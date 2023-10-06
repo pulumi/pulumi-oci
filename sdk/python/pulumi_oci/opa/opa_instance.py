@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -43,23 +43,50 @@ class OpaInstanceArgs:
         :param pulumi.Input[bool] is_breakglass_enabled: indicates if breakGlass is enabled for the opa instance.
         :param pulumi.Input[str] metering_type: MeteringType Identifier
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "shape_name", shape_name)
+        OpaInstanceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            shape_name=shape_name,
+            consumption_model=consumption_model,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            idcs_at=idcs_at,
+            is_breakglass_enabled=is_breakglass_enabled,
+            metering_type=metering_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             shape_name: pulumi.Input[str],
+             consumption_model: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             idcs_at: Optional[pulumi.Input[str]] = None,
+             is_breakglass_enabled: Optional[pulumi.Input[bool]] = None,
+             metering_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("shape_name", shape_name)
         if consumption_model is not None:
-            pulumi.set(__self__, "consumption_model", consumption_model)
+            _setter("consumption_model", consumption_model)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if idcs_at is not None:
-            pulumi.set(__self__, "idcs_at", idcs_at)
+            _setter("idcs_at", idcs_at)
         if is_breakglass_enabled is not None:
-            pulumi.set(__self__, "is_breakglass_enabled", is_breakglass_enabled)
+            _setter("is_breakglass_enabled", is_breakglass_enabled)
         if metering_type is not None:
-            pulumi.set(__self__, "metering_type", metering_type)
+            _setter("metering_type", metering_type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -236,46 +263,93 @@ class _OpaInstanceState:
         :param pulumi.Input[str] time_created: The time when OpaInstance was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the OpaInstance was updated. An RFC3339 formatted datetime string
         """
+        _OpaInstanceState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            attachments=attachments,
+            compartment_id=compartment_id,
+            consumption_model=consumption_model,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            idcs_at=idcs_at,
+            identity_app_display_name=identity_app_display_name,
+            identity_app_guid=identity_app_guid,
+            identity_app_opc_service_instance_guid=identity_app_opc_service_instance_guid,
+            identity_domain_url=identity_domain_url,
+            instance_url=instance_url,
+            is_breakglass_enabled=is_breakglass_enabled,
+            metering_type=metering_type,
+            shape_name=shape_name,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             attachments: Optional[pulumi.Input[Sequence[pulumi.Input['OpaInstanceAttachmentArgs']]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             consumption_model: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             idcs_at: Optional[pulumi.Input[str]] = None,
+             identity_app_display_name: Optional[pulumi.Input[str]] = None,
+             identity_app_guid: Optional[pulumi.Input[str]] = None,
+             identity_app_opc_service_instance_guid: Optional[pulumi.Input[str]] = None,
+             identity_domain_url: Optional[pulumi.Input[str]] = None,
+             instance_url: Optional[pulumi.Input[str]] = None,
+             is_breakglass_enabled: Optional[pulumi.Input[bool]] = None,
+             metering_type: Optional[pulumi.Input[str]] = None,
+             shape_name: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if attachments is not None:
-            pulumi.set(__self__, "attachments", attachments)
+            _setter("attachments", attachments)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if consumption_model is not None:
-            pulumi.set(__self__, "consumption_model", consumption_model)
+            _setter("consumption_model", consumption_model)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if idcs_at is not None:
-            pulumi.set(__self__, "idcs_at", idcs_at)
+            _setter("idcs_at", idcs_at)
         if identity_app_display_name is not None:
-            pulumi.set(__self__, "identity_app_display_name", identity_app_display_name)
+            _setter("identity_app_display_name", identity_app_display_name)
         if identity_app_guid is not None:
-            pulumi.set(__self__, "identity_app_guid", identity_app_guid)
+            _setter("identity_app_guid", identity_app_guid)
         if identity_app_opc_service_instance_guid is not None:
-            pulumi.set(__self__, "identity_app_opc_service_instance_guid", identity_app_opc_service_instance_guid)
+            _setter("identity_app_opc_service_instance_guid", identity_app_opc_service_instance_guid)
         if identity_domain_url is not None:
-            pulumi.set(__self__, "identity_domain_url", identity_domain_url)
+            _setter("identity_domain_url", identity_domain_url)
         if instance_url is not None:
-            pulumi.set(__self__, "instance_url", instance_url)
+            _setter("instance_url", instance_url)
         if is_breakglass_enabled is not None:
-            pulumi.set(__self__, "is_breakglass_enabled", is_breakglass_enabled)
+            _setter("is_breakglass_enabled", is_breakglass_enabled)
         if metering_type is not None:
-            pulumi.set(__self__, "metering_type", metering_type)
+            _setter("metering_type", metering_type)
         if shape_name is not None:
-            pulumi.set(__self__, "shape_name", shape_name)
+            _setter("shape_name", shape_name)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -643,6 +717,10 @@ class OpaInstance(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            OpaInstanceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

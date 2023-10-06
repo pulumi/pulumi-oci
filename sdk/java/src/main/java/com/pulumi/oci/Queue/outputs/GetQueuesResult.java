@@ -15,18 +15,18 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetQueuesResult {
     /**
-     * @return Compartment Identifier
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
      * 
      */
     private @Nullable String compartmentId;
     /**
-     * @return Queue Identifier, can be renamed
+     * @return A user-friendly name for the queue. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
     private @Nullable List<GetQueuesFilter> filters;
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return A unique identifier for the queue that is immutable on creation.
      * 
      */
     private @Nullable String id;
@@ -36,21 +36,21 @@ public final class GetQueuesResult {
      */
     private List<GetQueuesQueueCollection> queueCollections;
     /**
-     * @return The current state of the Queue.
+     * @return The current state of the queue.
      * 
      */
     private @Nullable String state;
 
     private GetQueuesResult() {}
     /**
-     * @return Compartment Identifier
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
      * 
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
     /**
-     * @return Queue Identifier, can be renamed
+     * @return A user-friendly name for the queue. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {
@@ -60,7 +60,7 @@ public final class GetQueuesResult {
         return this.filters == null ? List.of() : this.filters;
     }
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return A unique identifier for the queue that is immutable on creation.
      * 
      */
     public Optional<String> id() {
@@ -74,7 +74,7 @@ public final class GetQueuesResult {
         return this.queueCollections;
     }
     /**
-     * @return The current state of the Queue.
+     * @return The current state of the queue.
      * 
      */
     public Optional<String> state() {

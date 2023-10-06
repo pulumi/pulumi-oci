@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -30,14 +30,31 @@ class ProductLicenseImageArgs:
         :param pulumi.Input[str] listing_name: The listing name associated with the product license.
         :param pulumi.Input[str] publisher: The image publisher.
         """
-        pulumi.set(__self__, "listing_id", listing_id)
-        pulumi.set(__self__, "package_version", package_version)
+        ProductLicenseImageArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            listing_id=listing_id,
+            package_version=package_version,
+            id=id,
+            listing_name=listing_name,
+            publisher=publisher,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             listing_id: pulumi.Input[str],
+             package_version: pulumi.Input[str],
+             id: Optional[pulumi.Input[str]] = None,
+             listing_name: Optional[pulumi.Input[str]] = None,
+             publisher: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("listing_id", listing_id)
+        _setter("package_version", package_version)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if listing_name is not None:
-            pulumi.set(__self__, "listing_name", listing_name)
+            _setter("listing_name", listing_name)
         if publisher is not None:
-            pulumi.set(__self__, "publisher", publisher)
+            _setter("publisher", publisher)
 
     @property
     @pulumi.getter(name="listingId")
@@ -106,10 +123,23 @@ class GetLicenseRecordsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetLicenseRecordsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -145,10 +175,23 @@ class GetProductLicensesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProductLicensesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

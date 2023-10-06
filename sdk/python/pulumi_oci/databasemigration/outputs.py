@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -27,6 +27,8 @@ __all__ = [
     'MigrationDataTransferMediumDetailsDatabaseLinkDetails',
     'MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket',
     'MigrationDataTransferMediumDetailsObjectStorageDetails',
+    'MigrationDataTransferMediumDetailsV2',
+    'MigrationDataTransferMediumDetailsV2ObjectStorageBucket',
     'MigrationDatapumpSettings',
     'MigrationDatapumpSettingsDataPumpParameters',
     'MigrationDatapumpSettingsExportDirectoryObject',
@@ -84,6 +86,8 @@ __all__ = [
     'GetMigrationDataTransferMediumDetailDatabaseLinkDetailResult',
     'GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketResult',
     'GetMigrationDataTransferMediumDetailObjectStorageDetailResult',
+    'GetMigrationDataTransferMediumDetailsV2Result',
+    'GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketResult',
     'GetMigrationDatapumpSettingResult',
     'GetMigrationDatapumpSettingDataPumpParameterResult',
     'GetMigrationDatapumpSettingExportDirectoryObjectResult',
@@ -123,6 +127,8 @@ __all__ = [
     'GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailResult',
     'GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketResult',
     'GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailResult',
+    'GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Result',
+    'GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketResult',
     'GetMigrationsMigrationCollectionItemDatapumpSettingResult',
     'GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterResult',
     'GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectResult',
@@ -162,8 +168,19 @@ class ConnectionAdminCredentials(dict):
         :param str password: (Updatable) Administrator password
         :param str username: (Updatable) Administrator username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        ConnectionAdminCredentials._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -214,14 +231,29 @@ class ConnectionConnectDescriptor(dict):
         :param str host: (Updatable) Name of the host the SSH key is valid for.
         :param int port: (Updatable) Port of the connect descriptor. Required if no connectString was specified.
         """
+        ConnectionConnectDescriptor._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            connect_string=connect_string,
+            database_service_name=database_service_name,
+            host=host,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             connect_string: Optional[str] = None,
+             database_service_name: Optional[str] = None,
+             host: Optional[str] = None,
+             port: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if connect_string is not None:
-            pulumi.set(__self__, "connect_string", connect_string)
+            _setter("connect_string", connect_string)
         if database_service_name is not None:
-            pulumi.set(__self__, "database_service_name", database_service_name)
+            _setter("database_service_name", database_service_name)
         if host is not None:
-            pulumi.set(__self__, "host", host)
+            _setter("host", host)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
 
     @property
     @pulumi.getter(name="connectString")
@@ -290,11 +322,26 @@ class ConnectionPrivateEndpoint(dict):
         :param str vcn_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN where the Private Endpoint will be bound to.
         :param str id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        ConnectionPrivateEndpoint._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            subnet_id=subnet_id,
+            vcn_id=vcn_id,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             subnet_id: str,
+             vcn_id: str,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("subnet_id", subnet_id)
+        _setter("vcn_id", vcn_id)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -338,8 +385,19 @@ class ConnectionReplicationCredentials(dict):
         :param str password: (Updatable) Administrator password
         :param str username: (Updatable) Administrator username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        ConnectionReplicationCredentials._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -388,11 +446,26 @@ class ConnectionSshDetails(dict):
         :param str user: (Updatable) SSH user
         :param str sudo_location: (Updatable) Sudo location
         """
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "sshkey", sshkey)
-        pulumi.set(__self__, "user", user)
+        ConnectionSshDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host=host,
+            sshkey=sshkey,
+            user=user,
+            sudo_location=sudo_location,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host: str,
+             sshkey: str,
+             user: str,
+             sudo_location: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("host", host)
+        _setter("sshkey", sshkey)
+        _setter("user", user)
         if sudo_location is not None:
-            pulumi.set(__self__, "sudo_location", sudo_location)
+            _setter("sudo_location", sudo_location)
 
     @property
     @pulumi.getter
@@ -463,9 +536,22 @@ class ConnectionVaultDetails(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "key_id", key_id)
-        pulumi.set(__self__, "vault_id", vault_id)
+        ConnectionVaultDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            key_id=key_id,
+            vault_id=vault_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             key_id: str,
+             vault_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("key_id", key_id)
+        _setter("vault_id", vault_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -526,12 +612,25 @@ class JobProgress(dict):
         :param str current_status: Current status of the job.
         :param Sequence['JobProgressPhaseArgs'] phases: List of phase status for the job.
         """
+        JobProgress._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            current_phase=current_phase,
+            current_status=current_status,
+            phases=phases,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             current_phase: Optional[str] = None,
+             current_status: Optional[str] = None,
+             phases: Optional[Sequence['outputs.JobProgressPhase']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if current_phase is not None:
-            pulumi.set(__self__, "current_phase", current_phase)
+            _setter("current_phase", current_phase)
         if current_status is not None:
-            pulumi.set(__self__, "current_status", current_status)
+            _setter("current_status", current_status)
         if phases is not None:
-            pulumi.set(__self__, "phases", phases)
+            _setter("phases", phases)
 
     @property
     @pulumi.getter(name="currentPhase")
@@ -602,24 +701,49 @@ class JobProgressPhase(dict):
         :param int progress: Percent progress of job phase.
         :param str status: Phase status
         """
+        JobProgressPhase._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            duration_in_ms=duration_in_ms,
+            extracts=extracts,
+            is_advisor_report_available=is_advisor_report_available,
+            issue=issue,
+            log_locations=log_locations,
+            name=name,
+            progress=progress,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: Optional[str] = None,
+             duration_in_ms: Optional[int] = None,
+             extracts: Optional[Sequence['outputs.JobProgressPhaseExtract']] = None,
+             is_advisor_report_available: Optional[bool] = None,
+             issue: Optional[str] = None,
+             log_locations: Optional[Sequence['outputs.JobProgressPhaseLogLocation']] = None,
+             name: Optional[str] = None,
+             progress: Optional[int] = None,
+             status: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if action is not None:
-            pulumi.set(__self__, "action", action)
+            _setter("action", action)
         if duration_in_ms is not None:
-            pulumi.set(__self__, "duration_in_ms", duration_in_ms)
+            _setter("duration_in_ms", duration_in_ms)
         if extracts is not None:
-            pulumi.set(__self__, "extracts", extracts)
+            _setter("extracts", extracts)
         if is_advisor_report_available is not None:
-            pulumi.set(__self__, "is_advisor_report_available", is_advisor_report_available)
+            _setter("is_advisor_report_available", is_advisor_report_available)
         if issue is not None:
-            pulumi.set(__self__, "issue", issue)
+            _setter("issue", issue)
         if log_locations is not None:
-            pulumi.set(__self__, "log_locations", log_locations)
+            _setter("log_locations", log_locations)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if progress is not None:
-            pulumi.set(__self__, "progress", progress)
+            _setter("progress", progress)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
 
     @property
     @pulumi.getter
@@ -703,10 +827,21 @@ class JobProgressPhaseExtract(dict):
         :param str message: Message in entry.
         :param str type: Type of unsupported object
         """
+        JobProgressPhaseExtract._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            message=message,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             message: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if message is not None:
-            pulumi.set(__self__, "message", message)
+            _setter("message", message)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter
@@ -736,12 +871,25 @@ class JobProgressPhaseLogLocation(dict):
         :param str namespace: Object Storage namespace.
         :param str object: Name of the object (regular expression is allowed)
         """
+        JobProgressPhaseLogLocation._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter
@@ -779,12 +927,25 @@ class JobUnsupportedObject(dict):
         :param str owner: Owner of the object (regular expression is allowed)
         :param str type: Type of unsupported object
         """
+        JobUnsupportedObject._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object=object,
+            owner=owner,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object: Optional[str] = None,
+             owner: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter
@@ -839,10 +1000,21 @@ class MigrationAdvisorSettings(dict):
         :param bool is_ignore_errors: (Updatable) True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
         :param bool is_skip_advisor: (Updatable) True to skip the Pre-Migration Advisor execution. Default is false.
         """
+        MigrationAdvisorSettings._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_ignore_errors=is_ignore_errors,
+            is_skip_advisor=is_skip_advisor,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_ignore_errors: Optional[bool] = None,
+             is_skip_advisor: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if is_ignore_errors is not None:
-            pulumi.set(__self__, "is_ignore_errors", is_ignore_errors)
+            _setter("is_ignore_errors", is_ignore_errors)
         if is_skip_advisor is not None:
-            pulumi.set(__self__, "is_skip_advisor", is_skip_advisor)
+            _setter("is_skip_advisor", is_skip_advisor)
 
     @property
     @pulumi.getter(name="isIgnoreErrors")
@@ -889,10 +1061,21 @@ class MigrationDataTransferMediumDetails(dict):
         :param 'MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs' database_link_details: (Updatable) Optional details for creating a network database link from Oracle Cloud Infrastructure database to on-premise database.
         :param 'MigrationDataTransferMediumDetailsObjectStorageDetailsArgs' object_storage_details: (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
         """
+        MigrationDataTransferMediumDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            database_link_details=database_link_details,
+            object_storage_details=object_storage_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             database_link_details: Optional['outputs.MigrationDataTransferMediumDetailsDatabaseLinkDetails'] = None,
+             object_storage_details: Optional['outputs.MigrationDataTransferMediumDetailsObjectStorageDetails'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if database_link_details is not None:
-            pulumi.set(__self__, "database_link_details", database_link_details)
+            _setter("database_link_details", database_link_details)
         if object_storage_details is not None:
-            pulumi.set(__self__, "object_storage_details", object_storage_details)
+            _setter("object_storage_details", object_storage_details)
 
     @property
     @pulumi.getter(name="databaseLinkDetails")
@@ -937,10 +1120,21 @@ class MigrationDataTransferMediumDetailsDatabaseLinkDetails(dict):
         :param str name: (Updatable) Name of directory object in database
         :param 'MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs' wallet_bucket: (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
         """
+        MigrationDataTransferMediumDetailsDatabaseLinkDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            wallet_bucket=wallet_bucket,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             wallet_bucket: Optional['outputs.MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if wallet_bucket is not None:
-            pulumi.set(__self__, "wallet_bucket", wallet_bucket)
+            _setter("wallet_bucket", wallet_bucket)
 
     @property
     @pulumi.getter
@@ -968,8 +1162,19 @@ class MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket(dict):
         :param str bucket: (Updatable) Bucket name.
         :param str namespace: (Updatable) Namespace name of the object store bucket.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
+        MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
 
     @property
     @pulumi.getter
@@ -997,8 +1202,19 @@ class MigrationDataTransferMediumDetailsObjectStorageDetails(dict):
         :param str bucket: (Updatable) Bucket name.
         :param str namespace: (Updatable) Namespace name of the object store bucket.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
+        MigrationDataTransferMediumDetailsObjectStorageDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
 
     @property
     @pulumi.getter
@@ -1011,6 +1227,150 @@ class MigrationDataTransferMediumDetailsObjectStorageDetails(dict):
     @property
     @pulumi.getter
     def namespace(self) -> str:
+        """
+        (Updatable) Namespace name of the object store bucket.
+        """
+        return pulumi.get(self, "namespace")
+
+
+@pulumi.output_type
+class MigrationDataTransferMediumDetailsV2(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "accessKeyId":
+            suggest = "access_key_id"
+        elif key == "objectStorageBucket":
+            suggest = "object_storage_bucket"
+        elif key == "secretAccessKey":
+            suggest = "secret_access_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MigrationDataTransferMediumDetailsV2. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MigrationDataTransferMediumDetailsV2.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MigrationDataTransferMediumDetailsV2.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 access_key_id: Optional[str] = None,
+                 name: Optional[str] = None,
+                 object_storage_bucket: Optional['outputs.MigrationDataTransferMediumDetailsV2ObjectStorageBucket'] = None,
+                 region: Optional[str] = None,
+                 secret_access_key: Optional[str] = None):
+        """
+        :param str type: (Updatable) Migration type.
+        :param str name: (Updatable) Name of directory object in database
+        """
+        MigrationDataTransferMediumDetailsV2._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            access_key_id=access_key_id,
+            name=name,
+            object_storage_bucket=object_storage_bucket,
+            region=region,
+            secret_access_key=secret_access_key,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             access_key_id: Optional[str] = None,
+             name: Optional[str] = None,
+             object_storage_bucket: Optional['outputs.MigrationDataTransferMediumDetailsV2ObjectStorageBucket'] = None,
+             region: Optional[str] = None,
+             secret_access_key: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
+        if access_key_id is not None:
+            _setter("access_key_id", access_key_id)
+        if name is not None:
+            _setter("name", name)
+        if object_storage_bucket is not None:
+            _setter("object_storage_bucket", object_storage_bucket)
+        if region is not None:
+            _setter("region", region)
+        if secret_access_key is not None:
+            _setter("secret_access_key", secret_access_key)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        (Updatable) Migration type.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter(name="accessKeyId")
+    def access_key_id(self) -> Optional[str]:
+        return pulumi.get(self, "access_key_id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Name of directory object in database
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStorageBucket")
+    def object_storage_bucket(self) -> Optional['outputs.MigrationDataTransferMediumDetailsV2ObjectStorageBucket']:
+        return pulumi.get(self, "object_storage_bucket")
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[str]:
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="secretAccessKey")
+    def secret_access_key(self) -> Optional[str]:
+        return pulumi.get(self, "secret_access_key")
+
+
+@pulumi.output_type
+class MigrationDataTransferMediumDetailsV2ObjectStorageBucket(dict):
+    def __init__(__self__, *,
+                 bucket: Optional[str] = None,
+                 namespace: Optional[str] = None):
+        """
+        :param str bucket: (Updatable) Bucket name.
+        :param str namespace: (Updatable) Namespace name of the object store bucket.
+        """
+        MigrationDataTransferMediumDetailsV2ObjectStorageBucket._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[str] = None,
+             namespace: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        if bucket is not None:
+            _setter("bucket", bucket)
+        if namespace is not None:
+            _setter("namespace", namespace)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> Optional[str]:
+        """
+        (Updatable) Bucket name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[str]:
         """
         (Updatable) Namespace name of the object store bucket.
         """
@@ -1057,16 +1417,33 @@ class MigrationDatapumpSettings(dict):
         :param str job_mode: (Updatable) Data Pump job mode. Refer to [link text](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
         :param Sequence['MigrationDatapumpSettingsMetadataRemapArgs'] metadata_remaps: (Updatable) Defines remapping to be applied to objects as they are processed. Refer to [DATA_REMAP](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-E75AAE6F-4EA6-4737-A752-6B62F5E9D460)
         """
+        MigrationDatapumpSettings._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_pump_parameters=data_pump_parameters,
+            export_directory_object=export_directory_object,
+            import_directory_object=import_directory_object,
+            job_mode=job_mode,
+            metadata_remaps=metadata_remaps,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_pump_parameters: Optional['outputs.MigrationDatapumpSettingsDataPumpParameters'] = None,
+             export_directory_object: Optional['outputs.MigrationDatapumpSettingsExportDirectoryObject'] = None,
+             import_directory_object: Optional['outputs.MigrationDatapumpSettingsImportDirectoryObject'] = None,
+             job_mode: Optional[str] = None,
+             metadata_remaps: Optional[Sequence['outputs.MigrationDatapumpSettingsMetadataRemap']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if data_pump_parameters is not None:
-            pulumi.set(__self__, "data_pump_parameters", data_pump_parameters)
+            _setter("data_pump_parameters", data_pump_parameters)
         if export_directory_object is not None:
-            pulumi.set(__self__, "export_directory_object", export_directory_object)
+            _setter("export_directory_object", export_directory_object)
         if import_directory_object is not None:
-            pulumi.set(__self__, "import_directory_object", import_directory_object)
+            _setter("import_directory_object", import_directory_object)
         if job_mode is not None:
-            pulumi.set(__self__, "job_mode", job_mode)
+            _setter("job_mode", job_mode)
         if metadata_remaps is not None:
-            pulumi.set(__self__, "metadata_remaps", metadata_remaps)
+            _setter("metadata_remaps", metadata_remaps)
 
     @property
     @pulumi.getter(name="dataPumpParameters")
@@ -1151,18 +1528,37 @@ class MigrationDatapumpSettingsDataPumpParameters(dict):
         :param bool is_cluster: (Updatable) Set to false to force Data Pump worker process to run on one instance.
         :param str table_exists_action: (Updatable) IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
         """
+        MigrationDatapumpSettingsDataPumpParameters._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            estimate=estimate,
+            exclude_parameters=exclude_parameters,
+            export_parallelism_degree=export_parallelism_degree,
+            import_parallelism_degree=import_parallelism_degree,
+            is_cluster=is_cluster,
+            table_exists_action=table_exists_action,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             estimate: Optional[str] = None,
+             exclude_parameters: Optional[Sequence[str]] = None,
+             export_parallelism_degree: Optional[int] = None,
+             import_parallelism_degree: Optional[int] = None,
+             is_cluster: Optional[bool] = None,
+             table_exists_action: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if estimate is not None:
-            pulumi.set(__self__, "estimate", estimate)
+            _setter("estimate", estimate)
         if exclude_parameters is not None:
-            pulumi.set(__self__, "exclude_parameters", exclude_parameters)
+            _setter("exclude_parameters", exclude_parameters)
         if export_parallelism_degree is not None:
-            pulumi.set(__self__, "export_parallelism_degree", export_parallelism_degree)
+            _setter("export_parallelism_degree", export_parallelism_degree)
         if import_parallelism_degree is not None:
-            pulumi.set(__self__, "import_parallelism_degree", import_parallelism_degree)
+            _setter("import_parallelism_degree", import_parallelism_degree)
         if is_cluster is not None:
-            pulumi.set(__self__, "is_cluster", is_cluster)
+            _setter("is_cluster", is_cluster)
         if table_exists_action is not None:
-            pulumi.set(__self__, "table_exists_action", table_exists_action)
+            _setter("table_exists_action", table_exists_action)
 
     @property
     @pulumi.getter
@@ -1222,9 +1618,20 @@ class MigrationDatapumpSettingsExportDirectoryObject(dict):
         :param str name: (Updatable) Name of directory object in database
         :param str path: (Updatable) Absolute path of directory on database server
         """
-        pulumi.set(__self__, "name", name)
+        MigrationDatapumpSettingsExportDirectoryObject._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            path=path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             path: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
         if path is not None:
-            pulumi.set(__self__, "path", path)
+            _setter("path", path)
 
     @property
     @pulumi.getter
@@ -1252,9 +1659,20 @@ class MigrationDatapumpSettingsImportDirectoryObject(dict):
         :param str name: (Updatable) Name of directory object in database
         :param str path: (Updatable) Absolute path of directory on database server
         """
-        pulumi.set(__self__, "name", name)
+        MigrationDatapumpSettingsImportDirectoryObject._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            path=path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             path: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
         if path is not None:
-            pulumi.set(__self__, "path", path)
+            _setter("path", path)
 
     @property
     @pulumi.getter
@@ -1303,9 +1721,22 @@ class MigrationDatapumpSettingsMetadataRemap(dict):
         :param str old_value: (Updatable) Specifies the value which needs to be reset.
         :param str type: (Updatable) Migration type.
         """
-        pulumi.set(__self__, "new_value", new_value)
-        pulumi.set(__self__, "old_value", old_value)
-        pulumi.set(__self__, "type", type)
+        MigrationDatapumpSettingsMetadataRemap._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            new_value=new_value,
+            old_value=old_value,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             new_value: str,
+             old_value: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("new_value", new_value)
+        _setter("old_value", old_value)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="newValue")
@@ -1334,17 +1765,55 @@ class MigrationDatapumpSettingsMetadataRemap(dict):
 
 @pulumi.output_type
 class MigrationDumpTransferDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sharedStorageMountTargetId":
+            suggest = "shared_storage_mount_target_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MigrationDumpTransferDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MigrationDumpTransferDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MigrationDumpTransferDetails.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
+                 shared_storage_mount_target_id: Optional[str] = None,
                  source: Optional['outputs.MigrationDumpTransferDetailsSource'] = None,
                  target: Optional['outputs.MigrationDumpTransferDetailsTarget'] = None):
         """
         :param 'MigrationDumpTransferDetailsSourceArgs' source: (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
         :param 'MigrationDumpTransferDetailsTargetArgs' target: (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
         """
+        MigrationDumpTransferDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            shared_storage_mount_target_id=shared_storage_mount_target_id,
+            source=source,
+            target=target,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             shared_storage_mount_target_id: Optional[str] = None,
+             source: Optional['outputs.MigrationDumpTransferDetailsSource'] = None,
+             target: Optional['outputs.MigrationDumpTransferDetailsTarget'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        if shared_storage_mount_target_id is not None:
+            _setter("shared_storage_mount_target_id", shared_storage_mount_target_id)
         if source is not None:
-            pulumi.set(__self__, "source", source)
+            _setter("source", source)
         if target is not None:
-            pulumi.set(__self__, "target", target)
+            _setter("target", target)
+
+    @property
+    @pulumi.getter(name="sharedStorageMountTargetId")
+    def shared_storage_mount_target_id(self) -> Optional[str]:
+        return pulumi.get(self, "shared_storage_mount_target_id")
 
     @property
     @pulumi.getter
@@ -1393,11 +1862,24 @@ class MigrationDumpTransferDetailsSource(dict):
         :param str oci_home: (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
         :param str wallet_location: (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
         """
-        pulumi.set(__self__, "kind", kind)
+        MigrationDumpTransferDetailsSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+            oci_home=oci_home,
+            wallet_location=wallet_location,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: str,
+             oci_home: Optional[str] = None,
+             wallet_location: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("kind", kind)
         if oci_home is not None:
-            pulumi.set(__self__, "oci_home", oci_home)
+            _setter("oci_home", oci_home)
         if wallet_location is not None:
-            pulumi.set(__self__, "wallet_location", wallet_location)
+            _setter("wallet_location", wallet_location)
 
     @property
     @pulumi.getter
@@ -1454,11 +1936,24 @@ class MigrationDumpTransferDetailsTarget(dict):
         :param str oci_home: (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
         :param str wallet_location: (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
         """
-        pulumi.set(__self__, "kind", kind)
+        MigrationDumpTransferDetailsTarget._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+            oci_home=oci_home,
+            wallet_location=wallet_location,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: str,
+             oci_home: Optional[str] = None,
+             wallet_location: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("kind", kind)
         if oci_home is not None:
-            pulumi.set(__self__, "oci_home", oci_home)
+            _setter("oci_home", oci_home)
         if wallet_location is not None:
-            pulumi.set(__self__, "wallet_location", wallet_location)
+            _setter("wallet_location", wallet_location)
 
     @property
     @pulumi.getter
@@ -1515,12 +2010,27 @@ class MigrationExcludeObject(dict):
         :param bool is_omit_excluded_table_from_replication: (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
         :param str type: (Updatable) Migration type.
         """
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "owner", owner)
+        MigrationExcludeObject._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object=object,
+            owner=owner,
+            is_omit_excluded_table_from_replication=is_omit_excluded_table_from_replication,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object: str,
+             owner: str,
+             is_omit_excluded_table_from_replication: Optional[bool] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object", object)
+        _setter("owner", owner)
         if is_omit_excluded_table_from_replication is not None:
-            pulumi.set(__self__, "is_omit_excluded_table_from_replication", is_omit_excluded_table_from_replication)
+            _setter("is_omit_excluded_table_from_replication", is_omit_excluded_table_from_replication)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter
@@ -1564,9 +2074,20 @@ class MigrationGoldenGateDetails(dict):
         :param 'MigrationGoldenGateDetailsHubArgs' hub: (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
         :param 'MigrationGoldenGateDetailsSettingsArgs' settings: (Updatable) Optional settings for GoldenGate Microservices processes
         """
-        pulumi.set(__self__, "hub", hub)
+        MigrationGoldenGateDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hub=hub,
+            settings=settings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hub: 'outputs.MigrationGoldenGateDetailsHub',
+             settings: Optional['outputs.MigrationGoldenGateDetailsSettings'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hub", hub)
         if settings is not None:
-            pulumi.set(__self__, "settings", settings)
+            _setter("settings", settings)
 
     @property
     @pulumi.getter
@@ -1635,20 +2156,43 @@ class MigrationGoldenGateDetailsHub(dict):
         :param 'MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs' target_db_admin_credentials: (Updatable) Database Administrator Credentials details.
         :param str target_microservices_deployment_name: (Updatable) Name of GoldenGate Microservices deployment to operate on target database
         """
-        pulumi.set(__self__, "rest_admin_credentials", rest_admin_credentials)
-        pulumi.set(__self__, "url", url)
+        MigrationGoldenGateDetailsHub._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            rest_admin_credentials=rest_admin_credentials,
+            url=url,
+            compute_id=compute_id,
+            source_container_db_admin_credentials=source_container_db_admin_credentials,
+            source_db_admin_credentials=source_db_admin_credentials,
+            source_microservices_deployment_name=source_microservices_deployment_name,
+            target_db_admin_credentials=target_db_admin_credentials,
+            target_microservices_deployment_name=target_microservices_deployment_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             rest_admin_credentials: 'outputs.MigrationGoldenGateDetailsHubRestAdminCredentials',
+             url: str,
+             compute_id: Optional[str] = None,
+             source_container_db_admin_credentials: Optional['outputs.MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials'] = None,
+             source_db_admin_credentials: Optional['outputs.MigrationGoldenGateDetailsHubSourceDbAdminCredentials'] = None,
+             source_microservices_deployment_name: Optional[str] = None,
+             target_db_admin_credentials: Optional['outputs.MigrationGoldenGateDetailsHubTargetDbAdminCredentials'] = None,
+             target_microservices_deployment_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("rest_admin_credentials", rest_admin_credentials)
+        _setter("url", url)
         if compute_id is not None:
-            pulumi.set(__self__, "compute_id", compute_id)
+            _setter("compute_id", compute_id)
         if source_container_db_admin_credentials is not None:
-            pulumi.set(__self__, "source_container_db_admin_credentials", source_container_db_admin_credentials)
+            _setter("source_container_db_admin_credentials", source_container_db_admin_credentials)
         if source_db_admin_credentials is not None:
-            pulumi.set(__self__, "source_db_admin_credentials", source_db_admin_credentials)
+            _setter("source_db_admin_credentials", source_db_admin_credentials)
         if source_microservices_deployment_name is not None:
-            pulumi.set(__self__, "source_microservices_deployment_name", source_microservices_deployment_name)
+            _setter("source_microservices_deployment_name", source_microservices_deployment_name)
         if target_db_admin_credentials is not None:
-            pulumi.set(__self__, "target_db_admin_credentials", target_db_admin_credentials)
+            _setter("target_db_admin_credentials", target_db_admin_credentials)
         if target_microservices_deployment_name is not None:
-            pulumi.set(__self__, "target_microservices_deployment_name", target_microservices_deployment_name)
+            _setter("target_microservices_deployment_name", target_microservices_deployment_name)
 
     @property
     @pulumi.getter(name="restAdminCredentials")
@@ -1724,8 +2268,19 @@ class MigrationGoldenGateDetailsHubRestAdminCredentials(dict):
         :param str password: (Updatable) Database  password
         :param str username: (Updatable) Database username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        MigrationGoldenGateDetailsHubRestAdminCredentials._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -1753,8 +2308,19 @@ class MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials(dict):
         :param str password: (Updatable) Database  password
         :param str username: (Updatable) Database username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -1782,8 +2348,19 @@ class MigrationGoldenGateDetailsHubSourceDbAdminCredentials(dict):
         :param str password: (Updatable) Database  password
         :param str username: (Updatable) Database username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        MigrationGoldenGateDetailsHubSourceDbAdminCredentials._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -1811,8 +2388,19 @@ class MigrationGoldenGateDetailsHubTargetDbAdminCredentials(dict):
         :param str password: (Updatable) Database  password
         :param str username: (Updatable) Database username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        MigrationGoldenGateDetailsHubTargetDbAdminCredentials._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -1859,12 +2447,25 @@ class MigrationGoldenGateDetailsSettings(dict):
         :param 'MigrationGoldenGateDetailsSettingsExtractArgs' extract: (Updatable) Parameters for GoldenGate Extract processes.
         :param 'MigrationGoldenGateDetailsSettingsReplicatArgs' replicat: (Updatable) Parameters for GoldenGate Replicat processes.
         """
+        MigrationGoldenGateDetailsSettings._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            acceptable_lag=acceptable_lag,
+            extract=extract,
+            replicat=replicat,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             acceptable_lag: Optional[int] = None,
+             extract: Optional['outputs.MigrationGoldenGateDetailsSettingsExtract'] = None,
+             replicat: Optional['outputs.MigrationGoldenGateDetailsSettingsReplicat'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if acceptable_lag is not None:
-            pulumi.set(__self__, "acceptable_lag", acceptable_lag)
+            _setter("acceptable_lag", acceptable_lag)
         if extract is not None:
-            pulumi.set(__self__, "extract", extract)
+            _setter("extract", extract)
         if replicat is not None:
-            pulumi.set(__self__, "replicat", replicat)
+            _setter("replicat", replicat)
 
     @property
     @pulumi.getter(name="acceptableLag")
@@ -1919,10 +2520,21 @@ class MigrationGoldenGateDetailsSettingsExtract(dict):
         :param int long_trans_duration: (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
         :param str performance_profile: (Updatable) Extract performance.
         """
+        MigrationGoldenGateDetailsSettingsExtract._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            long_trans_duration=long_trans_duration,
+            performance_profile=performance_profile,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             long_trans_duration: Optional[int] = None,
+             performance_profile: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if long_trans_duration is not None:
-            pulumi.set(__self__, "long_trans_duration", long_trans_duration)
+            _setter("long_trans_duration", long_trans_duration)
         if performance_profile is not None:
-            pulumi.set(__self__, "performance_profile", performance_profile)
+            _setter("performance_profile", performance_profile)
 
     @property
     @pulumi.getter(name="longTransDuration")
@@ -1977,14 +2589,29 @@ class MigrationGoldenGateDetailsSettingsReplicat(dict):
         :param int min_apply_parallelism: (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
         :param str performance_profile: (Updatable) Extract performance.
         """
+        MigrationGoldenGateDetailsSettingsReplicat._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            map_parallelism=map_parallelism,
+            max_apply_parallelism=max_apply_parallelism,
+            min_apply_parallelism=min_apply_parallelism,
+            performance_profile=performance_profile,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             map_parallelism: Optional[int] = None,
+             max_apply_parallelism: Optional[int] = None,
+             min_apply_parallelism: Optional[int] = None,
+             performance_profile: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if map_parallelism is not None:
-            pulumi.set(__self__, "map_parallelism", map_parallelism)
+            _setter("map_parallelism", map_parallelism)
         if max_apply_parallelism is not None:
-            pulumi.set(__self__, "max_apply_parallelism", max_apply_parallelism)
+            _setter("max_apply_parallelism", max_apply_parallelism)
         if min_apply_parallelism is not None:
-            pulumi.set(__self__, "min_apply_parallelism", min_apply_parallelism)
+            _setter("min_apply_parallelism", min_apply_parallelism)
         if performance_profile is not None:
-            pulumi.set(__self__, "performance_profile", performance_profile)
+            _setter("performance_profile", performance_profile)
 
     @property
     @pulumi.getter(name="mapParallelism")
@@ -2057,16 +2684,33 @@ class MigrationGoldenGateServiceDetails(dict):
         :param 'MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs' source_db_credentials: (Updatable) Database Credentials details.
         :param 'MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs' target_db_credentials: (Updatable) Database Credentials details.
         """
+        MigrationGoldenGateServiceDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ggs_deployments=ggs_deployments,
+            settings=settings,
+            source_container_db_credentials=source_container_db_credentials,
+            source_db_credentials=source_db_credentials,
+            target_db_credentials=target_db_credentials,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ggs_deployments: Optional[Sequence['outputs.MigrationGoldenGateServiceDetailsGgsDeployment']] = None,
+             settings: Optional['outputs.MigrationGoldenGateServiceDetailsSettings'] = None,
+             source_container_db_credentials: Optional['outputs.MigrationGoldenGateServiceDetailsSourceContainerDbCredentials'] = None,
+             source_db_credentials: Optional['outputs.MigrationGoldenGateServiceDetailsSourceDbCredentials'] = None,
+             target_db_credentials: Optional['outputs.MigrationGoldenGateServiceDetailsTargetDbCredentials'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if ggs_deployments is not None:
-            pulumi.set(__self__, "ggs_deployments", ggs_deployments)
+            _setter("ggs_deployments", ggs_deployments)
         if settings is not None:
-            pulumi.set(__self__, "settings", settings)
+            _setter("settings", settings)
         if source_container_db_credentials is not None:
-            pulumi.set(__self__, "source_container_db_credentials", source_container_db_credentials)
+            _setter("source_container_db_credentials", source_container_db_credentials)
         if source_db_credentials is not None:
-            pulumi.set(__self__, "source_db_credentials", source_db_credentials)
+            _setter("source_db_credentials", source_db_credentials)
         if target_db_credentials is not None:
-            pulumi.set(__self__, "target_db_credentials", target_db_credentials)
+            _setter("target_db_credentials", target_db_credentials)
 
     @property
     @pulumi.getter(name="ggsDeployments")
@@ -2137,10 +2781,21 @@ class MigrationGoldenGateServiceDetailsGgsDeployment(dict):
         :param str deployment_id: OCID of a GoldenGate Deployment
         :param str ggs_admin_credentials_secret_id: OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
         """
+        MigrationGoldenGateServiceDetailsGgsDeployment._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            deployment_id=deployment_id,
+            ggs_admin_credentials_secret_id=ggs_admin_credentials_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             deployment_id: Optional[str] = None,
+             ggs_admin_credentials_secret_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if deployment_id is not None:
-            pulumi.set(__self__, "deployment_id", deployment_id)
+            _setter("deployment_id", deployment_id)
         if ggs_admin_credentials_secret_id is not None:
-            pulumi.set(__self__, "ggs_admin_credentials_secret_id", ggs_admin_credentials_secret_id)
+            _setter("ggs_admin_credentials_secret_id", ggs_admin_credentials_secret_id)
 
     @property
     @pulumi.getter(name="deploymentId")
@@ -2187,12 +2842,25 @@ class MigrationGoldenGateServiceDetailsSettings(dict):
         :param 'MigrationGoldenGateServiceDetailsSettingsExtractArgs' extract: (Updatable) Parameters for GoldenGate Extract processes.
         :param 'MigrationGoldenGateServiceDetailsSettingsReplicatArgs' replicat: (Updatable) Parameters for GoldenGate Replicat processes.
         """
+        MigrationGoldenGateServiceDetailsSettings._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            acceptable_lag=acceptable_lag,
+            extract=extract,
+            replicat=replicat,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             acceptable_lag: Optional[int] = None,
+             extract: Optional['outputs.MigrationGoldenGateServiceDetailsSettingsExtract'] = None,
+             replicat: Optional['outputs.MigrationGoldenGateServiceDetailsSettingsReplicat'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if acceptable_lag is not None:
-            pulumi.set(__self__, "acceptable_lag", acceptable_lag)
+            _setter("acceptable_lag", acceptable_lag)
         if extract is not None:
-            pulumi.set(__self__, "extract", extract)
+            _setter("extract", extract)
         if replicat is not None:
-            pulumi.set(__self__, "replicat", replicat)
+            _setter("replicat", replicat)
 
     @property
     @pulumi.getter(name="acceptableLag")
@@ -2247,10 +2915,21 @@ class MigrationGoldenGateServiceDetailsSettingsExtract(dict):
         :param int long_trans_duration: (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
         :param str performance_profile: (Updatable) Extract performance.
         """
+        MigrationGoldenGateServiceDetailsSettingsExtract._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            long_trans_duration=long_trans_duration,
+            performance_profile=performance_profile,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             long_trans_duration: Optional[int] = None,
+             performance_profile: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if long_trans_duration is not None:
-            pulumi.set(__self__, "long_trans_duration", long_trans_duration)
+            _setter("long_trans_duration", long_trans_duration)
         if performance_profile is not None:
-            pulumi.set(__self__, "performance_profile", performance_profile)
+            _setter("performance_profile", performance_profile)
 
     @property
     @pulumi.getter(name="longTransDuration")
@@ -2301,12 +2980,25 @@ class MigrationGoldenGateServiceDetailsSettingsReplicat(dict):
         :param int max_apply_parallelism: (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
         :param int min_apply_parallelism: (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
         """
+        MigrationGoldenGateServiceDetailsSettingsReplicat._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            map_parallelism=map_parallelism,
+            max_apply_parallelism=max_apply_parallelism,
+            min_apply_parallelism=min_apply_parallelism,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             map_parallelism: Optional[int] = None,
+             max_apply_parallelism: Optional[int] = None,
+             min_apply_parallelism: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if map_parallelism is not None:
-            pulumi.set(__self__, "map_parallelism", map_parallelism)
+            _setter("map_parallelism", map_parallelism)
         if max_apply_parallelism is not None:
-            pulumi.set(__self__, "max_apply_parallelism", max_apply_parallelism)
+            _setter("max_apply_parallelism", max_apply_parallelism)
         if min_apply_parallelism is not None:
-            pulumi.set(__self__, "min_apply_parallelism", min_apply_parallelism)
+            _setter("min_apply_parallelism", min_apply_parallelism)
 
     @property
     @pulumi.getter(name="mapParallelism")
@@ -2342,8 +3034,19 @@ class MigrationGoldenGateServiceDetailsSourceContainerDbCredentials(dict):
         :param str password: (Updatable) Database  password
         :param str username: (Updatable) Database username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        MigrationGoldenGateServiceDetailsSourceContainerDbCredentials._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -2371,8 +3074,19 @@ class MigrationGoldenGateServiceDetailsSourceDbCredentials(dict):
         :param str password: (Updatable) Database  password
         :param str username: (Updatable) Database username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        MigrationGoldenGateServiceDetailsSourceDbCredentials._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -2400,8 +3114,19 @@ class MigrationGoldenGateServiceDetailsTargetDbCredentials(dict):
         :param str password: (Updatable) Database  password
         :param str username: (Updatable) Database username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        MigrationGoldenGateServiceDetailsTargetDbCredentials._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -2450,12 +3175,27 @@ class MigrationIncludeObject(dict):
         :param bool is_omit_excluded_table_from_replication: (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
         :param str type: (Updatable) Migration type.
         """
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "owner", owner)
+        MigrationIncludeObject._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object=object,
+            owner=owner,
+            is_omit_excluded_table_from_replication=is_omit_excluded_table_from_replication,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object: str,
+             owner: str,
+             is_omit_excluded_table_from_replication: Optional[bool] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object", object)
+        _setter("owner", owner)
         if is_omit_excluded_table_from_replication is not None:
-            pulumi.set(__self__, "is_omit_excluded_table_from_replication", is_omit_excluded_table_from_replication)
+            _setter("is_omit_excluded_table_from_replication", is_omit_excluded_table_from_replication)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter
@@ -2526,9 +3266,22 @@ class MigrationVaultDetails(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "key_id", key_id)
-        pulumi.set(__self__, "vault_id", vault_id)
+        MigrationVaultDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            key_id=key_id,
+            vault_id=vault_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             key_id: str,
+             vault_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("key_id", key_id)
+        _setter("vault_id", vault_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2566,7 +3319,16 @@ class GetAgentImagesAgentImageCollectionResult(dict):
         """
         :param Sequence['GetAgentImagesAgentImageCollectionItemArgs'] items: Items in collection.
         """
-        pulumi.set(__self__, "items", items)
+        GetAgentImagesAgentImageCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAgentImagesAgentImageCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2586,8 +3348,19 @@ class GetAgentImagesAgentImageCollectionItemResult(dict):
         :param str download_url: URL to download Agent Image of the ODMS Agent.
         :param str version: ODMS Agent Image version.
         """
-        pulumi.set(__self__, "download_url", download_url)
-        pulumi.set(__self__, "version", version)
+        GetAgentImagesAgentImageCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            download_url=download_url,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             download_url: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("download_url", download_url)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="downloadUrl")
@@ -2612,10 +3385,23 @@ class GetAgentImagesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAgentImagesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2637,7 +3423,16 @@ class GetAgentImagesFilterResult(dict):
 class GetAgentsAgentCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAgentsAgentCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetAgentsAgentCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAgentsAgentCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2677,20 +3472,55 @@ class GetAgentsAgentCollectionItemResult(dict):
         :param str time_updated: The time of the last Agent details update. An RFC3339 formatted datetime string.
         :param str version: ODMS Agent version
         """
-        pulumi.set(__self__, "agent_id", agent_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "public_key", public_key)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "stream_id", stream_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "version", version)
+        GetAgentsAgentCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agent_id=agent_id,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            public_key=public_key,
+            state=state,
+            stream_id=stream_id,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agent_id: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             public_key: str,
+             state: str,
+             stream_id: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("agent_id", agent_id)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("public_key", public_key)
+        _setter("state", state)
+        _setter("stream_id", stream_id)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="agentId")
@@ -2808,10 +3638,23 @@ class GetAgentsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAgentsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2837,8 +3680,19 @@ class GetConnectionAdminCredentialResult(dict):
         """
         :param str username: Administrator username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        GetConnectionAdminCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -2867,10 +3721,25 @@ class GetConnectionConnectDescriptorResult(dict):
         :param str host: Name of the host the SSH key is valid for.
         :param int port: Port of the connect descriptor.
         """
-        pulumi.set(__self__, "connect_string", connect_string)
-        pulumi.set(__self__, "database_service_name", database_service_name)
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "port", port)
+        GetConnectionConnectDescriptorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            connect_string=connect_string,
+            database_service_name=database_service_name,
+            host=host,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             connect_string: str,
+             database_service_name: str,
+             host: str,
+             port: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("connect_string", connect_string)
+        _setter("database_service_name", database_service_name)
+        _setter("host", host)
+        _setter("port", port)
 
     @property
     @pulumi.getter(name="connectString")
@@ -2918,10 +3787,25 @@ class GetConnectionPrivateEndpointResult(dict):
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer's subnet where the private endpoint VNIC will reside.
         :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN where the Private Endpoint will be bound to.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        GetConnectionPrivateEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            id=id,
+            subnet_id=subnet_id,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             id: str,
+             subnet_id: str,
+             vcn_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("id", id)
+        _setter("subnet_id", subnet_id)
+        _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2964,8 +3848,19 @@ class GetConnectionReplicationCredentialResult(dict):
         """
         :param str username: Administrator username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        GetConnectionReplicationCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -2993,10 +3888,25 @@ class GetConnectionSshDetailResult(dict):
         :param str sudo_location: Sudo location
         :param str user: SSH user
         """
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "sshkey", sshkey)
-        pulumi.set(__self__, "sudo_location", sudo_location)
-        pulumi.set(__self__, "user", user)
+        GetConnectionSshDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host=host,
+            sshkey=sshkey,
+            sudo_location=sudo_location,
+            user=user,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host: str,
+             sshkey: str,
+             sudo_location: str,
+             user: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("host", host)
+        _setter("sshkey", sshkey)
+        _setter("sudo_location", sudo_location)
+        _setter("user", user)
 
     @property
     @pulumi.getter
@@ -3039,9 +3949,22 @@ class GetConnectionVaultDetailResult(dict):
         :param str key_id: OCID of the vault encryption key
         :param str vault_id: OCID of the vault
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "key_id", key_id)
-        pulumi.set(__self__, "vault_id", vault_id)
+        GetConnectionVaultDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            key_id=key_id,
+            vault_id=vault_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             key_id: str,
+             vault_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("key_id", key_id)
+        _setter("vault_id", vault_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3072,7 +3995,16 @@ class GetConnectionVaultDetailResult(dict):
 class GetConnectionsConnectionCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetConnectionsConnectionCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetConnectionsConnectionCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetConnectionsConnectionCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3129,29 +4061,82 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str time_updated: The time of the last Connection resource details update. An RFC3339 formatted datetime string.
         :param Sequence['GetConnectionsConnectionCollectionItemVaultDetailArgs'] vault_details: Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
         """
-        pulumi.set(__self__, "admin_credentials", admin_credentials)
-        pulumi.set(__self__, "certificate_tdn", certificate_tdn)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connect_descriptors", connect_descriptors)
-        pulumi.set(__self__, "credentials_secret_id", credentials_secret_id)
-        pulumi.set(__self__, "database_id", database_id)
-        pulumi.set(__self__, "database_type", database_type)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "private_endpoints", private_endpoints)
-        pulumi.set(__self__, "replication_credentials", replication_credentials)
-        pulumi.set(__self__, "ssh_details", ssh_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "tls_keystore", tls_keystore)
-        pulumi.set(__self__, "tls_wallet", tls_wallet)
-        pulumi.set(__self__, "vault_details", vault_details)
+        GetConnectionsConnectionCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_credentials=admin_credentials,
+            certificate_tdn=certificate_tdn,
+            compartment_id=compartment_id,
+            connect_descriptors=connect_descriptors,
+            credentials_secret_id=credentials_secret_id,
+            database_id=database_id,
+            database_type=database_type,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            nsg_ids=nsg_ids,
+            private_endpoints=private_endpoints,
+            replication_credentials=replication_credentials,
+            ssh_details=ssh_details,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            tls_keystore=tls_keystore,
+            tls_wallet=tls_wallet,
+            vault_details=vault_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_credentials: Sequence['outputs.GetConnectionsConnectionCollectionItemAdminCredentialResult'],
+             certificate_tdn: str,
+             compartment_id: str,
+             connect_descriptors: Sequence['outputs.GetConnectionsConnectionCollectionItemConnectDescriptorResult'],
+             credentials_secret_id: str,
+             database_id: str,
+             database_type: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             nsg_ids: Sequence[str],
+             private_endpoints: Sequence['outputs.GetConnectionsConnectionCollectionItemPrivateEndpointResult'],
+             replication_credentials: Sequence['outputs.GetConnectionsConnectionCollectionItemReplicationCredentialResult'],
+             ssh_details: Sequence['outputs.GetConnectionsConnectionCollectionItemSshDetailResult'],
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             tls_keystore: str,
+             tls_wallet: str,
+             vault_details: Sequence['outputs.GetConnectionsConnectionCollectionItemVaultDetailResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("admin_credentials", admin_credentials)
+        _setter("certificate_tdn", certificate_tdn)
+        _setter("compartment_id", compartment_id)
+        _setter("connect_descriptors", connect_descriptors)
+        _setter("credentials_secret_id", credentials_secret_id)
+        _setter("database_id", database_id)
+        _setter("database_type", database_type)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("nsg_ids", nsg_ids)
+        _setter("private_endpoints", private_endpoints)
+        _setter("replication_credentials", replication_credentials)
+        _setter("ssh_details", ssh_details)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("tls_keystore", tls_keystore)
+        _setter("tls_wallet", tls_wallet)
+        _setter("vault_details", vault_details)
 
     @property
     @pulumi.getter(name="adminCredentials")
@@ -3340,8 +4325,19 @@ class GetConnectionsConnectionCollectionItemAdminCredentialResult(dict):
         """
         :param str username: Administrator username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        GetConnectionsConnectionCollectionItemAdminCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -3370,10 +4366,25 @@ class GetConnectionsConnectionCollectionItemConnectDescriptorResult(dict):
         :param str host: Name of the host the SSH key is valid for.
         :param int port: Port of the connect descriptor.
         """
-        pulumi.set(__self__, "connect_string", connect_string)
-        pulumi.set(__self__, "database_service_name", database_service_name)
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "port", port)
+        GetConnectionsConnectionCollectionItemConnectDescriptorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            connect_string=connect_string,
+            database_service_name=database_service_name,
+            host=host,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             connect_string: str,
+             database_service_name: str,
+             host: str,
+             port: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("connect_string", connect_string)
+        _setter("database_service_name", database_service_name)
+        _setter("host", host)
+        _setter("port", port)
 
     @property
     @pulumi.getter(name="connectString")
@@ -3421,10 +4432,25 @@ class GetConnectionsConnectionCollectionItemPrivateEndpointResult(dict):
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer's subnet where the private endpoint VNIC will reside.
         :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN where the Private Endpoint will be bound to.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        GetConnectionsConnectionCollectionItemPrivateEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            id=id,
+            subnet_id=subnet_id,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             id: str,
+             subnet_id: str,
+             vcn_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("id", id)
+        _setter("subnet_id", subnet_id)
+        _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3467,8 +4493,19 @@ class GetConnectionsConnectionCollectionItemReplicationCredentialResult(dict):
         """
         :param str username: Administrator username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        GetConnectionsConnectionCollectionItemReplicationCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -3496,10 +4533,25 @@ class GetConnectionsConnectionCollectionItemSshDetailResult(dict):
         :param str sudo_location: Sudo location
         :param str user: SSH user
         """
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "sshkey", sshkey)
-        pulumi.set(__self__, "sudo_location", sudo_location)
-        pulumi.set(__self__, "user", user)
+        GetConnectionsConnectionCollectionItemSshDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host=host,
+            sshkey=sshkey,
+            sudo_location=sudo_location,
+            user=user,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host: str,
+             sshkey: str,
+             sudo_location: str,
+             user: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("host", host)
+        _setter("sshkey", sshkey)
+        _setter("sudo_location", sudo_location)
+        _setter("user", user)
 
     @property
     @pulumi.getter
@@ -3542,9 +4594,22 @@ class GetConnectionsConnectionCollectionItemVaultDetailResult(dict):
         :param str key_id: OCID of the vault encryption key
         :param str vault_id: OCID of the vault
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "key_id", key_id)
-        pulumi.set(__self__, "vault_id", vault_id)
+        GetConnectionsConnectionCollectionItemVaultDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            key_id=key_id,
+            vault_id=vault_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             key_id: str,
+             vault_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("key_id", key_id)
+        _setter("vault_id", vault_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3577,10 +4642,23 @@ class GetConnectionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetConnectionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3607,8 +4685,19 @@ class GetJobAdvisorReportReportLocationDetailResult(dict):
         :param str location_in_source: Path in the Source Registered Connection where the Pre-Migration advisor report can be accessed.
         :param Sequence['GetJobAdvisorReportReportLocationDetailObjectStorageDetailArgs'] object_storage_details: Details to access Pre-Migration Advisor report in the specified Object Storage bucket, if any.
         """
-        pulumi.set(__self__, "location_in_source", location_in_source)
-        pulumi.set(__self__, "object_storage_details", object_storage_details)
+        GetJobAdvisorReportReportLocationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            location_in_source=location_in_source,
+            object_storage_details=object_storage_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             location_in_source: str,
+             object_storage_details: Sequence['outputs.GetJobAdvisorReportReportLocationDetailObjectStorageDetailResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("location_in_source", location_in_source)
+        _setter("object_storage_details", object_storage_details)
 
     @property
     @pulumi.getter(name="locationInSource")
@@ -3638,9 +4727,22 @@ class GetJobAdvisorReportReportLocationDetailObjectStorageDetailResult(dict):
         :param str namespace: Object Storage namespace.
         :param str object: Pre-Migration Advisor report object name.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+        GetJobAdvisorReportReportLocationDetailObjectStorageDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             object: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -3674,7 +4776,16 @@ class GetJobOutputItemResult(dict):
         """
         :param str message: Job output line.
         """
-        pulumi.set(__self__, "message", message)
+        GetJobOutputItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            message=message,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             message: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("message", message)
 
     @property
     @pulumi.getter
@@ -3694,8 +4805,19 @@ class GetMigrationAdvisorSettingResult(dict):
         :param bool is_ignore_errors: True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
         :param bool is_skip_advisor: True to skip the Pre-Migration Advisor execution. Default is false.
         """
-        pulumi.set(__self__, "is_ignore_errors", is_ignore_errors)
-        pulumi.set(__self__, "is_skip_advisor", is_skip_advisor)
+        GetMigrationAdvisorSettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_ignore_errors=is_ignore_errors,
+            is_skip_advisor=is_skip_advisor,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_ignore_errors: bool,
+             is_skip_advisor: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_ignore_errors", is_ignore_errors)
+        _setter("is_skip_advisor", is_skip_advisor)
 
     @property
     @pulumi.getter(name="isIgnoreErrors")
@@ -3723,8 +4845,19 @@ class GetMigrationDataTransferMediumDetailResult(dict):
         :param Sequence['GetMigrationDataTransferMediumDetailDatabaseLinkDetailArgs'] database_link_details: Optional details for creating a network database link from Oracle Cloud Infrastructure database to on-premise database.
         :param Sequence['GetMigrationDataTransferMediumDetailObjectStorageDetailArgs'] object_storage_details: In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
         """
-        pulumi.set(__self__, "database_link_details", database_link_details)
-        pulumi.set(__self__, "object_storage_details", object_storage_details)
+        GetMigrationDataTransferMediumDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            database_link_details=database_link_details,
+            object_storage_details=object_storage_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             database_link_details: Sequence['outputs.GetMigrationDataTransferMediumDetailDatabaseLinkDetailResult'],
+             object_storage_details: Sequence['outputs.GetMigrationDataTransferMediumDetailObjectStorageDetailResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("database_link_details", database_link_details)
+        _setter("object_storage_details", object_storage_details)
 
     @property
     @pulumi.getter(name="databaseLinkDetails")
@@ -3752,8 +4885,19 @@ class GetMigrationDataTransferMediumDetailDatabaseLinkDetailResult(dict):
         :param str name: Name of directory object in database
         :param Sequence['GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArgs'] wallet_buckets: In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "wallet_buckets", wallet_buckets)
+        GetMigrationDataTransferMediumDetailDatabaseLinkDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            wallet_buckets=wallet_buckets,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             wallet_buckets: Sequence['outputs.GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("wallet_buckets", wallet_buckets)
 
     @property
     @pulumi.getter
@@ -3781,8 +4925,19 @@ class GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketResult(d
         :param str bucket: Bucket name.
         :param str namespace: Namespace name of the object store bucket.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
+        GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
 
     @property
     @pulumi.getter
@@ -3810,8 +4965,135 @@ class GetMigrationDataTransferMediumDetailObjectStorageDetailResult(dict):
         :param str bucket: Bucket name.
         :param str namespace: Namespace name of the object store bucket.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
+        GetMigrationDataTransferMediumDetailObjectStorageDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        Bucket name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        Namespace name of the object store bucket.
+        """
+        return pulumi.get(self, "namespace")
+
+
+@pulumi.output_type
+class GetMigrationDataTransferMediumDetailsV2Result(dict):
+    def __init__(__self__, *,
+                 access_key_id: str,
+                 name: str,
+                 object_storage_buckets: Sequence['outputs.GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketResult'],
+                 region: str,
+                 secret_access_key: str,
+                 type: str):
+        """
+        :param str name: Name of directory object in database
+        :param str type: Migration type.
+        """
+        GetMigrationDataTransferMediumDetailsV2Result._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_key_id=access_key_id,
+            name=name,
+            object_storage_buckets=object_storage_buckets,
+            region=region,
+            secret_access_key=secret_access_key,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_key_id: str,
+             name: str,
+             object_storage_buckets: Sequence['outputs.GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketResult'],
+             region: str,
+             secret_access_key: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("access_key_id", access_key_id)
+        _setter("name", name)
+        _setter("object_storage_buckets", object_storage_buckets)
+        _setter("region", region)
+        _setter("secret_access_key", secret_access_key)
+        _setter("type", type)
+
+    @property
+    @pulumi.getter(name="accessKeyId")
+    def access_key_id(self) -> str:
+        return pulumi.get(self, "access_key_id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of directory object in database
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStorageBuckets")
+    def object_storage_buckets(self) -> Sequence['outputs.GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketResult']:
+        return pulumi.get(self, "object_storage_buckets")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="secretAccessKey")
+    def secret_access_key(self) -> str:
+        return pulumi.get(self, "secret_access_key")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Migration type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 namespace: str):
+        """
+        :param str bucket: Bucket name.
+        :param str namespace: Namespace name of the object store bucket.
+        """
+        GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
 
     @property
     @pulumi.getter
@@ -3845,11 +5127,28 @@ class GetMigrationDatapumpSettingResult(dict):
         :param str job_mode: Data Pump job mode. Refer to [Data Pump Export Modes ](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
         :param Sequence['GetMigrationDatapumpSettingMetadataRemapArgs'] metadata_remaps: Defines remapping to be applied to objects as they are processed. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
         """
-        pulumi.set(__self__, "data_pump_parameters", data_pump_parameters)
-        pulumi.set(__self__, "export_directory_objects", export_directory_objects)
-        pulumi.set(__self__, "import_directory_objects", import_directory_objects)
-        pulumi.set(__self__, "job_mode", job_mode)
-        pulumi.set(__self__, "metadata_remaps", metadata_remaps)
+        GetMigrationDatapumpSettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_pump_parameters=data_pump_parameters,
+            export_directory_objects=export_directory_objects,
+            import_directory_objects=import_directory_objects,
+            job_mode=job_mode,
+            metadata_remaps=metadata_remaps,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_pump_parameters: Sequence['outputs.GetMigrationDatapumpSettingDataPumpParameterResult'],
+             export_directory_objects: Sequence['outputs.GetMigrationDatapumpSettingExportDirectoryObjectResult'],
+             import_directory_objects: Sequence['outputs.GetMigrationDatapumpSettingImportDirectoryObjectResult'],
+             job_mode: str,
+             metadata_remaps: Sequence['outputs.GetMigrationDatapumpSettingMetadataRemapResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("data_pump_parameters", data_pump_parameters)
+        _setter("export_directory_objects", export_directory_objects)
+        _setter("import_directory_objects", import_directory_objects)
+        _setter("job_mode", job_mode)
+        _setter("metadata_remaps", metadata_remaps)
 
     @property
     @pulumi.getter(name="dataPumpParameters")
@@ -3909,12 +5208,31 @@ class GetMigrationDatapumpSettingDataPumpParameterResult(dict):
         :param bool is_cluster: Set to false to force Data Pump worker processes to run on one instance.
         :param str table_exists_action: IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
         """
-        pulumi.set(__self__, "estimate", estimate)
-        pulumi.set(__self__, "exclude_parameters", exclude_parameters)
-        pulumi.set(__self__, "export_parallelism_degree", export_parallelism_degree)
-        pulumi.set(__self__, "import_parallelism_degree", import_parallelism_degree)
-        pulumi.set(__self__, "is_cluster", is_cluster)
-        pulumi.set(__self__, "table_exists_action", table_exists_action)
+        GetMigrationDatapumpSettingDataPumpParameterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            estimate=estimate,
+            exclude_parameters=exclude_parameters,
+            export_parallelism_degree=export_parallelism_degree,
+            import_parallelism_degree=import_parallelism_degree,
+            is_cluster=is_cluster,
+            table_exists_action=table_exists_action,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             estimate: str,
+             exclude_parameters: Sequence[str],
+             export_parallelism_degree: int,
+             import_parallelism_degree: int,
+             is_cluster: bool,
+             table_exists_action: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("estimate", estimate)
+        _setter("exclude_parameters", exclude_parameters)
+        _setter("export_parallelism_degree", export_parallelism_degree)
+        _setter("import_parallelism_degree", import_parallelism_degree)
+        _setter("is_cluster", is_cluster)
+        _setter("table_exists_action", table_exists_action)
 
     @property
     @pulumi.getter
@@ -3974,8 +5292,19 @@ class GetMigrationDatapumpSettingExportDirectoryObjectResult(dict):
         :param str name: Name of directory object in database
         :param str path: Absolute path of directory on database server
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "path", path)
+        GetMigrationDatapumpSettingExportDirectoryObjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            path=path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             path: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("path", path)
 
     @property
     @pulumi.getter
@@ -4003,8 +5332,19 @@ class GetMigrationDatapumpSettingImportDirectoryObjectResult(dict):
         :param str name: Name of directory object in database
         :param str path: Absolute path of directory on database server
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "path", path)
+        GetMigrationDatapumpSettingImportDirectoryObjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            path=path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             path: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("path", path)
 
     @property
     @pulumi.getter
@@ -4034,9 +5374,22 @@ class GetMigrationDatapumpSettingMetadataRemapResult(dict):
         :param str old_value: Specifies the value which needs to be reset.
         :param str type: Migration type.
         """
-        pulumi.set(__self__, "new_value", new_value)
-        pulumi.set(__self__, "old_value", old_value)
-        pulumi.set(__self__, "type", type)
+        GetMigrationDatapumpSettingMetadataRemapResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            new_value=new_value,
+            old_value=old_value,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             new_value: str,
+             old_value: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("new_value", new_value)
+        _setter("old_value", old_value)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="newValue")
@@ -4066,14 +5419,34 @@ class GetMigrationDatapumpSettingMetadataRemapResult(dict):
 @pulumi.output_type
 class GetMigrationDumpTransferDetailResult(dict):
     def __init__(__self__, *,
+                 shared_storage_mount_target_id: str,
                  sources: Sequence['outputs.GetMigrationDumpTransferDetailSourceResult'],
                  targets: Sequence['outputs.GetMigrationDumpTransferDetailTargetResult']):
         """
         :param Sequence['GetMigrationDumpTransferDetailSourceArgs'] sources: Optional additional properties for dump transfer in source or target host. Default kind is CURL
         :param Sequence['GetMigrationDumpTransferDetailTargetArgs'] targets: Optional additional properties for dump transfer in source or target host. Default kind is CURL
         """
-        pulumi.set(__self__, "sources", sources)
-        pulumi.set(__self__, "targets", targets)
+        GetMigrationDumpTransferDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            shared_storage_mount_target_id=shared_storage_mount_target_id,
+            sources=sources,
+            targets=targets,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             shared_storage_mount_target_id: str,
+             sources: Sequence['outputs.GetMigrationDumpTransferDetailSourceResult'],
+             targets: Sequence['outputs.GetMigrationDumpTransferDetailTargetResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("shared_storage_mount_target_id", shared_storage_mount_target_id)
+        _setter("sources", sources)
+        _setter("targets", targets)
+
+    @property
+    @pulumi.getter(name="sharedStorageMountTargetId")
+    def shared_storage_mount_target_id(self) -> str:
+        return pulumi.get(self, "shared_storage_mount_target_id")
 
     @property
     @pulumi.getter
@@ -4103,9 +5476,22 @@ class GetMigrationDumpTransferDetailSourceResult(dict):
         :param str oci_home: Path to the Oracle Cloud Infrastructure CLI installation in the node.
         :param str wallet_location: Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
         """
-        pulumi.set(__self__, "kind", kind)
-        pulumi.set(__self__, "oci_home", oci_home)
-        pulumi.set(__self__, "wallet_location", wallet_location)
+        GetMigrationDumpTransferDetailSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+            oci_home=oci_home,
+            wallet_location=wallet_location,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: str,
+             oci_home: str,
+             wallet_location: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("kind", kind)
+        _setter("oci_home", oci_home)
+        _setter("wallet_location", wallet_location)
 
     @property
     @pulumi.getter
@@ -4143,9 +5529,22 @@ class GetMigrationDumpTransferDetailTargetResult(dict):
         :param str oci_home: Path to the Oracle Cloud Infrastructure CLI installation in the node.
         :param str wallet_location: Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
         """
-        pulumi.set(__self__, "kind", kind)
-        pulumi.set(__self__, "oci_home", oci_home)
-        pulumi.set(__self__, "wallet_location", wallet_location)
+        GetMigrationDumpTransferDetailTargetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+            oci_home=oci_home,
+            wallet_location=wallet_location,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: str,
+             oci_home: str,
+             wallet_location: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("kind", kind)
+        _setter("oci_home", oci_home)
+        _setter("wallet_location", wallet_location)
 
     @property
     @pulumi.getter
@@ -4185,10 +5584,25 @@ class GetMigrationExcludeObjectResult(dict):
         :param str owner: Owner of the object (regular expression is allowed)
         :param str type: Migration type.
         """
-        pulumi.set(__self__, "is_omit_excluded_table_from_replication", is_omit_excluded_table_from_replication)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "owner", owner)
-        pulumi.set(__self__, "type", type)
+        GetMigrationExcludeObjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_omit_excluded_table_from_replication=is_omit_excluded_table_from_replication,
+            object=object,
+            owner=owner,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_omit_excluded_table_from_replication: bool,
+             object: str,
+             owner: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_omit_excluded_table_from_replication", is_omit_excluded_table_from_replication)
+        _setter("object", object)
+        _setter("owner", owner)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="isOmitExcludedTableFromReplication")
@@ -4232,8 +5646,19 @@ class GetMigrationGoldenGateDetailResult(dict):
         :param Sequence['GetMigrationGoldenGateDetailHubArgs'] hubs: Details about Oracle GoldenGate Microservices.
         :param Sequence['GetMigrationGoldenGateDetailSettingArgs'] settings: Optional settings for Oracle GoldenGate processes
         """
-        pulumi.set(__self__, "hubs", hubs)
-        pulumi.set(__self__, "settings", settings)
+        GetMigrationGoldenGateDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hubs=hubs,
+            settings=settings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hubs: Sequence['outputs.GetMigrationGoldenGateDetailHubResult'],
+             settings: Sequence['outputs.GetMigrationGoldenGateDetailSettingResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hubs", hubs)
+        _setter("settings", settings)
 
     @property
     @pulumi.getter
@@ -4273,14 +5698,37 @@ class GetMigrationGoldenGateDetailHubResult(dict):
         :param str target_microservices_deployment_name: Name of GoldenGate deployment to operate on target database
         :param str url: Oracle GoldenGate hub's REST endpoint. Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
         """
-        pulumi.set(__self__, "compute_id", compute_id)
-        pulumi.set(__self__, "rest_admin_credentials", rest_admin_credentials)
-        pulumi.set(__self__, "source_container_db_admin_credentials", source_container_db_admin_credentials)
-        pulumi.set(__self__, "source_db_admin_credentials", source_db_admin_credentials)
-        pulumi.set(__self__, "source_microservices_deployment_name", source_microservices_deployment_name)
-        pulumi.set(__self__, "target_db_admin_credentials", target_db_admin_credentials)
-        pulumi.set(__self__, "target_microservices_deployment_name", target_microservices_deployment_name)
-        pulumi.set(__self__, "url", url)
+        GetMigrationGoldenGateDetailHubResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compute_id=compute_id,
+            rest_admin_credentials=rest_admin_credentials,
+            source_container_db_admin_credentials=source_container_db_admin_credentials,
+            source_db_admin_credentials=source_db_admin_credentials,
+            source_microservices_deployment_name=source_microservices_deployment_name,
+            target_db_admin_credentials=target_db_admin_credentials,
+            target_microservices_deployment_name=target_microservices_deployment_name,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compute_id: str,
+             rest_admin_credentials: Sequence['outputs.GetMigrationGoldenGateDetailHubRestAdminCredentialResult'],
+             source_container_db_admin_credentials: Sequence['outputs.GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialResult'],
+             source_db_admin_credentials: Sequence['outputs.GetMigrationGoldenGateDetailHubSourceDbAdminCredentialResult'],
+             source_microservices_deployment_name: str,
+             target_db_admin_credentials: Sequence['outputs.GetMigrationGoldenGateDetailHubTargetDbAdminCredentialResult'],
+             target_microservices_deployment_name: str,
+             url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compute_id", compute_id)
+        _setter("rest_admin_credentials", rest_admin_credentials)
+        _setter("source_container_db_admin_credentials", source_container_db_admin_credentials)
+        _setter("source_db_admin_credentials", source_db_admin_credentials)
+        _setter("source_microservices_deployment_name", source_microservices_deployment_name)
+        _setter("target_db_admin_credentials", target_db_admin_credentials)
+        _setter("target_microservices_deployment_name", target_microservices_deployment_name)
+        _setter("url", url)
 
     @property
     @pulumi.getter(name="computeId")
@@ -4355,8 +5803,19 @@ class GetMigrationGoldenGateDetailHubRestAdminCredentialResult(dict):
         """
         :param str username: Administrator username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        GetMigrationGoldenGateDetailHubRestAdminCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -4380,8 +5839,19 @@ class GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialResult(dict
         """
         :param str username: Administrator username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        GetMigrationGoldenGateDetailHubSourceContainerDbAdminCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -4405,8 +5875,19 @@ class GetMigrationGoldenGateDetailHubSourceDbAdminCredentialResult(dict):
         """
         :param str username: Administrator username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        GetMigrationGoldenGateDetailHubSourceDbAdminCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -4430,8 +5911,19 @@ class GetMigrationGoldenGateDetailHubTargetDbAdminCredentialResult(dict):
         """
         :param str username: Administrator username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        GetMigrationGoldenGateDetailHubTargetDbAdminCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -4458,9 +5950,22 @@ class GetMigrationGoldenGateDetailSettingResult(dict):
         :param Sequence['GetMigrationGoldenGateDetailSettingExtractArgs'] extracts: Parameters for Extract processes.
         :param Sequence['GetMigrationGoldenGateDetailSettingReplicatArgs'] replicats: Parameters for Replicat processes.
         """
-        pulumi.set(__self__, "acceptable_lag", acceptable_lag)
-        pulumi.set(__self__, "extracts", extracts)
-        pulumi.set(__self__, "replicats", replicats)
+        GetMigrationGoldenGateDetailSettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            acceptable_lag=acceptable_lag,
+            extracts=extracts,
+            replicats=replicats,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             acceptable_lag: int,
+             extracts: Sequence['outputs.GetMigrationGoldenGateDetailSettingExtractResult'],
+             replicats: Sequence['outputs.GetMigrationGoldenGateDetailSettingReplicatResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("acceptable_lag", acceptable_lag)
+        _setter("extracts", extracts)
+        _setter("replicats", replicats)
 
     @property
     @pulumi.getter(name="acceptableLag")
@@ -4496,8 +6001,19 @@ class GetMigrationGoldenGateDetailSettingExtractResult(dict):
         :param int long_trans_duration: Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
         :param str performance_profile: Extract performance.
         """
-        pulumi.set(__self__, "long_trans_duration", long_trans_duration)
-        pulumi.set(__self__, "performance_profile", performance_profile)
+        GetMigrationGoldenGateDetailSettingExtractResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            long_trans_duration=long_trans_duration,
+            performance_profile=performance_profile,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             long_trans_duration: int,
+             performance_profile: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("long_trans_duration", long_trans_duration)
+        _setter("performance_profile", performance_profile)
 
     @property
     @pulumi.getter(name="longTransDuration")
@@ -4529,10 +6045,25 @@ class GetMigrationGoldenGateDetailSettingReplicatResult(dict):
         :param int min_apply_parallelism: Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
         :param str performance_profile: Extract performance.
         """
-        pulumi.set(__self__, "map_parallelism", map_parallelism)
-        pulumi.set(__self__, "max_apply_parallelism", max_apply_parallelism)
-        pulumi.set(__self__, "min_apply_parallelism", min_apply_parallelism)
-        pulumi.set(__self__, "performance_profile", performance_profile)
+        GetMigrationGoldenGateDetailSettingReplicatResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            map_parallelism=map_parallelism,
+            max_apply_parallelism=max_apply_parallelism,
+            min_apply_parallelism=min_apply_parallelism,
+            performance_profile=performance_profile,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             map_parallelism: int,
+             max_apply_parallelism: int,
+             min_apply_parallelism: int,
+             performance_profile: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("map_parallelism", map_parallelism)
+        _setter("max_apply_parallelism", max_apply_parallelism)
+        _setter("min_apply_parallelism", min_apply_parallelism)
+        _setter("performance_profile", performance_profile)
 
     @property
     @pulumi.getter(name="mapParallelism")
@@ -4579,11 +6110,28 @@ class GetMigrationGoldenGateServiceDetailResult(dict):
         :param Sequence['GetMigrationGoldenGateServiceDetailGgsDeploymentArgs'] ggs_deployments: Details about Oracle GoldenGate GGS Deployment.
         :param Sequence['GetMigrationGoldenGateServiceDetailSettingArgs'] settings: Optional settings for Oracle GoldenGate processes
         """
-        pulumi.set(__self__, "ggs_deployments", ggs_deployments)
-        pulumi.set(__self__, "settings", settings)
-        pulumi.set(__self__, "source_container_db_credentials", source_container_db_credentials)
-        pulumi.set(__self__, "source_db_credentials", source_db_credentials)
-        pulumi.set(__self__, "target_db_credentials", target_db_credentials)
+        GetMigrationGoldenGateServiceDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ggs_deployments=ggs_deployments,
+            settings=settings,
+            source_container_db_credentials=source_container_db_credentials,
+            source_db_credentials=source_db_credentials,
+            target_db_credentials=target_db_credentials,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ggs_deployments: Sequence['outputs.GetMigrationGoldenGateServiceDetailGgsDeploymentResult'],
+             settings: Sequence['outputs.GetMigrationGoldenGateServiceDetailSettingResult'],
+             source_container_db_credentials: Sequence['outputs.GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialResult'],
+             source_db_credentials: Sequence['outputs.GetMigrationGoldenGateServiceDetailSourceDbCredentialResult'],
+             target_db_credentials: Sequence['outputs.GetMigrationGoldenGateServiceDetailTargetDbCredentialResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ggs_deployments", ggs_deployments)
+        _setter("settings", settings)
+        _setter("source_container_db_credentials", source_container_db_credentials)
+        _setter("source_db_credentials", source_db_credentials)
+        _setter("target_db_credentials", target_db_credentials)
 
     @property
     @pulumi.getter(name="ggsDeployments")
@@ -4626,8 +6174,19 @@ class GetMigrationGoldenGateServiceDetailGgsDeploymentResult(dict):
         :param str deployment_id: OCID of a GoldenGate Deployment
         :param str ggs_admin_credentials_secret_id: OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
         """
-        pulumi.set(__self__, "deployment_id", deployment_id)
-        pulumi.set(__self__, "ggs_admin_credentials_secret_id", ggs_admin_credentials_secret_id)
+        GetMigrationGoldenGateServiceDetailGgsDeploymentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            deployment_id=deployment_id,
+            ggs_admin_credentials_secret_id=ggs_admin_credentials_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             deployment_id: str,
+             ggs_admin_credentials_secret_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("deployment_id", deployment_id)
+        _setter("ggs_admin_credentials_secret_id", ggs_admin_credentials_secret_id)
 
     @property
     @pulumi.getter(name="deploymentId")
@@ -4657,9 +6216,22 @@ class GetMigrationGoldenGateServiceDetailSettingResult(dict):
         :param Sequence['GetMigrationGoldenGateServiceDetailSettingExtractArgs'] extracts: Parameters for Extract processes.
         :param Sequence['GetMigrationGoldenGateServiceDetailSettingReplicatArgs'] replicats: Parameters for Replicat processes.
         """
-        pulumi.set(__self__, "acceptable_lag", acceptable_lag)
-        pulumi.set(__self__, "extracts", extracts)
-        pulumi.set(__self__, "replicats", replicats)
+        GetMigrationGoldenGateServiceDetailSettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            acceptable_lag=acceptable_lag,
+            extracts=extracts,
+            replicats=replicats,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             acceptable_lag: int,
+             extracts: Sequence['outputs.GetMigrationGoldenGateServiceDetailSettingExtractResult'],
+             replicats: Sequence['outputs.GetMigrationGoldenGateServiceDetailSettingReplicatResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("acceptable_lag", acceptable_lag)
+        _setter("extracts", extracts)
+        _setter("replicats", replicats)
 
     @property
     @pulumi.getter(name="acceptableLag")
@@ -4695,8 +6267,19 @@ class GetMigrationGoldenGateServiceDetailSettingExtractResult(dict):
         :param int long_trans_duration: Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
         :param str performance_profile: Extract performance.
         """
-        pulumi.set(__self__, "long_trans_duration", long_trans_duration)
-        pulumi.set(__self__, "performance_profile", performance_profile)
+        GetMigrationGoldenGateServiceDetailSettingExtractResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            long_trans_duration=long_trans_duration,
+            performance_profile=performance_profile,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             long_trans_duration: int,
+             performance_profile: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("long_trans_duration", long_trans_duration)
+        _setter("performance_profile", performance_profile)
 
     @property
     @pulumi.getter(name="longTransDuration")
@@ -4726,9 +6309,22 @@ class GetMigrationGoldenGateServiceDetailSettingReplicatResult(dict):
         :param int max_apply_parallelism: Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
         :param int min_apply_parallelism: Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
         """
-        pulumi.set(__self__, "map_parallelism", map_parallelism)
-        pulumi.set(__self__, "max_apply_parallelism", max_apply_parallelism)
-        pulumi.set(__self__, "min_apply_parallelism", min_apply_parallelism)
+        GetMigrationGoldenGateServiceDetailSettingReplicatResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            map_parallelism=map_parallelism,
+            max_apply_parallelism=max_apply_parallelism,
+            min_apply_parallelism=min_apply_parallelism,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             map_parallelism: int,
+             max_apply_parallelism: int,
+             min_apply_parallelism: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("map_parallelism", map_parallelism)
+        _setter("max_apply_parallelism", max_apply_parallelism)
+        _setter("min_apply_parallelism", min_apply_parallelism)
 
     @property
     @pulumi.getter(name="mapParallelism")
@@ -4763,8 +6359,19 @@ class GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialResult(dict)
         """
         :param str username: Administrator username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        GetMigrationGoldenGateServiceDetailSourceContainerDbCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -4788,8 +6395,19 @@ class GetMigrationGoldenGateServiceDetailSourceDbCredentialResult(dict):
         """
         :param str username: Administrator username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        GetMigrationGoldenGateServiceDetailSourceDbCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -4813,8 +6431,19 @@ class GetMigrationGoldenGateServiceDetailTargetDbCredentialResult(dict):
         """
         :param str username: Administrator username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        GetMigrationGoldenGateServiceDetailTargetDbCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -4843,10 +6472,25 @@ class GetMigrationIncludeObjectResult(dict):
         :param str owner: Owner of the object (regular expression is allowed)
         :param str type: Migration type.
         """
-        pulumi.set(__self__, "is_omit_excluded_table_from_replication", is_omit_excluded_table_from_replication)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "owner", owner)
-        pulumi.set(__self__, "type", type)
+        GetMigrationIncludeObjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_omit_excluded_table_from_replication=is_omit_excluded_table_from_replication,
+            object=object,
+            owner=owner,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_omit_excluded_table_from_replication: bool,
+             object: str,
+             owner: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_omit_excluded_table_from_replication", is_omit_excluded_table_from_replication)
+        _setter("object", object)
+        _setter("owner", owner)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="isOmitExcludedTableFromReplication")
@@ -4890,10 +6534,23 @@ class GetMigrationObjectTypesFilterResult(dict):
         """
         :param str name: Object type name
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMigrationObjectTypesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4921,7 +6578,16 @@ class GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionResult(dict):
         """
         :param Sequence['GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArgs'] items: Items in collection.
         """
-        pulumi.set(__self__, "items", items)
+        GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -4939,7 +6605,16 @@ class GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemResult(dict
         """
         :param str name: Object type name
         """
-        pulumi.set(__self__, "name", name)
+        GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -4961,9 +6636,22 @@ class GetMigrationVaultDetailResult(dict):
         :param str key_id: OCID of the vault encryption key
         :param str vault_id: OCID of the vault
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "key_id", key_id)
-        pulumi.set(__self__, "vault_id", vault_id)
+        GetMigrationVaultDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            key_id=key_id,
+            vault_id=vault_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             key_id: str,
+             vault_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("key_id", key_id)
+        _setter("vault_id", vault_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -4999,10 +6687,23 @@ class GetMigrationsFilterResult(dict):
         """
         :param str name: Name of directory object in database
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMigrationsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5027,7 +6728,16 @@ class GetMigrationsFilterResult(dict):
 class GetMigrationsMigrationCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetMigrationsMigrationCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetMigrationsMigrationCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetMigrationsMigrationCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -5044,6 +6754,7 @@ class GetMigrationsMigrationCollectionItemResult(dict):
                  credentials_secret_id: str,
                  csv_text: str,
                  data_transfer_medium_details: Sequence['outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailResult'],
+                 data_transfer_medium_details_v2s: Sequence['outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Result'],
                  datapump_settings: Sequence['outputs.GetMigrationsMigrationCollectionItemDatapumpSettingResult'],
                  defined_tags: Mapping[str, Any],
                  display_name: str,
@@ -5097,35 +6808,103 @@ class GetMigrationsMigrationCollectionItemResult(dict):
         :param Sequence['GetMigrationsMigrationCollectionItemVaultDetailArgs'] vault_details: Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
         :param str wait_after: Name of a migration phase. The Job will wait after executing this phase until the Resume Job endpoint is called.
         """
-        pulumi.set(__self__, "advisor_settings", advisor_settings)
-        pulumi.set(__self__, "agent_id", agent_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "credentials_secret_id", credentials_secret_id)
-        pulumi.set(__self__, "csv_text", csv_text)
-        pulumi.set(__self__, "data_transfer_medium_details", data_transfer_medium_details)
-        pulumi.set(__self__, "datapump_settings", datapump_settings)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "dump_transfer_details", dump_transfer_details)
-        pulumi.set(__self__, "exclude_objects", exclude_objects)
-        pulumi.set(__self__, "executing_job_id", executing_job_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "golden_gate_details", golden_gate_details)
-        pulumi.set(__self__, "golden_gate_service_details", golden_gate_service_details)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "include_objects", include_objects)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "source_container_database_connection_id", source_container_database_connection_id)
-        pulumi.set(__self__, "source_database_connection_id", source_database_connection_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "target_database_connection_id", target_database_connection_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_migration", time_last_migration)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "vault_details", vault_details)
-        pulumi.set(__self__, "wait_after", wait_after)
+        GetMigrationsMigrationCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            advisor_settings=advisor_settings,
+            agent_id=agent_id,
+            compartment_id=compartment_id,
+            credentials_secret_id=credentials_secret_id,
+            csv_text=csv_text,
+            data_transfer_medium_details=data_transfer_medium_details,
+            data_transfer_medium_details_v2s=data_transfer_medium_details_v2s,
+            datapump_settings=datapump_settings,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            dump_transfer_details=dump_transfer_details,
+            exclude_objects=exclude_objects,
+            executing_job_id=executing_job_id,
+            freeform_tags=freeform_tags,
+            golden_gate_details=golden_gate_details,
+            golden_gate_service_details=golden_gate_service_details,
+            id=id,
+            include_objects=include_objects,
+            lifecycle_details=lifecycle_details,
+            source_container_database_connection_id=source_container_database_connection_id,
+            source_database_connection_id=source_database_connection_id,
+            state=state,
+            system_tags=system_tags,
+            target_database_connection_id=target_database_connection_id,
+            time_created=time_created,
+            time_last_migration=time_last_migration,
+            time_updated=time_updated,
+            type=type,
+            vault_details=vault_details,
+            wait_after=wait_after,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             advisor_settings: Sequence['outputs.GetMigrationsMigrationCollectionItemAdvisorSettingResult'],
+             agent_id: str,
+             compartment_id: str,
+             credentials_secret_id: str,
+             csv_text: str,
+             data_transfer_medium_details: Sequence['outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailResult'],
+             data_transfer_medium_details_v2s: Sequence['outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Result'],
+             datapump_settings: Sequence['outputs.GetMigrationsMigrationCollectionItemDatapumpSettingResult'],
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             dump_transfer_details: Sequence['outputs.GetMigrationsMigrationCollectionItemDumpTransferDetailResult'],
+             exclude_objects: Sequence['outputs.GetMigrationsMigrationCollectionItemExcludeObjectResult'],
+             executing_job_id: str,
+             freeform_tags: Mapping[str, Any],
+             golden_gate_details: Sequence['outputs.GetMigrationsMigrationCollectionItemGoldenGateDetailResult'],
+             golden_gate_service_details: Sequence['outputs.GetMigrationsMigrationCollectionItemGoldenGateServiceDetailResult'],
+             id: str,
+             include_objects: Sequence['outputs.GetMigrationsMigrationCollectionItemIncludeObjectResult'],
+             lifecycle_details: str,
+             source_container_database_connection_id: str,
+             source_database_connection_id: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             target_database_connection_id: str,
+             time_created: str,
+             time_last_migration: str,
+             time_updated: str,
+             type: str,
+             vault_details: Sequence['outputs.GetMigrationsMigrationCollectionItemVaultDetailResult'],
+             wait_after: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("advisor_settings", advisor_settings)
+        _setter("agent_id", agent_id)
+        _setter("compartment_id", compartment_id)
+        _setter("credentials_secret_id", credentials_secret_id)
+        _setter("csv_text", csv_text)
+        _setter("data_transfer_medium_details", data_transfer_medium_details)
+        _setter("data_transfer_medium_details_v2s", data_transfer_medium_details_v2s)
+        _setter("datapump_settings", datapump_settings)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("dump_transfer_details", dump_transfer_details)
+        _setter("exclude_objects", exclude_objects)
+        _setter("executing_job_id", executing_job_id)
+        _setter("freeform_tags", freeform_tags)
+        _setter("golden_gate_details", golden_gate_details)
+        _setter("golden_gate_service_details", golden_gate_service_details)
+        _setter("id", id)
+        _setter("include_objects", include_objects)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("source_container_database_connection_id", source_container_database_connection_id)
+        _setter("source_database_connection_id", source_database_connection_id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("target_database_connection_id", target_database_connection_id)
+        _setter("time_created", time_created)
+        _setter("time_last_migration", time_last_migration)
+        _setter("time_updated", time_updated)
+        _setter("type", type)
+        _setter("vault_details", vault_details)
+        _setter("wait_after", wait_after)
 
     @property
     @pulumi.getter(name="advisorSettings")
@@ -5171,6 +6950,11 @@ class GetMigrationsMigrationCollectionItemResult(dict):
         Data Transfer Medium details for the Migration.
         """
         return pulumi.get(self, "data_transfer_medium_details")
+
+    @property
+    @pulumi.getter(name="dataTransferMediumDetailsV2s")
+    def data_transfer_medium_details_v2s(self) -> Sequence['outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Result']:
+        return pulumi.get(self, "data_transfer_medium_details_v2s")
 
     @property
     @pulumi.getter(name="datapumpSettings")
@@ -5366,8 +7150,19 @@ class GetMigrationsMigrationCollectionItemAdvisorSettingResult(dict):
         :param bool is_ignore_errors: True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
         :param bool is_skip_advisor: True to skip the Pre-Migration Advisor execution. Default is false.
         """
-        pulumi.set(__self__, "is_ignore_errors", is_ignore_errors)
-        pulumi.set(__self__, "is_skip_advisor", is_skip_advisor)
+        GetMigrationsMigrationCollectionItemAdvisorSettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_ignore_errors=is_ignore_errors,
+            is_skip_advisor=is_skip_advisor,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_ignore_errors: bool,
+             is_skip_advisor: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_ignore_errors", is_ignore_errors)
+        _setter("is_skip_advisor", is_skip_advisor)
 
     @property
     @pulumi.getter(name="isIgnoreErrors")
@@ -5395,8 +7190,19 @@ class GetMigrationsMigrationCollectionItemDataTransferMediumDetailResult(dict):
         :param Sequence['GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailArgs'] database_link_details: Optional details for creating a network database link from Oracle Cloud Infrastructure database to on-premise database.
         :param Sequence['GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArgs'] object_storage_details: In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
         """
-        pulumi.set(__self__, "database_link_details", database_link_details)
-        pulumi.set(__self__, "object_storage_details", object_storage_details)
+        GetMigrationsMigrationCollectionItemDataTransferMediumDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            database_link_details=database_link_details,
+            object_storage_details=object_storage_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             database_link_details: Sequence['outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailResult'],
+             object_storage_details: Sequence['outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("database_link_details", database_link_details)
+        _setter("object_storage_details", object_storage_details)
 
     @property
     @pulumi.getter(name="databaseLinkDetails")
@@ -5424,8 +7230,19 @@ class GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDe
         :param str name: Name of directory object in database
         :param Sequence['GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArgs'] wallet_buckets: In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "wallet_buckets", wallet_buckets)
+        GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            wallet_buckets=wallet_buckets,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             wallet_buckets: Sequence['outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("wallet_buckets", wallet_buckets)
 
     @property
     @pulumi.getter
@@ -5453,8 +7270,19 @@ class GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDe
         :param str bucket: Bucket name.
         :param str namespace: Namespace name of the object store bucket.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
+        GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
 
     @property
     @pulumi.getter
@@ -5482,8 +7310,135 @@ class GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageD
         :param str bucket: Bucket name.
         :param str namespace: Namespace name of the object store bucket.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
+        GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        Bucket name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        Namespace name of the object store bucket.
+        """
+        return pulumi.get(self, "namespace")
+
+
+@pulumi.output_type
+class GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Result(dict):
+    def __init__(__self__, *,
+                 access_key_id: str,
+                 name: str,
+                 object_storage_buckets: Sequence['outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketResult'],
+                 region: str,
+                 secret_access_key: str,
+                 type: str):
+        """
+        :param str name: Name of directory object in database
+        :param str type: Migration type.
+        """
+        GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Result._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_key_id=access_key_id,
+            name=name,
+            object_storage_buckets=object_storage_buckets,
+            region=region,
+            secret_access_key=secret_access_key,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_key_id: str,
+             name: str,
+             object_storage_buckets: Sequence['outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketResult'],
+             region: str,
+             secret_access_key: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("access_key_id", access_key_id)
+        _setter("name", name)
+        _setter("object_storage_buckets", object_storage_buckets)
+        _setter("region", region)
+        _setter("secret_access_key", secret_access_key)
+        _setter("type", type)
+
+    @property
+    @pulumi.getter(name="accessKeyId")
+    def access_key_id(self) -> str:
+        return pulumi.get(self, "access_key_id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of directory object in database
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="objectStorageBuckets")
+    def object_storage_buckets(self) -> Sequence['outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketResult']:
+        return pulumi.get(self, "object_storage_buckets")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="secretAccessKey")
+    def secret_access_key(self) -> str:
+        return pulumi.get(self, "secret_access_key")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Migration type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 namespace: str):
+        """
+        :param str bucket: Bucket name.
+        :param str namespace: Namespace name of the object store bucket.
+        """
+        GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
 
     @property
     @pulumi.getter
@@ -5517,11 +7472,28 @@ class GetMigrationsMigrationCollectionItemDatapumpSettingResult(dict):
         :param str job_mode: Data Pump job mode. Refer to [Data Pump Export Modes ](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
         :param Sequence['GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArgs'] metadata_remaps: Defines remapping to be applied to objects as they are processed. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
         """
-        pulumi.set(__self__, "data_pump_parameters", data_pump_parameters)
-        pulumi.set(__self__, "export_directory_objects", export_directory_objects)
-        pulumi.set(__self__, "import_directory_objects", import_directory_objects)
-        pulumi.set(__self__, "job_mode", job_mode)
-        pulumi.set(__self__, "metadata_remaps", metadata_remaps)
+        GetMigrationsMigrationCollectionItemDatapumpSettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_pump_parameters=data_pump_parameters,
+            export_directory_objects=export_directory_objects,
+            import_directory_objects=import_directory_objects,
+            job_mode=job_mode,
+            metadata_remaps=metadata_remaps,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_pump_parameters: Sequence['outputs.GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterResult'],
+             export_directory_objects: Sequence['outputs.GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectResult'],
+             import_directory_objects: Sequence['outputs.GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectResult'],
+             job_mode: str,
+             metadata_remaps: Sequence['outputs.GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("data_pump_parameters", data_pump_parameters)
+        _setter("export_directory_objects", export_directory_objects)
+        _setter("import_directory_objects", import_directory_objects)
+        _setter("job_mode", job_mode)
+        _setter("metadata_remaps", metadata_remaps)
 
     @property
     @pulumi.getter(name="dataPumpParameters")
@@ -5581,12 +7553,31 @@ class GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterResult
         :param bool is_cluster: Set to false to force Data Pump worker processes to run on one instance.
         :param str table_exists_action: IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
         """
-        pulumi.set(__self__, "estimate", estimate)
-        pulumi.set(__self__, "exclude_parameters", exclude_parameters)
-        pulumi.set(__self__, "export_parallelism_degree", export_parallelism_degree)
-        pulumi.set(__self__, "import_parallelism_degree", import_parallelism_degree)
-        pulumi.set(__self__, "is_cluster", is_cluster)
-        pulumi.set(__self__, "table_exists_action", table_exists_action)
+        GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            estimate=estimate,
+            exclude_parameters=exclude_parameters,
+            export_parallelism_degree=export_parallelism_degree,
+            import_parallelism_degree=import_parallelism_degree,
+            is_cluster=is_cluster,
+            table_exists_action=table_exists_action,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             estimate: str,
+             exclude_parameters: Sequence[str],
+             export_parallelism_degree: int,
+             import_parallelism_degree: int,
+             is_cluster: bool,
+             table_exists_action: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("estimate", estimate)
+        _setter("exclude_parameters", exclude_parameters)
+        _setter("export_parallelism_degree", export_parallelism_degree)
+        _setter("import_parallelism_degree", import_parallelism_degree)
+        _setter("is_cluster", is_cluster)
+        _setter("table_exists_action", table_exists_action)
 
     @property
     @pulumi.getter
@@ -5646,8 +7637,19 @@ class GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectRe
         :param str name: Name of directory object in database
         :param str path: Absolute path of directory on database server
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "path", path)
+        GetMigrationsMigrationCollectionItemDatapumpSettingExportDirectoryObjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            path=path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             path: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("path", path)
 
     @property
     @pulumi.getter
@@ -5675,8 +7677,19 @@ class GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectRe
         :param str name: Name of directory object in database
         :param str path: Absolute path of directory on database server
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "path", path)
+        GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            path=path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             path: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("path", path)
 
     @property
     @pulumi.getter
@@ -5706,9 +7719,22 @@ class GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapResult(dic
         :param str old_value: Specifies the value which needs to be reset.
         :param str type: Migration type.
         """
-        pulumi.set(__self__, "new_value", new_value)
-        pulumi.set(__self__, "old_value", old_value)
-        pulumi.set(__self__, "type", type)
+        GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            new_value=new_value,
+            old_value=old_value,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             new_value: str,
+             old_value: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("new_value", new_value)
+        _setter("old_value", old_value)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="newValue")
@@ -5738,14 +7764,34 @@ class GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapResult(dic
 @pulumi.output_type
 class GetMigrationsMigrationCollectionItemDumpTransferDetailResult(dict):
     def __init__(__self__, *,
+                 shared_storage_mount_target_id: str,
                  sources: Sequence['outputs.GetMigrationsMigrationCollectionItemDumpTransferDetailSourceResult'],
                  targets: Sequence['outputs.GetMigrationsMigrationCollectionItemDumpTransferDetailTargetResult']):
         """
         :param Sequence['GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArgs'] sources: Optional additional properties for dump transfer in source or target host. Default kind is CURL
         :param Sequence['GetMigrationsMigrationCollectionItemDumpTransferDetailTargetArgs'] targets: Optional additional properties for dump transfer in source or target host. Default kind is CURL
         """
-        pulumi.set(__self__, "sources", sources)
-        pulumi.set(__self__, "targets", targets)
+        GetMigrationsMigrationCollectionItemDumpTransferDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            shared_storage_mount_target_id=shared_storage_mount_target_id,
+            sources=sources,
+            targets=targets,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             shared_storage_mount_target_id: str,
+             sources: Sequence['outputs.GetMigrationsMigrationCollectionItemDumpTransferDetailSourceResult'],
+             targets: Sequence['outputs.GetMigrationsMigrationCollectionItemDumpTransferDetailTargetResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("shared_storage_mount_target_id", shared_storage_mount_target_id)
+        _setter("sources", sources)
+        _setter("targets", targets)
+
+    @property
+    @pulumi.getter(name="sharedStorageMountTargetId")
+    def shared_storage_mount_target_id(self) -> str:
+        return pulumi.get(self, "shared_storage_mount_target_id")
 
     @property
     @pulumi.getter
@@ -5775,9 +7821,22 @@ class GetMigrationsMigrationCollectionItemDumpTransferDetailSourceResult(dict):
         :param str oci_home: Path to the Oracle Cloud Infrastructure CLI installation in the node.
         :param str wallet_location: Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
         """
-        pulumi.set(__self__, "kind", kind)
-        pulumi.set(__self__, "oci_home", oci_home)
-        pulumi.set(__self__, "wallet_location", wallet_location)
+        GetMigrationsMigrationCollectionItemDumpTransferDetailSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+            oci_home=oci_home,
+            wallet_location=wallet_location,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: str,
+             oci_home: str,
+             wallet_location: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("kind", kind)
+        _setter("oci_home", oci_home)
+        _setter("wallet_location", wallet_location)
 
     @property
     @pulumi.getter
@@ -5815,9 +7874,22 @@ class GetMigrationsMigrationCollectionItemDumpTransferDetailTargetResult(dict):
         :param str oci_home: Path to the Oracle Cloud Infrastructure CLI installation in the node.
         :param str wallet_location: Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
         """
-        pulumi.set(__self__, "kind", kind)
-        pulumi.set(__self__, "oci_home", oci_home)
-        pulumi.set(__self__, "wallet_location", wallet_location)
+        GetMigrationsMigrationCollectionItemDumpTransferDetailTargetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+            oci_home=oci_home,
+            wallet_location=wallet_location,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: str,
+             oci_home: str,
+             wallet_location: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("kind", kind)
+        _setter("oci_home", oci_home)
+        _setter("wallet_location", wallet_location)
 
     @property
     @pulumi.getter
@@ -5857,10 +7929,25 @@ class GetMigrationsMigrationCollectionItemExcludeObjectResult(dict):
         :param str owner: Owner of the object (regular expression is allowed)
         :param str type: Migration type.
         """
-        pulumi.set(__self__, "is_omit_excluded_table_from_replication", is_omit_excluded_table_from_replication)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "owner", owner)
-        pulumi.set(__self__, "type", type)
+        GetMigrationsMigrationCollectionItemExcludeObjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_omit_excluded_table_from_replication=is_omit_excluded_table_from_replication,
+            object=object,
+            owner=owner,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_omit_excluded_table_from_replication: bool,
+             object: str,
+             owner: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_omit_excluded_table_from_replication", is_omit_excluded_table_from_replication)
+        _setter("object", object)
+        _setter("owner", owner)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="isOmitExcludedTableFromReplication")
@@ -5904,8 +7991,19 @@ class GetMigrationsMigrationCollectionItemGoldenGateDetailResult(dict):
         :param Sequence['GetMigrationsMigrationCollectionItemGoldenGateDetailHubArgs'] hubs: Details about Oracle GoldenGate Microservices.
         :param Sequence['GetMigrationsMigrationCollectionItemGoldenGateDetailSettingArgs'] settings: Optional settings for Oracle GoldenGate processes
         """
-        pulumi.set(__self__, "hubs", hubs)
-        pulumi.set(__self__, "settings", settings)
+        GetMigrationsMigrationCollectionItemGoldenGateDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hubs=hubs,
+            settings=settings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hubs: Sequence['outputs.GetMigrationsMigrationCollectionItemGoldenGateDetailHubResult'],
+             settings: Sequence['outputs.GetMigrationsMigrationCollectionItemGoldenGateDetailSettingResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hubs", hubs)
+        _setter("settings", settings)
 
     @property
     @pulumi.getter
@@ -5945,14 +8043,37 @@ class GetMigrationsMigrationCollectionItemGoldenGateDetailHubResult(dict):
         :param str target_microservices_deployment_name: Name of GoldenGate deployment to operate on target database
         :param str url: Oracle GoldenGate hub's REST endpoint. Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
         """
-        pulumi.set(__self__, "compute_id", compute_id)
-        pulumi.set(__self__, "rest_admin_credentials", rest_admin_credentials)
-        pulumi.set(__self__, "source_container_db_admin_credentials", source_container_db_admin_credentials)
-        pulumi.set(__self__, "source_db_admin_credentials", source_db_admin_credentials)
-        pulumi.set(__self__, "source_microservices_deployment_name", source_microservices_deployment_name)
-        pulumi.set(__self__, "target_db_admin_credentials", target_db_admin_credentials)
-        pulumi.set(__self__, "target_microservices_deployment_name", target_microservices_deployment_name)
-        pulumi.set(__self__, "url", url)
+        GetMigrationsMigrationCollectionItemGoldenGateDetailHubResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compute_id=compute_id,
+            rest_admin_credentials=rest_admin_credentials,
+            source_container_db_admin_credentials=source_container_db_admin_credentials,
+            source_db_admin_credentials=source_db_admin_credentials,
+            source_microservices_deployment_name=source_microservices_deployment_name,
+            target_db_admin_credentials=target_db_admin_credentials,
+            target_microservices_deployment_name=target_microservices_deployment_name,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compute_id: str,
+             rest_admin_credentials: Sequence['outputs.GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialResult'],
+             source_container_db_admin_credentials: Sequence['outputs.GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialResult'],
+             source_db_admin_credentials: Sequence['outputs.GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialResult'],
+             source_microservices_deployment_name: str,
+             target_db_admin_credentials: Sequence['outputs.GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialResult'],
+             target_microservices_deployment_name: str,
+             url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compute_id", compute_id)
+        _setter("rest_admin_credentials", rest_admin_credentials)
+        _setter("source_container_db_admin_credentials", source_container_db_admin_credentials)
+        _setter("source_db_admin_credentials", source_db_admin_credentials)
+        _setter("source_microservices_deployment_name", source_microservices_deployment_name)
+        _setter("target_db_admin_credentials", target_db_admin_credentials)
+        _setter("target_microservices_deployment_name", target_microservices_deployment_name)
+        _setter("url", url)
 
     @property
     @pulumi.getter(name="computeId")
@@ -6027,8 +8148,19 @@ class GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredential
         """
         :param str username: Administrator username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        GetMigrationsMigrationCollectionItemGoldenGateDetailHubRestAdminCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -6052,8 +8184,19 @@ class GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAd
         """
         :param str username: Administrator username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceContainerDbAdminCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -6077,8 +8220,19 @@ class GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCreden
         """
         :param str username: Administrator username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        GetMigrationsMigrationCollectionItemGoldenGateDetailHubSourceDbAdminCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -6102,8 +8256,19 @@ class GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCreden
         """
         :param str username: Administrator username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        GetMigrationsMigrationCollectionItemGoldenGateDetailHubTargetDbAdminCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -6130,9 +8295,22 @@ class GetMigrationsMigrationCollectionItemGoldenGateDetailSettingResult(dict):
         :param Sequence['GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractArgs'] extracts: Parameters for Extract processes.
         :param Sequence['GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatArgs'] replicats: Parameters for Replicat processes.
         """
-        pulumi.set(__self__, "acceptable_lag", acceptable_lag)
-        pulumi.set(__self__, "extracts", extracts)
-        pulumi.set(__self__, "replicats", replicats)
+        GetMigrationsMigrationCollectionItemGoldenGateDetailSettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            acceptable_lag=acceptable_lag,
+            extracts=extracts,
+            replicats=replicats,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             acceptable_lag: int,
+             extracts: Sequence['outputs.GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractResult'],
+             replicats: Sequence['outputs.GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("acceptable_lag", acceptable_lag)
+        _setter("extracts", extracts)
+        _setter("replicats", replicats)
 
     @property
     @pulumi.getter(name="acceptableLag")
@@ -6168,8 +8346,19 @@ class GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractResult(d
         :param int long_trans_duration: Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
         :param str performance_profile: Extract performance.
         """
-        pulumi.set(__self__, "long_trans_duration", long_trans_duration)
-        pulumi.set(__self__, "performance_profile", performance_profile)
+        GetMigrationsMigrationCollectionItemGoldenGateDetailSettingExtractResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            long_trans_duration=long_trans_duration,
+            performance_profile=performance_profile,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             long_trans_duration: int,
+             performance_profile: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("long_trans_duration", long_trans_duration)
+        _setter("performance_profile", performance_profile)
 
     @property
     @pulumi.getter(name="longTransDuration")
@@ -6201,10 +8390,25 @@ class GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatResult(
         :param int min_apply_parallelism: Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
         :param str performance_profile: Extract performance.
         """
-        pulumi.set(__self__, "map_parallelism", map_parallelism)
-        pulumi.set(__self__, "max_apply_parallelism", max_apply_parallelism)
-        pulumi.set(__self__, "min_apply_parallelism", min_apply_parallelism)
-        pulumi.set(__self__, "performance_profile", performance_profile)
+        GetMigrationsMigrationCollectionItemGoldenGateDetailSettingReplicatResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            map_parallelism=map_parallelism,
+            max_apply_parallelism=max_apply_parallelism,
+            min_apply_parallelism=min_apply_parallelism,
+            performance_profile=performance_profile,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             map_parallelism: int,
+             max_apply_parallelism: int,
+             min_apply_parallelism: int,
+             performance_profile: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("map_parallelism", map_parallelism)
+        _setter("max_apply_parallelism", max_apply_parallelism)
+        _setter("min_apply_parallelism", min_apply_parallelism)
+        _setter("performance_profile", performance_profile)
 
     @property
     @pulumi.getter(name="mapParallelism")
@@ -6251,11 +8455,28 @@ class GetMigrationsMigrationCollectionItemGoldenGateServiceDetailResult(dict):
         :param Sequence['GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentArgs'] ggs_deployments: Details about Oracle GoldenGate GGS Deployment.
         :param Sequence['GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingArgs'] settings: Optional settings for Oracle GoldenGate processes
         """
-        pulumi.set(__self__, "ggs_deployments", ggs_deployments)
-        pulumi.set(__self__, "settings", settings)
-        pulumi.set(__self__, "source_container_db_credentials", source_container_db_credentials)
-        pulumi.set(__self__, "source_db_credentials", source_db_credentials)
-        pulumi.set(__self__, "target_db_credentials", target_db_credentials)
+        GetMigrationsMigrationCollectionItemGoldenGateServiceDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ggs_deployments=ggs_deployments,
+            settings=settings,
+            source_container_db_credentials=source_container_db_credentials,
+            source_db_credentials=source_db_credentials,
+            target_db_credentials=target_db_credentials,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ggs_deployments: Sequence['outputs.GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentResult'],
+             settings: Sequence['outputs.GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingResult'],
+             source_container_db_credentials: Sequence['outputs.GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialResult'],
+             source_db_credentials: Sequence['outputs.GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialResult'],
+             target_db_credentials: Sequence['outputs.GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ggs_deployments", ggs_deployments)
+        _setter("settings", settings)
+        _setter("source_container_db_credentials", source_container_db_credentials)
+        _setter("source_db_credentials", source_db_credentials)
+        _setter("target_db_credentials", target_db_credentials)
 
     @property
     @pulumi.getter(name="ggsDeployments")
@@ -6298,8 +8519,19 @@ class GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentRe
         :param str deployment_id: OCID of a GoldenGate Deployment
         :param str ggs_admin_credentials_secret_id: OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
         """
-        pulumi.set(__self__, "deployment_id", deployment_id)
-        pulumi.set(__self__, "ggs_admin_credentials_secret_id", ggs_admin_credentials_secret_id)
+        GetMigrationsMigrationCollectionItemGoldenGateServiceDetailGgsDeploymentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            deployment_id=deployment_id,
+            ggs_admin_credentials_secret_id=ggs_admin_credentials_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             deployment_id: str,
+             ggs_admin_credentials_secret_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("deployment_id", deployment_id)
+        _setter("ggs_admin_credentials_secret_id", ggs_admin_credentials_secret_id)
 
     @property
     @pulumi.getter(name="deploymentId")
@@ -6329,9 +8561,22 @@ class GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingResult(d
         :param Sequence['GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractArgs'] extracts: Parameters for Extract processes.
         :param Sequence['GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatArgs'] replicats: Parameters for Replicat processes.
         """
-        pulumi.set(__self__, "acceptable_lag", acceptable_lag)
-        pulumi.set(__self__, "extracts", extracts)
-        pulumi.set(__self__, "replicats", replicats)
+        GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            acceptable_lag=acceptable_lag,
+            extracts=extracts,
+            replicats=replicats,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             acceptable_lag: int,
+             extracts: Sequence['outputs.GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractResult'],
+             replicats: Sequence['outputs.GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("acceptable_lag", acceptable_lag)
+        _setter("extracts", extracts)
+        _setter("replicats", replicats)
 
     @property
     @pulumi.getter(name="acceptableLag")
@@ -6367,8 +8612,19 @@ class GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractR
         :param int long_trans_duration: Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
         :param str performance_profile: Extract performance.
         """
-        pulumi.set(__self__, "long_trans_duration", long_trans_duration)
-        pulumi.set(__self__, "performance_profile", performance_profile)
+        GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingExtractResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            long_trans_duration=long_trans_duration,
+            performance_profile=performance_profile,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             long_trans_duration: int,
+             performance_profile: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("long_trans_duration", long_trans_duration)
+        _setter("performance_profile", performance_profile)
 
     @property
     @pulumi.getter(name="longTransDuration")
@@ -6398,9 +8654,22 @@ class GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicat
         :param int max_apply_parallelism: Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
         :param int min_apply_parallelism: Defines the range in which Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
         """
-        pulumi.set(__self__, "map_parallelism", map_parallelism)
-        pulumi.set(__self__, "max_apply_parallelism", max_apply_parallelism)
-        pulumi.set(__self__, "min_apply_parallelism", min_apply_parallelism)
+        GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSettingReplicatResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            map_parallelism=map_parallelism,
+            max_apply_parallelism=max_apply_parallelism,
+            min_apply_parallelism=min_apply_parallelism,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             map_parallelism: int,
+             max_apply_parallelism: int,
+             min_apply_parallelism: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("map_parallelism", map_parallelism)
+        _setter("max_apply_parallelism", max_apply_parallelism)
+        _setter("min_apply_parallelism", min_apply_parallelism)
 
     @property
     @pulumi.getter(name="mapParallelism")
@@ -6435,8 +8704,19 @@ class GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainer
         """
         :param str username: Administrator username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceContainerDbCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -6460,8 +8740,19 @@ class GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredent
         """
         :param str username: Administrator username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        GetMigrationsMigrationCollectionItemGoldenGateServiceDetailSourceDbCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -6485,8 +8776,19 @@ class GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredent
         """
         :param str username: Administrator username
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        GetMigrationsMigrationCollectionItemGoldenGateServiceDetailTargetDbCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -6515,10 +8817,25 @@ class GetMigrationsMigrationCollectionItemIncludeObjectResult(dict):
         :param str owner: Owner of the object (regular expression is allowed)
         :param str type: Migration type.
         """
-        pulumi.set(__self__, "is_omit_excluded_table_from_replication", is_omit_excluded_table_from_replication)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "owner", owner)
-        pulumi.set(__self__, "type", type)
+        GetMigrationsMigrationCollectionItemIncludeObjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_omit_excluded_table_from_replication=is_omit_excluded_table_from_replication,
+            object=object,
+            owner=owner,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_omit_excluded_table_from_replication: bool,
+             object: str,
+             owner: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_omit_excluded_table_from_replication", is_omit_excluded_table_from_replication)
+        _setter("object", object)
+        _setter("owner", owner)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="isOmitExcludedTableFromReplication")
@@ -6564,9 +8881,22 @@ class GetMigrationsMigrationCollectionItemVaultDetailResult(dict):
         :param str key_id: OCID of the vault encryption key
         :param str vault_id: OCID of the vault
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "key_id", key_id)
-        pulumi.set(__self__, "vault_id", vault_id)
+        GetMigrationsMigrationCollectionItemVaultDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            key_id=key_id,
+            vault_id=vault_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             key_id: str,
+             vault_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("key_id", key_id)
+        _setter("vault_id", vault_id)
 
     @property
     @pulumi.getter(name="compartmentId")

@@ -269,6 +269,9 @@ namespace Pulumi.Oci.DatabaseMigration
         [Output("dataTransferMediumDetails")]
         public Output<Outputs.MigrationDataTransferMediumDetails> DataTransferMediumDetails { get; private set; } = null!;
 
+        [Output("dataTransferMediumDetailsV2")]
+        public Output<Outputs.MigrationDataTransferMediumDetailsV2> DataTransferMediumDetailsV2 { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) Optional settings for Data Pump Export and Import jobs
         /// </summary>
@@ -477,6 +480,9 @@ namespace Pulumi.Oci.DatabaseMigration
         [Input("dataTransferMediumDetails")]
         public Input<Inputs.MigrationDataTransferMediumDetailsArgs>? DataTransferMediumDetails { get; set; }
 
+        [Input("dataTransferMediumDetailsV2")]
+        public Input<Inputs.MigrationDataTransferMediumDetailsV2Args>? DataTransferMediumDetailsV2 { get; set; }
+
         /// <summary>
         /// (Updatable) Optional settings for Data Pump Export and Import jobs
         /// </summary>
@@ -628,6 +634,9 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         [Input("dataTransferMediumDetails")]
         public Input<Inputs.MigrationDataTransferMediumDetailsGetArgs>? DataTransferMediumDetails { get; set; }
+
+        [Input("dataTransferMediumDetailsV2")]
+        public Input<Inputs.MigrationDataTransferMediumDetailsV2GetArgs>? DataTransferMediumDetailsV2 { get; set; }
 
         /// <summary>
         /// (Updatable) Optional settings for Data Pump Export and Import jobs

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,27 +41,58 @@ class PipelineArgs:
         :param pulumi.Input['PipelineInfrastructureConfigurationDetailsArgs'] infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
         :param pulumi.Input['PipelineLogConfigurationDetailsArgs'] log_configuration_details: (Updatable) The pipeline log configuration details.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "step_details", step_details)
+        PipelineArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            project_id=project_id,
+            step_details=step_details,
+            configuration_details=configuration_details,
+            defined_tags=defined_tags,
+            delete_related_pipeline_runs=delete_related_pipeline_runs,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            infrastructure_configuration_details=infrastructure_configuration_details,
+            log_configuration_details=log_configuration_details,
+            step_artifact=step_artifact,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             project_id: pulumi.Input[str],
+             step_details: pulumi.Input[Sequence[pulumi.Input['PipelineStepDetailArgs']]],
+             configuration_details: Optional[pulumi.Input['PipelineConfigurationDetailsArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             delete_related_pipeline_runs: Optional[pulumi.Input[bool]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             infrastructure_configuration_details: Optional[pulumi.Input['PipelineInfrastructureConfigurationDetailsArgs']] = None,
+             log_configuration_details: Optional[pulumi.Input['PipelineLogConfigurationDetailsArgs']] = None,
+             step_artifact: Optional[pulumi.Input['PipelineStepArtifactArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("project_id", project_id)
+        _setter("step_details", step_details)
         if configuration_details is not None:
-            pulumi.set(__self__, "configuration_details", configuration_details)
+            _setter("configuration_details", configuration_details)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if delete_related_pipeline_runs is not None:
-            pulumi.set(__self__, "delete_related_pipeline_runs", delete_related_pipeline_runs)
+            _setter("delete_related_pipeline_runs", delete_related_pipeline_runs)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if infrastructure_configuration_details is not None:
-            pulumi.set(__self__, "infrastructure_configuration_details", infrastructure_configuration_details)
+            _setter("infrastructure_configuration_details", infrastructure_configuration_details)
         if log_configuration_details is not None:
-            pulumi.set(__self__, "log_configuration_details", log_configuration_details)
+            _setter("log_configuration_details", log_configuration_details)
         if step_artifact is not None:
-            pulumi.set(__self__, "step_artifact", step_artifact)
+            _setter("step_artifact", step_artifact)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -242,42 +273,85 @@ class _PipelineState:
         :param pulumi.Input[str] time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
         :param pulumi.Input[str] time_updated: The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
         """
+        _PipelineState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            configuration_details=configuration_details,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            delete_related_pipeline_runs=delete_related_pipeline_runs,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            infrastructure_configuration_details=infrastructure_configuration_details,
+            lifecycle_details=lifecycle_details,
+            log_configuration_details=log_configuration_details,
+            project_id=project_id,
+            state=state,
+            step_artifact=step_artifact,
+            step_details=step_details,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             configuration_details: Optional[pulumi.Input['PipelineConfigurationDetailsArgs']] = None,
+             created_by: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             delete_related_pipeline_runs: Optional[pulumi.Input[bool]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             infrastructure_configuration_details: Optional[pulumi.Input['PipelineInfrastructureConfigurationDetailsArgs']] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             log_configuration_details: Optional[pulumi.Input['PipelineLogConfigurationDetailsArgs']] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             step_artifact: Optional[pulumi.Input['PipelineStepArtifactArgs']] = None,
+             step_details: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineStepDetailArgs']]]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if configuration_details is not None:
-            pulumi.set(__self__, "configuration_details", configuration_details)
+            _setter("configuration_details", configuration_details)
         if created_by is not None:
-            pulumi.set(__self__, "created_by", created_by)
+            _setter("created_by", created_by)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if delete_related_pipeline_runs is not None:
-            pulumi.set(__self__, "delete_related_pipeline_runs", delete_related_pipeline_runs)
+            _setter("delete_related_pipeline_runs", delete_related_pipeline_runs)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if infrastructure_configuration_details is not None:
-            pulumi.set(__self__, "infrastructure_configuration_details", infrastructure_configuration_details)
+            _setter("infrastructure_configuration_details", infrastructure_configuration_details)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if log_configuration_details is not None:
-            pulumi.set(__self__, "log_configuration_details", log_configuration_details)
+            _setter("log_configuration_details", log_configuration_details)
         if project_id is not None:
-            pulumi.set(__self__, "project_id", project_id)
+            _setter("project_id", project_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if step_artifact is not None:
-            pulumi.set(__self__, "step_artifact", step_artifact)
+            _setter("step_artifact", step_artifact)
         if step_details is not None:
-            pulumi.set(__self__, "step_details", step_details)
+            _setter("step_details", step_details)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -683,6 +757,10 @@ class Pipeline(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            PipelineArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -712,17 +790,37 @@ class Pipeline(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            if configuration_details is not None and not isinstance(configuration_details, PipelineConfigurationDetailsArgs):
+                configuration_details = configuration_details or {}
+                def _setter(key, value):
+                    configuration_details[key] = value
+                PipelineConfigurationDetailsArgs._configure(_setter, **configuration_details)
             __props__.__dict__["configuration_details"] = configuration_details
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["delete_related_pipeline_runs"] = delete_related_pipeline_runs
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            if infrastructure_configuration_details is not None and not isinstance(infrastructure_configuration_details, PipelineInfrastructureConfigurationDetailsArgs):
+                infrastructure_configuration_details = infrastructure_configuration_details or {}
+                def _setter(key, value):
+                    infrastructure_configuration_details[key] = value
+                PipelineInfrastructureConfigurationDetailsArgs._configure(_setter, **infrastructure_configuration_details)
             __props__.__dict__["infrastructure_configuration_details"] = infrastructure_configuration_details
+            if log_configuration_details is not None and not isinstance(log_configuration_details, PipelineLogConfigurationDetailsArgs):
+                log_configuration_details = log_configuration_details or {}
+                def _setter(key, value):
+                    log_configuration_details[key] = value
+                PipelineLogConfigurationDetailsArgs._configure(_setter, **log_configuration_details)
             __props__.__dict__["log_configuration_details"] = log_configuration_details
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
             __props__.__dict__["project_id"] = project_id
+            if step_artifact is not None and not isinstance(step_artifact, PipelineStepArtifactArgs):
+                step_artifact = step_artifact or {}
+                def _setter(key, value):
+                    step_artifact[key] = value
+                PipelineStepArtifactArgs._configure(_setter, **step_artifact)
             __props__.__dict__["step_artifact"] = step_artifact
             if step_details is None and not opts.urn:
                 raise TypeError("Missing required property 'step_details'")

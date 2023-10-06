@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetKeyKeyShape {
     /**
-     * @return The algorithm used by a key&#39;s key versions to encrypt or decrypt.
+     * @return The algorithm used by a key&#39;s key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
      * 
      */
     private String algorithm;
@@ -31,7 +31,7 @@ public final class GetKeyKeyShape {
 
     private GetKeyKeyShape() {}
     /**
-     * @return The algorithm used by a key&#39;s key versions to encrypt or decrypt.
+     * @return The algorithm used by a key&#39;s key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
      * 
      */
     public String algorithm() {

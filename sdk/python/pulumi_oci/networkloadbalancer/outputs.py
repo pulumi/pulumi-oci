@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -97,21 +97,44 @@ class BackendSetBackend(dict):
         :param str target_id: The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
         :param int weight: The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
-        pulumi.set(__self__, "port", port)
+        BackendSetBackend._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            port=port,
+            ip_address=ip_address,
+            is_backup=is_backup,
+            is_drain=is_drain,
+            is_offline=is_offline,
+            name=name,
+            target_id=target_id,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             port: int,
+             ip_address: Optional[str] = None,
+             is_backup: Optional[bool] = None,
+             is_drain: Optional[bool] = None,
+             is_offline: Optional[bool] = None,
+             name: Optional[str] = None,
+             target_id: Optional[str] = None,
+             weight: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("port", port)
         if ip_address is not None:
-            pulumi.set(__self__, "ip_address", ip_address)
+            _setter("ip_address", ip_address)
         if is_backup is not None:
-            pulumi.set(__self__, "is_backup", is_backup)
+            _setter("is_backup", is_backup)
         if is_drain is not None:
-            pulumi.set(__self__, "is_drain", is_drain)
+            _setter("is_drain", is_drain)
         if is_offline is not None:
-            pulumi.set(__self__, "is_offline", is_offline)
+            _setter("is_offline", is_offline)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if target_id is not None:
-            pulumi.set(__self__, "target_id", target_id)
+            _setter("target_id", target_id)
         if weight is not None:
-            pulumi.set(__self__, "weight", weight)
+            _setter("weight", weight)
 
     @property
     @pulumi.getter
@@ -236,25 +259,52 @@ class BackendSetHealthChecker(dict):
         :param int timeout_in_millis: (Updatable) The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
         :param str url_path: (Updatable) The path against which to run the health check.  Example: `/healthcheck`
         """
-        pulumi.set(__self__, "protocol", protocol)
+        BackendSetHealthChecker._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            protocol=protocol,
+            interval_in_millis=interval_in_millis,
+            port=port,
+            request_data=request_data,
+            response_body_regex=response_body_regex,
+            response_data=response_data,
+            retries=retries,
+            return_code=return_code,
+            timeout_in_millis=timeout_in_millis,
+            url_path=url_path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             protocol: str,
+             interval_in_millis: Optional[int] = None,
+             port: Optional[int] = None,
+             request_data: Optional[str] = None,
+             response_body_regex: Optional[str] = None,
+             response_data: Optional[str] = None,
+             retries: Optional[int] = None,
+             return_code: Optional[int] = None,
+             timeout_in_millis: Optional[int] = None,
+             url_path: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("protocol", protocol)
         if interval_in_millis is not None:
-            pulumi.set(__self__, "interval_in_millis", interval_in_millis)
+            _setter("interval_in_millis", interval_in_millis)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if request_data is not None:
-            pulumi.set(__self__, "request_data", request_data)
+            _setter("request_data", request_data)
         if response_body_regex is not None:
-            pulumi.set(__self__, "response_body_regex", response_body_regex)
+            _setter("response_body_regex", response_body_regex)
         if response_data is not None:
-            pulumi.set(__self__, "response_data", response_data)
+            _setter("response_data", response_data)
         if retries is not None:
-            pulumi.set(__self__, "retries", retries)
+            _setter("retries", retries)
         if return_code is not None:
-            pulumi.set(__self__, "return_code", return_code)
+            _setter("return_code", return_code)
         if timeout_in_millis is not None:
-            pulumi.set(__self__, "timeout_in_millis", timeout_in_millis)
+            _setter("timeout_in_millis", timeout_in_millis)
         if url_path is not None:
-            pulumi.set(__self__, "url_path", url_path)
+            _setter("url_path", url_path)
 
     @property
     @pulumi.getter
@@ -373,14 +423,29 @@ class NetworkLoadBalancerIpAddress(dict):
         :param bool is_public: Whether the IP address is public or private.
         :param Sequence['NetworkLoadBalancerIpAddressReservedIpArgs'] reserved_ips: An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
         """
+        NetworkLoadBalancerIpAddress._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_address=ip_address,
+            ip_version=ip_version,
+            is_public=is_public,
+            reserved_ips=reserved_ips,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_address: Optional[str] = None,
+             ip_version: Optional[str] = None,
+             is_public: Optional[bool] = None,
+             reserved_ips: Optional[Sequence['outputs.NetworkLoadBalancerIpAddressReservedIp']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if ip_address is not None:
-            pulumi.set(__self__, "ip_address", ip_address)
+            _setter("ip_address", ip_address)
         if ip_version is not None:
-            pulumi.set(__self__, "ip_version", ip_version)
+            _setter("ip_version", ip_version)
         if is_public is not None:
-            pulumi.set(__self__, "is_public", is_public)
+            _setter("is_public", is_public)
         if reserved_ips is not None:
-            pulumi.set(__self__, "reserved_ips", reserved_ips)
+            _setter("reserved_ips", reserved_ips)
 
     @property
     @pulumi.getter(name="ipAddress")
@@ -430,8 +495,17 @@ class NetworkLoadBalancerIpAddressReservedIp(dict):
                
                Example: "ocid1.publicip.oc1.phx.unique_ID"
         """
+        NetworkLoadBalancerIpAddressReservedIp._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter
@@ -465,8 +539,17 @@ class NetworkLoadBalancerReservedIp(dict):
                
                Example: "ocid1.publicip.oc1.phx.unique_ID"
         """
+        NetworkLoadBalancerReservedIp._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter
@@ -535,21 +618,44 @@ class NetworkLoadBalancersBackendSetsUnifiedBackend(dict):
         :param str target_id: (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
         :param int weight: (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
-        pulumi.set(__self__, "port", port)
+        NetworkLoadBalancersBackendSetsUnifiedBackend._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            port=port,
+            ip_address=ip_address,
+            is_backup=is_backup,
+            is_drain=is_drain,
+            is_offline=is_offline,
+            name=name,
+            target_id=target_id,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             port: int,
+             ip_address: Optional[str] = None,
+             is_backup: Optional[bool] = None,
+             is_drain: Optional[bool] = None,
+             is_offline: Optional[bool] = None,
+             name: Optional[str] = None,
+             target_id: Optional[str] = None,
+             weight: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("port", port)
         if ip_address is not None:
-            pulumi.set(__self__, "ip_address", ip_address)
+            _setter("ip_address", ip_address)
         if is_backup is not None:
-            pulumi.set(__self__, "is_backup", is_backup)
+            _setter("is_backup", is_backup)
         if is_drain is not None:
-            pulumi.set(__self__, "is_drain", is_drain)
+            _setter("is_drain", is_drain)
         if is_offline is not None:
-            pulumi.set(__self__, "is_offline", is_offline)
+            _setter("is_offline", is_offline)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if target_id is not None:
-            pulumi.set(__self__, "target_id", target_id)
+            _setter("target_id", target_id)
         if weight is not None:
-            pulumi.set(__self__, "weight", weight)
+            _setter("weight", weight)
 
     @property
     @pulumi.getter
@@ -674,25 +780,52 @@ class NetworkLoadBalancersBackendSetsUnifiedHealthChecker(dict):
         :param int timeout_in_millis: (Updatable) The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
         :param str url_path: (Updatable) The path against which to run the health check.  Example: `/healthcheck`
         """
-        pulumi.set(__self__, "protocol", protocol)
+        NetworkLoadBalancersBackendSetsUnifiedHealthChecker._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            protocol=protocol,
+            interval_in_millis=interval_in_millis,
+            port=port,
+            request_data=request_data,
+            response_body_regex=response_body_regex,
+            response_data=response_data,
+            retries=retries,
+            return_code=return_code,
+            timeout_in_millis=timeout_in_millis,
+            url_path=url_path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             protocol: str,
+             interval_in_millis: Optional[int] = None,
+             port: Optional[int] = None,
+             request_data: Optional[str] = None,
+             response_body_regex: Optional[str] = None,
+             response_data: Optional[str] = None,
+             retries: Optional[int] = None,
+             return_code: Optional[int] = None,
+             timeout_in_millis: Optional[int] = None,
+             url_path: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("protocol", protocol)
         if interval_in_millis is not None:
-            pulumi.set(__self__, "interval_in_millis", interval_in_millis)
+            _setter("interval_in_millis", interval_in_millis)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if request_data is not None:
-            pulumi.set(__self__, "request_data", request_data)
+            _setter("request_data", request_data)
         if response_body_regex is not None:
-            pulumi.set(__self__, "response_body_regex", response_body_regex)
+            _setter("response_body_regex", response_body_regex)
         if response_data is not None:
-            pulumi.set(__self__, "response_data", response_data)
+            _setter("response_data", response_data)
         if retries is not None:
-            pulumi.set(__self__, "retries", retries)
+            _setter("retries", retries)
         if return_code is not None:
-            pulumi.set(__self__, "return_code", return_code)
+            _setter("return_code", return_code)
         if timeout_in_millis is not None:
-            pulumi.set(__self__, "timeout_in_millis", timeout_in_millis)
+            _setter("timeout_in_millis", timeout_in_millis)
         if url_path is not None:
-            pulumi.set(__self__, "url_path", url_path)
+            _setter("url_path", url_path)
 
     @property
     @pulumi.getter
@@ -784,8 +917,19 @@ class GetBackendHealthHealthCheckResultResult(dict):
         :param str health_check_status: The result of the most recent health check.
         :param str timestamp: The date and time the data was retrieved, in the format defined by RFC3339.  Example: `2020-05-01T18:28:11+00:00`
         """
-        pulumi.set(__self__, "health_check_status", health_check_status)
-        pulumi.set(__self__, "timestamp", timestamp)
+        GetBackendHealthHealthCheckResultResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            health_check_status=health_check_status,
+            timestamp=timestamp,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             health_check_status: str,
+             timestamp: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("health_check_status", health_check_status)
+        _setter("timestamp", timestamp)
 
     @property
     @pulumi.getter(name="healthCheckStatus")
@@ -825,14 +969,37 @@ class GetBackendSetBackendResult(dict):
         :param str target_id: The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
         :param int weight: The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "is_backup", is_backup)
-        pulumi.set(__self__, "is_drain", is_drain)
-        pulumi.set(__self__, "is_offline", is_offline)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "weight", weight)
+        GetBackendSetBackendResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_address=ip_address,
+            is_backup=is_backup,
+            is_drain=is_drain,
+            is_offline=is_offline,
+            name=name,
+            port=port,
+            target_id=target_id,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_address: str,
+             is_backup: bool,
+             is_drain: bool,
+             is_offline: bool,
+             name: str,
+             port: int,
+             target_id: str,
+             weight: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ip_address", ip_address)
+        _setter("is_backup", is_backup)
+        _setter("is_drain", is_drain)
+        _setter("is_offline", is_offline)
+        _setter("name", name)
+        _setter("port", port)
+        _setter("target_id", target_id)
+        _setter("weight", weight)
 
     @property
     @pulumi.getter(name="ipAddress")
@@ -924,16 +1091,43 @@ class GetBackendSetHealthCheckerResult(dict):
         :param int timeout_in_millis: The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
         :param str url_path: The path against which to run the health check.  Example: `/healthcheck`
         """
-        pulumi.set(__self__, "interval_in_millis", interval_in_millis)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "request_data", request_data)
-        pulumi.set(__self__, "response_body_regex", response_body_regex)
-        pulumi.set(__self__, "response_data", response_data)
-        pulumi.set(__self__, "retries", retries)
-        pulumi.set(__self__, "return_code", return_code)
-        pulumi.set(__self__, "timeout_in_millis", timeout_in_millis)
-        pulumi.set(__self__, "url_path", url_path)
+        GetBackendSetHealthCheckerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            interval_in_millis=interval_in_millis,
+            port=port,
+            protocol=protocol,
+            request_data=request_data,
+            response_body_regex=response_body_regex,
+            response_data=response_data,
+            retries=retries,
+            return_code=return_code,
+            timeout_in_millis=timeout_in_millis,
+            url_path=url_path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             interval_in_millis: int,
+             port: int,
+             protocol: str,
+             request_data: str,
+             response_body_regex: str,
+             response_data: str,
+             retries: int,
+             return_code: int,
+             timeout_in_millis: int,
+             url_path: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("interval_in_millis", interval_in_millis)
+        _setter("port", port)
+        _setter("protocol", protocol)
+        _setter("request_data", request_data)
+        _setter("response_body_regex", response_body_regex)
+        _setter("response_data", response_data)
+        _setter("retries", retries)
+        _setter("return_code", return_code)
+        _setter("timeout_in_millis", timeout_in_millis)
+        _setter("url_path", url_path)
 
     @property
     @pulumi.getter(name="intervalInMillis")
@@ -1020,7 +1214,16 @@ class GetBackendSetHealthCheckerResult(dict):
 class GetBackendSetsBackendSetCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetBackendSetsBackendSetCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetBackendSetsBackendSetCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetBackendSetsBackendSetCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1048,14 +1251,37 @@ class GetBackendSetsBackendSetCollectionItemResult(dict):
         :param str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         :param str policy: The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`
         """
-        pulumi.set(__self__, "backends", backends)
-        pulumi.set(__self__, "health_checkers", health_checkers)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ip_version", ip_version)
-        pulumi.set(__self__, "is_preserve_source", is_preserve_source)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
-        pulumi.set(__self__, "policy", policy)
+        GetBackendSetsBackendSetCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backends=backends,
+            health_checkers=health_checkers,
+            id=id,
+            ip_version=ip_version,
+            is_preserve_source=is_preserve_source,
+            name=name,
+            network_load_balancer_id=network_load_balancer_id,
+            policy=policy,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backends: Sequence['outputs.GetBackendSetsBackendSetCollectionItemBackendResult'],
+             health_checkers: Sequence['outputs.GetBackendSetsBackendSetCollectionItemHealthCheckerResult'],
+             id: str,
+             ip_version: str,
+             is_preserve_source: bool,
+             name: str,
+             network_load_balancer_id: str,
+             policy: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("backends", backends)
+        _setter("health_checkers", health_checkers)
+        _setter("id", id)
+        _setter("ip_version", ip_version)
+        _setter("is_preserve_source", is_preserve_source)
+        _setter("name", name)
+        _setter("network_load_balancer_id", network_load_balancer_id)
+        _setter("policy", policy)
 
     @property
     @pulumi.getter
@@ -1140,14 +1366,37 @@ class GetBackendSetsBackendSetCollectionItemBackendResult(dict):
         :param str target_id: The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
         :param int weight: The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "is_backup", is_backup)
-        pulumi.set(__self__, "is_drain", is_drain)
-        pulumi.set(__self__, "is_offline", is_offline)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "weight", weight)
+        GetBackendSetsBackendSetCollectionItemBackendResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_address=ip_address,
+            is_backup=is_backup,
+            is_drain=is_drain,
+            is_offline=is_offline,
+            name=name,
+            port=port,
+            target_id=target_id,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_address: str,
+             is_backup: bool,
+             is_drain: bool,
+             is_offline: bool,
+             name: str,
+             port: int,
+             target_id: str,
+             weight: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ip_address", ip_address)
+        _setter("is_backup", is_backup)
+        _setter("is_drain", is_drain)
+        _setter("is_offline", is_offline)
+        _setter("name", name)
+        _setter("port", port)
+        _setter("target_id", target_id)
+        _setter("weight", weight)
 
     @property
     @pulumi.getter(name="ipAddress")
@@ -1239,16 +1488,43 @@ class GetBackendSetsBackendSetCollectionItemHealthCheckerResult(dict):
         :param int timeout_in_millis: The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. The default value is 3000 (3 seconds).  Example: `3000`
         :param str url_path: The path against which to run the health check.  Example: `/healthcheck`
         """
-        pulumi.set(__self__, "interval_in_millis", interval_in_millis)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "request_data", request_data)
-        pulumi.set(__self__, "response_body_regex", response_body_regex)
-        pulumi.set(__self__, "response_data", response_data)
-        pulumi.set(__self__, "retries", retries)
-        pulumi.set(__self__, "return_code", return_code)
-        pulumi.set(__self__, "timeout_in_millis", timeout_in_millis)
-        pulumi.set(__self__, "url_path", url_path)
+        GetBackendSetsBackendSetCollectionItemHealthCheckerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            interval_in_millis=interval_in_millis,
+            port=port,
+            protocol=protocol,
+            request_data=request_data,
+            response_body_regex=response_body_regex,
+            response_data=response_data,
+            retries=retries,
+            return_code=return_code,
+            timeout_in_millis=timeout_in_millis,
+            url_path=url_path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             interval_in_millis: int,
+             port: int,
+             protocol: str,
+             request_data: str,
+             response_body_regex: str,
+             response_data: str,
+             retries: int,
+             return_code: int,
+             timeout_in_millis: int,
+             url_path: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("interval_in_millis", interval_in_millis)
+        _setter("port", port)
+        _setter("protocol", protocol)
+        _setter("request_data", request_data)
+        _setter("response_body_regex", response_body_regex)
+        _setter("response_data", response_data)
+        _setter("retries", retries)
+        _setter("return_code", return_code)
+        _setter("timeout_in_millis", timeout_in_millis)
+        _setter("url_path", url_path)
 
     @property
     @pulumi.getter(name="intervalInMillis")
@@ -1340,10 +1616,23 @@ class GetBackendSetsFilterResult(dict):
         """
         :param str name: A user-friendly name for the backend set that must be unique and cannot be changed.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetBackendSetsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1368,7 +1657,16 @@ class GetBackendSetsFilterResult(dict):
 class GetBackendsBackendCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetBackendsBackendCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetBackendsBackendCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetBackendsBackendCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1402,17 +1700,46 @@ class GetBackendsBackendCollectionItemResult(dict):
         :param str target_id: The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
         :param int weight: The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
-        pulumi.set(__self__, "backend_set_name", backend_set_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "is_backup", is_backup)
-        pulumi.set(__self__, "is_drain", is_drain)
-        pulumi.set(__self__, "is_offline", is_offline)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "weight", weight)
+        GetBackendsBackendCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backend_set_name=backend_set_name,
+            id=id,
+            ip_address=ip_address,
+            is_backup=is_backup,
+            is_drain=is_drain,
+            is_offline=is_offline,
+            name=name,
+            network_load_balancer_id=network_load_balancer_id,
+            port=port,
+            target_id=target_id,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backend_set_name: str,
+             id: str,
+             ip_address: str,
+             is_backup: bool,
+             is_drain: bool,
+             is_offline: bool,
+             name: str,
+             network_load_balancer_id: str,
+             port: int,
+             target_id: str,
+             weight: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("backend_set_name", backend_set_name)
+        _setter("id", id)
+        _setter("ip_address", ip_address)
+        _setter("is_backup", is_backup)
+        _setter("is_drain", is_drain)
+        _setter("is_offline", is_offline)
+        _setter("name", name)
+        _setter("network_load_balancer_id", network_load_balancer_id)
+        _setter("port", port)
+        _setter("target_id", target_id)
+        _setter("weight", weight)
 
     @property
     @pulumi.getter(name="backendSetName")
@@ -1509,10 +1836,23 @@ class GetBackendsFilterResult(dict):
         """
         :param str name: A read-only field showing the IP address/IP OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetBackendsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1542,10 +1882,23 @@ class GetListenersFilterResult(dict):
         """
         :param str name: A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetListenersFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1570,7 +1923,16 @@ class GetListenersFilterResult(dict):
 class GetListenersListenerCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetListenersListenerCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetListenersListenerCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetListenersListenerCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1596,13 +1958,34 @@ class GetListenersListenerCollectionItemResult(dict):
         :param int port: The communication port for the listener.  Example: `80`
         :param str protocol: The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). To get a list of valid protocols, use the [ListNetworkLoadBalancersProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/NetworkLoadBalancer/20200501/networkLoadBalancerProtocol/ListNetworkLoadBalancersProtocols) operation.  Example: `TCP`
         """
-        pulumi.set(__self__, "default_backend_set_name", default_backend_set_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ip_version", ip_version)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
+        GetListenersListenerCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_backend_set_name=default_backend_set_name,
+            id=id,
+            ip_version=ip_version,
+            name=name,
+            network_load_balancer_id=network_load_balancer_id,
+            port=port,
+            protocol=protocol,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_backend_set_name: str,
+             id: str,
+             ip_version: str,
+             name: str,
+             network_load_balancer_id: str,
+             port: int,
+             protocol: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_backend_set_name", default_backend_set_name)
+        _setter("id", id)
+        _setter("ip_version", ip_version)
+        _setter("name", name)
+        _setter("network_load_balancer_id", network_load_balancer_id)
+        _setter("port", port)
+        _setter("protocol", protocol)
 
     @property
     @pulumi.getter(name="defaultBackendSetName")
@@ -1671,10 +2054,25 @@ class GetNetworkLoadBalancerIpAddressResult(dict):
         :param bool is_public: Whether the IP address is public or private.
         :param Sequence['GetNetworkLoadBalancerIpAddressReservedIpArgs'] reserved_ips: An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
         """
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "ip_version", ip_version)
-        pulumi.set(__self__, "is_public", is_public)
-        pulumi.set(__self__, "reserved_ips", reserved_ips)
+        GetNetworkLoadBalancerIpAddressResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_address=ip_address,
+            ip_version=ip_version,
+            is_public=is_public,
+            reserved_ips=reserved_ips,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_address: str,
+             ip_version: str,
+             is_public: bool,
+             reserved_ips: Sequence['outputs.GetNetworkLoadBalancerIpAddressReservedIpResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ip_address", ip_address)
+        _setter("ip_version", ip_version)
+        _setter("is_public", is_public)
+        _setter("reserved_ips", reserved_ips)
 
     @property
     @pulumi.getter(name="ipAddress")
@@ -1716,7 +2114,16 @@ class GetNetworkLoadBalancerIpAddressReservedIpResult(dict):
         """
         :param str id: OCID of the reserved public IP address created with the virtual cloud network.
         """
-        pulumi.set(__self__, "id", id)
+        GetNetworkLoadBalancerIpAddressReservedIpResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
 
     @property
     @pulumi.getter
@@ -1734,7 +2141,16 @@ class GetNetworkLoadBalancerReservedIpResult(dict):
         """
         :param str id: OCID of the reserved public IP address created with the virtual cloud network.
         """
-        pulumi.set(__self__, "id", id)
+        GetNetworkLoadBalancerReservedIpResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
 
     @property
     @pulumi.getter
@@ -1751,10 +2167,23 @@ class GetNetworkLoadBalancersFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetNetworkLoadBalancersFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1776,7 +2205,16 @@ class GetNetworkLoadBalancersFilterResult(dict):
 class GetNetworkLoadBalancersNetworkLoadBalancerCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetNetworkLoadBalancersNetworkLoadBalancerCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1822,23 +2260,64 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult(dict):
         :param str time_created: The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
         :param str time_updated: The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ip_addresses", ip_addresses)
-        pulumi.set(__self__, "is_preserve_source_destination", is_preserve_source_destination)
-        pulumi.set(__self__, "is_private", is_private)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
-        pulumi.set(__self__, "nlb_ip_version", nlb_ip_version)
-        pulumi.set(__self__, "reserved_ips", reserved_ips)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            ip_addresses=ip_addresses,
+            is_preserve_source_destination=is_preserve_source_destination,
+            is_private=is_private,
+            lifecycle_details=lifecycle_details,
+            network_security_group_ids=network_security_group_ids,
+            nlb_ip_version=nlb_ip_version,
+            reserved_ips=reserved_ips,
+            state=state,
+            subnet_id=subnet_id,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             ip_addresses: Sequence['outputs.GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressResult'],
+             is_preserve_source_destination: bool,
+             is_private: bool,
+             lifecycle_details: str,
+             network_security_group_ids: Sequence[str],
+             nlb_ip_version: str,
+             reserved_ips: Sequence['outputs.GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpResult'],
+             state: str,
+             subnet_id: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("ip_addresses", ip_addresses)
+        _setter("is_preserve_source_destination", is_preserve_source_destination)
+        _setter("is_private", is_private)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("network_security_group_ids", network_security_group_ids)
+        _setter("nlb_ip_version", nlb_ip_version)
+        _setter("reserved_ips", reserved_ips)
+        _setter("state", state)
+        _setter("subnet_id", subnet_id)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1988,10 +2467,25 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressResult(di
                If "true", then the IP address is public and accessible from the internet.
         :param Sequence['GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpArgs'] reserved_ips: An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
         """
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "ip_version", ip_version)
-        pulumi.set(__self__, "is_public", is_public)
-        pulumi.set(__self__, "reserved_ips", reserved_ips)
+        GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_address=ip_address,
+            ip_version=ip_version,
+            is_public=is_public,
+            reserved_ips=reserved_ips,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_address: str,
+             ip_version: str,
+             is_public: bool,
+             reserved_ips: Sequence['outputs.GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ip_address", ip_address)
+        _setter("ip_version", ip_version)
+        _setter("is_public", is_public)
+        _setter("reserved_ips", reserved_ips)
 
     @property
     @pulumi.getter(name="ipAddress")
@@ -2034,7 +2528,16 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedI
         """
         :param str id: OCID of the reserved public IP address created with the virtual cloud network.
         """
-        pulumi.set(__self__, "id", id)
+        GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemIpAddressReservedIpResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
 
     @property
     @pulumi.getter
@@ -2052,7 +2555,16 @@ class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpResult(d
         """
         :param str id: OCID of the reserved public IP address created with the virtual cloud network.
         """
-        pulumi.set(__self__, "id", id)
+        GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIpResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
 
     @property
     @pulumi.getter
@@ -2069,10 +2581,23 @@ class GetNetworkLoadBalancersPoliciesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetNetworkLoadBalancersPoliciesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2097,7 +2622,16 @@ class GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionResult(
         """
         :param Sequence[str] items: Array of NetworkLoadBalancersPolicySummary objects.
         """
-        pulumi.set(__self__, "items", items)
+        GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2114,10 +2648,23 @@ class GetNetworkLoadBalancersProtocolsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetNetworkLoadBalancersProtocolsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2142,7 +2689,16 @@ class GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionResu
         """
         :param Sequence[str] items: Array of NetworkLoadBalancersProtocolSummary objects.
         """
-        pulumi.set(__self__, "items", items)
+        GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['EnrollmentStatusArgs', 'EnrollmentStatus']
@@ -25,8 +25,19 @@ class EnrollmentStatusArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "enrollment_status_id", enrollment_status_id)
-        pulumi.set(__self__, "status", status)
+        EnrollmentStatusArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enrollment_status_id=enrollment_status_id,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enrollment_status_id: pulumi.Input[str],
+             status: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("enrollment_status_id", enrollment_status_id)
+        _setter("status", status)
 
     @property
     @pulumi.getter(name="enrollmentStatusId")
@@ -81,20 +92,41 @@ class _EnrollmentStatusState:
         :param pulumi.Input[str] time_created: The date and time the enrollment status was created, in the format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the enrollment status was last updated, in the format defined by RFC3339.
         """
+        _EnrollmentStatusState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            enrollment_status_id=enrollment_status_id,
+            state=state,
+            status=status,
+            status_reason=status_reason,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             enrollment_status_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             status_reason: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if enrollment_status_id is not None:
-            pulumi.set(__self__, "enrollment_status_id", enrollment_status_id)
+            _setter("enrollment_status_id", enrollment_status_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if status_reason is not None:
-            pulumi.set(__self__, "status_reason", status_reason)
+            _setter("status_reason", status_reason)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -244,6 +276,10 @@ class EnrollmentStatus(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            EnrollmentStatusArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

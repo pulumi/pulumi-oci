@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -32,13 +32,30 @@ class HeatWaveClusterArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "cluster_size", cluster_size)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "shape_name", shape_name)
+        HeatWaveClusterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cluster_size=cluster_size,
+            db_system_id=db_system_id,
+            shape_name=shape_name,
+            is_lakehouse_enabled=is_lakehouse_enabled,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cluster_size: pulumi.Input[int],
+             db_system_id: pulumi.Input[str],
+             shape_name: pulumi.Input[str],
+             is_lakehouse_enabled: Optional[pulumi.Input[bool]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cluster_size", cluster_size)
+        _setter("db_system_id", db_system_id)
+        _setter("shape_name", shape_name)
         if is_lakehouse_enabled is not None:
-            pulumi.set(__self__, "is_lakehouse_enabled", is_lakehouse_enabled)
+            _setter("is_lakehouse_enabled", is_lakehouse_enabled)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter(name="clusterSize")
@@ -131,24 +148,49 @@ class _HeatWaveClusterState:
         :param pulumi.Input[str] time_created: The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] time_updated: The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
+        _HeatWaveClusterState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cluster_nodes=cluster_nodes,
+            cluster_size=cluster_size,
+            db_system_id=db_system_id,
+            is_lakehouse_enabled=is_lakehouse_enabled,
+            lifecycle_details=lifecycle_details,
+            shape_name=shape_name,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cluster_nodes: Optional[pulumi.Input[Sequence[pulumi.Input['HeatWaveClusterClusterNodeArgs']]]] = None,
+             cluster_size: Optional[pulumi.Input[int]] = None,
+             db_system_id: Optional[pulumi.Input[str]] = None,
+             is_lakehouse_enabled: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             shape_name: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if cluster_nodes is not None:
-            pulumi.set(__self__, "cluster_nodes", cluster_nodes)
+            _setter("cluster_nodes", cluster_nodes)
         if cluster_size is not None:
-            pulumi.set(__self__, "cluster_size", cluster_size)
+            _setter("cluster_size", cluster_size)
         if db_system_id is not None:
-            pulumi.set(__self__, "db_system_id", db_system_id)
+            _setter("db_system_id", db_system_id)
         if is_lakehouse_enabled is not None:
-            pulumi.set(__self__, "is_lakehouse_enabled", is_lakehouse_enabled)
+            _setter("is_lakehouse_enabled", is_lakehouse_enabled)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if shape_name is not None:
-            pulumi.set(__self__, "shape_name", shape_name)
+            _setter("shape_name", shape_name)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="clusterNodes")
@@ -352,6 +394,10 @@ class HeatWaveCluster(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            HeatWaveClusterArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -53,31 +53,68 @@ class DomainArgs:
         :param pulumi.Input[bool] is_primary_email_required: Optional field to indicate whether users in the domain are required to have a primary email address or not Defaults to true
         :param pulumi.Input[str] state: The current state.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "home_region", home_region)
-        pulumi.set(__self__, "license_type", license_type)
+        DomainArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            description=description,
+            display_name=display_name,
+            home_region=home_region,
+            license_type=license_type,
+            admin_email=admin_email,
+            admin_first_name=admin_first_name,
+            admin_last_name=admin_last_name,
+            admin_user_name=admin_user_name,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_hidden_on_login=is_hidden_on_login,
+            is_notification_bypassed=is_notification_bypassed,
+            is_primary_email_required=is_primary_email_required,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             description: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             home_region: pulumi.Input[str],
+             license_type: pulumi.Input[str],
+             admin_email: Optional[pulumi.Input[str]] = None,
+             admin_first_name: Optional[pulumi.Input[str]] = None,
+             admin_last_name: Optional[pulumi.Input[str]] = None,
+             admin_user_name: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_hidden_on_login: Optional[pulumi.Input[bool]] = None,
+             is_notification_bypassed: Optional[pulumi.Input[bool]] = None,
+             is_primary_email_required: Optional[pulumi.Input[bool]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("home_region", home_region)
+        _setter("license_type", license_type)
         if admin_email is not None:
-            pulumi.set(__self__, "admin_email", admin_email)
+            _setter("admin_email", admin_email)
         if admin_first_name is not None:
-            pulumi.set(__self__, "admin_first_name", admin_first_name)
+            _setter("admin_first_name", admin_first_name)
         if admin_last_name is not None:
-            pulumi.set(__self__, "admin_last_name", admin_last_name)
+            _setter("admin_last_name", admin_last_name)
         if admin_user_name is not None:
-            pulumi.set(__self__, "admin_user_name", admin_user_name)
+            _setter("admin_user_name", admin_user_name)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_hidden_on_login is not None:
-            pulumi.set(__self__, "is_hidden_on_login", is_hidden_on_login)
+            _setter("is_hidden_on_login", is_hidden_on_login)
         if is_notification_bypassed is not None:
-            pulumi.set(__self__, "is_notification_bypassed", is_notification_bypassed)
+            _setter("is_notification_bypassed", is_notification_bypassed)
         if is_primary_email_required is not None:
-            pulumi.set(__self__, "is_primary_email_required", is_primary_email_required)
+            _setter("is_primary_email_required", is_primary_email_required)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -316,48 +353,97 @@ class _DomainState:
         :param pulumi.Input[str] type: The type of the domain.
         :param pulumi.Input[str] url: Region agnostic domain URL.
         """
+        _DomainState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_email=admin_email,
+            admin_first_name=admin_first_name,
+            admin_last_name=admin_last_name,
+            admin_user_name=admin_user_name,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            home_region=home_region,
+            home_region_url=home_region_url,
+            is_hidden_on_login=is_hidden_on_login,
+            is_notification_bypassed=is_notification_bypassed,
+            is_primary_email_required=is_primary_email_required,
+            license_type=license_type,
+            lifecycle_details=lifecycle_details,
+            replica_regions=replica_regions,
+            state=state,
+            time_created=time_created,
+            type=type,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_email: Optional[pulumi.Input[str]] = None,
+             admin_first_name: Optional[pulumi.Input[str]] = None,
+             admin_last_name: Optional[pulumi.Input[str]] = None,
+             admin_user_name: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             home_region: Optional[pulumi.Input[str]] = None,
+             home_region_url: Optional[pulumi.Input[str]] = None,
+             is_hidden_on_login: Optional[pulumi.Input[bool]] = None,
+             is_notification_bypassed: Optional[pulumi.Input[bool]] = None,
+             is_primary_email_required: Optional[pulumi.Input[bool]] = None,
+             license_type: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             replica_regions: Optional[pulumi.Input[Sequence[pulumi.Input['DomainReplicaRegionArgs']]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             url: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if admin_email is not None:
-            pulumi.set(__self__, "admin_email", admin_email)
+            _setter("admin_email", admin_email)
         if admin_first_name is not None:
-            pulumi.set(__self__, "admin_first_name", admin_first_name)
+            _setter("admin_first_name", admin_first_name)
         if admin_last_name is not None:
-            pulumi.set(__self__, "admin_last_name", admin_last_name)
+            _setter("admin_last_name", admin_last_name)
         if admin_user_name is not None:
-            pulumi.set(__self__, "admin_user_name", admin_user_name)
+            _setter("admin_user_name", admin_user_name)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if home_region is not None:
-            pulumi.set(__self__, "home_region", home_region)
+            _setter("home_region", home_region)
         if home_region_url is not None:
-            pulumi.set(__self__, "home_region_url", home_region_url)
+            _setter("home_region_url", home_region_url)
         if is_hidden_on_login is not None:
-            pulumi.set(__self__, "is_hidden_on_login", is_hidden_on_login)
+            _setter("is_hidden_on_login", is_hidden_on_login)
         if is_notification_bypassed is not None:
-            pulumi.set(__self__, "is_notification_bypassed", is_notification_bypassed)
+            _setter("is_notification_bypassed", is_notification_bypassed)
         if is_primary_email_required is not None:
-            pulumi.set(__self__, "is_primary_email_required", is_primary_email_required)
+            _setter("is_primary_email_required", is_primary_email_required)
         if license_type is not None:
-            pulumi.set(__self__, "license_type", license_type)
+            _setter("license_type", license_type)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if replica_regions is not None:
-            pulumi.set(__self__, "replica_regions", replica_regions)
+            _setter("replica_regions", replica_regions)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if url is not None:
-            pulumi.set(__self__, "url", url)
+            _setter("url", url)
 
     @property
     @pulumi.getter(name="adminEmail")
@@ -785,6 +871,10 @@ class Domain(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DomainArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

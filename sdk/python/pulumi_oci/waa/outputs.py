@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -62,8 +62,17 @@ class AppAccelerationPolicyResponseCachingPolicy(dict):
                
                If the header includes the "Vary" field with the special value "*", such a response will not be cached. If the header includes the "Vary" field with another value, such a response will be cached taking into account the corresponding request header fields.
         """
+        AppAccelerationPolicyResponseCachingPolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_response_header_based_caching_enabled=is_response_header_based_caching_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_response_header_based_caching_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if is_response_header_based_caching_enabled is not None:
-            pulumi.set(__self__, "is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
+            _setter("is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
 
     @property
     @pulumi.getter(name="isResponseHeaderBasedCachingEnabled")
@@ -108,8 +117,17 @@ class AppAccelerationPolicyResponseCompressionPolicy(dict):
         """
         :param 'AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs' gzip_compression: (Updatable) An object that specifies the gzip compression policy.
         """
+        AppAccelerationPolicyResponseCompressionPolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            gzip_compression=gzip_compression,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             gzip_compression: Optional['outputs.AppAccelerationPolicyResponseCompressionPolicyGzipCompression'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if gzip_compression is not None:
-            pulumi.set(__self__, "gzip_compression", gzip_compression)
+            _setter("gzip_compression", gzip_compression)
 
     @property
     @pulumi.getter(name="gzipCompression")
@@ -146,8 +164,17 @@ class AppAccelerationPolicyResponseCompressionPolicyGzipCompression(dict):
                
                When false, support for gzip compression is disabled and HTTP responses will not be compressed with gzip even if the client indicates support for gzip.
         """
+        AppAccelerationPolicyResponseCompressionPolicyGzipCompression._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -166,10 +193,23 @@ class GetAppAccelerationPoliciesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAppAccelerationPoliciesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -191,7 +231,16 @@ class GetAppAccelerationPoliciesFilterResult(dict):
 class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -228,18 +277,49 @@ class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResult(dic
         :param str time_created: The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the WebAppAccelerationPolicy was updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "response_caching_policies", response_caching_policies)
-        pulumi.set(__self__, "response_compression_policies", response_compression_policies)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            response_caching_policies=response_caching_policies,
+            response_compression_policies=response_compression_policies,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             response_caching_policies: Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyResult'],
+             response_compression_policies: Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyResult'],
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("response_caching_policies", response_caching_policies)
+        _setter("response_compression_policies", response_compression_policies)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -345,7 +425,16 @@ class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCa
         """
         :param bool is_response_header_based_caching_enabled: When false, responses will not be cached by the backend based on response headers.
         """
-        pulumi.set(__self__, "is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
+        GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_response_header_based_caching_enabled=is_response_header_based_caching_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_response_header_based_caching_enabled: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
 
     @property
     @pulumi.getter(name="isResponseHeaderBasedCachingEnabled")
@@ -363,7 +452,16 @@ class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCo
         """
         :param Sequence['GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionArgs'] gzip_compressions: An object that specifies the gzip compression policy.
         """
-        pulumi.set(__self__, "gzip_compressions", gzip_compressions)
+        GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            gzip_compressions=gzip_compressions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             gzip_compressions: Sequence['outputs.GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("gzip_compressions", gzip_compressions)
 
     @property
     @pulumi.getter(name="gzipCompressions")
@@ -381,7 +479,16 @@ class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCo
         """
         :param bool is_enabled: When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompressionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -399,7 +506,16 @@ class GetAppAccelerationPolicyResponseCachingPolicyResult(dict):
         """
         :param bool is_response_header_based_caching_enabled: When false, responses will not be cached by the backend based on response headers.
         """
-        pulumi.set(__self__, "is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
+        GetAppAccelerationPolicyResponseCachingPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_response_header_based_caching_enabled=is_response_header_based_caching_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_response_header_based_caching_enabled: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_response_header_based_caching_enabled", is_response_header_based_caching_enabled)
 
     @property
     @pulumi.getter(name="isResponseHeaderBasedCachingEnabled")
@@ -417,7 +533,16 @@ class GetAppAccelerationPolicyResponseCompressionPolicyResult(dict):
         """
         :param Sequence['GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs'] gzip_compressions: An object that specifies the gzip compression policy.
         """
-        pulumi.set(__self__, "gzip_compressions", gzip_compressions)
+        GetAppAccelerationPolicyResponseCompressionPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            gzip_compressions=gzip_compressions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             gzip_compressions: Sequence['outputs.GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("gzip_compressions", gzip_compressions)
 
     @property
     @pulumi.getter(name="gzipCompressions")
@@ -435,7 +560,16 @@ class GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionResult(dic
         """
         :param bool is_enabled: When true, support for gzip compression is enabled. HTTP responses will be compressed with gzip only if the client indicates support for gzip via the "Accept-Encoding: gzip" request header.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetAppAccelerationPolicyResponseCompressionPolicyGzipCompressionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -452,10 +586,23 @@ class GetAppAccelerationsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAppAccelerationsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -477,7 +624,16 @@ class GetAppAccelerationsFilterResult(dict):
 class GetAppAccelerationsWebAppAccelerationCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAppAccelerationsWebAppAccelerationCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetAppAccelerationsWebAppAccelerationCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAppAccelerationsWebAppAccelerationCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -516,19 +672,52 @@ class GetAppAccelerationsWebAppAccelerationCollectionItemResult(dict):
         :param str time_updated: The time the WebAppAcceleration was updated. An RFC3339 formatted datetime string.
         :param str web_app_acceleration_policy_id: A filter to return only the WebAppAcceleration with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related WebAppAccelerationPolicy.
         """
-        pulumi.set(__self__, "backend_type", backend_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "web_app_acceleration_policy_id", web_app_acceleration_policy_id)
+        GetAppAccelerationsWebAppAccelerationCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backend_type=backend_type,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            load_balancer_id=load_balancer_id,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            web_app_acceleration_policy_id=web_app_acceleration_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backend_type: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             load_balancer_id: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             web_app_acceleration_policy_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("backend_type", backend_type)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("load_balancer_id", load_balancer_id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("web_app_acceleration_policy_id", web_app_acceleration_policy_id)
 
     @property
     @pulumi.getter(name="backendType")

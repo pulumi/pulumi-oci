@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -56,13 +56,28 @@ class QuotaLock(dict):
         :param str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
         :param str time_created: Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
         """
-        pulumi.set(__self__, "type", type)
+        QuotaLock._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            message=message,
+            related_resource_id=related_resource_id,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             message: Optional[str] = None,
+             related_resource_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if message is not None:
-            pulumi.set(__self__, "message", message)
+            _setter("message", message)
         if related_resource_id is not None:
-            pulumi.set(__self__, "related_resource_id", related_resource_id)
+            _setter("related_resource_id", related_resource_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter
@@ -106,10 +121,23 @@ class GetLimitDefinitionsFilterResult(dict):
         """
         :param str name: Optional field, filter for a specific resource limit.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetLimitDefinitionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -153,15 +181,40 @@ class GetLimitDefinitionsLimitDefinitionResult(dict):
         :param str scope_type: Reflects the scope of the resource limit, whether Global (across all regions), regional, or availability domain-specific.
         :param str service_name: The target service name.
         """
-        pulumi.set(__self__, "are_quotas_supported", are_quotas_supported)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "is_deprecated", is_deprecated)
-        pulumi.set(__self__, "is_dynamic", is_dynamic)
-        pulumi.set(__self__, "is_eligible_for_limit_increase", is_eligible_for_limit_increase)
-        pulumi.set(__self__, "is_resource_availability_supported", is_resource_availability_supported)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "scope_type", scope_type)
-        pulumi.set(__self__, "service_name", service_name)
+        GetLimitDefinitionsLimitDefinitionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            are_quotas_supported=are_quotas_supported,
+            description=description,
+            is_deprecated=is_deprecated,
+            is_dynamic=is_dynamic,
+            is_eligible_for_limit_increase=is_eligible_for_limit_increase,
+            is_resource_availability_supported=is_resource_availability_supported,
+            name=name,
+            scope_type=scope_type,
+            service_name=service_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             are_quotas_supported: bool,
+             description: str,
+             is_deprecated: bool,
+             is_dynamic: bool,
+             is_eligible_for_limit_increase: bool,
+             is_resource_availability_supported: bool,
+             name: str,
+             scope_type: str,
+             service_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("are_quotas_supported", are_quotas_supported)
+        _setter("description", description)
+        _setter("is_deprecated", is_deprecated)
+        _setter("is_dynamic", is_dynamic)
+        _setter("is_eligible_for_limit_increase", is_eligible_for_limit_increase)
+        _setter("is_resource_availability_supported", is_resource_availability_supported)
+        _setter("name", name)
+        _setter("scope_type", scope_type)
+        _setter("service_name", service_name)
 
     @property
     @pulumi.getter(name="areQuotasSupported")
@@ -245,10 +298,23 @@ class GetLimitValuesFilterResult(dict):
         """
         :param str name: Optional field, can be used to see a specific resource limit value.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetLimitValuesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -282,10 +348,25 @@ class GetLimitValuesLimitValueResult(dict):
         :param str scope_type: Filter entries by scope type.
         :param str value: The resource limit value.
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "scope_type", scope_type)
-        pulumi.set(__self__, "value", value)
+        GetLimitValuesLimitValueResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            name=name,
+            scope_type=scope_type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: str,
+             name: str,
+             scope_type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("name", name)
+        _setter("scope_type", scope_type)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -333,10 +414,25 @@ class GetQuotaLockResult(dict):
         :param str time_created: Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
         :param str type: Lock type.
         """
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "related_resource_id", related_resource_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "type", type)
+        GetQuotaLockResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            message=message,
+            related_resource_id=related_resource_id,
+            time_created=time_created,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             message: str,
+             related_resource_id: str,
+             time_created: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("message", message)
+        _setter("related_resource_id", related_resource_id)
+        _setter("time_created", time_created)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -380,10 +476,23 @@ class GetQuotasFilterResult(dict):
         """
         :param str name: name
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetQuotasFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -430,17 +539,46 @@ class GetQuotasQuotaResult(dict):
         :param Sequence[str] statements: An array of one or more quota statements written in the declarative quota statement language.
         :param str time_created: Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_lock_override", is_lock_override)
-        pulumi.set(__self__, "locks", locks)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "statements", statements)
-        pulumi.set(__self__, "time_created", time_created)
+        GetQuotasQuotaResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_lock_override=is_lock_override,
+            locks=locks,
+            name=name,
+            state=state,
+            statements=statements,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_lock_override: bool,
+             locks: Sequence['outputs.GetQuotasQuotaLockResult'],
+             name: str,
+             state: str,
+             statements: Sequence[str],
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_lock_override", is_lock_override)
+        _setter("locks", locks)
+        _setter("name", name)
+        _setter("state", state)
+        _setter("statements", statements)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -541,10 +679,25 @@ class GetQuotasQuotaLockResult(dict):
         :param str time_created: Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
         :param str type: Lock type.
         """
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "related_resource_id", related_resource_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "type", type)
+        GetQuotasQuotaLockResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            message=message,
+            related_resource_id=related_resource_id,
+            time_created=time_created,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             message: str,
+             related_resource_id: str,
+             time_created: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("message", message)
+        _setter("related_resource_id", related_resource_id)
+        _setter("time_created", time_created)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -588,10 +741,23 @@ class GetServicesFilterResult(dict):
         """
         :param str name: The service name. Use this when calling other APIs.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetServicesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -621,8 +787,19 @@ class GetServicesServiceResult(dict):
         :param str description: The friendly service name.
         :param str name: The service name. Use this when calling other APIs.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "name", name)
+        GetServicesServiceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("name", name)
 
     @property
     @pulumi.getter

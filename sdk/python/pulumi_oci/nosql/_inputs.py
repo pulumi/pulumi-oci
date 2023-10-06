@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -30,11 +30,24 @@ class IndexKeyArgs:
         :param pulumi.Input[str] json_field_type: If the specified column is of type JSON, jsonFieldType contains the type of the field indicated by jsonPath.
         :param pulumi.Input[str] json_path: If the specified column is of type JSON, jsonPath contains a dotted path indicating the field within the JSON object that will be the index key.
         """
-        pulumi.set(__self__, "column_name", column_name)
+        IndexKeyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            json_field_type=json_field_type,
+            json_path=json_path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: pulumi.Input[str],
+             json_field_type: Optional[pulumi.Input[str]] = None,
+             json_path: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("column_name", column_name)
         if json_field_type is not None:
-            pulumi.set(__self__, "json_field_type", json_field_type)
+            _setter("json_field_type", json_field_type)
         if json_path is not None:
-            pulumi.set(__self__, "json_path", json_path)
+            _setter("json_path", json_path)
 
     @property
     @pulumi.getter(name="columnName")
@@ -88,16 +101,33 @@ class TableSchemaArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] shard_keys: A list of column names that make up a key.
         :param pulumi.Input[int] ttl: The default Time-to-Live for the table, in days.
         """
+        TableSchemaArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            columns=columns,
+            identities=identities,
+            primary_keys=primary_keys,
+            shard_keys=shard_keys,
+            ttl=ttl,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             columns: Optional[pulumi.Input[Sequence[pulumi.Input['TableSchemaColumnArgs']]]] = None,
+             identities: Optional[pulumi.Input[Sequence[pulumi.Input['TableSchemaIdentityArgs']]]] = None,
+             primary_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             shard_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             ttl: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if columns is not None:
-            pulumi.set(__self__, "columns", columns)
+            _setter("columns", columns)
         if identities is not None:
-            pulumi.set(__self__, "identities", identities)
+            _setter("identities", identities)
         if primary_keys is not None:
-            pulumi.set(__self__, "primary_keys", primary_keys)
+            _setter("primary_keys", primary_keys)
         if shard_keys is not None:
-            pulumi.set(__self__, "shard_keys", shard_keys)
+            _setter("shard_keys", shard_keys)
         if ttl is not None:
-            pulumi.set(__self__, "ttl", ttl)
+            _setter("ttl", ttl)
 
     @property
     @pulumi.getter
@@ -177,18 +207,37 @@ class TableSchemaColumnArgs:
         :param pulumi.Input[str] name: Table name.
         :param pulumi.Input[str] type: The column type.
         """
+        TableSchemaColumnArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_value=default_value,
+            is_as_uuid=is_as_uuid,
+            is_generated=is_generated,
+            is_nullable=is_nullable,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_value: Optional[pulumi.Input[str]] = None,
+             is_as_uuid: Optional[pulumi.Input[bool]] = None,
+             is_generated: Optional[pulumi.Input[bool]] = None,
+             is_nullable: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if default_value is not None:
-            pulumi.set(__self__, "default_value", default_value)
+            _setter("default_value", default_value)
         if is_as_uuid is not None:
-            pulumi.set(__self__, "is_as_uuid", is_as_uuid)
+            _setter("is_as_uuid", is_as_uuid)
         if is_generated is not None:
-            pulumi.set(__self__, "is_generated", is_generated)
+            _setter("is_generated", is_generated)
         if is_nullable is not None:
-            pulumi.set(__self__, "is_nullable", is_nullable)
+            _setter("is_nullable", is_nullable)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="defaultValue")
@@ -274,12 +323,25 @@ class TableSchemaIdentityArgs:
         :param pulumi.Input[bool] is_always: True if the identity value is GENERATED ALWAYS.
         :param pulumi.Input[bool] is_null: True if the identity value is GENERATED BY DEFAULT ON NULL.
         """
+        TableSchemaIdentityArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            is_always=is_always,
+            is_null=is_null,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: Optional[pulumi.Input[str]] = None,
+             is_always: Optional[pulumi.Input[bool]] = None,
+             is_null: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if column_name is not None:
-            pulumi.set(__self__, "column_name", column_name)
+            _setter("column_name", column_name)
         if is_always is not None:
-            pulumi.set(__self__, "is_always", is_always)
+            _setter("is_always", is_always)
         if is_null is not None:
-            pulumi.set(__self__, "is_null", is_null)
+            _setter("is_null", is_null)
 
     @property
     @pulumi.getter(name="columnName")
@@ -335,11 +397,26 @@ class TableTableLimitsArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] capacity_mode: (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
         """
-        pulumi.set(__self__, "max_read_units", max_read_units)
-        pulumi.set(__self__, "max_storage_in_gbs", max_storage_in_gbs)
-        pulumi.set(__self__, "max_write_units", max_write_units)
+        TableTableLimitsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            max_read_units=max_read_units,
+            max_storage_in_gbs=max_storage_in_gbs,
+            max_write_units=max_write_units,
+            capacity_mode=capacity_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             max_read_units: pulumi.Input[int],
+             max_storage_in_gbs: pulumi.Input[int],
+             max_write_units: pulumi.Input[int],
+             capacity_mode: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("max_read_units", max_read_units)
+        _setter("max_storage_in_gbs", max_storage_in_gbs)
+        _setter("max_write_units", max_write_units)
         if capacity_mode is not None:
-            pulumi.set(__self__, "capacity_mode", capacity_mode)
+            _setter("capacity_mode", capacity_mode)
 
     @property
     @pulumi.getter(name="maxReadUnits")
@@ -403,10 +480,23 @@ class GetIndexesFilterArgs:
         """
         :param str name: A shell-globbing-style (*?[]) filter for names.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetIndexesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -448,10 +538,23 @@ class GetTablesFilterArgs:
         """
         :param str name: A shell-globbing-style (*?[]) filter for names.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetTablesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

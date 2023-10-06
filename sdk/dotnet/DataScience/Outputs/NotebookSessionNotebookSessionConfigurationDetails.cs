@@ -22,6 +22,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly Outputs.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails? NotebookSessionShapeConfigDetails;
         /// <summary>
+        /// (Updatable) The OCID of a Data Science private endpoint.
+        /// </summary>
+        public readonly string? PrivateEndpointId;
+        /// <summary>
         /// (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
         /// </summary>
         public readonly string Shape;
@@ -36,12 +40,15 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             Outputs.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails? notebookSessionShapeConfigDetails,
 
+            string? privateEndpointId,
+
             string shape,
 
             string subnetId)
         {
             BlockStorageSizeInGbs = blockStorageSizeInGbs;
             NotebookSessionShapeConfigDetails = notebookSessionShapeConfigDetails;
+            PrivateEndpointId = privateEndpointId;
             Shape = shape;
             SubnetId = subnetId;
         }

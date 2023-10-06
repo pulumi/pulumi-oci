@@ -13,6 +13,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
     [OutputType]
     public sealed class MigrationDumpTransferDetails
     {
+        public readonly string? SharedStorageMountTargetId;
         /// <summary>
         /// (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
         /// </summary>
@@ -24,10 +25,13 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
 
         [OutputConstructor]
         private MigrationDumpTransferDetails(
+            string? sharedStorageMountTargetId,
+
             Outputs.MigrationDumpTransferDetailsSource? source,
 
             Outputs.MigrationDumpTransferDetailsTarget? target)
         {
+            SharedStorageMountTargetId = sharedStorageMountTargetId;
             Source = source;
             Target = target;
         }

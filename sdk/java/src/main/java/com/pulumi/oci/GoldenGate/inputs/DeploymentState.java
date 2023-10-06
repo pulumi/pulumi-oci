@@ -429,17 +429,9 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.publicIpAddress);
     }
 
-    /**
-     * Possible lifecycle states.
-     * 
-     */
     @Import(name="state")
     private @Nullable Output<String> state;
 
-    /**
-     * @return Possible lifecycle states.
-     * 
-     */
     public Optional<Output<String>> state() {
         return Optional.ofNullable(this.state);
     }
@@ -1210,23 +1202,11 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
             return publicIpAddress(Output.of(publicIpAddress));
         }
 
-        /**
-         * @param state Possible lifecycle states.
-         * 
-         * @return builder
-         * 
-         */
         public Builder state(@Nullable Output<String> state) {
             $.state = state;
             return this;
         }
 
-        /**
-         * @param state Possible lifecycle states.
-         * 
-         * @return builder
-         * 
-         */
         public Builder state(String state) {
             return state(Output.of(state));
         }

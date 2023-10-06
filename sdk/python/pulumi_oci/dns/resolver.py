@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -43,21 +43,44 @@ class ResolverArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "resolver_id", resolver_id)
+        ResolverArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            resolver_id=resolver_id,
+            attached_views=attached_views,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            rules=rules,
+            scope=scope,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             resolver_id: pulumi.Input[str],
+             attached_views: Optional[pulumi.Input[Sequence[pulumi.Input['ResolverAttachedViewArgs']]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             rules: Optional[pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]]] = None,
+             scope: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("resolver_id", resolver_id)
         if attached_views is not None:
-            pulumi.set(__self__, "attached_views", attached_views)
+            _setter("attached_views", attached_views)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if rules is not None:
-            pulumi.set(__self__, "rules", rules)
+            _setter("rules", rules)
         if scope is not None:
-            pulumi.set(__self__, "scope", scope)
+            _setter("scope", scope)
 
     @property
     @pulumi.getter(name="resolverId")
@@ -210,38 +233,77 @@ class _ResolverState:
         :param pulumi.Input[str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         :param pulumi.Input[str] time_updated: The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         """
+        _ResolverState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            attached_vcn_id=attached_vcn_id,
+            attached_views=attached_views,
+            compartment_id=compartment_id,
+            default_view_id=default_view_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            endpoints=endpoints,
+            freeform_tags=freeform_tags,
+            is_protected=is_protected,
+            resolver_id=resolver_id,
+            rules=rules,
+            scope=scope,
+            self=self,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             attached_vcn_id: Optional[pulumi.Input[str]] = None,
+             attached_views: Optional[pulumi.Input[Sequence[pulumi.Input['ResolverAttachedViewArgs']]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             default_view_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['ResolverEndpointArgs']]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_protected: Optional[pulumi.Input[bool]] = None,
+             resolver_id: Optional[pulumi.Input[str]] = None,
+             rules: Optional[pulumi.Input[Sequence[pulumi.Input['ResolverRuleArgs']]]] = None,
+             scope: Optional[pulumi.Input[str]] = None,
+             self: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if attached_vcn_id is not None:
-            pulumi.set(__self__, "attached_vcn_id", attached_vcn_id)
+            _setter("attached_vcn_id", attached_vcn_id)
         if attached_views is not None:
-            pulumi.set(__self__, "attached_views", attached_views)
+            _setter("attached_views", attached_views)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if default_view_id is not None:
-            pulumi.set(__self__, "default_view_id", default_view_id)
+            _setter("default_view_id", default_view_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if endpoints is not None:
-            pulumi.set(__self__, "endpoints", endpoints)
+            _setter("endpoints", endpoints)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_protected is not None:
-            pulumi.set(__self__, "is_protected", is_protected)
+            _setter("is_protected", is_protected)
         if resolver_id is not None:
-            pulumi.set(__self__, "resolver_id", resolver_id)
+            _setter("resolver_id", resolver_id)
         if rules is not None:
-            pulumi.set(__self__, "rules", rules)
+            _setter("rules", rules)
         if scope is not None:
-            pulumi.set(__self__, "scope", scope)
+            _setter("scope", scope)
         if self is not None:
-            pulumi.set(__self__, "self", self)
+            _setter("self", self)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="attachedVcnId")
@@ -525,6 +587,10 @@ class Resolver(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ResolverArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

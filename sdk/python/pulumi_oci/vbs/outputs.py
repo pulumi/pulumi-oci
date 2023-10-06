@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -25,10 +25,23 @@ class GetInstVbsInstancesFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetInstVbsInstancesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -53,7 +66,16 @@ class GetInstVbsInstancesFilterResult(dict):
 class GetInstVbsInstancesVbsInstanceSummaryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetInstVbsInstancesVbsInstanceSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetInstVbsInstancesVbsInstanceSummaryCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetInstVbsInstancesVbsInstanceSummaryCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -95,21 +117,58 @@ class GetInstVbsInstancesVbsInstanceSummaryCollectionItemResult(dict):
         :param str time_updated: The time the VbsInstance was updated. An RFC3339 formatted datetime string
         :param str vbs_access_url: Public web URL for accessing the VBS service instance
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "idcs_access_token", idcs_access_token)
-        pulumi.set(__self__, "is_resource_usage_agreement_granted", is_resource_usage_agreement_granted)
-        pulumi.set(__self__, "lifecyle_details", lifecyle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "resource_compartment_id", resource_compartment_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "vbs_access_url", vbs_access_url)
+        GetInstVbsInstancesVbsInstanceSummaryCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            idcs_access_token=idcs_access_token,
+            is_resource_usage_agreement_granted=is_resource_usage_agreement_granted,
+            lifecyle_details=lifecyle_details,
+            name=name,
+            resource_compartment_id=resource_compartment_id,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            vbs_access_url=vbs_access_url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             idcs_access_token: str,
+             is_resource_usage_agreement_granted: bool,
+             lifecyle_details: str,
+             name: str,
+             resource_compartment_id: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             vbs_access_url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("idcs_access_token", idcs_access_token)
+        _setter("is_resource_usage_agreement_granted", is_resource_usage_agreement_granted)
+        _setter("lifecyle_details", lifecyle_details)
+        _setter("name", name)
+        _setter("resource_compartment_id", resource_compartment_id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("vbs_access_url", vbs_access_url)
 
     @property
     @pulumi.getter(name="compartmentId")

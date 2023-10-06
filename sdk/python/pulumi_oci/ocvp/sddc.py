@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -93,57 +93,128 @@ class SddcArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
-        pulumi.set(__self__, "esxi_hosts_count", esxi_hosts_count)
-        pulumi.set(__self__, "nsx_edge_uplink1vlan_id", nsx_edge_uplink1vlan_id)
-        pulumi.set(__self__, "nsx_edge_uplink2vlan_id", nsx_edge_uplink2vlan_id)
-        pulumi.set(__self__, "nsx_edge_vtep_vlan_id", nsx_edge_vtep_vlan_id)
-        pulumi.set(__self__, "nsx_vtep_vlan_id", nsx_vtep_vlan_id)
-        pulumi.set(__self__, "provisioning_subnet_id", provisioning_subnet_id)
-        pulumi.set(__self__, "ssh_authorized_keys", ssh_authorized_keys)
-        pulumi.set(__self__, "vmotion_vlan_id", vmotion_vlan_id)
-        pulumi.set(__self__, "vmware_software_version", vmware_software_version)
-        pulumi.set(__self__, "vsan_vlan_id", vsan_vlan_id)
-        pulumi.set(__self__, "vsphere_vlan_id", vsphere_vlan_id)
+        SddcArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            compute_availability_domain=compute_availability_domain,
+            esxi_hosts_count=esxi_hosts_count,
+            nsx_edge_uplink1vlan_id=nsx_edge_uplink1vlan_id,
+            nsx_edge_uplink2vlan_id=nsx_edge_uplink2vlan_id,
+            nsx_edge_vtep_vlan_id=nsx_edge_vtep_vlan_id,
+            nsx_vtep_vlan_id=nsx_vtep_vlan_id,
+            provisioning_subnet_id=provisioning_subnet_id,
+            ssh_authorized_keys=ssh_authorized_keys,
+            vmotion_vlan_id=vmotion_vlan_id,
+            vmware_software_version=vmware_software_version,
+            vsan_vlan_id=vsan_vlan_id,
+            vsphere_vlan_id=vsphere_vlan_id,
+            capacity_reservation_id=capacity_reservation_id,
+            datastores=datastores,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            hcx_action=hcx_action,
+            hcx_vlan_id=hcx_vlan_id,
+            initial_host_ocpu_count=initial_host_ocpu_count,
+            initial_host_shape_name=initial_host_shape_name,
+            initial_sku=initial_sku,
+            instance_display_name_prefix=instance_display_name_prefix,
+            is_hcx_enabled=is_hcx_enabled,
+            is_shielded_instance_enabled=is_shielded_instance_enabled,
+            is_single_host_sddc=is_single_host_sddc,
+            provisioning_vlan_id=provisioning_vlan_id,
+            refresh_hcx_license_status=refresh_hcx_license_status,
+            replication_vlan_id=replication_vlan_id,
+            reserving_hcx_on_premise_license_keys=reserving_hcx_on_premise_license_keys,
+            workload_network_cidr=workload_network_cidr,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             compute_availability_domain: pulumi.Input[str],
+             esxi_hosts_count: pulumi.Input[int],
+             nsx_edge_uplink1vlan_id: pulumi.Input[str],
+             nsx_edge_uplink2vlan_id: pulumi.Input[str],
+             nsx_edge_vtep_vlan_id: pulumi.Input[str],
+             nsx_vtep_vlan_id: pulumi.Input[str],
+             provisioning_subnet_id: pulumi.Input[str],
+             ssh_authorized_keys: pulumi.Input[str],
+             vmotion_vlan_id: pulumi.Input[str],
+             vmware_software_version: pulumi.Input[str],
+             vsan_vlan_id: pulumi.Input[str],
+             vsphere_vlan_id: pulumi.Input[str],
+             capacity_reservation_id: Optional[pulumi.Input[str]] = None,
+             datastores: Optional[pulumi.Input[Sequence[pulumi.Input['SddcDatastoreArgs']]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hcx_action: Optional[pulumi.Input[str]] = None,
+             hcx_vlan_id: Optional[pulumi.Input[str]] = None,
+             initial_host_ocpu_count: Optional[pulumi.Input[float]] = None,
+             initial_host_shape_name: Optional[pulumi.Input[str]] = None,
+             initial_sku: Optional[pulumi.Input[str]] = None,
+             instance_display_name_prefix: Optional[pulumi.Input[str]] = None,
+             is_hcx_enabled: Optional[pulumi.Input[bool]] = None,
+             is_shielded_instance_enabled: Optional[pulumi.Input[bool]] = None,
+             is_single_host_sddc: Optional[pulumi.Input[bool]] = None,
+             provisioning_vlan_id: Optional[pulumi.Input[str]] = None,
+             refresh_hcx_license_status: Optional[pulumi.Input[bool]] = None,
+             replication_vlan_id: Optional[pulumi.Input[str]] = None,
+             reserving_hcx_on_premise_license_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             workload_network_cidr: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("compute_availability_domain", compute_availability_domain)
+        _setter("esxi_hosts_count", esxi_hosts_count)
+        _setter("nsx_edge_uplink1vlan_id", nsx_edge_uplink1vlan_id)
+        _setter("nsx_edge_uplink2vlan_id", nsx_edge_uplink2vlan_id)
+        _setter("nsx_edge_vtep_vlan_id", nsx_edge_vtep_vlan_id)
+        _setter("nsx_vtep_vlan_id", nsx_vtep_vlan_id)
+        _setter("provisioning_subnet_id", provisioning_subnet_id)
+        _setter("ssh_authorized_keys", ssh_authorized_keys)
+        _setter("vmotion_vlan_id", vmotion_vlan_id)
+        _setter("vmware_software_version", vmware_software_version)
+        _setter("vsan_vlan_id", vsan_vlan_id)
+        _setter("vsphere_vlan_id", vsphere_vlan_id)
         if capacity_reservation_id is not None:
-            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+            _setter("capacity_reservation_id", capacity_reservation_id)
         if datastores is not None:
-            pulumi.set(__self__, "datastores", datastores)
+            _setter("datastores", datastores)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hcx_action is not None:
-            pulumi.set(__self__, "hcx_action", hcx_action)
+            _setter("hcx_action", hcx_action)
         if hcx_vlan_id is not None:
-            pulumi.set(__self__, "hcx_vlan_id", hcx_vlan_id)
+            _setter("hcx_vlan_id", hcx_vlan_id)
         if initial_host_ocpu_count is not None:
-            pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
+            _setter("initial_host_ocpu_count", initial_host_ocpu_count)
         if initial_host_shape_name is not None:
-            pulumi.set(__self__, "initial_host_shape_name", initial_host_shape_name)
+            _setter("initial_host_shape_name", initial_host_shape_name)
         if initial_sku is not None:
-            pulumi.set(__self__, "initial_sku", initial_sku)
+            _setter("initial_sku", initial_sku)
         if instance_display_name_prefix is not None:
-            pulumi.set(__self__, "instance_display_name_prefix", instance_display_name_prefix)
+            _setter("instance_display_name_prefix", instance_display_name_prefix)
         if is_hcx_enabled is not None:
-            pulumi.set(__self__, "is_hcx_enabled", is_hcx_enabled)
+            _setter("is_hcx_enabled", is_hcx_enabled)
         if is_shielded_instance_enabled is not None:
-            pulumi.set(__self__, "is_shielded_instance_enabled", is_shielded_instance_enabled)
+            _setter("is_shielded_instance_enabled", is_shielded_instance_enabled)
         if is_single_host_sddc is not None:
-            pulumi.set(__self__, "is_single_host_sddc", is_single_host_sddc)
+            _setter("is_single_host_sddc", is_single_host_sddc)
         if provisioning_vlan_id is not None:
-            pulumi.set(__self__, "provisioning_vlan_id", provisioning_vlan_id)
+            _setter("provisioning_vlan_id", provisioning_vlan_id)
         if refresh_hcx_license_status is not None:
-            pulumi.set(__self__, "refresh_hcx_license_status", refresh_hcx_license_status)
+            _setter("refresh_hcx_license_status", refresh_hcx_license_status)
         if replication_vlan_id is not None:
-            pulumi.set(__self__, "replication_vlan_id", replication_vlan_id)
+            _setter("replication_vlan_id", replication_vlan_id)
         if reserving_hcx_on_premise_license_keys is not None:
-            pulumi.set(__self__, "reserving_hcx_on_premise_license_keys", reserving_hcx_on_premise_license_keys)
+            _setter("reserving_hcx_on_premise_license_keys", reserving_hcx_on_premise_license_keys)
         if workload_network_cidr is not None:
-            pulumi.set(__self__, "workload_network_cidr", workload_network_cidr)
+            _setter("workload_network_cidr", workload_network_cidr)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -672,122 +743,245 @@ class _SddcState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _SddcState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actual_esxi_hosts_count=actual_esxi_hosts_count,
+            capacity_reservation_id=capacity_reservation_id,
+            compartment_id=compartment_id,
+            compute_availability_domain=compute_availability_domain,
+            datastores=datastores,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            esxi_hosts_count=esxi_hosts_count,
+            freeform_tags=freeform_tags,
+            hcx_action=hcx_action,
+            hcx_fqdn=hcx_fqdn,
+            hcx_initial_password=hcx_initial_password,
+            hcx_on_prem_key=hcx_on_prem_key,
+            hcx_on_prem_licenses=hcx_on_prem_licenses,
+            hcx_private_ip_id=hcx_private_ip_id,
+            hcx_vlan_id=hcx_vlan_id,
+            initial_host_ocpu_count=initial_host_ocpu_count,
+            initial_host_shape_name=initial_host_shape_name,
+            initial_sku=initial_sku,
+            instance_display_name_prefix=instance_display_name_prefix,
+            is_hcx_enabled=is_hcx_enabled,
+            is_hcx_enterprise_enabled=is_hcx_enterprise_enabled,
+            is_hcx_pending_downgrade=is_hcx_pending_downgrade,
+            is_shielded_instance_enabled=is_shielded_instance_enabled,
+            is_single_host_sddc=is_single_host_sddc,
+            nsx_edge_uplink1vlan_id=nsx_edge_uplink1vlan_id,
+            nsx_edge_uplink2vlan_id=nsx_edge_uplink2vlan_id,
+            nsx_edge_uplink_ip_id=nsx_edge_uplink_ip_id,
+            nsx_edge_vtep_vlan_id=nsx_edge_vtep_vlan_id,
+            nsx_manager_fqdn=nsx_manager_fqdn,
+            nsx_manager_initial_password=nsx_manager_initial_password,
+            nsx_manager_private_ip_id=nsx_manager_private_ip_id,
+            nsx_manager_username=nsx_manager_username,
+            nsx_overlay_segment_name=nsx_overlay_segment_name,
+            nsx_vtep_vlan_id=nsx_vtep_vlan_id,
+            provisioning_subnet_id=provisioning_subnet_id,
+            provisioning_vlan_id=provisioning_vlan_id,
+            refresh_hcx_license_status=refresh_hcx_license_status,
+            replication_vlan_id=replication_vlan_id,
+            reserving_hcx_on_premise_license_keys=reserving_hcx_on_premise_license_keys,
+            ssh_authorized_keys=ssh_authorized_keys,
+            state=state,
+            time_created=time_created,
+            time_hcx_billing_cycle_end=time_hcx_billing_cycle_end,
+            time_hcx_license_status_updated=time_hcx_license_status_updated,
+            time_updated=time_updated,
+            upgrade_licenses=upgrade_licenses,
+            vcenter_fqdn=vcenter_fqdn,
+            vcenter_initial_password=vcenter_initial_password,
+            vcenter_private_ip_id=vcenter_private_ip_id,
+            vcenter_username=vcenter_username,
+            vmotion_vlan_id=vmotion_vlan_id,
+            vmware_software_version=vmware_software_version,
+            vsan_vlan_id=vsan_vlan_id,
+            vsphere_upgrade_guide=vsphere_upgrade_guide,
+            vsphere_upgrade_objects=vsphere_upgrade_objects,
+            vsphere_vlan_id=vsphere_vlan_id,
+            workload_network_cidr=workload_network_cidr,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actual_esxi_hosts_count: Optional[pulumi.Input[int]] = None,
+             capacity_reservation_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             compute_availability_domain: Optional[pulumi.Input[str]] = None,
+             datastores: Optional[pulumi.Input[Sequence[pulumi.Input['SddcDatastoreArgs']]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             esxi_hosts_count: Optional[pulumi.Input[int]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hcx_action: Optional[pulumi.Input[str]] = None,
+             hcx_fqdn: Optional[pulumi.Input[str]] = None,
+             hcx_initial_password: Optional[pulumi.Input[str]] = None,
+             hcx_on_prem_key: Optional[pulumi.Input[str]] = None,
+             hcx_on_prem_licenses: Optional[pulumi.Input[Sequence[pulumi.Input['SddcHcxOnPremLicenseArgs']]]] = None,
+             hcx_private_ip_id: Optional[pulumi.Input[str]] = None,
+             hcx_vlan_id: Optional[pulumi.Input[str]] = None,
+             initial_host_ocpu_count: Optional[pulumi.Input[float]] = None,
+             initial_host_shape_name: Optional[pulumi.Input[str]] = None,
+             initial_sku: Optional[pulumi.Input[str]] = None,
+             instance_display_name_prefix: Optional[pulumi.Input[str]] = None,
+             is_hcx_enabled: Optional[pulumi.Input[bool]] = None,
+             is_hcx_enterprise_enabled: Optional[pulumi.Input[bool]] = None,
+             is_hcx_pending_downgrade: Optional[pulumi.Input[bool]] = None,
+             is_shielded_instance_enabled: Optional[pulumi.Input[bool]] = None,
+             is_single_host_sddc: Optional[pulumi.Input[bool]] = None,
+             nsx_edge_uplink1vlan_id: Optional[pulumi.Input[str]] = None,
+             nsx_edge_uplink2vlan_id: Optional[pulumi.Input[str]] = None,
+             nsx_edge_uplink_ip_id: Optional[pulumi.Input[str]] = None,
+             nsx_edge_vtep_vlan_id: Optional[pulumi.Input[str]] = None,
+             nsx_manager_fqdn: Optional[pulumi.Input[str]] = None,
+             nsx_manager_initial_password: Optional[pulumi.Input[str]] = None,
+             nsx_manager_private_ip_id: Optional[pulumi.Input[str]] = None,
+             nsx_manager_username: Optional[pulumi.Input[str]] = None,
+             nsx_overlay_segment_name: Optional[pulumi.Input[str]] = None,
+             nsx_vtep_vlan_id: Optional[pulumi.Input[str]] = None,
+             provisioning_subnet_id: Optional[pulumi.Input[str]] = None,
+             provisioning_vlan_id: Optional[pulumi.Input[str]] = None,
+             refresh_hcx_license_status: Optional[pulumi.Input[bool]] = None,
+             replication_vlan_id: Optional[pulumi.Input[str]] = None,
+             reserving_hcx_on_premise_license_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             ssh_authorized_keys: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_hcx_billing_cycle_end: Optional[pulumi.Input[str]] = None,
+             time_hcx_license_status_updated: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             upgrade_licenses: Optional[pulumi.Input[Sequence[pulumi.Input['SddcUpgradeLicenseArgs']]]] = None,
+             vcenter_fqdn: Optional[pulumi.Input[str]] = None,
+             vcenter_initial_password: Optional[pulumi.Input[str]] = None,
+             vcenter_private_ip_id: Optional[pulumi.Input[str]] = None,
+             vcenter_username: Optional[pulumi.Input[str]] = None,
+             vmotion_vlan_id: Optional[pulumi.Input[str]] = None,
+             vmware_software_version: Optional[pulumi.Input[str]] = None,
+             vsan_vlan_id: Optional[pulumi.Input[str]] = None,
+             vsphere_upgrade_guide: Optional[pulumi.Input[str]] = None,
+             vsphere_upgrade_objects: Optional[pulumi.Input[Sequence[pulumi.Input['SddcVsphereUpgradeObjectArgs']]]] = None,
+             vsphere_vlan_id: Optional[pulumi.Input[str]] = None,
+             workload_network_cidr: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if actual_esxi_hosts_count is not None:
-            pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
+            _setter("actual_esxi_hosts_count", actual_esxi_hosts_count)
         if capacity_reservation_id is not None:
-            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+            _setter("capacity_reservation_id", capacity_reservation_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if compute_availability_domain is not None:
-            pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
+            _setter("compute_availability_domain", compute_availability_domain)
         if datastores is not None:
-            pulumi.set(__self__, "datastores", datastores)
+            _setter("datastores", datastores)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if esxi_hosts_count is not None:
-            pulumi.set(__self__, "esxi_hosts_count", esxi_hosts_count)
+            _setter("esxi_hosts_count", esxi_hosts_count)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hcx_action is not None:
-            pulumi.set(__self__, "hcx_action", hcx_action)
+            _setter("hcx_action", hcx_action)
         if hcx_fqdn is not None:
-            pulumi.set(__self__, "hcx_fqdn", hcx_fqdn)
+            _setter("hcx_fqdn", hcx_fqdn)
         if hcx_initial_password is not None:
-            pulumi.set(__self__, "hcx_initial_password", hcx_initial_password)
+            _setter("hcx_initial_password", hcx_initial_password)
         if hcx_on_prem_key is not None:
-            pulumi.set(__self__, "hcx_on_prem_key", hcx_on_prem_key)
+            _setter("hcx_on_prem_key", hcx_on_prem_key)
         if hcx_on_prem_licenses is not None:
-            pulumi.set(__self__, "hcx_on_prem_licenses", hcx_on_prem_licenses)
+            _setter("hcx_on_prem_licenses", hcx_on_prem_licenses)
         if hcx_private_ip_id is not None:
-            pulumi.set(__self__, "hcx_private_ip_id", hcx_private_ip_id)
+            _setter("hcx_private_ip_id", hcx_private_ip_id)
         if hcx_vlan_id is not None:
-            pulumi.set(__self__, "hcx_vlan_id", hcx_vlan_id)
+            _setter("hcx_vlan_id", hcx_vlan_id)
         if initial_host_ocpu_count is not None:
-            pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
+            _setter("initial_host_ocpu_count", initial_host_ocpu_count)
         if initial_host_shape_name is not None:
-            pulumi.set(__self__, "initial_host_shape_name", initial_host_shape_name)
+            _setter("initial_host_shape_name", initial_host_shape_name)
         if initial_sku is not None:
-            pulumi.set(__self__, "initial_sku", initial_sku)
+            _setter("initial_sku", initial_sku)
         if instance_display_name_prefix is not None:
-            pulumi.set(__self__, "instance_display_name_prefix", instance_display_name_prefix)
+            _setter("instance_display_name_prefix", instance_display_name_prefix)
         if is_hcx_enabled is not None:
-            pulumi.set(__self__, "is_hcx_enabled", is_hcx_enabled)
+            _setter("is_hcx_enabled", is_hcx_enabled)
         if is_hcx_enterprise_enabled is not None:
-            pulumi.set(__self__, "is_hcx_enterprise_enabled", is_hcx_enterprise_enabled)
+            _setter("is_hcx_enterprise_enabled", is_hcx_enterprise_enabled)
         if is_hcx_pending_downgrade is not None:
-            pulumi.set(__self__, "is_hcx_pending_downgrade", is_hcx_pending_downgrade)
+            _setter("is_hcx_pending_downgrade", is_hcx_pending_downgrade)
         if is_shielded_instance_enabled is not None:
-            pulumi.set(__self__, "is_shielded_instance_enabled", is_shielded_instance_enabled)
+            _setter("is_shielded_instance_enabled", is_shielded_instance_enabled)
         if is_single_host_sddc is not None:
-            pulumi.set(__self__, "is_single_host_sddc", is_single_host_sddc)
+            _setter("is_single_host_sddc", is_single_host_sddc)
         if nsx_edge_uplink1vlan_id is not None:
-            pulumi.set(__self__, "nsx_edge_uplink1vlan_id", nsx_edge_uplink1vlan_id)
+            _setter("nsx_edge_uplink1vlan_id", nsx_edge_uplink1vlan_id)
         if nsx_edge_uplink2vlan_id is not None:
-            pulumi.set(__self__, "nsx_edge_uplink2vlan_id", nsx_edge_uplink2vlan_id)
+            _setter("nsx_edge_uplink2vlan_id", nsx_edge_uplink2vlan_id)
         if nsx_edge_uplink_ip_id is not None:
-            pulumi.set(__self__, "nsx_edge_uplink_ip_id", nsx_edge_uplink_ip_id)
+            _setter("nsx_edge_uplink_ip_id", nsx_edge_uplink_ip_id)
         if nsx_edge_vtep_vlan_id is not None:
-            pulumi.set(__self__, "nsx_edge_vtep_vlan_id", nsx_edge_vtep_vlan_id)
+            _setter("nsx_edge_vtep_vlan_id", nsx_edge_vtep_vlan_id)
         if nsx_manager_fqdn is not None:
-            pulumi.set(__self__, "nsx_manager_fqdn", nsx_manager_fqdn)
+            _setter("nsx_manager_fqdn", nsx_manager_fqdn)
         if nsx_manager_initial_password is not None:
-            pulumi.set(__self__, "nsx_manager_initial_password", nsx_manager_initial_password)
+            _setter("nsx_manager_initial_password", nsx_manager_initial_password)
         if nsx_manager_private_ip_id is not None:
-            pulumi.set(__self__, "nsx_manager_private_ip_id", nsx_manager_private_ip_id)
+            _setter("nsx_manager_private_ip_id", nsx_manager_private_ip_id)
         if nsx_manager_username is not None:
-            pulumi.set(__self__, "nsx_manager_username", nsx_manager_username)
+            _setter("nsx_manager_username", nsx_manager_username)
         if nsx_overlay_segment_name is not None:
-            pulumi.set(__self__, "nsx_overlay_segment_name", nsx_overlay_segment_name)
+            _setter("nsx_overlay_segment_name", nsx_overlay_segment_name)
         if nsx_vtep_vlan_id is not None:
-            pulumi.set(__self__, "nsx_vtep_vlan_id", nsx_vtep_vlan_id)
+            _setter("nsx_vtep_vlan_id", nsx_vtep_vlan_id)
         if provisioning_subnet_id is not None:
-            pulumi.set(__self__, "provisioning_subnet_id", provisioning_subnet_id)
+            _setter("provisioning_subnet_id", provisioning_subnet_id)
         if provisioning_vlan_id is not None:
-            pulumi.set(__self__, "provisioning_vlan_id", provisioning_vlan_id)
+            _setter("provisioning_vlan_id", provisioning_vlan_id)
         if refresh_hcx_license_status is not None:
-            pulumi.set(__self__, "refresh_hcx_license_status", refresh_hcx_license_status)
+            _setter("refresh_hcx_license_status", refresh_hcx_license_status)
         if replication_vlan_id is not None:
-            pulumi.set(__self__, "replication_vlan_id", replication_vlan_id)
+            _setter("replication_vlan_id", replication_vlan_id)
         if reserving_hcx_on_premise_license_keys is not None:
-            pulumi.set(__self__, "reserving_hcx_on_premise_license_keys", reserving_hcx_on_premise_license_keys)
+            _setter("reserving_hcx_on_premise_license_keys", reserving_hcx_on_premise_license_keys)
         if ssh_authorized_keys is not None:
-            pulumi.set(__self__, "ssh_authorized_keys", ssh_authorized_keys)
+            _setter("ssh_authorized_keys", ssh_authorized_keys)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_hcx_billing_cycle_end is not None:
-            pulumi.set(__self__, "time_hcx_billing_cycle_end", time_hcx_billing_cycle_end)
+            _setter("time_hcx_billing_cycle_end", time_hcx_billing_cycle_end)
         if time_hcx_license_status_updated is not None:
-            pulumi.set(__self__, "time_hcx_license_status_updated", time_hcx_license_status_updated)
+            _setter("time_hcx_license_status_updated", time_hcx_license_status_updated)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if upgrade_licenses is not None:
-            pulumi.set(__self__, "upgrade_licenses", upgrade_licenses)
+            _setter("upgrade_licenses", upgrade_licenses)
         if vcenter_fqdn is not None:
-            pulumi.set(__self__, "vcenter_fqdn", vcenter_fqdn)
+            _setter("vcenter_fqdn", vcenter_fqdn)
         if vcenter_initial_password is not None:
-            pulumi.set(__self__, "vcenter_initial_password", vcenter_initial_password)
+            _setter("vcenter_initial_password", vcenter_initial_password)
         if vcenter_private_ip_id is not None:
-            pulumi.set(__self__, "vcenter_private_ip_id", vcenter_private_ip_id)
+            _setter("vcenter_private_ip_id", vcenter_private_ip_id)
         if vcenter_username is not None:
-            pulumi.set(__self__, "vcenter_username", vcenter_username)
+            _setter("vcenter_username", vcenter_username)
         if vmotion_vlan_id is not None:
-            pulumi.set(__self__, "vmotion_vlan_id", vmotion_vlan_id)
+            _setter("vmotion_vlan_id", vmotion_vlan_id)
         if vmware_software_version is not None:
-            pulumi.set(__self__, "vmware_software_version", vmware_software_version)
+            _setter("vmware_software_version", vmware_software_version)
         if vsan_vlan_id is not None:
-            pulumi.set(__self__, "vsan_vlan_id", vsan_vlan_id)
+            _setter("vsan_vlan_id", vsan_vlan_id)
         if vsphere_upgrade_guide is not None:
-            pulumi.set(__self__, "vsphere_upgrade_guide", vsphere_upgrade_guide)
+            _setter("vsphere_upgrade_guide", vsphere_upgrade_guide)
         if vsphere_upgrade_objects is not None:
-            pulumi.set(__self__, "vsphere_upgrade_objects", vsphere_upgrade_objects)
+            _setter("vsphere_upgrade_objects", vsphere_upgrade_objects)
         if vsphere_vlan_id is not None:
-            pulumi.set(__self__, "vsphere_vlan_id", vsphere_vlan_id)
+            _setter("vsphere_vlan_id", vsphere_vlan_id)
         if workload_network_cidr is not None:
-            pulumi.set(__self__, "workload_network_cidr", workload_network_cidr)
+            _setter("workload_network_cidr", workload_network_cidr)
 
     @property
     @pulumi.getter(name="actualEsxiHostsCount")
@@ -1727,6 +1921,10 @@ class Sddc(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            SddcArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -114,7 +114,7 @@ namespace Pulumi.Oci.FileStorage
         /// May be unset as a blank value.
         /// </summary>
         [Output("filesystemSnapshotPolicyId")]
-        public Output<string> FilesystemSnapshotPolicyId { get; private set; } = null!;
+        public Output<string?> FilesystemSnapshotPolicyId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`

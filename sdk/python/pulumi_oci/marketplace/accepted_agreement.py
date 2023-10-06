@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['AcceptedAgreementArgs', 'AcceptedAgreement']
@@ -37,17 +37,40 @@ class AcceptedAgreementArgs:
         :param pulumi.Input[str] display_name: (Updatable) A display name for the accepted agreement.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
-        pulumi.set(__self__, "agreement_id", agreement_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "listing_id", listing_id)
-        pulumi.set(__self__, "package_version", package_version)
-        pulumi.set(__self__, "signature", signature)
+        AcceptedAgreementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agreement_id=agreement_id,
+            compartment_id=compartment_id,
+            listing_id=listing_id,
+            package_version=package_version,
+            signature=signature,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agreement_id: pulumi.Input[str],
+             compartment_id: pulumi.Input[str],
+             listing_id: pulumi.Input[str],
+             package_version: pulumi.Input[str],
+             signature: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("agreement_id", agreement_id)
+        _setter("compartment_id", compartment_id)
+        _setter("listing_id", listing_id)
+        _setter("package_version", package_version)
+        _setter("signature", signature)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="agreementId")
@@ -178,24 +201,49 @@ class _AcceptedAgreementState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_accepted: The time the agreement was accepted.
         """
+        _AcceptedAgreementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agreement_id=agreement_id,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            listing_id=listing_id,
+            package_version=package_version,
+            signature=signature,
+            time_accepted=time_accepted,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agreement_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             listing_id: Optional[pulumi.Input[str]] = None,
+             package_version: Optional[pulumi.Input[str]] = None,
+             signature: Optional[pulumi.Input[str]] = None,
+             time_accepted: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if agreement_id is not None:
-            pulumi.set(__self__, "agreement_id", agreement_id)
+            _setter("agreement_id", agreement_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if listing_id is not None:
-            pulumi.set(__self__, "listing_id", listing_id)
+            _setter("listing_id", listing_id)
         if package_version is not None:
-            pulumi.set(__self__, "package_version", package_version)
+            _setter("package_version", package_version)
         if signature is not None:
-            pulumi.set(__self__, "signature", signature)
+            _setter("signature", signature)
         if time_accepted is not None:
-            pulumi.set(__self__, "time_accepted", time_accepted)
+            _setter("time_accepted", time_accepted)
 
     @property
     @pulumi.getter(name="agreementId")
@@ -425,6 +473,10 @@ class AcceptedAgreement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AcceptedAgreementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

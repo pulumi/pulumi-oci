@@ -6,6 +6,7 @@ package com.pulumi.oci.Mysql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Mysql.outputs.GetReplicasFilter;
 import com.pulumi.oci.Mysql.outputs.GetReplicasReplica;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -19,6 +20,11 @@ public final class GetReplicasResult {
      * 
      */
     private String compartmentId;
+    /**
+     * @return The OCID of the Configuration to be used by the read replica.
+     * 
+     */
+    private @Nullable String configurationId;
     /**
      * @return The OCID of the DB System the read replica is associated with.
      * 
@@ -35,6 +41,7 @@ public final class GetReplicasResult {
      * 
      */
     private String id;
+    private @Nullable Boolean isUpToDate;
     private @Nullable String replicaId;
     /**
      * @return The list of replicas.
@@ -54,6 +61,13 @@ public final class GetReplicasResult {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The OCID of the Configuration to be used by the read replica.
+     * 
+     */
+    public Optional<String> configurationId() {
+        return Optional.ofNullable(this.configurationId);
     }
     /**
      * @return The OCID of the DB System the read replica is associated with.
@@ -78,6 +92,9 @@ public final class GetReplicasResult {
      */
     public String id() {
         return this.id;
+    }
+    public Optional<Boolean> isUpToDate() {
+        return Optional.ofNullable(this.isUpToDate);
     }
     public Optional<String> replicaId() {
         return Optional.ofNullable(this.replicaId);
@@ -107,10 +124,12 @@ public final class GetReplicasResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private @Nullable String configurationId;
         private @Nullable String dbSystemId;
         private @Nullable String displayName;
         private @Nullable List<GetReplicasFilter> filters;
         private String id;
+        private @Nullable Boolean isUpToDate;
         private @Nullable String replicaId;
         private List<GetReplicasReplica> replicas;
         private @Nullable String state;
@@ -118,10 +137,12 @@ public final class GetReplicasResult {
         public Builder(GetReplicasResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.configurationId = defaults.configurationId;
     	      this.dbSystemId = defaults.dbSystemId;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.isUpToDate = defaults.isUpToDate;
     	      this.replicaId = defaults.replicaId;
     	      this.replicas = defaults.replicas;
     	      this.state = defaults.state;
@@ -130,6 +151,11 @@ public final class GetReplicasResult {
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder configurationId(@Nullable String configurationId) {
+            this.configurationId = configurationId;
             return this;
         }
         @CustomType.Setter
@@ -156,6 +182,11 @@ public final class GetReplicasResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isUpToDate(@Nullable Boolean isUpToDate) {
+            this.isUpToDate = isUpToDate;
+            return this;
+        }
+        @CustomType.Setter
         public Builder replicaId(@Nullable String replicaId) {
             this.replicaId = replicaId;
             return this;
@@ -176,10 +207,12 @@ public final class GetReplicasResult {
         public GetReplicasResult build() {
             final var o = new GetReplicasResult();
             o.compartmentId = compartmentId;
+            o.configurationId = configurationId;
             o.dbSystemId = dbSystemId;
             o.displayName = displayName;
             o.filters = filters;
             o.id = id;
+            o.isUpToDate = isUpToDate;
             o.replicaId = replicaId;
             o.replicas = replicas;
             o.state = state;

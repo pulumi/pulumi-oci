@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -122,18 +122,39 @@ class BackendSetBackend(dict):
         :param bool offline: Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param int weight: The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "port", port)
+        BackendSetBackend._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_address=ip_address,
+            port=port,
+            backup=backup,
+            drain=drain,
+            name=name,
+            offline=offline,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_address: str,
+             port: int,
+             backup: Optional[bool] = None,
+             drain: Optional[bool] = None,
+             name: Optional[str] = None,
+             offline: Optional[bool] = None,
+             weight: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ip_address", ip_address)
+        _setter("port", port)
         if backup is not None:
-            pulumi.set(__self__, "backup", backup)
+            _setter("backup", backup)
         if drain is not None:
-            pulumi.set(__self__, "drain", drain)
+            _setter("drain", drain)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if offline is not None:
-            pulumi.set(__self__, "offline", offline)
+            _setter("offline", offline)
         if weight is not None:
-            pulumi.set(__self__, "weight", weight)
+            _setter("weight", weight)
 
     @property
     @pulumi.getter(name="ipAddress")
@@ -252,23 +273,48 @@ class BackendSetHealthChecker(dict):
         :param int timeout_in_millis: (Updatable) The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period.  Example: `3000`
         :param str url_path: (Updatable) The path against which to run the health check.  Example: `/healthcheck`
         """
-        pulumi.set(__self__, "protocol", protocol)
+        BackendSetHealthChecker._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            protocol=protocol,
+            interval_ms=interval_ms,
+            is_force_plain_text=is_force_plain_text,
+            port=port,
+            response_body_regex=response_body_regex,
+            retries=retries,
+            return_code=return_code,
+            timeout_in_millis=timeout_in_millis,
+            url_path=url_path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             protocol: str,
+             interval_ms: Optional[int] = None,
+             is_force_plain_text: Optional[bool] = None,
+             port: Optional[int] = None,
+             response_body_regex: Optional[str] = None,
+             retries: Optional[int] = None,
+             return_code: Optional[int] = None,
+             timeout_in_millis: Optional[int] = None,
+             url_path: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("protocol", protocol)
         if interval_ms is not None:
-            pulumi.set(__self__, "interval_ms", interval_ms)
+            _setter("interval_ms", interval_ms)
         if is_force_plain_text is not None:
-            pulumi.set(__self__, "is_force_plain_text", is_force_plain_text)
+            _setter("is_force_plain_text", is_force_plain_text)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if response_body_regex is not None:
-            pulumi.set(__self__, "response_body_regex", response_body_regex)
+            _setter("response_body_regex", response_body_regex)
         if retries is not None:
-            pulumi.set(__self__, "retries", retries)
+            _setter("retries", retries)
         if return_code is not None:
-            pulumi.set(__self__, "return_code", return_code)
+            _setter("return_code", return_code)
         if timeout_in_millis is not None:
-            pulumi.set(__self__, "timeout_in_millis", timeout_in_millis)
+            _setter("timeout_in_millis", timeout_in_millis)
         if url_path is not None:
-            pulumi.set(__self__, "url_path", url_path)
+            _setter("url_path", url_path)
 
     @property
     @pulumi.getter
@@ -417,20 +463,41 @@ class BackendSetLbCookieSessionPersistenceConfiguration(dict):
                
                Example: `/example`
         """
+        BackendSetLbCookieSessionPersistenceConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cookie_name=cookie_name,
+            disable_fallback=disable_fallback,
+            domain=domain,
+            is_http_only=is_http_only,
+            is_secure=is_secure,
+            max_age_in_seconds=max_age_in_seconds,
+            path=path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cookie_name: Optional[str] = None,
+             disable_fallback: Optional[bool] = None,
+             domain: Optional[str] = None,
+             is_http_only: Optional[bool] = None,
+             is_secure: Optional[bool] = None,
+             max_age_in_seconds: Optional[int] = None,
+             path: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if cookie_name is not None:
-            pulumi.set(__self__, "cookie_name", cookie_name)
+            _setter("cookie_name", cookie_name)
         if disable_fallback is not None:
-            pulumi.set(__self__, "disable_fallback", disable_fallback)
+            _setter("disable_fallback", disable_fallback)
         if domain is not None:
-            pulumi.set(__self__, "domain", domain)
+            _setter("domain", domain)
         if is_http_only is not None:
-            pulumi.set(__self__, "is_http_only", is_http_only)
+            _setter("is_http_only", is_http_only)
         if is_secure is not None:
-            pulumi.set(__self__, "is_secure", is_secure)
+            _setter("is_secure", is_secure)
         if max_age_in_seconds is not None:
-            pulumi.set(__self__, "max_age_in_seconds", max_age_in_seconds)
+            _setter("max_age_in_seconds", max_age_in_seconds)
         if path is not None:
-            pulumi.set(__self__, "path", path)
+            _setter("path", path)
 
     @property
     @pulumi.getter(name="cookieName")
@@ -541,9 +608,20 @@ class BackendSetSessionPersistenceConfiguration(dict):
         :param str cookie_name: (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
         :param bool disable_fallback: (Updatable) Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
         """
-        pulumi.set(__self__, "cookie_name", cookie_name)
+        BackendSetSessionPersistenceConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cookie_name=cookie_name,
+            disable_fallback=disable_fallback,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cookie_name: str,
+             disable_fallback: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cookie_name", cookie_name)
         if disable_fallback is not None:
-            pulumi.set(__self__, "disable_fallback", disable_fallback)
+            _setter("disable_fallback", disable_fallback)
 
     @property
     @pulumi.getter(name="cookieName")
@@ -648,22 +726,45 @@ class BackendSetSslConfiguration(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        BackendSetSslConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_ids=certificate_ids,
+            certificate_name=certificate_name,
+            cipher_suite_name=cipher_suite_name,
+            protocols=protocols,
+            server_order_preference=server_order_preference,
+            trusted_certificate_authority_ids=trusted_certificate_authority_ids,
+            verify_depth=verify_depth,
+            verify_peer_certificate=verify_peer_certificate,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_ids: Optional[Sequence[str]] = None,
+             certificate_name: Optional[str] = None,
+             cipher_suite_name: Optional[str] = None,
+             protocols: Optional[Sequence[str]] = None,
+             server_order_preference: Optional[str] = None,
+             trusted_certificate_authority_ids: Optional[Sequence[str]] = None,
+             verify_depth: Optional[int] = None,
+             verify_peer_certificate: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if certificate_ids is not None:
-            pulumi.set(__self__, "certificate_ids", certificate_ids)
+            _setter("certificate_ids", certificate_ids)
         if certificate_name is not None:
-            pulumi.set(__self__, "certificate_name", certificate_name)
+            _setter("certificate_name", certificate_name)
         if cipher_suite_name is not None:
-            pulumi.set(__self__, "cipher_suite_name", cipher_suite_name)
+            _setter("cipher_suite_name", cipher_suite_name)
         if protocols is not None:
-            pulumi.set(__self__, "protocols", protocols)
+            _setter("protocols", protocols)
         if server_order_preference is not None:
-            pulumi.set(__self__, "server_order_preference", server_order_preference)
+            _setter("server_order_preference", server_order_preference)
         if trusted_certificate_authority_ids is not None:
-            pulumi.set(__self__, "trusted_certificate_authority_ids", trusted_certificate_authority_ids)
+            _setter("trusted_certificate_authority_ids", trusted_certificate_authority_ids)
         if verify_depth is not None:
-            pulumi.set(__self__, "verify_depth", verify_depth)
+            _setter("verify_depth", verify_depth)
         if verify_peer_certificate is not None:
-            pulumi.set(__self__, "verify_peer_certificate", verify_peer_certificate)
+            _setter("verify_peer_certificate", verify_peer_certificate)
 
     @property
     @pulumi.getter(name="certificateIds")
@@ -798,9 +899,20 @@ class ListenerConnectionConfiguration(dict):
                Example: `1200`
         :param int backend_tcp_proxy_protocol_version: (Updatable) The backend TCP Proxy Protocol version.  Example: `1`
         """
-        pulumi.set(__self__, "idle_timeout_in_seconds", idle_timeout_in_seconds)
+        ListenerConnectionConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            idle_timeout_in_seconds=idle_timeout_in_seconds,
+            backend_tcp_proxy_protocol_version=backend_tcp_proxy_protocol_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             idle_timeout_in_seconds: str,
+             backend_tcp_proxy_protocol_version: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("idle_timeout_in_seconds", idle_timeout_in_seconds)
         if backend_tcp_proxy_protocol_version is not None:
-            pulumi.set(__self__, "backend_tcp_proxy_protocol_version", backend_tcp_proxy_protocol_version)
+            _setter("backend_tcp_proxy_protocol_version", backend_tcp_proxy_protocol_version)
 
     @property
     @pulumi.getter(name="idleTimeoutInSeconds")
@@ -910,22 +1022,45 @@ class ListenerSslConfiguration(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        ListenerSslConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_ids=certificate_ids,
+            certificate_name=certificate_name,
+            cipher_suite_name=cipher_suite_name,
+            protocols=protocols,
+            server_order_preference=server_order_preference,
+            trusted_certificate_authority_ids=trusted_certificate_authority_ids,
+            verify_depth=verify_depth,
+            verify_peer_certificate=verify_peer_certificate,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_ids: Optional[Sequence[str]] = None,
+             certificate_name: Optional[str] = None,
+             cipher_suite_name: Optional[str] = None,
+             protocols: Optional[Sequence[str]] = None,
+             server_order_preference: Optional[str] = None,
+             trusted_certificate_authority_ids: Optional[Sequence[str]] = None,
+             verify_depth: Optional[int] = None,
+             verify_peer_certificate: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if certificate_ids is not None:
-            pulumi.set(__self__, "certificate_ids", certificate_ids)
+            _setter("certificate_ids", certificate_ids)
         if certificate_name is not None:
-            pulumi.set(__self__, "certificate_name", certificate_name)
+            _setter("certificate_name", certificate_name)
         if cipher_suite_name is not None:
-            pulumi.set(__self__, "cipher_suite_name", cipher_suite_name)
+            _setter("cipher_suite_name", cipher_suite_name)
         if protocols is not None:
-            pulumi.set(__self__, "protocols", protocols)
+            _setter("protocols", protocols)
         if server_order_preference is not None:
-            pulumi.set(__self__, "server_order_preference", server_order_preference)
+            _setter("server_order_preference", server_order_preference)
         if trusted_certificate_authority_ids is not None:
-            pulumi.set(__self__, "trusted_certificate_authority_ids", trusted_certificate_authority_ids)
+            _setter("trusted_certificate_authority_ids", trusted_certificate_authority_ids)
         if verify_depth is not None:
-            pulumi.set(__self__, "verify_depth", verify_depth)
+            _setter("verify_depth", verify_depth)
         if verify_peer_certificate is not None:
-            pulumi.set(__self__, "verify_peer_certificate", verify_peer_certificate)
+            _setter("verify_peer_certificate", verify_peer_certificate)
 
     @property
     @pulumi.getter(name="certificateIds")
@@ -1061,12 +1196,25 @@ class LoadBalancerIpAddressDetail(dict):
         :param bool is_public: Whether the IP address is public or private.
         :param Sequence['LoadBalancerIpAddressDetailReservedIpArgs'] reserved_ips: Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         """
+        LoadBalancerIpAddressDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_address=ip_address,
+            is_public=is_public,
+            reserved_ips=reserved_ips,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_address: Optional[str] = None,
+             is_public: Optional[bool] = None,
+             reserved_ips: Optional[Sequence['outputs.LoadBalancerIpAddressDetailReservedIp']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if ip_address is not None:
-            pulumi.set(__self__, "ip_address", ip_address)
+            _setter("ip_address", ip_address)
         if is_public is not None:
-            pulumi.set(__self__, "is_public", is_public)
+            _setter("is_public", is_public)
         if reserved_ips is not None:
-            pulumi.set(__self__, "reserved_ips", reserved_ips)
+            _setter("reserved_ips", reserved_ips)
 
     @property
     @pulumi.getter(name="ipAddress")
@@ -1097,18 +1245,21 @@ class LoadBalancerIpAddressDetail(dict):
 class LoadBalancerIpAddressDetailReservedIp(dict):
     def __init__(__self__, *,
                  id: Optional[str] = None):
-        """
-        :param str id: Ocid of the pre-created public IP. That should be attahed to this load balancer.
-        """
+        LoadBalancerIpAddressDetailReservedIp._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Ocid of the pre-created public IP. That should be attahed to this load balancer.
-        """
         return pulumi.get(self, "id")
 
 
@@ -1116,18 +1267,21 @@ class LoadBalancerIpAddressDetailReservedIp(dict):
 class LoadBalancerReservedIp(dict):
     def __init__(__self__, *,
                  id: Optional[str] = None):
-        """
-        :param str id: Ocid of the pre-created public IP. That should be attahed to this load balancer.
-        """
+        LoadBalancerReservedIp._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        Ocid of the pre-created public IP. That should be attahed to this load balancer.
-        """
         return pulumi.get(self, "id")
 
 
@@ -1146,9 +1300,22 @@ class LoadBalancerRoutingPolicyRule(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "actions", actions)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "name", name)
+        LoadBalancerRoutingPolicyRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actions=actions,
+            condition=condition,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actions: Sequence['outputs.LoadBalancerRoutingPolicyRuleAction'],
+             condition: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("actions", actions)
+        _setter("condition", condition)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1209,8 +1376,19 @@ class LoadBalancerRoutingPolicyRuleAction(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "backend_set_name", backend_set_name)
-        pulumi.set(__self__, "name", name)
+        LoadBalancerRoutingPolicyRuleAction._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backend_set_name=backend_set_name,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backend_set_name: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("backend_set_name", backend_set_name)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="backendSetName")
@@ -1265,8 +1443,19 @@ class LoadBalancerShapeDetails(dict):
                Example: `1500`
         :param int minimum_bandwidth_in_mbps: (Updatable) Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 10 and the maximumBandwidthInMbps.  Example: `150`
         """
-        pulumi.set(__self__, "maximum_bandwidth_in_mbps", maximum_bandwidth_in_mbps)
-        pulumi.set(__self__, "minimum_bandwidth_in_mbps", minimum_bandwidth_in_mbps)
+        LoadBalancerShapeDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            maximum_bandwidth_in_mbps=maximum_bandwidth_in_mbps,
+            minimum_bandwidth_in_mbps=minimum_bandwidth_in_mbps,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             maximum_bandwidth_in_mbps: int,
+             minimum_bandwidth_in_mbps: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("maximum_bandwidth_in_mbps", maximum_bandwidth_in_mbps)
+        _setter("minimum_bandwidth_in_mbps", minimum_bandwidth_in_mbps)
 
     @property
     @pulumi.getter(name="maximumBandwidthInMbps")
@@ -1324,9 +1513,22 @@ class PathRouteSetPathRoute(dict):
                Example: `/example/video/123`
         :param 'PathRouteSetPathRoutePathMatchTypeArgs' path_match_type: (Updatable) The type of matching to apply to incoming URIs.
         """
-        pulumi.set(__self__, "backend_set_name", backend_set_name)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "path_match_type", path_match_type)
+        PathRouteSetPathRoute._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backend_set_name=backend_set_name,
+            path=path,
+            path_match_type=path_match_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backend_set_name: str,
+             path: str,
+             path_match_type: 'outputs.PathRouteSetPathRoutePathMatchType',
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("backend_set_name", backend_set_name)
+        _setter("path", path)
+        _setter("path_match_type", path_match_type)
 
     @property
     @pulumi.getter(name="backendSetName")
@@ -1392,7 +1594,16 @@ class PathRouteSetPathRoutePathMatchType(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "match_type", match_type)
+        PathRouteSetPathRoutePathMatchType._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            match_type=match_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             match_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("match_type", match_type)
 
     @property
     @pulumi.getter(name="matchType")
@@ -1527,31 +1738,64 @@ class RuleSetItem(dict):
                
                Example: `example_value`
         """
-        pulumi.set(__self__, "action", action)
+        RuleSetItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            allowed_methods=allowed_methods,
+            are_invalid_characters_allowed=are_invalid_characters_allowed,
+            conditions=conditions,
+            description=description,
+            header=header,
+            http_large_header_size_in_kb=http_large_header_size_in_kb,
+            prefix=prefix,
+            redirect_uri=redirect_uri,
+            response_code=response_code,
+            status_code=status_code,
+            suffix=suffix,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: str,
+             allowed_methods: Optional[Sequence[str]] = None,
+             are_invalid_characters_allowed: Optional[bool] = None,
+             conditions: Optional[Sequence['outputs.RuleSetItemCondition']] = None,
+             description: Optional[str] = None,
+             header: Optional[str] = None,
+             http_large_header_size_in_kb: Optional[int] = None,
+             prefix: Optional[str] = None,
+             redirect_uri: Optional['outputs.RuleSetItemRedirectUri'] = None,
+             response_code: Optional[int] = None,
+             status_code: Optional[int] = None,
+             suffix: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
         if allowed_methods is not None:
-            pulumi.set(__self__, "allowed_methods", allowed_methods)
+            _setter("allowed_methods", allowed_methods)
         if are_invalid_characters_allowed is not None:
-            pulumi.set(__self__, "are_invalid_characters_allowed", are_invalid_characters_allowed)
+            _setter("are_invalid_characters_allowed", are_invalid_characters_allowed)
         if conditions is not None:
-            pulumi.set(__self__, "conditions", conditions)
+            _setter("conditions", conditions)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if header is not None:
-            pulumi.set(__self__, "header", header)
+            _setter("header", header)
         if http_large_header_size_in_kb is not None:
-            pulumi.set(__self__, "http_large_header_size_in_kb", http_large_header_size_in_kb)
+            _setter("http_large_header_size_in_kb", http_large_header_size_in_kb)
         if prefix is not None:
-            pulumi.set(__self__, "prefix", prefix)
+            _setter("prefix", prefix)
         if redirect_uri is not None:
-            pulumi.set(__self__, "redirect_uri", redirect_uri)
+            _setter("redirect_uri", redirect_uri)
         if response_code is not None:
-            pulumi.set(__self__, "response_code", response_code)
+            _setter("response_code", response_code)
         if status_code is not None:
-            pulumi.set(__self__, "status_code", status_code)
+            _setter("status_code", status_code)
         if suffix is not None:
-            pulumi.set(__self__, "suffix", suffix)
+            _setter("suffix", suffix)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -1751,10 +1995,23 @@ class RuleSetItemCondition(dict):
                *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
                *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
         """
-        pulumi.set(__self__, "attribute_name", attribute_name)
-        pulumi.set(__self__, "attribute_value", attribute_value)
+        RuleSetItemCondition._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            attribute_name=attribute_name,
+            attribute_value=attribute_value,
+            operator=operator,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             attribute_name: str,
+             attribute_value: str,
+             operator: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("attribute_name", attribute_name)
+        _setter("attribute_value", attribute_value)
         if operator is not None:
-            pulumi.set(__self__, "operator", operator)
+            _setter("operator", operator)
 
     @property
     @pulumi.getter(name="attributeName")
@@ -1861,16 +2118,33 @@ class RuleSetItemRedirectUri(dict):
                *  **protocol={protocol}&hostname={host}** appears as `protocol=http&hostname=example.com` in the redirect URI if the protocol is `HTTP` and the hostname is `example.com` in the incoming HTTP request.
                *  **port={port}&hostname={host}** appears as `port=8080&hostname=example.com` in the redirect URI if the port is `8080` and the hostname is `example.com` in the incoming HTTP request URI.
         """
+        RuleSetItemRedirectUri._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host=host,
+            path=path,
+            port=port,
+            protocol=protocol,
+            query=query,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host: Optional[str] = None,
+             path: Optional[str] = None,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             query: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if host is not None:
-            pulumi.set(__self__, "host", host)
+            _setter("host", host)
         if path is not None:
-            pulumi.set(__self__, "path", path)
+            _setter("path", path)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if query is not None:
-            pulumi.set(__self__, "query", query)
+            _setter("query", query)
 
     @property
     @pulumi.getter
@@ -1984,10 +2258,25 @@ class GetBackendHealthHealthCheckResultResult(dict):
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet hosting the load balancer that reported this health check status.
         :param str timestamp: The date and time the data was retrieved, in the format defined by RFC3339.  Example: `2017-06-02T18:28:11+00:00`
         """
-        pulumi.set(__self__, "health_check_status", health_check_status)
-        pulumi.set(__self__, "source_ip_address", source_ip_address)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "timestamp", timestamp)
+        GetBackendHealthHealthCheckResultResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            health_check_status=health_check_status,
+            source_ip_address=source_ip_address,
+            subnet_id=subnet_id,
+            timestamp=timestamp,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             health_check_status: str,
+             source_ip_address: str,
+             subnet_id: str,
+             timestamp: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("health_check_status", health_check_status)
+        _setter("source_ip_address", source_ip_address)
+        _setter("subnet_id", subnet_id)
+        _setter("timestamp", timestamp)
 
     @property
     @pulumi.getter(name="healthCheckStatus")
@@ -2044,16 +2333,43 @@ class GetBackendSetsBackendsetResult(dict):
         :param Sequence['GetBackendSetsBackendsetSessionPersistenceConfigurationArgs'] session_persistence_configurations: The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
         :param Sequence['GetBackendSetsBackendsetSslConfigurationArgs'] ssl_configurations: A listener's SSL handling configuration.
         """
-        pulumi.set(__self__, "backends", backends)
-        pulumi.set(__self__, "health_checkers", health_checkers)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lb_cookie_session_persistence_configurations", lb_cookie_session_persistence_configurations)
-        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "policy", policy)
-        pulumi.set(__self__, "session_persistence_configurations", session_persistence_configurations)
-        pulumi.set(__self__, "ssl_configurations", ssl_configurations)
-        pulumi.set(__self__, "state", state)
+        GetBackendSetsBackendsetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backends=backends,
+            health_checkers=health_checkers,
+            id=id,
+            lb_cookie_session_persistence_configurations=lb_cookie_session_persistence_configurations,
+            load_balancer_id=load_balancer_id,
+            name=name,
+            policy=policy,
+            session_persistence_configurations=session_persistence_configurations,
+            ssl_configurations=ssl_configurations,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backends: Sequence['outputs.GetBackendSetsBackendsetBackendResult'],
+             health_checkers: Sequence['outputs.GetBackendSetsBackendsetHealthCheckerResult'],
+             id: str,
+             lb_cookie_session_persistence_configurations: Sequence['outputs.GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationResult'],
+             load_balancer_id: str,
+             name: str,
+             policy: str,
+             session_persistence_configurations: Sequence['outputs.GetBackendSetsBackendsetSessionPersistenceConfigurationResult'],
+             ssl_configurations: Sequence['outputs.GetBackendSetsBackendsetSslConfigurationResult'],
+             state: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("backends", backends)
+        _setter("health_checkers", health_checkers)
+        _setter("id", id)
+        _setter("lb_cookie_session_persistence_configurations", lb_cookie_session_persistence_configurations)
+        _setter("load_balancer_id", load_balancer_id)
+        _setter("name", name)
+        _setter("policy", policy)
+        _setter("session_persistence_configurations", session_persistence_configurations)
+        _setter("ssl_configurations", ssl_configurations)
+        _setter("state", state)
 
     @property
     @pulumi.getter
@@ -2146,13 +2462,34 @@ class GetBackendSetsBackendsetBackendResult(dict):
         :param int port: The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
         :param int weight: The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
-        pulumi.set(__self__, "backup", backup)
-        pulumi.set(__self__, "drain", drain)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "offline", offline)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "weight", weight)
+        GetBackendSetsBackendsetBackendResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup=backup,
+            drain=drain,
+            ip_address=ip_address,
+            name=name,
+            offline=offline,
+            port=port,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup: bool,
+             drain: bool,
+             ip_address: str,
+             name: str,
+             offline: bool,
+             port: int,
+             weight: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("backup", backup)
+        _setter("drain", drain)
+        _setter("ip_address", ip_address)
+        _setter("name", name)
+        _setter("offline", offline)
+        _setter("port", port)
+        _setter("weight", weight)
 
     @property
     @pulumi.getter
@@ -2234,15 +2571,40 @@ class GetBackendSetsBackendsetHealthCheckerResult(dict):
         :param int timeout_in_millis: The maximum time, in milliseconds, to wait for a reply to a health check. A health check is successful only if a reply returns within this timeout period. Defaults to 3000 (3 seconds).  Example: `3000`
         :param str url_path: The path against which to run the health check.  Example: `/healthcheck`
         """
-        pulumi.set(__self__, "interval_ms", interval_ms)
-        pulumi.set(__self__, "is_force_plain_text", is_force_plain_text)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "response_body_regex", response_body_regex)
-        pulumi.set(__self__, "retries", retries)
-        pulumi.set(__self__, "return_code", return_code)
-        pulumi.set(__self__, "timeout_in_millis", timeout_in_millis)
-        pulumi.set(__self__, "url_path", url_path)
+        GetBackendSetsBackendsetHealthCheckerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            interval_ms=interval_ms,
+            is_force_plain_text=is_force_plain_text,
+            port=port,
+            protocol=protocol,
+            response_body_regex=response_body_regex,
+            retries=retries,
+            return_code=return_code,
+            timeout_in_millis=timeout_in_millis,
+            url_path=url_path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             interval_ms: int,
+             is_force_plain_text: bool,
+             port: int,
+             protocol: str,
+             response_body_regex: str,
+             retries: int,
+             return_code: int,
+             timeout_in_millis: int,
+             url_path: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("interval_ms", interval_ms)
+        _setter("is_force_plain_text", is_force_plain_text)
+        _setter("port", port)
+        _setter("protocol", protocol)
+        _setter("response_body_regex", response_body_regex)
+        _setter("retries", retries)
+        _setter("return_code", return_code)
+        _setter("timeout_in_millis", timeout_in_millis)
+        _setter("url_path", url_path)
 
     @property
     @pulumi.getter(name="intervalMs")
@@ -2336,13 +2698,34 @@ class GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationResult(dict
         :param int max_age_in_seconds: The amount of time the cookie remains valid. The `Set-cookie` header inserted by the load balancer contains a `Max-Age` attribute with the specified value.
         :param str path: The path in which the cookie is valid. The `Set-cookie header` inserted by the load balancer contains a `Path` attribute with the specified value.
         """
-        pulumi.set(__self__, "cookie_name", cookie_name)
-        pulumi.set(__self__, "disable_fallback", disable_fallback)
-        pulumi.set(__self__, "domain", domain)
-        pulumi.set(__self__, "is_http_only", is_http_only)
-        pulumi.set(__self__, "is_secure", is_secure)
-        pulumi.set(__self__, "max_age_in_seconds", max_age_in_seconds)
-        pulumi.set(__self__, "path", path)
+        GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cookie_name=cookie_name,
+            disable_fallback=disable_fallback,
+            domain=domain,
+            is_http_only=is_http_only,
+            is_secure=is_secure,
+            max_age_in_seconds=max_age_in_seconds,
+            path=path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cookie_name: str,
+             disable_fallback: bool,
+             domain: str,
+             is_http_only: bool,
+             is_secure: bool,
+             max_age_in_seconds: int,
+             path: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cookie_name", cookie_name)
+        _setter("disable_fallback", disable_fallback)
+        _setter("domain", domain)
+        _setter("is_http_only", is_http_only)
+        _setter("is_secure", is_secure)
+        _setter("max_age_in_seconds", max_age_in_seconds)
+        _setter("path", path)
 
     @property
     @pulumi.getter(name="cookieName")
@@ -2410,8 +2793,19 @@ class GetBackendSetsBackendsetSessionPersistenceConfigurationResult(dict):
         :param str cookie_name: The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
         :param bool disable_fallback: Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
         """
-        pulumi.set(__self__, "cookie_name", cookie_name)
-        pulumi.set(__self__, "disable_fallback", disable_fallback)
+        GetBackendSetsBackendsetSessionPersistenceConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cookie_name=cookie_name,
+            disable_fallback=disable_fallback,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cookie_name: str,
+             disable_fallback: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cookie_name", cookie_name)
+        _setter("disable_fallback", disable_fallback)
 
     @property
     @pulumi.getter(name="cookieName")
@@ -2451,14 +2845,37 @@ class GetBackendSetsBackendsetSslConfigurationResult(dict):
         :param int verify_depth: The maximum depth for peer certificate chain verification.  Example: `3`
         :param bool verify_peer_certificate: Whether the load balancer listener should verify peer certificates.  Example: `true`
         """
-        pulumi.set(__self__, "certificate_ids", certificate_ids)
-        pulumi.set(__self__, "certificate_name", certificate_name)
-        pulumi.set(__self__, "cipher_suite_name", cipher_suite_name)
-        pulumi.set(__self__, "protocols", protocols)
-        pulumi.set(__self__, "server_order_preference", server_order_preference)
-        pulumi.set(__self__, "trusted_certificate_authority_ids", trusted_certificate_authority_ids)
-        pulumi.set(__self__, "verify_depth", verify_depth)
-        pulumi.set(__self__, "verify_peer_certificate", verify_peer_certificate)
+        GetBackendSetsBackendsetSslConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_ids=certificate_ids,
+            certificate_name=certificate_name,
+            cipher_suite_name=cipher_suite_name,
+            protocols=protocols,
+            server_order_preference=server_order_preference,
+            trusted_certificate_authority_ids=trusted_certificate_authority_ids,
+            verify_depth=verify_depth,
+            verify_peer_certificate=verify_peer_certificate,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_ids: Sequence[str],
+             certificate_name: str,
+             cipher_suite_name: str,
+             protocols: Sequence[str],
+             server_order_preference: str,
+             trusted_certificate_authority_ids: Sequence[str],
+             verify_depth: int,
+             verify_peer_certificate: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_ids", certificate_ids)
+        _setter("certificate_name", certificate_name)
+        _setter("cipher_suite_name", cipher_suite_name)
+        _setter("protocols", protocols)
+        _setter("server_order_preference", server_order_preference)
+        _setter("trusted_certificate_authority_ids", trusted_certificate_authority_ids)
+        _setter("verify_depth", verify_depth)
+        _setter("verify_peer_certificate", verify_peer_certificate)
 
     @property
     @pulumi.getter(name="certificateIds")
@@ -2534,10 +2951,23 @@ class GetBackendSetsFilterResult(dict):
         """
         :param str name: A friendly name for the backend set. It must be unique and it cannot be changed.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetBackendSetsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2582,17 +3012,44 @@ class GetBackendsBackendResult(dict):
         :param int weight: The load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives 3 times the number of new connections as a server weighted '1'. For more information on load balancing policies, see [How Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         :param bool backup: Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
         """
-        pulumi.set(__self__, "backendset_name", backendset_name)
-        pulumi.set(__self__, "drain", drain)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "offline", offline)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "weight", weight)
+        GetBackendsBackendResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backendset_name=backendset_name,
+            drain=drain,
+            ip_address=ip_address,
+            load_balancer_id=load_balancer_id,
+            name=name,
+            offline=offline,
+            port=port,
+            state=state,
+            weight=weight,
+            backup=backup,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backendset_name: str,
+             drain: bool,
+             ip_address: str,
+             load_balancer_id: str,
+             name: str,
+             offline: bool,
+             port: int,
+             state: str,
+             weight: int,
+             backup: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("backendset_name", backendset_name)
+        _setter("drain", drain)
+        _setter("ip_address", ip_address)
+        _setter("load_balancer_id", load_balancer_id)
+        _setter("name", name)
+        _setter("offline", offline)
+        _setter("port", port)
+        _setter("state", state)
+        _setter("weight", weight)
         if backup is not None:
-            pulumi.set(__self__, "backup", backup)
+            _setter("backup", backup)
 
     @property
     @pulumi.getter(name="backendsetName")
@@ -2681,10 +3138,23 @@ class GetBackendsFilterResult(dict):
         """
         :param str name: A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetBackendsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2721,14 +3191,35 @@ class GetCertificatesCertificateResult(dict):
         :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the certificate bundles to be listed.
         :param str public_certificate: The public certificate, in PEM format, that you received from your SSL certificate provider.
         """
-        pulumi.set(__self__, "ca_certificate", ca_certificate)
-        pulumi.set(__self__, "certificate_name", certificate_name)
-        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
-        pulumi.set(__self__, "private_key", private_key)
-        pulumi.set(__self__, "public_certificate", public_certificate)
-        pulumi.set(__self__, "state", state)
+        GetCertificatesCertificateResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ca_certificate=ca_certificate,
+            certificate_name=certificate_name,
+            load_balancer_id=load_balancer_id,
+            private_key=private_key,
+            public_certificate=public_certificate,
+            state=state,
+            passphrase=passphrase,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ca_certificate: str,
+             certificate_name: str,
+             load_balancer_id: str,
+             private_key: str,
+             public_certificate: str,
+             state: str,
+             passphrase: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ca_certificate", ca_certificate)
+        _setter("certificate_name", certificate_name)
+        _setter("load_balancer_id", load_balancer_id)
+        _setter("private_key", private_key)
+        _setter("public_certificate", public_certificate)
+        _setter("state", state)
         if passphrase is not None:
-            pulumi.set(__self__, "passphrase", passphrase)
+            _setter("passphrase", passphrase)
 
     @property
     @pulumi.getter(name="caCertificate")
@@ -2784,10 +3275,23 @@ class GetCertificatesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetCertificatesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2814,10 +3318,23 @@ class GetHostnamesFilterResult(dict):
         """
         :param str name: A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetHostnamesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2850,10 +3367,25 @@ class GetHostnamesHostnameResult(dict):
         :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the hostnames to retrieve.
         :param str name: A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "state", state)
+        GetHostnamesHostnameResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            load_balancer_id=load_balancer_id,
+            name=name,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: str,
+             load_balancer_id: str,
+             name: str,
+             state: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hostname", hostname)
+        _setter("load_balancer_id", load_balancer_id)
+        _setter("name", name)
+        _setter("state", state)
 
     @property
     @pulumi.getter
@@ -2894,10 +3426,23 @@ class GetListenerRulesFilterResult(dict):
         """
         :param str name: The name of the rule set that the rule belongs to.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetListenerRulesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2928,9 +3473,22 @@ class GetListenerRulesListenerRuleResult(dict):
         :param str name: The name of the rule set that the rule belongs to.
         :param Sequence['GetListenerRulesListenerRuleRuleArgs'] rules: A rule object that applies to the listener.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "rules", rules)
-        pulumi.set(__self__, "state", state)
+        GetListenerRulesListenerRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            rules=rules,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             rules: Sequence['outputs.GetListenerRulesListenerRuleRuleResult'],
+             state: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("rules", rules)
+        _setter("state", state)
 
     @property
     @pulumi.getter
@@ -2990,19 +3548,52 @@ class GetListenerRulesListenerRuleRuleResult(dict):
                *  value cannot contain `$`
                *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "allowed_methods", allowed_methods)
-        pulumi.set(__self__, "are_invalid_characters_allowed", are_invalid_characters_allowed)
-        pulumi.set(__self__, "conditions", conditions)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "header", header)
-        pulumi.set(__self__, "http_large_header_size_in_kb", http_large_header_size_in_kb)
-        pulumi.set(__self__, "prefix", prefix)
-        pulumi.set(__self__, "redirect_uris", redirect_uris)
-        pulumi.set(__self__, "response_code", response_code)
-        pulumi.set(__self__, "status_code", status_code)
-        pulumi.set(__self__, "suffix", suffix)
-        pulumi.set(__self__, "value", value)
+        GetListenerRulesListenerRuleRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            allowed_methods=allowed_methods,
+            are_invalid_characters_allowed=are_invalid_characters_allowed,
+            conditions=conditions,
+            description=description,
+            header=header,
+            http_large_header_size_in_kb=http_large_header_size_in_kb,
+            prefix=prefix,
+            redirect_uris=redirect_uris,
+            response_code=response_code,
+            status_code=status_code,
+            suffix=suffix,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: str,
+             allowed_methods: Sequence[str],
+             are_invalid_characters_allowed: bool,
+             conditions: Sequence['outputs.GetListenerRulesListenerRuleRuleConditionResult'],
+             description: str,
+             header: str,
+             http_large_header_size_in_kb: int,
+             prefix: str,
+             redirect_uris: Sequence['outputs.GetListenerRulesListenerRuleRuleRedirectUriResult'],
+             response_code: int,
+             status_code: int,
+             suffix: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("allowed_methods", allowed_methods)
+        _setter("are_invalid_characters_allowed", are_invalid_characters_allowed)
+        _setter("conditions", conditions)
+        _setter("description", description)
+        _setter("header", header)
+        _setter("http_large_header_size_in_kb", http_large_header_size_in_kb)
+        _setter("prefix", prefix)
+        _setter("redirect_uris", redirect_uris)
+        _setter("response_code", response_code)
+        _setter("status_code", status_code)
+        _setter("suffix", suffix)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -3127,9 +3718,22 @@ class GetListenerRulesListenerRuleRuleConditionResult(dict):
                *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
                *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
         """
-        pulumi.set(__self__, "attribute_name", attribute_name)
-        pulumi.set(__self__, "attribute_value", attribute_value)
-        pulumi.set(__self__, "operator", operator)
+        GetListenerRulesListenerRuleRuleConditionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            attribute_name=attribute_name,
+            attribute_value=attribute_value,
+            operator=operator,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             attribute_name: str,
+             attribute_value: str,
+             operator: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("attribute_name", attribute_name)
+        _setter("attribute_value", attribute_value)
+        _setter("operator", operator)
 
     @property
     @pulumi.getter(name="attributeName")
@@ -3175,11 +3779,28 @@ class GetListenerRulesListenerRuleRuleRedirectUriResult(dict):
         :param str protocol: The HTTP protocol to use in the redirect URI.
         :param str query: The query string to use in the redirect URI.
         """
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "query", query)
+        GetListenerRulesListenerRuleRuleRedirectUriResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host=host,
+            path=path,
+            port=port,
+            protocol=protocol,
+            query=query,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host: str,
+             path: str,
+             port: int,
+             protocol: str,
+             query: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("host", host)
+        _setter("path", path)
+        _setter("port", port)
+        _setter("protocol", protocol)
+        _setter("query", query)
 
     @property
     @pulumi.getter
@@ -3231,10 +3852,23 @@ class GetLoadBalancerRoutingPoliciesFilterResult(dict):
         """
         :param str name: A unique name for the routing policy rule. Avoid entering confidential information.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetLoadBalancerRoutingPoliciesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3269,11 +3903,28 @@ class GetLoadBalancerRoutingPoliciesRoutingPolicyResult(dict):
         :param str name: A unique name for the routing policy rule. Avoid entering confidential information.
         :param Sequence['GetLoadBalancerRoutingPoliciesRoutingPolicyRuleArgs'] rules: The ordered list of routing rules.
         """
-        pulumi.set(__self__, "condition_language_version", condition_language_version)
-        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "rules", rules)
-        pulumi.set(__self__, "state", state)
+        GetLoadBalancerRoutingPoliciesRoutingPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition_language_version=condition_language_version,
+            load_balancer_id=load_balancer_id,
+            name=name,
+            rules=rules,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition_language_version: str,
+             load_balancer_id: str,
+             name: str,
+             rules: Sequence['outputs.GetLoadBalancerRoutingPoliciesRoutingPolicyRuleResult'],
+             state: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition_language_version", condition_language_version)
+        _setter("load_balancer_id", load_balancer_id)
+        _setter("name", name)
+        _setter("rules", rules)
+        _setter("state", state)
 
     @property
     @pulumi.getter(name="conditionLanguageVersion")
@@ -3324,9 +3975,22 @@ class GetLoadBalancerRoutingPoliciesRoutingPolicyRuleResult(dict):
         :param str condition: A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
         :param str name: A unique name for the routing policy rule. Avoid entering confidential information.
         """
-        pulumi.set(__self__, "actions", actions)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "name", name)
+        GetLoadBalancerRoutingPoliciesRoutingPolicyRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actions=actions,
+            condition=condition,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actions: Sequence['outputs.GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionResult'],
+             condition: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("actions", actions)
+        _setter("condition", condition)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -3362,8 +4026,19 @@ class GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionResult(dict):
         :param str backend_set_name: Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
         :param str name: A unique name for the routing policy rule. Avoid entering confidential information.
         """
-        pulumi.set(__self__, "backend_set_name", backend_set_name)
-        pulumi.set(__self__, "name", name)
+        GetLoadBalancerRoutingPoliciesRoutingPolicyRuleActionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backend_set_name=backend_set_name,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backend_set_name: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("backend_set_name", backend_set_name)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="backendSetName")
@@ -3393,9 +4068,22 @@ class GetLoadBalancerRoutingPolicyRuleResult(dict):
         :param str condition: A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
         :param str name: A unique name for the routing policy rule. Avoid entering confidential information.
         """
-        pulumi.set(__self__, "actions", actions)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "name", name)
+        GetLoadBalancerRoutingPolicyRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actions=actions,
+            condition=condition,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actions: Sequence['outputs.GetLoadBalancerRoutingPolicyRuleActionResult'],
+             condition: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("actions", actions)
+        _setter("condition", condition)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -3431,8 +4119,19 @@ class GetLoadBalancerRoutingPolicyRuleActionResult(dict):
         :param str backend_set_name: Name of the backend set the listener will forward the traffic to.  Example: `backendSetForImages`
         :param str name: A unique name for the routing policy rule. Avoid entering confidential information.
         """
-        pulumi.set(__self__, "backend_set_name", backend_set_name)
-        pulumi.set(__self__, "name", name)
+        GetLoadBalancerRoutingPolicyRuleActionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backend_set_name=backend_set_name,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backend_set_name: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("backend_set_name", backend_set_name)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="backendSetName")
@@ -3460,10 +4159,23 @@ class GetLoadBalancersFilterResult(dict):
         """
         :param str name: A unique name for the routing policy rule. Avoid entering confidential information.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetLoadBalancersFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3521,23 +4233,64 @@ class GetLoadBalancersLoadBalancerResult(dict):
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ip_address_details", ip_address_details)
-        pulumi.set(__self__, "ip_addresses", ip_addresses)
-        pulumi.set(__self__, "ip_mode", ip_mode)
-        pulumi.set(__self__, "is_private", is_private)
-        pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
-        pulumi.set(__self__, "reserved_ips", reserved_ips)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "shape_details", shape_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_ids", subnet_ids)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
+        GetLoadBalancersLoadBalancerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            ip_address_details=ip_address_details,
+            ip_addresses=ip_addresses,
+            ip_mode=ip_mode,
+            is_private=is_private,
+            network_security_group_ids=network_security_group_ids,
+            reserved_ips=reserved_ips,
+            shape=shape,
+            shape_details=shape_details,
+            state=state,
+            subnet_ids=subnet_ids,
+            system_tags=system_tags,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             ip_address_details: Sequence['outputs.GetLoadBalancersLoadBalancerIpAddressDetailResult'],
+             ip_addresses: Sequence[str],
+             ip_mode: str,
+             is_private: bool,
+             network_security_group_ids: Sequence[str],
+             reserved_ips: Sequence['outputs.GetLoadBalancersLoadBalancerReservedIpResult'],
+             shape: str,
+             shape_details: Sequence['outputs.GetLoadBalancersLoadBalancerShapeDetailResult'],
+             state: str,
+             subnet_ids: Sequence[str],
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("ip_address_details", ip_address_details)
+        _setter("ip_addresses", ip_addresses)
+        _setter("ip_mode", ip_mode)
+        _setter("is_private", is_private)
+        _setter("network_security_group_ids", network_security_group_ids)
+        _setter("reserved_ips", reserved_ips)
+        _setter("shape", shape)
+        _setter("shape_details", shape_details)
+        _setter("state", state)
+        _setter("subnet_ids", subnet_ids)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3684,9 +4437,22 @@ class GetLoadBalancersLoadBalancerIpAddressDetailResult(dict):
         :param bool is_public: Whether the IP address is public or private.
         :param Sequence['GetLoadBalancersLoadBalancerIpAddressDetailReservedIpArgs'] reserved_ips: Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         """
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "is_public", is_public)
-        pulumi.set(__self__, "reserved_ips", reserved_ips)
+        GetLoadBalancersLoadBalancerIpAddressDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_address=ip_address,
+            is_public=is_public,
+            reserved_ips=reserved_ips,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_address: str,
+             is_public: bool,
+             reserved_ips: Sequence['outputs.GetLoadBalancersLoadBalancerIpAddressDetailReservedIpResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ip_address", ip_address)
+        _setter("is_public", is_public)
+        _setter("reserved_ips", reserved_ips)
 
     @property
     @pulumi.getter(name="ipAddress")
@@ -3720,7 +4486,16 @@ class GetLoadBalancersLoadBalancerIpAddressDetailReservedIpResult(dict):
         """
         :param str id: Ocid of the pre-created public IP. That should be attahed to this load balancer.
         """
-        pulumi.set(__self__, "id", id)
+        GetLoadBalancersLoadBalancerIpAddressDetailReservedIpResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
 
     @property
     @pulumi.getter
@@ -3738,7 +4513,16 @@ class GetLoadBalancersLoadBalancerReservedIpResult(dict):
         """
         :param str id: Ocid of the pre-created public IP. That should be attahed to this load balancer.
         """
-        pulumi.set(__self__, "id", id)
+        GetLoadBalancersLoadBalancerReservedIpResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
 
     @property
     @pulumi.getter
@@ -3758,8 +4542,19 @@ class GetLoadBalancersLoadBalancerShapeDetailResult(dict):
         :param int maximum_bandwidth_in_mbps: Bandwidth in Mbps that determines the maximum bandwidth (ingress plus egress) that the load balancer can achieve. This bandwidth cannot be always guaranteed. For a guaranteed bandwidth use the minimumBandwidthInMbps parameter.
         :param int minimum_bandwidth_in_mbps: Bandwidth in Mbps that determines the total pre-provisioned bandwidth (ingress plus egress). The values must be between 0 and the maximumBandwidthInMbps in multiples of 10. The current allowed maximum value is defined in [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).  Example: `150`
         """
-        pulumi.set(__self__, "maximum_bandwidth_in_mbps", maximum_bandwidth_in_mbps)
-        pulumi.set(__self__, "minimum_bandwidth_in_mbps", minimum_bandwidth_in_mbps)
+        GetLoadBalancersLoadBalancerShapeDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            maximum_bandwidth_in_mbps=maximum_bandwidth_in_mbps,
+            minimum_bandwidth_in_mbps=minimum_bandwidth_in_mbps,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             maximum_bandwidth_in_mbps: int,
+             minimum_bandwidth_in_mbps: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("maximum_bandwidth_in_mbps", maximum_bandwidth_in_mbps)
+        _setter("minimum_bandwidth_in_mbps", minimum_bandwidth_in_mbps)
 
     @property
     @pulumi.getter(name="maximumBandwidthInMbps")
@@ -3787,10 +4582,23 @@ class GetPathRouteSetsFilterResult(dict):
         """
         :param str name: The unique name for this set of path route rules. Avoid entering confidential information.  Example: `example_path_route_set`
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPathRouteSetsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3823,10 +4631,25 @@ class GetPathRouteSetsPathRouteSetResult(dict):
         :param str name: The unique name for this set of path route rules. Avoid entering confidential information.  Example: `example_path_route_set`
         :param Sequence['GetPathRouteSetsPathRouteSetPathRouteArgs'] path_routes: The set of path route rules.
         """
-        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "path_routes", path_routes)
-        pulumi.set(__self__, "state", state)
+        GetPathRouteSetsPathRouteSetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            load_balancer_id=load_balancer_id,
+            name=name,
+            path_routes=path_routes,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             load_balancer_id: str,
+             name: str,
+             path_routes: Sequence['outputs.GetPathRouteSetsPathRouteSetPathRouteResult'],
+             state: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("load_balancer_id", load_balancer_id)
+        _setter("name", name)
+        _setter("path_routes", path_routes)
+        _setter("state", state)
 
     @property
     @pulumi.getter(name="loadBalancerId")
@@ -3872,9 +4695,22 @@ class GetPathRouteSetsPathRouteSetPathRouteResult(dict):
                *  Regular expressions are not supported.
         :param 'GetPathRouteSetsPathRouteSetPathRoutePathMatchTypeArgs' path_match_type: The type of matching to apply to incoming URIs.
         """
-        pulumi.set(__self__, "backend_set_name", backend_set_name)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "path_match_type", path_match_type)
+        GetPathRouteSetsPathRouteSetPathRouteResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backend_set_name=backend_set_name,
+            path=path,
+            path_match_type=path_match_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backend_set_name: str,
+             path: str,
+             path_match_type: 'outputs.GetPathRouteSetsPathRouteSetPathRoutePathMatchTypeResult',
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("backend_set_name", backend_set_name)
+        _setter("path", path)
+        _setter("path_match_type", path_match_type)
 
     @property
     @pulumi.getter(name="backendSetName")
@@ -3915,7 +4751,16 @@ class GetPathRouteSetsPathRouteSetPathRoutePathMatchTypeResult(dict):
                *  **PREFIX_MATCH** - Looks for a `path` string that matches the beginning portion of the incoming URI path.
                *  **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
         """
-        pulumi.set(__self__, "match_type", match_type)
+        GetPathRouteSetsPathRouteSetPathRoutePathMatchTypeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            match_type=match_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             match_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("match_type", match_type)
 
     @property
     @pulumi.getter(name="matchType")
@@ -3939,10 +4784,23 @@ class GetPoliciesFilterResult(dict):
         """
         :param str name: The name of a load balancing policy.  Example: 'LEAST_CONNECTIONS'
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPoliciesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3970,7 +4828,16 @@ class GetPoliciesPolicyResult(dict):
         """
         :param str name: The name of a load balancing policy.  Example: 'LEAST_CONNECTIONS'
         """
-        pulumi.set(__self__, "name", name)
+        GetPoliciesPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -3990,10 +4857,23 @@ class GetProtocolsFilterResult(dict):
         """
         :param str name: The name of a protocol.  Example: 'HTTP'
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProtocolsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4021,7 +4901,16 @@ class GetProtocolsProtocolResult(dict):
         """
         :param str name: The name of a protocol.  Example: 'HTTP'
         """
-        pulumi.set(__self__, "name", name)
+        GetProtocolsProtocolResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -4068,19 +4957,52 @@ class GetRuleSetItemResult(dict):
                *  value cannot contain `$`
                *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "allowed_methods", allowed_methods)
-        pulumi.set(__self__, "are_invalid_characters_allowed", are_invalid_characters_allowed)
-        pulumi.set(__self__, "conditions", conditions)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "header", header)
-        pulumi.set(__self__, "http_large_header_size_in_kb", http_large_header_size_in_kb)
-        pulumi.set(__self__, "prefix", prefix)
-        pulumi.set(__self__, "redirect_uris", redirect_uris)
-        pulumi.set(__self__, "response_code", response_code)
-        pulumi.set(__self__, "status_code", status_code)
-        pulumi.set(__self__, "suffix", suffix)
-        pulumi.set(__self__, "value", value)
+        GetRuleSetItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            allowed_methods=allowed_methods,
+            are_invalid_characters_allowed=are_invalid_characters_allowed,
+            conditions=conditions,
+            description=description,
+            header=header,
+            http_large_header_size_in_kb=http_large_header_size_in_kb,
+            prefix=prefix,
+            redirect_uris=redirect_uris,
+            response_code=response_code,
+            status_code=status_code,
+            suffix=suffix,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: str,
+             allowed_methods: Sequence[str],
+             are_invalid_characters_allowed: bool,
+             conditions: Sequence['outputs.GetRuleSetItemConditionResult'],
+             description: str,
+             header: str,
+             http_large_header_size_in_kb: int,
+             prefix: str,
+             redirect_uris: Sequence['outputs.GetRuleSetItemRedirectUriResult'],
+             response_code: int,
+             status_code: int,
+             suffix: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("allowed_methods", allowed_methods)
+        _setter("are_invalid_characters_allowed", are_invalid_characters_allowed)
+        _setter("conditions", conditions)
+        _setter("description", description)
+        _setter("header", header)
+        _setter("http_large_header_size_in_kb", http_large_header_size_in_kb)
+        _setter("prefix", prefix)
+        _setter("redirect_uris", redirect_uris)
+        _setter("response_code", response_code)
+        _setter("status_code", status_code)
+        _setter("suffix", suffix)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -4208,9 +5130,22 @@ class GetRuleSetItemConditionResult(dict):
                *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
                *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
         """
-        pulumi.set(__self__, "attribute_name", attribute_name)
-        pulumi.set(__self__, "attribute_value", attribute_value)
-        pulumi.set(__self__, "operator", operator)
+        GetRuleSetItemConditionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            attribute_name=attribute_name,
+            attribute_value=attribute_value,
+            operator=operator,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             attribute_name: str,
+             attribute_value: str,
+             operator: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("attribute_name", attribute_name)
+        _setter("attribute_value", attribute_value)
+        _setter("operator", operator)
 
     @property
     @pulumi.getter(name="attributeName")
@@ -4259,11 +5194,28 @@ class GetRuleSetItemRedirectUriResult(dict):
         :param str protocol: The HTTP protocol to use in the redirect URI.
         :param str query: The query string to use in the redirect URI.
         """
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "query", query)
+        GetRuleSetItemRedirectUriResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host=host,
+            path=path,
+            port=port,
+            protocol=protocol,
+            query=query,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host: str,
+             path: str,
+             port: int,
+             protocol: str,
+             query: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("host", host)
+        _setter("path", path)
+        _setter("port", port)
+        _setter("protocol", protocol)
+        _setter("query", query)
 
     @property
     @pulumi.getter
@@ -4315,10 +5267,23 @@ class GetRuleSetsFilterResult(dict):
         """
         :param str name: The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetRuleSetsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4352,11 +5317,28 @@ class GetRuleSetsRuleSetResult(dict):
         :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
         :param str name: The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
         """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "state", state)
+        GetRuleSetsRuleSetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            items=items,
+            load_balancer_id=load_balancer_id,
+            name=name,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             items: Sequence['outputs.GetRuleSetsRuleSetItemResult'],
+             load_balancer_id: str,
+             name: str,
+             state: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
+        _setter("items", items)
+        _setter("load_balancer_id", load_balancer_id)
+        _setter("name", name)
+        _setter("state", state)
 
     @property
     @pulumi.getter
@@ -4429,19 +5411,52 @@ class GetRuleSetsRuleSetItemResult(dict):
                *  value cannot contain `$`
                *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "allowed_methods", allowed_methods)
-        pulumi.set(__self__, "are_invalid_characters_allowed", are_invalid_characters_allowed)
-        pulumi.set(__self__, "conditions", conditions)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "header", header)
-        pulumi.set(__self__, "http_large_header_size_in_kb", http_large_header_size_in_kb)
-        pulumi.set(__self__, "prefix", prefix)
-        pulumi.set(__self__, "redirect_uris", redirect_uris)
-        pulumi.set(__self__, "response_code", response_code)
-        pulumi.set(__self__, "status_code", status_code)
-        pulumi.set(__self__, "suffix", suffix)
-        pulumi.set(__self__, "value", value)
+        GetRuleSetsRuleSetItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            allowed_methods=allowed_methods,
+            are_invalid_characters_allowed=are_invalid_characters_allowed,
+            conditions=conditions,
+            description=description,
+            header=header,
+            http_large_header_size_in_kb=http_large_header_size_in_kb,
+            prefix=prefix,
+            redirect_uris=redirect_uris,
+            response_code=response_code,
+            status_code=status_code,
+            suffix=suffix,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: str,
+             allowed_methods: Sequence[str],
+             are_invalid_characters_allowed: bool,
+             conditions: Sequence['outputs.GetRuleSetsRuleSetItemConditionResult'],
+             description: str,
+             header: str,
+             http_large_header_size_in_kb: int,
+             prefix: str,
+             redirect_uris: Sequence['outputs.GetRuleSetsRuleSetItemRedirectUriResult'],
+             response_code: int,
+             status_code: int,
+             suffix: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("allowed_methods", allowed_methods)
+        _setter("are_invalid_characters_allowed", are_invalid_characters_allowed)
+        _setter("conditions", conditions)
+        _setter("description", description)
+        _setter("header", header)
+        _setter("http_large_header_size_in_kb", http_large_header_size_in_kb)
+        _setter("prefix", prefix)
+        _setter("redirect_uris", redirect_uris)
+        _setter("response_code", response_code)
+        _setter("status_code", status_code)
+        _setter("suffix", suffix)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -4569,9 +5584,22 @@ class GetRuleSetsRuleSetItemConditionResult(dict):
                *  **PREFIX_MATCH** - The beginning portion of the incoming URI path must exactly match the `attributeValue` string.
                *  **SUFFIX_MATCH** - The ending portion of the incoming URI path must exactly match the `attributeValue` string.
         """
-        pulumi.set(__self__, "attribute_name", attribute_name)
-        pulumi.set(__self__, "attribute_value", attribute_value)
-        pulumi.set(__self__, "operator", operator)
+        GetRuleSetsRuleSetItemConditionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            attribute_name=attribute_name,
+            attribute_value=attribute_value,
+            operator=operator,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             attribute_name: str,
+             attribute_value: str,
+             operator: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("attribute_name", attribute_name)
+        _setter("attribute_value", attribute_value)
+        _setter("operator", operator)
 
     @property
     @pulumi.getter(name="attributeName")
@@ -4620,11 +5648,28 @@ class GetRuleSetsRuleSetItemRedirectUriResult(dict):
         :param str protocol: The HTTP protocol to use in the redirect URI.
         :param str query: The query string to use in the redirect URI.
         """
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "query", query)
+        GetRuleSetsRuleSetItemRedirectUriResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host=host,
+            path=path,
+            port=port,
+            protocol=protocol,
+            query=query,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host: str,
+             path: str,
+             port: int,
+             protocol: str,
+             query: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("host", host)
+        _setter("path", path)
+        _setter("port", port)
+        _setter("protocol", protocol)
+        _setter("query", query)
 
     @property
     @pulumi.getter
@@ -4676,10 +5721,23 @@ class GetShapesFilterResult(dict):
         """
         :param str name: The name of the shape.  Example: `100Mbps`
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetShapesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4707,7 +5765,16 @@ class GetShapesShapeResult(dict):
         """
         :param str name: The name of the shape.  Example: `100Mbps`
         """
-        pulumi.set(__self__, "name", name)
+        GetShapesShapeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -4727,10 +5794,23 @@ class GetSslCipherSuitesFilterResult(dict):
         """
         :param str name: A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSslCipherSuitesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4763,10 +5843,25 @@ class GetSslCipherSuitesSslCipherSuiteResult(dict):
         :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
         :param str name: A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
         """
-        pulumi.set(__self__, "ciphers", ciphers)
-        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "state", state)
+        GetSslCipherSuitesSslCipherSuiteResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ciphers=ciphers,
+            load_balancer_id=load_balancer_id,
+            name=name,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ciphers: Sequence[str],
+             load_balancer_id: str,
+             name: str,
+             state: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ciphers", ciphers)
+        _setter("load_balancer_id", load_balancer_id)
+        _setter("name", name)
+        _setter("state", state)
 
     @property
     @pulumi.getter

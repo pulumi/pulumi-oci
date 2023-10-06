@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['QueueArgs', 'Queue']
@@ -16,6 +16,7 @@ class QueueArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
                  display_name: pulumi.Input[str],
+                 channel_consumption_limit: Optional[pulumi.Input[int]] = None,
                  custom_encryption_key_id: Optional[pulumi.Input[str]] = None,
                  dead_letter_queue_delivery_count: Optional[pulumi.Input[int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -27,42 +28,76 @@ class QueueArgs:
                  visibility_in_seconds: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a Queue resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[str] display_name: (Updatable) Queue Identifier
-        :param pulumi.Input[str] custom_encryption_key_id: (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
+        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name of the queue.
+        :param pulumi.Input[int] channel_consumption_limit: (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+        :param pulumi.Input[str] custom_encryption_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         :param pulumi.Input[int] dead_letter_queue_delivery_count: (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] retention_in_seconds: The retention period of the messages in the queue, in seconds.
+        :param pulumi.Input[int] retention_in_seconds: The retention period of messages in the queue, in seconds.
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) The default polling timeout of the messages in the queue, in seconds.
-        :param pulumi.Input[int] visibility_in_seconds: (Updatable) The default visibility of the messages consumed from the queue.
+        :param pulumi.Input[int] visibility_in_seconds: (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
+        QueueArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            channel_consumption_limit=channel_consumption_limit,
+            custom_encryption_key_id=custom_encryption_key_id,
+            dead_letter_queue_delivery_count=dead_letter_queue_delivery_count,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            purge_queue=purge_queue,
+            purge_type=purge_type,
+            retention_in_seconds=retention_in_seconds,
+            timeout_in_seconds=timeout_in_seconds,
+            visibility_in_seconds=visibility_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             channel_consumption_limit: Optional[pulumi.Input[int]] = None,
+             custom_encryption_key_id: Optional[pulumi.Input[str]] = None,
+             dead_letter_queue_delivery_count: Optional[pulumi.Input[int]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             purge_queue: Optional[pulumi.Input[bool]] = None,
+             purge_type: Optional[pulumi.Input[str]] = None,
+             retention_in_seconds: Optional[pulumi.Input[int]] = None,
+             timeout_in_seconds: Optional[pulumi.Input[int]] = None,
+             visibility_in_seconds: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        if channel_consumption_limit is not None:
+            _setter("channel_consumption_limit", channel_consumption_limit)
         if custom_encryption_key_id is not None:
-            pulumi.set(__self__, "custom_encryption_key_id", custom_encryption_key_id)
+            _setter("custom_encryption_key_id", custom_encryption_key_id)
         if dead_letter_queue_delivery_count is not None:
-            pulumi.set(__self__, "dead_letter_queue_delivery_count", dead_letter_queue_delivery_count)
+            _setter("dead_letter_queue_delivery_count", dead_letter_queue_delivery_count)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if purge_queue is not None:
-            pulumi.set(__self__, "purge_queue", purge_queue)
+            _setter("purge_queue", purge_queue)
         if purge_type is not None:
-            pulumi.set(__self__, "purge_type", purge_type)
+            _setter("purge_type", purge_type)
         if retention_in_seconds is not None:
-            pulumi.set(__self__, "retention_in_seconds", retention_in_seconds)
+            _setter("retention_in_seconds", retention_in_seconds)
         if timeout_in_seconds is not None:
-            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+            _setter("timeout_in_seconds", timeout_in_seconds)
         if visibility_in_seconds is not None:
-            pulumi.set(__self__, "visibility_in_seconds", visibility_in_seconds)
+            _setter("visibility_in_seconds", visibility_in_seconds)
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) Compartment Identifier
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -74,7 +109,7 @@ class QueueArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Queue Identifier
+        (Updatable) The user-friendly name of the queue.
         """
         return pulumi.get(self, "display_name")
 
@@ -83,10 +118,22 @@ class QueueArgs:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter(name="channelConsumptionLimit")
+    def channel_consumption_limit(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+        """
+        return pulumi.get(self, "channel_consumption_limit")
+
+    @channel_consumption_limit.setter
+    def channel_consumption_limit(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "channel_consumption_limit", value)
+
+    @property
     @pulumi.getter(name="customEncryptionKeyId")
     def custom_encryption_key_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         """
         return pulumi.get(self, "custom_encryption_key_id")
 
@@ -152,7 +199,7 @@ class QueueArgs:
     @pulumi.getter(name="retentionInSeconds")
     def retention_in_seconds(self) -> Optional[pulumi.Input[int]]:
         """
-        The retention period of the messages in the queue, in seconds.
+        The retention period of messages in the queue, in seconds.
         """
         return pulumi.get(self, "retention_in_seconds")
 
@@ -176,7 +223,7 @@ class QueueArgs:
     @pulumi.getter(name="visibilityInSeconds")
     def visibility_in_seconds(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The default visibility of the messages consumed from the queue.
+        (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
         """
         return pulumi.get(self, "visibility_in_seconds")
 
@@ -188,6 +235,7 @@ class QueueArgs:
 @pulumi.input_type
 class _QueueState:
     def __init__(__self__, *,
+                 channel_consumption_limit: Optional[pulumi.Input[int]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  custom_encryption_key_id: Optional[pulumi.Input[str]] = None,
                  dead_letter_queue_delivery_count: Optional[pulumi.Input[int]] = None,
@@ -207,62 +255,120 @@ class _QueueState:
                  visibility_in_seconds: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering Queue resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[str] custom_encryption_key_id: (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+        :param pulumi.Input[int] channel_consumption_limit: (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
+        :param pulumi.Input[str] custom_encryption_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         :param pulumi.Input[int] dead_letter_queue_delivery_count: (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Queue Identifier
+        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name of the queue.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param pulumi.Input[str] lifecycle_details: Any additional details about the current state of the queue.
         :param pulumi.Input[str] messages_endpoint: The endpoint to use to consume or publish messages in the queue.
-        :param pulumi.Input[int] retention_in_seconds: The retention period of the messages in the queue, in seconds.
-        :param pulumi.Input[str] state: The current state of the Queue.
+        :param pulumi.Input[int] retention_in_seconds: The retention period of messages in the queue, in seconds.
+        :param pulumi.Input[str] state: The current state of the queue.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the the Queue was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the Queue was updated. An RFC3339 formatted datetime string
+        :param pulumi.Input[str] time_created: The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
+        :param pulumi.Input[str] time_updated: The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) The default polling timeout of the messages in the queue, in seconds.
-        :param pulumi.Input[int] visibility_in_seconds: (Updatable) The default visibility of the messages consumed from the queue.
+        :param pulumi.Input[int] visibility_in_seconds: (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
         """
+        _QueueState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            channel_consumption_limit=channel_consumption_limit,
+            compartment_id=compartment_id,
+            custom_encryption_key_id=custom_encryption_key_id,
+            dead_letter_queue_delivery_count=dead_letter_queue_delivery_count,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            messages_endpoint=messages_endpoint,
+            purge_queue=purge_queue,
+            purge_type=purge_type,
+            retention_in_seconds=retention_in_seconds,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            timeout_in_seconds=timeout_in_seconds,
+            visibility_in_seconds=visibility_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             channel_consumption_limit: Optional[pulumi.Input[int]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             custom_encryption_key_id: Optional[pulumi.Input[str]] = None,
+             dead_letter_queue_delivery_count: Optional[pulumi.Input[int]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             messages_endpoint: Optional[pulumi.Input[str]] = None,
+             purge_queue: Optional[pulumi.Input[bool]] = None,
+             purge_type: Optional[pulumi.Input[str]] = None,
+             retention_in_seconds: Optional[pulumi.Input[int]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             timeout_in_seconds: Optional[pulumi.Input[int]] = None,
+             visibility_in_seconds: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        if channel_consumption_limit is not None:
+            _setter("channel_consumption_limit", channel_consumption_limit)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if custom_encryption_key_id is not None:
-            pulumi.set(__self__, "custom_encryption_key_id", custom_encryption_key_id)
+            _setter("custom_encryption_key_id", custom_encryption_key_id)
         if dead_letter_queue_delivery_count is not None:
-            pulumi.set(__self__, "dead_letter_queue_delivery_count", dead_letter_queue_delivery_count)
+            _setter("dead_letter_queue_delivery_count", dead_letter_queue_delivery_count)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if messages_endpoint is not None:
-            pulumi.set(__self__, "messages_endpoint", messages_endpoint)
+            _setter("messages_endpoint", messages_endpoint)
         if purge_queue is not None:
-            pulumi.set(__self__, "purge_queue", purge_queue)
+            _setter("purge_queue", purge_queue)
         if purge_type is not None:
-            pulumi.set(__self__, "purge_type", purge_type)
+            _setter("purge_type", purge_type)
         if retention_in_seconds is not None:
-            pulumi.set(__self__, "retention_in_seconds", retention_in_seconds)
+            _setter("retention_in_seconds", retention_in_seconds)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if timeout_in_seconds is not None:
-            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+            _setter("timeout_in_seconds", timeout_in_seconds)
         if visibility_in_seconds is not None:
-            pulumi.set(__self__, "visibility_in_seconds", visibility_in_seconds)
+            _setter("visibility_in_seconds", visibility_in_seconds)
+
+    @property
+    @pulumi.getter(name="channelConsumptionLimit")
+    def channel_consumption_limit(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+        """
+        return pulumi.get(self, "channel_consumption_limit")
+
+    @channel_consumption_limit.setter
+    def channel_consumption_limit(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "channel_consumption_limit", value)
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Compartment Identifier
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -274,7 +380,7 @@ class _QueueState:
     @pulumi.getter(name="customEncryptionKeyId")
     def custom_encryption_key_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         """
         return pulumi.get(self, "custom_encryption_key_id")
 
@@ -310,7 +416,7 @@ class _QueueState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Queue Identifier
+        (Updatable) The user-friendly name of the queue.
         """
         return pulumi.get(self, "display_name")
 
@@ -334,7 +440,7 @@ class _QueueState:
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        Any additional details about the current state of the queue.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -376,7 +482,7 @@ class _QueueState:
     @pulumi.getter(name="retentionInSeconds")
     def retention_in_seconds(self) -> Optional[pulumi.Input[int]]:
         """
-        The retention period of the messages in the queue, in seconds.
+        The retention period of messages in the queue, in seconds.
         """
         return pulumi.get(self, "retention_in_seconds")
 
@@ -388,7 +494,7 @@ class _QueueState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The current state of the Queue.
+        The current state of the queue.
         """
         return pulumi.get(self, "state")
 
@@ -412,7 +518,7 @@ class _QueueState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        The time the the Queue was created. An RFC3339 formatted datetime string
+        The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -424,7 +530,7 @@ class _QueueState:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
-        The time the Queue was updated. An RFC3339 formatted datetime string
+        The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -448,7 +554,7 @@ class _QueueState:
     @pulumi.getter(name="visibilityInSeconds")
     def visibility_in_seconds(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The default visibility of the messages consumed from the queue.
+        (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
         """
         return pulumi.get(self, "visibility_in_seconds")
 
@@ -462,6 +568,7 @@ class Queue(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 channel_consumption_limit: Optional[pulumi.Input[int]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  custom_encryption_key_id: Optional[pulumi.Input[str]] = None,
                  dead_letter_queue_delivery_count: Optional[pulumi.Input[int]] = None,
@@ -477,7 +584,7 @@ class Queue(pulumi.CustomResource):
         """
         This resource provides the Queue resource in Oracle Cloud Infrastructure Queue service.
 
-        Creates a new Queue.
+        Creates a new queue.
 
         ## Example Usage
 
@@ -488,6 +595,7 @@ class Queue(pulumi.CustomResource):
         test_queue = oci.queue.Queue("testQueue",
             compartment_id=var["compartment_id"],
             display_name=var["queue_display_name"],
+            channel_consumption_limit=var["queue_channel_consumption_limit"],
             custom_encryption_key_id=oci_kms_key["test_key"]["id"],
             dead_letter_queue_delivery_count=var["queue_dead_letter_queue_delivery_count"],
             defined_tags={
@@ -511,15 +619,16 @@ class Queue(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[str] custom_encryption_key_id: (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+        :param pulumi.Input[int] channel_consumption_limit: (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
+        :param pulumi.Input[str] custom_encryption_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         :param pulumi.Input[int] dead_letter_queue_delivery_count: (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Queue Identifier
+        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name of the queue.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[int] retention_in_seconds: The retention period of the messages in the queue, in seconds.
+        :param pulumi.Input[int] retention_in_seconds: The retention period of messages in the queue, in seconds.
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) The default polling timeout of the messages in the queue, in seconds.
-        :param pulumi.Input[int] visibility_in_seconds: (Updatable) The default visibility of the messages consumed from the queue.
+        :param pulumi.Input[int] visibility_in_seconds: (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
         """
         ...
     @overload
@@ -530,7 +639,7 @@ class Queue(pulumi.CustomResource):
         """
         This resource provides the Queue resource in Oracle Cloud Infrastructure Queue service.
 
-        Creates a new Queue.
+        Creates a new queue.
 
         ## Example Usage
 
@@ -541,6 +650,7 @@ class Queue(pulumi.CustomResource):
         test_queue = oci.queue.Queue("testQueue",
             compartment_id=var["compartment_id"],
             display_name=var["queue_display_name"],
+            channel_consumption_limit=var["queue_channel_consumption_limit"],
             custom_encryption_key_id=oci_kms_key["test_key"]["id"],
             dead_letter_queue_delivery_count=var["queue_dead_letter_queue_delivery_count"],
             defined_tags={
@@ -572,11 +682,16 @@ class Queue(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            QueueArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 channel_consumption_limit: Optional[pulumi.Input[int]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  custom_encryption_key_id: Optional[pulumi.Input[str]] = None,
                  dead_letter_queue_delivery_count: Optional[pulumi.Input[int]] = None,
@@ -597,6 +712,7 @@ class Queue(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = QueueArgs.__new__(QueueArgs)
 
+            __props__.__dict__["channel_consumption_limit"] = channel_consumption_limit
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -628,6 +744,7 @@ class Queue(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            channel_consumption_limit: Optional[pulumi.Input[int]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             custom_encryption_key_id: Optional[pulumi.Input[str]] = None,
             dead_letter_queue_delivery_count: Optional[pulumi.Input[int]] = None,
@@ -652,26 +769,28 @@ class Queue(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[str] custom_encryption_key_id: (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+        :param pulumi.Input[int] channel_consumption_limit: (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
+        :param pulumi.Input[str] custom_encryption_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         :param pulumi.Input[int] dead_letter_queue_delivery_count: (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) Queue Identifier
+        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name of the queue.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param pulumi.Input[str] lifecycle_details: Any additional details about the current state of the queue.
         :param pulumi.Input[str] messages_endpoint: The endpoint to use to consume or publish messages in the queue.
-        :param pulumi.Input[int] retention_in_seconds: The retention period of the messages in the queue, in seconds.
-        :param pulumi.Input[str] state: The current state of the Queue.
+        :param pulumi.Input[int] retention_in_seconds: The retention period of messages in the queue, in seconds.
+        :param pulumi.Input[str] state: The current state of the queue.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the the Queue was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_updated: The time the Queue was updated. An RFC3339 formatted datetime string
+        :param pulumi.Input[str] time_created: The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
+        :param pulumi.Input[str] time_updated: The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) The default polling timeout of the messages in the queue, in seconds.
-        :param pulumi.Input[int] visibility_in_seconds: (Updatable) The default visibility of the messages consumed from the queue.
+        :param pulumi.Input[int] visibility_in_seconds: (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _QueueState.__new__(_QueueState)
 
+        __props__.__dict__["channel_consumption_limit"] = channel_consumption_limit
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["custom_encryption_key_id"] = custom_encryption_key_id
         __props__.__dict__["dead_letter_queue_delivery_count"] = dead_letter_queue_delivery_count
@@ -692,10 +811,18 @@ class Queue(pulumi.CustomResource):
         return Queue(resource_name, opts=opts, __props__=__props__)
 
     @property
+    @pulumi.getter(name="channelConsumptionLimit")
+    def channel_consumption_limit(self) -> pulumi.Output[int]:
+        """
+        (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+        """
+        return pulumi.get(self, "channel_consumption_limit")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) Compartment Identifier
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -703,7 +830,7 @@ class Queue(pulumi.CustomResource):
     @pulumi.getter(name="customEncryptionKeyId")
     def custom_encryption_key_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         """
         return pulumi.get(self, "custom_encryption_key_id")
 
@@ -727,7 +854,7 @@ class Queue(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) Queue Identifier
+        (Updatable) The user-friendly name of the queue.
         """
         return pulumi.get(self, "display_name")
 
@@ -743,7 +870,7 @@ class Queue(pulumi.CustomResource):
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[str]:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        Any additional details about the current state of the queue.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -769,7 +896,7 @@ class Queue(pulumi.CustomResource):
     @pulumi.getter(name="retentionInSeconds")
     def retention_in_seconds(self) -> pulumi.Output[int]:
         """
-        The retention period of the messages in the queue, in seconds.
+        The retention period of messages in the queue, in seconds.
         """
         return pulumi.get(self, "retention_in_seconds")
 
@@ -777,7 +904,7 @@ class Queue(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        The current state of the Queue.
+        The current state of the queue.
         """
         return pulumi.get(self, "state")
 
@@ -793,7 +920,7 @@ class Queue(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        The time the the Queue was created. An RFC3339 formatted datetime string
+        The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -801,7 +928,7 @@ class Queue(pulumi.CustomResource):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[str]:
         """
-        The time the Queue was updated. An RFC3339 formatted datetime string
+        The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -817,7 +944,7 @@ class Queue(pulumi.CustomResource):
     @pulumi.getter(name="visibilityInSeconds")
     def visibility_in_seconds(self) -> pulumi.Output[int]:
         """
-        (Updatable) The default visibility of the messages consumed from the queue.
+        (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
         """
         return pulumi.get(self, "visibility_in_seconds")
 

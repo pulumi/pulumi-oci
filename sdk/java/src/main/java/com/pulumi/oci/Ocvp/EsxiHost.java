@@ -270,17 +270,9 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
     public Output<Boolean> isBillingSwappingInProgress() {
         return this.isBillingSwappingInProgress;
     }
-    /**
-     * The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
-     * 
-     */
     @Export(name="nextSku", refs={String.class}, tree="[0]")
     private Output<String> nextSku;
 
-    /**
-     * @return The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
-     * 
-     */
     public Output<String> nextSku() {
         return this.nextSku;
     }

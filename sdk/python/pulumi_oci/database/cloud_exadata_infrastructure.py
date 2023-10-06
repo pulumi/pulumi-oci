@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -43,22 +43,49 @@ class CloudExadataInfrastructureArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "shape", shape)
+        CloudExadataInfrastructureArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            display_name=display_name,
+            shape=shape,
+            compute_count=compute_count,
+            customer_contacts=customer_contacts,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            maintenance_window=maintenance_window,
+            storage_count=storage_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: pulumi.Input[str],
+             compartment_id: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             shape: pulumi.Input[str],
+             compute_count: Optional[pulumi.Input[int]] = None,
+             customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             maintenance_window: Optional[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowArgs']] = None,
+             storage_count: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("shape", shape)
         if compute_count is not None:
-            pulumi.set(__self__, "compute_count", compute_count)
+            _setter("compute_count", compute_count)
         if customer_contacts is not None:
-            pulumi.set(__self__, "customer_contacts", customer_contacts)
+            _setter("customer_contacts", customer_contacts)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if maintenance_window is not None:
-            pulumi.set(__self__, "maintenance_window", maintenance_window)
+            _setter("maintenance_window", maintenance_window)
         if storage_count is not None:
-            pulumi.set(__self__, "storage_count", storage_count)
+            _setter("storage_count", storage_count)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -257,68 +284,137 @@ class _CloudExadataInfrastructureState:
         :param pulumi.Input[str] time_created: The date and time the cloud Exadata infrastructure resource was created.
         :param pulumi.Input[int] total_storage_size_in_gbs: The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
         """
+        _CloudExadataInfrastructureState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            activated_storage_count=activated_storage_count,
+            additional_storage_count=additional_storage_count,
+            availability_domain=availability_domain,
+            available_storage_size_in_gbs=available_storage_size_in_gbs,
+            compartment_id=compartment_id,
+            compute_count=compute_count,
+            cpu_count=cpu_count,
+            customer_contacts=customer_contacts,
+            data_storage_size_in_tbs=data_storage_size_in_tbs,
+            db_node_storage_size_in_gbs=db_node_storage_size_in_gbs,
+            db_server_version=db_server_version,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            last_maintenance_run_id=last_maintenance_run_id,
+            lifecycle_details=lifecycle_details,
+            maintenance_window=maintenance_window,
+            max_cpu_count=max_cpu_count,
+            max_data_storage_in_tbs=max_data_storage_in_tbs,
+            max_db_node_storage_in_gbs=max_db_node_storage_in_gbs,
+            max_memory_in_gbs=max_memory_in_gbs,
+            memory_size_in_gbs=memory_size_in_gbs,
+            monthly_db_server_version=monthly_db_server_version,
+            monthly_storage_server_version=monthly_storage_server_version,
+            next_maintenance_run_id=next_maintenance_run_id,
+            shape=shape,
+            state=state,
+            storage_count=storage_count,
+            storage_server_version=storage_server_version,
+            time_created=time_created,
+            total_storage_size_in_gbs=total_storage_size_in_gbs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             activated_storage_count: Optional[pulumi.Input[int]] = None,
+             additional_storage_count: Optional[pulumi.Input[int]] = None,
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             available_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             compute_count: Optional[pulumi.Input[int]] = None,
+             cpu_count: Optional[pulumi.Input[int]] = None,
+             customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]] = None,
+             data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
+             db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+             db_server_version: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             last_maintenance_run_id: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             maintenance_window: Optional[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowArgs']] = None,
+             max_cpu_count: Optional[pulumi.Input[int]] = None,
+             max_data_storage_in_tbs: Optional[pulumi.Input[float]] = None,
+             max_db_node_storage_in_gbs: Optional[pulumi.Input[int]] = None,
+             max_memory_in_gbs: Optional[pulumi.Input[int]] = None,
+             memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
+             monthly_db_server_version: Optional[pulumi.Input[str]] = None,
+             monthly_storage_server_version: Optional[pulumi.Input[str]] = None,
+             next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             storage_count: Optional[pulumi.Input[int]] = None,
+             storage_server_version: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             total_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if activated_storage_count is not None:
-            pulumi.set(__self__, "activated_storage_count", activated_storage_count)
+            _setter("activated_storage_count", activated_storage_count)
         if additional_storage_count is not None:
-            pulumi.set(__self__, "additional_storage_count", additional_storage_count)
+            _setter("additional_storage_count", additional_storage_count)
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if available_storage_size_in_gbs is not None:
-            pulumi.set(__self__, "available_storage_size_in_gbs", available_storage_size_in_gbs)
+            _setter("available_storage_size_in_gbs", available_storage_size_in_gbs)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if compute_count is not None:
-            pulumi.set(__self__, "compute_count", compute_count)
+            _setter("compute_count", compute_count)
         if cpu_count is not None:
-            pulumi.set(__self__, "cpu_count", cpu_count)
+            _setter("cpu_count", cpu_count)
         if customer_contacts is not None:
-            pulumi.set(__self__, "customer_contacts", customer_contacts)
+            _setter("customer_contacts", customer_contacts)
         if data_storage_size_in_tbs is not None:
-            pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+            _setter("data_storage_size_in_tbs", data_storage_size_in_tbs)
         if db_node_storage_size_in_gbs is not None:
-            pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
+            _setter("db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
         if db_server_version is not None:
-            pulumi.set(__self__, "db_server_version", db_server_version)
+            _setter("db_server_version", db_server_version)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if last_maintenance_run_id is not None:
-            pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
+            _setter("last_maintenance_run_id", last_maintenance_run_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if maintenance_window is not None:
-            pulumi.set(__self__, "maintenance_window", maintenance_window)
+            _setter("maintenance_window", maintenance_window)
         if max_cpu_count is not None:
-            pulumi.set(__self__, "max_cpu_count", max_cpu_count)
+            _setter("max_cpu_count", max_cpu_count)
         if max_data_storage_in_tbs is not None:
-            pulumi.set(__self__, "max_data_storage_in_tbs", max_data_storage_in_tbs)
+            _setter("max_data_storage_in_tbs", max_data_storage_in_tbs)
         if max_db_node_storage_in_gbs is not None:
-            pulumi.set(__self__, "max_db_node_storage_in_gbs", max_db_node_storage_in_gbs)
+            _setter("max_db_node_storage_in_gbs", max_db_node_storage_in_gbs)
         if max_memory_in_gbs is not None:
-            pulumi.set(__self__, "max_memory_in_gbs", max_memory_in_gbs)
+            _setter("max_memory_in_gbs", max_memory_in_gbs)
         if memory_size_in_gbs is not None:
-            pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+            _setter("memory_size_in_gbs", memory_size_in_gbs)
         if monthly_db_server_version is not None:
-            pulumi.set(__self__, "monthly_db_server_version", monthly_db_server_version)
+            _setter("monthly_db_server_version", monthly_db_server_version)
         if monthly_storage_server_version is not None:
-            pulumi.set(__self__, "monthly_storage_server_version", monthly_storage_server_version)
+            _setter("monthly_storage_server_version", monthly_storage_server_version)
         if next_maintenance_run_id is not None:
-            pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
+            _setter("next_maintenance_run_id", next_maintenance_run_id)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if storage_count is not None:
-            pulumi.set(__self__, "storage_count", storage_count)
+            _setter("storage_count", storage_count)
         if storage_server_version is not None:
-            pulumi.set(__self__, "storage_server_version", storage_server_version)
+            _setter("storage_server_version", storage_server_version)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if total_storage_size_in_gbs is not None:
-            pulumi.set(__self__, "total_storage_size_in_gbs", total_storage_size_in_gbs)
+            _setter("total_storage_size_in_gbs", total_storage_size_in_gbs)
 
     @property
     @pulumi.getter(name="activatedStorageCount")
@@ -848,6 +944,10 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CloudExadataInfrastructureArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -885,6 +985,11 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            if maintenance_window is not None and not isinstance(maintenance_window, CloudExadataInfrastructureMaintenanceWindowArgs):
+                maintenance_window = maintenance_window or {}
+                def _setter(key, value):
+                    maintenance_window[key] = value
+                CloudExadataInfrastructureMaintenanceWindowArgs._configure(_setter, **maintenance_window)
             __props__.__dict__["maintenance_window"] = maintenance_window
             if shape is None and not opts.urn:
                 raise TypeError("Missing required property 'shape'")

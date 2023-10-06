@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -59,23 +59,50 @@ class NetworkLoadBalancerArgs:
         :param pulumi.Input[str] nlb_ip_version: (Updatable) IP version associated with the NLB.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        NetworkLoadBalancerArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            subnet_id=subnet_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_preserve_source_destination=is_preserve_source_destination,
+            is_private=is_private,
+            network_security_group_ids=network_security_group_ids,
+            nlb_ip_version=nlb_ip_version,
+            reserved_ips=reserved_ips,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             subnet_id: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_preserve_source_destination: Optional[pulumi.Input[bool]] = None,
+             is_private: Optional[pulumi.Input[bool]] = None,
+             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             nlb_ip_version: Optional[pulumi.Input[str]] = None,
+             reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("subnet_id", subnet_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_preserve_source_destination is not None:
-            pulumi.set(__self__, "is_preserve_source_destination", is_preserve_source_destination)
+            _setter("is_preserve_source_destination", is_preserve_source_destination)
         if is_private is not None:
-            pulumi.set(__self__, "is_private", is_private)
+            _setter("is_private", is_private)
         if network_security_group_ids is not None:
-            pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+            _setter("network_security_group_ids", network_security_group_ids)
         if nlb_ip_version is not None:
-            pulumi.set(__self__, "nlb_ip_version", nlb_ip_version)
+            _setter("nlb_ip_version", nlb_ip_version)
         if reserved_ips is not None:
-            pulumi.set(__self__, "reserved_ips", reserved_ips)
+            _setter("reserved_ips", reserved_ips)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -276,38 +303,77 @@ class _NetworkLoadBalancerState:
         :param pulumi.Input[str] time_created: The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
         """
+        _NetworkLoadBalancerState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            ip_addresses=ip_addresses,
+            is_preserve_source_destination=is_preserve_source_destination,
+            is_private=is_private,
+            lifecycle_details=lifecycle_details,
+            network_security_group_ids=network_security_group_ids,
+            nlb_ip_version=nlb_ip_version,
+            reserved_ips=reserved_ips,
+            state=state,
+            subnet_id=subnet_id,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerIpAddressArgs']]]] = None,
+             is_preserve_source_destination: Optional[pulumi.Input[bool]] = None,
+             is_private: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             nlb_ip_version: Optional[pulumi.Input[str]] = None,
+             reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkLoadBalancerReservedIpArgs']]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if ip_addresses is not None:
-            pulumi.set(__self__, "ip_addresses", ip_addresses)
+            _setter("ip_addresses", ip_addresses)
         if is_preserve_source_destination is not None:
-            pulumi.set(__self__, "is_preserve_source_destination", is_preserve_source_destination)
+            _setter("is_preserve_source_destination", is_preserve_source_destination)
         if is_private is not None:
-            pulumi.set(__self__, "is_private", is_private)
+            _setter("is_private", is_private)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if network_security_group_ids is not None:
-            pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+            _setter("network_security_group_ids", network_security_group_ids)
         if nlb_ip_version is not None:
-            pulumi.set(__self__, "nlb_ip_version", nlb_ip_version)
+            _setter("nlb_ip_version", nlb_ip_version)
         if reserved_ips is not None:
-            pulumi.set(__self__, "reserved_ips", reserved_ips)
+            _setter("reserved_ips", reserved_ips)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -663,6 +729,10 @@ class NetworkLoadBalancer(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            NetworkLoadBalancerArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -24,6 +24,7 @@ class MigrationArgs:
                  agent_id: Optional[pulumi.Input[str]] = None,
                  csv_text: Optional[pulumi.Input[str]] = None,
                  data_transfer_medium_details: Optional[pulumi.Input['MigrationDataTransferMediumDetailsArgs']] = None,
+                 data_transfer_medium_details_v2: Optional[pulumi.Input['MigrationDataTransferMediumDetailsV2Args']] = None,
                  datapump_settings: Optional[pulumi.Input['MigrationDatapumpSettingsArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -57,40 +58,89 @@ class MigrationArgs:
         :param pulumi.Input[str] source_container_database_connection_id: (Updatable) The OCID of the Source Container Database Connection. Only used for Online migrations. Only Connections of type Non-Autonomous can be used as source container databases.
         :param pulumi.Input['MigrationVaultDetailsArgs'] vault_details: (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "source_database_connection_id", source_database_connection_id)
-        pulumi.set(__self__, "target_database_connection_id", target_database_connection_id)
-        pulumi.set(__self__, "type", type)
+        MigrationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            source_database_connection_id=source_database_connection_id,
+            target_database_connection_id=target_database_connection_id,
+            type=type,
+            advisor_settings=advisor_settings,
+            agent_id=agent_id,
+            csv_text=csv_text,
+            data_transfer_medium_details=data_transfer_medium_details,
+            data_transfer_medium_details_v2=data_transfer_medium_details_v2,
+            datapump_settings=datapump_settings,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            dump_transfer_details=dump_transfer_details,
+            exclude_objects=exclude_objects,
+            freeform_tags=freeform_tags,
+            golden_gate_details=golden_gate_details,
+            golden_gate_service_details=golden_gate_service_details,
+            include_objects=include_objects,
+            source_container_database_connection_id=source_container_database_connection_id,
+            vault_details=vault_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             source_database_connection_id: pulumi.Input[str],
+             target_database_connection_id: pulumi.Input[str],
+             type: pulumi.Input[str],
+             advisor_settings: Optional[pulumi.Input['MigrationAdvisorSettingsArgs']] = None,
+             agent_id: Optional[pulumi.Input[str]] = None,
+             csv_text: Optional[pulumi.Input[str]] = None,
+             data_transfer_medium_details: Optional[pulumi.Input['MigrationDataTransferMediumDetailsArgs']] = None,
+             data_transfer_medium_details_v2: Optional[pulumi.Input['MigrationDataTransferMediumDetailsV2Args']] = None,
+             datapump_settings: Optional[pulumi.Input['MigrationDatapumpSettingsArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             dump_transfer_details: Optional[pulumi.Input['MigrationDumpTransferDetailsArgs']] = None,
+             exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             golden_gate_details: Optional[pulumi.Input['MigrationGoldenGateDetailsArgs']] = None,
+             golden_gate_service_details: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsArgs']] = None,
+             include_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]] = None,
+             source_container_database_connection_id: Optional[pulumi.Input[str]] = None,
+             vault_details: Optional[pulumi.Input['MigrationVaultDetailsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("source_database_connection_id", source_database_connection_id)
+        _setter("target_database_connection_id", target_database_connection_id)
+        _setter("type", type)
         if advisor_settings is not None:
-            pulumi.set(__self__, "advisor_settings", advisor_settings)
+            _setter("advisor_settings", advisor_settings)
         if agent_id is not None:
-            pulumi.set(__self__, "agent_id", agent_id)
+            _setter("agent_id", agent_id)
         if csv_text is not None:
-            pulumi.set(__self__, "csv_text", csv_text)
+            _setter("csv_text", csv_text)
         if data_transfer_medium_details is not None:
-            pulumi.set(__self__, "data_transfer_medium_details", data_transfer_medium_details)
+            _setter("data_transfer_medium_details", data_transfer_medium_details)
+        if data_transfer_medium_details_v2 is not None:
+            _setter("data_transfer_medium_details_v2", data_transfer_medium_details_v2)
         if datapump_settings is not None:
-            pulumi.set(__self__, "datapump_settings", datapump_settings)
+            _setter("datapump_settings", datapump_settings)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if dump_transfer_details is not None:
-            pulumi.set(__self__, "dump_transfer_details", dump_transfer_details)
+            _setter("dump_transfer_details", dump_transfer_details)
         if exclude_objects is not None:
-            pulumi.set(__self__, "exclude_objects", exclude_objects)
+            _setter("exclude_objects", exclude_objects)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if golden_gate_details is not None:
-            pulumi.set(__self__, "golden_gate_details", golden_gate_details)
+            _setter("golden_gate_details", golden_gate_details)
         if golden_gate_service_details is not None:
-            pulumi.set(__self__, "golden_gate_service_details", golden_gate_service_details)
+            _setter("golden_gate_service_details", golden_gate_service_details)
         if include_objects is not None:
-            pulumi.set(__self__, "include_objects", include_objects)
+            _setter("include_objects", include_objects)
         if source_container_database_connection_id is not None:
-            pulumi.set(__self__, "source_container_database_connection_id", source_container_database_connection_id)
+            _setter("source_container_database_connection_id", source_container_database_connection_id)
         if vault_details is not None:
-            pulumi.set(__self__, "vault_details", vault_details)
+            _setter("vault_details", vault_details)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -187,6 +237,15 @@ class MigrationArgs:
     @data_transfer_medium_details.setter
     def data_transfer_medium_details(self, value: Optional[pulumi.Input['MigrationDataTransferMediumDetailsArgs']]):
         pulumi.set(self, "data_transfer_medium_details", value)
+
+    @property
+    @pulumi.getter(name="dataTransferMediumDetailsV2")
+    def data_transfer_medium_details_v2(self) -> Optional[pulumi.Input['MigrationDataTransferMediumDetailsV2Args']]:
+        return pulumi.get(self, "data_transfer_medium_details_v2")
+
+    @data_transfer_medium_details_v2.setter
+    def data_transfer_medium_details_v2(self, value: Optional[pulumi.Input['MigrationDataTransferMediumDetailsV2Args']]):
+        pulumi.set(self, "data_transfer_medium_details_v2", value)
 
     @property
     @pulumi.getter(name="datapumpSettings")
@@ -330,6 +389,7 @@ class _MigrationState:
                  credentials_secret_id: Optional[pulumi.Input[str]] = None,
                  csv_text: Optional[pulumi.Input[str]] = None,
                  data_transfer_medium_details: Optional[pulumi.Input['MigrationDataTransferMediumDetailsArgs']] = None,
+                 data_transfer_medium_details_v2: Optional[pulumi.Input['MigrationDataTransferMediumDetailsV2Args']] = None,
                  datapump_settings: Optional[pulumi.Input['MigrationDatapumpSettingsArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -383,62 +443,129 @@ class _MigrationState:
         :param pulumi.Input['MigrationVaultDetailsArgs'] vault_details: (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
         :param pulumi.Input[str] wait_after: Name of a migration phase. The Job will wait after executing this phase until the Resume Job endpoint is called.
         """
+        _MigrationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            advisor_settings=advisor_settings,
+            agent_id=agent_id,
+            compartment_id=compartment_id,
+            credentials_secret_id=credentials_secret_id,
+            csv_text=csv_text,
+            data_transfer_medium_details=data_transfer_medium_details,
+            data_transfer_medium_details_v2=data_transfer_medium_details_v2,
+            datapump_settings=datapump_settings,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            dump_transfer_details=dump_transfer_details,
+            exclude_objects=exclude_objects,
+            executing_job_id=executing_job_id,
+            freeform_tags=freeform_tags,
+            golden_gate_details=golden_gate_details,
+            golden_gate_service_details=golden_gate_service_details,
+            include_objects=include_objects,
+            lifecycle_details=lifecycle_details,
+            source_container_database_connection_id=source_container_database_connection_id,
+            source_database_connection_id=source_database_connection_id,
+            state=state,
+            system_tags=system_tags,
+            target_database_connection_id=target_database_connection_id,
+            time_created=time_created,
+            time_last_migration=time_last_migration,
+            time_updated=time_updated,
+            type=type,
+            vault_details=vault_details,
+            wait_after=wait_after,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             advisor_settings: Optional[pulumi.Input['MigrationAdvisorSettingsArgs']] = None,
+             agent_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             credentials_secret_id: Optional[pulumi.Input[str]] = None,
+             csv_text: Optional[pulumi.Input[str]] = None,
+             data_transfer_medium_details: Optional[pulumi.Input['MigrationDataTransferMediumDetailsArgs']] = None,
+             data_transfer_medium_details_v2: Optional[pulumi.Input['MigrationDataTransferMediumDetailsV2Args']] = None,
+             datapump_settings: Optional[pulumi.Input['MigrationDatapumpSettingsArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             dump_transfer_details: Optional[pulumi.Input['MigrationDumpTransferDetailsArgs']] = None,
+             exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]]] = None,
+             executing_job_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             golden_gate_details: Optional[pulumi.Input['MigrationGoldenGateDetailsArgs']] = None,
+             golden_gate_service_details: Optional[pulumi.Input['MigrationGoldenGateServiceDetailsArgs']] = None,
+             include_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             source_container_database_connection_id: Optional[pulumi.Input[str]] = None,
+             source_database_connection_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             target_database_connection_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_last_migration: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             vault_details: Optional[pulumi.Input['MigrationVaultDetailsArgs']] = None,
+             wait_after: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if advisor_settings is not None:
-            pulumi.set(__self__, "advisor_settings", advisor_settings)
+            _setter("advisor_settings", advisor_settings)
         if agent_id is not None:
-            pulumi.set(__self__, "agent_id", agent_id)
+            _setter("agent_id", agent_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if credentials_secret_id is not None:
-            pulumi.set(__self__, "credentials_secret_id", credentials_secret_id)
+            _setter("credentials_secret_id", credentials_secret_id)
         if csv_text is not None:
-            pulumi.set(__self__, "csv_text", csv_text)
+            _setter("csv_text", csv_text)
         if data_transfer_medium_details is not None:
-            pulumi.set(__self__, "data_transfer_medium_details", data_transfer_medium_details)
+            _setter("data_transfer_medium_details", data_transfer_medium_details)
+        if data_transfer_medium_details_v2 is not None:
+            _setter("data_transfer_medium_details_v2", data_transfer_medium_details_v2)
         if datapump_settings is not None:
-            pulumi.set(__self__, "datapump_settings", datapump_settings)
+            _setter("datapump_settings", datapump_settings)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if dump_transfer_details is not None:
-            pulumi.set(__self__, "dump_transfer_details", dump_transfer_details)
+            _setter("dump_transfer_details", dump_transfer_details)
         if exclude_objects is not None:
-            pulumi.set(__self__, "exclude_objects", exclude_objects)
+            _setter("exclude_objects", exclude_objects)
         if executing_job_id is not None:
-            pulumi.set(__self__, "executing_job_id", executing_job_id)
+            _setter("executing_job_id", executing_job_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if golden_gate_details is not None:
-            pulumi.set(__self__, "golden_gate_details", golden_gate_details)
+            _setter("golden_gate_details", golden_gate_details)
         if golden_gate_service_details is not None:
-            pulumi.set(__self__, "golden_gate_service_details", golden_gate_service_details)
+            _setter("golden_gate_service_details", golden_gate_service_details)
         if include_objects is not None:
-            pulumi.set(__self__, "include_objects", include_objects)
+            _setter("include_objects", include_objects)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if source_container_database_connection_id is not None:
-            pulumi.set(__self__, "source_container_database_connection_id", source_container_database_connection_id)
+            _setter("source_container_database_connection_id", source_container_database_connection_id)
         if source_database_connection_id is not None:
-            pulumi.set(__self__, "source_database_connection_id", source_database_connection_id)
+            _setter("source_database_connection_id", source_database_connection_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if target_database_connection_id is not None:
-            pulumi.set(__self__, "target_database_connection_id", target_database_connection_id)
+            _setter("target_database_connection_id", target_database_connection_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_last_migration is not None:
-            pulumi.set(__self__, "time_last_migration", time_last_migration)
+            _setter("time_last_migration", time_last_migration)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if vault_details is not None:
-            pulumi.set(__self__, "vault_details", vault_details)
+            _setter("vault_details", vault_details)
         if wait_after is not None:
-            pulumi.set(__self__, "wait_after", wait_after)
+            _setter("wait_after", wait_after)
 
     @property
     @pulumi.getter(name="advisorSettings")
@@ -511,6 +638,15 @@ class _MigrationState:
     @data_transfer_medium_details.setter
     def data_transfer_medium_details(self, value: Optional[pulumi.Input['MigrationDataTransferMediumDetailsArgs']]):
         pulumi.set(self, "data_transfer_medium_details", value)
+
+    @property
+    @pulumi.getter(name="dataTransferMediumDetailsV2")
+    def data_transfer_medium_details_v2(self) -> Optional[pulumi.Input['MigrationDataTransferMediumDetailsV2Args']]:
+        return pulumi.get(self, "data_transfer_medium_details_v2")
+
+    @data_transfer_medium_details_v2.setter
+    def data_transfer_medium_details_v2(self, value: Optional[pulumi.Input['MigrationDataTransferMediumDetailsV2Args']]):
+        pulumi.set(self, "data_transfer_medium_details_v2", value)
 
     @property
     @pulumi.getter(name="datapumpSettings")
@@ -787,6 +923,7 @@ class Migration(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  csv_text: Optional[pulumi.Input[str]] = None,
                  data_transfer_medium_details: Optional[pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsArgs']]] = None,
+                 data_transfer_medium_details_v2: Optional[pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsV2Args']]] = None,
                  datapump_settings: Optional[pulumi.Input[pulumi.InputType['MigrationDatapumpSettingsArgs']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -1180,6 +1317,10 @@ class Migration(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            MigrationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1190,6 +1331,7 @@ class Migration(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  csv_text: Optional[pulumi.Input[str]] = None,
                  data_transfer_medium_details: Optional[pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsArgs']]] = None,
+                 data_transfer_medium_details_v2: Optional[pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsV2Args']]] = None,
                  datapump_settings: Optional[pulumi.Input[pulumi.InputType['MigrationDatapumpSettingsArgs']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -1213,20 +1355,56 @@ class Migration(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = MigrationArgs.__new__(MigrationArgs)
 
+            if advisor_settings is not None and not isinstance(advisor_settings, MigrationAdvisorSettingsArgs):
+                advisor_settings = advisor_settings or {}
+                def _setter(key, value):
+                    advisor_settings[key] = value
+                MigrationAdvisorSettingsArgs._configure(_setter, **advisor_settings)
             __props__.__dict__["advisor_settings"] = advisor_settings
             __props__.__dict__["agent_id"] = agent_id
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["csv_text"] = csv_text
+            if data_transfer_medium_details is not None and not isinstance(data_transfer_medium_details, MigrationDataTransferMediumDetailsArgs):
+                data_transfer_medium_details = data_transfer_medium_details or {}
+                def _setter(key, value):
+                    data_transfer_medium_details[key] = value
+                MigrationDataTransferMediumDetailsArgs._configure(_setter, **data_transfer_medium_details)
             __props__.__dict__["data_transfer_medium_details"] = data_transfer_medium_details
+            if data_transfer_medium_details_v2 is not None and not isinstance(data_transfer_medium_details_v2, MigrationDataTransferMediumDetailsV2Args):
+                data_transfer_medium_details_v2 = data_transfer_medium_details_v2 or {}
+                def _setter(key, value):
+                    data_transfer_medium_details_v2[key] = value
+                MigrationDataTransferMediumDetailsV2Args._configure(_setter, **data_transfer_medium_details_v2)
+            __props__.__dict__["data_transfer_medium_details_v2"] = data_transfer_medium_details_v2
+            if datapump_settings is not None and not isinstance(datapump_settings, MigrationDatapumpSettingsArgs):
+                datapump_settings = datapump_settings or {}
+                def _setter(key, value):
+                    datapump_settings[key] = value
+                MigrationDatapumpSettingsArgs._configure(_setter, **datapump_settings)
             __props__.__dict__["datapump_settings"] = datapump_settings
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
+            if dump_transfer_details is not None and not isinstance(dump_transfer_details, MigrationDumpTransferDetailsArgs):
+                dump_transfer_details = dump_transfer_details or {}
+                def _setter(key, value):
+                    dump_transfer_details[key] = value
+                MigrationDumpTransferDetailsArgs._configure(_setter, **dump_transfer_details)
             __props__.__dict__["dump_transfer_details"] = dump_transfer_details
             __props__.__dict__["exclude_objects"] = exclude_objects
             __props__.__dict__["freeform_tags"] = freeform_tags
+            if golden_gate_details is not None and not isinstance(golden_gate_details, MigrationGoldenGateDetailsArgs):
+                golden_gate_details = golden_gate_details or {}
+                def _setter(key, value):
+                    golden_gate_details[key] = value
+                MigrationGoldenGateDetailsArgs._configure(_setter, **golden_gate_details)
             __props__.__dict__["golden_gate_details"] = golden_gate_details
+            if golden_gate_service_details is not None and not isinstance(golden_gate_service_details, MigrationGoldenGateServiceDetailsArgs):
+                golden_gate_service_details = golden_gate_service_details or {}
+                def _setter(key, value):
+                    golden_gate_service_details[key] = value
+                MigrationGoldenGateServiceDetailsArgs._configure(_setter, **golden_gate_service_details)
             __props__.__dict__["golden_gate_service_details"] = golden_gate_service_details
             __props__.__dict__["include_objects"] = include_objects
             __props__.__dict__["source_container_database_connection_id"] = source_container_database_connection_id
@@ -1239,6 +1417,11 @@ class Migration(pulumi.CustomResource):
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
             __props__.__dict__["type"] = type
+            if vault_details is not None and not isinstance(vault_details, MigrationVaultDetailsArgs):
+                vault_details = vault_details or {}
+                def _setter(key, value):
+                    vault_details[key] = value
+                MigrationVaultDetailsArgs._configure(_setter, **vault_details)
             __props__.__dict__["vault_details"] = vault_details
             __props__.__dict__["credentials_secret_id"] = None
             __props__.__dict__["executing_job_id"] = None
@@ -1265,6 +1448,7 @@ class Migration(pulumi.CustomResource):
             credentials_secret_id: Optional[pulumi.Input[str]] = None,
             csv_text: Optional[pulumi.Input[str]] = None,
             data_transfer_medium_details: Optional[pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsArgs']]] = None,
+            data_transfer_medium_details_v2: Optional[pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsV2Args']]] = None,
             datapump_settings: Optional[pulumi.Input[pulumi.InputType['MigrationDatapumpSettingsArgs']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -1333,6 +1517,7 @@ class Migration(pulumi.CustomResource):
         __props__.__dict__["credentials_secret_id"] = credentials_secret_id
         __props__.__dict__["csv_text"] = csv_text
         __props__.__dict__["data_transfer_medium_details"] = data_transfer_medium_details
+        __props__.__dict__["data_transfer_medium_details_v2"] = data_transfer_medium_details_v2
         __props__.__dict__["datapump_settings"] = datapump_settings
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
@@ -1404,6 +1589,11 @@ class Migration(pulumi.CustomResource):
         (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
         """
         return pulumi.get(self, "data_transfer_medium_details")
+
+    @property
+    @pulumi.getter(name="dataTransferMediumDetailsV2")
+    def data_transfer_medium_details_v2(self) -> pulumi.Output['outputs.MigrationDataTransferMediumDetailsV2']:
+        return pulumi.get(self, "data_transfer_medium_details_v2")
 
     @property
     @pulumi.getter(name="datapumpSettings")

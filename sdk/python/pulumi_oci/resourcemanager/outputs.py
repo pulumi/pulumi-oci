@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -26,10 +26,23 @@ class GetPrivateEndpointsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPrivateEndpointsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -51,7 +64,16 @@ class GetPrivateEndpointsFilterResult(dict):
 class GetPrivateEndpointsPrivateEndpointCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetPrivateEndpointsPrivateEndpointCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetPrivateEndpointsPrivateEndpointCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -92,20 +114,55 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
         :param str time_created: The date and time at which the private endpoint was created. Format is defined by RFC3339. Example: `2020-11-25T21:10:29.600Z`
         :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "dns_zones", dns_zones)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_used_with_configuration_source_provider", is_used_with_configuration_source_provider)
-        pulumi.set(__self__, "nsg_id_lists", nsg_id_lists)
-        pulumi.set(__self__, "source_ips", source_ips)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        GetPrivateEndpointsPrivateEndpointCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            dns_zones=dns_zones,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_used_with_configuration_source_provider=is_used_with_configuration_source_provider,
+            nsg_id_lists=nsg_id_lists,
+            source_ips=source_ips,
+            state=state,
+            subnet_id=subnet_id,
+            time_created=time_created,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             dns_zones: Sequence[str],
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_used_with_configuration_source_provider: bool,
+             nsg_id_lists: Sequence[str],
+             source_ips: Sequence[str],
+             state: str,
+             subnet_id: str,
+             time_created: str,
+             vcn_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("dns_zones", dns_zones)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_used_with_configuration_source_provider", is_used_with_configuration_source_provider)
+        _setter("nsg_id_lists", nsg_id_lists)
+        _setter("source_ips", source_ips)
+        _setter("state", state)
+        _setter("subnet_id", subnet_id)
+        _setter("time_created", time_created)
+        _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -226,9 +283,22 @@ class GetStackConfigSourceResult(dict):
                  config_source_type: str,
                  working_directory: str,
                  zip_file_base64encoded: str):
-        pulumi.set(__self__, "config_source_type", config_source_type)
-        pulumi.set(__self__, "working_directory", working_directory)
-        pulumi.set(__self__, "zip_file_base64encoded", zip_file_base64encoded)
+        GetStackConfigSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_source_type=config_source_type,
+            working_directory=working_directory,
+            zip_file_base64encoded=zip_file_base64encoded,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_source_type: str,
+             working_directory: str,
+             zip_file_base64encoded: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_source_type", config_source_type)
+        _setter("working_directory", working_directory)
+        _setter("zip_file_base64encoded", zip_file_base64encoded)
 
     @property
     @pulumi.getter(name="configSourceType")
@@ -252,10 +322,23 @@ class GetStacksFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetStacksFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -302,16 +385,43 @@ class GetStacksStackResult(dict):
                * DELETED
         :param str time_created: The date and time at which the stack was created.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "config_source", config_source)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "variables", variables)
+        GetStacksStackResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            config_source=config_source,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            state=state,
+            time_created=time_created,
+            variables=variables,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             config_source: 'outputs.GetStacksStackConfigSourceResult',
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             state: str,
+             time_created: str,
+             variables: Mapping[str, Any],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("config_source", config_source)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("variables", variables)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -400,9 +510,22 @@ class GetStacksStackConfigSourceResult(dict):
                  config_source_type: str,
                  working_directory: str,
                  zip_file_base64encoded: str):
-        pulumi.set(__self__, "config_source_type", config_source_type)
-        pulumi.set(__self__, "working_directory", working_directory)
-        pulumi.set(__self__, "zip_file_base64encoded", zip_file_base64encoded)
+        GetStacksStackConfigSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_source_type=config_source_type,
+            working_directory=working_directory,
+            zip_file_base64encoded=zip_file_base64encoded,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_source_type: str,
+             working_directory: str,
+             zip_file_base64encoded: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_source_type", config_source_type)
+        _setter("working_directory", working_directory)
+        _setter("zip_file_base64encoded", zip_file_base64encoded)
 
     @property
     @pulumi.getter(name="configSourceType")

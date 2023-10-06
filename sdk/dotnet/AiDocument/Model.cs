@@ -99,9 +99,6 @@ namespace Pulumi.Oci.AiDocument
         [Output("metrics")]
         public Output<ImmutableArray<Outputs.ModelMetric>> Metrics { get; private set; } = null!;
 
-        /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-        /// </summary>
         [Output("modelId")]
         public Output<string?> ModelId { get; private set; } = null!;
 
@@ -289,9 +286,6 @@ namespace Pulumi.Oci.AiDocument
         [Input("maxTrainingTimeInHours")]
         public Input<double>? MaxTrainingTimeInHours { get; set; }
 
-        /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-        /// </summary>
         [Input("modelId")]
         public Input<string>? ModelId { get; set; }
 
@@ -441,9 +435,6 @@ namespace Pulumi.Oci.AiDocument
             set => _metrics = value;
         }
 
-        /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-        /// </summary>
         [Input("modelId")]
         public Input<string>? ModelId { get; set; }
 

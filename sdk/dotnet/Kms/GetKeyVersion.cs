@@ -150,11 +150,19 @@ namespace Pulumi.Oci.Kms
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// Key reference data to be returned to the customer as a response.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetKeyVersionExternalKeyReferenceDetailResult> ExternalKeyReferenceDetails;
+        /// <summary>
+        /// Key version ID associated with the external key.
+        /// </summary>
+        public readonly string ExternalKeyVersionId;
+        /// <summary>
         /// The OCID of the key version.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+        /// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
         /// </summary>
         public readonly bool IsPrimary;
         /// <summary>
@@ -200,6 +208,10 @@ namespace Pulumi.Oci.Kms
         private GetKeyVersionResult(
             string compartmentId,
 
+            ImmutableArray<Outputs.GetKeyVersionExternalKeyReferenceDetailResult> externalKeyReferenceDetails,
+
+            string externalKeyVersionId,
+
             string id,
 
             bool isPrimary,
@@ -227,6 +239,8 @@ namespace Pulumi.Oci.Kms
             string vaultId)
         {
             CompartmentId = compartmentId;
+            ExternalKeyReferenceDetails = externalKeyReferenceDetails;
+            ExternalKeyVersionId = externalKeyVersionId;
             Id = id;
             IsPrimary = isPrimary;
             KeyId = keyId;

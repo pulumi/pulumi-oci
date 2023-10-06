@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['VerifyArgs', 'Verify']
@@ -28,21 +28,42 @@ class VerifyArgs:
         :param pulumi.Input[str] key_version_id: The OCID of the key version used to sign the message.
         :param pulumi.Input[str] message: The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
         :param pulumi.Input[str] signature: The base64-encoded binary data object denoting the cryptographic signature generated for the message.
-        :param pulumi.Input[str] signing_algorithm: The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with  different hashing algorithms.  For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm  as used when creating the message digest.       
+        :param pulumi.Input[str] signing_algorithm: The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest. 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] message_type: Denotes whether the value of the message parameter is a raw message or a message digest.  The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
+        :param pulumi.Input[str] message_type: Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
         """
-        pulumi.set(__self__, "crypto_endpoint", crypto_endpoint)
-        pulumi.set(__self__, "key_id", key_id)
-        pulumi.set(__self__, "key_version_id", key_version_id)
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "signature", signature)
-        pulumi.set(__self__, "signing_algorithm", signing_algorithm)
+        VerifyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            crypto_endpoint=crypto_endpoint,
+            key_id=key_id,
+            key_version_id=key_version_id,
+            message=message,
+            signature=signature,
+            signing_algorithm=signing_algorithm,
+            message_type=message_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             crypto_endpoint: pulumi.Input[str],
+             key_id: pulumi.Input[str],
+             key_version_id: pulumi.Input[str],
+             message: pulumi.Input[str],
+             signature: pulumi.Input[str],
+             signing_algorithm: pulumi.Input[str],
+             message_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("crypto_endpoint", crypto_endpoint)
+        _setter("key_id", key_id)
+        _setter("key_version_id", key_version_id)
+        _setter("message", message)
+        _setter("signature", signature)
+        _setter("signing_algorithm", signing_algorithm)
         if message_type is not None:
-            pulumi.set(__self__, "message_type", message_type)
+            _setter("message_type", message_type)
 
     @property
     @pulumi.getter(name="cryptoEndpoint")
@@ -108,7 +129,7 @@ class VerifyArgs:
     @pulumi.getter(name="signingAlgorithm")
     def signing_algorithm(self) -> pulumi.Input[str]:
         """
-        The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with  different hashing algorithms.  For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm  as used when creating the message digest.       
+        The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest. 
 
 
         ** IMPORTANT **
@@ -124,7 +145,7 @@ class VerifyArgs:
     @pulumi.getter(name="messageType")
     def message_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Denotes whether the value of the message parameter is a raw message or a message digest.  The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
+        Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
         """
         return pulumi.get(self, "message_type")
 
@@ -151,30 +172,53 @@ class _VerifyState:
         :param pulumi.Input[str] key_id: The OCID of the key used to sign the message.
         :param pulumi.Input[str] key_version_id: The OCID of the key version used to sign the message.
         :param pulumi.Input[str] message: The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
-        :param pulumi.Input[str] message_type: Denotes whether the value of the message parameter is a raw message or a message digest.  The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
+        :param pulumi.Input[str] message_type: Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
         :param pulumi.Input[str] signature: The base64-encoded binary data object denoting the cryptographic signature generated for the message.
-        :param pulumi.Input[str] signing_algorithm: The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with  different hashing algorithms.  For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm  as used when creating the message digest.       
+        :param pulumi.Input[str] signing_algorithm: The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest. 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _VerifyState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            crypto_endpoint=crypto_endpoint,
+            is_signature_valid=is_signature_valid,
+            key_id=key_id,
+            key_version_id=key_version_id,
+            message=message,
+            message_type=message_type,
+            signature=signature,
+            signing_algorithm=signing_algorithm,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             crypto_endpoint: Optional[pulumi.Input[str]] = None,
+             is_signature_valid: Optional[pulumi.Input[bool]] = None,
+             key_id: Optional[pulumi.Input[str]] = None,
+             key_version_id: Optional[pulumi.Input[str]] = None,
+             message: Optional[pulumi.Input[str]] = None,
+             message_type: Optional[pulumi.Input[str]] = None,
+             signature: Optional[pulumi.Input[str]] = None,
+             signing_algorithm: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if crypto_endpoint is not None:
-            pulumi.set(__self__, "crypto_endpoint", crypto_endpoint)
+            _setter("crypto_endpoint", crypto_endpoint)
         if is_signature_valid is not None:
-            pulumi.set(__self__, "is_signature_valid", is_signature_valid)
+            _setter("is_signature_valid", is_signature_valid)
         if key_id is not None:
-            pulumi.set(__self__, "key_id", key_id)
+            _setter("key_id", key_id)
         if key_version_id is not None:
-            pulumi.set(__self__, "key_version_id", key_version_id)
+            _setter("key_version_id", key_version_id)
         if message is not None:
-            pulumi.set(__self__, "message", message)
+            _setter("message", message)
         if message_type is not None:
-            pulumi.set(__self__, "message_type", message_type)
+            _setter("message_type", message_type)
         if signature is not None:
-            pulumi.set(__self__, "signature", signature)
+            _setter("signature", signature)
         if signing_algorithm is not None:
-            pulumi.set(__self__, "signing_algorithm", signing_algorithm)
+            _setter("signing_algorithm", signing_algorithm)
 
     @property
     @pulumi.getter(name="cryptoEndpoint")
@@ -240,7 +284,7 @@ class _VerifyState:
     @pulumi.getter(name="messageType")
     def message_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Denotes whether the value of the message parameter is a raw message or a message digest.  The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
+        Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
         """
         return pulumi.get(self, "message_type")
 
@@ -264,7 +308,7 @@ class _VerifyState:
     @pulumi.getter(name="signingAlgorithm")
     def signing_algorithm(self) -> Optional[pulumi.Input[str]]:
         """
-        The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with  different hashing algorithms.  For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm  as used when creating the message digest.       
+        The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest. 
 
 
         ** IMPORTANT **
@@ -294,8 +338,9 @@ class Verify(pulumi.CustomResource):
         This resource provides the Verify resource in Oracle Cloud Infrastructure Kms service.
 
         Verifies a digital signature that was generated by the [Sign](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/SignedData/Sign) operation
-        by using the public key of the same asymmetric key that was used to sign the data. If you want to validate the\\
+        by using the public key of the same asymmetric key that was used to sign the data. If you want to validate the
         digital signature outside of the service, you can do so by using the public key of the asymmetric key.
+        This operation is not supported for keys having protection mode `EXTERNAL`.
 
         ## Example Usage
 
@@ -327,9 +372,9 @@ class Verify(pulumi.CustomResource):
         :param pulumi.Input[str] key_id: The OCID of the key used to sign the message.
         :param pulumi.Input[str] key_version_id: The OCID of the key version used to sign the message.
         :param pulumi.Input[str] message: The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
-        :param pulumi.Input[str] message_type: Denotes whether the value of the message parameter is a raw message or a message digest.  The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
+        :param pulumi.Input[str] message_type: Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
         :param pulumi.Input[str] signature: The base64-encoded binary data object denoting the cryptographic signature generated for the message.
-        :param pulumi.Input[str] signing_algorithm: The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with  different hashing algorithms.  For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm  as used when creating the message digest.       
+        :param pulumi.Input[str] signing_algorithm: The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest. 
                
                
                ** IMPORTANT **
@@ -345,8 +390,9 @@ class Verify(pulumi.CustomResource):
         This resource provides the Verify resource in Oracle Cloud Infrastructure Kms service.
 
         Verifies a digital signature that was generated by the [Sign](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/SignedData/Sign) operation
-        by using the public key of the same asymmetric key that was used to sign the data. If you want to validate the\\
+        by using the public key of the same asymmetric key that was used to sign the data. If you want to validate the
         digital signature outside of the service, you can do so by using the public key of the asymmetric key.
+        This operation is not supported for keys having protection mode `EXTERNAL`.
 
         ## Example Usage
 
@@ -382,6 +428,10 @@ class Verify(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            VerifyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -453,9 +503,9 @@ class Verify(pulumi.CustomResource):
         :param pulumi.Input[str] key_id: The OCID of the key used to sign the message.
         :param pulumi.Input[str] key_version_id: The OCID of the key version used to sign the message.
         :param pulumi.Input[str] message: The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
-        :param pulumi.Input[str] message_type: Denotes whether the value of the message parameter is a raw message or a message digest.  The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
+        :param pulumi.Input[str] message_type: Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
         :param pulumi.Input[str] signature: The base64-encoded binary data object denoting the cryptographic signature generated for the message.
-        :param pulumi.Input[str] signing_algorithm: The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with  different hashing algorithms.  For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm  as used when creating the message digest.       
+        :param pulumi.Input[str] signing_algorithm: The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest. 
                
                
                ** IMPORTANT **
@@ -519,7 +569,7 @@ class Verify(pulumi.CustomResource):
     @pulumi.getter(name="messageType")
     def message_type(self) -> pulumi.Output[str]:
         """
-        Denotes whether the value of the message parameter is a raw message or a message digest.  The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
+        Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
         """
         return pulumi.get(self, "message_type")
 
@@ -535,7 +585,7 @@ class Verify(pulumi.CustomResource):
     @pulumi.getter(name="signingAlgorithm")
     def signing_algorithm(self) -> pulumi.Output[str]:
         """
-        The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with  different hashing algorithms.  For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm  as used when creating the message digest.       
+        The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest. 
 
 
         ** IMPORTANT **

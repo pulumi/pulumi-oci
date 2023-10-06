@@ -14,11 +14,15 @@ namespace Pulumi.Oci.Queue.Outputs
     public sealed class GetQueuesQueueCollectionItemResult
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+        /// </summary>
+        public readonly int ChannelConsumptionLimit;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Id of the custom master encryption key which will be used to encrypt messages content
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         /// </summary>
         public readonly string CustomEncryptionKeyId;
         /// <summary>
@@ -38,11 +42,11 @@ namespace Pulumi.Oci.Queue.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// unique Queue identifier
+        /// The unique queue identifier.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// Any additional details about the current state of the queue.
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
@@ -64,11 +68,11 @@ namespace Pulumi.Oci.Queue.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The time the the Queue was created. An RFC3339 formatted datetime string
+        /// The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the Queue was updated. An RFC3339 formatted datetime string
+        /// The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
@@ -76,12 +80,14 @@ namespace Pulumi.Oci.Queue.Outputs
         /// </summary>
         public readonly int TimeoutInSeconds;
         /// <summary>
-        /// The default visibility of the messages consumed from the queue.
+        /// The default visibility timeout of the messages consumed from the queue, in seconds.
         /// </summary>
         public readonly int VisibilityInSeconds;
 
         [OutputConstructor]
         private GetQueuesQueueCollectionItemResult(
+            int channelConsumptionLimit,
+
             string compartmentId,
 
             string customEncryptionKeyId,
@@ -118,6 +124,7 @@ namespace Pulumi.Oci.Queue.Outputs
 
             int visibilityInSeconds)
         {
+            ChannelConsumptionLimit = channelConsumptionLimit;
             CompartmentId = compartmentId;
             CustomEncryptionKeyId = customEncryptionKeyId;
             DeadLetterQueueDeliveryCount = deadLetterQueueDeliveryCount;

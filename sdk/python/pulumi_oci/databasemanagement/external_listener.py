@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -27,9 +27,20 @@ class ExternalListenerArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] external_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
         """
-        pulumi.set(__self__, "external_listener_id", external_listener_id)
+        ExternalListenerArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            external_listener_id=external_listener_id,
+            external_connector_id=external_connector_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             external_listener_id: pulumi.Input[str],
+             external_connector_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("external_listener_id", external_listener_id)
         if external_connector_id is not None:
-            pulumi.set(__self__, "external_connector_id", external_connector_id)
+            _setter("external_connector_id", external_connector_id)
 
     @property
     @pulumi.getter(name="externalListenerId")
@@ -120,56 +131,113 @@ class _ExternalListenerState:
         :param pulumi.Input[str] trace_directory: The destination directory of the listener trace file.
         :param pulumi.Input[str] version: The listener version.
         """
+        _ExternalListenerState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_details=additional_details,
+            adr_home_directory=adr_home_directory,
+            compartment_id=compartment_id,
+            component_name=component_name,
+            display_name=display_name,
+            endpoints=endpoints,
+            external_connector_id=external_connector_id,
+            external_db_home_id=external_db_home_id,
+            external_db_node_id=external_db_node_id,
+            external_db_system_id=external_db_system_id,
+            external_listener_id=external_listener_id,
+            host_name=host_name,
+            lifecycle_details=lifecycle_details,
+            listener_alias=listener_alias,
+            listener_ora_location=listener_ora_location,
+            listener_type=listener_type,
+            log_directory=log_directory,
+            oracle_home=oracle_home,
+            serviced_asms=serviced_asms,
+            serviced_databases=serviced_databases,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+            trace_directory=trace_directory,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_details: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             adr_home_directory: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             component_name: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalListenerEndpointArgs']]]] = None,
+             external_connector_id: Optional[pulumi.Input[str]] = None,
+             external_db_home_id: Optional[pulumi.Input[str]] = None,
+             external_db_node_id: Optional[pulumi.Input[str]] = None,
+             external_db_system_id: Optional[pulumi.Input[str]] = None,
+             external_listener_id: Optional[pulumi.Input[str]] = None,
+             host_name: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             listener_alias: Optional[pulumi.Input[str]] = None,
+             listener_ora_location: Optional[pulumi.Input[str]] = None,
+             listener_type: Optional[pulumi.Input[str]] = None,
+             log_directory: Optional[pulumi.Input[str]] = None,
+             oracle_home: Optional[pulumi.Input[str]] = None,
+             serviced_asms: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalListenerServicedAsmArgs']]]] = None,
+             serviced_databases: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalListenerServicedDatabaseArgs']]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             trace_directory: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if additional_details is not None:
-            pulumi.set(__self__, "additional_details", additional_details)
+            _setter("additional_details", additional_details)
         if adr_home_directory is not None:
-            pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+            _setter("adr_home_directory", adr_home_directory)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if component_name is not None:
-            pulumi.set(__self__, "component_name", component_name)
+            _setter("component_name", component_name)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if endpoints is not None:
-            pulumi.set(__self__, "endpoints", endpoints)
+            _setter("endpoints", endpoints)
         if external_connector_id is not None:
-            pulumi.set(__self__, "external_connector_id", external_connector_id)
+            _setter("external_connector_id", external_connector_id)
         if external_db_home_id is not None:
-            pulumi.set(__self__, "external_db_home_id", external_db_home_id)
+            _setter("external_db_home_id", external_db_home_id)
         if external_db_node_id is not None:
-            pulumi.set(__self__, "external_db_node_id", external_db_node_id)
+            _setter("external_db_node_id", external_db_node_id)
         if external_db_system_id is not None:
-            pulumi.set(__self__, "external_db_system_id", external_db_system_id)
+            _setter("external_db_system_id", external_db_system_id)
         if external_listener_id is not None:
-            pulumi.set(__self__, "external_listener_id", external_listener_id)
+            _setter("external_listener_id", external_listener_id)
         if host_name is not None:
-            pulumi.set(__self__, "host_name", host_name)
+            _setter("host_name", host_name)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if listener_alias is not None:
-            pulumi.set(__self__, "listener_alias", listener_alias)
+            _setter("listener_alias", listener_alias)
         if listener_ora_location is not None:
-            pulumi.set(__self__, "listener_ora_location", listener_ora_location)
+            _setter("listener_ora_location", listener_ora_location)
         if listener_type is not None:
-            pulumi.set(__self__, "listener_type", listener_type)
+            _setter("listener_type", listener_type)
         if log_directory is not None:
-            pulumi.set(__self__, "log_directory", log_directory)
+            _setter("log_directory", log_directory)
         if oracle_home is not None:
-            pulumi.set(__self__, "oracle_home", oracle_home)
+            _setter("oracle_home", oracle_home)
         if serviced_asms is not None:
-            pulumi.set(__self__, "serviced_asms", serviced_asms)
+            _setter("serviced_asms", serviced_asms)
         if serviced_databases is not None:
-            pulumi.set(__self__, "serviced_databases", serviced_databases)
+            _setter("serviced_databases", serviced_databases)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if trace_directory is not None:
-            pulumi.set(__self__, "trace_directory", trace_directory)
+            _setter("trace_directory", trace_directory)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter(name="additionalDetails")
@@ -535,6 +603,10 @@ class ExternalListener(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ExternalListenerArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

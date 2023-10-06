@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -22,7 +22,7 @@ class GetVaultResult:
     """
     A collection of values returned by getVault.
     """
-    def __init__(__self__, compartment_id=None, crypto_endpoint=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_primary=None, management_endpoint=None, replica_details=None, restore_from_files=None, restore_from_object_stores=None, restore_trigger=None, restored_from_vault_id=None, state=None, time_created=None, time_of_deletion=None, vault_id=None, vault_type=None):
+    def __init__(__self__, compartment_id=None, crypto_endpoint=None, defined_tags=None, display_name=None, external_key_manager_metadata_summaries=None, external_key_manager_metadatas=None, freeform_tags=None, id=None, is_primary=None, management_endpoint=None, replica_details=None, restore_from_files=None, restore_from_object_stores=None, restore_trigger=None, restored_from_vault_id=None, state=None, time_created=None, time_of_deletion=None, vault_id=None, vault_type=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -35,6 +35,12 @@ class GetVaultResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if external_key_manager_metadata_summaries and not isinstance(external_key_manager_metadata_summaries, list):
+            raise TypeError("Expected argument 'external_key_manager_metadata_summaries' to be a list")
+        pulumi.set(__self__, "external_key_manager_metadata_summaries", external_key_manager_metadata_summaries)
+        if external_key_manager_metadatas and not isinstance(external_key_manager_metadatas, list):
+            raise TypeError("Expected argument 'external_key_manager_metadatas' to be a list")
+        pulumi.set(__self__, "external_key_manager_metadatas", external_key_manager_metadatas)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -111,6 +117,19 @@ class GetVaultResult:
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="externalKeyManagerMetadataSummaries")
+    def external_key_manager_metadata_summaries(self) -> Sequence['outputs.GetVaultExternalKeyManagerMetadataSummaryResult']:
+        """
+        Summary about metadata of external key manager to be returned to the customer as a response.
+        """
+        return pulumi.get(self, "external_key_manager_metadata_summaries")
+
+    @property
+    @pulumi.getter(name="externalKeyManagerMetadatas")
+    def external_key_manager_metadatas(self) -> Sequence['outputs.GetVaultExternalKeyManagerMetadataResult']:
+        return pulumi.get(self, "external_key_manager_metadatas")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
@@ -130,7 +149,7 @@ class GetVaultResult:
     @pulumi.getter(name="isPrimary")
     def is_primary(self) -> bool:
         """
-        A boolean that will be true when vault is primary, and will be false when vault is a replica from a primary vault.
+        A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
         """
         return pulumi.get(self, "is_primary")
 
@@ -178,7 +197,7 @@ class GetVaultResult:
     @pulumi.getter(name="restoredFromVaultId")
     def restored_from_vault_id(self) -> str:
         """
-        The OCID of the vault from which this vault was restored, if it was restored from a backup file.  If you restore a vault to the same region, the vault retains the same OCID that it had when you  backed up the vault.
+        The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
         """
         return pulumi.get(self, "restored_from_vault_id")
 
@@ -230,6 +249,8 @@ class AwaitableGetVaultResult(GetVaultResult):
             crypto_endpoint=self.crypto_endpoint,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
+            external_key_manager_metadata_summaries=self.external_key_manager_metadata_summaries,
+            external_key_manager_metadatas=self.external_key_manager_metadatas,
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_primary=self.is_primary,
@@ -280,6 +301,8 @@ def get_vault(vault_id: Optional[str] = None,
         crypto_endpoint=pulumi.get(__ret__, 'crypto_endpoint'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        external_key_manager_metadata_summaries=pulumi.get(__ret__, 'external_key_manager_metadata_summaries'),
+        external_key_manager_metadatas=pulumi.get(__ret__, 'external_key_manager_metadatas'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_primary=pulumi.get(__ret__, 'is_primary'),

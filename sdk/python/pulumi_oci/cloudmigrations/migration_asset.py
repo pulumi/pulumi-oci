@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['MigrationAssetArgs', 'MigrationAsset']
@@ -36,17 +36,40 @@ class MigrationAssetArgs:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] replication_schedule_id: (Updatable) Replication schedule identifier
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "inventory_asset_id", inventory_asset_id)
-        pulumi.set(__self__, "migration_id", migration_id)
-        pulumi.set(__self__, "replication_compartment_id", replication_compartment_id)
-        pulumi.set(__self__, "snap_shot_bucket_name", snap_shot_bucket_name)
+        MigrationAssetArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            inventory_asset_id=inventory_asset_id,
+            migration_id=migration_id,
+            replication_compartment_id=replication_compartment_id,
+            snap_shot_bucket_name=snap_shot_bucket_name,
+            display_name=display_name,
+            migration_asset_depends_ons=migration_asset_depends_ons,
+            replication_schedule_id=replication_schedule_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: pulumi.Input[str],
+             inventory_asset_id: pulumi.Input[str],
+             migration_id: pulumi.Input[str],
+             replication_compartment_id: pulumi.Input[str],
+             snap_shot_bucket_name: pulumi.Input[str],
+             display_name: Optional[pulumi.Input[str]] = None,
+             migration_asset_depends_ons: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             replication_schedule_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("inventory_asset_id", inventory_asset_id)
+        _setter("migration_id", migration_id)
+        _setter("replication_compartment_id", replication_compartment_id)
+        _setter("snap_shot_bucket_name", snap_shot_bucket_name)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if migration_asset_depends_ons is not None:
-            pulumi.set(__self__, "migration_asset_depends_ons", migration_asset_depends_ons)
+            _setter("migration_asset_depends_ons", migration_asset_depends_ons)
         if replication_schedule_id is not None:
-            pulumi.set(__self__, "replication_schedule_id", replication_schedule_id)
+            _setter("replication_schedule_id", replication_schedule_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -195,46 +218,93 @@ class _MigrationAssetState:
         :param pulumi.Input[str] time_updated: The time when the migration asset was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] type: The type of asset referenced for inventory.
         """
+        _MigrationAssetState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            depended_on_bies=depended_on_bies,
+            display_name=display_name,
+            inventory_asset_id=inventory_asset_id,
+            lifecycle_details=lifecycle_details,
+            migration_asset_depends_ons=migration_asset_depends_ons,
+            migration_id=migration_id,
+            notifications=notifications,
+            parent_snapshot=parent_snapshot,
+            replication_compartment_id=replication_compartment_id,
+            replication_schedule_id=replication_schedule_id,
+            snap_shot_bucket_name=snap_shot_bucket_name,
+            snapshots=snapshots,
+            source_asset_id=source_asset_id,
+            state=state,
+            tenancy_id=tenancy_id,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             depended_on_bies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             inventory_asset_id: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             migration_asset_depends_ons: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             migration_id: Optional[pulumi.Input[str]] = None,
+             notifications: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             parent_snapshot: Optional[pulumi.Input[str]] = None,
+             replication_compartment_id: Optional[pulumi.Input[str]] = None,
+             replication_schedule_id: Optional[pulumi.Input[str]] = None,
+             snap_shot_bucket_name: Optional[pulumi.Input[str]] = None,
+             snapshots: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             source_asset_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             tenancy_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if depended_on_bies is not None:
-            pulumi.set(__self__, "depended_on_bies", depended_on_bies)
+            _setter("depended_on_bies", depended_on_bies)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if inventory_asset_id is not None:
-            pulumi.set(__self__, "inventory_asset_id", inventory_asset_id)
+            _setter("inventory_asset_id", inventory_asset_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if migration_asset_depends_ons is not None:
-            pulumi.set(__self__, "migration_asset_depends_ons", migration_asset_depends_ons)
+            _setter("migration_asset_depends_ons", migration_asset_depends_ons)
         if migration_id is not None:
-            pulumi.set(__self__, "migration_id", migration_id)
+            _setter("migration_id", migration_id)
         if notifications is not None:
-            pulumi.set(__self__, "notifications", notifications)
+            _setter("notifications", notifications)
         if parent_snapshot is not None:
-            pulumi.set(__self__, "parent_snapshot", parent_snapshot)
+            _setter("parent_snapshot", parent_snapshot)
         if replication_compartment_id is not None:
-            pulumi.set(__self__, "replication_compartment_id", replication_compartment_id)
+            _setter("replication_compartment_id", replication_compartment_id)
         if replication_schedule_id is not None:
-            pulumi.set(__self__, "replication_schedule_id", replication_schedule_id)
+            _setter("replication_schedule_id", replication_schedule_id)
         if snap_shot_bucket_name is not None:
-            pulumi.set(__self__, "snap_shot_bucket_name", snap_shot_bucket_name)
+            _setter("snap_shot_bucket_name", snap_shot_bucket_name)
         if snapshots is not None:
-            pulumi.set(__self__, "snapshots", snapshots)
+            _setter("snapshots", snapshots)
         if source_asset_id is not None:
-            pulumi.set(__self__, "source_asset_id", source_asset_id)
+            _setter("source_asset_id", source_asset_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if tenancy_id is not None:
-            pulumi.set(__self__, "tenancy_id", tenancy_id)
+            _setter("tenancy_id", tenancy_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -582,6 +652,10 @@ class MigrationAsset(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            MigrationAssetArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

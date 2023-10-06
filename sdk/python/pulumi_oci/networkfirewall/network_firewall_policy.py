@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,27 +41,56 @@ class NetworkFirewallPolicyArgs:
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRuleArgs']]] security_rules: (Updatable) List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListArgs']]] url_lists: (Updatable) Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
+        NetworkFirewallPolicyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            application_lists=application_lists,
+            decryption_profiles=decryption_profiles,
+            decryption_rules=decryption_rules,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            ip_address_lists=ip_address_lists,
+            mapped_secrets=mapped_secrets,
+            security_rules=security_rules,
+            url_lists=url_lists,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             application_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListArgs']]]] = None,
+             decryption_profiles: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionProfileArgs']]]] = None,
+             decryption_rules: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionRuleArgs']]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             ip_address_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyIpAddressListArgs']]]] = None,
+             mapped_secrets: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyMappedSecretArgs']]]] = None,
+             security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRuleArgs']]]] = None,
+             url_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
         if application_lists is not None:
-            pulumi.set(__self__, "application_lists", application_lists)
+            _setter("application_lists", application_lists)
         if decryption_profiles is not None:
-            pulumi.set(__self__, "decryption_profiles", decryption_profiles)
+            _setter("decryption_profiles", decryption_profiles)
         if decryption_rules is not None:
-            pulumi.set(__self__, "decryption_rules", decryption_rules)
+            _setter("decryption_rules", decryption_rules)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if ip_address_lists is not None:
-            pulumi.set(__self__, "ip_address_lists", ip_address_lists)
+            _setter("ip_address_lists", ip_address_lists)
         if mapped_secrets is not None:
-            pulumi.set(__self__, "mapped_secrets", mapped_secrets)
+            _setter("mapped_secrets", mapped_secrets)
         if security_rules is not None:
-            pulumi.set(__self__, "security_rules", security_rules)
+            _setter("security_rules", security_rules)
         if url_lists is not None:
-            pulumi.set(__self__, "url_lists", url_lists)
+            _setter("url_lists", url_lists)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -236,40 +265,81 @@ class _NetworkFirewallPolicyState:
         :param pulumi.Input[str] time_updated: The time instant at which the Network Firewall Policy was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListArgs']]] url_lists: (Updatable) Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
         """
+        _NetworkFirewallPolicyState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            application_lists=application_lists,
+            compartment_id=compartment_id,
+            decryption_profiles=decryption_profiles,
+            decryption_rules=decryption_rules,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            ip_address_lists=ip_address_lists,
+            is_firewall_attached=is_firewall_attached,
+            lifecycle_details=lifecycle_details,
+            mapped_secrets=mapped_secrets,
+            security_rules=security_rules,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            url_lists=url_lists,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             application_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListArgs']]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             decryption_profiles: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionProfileArgs']]]] = None,
+             decryption_rules: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionRuleArgs']]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             ip_address_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyIpAddressListArgs']]]] = None,
+             is_firewall_attached: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             mapped_secrets: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyMappedSecretArgs']]]] = None,
+             security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRuleArgs']]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             url_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if application_lists is not None:
-            pulumi.set(__self__, "application_lists", application_lists)
+            _setter("application_lists", application_lists)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if decryption_profiles is not None:
-            pulumi.set(__self__, "decryption_profiles", decryption_profiles)
+            _setter("decryption_profiles", decryption_profiles)
         if decryption_rules is not None:
-            pulumi.set(__self__, "decryption_rules", decryption_rules)
+            _setter("decryption_rules", decryption_rules)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if ip_address_lists is not None:
-            pulumi.set(__self__, "ip_address_lists", ip_address_lists)
+            _setter("ip_address_lists", ip_address_lists)
         if is_firewall_attached is not None:
-            pulumi.set(__self__, "is_firewall_attached", is_firewall_attached)
+            _setter("is_firewall_attached", is_firewall_attached)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if mapped_secrets is not None:
-            pulumi.set(__self__, "mapped_secrets", mapped_secrets)
+            _setter("mapped_secrets", mapped_secrets)
         if security_rules is not None:
-            pulumi.set(__self__, "security_rules", security_rules)
+            _setter("security_rules", security_rules)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if url_lists is not None:
-            pulumi.set(__self__, "url_lists", url_lists)
+            _setter("url_lists", url_lists)
 
     @property
     @pulumi.getter(name="applicationLists")
@@ -549,6 +619,10 @@ class NetworkFirewallPolicy(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            NetworkFirewallPolicyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

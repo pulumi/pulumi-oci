@@ -31,11 +31,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Mysql.GetReplicas(ctx, &mysql.GetReplicasArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DbSystemId:    pulumi.StringRef(oci_mysql_mysql_db_system.Test_mysql_db_system.Id),
-//				DisplayName:   pulumi.StringRef(_var.Replica_display_name),
-//				ReplicaId:     pulumi.StringRef(oci_mysql_replica.Test_replica.Id),
-//				State:         pulumi.StringRef(_var.Replica_state),
+//				CompartmentId:   _var.Compartment_id,
+//				ConfigurationId: pulumi.StringRef(oci_mysql_mysql_configuration.Test_mysql_configuration.Id),
+//				DbSystemId:      pulumi.StringRef(oci_mysql_mysql_db_system.Test_mysql_db_system.Id),
+//				DisplayName:     pulumi.StringRef(_var.Replica_display_name),
+//				IsUpToDate:      pulumi.BoolRef(_var.Replica_is_up_to_date),
+//				ReplicaId:       pulumi.StringRef(oci_mysql_replica.Test_replica.Id),
+//				State:           pulumi.StringRef(_var.Replica_state),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -59,11 +61,15 @@ func GetReplicas(ctx *pulumi.Context, args *GetReplicasArgs, opts ...pulumi.Invo
 type GetReplicasArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
+	// The requested Configuration instance.
+	ConfigurationId *string `pulumi:"configurationId"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId *string `pulumi:"dbSystemId"`
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName *string             `pulumi:"displayName"`
 	Filters     []GetReplicasFilter `pulumi:"filters"`
+	// Filter instances if they are using the latest revision of the Configuration they are associated with.
+	IsUpToDate *bool `pulumi:"isUpToDate"`
 	// The read replica [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ReplicaId *string `pulumi:"replicaId"`
 	// The LifecycleState of the read replica.
@@ -74,14 +80,17 @@ type GetReplicasArgs struct {
 type GetReplicasResult struct {
 	// The OCID of the compartment that contains the read replica.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The OCID of the Configuration to be used by the read replica.
+	ConfigurationId *string `pulumi:"configurationId"`
 	// The OCID of the DB System the read replica is associated with.
 	DbSystemId *string `pulumi:"dbSystemId"`
 	// The user-friendly name for the read replica. It does not have to be unique.
 	DisplayName *string             `pulumi:"displayName"`
 	Filters     []GetReplicasFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string  `pulumi:"id"`
-	ReplicaId *string `pulumi:"replicaId"`
+	Id         string  `pulumi:"id"`
+	IsUpToDate *bool   `pulumi:"isUpToDate"`
+	ReplicaId  *string `pulumi:"replicaId"`
 	// The list of replicas.
 	Replicas []GetReplicasReplica `pulumi:"replicas"`
 	// The state of the read replica.
@@ -105,11 +114,15 @@ func GetReplicasOutput(ctx *pulumi.Context, args GetReplicasOutputArgs, opts ...
 type GetReplicasOutputArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The requested Configuration instance.
+	ConfigurationId pulumi.StringPtrInput `pulumi:"configurationId"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName pulumi.StringPtrInput       `pulumi:"displayName"`
 	Filters     GetReplicasFilterArrayInput `pulumi:"filters"`
+	// Filter instances if they are using the latest revision of the Configuration they are associated with.
+	IsUpToDate pulumi.BoolPtrInput `pulumi:"isUpToDate"`
 	// The read replica [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ReplicaId pulumi.StringPtrInput `pulumi:"replicaId"`
 	// The LifecycleState of the read replica.
@@ -146,6 +159,11 @@ func (o GetReplicasResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicasResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The OCID of the Configuration to be used by the read replica.
+func (o GetReplicasResultOutput) ConfigurationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReplicasResult) *string { return v.ConfigurationId }).(pulumi.StringPtrOutput)
+}
+
 // The OCID of the DB System the read replica is associated with.
 func (o GetReplicasResultOutput) DbSystemId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetReplicasResult) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
@@ -163,6 +181,10 @@ func (o GetReplicasResultOutput) Filters() GetReplicasFilterArrayOutput {
 // The provider-assigned unique ID for this managed resource.
 func (o GetReplicasResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicasResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetReplicasResultOutput) IsUpToDate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetReplicasResult) *bool { return v.IsUpToDate }).(pulumi.BoolPtrOutput)
 }
 
 func (o GetReplicasResultOutput) ReplicaId() pulumi.StringPtrOutput {

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['BackupCancelManagementArgs', 'BackupCancelManagement']
@@ -25,9 +25,20 @@ class BackupCancelManagementArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "backup_id", backup_id)
+        BackupCancelManagementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup_id=backup_id,
+            cancel_backup_trigger=cancel_backup_trigger,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup_id: pulumi.Input[str],
+             cancel_backup_trigger: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("backup_id", backup_id)
         if cancel_backup_trigger is not None:
-            pulumi.set(__self__, "cancel_backup_trigger", cancel_backup_trigger)
+            _setter("cancel_backup_trigger", cancel_backup_trigger)
 
     @property
     @pulumi.getter(name="backupId")
@@ -72,10 +83,21 @@ class _BackupCancelManagementState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _BackupCancelManagementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup_id=backup_id,
+            cancel_backup_trigger=cancel_backup_trigger,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup_id: Optional[pulumi.Input[str]] = None,
+             cancel_backup_trigger: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if backup_id is not None:
-            pulumi.set(__self__, "backup_id", backup_id)
+            _setter("backup_id", backup_id)
         if cancel_backup_trigger is not None:
-            pulumi.set(__self__, "cancel_backup_trigger", cancel_backup_trigger)
+            _setter("cancel_backup_trigger", cancel_backup_trigger)
 
     @property
     @pulumi.getter(name="backupId")
@@ -179,6 +201,10 @@ class BackupCancelManagement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            BackupCancelManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

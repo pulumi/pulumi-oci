@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -64,11 +64,24 @@ class IndexKey(dict):
         :param str json_field_type: If the specified column is of type JSON, jsonFieldType contains the type of the field indicated by jsonPath.
         :param str json_path: If the specified column is of type JSON, jsonPath contains a dotted path indicating the field within the JSON object that will be the index key.
         """
-        pulumi.set(__self__, "column_name", column_name)
+        IndexKey._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            json_field_type=json_field_type,
+            json_path=json_path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: str,
+             json_field_type: Optional[str] = None,
+             json_path: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("column_name", column_name)
         if json_field_type is not None:
-            pulumi.set(__self__, "json_field_type", json_field_type)
+            _setter("json_field_type", json_field_type)
         if json_path is not None:
-            pulumi.set(__self__, "json_path", json_path)
+            _setter("json_path", json_path)
 
     @property
     @pulumi.getter(name="columnName")
@@ -129,16 +142,33 @@ class TableSchema(dict):
         :param Sequence[str] shard_keys: A list of column names that make up a key.
         :param int ttl: The default Time-to-Live for the table, in days.
         """
+        TableSchema._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            columns=columns,
+            identities=identities,
+            primary_keys=primary_keys,
+            shard_keys=shard_keys,
+            ttl=ttl,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             columns: Optional[Sequence['outputs.TableSchemaColumn']] = None,
+             identities: Optional[Sequence['outputs.TableSchemaIdentity']] = None,
+             primary_keys: Optional[Sequence[str]] = None,
+             shard_keys: Optional[Sequence[str]] = None,
+             ttl: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if columns is not None:
-            pulumi.set(__self__, "columns", columns)
+            _setter("columns", columns)
         if identities is not None:
-            pulumi.set(__self__, "identities", identities)
+            _setter("identities", identities)
         if primary_keys is not None:
-            pulumi.set(__self__, "primary_keys", primary_keys)
+            _setter("primary_keys", primary_keys)
         if shard_keys is not None:
-            pulumi.set(__self__, "shard_keys", shard_keys)
+            _setter("shard_keys", shard_keys)
         if ttl is not None:
-            pulumi.set(__self__, "ttl", ttl)
+            _setter("ttl", ttl)
 
     @property
     @pulumi.getter
@@ -221,18 +251,37 @@ class TableSchemaColumn(dict):
         :param str name: Table name.
         :param str type: The column type.
         """
+        TableSchemaColumn._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_value=default_value,
+            is_as_uuid=is_as_uuid,
+            is_generated=is_generated,
+            is_nullable=is_nullable,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_value: Optional[str] = None,
+             is_as_uuid: Optional[bool] = None,
+             is_generated: Optional[bool] = None,
+             is_nullable: Optional[bool] = None,
+             name: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if default_value is not None:
-            pulumi.set(__self__, "default_value", default_value)
+            _setter("default_value", default_value)
         if is_as_uuid is not None:
-            pulumi.set(__self__, "is_as_uuid", is_as_uuid)
+            _setter("is_as_uuid", is_as_uuid)
         if is_generated is not None:
-            pulumi.set(__self__, "is_generated", is_generated)
+            _setter("is_generated", is_generated)
         if is_nullable is not None:
-            pulumi.set(__self__, "is_nullable", is_nullable)
+            _setter("is_nullable", is_nullable)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="defaultValue")
@@ -315,12 +364,25 @@ class TableSchemaIdentity(dict):
         :param bool is_always: True if the identity value is GENERATED ALWAYS.
         :param bool is_null: True if the identity value is GENERATED BY DEFAULT ON NULL.
         """
+        TableSchemaIdentity._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            is_always=is_always,
+            is_null=is_null,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: Optional[str] = None,
+             is_always: Optional[bool] = None,
+             is_null: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if column_name is not None:
-            pulumi.set(__self__, "column_name", column_name)
+            _setter("column_name", column_name)
         if is_always is not None:
-            pulumi.set(__self__, "is_always", is_always)
+            _setter("is_always", is_always)
         if is_null is not None:
-            pulumi.set(__self__, "is_null", is_null)
+            _setter("is_null", is_null)
 
     @property
     @pulumi.getter(name="columnName")
@@ -387,11 +449,26 @@ class TableTableLimits(dict):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str capacity_mode: (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
         """
-        pulumi.set(__self__, "max_read_units", max_read_units)
-        pulumi.set(__self__, "max_storage_in_gbs", max_storage_in_gbs)
-        pulumi.set(__self__, "max_write_units", max_write_units)
+        TableTableLimits._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            max_read_units=max_read_units,
+            max_storage_in_gbs=max_storage_in_gbs,
+            max_write_units=max_write_units,
+            capacity_mode=capacity_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             max_read_units: int,
+             max_storage_in_gbs: int,
+             max_write_units: int,
+             capacity_mode: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("max_read_units", max_read_units)
+        _setter("max_storage_in_gbs", max_storage_in_gbs)
+        _setter("max_write_units", max_write_units)
         if capacity_mode is not None:
-            pulumi.set(__self__, "capacity_mode", capacity_mode)
+            _setter("capacity_mode", capacity_mode)
 
     @property
     @pulumi.getter(name="maxReadUnits")
@@ -441,9 +518,22 @@ class GetIndexKeyResult(dict):
         :param str json_field_type: If the specified column is of type JSON, jsonFieldType contains the type of the field indicated by jsonPath.
         :param str json_path: If the specified column is of type JSON, jsonPath contains a dotted path indicating the field within the JSON object that will be the index key.
         """
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "json_field_type", json_field_type)
-        pulumi.set(__self__, "json_path", json_path)
+        GetIndexKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            json_field_type=json_field_type,
+            json_path=json_path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: str,
+             json_field_type: str,
+             json_path: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("column_name", column_name)
+        _setter("json_field_type", json_field_type)
+        _setter("json_path", json_path)
 
     @property
     @pulumi.getter(name="columnName")
@@ -479,10 +569,23 @@ class GetIndexesFilterResult(dict):
         """
         :param str name: A shell-globbing-style (*?[]) filter for names.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetIndexesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -526,16 +629,43 @@ class GetIndexesIndexCollectionResult(dict):
         :param str table_name: The name of the table to which this index belongs.
         :param str table_name_or_id: A table name within the compartment, or a table OCID.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_if_not_exists", is_if_not_exists)
-        pulumi.set(__self__, "keys", keys)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "table_id", table_id)
-        pulumi.set(__self__, "table_name", table_name)
-        pulumi.set(__self__, "table_name_or_id", table_name_or_id)
+        GetIndexesIndexCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            id=id,
+            is_if_not_exists=is_if_not_exists,
+            keys=keys,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            state=state,
+            table_id=table_id,
+            table_name=table_name,
+            table_name_or_id=table_name_or_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             id: str,
+             is_if_not_exists: bool,
+             keys: Sequence['outputs.GetIndexesIndexCollectionKeyResult'],
+             lifecycle_details: str,
+             name: str,
+             state: str,
+             table_id: str,
+             table_name: str,
+             table_name_or_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("id", id)
+        _setter("is_if_not_exists", is_if_not_exists)
+        _setter("keys", keys)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("name", name)
+        _setter("state", state)
+        _setter("table_id", table_id)
+        _setter("table_name", table_name)
+        _setter("table_name_or_id", table_name_or_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -623,9 +753,22 @@ class GetIndexesIndexCollectionKeyResult(dict):
         :param str json_field_type: If the specified column is of type JSON, jsonFieldType contains the type of the field indicated by jsonPath.
         :param str json_path: If the specified column is of type JSON, jsonPath contains a dotted path indicating the field within the JSON object that will be the index key.
         """
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "json_field_type", json_field_type)
-        pulumi.set(__self__, "json_path", json_path)
+        GetIndexesIndexCollectionKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            json_field_type=json_field_type,
+            json_path=json_path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: str,
+             json_field_type: str,
+             json_path: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("column_name", column_name)
+        _setter("json_field_type", json_field_type)
+        _setter("json_path", json_path)
 
     @property
     @pulumi.getter(name="columnName")
@@ -667,11 +810,28 @@ class GetTableSchemaResult(dict):
         :param Sequence[str] shard_keys: A list of column names that make up a key.
         :param int ttl: The default Time-to-Live for the table, in days.
         """
-        pulumi.set(__self__, "columns", columns)
-        pulumi.set(__self__, "identities", identities)
-        pulumi.set(__self__, "primary_keys", primary_keys)
-        pulumi.set(__self__, "shard_keys", shard_keys)
-        pulumi.set(__self__, "ttl", ttl)
+        GetTableSchemaResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            columns=columns,
+            identities=identities,
+            primary_keys=primary_keys,
+            shard_keys=shard_keys,
+            ttl=ttl,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             columns: Sequence['outputs.GetTableSchemaColumnResult'],
+             identities: Sequence['outputs.GetTableSchemaIdentityResult'],
+             primary_keys: Sequence[str],
+             shard_keys: Sequence[str],
+             ttl: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("columns", columns)
+        _setter("identities", identities)
+        _setter("primary_keys", primary_keys)
+        _setter("shard_keys", shard_keys)
+        _setter("ttl", ttl)
 
     @property
     @pulumi.getter
@@ -731,12 +891,31 @@ class GetTableSchemaColumnResult(dict):
         :param str name: The column name.
         :param str type: The column type.
         """
-        pulumi.set(__self__, "default_value", default_value)
-        pulumi.set(__self__, "is_as_uuid", is_as_uuid)
-        pulumi.set(__self__, "is_generated", is_generated)
-        pulumi.set(__self__, "is_nullable", is_nullable)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        GetTableSchemaColumnResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_value=default_value,
+            is_as_uuid=is_as_uuid,
+            is_generated=is_generated,
+            is_nullable=is_nullable,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_value: str,
+             is_as_uuid: bool,
+             is_generated: bool,
+             is_nullable: bool,
+             name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_value", default_value)
+        _setter("is_as_uuid", is_as_uuid)
+        _setter("is_generated", is_generated)
+        _setter("is_nullable", is_nullable)
+        _setter("name", name)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="defaultValue")
@@ -798,9 +977,22 @@ class GetTableSchemaIdentityResult(dict):
         :param bool is_always: True if the identity value is GENERATED ALWAYS.
         :param bool is_null: True if the identity value is GENERATED BY DEFAULT ON NULL.
         """
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "is_always", is_always)
-        pulumi.set(__self__, "is_null", is_null)
+        GetTableSchemaIdentityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            is_always=is_always,
+            is_null=is_null,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: str,
+             is_always: bool,
+             is_null: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("column_name", column_name)
+        _setter("is_always", is_always)
+        _setter("is_null", is_null)
 
     @property
     @pulumi.getter(name="columnName")
@@ -840,10 +1032,25 @@ class GetTableTableLimitResult(dict):
         :param int max_storage_in_gbs: Maximum size of storage used by the table.
         :param int max_write_units: Maximum sustained write throughput limit for the table.
         """
-        pulumi.set(__self__, "capacity_mode", capacity_mode)
-        pulumi.set(__self__, "max_read_units", max_read_units)
-        pulumi.set(__self__, "max_storage_in_gbs", max_storage_in_gbs)
-        pulumi.set(__self__, "max_write_units", max_write_units)
+        GetTableTableLimitResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacity_mode=capacity_mode,
+            max_read_units=max_read_units,
+            max_storage_in_gbs=max_storage_in_gbs,
+            max_write_units=max_write_units,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacity_mode: str,
+             max_read_units: int,
+             max_storage_in_gbs: int,
+             max_write_units: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("capacity_mode", capacity_mode)
+        _setter("max_read_units", max_read_units)
+        _setter("max_storage_in_gbs", max_storage_in_gbs)
+        _setter("max_write_units", max_write_units)
 
     @property
     @pulumi.getter(name="capacityMode")
@@ -887,10 +1094,23 @@ class GetTablesFilterResult(dict):
         """
         :param str name: A shell-globbing-style (*?[]) filter for names.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetTablesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -944,21 +1164,58 @@ class GetTablesTableCollectionResult(dict):
         :param str time_of_expiration: If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
         :param str time_updated: The time the the table's metadata was last updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "ddl_statement", ddl_statement)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_auto_reclaimable", is_auto_reclaimable)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "schemas", schemas)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "table_limits", table_limits)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_of_expiration", time_of_expiration)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetTablesTableCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            ddl_statement=ddl_statement,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_auto_reclaimable=is_auto_reclaimable,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            schemas=schemas,
+            state=state,
+            system_tags=system_tags,
+            table_limits=table_limits,
+            time_created=time_created,
+            time_of_expiration=time_of_expiration,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             ddl_statement: str,
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_auto_reclaimable: bool,
+             lifecycle_details: str,
+             name: str,
+             schemas: Sequence['outputs.GetTablesTableCollectionSchemaResult'],
+             state: str,
+             system_tags: Mapping[str, Any],
+             table_limits: Sequence['outputs.GetTablesTableCollectionTableLimitResult'],
+             time_created: str,
+             time_of_expiration: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("ddl_statement", ddl_statement)
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_auto_reclaimable", is_auto_reclaimable)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("name", name)
+        _setter("schemas", schemas)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("table_limits", table_limits)
+        _setter("time_created", time_created)
+        _setter("time_of_expiration", time_of_expiration)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1083,11 +1340,28 @@ class GetTablesTableCollectionSchemaResult(dict):
                  primary_keys: Sequence[str],
                  shard_keys: Sequence[str],
                  ttl: int):
-        pulumi.set(__self__, "columns", columns)
-        pulumi.set(__self__, "identities", identities)
-        pulumi.set(__self__, "primary_keys", primary_keys)
-        pulumi.set(__self__, "shard_keys", shard_keys)
-        pulumi.set(__self__, "ttl", ttl)
+        GetTablesTableCollectionSchemaResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            columns=columns,
+            identities=identities,
+            primary_keys=primary_keys,
+            shard_keys=shard_keys,
+            ttl=ttl,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             columns: Sequence['outputs.GetTablesTableCollectionSchemaColumnResult'],
+             identities: Sequence['outputs.GetTablesTableCollectionSchemaIdentityResult'],
+             primary_keys: Sequence[str],
+             shard_keys: Sequence[str],
+             ttl: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("columns", columns)
+        _setter("identities", identities)
+        _setter("primary_keys", primary_keys)
+        _setter("shard_keys", shard_keys)
+        _setter("ttl", ttl)
 
     @property
     @pulumi.getter
@@ -1127,12 +1401,31 @@ class GetTablesTableCollectionSchemaColumnResult(dict):
         """
         :param str name: A shell-globbing-style (*?[]) filter for names.
         """
-        pulumi.set(__self__, "default_value", default_value)
-        pulumi.set(__self__, "is_as_uuid", is_as_uuid)
-        pulumi.set(__self__, "is_generated", is_generated)
-        pulumi.set(__self__, "is_nullable", is_nullable)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        GetTablesTableCollectionSchemaColumnResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_value=default_value,
+            is_as_uuid=is_as_uuid,
+            is_generated=is_generated,
+            is_nullable=is_nullable,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_value: str,
+             is_as_uuid: bool,
+             is_generated: bool,
+             is_nullable: bool,
+             name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_value", default_value)
+        _setter("is_as_uuid", is_as_uuid)
+        _setter("is_generated", is_generated)
+        _setter("is_nullable", is_nullable)
+        _setter("name", name)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="defaultValue")
@@ -1174,9 +1467,22 @@ class GetTablesTableCollectionSchemaIdentityResult(dict):
                  column_name: str,
                  is_always: bool,
                  is_null: bool):
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "is_always", is_always)
-        pulumi.set(__self__, "is_null", is_null)
+        GetTablesTableCollectionSchemaIdentityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            is_always=is_always,
+            is_null=is_null,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: str,
+             is_always: bool,
+             is_null: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("column_name", column_name)
+        _setter("is_always", is_always)
+        _setter("is_null", is_null)
 
     @property
     @pulumi.getter(name="columnName")
@@ -1207,10 +1513,25 @@ class GetTablesTableCollectionTableLimitResult(dict):
         :param int max_storage_in_gbs: Maximum size of storage used by the table.
         :param int max_write_units: Maximum sustained write throughput limit for the table.
         """
-        pulumi.set(__self__, "capacity_mode", capacity_mode)
-        pulumi.set(__self__, "max_read_units", max_read_units)
-        pulumi.set(__self__, "max_storage_in_gbs", max_storage_in_gbs)
-        pulumi.set(__self__, "max_write_units", max_write_units)
+        GetTablesTableCollectionTableLimitResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacity_mode=capacity_mode,
+            max_read_units=max_read_units,
+            max_storage_in_gbs=max_storage_in_gbs,
+            max_write_units=max_write_units,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacity_mode: str,
+             max_read_units: int,
+             max_storage_in_gbs: int,
+             max_write_units: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("capacity_mode", capacity_mode)
+        _setter("max_read_units", max_read_units)
+        _setter("max_storage_in_gbs", max_storage_in_gbs)
+        _setter("max_write_units", max_write_units)
 
     @property
     @pulumi.getter(name="capacityMode")

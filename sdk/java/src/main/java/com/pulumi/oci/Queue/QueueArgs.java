@@ -20,14 +20,29 @@ public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
     public static final QueueArgs Empty = new QueueArgs();
 
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue&#39;s resources.
+     * 
+     */
+    @Import(name="channelConsumptionLimit")
+    private @Nullable Output<Integer> channelConsumptionLimit;
+
+    /**
+     * @return (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue&#39;s resources.
+     * 
+     */
+    public Optional<Output<Integer>> channelConsumptionLimit() {
+        return Optional.ofNullable(this.channelConsumptionLimit);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
      * 
      */
     public Output<String> compartmentId() {
@@ -35,14 +50,14 @@ public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
      * 
      */
     @Import(name="customEncryptionKeyId")
     private @Nullable Output<String> customEncryptionKeyId;
 
     /**
-     * @return (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
      * 
      */
     public Optional<Output<String>> customEncryptionKeyId() {
@@ -80,14 +95,14 @@ public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Queue Identifier
+     * (Updatable) The user-friendly name of the queue.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Queue Identifier
+     * @return (Updatable) The user-friendly name of the queue.
      * 
      */
     public Output<String> displayName() {
@@ -124,14 +139,14 @@ public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The retention period of the messages in the queue, in seconds.
+     * The retention period of messages in the queue, in seconds.
      * 
      */
     @Import(name="retentionInSeconds")
     private @Nullable Output<Integer> retentionInSeconds;
 
     /**
-     * @return The retention period of the messages in the queue, in seconds.
+     * @return The retention period of messages in the queue, in seconds.
      * 
      */
     public Optional<Output<Integer>> retentionInSeconds() {
@@ -154,14 +169,14 @@ public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The default visibility of the messages consumed from the queue.
+     * (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
      * 
      */
     @Import(name="visibilityInSeconds")
     private @Nullable Output<Integer> visibilityInSeconds;
 
     /**
-     * @return (Updatable) The default visibility of the messages consumed from the queue.
+     * @return (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
      * 
      */
     public Optional<Output<Integer>> visibilityInSeconds() {
@@ -171,6 +186,7 @@ public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
     private QueueArgs() {}
 
     private QueueArgs(QueueArgs $) {
+        this.channelConsumptionLimit = $.channelConsumptionLimit;
         this.compartmentId = $.compartmentId;
         this.customEncryptionKeyId = $.customEncryptionKeyId;
         this.deadLetterQueueDeliveryCount = $.deadLetterQueueDeliveryCount;
@@ -203,7 +219,28 @@ public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param channelConsumptionLimit (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue&#39;s resources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder channelConsumptionLimit(@Nullable Output<Integer> channelConsumptionLimit) {
+            $.channelConsumptionLimit = channelConsumptionLimit;
+            return this;
+        }
+
+        /**
+         * @param channelConsumptionLimit (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue&#39;s resources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder channelConsumptionLimit(Integer channelConsumptionLimit) {
+            return channelConsumptionLimit(Output.of(channelConsumptionLimit));
+        }
+
+        /**
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
          * 
          * @return builder
          * 
@@ -214,7 +251,7 @@ public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
          * 
          * @return builder
          * 
@@ -224,7 +261,7 @@ public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customEncryptionKeyId (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+         * @param customEncryptionKeyId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
          * 
          * @return builder
          * 
@@ -235,7 +272,7 @@ public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customEncryptionKeyId (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+         * @param customEncryptionKeyId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
          * 
          * @return builder
          * 
@@ -287,7 +324,7 @@ public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Queue Identifier
+         * @param displayName (Updatable) The user-friendly name of the queue.
          * 
          * @return builder
          * 
@@ -298,7 +335,7 @@ public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Queue Identifier
+         * @param displayName (Updatable) The user-friendly name of the queue.
          * 
          * @return builder
          * 
@@ -347,7 +384,7 @@ public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param retentionInSeconds The retention period of the messages in the queue, in seconds.
+         * @param retentionInSeconds The retention period of messages in the queue, in seconds.
          * 
          * @return builder
          * 
@@ -358,7 +395,7 @@ public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param retentionInSeconds The retention period of the messages in the queue, in seconds.
+         * @param retentionInSeconds The retention period of messages in the queue, in seconds.
          * 
          * @return builder
          * 
@@ -389,7 +426,7 @@ public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param visibilityInSeconds (Updatable) The default visibility of the messages consumed from the queue.
+         * @param visibilityInSeconds (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
          * 
          * @return builder
          * 
@@ -400,7 +437,7 @@ public final class QueueArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param visibilityInSeconds (Updatable) The default visibility of the messages consumed from the queue.
+         * @param visibilityInSeconds (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
          * 
          * @return builder
          * 

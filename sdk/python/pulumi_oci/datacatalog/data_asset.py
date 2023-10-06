@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['DataAssetArgs', 'DataAsset']
@@ -29,15 +29,31 @@ class DataAssetArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] description: (Updatable) Detailed description of the data asset.
-        :param pulumi.Input[Mapping[str, Any]] properties: A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
         """
-        pulumi.set(__self__, "catalog_id", catalog_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "type_key", type_key)
+        DataAssetArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            catalog_id=catalog_id,
+            display_name=display_name,
+            type_key=type_key,
+            description=description,
+            properties=properties,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             catalog_id: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             type_key: pulumi.Input[str],
+             description: Optional[pulumi.Input[str]] = None,
+             properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("catalog_id", catalog_id)
+        _setter("display_name", display_name)
+        _setter("type_key", type_key)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if properties is not None:
-            pulumi.set(__self__, "properties", properties)
+            _setter("properties", properties)
 
     @property
     @pulumi.getter(name="catalogId")
@@ -94,9 +110,6 @@ class DataAssetArgs:
     @property
     @pulumi.getter
     def properties(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
-        """
         return pulumi.get(self, "properties")
 
     @properties.setter
@@ -131,7 +144,6 @@ class _DataAssetState:
         :param pulumi.Input[str] external_key: External URI that can be used to reference the object. Format will differ based on the type of object.
         :param pulumi.Input[str] key: Unique data asset key that is immutable.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
-        :param pulumi.Input[Mapping[str, Any]] properties: A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
         :param pulumi.Input[str] state: The current state of the data asset.
         :param pulumi.Input[str] time_created: The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
         :param pulumi.Input[str] time_harvested: The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -144,36 +156,73 @@ class _DataAssetState:
         :param pulumi.Input[str] updated_by_id: OCID of the user who last modified the data asset.
         :param pulumi.Input[str] uri: URI to the data asset instance in the API.
         """
+        _DataAssetState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            catalog_id=catalog_id,
+            created_by_id=created_by_id,
+            description=description,
+            display_name=display_name,
+            external_key=external_key,
+            key=key,
+            lifecycle_details=lifecycle_details,
+            properties=properties,
+            state=state,
+            time_created=time_created,
+            time_harvested=time_harvested,
+            time_updated=time_updated,
+            type_key=type_key,
+            updated_by_id=updated_by_id,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             catalog_id: Optional[pulumi.Input[str]] = None,
+             created_by_id: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             external_key: Optional[pulumi.Input[str]] = None,
+             key: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_harvested: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             type_key: Optional[pulumi.Input[str]] = None,
+             updated_by_id: Optional[pulumi.Input[str]] = None,
+             uri: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if catalog_id is not None:
-            pulumi.set(__self__, "catalog_id", catalog_id)
+            _setter("catalog_id", catalog_id)
         if created_by_id is not None:
-            pulumi.set(__self__, "created_by_id", created_by_id)
+            _setter("created_by_id", created_by_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if external_key is not None:
-            pulumi.set(__self__, "external_key", external_key)
+            _setter("external_key", external_key)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if properties is not None:
-            pulumi.set(__self__, "properties", properties)
+            _setter("properties", properties)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_harvested is not None:
-            pulumi.set(__self__, "time_harvested", time_harvested)
+            _setter("time_harvested", time_harvested)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if type_key is not None:
-            pulumi.set(__self__, "type_key", type_key)
+            _setter("type_key", type_key)
         if updated_by_id is not None:
-            pulumi.set(__self__, "updated_by_id", updated_by_id)
+            _setter("updated_by_id", updated_by_id)
         if uri is not None:
-            pulumi.set(__self__, "uri", uri)
+            _setter("uri", uri)
 
     @property
     @pulumi.getter(name="catalogId")
@@ -262,9 +311,6 @@ class _DataAssetState:
     @property
     @pulumi.getter
     def properties(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
-        """
         return pulumi.get(self, "properties")
 
     @properties.setter
@@ -403,7 +449,6 @@ class DataAsset(pulumi.CustomResource):
         :param pulumi.Input[str] catalog_id: Unique catalog identifier.
         :param pulumi.Input[str] description: (Updatable) Detailed description of the data asset.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] properties: A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
         :param pulumi.Input[str] type_key: The key of the data asset type. This can be obtained via the '/types' endpoint.
                
                
@@ -453,6 +498,10 @@ class DataAsset(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DataAssetArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -532,7 +581,6 @@ class DataAsset(pulumi.CustomResource):
         :param pulumi.Input[str] external_key: External URI that can be used to reference the object. Format will differ based on the type of object.
         :param pulumi.Input[str] key: Unique data asset key that is immutable.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
-        :param pulumi.Input[Mapping[str, Any]] properties: A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
         :param pulumi.Input[str] state: The current state of the data asset.
         :param pulumi.Input[str] time_created: The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
         :param pulumi.Input[str] time_harvested: The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -625,9 +673,6 @@ class DataAsset(pulumi.CustomResource):
     @property
     @pulumi.getter
     def properties(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
-        """
         return pulumi.get(self, "properties")
 
     @property

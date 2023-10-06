@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ManagementDashboardsImportArgs', 'ManagementDashboardsImport']
@@ -20,10 +20,21 @@ class ManagementDashboardsImportArgs:
         The set of arguments for constructing a ManagementDashboardsImport resource.
         :param pulumi.Input[str] import_details: Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
         """
+        ManagementDashboardsImportArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            import_details=import_details,
+            import_details_file=import_details_file,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             import_details: Optional[pulumi.Input[str]] = None,
+             import_details_file: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if import_details is not None:
-            pulumi.set(__self__, "import_details", import_details)
+            _setter("import_details", import_details)
         if import_details_file is not None:
-            pulumi.set(__self__, "import_details_file", import_details_file)
+            _setter("import_details_file", import_details_file)
 
     @property
     @pulumi.getter(name="importDetails")
@@ -56,10 +67,21 @@ class _ManagementDashboardsImportState:
         Input properties used for looking up and filtering ManagementDashboardsImport resources.
         :param pulumi.Input[str] import_details: Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
         """
+        _ManagementDashboardsImportState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            import_details=import_details,
+            import_details_file=import_details_file,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             import_details: Optional[pulumi.Input[str]] = None,
+             import_details_file: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if import_details is not None:
-            pulumi.set(__self__, "import_details", import_details)
+            _setter("import_details", import_details)
         if import_details_file is not None:
-            pulumi.set(__self__, "import_details_file", import_details_file)
+            _setter("import_details_file", import_details_file)
 
     @property
     @pulumi.getter(name="importDetails")
@@ -169,6 +191,10 @@ class ManagementDashboardsImport(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ManagementDashboardsImportArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -3687,6 +3687,8 @@ public final class DatabaseFunctions {
      *             .isDataGuardEnabled(var_.autonomous_database_is_data_guard_enabled())
      *             .isFreeTier(var_.autonomous_database_is_free_tier())
      *             .isRefreshableClone(var_.autonomous_database_is_refreshable_clone())
+     *             .isResourcePoolLeader(var_.autonomous_database_is_resource_pool_leader())
+     *             .resourcePoolLeaderId(oci_database_resource_pool_leader.test_resource_pool_leader().id())
      *             .state(var_.autonomous_database_state())
      *             .build());
      * 
@@ -3735,6 +3737,8 @@ public final class DatabaseFunctions {
      *             .isDataGuardEnabled(var_.autonomous_database_is_data_guard_enabled())
      *             .isFreeTier(var_.autonomous_database_is_free_tier())
      *             .isRefreshableClone(var_.autonomous_database_is_refreshable_clone())
+     *             .isResourcePoolLeader(var_.autonomous_database_is_resource_pool_leader())
+     *             .resourcePoolLeaderId(oci_database_resource_pool_leader.test_resource_pool_leader().id())
      *             .state(var_.autonomous_database_state())
      *             .build());
      * 
@@ -3783,6 +3787,8 @@ public final class DatabaseFunctions {
      *             .isDataGuardEnabled(var_.autonomous_database_is_data_guard_enabled())
      *             .isFreeTier(var_.autonomous_database_is_free_tier())
      *             .isRefreshableClone(var_.autonomous_database_is_refreshable_clone())
+     *             .isResourcePoolLeader(var_.autonomous_database_is_resource_pool_leader())
+     *             .resourcePoolLeaderId(oci_database_resource_pool_leader.test_resource_pool_leader().id())
      *             .state(var_.autonomous_database_state())
      *             .build());
      * 
@@ -3831,6 +3837,8 @@ public final class DatabaseFunctions {
      *             .isDataGuardEnabled(var_.autonomous_database_is_data_guard_enabled())
      *             .isFreeTier(var_.autonomous_database_is_free_tier())
      *             .isRefreshableClone(var_.autonomous_database_is_refreshable_clone())
+     *             .isResourcePoolLeader(var_.autonomous_database_is_resource_pool_leader())
+     *             .resourcePoolLeaderId(oci_database_resource_pool_leader.test_resource_pool_leader().id())
      *             .state(var_.autonomous_database_state())
      *             .build());
      * 

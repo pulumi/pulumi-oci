@@ -74,7 +74,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private endpoint.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -88,7 +88,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user that created the private endpoint.
      * 
      */
-    @Export(name="createdBy", type=String.class, parameters={})
+    @Export(name="createdBy", refs={String.class}, tree="[0]")
     private Output<String> createdBy;
 
     /**
@@ -102,7 +102,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * Data Science resource type.
      * 
      */
-    @Export(name="dataScienceResourceType", type=String.class, parameters={})
+    @Export(name="dataScienceResourceType", refs={String.class}, tree="[0]")
     private Output<String> dataScienceResourceType;
 
     /**
@@ -116,7 +116,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -130,7 +130,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) A user friendly description. Avoid entering confidential information.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -144,7 +144,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) A user friendly name. It doesn&#39;t have to be unique. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -158,7 +158,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * Accesing the Data Science resource using FQDN.
      * 
      */
-    @Export(name="fqdn", type=String.class, parameters={})
+    @Export(name="fqdn", refs={String.class}, tree="[0]")
     private Output<String> fqdn;
 
     /**
@@ -172,7 +172,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -186,7 +186,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * Details of the state of Data Science private endpoint.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -200,7 +200,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) An array of network security group OCIDs.
      * 
      */
-    @Export(name="nsgIds", type=List.class, parameters={String.class})
+    @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> nsgIds;
 
     /**
@@ -214,7 +214,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * State of the Data Science private endpoint.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -228,7 +228,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * Subdomain for a private endpoint FQDN.
      * 
      */
-    @Export(name="subDomain", type=String.class, parameters={})
+    @Export(name="subDomain", refs={String.class}, tree="[0]")
     private Output<String> subDomain;
 
     /**
@@ -245,7 +245,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -262,7 +262,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -276,7 +276,7 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

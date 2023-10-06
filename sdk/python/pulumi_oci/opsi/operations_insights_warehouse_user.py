@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['OperationsInsightsWarehouseUserArgs', 'OperationsInsightsWarehouseUser']
@@ -39,20 +39,45 @@ class OperationsInsightsWarehouseUserArgs:
         :param pulumi.Input[bool] is_opsi_data_access: (Updatable) Indicate whether user has access to OPSI data.
         :param pulumi.Input[str] name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connection_password", connection_password)
-        pulumi.set(__self__, "is_awr_data_access", is_awr_data_access)
-        pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
+        OperationsInsightsWarehouseUserArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            connection_password=connection_password,
+            is_awr_data_access=is_awr_data_access,
+            operations_insights_warehouse_id=operations_insights_warehouse_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_em_data_access=is_em_data_access,
+            is_opsi_data_access=is_opsi_data_access,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             connection_password: pulumi.Input[str],
+             is_awr_data_access: pulumi.Input[bool],
+             operations_insights_warehouse_id: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_em_data_access: Optional[pulumi.Input[bool]] = None,
+             is_opsi_data_access: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("connection_password", connection_password)
+        _setter("is_awr_data_access", is_awr_data_access)
+        _setter("operations_insights_warehouse_id", operations_insights_warehouse_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_em_data_access is not None:
-            pulumi.set(__self__, "is_em_data_access", is_em_data_access)
+            _setter("is_em_data_access", is_em_data_access)
         if is_opsi_data_access is not None:
-            pulumi.set(__self__, "is_opsi_data_access", is_opsi_data_access)
+            _setter("is_opsi_data_access", is_opsi_data_access)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -205,34 +230,69 @@ class _OperationsInsightsWarehouseUserState:
         :param pulumi.Input[str] time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
+        _OperationsInsightsWarehouseUserState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            connection_password=connection_password,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_awr_data_access=is_awr_data_access,
+            is_em_data_access=is_em_data_access,
+            is_opsi_data_access=is_opsi_data_access,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            operations_insights_warehouse_id=operations_insights_warehouse_id,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             connection_password: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_awr_data_access: Optional[pulumi.Input[bool]] = None,
+             is_em_data_access: Optional[pulumi.Input[bool]] = None,
+             is_opsi_data_access: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if connection_password is not None:
-            pulumi.set(__self__, "connection_password", connection_password)
+            _setter("connection_password", connection_password)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_awr_data_access is not None:
-            pulumi.set(__self__, "is_awr_data_access", is_awr_data_access)
+            _setter("is_awr_data_access", is_awr_data_access)
         if is_em_data_access is not None:
-            pulumi.set(__self__, "is_em_data_access", is_em_data_access)
+            _setter("is_em_data_access", is_em_data_access)
         if is_opsi_data_access is not None:
-            pulumi.set(__self__, "is_opsi_data_access", is_opsi_data_access)
+            _setter("is_opsi_data_access", is_opsi_data_access)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if operations_insights_warehouse_id is not None:
-            pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
+            _setter("operations_insights_warehouse_id", operations_insights_warehouse_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -524,6 +584,10 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            OperationsInsightsWarehouseUserArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

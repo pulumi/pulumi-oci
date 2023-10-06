@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -35,19 +35,42 @@ class UnifiedAgentConfigurationArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input['UnifiedAgentConfigurationGroupAssociationArgs'] group_association: (Updatable) Groups using the configuration.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "service_configuration", service_configuration)
+        UnifiedAgentConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            is_enabled=is_enabled,
+            service_configuration=service_configuration,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            group_association=group_association,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             is_enabled: pulumi.Input[bool],
+             service_configuration: pulumi.Input['UnifiedAgentConfigurationServiceConfigurationArgs'],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             group_association: Optional[pulumi.Input['UnifiedAgentConfigurationGroupAssociationArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("is_enabled", is_enabled)
+        _setter("service_configuration", service_configuration)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if group_association is not None:
-            pulumi.set(__self__, "group_association", group_association)
+            _setter("group_association", group_association)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -176,30 +199,61 @@ class _UnifiedAgentConfigurationState:
         :param pulumi.Input[str] time_created: Time the resource was created.
         :param pulumi.Input[str] time_last_modified: Time the resource was last modified.
         """
+        _UnifiedAgentConfigurationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            configuration_state=configuration_state,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            group_association=group_association,
+            is_enabled=is_enabled,
+            service_configuration=service_configuration,
+            state=state,
+            time_created=time_created,
+            time_last_modified=time_last_modified,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             configuration_state: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             group_association: Optional[pulumi.Input['UnifiedAgentConfigurationGroupAssociationArgs']] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             service_configuration: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_last_modified: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if configuration_state is not None:
-            pulumi.set(__self__, "configuration_state", configuration_state)
+            _setter("configuration_state", configuration_state)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if group_association is not None:
-            pulumi.set(__self__, "group_association", group_association)
+            _setter("group_association", group_association)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if service_configuration is not None:
-            pulumi.set(__self__, "service_configuration", service_configuration)
+            _setter("service_configuration", service_configuration)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_last_modified is not None:
-            pulumi.set(__self__, "time_last_modified", time_last_modified)
+            _setter("time_last_modified", time_last_modified)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -559,6 +613,10 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            UnifiedAgentConfigurationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -588,10 +646,20 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            if group_association is not None and not isinstance(group_association, UnifiedAgentConfigurationGroupAssociationArgs):
+                group_association = group_association or {}
+                def _setter(key, value):
+                    group_association[key] = value
+                UnifiedAgentConfigurationGroupAssociationArgs._configure(_setter, **group_association)
             __props__.__dict__["group_association"] = group_association
             if is_enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'is_enabled'")
             __props__.__dict__["is_enabled"] = is_enabled
+            if service_configuration is not None and not isinstance(service_configuration, UnifiedAgentConfigurationServiceConfigurationArgs):
+                service_configuration = service_configuration or {}
+                def _setter(key, value):
+                    service_configuration[key] = value
+                UnifiedAgentConfigurationServiceConfigurationArgs._configure(_setter, **service_configuration)
             if service_configuration is None and not opts.urn:
                 raise TypeError("Missing required property 'service_configuration'")
             __props__.__dict__["service_configuration"] = service_configuration

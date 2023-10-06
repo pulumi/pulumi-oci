@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['SslCipherSuiteArgs', 'SslCipherSuite']
@@ -19,7 +19,6 @@ class SslCipherSuiteArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a SslCipherSuite resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ciphers: A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
         :param pulumi.Input[str] name: A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
                
@@ -36,17 +35,27 @@ class SslCipherSuiteArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "ciphers", ciphers)
-        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        SslCipherSuiteArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ciphers=ciphers,
+            load_balancer_id=load_balancer_id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ciphers: pulumi.Input[Sequence[pulumi.Input[str]]],
+             load_balancer_id: pulumi.Input[str],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ciphers", ciphers)
+        _setter("load_balancer_id", load_balancer_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
     def ciphers(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
-        """
         return pulumi.get(self, "ciphers")
 
     @ciphers.setter
@@ -100,7 +109,6 @@ class _SslCipherSuiteState:
                  state: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering SslCipherSuite resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ciphers: A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
         :param pulumi.Input[str] name: A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
                
@@ -117,21 +125,33 @@ class _SslCipherSuiteState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _SslCipherSuiteState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ciphers=ciphers,
+            load_balancer_id=load_balancer_id,
+            name=name,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ciphers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             load_balancer_id: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if ciphers is not None:
-            pulumi.set(__self__, "ciphers", ciphers)
+            _setter("ciphers", ciphers)
         if load_balancer_id is not None:
-            pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+            _setter("load_balancer_id", load_balancer_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter
     def ciphers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
-        """
         return pulumi.get(self, "ciphers")
 
     @ciphers.setter
@@ -220,7 +240,6 @@ class SslCipherSuite(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ciphers: A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
         :param pulumi.Input[str] name: A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
                
@@ -277,6 +296,10 @@ class SslCipherSuite(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            SslCipherSuiteArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -323,7 +346,6 @@ class SslCipherSuite(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ciphers: A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
         :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
         :param pulumi.Input[str] name: A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
                
@@ -353,9 +375,6 @@ class SslCipherSuite(pulumi.CustomResource):
     @property
     @pulumi.getter
     def ciphers(self) -> pulumi.Output[Sequence[str]]:
-        """
-        A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
-        """
         return pulumi.get(self, "ciphers")
 
     @property

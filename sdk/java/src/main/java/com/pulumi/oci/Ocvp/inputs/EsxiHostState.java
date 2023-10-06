@@ -267,17 +267,9 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.isBillingSwappingInProgress);
     }
 
-    /**
-     * The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
-     * 
-     */
     @Import(name="nextSku")
     private @Nullable Output<String> nextSku;
 
-    /**
-     * @return The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
-     * 
-     */
     public Optional<Output<String>> nextSku() {
         return Optional.ofNullable(this.nextSku);
     }
@@ -816,23 +808,11 @@ public final class EsxiHostState extends com.pulumi.resources.ResourceArgs {
             return isBillingSwappingInProgress(Output.of(isBillingSwappingInProgress));
         }
 
-        /**
-         * @param nextSku The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
-         * 
-         * @return builder
-         * 
-         */
         public Builder nextSku(@Nullable Output<String> nextSku) {
             $.nextSku = nextSku;
             return this;
         }
 
-        /**
-         * @param nextSku The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
-         * 
-         * @return builder
-         * 
-         */
         public Builder nextSku(String nextSku) {
             return nextSku(Output.of(nextSku));
         }

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ExternalPluggableDatabasesStackMonitoringArgs', 'ExternalPluggableDatabasesStackMonitoring']
@@ -27,9 +27,22 @@ class ExternalPluggableDatabasesStackMonitoringArgs:
         :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] external_pluggable_database_id: The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
-        pulumi.set(__self__, "enable_stack_monitoring", enable_stack_monitoring)
-        pulumi.set(__self__, "external_database_connector_id", external_database_connector_id)
-        pulumi.set(__self__, "external_pluggable_database_id", external_pluggable_database_id)
+        ExternalPluggableDatabasesStackMonitoringArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_stack_monitoring=enable_stack_monitoring,
+            external_database_connector_id=external_database_connector_id,
+            external_pluggable_database_id=external_pluggable_database_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_stack_monitoring: pulumi.Input[bool],
+             external_database_connector_id: pulumi.Input[str],
+             external_pluggable_database_id: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("enable_stack_monitoring", enable_stack_monitoring)
+        _setter("external_database_connector_id", external_database_connector_id)
+        _setter("external_pluggable_database_id", external_pluggable_database_id)
 
     @property
     @pulumi.getter(name="enableStackMonitoring")
@@ -88,12 +101,25 @@ class _ExternalPluggableDatabasesStackMonitoringState:
         :param pulumi.Input[str] external_database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param pulumi.Input[str] external_pluggable_database_id: The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
+        _ExternalPluggableDatabasesStackMonitoringState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_stack_monitoring=enable_stack_monitoring,
+            external_database_connector_id=external_database_connector_id,
+            external_pluggable_database_id=external_pluggable_database_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_stack_monitoring: Optional[pulumi.Input[bool]] = None,
+             external_database_connector_id: Optional[pulumi.Input[str]] = None,
+             external_pluggable_database_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if enable_stack_monitoring is not None:
-            pulumi.set(__self__, "enable_stack_monitoring", enable_stack_monitoring)
+            _setter("enable_stack_monitoring", enable_stack_monitoring)
         if external_database_connector_id is not None:
-            pulumi.set(__self__, "external_database_connector_id", external_database_connector_id)
+            _setter("external_database_connector_id", external_database_connector_id)
         if external_pluggable_database_id is not None:
-            pulumi.set(__self__, "external_pluggable_database_id", external_pluggable_database_id)
+            _setter("external_pluggable_database_id", external_pluggable_database_id)
 
     @property
     @pulumi.getter(name="enableStackMonitoring")
@@ -213,6 +239,10 @@ class ExternalPluggableDatabasesStackMonitoring(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ExternalPluggableDatabasesStackMonitoringArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

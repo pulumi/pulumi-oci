@@ -416,17 +416,9 @@ public class Deployment extends com.pulumi.resources.CustomResource {
     public Output<String> publicIpAddress() {
         return this.publicIpAddress;
     }
-    /**
-     * Possible lifecycle states.
-     * 
-     */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
-    /**
-     * @return Possible lifecycle states.
-     * 
-     */
     public Output<String> state() {
         return this.state;
     }

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -78,17 +78,36 @@ class BucketRetentionRule(dict):
         :param str time_modified: The date and time that the retention rule was modified as per [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_rule_locked: (Updatable) The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule is locked and can only be deleted by deleting the bucket. Once a rule is locked, only increases in the duration are allowed and no other properties can be changed. This property cannot be updated for rules that are in a locked state. Specifying it when a duration is not specified is considered an error.
         """
-        pulumi.set(__self__, "display_name", display_name)
+        BucketRetentionRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            duration=duration,
+            retention_rule_id=retention_rule_id,
+            time_created=time_created,
+            time_modified=time_modified,
+            time_rule_locked=time_rule_locked,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             duration: Optional['outputs.BucketRetentionRuleDuration'] = None,
+             retention_rule_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_modified: Optional[str] = None,
+             time_rule_locked: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
         if duration is not None:
-            pulumi.set(__self__, "duration", duration)
+            _setter("duration", duration)
         if retention_rule_id is not None:
-            pulumi.set(__self__, "retention_rule_id", retention_rule_id)
+            _setter("retention_rule_id", retention_rule_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_modified is not None:
-            pulumi.set(__self__, "time_modified", time_modified)
+            _setter("time_modified", time_modified)
         if time_rule_locked is not None:
-            pulumi.set(__self__, "time_rule_locked", time_rule_locked)
+            _setter("time_rule_locked", time_rule_locked)
 
     @property
     @pulumi.getter(name="displayName")
@@ -167,8 +186,19 @@ class BucketRetentionRuleDuration(dict):
         :param str time_amount: (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
         :param str time_unit: (Updatable) The unit that should be used to interpret timeAmount.
         """
-        pulumi.set(__self__, "time_amount", time_amount)
-        pulumi.set(__self__, "time_unit", time_unit)
+        BucketRetentionRuleDuration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_amount=time_amount,
+            time_unit=time_unit,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_amount: str,
+             time_unit: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_amount", time_amount)
+        _setter("time_unit", time_unit)
 
     @property
     @pulumi.getter(name="timeAmount")
@@ -233,15 +263,36 @@ class ObjectLifecyclePolicyRule(dict):
         :param 'ObjectLifecyclePolicyRuleObjectNameFilterArgs' object_name_filter: (Updatable) A filter that compares object names to a set of prefixes or patterns to determine if a rule applies to a given object. The filter can contain include glob patterns, exclude glob patterns and inclusion prefixes. The inclusion prefixes property is kept for backward compatibility. It is recommended to use inclusion patterns instead of prefixes. Exclusions take precedence over inclusions.
         :param str target: (Updatable) The target of the object lifecycle policy rule. The values of target can be either "objects", "multipart-uploads" or "previous-object-versions". This field when declared as "objects" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for objects. This field when declared as "previous-object-versions" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for previous versions of existing objects. This field when declared as "multipart-uploads" is used to specify the ABORT (only) rule for uncommitted multipart-uploads.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "time_amount", time_amount)
-        pulumi.set(__self__, "time_unit", time_unit)
+        ObjectLifecyclePolicyRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            is_enabled=is_enabled,
+            name=name,
+            time_amount=time_amount,
+            time_unit=time_unit,
+            object_name_filter=object_name_filter,
+            target=target,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: str,
+             is_enabled: bool,
+             name: str,
+             time_amount: str,
+             time_unit: str,
+             object_name_filter: Optional['outputs.ObjectLifecyclePolicyRuleObjectNameFilter'] = None,
+             target: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("is_enabled", is_enabled)
+        _setter("name", name)
+        _setter("time_amount", time_amount)
+        _setter("time_unit", time_unit)
         if object_name_filter is not None:
-            pulumi.set(__self__, "object_name_filter", object_name_filter)
+            _setter("object_name_filter", object_name_filter)
         if target is not None:
-            pulumi.set(__self__, "target", target)
+            _setter("target", target)
 
     @property
     @pulumi.getter
@@ -346,12 +397,25 @@ class ObjectLifecyclePolicyRuleObjectNameFilter(dict):
                *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
         :param Sequence[str] inclusion_prefixes: (Updatable) An array of object name prefixes that the rule will apply to. An empty array means to include all objects.
         """
+        ObjectLifecyclePolicyRuleObjectNameFilter._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            exclusion_patterns=exclusion_patterns,
+            inclusion_patterns=inclusion_patterns,
+            inclusion_prefixes=inclusion_prefixes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             exclusion_patterns: Optional[Sequence[str]] = None,
+             inclusion_patterns: Optional[Sequence[str]] = None,
+             inclusion_prefixes: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if exclusion_patterns is not None:
-            pulumi.set(__self__, "exclusion_patterns", exclusion_patterns)
+            _setter("exclusion_patterns", exclusion_patterns)
         if inclusion_patterns is not None:
-            pulumi.set(__self__, "inclusion_patterns", inclusion_patterns)
+            _setter("inclusion_patterns", inclusion_patterns)
         if inclusion_prefixes is not None:
-            pulumi.set(__self__, "inclusion_prefixes", inclusion_prefixes)
+            _setter("inclusion_prefixes", inclusion_prefixes)
 
     @property
     @pulumi.getter(name="exclusionPatterns")
@@ -436,18 +500,41 @@ class StorageObjectSourceUriDetails(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "region", region)
+        StorageObjectSourceUriDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+            region=region,
+            destination_object_if_match_etag=destination_object_if_match_etag,
+            destination_object_if_none_match_etag=destination_object_if_none_match_etag,
+            source_object_if_match_etag=source_object_if_match_etag,
+            source_version_id=source_version_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             object: str,
+             region: str,
+             destination_object_if_match_etag: Optional[str] = None,
+             destination_object_if_none_match_etag: Optional[str] = None,
+             source_object_if_match_etag: Optional[str] = None,
+             source_version_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("object", object)
+        _setter("region", region)
         if destination_object_if_match_etag is not None:
-            pulumi.set(__self__, "destination_object_if_match_etag", destination_object_if_match_etag)
+            _setter("destination_object_if_match_etag", destination_object_if_match_etag)
         if destination_object_if_none_match_etag is not None:
-            pulumi.set(__self__, "destination_object_if_none_match_etag", destination_object_if_none_match_etag)
+            _setter("destination_object_if_none_match_etag", destination_object_if_none_match_etag)
         if source_object_if_match_etag is not None:
-            pulumi.set(__self__, "source_object_if_match_etag", source_object_if_match_etag)
+            _setter("source_object_if_match_etag", source_object_if_match_etag)
         if source_version_id is not None:
-            pulumi.set(__self__, "source_version_id", source_version_id)
+            _setter("source_version_id", source_version_id)
 
     @property
     @pulumi.getter
@@ -534,12 +621,31 @@ class GetBucketRetentionRuleResult(dict):
         :param str time_modified: The date and time that the retention rule was modified as per [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_rule_locked: The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule becomes locked. and can only be deleted by deleting the bucket.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "durations", durations)
-        pulumi.set(__self__, "retention_rule_id", retention_rule_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_modified", time_modified)
-        pulumi.set(__self__, "time_rule_locked", time_rule_locked)
+        GetBucketRetentionRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            durations=durations,
+            retention_rule_id=retention_rule_id,
+            time_created=time_created,
+            time_modified=time_modified,
+            time_rule_locked=time_rule_locked,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             durations: Sequence['outputs.GetBucketRetentionRuleDurationResult'],
+             retention_rule_id: str,
+             time_created: str,
+             time_modified: str,
+             time_rule_locked: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("durations", durations)
+        _setter("retention_rule_id", retention_rule_id)
+        _setter("time_created", time_created)
+        _setter("time_modified", time_modified)
+        _setter("time_rule_locked", time_rule_locked)
 
     @property
     @pulumi.getter(name="displayName")
@@ -596,8 +702,19 @@ class GetBucketRetentionRuleDurationResult(dict):
         :param str time_amount: The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
         :param str time_unit: The unit that should be used to interpret timeAmount.
         """
-        pulumi.set(__self__, "time_amount", time_amount)
-        pulumi.set(__self__, "time_unit", time_unit)
+        GetBucketRetentionRuleDurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_amount=time_amount,
+            time_unit=time_unit,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_amount: str,
+             time_unit: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_amount", time_amount)
+        _setter("time_unit", time_unit)
 
     @property
     @pulumi.getter(name="timeAmount")
@@ -664,29 +781,82 @@ class GetBucketSummariesBucketSummaryResult(dict):
         :param str time_created: The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
         :param str versioning: The versioning status on the bucket. A bucket is created with versioning `Disabled` by default. For versioning `Enabled`, objects are protected from overwrites and deletes, by maintaining their version history. When versioning is `Suspended`, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
         """
-        pulumi.set(__self__, "access_type", access_type)
-        pulumi.set(__self__, "approximate_count", approximate_count)
-        pulumi.set(__self__, "approximate_size", approximate_size)
-        pulumi.set(__self__, "auto_tiering", auto_tiering)
-        pulumi.set(__self__, "bucket_id", bucket_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "etag", etag)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_read_only", is_read_only)
-        pulumi.set(__self__, "kms_key_id", kms_key_id)
-        pulumi.set(__self__, "metadata", metadata)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object_events_enabled", object_events_enabled)
-        pulumi.set(__self__, "object_lifecycle_policy_etag", object_lifecycle_policy_etag)
-        pulumi.set(__self__, "replication_enabled", replication_enabled)
-        pulumi.set(__self__, "retention_rules", retention_rules)
-        pulumi.set(__self__, "storage_tier", storage_tier)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "versioning", versioning)
+        GetBucketSummariesBucketSummaryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_type=access_type,
+            approximate_count=approximate_count,
+            approximate_size=approximate_size,
+            auto_tiering=auto_tiering,
+            bucket_id=bucket_id,
+            compartment_id=compartment_id,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            etag=etag,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_read_only=is_read_only,
+            kms_key_id=kms_key_id,
+            metadata=metadata,
+            name=name,
+            namespace=namespace,
+            object_events_enabled=object_events_enabled,
+            object_lifecycle_policy_etag=object_lifecycle_policy_etag,
+            replication_enabled=replication_enabled,
+            retention_rules=retention_rules,
+            storage_tier=storage_tier,
+            time_created=time_created,
+            versioning=versioning,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_type: str,
+             approximate_count: str,
+             approximate_size: str,
+             auto_tiering: str,
+             bucket_id: str,
+             compartment_id: str,
+             created_by: str,
+             defined_tags: Mapping[str, Any],
+             etag: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_read_only: bool,
+             kms_key_id: str,
+             metadata: Mapping[str, Any],
+             name: str,
+             namespace: str,
+             object_events_enabled: bool,
+             object_lifecycle_policy_etag: str,
+             replication_enabled: bool,
+             retention_rules: Sequence['outputs.GetBucketSummariesBucketSummaryRetentionRuleResult'],
+             storage_tier: str,
+             time_created: str,
+             versioning: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("access_type", access_type)
+        _setter("approximate_count", approximate_count)
+        _setter("approximate_size", approximate_size)
+        _setter("auto_tiering", auto_tiering)
+        _setter("bucket_id", bucket_id)
+        _setter("compartment_id", compartment_id)
+        _setter("created_by", created_by)
+        _setter("defined_tags", defined_tags)
+        _setter("etag", etag)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_read_only", is_read_only)
+        _setter("kms_key_id", kms_key_id)
+        _setter("metadata", metadata)
+        _setter("name", name)
+        _setter("namespace", namespace)
+        _setter("object_events_enabled", object_events_enabled)
+        _setter("object_lifecycle_policy_etag", object_lifecycle_policy_etag)
+        _setter("replication_enabled", replication_enabled)
+        _setter("retention_rules", retention_rules)
+        _setter("storage_tier", storage_tier)
+        _setter("time_created", time_created)
+        _setter("versioning", versioning)
 
     @property
     @pulumi.getter(name="accessType")
@@ -876,12 +1046,31 @@ class GetBucketSummariesBucketSummaryRetentionRuleResult(dict):
         """
         :param str time_created: The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "durations", durations)
-        pulumi.set(__self__, "retention_rule_id", retention_rule_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_modified", time_modified)
-        pulumi.set(__self__, "time_rule_locked", time_rule_locked)
+        GetBucketSummariesBucketSummaryRetentionRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            durations=durations,
+            retention_rule_id=retention_rule_id,
+            time_created=time_created,
+            time_modified=time_modified,
+            time_rule_locked=time_rule_locked,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             durations: Sequence['outputs.GetBucketSummariesBucketSummaryRetentionRuleDurationResult'],
+             retention_rule_id: str,
+             time_created: str,
+             time_modified: str,
+             time_rule_locked: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("durations", durations)
+        _setter("retention_rule_id", retention_rule_id)
+        _setter("time_created", time_created)
+        _setter("time_modified", time_modified)
+        _setter("time_rule_locked", time_rule_locked)
 
     @property
     @pulumi.getter(name="displayName")
@@ -922,8 +1111,19 @@ class GetBucketSummariesBucketSummaryRetentionRuleDurationResult(dict):
     def __init__(__self__, *,
                  time_amount: str,
                  time_unit: str):
-        pulumi.set(__self__, "time_amount", time_amount)
-        pulumi.set(__self__, "time_unit", time_unit)
+        GetBucketSummariesBucketSummaryRetentionRuleDurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_amount=time_amount,
+            time_unit=time_unit,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_amount: str,
+             time_unit: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_amount", time_amount)
+        _setter("time_unit", time_unit)
 
     @property
     @pulumi.getter(name="timeAmount")
@@ -945,10 +1145,23 @@ class GetBucketSummariesFilterResult(dict):
         """
         :param str name: The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetBucketSummariesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -988,13 +1201,34 @@ class GetObjectLifecyclePolicyRuleResult(dict):
         :param str time_amount: Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified time.
         :param str time_unit: The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "object_name_filters", object_name_filters)
-        pulumi.set(__self__, "target", target)
-        pulumi.set(__self__, "time_amount", time_amount)
-        pulumi.set(__self__, "time_unit", time_unit)
+        GetObjectLifecyclePolicyRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            is_enabled=is_enabled,
+            name=name,
+            object_name_filters=object_name_filters,
+            target=target,
+            time_amount=time_amount,
+            time_unit=time_unit,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: str,
+             is_enabled: bool,
+             name: str,
+             object_name_filters: Sequence['outputs.GetObjectLifecyclePolicyRuleObjectNameFilterResult'],
+             target: str,
+             time_amount: str,
+             time_unit: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("is_enabled", is_enabled)
+        _setter("name", name)
+        _setter("object_name_filters", object_name_filters)
+        _setter("target", target)
+        _setter("time_amount", time_amount)
+        _setter("time_unit", time_unit)
 
     @property
     @pulumi.getter
@@ -1064,9 +1298,22 @@ class GetObjectLifecyclePolicyRuleObjectNameFilterResult(dict):
         :param Sequence[str] inclusion_patterns: An array of glob patterns to match the object names to include. An empty array includes all objects in the bucket. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
         :param Sequence[str] inclusion_prefixes: An array of object name prefixes that the rule will apply to. An empty array means to include all objects.
         """
-        pulumi.set(__self__, "exclusion_patterns", exclusion_patterns)
-        pulumi.set(__self__, "inclusion_patterns", inclusion_patterns)
-        pulumi.set(__self__, "inclusion_prefixes", inclusion_prefixes)
+        GetObjectLifecyclePolicyRuleObjectNameFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            exclusion_patterns=exclusion_patterns,
+            inclusion_patterns=inclusion_patterns,
+            inclusion_prefixes=inclusion_prefixes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             exclusion_patterns: Sequence[str],
+             inclusion_patterns: Sequence[str],
+             inclusion_prefixes: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("exclusion_patterns", exclusion_patterns)
+        _setter("inclusion_patterns", inclusion_patterns)
+        _setter("inclusion_prefixes", inclusion_prefixes)
 
     @property
     @pulumi.getter(name="exclusionPatterns")
@@ -1102,10 +1349,23 @@ class GetObjectVersionsFilterResult(dict):
         """
         :param str name: The name of the object. Avoid entering confidential information. Example: test/object1.log
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetObjectVersionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1151,16 +1411,43 @@ class GetObjectVersionsItemResult(dict):
         :param str time_modified: The date and time the object was modified, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616#section-14.29).
         :param str version_id: VersionId of the object.
         """
-        pulumi.set(__self__, "archival_state", archival_state)
-        pulumi.set(__self__, "etag", etag)
-        pulumi.set(__self__, "is_delete_marker", is_delete_marker)
-        pulumi.set(__self__, "md5", md5)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "size", size)
-        pulumi.set(__self__, "storage_tier", storage_tier)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_modified", time_modified)
-        pulumi.set(__self__, "version_id", version_id)
+        GetObjectVersionsItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            archival_state=archival_state,
+            etag=etag,
+            is_delete_marker=is_delete_marker,
+            md5=md5,
+            name=name,
+            size=size,
+            storage_tier=storage_tier,
+            time_created=time_created,
+            time_modified=time_modified,
+            version_id=version_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             archival_state: str,
+             etag: str,
+             is_delete_marker: bool,
+             md5: str,
+             name: str,
+             size: str,
+             storage_tier: str,
+             time_created: str,
+             time_modified: str,
+             version_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("archival_state", archival_state)
+        _setter("etag", etag)
+        _setter("is_delete_marker", is_delete_marker)
+        _setter("md5", md5)
+        _setter("name", name)
+        _setter("size", size)
+        _setter("storage_tier", storage_tier)
+        _setter("time_created", time_created)
+        _setter("time_modified", time_modified)
+        _setter("version_id", version_id)
 
     @property
     @pulumi.getter(name="archivalState")
@@ -1252,10 +1539,23 @@ class GetObjectsFilterResult(dict):
         """
         :param str name: The name of the object.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetObjectsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1297,14 +1597,37 @@ class GetObjectsObjectResult(dict):
         :param str time_created: The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
         :param str time_modified: The date and time the object was modified, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616#section-14.29).
         """
-        pulumi.set(__self__, "archival_state", archival_state)
-        pulumi.set(__self__, "etag", etag)
-        pulumi.set(__self__, "md5", md5)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "size", size)
-        pulumi.set(__self__, "storage_tier", storage_tier)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_modified", time_modified)
+        GetObjectsObjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            archival_state=archival_state,
+            etag=etag,
+            md5=md5,
+            name=name,
+            size=size,
+            storage_tier=storage_tier,
+            time_created=time_created,
+            time_modified=time_modified,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             archival_state: str,
+             etag: str,
+             md5: str,
+             name: str,
+             size: str,
+             storage_tier: str,
+             time_created: str,
+             time_modified: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("archival_state", archival_state)
+        _setter("etag", etag)
+        _setter("md5", md5)
+        _setter("name", name)
+        _setter("size", size)
+        _setter("storage_tier", storage_tier)
+        _setter("time_created", time_created)
+        _setter("time_modified", time_modified)
 
     @property
     @pulumi.getter(name="archivalState")
@@ -1378,10 +1701,23 @@ class GetPreauthrequestsFilterResult(dict):
         """
         :param str name: The user-provided name of the pre-authenticated request.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPreauthrequestsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1431,19 +1767,52 @@ class GetPreauthrequestsPreauthenticatedRequestResult(dict):
         :param str time_created: The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
         :param str time_expires: The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
         """
-        pulumi.set(__self__, "access_type", access_type)
-        pulumi.set(__self__, "access_uri", access_uri)
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "bucket_listing_action", bucket_listing_action)
-        pulumi.set(__self__, "full_path", full_path)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "object_name", object_name)
-        pulumi.set(__self__, "par_id", par_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_expires", time_expires)
+        GetPreauthrequestsPreauthenticatedRequestResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_type=access_type,
+            access_uri=access_uri,
+            bucket=bucket,
+            bucket_listing_action=bucket_listing_action,
+            full_path=full_path,
+            id=id,
+            name=name,
+            namespace=namespace,
+            object=object,
+            object_name=object_name,
+            par_id=par_id,
+            time_created=time_created,
+            time_expires=time_expires,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_type: str,
+             access_uri: str,
+             bucket: str,
+             bucket_listing_action: str,
+             full_path: str,
+             id: str,
+             name: str,
+             namespace: str,
+             object: str,
+             object_name: str,
+             par_id: str,
+             time_created: str,
+             time_expires: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("access_type", access_type)
+        _setter("access_uri", access_uri)
+        _setter("bucket", bucket)
+        _setter("bucket_listing_action", bucket_listing_action)
+        _setter("full_path", full_path)
+        _setter("id", id)
+        _setter("name", name)
+        _setter("namespace", namespace)
+        _setter("object", object)
+        _setter("object_name", object_name)
+        _setter("par_id", par_id)
+        _setter("time_created", time_created)
+        _setter("time_expires", time_expires)
 
     @property
     @pulumi.getter(name="accessType")
@@ -1556,10 +1925,23 @@ class GetReplicationPoliciesFilterResult(dict):
         """
         :param str name: The name of the policy.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetReplicationPoliciesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1606,17 +1988,46 @@ class GetReplicationPoliciesReplicationPolicyResult(dict):
         :param str time_created: The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
         :param str time_last_sync: Changes made to the source bucket before this time has been replicated.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "delete_object_in_destination_bucket", delete_object_in_destination_bucket)
-        pulumi.set(__self__, "destination_bucket_name", destination_bucket_name)
-        pulumi.set(__self__, "destination_region_name", destination_region_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_message", status_message)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_sync", time_last_sync)
+        GetReplicationPoliciesReplicationPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            delete_object_in_destination_bucket=delete_object_in_destination_bucket,
+            destination_bucket_name=destination_bucket_name,
+            destination_region_name=destination_region_name,
+            id=id,
+            name=name,
+            namespace=namespace,
+            status=status,
+            status_message=status_message,
+            time_created=time_created,
+            time_last_sync=time_last_sync,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             delete_object_in_destination_bucket: str,
+             destination_bucket_name: str,
+             destination_region_name: str,
+             id: str,
+             name: str,
+             namespace: str,
+             status: str,
+             status_message: str,
+             time_created: str,
+             time_last_sync: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("delete_object_in_destination_bucket", delete_object_in_destination_bucket)
+        _setter("destination_bucket_name", destination_bucket_name)
+        _setter("destination_region_name", destination_region_name)
+        _setter("id", id)
+        _setter("name", name)
+        _setter("namespace", namespace)
+        _setter("status", status)
+        _setter("status_message", status_message)
+        _setter("time_created", time_created)
+        _setter("time_last_sync", time_last_sync)
 
     @property
     @pulumi.getter
@@ -1713,10 +2124,23 @@ class GetReplicationSourcesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetReplicationSourcesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1745,9 +2169,22 @@ class GetReplicationSourcesReplicationSourceResult(dict):
         :param str source_bucket_name: The source bucket replicating data from.
         :param str source_region_name: The source region replicating data from, for example "us-ashburn-1".
         """
-        pulumi.set(__self__, "policy_name", policy_name)
-        pulumi.set(__self__, "source_bucket_name", source_bucket_name)
-        pulumi.set(__self__, "source_region_name", source_region_name)
+        GetReplicationSourcesReplicationSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            policy_name=policy_name,
+            source_bucket_name=source_bucket_name,
+            source_region_name=source_region_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             policy_name: str,
+             source_bucket_name: str,
+             source_region_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("policy_name", policy_name)
+        _setter("source_bucket_name", source_bucket_name)
+        _setter("source_region_name", source_region_name)
 
     @property
     @pulumi.getter(name="policyName")

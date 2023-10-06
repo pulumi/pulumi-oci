@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -37,16 +37,37 @@ class DetectAnomalyJobArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "input_details", input_details)
-        pulumi.set(__self__, "model_id", model_id)
-        pulumi.set(__self__, "output_details", output_details)
+        DetectAnomalyJobArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            input_details=input_details,
+            model_id=model_id,
+            output_details=output_details,
+            description=description,
+            display_name=display_name,
+            sensitivity=sensitivity,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             input_details: pulumi.Input['DetectAnomalyJobInputDetailsArgs'],
+             model_id: pulumi.Input[str],
+             output_details: pulumi.Input['DetectAnomalyJobOutputDetailsArgs'],
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             sensitivity: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("input_details", input_details)
+        _setter("model_id", model_id)
+        _setter("output_details", output_details)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if sensitivity is not None:
-            pulumi.set(__self__, "sensitivity", sensitivity)
+            _setter("sensitivity", sensitivity)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -179,38 +200,77 @@ class _DetectAnomalyJobState:
         :param pulumi.Input[str] time_finished: Job finished time
         :param pulumi.Input[str] time_started: Job started time
         """
+        _DetectAnomalyJobState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            input_details=input_details,
+            lifecycle_state_details=lifecycle_state_details,
+            model_id=model_id,
+            output_details=output_details,
+            project_id=project_id,
+            sensitivity=sensitivity,
+            state=state,
+            system_tags=system_tags,
+            time_accepted=time_accepted,
+            time_finished=time_finished,
+            time_started=time_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             input_details: Optional[pulumi.Input['DetectAnomalyJobInputDetailsArgs']] = None,
+             lifecycle_state_details: Optional[pulumi.Input[str]] = None,
+             model_id: Optional[pulumi.Input[str]] = None,
+             output_details: Optional[pulumi.Input['DetectAnomalyJobOutputDetailsArgs']] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
+             sensitivity: Optional[pulumi.Input[float]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_accepted: Optional[pulumi.Input[str]] = None,
+             time_finished: Optional[pulumi.Input[str]] = None,
+             time_started: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if input_details is not None:
-            pulumi.set(__self__, "input_details", input_details)
+            _setter("input_details", input_details)
         if lifecycle_state_details is not None:
-            pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+            _setter("lifecycle_state_details", lifecycle_state_details)
         if model_id is not None:
-            pulumi.set(__self__, "model_id", model_id)
+            _setter("model_id", model_id)
         if output_details is not None:
-            pulumi.set(__self__, "output_details", output_details)
+            _setter("output_details", output_details)
         if project_id is not None:
-            pulumi.set(__self__, "project_id", project_id)
+            _setter("project_id", project_id)
         if sensitivity is not None:
-            pulumi.set(__self__, "sensitivity", sensitivity)
+            _setter("sensitivity", sensitivity)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_accepted is not None:
-            pulumi.set(__self__, "time_accepted", time_accepted)
+            _setter("time_accepted", time_accepted)
         if time_finished is not None:
-            pulumi.set(__self__, "time_finished", time_finished)
+            _setter("time_finished", time_finished)
         if time_started is not None:
-            pulumi.set(__self__, "time_started", time_started)
+            _setter("time_started", time_started)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -478,6 +538,10 @@ class DetectAnomalyJob(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DetectAnomalyJobArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -504,12 +568,22 @@ class DetectAnomalyJob(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
+            if input_details is not None and not isinstance(input_details, DetectAnomalyJobInputDetailsArgs):
+                input_details = input_details or {}
+                def _setter(key, value):
+                    input_details[key] = value
+                DetectAnomalyJobInputDetailsArgs._configure(_setter, **input_details)
             if input_details is None and not opts.urn:
                 raise TypeError("Missing required property 'input_details'")
             __props__.__dict__["input_details"] = input_details
             if model_id is None and not opts.urn:
                 raise TypeError("Missing required property 'model_id'")
             __props__.__dict__["model_id"] = model_id
+            if output_details is not None and not isinstance(output_details, DetectAnomalyJobOutputDetailsArgs):
+                output_details = output_details or {}
+                def _setter(key, value):
+                    output_details[key] = value
+                DetectAnomalyJobOutputDetailsArgs._configure(_setter, **output_details)
             if output_details is None and not opts.urn:
                 raise TypeError("Missing required property 'output_details'")
             __props__.__dict__["output_details"] = output_details

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -21,7 +21,10 @@ class GetQueueResult:
     """
     A collection of values returned by getQueue.
     """
-    def __init__(__self__, compartment_id=None, custom_encryption_key_id=None, dead_letter_queue_delivery_count=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, messages_endpoint=None, purge_queue=None, purge_type=None, queue_id=None, retention_in_seconds=None, state=None, system_tags=None, time_created=None, time_updated=None, timeout_in_seconds=None, visibility_in_seconds=None):
+    def __init__(__self__, channel_consumption_limit=None, compartment_id=None, custom_encryption_key_id=None, dead_letter_queue_delivery_count=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, messages_endpoint=None, purge_queue=None, purge_type=None, queue_id=None, retention_in_seconds=None, state=None, system_tags=None, time_created=None, time_updated=None, timeout_in_seconds=None, visibility_in_seconds=None):
+        if channel_consumption_limit and not isinstance(channel_consumption_limit, int):
+            raise TypeError("Expected argument 'channel_consumption_limit' to be a int")
+        pulumi.set(__self__, "channel_consumption_limit", channel_consumption_limit)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -81,10 +84,18 @@ class GetQueueResult:
         pulumi.set(__self__, "visibility_in_seconds", visibility_in_seconds)
 
     @property
+    @pulumi.getter(name="channelConsumptionLimit")
+    def channel_consumption_limit(self) -> int:
+        """
+        The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+        """
+        return pulumi.get(self, "channel_consumption_limit")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -92,7 +103,7 @@ class GetQueueResult:
     @pulumi.getter(name="customEncryptionKeyId")
     def custom_encryption_key_id(self) -> str:
         """
-        Id of the custom master encryption key which will be used to encrypt messages content
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         """
         return pulumi.get(self, "custom_encryption_key_id")
 
@@ -116,7 +127,7 @@ class GetQueueResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Queue Identifier, can be renamed
+        A user-friendly name for the queue. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -132,7 +143,7 @@ class GetQueueResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        Unique identifier that is immutable on creation
+        A unique identifier for the queue that is immutable on creation.
         """
         return pulumi.get(self, "id")
 
@@ -140,7 +151,7 @@ class GetQueueResult:
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        Any additional details about the current state of the queue.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -179,7 +190,7 @@ class GetQueueResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the Queue.
+        The current state of the queue.
         """
         return pulumi.get(self, "state")
 
@@ -195,7 +206,7 @@ class GetQueueResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the the Queue was created. An RFC3339 formatted datetime string
+        The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -203,7 +214,7 @@ class GetQueueResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the Queue was updated. An RFC3339 formatted datetime string
+        The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
         return pulumi.get(self, "time_updated")
 
@@ -219,7 +230,7 @@ class GetQueueResult:
     @pulumi.getter(name="visibilityInSeconds")
     def visibility_in_seconds(self) -> int:
         """
-        The default visibility of the messages consumed from the queue.
+        The default visibility timeout of the messages consumed from the queue, in seconds.
         """
         return pulumi.get(self, "visibility_in_seconds")
 
@@ -230,6 +241,7 @@ class AwaitableGetQueueResult(GetQueueResult):
         if False:
             yield self
         return GetQueueResult(
+            channel_consumption_limit=self.channel_consumption_limit,
             compartment_id=self.compartment_id,
             custom_encryption_key_id=self.custom_encryption_key_id,
             dead_letter_queue_delivery_count=self.dead_letter_queue_delivery_count,
@@ -256,7 +268,7 @@ def get_queue(queue_id: Optional[str] = None,
     """
     This data source provides details about a specific Queue resource in Oracle Cloud Infrastructure Queue service.
 
-    Gets a Queue by identifier
+    Gets a queue by identifier.
 
     ## Example Usage
 
@@ -268,7 +280,7 @@ def get_queue(queue_id: Optional[str] = None,
     ```
 
 
-    :param str queue_id: unique Queue identifier
+    :param str queue_id: The unique queue identifier.
     """
     __args__ = dict()
     __args__['queueId'] = queue_id
@@ -276,6 +288,7 @@ def get_queue(queue_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Queue/getQueue:getQueue', __args__, opts=opts, typ=GetQueueResult).value
 
     return AwaitableGetQueueResult(
+        channel_consumption_limit=pulumi.get(__ret__, 'channel_consumption_limit'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         custom_encryption_key_id=pulumi.get(__ret__, 'custom_encryption_key_id'),
         dead_letter_queue_delivery_count=pulumi.get(__ret__, 'dead_letter_queue_delivery_count'),
@@ -303,7 +316,7 @@ def get_queue_output(queue_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides details about a specific Queue resource in Oracle Cloud Infrastructure Queue service.
 
-    Gets a Queue by identifier
+    Gets a queue by identifier.
 
     ## Example Usage
 
@@ -315,6 +328,6 @@ def get_queue_output(queue_id: Optional[pulumi.Input[str]] = None,
     ```
 
 
-    :param str queue_id: unique Queue identifier
+    :param str queue_id: The unique queue identifier.
     """
     ...

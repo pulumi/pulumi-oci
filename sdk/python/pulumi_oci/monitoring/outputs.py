@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -65,10 +65,23 @@ class AlarmSuppression(dict):
                
                Example: `Planned outage due to change IT-1234.`
         """
-        pulumi.set(__self__, "time_suppress_from", time_suppress_from)
-        pulumi.set(__self__, "time_suppress_until", time_suppress_until)
+        AlarmSuppression._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_suppress_from=time_suppress_from,
+            time_suppress_until=time_suppress_until,
+            description=description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_suppress_from: str,
+             time_suppress_until: str,
+             description: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_suppress_from", time_suppress_from)
+        _setter("time_suppress_until", time_suppress_until)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
 
     @property
     @pulumi.getter(name="timeSuppressFrom")
@@ -114,9 +127,22 @@ class GetAlarmHistoryCollectionEntryResult(dict):
         :param str timestamp: Timestamp for this alarm history entry. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
         :param str timestamp_triggered: Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T0:59:00.789Z`
         """
-        pulumi.set(__self__, "summary", summary)
-        pulumi.set(__self__, "timestamp", timestamp)
-        pulumi.set(__self__, "timestamp_triggered", timestamp_triggered)
+        GetAlarmHistoryCollectionEntryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            summary=summary,
+            timestamp=timestamp,
+            timestamp_triggered=timestamp_triggered,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             summary: str,
+             timestamp: str,
+             timestamp_triggered: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("summary", summary)
+        _setter("timestamp", timestamp)
+        _setter("timestamp_triggered", timestamp_triggered)
 
     @property
     @pulumi.getter
@@ -160,12 +186,31 @@ class GetAlarmStatusesAlarmStatusResult(dict):
         :param Sequence['GetAlarmStatusesAlarmStatusSuppressionArgs'] suppressions: The configuration details for suppressing an alarm.
         :param str timestamp_triggered: Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing. Note: A three-minute lag for this value accounts for any late-arriving metrics.  Example: `2019-02-01T01:02:29.600Z`
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "suppressions", suppressions)
-        pulumi.set(__self__, "timestamp_triggered", timestamp_triggered)
+        GetAlarmStatusesAlarmStatusResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+            severity=severity,
+            status=status,
+            suppressions=suppressions,
+            timestamp_triggered=timestamp_triggered,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             id: str,
+             severity: str,
+             status: str,
+             suppressions: Sequence['outputs.GetAlarmStatusesAlarmStatusSuppressionResult'],
+             timestamp_triggered: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("severity", severity)
+        _setter("status", status)
+        _setter("suppressions", suppressions)
+        _setter("timestamp_triggered", timestamp_triggered)
 
     @property
     @pulumi.getter(name="displayName")
@@ -227,9 +272,22 @@ class GetAlarmStatusesAlarmStatusSuppressionResult(dict):
         :param str time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
         :param str time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "time_suppress_from", time_suppress_from)
-        pulumi.set(__self__, "time_suppress_until", time_suppress_until)
+        GetAlarmStatusesAlarmStatusSuppressionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            time_suppress_from=time_suppress_from,
+            time_suppress_until=time_suppress_until,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             time_suppress_from: str,
+             time_suppress_until: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("time_suppress_from", time_suppress_from)
+        _setter("time_suppress_until", time_suppress_until)
 
     @property
     @pulumi.getter
@@ -262,10 +320,23 @@ class GetAlarmStatusesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAlarmStatusesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -294,9 +365,22 @@ class GetAlarmSuppressionResult(dict):
         :param str time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
         :param str time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "time_suppress_from", time_suppress_from)
-        pulumi.set(__self__, "time_suppress_until", time_suppress_until)
+        GetAlarmSuppressionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            time_suppress_from=time_suppress_from,
+            time_suppress_until=time_suppress_until,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             time_suppress_from: str,
+             time_suppress_until: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("time_suppress_from", time_suppress_from)
+        _setter("time_suppress_until", time_suppress_until)
 
     @property
     @pulumi.getter
@@ -374,29 +458,82 @@ class GetAlarmsAlarmResult(dict):
         :param str time_created: The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
         :param str time_updated: The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
         """
-        pulumi.set(__self__, "body", body)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "destinations", destinations)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "is_notifications_per_metric_dimension_enabled", is_notifications_per_metric_dimension_enabled)
-        pulumi.set(__self__, "message_format", message_format)
-        pulumi.set(__self__, "metric_compartment_id", metric_compartment_id)
-        pulumi.set(__self__, "metric_compartment_id_in_subtree", metric_compartment_id_in_subtree)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "pending_duration", pending_duration)
-        pulumi.set(__self__, "query", query)
-        pulumi.set(__self__, "repeat_notification_duration", repeat_notification_duration)
-        pulumi.set(__self__, "resolution", resolution)
-        pulumi.set(__self__, "resource_group", resource_group)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "suppressions", suppressions)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetAlarmsAlarmResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            body=body,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            destinations=destinations,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_enabled=is_enabled,
+            is_notifications_per_metric_dimension_enabled=is_notifications_per_metric_dimension_enabled,
+            message_format=message_format,
+            metric_compartment_id=metric_compartment_id,
+            metric_compartment_id_in_subtree=metric_compartment_id_in_subtree,
+            namespace=namespace,
+            pending_duration=pending_duration,
+            query=query,
+            repeat_notification_duration=repeat_notification_duration,
+            resolution=resolution,
+            resource_group=resource_group,
+            severity=severity,
+            state=state,
+            suppressions=suppressions,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             body: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             destinations: Sequence[str],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_enabled: bool,
+             is_notifications_per_metric_dimension_enabled: bool,
+             message_format: str,
+             metric_compartment_id: str,
+             metric_compartment_id_in_subtree: bool,
+             namespace: str,
+             pending_duration: str,
+             query: str,
+             repeat_notification_duration: str,
+             resolution: str,
+             resource_group: str,
+             severity: str,
+             state: str,
+             suppressions: Sequence['outputs.GetAlarmsAlarmSuppressionResult'],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("body", body)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("destinations", destinations)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_enabled", is_enabled)
+        _setter("is_notifications_per_metric_dimension_enabled", is_notifications_per_metric_dimension_enabled)
+        _setter("message_format", message_format)
+        _setter("metric_compartment_id", metric_compartment_id)
+        _setter("metric_compartment_id_in_subtree", metric_compartment_id_in_subtree)
+        _setter("namespace", namespace)
+        _setter("pending_duration", pending_duration)
+        _setter("query", query)
+        _setter("repeat_notification_duration", repeat_notification_duration)
+        _setter("resolution", resolution)
+        _setter("resource_group", resource_group)
+        _setter("severity", severity)
+        _setter("state", state)
+        _setter("suppressions", suppressions)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -594,9 +731,22 @@ class GetAlarmsAlarmSuppressionResult(dict):
         :param str time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
         :param str time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2019-02-01T02:02:29.600Z`
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "time_suppress_from", time_suppress_from)
-        pulumi.set(__self__, "time_suppress_until", time_suppress_until)
+        GetAlarmsAlarmSuppressionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            time_suppress_from=time_suppress_from,
+            time_suppress_until=time_suppress_until,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             time_suppress_from: str,
+             time_suppress_until: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("time_suppress_from", time_suppress_from)
+        _setter("time_suppress_until", time_suppress_until)
 
     @property
     @pulumi.getter
@@ -629,10 +779,23 @@ class GetAlarmsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAlarmsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -659,10 +822,23 @@ class GetMetricDataFilterResult(dict):
         """
         :param str name: The name of the metric.  Example: `CpuUtilization`
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMetricDataFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -718,18 +894,49 @@ class GetMetricDataMetricDataResult(dict):
         :param str resource_group: Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
         :param str start_time: The beginning of the time range to use when searching for metric data points. Format is defined by RFC3339. The response includes metric data points for the startTime. Default value: the timestamp 3 hours before the call was sent.  Example: `2019-02-01T01:02:29.600Z`
         """
-        pulumi.set(__self__, "aggregated_datapoints", aggregated_datapoints)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
-        pulumi.set(__self__, "dimensions", dimensions)
-        pulumi.set(__self__, "end_time", end_time)
-        pulumi.set(__self__, "metadata", metadata)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "query", query)
-        pulumi.set(__self__, "resolution", resolution)
-        pulumi.set(__self__, "resource_group", resource_group)
-        pulumi.set(__self__, "start_time", start_time)
+        GetMetricDataMetricDataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregated_datapoints=aggregated_datapoints,
+            compartment_id=compartment_id,
+            compartment_id_in_subtree=compartment_id_in_subtree,
+            dimensions=dimensions,
+            end_time=end_time,
+            metadata=metadata,
+            name=name,
+            namespace=namespace,
+            query=query,
+            resolution=resolution,
+            resource_group=resource_group,
+            start_time=start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregated_datapoints: Sequence['outputs.GetMetricDataMetricDataAggregatedDatapointResult'],
+             compartment_id: str,
+             compartment_id_in_subtree: bool,
+             dimensions: Mapping[str, Any],
+             end_time: str,
+             metadata: Mapping[str, Any],
+             name: str,
+             namespace: str,
+             query: str,
+             resolution: str,
+             resource_group: str,
+             start_time: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("aggregated_datapoints", aggregated_datapoints)
+        _setter("compartment_id", compartment_id)
+        _setter("compartment_id_in_subtree", compartment_id_in_subtree)
+        _setter("dimensions", dimensions)
+        _setter("end_time", end_time)
+        _setter("metadata", metadata)
+        _setter("name", name)
+        _setter("namespace", namespace)
+        _setter("query", query)
+        _setter("resolution", resolution)
+        _setter("resource_group", resource_group)
+        _setter("start_time", start_time)
 
     @property
     @pulumi.getter(name="aggregatedDatapoints")
@@ -843,8 +1050,19 @@ class GetMetricDataMetricDataAggregatedDatapointResult(dict):
         :param str timestamp: The date and time associated with the value of this data point. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
         :param float value: Numeric value of the metric.  Example: `10.4`
         """
-        pulumi.set(__self__, "timestamp", timestamp)
-        pulumi.set(__self__, "value", value)
+        GetMetricDataMetricDataAggregatedDatapointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            timestamp=timestamp,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             timestamp: str,
+             value: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("timestamp", timestamp)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -872,10 +1090,23 @@ class GetMetricsFilterResult(dict):
         """
         :param str name: The metric name to use when searching for metric definitions.  Example: `CpuUtilization`
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMetricsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -919,14 +1150,37 @@ class GetMetricsMetricResult(dict):
         :param str namespace: The source service or application to use when searching for metric definitions.  Example: `oci_computeagent`
         :param str resource_group: Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
-        pulumi.set(__self__, "dimension_filters", dimension_filters)
-        pulumi.set(__self__, "dimensions", dimensions)
-        pulumi.set(__self__, "group_bies", group_bies)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "resource_group", resource_group)
+        GetMetricsMetricResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            compartment_id_in_subtree=compartment_id_in_subtree,
+            dimension_filters=dimension_filters,
+            dimensions=dimensions,
+            group_bies=group_bies,
+            name=name,
+            namespace=namespace,
+            resource_group=resource_group,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             compartment_id_in_subtree: bool,
+             dimension_filters: Mapping[str, Any],
+             dimensions: Mapping[str, Any],
+             group_bies: Sequence[str],
+             name: str,
+             namespace: str,
+             resource_group: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("compartment_id_in_subtree", compartment_id_in_subtree)
+        _setter("dimension_filters", dimension_filters)
+        _setter("dimensions", dimensions)
+        _setter("group_bies", group_bies)
+        _setter("name", name)
+        _setter("namespace", namespace)
+        _setter("resource_group", resource_group)
 
     @property
     @pulumi.getter(name="compartmentId")

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ModelProvenanceArgs', 'ModelProvenance']
@@ -35,19 +35,40 @@ class ModelProvenanceArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "model_id", model_id)
+        ModelProvenanceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            model_id=model_id,
+            git_branch=git_branch,
+            git_commit=git_commit,
+            repository_url=repository_url,
+            script_dir=script_dir,
+            training_id=training_id,
+            training_script=training_script,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             model_id: pulumi.Input[str],
+             git_branch: Optional[pulumi.Input[str]] = None,
+             git_commit: Optional[pulumi.Input[str]] = None,
+             repository_url: Optional[pulumi.Input[str]] = None,
+             script_dir: Optional[pulumi.Input[str]] = None,
+             training_id: Optional[pulumi.Input[str]] = None,
+             training_script: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("model_id", model_id)
         if git_branch is not None:
-            pulumi.set(__self__, "git_branch", git_branch)
+            _setter("git_branch", git_branch)
         if git_commit is not None:
-            pulumi.set(__self__, "git_commit", git_commit)
+            _setter("git_commit", git_commit)
         if repository_url is not None:
-            pulumi.set(__self__, "repository_url", repository_url)
+            _setter("repository_url", repository_url)
         if script_dir is not None:
-            pulumi.set(__self__, "script_dir", script_dir)
+            _setter("script_dir", script_dir)
         if training_id is not None:
-            pulumi.set(__self__, "training_id", training_id)
+            _setter("training_id", training_id)
         if training_script is not None:
-            pulumi.set(__self__, "training_script", training_script)
+            _setter("training_script", training_script)
 
     @property
     @pulumi.getter(name="modelId")
@@ -162,20 +183,41 @@ class _ModelProvenanceState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _ModelProvenanceState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            git_branch=git_branch,
+            git_commit=git_commit,
+            model_id=model_id,
+            repository_url=repository_url,
+            script_dir=script_dir,
+            training_id=training_id,
+            training_script=training_script,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             git_branch: Optional[pulumi.Input[str]] = None,
+             git_commit: Optional[pulumi.Input[str]] = None,
+             model_id: Optional[pulumi.Input[str]] = None,
+             repository_url: Optional[pulumi.Input[str]] = None,
+             script_dir: Optional[pulumi.Input[str]] = None,
+             training_id: Optional[pulumi.Input[str]] = None,
+             training_script: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if git_branch is not None:
-            pulumi.set(__self__, "git_branch", git_branch)
+            _setter("git_branch", git_branch)
         if git_commit is not None:
-            pulumi.set(__self__, "git_commit", git_commit)
+            _setter("git_commit", git_commit)
         if model_id is not None:
-            pulumi.set(__self__, "model_id", model_id)
+            _setter("model_id", model_id)
         if repository_url is not None:
-            pulumi.set(__self__, "repository_url", repository_url)
+            _setter("repository_url", repository_url)
         if script_dir is not None:
-            pulumi.set(__self__, "script_dir", script_dir)
+            _setter("script_dir", script_dir)
         if training_id is not None:
-            pulumi.set(__self__, "training_id", training_id)
+            _setter("training_id", training_id)
         if training_script is not None:
-            pulumi.set(__self__, "training_script", training_script)
+            _setter("training_script", training_script)
 
     @property
     @pulumi.getter(name="gitBranch")
@@ -367,6 +409,10 @@ class ModelProvenance(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ModelProvenanceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

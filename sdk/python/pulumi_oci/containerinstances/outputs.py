@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -93,31 +93,88 @@ class GetContainerInstanceContainerResult(dict):
         :param str time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
-        pulumi.set(__self__, "arguments", arguments)
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "commands", commands)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "container_id", container_id)
-        pulumi.set(__self__, "container_instance_id", container_instance_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "exit_code", exit_code)
-        pulumi.set(__self__, "fault_domain", fault_domain)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "health_checks", health_checks)
-        pulumi.set(__self__, "image_url", image_url)
-        pulumi.set(__self__, "is_resource_principal_disabled", is_resource_principal_disabled)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "resource_configs", resource_configs)
-        pulumi.set(__self__, "security_contexts", security_contexts)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_terminated", time_terminated)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "volume_mounts", volume_mounts)
-        pulumi.set(__self__, "working_directory", working_directory)
+        GetContainerInstanceContainerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            arguments=arguments,
+            availability_domain=availability_domain,
+            commands=commands,
+            compartment_id=compartment_id,
+            container_id=container_id,
+            container_instance_id=container_instance_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            environment_variables=environment_variables,
+            exit_code=exit_code,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            health_checks=health_checks,
+            image_url=image_url,
+            is_resource_principal_disabled=is_resource_principal_disabled,
+            lifecycle_details=lifecycle_details,
+            resource_configs=resource_configs,
+            security_contexts=security_contexts,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_terminated=time_terminated,
+            time_updated=time_updated,
+            volume_mounts=volume_mounts,
+            working_directory=working_directory,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             arguments: Sequence[str],
+             availability_domain: str,
+             commands: Sequence[str],
+             compartment_id: str,
+             container_id: str,
+             container_instance_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             environment_variables: Mapping[str, Any],
+             exit_code: int,
+             fault_domain: str,
+             freeform_tags: Mapping[str, Any],
+             health_checks: Sequence['outputs.GetContainerInstanceContainerHealthCheckResult'],
+             image_url: str,
+             is_resource_principal_disabled: bool,
+             lifecycle_details: str,
+             resource_configs: Sequence['outputs.GetContainerInstanceContainerResourceConfigResult'],
+             security_contexts: Sequence['outputs.GetContainerInstanceContainerSecurityContextResult'],
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_terminated: str,
+             time_updated: str,
+             volume_mounts: Sequence['outputs.GetContainerInstanceContainerVolumeMountResult'],
+             working_directory: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("arguments", arguments)
+        _setter("availability_domain", availability_domain)
+        _setter("commands", commands)
+        _setter("compartment_id", compartment_id)
+        _setter("container_id", container_id)
+        _setter("container_instance_id", container_instance_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("environment_variables", environment_variables)
+        _setter("exit_code", exit_code)
+        _setter("fault_domain", fault_domain)
+        _setter("freeform_tags", freeform_tags)
+        _setter("health_checks", health_checks)
+        _setter("image_url", image_url)
+        _setter("is_resource_principal_disabled", is_resource_principal_disabled)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("resource_configs", resource_configs)
+        _setter("security_contexts", security_contexts)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_terminated", time_terminated)
+        _setter("time_updated", time_updated)
+        _setter("volume_mounts", volume_mounts)
+        _setter("working_directory", working_directory)
 
     @property
     @pulumi.getter
@@ -305,20 +362,55 @@ class GetContainerInstanceContainerHealthCheckResult(dict):
         :param str name: The name of the volume. This must be unique within a single container instance.
         :param str path: (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
         """
-        pulumi.set(__self__, "commands", commands)
-        pulumi.set(__self__, "failure_action", failure_action)
-        pulumi.set(__self__, "failure_threshold", failure_threshold)
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "health_check_type", health_check_type)
-        pulumi.set(__self__, "initial_delay_in_seconds", initial_delay_in_seconds)
-        pulumi.set(__self__, "interval_in_seconds", interval_in_seconds)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_details", status_details)
-        pulumi.set(__self__, "success_threshold", success_threshold)
-        pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+        GetContainerInstanceContainerHealthCheckResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            commands=commands,
+            failure_action=failure_action,
+            failure_threshold=failure_threshold,
+            headers=headers,
+            health_check_type=health_check_type,
+            initial_delay_in_seconds=initial_delay_in_seconds,
+            interval_in_seconds=interval_in_seconds,
+            name=name,
+            path=path,
+            port=port,
+            status=status,
+            status_details=status_details,
+            success_threshold=success_threshold,
+            timeout_in_seconds=timeout_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             commands: Sequence[str],
+             failure_action: str,
+             failure_threshold: int,
+             headers: Sequence['outputs.GetContainerInstanceContainerHealthCheckHeaderResult'],
+             health_check_type: str,
+             initial_delay_in_seconds: int,
+             interval_in_seconds: int,
+             name: str,
+             path: str,
+             port: int,
+             status: str,
+             status_details: str,
+             success_threshold: int,
+             timeout_in_seconds: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("commands", commands)
+        _setter("failure_action", failure_action)
+        _setter("failure_threshold", failure_threshold)
+        _setter("headers", headers)
+        _setter("health_check_type", health_check_type)
+        _setter("initial_delay_in_seconds", initial_delay_in_seconds)
+        _setter("interval_in_seconds", interval_in_seconds)
+        _setter("name", name)
+        _setter("path", path)
+        _setter("port", port)
+        _setter("status", status)
+        _setter("status_details", status_details)
+        _setter("success_threshold", success_threshold)
+        _setter("timeout_in_seconds", timeout_in_seconds)
 
     @property
     @pulumi.getter
@@ -405,8 +497,19 @@ class GetContainerInstanceContainerHealthCheckHeaderResult(dict):
         """
         :param str name: The name of the volume. This must be unique within a single container instance.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetContainerInstanceContainerHealthCheckHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -427,8 +530,19 @@ class GetContainerInstanceContainerResourceConfigResult(dict):
     def __init__(__self__, *,
                  memory_limit_in_gbs: float,
                  vcpus_limit: float):
-        pulumi.set(__self__, "memory_limit_in_gbs", memory_limit_in_gbs)
-        pulumi.set(__self__, "vcpus_limit", vcpus_limit)
+        GetContainerInstanceContainerResourceConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_limit_in_gbs=memory_limit_in_gbs,
+            vcpus_limit=vcpus_limit,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_limit_in_gbs: float,
+             vcpus_limit: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_limit_in_gbs", memory_limit_in_gbs)
+        _setter("vcpus_limit", vcpus_limit)
 
     @property
     @pulumi.getter(name="memoryLimitInGbs")
@@ -449,11 +563,28 @@ class GetContainerInstanceContainerSecurityContextResult(dict):
                  run_as_group: int,
                  run_as_user: int,
                  security_context_type: str):
-        pulumi.set(__self__, "is_non_root_user_check_enabled", is_non_root_user_check_enabled)
-        pulumi.set(__self__, "is_root_file_system_readonly", is_root_file_system_readonly)
-        pulumi.set(__self__, "run_as_group", run_as_group)
-        pulumi.set(__self__, "run_as_user", run_as_user)
-        pulumi.set(__self__, "security_context_type", security_context_type)
+        GetContainerInstanceContainerSecurityContextResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_non_root_user_check_enabled=is_non_root_user_check_enabled,
+            is_root_file_system_readonly=is_root_file_system_readonly,
+            run_as_group=run_as_group,
+            run_as_user=run_as_user,
+            security_context_type=security_context_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_non_root_user_check_enabled: bool,
+             is_root_file_system_readonly: bool,
+             run_as_group: int,
+             run_as_user: int,
+             security_context_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_non_root_user_check_enabled", is_non_root_user_check_enabled)
+        _setter("is_root_file_system_readonly", is_root_file_system_readonly)
+        _setter("run_as_group", run_as_group)
+        _setter("run_as_user", run_as_user)
+        _setter("security_context_type", security_context_type)
 
     @property
     @pulumi.getter(name="isNonRootUserCheckEnabled")
@@ -489,11 +620,28 @@ class GetContainerInstanceContainerVolumeMountResult(dict):
                  partition: int,
                  sub_path: str,
                  volume_name: str):
-        pulumi.set(__self__, "is_read_only", is_read_only)
-        pulumi.set(__self__, "mount_path", mount_path)
-        pulumi.set(__self__, "partition", partition)
-        pulumi.set(__self__, "sub_path", sub_path)
-        pulumi.set(__self__, "volume_name", volume_name)
+        GetContainerInstanceContainerVolumeMountResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_read_only=is_read_only,
+            mount_path=mount_path,
+            partition=partition,
+            sub_path=sub_path,
+            volume_name=volume_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_read_only: bool,
+             mount_path: str,
+             partition: int,
+             sub_path: str,
+             volume_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_read_only", is_read_only)
+        _setter("mount_path", mount_path)
+        _setter("partition", partition)
+        _setter("sub_path", sub_path)
+        _setter("volume_name", volume_name)
 
     @property
     @pulumi.getter(name="isReadOnly")
@@ -532,9 +680,22 @@ class GetContainerInstanceDnsConfigResult(dict):
         :param Sequence[str] options: Options allows certain internal resolver variables to be modified.
         :param Sequence[str] searches: Search list for hostname lookup.
         """
-        pulumi.set(__self__, "nameservers", nameservers)
-        pulumi.set(__self__, "options", options)
-        pulumi.set(__self__, "searches", searches)
+        GetContainerInstanceDnsConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            nameservers=nameservers,
+            options=options,
+            searches=searches,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             nameservers: Sequence[str],
+             options: Sequence[str],
+             searches: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("nameservers", nameservers)
+        _setter("options", options)
+        _setter("searches", searches)
 
     @property
     @pulumi.getter
@@ -574,11 +735,28 @@ class GetContainerInstanceImagePullSecretResult(dict):
         :param str secret_id: The OCID of the secret for registry credentials.
         :param str secret_type: The type of ImagePullSecret.
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "registry_endpoint", registry_endpoint)
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "secret_type", secret_type)
-        pulumi.set(__self__, "username", username)
+        GetContainerInstanceImagePullSecretResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            registry_endpoint=registry_endpoint,
+            secret_id=secret_id,
+            secret_type=secret_type,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             registry_endpoint: str,
+             secret_id: str,
+             secret_type: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("registry_endpoint", registry_endpoint)
+        _setter("secret_id", secret_id)
+        _setter("secret_type", secret_type)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -628,10 +806,25 @@ class GetContainerInstanceShapeConfigResult(dict):
         :param float ocpus: The total number of OCPUs available to the container instance.
         :param str processor_description: A short description of the container instance's processor (CPU).
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
-        pulumi.set(__self__, "ocpus", ocpus)
-        pulumi.set(__self__, "processor_description", processor_description)
+        GetContainerInstanceShapeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            networking_bandwidth_in_gbps=networking_bandwidth_in_gbps,
+            ocpus=ocpus,
+            processor_description=processor_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: float,
+             networking_bandwidth_in_gbps: float,
+             ocpus: float,
+             processor_description: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
+        _setter("ocpus", ocpus)
+        _setter("processor_description", processor_description)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -681,11 +874,28 @@ class GetContainerInstanceShapeItemResult(dict):
         :param Sequence['GetContainerInstanceShapeItemOcpuOptionArgs'] ocpu_options: For a flexible shape, the number of OCPUs available for instances that use this shape.
         :param str processor_description: A short description of the Instance's processor (CPU).
         """
-        pulumi.set(__self__, "memory_options", memory_options)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "networking_bandwidth_options", networking_bandwidth_options)
-        pulumi.set(__self__, "ocpu_options", ocpu_options)
-        pulumi.set(__self__, "processor_description", processor_description)
+        GetContainerInstanceShapeItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_options=memory_options,
+            name=name,
+            networking_bandwidth_options=networking_bandwidth_options,
+            ocpu_options=ocpu_options,
+            processor_description=processor_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_options: Sequence['outputs.GetContainerInstanceShapeItemMemoryOptionResult'],
+             name: str,
+             networking_bandwidth_options: Sequence['outputs.GetContainerInstanceShapeItemNetworkingBandwidthOptionResult'],
+             ocpu_options: Sequence['outputs.GetContainerInstanceShapeItemOcpuOptionResult'],
+             processor_description: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_options", memory_options)
+        _setter("name", name)
+        _setter("networking_bandwidth_options", networking_bandwidth_options)
+        _setter("ocpu_options", ocpu_options)
+        _setter("processor_description", processor_description)
 
     @property
     @pulumi.getter(name="memoryOptions")
@@ -743,11 +953,28 @@ class GetContainerInstanceShapeItemMemoryOptionResult(dict):
         :param float min_in_gbs: The minimum amount of memory, in gigabytes.
         :param float min_per_ocpu_in_gbs: The minimum amount of memory per OCPU available for this shape, in gigabytes.
         """
-        pulumi.set(__self__, "default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
-        pulumi.set(__self__, "max_in_gbs", max_in_gbs)
-        pulumi.set(__self__, "max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
-        pulumi.set(__self__, "min_in_gbs", min_in_gbs)
-        pulumi.set(__self__, "min_per_ocpu_in_gbs", min_per_ocpu_in_gbs)
+        GetContainerInstanceShapeItemMemoryOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_per_ocpu_in_gbs=default_per_ocpu_in_gbs,
+            max_in_gbs=max_in_gbs,
+            max_per_ocpu_in_gbs=max_per_ocpu_in_gbs,
+            min_in_gbs=min_in_gbs,
+            min_per_ocpu_in_gbs=min_per_ocpu_in_gbs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_per_ocpu_in_gbs: float,
+             max_in_gbs: float,
+             max_per_ocpu_in_gbs: float,
+             min_in_gbs: float,
+             min_per_ocpu_in_gbs: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
+        _setter("max_in_gbs", max_in_gbs)
+        _setter("max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
+        _setter("min_in_gbs", min_in_gbs)
+        _setter("min_per_ocpu_in_gbs", min_per_ocpu_in_gbs)
 
     @property
     @pulumi.getter(name="defaultPerOcpuInGbs")
@@ -801,9 +1028,22 @@ class GetContainerInstanceShapeItemNetworkingBandwidthOptionResult(dict):
         :param float max_in_gbps: The maximum amount of networking bandwidth, in gigabits per second.
         :param float min_in_gbps: The minimum amount of networking bandwidth, in gigabits per second.
         """
-        pulumi.set(__self__, "default_per_ocpu_in_gbps", default_per_ocpu_in_gbps)
-        pulumi.set(__self__, "max_in_gbps", max_in_gbps)
-        pulumi.set(__self__, "min_in_gbps", min_in_gbps)
+        GetContainerInstanceShapeItemNetworkingBandwidthOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_per_ocpu_in_gbps=default_per_ocpu_in_gbps,
+            max_in_gbps=max_in_gbps,
+            min_in_gbps=min_in_gbps,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_per_ocpu_in_gbps: float,
+             max_in_gbps: float,
+             min_in_gbps: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_per_ocpu_in_gbps", default_per_ocpu_in_gbps)
+        _setter("max_in_gbps", max_in_gbps)
+        _setter("min_in_gbps", min_in_gbps)
 
     @property
     @pulumi.getter(name="defaultPerOcpuInGbps")
@@ -839,8 +1079,19 @@ class GetContainerInstanceShapeItemOcpuOptionResult(dict):
         :param float max: The maximum number of OCPUs.
         :param float min: The minimum number of OCPUs.
         """
-        pulumi.set(__self__, "max", max)
-        pulumi.set(__self__, "min", min)
+        GetContainerInstanceShapeItemOcpuOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            max=max,
+            min=min,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             max: float,
+             min: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("max", max)
+        _setter("min", min)
 
     @property
     @pulumi.getter
@@ -866,7 +1117,16 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionResult(dict):
         """
         :param Sequence['GetContainerInstanceShapesContainerInstanceShapeCollectionItemArgs'] items: A list of shapes.
         """
-        pulumi.set(__self__, "items", items)
+        GetContainerInstanceShapesContainerInstanceShapeCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -892,11 +1152,28 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult(dict)
         :param Sequence['GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionArgs'] ocpu_options: For a flexible shape, the number of OCPUs available for container instances that use this shape.
         :param str processor_description: A short description of the container instance's processor (CPU).
         """
-        pulumi.set(__self__, "memory_options", memory_options)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "networking_bandwidth_options", networking_bandwidth_options)
-        pulumi.set(__self__, "ocpu_options", ocpu_options)
-        pulumi.set(__self__, "processor_description", processor_description)
+        GetContainerInstanceShapesContainerInstanceShapeCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_options=memory_options,
+            name=name,
+            networking_bandwidth_options=networking_bandwidth_options,
+            ocpu_options=ocpu_options,
+            processor_description=processor_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_options: Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionResult'],
+             name: str,
+             networking_bandwidth_options: Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionResult'],
+             ocpu_options: Sequence['outputs.GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionResult'],
+             processor_description: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_options", memory_options)
+        _setter("name", name)
+        _setter("networking_bandwidth_options", networking_bandwidth_options)
+        _setter("ocpu_options", ocpu_options)
+        _setter("processor_description", processor_description)
 
     @property
     @pulumi.getter(name="memoryOptions")
@@ -954,11 +1231,28 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption
         :param float min_in_gbs: The minimum amount of memory (GB).
         :param float min_per_ocpu_in_gbs: The minimum amount of memory per OCPU available for this shape (GB).
         """
-        pulumi.set(__self__, "default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
-        pulumi.set(__self__, "max_in_gbs", max_in_gbs)
-        pulumi.set(__self__, "max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
-        pulumi.set(__self__, "min_in_gbs", min_in_gbs)
-        pulumi.set(__self__, "min_per_ocpu_in_gbs", min_per_ocpu_in_gbs)
+        GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_per_ocpu_in_gbs=default_per_ocpu_in_gbs,
+            max_in_gbs=max_in_gbs,
+            max_per_ocpu_in_gbs=max_per_ocpu_in_gbs,
+            min_in_gbs=min_in_gbs,
+            min_per_ocpu_in_gbs=min_per_ocpu_in_gbs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_per_ocpu_in_gbs: float,
+             max_in_gbs: float,
+             max_per_ocpu_in_gbs: float,
+             min_in_gbs: float,
+             min_per_ocpu_in_gbs: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
+        _setter("max_in_gbs", max_in_gbs)
+        _setter("max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
+        _setter("min_in_gbs", min_in_gbs)
+        _setter("min_per_ocpu_in_gbs", min_per_ocpu_in_gbs)
 
     @property
     @pulumi.getter(name="defaultPerOcpuInGbs")
@@ -1012,9 +1306,22 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBa
         :param float max_in_gbps: The maximum amount of networking bandwidth, in gigabits per second.
         :param float min_in_gbps: The minimum amount of networking bandwidth, in gigabits per second.
         """
-        pulumi.set(__self__, "default_per_ocpu_in_gbps", default_per_ocpu_in_gbps)
-        pulumi.set(__self__, "max_in_gbps", max_in_gbps)
-        pulumi.set(__self__, "min_in_gbps", min_in_gbps)
+        GetContainerInstanceShapesContainerInstanceShapeCollectionItemNetworkingBandwidthOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_per_ocpu_in_gbps=default_per_ocpu_in_gbps,
+            max_in_gbps=max_in_gbps,
+            min_in_gbps=min_in_gbps,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_per_ocpu_in_gbps: float,
+             max_in_gbps: float,
+             min_in_gbps: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_per_ocpu_in_gbps", default_per_ocpu_in_gbps)
+        _setter("max_in_gbps", max_in_gbps)
+        _setter("min_in_gbps", min_in_gbps)
 
     @property
     @pulumi.getter(name="defaultPerOcpuInGbps")
@@ -1050,8 +1357,19 @@ class GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionRe
         :param float max: The maximum number of OCPUs.
         :param float min: The minimum number of OCPUs.
         """
-        pulumi.set(__self__, "max", max)
-        pulumi.set(__self__, "min", min)
+        GetContainerInstanceShapesContainerInstanceShapeCollectionItemOcpuOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            max=max,
+            min=min,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             max: float,
+             min: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("max", max)
+        _setter("min", min)
 
     @property
     @pulumi.getter
@@ -1079,10 +1397,23 @@ class GetContainerInstanceShapesFilterResult(dict):
         """
         :param str name: The name identifying the shape.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetContainerInstanceShapesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1122,16 +1453,43 @@ class GetContainerInstanceVnicResult(dict):
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str vnic_id: The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
         """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "hostname_label", hostname_label)
-        pulumi.set(__self__, "is_public_ip_assigned", is_public_ip_assigned)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "private_ip", private_ip)
-        pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "vnic_id", vnic_id)
+        GetContainerInstanceVnicResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            is_public_ip_assigned=is_public_ip_assigned,
+            nsg_ids=nsg_ids,
+            private_ip=private_ip,
+            skip_source_dest_check=skip_source_dest_check,
+            subnet_id=subnet_id,
+            vnic_id=vnic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             hostname_label: str,
+             is_public_ip_assigned: bool,
+             nsg_ids: Sequence[str],
+             private_ip: str,
+             skip_source_dest_check: bool,
+             subnet_id: str,
+             vnic_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("hostname_label", hostname_label)
+        _setter("is_public_ip_assigned", is_public_ip_assigned)
+        _setter("nsg_ids", nsg_ids)
+        _setter("private_ip", private_ip)
+        _setter("skip_source_dest_check", skip_source_dest_check)
+        _setter("subnet_id", subnet_id)
+        _setter("vnic_id", vnic_id)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -1209,10 +1567,25 @@ class GetContainerInstanceVolumeResult(dict):
         :param str name: The name of the volume. This must be unique within a single container instance.
         :param str volume_type: The type of volume.
         """
-        pulumi.set(__self__, "backing_store", backing_store)
-        pulumi.set(__self__, "configs", configs)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "volume_type", volume_type)
+        GetContainerInstanceVolumeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backing_store=backing_store,
+            configs=configs,
+            name=name,
+            volume_type=volume_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backing_store: str,
+             configs: Sequence['outputs.GetContainerInstanceVolumeConfigResult'],
+             name: str,
+             volume_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("backing_store", backing_store)
+        _setter("configs", configs)
+        _setter("name", name)
+        _setter("volume_type", volume_type)
 
     @property
     @pulumi.getter(name="backingStore")
@@ -1258,9 +1631,22 @@ class GetContainerInstanceVolumeConfigResult(dict):
         :param str file_name: The name of the file. The fileName should be unique across the volume.
         :param str path: (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
         """
-        pulumi.set(__self__, "data", data)
-        pulumi.set(__self__, "file_name", file_name)
-        pulumi.set(__self__, "path", path)
+        GetContainerInstanceVolumeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data=data,
+            file_name=file_name,
+            path=path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data: str,
+             file_name: str,
+             path: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("data", data)
+        _setter("file_name", file_name)
+        _setter("path", path)
 
     @property
     @pulumi.getter
@@ -1291,7 +1677,16 @@ class GetContainerInstanceVolumeConfigResult(dict):
 class GetContainerInstancesContainerInstanceCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetContainerInstancesContainerInstanceCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1350,29 +1745,82 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
         :param int volume_count: The number of volumes that are attached to the container instance.
         :param Sequence['GetContainerInstancesContainerInstanceCollectionItemVolumeArgs'] volumes: A volume is a directory with data that is accessible across multiple containers in a container instance.
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "container_count", container_count)
-        pulumi.set(__self__, "container_restart_policy", container_restart_policy)
-        pulumi.set(__self__, "containers", containers)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "dns_configs", dns_configs)
-        pulumi.set(__self__, "fault_domain", fault_domain)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "graceful_shutdown_timeout_in_seconds", graceful_shutdown_timeout_in_seconds)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "image_pull_secrets", image_pull_secrets)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "shape_configs", shape_configs)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "vnics", vnics)
-        pulumi.set(__self__, "volume_count", volume_count)
-        pulumi.set(__self__, "volumes", volumes)
+        GetContainerInstancesContainerInstanceCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            container_count=container_count,
+            container_restart_policy=container_restart_policy,
+            containers=containers,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            dns_configs=dns_configs,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            graceful_shutdown_timeout_in_seconds=graceful_shutdown_timeout_in_seconds,
+            id=id,
+            image_pull_secrets=image_pull_secrets,
+            lifecycle_details=lifecycle_details,
+            shape=shape,
+            shape_configs=shape_configs,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            vnics=vnics,
+            volume_count=volume_count,
+            volumes=volumes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: str,
+             compartment_id: str,
+             container_count: int,
+             container_restart_policy: str,
+             containers: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResult'],
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             dns_configs: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemDnsConfigResult'],
+             fault_domain: str,
+             freeform_tags: Mapping[str, Any],
+             graceful_shutdown_timeout_in_seconds: str,
+             id: str,
+             image_pull_secrets: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemImagePullSecretResult'],
+             lifecycle_details: str,
+             shape: str,
+             shape_configs: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult'],
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             vnics: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVnicResult'],
+             volume_count: int,
+             volumes: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("compartment_id", compartment_id)
+        _setter("container_count", container_count)
+        _setter("container_restart_policy", container_restart_policy)
+        _setter("containers", containers)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("dns_configs", dns_configs)
+        _setter("fault_domain", fault_domain)
+        _setter("freeform_tags", freeform_tags)
+        _setter("graceful_shutdown_timeout_in_seconds", graceful_shutdown_timeout_in_seconds)
+        _setter("id", id)
+        _setter("image_pull_secrets", image_pull_secrets)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("shape", shape)
+        _setter("shape_configs", shape_configs)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("vnics", vnics)
+        _setter("volume_count", volume_count)
+        _setter("volumes", volumes)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -1601,31 +2049,88 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
         :param str time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
-        pulumi.set(__self__, "arguments", arguments)
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "commands", commands)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "container_id", container_id)
-        pulumi.set(__self__, "container_instance_id", container_instance_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "exit_code", exit_code)
-        pulumi.set(__self__, "fault_domain", fault_domain)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "health_checks", health_checks)
-        pulumi.set(__self__, "image_url", image_url)
-        pulumi.set(__self__, "is_resource_principal_disabled", is_resource_principal_disabled)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "resource_configs", resource_configs)
-        pulumi.set(__self__, "security_contexts", security_contexts)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_terminated", time_terminated)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "volume_mounts", volume_mounts)
-        pulumi.set(__self__, "working_directory", working_directory)
+        GetContainerInstancesContainerInstanceCollectionItemContainerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            arguments=arguments,
+            availability_domain=availability_domain,
+            commands=commands,
+            compartment_id=compartment_id,
+            container_id=container_id,
+            container_instance_id=container_instance_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            environment_variables=environment_variables,
+            exit_code=exit_code,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            health_checks=health_checks,
+            image_url=image_url,
+            is_resource_principal_disabled=is_resource_principal_disabled,
+            lifecycle_details=lifecycle_details,
+            resource_configs=resource_configs,
+            security_contexts=security_contexts,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_terminated=time_terminated,
+            time_updated=time_updated,
+            volume_mounts=volume_mounts,
+            working_directory=working_directory,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             arguments: Sequence[str],
+             availability_domain: str,
+             commands: Sequence[str],
+             compartment_id: str,
+             container_id: str,
+             container_instance_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             environment_variables: Mapping[str, Any],
+             exit_code: int,
+             fault_domain: str,
+             freeform_tags: Mapping[str, Any],
+             health_checks: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckResult'],
+             image_url: str,
+             is_resource_principal_disabled: bool,
+             lifecycle_details: str,
+             resource_configs: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigResult'],
+             security_contexts: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult'],
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_terminated: str,
+             time_updated: str,
+             volume_mounts: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountResult'],
+             working_directory: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("arguments", arguments)
+        _setter("availability_domain", availability_domain)
+        _setter("commands", commands)
+        _setter("compartment_id", compartment_id)
+        _setter("container_id", container_id)
+        _setter("container_instance_id", container_instance_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("environment_variables", environment_variables)
+        _setter("exit_code", exit_code)
+        _setter("fault_domain", fault_domain)
+        _setter("freeform_tags", freeform_tags)
+        _setter("health_checks", health_checks)
+        _setter("image_url", image_url)
+        _setter("is_resource_principal_disabled", is_resource_principal_disabled)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("resource_configs", resource_configs)
+        _setter("security_contexts", security_contexts)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_terminated", time_terminated)
+        _setter("time_updated", time_updated)
+        _setter("volume_mounts", volume_mounts)
+        _setter("working_directory", working_directory)
 
     @property
     @pulumi.getter
@@ -1810,20 +2315,55 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckRe
         :param str name: The name of the volume. This must be unique within a single container instance.
         :param str path: (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
         """
-        pulumi.set(__self__, "commands", commands)
-        pulumi.set(__self__, "failure_action", failure_action)
-        pulumi.set(__self__, "failure_threshold", failure_threshold)
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "health_check_type", health_check_type)
-        pulumi.set(__self__, "initial_delay_in_seconds", initial_delay_in_seconds)
-        pulumi.set(__self__, "interval_in_seconds", interval_in_seconds)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_details", status_details)
-        pulumi.set(__self__, "success_threshold", success_threshold)
-        pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+        GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            commands=commands,
+            failure_action=failure_action,
+            failure_threshold=failure_threshold,
+            headers=headers,
+            health_check_type=health_check_type,
+            initial_delay_in_seconds=initial_delay_in_seconds,
+            interval_in_seconds=interval_in_seconds,
+            name=name,
+            path=path,
+            port=port,
+            status=status,
+            status_details=status_details,
+            success_threshold=success_threshold,
+            timeout_in_seconds=timeout_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             commands: Sequence[str],
+             failure_action: str,
+             failure_threshold: int,
+             headers: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderResult'],
+             health_check_type: str,
+             initial_delay_in_seconds: int,
+             interval_in_seconds: int,
+             name: str,
+             path: str,
+             port: int,
+             status: str,
+             status_details: str,
+             success_threshold: int,
+             timeout_in_seconds: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("commands", commands)
+        _setter("failure_action", failure_action)
+        _setter("failure_threshold", failure_threshold)
+        _setter("headers", headers)
+        _setter("health_check_type", health_check_type)
+        _setter("initial_delay_in_seconds", initial_delay_in_seconds)
+        _setter("interval_in_seconds", interval_in_seconds)
+        _setter("name", name)
+        _setter("path", path)
+        _setter("port", port)
+        _setter("status", status)
+        _setter("status_details", status_details)
+        _setter("success_threshold", success_threshold)
+        _setter("timeout_in_seconds", timeout_in_seconds)
 
     @property
     @pulumi.getter
@@ -1910,8 +2450,19 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHe
         """
         :param str name: The name of the volume. This must be unique within a single container instance.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -1932,8 +2483,19 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfi
     def __init__(__self__, *,
                  memory_limit_in_gbs: float,
                  vcpus_limit: float):
-        pulumi.set(__self__, "memory_limit_in_gbs", memory_limit_in_gbs)
-        pulumi.set(__self__, "vcpus_limit", vcpus_limit)
+        GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_limit_in_gbs=memory_limit_in_gbs,
+            vcpus_limit=vcpus_limit,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_limit_in_gbs: float,
+             vcpus_limit: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_limit_in_gbs", memory_limit_in_gbs)
+        _setter("vcpus_limit", vcpus_limit)
 
     @property
     @pulumi.getter(name="memoryLimitInGbs")
@@ -1954,11 +2516,28 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerSecurityConte
                  run_as_group: int,
                  run_as_user: int,
                  security_context_type: str):
-        pulumi.set(__self__, "is_non_root_user_check_enabled", is_non_root_user_check_enabled)
-        pulumi.set(__self__, "is_root_file_system_readonly", is_root_file_system_readonly)
-        pulumi.set(__self__, "run_as_group", run_as_group)
-        pulumi.set(__self__, "run_as_user", run_as_user)
-        pulumi.set(__self__, "security_context_type", security_context_type)
+        GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_non_root_user_check_enabled=is_non_root_user_check_enabled,
+            is_root_file_system_readonly=is_root_file_system_readonly,
+            run_as_group=run_as_group,
+            run_as_user=run_as_user,
+            security_context_type=security_context_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_non_root_user_check_enabled: bool,
+             is_root_file_system_readonly: bool,
+             run_as_group: int,
+             run_as_user: int,
+             security_context_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_non_root_user_check_enabled", is_non_root_user_check_enabled)
+        _setter("is_root_file_system_readonly", is_root_file_system_readonly)
+        _setter("run_as_group", run_as_group)
+        _setter("run_as_user", run_as_user)
+        _setter("security_context_type", security_context_type)
 
     @property
     @pulumi.getter(name="isNonRootUserCheckEnabled")
@@ -1994,11 +2573,28 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountRe
                  partition: int,
                  sub_path: str,
                  volume_name: str):
-        pulumi.set(__self__, "is_read_only", is_read_only)
-        pulumi.set(__self__, "mount_path", mount_path)
-        pulumi.set(__self__, "partition", partition)
-        pulumi.set(__self__, "sub_path", sub_path)
-        pulumi.set(__self__, "volume_name", volume_name)
+        GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_read_only=is_read_only,
+            mount_path=mount_path,
+            partition=partition,
+            sub_path=sub_path,
+            volume_name=volume_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_read_only: bool,
+             mount_path: str,
+             partition: int,
+             sub_path: str,
+             volume_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_read_only", is_read_only)
+        _setter("mount_path", mount_path)
+        _setter("partition", partition)
+        _setter("sub_path", sub_path)
+        _setter("volume_name", volume_name)
 
     @property
     @pulumi.getter(name="isReadOnly")
@@ -2037,9 +2633,22 @@ class GetContainerInstancesContainerInstanceCollectionItemDnsConfigResult(dict):
         :param Sequence[str] options: Options allows certain internal resolver variables to be modified.
         :param Sequence[str] searches: Search list for hostname lookup.
         """
-        pulumi.set(__self__, "nameservers", nameservers)
-        pulumi.set(__self__, "options", options)
-        pulumi.set(__self__, "searches", searches)
+        GetContainerInstancesContainerInstanceCollectionItemDnsConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            nameservers=nameservers,
+            options=options,
+            searches=searches,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             nameservers: Sequence[str],
+             options: Sequence[str],
+             searches: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("nameservers", nameservers)
+        _setter("options", options)
+        _setter("searches", searches)
 
     @property
     @pulumi.getter
@@ -2079,11 +2688,28 @@ class GetContainerInstancesContainerInstanceCollectionItemImagePullSecretResult(
         :param str secret_id: The OCID of the secret for registry credentials.
         :param str secret_type: The type of ImagePullSecret.
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "registry_endpoint", registry_endpoint)
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "secret_type", secret_type)
-        pulumi.set(__self__, "username", username)
+        GetContainerInstancesContainerInstanceCollectionItemImagePullSecretResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            registry_endpoint=registry_endpoint,
+            secret_id=secret_id,
+            secret_type=secret_type,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             registry_endpoint: str,
+             secret_id: str,
+             secret_type: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("registry_endpoint", registry_endpoint)
+        _setter("secret_id", secret_id)
+        _setter("secret_type", secret_type)
+        _setter("username", username)
 
     @property
     @pulumi.getter
@@ -2133,10 +2759,25 @@ class GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult(dict
         :param float ocpus: The total number of OCPUs available to the container instance.
         :param str processor_description: A short description of the container instance's processor (CPU).
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
-        pulumi.set(__self__, "ocpus", ocpus)
-        pulumi.set(__self__, "processor_description", processor_description)
+        GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            networking_bandwidth_in_gbps=networking_bandwidth_in_gbps,
+            ocpus=ocpus,
+            processor_description=processor_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: float,
+             networking_bandwidth_in_gbps: float,
+             ocpus: float,
+             processor_description: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
+        _setter("ocpus", ocpus)
+        _setter("processor_description", processor_description)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -2190,16 +2831,43 @@ class GetContainerInstancesContainerInstanceCollectionItemVnicResult(dict):
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str vnic_id: The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
         """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "hostname_label", hostname_label)
-        pulumi.set(__self__, "is_public_ip_assigned", is_public_ip_assigned)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "private_ip", private_ip)
-        pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "vnic_id", vnic_id)
+        GetContainerInstancesContainerInstanceCollectionItemVnicResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            is_public_ip_assigned=is_public_ip_assigned,
+            nsg_ids=nsg_ids,
+            private_ip=private_ip,
+            skip_source_dest_check=skip_source_dest_check,
+            subnet_id=subnet_id,
+            vnic_id=vnic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             hostname_label: str,
+             is_public_ip_assigned: bool,
+             nsg_ids: Sequence[str],
+             private_ip: str,
+             skip_source_dest_check: bool,
+             subnet_id: str,
+             vnic_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("hostname_label", hostname_label)
+        _setter("is_public_ip_assigned", is_public_ip_assigned)
+        _setter("nsg_ids", nsg_ids)
+        _setter("private_ip", private_ip)
+        _setter("skip_source_dest_check", skip_source_dest_check)
+        _setter("subnet_id", subnet_id)
+        _setter("vnic_id", vnic_id)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -2277,10 +2945,25 @@ class GetContainerInstancesContainerInstanceCollectionItemVolumeResult(dict):
         :param str name: The name of the volume. This must be unique within a single container instance.
         :param str volume_type: The type of volume.
         """
-        pulumi.set(__self__, "backing_store", backing_store)
-        pulumi.set(__self__, "configs", configs)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "volume_type", volume_type)
+        GetContainerInstancesContainerInstanceCollectionItemVolumeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backing_store=backing_store,
+            configs=configs,
+            name=name,
+            volume_type=volume_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backing_store: str,
+             configs: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeConfigResult'],
+             name: str,
+             volume_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("backing_store", backing_store)
+        _setter("configs", configs)
+        _setter("name", name)
+        _setter("volume_type", volume_type)
 
     @property
     @pulumi.getter(name="backingStore")
@@ -2326,9 +3009,22 @@ class GetContainerInstancesContainerInstanceCollectionItemVolumeConfigResult(dic
         :param str file_name: The name of the file. The fileName should be unique across the volume.
         :param str path: (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
         """
-        pulumi.set(__self__, "data", data)
-        pulumi.set(__self__, "file_name", file_name)
-        pulumi.set(__self__, "path", path)
+        GetContainerInstancesContainerInstanceCollectionItemVolumeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data=data,
+            file_name=file_name,
+            path=path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data: str,
+             file_name: str,
+             path: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("data", data)
+        _setter("file_name", file_name)
+        _setter("path", path)
 
     @property
     @pulumi.getter
@@ -2364,10 +3060,23 @@ class GetContainerInstancesFilterResult(dict):
         """
         :param str name: The name of the volume. This must be unique within a single container instance.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetContainerInstancesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

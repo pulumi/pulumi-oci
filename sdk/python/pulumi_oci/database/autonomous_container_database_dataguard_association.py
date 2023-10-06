@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['AutonomousContainerDatabaseDataguardAssociationArgs', 'AutonomousContainerDatabaseDataguardAssociation']
@@ -31,14 +31,31 @@ class AutonomousContainerDatabaseDataguardAssociationArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "autonomous_container_database_dataguard_association_id", autonomous_container_database_dataguard_association_id)
-        pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
+        AutonomousContainerDatabaseDataguardAssociationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            autonomous_container_database_dataguard_association_id=autonomous_container_database_dataguard_association_id,
+            autonomous_container_database_id=autonomous_container_database_id,
+            fast_start_fail_over_lag_limit_in_seconds=fast_start_fail_over_lag_limit_in_seconds,
+            is_automatic_failover_enabled=is_automatic_failover_enabled,
+            protection_mode=protection_mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             autonomous_container_database_dataguard_association_id: pulumi.Input[str],
+             autonomous_container_database_id: pulumi.Input[str],
+             fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
+             is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
+             protection_mode: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("autonomous_container_database_dataguard_association_id", autonomous_container_database_dataguard_association_id)
+        _setter("autonomous_container_database_id", autonomous_container_database_id)
         if fast_start_fail_over_lag_limit_in_seconds is not None:
-            pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
+            _setter("fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
         if is_automatic_failover_enabled is not None:
-            pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
+            _setter("is_automatic_failover_enabled", is_automatic_failover_enabled)
         if protection_mode is not None:
-            pulumi.set(__self__, "protection_mode", protection_mode)
+            _setter("protection_mode", protection_mode)
 
     @property
     @pulumi.getter(name="autonomousContainerDatabaseDataguardAssociationId")
@@ -151,42 +168,85 @@ class _AutonomousContainerDatabaseDataguardAssociationState:
         :param pulumi.Input[str] time_last_synced: The date and time of the last update to the apply lag, apply rate, and transport lag values.
         :param pulumi.Input[str] transport_lag: The approximate number of seconds of redo data not yet available on the standby Autonomous Container Database, as computed by the reporting database.  Example: `7 seconds`
         """
+        _AutonomousContainerDatabaseDataguardAssociationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            apply_lag=apply_lag,
+            apply_rate=apply_rate,
+            autonomous_container_database_dataguard_association_id=autonomous_container_database_dataguard_association_id,
+            autonomous_container_database_id=autonomous_container_database_id,
+            fast_start_fail_over_lag_limit_in_seconds=fast_start_fail_over_lag_limit_in_seconds,
+            is_automatic_failover_enabled=is_automatic_failover_enabled,
+            lifecycle_details=lifecycle_details,
+            peer_autonomous_container_database_dataguard_association_id=peer_autonomous_container_database_dataguard_association_id,
+            peer_autonomous_container_database_id=peer_autonomous_container_database_id,
+            peer_lifecycle_state=peer_lifecycle_state,
+            peer_role=peer_role,
+            protection_mode=protection_mode,
+            role=role,
+            state=state,
+            time_created=time_created,
+            time_last_role_changed=time_last_role_changed,
+            time_last_synced=time_last_synced,
+            transport_lag=transport_lag,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             apply_lag: Optional[pulumi.Input[str]] = None,
+             apply_rate: Optional[pulumi.Input[str]] = None,
+             autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
+             autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
+             fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
+             is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             peer_autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
+             peer_autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
+             peer_lifecycle_state: Optional[pulumi.Input[str]] = None,
+             peer_role: Optional[pulumi.Input[str]] = None,
+             protection_mode: Optional[pulumi.Input[str]] = None,
+             role: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_last_role_changed: Optional[pulumi.Input[str]] = None,
+             time_last_synced: Optional[pulumi.Input[str]] = None,
+             transport_lag: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if apply_lag is not None:
-            pulumi.set(__self__, "apply_lag", apply_lag)
+            _setter("apply_lag", apply_lag)
         if apply_rate is not None:
-            pulumi.set(__self__, "apply_rate", apply_rate)
+            _setter("apply_rate", apply_rate)
         if autonomous_container_database_dataguard_association_id is not None:
-            pulumi.set(__self__, "autonomous_container_database_dataguard_association_id", autonomous_container_database_dataguard_association_id)
+            _setter("autonomous_container_database_dataguard_association_id", autonomous_container_database_dataguard_association_id)
         if autonomous_container_database_id is not None:
-            pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
+            _setter("autonomous_container_database_id", autonomous_container_database_id)
         if fast_start_fail_over_lag_limit_in_seconds is not None:
-            pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
+            _setter("fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
         if is_automatic_failover_enabled is not None:
-            pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
+            _setter("is_automatic_failover_enabled", is_automatic_failover_enabled)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if peer_autonomous_container_database_dataguard_association_id is not None:
-            pulumi.set(__self__, "peer_autonomous_container_database_dataguard_association_id", peer_autonomous_container_database_dataguard_association_id)
+            _setter("peer_autonomous_container_database_dataguard_association_id", peer_autonomous_container_database_dataguard_association_id)
         if peer_autonomous_container_database_id is not None:
-            pulumi.set(__self__, "peer_autonomous_container_database_id", peer_autonomous_container_database_id)
+            _setter("peer_autonomous_container_database_id", peer_autonomous_container_database_id)
         if peer_lifecycle_state is not None:
-            pulumi.set(__self__, "peer_lifecycle_state", peer_lifecycle_state)
+            _setter("peer_lifecycle_state", peer_lifecycle_state)
         if peer_role is not None:
-            pulumi.set(__self__, "peer_role", peer_role)
+            _setter("peer_role", peer_role)
         if protection_mode is not None:
-            pulumi.set(__self__, "protection_mode", protection_mode)
+            _setter("protection_mode", protection_mode)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_last_role_changed is not None:
-            pulumi.set(__self__, "time_last_role_changed", time_last_role_changed)
+            _setter("time_last_role_changed", time_last_role_changed)
         if time_last_synced is not None:
-            pulumi.set(__self__, "time_last_synced", time_last_synced)
+            _setter("time_last_synced", time_last_synced)
         if transport_lag is not None:
-            pulumi.set(__self__, "transport_lag", transport_lag)
+            _setter("transport_lag", transport_lag)
 
     @property
     @pulumi.getter(name="applyLag")
@@ -474,6 +534,10 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AutonomousContainerDatabaseDataguardAssociationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

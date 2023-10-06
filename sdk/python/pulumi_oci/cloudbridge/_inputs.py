@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -57,24 +57,49 @@ class AgentPluginListArgs:
         :param pulumi.Input[str] time_created: The time when the Agent was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the Agent was updated. An RFC3339 formatted datetime string.
         """
+        AgentPluginListArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agent_id=agent_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            plugin_version=plugin_version,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agent_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             plugin_version: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if agent_id is not None:
-            pulumi.set(__self__, "agent_id", agent_id)
+            _setter("agent_id", agent_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if plugin_version is not None:
-            pulumi.set(__self__, "plugin_version", plugin_version)
+            _setter("plugin_version", plugin_version)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="agentId")
@@ -248,64 +273,129 @@ class AssetComputeArgs:
         :param pulumi.Input[str] storage_provisioned_in_mbs: (Updatable) Provision storage size in MBs.
         :param pulumi.Input[int] threads_per_core_count: (Updatable) Number of threads per core.
         """
+        AssetComputeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            connected_networks=connected_networks,
+            cores_count=cores_count,
+            cpu_model=cpu_model,
+            description=description,
+            disks=disks,
+            disks_count=disks_count,
+            dns_name=dns_name,
+            firmware=firmware,
+            gpu_devices=gpu_devices,
+            gpu_devices_count=gpu_devices_count,
+            guest_state=guest_state,
+            hardware_version=hardware_version,
+            host_name=host_name,
+            is_pmem_enabled=is_pmem_enabled,
+            is_tpm_enabled=is_tpm_enabled,
+            latency_sensitivity=latency_sensitivity,
+            memory_in_mbs=memory_in_mbs,
+            nics=nics,
+            nics_count=nics_count,
+            nvdimm_controller=nvdimm_controller,
+            nvdimms=nvdimms,
+            operating_system=operating_system,
+            operating_system_version=operating_system_version,
+            pmem_in_mbs=pmem_in_mbs,
+            power_state=power_state,
+            primary_ip=primary_ip,
+            scsi_controller=scsi_controller,
+            storage_provisioned_in_mbs=storage_provisioned_in_mbs,
+            threads_per_core_count=threads_per_core_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             connected_networks: Optional[pulumi.Input[int]] = None,
+             cores_count: Optional[pulumi.Input[int]] = None,
+             cpu_model: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             disks: Optional[pulumi.Input[Sequence[pulumi.Input['AssetComputeDiskArgs']]]] = None,
+             disks_count: Optional[pulumi.Input[int]] = None,
+             dns_name: Optional[pulumi.Input[str]] = None,
+             firmware: Optional[pulumi.Input[str]] = None,
+             gpu_devices: Optional[pulumi.Input[Sequence[pulumi.Input['AssetComputeGpuDeviceArgs']]]] = None,
+             gpu_devices_count: Optional[pulumi.Input[int]] = None,
+             guest_state: Optional[pulumi.Input[str]] = None,
+             hardware_version: Optional[pulumi.Input[str]] = None,
+             host_name: Optional[pulumi.Input[str]] = None,
+             is_pmem_enabled: Optional[pulumi.Input[bool]] = None,
+             is_tpm_enabled: Optional[pulumi.Input[bool]] = None,
+             latency_sensitivity: Optional[pulumi.Input[str]] = None,
+             memory_in_mbs: Optional[pulumi.Input[str]] = None,
+             nics: Optional[pulumi.Input[Sequence[pulumi.Input['AssetComputeNicArgs']]]] = None,
+             nics_count: Optional[pulumi.Input[int]] = None,
+             nvdimm_controller: Optional[pulumi.Input['AssetComputeNvdimmControllerArgs']] = None,
+             nvdimms: Optional[pulumi.Input[Sequence[pulumi.Input['AssetComputeNvdimmArgs']]]] = None,
+             operating_system: Optional[pulumi.Input[str]] = None,
+             operating_system_version: Optional[pulumi.Input[str]] = None,
+             pmem_in_mbs: Optional[pulumi.Input[str]] = None,
+             power_state: Optional[pulumi.Input[str]] = None,
+             primary_ip: Optional[pulumi.Input[str]] = None,
+             scsi_controller: Optional[pulumi.Input['AssetComputeScsiControllerArgs']] = None,
+             storage_provisioned_in_mbs: Optional[pulumi.Input[str]] = None,
+             threads_per_core_count: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if connected_networks is not None:
-            pulumi.set(__self__, "connected_networks", connected_networks)
+            _setter("connected_networks", connected_networks)
         if cores_count is not None:
-            pulumi.set(__self__, "cores_count", cores_count)
+            _setter("cores_count", cores_count)
         if cpu_model is not None:
-            pulumi.set(__self__, "cpu_model", cpu_model)
+            _setter("cpu_model", cpu_model)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if disks is not None:
-            pulumi.set(__self__, "disks", disks)
+            _setter("disks", disks)
         if disks_count is not None:
-            pulumi.set(__self__, "disks_count", disks_count)
+            _setter("disks_count", disks_count)
         if dns_name is not None:
-            pulumi.set(__self__, "dns_name", dns_name)
+            _setter("dns_name", dns_name)
         if firmware is not None:
-            pulumi.set(__self__, "firmware", firmware)
+            _setter("firmware", firmware)
         if gpu_devices is not None:
-            pulumi.set(__self__, "gpu_devices", gpu_devices)
+            _setter("gpu_devices", gpu_devices)
         if gpu_devices_count is not None:
-            pulumi.set(__self__, "gpu_devices_count", gpu_devices_count)
+            _setter("gpu_devices_count", gpu_devices_count)
         if guest_state is not None:
-            pulumi.set(__self__, "guest_state", guest_state)
+            _setter("guest_state", guest_state)
         if hardware_version is not None:
-            pulumi.set(__self__, "hardware_version", hardware_version)
+            _setter("hardware_version", hardware_version)
         if host_name is not None:
-            pulumi.set(__self__, "host_name", host_name)
+            _setter("host_name", host_name)
         if is_pmem_enabled is not None:
-            pulumi.set(__self__, "is_pmem_enabled", is_pmem_enabled)
+            _setter("is_pmem_enabled", is_pmem_enabled)
         if is_tpm_enabled is not None:
-            pulumi.set(__self__, "is_tpm_enabled", is_tpm_enabled)
+            _setter("is_tpm_enabled", is_tpm_enabled)
         if latency_sensitivity is not None:
-            pulumi.set(__self__, "latency_sensitivity", latency_sensitivity)
+            _setter("latency_sensitivity", latency_sensitivity)
         if memory_in_mbs is not None:
-            pulumi.set(__self__, "memory_in_mbs", memory_in_mbs)
+            _setter("memory_in_mbs", memory_in_mbs)
         if nics is not None:
-            pulumi.set(__self__, "nics", nics)
+            _setter("nics", nics)
         if nics_count is not None:
-            pulumi.set(__self__, "nics_count", nics_count)
+            _setter("nics_count", nics_count)
         if nvdimm_controller is not None:
-            pulumi.set(__self__, "nvdimm_controller", nvdimm_controller)
+            _setter("nvdimm_controller", nvdimm_controller)
         if nvdimms is not None:
-            pulumi.set(__self__, "nvdimms", nvdimms)
+            _setter("nvdimms", nvdimms)
         if operating_system is not None:
-            pulumi.set(__self__, "operating_system", operating_system)
+            _setter("operating_system", operating_system)
         if operating_system_version is not None:
-            pulumi.set(__self__, "operating_system_version", operating_system_version)
+            _setter("operating_system_version", operating_system_version)
         if pmem_in_mbs is not None:
-            pulumi.set(__self__, "pmem_in_mbs", pmem_in_mbs)
+            _setter("pmem_in_mbs", pmem_in_mbs)
         if power_state is not None:
-            pulumi.set(__self__, "power_state", power_state)
+            _setter("power_state", power_state)
         if primary_ip is not None:
-            pulumi.set(__self__, "primary_ip", primary_ip)
+            _setter("primary_ip", primary_ip)
         if scsi_controller is not None:
-            pulumi.set(__self__, "scsi_controller", scsi_controller)
+            _setter("scsi_controller", scsi_controller)
         if storage_provisioned_in_mbs is not None:
-            pulumi.set(__self__, "storage_provisioned_in_mbs", storage_provisioned_in_mbs)
+            _setter("storage_provisioned_in_mbs", storage_provisioned_in_mbs)
         if threads_per_core_count is not None:
-            pulumi.set(__self__, "threads_per_core_count", threads_per_core_count)
+            _setter("threads_per_core_count", threads_per_core_count)
 
     @property
     @pulumi.getter(name="connectedNetworks")
@@ -675,20 +765,41 @@ class AssetComputeDiskArgs:
         :param pulumi.Input[str] uuid: (Updatable) Disk UUID for the virtual disk, if available.
         :param pulumi.Input[str] uuid_lun: (Updatable) Disk UUID LUN for the virtual disk, if available.
         """
+        AssetComputeDiskArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            boot_order=boot_order,
+            location=location,
+            name=name,
+            persistent_mode=persistent_mode,
+            size_in_mbs=size_in_mbs,
+            uuid=uuid,
+            uuid_lun=uuid_lun,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             boot_order: Optional[pulumi.Input[int]] = None,
+             location: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             persistent_mode: Optional[pulumi.Input[str]] = None,
+             size_in_mbs: Optional[pulumi.Input[str]] = None,
+             uuid: Optional[pulumi.Input[str]] = None,
+             uuid_lun: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if boot_order is not None:
-            pulumi.set(__self__, "boot_order", boot_order)
+            _setter("boot_order", boot_order)
         if location is not None:
-            pulumi.set(__self__, "location", location)
+            _setter("location", location)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if persistent_mode is not None:
-            pulumi.set(__self__, "persistent_mode", persistent_mode)
+            _setter("persistent_mode", persistent_mode)
         if size_in_mbs is not None:
-            pulumi.set(__self__, "size_in_mbs", size_in_mbs)
+            _setter("size_in_mbs", size_in_mbs)
         if uuid is not None:
-            pulumi.set(__self__, "uuid", uuid)
+            _setter("uuid", uuid)
         if uuid_lun is not None:
-            pulumi.set(__self__, "uuid_lun", uuid_lun)
+            _setter("uuid_lun", uuid_lun)
 
     @property
     @pulumi.getter(name="bootOrder")
@@ -790,16 +901,33 @@ class AssetComputeGpuDeviceArgs:
         :param pulumi.Input[str] memory_in_mbs: (Updatable) Memory size in MBs.
         :param pulumi.Input[str] name: (Updatable) The tag name.
         """
+        AssetComputeGpuDeviceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cores_count=cores_count,
+            description=description,
+            manufacturer=manufacturer,
+            memory_in_mbs=memory_in_mbs,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cores_count: Optional[pulumi.Input[int]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             manufacturer: Optional[pulumi.Input[str]] = None,
+             memory_in_mbs: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if cores_count is not None:
-            pulumi.set(__self__, "cores_count", cores_count)
+            _setter("cores_count", cores_count)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if manufacturer is not None:
-            pulumi.set(__self__, "manufacturer", manufacturer)
+            _setter("manufacturer", manufacturer)
         if memory_in_mbs is not None:
-            pulumi.set(__self__, "memory_in_mbs", memory_in_mbs)
+            _setter("memory_in_mbs", memory_in_mbs)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="coresCount")
@@ -879,18 +1007,37 @@ class AssetComputeNicArgs:
         :param pulumi.Input[str] network_name: (Updatable) Network name.
         :param pulumi.Input[str] switch_name: (Updatable) Switch name.
         """
+        AssetComputeNicArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_addresses=ip_addresses,
+            label=label,
+            mac_address=mac_address,
+            mac_address_type=mac_address_type,
+            network_name=network_name,
+            switch_name=switch_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             label: Optional[pulumi.Input[str]] = None,
+             mac_address: Optional[pulumi.Input[str]] = None,
+             mac_address_type: Optional[pulumi.Input[str]] = None,
+             network_name: Optional[pulumi.Input[str]] = None,
+             switch_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if ip_addresses is not None:
-            pulumi.set(__self__, "ip_addresses", ip_addresses)
+            _setter("ip_addresses", ip_addresses)
         if label is not None:
-            pulumi.set(__self__, "label", label)
+            _setter("label", label)
         if mac_address is not None:
-            pulumi.set(__self__, "mac_address", mac_address)
+            _setter("mac_address", mac_address)
         if mac_address_type is not None:
-            pulumi.set(__self__, "mac_address_type", mac_address_type)
+            _setter("mac_address_type", mac_address_type)
         if network_name is not None:
-            pulumi.set(__self__, "network_name", network_name)
+            _setter("network_name", network_name)
         if switch_name is not None:
-            pulumi.set(__self__, "switch_name", switch_name)
+            _setter("switch_name", switch_name)
 
     @property
     @pulumi.getter(name="ipAddresses")
@@ -976,12 +1123,25 @@ class AssetComputeNvdimmArgs:
         :param pulumi.Input[str] label: (Updatable) Provides a label and summary information for the device.
         :param pulumi.Input[int] unit_number: (Updatable) The unit number of the SCSI controller.
         """
+        AssetComputeNvdimmArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            controller_key=controller_key,
+            label=label,
+            unit_number=unit_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             controller_key: Optional[pulumi.Input[int]] = None,
+             label: Optional[pulumi.Input[str]] = None,
+             unit_number: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if controller_key is not None:
-            pulumi.set(__self__, "controller_key", controller_key)
+            _setter("controller_key", controller_key)
         if label is not None:
-            pulumi.set(__self__, "label", label)
+            _setter("label", label)
         if unit_number is not None:
-            pulumi.set(__self__, "unit_number", unit_number)
+            _setter("unit_number", unit_number)
 
     @property
     @pulumi.getter(name="controllerKey")
@@ -1029,10 +1189,21 @@ class AssetComputeNvdimmControllerArgs:
         :param pulumi.Input[int] bus_number: (Updatable) Bus number.
         :param pulumi.Input[str] label: (Updatable) Provides a label and summary information for the device.
         """
+        AssetComputeNvdimmControllerArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bus_number=bus_number,
+            label=label,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bus_number: Optional[pulumi.Input[int]] = None,
+             label: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if bus_number is not None:
-            pulumi.set(__self__, "bus_number", bus_number)
+            _setter("bus_number", bus_number)
         if label is not None:
-            pulumi.set(__self__, "label", label)
+            _setter("label", label)
 
     @property
     @pulumi.getter(name="busNumber")
@@ -1070,12 +1241,25 @@ class AssetComputeScsiControllerArgs:
         :param pulumi.Input[str] shared_bus: (Updatable) Shared bus.
         :param pulumi.Input[int] unit_number: (Updatable) The unit number of the SCSI controller.
         """
+        AssetComputeScsiControllerArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            label=label,
+            shared_bus=shared_bus,
+            unit_number=unit_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             label: Optional[pulumi.Input[str]] = None,
+             shared_bus: Optional[pulumi.Input[str]] = None,
+             unit_number: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if label is not None:
-            pulumi.set(__self__, "label", label)
+            _setter("label", label)
         if shared_bus is not None:
-            pulumi.set(__self__, "shared_bus", shared_bus)
+            _setter("shared_bus", shared_bus)
         if unit_number is not None:
-            pulumi.set(__self__, "unit_number", unit_number)
+            _setter("unit_number", unit_number)
 
     @property
     @pulumi.getter
@@ -1123,8 +1307,19 @@ class AssetSourceDiscoveryCredentialsArgs:
         :param pulumi.Input[str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
         :param pulumi.Input[str] type: (Updatable) Asset source type.
         """
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "type", type)
+        AssetSourceDiscoveryCredentialsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            secret_id=secret_id,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             secret_id: pulumi.Input[str],
+             type: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("secret_id", secret_id)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="secretId")
@@ -1160,8 +1355,19 @@ class AssetSourceReplicationCredentialsArgs:
         :param pulumi.Input[str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
         :param pulumi.Input[str] type: (Updatable) Asset source type.
         """
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "type", type)
+        AssetSourceReplicationCredentialsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            secret_id=secret_id,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             secret_id: pulumi.Input[str],
+             type: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("secret_id", secret_id)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="secretId")
@@ -1199,12 +1405,25 @@ class AssetVmArgs:
         :param pulumi.Input[str] hypervisor_vendor: (Updatable) Hypervisor vendor.
         :param pulumi.Input[str] hypervisor_version: (Updatable) Hypervisor version.
         """
+        AssetVmArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hypervisor_host=hypervisor_host,
+            hypervisor_vendor=hypervisor_vendor,
+            hypervisor_version=hypervisor_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hypervisor_host: Optional[pulumi.Input[str]] = None,
+             hypervisor_vendor: Optional[pulumi.Input[str]] = None,
+             hypervisor_version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if hypervisor_host is not None:
-            pulumi.set(__self__, "hypervisor_host", hypervisor_host)
+            _setter("hypervisor_host", hypervisor_host)
         if hypervisor_vendor is not None:
-            pulumi.set(__self__, "hypervisor_vendor", hypervisor_vendor)
+            _setter("hypervisor_vendor", hypervisor_vendor)
         if hypervisor_version is not None:
-            pulumi.set(__self__, "hypervisor_version", hypervisor_version)
+            _setter("hypervisor_version", hypervisor_version)
 
     @property
     @pulumi.getter(name="hypervisorHost")
@@ -1254,12 +1473,25 @@ class AssetVmwareVcenterArgs:
         :param pulumi.Input[str] vcenter_key: (Updatable) vCenter unique key.
         :param pulumi.Input[str] vcenter_version: (Updatable) Dot-separated version string.
         """
+        AssetVmwareVcenterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_center=data_center,
+            vcenter_key=vcenter_key,
+            vcenter_version=vcenter_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_center: Optional[pulumi.Input[str]] = None,
+             vcenter_key: Optional[pulumi.Input[str]] = None,
+             vcenter_version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if data_center is not None:
-            pulumi.set(__self__, "data_center", data_center)
+            _setter("data_center", data_center)
         if vcenter_key is not None:
-            pulumi.set(__self__, "vcenter_key", vcenter_key)
+            _setter("vcenter_key", vcenter_key)
         if vcenter_version is not None:
-            pulumi.set(__self__, "vcenter_version", vcenter_version)
+            _setter("vcenter_version", vcenter_version)
 
     @property
     @pulumi.getter(name="dataCenter")
@@ -1329,28 +1561,57 @@ class AssetVmwareVmArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        AssetVmwareVmArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cluster=cluster,
+            customer_fields=customer_fields,
+            customer_tags=customer_tags,
+            fault_tolerance_bandwidth=fault_tolerance_bandwidth,
+            fault_tolerance_secondary_latency=fault_tolerance_secondary_latency,
+            fault_tolerance_state=fault_tolerance_state,
+            instance_uuid=instance_uuid,
+            is_disks_cbt_enabled=is_disks_cbt_enabled,
+            is_disks_uuid_enabled=is_disks_uuid_enabled,
+            path=path,
+            vmware_tools_status=vmware_tools_status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cluster: Optional[pulumi.Input[str]] = None,
+             customer_fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             customer_tags: Optional[pulumi.Input[Sequence[pulumi.Input['AssetVmwareVmCustomerTagArgs']]]] = None,
+             fault_tolerance_bandwidth: Optional[pulumi.Input[int]] = None,
+             fault_tolerance_secondary_latency: Optional[pulumi.Input[int]] = None,
+             fault_tolerance_state: Optional[pulumi.Input[str]] = None,
+             instance_uuid: Optional[pulumi.Input[str]] = None,
+             is_disks_cbt_enabled: Optional[pulumi.Input[bool]] = None,
+             is_disks_uuid_enabled: Optional[pulumi.Input[bool]] = None,
+             path: Optional[pulumi.Input[str]] = None,
+             vmware_tools_status: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if cluster is not None:
-            pulumi.set(__self__, "cluster", cluster)
+            _setter("cluster", cluster)
         if customer_fields is not None:
-            pulumi.set(__self__, "customer_fields", customer_fields)
+            _setter("customer_fields", customer_fields)
         if customer_tags is not None:
-            pulumi.set(__self__, "customer_tags", customer_tags)
+            _setter("customer_tags", customer_tags)
         if fault_tolerance_bandwidth is not None:
-            pulumi.set(__self__, "fault_tolerance_bandwidth", fault_tolerance_bandwidth)
+            _setter("fault_tolerance_bandwidth", fault_tolerance_bandwidth)
         if fault_tolerance_secondary_latency is not None:
-            pulumi.set(__self__, "fault_tolerance_secondary_latency", fault_tolerance_secondary_latency)
+            _setter("fault_tolerance_secondary_latency", fault_tolerance_secondary_latency)
         if fault_tolerance_state is not None:
-            pulumi.set(__self__, "fault_tolerance_state", fault_tolerance_state)
+            _setter("fault_tolerance_state", fault_tolerance_state)
         if instance_uuid is not None:
-            pulumi.set(__self__, "instance_uuid", instance_uuid)
+            _setter("instance_uuid", instance_uuid)
         if is_disks_cbt_enabled is not None:
-            pulumi.set(__self__, "is_disks_cbt_enabled", is_disks_cbt_enabled)
+            _setter("is_disks_cbt_enabled", is_disks_cbt_enabled)
         if is_disks_uuid_enabled is not None:
-            pulumi.set(__self__, "is_disks_uuid_enabled", is_disks_uuid_enabled)
+            _setter("is_disks_uuid_enabled", is_disks_uuid_enabled)
         if path is not None:
-            pulumi.set(__self__, "path", path)
+            _setter("path", path)
         if vmware_tools_status is not None:
-            pulumi.set(__self__, "vmware_tools_status", vmware_tools_status)
+            _setter("vmware_tools_status", vmware_tools_status)
 
     @property
     @pulumi.getter
@@ -1498,10 +1759,21 @@ class AssetVmwareVmCustomerTagArgs:
         :param pulumi.Input[str] description: (Updatable) The tag description.
         :param pulumi.Input[str] name: (Updatable) The tag name.
         """
+        AssetVmwareVmCustomerTagArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1534,10 +1806,23 @@ class GetAgentDependenciesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAgentDependenciesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1576,10 +1861,23 @@ class GetAgentsFilterArgs:
         """
         :param str name: Plugin identifier, which can be renamed.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAgentsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1618,10 +1916,23 @@ class GetApplianceImagesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetApplianceImagesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1657,10 +1968,23 @@ class GetAssetSourcesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAssetSourcesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1699,10 +2023,23 @@ class GetAssetsFilterArgs:
         """
         :param str name: The tag name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAssetsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1741,10 +2078,23 @@ class GetDiscoverySchedulesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDiscoverySchedulesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1780,10 +2130,23 @@ class GetEnvironmentsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetEnvironmentsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1819,10 +2182,23 @@ class GetInventoriesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetInventoriesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

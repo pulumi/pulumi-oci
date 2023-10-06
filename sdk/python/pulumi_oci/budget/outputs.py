@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -51,21 +51,58 @@ class GetAlertRulesAlertRuleResult(dict):
         :param str type: The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert triggers based on predicted usage).
         :param int version: The version of the alert rule. Starts from 1 and increments by 1.
         """
-        pulumi.set(__self__, "budget_id", budget_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "recipients", recipients)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "threshold", threshold)
-        pulumi.set(__self__, "threshold_type", threshold_type)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "version", version)
+        GetAlertRulesAlertRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            budget_id=budget_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            message=message,
+            recipients=recipients,
+            state=state,
+            threshold=threshold,
+            threshold_type=threshold_type,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             budget_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             message: str,
+             recipients: str,
+             state: str,
+             threshold: float,
+             threshold_type: str,
+             time_created: str,
+             time_updated: str,
+             type: str,
+             version: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("budget_id", budget_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("message", message)
+        _setter("recipients", recipients)
+        _setter("state", state)
+        _setter("threshold", threshold)
+        _setter("threshold_type", threshold_type)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("type", type)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="budgetId")
@@ -194,10 +231,23 @@ class GetAlertRulesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAlertRulesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -269,29 +319,82 @@ class GetBudgetsBudgetResult(dict):
         :param str time_updated: The time that the budget was updated.
         :param int version: The version of the budget. Starts from 1 and increments by 1.
         """
-        pulumi.set(__self__, "actual_spend", actual_spend)
-        pulumi.set(__self__, "alert_rule_count", alert_rule_count)
-        pulumi.set(__self__, "amount", amount)
-        pulumi.set(__self__, "budget_processing_period_start_offset", budget_processing_period_start_offset)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "end_date", end_date)
-        pulumi.set(__self__, "forecasted_spend", forecasted_spend)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "processing_period_type", processing_period_type)
-        pulumi.set(__self__, "reset_period", reset_period)
-        pulumi.set(__self__, "start_date", start_date)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "target_compartment_id", target_compartment_id)
-        pulumi.set(__self__, "target_type", target_type)
-        pulumi.set(__self__, "targets", targets)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_spend_computed", time_spend_computed)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "version", version)
+        GetBudgetsBudgetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actual_spend=actual_spend,
+            alert_rule_count=alert_rule_count,
+            amount=amount,
+            budget_processing_period_start_offset=budget_processing_period_start_offset,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            end_date=end_date,
+            forecasted_spend=forecasted_spend,
+            freeform_tags=freeform_tags,
+            id=id,
+            processing_period_type=processing_period_type,
+            reset_period=reset_period,
+            start_date=start_date,
+            state=state,
+            target_compartment_id=target_compartment_id,
+            target_type=target_type,
+            targets=targets,
+            time_created=time_created,
+            time_spend_computed=time_spend_computed,
+            time_updated=time_updated,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actual_spend: float,
+             alert_rule_count: int,
+             amount: int,
+             budget_processing_period_start_offset: int,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             end_date: str,
+             forecasted_spend: float,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             processing_period_type: str,
+             reset_period: str,
+             start_date: str,
+             state: str,
+             target_compartment_id: str,
+             target_type: str,
+             targets: Sequence[str],
+             time_created: str,
+             time_spend_computed: str,
+             time_updated: str,
+             version: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("actual_spend", actual_spend)
+        _setter("alert_rule_count", alert_rule_count)
+        _setter("amount", amount)
+        _setter("budget_processing_period_start_offset", budget_processing_period_start_offset)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("end_date", end_date)
+        _setter("forecasted_spend", forecasted_spend)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("processing_period_type", processing_period_type)
+        _setter("reset_period", reset_period)
+        _setter("start_date", start_date)
+        _setter("state", state)
+        _setter("target_compartment_id", target_compartment_id)
+        _setter("target_type", target_type)
+        _setter("targets", targets)
+        _setter("time_created", time_created)
+        _setter("time_spend_computed", time_spend_computed)
+        _setter("time_updated", time_updated)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="actualSpend")
@@ -490,10 +593,23 @@ class GetBudgetsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetBudgetsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

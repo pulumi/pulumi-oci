@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -29,10 +29,23 @@ class AnnouncementSubscriptionsFilterGroupArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "announcement_subscription_id", announcement_subscription_id)
-        pulumi.set(__self__, "filters", filters)
+        AnnouncementSubscriptionsFilterGroupArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            announcement_subscription_id=announcement_subscription_id,
+            filters=filters,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             announcement_subscription_id: pulumi.Input[str],
+             filters: pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("announcement_subscription_id", announcement_subscription_id)
+        _setter("filters", filters)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="announcementSubscriptionId")
@@ -91,12 +104,25 @@ class _AnnouncementSubscriptionsFilterGroupState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _AnnouncementSubscriptionsFilterGroupState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            announcement_subscription_id=announcement_subscription_id,
+            filters=filters,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             announcement_subscription_id: Optional[pulumi.Input[str]] = None,
+             filters: Optional[pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionsFilterGroupFilterArgs']]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if announcement_subscription_id is not None:
-            pulumi.set(__self__, "announcement_subscription_id", announcement_subscription_id)
+            _setter("announcement_subscription_id", announcement_subscription_id)
         if filters is not None:
-            pulumi.set(__self__, "filters", filters)
+            _setter("filters", filters)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="announcementSubscriptionId")
@@ -232,6 +258,10 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AnnouncementSubscriptionsFilterGroupArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

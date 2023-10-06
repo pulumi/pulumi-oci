@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -110,24 +110,51 @@ class DomainsMySmtpCredentialArgs:
                * type: complex
                * uniqueness: none
         """
-        pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
-        pulumi.set(__self__, "schemas", schemas)
+        DomainsMySmtpCredentialArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            idcs_endpoint=idcs_endpoint,
+            schemas=schemas,
+            authorization=authorization,
+            description=description,
+            expires_on=expires_on,
+            ocid=ocid,
+            resource_type_schema_version=resource_type_schema_version,
+            status=status,
+            tags=tags,
+            user=user,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             idcs_endpoint: pulumi.Input[str],
+             schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
+             authorization: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             expires_on: Optional[pulumi.Input[str]] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMySmtpCredentialTagArgs']]]] = None,
+             user: Optional[pulumi.Input['DomainsMySmtpCredentialUserArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("idcs_endpoint", idcs_endpoint)
+        _setter("schemas", schemas)
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if expires_on is not None:
-            pulumi.set(__self__, "expires_on", expires_on)
+            _setter("expires_on", expires_on)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if user is not None:
-            pulumi.set(__self__, "user", user)
+            _setter("user", user)
 
     @property
     @pulumi.getter(name="idcsEndpoint")
@@ -534,46 +561,93 @@ class _DomainsMySmtpCredentialState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _DomainsMySmtpCredentialState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authorization=authorization,
+            compartment_ocid=compartment_ocid,
+            delete_in_progress=delete_in_progress,
+            description=description,
+            domain_ocid=domain_ocid,
+            expires_on=expires_on,
+            idcs_created_bies=idcs_created_bies,
+            idcs_endpoint=idcs_endpoint,
+            idcs_last_modified_bies=idcs_last_modified_bies,
+            idcs_last_upgraded_in_release=idcs_last_upgraded_in_release,
+            idcs_prevented_operations=idcs_prevented_operations,
+            metas=metas,
+            ocid=ocid,
+            resource_type_schema_version=resource_type_schema_version,
+            schemas=schemas,
+            status=status,
+            tags=tags,
+            tenancy_ocid=tenancy_ocid,
+            user=user,
+            user_name=user_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authorization: Optional[pulumi.Input[str]] = None,
+             compartment_ocid: Optional[pulumi.Input[str]] = None,
+             delete_in_progress: Optional[pulumi.Input[bool]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             domain_ocid: Optional[pulumi.Input[str]] = None,
+             expires_on: Optional[pulumi.Input[str]] = None,
+             idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMySmtpCredentialIdcsCreatedByArgs']]]] = None,
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMySmtpCredentialIdcsLastModifiedByArgs']]]] = None,
+             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
+             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMySmtpCredentialMetaArgs']]]] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMySmtpCredentialTagArgs']]]] = None,
+             tenancy_ocid: Optional[pulumi.Input[str]] = None,
+             user: Optional[pulumi.Input['DomainsMySmtpCredentialUserArgs']] = None,
+             user_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if compartment_ocid is not None:
-            pulumi.set(__self__, "compartment_ocid", compartment_ocid)
+            _setter("compartment_ocid", compartment_ocid)
         if delete_in_progress is not None:
-            pulumi.set(__self__, "delete_in_progress", delete_in_progress)
+            _setter("delete_in_progress", delete_in_progress)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if domain_ocid is not None:
-            pulumi.set(__self__, "domain_ocid", domain_ocid)
+            _setter("domain_ocid", domain_ocid)
         if expires_on is not None:
-            pulumi.set(__self__, "expires_on", expires_on)
+            _setter("expires_on", expires_on)
         if idcs_created_bies is not None:
-            pulumi.set(__self__, "idcs_created_bies", idcs_created_bies)
+            _setter("idcs_created_bies", idcs_created_bies)
         if idcs_endpoint is not None:
-            pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
+            _setter("idcs_endpoint", idcs_endpoint)
         if idcs_last_modified_bies is not None:
-            pulumi.set(__self__, "idcs_last_modified_bies", idcs_last_modified_bies)
+            _setter("idcs_last_modified_bies", idcs_last_modified_bies)
         if idcs_last_upgraded_in_release is not None:
-            pulumi.set(__self__, "idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
+            _setter("idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
         if idcs_prevented_operations is not None:
-            pulumi.set(__self__, "idcs_prevented_operations", idcs_prevented_operations)
+            _setter("idcs_prevented_operations", idcs_prevented_operations)
         if metas is not None:
-            pulumi.set(__self__, "metas", metas)
+            _setter("metas", metas)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if schemas is not None:
-            pulumi.set(__self__, "schemas", schemas)
+            _setter("schemas", schemas)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if tenancy_ocid is not None:
-            pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
+            _setter("tenancy_ocid", tenancy_ocid)
         if user is not None:
-            pulumi.set(__self__, "user", user)
+            _setter("user", user)
         if user_name is not None:
-            pulumi.set(__self__, "user_name", user_name)
+            _setter("user_name", user_name)
 
     @property
     @pulumi.getter
@@ -1125,6 +1199,10 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DomainsMySmtpCredentialArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1162,6 +1240,11 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
             __props__.__dict__["schemas"] = schemas
             __props__.__dict__["status"] = status
             __props__.__dict__["tags"] = tags
+            if user is not None and not isinstance(user, DomainsMySmtpCredentialUserArgs):
+                user = user or {}
+                def _setter(key, value):
+                    user[key] = value
+                DomainsMySmtpCredentialUserArgs._configure(_setter, **user)
             __props__.__dict__["user"] = user
             __props__.__dict__["compartment_ocid"] = None
             __props__.__dict__["delete_in_progress"] = None

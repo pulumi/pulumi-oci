@@ -13,15 +13,49 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
+// The `Core.AppCatalogListingResourceVersionAgreement` resource creates AppCatalogListingResourceVersionAgreement for a particular resource version of a listing.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Core.NewAppCatalogListingResourceVersionAgreement(ctx, "testAppCatalogListingResourceVersionAgreement", &Core.AppCatalogListingResourceVersionAgreementArgs{
+//				ListingId:              pulumi.Any(data.Oci_core_app_catalog_listing.Test_listing.Id),
+//				ListingResourceVersion: pulumi.Any(_var.App_catalog_listing_resource_version_agreement_listing_resource_version),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type ListingResourceVersionAgreement struct {
 	pulumi.CustomResourceState
 
-	EulaLink               pulumi.StringOutput `pulumi:"eulaLink"`
-	ListingId              pulumi.StringOutput `pulumi:"listingId"`
+	// EULA link
+	EulaLink pulumi.StringOutput `pulumi:"eulaLink"`
+	// The OCID of the listing.
+	ListingId pulumi.StringOutput `pulumi:"listingId"`
+	// Listing Resource Version.
 	ListingResourceVersion pulumi.StringOutput `pulumi:"listingResourceVersion"`
-	OracleTermsOfUseLink   pulumi.StringOutput `pulumi:"oracleTermsOfUseLink"`
-	Signature              pulumi.StringOutput `pulumi:"signature"`
-	TimeRetrieved          pulumi.StringOutput `pulumi:"timeRetrieved"`
+	// Oracle TOU link
+	OracleTermsOfUseLink pulumi.StringOutput `pulumi:"oracleTermsOfUseLink"`
+	// A generated signature for this agreement retrieval operation which should be used in the create subscription call.
+	Signature pulumi.StringOutput `pulumi:"signature"`
+	// Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
+	TimeRetrieved pulumi.StringOutput `pulumi:"timeRetrieved"`
 }
 
 // NewListingResourceVersionAgreement registers a new resource with the given unique name, arguments, and options.
@@ -60,21 +94,33 @@ func GetListingResourceVersionAgreement(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ListingResourceVersionAgreement resources.
 type listingResourceVersionAgreementState struct {
-	EulaLink               *string `pulumi:"eulaLink"`
-	ListingId              *string `pulumi:"listingId"`
+	// EULA link
+	EulaLink *string `pulumi:"eulaLink"`
+	// The OCID of the listing.
+	ListingId *string `pulumi:"listingId"`
+	// Listing Resource Version.
 	ListingResourceVersion *string `pulumi:"listingResourceVersion"`
-	OracleTermsOfUseLink   *string `pulumi:"oracleTermsOfUseLink"`
-	Signature              *string `pulumi:"signature"`
-	TimeRetrieved          *string `pulumi:"timeRetrieved"`
+	// Oracle TOU link
+	OracleTermsOfUseLink *string `pulumi:"oracleTermsOfUseLink"`
+	// A generated signature for this agreement retrieval operation which should be used in the create subscription call.
+	Signature *string `pulumi:"signature"`
+	// Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
+	TimeRetrieved *string `pulumi:"timeRetrieved"`
 }
 
 type ListingResourceVersionAgreementState struct {
-	EulaLink               pulumi.StringPtrInput
-	ListingId              pulumi.StringPtrInput
+	// EULA link
+	EulaLink pulumi.StringPtrInput
+	// The OCID of the listing.
+	ListingId pulumi.StringPtrInput
+	// Listing Resource Version.
 	ListingResourceVersion pulumi.StringPtrInput
-	OracleTermsOfUseLink   pulumi.StringPtrInput
-	Signature              pulumi.StringPtrInput
-	TimeRetrieved          pulumi.StringPtrInput
+	// Oracle TOU link
+	OracleTermsOfUseLink pulumi.StringPtrInput
+	// A generated signature for this agreement retrieval operation which should be used in the create subscription call.
+	Signature pulumi.StringPtrInput
+	// Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
+	TimeRetrieved pulumi.StringPtrInput
 }
 
 func (ListingResourceVersionAgreementState) ElementType() reflect.Type {
@@ -82,13 +128,17 @@ func (ListingResourceVersionAgreementState) ElementType() reflect.Type {
 }
 
 type listingResourceVersionAgreementArgs struct {
-	ListingId              string `pulumi:"listingId"`
+	// The OCID of the listing.
+	ListingId string `pulumi:"listingId"`
+	// Listing Resource Version.
 	ListingResourceVersion string `pulumi:"listingResourceVersion"`
 }
 
 // The set of arguments for constructing a ListingResourceVersionAgreement resource.
 type ListingResourceVersionAgreementArgs struct {
-	ListingId              pulumi.StringInput
+	// The OCID of the listing.
+	ListingId pulumi.StringInput
+	// Listing Resource Version.
 	ListingResourceVersion pulumi.StringInput
 }
 
@@ -203,26 +253,32 @@ func (o ListingResourceVersionAgreementOutput) ToOutput(ctx context.Context) pul
 	}
 }
 
+// EULA link
 func (o ListingResourceVersionAgreementOutput) EulaLink() pulumi.StringOutput {
 	return o.ApplyT(func(v *ListingResourceVersionAgreement) pulumi.StringOutput { return v.EulaLink }).(pulumi.StringOutput)
 }
 
+// The OCID of the listing.
 func (o ListingResourceVersionAgreementOutput) ListingId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ListingResourceVersionAgreement) pulumi.StringOutput { return v.ListingId }).(pulumi.StringOutput)
 }
 
+// Listing Resource Version.
 func (o ListingResourceVersionAgreementOutput) ListingResourceVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *ListingResourceVersionAgreement) pulumi.StringOutput { return v.ListingResourceVersion }).(pulumi.StringOutput)
 }
 
+// Oracle TOU link
 func (o ListingResourceVersionAgreementOutput) OracleTermsOfUseLink() pulumi.StringOutput {
 	return o.ApplyT(func(v *ListingResourceVersionAgreement) pulumi.StringOutput { return v.OracleTermsOfUseLink }).(pulumi.StringOutput)
 }
 
+// A generated signature for this agreement retrieval operation which should be used in the create subscription call.
 func (o ListingResourceVersionAgreementOutput) Signature() pulumi.StringOutput {
 	return o.ApplyT(func(v *ListingResourceVersionAgreement) pulumi.StringOutput { return v.Signature }).(pulumi.StringOutput)
 }
 
+// Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
 func (o ListingResourceVersionAgreementOutput) TimeRetrieved() pulumi.StringOutput {
 	return o.ApplyT(func(v *ListingResourceVersionAgreement) pulumi.StringOutput { return v.TimeRetrieved }).(pulumi.StringOutput)
 }

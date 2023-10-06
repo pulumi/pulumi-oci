@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -52,6 +52,9 @@ class GetReplicationStatusResult:
     @property
     @pulumi.getter(name="replicaDetails")
     def replica_details(self) -> Sequence['outputs.GetReplicationStatusReplicaDetailResult']:
+        """
+        Replica Details.
+        """
         return pulumi.get(self, "replica_details")
 
     @property

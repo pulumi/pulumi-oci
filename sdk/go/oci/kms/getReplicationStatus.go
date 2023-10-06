@@ -66,10 +66,11 @@ type GetReplicationStatusArgs struct {
 // A collection of values returned by getReplicationStatus.
 type GetReplicationStatusResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id                 string                              `pulumi:"id"`
-	ManagementEndpoint string                              `pulumi:"managementEndpoint"`
-	ReplicaDetails     []GetReplicationStatusReplicaDetail `pulumi:"replicaDetails"`
-	ReplicationId      string                              `pulumi:"replicationId"`
+	Id                 string `pulumi:"id"`
+	ManagementEndpoint string `pulumi:"managementEndpoint"`
+	// Replica Details.
+	ReplicaDetails []GetReplicationStatusReplicaDetail `pulumi:"replicaDetails"`
+	ReplicationId  string                              `pulumi:"replicationId"`
 }
 
 func GetReplicationStatusOutput(ctx *pulumi.Context, args GetReplicationStatusOutputArgs, opts ...pulumi.InvokeOption) GetReplicationStatusResultOutput {
@@ -127,6 +128,7 @@ func (o GetReplicationStatusResultOutput) ManagementEndpoint() pulumi.StringOutp
 	return o.ApplyT(func(v GetReplicationStatusResult) string { return v.ManagementEndpoint }).(pulumi.StringOutput)
 }
 
+// Replica Details.
 func (o GetReplicationStatusResultOutput) ReplicaDetails() GetReplicationStatusReplicaDetailArrayOutput {
 	return o.ApplyT(func(v GetReplicationStatusResult) []GetReplicationStatusReplicaDetail { return v.ReplicaDetails }).(GetReplicationStatusReplicaDetailArrayOutput)
 }

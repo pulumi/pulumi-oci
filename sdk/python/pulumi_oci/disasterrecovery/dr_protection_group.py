@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,19 +39,42 @@ class DrProtectionGroupArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberArgs']]] members: (Updatable) A list of DR Protection Group members.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "log_location", log_location)
+        DrProtectionGroupArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            log_location=log_location,
+            association=association,
+            defined_tags=defined_tags,
+            disassociate_trigger=disassociate_trigger,
+            freeform_tags=freeform_tags,
+            members=members,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             log_location: pulumi.Input['DrProtectionGroupLogLocationArgs'],
+             association: Optional[pulumi.Input['DrProtectionGroupAssociationArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             disassociate_trigger: Optional[pulumi.Input[int]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             members: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("log_location", log_location)
         if association is not None:
-            pulumi.set(__self__, "association", association)
+            _setter("association", association)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if disassociate_trigger is not None:
-            pulumi.set(__self__, "disassociate_trigger", disassociate_trigger)
+            _setter("disassociate_trigger", disassociate_trigger)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if members is not None:
-            pulumi.set(__self__, "members", members)
+            _setter("members", members)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -196,38 +219,77 @@ class _DrProtectionGroupState:
         :param pulumi.Input[str] time_created: The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param pulumi.Input[str] time_updated: The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
+        _DrProtectionGroupState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            association=association,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            disassociate_trigger=disassociate_trigger,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            life_cycle_details=life_cycle_details,
+            log_location=log_location,
+            members=members,
+            peer_id=peer_id,
+            peer_region=peer_region,
+            role=role,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             association: Optional[pulumi.Input['DrProtectionGroupAssociationArgs']] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             disassociate_trigger: Optional[pulumi.Input[int]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             life_cycle_details: Optional[pulumi.Input[str]] = None,
+             log_location: Optional[pulumi.Input['DrProtectionGroupLogLocationArgs']] = None,
+             members: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberArgs']]]] = None,
+             peer_id: Optional[pulumi.Input[str]] = None,
+             peer_region: Optional[pulumi.Input[str]] = None,
+             role: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if association is not None:
-            pulumi.set(__self__, "association", association)
+            _setter("association", association)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if disassociate_trigger is not None:
-            pulumi.set(__self__, "disassociate_trigger", disassociate_trigger)
+            _setter("disassociate_trigger", disassociate_trigger)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if life_cycle_details is not None:
-            pulumi.set(__self__, "life_cycle_details", life_cycle_details)
+            _setter("life_cycle_details", life_cycle_details)
         if log_location is not None:
-            pulumi.set(__self__, "log_location", log_location)
+            _setter("log_location", log_location)
         if members is not None:
-            pulumi.set(__self__, "members", members)
+            _setter("members", members)
         if peer_id is not None:
-            pulumi.set(__self__, "peer_id", peer_id)
+            _setter("peer_id", peer_id)
         if peer_region is not None:
-            pulumi.set(__self__, "peer_region", peer_region)
+            _setter("peer_region", peer_region)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -597,6 +659,10 @@ class DrProtectionGroup(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DrProtectionGroupArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -619,6 +685,11 @@ class DrProtectionGroup(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DrProtectionGroupArgs.__new__(DrProtectionGroupArgs)
 
+            if association is not None and not isinstance(association, DrProtectionGroupAssociationArgs):
+                association = association or {}
+                def _setter(key, value):
+                    association[key] = value
+                DrProtectionGroupAssociationArgs._configure(_setter, **association)
             __props__.__dict__["association"] = association
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
@@ -629,6 +700,11 @@ class DrProtectionGroup(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            if log_location is not None and not isinstance(log_location, DrProtectionGroupLogLocationArgs):
+                log_location = log_location or {}
+                def _setter(key, value):
+                    log_location[key] = value
+                DrProtectionGroupLogLocationArgs._configure(_setter, **log_location)
             if log_location is None and not opts.urn:
                 raise TypeError("Missing required property 'log_location'")
             __props__.__dict__["log_location"] = log_location

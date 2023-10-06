@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -150,45 +150,92 @@ class DataAssetDataSourceDetails(dict):
         :param 'DataAssetDataSourceDetailsVersionSpecificDetailsArgs' version_specific_details: Possible data sources
         :param str wallet_password_secret_id: wallet password Secret ID in String format
         """
-        pulumi.set(__self__, "data_source_type", data_source_type)
+        DataAssetDataSourceDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_source_type=data_source_type,
+            atp_password_secret_id=atp_password_secret_id,
+            atp_user_name=atp_user_name,
+            bucket=bucket,
+            cwallet_file_secret_id=cwallet_file_secret_id,
+            database_name=database_name,
+            ewallet_file_secret_id=ewallet_file_secret_id,
+            key_store_file_secret_id=key_store_file_secret_id,
+            measurement_name=measurement_name,
+            namespace=namespace,
+            object=object,
+            ojdbc_file_secret_id=ojdbc_file_secret_id,
+            password_secret_id=password_secret_id,
+            table_name=table_name,
+            tnsnames_file_secret_id=tnsnames_file_secret_id,
+            truststore_file_secret_id=truststore_file_secret_id,
+            url=url,
+            user_name=user_name,
+            version_specific_details=version_specific_details,
+            wallet_password_secret_id=wallet_password_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_source_type: str,
+             atp_password_secret_id: Optional[str] = None,
+             atp_user_name: Optional[str] = None,
+             bucket: Optional[str] = None,
+             cwallet_file_secret_id: Optional[str] = None,
+             database_name: Optional[str] = None,
+             ewallet_file_secret_id: Optional[str] = None,
+             key_store_file_secret_id: Optional[str] = None,
+             measurement_name: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             ojdbc_file_secret_id: Optional[str] = None,
+             password_secret_id: Optional[str] = None,
+             table_name: Optional[str] = None,
+             tnsnames_file_secret_id: Optional[str] = None,
+             truststore_file_secret_id: Optional[str] = None,
+             url: Optional[str] = None,
+             user_name: Optional[str] = None,
+             version_specific_details: Optional['outputs.DataAssetDataSourceDetailsVersionSpecificDetails'] = None,
+             wallet_password_secret_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("data_source_type", data_source_type)
         if atp_password_secret_id is not None:
-            pulumi.set(__self__, "atp_password_secret_id", atp_password_secret_id)
+            _setter("atp_password_secret_id", atp_password_secret_id)
         if atp_user_name is not None:
-            pulumi.set(__self__, "atp_user_name", atp_user_name)
+            _setter("atp_user_name", atp_user_name)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if cwallet_file_secret_id is not None:
-            pulumi.set(__self__, "cwallet_file_secret_id", cwallet_file_secret_id)
+            _setter("cwallet_file_secret_id", cwallet_file_secret_id)
         if database_name is not None:
-            pulumi.set(__self__, "database_name", database_name)
+            _setter("database_name", database_name)
         if ewallet_file_secret_id is not None:
-            pulumi.set(__self__, "ewallet_file_secret_id", ewallet_file_secret_id)
+            _setter("ewallet_file_secret_id", ewallet_file_secret_id)
         if key_store_file_secret_id is not None:
-            pulumi.set(__self__, "key_store_file_secret_id", key_store_file_secret_id)
+            _setter("key_store_file_secret_id", key_store_file_secret_id)
         if measurement_name is not None:
-            pulumi.set(__self__, "measurement_name", measurement_name)
+            _setter("measurement_name", measurement_name)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
         if ojdbc_file_secret_id is not None:
-            pulumi.set(__self__, "ojdbc_file_secret_id", ojdbc_file_secret_id)
+            _setter("ojdbc_file_secret_id", ojdbc_file_secret_id)
         if password_secret_id is not None:
-            pulumi.set(__self__, "password_secret_id", password_secret_id)
+            _setter("password_secret_id", password_secret_id)
         if table_name is not None:
-            pulumi.set(__self__, "table_name", table_name)
+            _setter("table_name", table_name)
         if tnsnames_file_secret_id is not None:
-            pulumi.set(__self__, "tnsnames_file_secret_id", tnsnames_file_secret_id)
+            _setter("tnsnames_file_secret_id", tnsnames_file_secret_id)
         if truststore_file_secret_id is not None:
-            pulumi.set(__self__, "truststore_file_secret_id", truststore_file_secret_id)
+            _setter("truststore_file_secret_id", truststore_file_secret_id)
         if url is not None:
-            pulumi.set(__self__, "url", url)
+            _setter("url", url)
         if user_name is not None:
-            pulumi.set(__self__, "user_name", user_name)
+            _setter("user_name", user_name)
         if version_specific_details is not None:
-            pulumi.set(__self__, "version_specific_details", version_specific_details)
+            _setter("version_specific_details", version_specific_details)
         if wallet_password_secret_id is not None:
-            pulumi.set(__self__, "wallet_password_secret_id", wallet_password_secret_id)
+            _setter("wallet_password_secret_id", wallet_password_secret_id)
 
     @property
     @pulumi.getter(name="dataSourceType")
@@ -389,15 +436,32 @@ class DataAssetDataSourceDetailsVersionSpecificDetails(dict):
         :param str organization_name: Org name for the influx db
         :param str retention_policy_name: retention policy is how long the bucket would last
         """
-        pulumi.set(__self__, "influx_version", influx_version)
+        DataAssetDataSourceDetailsVersionSpecificDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            influx_version=influx_version,
+            bucket=bucket,
+            database_name=database_name,
+            organization_name=organization_name,
+            retention_policy_name=retention_policy_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             influx_version: str,
+             bucket: Optional[str] = None,
+             database_name: Optional[str] = None,
+             organization_name: Optional[str] = None,
+             retention_policy_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("influx_version", influx_version)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if database_name is not None:
-            pulumi.set(__self__, "database_name", database_name)
+            _setter("database_name", database_name)
         if organization_name is not None:
-            pulumi.set(__self__, "organization_name", organization_name)
+            _setter("organization_name", organization_name)
         if retention_policy_name is not None:
-            pulumi.set(__self__, "retention_policy_name", retention_policy_name)
+            _setter("retention_policy_name", retention_policy_name)
 
     @property
     @pulumi.getter(name="influxVersion")
@@ -480,19 +544,40 @@ class DetectAnomalyJobInputDetails(dict):
         :param Sequence['DetectAnomalyJobInputDetailsObjectLocationArgs'] object_locations: List of ObjectLocations.
         :param Sequence[str] signal_names: List of signal names.
         """
-        pulumi.set(__self__, "input_type", input_type)
+        DetectAnomalyJobInputDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            input_type=input_type,
+            content=content,
+            content_type=content_type,
+            datas=datas,
+            message=message,
+            object_locations=object_locations,
+            signal_names=signal_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             input_type: str,
+             content: Optional[str] = None,
+             content_type: Optional[str] = None,
+             datas: Optional[Sequence['outputs.DetectAnomalyJobInputDetailsData']] = None,
+             message: Optional[str] = None,
+             object_locations: Optional[Sequence['outputs.DetectAnomalyJobInputDetailsObjectLocation']] = None,
+             signal_names: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("input_type", input_type)
         if content is not None:
-            pulumi.set(__self__, "content", content)
+            _setter("content", content)
         if content_type is not None:
-            pulumi.set(__self__, "content_type", content_type)
+            _setter("content_type", content_type)
         if datas is not None:
-            pulumi.set(__self__, "datas", datas)
+            _setter("datas", datas)
         if message is not None:
-            pulumi.set(__self__, "message", message)
+            _setter("message", message)
         if object_locations is not None:
-            pulumi.set(__self__, "object_locations", object_locations)
+            _setter("object_locations", object_locations)
         if signal_names is not None:
-            pulumi.set(__self__, "signal_names", signal_names)
+            _setter("signal_names", signal_names)
 
     @property
     @pulumi.getter(name="inputType")
@@ -554,10 +639,21 @@ class DetectAnomalyJobInputDetailsData(dict):
         :param str timestamp: Nullable string representing timestamp.
         :param Sequence[float] values: Array of double precision values.
         """
+        DetectAnomalyJobInputDetailsData._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            timestamp=timestamp,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             timestamp: Optional[str] = None,
+             values: Optional[Sequence[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if timestamp is not None:
-            pulumi.set(__self__, "timestamp", timestamp)
+            _setter("timestamp", timestamp)
         if values is not None:
-            pulumi.set(__self__, "values", values)
+            _setter("values", values)
 
     @property
     @pulumi.getter
@@ -587,12 +683,25 @@ class DetectAnomalyJobInputDetailsObjectLocation(dict):
         :param str namespace: Object Storage namespace.
         :param str object: Object Storage object name.
         """
+        DetectAnomalyJobInputDetailsObjectLocation._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter
@@ -649,11 +758,26 @@ class DetectAnomalyJobOutputDetails(dict):
         :param str output_type: The type of output location. Allowed values are:
         :param str prefix: Object Storage folder name.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "output_type", output_type)
+        DetectAnomalyJobOutputDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            output_type=output_type,
+            prefix=prefix,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             output_type: str,
+             prefix: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("output_type", output_type)
         if prefix is not None:
-            pulumi.set(__self__, "prefix", prefix)
+            _setter("prefix", prefix)
 
     @property
     @pulumi.getter
@@ -728,15 +852,32 @@ class ModelModelTrainingDetails(dict):
         :param float training_fraction: Fraction of total data that is used for training the model. The remaining is used for validation of the model.
         :param int window_size: This value would determine the window size of the training algorithm.
         """
-        pulumi.set(__self__, "data_asset_ids", data_asset_ids)
+        ModelModelTrainingDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_asset_ids=data_asset_ids,
+            algorithm_hint=algorithm_hint,
+            target_fap=target_fap,
+            training_fraction=training_fraction,
+            window_size=window_size,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_asset_ids: Sequence[str],
+             algorithm_hint: Optional[str] = None,
+             target_fap: Optional[float] = None,
+             training_fraction: Optional[float] = None,
+             window_size: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("data_asset_ids", data_asset_ids)
         if algorithm_hint is not None:
-            pulumi.set(__self__, "algorithm_hint", algorithm_hint)
+            _setter("algorithm_hint", algorithm_hint)
         if target_fap is not None:
-            pulumi.set(__self__, "target_fap", target_fap)
+            _setter("target_fap", target_fap)
         if training_fraction is not None:
-            pulumi.set(__self__, "training_fraction", training_fraction)
+            _setter("training_fraction", training_fraction)
         if window_size is not None:
-            pulumi.set(__self__, "window_size", window_size)
+            _setter("window_size", window_size)
 
     @property
     @pulumi.getter(name="dataAssetIds")
@@ -828,26 +969,53 @@ class ModelModelTrainingResult(dict):
         :param str warning: A warning message to explain the reason when targetFap cannot be achieved for trained model
         :param int window_size: This value would determine the window size of the training algorithm.
         """
+        ModelModelTrainingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            fap=fap,
+            is_training_goal_achieved=is_training_goal_achieved,
+            mae=mae,
+            max_inference_sync_rows=max_inference_sync_rows,
+            multivariate_fap=multivariate_fap,
+            rmse=rmse,
+            row_reduction_details=row_reduction_details,
+            signal_details=signal_details,
+            warning=warning,
+            window_size=window_size,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             fap: Optional[float] = None,
+             is_training_goal_achieved: Optional[bool] = None,
+             mae: Optional[float] = None,
+             max_inference_sync_rows: Optional[int] = None,
+             multivariate_fap: Optional[float] = None,
+             rmse: Optional[float] = None,
+             row_reduction_details: Optional[Sequence['outputs.ModelModelTrainingResultRowReductionDetail']] = None,
+             signal_details: Optional[Sequence['outputs.ModelModelTrainingResultSignalDetail']] = None,
+             warning: Optional[str] = None,
+             window_size: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if fap is not None:
-            pulumi.set(__self__, "fap", fap)
+            _setter("fap", fap)
         if is_training_goal_achieved is not None:
-            pulumi.set(__self__, "is_training_goal_achieved", is_training_goal_achieved)
+            _setter("is_training_goal_achieved", is_training_goal_achieved)
         if mae is not None:
-            pulumi.set(__self__, "mae", mae)
+            _setter("mae", mae)
         if max_inference_sync_rows is not None:
-            pulumi.set(__self__, "max_inference_sync_rows", max_inference_sync_rows)
+            _setter("max_inference_sync_rows", max_inference_sync_rows)
         if multivariate_fap is not None:
-            pulumi.set(__self__, "multivariate_fap", multivariate_fap)
+            _setter("multivariate_fap", multivariate_fap)
         if rmse is not None:
-            pulumi.set(__self__, "rmse", rmse)
+            _setter("rmse", rmse)
         if row_reduction_details is not None:
-            pulumi.set(__self__, "row_reduction_details", row_reduction_details)
+            _setter("row_reduction_details", row_reduction_details)
         if signal_details is not None:
-            pulumi.set(__self__, "signal_details", signal_details)
+            _setter("signal_details", signal_details)
         if warning is not None:
-            pulumi.set(__self__, "warning", warning)
+            _setter("warning", warning)
         if window_size is not None:
-            pulumi.set(__self__, "window_size", window_size)
+            _setter("window_size", window_size)
 
     @property
     @pulumi.getter
@@ -955,12 +1123,25 @@ class ModelModelTrainingResultRowReductionDetail(dict):
                * AVERAGE_ROW - average multiple rows to one row
         :param float reduction_percentage: A percentage to reduce data size down to on top of original data
         """
+        ModelModelTrainingResultRowReductionDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_reduction_enabled=is_reduction_enabled,
+            reduction_method=reduction_method,
+            reduction_percentage=reduction_percentage,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_reduction_enabled: Optional[bool] = None,
+             reduction_method: Optional[str] = None,
+             reduction_percentage: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if is_reduction_enabled is not None:
-            pulumi.set(__self__, "is_reduction_enabled", is_reduction_enabled)
+            _setter("is_reduction_enabled", is_reduction_enabled)
         if reduction_method is not None:
-            pulumi.set(__self__, "reduction_method", reduction_method)
+            _setter("reduction_method", reduction_method)
         if reduction_percentage is not None:
-            pulumi.set(__self__, "reduction_percentage", reduction_percentage)
+            _setter("reduction_percentage", reduction_percentage)
 
     @property
     @pulumi.getter(name="isReductionEnabled")
@@ -1036,24 +1217,49 @@ class ModelModelTrainingResultSignalDetail(dict):
                * OTHER - placeholder for other status
         :param float std: Standard deviation of values within a signal.
         """
+        ModelModelTrainingResultSignalDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            fap=fap,
+            is_quantized=is_quantized,
+            max=max,
+            min=min,
+            mvi_ratio=mvi_ratio,
+            signal_name=signal_name,
+            status=status,
+            std=std,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: Optional[str] = None,
+             fap: Optional[float] = None,
+             is_quantized: Optional[bool] = None,
+             max: Optional[float] = None,
+             min: Optional[float] = None,
+             mvi_ratio: Optional[float] = None,
+             signal_name: Optional[str] = None,
+             status: Optional[str] = None,
+             std: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if details is not None:
-            pulumi.set(__self__, "details", details)
+            _setter("details", details)
         if fap is not None:
-            pulumi.set(__self__, "fap", fap)
+            _setter("fap", fap)
         if is_quantized is not None:
-            pulumi.set(__self__, "is_quantized", is_quantized)
+            _setter("is_quantized", is_quantized)
         if max is not None:
-            pulumi.set(__self__, "max", max)
+            _setter("max", max)
         if min is not None:
-            pulumi.set(__self__, "min", min)
+            _setter("min", min)
         if mvi_ratio is not None:
-            pulumi.set(__self__, "mvi_ratio", mvi_ratio)
+            _setter("mvi_ratio", mvi_ratio)
         if signal_name is not None:
-            pulumi.set(__self__, "signal_name", signal_name)
+            _setter("signal_name", signal_name)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if std is not None:
-            pulumi.set(__self__, "std", std)
+            _setter("std", std)
 
     @property
     @pulumi.getter
@@ -1135,7 +1341,16 @@ class ModelModelTrainingResultSignalDetail(dict):
 class GetAiPrivateEndpointsAiPrivateEndpointCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAiPrivateEndpointsAiPrivateEndpointCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetAiPrivateEndpointsAiPrivateEndpointCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAiPrivateEndpointsAiPrivateEndpointCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1174,19 +1389,52 @@ class GetAiPrivateEndpointsAiPrivateEndpointCollectionItemResult(dict):
         :param str time_created: The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         :param str time_updated: The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
-        pulumi.set(__self__, "attached_data_assets", attached_data_assets)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "dns_zones", dns_zones)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetAiPrivateEndpointsAiPrivateEndpointCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            attached_data_assets=attached_data_assets,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            dns_zones=dns_zones,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            subnet_id=subnet_id,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             attached_data_assets: Sequence[str],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             dns_zones: Sequence[str],
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             state: str,
+             subnet_id: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("attached_data_assets", attached_data_assets)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("dns_zones", dns_zones)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("subnet_id", subnet_id)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="attachedDataAssets")
@@ -1299,10 +1547,23 @@ class GetAiPrivateEndpointsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAiPrivateEndpointsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1335,13 +1596,34 @@ class GetDetectAnomalyJobInputDetailResult(dict):
         :param str message: Inline input details.
         :param Sequence['GetDetectAnomalyJobInputDetailObjectLocationArgs'] object_locations: List of ObjectLocations.
         """
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "content_type", content_type)
-        pulumi.set(__self__, "datas", datas)
-        pulumi.set(__self__, "input_type", input_type)
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "object_locations", object_locations)
-        pulumi.set(__self__, "signal_names", signal_names)
+        GetDetectAnomalyJobInputDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            content=content,
+            content_type=content_type,
+            datas=datas,
+            input_type=input_type,
+            message=message,
+            object_locations=object_locations,
+            signal_names=signal_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             content: str,
+             content_type: str,
+             datas: Sequence['outputs.GetDetectAnomalyJobInputDetailDataResult'],
+             input_type: str,
+             message: str,
+             object_locations: Sequence['outputs.GetDetectAnomalyJobInputDetailObjectLocationResult'],
+             signal_names: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("content", content)
+        _setter("content_type", content_type)
+        _setter("datas", datas)
+        _setter("input_type", input_type)
+        _setter("message", message)
+        _setter("object_locations", object_locations)
+        _setter("signal_names", signal_names)
 
     @property
     @pulumi.getter
@@ -1393,8 +1675,19 @@ class GetDetectAnomalyJobInputDetailDataResult(dict):
     def __init__(__self__, *,
                  timestamp: str,
                  values: Sequence[float]):
-        pulumi.set(__self__, "timestamp", timestamp)
-        pulumi.set(__self__, "values", values)
+        GetDetectAnomalyJobInputDetailDataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            timestamp=timestamp,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             timestamp: str,
+             values: Sequence[float],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("timestamp", timestamp)
+        _setter("values", values)
 
     @property
     @pulumi.getter
@@ -1418,9 +1711,22 @@ class GetDetectAnomalyJobInputDetailObjectLocationResult(dict):
         :param str namespace: Object Storage namespace.
         :param str object: Object Storage object name.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+        GetDetectAnomalyJobInputDetailObjectLocationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             object: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -1460,10 +1766,25 @@ class GetDetectAnomalyJobOutputDetailResult(dict):
         :param str output_type: The type of output location Allowed values are:
         :param str prefix: Object Storage folder name.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "output_type", output_type)
-        pulumi.set(__self__, "prefix", prefix)
+        GetDetectAnomalyJobOutputDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            output_type=output_type,
+            prefix=prefix,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             output_type: str,
+             prefix: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("output_type", output_type)
+        _setter("prefix", prefix)
 
     @property
     @pulumi.getter
@@ -1502,7 +1823,16 @@ class GetDetectAnomalyJobOutputDetailResult(dict):
 class GetDetectAnomalyJobsDetectAnomalyJobCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetDetectAnomalyJobsDetectAnomalyJobCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1549,23 +1879,64 @@ class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemResult(dict):
         :param str time_finished: Job finished time
         :param str time_started: Job started time
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "input_details", input_details)
-        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
-        pulumi.set(__self__, "model_id", model_id)
-        pulumi.set(__self__, "output_details", output_details)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "sensitivity", sensitivity)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_accepted", time_accepted)
-        pulumi.set(__self__, "time_finished", time_finished)
-        pulumi.set(__self__, "time_started", time_started)
+        GetDetectAnomalyJobsDetectAnomalyJobCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            input_details=input_details,
+            lifecycle_state_details=lifecycle_state_details,
+            model_id=model_id,
+            output_details=output_details,
+            project_id=project_id,
+            sensitivity=sensitivity,
+            state=state,
+            system_tags=system_tags,
+            time_accepted=time_accepted,
+            time_finished=time_finished,
+            time_started=time_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             input_details: Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailResult'],
+             lifecycle_state_details: str,
+             model_id: str,
+             output_details: Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailResult'],
+             project_id: str,
+             sensitivity: float,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_accepted: str,
+             time_finished: str,
+             time_started: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("input_details", input_details)
+        _setter("lifecycle_state_details", lifecycle_state_details)
+        _setter("model_id", model_id)
+        _setter("output_details", output_details)
+        _setter("project_id", project_id)
+        _setter("sensitivity", sensitivity)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_accepted", time_accepted)
+        _setter("time_finished", time_finished)
+        _setter("time_started", time_started)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1719,13 +2090,34 @@ class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailResult(dict):
         :param str message: Inline input details.
         :param Sequence['GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationArgs'] object_locations: List of ObjectLocations.
         """
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "content_type", content_type)
-        pulumi.set(__self__, "datas", datas)
-        pulumi.set(__self__, "input_type", input_type)
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "object_locations", object_locations)
-        pulumi.set(__self__, "signal_names", signal_names)
+        GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            content=content,
+            content_type=content_type,
+            datas=datas,
+            input_type=input_type,
+            message=message,
+            object_locations=object_locations,
+            signal_names=signal_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             content: str,
+             content_type: str,
+             datas: Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataResult'],
+             input_type: str,
+             message: str,
+             object_locations: Sequence['outputs.GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationResult'],
+             signal_names: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("content", content)
+        _setter("content_type", content_type)
+        _setter("datas", datas)
+        _setter("input_type", input_type)
+        _setter("message", message)
+        _setter("object_locations", object_locations)
+        _setter("signal_names", signal_names)
 
     @property
     @pulumi.getter
@@ -1777,8 +2169,19 @@ class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataResult(di
     def __init__(__self__, *,
                  timestamp: str,
                  values: Sequence[float]):
-        pulumi.set(__self__, "timestamp", timestamp)
-        pulumi.set(__self__, "values", values)
+        GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            timestamp=timestamp,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             timestamp: str,
+             values: Sequence[float],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("timestamp", timestamp)
+        _setter("values", values)
 
     @property
     @pulumi.getter
@@ -1802,9 +2205,22 @@ class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocatio
         :param str namespace: Object Storage namespace.
         :param str object: Object Storage object name.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+        GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailObjectLocationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             object: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -1844,10 +2260,25 @@ class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailResult(dict)
         :param str output_type: The type of output location Allowed values are:
         :param str prefix: Object Storage folder name.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "output_type", output_type)
-        pulumi.set(__self__, "prefix", prefix)
+        GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            output_type=output_type,
+            prefix=prefix,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             output_type: str,
+             prefix: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("output_type", output_type)
+        _setter("prefix", prefix)
 
     @property
     @pulumi.getter
@@ -1888,10 +2319,23 @@ class GetDetectAnomalyJobsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDetectAnomalyJobsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1954,26 +2398,73 @@ class GetDetectionDataAssetDataSourceDetailResult(dict):
         :param Sequence['GetDetectionDataAssetDataSourceDetailVersionSpecificDetailArgs'] version_specific_details: Possible data sources
         :param str wallet_password_secret_id: wallet password Secret ID in String format
         """
-        pulumi.set(__self__, "atp_password_secret_id", atp_password_secret_id)
-        pulumi.set(__self__, "atp_user_name", atp_user_name)
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "cwallet_file_secret_id", cwallet_file_secret_id)
-        pulumi.set(__self__, "data_source_type", data_source_type)
-        pulumi.set(__self__, "database_name", database_name)
-        pulumi.set(__self__, "ewallet_file_secret_id", ewallet_file_secret_id)
-        pulumi.set(__self__, "key_store_file_secret_id", key_store_file_secret_id)
-        pulumi.set(__self__, "measurement_name", measurement_name)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "ojdbc_file_secret_id", ojdbc_file_secret_id)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
-        pulumi.set(__self__, "table_name", table_name)
-        pulumi.set(__self__, "tnsnames_file_secret_id", tnsnames_file_secret_id)
-        pulumi.set(__self__, "truststore_file_secret_id", truststore_file_secret_id)
-        pulumi.set(__self__, "url", url)
-        pulumi.set(__self__, "user_name", user_name)
-        pulumi.set(__self__, "version_specific_details", version_specific_details)
-        pulumi.set(__self__, "wallet_password_secret_id", wallet_password_secret_id)
+        GetDetectionDataAssetDataSourceDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            atp_password_secret_id=atp_password_secret_id,
+            atp_user_name=atp_user_name,
+            bucket=bucket,
+            cwallet_file_secret_id=cwallet_file_secret_id,
+            data_source_type=data_source_type,
+            database_name=database_name,
+            ewallet_file_secret_id=ewallet_file_secret_id,
+            key_store_file_secret_id=key_store_file_secret_id,
+            measurement_name=measurement_name,
+            namespace=namespace,
+            object=object,
+            ojdbc_file_secret_id=ojdbc_file_secret_id,
+            password_secret_id=password_secret_id,
+            table_name=table_name,
+            tnsnames_file_secret_id=tnsnames_file_secret_id,
+            truststore_file_secret_id=truststore_file_secret_id,
+            url=url,
+            user_name=user_name,
+            version_specific_details=version_specific_details,
+            wallet_password_secret_id=wallet_password_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             atp_password_secret_id: str,
+             atp_user_name: str,
+             bucket: str,
+             cwallet_file_secret_id: str,
+             data_source_type: str,
+             database_name: str,
+             ewallet_file_secret_id: str,
+             key_store_file_secret_id: str,
+             measurement_name: str,
+             namespace: str,
+             object: str,
+             ojdbc_file_secret_id: str,
+             password_secret_id: str,
+             table_name: str,
+             tnsnames_file_secret_id: str,
+             truststore_file_secret_id: str,
+             url: str,
+             user_name: str,
+             version_specific_details: Sequence['outputs.GetDetectionDataAssetDataSourceDetailVersionSpecificDetailResult'],
+             wallet_password_secret_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("atp_password_secret_id", atp_password_secret_id)
+        _setter("atp_user_name", atp_user_name)
+        _setter("bucket", bucket)
+        _setter("cwallet_file_secret_id", cwallet_file_secret_id)
+        _setter("data_source_type", data_source_type)
+        _setter("database_name", database_name)
+        _setter("ewallet_file_secret_id", ewallet_file_secret_id)
+        _setter("key_store_file_secret_id", key_store_file_secret_id)
+        _setter("measurement_name", measurement_name)
+        _setter("namespace", namespace)
+        _setter("object", object)
+        _setter("ojdbc_file_secret_id", ojdbc_file_secret_id)
+        _setter("password_secret_id", password_secret_id)
+        _setter("table_name", table_name)
+        _setter("tnsnames_file_secret_id", tnsnames_file_secret_id)
+        _setter("truststore_file_secret_id", truststore_file_secret_id)
+        _setter("url", url)
+        _setter("user_name", user_name)
+        _setter("version_specific_details", version_specific_details)
+        _setter("wallet_password_secret_id", wallet_password_secret_id)
 
     @property
     @pulumi.getter(name="atpPasswordSecretId")
@@ -2151,11 +2642,28 @@ class GetDetectionDataAssetDataSourceDetailVersionSpecificDetailResult(dict):
         :param str organization_name: Org name for the influx db
         :param str retention_policy_name: retention policy is how long the bucket would last
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "database_name", database_name)
-        pulumi.set(__self__, "influx_version", influx_version)
-        pulumi.set(__self__, "organization_name", organization_name)
-        pulumi.set(__self__, "retention_policy_name", retention_policy_name)
+        GetDetectionDataAssetDataSourceDetailVersionSpecificDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            database_name=database_name,
+            influx_version=influx_version,
+            organization_name=organization_name,
+            retention_policy_name=retention_policy_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             database_name: str,
+             influx_version: str,
+             organization_name: str,
+             retention_policy_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("database_name", database_name)
+        _setter("influx_version", influx_version)
+        _setter("organization_name", organization_name)
+        _setter("retention_policy_name", retention_policy_name)
 
     @property
     @pulumi.getter
@@ -2202,7 +2710,16 @@ class GetDetectionDataAssetDataSourceDetailVersionSpecificDetailResult(dict):
 class GetDetectionDataAssetsDataAssetCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDetectionDataAssetsDataAssetCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetDetectionDataAssetsDataAssetCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDetectionDataAssetsDataAssetCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2241,19 +2758,52 @@ class GetDetectionDataAssetsDataAssetCollectionItemResult(dict):
         :param str time_created: The time the the DataAsset was created. An RFC3339 formatted datetime string
         :param str time_updated: The time the the DataAsset was updated. An RFC3339 formatted datetime string
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "data_source_details", data_source_details)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetDetectionDataAssetsDataAssetCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            data_source_details=data_source_details,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            private_endpoint_id=private_endpoint_id,
+            project_id=project_id,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             data_source_details: Sequence['outputs.GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailResult'],
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             private_endpoint_id: str,
+             project_id: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("data_source_details", data_source_details)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("private_endpoint_id", private_endpoint_id)
+        _setter("project_id", project_id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2405,26 +2955,73 @@ class GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailResult(dict):
         :param Sequence['GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailArgs'] version_specific_details: Possible data sources
         :param str wallet_password_secret_id: wallet password Secret ID in String format
         """
-        pulumi.set(__self__, "atp_password_secret_id", atp_password_secret_id)
-        pulumi.set(__self__, "atp_user_name", atp_user_name)
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "cwallet_file_secret_id", cwallet_file_secret_id)
-        pulumi.set(__self__, "data_source_type", data_source_type)
-        pulumi.set(__self__, "database_name", database_name)
-        pulumi.set(__self__, "ewallet_file_secret_id", ewallet_file_secret_id)
-        pulumi.set(__self__, "key_store_file_secret_id", key_store_file_secret_id)
-        pulumi.set(__self__, "measurement_name", measurement_name)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "ojdbc_file_secret_id", ojdbc_file_secret_id)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
-        pulumi.set(__self__, "table_name", table_name)
-        pulumi.set(__self__, "tnsnames_file_secret_id", tnsnames_file_secret_id)
-        pulumi.set(__self__, "truststore_file_secret_id", truststore_file_secret_id)
-        pulumi.set(__self__, "url", url)
-        pulumi.set(__self__, "user_name", user_name)
-        pulumi.set(__self__, "version_specific_details", version_specific_details)
-        pulumi.set(__self__, "wallet_password_secret_id", wallet_password_secret_id)
+        GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            atp_password_secret_id=atp_password_secret_id,
+            atp_user_name=atp_user_name,
+            bucket=bucket,
+            cwallet_file_secret_id=cwallet_file_secret_id,
+            data_source_type=data_source_type,
+            database_name=database_name,
+            ewallet_file_secret_id=ewallet_file_secret_id,
+            key_store_file_secret_id=key_store_file_secret_id,
+            measurement_name=measurement_name,
+            namespace=namespace,
+            object=object,
+            ojdbc_file_secret_id=ojdbc_file_secret_id,
+            password_secret_id=password_secret_id,
+            table_name=table_name,
+            tnsnames_file_secret_id=tnsnames_file_secret_id,
+            truststore_file_secret_id=truststore_file_secret_id,
+            url=url,
+            user_name=user_name,
+            version_specific_details=version_specific_details,
+            wallet_password_secret_id=wallet_password_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             atp_password_secret_id: str,
+             atp_user_name: str,
+             bucket: str,
+             cwallet_file_secret_id: str,
+             data_source_type: str,
+             database_name: str,
+             ewallet_file_secret_id: str,
+             key_store_file_secret_id: str,
+             measurement_name: str,
+             namespace: str,
+             object: str,
+             ojdbc_file_secret_id: str,
+             password_secret_id: str,
+             table_name: str,
+             tnsnames_file_secret_id: str,
+             truststore_file_secret_id: str,
+             url: str,
+             user_name: str,
+             version_specific_details: Sequence['outputs.GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailResult'],
+             wallet_password_secret_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("atp_password_secret_id", atp_password_secret_id)
+        _setter("atp_user_name", atp_user_name)
+        _setter("bucket", bucket)
+        _setter("cwallet_file_secret_id", cwallet_file_secret_id)
+        _setter("data_source_type", data_source_type)
+        _setter("database_name", database_name)
+        _setter("ewallet_file_secret_id", ewallet_file_secret_id)
+        _setter("key_store_file_secret_id", key_store_file_secret_id)
+        _setter("measurement_name", measurement_name)
+        _setter("namespace", namespace)
+        _setter("object", object)
+        _setter("ojdbc_file_secret_id", ojdbc_file_secret_id)
+        _setter("password_secret_id", password_secret_id)
+        _setter("table_name", table_name)
+        _setter("tnsnames_file_secret_id", tnsnames_file_secret_id)
+        _setter("truststore_file_secret_id", truststore_file_secret_id)
+        _setter("url", url)
+        _setter("user_name", user_name)
+        _setter("version_specific_details", version_specific_details)
+        _setter("wallet_password_secret_id", wallet_password_secret_id)
 
     @property
     @pulumi.getter(name="atpPasswordSecretId")
@@ -2602,11 +3199,28 @@ class GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecif
         :param str organization_name: Org name for the influx db
         :param str retention_policy_name: retention policy is how long the bucket would last
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "database_name", database_name)
-        pulumi.set(__self__, "influx_version", influx_version)
-        pulumi.set(__self__, "organization_name", organization_name)
-        pulumi.set(__self__, "retention_policy_name", retention_policy_name)
+        GetDetectionDataAssetsDataAssetCollectionItemDataSourceDetailVersionSpecificDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            database_name=database_name,
+            influx_version=influx_version,
+            organization_name=organization_name,
+            retention_policy_name=retention_policy_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             database_name: str,
+             influx_version: str,
+             organization_name: str,
+             retention_policy_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("database_name", database_name)
+        _setter("influx_version", influx_version)
+        _setter("organization_name", organization_name)
+        _setter("retention_policy_name", retention_policy_name)
 
     @property
     @pulumi.getter
@@ -2655,10 +3269,23 @@ class GetDetectionDataAssetsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDetectionDataAssetsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2691,11 +3318,28 @@ class GetDetectionModelModelTrainingDetailResult(dict):
         :param float training_fraction: Fraction of total data that is used for training the model. The remaining is used for validation of the model.
         :param int window_size: Window size defined during training or deduced by the algorithm.
         """
-        pulumi.set(__self__, "algorithm_hint", algorithm_hint)
-        pulumi.set(__self__, "data_asset_ids", data_asset_ids)
-        pulumi.set(__self__, "target_fap", target_fap)
-        pulumi.set(__self__, "training_fraction", training_fraction)
-        pulumi.set(__self__, "window_size", window_size)
+        GetDetectionModelModelTrainingDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            algorithm_hint=algorithm_hint,
+            data_asset_ids=data_asset_ids,
+            target_fap=target_fap,
+            training_fraction=training_fraction,
+            window_size=window_size,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             algorithm_hint: str,
+             data_asset_ids: Sequence[str],
+             target_fap: float,
+             training_fraction: float,
+             window_size: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("algorithm_hint", algorithm_hint)
+        _setter("data_asset_ids", data_asset_ids)
+        _setter("target_fap", target_fap)
+        _setter("training_fraction", training_fraction)
+        _setter("window_size", window_size)
 
     @property
     @pulumi.getter(name="algorithmHint")
@@ -2760,16 +3404,43 @@ class GetDetectionModelModelTrainingResultResult(dict):
         :param str warning: A warning message to explain the reason when targetFap cannot be achieved for trained model
         :param int window_size: Window size defined during training or deduced by the algorithm.
         """
-        pulumi.set(__self__, "fap", fap)
-        pulumi.set(__self__, "is_training_goal_achieved", is_training_goal_achieved)
-        pulumi.set(__self__, "mae", mae)
-        pulumi.set(__self__, "max_inference_sync_rows", max_inference_sync_rows)
-        pulumi.set(__self__, "multivariate_fap", multivariate_fap)
-        pulumi.set(__self__, "rmse", rmse)
-        pulumi.set(__self__, "row_reduction_details", row_reduction_details)
-        pulumi.set(__self__, "signal_details", signal_details)
-        pulumi.set(__self__, "warning", warning)
-        pulumi.set(__self__, "window_size", window_size)
+        GetDetectionModelModelTrainingResultResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            fap=fap,
+            is_training_goal_achieved=is_training_goal_achieved,
+            mae=mae,
+            max_inference_sync_rows=max_inference_sync_rows,
+            multivariate_fap=multivariate_fap,
+            rmse=rmse,
+            row_reduction_details=row_reduction_details,
+            signal_details=signal_details,
+            warning=warning,
+            window_size=window_size,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             fap: float,
+             is_training_goal_achieved: bool,
+             mae: float,
+             max_inference_sync_rows: int,
+             multivariate_fap: float,
+             rmse: float,
+             row_reduction_details: Sequence['outputs.GetDetectionModelModelTrainingResultRowReductionDetailResult'],
+             signal_details: Sequence['outputs.GetDetectionModelModelTrainingResultSignalDetailResult'],
+             warning: str,
+             window_size: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("fap", fap)
+        _setter("is_training_goal_achieved", is_training_goal_achieved)
+        _setter("mae", mae)
+        _setter("max_inference_sync_rows", max_inference_sync_rows)
+        _setter("multivariate_fap", multivariate_fap)
+        _setter("rmse", rmse)
+        _setter("row_reduction_details", row_reduction_details)
+        _setter("signal_details", signal_details)
+        _setter("warning", warning)
+        _setter("window_size", window_size)
 
     @property
     @pulumi.getter
@@ -2856,9 +3527,22 @@ class GetDetectionModelModelTrainingResultRowReductionDetailResult(dict):
                * AVERAGE_ROW - average multiple rows to one row
         :param float reduction_percentage: A percentage to reduce data size down to on top of original data
         """
-        pulumi.set(__self__, "is_reduction_enabled", is_reduction_enabled)
-        pulumi.set(__self__, "reduction_method", reduction_method)
-        pulumi.set(__self__, "reduction_percentage", reduction_percentage)
+        GetDetectionModelModelTrainingResultRowReductionDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_reduction_enabled=is_reduction_enabled,
+            reduction_method=reduction_method,
+            reduction_percentage=reduction_percentage,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_reduction_enabled: bool,
+             reduction_method: str,
+             reduction_percentage: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_reduction_enabled", is_reduction_enabled)
+        _setter("reduction_method", reduction_method)
+        _setter("reduction_percentage", reduction_percentage)
 
     @property
     @pulumi.getter(name="isReductionEnabled")
@@ -2913,15 +3597,40 @@ class GetDetectionModelModelTrainingResultSignalDetailResult(dict):
                * OTHER - placeholder for other status
         :param float std: Standard deviation of values within a signal.
         """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "fap", fap)
-        pulumi.set(__self__, "is_quantized", is_quantized)
-        pulumi.set(__self__, "max", max)
-        pulumi.set(__self__, "min", min)
-        pulumi.set(__self__, "mvi_ratio", mvi_ratio)
-        pulumi.set(__self__, "signal_name", signal_name)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "std", std)
+        GetDetectionModelModelTrainingResultSignalDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            fap=fap,
+            is_quantized=is_quantized,
+            max=max,
+            min=min,
+            mvi_ratio=mvi_ratio,
+            signal_name=signal_name,
+            status=status,
+            std=std,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: str,
+             fap: float,
+             is_quantized: bool,
+             max: float,
+             min: float,
+             mvi_ratio: float,
+             signal_name: str,
+             status: str,
+             std: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("details", details)
+        _setter("fap", fap)
+        _setter("is_quantized", is_quantized)
+        _setter("max", max)
+        _setter("min", min)
+        _setter("mvi_ratio", mvi_ratio)
+        _setter("signal_name", signal_name)
+        _setter("status", status)
+        _setter("std", std)
 
     @property
     @pulumi.getter
@@ -3005,10 +3714,23 @@ class GetDetectionModelsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDetectionModelsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3030,7 +3752,16 @@ class GetDetectionModelsFilterResult(dict):
 class GetDetectionModelsModelCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDetectionModelsModelCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetDetectionModelsModelCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDetectionModelsModelCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3071,20 +3802,55 @@ class GetDetectionModelsModelCollectionItemResult(dict):
         :param str time_created: The time the the Model was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the Model was updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "model_training_details", model_training_details)
-        pulumi.set(__self__, "model_training_results", model_training_results)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetDetectionModelsModelCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            model_training_details=model_training_details,
+            model_training_results=model_training_results,
+            project_id=project_id,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             model_training_details: Sequence['outputs.GetDetectionModelsModelCollectionItemModelTrainingDetailResult'],
+             model_training_results: Sequence['outputs.GetDetectionModelsModelCollectionItemModelTrainingResultResult'],
+             project_id: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("model_training_details", model_training_details)
+        _setter("model_training_results", model_training_results)
+        _setter("project_id", project_id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3214,11 +3980,28 @@ class GetDetectionModelsModelCollectionItemModelTrainingDetailResult(dict):
         :param float training_fraction: Fraction of total data that is used for training the model. The remaining is used for validation of the model.
         :param int window_size: Window size defined during training or deduced by the algorithm.
         """
-        pulumi.set(__self__, "algorithm_hint", algorithm_hint)
-        pulumi.set(__self__, "data_asset_ids", data_asset_ids)
-        pulumi.set(__self__, "target_fap", target_fap)
-        pulumi.set(__self__, "training_fraction", training_fraction)
-        pulumi.set(__self__, "window_size", window_size)
+        GetDetectionModelsModelCollectionItemModelTrainingDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            algorithm_hint=algorithm_hint,
+            data_asset_ids=data_asset_ids,
+            target_fap=target_fap,
+            training_fraction=training_fraction,
+            window_size=window_size,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             algorithm_hint: str,
+             data_asset_ids: Sequence[str],
+             target_fap: float,
+             training_fraction: float,
+             window_size: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("algorithm_hint", algorithm_hint)
+        _setter("data_asset_ids", data_asset_ids)
+        _setter("target_fap", target_fap)
+        _setter("training_fraction", training_fraction)
+        _setter("window_size", window_size)
 
     @property
     @pulumi.getter(name="algorithmHint")
@@ -3283,16 +4066,43 @@ class GetDetectionModelsModelCollectionItemModelTrainingResultResult(dict):
         :param str warning: A warning message to explain the reason when targetFap cannot be achieved for trained model
         :param int window_size: Window size defined during training or deduced by the algorithm.
         """
-        pulumi.set(__self__, "fap", fap)
-        pulumi.set(__self__, "is_training_goal_achieved", is_training_goal_achieved)
-        pulumi.set(__self__, "mae", mae)
-        pulumi.set(__self__, "max_inference_sync_rows", max_inference_sync_rows)
-        pulumi.set(__self__, "multivariate_fap", multivariate_fap)
-        pulumi.set(__self__, "rmse", rmse)
-        pulumi.set(__self__, "row_reduction_details", row_reduction_details)
-        pulumi.set(__self__, "signal_details", signal_details)
-        pulumi.set(__self__, "warning", warning)
-        pulumi.set(__self__, "window_size", window_size)
+        GetDetectionModelsModelCollectionItemModelTrainingResultResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            fap=fap,
+            is_training_goal_achieved=is_training_goal_achieved,
+            mae=mae,
+            max_inference_sync_rows=max_inference_sync_rows,
+            multivariate_fap=multivariate_fap,
+            rmse=rmse,
+            row_reduction_details=row_reduction_details,
+            signal_details=signal_details,
+            warning=warning,
+            window_size=window_size,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             fap: float,
+             is_training_goal_achieved: bool,
+             mae: float,
+             max_inference_sync_rows: int,
+             multivariate_fap: float,
+             rmse: float,
+             row_reduction_details: Sequence['outputs.GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailResult'],
+             signal_details: Sequence['outputs.GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailResult'],
+             warning: str,
+             window_size: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("fap", fap)
+        _setter("is_training_goal_achieved", is_training_goal_achieved)
+        _setter("mae", mae)
+        _setter("max_inference_sync_rows", max_inference_sync_rows)
+        _setter("multivariate_fap", multivariate_fap)
+        _setter("rmse", rmse)
+        _setter("row_reduction_details", row_reduction_details)
+        _setter("signal_details", signal_details)
+        _setter("warning", warning)
+        _setter("window_size", window_size)
 
     @property
     @pulumi.getter
@@ -3379,9 +4189,22 @@ class GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetail
                * AVERAGE_ROW - average multiple rows to one row
         :param float reduction_percentage: A percentage to reduce data size down to on top of original data
         """
-        pulumi.set(__self__, "is_reduction_enabled", is_reduction_enabled)
-        pulumi.set(__self__, "reduction_method", reduction_method)
-        pulumi.set(__self__, "reduction_percentage", reduction_percentage)
+        GetDetectionModelsModelCollectionItemModelTrainingResultRowReductionDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_reduction_enabled=is_reduction_enabled,
+            reduction_method=reduction_method,
+            reduction_percentage=reduction_percentage,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_reduction_enabled: bool,
+             reduction_method: str,
+             reduction_percentage: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_reduction_enabled", is_reduction_enabled)
+        _setter("reduction_method", reduction_method)
+        _setter("reduction_percentage", reduction_percentage)
 
     @property
     @pulumi.getter(name="isReductionEnabled")
@@ -3436,15 +4259,40 @@ class GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailResult
                * OTHER - placeholder for other status
         :param float std: Standard deviation of values within a signal.
         """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "fap", fap)
-        pulumi.set(__self__, "is_quantized", is_quantized)
-        pulumi.set(__self__, "max", max)
-        pulumi.set(__self__, "min", min)
-        pulumi.set(__self__, "mvi_ratio", mvi_ratio)
-        pulumi.set(__self__, "signal_name", signal_name)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "std", std)
+        GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            fap=fap,
+            is_quantized=is_quantized,
+            max=max,
+            min=min,
+            mvi_ratio=mvi_ratio,
+            signal_name=signal_name,
+            status=status,
+            std=std,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: str,
+             fap: float,
+             is_quantized: bool,
+             max: float,
+             min: float,
+             mvi_ratio: float,
+             signal_name: str,
+             status: str,
+             std: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("details", details)
+        _setter("fap", fap)
+        _setter("is_quantized", is_quantized)
+        _setter("max", max)
+        _setter("min", min)
+        _setter("mvi_ratio", mvi_ratio)
+        _setter("signal_name", signal_name)
+        _setter("status", status)
+        _setter("std", std)
 
     @property
     @pulumi.getter
@@ -3528,10 +4376,23 @@ class GetDetectionProjectsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDetectionProjectsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3553,7 +4414,16 @@ class GetDetectionProjectsFilterResult(dict):
 class GetDetectionProjectsProjectCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDetectionProjectsProjectCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetDetectionProjectsProjectCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDetectionProjectsProjectCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3586,16 +4456,43 @@ class GetDetectionProjectsProjectCollectionItemResult(dict):
         :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetDetectionProjectsProjectCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")

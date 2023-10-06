@@ -223,6 +223,10 @@ type LookupAutonomousDatabaseResult struct {
 	// Configurations of a Disaster Recovery.
 	RemoteDisasterRecoveryConfigurations []GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration `pulumi:"remoteDisasterRecoveryConfigurations"`
 	RemoteDisasterRecoveryType           string                                                     `pulumi:"remoteDisasterRecoveryType"`
+	// The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	ResourcePoolLeaderId string `pulumi:"resourcePoolLeaderId"`
+	// The configuration details for resource pool
+	ResourcePoolSummaries []GetAutonomousDatabaseResourcePoolSummary `pulumi:"resourcePoolSummaries"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	Role             string `pulumi:"role"`
 	RotateKeyTrigger bool   `pulumi:"rotateKeyTrigger"`
@@ -263,6 +267,8 @@ type LookupAutonomousDatabaseResult struct {
 	TimeMaintenanceBegin string `pulumi:"timeMaintenanceBegin"`
 	// The date and time when maintenance will end.
 	TimeMaintenanceEnd string `pulumi:"timeMaintenanceEnd"`
+	// The time the member joined the resource pool.
+	TimeOfJoiningResourcePool string `pulumi:"timeOfJoiningResourcePool"`
 	// The timestamp of the last failover operation.
 	TimeOfLastFailover string `pulumi:"timeOfLastFailover"`
 	// The date and time when last refresh happened.
@@ -758,6 +764,18 @@ func (o LookupAutonomousDatabaseResultOutput) RemoteDisasterRecoveryType() pulum
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.RemoteDisasterRecoveryType }).(pulumi.StringOutput)
 }
 
+// The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o LookupAutonomousDatabaseResultOutput) ResourcePoolLeaderId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.ResourcePoolLeaderId }).(pulumi.StringOutput)
+}
+
+// The configuration details for resource pool
+func (o LookupAutonomousDatabaseResultOutput) ResourcePoolSummaries() GetAutonomousDatabaseResourcePoolSummaryArrayOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseResourcePoolSummary {
+		return v.ResourcePoolSummaries
+	}).(GetAutonomousDatabaseResourcePoolSummaryArrayOutput)
+}
+
 // The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 func (o LookupAutonomousDatabaseResultOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.Role }).(pulumi.StringOutput)
@@ -867,6 +885,11 @@ func (o LookupAutonomousDatabaseResultOutput) TimeMaintenanceBegin() pulumi.Stri
 // The date and time when maintenance will end.
 func (o LookupAutonomousDatabaseResultOutput) TimeMaintenanceEnd() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeMaintenanceEnd }).(pulumi.StringOutput)
+}
+
+// The time the member joined the resource pool.
+func (o LookupAutonomousDatabaseResultOutput) TimeOfJoiningResourcePool() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeOfJoiningResourcePool }).(pulumi.StringOutput)
 }
 
 // The timestamp of the last failover operation.

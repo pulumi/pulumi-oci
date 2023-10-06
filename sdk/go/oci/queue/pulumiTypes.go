@@ -263,9 +263,11 @@ func (o GetQueuesQueueCollectionArrayOutput) Index(i pulumi.IntInput) GetQueuesQ
 }
 
 type GetQueuesQueueCollectionItem struct {
-	// The ID of the compartment in which to list resources.
+	// The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+	ChannelConsumptionLimit int `pulumi:"channelConsumptionLimit"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Id of the custom master encryption key which will be used to encrypt messages content
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
 	CustomEncryptionKeyId string `pulumi:"customEncryptionKeyId"`
 	// The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
 	DeadLetterQueueDeliveryCount int `pulumi:"deadLetterQueueDeliveryCount"`
@@ -275,9 +277,9 @@ type GetQueuesQueueCollectionItem struct {
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// unique Queue identifier
+	// The unique queue identifier.
 	Id string `pulumi:"id"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// Any additional details about the current state of the queue.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The endpoint to use to consume or publish messages in the queue.
 	MessagesEndpoint string `pulumi:"messagesEndpoint"`
@@ -289,13 +291,13 @@ type GetQueuesQueueCollectionItem struct {
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the the Queue was created. An RFC3339 formatted datetime string
+	// The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the Queue was updated. An RFC3339 formatted datetime string
+	// The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The default polling timeout of the messages in the queue, in seconds.
 	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
-	// The default visibility of the messages consumed from the queue.
+	// The default visibility timeout of the messages consumed from the queue, in seconds.
 	VisibilityInSeconds int `pulumi:"visibilityInSeconds"`
 }
 
@@ -311,9 +313,11 @@ type GetQueuesQueueCollectionItemInput interface {
 }
 
 type GetQueuesQueueCollectionItemArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+	ChannelConsumptionLimit pulumi.IntInput `pulumi:"channelConsumptionLimit"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Id of the custom master encryption key which will be used to encrypt messages content
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
 	CustomEncryptionKeyId pulumi.StringInput `pulumi:"customEncryptionKeyId"`
 	// The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
 	DeadLetterQueueDeliveryCount pulumi.IntInput `pulumi:"deadLetterQueueDeliveryCount"`
@@ -323,9 +327,9 @@ type GetQueuesQueueCollectionItemArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// unique Queue identifier
+	// The unique queue identifier.
 	Id pulumi.StringInput `pulumi:"id"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// Any additional details about the current state of the queue.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The endpoint to use to consume or publish messages in the queue.
 	MessagesEndpoint pulumi.StringInput `pulumi:"messagesEndpoint"`
@@ -337,13 +341,13 @@ type GetQueuesQueueCollectionItemArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// The time the the Queue was created. An RFC3339 formatted datetime string
+	// The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time the Queue was updated. An RFC3339 formatted datetime string
+	// The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// The default polling timeout of the messages in the queue, in seconds.
 	TimeoutInSeconds pulumi.IntInput `pulumi:"timeoutInSeconds"`
-	// The default visibility of the messages consumed from the queue.
+	// The default visibility timeout of the messages consumed from the queue, in seconds.
 	VisibilityInSeconds pulumi.IntInput `pulumi:"visibilityInSeconds"`
 }
 
@@ -416,12 +420,17 @@ func (o GetQueuesQueueCollectionItemOutput) ToOutput(ctx context.Context) pulumi
 	}
 }
 
-// The ID of the compartment in which to list resources.
+// The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+func (o GetQueuesQueueCollectionItemOutput) ChannelConsumptionLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v GetQueuesQueueCollectionItem) int { return v.ChannelConsumptionLimit }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 func (o GetQueuesQueueCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetQueuesQueueCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Id of the custom master encryption key which will be used to encrypt messages content
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
 func (o GetQueuesQueueCollectionItemOutput) CustomEncryptionKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetQueuesQueueCollectionItem) string { return v.CustomEncryptionKeyId }).(pulumi.StringOutput)
 }
@@ -446,12 +455,12 @@ func (o GetQueuesQueueCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetQueuesQueueCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// unique Queue identifier
+// The unique queue identifier.
 func (o GetQueuesQueueCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetQueuesQueueCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+// Any additional details about the current state of the queue.
 func (o GetQueuesQueueCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetQueuesQueueCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
@@ -484,12 +493,12 @@ func (o GetQueuesQueueCollectionItemOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetQueuesQueueCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time the the Queue was created. An RFC3339 formatted datetime string
+// The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
 func (o GetQueuesQueueCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetQueuesQueueCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the Queue was updated. An RFC3339 formatted datetime string
+// The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
 func (o GetQueuesQueueCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetQueuesQueueCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -499,7 +508,7 @@ func (o GetQueuesQueueCollectionItemOutput) TimeoutInSeconds() pulumi.IntOutput 
 	return o.ApplyT(func(v GetQueuesQueueCollectionItem) int { return v.TimeoutInSeconds }).(pulumi.IntOutput)
 }
 
-// The default visibility of the messages consumed from the queue.
+// The default visibility timeout of the messages consumed from the queue, in seconds.
 func (o GetQueuesQueueCollectionItemOutput) VisibilityInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v GetQueuesQueueCollectionItem) int { return v.VisibilityInSeconds }).(pulumi.IntOutput)
 }

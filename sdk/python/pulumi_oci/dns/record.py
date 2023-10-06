@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['RecordArgs', 'Record']
@@ -33,24 +33,43 @@ class RecordArgs:
         :param pulumi.Input[str] rdata: (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
         :param pulumi.Input[int] ttl: (Updatable) The Time To Live for the record, in seconds.
         """
+        RecordArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            domain=domain,
+            rtype=rtype,
+            zone_name_or_id=zone_name_or_id,
+            compartment_id=compartment_id,
+            rdata=rdata,
+            ttl=ttl,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             domain: pulumi.Input[str],
+             rtype: pulumi.Input[str],
+             zone_name_or_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             rdata: Optional[pulumi.Input[str]] = None,
+             ttl: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if domain is not None:
             warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
             pulumi.log.warn("""domain is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
-        pulumi.set(__self__, "domain", domain)
+        _setter("domain", domain)
         if rtype is not None:
             warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
             pulumi.log.warn("""rtype is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
-        pulumi.set(__self__, "rtype", rtype)
+        _setter("rtype", rtype)
         if zone_name_or_id is not None:
             warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
             pulumi.log.warn("""zone_name_or_id is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
-        pulumi.set(__self__, "zone_name_or_id", zone_name_or_id)
+        _setter("zone_name_or_id", zone_name_or_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if rdata is not None:
-            pulumi.set(__self__, "rdata", rdata)
+            _setter("rdata", rdata)
         if ttl is not None:
-            pulumi.set(__self__, "ttl", ttl)
+            _setter("ttl", ttl)
 
     @property
     @pulumi.getter
@@ -166,33 +185,58 @@ class _RecordState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _RecordState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            domain=domain,
+            is_protected=is_protected,
+            rdata=rdata,
+            record_hash=record_hash,
+            rrset_version=rrset_version,
+            rtype=rtype,
+            ttl=ttl,
+            zone_name_or_id=zone_name_or_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             domain: Optional[pulumi.Input[str]] = None,
+             is_protected: Optional[pulumi.Input[bool]] = None,
+             rdata: Optional[pulumi.Input[str]] = None,
+             record_hash: Optional[pulumi.Input[str]] = None,
+             rrset_version: Optional[pulumi.Input[str]] = None,
+             rtype: Optional[pulumi.Input[str]] = None,
+             ttl: Optional[pulumi.Input[int]] = None,
+             zone_name_or_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if domain is not None:
             warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
             pulumi.log.warn("""domain is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
         if domain is not None:
-            pulumi.set(__self__, "domain", domain)
+            _setter("domain", domain)
         if is_protected is not None:
-            pulumi.set(__self__, "is_protected", is_protected)
+            _setter("is_protected", is_protected)
         if rdata is not None:
-            pulumi.set(__self__, "rdata", rdata)
+            _setter("rdata", rdata)
         if record_hash is not None:
-            pulumi.set(__self__, "record_hash", record_hash)
+            _setter("record_hash", record_hash)
         if rrset_version is not None:
-            pulumi.set(__self__, "rrset_version", rrset_version)
+            _setter("rrset_version", rrset_version)
         if rtype is not None:
             warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
             pulumi.log.warn("""rtype is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
         if rtype is not None:
-            pulumi.set(__self__, "rtype", rtype)
+            _setter("rtype", rtype)
         if ttl is not None:
-            pulumi.set(__self__, "ttl", ttl)
+            _setter("ttl", ttl)
         if zone_name_or_id is not None:
             warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
             pulumi.log.warn("""zone_name_or_id is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
         if zone_name_or_id is not None:
-            pulumi.set(__self__, "zone_name_or_id", zone_name_or_id)
+            _setter("zone_name_or_id", zone_name_or_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -417,6 +461,10 @@ class Record(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            RecordArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -438,23 +486,14 @@ class Record(pulumi.CustomResource):
             __props__ = RecordArgs.__new__(RecordArgs)
 
             __props__.__dict__["compartment_id"] = compartment_id
-            if domain is not None and not opts.urn:
-                warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
-                pulumi.log.warn("""domain is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
             if domain is None and not opts.urn:
                 raise TypeError("Missing required property 'domain'")
             __props__.__dict__["domain"] = domain
             __props__.__dict__["rdata"] = rdata
-            if rtype is not None and not opts.urn:
-                warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
-                pulumi.log.warn("""rtype is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
             if rtype is None and not opts.urn:
                 raise TypeError("Missing required property 'rtype'")
             __props__.__dict__["rtype"] = rtype
             __props__.__dict__["ttl"] = ttl
-            if zone_name_or_id is not None and not opts.urn:
-                warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
-                pulumi.log.warn("""zone_name_or_id is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
             if zone_name_or_id is None and not opts.urn:
                 raise TypeError("Missing required property 'zone_name_or_id'")
             __props__.__dict__["zone_name_or_id"] = zone_name_or_id

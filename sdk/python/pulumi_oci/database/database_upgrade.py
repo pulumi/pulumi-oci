@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -25,10 +25,23 @@ class DatabaseUpgradeArgs:
         :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs'] database_upgrade_source_details: Details for the database upgrade source.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "database_id", database_id)
+        DatabaseUpgradeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            database_id=database_id,
+            database_upgrade_source_details=database_upgrade_source_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: pulumi.Input[str],
+             database_id: pulumi.Input[str],
+             database_upgrade_source_details: Optional[pulumi.Input['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("database_id", database_id)
         if database_upgrade_source_details is not None:
-            pulumi.set(__self__, "database_upgrade_source_details", database_upgrade_source_details)
+            _setter("database_upgrade_source_details", database_upgrade_source_details)
 
     @property
     @pulumi.getter
@@ -137,70 +150,141 @@ class _DatabaseUpgradeState:
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         """
+        _DatabaseUpgradeState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            character_set=character_set,
+            compartment_id=compartment_id,
+            connection_strings=connection_strings,
+            database_id=database_id,
+            database_software_image_id=database_software_image_id,
+            database_upgrade_source_details=database_upgrade_source_details,
+            db_backup_configs=db_backup_configs,
+            db_home_id=db_home_id,
+            db_name=db_name,
+            db_system_id=db_system_id,
+            db_unique_name=db_unique_name,
+            db_workload=db_workload,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_cdb=is_cdb,
+            key_store_id=key_store_id,
+            key_store_wallet_name=key_store_wallet_name,
+            kms_key_id=kms_key_id,
+            kms_key_version_id=kms_key_version_id,
+            last_backup_duration_in_seconds=last_backup_duration_in_seconds,
+            last_backup_timestamp=last_backup_timestamp,
+            last_failed_backup_timestamp=last_failed_backup_timestamp,
+            lifecycle_details=lifecycle_details,
+            ncharacter_set=ncharacter_set,
+            pdb_name=pdb_name,
+            sid_prefix=sid_prefix,
+            source_database_point_in_time_recovery_timestamp=source_database_point_in_time_recovery_timestamp,
+            state=state,
+            time_created=time_created,
+            vault_id=vault_id,
+            vm_cluster_id=vm_cluster_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: Optional[pulumi.Input[str]] = None,
+             character_set: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeConnectionStringArgs']]]] = None,
+             database_id: Optional[pulumi.Input[str]] = None,
+             database_software_image_id: Optional[pulumi.Input[str]] = None,
+             database_upgrade_source_details: Optional[pulumi.Input['DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs']] = None,
+             db_backup_configs: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeDbBackupConfigArgs']]]] = None,
+             db_home_id: Optional[pulumi.Input[str]] = None,
+             db_name: Optional[pulumi.Input[str]] = None,
+             db_system_id: Optional[pulumi.Input[str]] = None,
+             db_unique_name: Optional[pulumi.Input[str]] = None,
+             db_workload: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_cdb: Optional[pulumi.Input[bool]] = None,
+             key_store_id: Optional[pulumi.Input[str]] = None,
+             key_store_wallet_name: Optional[pulumi.Input[str]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             kms_key_version_id: Optional[pulumi.Input[str]] = None,
+             last_backup_duration_in_seconds: Optional[pulumi.Input[int]] = None,
+             last_backup_timestamp: Optional[pulumi.Input[str]] = None,
+             last_failed_backup_timestamp: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             ncharacter_set: Optional[pulumi.Input[str]] = None,
+             pdb_name: Optional[pulumi.Input[str]] = None,
+             sid_prefix: Optional[pulumi.Input[str]] = None,
+             source_database_point_in_time_recovery_timestamp: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             vm_cluster_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if action is not None:
-            pulumi.set(__self__, "action", action)
+            _setter("action", action)
         if character_set is not None:
-            pulumi.set(__self__, "character_set", character_set)
+            _setter("character_set", character_set)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if connection_strings is not None:
-            pulumi.set(__self__, "connection_strings", connection_strings)
+            _setter("connection_strings", connection_strings)
         if database_id is not None:
-            pulumi.set(__self__, "database_id", database_id)
+            _setter("database_id", database_id)
         if database_software_image_id is not None:
-            pulumi.set(__self__, "database_software_image_id", database_software_image_id)
+            _setter("database_software_image_id", database_software_image_id)
         if database_upgrade_source_details is not None:
-            pulumi.set(__self__, "database_upgrade_source_details", database_upgrade_source_details)
+            _setter("database_upgrade_source_details", database_upgrade_source_details)
         if db_backup_configs is not None:
-            pulumi.set(__self__, "db_backup_configs", db_backup_configs)
+            _setter("db_backup_configs", db_backup_configs)
         if db_home_id is not None:
-            pulumi.set(__self__, "db_home_id", db_home_id)
+            _setter("db_home_id", db_home_id)
         if db_name is not None:
-            pulumi.set(__self__, "db_name", db_name)
+            _setter("db_name", db_name)
         if db_system_id is not None:
-            pulumi.set(__self__, "db_system_id", db_system_id)
+            _setter("db_system_id", db_system_id)
         if db_unique_name is not None:
-            pulumi.set(__self__, "db_unique_name", db_unique_name)
+            _setter("db_unique_name", db_unique_name)
         if db_workload is not None:
-            pulumi.set(__self__, "db_workload", db_workload)
+            _setter("db_workload", db_workload)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_cdb is not None:
-            pulumi.set(__self__, "is_cdb", is_cdb)
+            _setter("is_cdb", is_cdb)
         if key_store_id is not None:
-            pulumi.set(__self__, "key_store_id", key_store_id)
+            _setter("key_store_id", key_store_id)
         if key_store_wallet_name is not None:
-            pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
+            _setter("key_store_wallet_name", key_store_wallet_name)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
-            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+            _setter("kms_key_version_id", kms_key_version_id)
         if last_backup_duration_in_seconds is not None:
-            pulumi.set(__self__, "last_backup_duration_in_seconds", last_backup_duration_in_seconds)
+            _setter("last_backup_duration_in_seconds", last_backup_duration_in_seconds)
         if last_backup_timestamp is not None:
-            pulumi.set(__self__, "last_backup_timestamp", last_backup_timestamp)
+            _setter("last_backup_timestamp", last_backup_timestamp)
         if last_failed_backup_timestamp is not None:
-            pulumi.set(__self__, "last_failed_backup_timestamp", last_failed_backup_timestamp)
+            _setter("last_failed_backup_timestamp", last_failed_backup_timestamp)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if ncharacter_set is not None:
-            pulumi.set(__self__, "ncharacter_set", ncharacter_set)
+            _setter("ncharacter_set", ncharacter_set)
         if pdb_name is not None:
-            pulumi.set(__self__, "pdb_name", pdb_name)
+            _setter("pdb_name", pdb_name)
         if sid_prefix is not None:
-            pulumi.set(__self__, "sid_prefix", sid_prefix)
+            _setter("sid_prefix", sid_prefix)
         if source_database_point_in_time_recovery_timestamp is not None:
-            pulumi.set(__self__, "source_database_point_in_time_recovery_timestamp", source_database_point_in_time_recovery_timestamp)
+            _setter("source_database_point_in_time_recovery_timestamp", source_database_point_in_time_recovery_timestamp)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
+            _setter("vault_id", vault_id)
         if vm_cluster_id is not None:
-            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+            _setter("vm_cluster_id", vm_cluster_id)
 
     @property
     @pulumi.getter
@@ -656,6 +740,10 @@ class DatabaseUpgrade(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DatabaseUpgradeArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -679,6 +767,11 @@ class DatabaseUpgrade(pulumi.CustomResource):
             if database_id is None and not opts.urn:
                 raise TypeError("Missing required property 'database_id'")
             __props__.__dict__["database_id"] = database_id
+            if database_upgrade_source_details is not None and not isinstance(database_upgrade_source_details, DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs):
+                database_upgrade_source_details = database_upgrade_source_details or {}
+                def _setter(key, value):
+                    database_upgrade_source_details[key] = value
+                DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs._configure(_setter, **database_upgrade_source_details)
             __props__.__dict__["database_upgrade_source_details"] = database_upgrade_source_details
             __props__.__dict__["character_set"] = None
             __props__.__dict__["compartment_id"] = None

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -62,14 +62,31 @@ class ProductLicenseImage(dict):
         :param str listing_name: The listing name associated with the product license.
         :param str publisher: The image publisher.
         """
-        pulumi.set(__self__, "listing_id", listing_id)
-        pulumi.set(__self__, "package_version", package_version)
+        ProductLicenseImage._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            listing_id=listing_id,
+            package_version=package_version,
+            id=id,
+            listing_name=listing_name,
+            publisher=publisher,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             listing_id: str,
+             package_version: str,
+             id: Optional[str] = None,
+             listing_name: Optional[str] = None,
+             publisher: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("listing_id", listing_id)
+        _setter("package_version", package_version)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if listing_name is not None:
-            pulumi.set(__self__, "listing_name", listing_name)
+            _setter("listing_name", listing_name)
         if publisher is not None:
-            pulumi.set(__self__, "publisher", publisher)
+            _setter("publisher", publisher)
 
     @property
     @pulumi.getter(name="listingId")
@@ -118,10 +135,23 @@ class GetLicenseRecordsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetLicenseRecordsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -143,7 +173,16 @@ class GetLicenseRecordsFilterResult(dict):
 class GetLicenseRecordsLicenseRecordCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetLicenseRecordsLicenseRecordCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetLicenseRecordsLicenseRecordCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetLicenseRecordsLicenseRecordCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -192,24 +231,67 @@ class GetLicenseRecordsLicenseRecordCollectionItemResult(dict):
         :param str time_created: The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         :param str time_updated: The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "expiration_date", expiration_date)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_perpetual", is_perpetual)
-        pulumi.set(__self__, "is_unlimited", is_unlimited)
-        pulumi.set(__self__, "license_count", license_count)
-        pulumi.set(__self__, "license_unit", license_unit)
-        pulumi.set(__self__, "product_id", product_id)
-        pulumi.set(__self__, "product_license", product_license)
-        pulumi.set(__self__, "product_license_id", product_license_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "support_end_date", support_end_date)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetLicenseRecordsLicenseRecordCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            expiration_date=expiration_date,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_perpetual=is_perpetual,
+            is_unlimited=is_unlimited,
+            license_count=license_count,
+            license_unit=license_unit,
+            product_id=product_id,
+            product_license=product_license,
+            product_license_id=product_license_id,
+            state=state,
+            support_end_date=support_end_date,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             expiration_date: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_perpetual: bool,
+             is_unlimited: bool,
+             license_count: int,
+             license_unit: str,
+             product_id: str,
+             product_license: str,
+             product_license_id: str,
+             state: str,
+             support_end_date: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("expiration_date", expiration_date)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_perpetual", is_perpetual)
+        _setter("is_unlimited", is_unlimited)
+        _setter("license_count", license_count)
+        _setter("license_unit", license_unit)
+        _setter("product_id", product_id)
+        _setter("product_license", product_license)
+        _setter("product_license_id", product_license_id)
+        _setter("state", state)
+        _setter("support_end_date", support_end_date)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -385,18 +467,49 @@ class GetProductLicenseConsumersItemResult(dict):
         :param float resource_unit_count: Number of units of the resource
         :param str resource_unit_type: The unit type for the resource.
         """
-        pulumi.set(__self__, "are_all_options_available", are_all_options_available)
-        pulumi.set(__self__, "is_base_license_available", is_base_license_available)
-        pulumi.set(__self__, "license_unit_type", license_unit_type)
-        pulumi.set(__self__, "license_units_consumed", license_units_consumed)
-        pulumi.set(__self__, "missing_products", missing_products)
-        pulumi.set(__self__, "product_name", product_name)
-        pulumi.set(__self__, "resource_compartment_id", resource_compartment_id)
-        pulumi.set(__self__, "resource_compartment_name", resource_compartment_name)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_name", resource_name)
-        pulumi.set(__self__, "resource_unit_count", resource_unit_count)
-        pulumi.set(__self__, "resource_unit_type", resource_unit_type)
+        GetProductLicenseConsumersItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            are_all_options_available=are_all_options_available,
+            is_base_license_available=is_base_license_available,
+            license_unit_type=license_unit_type,
+            license_units_consumed=license_units_consumed,
+            missing_products=missing_products,
+            product_name=product_name,
+            resource_compartment_id=resource_compartment_id,
+            resource_compartment_name=resource_compartment_name,
+            resource_id=resource_id,
+            resource_name=resource_name,
+            resource_unit_count=resource_unit_count,
+            resource_unit_type=resource_unit_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             are_all_options_available: bool,
+             is_base_license_available: bool,
+             license_unit_type: str,
+             license_units_consumed: float,
+             missing_products: Sequence['outputs.GetProductLicenseConsumersItemMissingProductResult'],
+             product_name: str,
+             resource_compartment_id: str,
+             resource_compartment_name: str,
+             resource_id: str,
+             resource_name: str,
+             resource_unit_count: float,
+             resource_unit_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("are_all_options_available", are_all_options_available)
+        _setter("is_base_license_available", is_base_license_available)
+        _setter("license_unit_type", license_unit_type)
+        _setter("license_units_consumed", license_units_consumed)
+        _setter("missing_products", missing_products)
+        _setter("product_name", product_name)
+        _setter("resource_compartment_id", resource_compartment_id)
+        _setter("resource_compartment_name", resource_compartment_name)
+        _setter("resource_id", resource_id)
+        _setter("resource_name", resource_name)
+        _setter("resource_unit_count", resource_unit_count)
+        _setter("resource_unit_type", resource_unit_type)
 
     @property
     @pulumi.getter(name="areAllOptionsAvailable")
@@ -506,9 +619,22 @@ class GetProductLicenseConsumersItemMissingProductResult(dict):
         :param float count: Units required for the missing product.
         :param str name: Name of the product.
         """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "name", name)
+        GetProductLicenseConsumersItemMissingProductResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            count=count,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: str,
+             count: float,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("category", category)
+        _setter("count", count)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -550,11 +676,28 @@ class GetProductLicenseImageResult(dict):
         :param str package_version: The image package version.
         :param str publisher: The image publisher.
         """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "listing_id", listing_id)
-        pulumi.set(__self__, "listing_name", listing_name)
-        pulumi.set(__self__, "package_version", package_version)
-        pulumi.set(__self__, "publisher", publisher)
+        GetProductLicenseImageResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            listing_id=listing_id,
+            listing_name=listing_name,
+            package_version=package_version,
+            publisher=publisher,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             listing_id: str,
+             listing_name: str,
+             package_version: str,
+             publisher: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
+        _setter("listing_id", listing_id)
+        _setter("listing_name", listing_name)
+        _setter("package_version", package_version)
+        _setter("publisher", publisher)
 
     @property
     @pulumi.getter
@@ -603,10 +746,23 @@ class GetProductLicensesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProductLicensesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -628,7 +784,16 @@ class GetProductLicensesFilterResult(dict):
 class GetProductLicensesProductLicenseCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetProductLicensesProductLicenseCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetProductLicensesProductLicenseCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetProductLicensesProductLicenseCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -683,27 +848,76 @@ class GetProductLicensesProductLicenseCollectionItemResult(dict):
         :param float total_license_units_consumed: The number of license units consumed. Updated after each allocation run.
         :param str vendor_name: The vendor of the ProductLicense
         """
-        pulumi.set(__self__, "active_license_record_count", active_license_record_count)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "images", images)
-        pulumi.set(__self__, "is_over_subscribed", is_over_subscribed)
-        pulumi.set(__self__, "is_unlimited", is_unlimited)
-        pulumi.set(__self__, "is_vendor_oracle", is_vendor_oracle)
-        pulumi.set(__self__, "license_unit", license_unit)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_description", status_description)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "total_active_license_unit_count", total_active_license_unit_count)
-        pulumi.set(__self__, "total_license_record_count", total_license_record_count)
-        pulumi.set(__self__, "total_license_units_consumed", total_license_units_consumed)
-        pulumi.set(__self__, "vendor_name", vendor_name)
+        GetProductLicensesProductLicenseCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            active_license_record_count=active_license_record_count,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            images=images,
+            is_over_subscribed=is_over_subscribed,
+            is_unlimited=is_unlimited,
+            is_vendor_oracle=is_vendor_oracle,
+            license_unit=license_unit,
+            state=state,
+            status=status,
+            status_description=status_description,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            total_active_license_unit_count=total_active_license_unit_count,
+            total_license_record_count=total_license_record_count,
+            total_license_units_consumed=total_license_units_consumed,
+            vendor_name=vendor_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             active_license_record_count: int,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             images: Sequence['outputs.GetProductLicensesProductLicenseCollectionItemImageResult'],
+             is_over_subscribed: bool,
+             is_unlimited: bool,
+             is_vendor_oracle: bool,
+             license_unit: str,
+             state: str,
+             status: str,
+             status_description: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             total_active_license_unit_count: int,
+             total_license_record_count: int,
+             total_license_units_consumed: float,
+             vendor_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("active_license_record_count", active_license_record_count)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("images", images)
+        _setter("is_over_subscribed", is_over_subscribed)
+        _setter("is_unlimited", is_unlimited)
+        _setter("is_vendor_oracle", is_vendor_oracle)
+        _setter("license_unit", license_unit)
+        _setter("state", state)
+        _setter("status", status)
+        _setter("status_description", status_description)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("total_active_license_unit_count", total_active_license_unit_count)
+        _setter("total_license_record_count", total_license_record_count)
+        _setter("total_license_units_consumed", total_license_units_consumed)
+        _setter("vendor_name", vendor_name)
 
     @property
     @pulumi.getter(name="activeLicenseRecordCount")
@@ -889,11 +1103,28 @@ class GetProductLicensesProductLicenseCollectionItemImageResult(dict):
         :param str package_version: The image package version.
         :param str publisher: The image publisher.
         """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "listing_id", listing_id)
-        pulumi.set(__self__, "listing_name", listing_name)
-        pulumi.set(__self__, "package_version", package_version)
-        pulumi.set(__self__, "publisher", publisher)
+        GetProductLicensesProductLicenseCollectionItemImageResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            listing_id=listing_id,
+            listing_name=listing_name,
+            package_version=package_version,
+            publisher=publisher,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             listing_id: str,
+             listing_name: str,
+             package_version: str,
+             publisher: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
+        _setter("listing_id", listing_id)
+        _setter("listing_name", listing_name)
+        _setter("package_version", package_version)
+        _setter("publisher", publisher)
 
     @property
     @pulumi.getter
@@ -955,13 +1186,34 @@ class GetTopUtilizedProductLicensesItemResult(dict):
         :param float total_units_consumed: Number of license units consumed.
         :param str unit_type: The product license unit.
         """
-        pulumi.set(__self__, "is_unlimited", is_unlimited)
-        pulumi.set(__self__, "product_license_id", product_license_id)
-        pulumi.set(__self__, "product_type", product_type)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "total_license_unit_count", total_license_unit_count)
-        pulumi.set(__self__, "total_units_consumed", total_units_consumed)
-        pulumi.set(__self__, "unit_type", unit_type)
+        GetTopUtilizedProductLicensesItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_unlimited=is_unlimited,
+            product_license_id=product_license_id,
+            product_type=product_type,
+            status=status,
+            total_license_unit_count=total_license_unit_count,
+            total_units_consumed=total_units_consumed,
+            unit_type=unit_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_unlimited: bool,
+             product_license_id: str,
+             product_type: str,
+             status: str,
+             total_license_unit_count: int,
+             total_units_consumed: float,
+             unit_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_unlimited", is_unlimited)
+        _setter("product_license_id", product_license_id)
+        _setter("product_type", product_type)
+        _setter("status", status)
+        _setter("total_license_unit_count", total_license_unit_count)
+        _setter("total_units_consumed", total_units_consumed)
+        _setter("unit_type", unit_type)
 
     @property
     @pulumi.getter(name="isUnlimited")
@@ -1037,12 +1289,31 @@ class GetTopUtilizedResourcesItemResult(dict):
         :param float total_units: Number of license units consumed by the resource.
         :param str unit_type: The resource unit.
         """
-        pulumi.set(__self__, "resource_compartment_id", resource_compartment_id)
-        pulumi.set(__self__, "resource_compartment_name", resource_compartment_name)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_name", resource_name)
-        pulumi.set(__self__, "total_units", total_units)
-        pulumi.set(__self__, "unit_type", unit_type)
+        GetTopUtilizedResourcesItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            resource_compartment_id=resource_compartment_id,
+            resource_compartment_name=resource_compartment_name,
+            resource_id=resource_id,
+            resource_name=resource_name,
+            total_units=total_units,
+            unit_type=unit_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             resource_compartment_id: str,
+             resource_compartment_name: str,
+             resource_id: str,
+             resource_name: str,
+             total_units: float,
+             unit_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("resource_compartment_id", resource_compartment_id)
+        _setter("resource_compartment_name", resource_compartment_name)
+        _setter("resource_id", resource_id)
+        _setter("resource_name", resource_name)
+        _setter("total_units", total_units)
+        _setter("unit_type", unit_type)
 
     @property
     @pulumi.getter(name="resourceCompartmentId")

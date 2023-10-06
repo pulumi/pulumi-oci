@@ -114,6 +114,10 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The OCID of the Configuration to be used by the read replica.
+        /// </summary>
+        public readonly string ConfigurationId;
+        /// <summary>
         /// The OCID of the DB System the read replica is associated with.
         /// </summary>
         public readonly string DbSystemId;
@@ -154,7 +158,7 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The MySQL version used by the read replica.
+        /// The MySQL version to be used by the read replica.
         /// </summary>
         public readonly string MysqlVersion;
         /// <summary>
@@ -166,6 +170,14 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly int PortX;
         public readonly string ReplicaId;
+        /// <summary>
+        /// By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetReplicaReplicaOverrideResult> ReplicaOverrides;
+        /// <summary>
+        /// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+        /// </summary>
+        public readonly string ShapeName;
         /// <summary>
         /// The state of the read replica.
         /// </summary>
@@ -184,6 +196,8 @@ namespace Pulumi.Oci.Mysql
             string availabilityDomain,
 
             string compartmentId,
+
+            string configurationId,
 
             string dbSystemId,
 
@@ -213,6 +227,10 @@ namespace Pulumi.Oci.Mysql
 
             string replicaId,
 
+            ImmutableArray<Outputs.GetReplicaReplicaOverrideResult> replicaOverrides,
+
+            string shapeName,
+
             string state,
 
             string timeCreated,
@@ -221,6 +239,7 @@ namespace Pulumi.Oci.Mysql
         {
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;
+            ConfigurationId = configurationId;
             DbSystemId = dbSystemId;
             DefinedTags = definedTags;
             Description = description;
@@ -235,6 +254,8 @@ namespace Pulumi.Oci.Mysql
             Port = port;
             PortX = portX;
             ReplicaId = replicaId;
+            ReplicaOverrides = replicaOverrides;
+            ShapeName = shapeName;
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

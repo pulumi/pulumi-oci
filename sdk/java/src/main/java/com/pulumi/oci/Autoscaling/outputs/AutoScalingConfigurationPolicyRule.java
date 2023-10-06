@@ -18,10 +18,6 @@ public final class AutoScalingConfigurationPolicyRule {
      * 
      */
     private @Nullable AutoScalingConfigurationPolicyRuleAction action;
-    /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
-     * 
-     */
     private String displayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
@@ -42,10 +38,6 @@ public final class AutoScalingConfigurationPolicyRule {
     public Optional<AutoScalingConfigurationPolicyRuleAction> action() {
         return Optional.ofNullable(this.action);
     }
-    /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
-     * 
-     */
     public String displayName() {
         return this.displayName;
     }

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -85,19 +85,42 @@ class DomainsMySupportAccountArgs:
                * type: complex
                * uniqueness: none
         """
-        pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
-        pulumi.set(__self__, "schemas", schemas)
-        pulumi.set(__self__, "token", token)
+        DomainsMySupportAccountArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            idcs_endpoint=idcs_endpoint,
+            schemas=schemas,
+            token=token,
+            authorization=authorization,
+            ocid=ocid,
+            resource_type_schema_version=resource_type_schema_version,
+            tags=tags,
+            user=user,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             idcs_endpoint: pulumi.Input[str],
+             schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
+             token: pulumi.Input[str],
+             authorization: Optional[pulumi.Input[str]] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMySupportAccountTagArgs']]]] = None,
+             user: Optional[pulumi.Input['DomainsMySupportAccountUserArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("idcs_endpoint", idcs_endpoint)
+        _setter("schemas", schemas)
+        _setter("token", token)
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if user is not None:
-            pulumi.set(__self__, "user", user)
+            _setter("user", user)
 
     @property
     @pulumi.getter(name="idcsEndpoint")
@@ -453,44 +476,89 @@ class _DomainsMySupportAccountState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _DomainsMySupportAccountState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authorization=authorization,
+            compartment_ocid=compartment_ocid,
+            delete_in_progress=delete_in_progress,
+            domain_ocid=domain_ocid,
+            idcs_created_bies=idcs_created_bies,
+            idcs_endpoint=idcs_endpoint,
+            idcs_last_modified_bies=idcs_last_modified_bies,
+            idcs_last_upgraded_in_release=idcs_last_upgraded_in_release,
+            idcs_prevented_operations=idcs_prevented_operations,
+            metas=metas,
+            my_support_account_provider=my_support_account_provider,
+            ocid=ocid,
+            resource_type_schema_version=resource_type_schema_version,
+            schemas=schemas,
+            tags=tags,
+            tenancy_ocid=tenancy_ocid,
+            token=token,
+            user=user,
+            user_id=user_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authorization: Optional[pulumi.Input[str]] = None,
+             compartment_ocid: Optional[pulumi.Input[str]] = None,
+             delete_in_progress: Optional[pulumi.Input[bool]] = None,
+             domain_ocid: Optional[pulumi.Input[str]] = None,
+             idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMySupportAccountIdcsCreatedByArgs']]]] = None,
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMySupportAccountIdcsLastModifiedByArgs']]]] = None,
+             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
+             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMySupportAccountMetaArgs']]]] = None,
+             my_support_account_provider: Optional[pulumi.Input[str]] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMySupportAccountTagArgs']]]] = None,
+             tenancy_ocid: Optional[pulumi.Input[str]] = None,
+             token: Optional[pulumi.Input[str]] = None,
+             user: Optional[pulumi.Input['DomainsMySupportAccountUserArgs']] = None,
+             user_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if compartment_ocid is not None:
-            pulumi.set(__self__, "compartment_ocid", compartment_ocid)
+            _setter("compartment_ocid", compartment_ocid)
         if delete_in_progress is not None:
-            pulumi.set(__self__, "delete_in_progress", delete_in_progress)
+            _setter("delete_in_progress", delete_in_progress)
         if domain_ocid is not None:
-            pulumi.set(__self__, "domain_ocid", domain_ocid)
+            _setter("domain_ocid", domain_ocid)
         if idcs_created_bies is not None:
-            pulumi.set(__self__, "idcs_created_bies", idcs_created_bies)
+            _setter("idcs_created_bies", idcs_created_bies)
         if idcs_endpoint is not None:
-            pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
+            _setter("idcs_endpoint", idcs_endpoint)
         if idcs_last_modified_bies is not None:
-            pulumi.set(__self__, "idcs_last_modified_bies", idcs_last_modified_bies)
+            _setter("idcs_last_modified_bies", idcs_last_modified_bies)
         if idcs_last_upgraded_in_release is not None:
-            pulumi.set(__self__, "idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
+            _setter("idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
         if idcs_prevented_operations is not None:
-            pulumi.set(__self__, "idcs_prevented_operations", idcs_prevented_operations)
+            _setter("idcs_prevented_operations", idcs_prevented_operations)
         if metas is not None:
-            pulumi.set(__self__, "metas", metas)
+            _setter("metas", metas)
         if my_support_account_provider is not None:
-            pulumi.set(__self__, "my_support_account_provider", my_support_account_provider)
+            _setter("my_support_account_provider", my_support_account_provider)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if schemas is not None:
-            pulumi.set(__self__, "schemas", schemas)
+            _setter("schemas", schemas)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if tenancy_ocid is not None:
-            pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
+            _setter("tenancy_ocid", tenancy_ocid)
         if token is not None:
-            pulumi.set(__self__, "token", token)
+            _setter("token", token)
         if user is not None:
-            pulumi.set(__self__, "user", user)
+            _setter("user", user)
         if user_id is not None:
-            pulumi.set(__self__, "user_id", user_id)
+            _setter("user_id", user_id)
 
     @property
     @pulumi.getter
@@ -1001,6 +1069,10 @@ class DomainsMySupportAccount(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DomainsMySupportAccountArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1036,6 +1108,11 @@ class DomainsMySupportAccount(pulumi.CustomResource):
             if token is None and not opts.urn:
                 raise TypeError("Missing required property 'token'")
             __props__.__dict__["token"] = token
+            if user is not None and not isinstance(user, DomainsMySupportAccountUserArgs):
+                user = user or {}
+                def _setter(key, value):
+                    user[key] = value
+                DomainsMySupportAccountUserArgs._configure(_setter, **user)
             __props__.__dict__["user"] = user
             __props__.__dict__["compartment_ocid"] = None
             __props__.__dict__["delete_in_progress"] = None

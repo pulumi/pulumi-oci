@@ -73,7 +73,7 @@ public class EkmsPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * CABundle to validate TLS certificate of the external key manager system in PEM format
      * 
      */
-    @Export(name="caBundle", type=String.class, parameters={})
+    @Export(name="caBundle", refs={String.class}, tree="[0]")
     private Output<String> caBundle;
 
     /**
@@ -87,7 +87,7 @@ public class EkmsPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * Compartment identifier.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -101,7 +101,7 @@ public class EkmsPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -115,7 +115,7 @@ public class EkmsPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Display name of the EKMS private endpoint resource being created.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -129,7 +129,7 @@ public class EkmsPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * External private IP to connect to from this EKMS private endpoint
      * 
      */
-    @Export(name="externalKeyManagerIp", type=String.class, parameters={})
+    @Export(name="externalKeyManagerIp", refs={String.class}, tree="[0]")
     private Output<String> externalKeyManagerIp;
 
     /**
@@ -143,7 +143,7 @@ public class EkmsPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -157,7 +157,7 @@ public class EkmsPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in &#39;Failed&#39; state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -171,7 +171,7 @@ public class EkmsPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The port of the external key manager system
      * 
      */
-    @Export(name="port", type=Integer.class, parameters={})
+    @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
@@ -185,7 +185,7 @@ public class EkmsPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The IP address in the customer&#39;s VCN for the EKMS private endpoint. This is taken from subnet
      * 
      */
-    @Export(name="privateEndpointIp", type=String.class, parameters={})
+    @Export(name="privateEndpointIp", refs={String.class}, tree="[0]")
     private Output<String> privateEndpointIp;
 
     /**
@@ -199,7 +199,7 @@ public class EkmsPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The current state of the EKMS private endpoint resource.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -216,7 +216,7 @@ public class EkmsPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -233,7 +233,7 @@ public class EkmsPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The time the EKMS private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -247,7 +247,7 @@ public class EkmsPrivateEndpoint extends com.pulumi.resources.CustomResource {
      * The time the EKMS private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**

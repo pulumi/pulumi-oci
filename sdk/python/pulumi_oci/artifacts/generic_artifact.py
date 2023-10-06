@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['GenericArtifactArgs', 'GenericArtifact']
@@ -27,11 +27,24 @@ class GenericArtifactArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "artifact_id", artifact_id)
+        GenericArtifactArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            artifact_id=artifact_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             artifact_id: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("artifact_id", artifact_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="artifactId")
@@ -108,30 +121,61 @@ class _GenericArtifactState:
         :param pulumi.Input[str] time_created: An RFC 3339 timestamp indicating when the repository was created.
         :param pulumi.Input[str] version: A user-defined string to describe the artifact version.  Example: `1.1.0` or `1.2-beta-2`
         """
+        _GenericArtifactState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            artifact_id=artifact_id,
+            artifact_path=artifact_path,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            repository_id=repository_id,
+            sha256=sha256,
+            size_in_bytes=size_in_bytes,
+            state=state,
+            time_created=time_created,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             artifact_id: Optional[pulumi.Input[str]] = None,
+             artifact_path: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             repository_id: Optional[pulumi.Input[str]] = None,
+             sha256: Optional[pulumi.Input[str]] = None,
+             size_in_bytes: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if artifact_id is not None:
-            pulumi.set(__self__, "artifact_id", artifact_id)
+            _setter("artifact_id", artifact_id)
         if artifact_path is not None:
-            pulumi.set(__self__, "artifact_path", artifact_path)
+            _setter("artifact_path", artifact_path)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if repository_id is not None:
-            pulumi.set(__self__, "repository_id", repository_id)
+            _setter("repository_id", repository_id)
         if sha256 is not None:
-            pulumi.set(__self__, "sha256", sha256)
+            _setter("sha256", sha256)
         if size_in_bytes is not None:
-            pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+            _setter("size_in_bytes", size_in_bytes)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter(name="artifactId")
@@ -371,6 +415,10 @@ class GenericArtifact(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            GenericArtifactArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -53,29 +53,66 @@ class AssetSourceArgs:
         :param pulumi.Input['AssetSourceReplicationCredentialsArgs'] replication_credentials: (Updatable) Credentials for an asset source.
         :param pulumi.Input[Mapping[str, Any]] system_tags: (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
-        pulumi.set(__self__, "assets_compartment_id", assets_compartment_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "discovery_credentials", discovery_credentials)
-        pulumi.set(__self__, "environment_id", environment_id)
-        pulumi.set(__self__, "inventory_id", inventory_id)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "vcenter_endpoint", vcenter_endpoint)
+        AssetSourceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            assets_compartment_id=assets_compartment_id,
+            compartment_id=compartment_id,
+            discovery_credentials=discovery_credentials,
+            environment_id=environment_id,
+            inventory_id=inventory_id,
+            type=type,
+            vcenter_endpoint=vcenter_endpoint,
+            are_historical_metrics_collected=are_historical_metrics_collected,
+            are_realtime_metrics_collected=are_realtime_metrics_collected,
+            defined_tags=defined_tags,
+            discovery_schedule_id=discovery_schedule_id,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            replication_credentials=replication_credentials,
+            system_tags=system_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             assets_compartment_id: pulumi.Input[str],
+             compartment_id: pulumi.Input[str],
+             discovery_credentials: pulumi.Input['AssetSourceDiscoveryCredentialsArgs'],
+             environment_id: pulumi.Input[str],
+             inventory_id: pulumi.Input[str],
+             type: pulumi.Input[str],
+             vcenter_endpoint: pulumi.Input[str],
+             are_historical_metrics_collected: Optional[pulumi.Input[bool]] = None,
+             are_realtime_metrics_collected: Optional[pulumi.Input[bool]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             discovery_schedule_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             replication_credentials: Optional[pulumi.Input['AssetSourceReplicationCredentialsArgs']] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("assets_compartment_id", assets_compartment_id)
+        _setter("compartment_id", compartment_id)
+        _setter("discovery_credentials", discovery_credentials)
+        _setter("environment_id", environment_id)
+        _setter("inventory_id", inventory_id)
+        _setter("type", type)
+        _setter("vcenter_endpoint", vcenter_endpoint)
         if are_historical_metrics_collected is not None:
-            pulumi.set(__self__, "are_historical_metrics_collected", are_historical_metrics_collected)
+            _setter("are_historical_metrics_collected", are_historical_metrics_collected)
         if are_realtime_metrics_collected is not None:
-            pulumi.set(__self__, "are_realtime_metrics_collected", are_realtime_metrics_collected)
+            _setter("are_realtime_metrics_collected", are_realtime_metrics_collected)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if discovery_schedule_id is not None:
-            pulumi.set(__self__, "discovery_schedule_id", discovery_schedule_id)
+            _setter("discovery_schedule_id", discovery_schedule_id)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if replication_credentials is not None:
-            pulumi.set(__self__, "replication_credentials", replication_credentials)
+            _setter("replication_credentials", replication_credentials)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
 
     @property
     @pulumi.getter(name="assetsCompartmentId")
@@ -310,44 +347,89 @@ class _AssetSourceState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _AssetSourceState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            are_historical_metrics_collected=are_historical_metrics_collected,
+            are_realtime_metrics_collected=are_realtime_metrics_collected,
+            assets_compartment_id=assets_compartment_id,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            discovery_credentials=discovery_credentials,
+            discovery_schedule_id=discovery_schedule_id,
+            display_name=display_name,
+            environment_id=environment_id,
+            freeform_tags=freeform_tags,
+            inventory_id=inventory_id,
+            lifecycle_details=lifecycle_details,
+            replication_credentials=replication_credentials,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+            vcenter_endpoint=vcenter_endpoint,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             are_historical_metrics_collected: Optional[pulumi.Input[bool]] = None,
+             are_realtime_metrics_collected: Optional[pulumi.Input[bool]] = None,
+             assets_compartment_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             discovery_credentials: Optional[pulumi.Input['AssetSourceDiscoveryCredentialsArgs']] = None,
+             discovery_schedule_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             environment_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             inventory_id: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             replication_credentials: Optional[pulumi.Input['AssetSourceReplicationCredentialsArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             vcenter_endpoint: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if are_historical_metrics_collected is not None:
-            pulumi.set(__self__, "are_historical_metrics_collected", are_historical_metrics_collected)
+            _setter("are_historical_metrics_collected", are_historical_metrics_collected)
         if are_realtime_metrics_collected is not None:
-            pulumi.set(__self__, "are_realtime_metrics_collected", are_realtime_metrics_collected)
+            _setter("are_realtime_metrics_collected", are_realtime_metrics_collected)
         if assets_compartment_id is not None:
-            pulumi.set(__self__, "assets_compartment_id", assets_compartment_id)
+            _setter("assets_compartment_id", assets_compartment_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if discovery_credentials is not None:
-            pulumi.set(__self__, "discovery_credentials", discovery_credentials)
+            _setter("discovery_credentials", discovery_credentials)
         if discovery_schedule_id is not None:
-            pulumi.set(__self__, "discovery_schedule_id", discovery_schedule_id)
+            _setter("discovery_schedule_id", discovery_schedule_id)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if environment_id is not None:
-            pulumi.set(__self__, "environment_id", environment_id)
+            _setter("environment_id", environment_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if inventory_id is not None:
-            pulumi.set(__self__, "inventory_id", inventory_id)
+            _setter("inventory_id", inventory_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if replication_credentials is not None:
-            pulumi.set(__self__, "replication_credentials", replication_credentials)
+            _setter("replication_credentials", replication_credentials)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if vcenter_endpoint is not None:
-            pulumi.set(__self__, "vcenter_endpoint", vcenter_endpoint)
+            _setter("vcenter_endpoint", vcenter_endpoint)
 
     @property
     @pulumi.getter(name="areHistoricalMetricsCollected")
@@ -735,6 +817,10 @@ class AssetSource(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AssetSourceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -773,6 +859,11 @@ class AssetSource(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
+            if discovery_credentials is not None and not isinstance(discovery_credentials, AssetSourceDiscoveryCredentialsArgs):
+                discovery_credentials = discovery_credentials or {}
+                def _setter(key, value):
+                    discovery_credentials[key] = value
+                AssetSourceDiscoveryCredentialsArgs._configure(_setter, **discovery_credentials)
             if discovery_credentials is None and not opts.urn:
                 raise TypeError("Missing required property 'discovery_credentials'")
             __props__.__dict__["discovery_credentials"] = discovery_credentials
@@ -785,6 +876,11 @@ class AssetSource(pulumi.CustomResource):
             if inventory_id is None and not opts.urn:
                 raise TypeError("Missing required property 'inventory_id'")
             __props__.__dict__["inventory_id"] = inventory_id
+            if replication_credentials is not None and not isinstance(replication_credentials, AssetSourceReplicationCredentialsArgs):
+                replication_credentials = replication_credentials or {}
+                def _setter(key, value):
+                    replication_credentials[key] = value
+                AssetSourceReplicationCredentialsArgs._configure(_setter, **replication_credentials)
             __props__.__dict__["replication_credentials"] = replication_credentials
             __props__.__dict__["system_tags"] = system_tags
             if type is None and not opts.urn:

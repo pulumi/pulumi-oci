@@ -19,14 +19,14 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
     public static final ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs Empty = new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs();
 
     /**
-     * (Updatable) The network bandwidth for the model.
+     * (Updatable) The minimum network bandwidth for the model deployment.
      * 
      */
     @Import(name="bandwidthMbps")
     private @Nullable Output<Integer> bandwidthMbps;
 
     /**
-     * @return (Updatable) The network bandwidth for the model.
+     * @return (Updatable) The minimum network bandwidth for the model deployment.
      * 
      */
     public Optional<Output<Integer>> bandwidthMbps() {
@@ -106,7 +106,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
         }
 
         /**
-         * @param bandwidthMbps (Updatable) The network bandwidth for the model.
+         * @param bandwidthMbps (Updatable) The minimum network bandwidth for the model deployment.
          * 
          * @return builder
          * 
@@ -117,7 +117,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
         }
 
         /**
-         * @param bandwidthMbps (Updatable) The network bandwidth for the model.
+         * @param bandwidthMbps (Updatable) The minimum network bandwidth for the model deployment.
          * 
          * @return builder
          * 

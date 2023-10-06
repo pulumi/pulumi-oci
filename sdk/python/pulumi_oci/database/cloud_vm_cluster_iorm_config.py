@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -25,10 +25,23 @@ class CloudVmClusterIormConfigArgs:
         :param pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigDbPlanArgs']]] db_plans: (Updatable) Array of IORM Setting for all the database in this Cloud Vm Cluster
         :param pulumi.Input[str] objective: (Updatable) Value for the IORM objective Default is "Auto"
         """
-        pulumi.set(__self__, "cloud_vm_cluster_id", cloud_vm_cluster_id)
-        pulumi.set(__self__, "db_plans", db_plans)
+        CloudVmClusterIormConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cloud_vm_cluster_id=cloud_vm_cluster_id,
+            db_plans=db_plans,
+            objective=objective,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cloud_vm_cluster_id: pulumi.Input[str],
+             db_plans: pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigDbPlanArgs']]],
+             objective: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cloud_vm_cluster_id", cloud_vm_cluster_id)
+        _setter("db_plans", db_plans)
         if objective is not None:
-            pulumi.set(__self__, "objective", objective)
+            _setter("objective", objective)
 
     @property
     @pulumi.getter(name="cloudVmClusterId")
@@ -83,16 +96,33 @@ class _CloudVmClusterIormConfigState:
         :param pulumi.Input[str] objective: (Updatable) Value for the IORM objective Default is "Auto"
         :param pulumi.Input[str] state: The current state of IORM configuration for the Exadata DB system.
         """
+        _CloudVmClusterIormConfigState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cloud_vm_cluster_id=cloud_vm_cluster_id,
+            db_plans=db_plans,
+            lifecycle_details=lifecycle_details,
+            objective=objective,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cloud_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+             db_plans: Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigDbPlanArgs']]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             objective: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if cloud_vm_cluster_id is not None:
-            pulumi.set(__self__, "cloud_vm_cluster_id", cloud_vm_cluster_id)
+            _setter("cloud_vm_cluster_id", cloud_vm_cluster_id)
         if db_plans is not None:
-            pulumi.set(__self__, "db_plans", db_plans)
+            _setter("db_plans", db_plans)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if objective is not None:
-            pulumi.set(__self__, "objective", objective)
+            _setter("objective", objective)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter(name="cloudVmClusterId")
@@ -246,6 +276,10 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CloudVmClusterIormConfigArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

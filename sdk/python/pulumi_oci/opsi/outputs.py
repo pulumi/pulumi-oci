@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -141,18 +141,37 @@ class DatabaseInsightConnectionCredentialDetails(dict):
         :param str user_name: database user name.
         :param str wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
         """
+        DatabaseInsightConnectionCredentialDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_source_name=credential_source_name,
+            credential_type=credential_type,
+            password_secret_id=password_secret_id,
+            role=role,
+            user_name=user_name,
+            wallet_secret_id=wallet_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_source_name: Optional[str] = None,
+             credential_type: Optional[str] = None,
+             password_secret_id: Optional[str] = None,
+             role: Optional[str] = None,
+             user_name: Optional[str] = None,
+             wallet_secret_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if credential_source_name is not None:
-            pulumi.set(__self__, "credential_source_name", credential_source_name)
+            _setter("credential_source_name", credential_source_name)
         if credential_type is not None:
-            pulumi.set(__self__, "credential_type", credential_type)
+            _setter("credential_type", credential_type)
         if password_secret_id is not None:
-            pulumi.set(__self__, "password_secret_id", password_secret_id)
+            _setter("password_secret_id", password_secret_id)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if user_name is not None:
-            pulumi.set(__self__, "user_name", user_name)
+            _setter("user_name", user_name)
         if wallet_secret_id is not None:
-            pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
+            _setter("wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="credentialSourceName")
@@ -237,16 +256,33 @@ class DatabaseInsightConnectionDetails(dict):
         :param str protocol: Protocol used for connection requests for private endpoint accssed database resource.
         :param str service_name: Database service name used for connection requests.
         """
+        DatabaseInsightConnectionDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host_name=host_name,
+            hosts=hosts,
+            port=port,
+            protocol=protocol,
+            service_name=service_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host_name: Optional[str] = None,
+             hosts: Optional[Sequence['outputs.DatabaseInsightConnectionDetailsHost']] = None,
+             port: Optional[int] = None,
+             protocol: Optional[str] = None,
+             service_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if host_name is not None:
-            pulumi.set(__self__, "host_name", host_name)
+            _setter("host_name", host_name)
         if hosts is not None:
-            pulumi.set(__self__, "hosts", hosts)
+            _setter("hosts", hosts)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if service_name is not None:
-            pulumi.set(__self__, "service_name", service_name)
+            _setter("service_name", service_name)
 
     @property
     @pulumi.getter(name="hostName")
@@ -315,10 +351,21 @@ class DatabaseInsightConnectionDetailsHost(dict):
         :param str host_ip: Host IP used for connection requests for Cloud DB resource.
         :param int port: Listener port number used for connection requests for rivate endpoint accessed db resource.
         """
+        DatabaseInsightConnectionDetailsHost._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host_ip=host_ip,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host_ip: Optional[str] = None,
+             port: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if host_ip is not None:
-            pulumi.set(__self__, "host_ip", host_ip)
+            _setter("host_ip", host_ip)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
 
     @property
     @pulumi.getter(name="hostIp")
@@ -379,17 +426,36 @@ class DatabaseInsightCredentialDetails(dict):
         :param str user_name: database user name.
         :param str wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
         """
-        pulumi.set(__self__, "credential_type", credential_type)
+        DatabaseInsightCredentialDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_type=credential_type,
+            credential_source_name=credential_source_name,
+            password_secret_id=password_secret_id,
+            role=role,
+            user_name=user_name,
+            wallet_secret_id=wallet_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_type: str,
+             credential_source_name: Optional[str] = None,
+             password_secret_id: Optional[str] = None,
+             role: Optional[str] = None,
+             user_name: Optional[str] = None,
+             wallet_secret_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credential_type", credential_type)
         if credential_source_name is not None:
-            pulumi.set(__self__, "credential_source_name", credential_source_name)
+            _setter("credential_source_name", credential_source_name)
         if password_secret_id is not None:
-            pulumi.set(__self__, "password_secret_id", password_secret_id)
+            _setter("password_secret_id", password_secret_id)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if user_name is not None:
-            pulumi.set(__self__, "user_name", user_name)
+            _setter("user_name", user_name)
         if wallet_secret_id is not None:
-            pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
+            _setter("wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="credentialType")
@@ -480,16 +546,33 @@ class ExadataInsightMemberVmClusterDetail(dict):
         :param str opsi_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
         :param str vmcluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
         """
+        ExadataInsightMemberVmClusterDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            dbm_private_endpoint_id=dbm_private_endpoint_id,
+            member_database_details=member_database_details,
+            opsi_private_endpoint_id=opsi_private_endpoint_id,
+            vmcluster_id=vmcluster_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             dbm_private_endpoint_id: Optional[str] = None,
+             member_database_details: Optional[Sequence['outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetail']] = None,
+             opsi_private_endpoint_id: Optional[str] = None,
+             vmcluster_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if dbm_private_endpoint_id is not None:
-            pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
+            _setter("dbm_private_endpoint_id", dbm_private_endpoint_id)
         if member_database_details is not None:
-            pulumi.set(__self__, "member_database_details", member_database_details)
+            _setter("member_database_details", member_database_details)
         if opsi_private_endpoint_id is not None:
-            pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
+            _setter("opsi_private_endpoint_id", opsi_private_endpoint_id)
         if vmcluster_id is not None:
-            pulumi.set(__self__, "vmcluster_id", vmcluster_id)
+            _setter("vmcluster_id", vmcluster_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -604,32 +687,65 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail(dict):
         :param str service_name: Database service name used for connection requests.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
+        ExadataInsightMemberVmClusterDetailMemberDatabaseDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            connection_details=connection_details,
+            credential_details=credential_details,
+            database_id=database_id,
+            database_resource_type=database_resource_type,
+            dbm_private_endpoint_id=dbm_private_endpoint_id,
+            defined_tags=defined_tags,
+            deployment_type=deployment_type,
+            entity_source=entity_source,
+            freeform_tags=freeform_tags,
+            opsi_private_endpoint_id=opsi_private_endpoint_id,
+            service_name=service_name,
+            system_tags=system_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             connection_details: Optional['outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails'] = None,
+             credential_details: Optional['outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails'] = None,
+             database_id: Optional[str] = None,
+             database_resource_type: Optional[str] = None,
+             dbm_private_endpoint_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             deployment_type: Optional[str] = None,
+             entity_source: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             opsi_private_endpoint_id: Optional[str] = None,
+             service_name: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if connection_details is not None:
-            pulumi.set(__self__, "connection_details", connection_details)
+            _setter("connection_details", connection_details)
         if credential_details is not None:
-            pulumi.set(__self__, "credential_details", credential_details)
+            _setter("credential_details", credential_details)
         if database_id is not None:
-            pulumi.set(__self__, "database_id", database_id)
+            _setter("database_id", database_id)
         if database_resource_type is not None:
-            pulumi.set(__self__, "database_resource_type", database_resource_type)
+            _setter("database_resource_type", database_resource_type)
         if dbm_private_endpoint_id is not None:
-            pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
+            _setter("dbm_private_endpoint_id", dbm_private_endpoint_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if deployment_type is not None:
-            pulumi.set(__self__, "deployment_type", deployment_type)
+            _setter("deployment_type", deployment_type)
         if entity_source is not None:
-            pulumi.set(__self__, "entity_source", entity_source)
+            _setter("entity_source", entity_source)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if opsi_private_endpoint_id is not None:
-            pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
+            _setter("opsi_private_endpoint_id", opsi_private_endpoint_id)
         if service_name is not None:
-            pulumi.set(__self__, "service_name", service_name)
+            _setter("service_name", service_name)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -764,12 +880,25 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails(d
         :param str protocol: Protocol used for connection requests for private endpoint accssed database resource.
         :param str service_name: Database service name used for connection requests.
         """
+        ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hosts=hosts,
+            protocol=protocol,
+            service_name=service_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hosts: Optional[Sequence['outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost']] = None,
+             protocol: Optional[str] = None,
+             service_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if hosts is not None:
-            pulumi.set(__self__, "hosts", hosts)
+            _setter("hosts", hosts)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if service_name is not None:
-            pulumi.set(__self__, "service_name", service_name)
+            _setter("service_name", service_name)
 
     @property
     @pulumi.getter
@@ -822,10 +951,21 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHo
         :param str host_ip: Host IP used for connection requests for Cloud DB resource.
         :param int port: Listener port number used for connection requests for rivate endpoint accessed db resource.
         """
+        ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host_ip=host_ip,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host_ip: Optional[str] = None,
+             port: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if host_ip is not None:
-            pulumi.set(__self__, "host_ip", host_ip)
+            _setter("host_ip", host_ip)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
 
     @property
     @pulumi.getter(name="hostIp")
@@ -886,17 +1026,36 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails(d
         :param str user_name: database user name.
         :param str wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
         """
-        pulumi.set(__self__, "credential_type", credential_type)
+        ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_type=credential_type,
+            credential_source_name=credential_source_name,
+            password_secret_id=password_secret_id,
+            role=role,
+            user_name=user_name,
+            wallet_secret_id=wallet_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_type: str,
+             credential_source_name: Optional[str] = None,
+             password_secret_id: Optional[str] = None,
+             role: Optional[str] = None,
+             user_name: Optional[str] = None,
+             wallet_secret_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credential_type", credential_type)
         if credential_source_name is not None:
-            pulumi.set(__self__, "credential_source_name", credential_source_name)
+            _setter("credential_source_name", credential_source_name)
         if password_secret_id is not None:
-            pulumi.set(__self__, "password_secret_id", password_secret_id)
+            _setter("password_secret_id", password_secret_id)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if user_name is not None:
-            pulumi.set(__self__, "user_name", user_name)
+            _setter("user_name", user_name)
         if wallet_secret_id is not None:
-            pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
+            _setter("wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="credentialType")
@@ -971,7 +1130,16 @@ class NewsReportContentTypes(dict):
         """
         :param Sequence[str] capacity_planning_resources: (Updatable) Supported resources for capacity planning content type.
         """
-        pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
+        NewsReportContentTypes._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacity_planning_resources=capacity_planning_resources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacity_planning_resources: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("capacity_planning_resources", capacity_planning_resources)
 
     @property
     @pulumi.getter(name="capacityPlanningResources")
@@ -1020,17 +1188,36 @@ class OpsiConfigurationConfigItem(dict):
         :param str name: (Updatable) Name of configuration item.
         :param str value: (Updatable) Value of configuration item.
         """
-        pulumi.set(__self__, "config_item_type", config_item_type)
+        OpsiConfigurationConfigItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_item_type=config_item_type,
+            applicable_contexts=applicable_contexts,
+            default_value=default_value,
+            metadatas=metadatas,
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_item_type: str,
+             applicable_contexts: Optional[Sequence[str]] = None,
+             default_value: Optional[str] = None,
+             metadatas: Optional[Sequence['outputs.OpsiConfigurationConfigItemMetadata']] = None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_item_type", config_item_type)
         if applicable_contexts is not None:
-            pulumi.set(__self__, "applicable_contexts", applicable_contexts)
+            _setter("applicable_contexts", applicable_contexts)
         if default_value is not None:
-            pulumi.set(__self__, "default_value", default_value)
+            _setter("default_value", default_value)
         if metadatas is not None:
-            pulumi.set(__self__, "metadatas", metadatas)
+            _setter("metadatas", metadatas)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter(name="configItemType")
@@ -1123,18 +1310,37 @@ class OpsiConfigurationConfigItemMetadata(dict):
         :param Sequence['OpsiConfigurationConfigItemMetadataUnitDetailArgs'] unit_details: Unit details of configuration item.
         :param Sequence['OpsiConfigurationConfigItemMetadataValueInputDetailArgs'] value_input_details: Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
         """
+        OpsiConfigurationConfigItemMetadata._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_item_type=config_item_type,
+            data_type=data_type,
+            description=description,
+            display_name=display_name,
+            unit_details=unit_details,
+            value_input_details=value_input_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_item_type: Optional[str] = None,
+             data_type: Optional[str] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             unit_details: Optional[Sequence['outputs.OpsiConfigurationConfigItemMetadataUnitDetail']] = None,
+             value_input_details: Optional[Sequence['outputs.OpsiConfigurationConfigItemMetadataValueInputDetail']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_item_type is not None:
-            pulumi.set(__self__, "config_item_type", config_item_type)
+            _setter("config_item_type", config_item_type)
         if data_type is not None:
-            pulumi.set(__self__, "data_type", data_type)
+            _setter("data_type", data_type)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if unit_details is not None:
-            pulumi.set(__self__, "unit_details", unit_details)
+            _setter("unit_details", unit_details)
         if value_input_details is not None:
-            pulumi.set(__self__, "value_input_details", value_input_details)
+            _setter("value_input_details", value_input_details)
 
     @property
     @pulumi.getter(name="configItemType")
@@ -1211,10 +1417,21 @@ class OpsiConfigurationConfigItemMetadataUnitDetail(dict):
         :param str display_name: (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
         :param str unit: Unit of configuration item.
         """
+        OpsiConfigurationConfigItemMetadataUnitDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            unit=unit,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             unit: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if unit is not None:
-            pulumi.set(__self__, "unit", unit)
+            _setter("unit", unit)
 
     @property
     @pulumi.getter(name="displayName")
@@ -1269,14 +1486,29 @@ class OpsiConfigurationConfigItemMetadataValueInputDetail(dict):
         :param str min_value: Minimum value limit for the configuration item.
         :param Sequence[str] possible_values: Allowed values to pick for the configuration item.
         """
+        OpsiConfigurationConfigItemMetadataValueInputDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_value_type=allowed_value_type,
+            max_value=max_value,
+            min_value=min_value,
+            possible_values=possible_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_value_type: Optional[str] = None,
+             max_value: Optional[str] = None,
+             min_value: Optional[str] = None,
+             possible_values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if allowed_value_type is not None:
-            pulumi.set(__self__, "allowed_value_type", allowed_value_type)
+            _setter("allowed_value_type", allowed_value_type)
         if max_value is not None:
-            pulumi.set(__self__, "max_value", max_value)
+            _setter("max_value", max_value)
         if min_value is not None:
-            pulumi.set(__self__, "min_value", min_value)
+            _setter("min_value", min_value)
         if possible_values is not None:
-            pulumi.set(__self__, "possible_values", possible_values)
+            _setter("possible_values", possible_values)
 
     @property
     @pulumi.getter(name="allowedValueType")
@@ -1330,13 +1562,34 @@ class GetAwrHubAwrSnapshotItemResult(dict):
         :param str time_snapshot_begin: The start time of the snapshot.
         :param str time_snapshot_end: The end time of the snapshot.
         """
-        pulumi.set(__self__, "awr_source_database_id", awr_source_database_id)
-        pulumi.set(__self__, "error_count", error_count)
-        pulumi.set(__self__, "instance_number", instance_number)
-        pulumi.set(__self__, "snapshot_identifier", snapshot_identifier)
-        pulumi.set(__self__, "time_db_startup", time_db_startup)
-        pulumi.set(__self__, "time_snapshot_begin", time_snapshot_begin)
-        pulumi.set(__self__, "time_snapshot_end", time_snapshot_end)
+        GetAwrHubAwrSnapshotItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            awr_source_database_id=awr_source_database_id,
+            error_count=error_count,
+            instance_number=instance_number,
+            snapshot_identifier=snapshot_identifier,
+            time_db_startup=time_db_startup,
+            time_snapshot_begin=time_snapshot_begin,
+            time_snapshot_end=time_snapshot_end,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             awr_source_database_id: str,
+             error_count: str,
+             instance_number: int,
+             snapshot_identifier: int,
+             time_db_startup: str,
+             time_snapshot_begin: str,
+             time_snapshot_end: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("awr_source_database_id", awr_source_database_id)
+        _setter("error_count", error_count)
+        _setter("instance_number", instance_number)
+        _setter("snapshot_identifier", snapshot_identifier)
+        _setter("time_db_startup", time_db_startup)
+        _setter("time_snapshot_begin", time_snapshot_begin)
+        _setter("time_snapshot_end", time_snapshot_end)
 
     @property
     @pulumi.getter(name="awrSourceDatabaseId")
@@ -1402,7 +1655,16 @@ class GetAwrHubAwrSnapshotsAwrSnapshotCollectionResult(dict):
         """
         :param Sequence['GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemArgs'] items: A list of AWR snapshot summary data.
         """
-        pulumi.set(__self__, "items", items)
+        GetAwrHubAwrSnapshotsAwrSnapshotCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1420,7 +1682,16 @@ class GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemResult(dict):
         """
         :param Sequence['GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemArgs'] items: A list of AWR snapshot summary data.
         """
-        pulumi.set(__self__, "items", items)
+        GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1450,13 +1721,34 @@ class GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemResult(dict):
         :param str time_snapshot_begin: The start time of the snapshot.
         :param str time_snapshot_end: The end time of the snapshot.
         """
-        pulumi.set(__self__, "awr_source_database_id", awr_source_database_id)
-        pulumi.set(__self__, "error_count", error_count)
-        pulumi.set(__self__, "instance_number", instance_number)
-        pulumi.set(__self__, "snapshot_identifier", snapshot_identifier)
-        pulumi.set(__self__, "time_db_startup", time_db_startup)
-        pulumi.set(__self__, "time_snapshot_begin", time_snapshot_begin)
-        pulumi.set(__self__, "time_snapshot_end", time_snapshot_end)
+        GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            awr_source_database_id=awr_source_database_id,
+            error_count=error_count,
+            instance_number=instance_number,
+            snapshot_identifier=snapshot_identifier,
+            time_db_startup=time_db_startup,
+            time_snapshot_begin=time_snapshot_begin,
+            time_snapshot_end=time_snapshot_end,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             awr_source_database_id: str,
+             error_count: str,
+             instance_number: int,
+             snapshot_identifier: int,
+             time_db_startup: str,
+             time_snapshot_begin: str,
+             time_snapshot_end: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("awr_source_database_id", awr_source_database_id)
+        _setter("error_count", error_count)
+        _setter("instance_number", instance_number)
+        _setter("snapshot_identifier", snapshot_identifier)
+        _setter("time_db_startup", time_db_startup)
+        _setter("time_snapshot_begin", time_snapshot_begin)
+        _setter("time_snapshot_end", time_snapshot_end)
 
     @property
     @pulumi.getter(name="awrSourceDatabaseId")
@@ -1521,10 +1813,23 @@ class GetAwrHubAwrSnapshotsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAwrHubAwrSnapshotsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1565,15 +1870,40 @@ class GetAwrHubAwrSourcesSummaryItemResult(dict):
         :param str time_first_snapshot_generated: The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
         :param str time_last_snapshot_generated: The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
         """
-        pulumi.set(__self__, "awr_hub_id", awr_hub_id)
-        pulumi.set(__self__, "awr_source_database_id", awr_source_database_id)
-        pulumi.set(__self__, "hours_since_last_import", hours_since_last_import)
-        pulumi.set(__self__, "max_snapshot_identifier", max_snapshot_identifier)
-        pulumi.set(__self__, "min_snapshot_identifier", min_snapshot_identifier)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "snapshots_uploaded", snapshots_uploaded)
-        pulumi.set(__self__, "time_first_snapshot_generated", time_first_snapshot_generated)
-        pulumi.set(__self__, "time_last_snapshot_generated", time_last_snapshot_generated)
+        GetAwrHubAwrSourcesSummaryItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            awr_hub_id=awr_hub_id,
+            awr_source_database_id=awr_source_database_id,
+            hours_since_last_import=hours_since_last_import,
+            max_snapshot_identifier=max_snapshot_identifier,
+            min_snapshot_identifier=min_snapshot_identifier,
+            name=name,
+            snapshots_uploaded=snapshots_uploaded,
+            time_first_snapshot_generated=time_first_snapshot_generated,
+            time_last_snapshot_generated=time_last_snapshot_generated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             awr_hub_id: str,
+             awr_source_database_id: str,
+             hours_since_last_import: float,
+             max_snapshot_identifier: float,
+             min_snapshot_identifier: float,
+             name: str,
+             snapshots_uploaded: float,
+             time_first_snapshot_generated: str,
+             time_last_snapshot_generated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("awr_hub_id", awr_hub_id)
+        _setter("awr_source_database_id", awr_source_database_id)
+        _setter("hours_since_last_import", hours_since_last_import)
+        _setter("max_snapshot_identifier", max_snapshot_identifier)
+        _setter("min_snapshot_identifier", min_snapshot_identifier)
+        _setter("name", name)
+        _setter("snapshots_uploaded", snapshots_uploaded)
+        _setter("time_first_snapshot_generated", time_first_snapshot_generated)
+        _setter("time_last_snapshot_generated", time_last_snapshot_generated)
 
     @property
     @pulumi.getter(name="awrHubId")
@@ -1652,7 +1982,16 @@ class GetAwrHubAwrSourcesSummaryItemResult(dict):
 class GetAwrHubsAwrHubSummaryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAwrHubsAwrHubSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetAwrHubsAwrHubSummaryCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAwrHubsAwrHubSummaryCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1691,19 +2030,52 @@ class GetAwrHubsAwrHubSummaryCollectionItemResult(dict):
         :param str time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
         :param str time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
-        pulumi.set(__self__, "awr_mailbox_url", awr_mailbox_url)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "object_storage_bucket_name", object_storage_bucket_name)
-        pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetAwrHubsAwrHubSummaryCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            awr_mailbox_url=awr_mailbox_url,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            object_storage_bucket_name=object_storage_bucket_name,
+            operations_insights_warehouse_id=operations_insights_warehouse_id,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             awr_mailbox_url: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             object_storage_bucket_name: str,
+             operations_insights_warehouse_id: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("awr_mailbox_url", awr_mailbox_url)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("object_storage_bucket_name", object_storage_bucket_name)
+        _setter("operations_insights_warehouse_id", operations_insights_warehouse_id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="awrMailboxUrl")
@@ -1816,10 +2188,23 @@ class GetAwrHubsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAwrHubsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1854,12 +2239,31 @@ class GetDatabaseInsightConnectionCredentialDetailResult(dict):
         :param str user_name: database user name.
         :param str wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
         """
-        pulumi.set(__self__, "credential_source_name", credential_source_name)
-        pulumi.set(__self__, "credential_type", credential_type)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
-        pulumi.set(__self__, "role", role)
-        pulumi.set(__self__, "user_name", user_name)
-        pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
+        GetDatabaseInsightConnectionCredentialDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_source_name=credential_source_name,
+            credential_type=credential_type,
+            password_secret_id=password_secret_id,
+            role=role,
+            user_name=user_name,
+            wallet_secret_id=wallet_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_source_name: str,
+             credential_type: str,
+             password_secret_id: str,
+             role: str,
+             user_name: str,
+             wallet_secret_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credential_source_name", credential_source_name)
+        _setter("credential_type", credential_type)
+        _setter("password_secret_id", password_secret_id)
+        _setter("role", role)
+        _setter("user_name", user_name)
+        _setter("wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="credentialSourceName")
@@ -1925,11 +2329,28 @@ class GetDatabaseInsightConnectionDetailResult(dict):
         :param str protocol: Protocol used for connection requests for private endpoint accssed database resource.
         :param str service_name: Database service name used for connection requests.
         """
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "hosts", hosts)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "service_name", service_name)
+        GetDatabaseInsightConnectionDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host_name=host_name,
+            hosts=hosts,
+            port=port,
+            protocol=protocol,
+            service_name=service_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host_name: str,
+             hosts: Sequence['outputs.GetDatabaseInsightConnectionDetailHostResult'],
+             port: int,
+             protocol: str,
+             service_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("host_name", host_name)
+        _setter("hosts", hosts)
+        _setter("port", port)
+        _setter("protocol", protocol)
+        _setter("service_name", service_name)
 
     @property
     @pulumi.getter(name="hostName")
@@ -1981,8 +2402,19 @@ class GetDatabaseInsightConnectionDetailHostResult(dict):
         :param str host_ip: Host IP used for connection requests for Cloud DB resource.
         :param int port: Listener port number used for connection requests.
         """
-        pulumi.set(__self__, "host_ip", host_ip)
-        pulumi.set(__self__, "port", port)
+        GetDatabaseInsightConnectionDetailHostResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host_ip=host_ip,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host_ip: str,
+             port: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("host_ip", host_ip)
+        _setter("port", port)
 
     @property
     @pulumi.getter(name="hostIp")
@@ -2018,12 +2450,31 @@ class GetDatabaseInsightCredentialDetailResult(dict):
         :param str user_name: database user name.
         :param str wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
         """
-        pulumi.set(__self__, "credential_source_name", credential_source_name)
-        pulumi.set(__self__, "credential_type", credential_type)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
-        pulumi.set(__self__, "role", role)
-        pulumi.set(__self__, "user_name", user_name)
-        pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
+        GetDatabaseInsightCredentialDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_source_name=credential_source_name,
+            credential_type=credential_type,
+            password_secret_id=password_secret_id,
+            role=role,
+            user_name=user_name,
+            wallet_secret_id=wallet_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_source_name: str,
+             credential_type: str,
+             password_secret_id: str,
+             role: str,
+             user_name: str,
+             wallet_secret_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credential_source_name", credential_source_name)
+        _setter("credential_type", credential_type)
+        _setter("password_secret_id", password_secret_id)
+        _setter("role", role)
+        _setter("user_name", user_name)
+        _setter("wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="credentialSourceName")
@@ -2078,7 +2529,16 @@ class GetDatabaseInsightCredentialDetailResult(dict):
 class GetDatabaseInsightsDatabaseInsightsCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetDatabaseInsightsDatabaseInsightsCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2159,41 +2619,118 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
         :param str time_created: The time the the database insight was first enabled. An RFC3339 formatted datetime string
         :param str time_updated: The time the database insight was updated. An RFC3339 formatted datetime string
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connection_credential_details", connection_credential_details)
-        pulumi.set(__self__, "connection_details", connection_details)
-        pulumi.set(__self__, "credential_details", credential_details)
-        pulumi.set(__self__, "database_connection_status_details", database_connection_status_details)
-        pulumi.set(__self__, "database_display_name", database_display_name)
-        pulumi.set(__self__, "database_id", database_id)
-        pulumi.set(__self__, "database_name", database_name)
-        pulumi.set(__self__, "database_resource_type", database_resource_type)
-        pulumi.set(__self__, "database_type", database_type)
-        pulumi.set(__self__, "database_version", database_version)
-        pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "enterprise_manager_bridge_id", enterprise_manager_bridge_id)
-        pulumi.set(__self__, "enterprise_manager_entity_display_name", enterprise_manager_entity_display_name)
-        pulumi.set(__self__, "enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
-        pulumi.set(__self__, "enterprise_manager_entity_name", enterprise_manager_entity_name)
-        pulumi.set(__self__, "enterprise_manager_entity_type", enterprise_manager_entity_type)
-        pulumi.set(__self__, "enterprise_manager_identifier", enterprise_manager_identifier)
-        pulumi.set(__self__, "entity_source", entity_source)
-        pulumi.set(__self__, "exadata_insight_id", exadata_insight_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
-        pulumi.set(__self__, "parent_id", parent_id)
-        pulumi.set(__self__, "processor_count", processor_count)
-        pulumi.set(__self__, "root_id", root_id)
-        pulumi.set(__self__, "service_name", service_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetDatabaseInsightsDatabaseInsightsCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            connection_credential_details=connection_credential_details,
+            connection_details=connection_details,
+            credential_details=credential_details,
+            database_connection_status_details=database_connection_status_details,
+            database_display_name=database_display_name,
+            database_id=database_id,
+            database_name=database_name,
+            database_resource_type=database_resource_type,
+            database_type=database_type,
+            database_version=database_version,
+            dbm_private_endpoint_id=dbm_private_endpoint_id,
+            defined_tags=defined_tags,
+            deployment_type=deployment_type,
+            enterprise_manager_bridge_id=enterprise_manager_bridge_id,
+            enterprise_manager_entity_display_name=enterprise_manager_entity_display_name,
+            enterprise_manager_entity_identifier=enterprise_manager_entity_identifier,
+            enterprise_manager_entity_name=enterprise_manager_entity_name,
+            enterprise_manager_entity_type=enterprise_manager_entity_type,
+            enterprise_manager_identifier=enterprise_manager_identifier,
+            entity_source=entity_source,
+            exadata_insight_id=exadata_insight_id,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            opsi_private_endpoint_id=opsi_private_endpoint_id,
+            parent_id=parent_id,
+            processor_count=processor_count,
+            root_id=root_id,
+            service_name=service_name,
+            state=state,
+            status=status,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             connection_credential_details: Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailResult'],
+             connection_details: Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailResult'],
+             credential_details: Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailResult'],
+             database_connection_status_details: str,
+             database_display_name: str,
+             database_id: str,
+             database_name: str,
+             database_resource_type: str,
+             database_type: str,
+             database_version: str,
+             dbm_private_endpoint_id: str,
+             defined_tags: Mapping[str, Any],
+             deployment_type: str,
+             enterprise_manager_bridge_id: str,
+             enterprise_manager_entity_display_name: str,
+             enterprise_manager_entity_identifier: str,
+             enterprise_manager_entity_name: str,
+             enterprise_manager_entity_type: str,
+             enterprise_manager_identifier: str,
+             entity_source: str,
+             exadata_insight_id: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             opsi_private_endpoint_id: str,
+             parent_id: str,
+             processor_count: int,
+             root_id: str,
+             service_name: str,
+             state: str,
+             status: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("connection_credential_details", connection_credential_details)
+        _setter("connection_details", connection_details)
+        _setter("credential_details", credential_details)
+        _setter("database_connection_status_details", database_connection_status_details)
+        _setter("database_display_name", database_display_name)
+        _setter("database_id", database_id)
+        _setter("database_name", database_name)
+        _setter("database_resource_type", database_resource_type)
+        _setter("database_type", database_type)
+        _setter("database_version", database_version)
+        _setter("dbm_private_endpoint_id", dbm_private_endpoint_id)
+        _setter("defined_tags", defined_tags)
+        _setter("deployment_type", deployment_type)
+        _setter("enterprise_manager_bridge_id", enterprise_manager_bridge_id)
+        _setter("enterprise_manager_entity_display_name", enterprise_manager_entity_display_name)
+        _setter("enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
+        _setter("enterprise_manager_entity_name", enterprise_manager_entity_name)
+        _setter("enterprise_manager_entity_type", enterprise_manager_entity_type)
+        _setter("enterprise_manager_identifier", enterprise_manager_identifier)
+        _setter("entity_source", entity_source)
+        _setter("exadata_insight_id", exadata_insight_id)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("opsi_private_endpoint_id", opsi_private_endpoint_id)
+        _setter("parent_id", parent_id)
+        _setter("processor_count", processor_count)
+        _setter("root_id", root_id)
+        _setter("service_name", service_name)
+        _setter("state", state)
+        _setter("status", status)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2487,12 +3024,31 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetai
         :param str user_name: database user name.
         :param str wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
         """
-        pulumi.set(__self__, "credential_source_name", credential_source_name)
-        pulumi.set(__self__, "credential_type", credential_type)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
-        pulumi.set(__self__, "role", role)
-        pulumi.set(__self__, "user_name", user_name)
-        pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
+        GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_source_name=credential_source_name,
+            credential_type=credential_type,
+            password_secret_id=password_secret_id,
+            role=role,
+            user_name=user_name,
+            wallet_secret_id=wallet_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_source_name: str,
+             credential_type: str,
+             password_secret_id: str,
+             role: str,
+             user_name: str,
+             wallet_secret_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credential_source_name", credential_source_name)
+        _setter("credential_type", credential_type)
+        _setter("password_secret_id", password_secret_id)
+        _setter("role", role)
+        _setter("user_name", user_name)
+        _setter("wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="credentialSourceName")
@@ -2558,11 +3114,28 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailResult(di
         :param str protocol: Protocol used for connection requests for private endpoint accssed database resource.
         :param str service_name: Database service name used for connection requests.
         """
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "hosts", hosts)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "service_name", service_name)
+        GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host_name=host_name,
+            hosts=hosts,
+            port=port,
+            protocol=protocol,
+            service_name=service_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host_name: str,
+             hosts: Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostResult'],
+             port: int,
+             protocol: str,
+             service_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("host_name", host_name)
+        _setter("hosts", hosts)
+        _setter("port", port)
+        _setter("protocol", protocol)
+        _setter("service_name", service_name)
 
     @property
     @pulumi.getter(name="hostName")
@@ -2614,8 +3187,19 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostResul
         :param str host_ip: Host IP used for connection requests for Cloud DB resource.
         :param int port: Listener port number used for connection requests.
         """
-        pulumi.set(__self__, "host_ip", host_ip)
-        pulumi.set(__self__, "port", port)
+        GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHostResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host_ip=host_ip,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host_ip: str,
+             port: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("host_ip", host_ip)
+        _setter("port", port)
 
     @property
     @pulumi.getter(name="hostIp")
@@ -2651,12 +3235,31 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailResult(di
         :param str user_name: database user name.
         :param str wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
         """
-        pulumi.set(__self__, "credential_source_name", credential_source_name)
-        pulumi.set(__self__, "credential_type", credential_type)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
-        pulumi.set(__self__, "role", role)
-        pulumi.set(__self__, "user_name", user_name)
-        pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
+        GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_source_name=credential_source_name,
+            credential_type=credential_type,
+            password_secret_id=password_secret_id,
+            role=role,
+            user_name=user_name,
+            wallet_secret_id=wallet_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_source_name: str,
+             credential_type: str,
+             password_secret_id: str,
+             role: str,
+             user_name: str,
+             wallet_secret_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credential_source_name", credential_source_name)
+        _setter("credential_type", credential_type)
+        _setter("password_secret_id", password_secret_id)
+        _setter("role", role)
+        _setter("user_name", user_name)
+        _setter("wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="credentialSourceName")
@@ -2713,10 +3316,23 @@ class GetDatabaseInsightsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDatabaseInsightsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2738,7 +3354,16 @@ class GetDatabaseInsightsFilterResult(dict):
 class GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2779,20 +3404,55 @@ class GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemResult(dic
         :param str time_created: The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
         :param str time_updated: The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "object_storage_bucket_name", object_storage_bucket_name)
-        pulumi.set(__self__, "object_storage_bucket_status_details", object_storage_bucket_status_details)
-        pulumi.set(__self__, "object_storage_namespace_name", object_storage_namespace_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            object_storage_bucket_name=object_storage_bucket_name,
+            object_storage_bucket_status_details=object_storage_bucket_status_details,
+            object_storage_namespace_name=object_storage_namespace_name,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             object_storage_bucket_name: str,
+             object_storage_bucket_status_details: str,
+             object_storage_namespace_name: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("object_storage_bucket_name", object_storage_bucket_name)
+        _setter("object_storage_bucket_status_details", object_storage_bucket_status_details)
+        _setter("object_storage_namespace_name", object_storage_namespace_name)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2913,10 +3573,23 @@ class GetEnterpriseManagerBridgesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetEnterpriseManagerBridgesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2945,11 +3618,28 @@ class GetExadataInsightMemberVmClusterDetailResult(dict):
         """
         :param str compartment_id: Compartment identifier of the Exadata insight resource
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
-        pulumi.set(__self__, "member_database_details", member_database_details)
-        pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
-        pulumi.set(__self__, "vmcluster_id", vmcluster_id)
+        GetExadataInsightMemberVmClusterDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            dbm_private_endpoint_id=dbm_private_endpoint_id,
+            member_database_details=member_database_details,
+            opsi_private_endpoint_id=opsi_private_endpoint_id,
+            vmcluster_id=vmcluster_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             dbm_private_endpoint_id: str,
+             member_database_details: Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult'],
+             opsi_private_endpoint_id: str,
+             vmcluster_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("dbm_private_endpoint_id", dbm_private_endpoint_id)
+        _setter("member_database_details", member_database_details)
+        _setter("opsi_private_endpoint_id", opsi_private_endpoint_id)
+        _setter("vmcluster_id", vmcluster_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3003,19 +3693,52 @@ class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult(dict):
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connection_details", connection_details)
-        pulumi.set(__self__, "credential_details", credential_details)
-        pulumi.set(__self__, "database_id", database_id)
-        pulumi.set(__self__, "database_resource_type", database_resource_type)
-        pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "entity_source", entity_source)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
-        pulumi.set(__self__, "service_name", service_name)
-        pulumi.set(__self__, "system_tags", system_tags)
+        GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            connection_details=connection_details,
+            credential_details=credential_details,
+            database_id=database_id,
+            database_resource_type=database_resource_type,
+            dbm_private_endpoint_id=dbm_private_endpoint_id,
+            defined_tags=defined_tags,
+            deployment_type=deployment_type,
+            entity_source=entity_source,
+            freeform_tags=freeform_tags,
+            opsi_private_endpoint_id=opsi_private_endpoint_id,
+            service_name=service_name,
+            system_tags=system_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             connection_details: Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult'],
+             credential_details: Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult'],
+             database_id: str,
+             database_resource_type: str,
+             dbm_private_endpoint_id: str,
+             defined_tags: Mapping[str, Any],
+             deployment_type: str,
+             entity_source: str,
+             freeform_tags: Mapping[str, Any],
+             opsi_private_endpoint_id: str,
+             service_name: str,
+             system_tags: Mapping[str, Any],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("connection_details", connection_details)
+        _setter("credential_details", credential_details)
+        _setter("database_id", database_id)
+        _setter("database_resource_type", database_resource_type)
+        _setter("dbm_private_endpoint_id", dbm_private_endpoint_id)
+        _setter("defined_tags", defined_tags)
+        _setter("deployment_type", deployment_type)
+        _setter("entity_source", entity_source)
+        _setter("freeform_tags", freeform_tags)
+        _setter("opsi_private_endpoint_id", opsi_private_endpoint_id)
+        _setter("service_name", service_name)
+        _setter("system_tags", system_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3104,9 +3827,22 @@ class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail
                  hosts: Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult'],
                  protocol: str,
                  service_name: str):
-        pulumi.set(__self__, "hosts", hosts)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "service_name", service_name)
+        GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hosts=hosts,
+            protocol=protocol,
+            service_name=service_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hosts: Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult'],
+             protocol: str,
+             service_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hosts", hosts)
+        _setter("protocol", protocol)
+        _setter("service_name", service_name)
 
     @property
     @pulumi.getter
@@ -3129,8 +3865,19 @@ class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetail
     def __init__(__self__, *,
                  host_ip: str,
                  port: int):
-        pulumi.set(__self__, "host_ip", host_ip)
-        pulumi.set(__self__, "port", port)
+        GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host_ip=host_ip,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host_ip: str,
+             port: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("host_ip", host_ip)
+        _setter("port", port)
 
     @property
     @pulumi.getter(name="hostIp")
@@ -3152,12 +3899,31 @@ class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail
                  role: str,
                  user_name: str,
                  wallet_secret_id: str):
-        pulumi.set(__self__, "credential_source_name", credential_source_name)
-        pulumi.set(__self__, "credential_type", credential_type)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
-        pulumi.set(__self__, "role", role)
-        pulumi.set(__self__, "user_name", user_name)
-        pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
+        GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_source_name=credential_source_name,
+            credential_type=credential_type,
+            password_secret_id=password_secret_id,
+            role=role,
+            user_name=user_name,
+            wallet_secret_id=wallet_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_source_name: str,
+             credential_type: str,
+             password_secret_id: str,
+             role: str,
+             user_name: str,
+             wallet_secret_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credential_source_name", credential_source_name)
+        _setter("credential_type", credential_type)
+        _setter("password_secret_id", password_secret_id)
+        _setter("role", role)
+        _setter("user_name", user_name)
+        _setter("wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="credentialSourceName")
@@ -3194,7 +3960,16 @@ class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail
 class GetExadataInsightsExadataInsightSummaryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetExadataInsightsExadataInsightSummaryCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3259,33 +4034,94 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemResult(dict):
         :param str time_created: The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
         :param str time_updated: The time the Exadata insight was updated. An RFC3339 formatted datetime string
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "enterprise_manager_bridge_id", enterprise_manager_bridge_id)
-        pulumi.set(__self__, "enterprise_manager_entity_display_name", enterprise_manager_entity_display_name)
-        pulumi.set(__self__, "enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
-        pulumi.set(__self__, "enterprise_manager_entity_name", enterprise_manager_entity_name)
-        pulumi.set(__self__, "enterprise_manager_entity_type", enterprise_manager_entity_type)
-        pulumi.set(__self__, "enterprise_manager_identifier", enterprise_manager_identifier)
-        pulumi.set(__self__, "entity_source", entity_source)
-        pulumi.set(__self__, "exadata_display_name", exadata_display_name)
-        pulumi.set(__self__, "exadata_infra_id", exadata_infra_id)
-        pulumi.set(__self__, "exadata_infra_resource_type", exadata_infra_resource_type)
-        pulumi.set(__self__, "exadata_name", exadata_name)
-        pulumi.set(__self__, "exadata_rack_type", exadata_rack_type)
-        pulumi.set(__self__, "exadata_shape", exadata_shape)
-        pulumi.set(__self__, "exadata_type", exadata_type)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_auto_sync_enabled", is_auto_sync_enabled)
-        pulumi.set(__self__, "is_virtualized_exadata", is_virtualized_exadata)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "member_vm_cluster_details", member_vm_cluster_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetExadataInsightsExadataInsightSummaryCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            enterprise_manager_bridge_id=enterprise_manager_bridge_id,
+            enterprise_manager_entity_display_name=enterprise_manager_entity_display_name,
+            enterprise_manager_entity_identifier=enterprise_manager_entity_identifier,
+            enterprise_manager_entity_name=enterprise_manager_entity_name,
+            enterprise_manager_entity_type=enterprise_manager_entity_type,
+            enterprise_manager_identifier=enterprise_manager_identifier,
+            entity_source=entity_source,
+            exadata_display_name=exadata_display_name,
+            exadata_infra_id=exadata_infra_id,
+            exadata_infra_resource_type=exadata_infra_resource_type,
+            exadata_name=exadata_name,
+            exadata_rack_type=exadata_rack_type,
+            exadata_shape=exadata_shape,
+            exadata_type=exadata_type,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_auto_sync_enabled=is_auto_sync_enabled,
+            is_virtualized_exadata=is_virtualized_exadata,
+            lifecycle_details=lifecycle_details,
+            member_vm_cluster_details=member_vm_cluster_details,
+            state=state,
+            status=status,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             enterprise_manager_bridge_id: str,
+             enterprise_manager_entity_display_name: str,
+             enterprise_manager_entity_identifier: str,
+             enterprise_manager_entity_name: str,
+             enterprise_manager_entity_type: str,
+             enterprise_manager_identifier: str,
+             entity_source: str,
+             exadata_display_name: str,
+             exadata_infra_id: str,
+             exadata_infra_resource_type: str,
+             exadata_name: str,
+             exadata_rack_type: str,
+             exadata_shape: str,
+             exadata_type: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_auto_sync_enabled: bool,
+             is_virtualized_exadata: bool,
+             lifecycle_details: str,
+             member_vm_cluster_details: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailResult'],
+             state: str,
+             status: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("enterprise_manager_bridge_id", enterprise_manager_bridge_id)
+        _setter("enterprise_manager_entity_display_name", enterprise_manager_entity_display_name)
+        _setter("enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
+        _setter("enterprise_manager_entity_name", enterprise_manager_entity_name)
+        _setter("enterprise_manager_entity_type", enterprise_manager_entity_type)
+        _setter("enterprise_manager_identifier", enterprise_manager_identifier)
+        _setter("entity_source", entity_source)
+        _setter("exadata_display_name", exadata_display_name)
+        _setter("exadata_infra_id", exadata_infra_id)
+        _setter("exadata_infra_resource_type", exadata_infra_resource_type)
+        _setter("exadata_name", exadata_name)
+        _setter("exadata_rack_type", exadata_rack_type)
+        _setter("exadata_shape", exadata_shape)
+        _setter("exadata_type", exadata_type)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_auto_sync_enabled", is_auto_sync_enabled)
+        _setter("is_virtualized_exadata", is_virtualized_exadata)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("member_vm_cluster_details", member_vm_cluster_details)
+        _setter("state", state)
+        _setter("status", status)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3509,11 +4345,28 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
-        pulumi.set(__self__, "member_database_details", member_database_details)
-        pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
-        pulumi.set(__self__, "vmcluster_id", vmcluster_id)
+        GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            dbm_private_endpoint_id=dbm_private_endpoint_id,
+            member_database_details=member_database_details,
+            opsi_private_endpoint_id=opsi_private_endpoint_id,
+            vmcluster_id=vmcluster_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             dbm_private_endpoint_id: str,
+             member_database_details: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailResult'],
+             opsi_private_endpoint_id: str,
+             vmcluster_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("dbm_private_endpoint_id", dbm_private_endpoint_id)
+        _setter("member_database_details", member_database_details)
+        _setter("opsi_private_endpoint_id", opsi_private_endpoint_id)
+        _setter("vmcluster_id", vmcluster_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3567,19 +4420,52 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connection_details", connection_details)
-        pulumi.set(__self__, "credential_details", credential_details)
-        pulumi.set(__self__, "database_id", database_id)
-        pulumi.set(__self__, "database_resource_type", database_resource_type)
-        pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "entity_source", entity_source)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
-        pulumi.set(__self__, "service_name", service_name)
-        pulumi.set(__self__, "system_tags", system_tags)
+        GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            connection_details=connection_details,
+            credential_details=credential_details,
+            database_id=database_id,
+            database_resource_type=database_resource_type,
+            dbm_private_endpoint_id=dbm_private_endpoint_id,
+            defined_tags=defined_tags,
+            deployment_type=deployment_type,
+            entity_source=entity_source,
+            freeform_tags=freeform_tags,
+            opsi_private_endpoint_id=opsi_private_endpoint_id,
+            service_name=service_name,
+            system_tags=system_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             connection_details: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult'],
+             credential_details: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult'],
+             database_id: str,
+             database_resource_type: str,
+             dbm_private_endpoint_id: str,
+             defined_tags: Mapping[str, Any],
+             deployment_type: str,
+             entity_source: str,
+             freeform_tags: Mapping[str, Any],
+             opsi_private_endpoint_id: str,
+             service_name: str,
+             system_tags: Mapping[str, Any],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("connection_details", connection_details)
+        _setter("credential_details", credential_details)
+        _setter("database_id", database_id)
+        _setter("database_resource_type", database_resource_type)
+        _setter("dbm_private_endpoint_id", dbm_private_endpoint_id)
+        _setter("defined_tags", defined_tags)
+        _setter("deployment_type", deployment_type)
+        _setter("entity_source", entity_source)
+        _setter("freeform_tags", freeform_tags)
+        _setter("opsi_private_endpoint_id", opsi_private_endpoint_id)
+        _setter("service_name", service_name)
+        _setter("system_tags", system_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3668,9 +4554,22 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail
                  hosts: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult'],
                  protocol: str,
                  service_name: str):
-        pulumi.set(__self__, "hosts", hosts)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "service_name", service_name)
+        GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hosts=hosts,
+            protocol=protocol,
+            service_name=service_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hosts: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult'],
+             protocol: str,
+             service_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hosts", hosts)
+        _setter("protocol", protocol)
+        _setter("service_name", service_name)
 
     @property
     @pulumi.getter
@@ -3693,8 +4592,19 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail
     def __init__(__self__, *,
                  host_ip: str,
                  port: int):
-        pulumi.set(__self__, "host_ip", host_ip)
-        pulumi.set(__self__, "port", port)
+        GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHostResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host_ip=host_ip,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host_ip: str,
+             port: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("host_ip", host_ip)
+        _setter("port", port)
 
     @property
     @pulumi.getter(name="hostIp")
@@ -3716,12 +4626,31 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail
                  role: str,
                  user_name: str,
                  wallet_secret_id: str):
-        pulumi.set(__self__, "credential_source_name", credential_source_name)
-        pulumi.set(__self__, "credential_type", credential_type)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
-        pulumi.set(__self__, "role", role)
-        pulumi.set(__self__, "user_name", user_name)
-        pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
+        GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_source_name=credential_source_name,
+            credential_type=credential_type,
+            password_secret_id=password_secret_id,
+            role=role,
+            user_name=user_name,
+            wallet_secret_id=wallet_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_source_name: str,
+             credential_type: str,
+             password_secret_id: str,
+             role: str,
+             user_name: str,
+             wallet_secret_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credential_source_name", credential_source_name)
+        _setter("credential_type", credential_type)
+        _setter("password_secret_id", password_secret_id)
+        _setter("role", role)
+        _setter("user_name", user_name)
+        _setter("wallet_secret_id", wallet_secret_id)
 
     @property
     @pulumi.getter(name="credentialSourceName")
@@ -3760,10 +4689,23 @@ class GetExadataInsightsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExadataInsightsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3787,10 +4729,23 @@ class GetHostInsightsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetHostInsightsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3812,7 +4767,16 @@ class GetHostInsightsFilterResult(dict):
 class GetHostInsightsHostInsightSummaryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetHostInsightsHostInsightSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetHostInsightsHostInsightSummaryCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetHostInsightsHostInsightSummaryCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3879,33 +4843,94 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
         :param str time_created: The time the the host insight was first enabled. An RFC3339 formatted datetime string
         :param str time_updated: The time the host insight was updated. An RFC3339 formatted datetime string
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compute_id", compute_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "enterprise_manager_bridge_id", enterprise_manager_bridge_id)
-        pulumi.set(__self__, "enterprise_manager_entity_display_name", enterprise_manager_entity_display_name)
-        pulumi.set(__self__, "enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
-        pulumi.set(__self__, "enterprise_manager_entity_name", enterprise_manager_entity_name)
-        pulumi.set(__self__, "enterprise_manager_entity_type", enterprise_manager_entity_type)
-        pulumi.set(__self__, "enterprise_manager_identifier", enterprise_manager_identifier)
-        pulumi.set(__self__, "entity_source", entity_source)
-        pulumi.set(__self__, "exadata_insight_id", exadata_insight_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "host_display_name", host_display_name)
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "host_type", host_type)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "management_agent_id", management_agent_id)
-        pulumi.set(__self__, "platform_name", platform_name)
-        pulumi.set(__self__, "platform_type", platform_type)
-        pulumi.set(__self__, "platform_version", platform_version)
-        pulumi.set(__self__, "processor_count", processor_count)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetHostInsightsHostInsightSummaryCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            compute_id=compute_id,
+            defined_tags=defined_tags,
+            enterprise_manager_bridge_id=enterprise_manager_bridge_id,
+            enterprise_manager_entity_display_name=enterprise_manager_entity_display_name,
+            enterprise_manager_entity_identifier=enterprise_manager_entity_identifier,
+            enterprise_manager_entity_name=enterprise_manager_entity_name,
+            enterprise_manager_entity_type=enterprise_manager_entity_type,
+            enterprise_manager_identifier=enterprise_manager_identifier,
+            entity_source=entity_source,
+            exadata_insight_id=exadata_insight_id,
+            freeform_tags=freeform_tags,
+            host_display_name=host_display_name,
+            host_name=host_name,
+            host_type=host_type,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            management_agent_id=management_agent_id,
+            platform_name=platform_name,
+            platform_type=platform_type,
+            platform_version=platform_version,
+            processor_count=processor_count,
+            state=state,
+            status=status,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             compute_id: str,
+             defined_tags: Mapping[str, Any],
+             enterprise_manager_bridge_id: str,
+             enterprise_manager_entity_display_name: str,
+             enterprise_manager_entity_identifier: str,
+             enterprise_manager_entity_name: str,
+             enterprise_manager_entity_type: str,
+             enterprise_manager_identifier: str,
+             entity_source: str,
+             exadata_insight_id: str,
+             freeform_tags: Mapping[str, Any],
+             host_display_name: str,
+             host_name: str,
+             host_type: str,
+             id: str,
+             lifecycle_details: str,
+             management_agent_id: str,
+             platform_name: str,
+             platform_type: str,
+             platform_version: str,
+             processor_count: int,
+             state: str,
+             status: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("compute_id", compute_id)
+        _setter("defined_tags", defined_tags)
+        _setter("enterprise_manager_bridge_id", enterprise_manager_bridge_id)
+        _setter("enterprise_manager_entity_display_name", enterprise_manager_entity_display_name)
+        _setter("enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
+        _setter("enterprise_manager_entity_name", enterprise_manager_entity_name)
+        _setter("enterprise_manager_entity_type", enterprise_manager_entity_type)
+        _setter("enterprise_manager_identifier", enterprise_manager_identifier)
+        _setter("entity_source", entity_source)
+        _setter("exadata_insight_id", exadata_insight_id)
+        _setter("freeform_tags", freeform_tags)
+        _setter("host_display_name", host_display_name)
+        _setter("host_name", host_name)
+        _setter("host_type", host_type)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("management_agent_id", management_agent_id)
+        _setter("platform_name", platform_name)
+        _setter("platform_type", platform_type)
+        _setter("platform_version", platform_version)
+        _setter("processor_count", processor_count)
+        _setter("state", state)
+        _setter("status", status)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -4139,11 +5164,28 @@ class GetImportableAgentEntitiesItemResult(dict):
         :param str management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
         :param str platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
         """
-        pulumi.set(__self__, "entity_source", entity_source)
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "management_agent_display_name", management_agent_display_name)
-        pulumi.set(__self__, "management_agent_id", management_agent_id)
-        pulumi.set(__self__, "platform_type", platform_type)
+        GetImportableAgentEntitiesItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            entity_source=entity_source,
+            host_name=host_name,
+            management_agent_display_name=management_agent_display_name,
+            management_agent_id=management_agent_id,
+            platform_type=platform_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             entity_source: str,
+             host_name: str,
+             management_agent_display_name: str,
+             management_agent_id: str,
+             platform_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("entity_source", entity_source)
+        _setter("host_name", host_name)
+        _setter("management_agent_display_name", management_agent_display_name)
+        _setter("management_agent_id", management_agent_id)
+        _setter("platform_type", platform_type)
 
     @property
     @pulumi.getter(name="entitySource")
@@ -4201,11 +5243,28 @@ class GetImportableAgentEntityItemResult(dict):
         :param str management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
         :param str platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
         """
-        pulumi.set(__self__, "entity_source", entity_source)
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "management_agent_display_name", management_agent_display_name)
-        pulumi.set(__self__, "management_agent_id", management_agent_id)
-        pulumi.set(__self__, "platform_type", platform_type)
+        GetImportableAgentEntityItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            entity_source=entity_source,
+            host_name=host_name,
+            management_agent_display_name=management_agent_display_name,
+            management_agent_id=management_agent_id,
+            platform_type=platform_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             entity_source: str,
+             host_name: str,
+             management_agent_display_name: str,
+             management_agent_id: str,
+             platform_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("entity_source", entity_source)
+        _setter("host_name", host_name)
+        _setter("management_agent_display_name", management_agent_display_name)
+        _setter("management_agent_id", management_agent_id)
+        _setter("platform_type", platform_type)
 
     @property
     @pulumi.getter(name="entitySource")
@@ -4265,12 +5324,31 @@ class GetImportableComputeEntitiesItemResult(dict):
         :param str host_name: The host name. The host name is unique amongst the hosts managed by the same management agent.
         :param str platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compute_display_name", compute_display_name)
-        pulumi.set(__self__, "compute_id", compute_id)
-        pulumi.set(__self__, "entity_source", entity_source)
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "platform_type", platform_type)
+        GetImportableComputeEntitiesItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            compute_display_name=compute_display_name,
+            compute_id=compute_id,
+            entity_source=entity_source,
+            host_name=host_name,
+            platform_type=platform_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             compute_display_name: str,
+             compute_id: str,
+             entity_source: str,
+             host_name: str,
+             platform_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("compute_display_name", compute_display_name)
+        _setter("compute_id", compute_id)
+        _setter("entity_source", entity_source)
+        _setter("host_name", host_name)
+        _setter("platform_type", platform_type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -4338,12 +5416,31 @@ class GetImportableComputeEntityItemResult(dict):
         :param str host_name: The host name. The host name is unique amongst the hosts managed by the same management agent.
         :param str platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compute_display_name", compute_display_name)
-        pulumi.set(__self__, "compute_id", compute_id)
-        pulumi.set(__self__, "entity_source", entity_source)
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "platform_type", platform_type)
+        GetImportableComputeEntityItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            compute_display_name=compute_display_name,
+            compute_id=compute_id,
+            entity_source=entity_source,
+            host_name=host_name,
+            platform_type=platform_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             compute_display_name: str,
+             compute_id: str,
+             entity_source: str,
+             host_name: str,
+             platform_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("compute_display_name", compute_display_name)
+        _setter("compute_id", compute_id)
+        _setter("entity_source", entity_source)
+        _setter("host_name", host_name)
+        _setter("platform_type", platform_type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -4401,7 +5498,16 @@ class GetNewsReportContentTypeResult(dict):
         """
         :param Sequence[str] capacity_planning_resources: Supported resources for capacity planning content type.
         """
-        pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
+        GetNewsReportContentTypeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacity_planning_resources=capacity_planning_resources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacity_planning_resources: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("capacity_planning_resources", capacity_planning_resources)
 
     @property
     @pulumi.getter(name="capacityPlanningResources")
@@ -4421,10 +5527,23 @@ class GetNewsReportsFilterResult(dict):
         """
         :param str name: The news report name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetNewsReportsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4449,7 +5568,16 @@ class GetNewsReportsFilterResult(dict):
 class GetNewsReportsNewsReportCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetNewsReportsNewsReportCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetNewsReportsNewsReportCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetNewsReportsNewsReportCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -4494,22 +5622,61 @@ class GetNewsReportsNewsReportCollectionItemResult(dict):
         :param str time_created: The time the the news report was first enabled. An RFC3339 formatted datetime string.
         :param str time_updated: The time the news report was updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "content_types", content_types)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "locale", locale)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "news_frequency", news_frequency)
-        pulumi.set(__self__, "ons_topic_id", ons_topic_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetNewsReportsNewsReportCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            content_types=content_types,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            locale=locale,
+            name=name,
+            news_frequency=news_frequency,
+            ons_topic_id=ons_topic_id,
+            state=state,
+            status=status,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             content_types: Sequence['outputs.GetNewsReportsNewsReportCollectionItemContentTypeResult'],
+             defined_tags: Mapping[str, Any],
+             description: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             locale: str,
+             name: str,
+             news_frequency: str,
+             ons_topic_id: str,
+             state: str,
+             status: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("content_types", content_types)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("locale", locale)
+        _setter("name", name)
+        _setter("news_frequency", news_frequency)
+        _setter("ons_topic_id", ons_topic_id)
+        _setter("state", state)
+        _setter("status", status)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -4647,7 +5814,16 @@ class GetNewsReportsNewsReportCollectionItemContentTypeResult(dict):
         """
         :param Sequence[str] capacity_planning_resources: Supported resources for capacity planning content type.
         """
-        pulumi.set(__self__, "capacity_planning_resources", capacity_planning_resources)
+        GetNewsReportsNewsReportCollectionItemContentTypeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacity_planning_resources=capacity_planning_resources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacity_planning_resources: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("capacity_planning_resources", capacity_planning_resources)
 
     @property
     @pulumi.getter(name="capacityPlanningResources")
@@ -4664,10 +5840,23 @@ class GetOperationsInsightsPrivateEndpointsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOperationsInsightsPrivateEndpointsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4689,7 +5878,16 @@ class GetOperationsInsightsPrivateEndpointsFilterResult(dict):
 class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -4734,22 +5932,61 @@ class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColl
         :param str time_created: The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_used_for_rac_dbs", is_used_for_rac_dbs)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "private_endpoint_status_details", private_endpoint_status_details)
-        pulumi.set(__self__, "private_ip", private_ip)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_used_for_rac_dbs=is_used_for_rac_dbs,
+            lifecycle_details=lifecycle_details,
+            nsg_ids=nsg_ids,
+            private_endpoint_status_details=private_endpoint_status_details,
+            private_ip=private_ip,
+            state=state,
+            subnet_id=subnet_id,
+            system_tags=system_tags,
+            time_created=time_created,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_used_for_rac_dbs: bool,
+             lifecycle_details: str,
+             nsg_ids: Sequence[str],
+             private_endpoint_status_details: str,
+             private_ip: str,
+             state: str,
+             subnet_id: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             vcn_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_used_for_rac_dbs", is_used_for_rac_dbs)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("nsg_ids", nsg_ids)
+        _setter("private_endpoint_status_details", private_endpoint_status_details)
+        _setter("private_ip", private_ip)
+        _setter("state", state)
+        _setter("subnet_id", subnet_id)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -4889,10 +6126,23 @@ class GetOperationsInsightsWarehouseUsersFilterResult(dict):
         """
         :param str name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOperationsInsightsWarehouseUsersFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4917,7 +6167,16 @@ class GetOperationsInsightsWarehouseUsersFilterResult(dict):
 class GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -4960,21 +6219,58 @@ class GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryC
         :param str time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
         :param str time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connection_password", connection_password)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_awr_data_access", is_awr_data_access)
-        pulumi.set(__self__, "is_em_data_access", is_em_data_access)
-        pulumi.set(__self__, "is_opsi_data_access", is_opsi_data_access)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            connection_password=connection_password,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_awr_data_access=is_awr_data_access,
+            is_em_data_access=is_em_data_access,
+            is_opsi_data_access=is_opsi_data_access,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            operations_insights_warehouse_id=operations_insights_warehouse_id,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             connection_password: str,
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_awr_data_access: bool,
+             is_em_data_access: bool,
+             is_opsi_data_access: bool,
+             lifecycle_details: str,
+             name: str,
+             operations_insights_warehouse_id: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("connection_password", connection_password)
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_awr_data_access", is_awr_data_access)
+        _setter("is_em_data_access", is_em_data_access)
+        _setter("is_opsi_data_access", is_opsi_data_access)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("name", name)
+        _setter("operations_insights_warehouse_id", operations_insights_warehouse_id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -5103,10 +6399,23 @@ class GetOperationsInsightsWarehousesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOperationsInsightsWarehousesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5128,7 +6437,16 @@ class GetOperationsInsightsWarehousesFilterResult(dict):
 class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -5175,23 +6493,64 @@ class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectio
         :param str time_last_wallet_rotated: The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
         :param str time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "cpu_allocated", cpu_allocated)
-        pulumi.set(__self__, "cpu_used", cpu_used)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "dynamic_group_id", dynamic_group_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "operations_insights_tenancy_id", operations_insights_tenancy_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "storage_allocated_in_gbs", storage_allocated_in_gbs)
-        pulumi.set(__self__, "storage_used_in_gbs", storage_used_in_gbs)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_wallet_rotated", time_last_wallet_rotated)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            cpu_allocated=cpu_allocated,
+            cpu_used=cpu_used,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            dynamic_group_id=dynamic_group_id,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            operations_insights_tenancy_id=operations_insights_tenancy_id,
+            state=state,
+            storage_allocated_in_gbs=storage_allocated_in_gbs,
+            storage_used_in_gbs=storage_used_in_gbs,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_last_wallet_rotated=time_last_wallet_rotated,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             cpu_allocated: float,
+             cpu_used: float,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             dynamic_group_id: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             operations_insights_tenancy_id: str,
+             state: str,
+             storage_allocated_in_gbs: float,
+             storage_used_in_gbs: float,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_last_wallet_rotated: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("cpu_allocated", cpu_allocated)
+        _setter("cpu_used", cpu_used)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("dynamic_group_id", dynamic_group_id)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("operations_insights_tenancy_id", operations_insights_tenancy_id)
+        _setter("state", state)
+        _setter("storage_allocated_in_gbs", storage_allocated_in_gbs)
+        _setter("storage_used_in_gbs", storage_used_in_gbs)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_last_wallet_rotated", time_last_wallet_rotated)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -5347,12 +6706,31 @@ class GetOpsiConfigurationConfigItemResult(dict):
         :param str name: Name of configuration item.
         :param str value: Value of configuration item.
         """
-        pulumi.set(__self__, "applicable_contexts", applicable_contexts)
-        pulumi.set(__self__, "config_item_type", config_item_type)
-        pulumi.set(__self__, "default_value", default_value)
-        pulumi.set(__self__, "metadatas", metadatas)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetOpsiConfigurationConfigItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            applicable_contexts=applicable_contexts,
+            config_item_type=config_item_type,
+            default_value=default_value,
+            metadatas=metadatas,
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             applicable_contexts: Sequence[str],
+             config_item_type: str,
+             default_value: str,
+             metadatas: Sequence['outputs.GetOpsiConfigurationConfigItemMetadataResult'],
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("applicable_contexts", applicable_contexts)
+        _setter("config_item_type", config_item_type)
+        _setter("default_value", default_value)
+        _setter("metadatas", metadatas)
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="applicableContexts")
@@ -5420,12 +6798,31 @@ class GetOpsiConfigurationConfigItemMetadataResult(dict):
         :param Sequence['GetOpsiConfigurationConfigItemMetadataUnitDetailArgs'] unit_details: Unit details of configuration item.
         :param Sequence['GetOpsiConfigurationConfigItemMetadataValueInputDetailArgs'] value_input_details: Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
         """
-        pulumi.set(__self__, "config_item_type", config_item_type)
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "unit_details", unit_details)
-        pulumi.set(__self__, "value_input_details", value_input_details)
+        GetOpsiConfigurationConfigItemMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_item_type=config_item_type,
+            data_type=data_type,
+            description=description,
+            display_name=display_name,
+            unit_details=unit_details,
+            value_input_details=value_input_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_item_type: str,
+             data_type: str,
+             description: str,
+             display_name: str,
+             unit_details: Sequence['outputs.GetOpsiConfigurationConfigItemMetadataUnitDetailResult'],
+             value_input_details: Sequence['outputs.GetOpsiConfigurationConfigItemMetadataValueInputDetailResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_item_type", config_item_type)
+        _setter("data_type", data_type)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("unit_details", unit_details)
+        _setter("value_input_details", value_input_details)
 
     @property
     @pulumi.getter(name="configItemType")
@@ -5485,8 +6882,19 @@ class GetOpsiConfigurationConfigItemMetadataUnitDetailResult(dict):
         :param str display_name: User-friendly display name for the OPSI configuration. The name does not have to be unique.
         :param str unit: Unit of configuration item.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "unit", unit)
+        GetOpsiConfigurationConfigItemMetadataUnitDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            unit=unit,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             unit: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("unit", unit)
 
     @property
     @pulumi.getter(name="displayName")
@@ -5518,10 +6926,25 @@ class GetOpsiConfigurationConfigItemMetadataValueInputDetailResult(dict):
         :param str min_value: Minimum value limit for the configuration item.
         :param Sequence[str] possible_values: Allowed values to pick for the configuration item.
         """
-        pulumi.set(__self__, "allowed_value_type", allowed_value_type)
-        pulumi.set(__self__, "max_value", max_value)
-        pulumi.set(__self__, "min_value", min_value)
-        pulumi.set(__self__, "possible_values", possible_values)
+        GetOpsiConfigurationConfigItemMetadataValueInputDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_value_type=allowed_value_type,
+            max_value=max_value,
+            min_value=min_value,
+            possible_values=possible_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_value_type: str,
+             max_value: str,
+             min_value: str,
+             possible_values: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("allowed_value_type", allowed_value_type)
+        _setter("max_value", max_value)
+        _setter("min_value", min_value)
+        _setter("possible_values", possible_values)
 
     @property
     @pulumi.getter(name="allowedValueType")
@@ -5575,13 +6998,34 @@ class GetOpsiConfigurationConfigurationItemConfigItemResult(dict):
         :param str value: Value of configuration item.
         :param str value_source_config: Source configuration from where the value is taken for a configuration item.
         """
-        pulumi.set(__self__, "applicable_contexts", applicable_contexts)
-        pulumi.set(__self__, "config_item_type", config_item_type)
-        pulumi.set(__self__, "default_value", default_value)
-        pulumi.set(__self__, "metadatas", metadatas)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
-        pulumi.set(__self__, "value_source_config", value_source_config)
+        GetOpsiConfigurationConfigurationItemConfigItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            applicable_contexts=applicable_contexts,
+            config_item_type=config_item_type,
+            default_value=default_value,
+            metadatas=metadatas,
+            name=name,
+            value=value,
+            value_source_config=value_source_config,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             applicable_contexts: Sequence[str],
+             config_item_type: str,
+             default_value: str,
+             metadatas: Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataResult'],
+             name: str,
+             value: str,
+             value_source_config: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("applicable_contexts", applicable_contexts)
+        _setter("config_item_type", config_item_type)
+        _setter("default_value", default_value)
+        _setter("metadatas", metadatas)
+        _setter("name", name)
+        _setter("value", value)
+        _setter("value_source_config", value_source_config)
 
     @property
     @pulumi.getter(name="applicableContexts")
@@ -5657,12 +7101,31 @@ class GetOpsiConfigurationConfigurationItemConfigItemMetadataResult(dict):
         :param Sequence['GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailArgs'] unit_details: Unit details of configuration item.
         :param Sequence['GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailArgs'] value_input_details: Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
         """
-        pulumi.set(__self__, "config_item_type", config_item_type)
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "unit_details", unit_details)
-        pulumi.set(__self__, "value_input_details", value_input_details)
+        GetOpsiConfigurationConfigurationItemConfigItemMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_item_type=config_item_type,
+            data_type=data_type,
+            description=description,
+            display_name=display_name,
+            unit_details=unit_details,
+            value_input_details=value_input_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_item_type: str,
+             data_type: str,
+             description: str,
+             display_name: str,
+             unit_details: Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailResult'],
+             value_input_details: Sequence['outputs.GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_item_type", config_item_type)
+        _setter("data_type", data_type)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("unit_details", unit_details)
+        _setter("value_input_details", value_input_details)
 
     @property
     @pulumi.getter(name="configItemType")
@@ -5722,8 +7185,19 @@ class GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailResult(di
         :param str display_name: User-friendly display name for the configuration item unit.
         :param str unit: Unit of configuration item.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "unit", unit)
+        GetOpsiConfigurationConfigurationItemConfigItemMetadataUnitDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            unit=unit,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             unit: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("unit", unit)
 
     @property
     @pulumi.getter(name="displayName")
@@ -5755,10 +7229,25 @@ class GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailRes
         :param str min_value: Minimum value limit for the configuration item.
         :param Sequence[str] possible_values: Allowed values to pick for the configuration item.
         """
-        pulumi.set(__self__, "allowed_value_type", allowed_value_type)
-        pulumi.set(__self__, "max_value", max_value)
-        pulumi.set(__self__, "min_value", min_value)
-        pulumi.set(__self__, "possible_values", possible_values)
+        GetOpsiConfigurationConfigurationItemConfigItemMetadataValueInputDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_value_type=allowed_value_type,
+            max_value=max_value,
+            min_value=min_value,
+            possible_values=possible_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_value_type: str,
+             max_value: str,
+             min_value: str,
+             possible_values: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("allowed_value_type", allowed_value_type)
+        _setter("max_value", max_value)
+        _setter("min_value", min_value)
+        _setter("possible_values", possible_values)
 
     @property
     @pulumi.getter(name="allowedValueType")
@@ -5802,10 +7291,23 @@ class GetOpsiConfigurationsFilterResult(dict):
         """
         :param str name: Name of configuration item.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOpsiConfigurationsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5830,7 +7332,16 @@ class GetOpsiConfigurationsFilterResult(dict):
 class GetOpsiConfigurationsOpsiConfigurationsCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetOpsiConfigurationsOpsiConfigurationsCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -5873,23 +7384,64 @@ class GetOpsiConfigurationsOpsiConfigurationsCollectionItemResult(dict):
         :param str time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
         :param str time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "config_item_custom_statuses", config_item_custom_statuses)
-        pulumi.set(__self__, "config_item_fields", config_item_fields)
-        pulumi.set(__self__, "config_items", config_items)
-        pulumi.set(__self__, "config_items_applicable_contexts", config_items_applicable_contexts)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "opsi_config_fields", opsi_config_fields)
-        pulumi.set(__self__, "opsi_config_type", opsi_config_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetOpsiConfigurationsOpsiConfigurationsCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            config_item_custom_statuses=config_item_custom_statuses,
+            config_item_fields=config_item_fields,
+            config_items=config_items,
+            config_items_applicable_contexts=config_items_applicable_contexts,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            opsi_config_fields=opsi_config_fields,
+            opsi_config_type=opsi_config_type,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             config_item_custom_statuses: Sequence[str],
+             config_item_fields: Sequence[str],
+             config_items: Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemResult'],
+             config_items_applicable_contexts: Sequence[str],
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             opsi_config_fields: Sequence[str],
+             opsi_config_type: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("config_item_custom_statuses", config_item_custom_statuses)
+        _setter("config_item_fields", config_item_fields)
+        _setter("config_items", config_items)
+        _setter("config_items_applicable_contexts", config_items_applicable_contexts)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("opsi_config_fields", opsi_config_fields)
+        _setter("opsi_config_type", opsi_config_type)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -6033,12 +7585,31 @@ class GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemResult(dict
         :param str name: Name of configuration item.
         :param str value: Value of configuration item.
         """
-        pulumi.set(__self__, "applicable_contexts", applicable_contexts)
-        pulumi.set(__self__, "config_item_type", config_item_type)
-        pulumi.set(__self__, "default_value", default_value)
-        pulumi.set(__self__, "metadatas", metadatas)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            applicable_contexts=applicable_contexts,
+            config_item_type=config_item_type,
+            default_value=default_value,
+            metadatas=metadatas,
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             applicable_contexts: Sequence[str],
+             config_item_type: str,
+             default_value: str,
+             metadatas: Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataResult'],
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("applicable_contexts", applicable_contexts)
+        _setter("config_item_type", config_item_type)
+        _setter("default_value", default_value)
+        _setter("metadatas", metadatas)
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="applicableContexts")
@@ -6106,12 +7677,31 @@ class GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataRes
         :param Sequence['GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailArgs'] unit_details: Unit details of configuration item.
         :param Sequence['GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailArgs'] value_input_details: Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
         """
-        pulumi.set(__self__, "config_item_type", config_item_type)
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "unit_details", unit_details)
-        pulumi.set(__self__, "value_input_details", value_input_details)
+        GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_item_type=config_item_type,
+            data_type=data_type,
+            description=description,
+            display_name=display_name,
+            unit_details=unit_details,
+            value_input_details=value_input_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_item_type: str,
+             data_type: str,
+             description: str,
+             display_name: str,
+             unit_details: Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailResult'],
+             value_input_details: Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_item_type", config_item_type)
+        _setter("data_type", data_type)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("unit_details", unit_details)
+        _setter("value_input_details", value_input_details)
 
     @property
     @pulumi.getter(name="configItemType")
@@ -6171,8 +7761,19 @@ class GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUni
         :param str display_name: Filter to return based on resources that match the entire display name.
         :param str unit: Unit of configuration item.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "unit", unit)
+        GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataUnitDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            unit=unit,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             unit: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("unit", unit)
 
     @property
     @pulumi.getter(name="displayName")
@@ -6204,10 +7805,25 @@ class GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataVal
         :param str min_value: Minimum value limit for the configuration item.
         :param Sequence[str] possible_values: Allowed values to pick for the configuration item.
         """
-        pulumi.set(__self__, "allowed_value_type", allowed_value_type)
-        pulumi.set(__self__, "max_value", max_value)
-        pulumi.set(__self__, "min_value", min_value)
-        pulumi.set(__self__, "possible_values", possible_values)
+        GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemMetadataValueInputDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_value_type=allowed_value_type,
+            max_value=max_value,
+            min_value=min_value,
+            possible_values=possible_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_value_type: str,
+             max_value: str,
+             min_value: str,
+             possible_values: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("allowed_value_type", allowed_value_type)
+        _setter("max_value", max_value)
+        _setter("min_value", min_value)
+        _setter("possible_values", possible_values)
 
     @property
     @pulumi.getter(name="allowedValueType")

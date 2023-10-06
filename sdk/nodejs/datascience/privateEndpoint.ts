@@ -4,6 +4,42 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
+/**
+ * This resource provides the Data Science Private Endpoint resource in Oracle Cloud Infrastructure Data Science service.
+ *
+ * Creates a Data Science private endpoint to be used by a Data Science resource.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDataSciencePrivateEndpoint = new oci.datascience.PrivateEndpoint("testDataSciencePrivateEndpoint", {
+ *     compartmentId: _var.compartment_id,
+ *     dataScienceResourceType: _var.data_science_private_endpoint_data_science_resource_type,
+ *     subnetId: oci_core_subnet.test_subnet.id,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     description: _var.data_science_private_endpoint_description,
+ *     displayName: _var.data_science_private_endpoint_display_name,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     nsgIds: _var.data_science_private_endpoint_nsg_ids,
+ *     subDomain: _var.data_science_private_endpoint_sub_domain,
+ * });
+ * ```
+ *
+ * ## Import
+ *
+ * DataSciencePrivateEndpoints can be imported using the `id`, e.g.
+ *
+ * ```sh
+ *  $ pulumi import oci:DataScience/privateEndpoint:PrivateEndpoint test_data_science_private_endpoint "id"
+ * ```
+ */
 export class PrivateEndpoint extends pulumi.CustomResource {
     /**
      * Get an existing PrivateEndpoint resource's state with the given name, ID, and optional extra
@@ -32,20 +68,69 @@ export class PrivateEndpoint extends pulumi.CustomResource {
         return obj['__pulumiType'] === PrivateEndpoint.__pulumiType;
     }
 
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private endpoint.
+     */
     public readonly compartmentId!: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user that created the private endpoint.
+     */
     public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    /**
+     * Data Science resource type.
+     */
     public readonly dataScienceResourceType!: pulumi.Output<string>;
+    /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    /**
+     * (Updatable) A user friendly description. Avoid entering confidential information.
+     */
     public readonly description!: pulumi.Output<string>;
+    /**
+     * (Updatable) A user friendly name. It doesn't have to be unique. Avoid entering confidential information.
+     */
     public readonly displayName!: pulumi.Output<string>;
+    /**
+     * Accesing the Data Science resource using FQDN.
+     */
     public /*out*/ readonly fqdn!: pulumi.Output<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    /**
+     * Details of the state of Data Science private endpoint.
+     */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * (Updatable) An array of network security group OCIDs.
+     */
     public readonly nsgIds!: pulumi.Output<string[]>;
+    /**
+     * State of the Data Science private endpoint.
+     */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    /**
+     * Subdomain for a private endpoint FQDN.
+     */
     public readonly subDomain!: pulumi.Output<string>;
+    /**
+     * The OCID of the subnet. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
     public readonly subnetId!: pulumi.Output<string>;
+    /**
+     * The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    /**
+     * The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
 
     /**
@@ -112,20 +197,69 @@ export class PrivateEndpoint extends pulumi.CustomResource {
  * Input properties used for looking up and filtering PrivateEndpoint resources.
  */
 export interface PrivateEndpointState {
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private endpoint.
+     */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user that created the private endpoint.
+     */
     createdBy?: pulumi.Input<string>;
+    /**
+     * Data Science resource type.
+     */
     dataScienceResourceType?: pulumi.Input<string>;
+    /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
     definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) A user friendly description. Avoid entering confidential information.
+     */
     description?: pulumi.Input<string>;
+    /**
+     * (Updatable) A user friendly name. It doesn't have to be unique. Avoid entering confidential information.
+     */
     displayName?: pulumi.Input<string>;
+    /**
+     * Accesing the Data Science resource using FQDN.
+     */
     fqdn?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * Details of the state of Data Science private endpoint.
+     */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * (Updatable) An array of network security group OCIDs.
+     */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * State of the Data Science private endpoint.
+     */
     state?: pulumi.Input<string>;
+    /**
+     * Subdomain for a private endpoint FQDN.
+     */
     subDomain?: pulumi.Input<string>;
+    /**
+     * The OCID of the subnet. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
     subnetId?: pulumi.Input<string>;
+    /**
+     * The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     */
     timeCreated?: pulumi.Input<string>;
+    /**
+     * The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+     */
     timeUpdated?: pulumi.Input<string>;
 }
 
@@ -133,13 +267,44 @@ export interface PrivateEndpointState {
  * The set of arguments for constructing a PrivateEndpoint resource.
  */
 export interface PrivateEndpointArgs {
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private endpoint.
+     */
     compartmentId: pulumi.Input<string>;
+    /**
+     * Data Science resource type.
+     */
     dataScienceResourceType: pulumi.Input<string>;
+    /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+     */
     definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) A user friendly description. Avoid entering confidential information.
+     */
     description?: pulumi.Input<string>;
+    /**
+     * (Updatable) A user friendly name. It doesn't have to be unique. Avoid entering confidential information.
+     */
     displayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+     */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) An array of network security group OCIDs.
+     */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Subdomain for a private endpoint FQDN.
+     */
     subDomain?: pulumi.Input<string>;
+    /**
+     * The OCID of the subnet. 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
     subnetId: pulumi.Input<string>;
 }

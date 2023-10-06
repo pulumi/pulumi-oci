@@ -55,7 +55,6 @@ type Model struct {
 	MaxTrainingTimeInHours pulumi.Float64Output `pulumi:"maxTrainingTimeInHours"`
 	// Trained Model Metrics.
 	Metrics ModelMetricArrayOutput `pulumi:"metrics"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
 	ModelId pulumi.StringPtrOutput `pulumi:"modelId"`
 	// The type of the Document model.
 	ModelType pulumi.StringOutput `pulumi:"modelType"`
@@ -146,8 +145,7 @@ type modelState struct {
 	MaxTrainingTimeInHours *float64 `pulumi:"maxTrainingTimeInHours"`
 	// Trained Model Metrics.
 	Metrics []ModelMetric `pulumi:"metrics"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-	ModelId *string `pulumi:"modelId"`
+	ModelId *string       `pulumi:"modelId"`
 	// The type of the Document model.
 	ModelType *string `pulumi:"modelType"`
 	// The model version
@@ -199,7 +197,6 @@ type ModelState struct {
 	MaxTrainingTimeInHours pulumi.Float64PtrInput
 	// Trained Model Metrics.
 	Metrics ModelMetricArrayInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
 	ModelId pulumi.StringPtrInput
 	// The type of the Document model.
 	ModelType pulumi.StringPtrInput
@@ -248,8 +245,7 @@ type modelArgs struct {
 	IsQuickMode *bool `pulumi:"isQuickMode"`
 	// The maximum model training time in hours, expressed as a decimal fraction.
 	MaxTrainingTimeInHours *float64 `pulumi:"maxTrainingTimeInHours"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-	ModelId *string `pulumi:"modelId"`
+	ModelId                *string  `pulumi:"modelId"`
 	// The type of the Document model.
 	ModelType string `pulumi:"modelType"`
 	// The model version
@@ -282,8 +278,7 @@ type ModelArgs struct {
 	IsQuickMode pulumi.BoolPtrInput
 	// The maximum model training time in hours, expressed as a decimal fraction.
 	MaxTrainingTimeInHours pulumi.Float64PtrInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-	ModelId pulumi.StringPtrInput
+	ModelId                pulumi.StringPtrInput
 	// The type of the Document model.
 	ModelType pulumi.StringInput
 	// The model version
@@ -469,7 +464,6 @@ func (o ModelOutput) Metrics() ModelMetricArrayOutput {
 	return o.ApplyT(func(v *Model) ModelMetricArrayOutput { return v.Metrics }).(ModelMetricArrayOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
 func (o ModelOutput) ModelId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringPtrOutput { return v.ModelId }).(pulumi.StringPtrOutput)
 }

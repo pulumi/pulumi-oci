@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -29,14 +29,31 @@ class ExternalDbSystemArgs:
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         :param pulumi.Input['ExternalDbSystemStackMonitoringConfigArgs'] stack_monitoring_config: The details of the associated service that will be enabled or disabled for an external DB System.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "db_system_discovery_id", db_system_discovery_id)
+        ExternalDbSystemArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            db_system_discovery_id=db_system_discovery_id,
+            database_management_config=database_management_config,
+            display_name=display_name,
+            stack_monitoring_config=stack_monitoring_config,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             db_system_discovery_id: pulumi.Input[str],
+             database_management_config: Optional[pulumi.Input['ExternalDbSystemDatabaseManagementConfigArgs']] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             stack_monitoring_config: Optional[pulumi.Input['ExternalDbSystemStackMonitoringConfigArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("db_system_discovery_id", db_system_discovery_id)
         if database_management_config is not None:
-            pulumi.set(__self__, "database_management_config", database_management_config)
+            _setter("database_management_config", database_management_config)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if stack_monitoring_config is not None:
-            pulumi.set(__self__, "stack_monitoring_config", stack_monitoring_config)
+            _setter("stack_monitoring_config", stack_monitoring_config)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -129,30 +146,61 @@ class _ExternalDbSystemState:
         :param pulumi.Input[str] time_created: The date and time the external DB system was created.
         :param pulumi.Input[str] time_updated: The date and time the external DB system was last updated.
         """
+        _ExternalDbSystemState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            database_management_config=database_management_config,
+            db_system_discovery_id=db_system_discovery_id,
+            discovery_agent_id=discovery_agent_id,
+            display_name=display_name,
+            home_directory=home_directory,
+            is_cluster=is_cluster,
+            lifecycle_details=lifecycle_details,
+            stack_monitoring_config=stack_monitoring_config,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             database_management_config: Optional[pulumi.Input['ExternalDbSystemDatabaseManagementConfigArgs']] = None,
+             db_system_discovery_id: Optional[pulumi.Input[str]] = None,
+             discovery_agent_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             home_directory: Optional[pulumi.Input[str]] = None,
+             is_cluster: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             stack_monitoring_config: Optional[pulumi.Input['ExternalDbSystemStackMonitoringConfigArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if database_management_config is not None:
-            pulumi.set(__self__, "database_management_config", database_management_config)
+            _setter("database_management_config", database_management_config)
         if db_system_discovery_id is not None:
-            pulumi.set(__self__, "db_system_discovery_id", db_system_discovery_id)
+            _setter("db_system_discovery_id", db_system_discovery_id)
         if discovery_agent_id is not None:
-            pulumi.set(__self__, "discovery_agent_id", discovery_agent_id)
+            _setter("discovery_agent_id", discovery_agent_id)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if home_directory is not None:
-            pulumi.set(__self__, "home_directory", home_directory)
+            _setter("home_directory", home_directory)
         if is_cluster is not None:
-            pulumi.set(__self__, "is_cluster", is_cluster)
+            _setter("is_cluster", is_cluster)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if stack_monitoring_config is not None:
-            pulumi.set(__self__, "stack_monitoring_config", stack_monitoring_config)
+            _setter("stack_monitoring_config", stack_monitoring_config)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -398,6 +446,10 @@ class ExternalDbSystem(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ExternalDbSystemArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -420,11 +472,21 @@ class ExternalDbSystem(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            if database_management_config is not None and not isinstance(database_management_config, ExternalDbSystemDatabaseManagementConfigArgs):
+                database_management_config = database_management_config or {}
+                def _setter(key, value):
+                    database_management_config[key] = value
+                ExternalDbSystemDatabaseManagementConfigArgs._configure(_setter, **database_management_config)
             __props__.__dict__["database_management_config"] = database_management_config
             if db_system_discovery_id is None and not opts.urn:
                 raise TypeError("Missing required property 'db_system_discovery_id'")
             __props__.__dict__["db_system_discovery_id"] = db_system_discovery_id
             __props__.__dict__["display_name"] = display_name
+            if stack_monitoring_config is not None and not isinstance(stack_monitoring_config, ExternalDbSystemStackMonitoringConfigArgs):
+                stack_monitoring_config = stack_monitoring_config or {}
+                def _setter(key, value):
+                    stack_monitoring_config[key] = value
+                ExternalDbSystemStackMonitoringConfigArgs._configure(_setter, **stack_monitoring_config)
             __props__.__dict__["stack_monitoring_config"] = stack_monitoring_config
             __props__.__dict__["discovery_agent_id"] = None
             __props__.__dict__["home_directory"] = None

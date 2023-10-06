@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -130,37 +130,78 @@ class DomainsGroupArgs:
         :param pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs'] urnietfparamsscimschemasoracleidcsextensionposix_group: (Updatable) POSIX Group extension
         :param pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs'] urnietfparamsscimschemasoracleidcsextensionrequestable_group: (Updatable) Requestable Group
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
-        pulumi.set(__self__, "schemas", schemas)
+        DomainsGroupArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            idcs_endpoint=idcs_endpoint,
+            schemas=schemas,
+            attribute_sets=attribute_sets,
+            attributes=attributes,
+            authorization=authorization,
+            external_id=external_id,
+            members=members,
+            non_unique_display_name=non_unique_display_name,
+            ocid=ocid,
+            resource_type_schema_version=resource_type_schema_version,
+            tags=tags,
+            urnietfparamsscimschemasoracleidcsextension_oci_tags=urnietfparamsscimschemasoracleidcsextension_oci_tags,
+            urnietfparamsscimschemasoracleidcsextensiondynamic_group=urnietfparamsscimschemasoracleidcsextensiondynamic_group,
+            urnietfparamsscimschemasoracleidcsextensiongroup_group=urnietfparamsscimschemasoracleidcsextensiongroup_group,
+            urnietfparamsscimschemasoracleidcsextensionposix_group=urnietfparamsscimschemasoracleidcsextensionposix_group,
+            urnietfparamsscimschemasoracleidcsextensionrequestable_group=urnietfparamsscimschemasoracleidcsextensionrequestable_group,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: pulumi.Input[str],
+             idcs_endpoint: pulumi.Input[str],
+             schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
+             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             attributes: Optional[pulumi.Input[str]] = None,
+             authorization: Optional[pulumi.Input[str]] = None,
+             external_id: Optional[pulumi.Input[str]] = None,
+             members: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupMemberArgs']]]] = None,
+             non_unique_display_name: Optional[pulumi.Input[str]] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupTagArgs']]]] = None,
+             urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensiondynamic_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensiongroup_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionposix_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionrequestable_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("idcs_endpoint", idcs_endpoint)
+        _setter("schemas", schemas)
         if attribute_sets is not None:
-            pulumi.set(__self__, "attribute_sets", attribute_sets)
+            _setter("attribute_sets", attribute_sets)
         if attributes is not None:
-            pulumi.set(__self__, "attributes", attributes)
+            _setter("attributes", attributes)
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if external_id is not None:
-            pulumi.set(__self__, "external_id", external_id)
+            _setter("external_id", external_id)
         if members is not None:
-            pulumi.set(__self__, "members", members)
+            _setter("members", members)
         if non_unique_display_name is not None:
-            pulumi.set(__self__, "non_unique_display_name", non_unique_display_name)
+            _setter("non_unique_display_name", non_unique_display_name)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if urnietfparamsscimschemasoracleidcsextension_oci_tags is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextension_oci_tags", urnietfparamsscimschemasoracleidcsextension_oci_tags)
+            _setter("urnietfparamsscimschemasoracleidcsextension_oci_tags", urnietfparamsscimschemasoracleidcsextension_oci_tags)
         if urnietfparamsscimschemasoracleidcsextensiondynamic_group is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensiondynamic_group", urnietfparamsscimschemasoracleidcsextensiondynamic_group)
+            _setter("urnietfparamsscimschemasoracleidcsextensiondynamic_group", urnietfparamsscimschemasoracleidcsextensiondynamic_group)
         if urnietfparamsscimschemasoracleidcsextensiongroup_group is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensiongroup_group", urnietfparamsscimschemasoracleidcsextensiongroup_group)
+            _setter("urnietfparamsscimschemasoracleidcsextensiongroup_group", urnietfparamsscimschemasoracleidcsextensiongroup_group)
         if urnietfparamsscimschemasoracleidcsextensionposix_group is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionposix_group", urnietfparamsscimschemasoracleidcsextensionposix_group)
+            _setter("urnietfparamsscimschemasoracleidcsextensionposix_group", urnietfparamsscimschemasoracleidcsextensionposix_group)
         if urnietfparamsscimschemasoracleidcsextensionrequestable_group is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionrequestable_group", urnietfparamsscimschemasoracleidcsextensionrequestable_group)
+            _setter("urnietfparamsscimschemasoracleidcsextensionrequestable_group", urnietfparamsscimschemasoracleidcsextensionrequestable_group)
 
     @property
     @pulumi.getter(name="displayName")
@@ -666,60 +707,121 @@ class _DomainsGroupState:
         :param pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs'] urnietfparamsscimschemasoracleidcsextensionposix_group: (Updatable) POSIX Group extension
         :param pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs'] urnietfparamsscimschemasoracleidcsextensionrequestable_group: (Updatable) Requestable Group
         """
+        _DomainsGroupState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            attribute_sets=attribute_sets,
+            attributes=attributes,
+            authorization=authorization,
+            compartment_ocid=compartment_ocid,
+            delete_in_progress=delete_in_progress,
+            display_name=display_name,
+            domain_ocid=domain_ocid,
+            external_id=external_id,
+            idcs_created_bies=idcs_created_bies,
+            idcs_endpoint=idcs_endpoint,
+            idcs_last_modified_bies=idcs_last_modified_bies,
+            idcs_last_upgraded_in_release=idcs_last_upgraded_in_release,
+            idcs_prevented_operations=idcs_prevented_operations,
+            members=members,
+            metas=metas,
+            non_unique_display_name=non_unique_display_name,
+            ocid=ocid,
+            resource_type_schema_version=resource_type_schema_version,
+            schemas=schemas,
+            tags=tags,
+            tenancy_ocid=tenancy_ocid,
+            urnietfparamsscimschemasoracleidcsextension_oci_tags=urnietfparamsscimschemasoracleidcsextension_oci_tags,
+            urnietfparamsscimschemasoracleidcsextensiondbcs_groups=urnietfparamsscimschemasoracleidcsextensiondbcs_groups,
+            urnietfparamsscimschemasoracleidcsextensiondynamic_group=urnietfparamsscimschemasoracleidcsextensiondynamic_group,
+            urnietfparamsscimschemasoracleidcsextensiongroup_group=urnietfparamsscimschemasoracleidcsextensiongroup_group,
+            urnietfparamsscimschemasoracleidcsextensionposix_group=urnietfparamsscimschemasoracleidcsextensionposix_group,
+            urnietfparamsscimschemasoracleidcsextensionrequestable_group=urnietfparamsscimschemasoracleidcsextensionrequestable_group,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             attributes: Optional[pulumi.Input[str]] = None,
+             authorization: Optional[pulumi.Input[str]] = None,
+             compartment_ocid: Optional[pulumi.Input[str]] = None,
+             delete_in_progress: Optional[pulumi.Input[bool]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             domain_ocid: Optional[pulumi.Input[str]] = None,
+             external_id: Optional[pulumi.Input[str]] = None,
+             idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupIdcsCreatedByArgs']]]] = None,
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupIdcsLastModifiedByArgs']]]] = None,
+             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
+             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             members: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupMemberArgs']]]] = None,
+             metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupMetaArgs']]]] = None,
+             non_unique_display_name: Optional[pulumi.Input[str]] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupTagArgs']]]] = None,
+             tenancy_ocid: Optional[pulumi.Input[str]] = None,
+             urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensiondbcs_groups: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupArgs']]]] = None,
+             urnietfparamsscimschemasoracleidcsextensiondynamic_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensiongroup_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionposix_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionrequestable_group: Optional[pulumi.Input['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if attribute_sets is not None:
-            pulumi.set(__self__, "attribute_sets", attribute_sets)
+            _setter("attribute_sets", attribute_sets)
         if attributes is not None:
-            pulumi.set(__self__, "attributes", attributes)
+            _setter("attributes", attributes)
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if compartment_ocid is not None:
-            pulumi.set(__self__, "compartment_ocid", compartment_ocid)
+            _setter("compartment_ocid", compartment_ocid)
         if delete_in_progress is not None:
-            pulumi.set(__self__, "delete_in_progress", delete_in_progress)
+            _setter("delete_in_progress", delete_in_progress)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if domain_ocid is not None:
-            pulumi.set(__self__, "domain_ocid", domain_ocid)
+            _setter("domain_ocid", domain_ocid)
         if external_id is not None:
-            pulumi.set(__self__, "external_id", external_id)
+            _setter("external_id", external_id)
         if idcs_created_bies is not None:
-            pulumi.set(__self__, "idcs_created_bies", idcs_created_bies)
+            _setter("idcs_created_bies", idcs_created_bies)
         if idcs_endpoint is not None:
-            pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
+            _setter("idcs_endpoint", idcs_endpoint)
         if idcs_last_modified_bies is not None:
-            pulumi.set(__self__, "idcs_last_modified_bies", idcs_last_modified_bies)
+            _setter("idcs_last_modified_bies", idcs_last_modified_bies)
         if idcs_last_upgraded_in_release is not None:
-            pulumi.set(__self__, "idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
+            _setter("idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
         if idcs_prevented_operations is not None:
-            pulumi.set(__self__, "idcs_prevented_operations", idcs_prevented_operations)
+            _setter("idcs_prevented_operations", idcs_prevented_operations)
         if members is not None:
-            pulumi.set(__self__, "members", members)
+            _setter("members", members)
         if metas is not None:
-            pulumi.set(__self__, "metas", metas)
+            _setter("metas", metas)
         if non_unique_display_name is not None:
-            pulumi.set(__self__, "non_unique_display_name", non_unique_display_name)
+            _setter("non_unique_display_name", non_unique_display_name)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if schemas is not None:
-            pulumi.set(__self__, "schemas", schemas)
+            _setter("schemas", schemas)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if tenancy_ocid is not None:
-            pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
+            _setter("tenancy_ocid", tenancy_ocid)
         if urnietfparamsscimschemasoracleidcsextension_oci_tags is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextension_oci_tags", urnietfparamsscimschemasoracleidcsextension_oci_tags)
+            _setter("urnietfparamsscimschemasoracleidcsextension_oci_tags", urnietfparamsscimschemasoracleidcsextension_oci_tags)
         if urnietfparamsscimschemasoracleidcsextensiondbcs_groups is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensiondbcs_groups", urnietfparamsscimschemasoracleidcsextensiondbcs_groups)
+            _setter("urnietfparamsscimschemasoracleidcsextensiondbcs_groups", urnietfparamsscimschemasoracleidcsextensiondbcs_groups)
         if urnietfparamsscimschemasoracleidcsextensiondynamic_group is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensiondynamic_group", urnietfparamsscimschemasoracleidcsextensiondynamic_group)
+            _setter("urnietfparamsscimschemasoracleidcsextensiondynamic_group", urnietfparamsscimschemasoracleidcsextensiondynamic_group)
         if urnietfparamsscimschemasoracleidcsextensiongroup_group is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensiongroup_group", urnietfparamsscimschemasoracleidcsextensiongroup_group)
+            _setter("urnietfparamsscimschemasoracleidcsextensiongroup_group", urnietfparamsscimschemasoracleidcsextensiongroup_group)
         if urnietfparamsscimschemasoracleidcsextensionposix_group is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionposix_group", urnietfparamsscimschemasoracleidcsextensionposix_group)
+            _setter("urnietfparamsscimschemasoracleidcsextensionposix_group", urnietfparamsscimschemasoracleidcsextensionposix_group)
         if urnietfparamsscimschemasoracleidcsextensionrequestable_group is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionrequestable_group", urnietfparamsscimschemasoracleidcsextensionrequestable_group)
+            _setter("urnietfparamsscimschemasoracleidcsextensionrequestable_group", urnietfparamsscimschemasoracleidcsextensionrequestable_group)
 
     @property
     @pulumi.getter(name="attributeSets")
@@ -1370,6 +1472,10 @@ class DomainsGroup(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DomainsGroupArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1419,10 +1525,35 @@ class DomainsGroup(pulumi.CustomResource):
                 raise TypeError("Missing required property 'schemas'")
             __props__.__dict__["schemas"] = schemas
             __props__.__dict__["tags"] = tags
+            if urnietfparamsscimschemasoracleidcsextension_oci_tags is not None and not isinstance(urnietfparamsscimschemasoracleidcsextension_oci_tags, DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs):
+                urnietfparamsscimschemasoracleidcsextension_oci_tags = urnietfparamsscimschemasoracleidcsextension_oci_tags or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextension_oci_tags[key] = value
+                DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextension_oci_tags)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextension_oci_tags"] = urnietfparamsscimschemasoracleidcsextension_oci_tags
+            if urnietfparamsscimschemasoracleidcsextensiondynamic_group is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensiondynamic_group, DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs):
+                urnietfparamsscimschemasoracleidcsextensiondynamic_group = urnietfparamsscimschemasoracleidcsextensiondynamic_group or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensiondynamic_group[key] = value
+                DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensiondynamic_group)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensiondynamic_group"] = urnietfparamsscimschemasoracleidcsextensiondynamic_group
+            if urnietfparamsscimschemasoracleidcsextensiongroup_group is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensiongroup_group, DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs):
+                urnietfparamsscimschemasoracleidcsextensiongroup_group = urnietfparamsscimschemasoracleidcsextensiongroup_group or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensiongroup_group[key] = value
+                DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensiongroup_group)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensiongroup_group"] = urnietfparamsscimschemasoracleidcsextensiongroup_group
+            if urnietfparamsscimschemasoracleidcsextensionposix_group is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionposix_group, DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs):
+                urnietfparamsscimschemasoracleidcsextensionposix_group = urnietfparamsscimschemasoracleidcsextensionposix_group or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionposix_group[key] = value
+                DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionposix_group)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionposix_group"] = urnietfparamsscimschemasoracleidcsextensionposix_group
+            if urnietfparamsscimschemasoracleidcsextensionrequestable_group is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionrequestable_group, DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs):
+                urnietfparamsscimschemasoracleidcsextensionrequestable_group = urnietfparamsscimschemasoracleidcsextensionrequestable_group or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionrequestable_group[key] = value
+                DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionrequestable_group)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionrequestable_group"] = urnietfparamsscimschemasoracleidcsextensionrequestable_group
             __props__.__dict__["compartment_ocid"] = None
             __props__.__dict__["delete_in_progress"] = None

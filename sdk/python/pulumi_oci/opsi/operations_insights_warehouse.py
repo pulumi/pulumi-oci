@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['OperationsInsightsWarehouseArgs', 'OperationsInsightsWarehouse']
@@ -33,15 +33,34 @@ class OperationsInsightsWarehouseArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "cpu_allocated", cpu_allocated)
-        pulumi.set(__self__, "display_name", display_name)
+        OperationsInsightsWarehouseArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            cpu_allocated=cpu_allocated,
+            display_name=display_name,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            storage_allocated_in_gbs=storage_allocated_in_gbs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             cpu_allocated: pulumi.Input[float],
+             display_name: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             storage_allocated_in_gbs: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("cpu_allocated", cpu_allocated)
+        _setter("display_name", display_name)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if storage_allocated_in_gbs is not None:
-            pulumi.set(__self__, "storage_allocated_in_gbs", storage_allocated_in_gbs)
+            _setter("storage_allocated_in_gbs", storage_allocated_in_gbs)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -162,38 +181,77 @@ class _OperationsInsightsWarehouseState:
         :param pulumi.Input[str] time_last_wallet_rotated: The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
+        _OperationsInsightsWarehouseState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            cpu_allocated=cpu_allocated,
+            cpu_used=cpu_used,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            dynamic_group_id=dynamic_group_id,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            operations_insights_tenancy_id=operations_insights_tenancy_id,
+            state=state,
+            storage_allocated_in_gbs=storage_allocated_in_gbs,
+            storage_used_in_gbs=storage_used_in_gbs,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_last_wallet_rotated=time_last_wallet_rotated,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             cpu_allocated: Optional[pulumi.Input[float]] = None,
+             cpu_used: Optional[pulumi.Input[float]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             dynamic_group_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             operations_insights_tenancy_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             storage_allocated_in_gbs: Optional[pulumi.Input[float]] = None,
+             storage_used_in_gbs: Optional[pulumi.Input[float]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_last_wallet_rotated: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if cpu_allocated is not None:
-            pulumi.set(__self__, "cpu_allocated", cpu_allocated)
+            _setter("cpu_allocated", cpu_allocated)
         if cpu_used is not None:
-            pulumi.set(__self__, "cpu_used", cpu_used)
+            _setter("cpu_used", cpu_used)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if dynamic_group_id is not None:
-            pulumi.set(__self__, "dynamic_group_id", dynamic_group_id)
+            _setter("dynamic_group_id", dynamic_group_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if operations_insights_tenancy_id is not None:
-            pulumi.set(__self__, "operations_insights_tenancy_id", operations_insights_tenancy_id)
+            _setter("operations_insights_tenancy_id", operations_insights_tenancy_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if storage_allocated_in_gbs is not None:
-            pulumi.set(__self__, "storage_allocated_in_gbs", storage_allocated_in_gbs)
+            _setter("storage_allocated_in_gbs", storage_allocated_in_gbs)
         if storage_used_in_gbs is not None:
-            pulumi.set(__self__, "storage_used_in_gbs", storage_used_in_gbs)
+            _setter("storage_used_in_gbs", storage_used_in_gbs)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_last_wallet_rotated is not None:
-            pulumi.set(__self__, "time_last_wallet_rotated", time_last_wallet_rotated)
+            _setter("time_last_wallet_rotated", time_last_wallet_rotated)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -501,6 +559,10 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            OperationsInsightsWarehouseArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -25,6 +25,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<Inputs.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsGetArgs>? NotebookSessionShapeConfigDetails { get; set; }
 
         /// <summary>
+        /// (Updatable) The OCID of a Data Science private endpoint.
+        /// </summary>
+        [Input("privateEndpointId")]
+        public Input<string>? PrivateEndpointId { get; set; }
+
+        /// <summary>
         /// (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
         /// </summary>
         [Input("shape", required: true)]

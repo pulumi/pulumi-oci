@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -35,18 +35,41 @@ class ScriptArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['ScriptParameterArgs']]] parameters: (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
         """
-        pulumi.set(__self__, "apm_domain_id", apm_domain_id)
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "content_type", content_type)
-        pulumi.set(__self__, "display_name", display_name)
+        ScriptArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            apm_domain_id=apm_domain_id,
+            content=content,
+            content_type=content_type,
+            display_name=display_name,
+            content_file_name=content_file_name,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            parameters=parameters,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             apm_domain_id: pulumi.Input[str],
+             content: pulumi.Input[str],
+             content_type: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             content_file_name: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ScriptParameterArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("apm_domain_id", apm_domain_id)
+        _setter("content", content)
+        _setter("content_type", content_type)
+        _setter("display_name", display_name)
         if content_file_name is not None:
-            pulumi.set(__self__, "content_file_name", content_file_name)
+            _setter("content_file_name", content_file_name)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if parameters is not None:
-            pulumi.set(__self__, "parameters", parameters)
+            _setter("parameters", parameters)
 
     @property
     @pulumi.getter(name="apmDomainId")
@@ -177,32 +200,65 @@ class _ScriptState:
         :param pulumi.Input[str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         :param pulumi.Input[str] time_uploaded: The time the script was uploaded.
         """
+        _ScriptState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            apm_domain_id=apm_domain_id,
+            content=content,
+            content_file_name=content_file_name,
+            content_size_in_bytes=content_size_in_bytes,
+            content_type=content_type,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            monitor_status_count_maps=monitor_status_count_maps,
+            parameters=parameters,
+            time_created=time_created,
+            time_updated=time_updated,
+            time_uploaded=time_uploaded,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             apm_domain_id: Optional[pulumi.Input[str]] = None,
+             content: Optional[pulumi.Input[str]] = None,
+             content_file_name: Optional[pulumi.Input[str]] = None,
+             content_size_in_bytes: Optional[pulumi.Input[int]] = None,
+             content_type: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             monitor_status_count_maps: Optional[pulumi.Input[Sequence[pulumi.Input['ScriptMonitorStatusCountMapArgs']]]] = None,
+             parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ScriptParameterArgs']]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             time_uploaded: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if apm_domain_id is not None:
-            pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+            _setter("apm_domain_id", apm_domain_id)
         if content is not None:
-            pulumi.set(__self__, "content", content)
+            _setter("content", content)
         if content_file_name is not None:
-            pulumi.set(__self__, "content_file_name", content_file_name)
+            _setter("content_file_name", content_file_name)
         if content_size_in_bytes is not None:
-            pulumi.set(__self__, "content_size_in_bytes", content_size_in_bytes)
+            _setter("content_size_in_bytes", content_size_in_bytes)
         if content_type is not None:
-            pulumi.set(__self__, "content_type", content_type)
+            _setter("content_type", content_type)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if monitor_status_count_maps is not None:
-            pulumi.set(__self__, "monitor_status_count_maps", monitor_status_count_maps)
+            _setter("monitor_status_count_maps", monitor_status_count_maps)
         if parameters is not None:
-            pulumi.set(__self__, "parameters", parameters)
+            _setter("parameters", parameters)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if time_uploaded is not None:
-            pulumi.set(__self__, "time_uploaded", time_uploaded)
+            _setter("time_uploaded", time_uploaded)
 
     @property
     @pulumi.getter(name="apmDomainId")
@@ -478,6 +534,10 @@ class Script(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ScriptArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

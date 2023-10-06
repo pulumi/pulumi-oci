@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['MonitorPluginManagementArgs', 'MonitorPluginManagement']
@@ -23,7 +23,16 @@ class MonitorPluginManagementArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "monitored_instance_id", monitored_instance_id)
+        MonitorPluginManagementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            monitored_instance_id=monitored_instance_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             monitored_instance_id: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("monitored_instance_id", monitored_instance_id)
 
     @property
     @pulumi.getter(name="monitoredInstanceId")
@@ -59,18 +68,37 @@ class _MonitorPluginManagementState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _MonitorPluginManagementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            monitored_instance_description=monitored_instance_description,
+            monitored_instance_display_name=monitored_instance_display_name,
+            monitored_instance_id=monitored_instance_id,
+            monitored_instance_management_agent_id=monitored_instance_management_agent_id,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             monitored_instance_description: Optional[pulumi.Input[str]] = None,
+             monitored_instance_display_name: Optional[pulumi.Input[str]] = None,
+             monitored_instance_id: Optional[pulumi.Input[str]] = None,
+             monitored_instance_management_agent_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if monitored_instance_description is not None:
-            pulumi.set(__self__, "monitored_instance_description", monitored_instance_description)
+            _setter("monitored_instance_description", monitored_instance_description)
         if monitored_instance_display_name is not None:
-            pulumi.set(__self__, "monitored_instance_display_name", monitored_instance_display_name)
+            _setter("monitored_instance_display_name", monitored_instance_display_name)
         if monitored_instance_id is not None:
-            pulumi.set(__self__, "monitored_instance_id", monitored_instance_id)
+            _setter("monitored_instance_id", monitored_instance_id)
         if monitored_instance_management_agent_id is not None:
-            pulumi.set(__self__, "monitored_instance_management_agent_id", monitored_instance_management_agent_id)
+            _setter("monitored_instance_management_agent_id", monitored_instance_management_agent_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -205,6 +233,10 @@ class MonitorPluginManagement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            MonitorPluginManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

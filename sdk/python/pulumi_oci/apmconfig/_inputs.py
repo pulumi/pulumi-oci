@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -26,10 +26,21 @@ class ConfigDimensionArgs:
         :param pulumi.Input[str] name: (Updatable) The name of the metric. This must be a known metric name.
         :param pulumi.Input[str] value_source: (Updatable) This must not be set.
         """
+        ConfigDimensionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value_source=value_source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             value_source: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if value_source is not None:
-            pulumi.set(__self__, "value_source", value_source)
+            _setter("value_source", value_source)
 
     @property
     @pulumi.getter
@@ -69,14 +80,29 @@ class ConfigInUseByArgs:
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
         :param pulumi.Input[str] options_group: A string that specifies the group that an OPTIONS item belongs to.
         """
+        ConfigInUseByArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_type=config_type,
+            display_name=display_name,
+            id=id,
+            options_group=options_group,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_type: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             options_group: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_type is not None:
-            pulumi.set(__self__, "config_type", config_type)
+            _setter("config_type", config_type)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if options_group is not None:
-            pulumi.set(__self__, "options_group", options_group)
+            _setter("options_group", options_group)
 
     @property
     @pulumi.getter(name="configType")
@@ -140,14 +166,29 @@ class ConfigMetricArgs:
         :param pulumi.Input[str] unit: (Updatable) The unit of the metric.
         :param pulumi.Input[str] value_source: (Updatable) This must not be set.
         """
+        ConfigMetricArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            name=name,
+            unit=unit,
+            value_source=value_source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             unit: Optional[pulumi.Input[str]] = None,
+             value_source: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if unit is not None:
-            pulumi.set(__self__, "unit", unit)
+            _setter("unit", unit)
         if value_source is not None:
-            pulumi.set(__self__, "value_source", value_source)
+            _setter("value_source", value_source)
 
     @property
     @pulumi.getter
@@ -221,20 +262,41 @@ class ConfigRuleArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        ConfigRuleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            filter_text=filter_text,
+            is_apply_to_error_spans=is_apply_to_error_spans,
+            is_enabled=is_enabled,
+            priority=priority,
+            satisfied_response_time=satisfied_response_time,
+            tolerating_response_time=tolerating_response_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[pulumi.Input[str]] = None,
+             filter_text: Optional[pulumi.Input[str]] = None,
+             is_apply_to_error_spans: Optional[pulumi.Input[bool]] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             priority: Optional[pulumi.Input[int]] = None,
+             satisfied_response_time: Optional[pulumi.Input[int]] = None,
+             tolerating_response_time: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if filter_text is not None:
-            pulumi.set(__self__, "filter_text", filter_text)
+            _setter("filter_text", filter_text)
         if is_apply_to_error_spans is not None:
-            pulumi.set(__self__, "is_apply_to_error_spans", is_apply_to_error_spans)
+            _setter("is_apply_to_error_spans", is_apply_to_error_spans)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if priority is not None:
-            pulumi.set(__self__, "priority", priority)
+            _setter("priority", priority)
         if satisfied_response_time is not None:
-            pulumi.set(__self__, "satisfied_response_time", satisfied_response_time)
+            _setter("satisfied_response_time", satisfied_response_time)
         if tolerating_response_time is not None:
-            pulumi.set(__self__, "tolerating_response_time", tolerating_response_time)
+            _setter("tolerating_response_time", tolerating_response_time)
 
     @property
     @pulumi.getter(name="displayName")
@@ -334,10 +396,23 @@ class GetConfigsFilterArgs:
         """
         :param str name: The name of the metric. This must be a known metric name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetConfigsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

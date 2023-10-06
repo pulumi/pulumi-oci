@@ -6,8 +6,9 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetReplicaResult',
@@ -21,13 +22,16 @@ class GetReplicaResult:
     """
     A collection of values returned by getReplica.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, db_system_id=None, defined_tags=None, description=None, display_name=None, fault_domain=None, freeform_tags=None, id=None, ip_address=None, is_delete_protected=None, lifecycle_details=None, mysql_version=None, port=None, port_x=None, replica_id=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, configuration_id=None, db_system_id=None, defined_tags=None, description=None, display_name=None, fault_domain=None, freeform_tags=None, id=None, ip_address=None, is_delete_protected=None, lifecycle_details=None, mysql_version=None, port=None, port_x=None, replica_id=None, replica_overrides=None, shape_name=None, state=None, time_created=None, time_updated=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if configuration_id and not isinstance(configuration_id, str):
+            raise TypeError("Expected argument 'configuration_id' to be a str")
+        pulumi.set(__self__, "configuration_id", configuration_id)
         if db_system_id and not isinstance(db_system_id, str):
             raise TypeError("Expected argument 'db_system_id' to be a str")
         pulumi.set(__self__, "db_system_id", db_system_id)
@@ -70,6 +74,12 @@ class GetReplicaResult:
         if replica_id and not isinstance(replica_id, str):
             raise TypeError("Expected argument 'replica_id' to be a str")
         pulumi.set(__self__, "replica_id", replica_id)
+        if replica_overrides and not isinstance(replica_overrides, list):
+            raise TypeError("Expected argument 'replica_overrides' to be a list")
+        pulumi.set(__self__, "replica_overrides", replica_overrides)
+        if shape_name and not isinstance(shape_name, str):
+            raise TypeError("Expected argument 'shape_name' to be a str")
+        pulumi.set(__self__, "shape_name", shape_name)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -95,6 +105,14 @@ class GetReplicaResult:
         The OCID of the compartment that contains the read replica.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="configurationId")
+    def configuration_id(self) -> str:
+        """
+        The OCID of the Configuration to be used by the read replica.
+        """
+        return pulumi.get(self, "configuration_id")
 
     @property
     @pulumi.getter(name="dbSystemId")
@@ -180,7 +198,7 @@ class GetReplicaResult:
     @pulumi.getter(name="mysqlVersion")
     def mysql_version(self) -> str:
         """
-        The MySQL version used by the read replica.
+        The MySQL version to be used by the read replica.
         """
         return pulumi.get(self, "mysql_version")
 
@@ -204,6 +222,22 @@ class GetReplicaResult:
     @pulumi.getter(name="replicaId")
     def replica_id(self) -> str:
         return pulumi.get(self, "replica_id")
+
+    @property
+    @pulumi.getter(name="replicaOverrides")
+    def replica_overrides(self) -> Sequence['outputs.GetReplicaReplicaOverrideResult']:
+        """
+        By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+        """
+        return pulumi.get(self, "replica_overrides")
+
+    @property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> str:
+        """
+        The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+        """
+        return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter
@@ -238,6 +272,7 @@ class AwaitableGetReplicaResult(GetReplicaResult):
         return GetReplicaResult(
             availability_domain=self.availability_domain,
             compartment_id=self.compartment_id,
+            configuration_id=self.configuration_id,
             db_system_id=self.db_system_id,
             defined_tags=self.defined_tags,
             description=self.description,
@@ -252,6 +287,8 @@ class AwaitableGetReplicaResult(GetReplicaResult):
             port=self.port,
             port_x=self.port_x,
             replica_id=self.replica_id,
+            replica_overrides=self.replica_overrides,
+            shape_name=self.shape_name,
             state=self.state,
             time_created=self.time_created,
             time_updated=self.time_updated)
@@ -284,6 +321,7 @@ def get_replica(replica_id: Optional[str] = None,
     return AwaitableGetReplicaResult(
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        configuration_id=pulumi.get(__ret__, 'configuration_id'),
         db_system_id=pulumi.get(__ret__, 'db_system_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
@@ -298,6 +336,8 @@ def get_replica(replica_id: Optional[str] = None,
         port=pulumi.get(__ret__, 'port'),
         port_x=pulumi.get(__ret__, 'port_x'),
         replica_id=pulumi.get(__ret__, 'replica_id'),
+        replica_overrides=pulumi.get(__ret__, 'replica_overrides'),
+        shape_name=pulumi.get(__ret__, 'shape_name'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))

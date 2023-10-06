@@ -49,6 +49,10 @@ import com.pulumi.oci.DataScience.inputs.GetPipelineRunsArgs;
 import com.pulumi.oci.DataScience.inputs.GetPipelineRunsPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetPipelinesArgs;
 import com.pulumi.oci.DataScience.inputs.GetPipelinesPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointArgs;
+import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointsArgs;
+import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointsPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetProjectArgs;
 import com.pulumi.oci.DataScience.inputs.GetProjectPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetProjectsArgs;
@@ -74,6 +78,8 @@ import com.pulumi.oci.DataScience.outputs.GetPipelineResult;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunResult;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunsResult;
 import com.pulumi.oci.DataScience.outputs.GetPipelinesResult;
+import com.pulumi.oci.DataScience.outputs.GetPrivateEndpointResult;
+import com.pulumi.oci.DataScience.outputs.GetPrivateEndpointsResult;
 import com.pulumi.oci.DataScience.outputs.GetProjectResult;
 import com.pulumi.oci.DataScience.outputs.GetProjectsResult;
 import com.pulumi.oci.Utilities;
@@ -3519,6 +3525,334 @@ public final class DataScienceFunctions {
      */
     public static CompletableFuture<GetPipelinesResult> getPipelinesPlain(GetPipelinesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getPipelines:getPipelines", TypeShape.of(GetPipelinesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Data Science Private Endpoint resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Retrieves an private endpoint using a `privateEndpointId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSciencePrivateEndpoint = DataScienceFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
+     *             .dataSciencePrivateEndpointId(oci_datascience_private_endpoint.test_data_science_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args) {
+        return getPrivateEndpoint(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Data Science Private Endpoint resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Retrieves an private endpoint using a `privateEndpointId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSciencePrivateEndpoint = DataScienceFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
+     *             .dataSciencePrivateEndpointId(oci_datascience_private_endpoint.test_data_science_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPrivateEndpointResult> getPrivateEndpointPlain(GetPrivateEndpointPlainArgs args) {
+        return getPrivateEndpointPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Data Science Private Endpoint resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Retrieves an private endpoint using a `privateEndpointId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSciencePrivateEndpoint = DataScienceFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
+     *             .dataSciencePrivateEndpointId(oci_datascience_private_endpoint.test_data_science_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getPrivateEndpoint:getPrivateEndpoint", TypeShape.of(GetPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Data Science Private Endpoint resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Retrieves an private endpoint using a `privateEndpointId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSciencePrivateEndpoint = DataScienceFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
+     *             .dataSciencePrivateEndpointId(oci_datascience_private_endpoint.test_data_science_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPrivateEndpointResult> getPrivateEndpointPlain(GetPrivateEndpointPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getPrivateEndpoint:getPrivateEndpoint", TypeShape.of(GetPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Data Science Private Endpoints in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists all Data Science private endpoints in the specified compartment. The query must include compartmentId. The query can also include one other parameter. If the query doesn&#39;t include compartmentId, or includes compartmentId with two or more other parameters, then an error is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSciencePrivateEndpoints = DataScienceFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.data_science_private_endpoint_created_by())
+     *             .dataScienceResourceType(var_.data_science_private_endpoint_data_science_resource_type())
+     *             .displayName(var_.data_science_private_endpoint_display_name())
+     *             .state(var_.data_science_private_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPrivateEndpointsResult> getPrivateEndpoints(GetPrivateEndpointsArgs args) {
+        return getPrivateEndpoints(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Data Science Private Endpoints in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists all Data Science private endpoints in the specified compartment. The query must include compartmentId. The query can also include one other parameter. If the query doesn&#39;t include compartmentId, or includes compartmentId with two or more other parameters, then an error is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSciencePrivateEndpoints = DataScienceFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.data_science_private_endpoint_created_by())
+     *             .dataScienceResourceType(var_.data_science_private_endpoint_data_science_resource_type())
+     *             .displayName(var_.data_science_private_endpoint_display_name())
+     *             .state(var_.data_science_private_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPrivateEndpointsResult> getPrivateEndpointsPlain(GetPrivateEndpointsPlainArgs args) {
+        return getPrivateEndpointsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Data Science Private Endpoints in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists all Data Science private endpoints in the specified compartment. The query must include compartmentId. The query can also include one other parameter. If the query doesn&#39;t include compartmentId, or includes compartmentId with two or more other parameters, then an error is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSciencePrivateEndpoints = DataScienceFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.data_science_private_endpoint_created_by())
+     *             .dataScienceResourceType(var_.data_science_private_endpoint_data_science_resource_type())
+     *             .displayName(var_.data_science_private_endpoint_display_name())
+     *             .state(var_.data_science_private_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetPrivateEndpointsResult> getPrivateEndpoints(GetPrivateEndpointsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getPrivateEndpoints:getPrivateEndpoints", TypeShape.of(GetPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Data Science Private Endpoints in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists all Data Science private endpoints in the specified compartment. The query must include compartmentId. The query can also include one other parameter. If the query doesn&#39;t include compartmentId, or includes compartmentId with two or more other parameters, then an error is returned.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataSciencePrivateEndpoints = DataScienceFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .createdBy(var_.data_science_private_endpoint_created_by())
+     *             .dataScienceResourceType(var_.data_science_private_endpoint_data_science_resource_type())
+     *             .displayName(var_.data_science_private_endpoint_display_name())
+     *             .state(var_.data_science_private_endpoint_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetPrivateEndpointsResult> getPrivateEndpointsPlain(GetPrivateEndpointsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getPrivateEndpoints:getPrivateEndpoints", TypeShape.of(GetPrivateEndpointsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Data Science service.

@@ -26,6 +26,8 @@ from .get_pipeline import *
 from .get_pipeline_run import *
 from .get_pipeline_runs import *
 from .get_pipelines import *
+from .get_private_endpoint import *
+from .get_private_endpoints import *
 from .get_project import *
 from .get_projects import *
 from .job import *
@@ -39,6 +41,7 @@ from .model_version_set import *
 from .notebook_session import *
 from .pipeline import *
 from .pipeline_run import *
+from .private_endpoint import *
 from .project import *
 from ._inputs import *
 from . import outputs

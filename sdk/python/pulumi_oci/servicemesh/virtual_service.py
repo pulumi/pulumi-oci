@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,22 +41,47 @@ class VirtualServiceArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "mesh_id", mesh_id)
+        VirtualServiceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            mesh_id=mesh_id,
+            default_routing_policy=default_routing_policy,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            hosts=hosts,
+            mtls=mtls,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             mesh_id: pulumi.Input[str],
+             default_routing_policy: Optional[pulumi.Input['VirtualServiceDefaultRoutingPolicyArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             mtls: Optional[pulumi.Input['VirtualServiceMtlsArgs']] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("mesh_id", mesh_id)
         if default_routing_policy is not None:
-            pulumi.set(__self__, "default_routing_policy", default_routing_policy)
+            _setter("default_routing_policy", default_routing_policy)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hosts is not None:
-            pulumi.set(__self__, "hosts", hosts)
+            _setter("hosts", hosts)
         if mtls is not None:
-            pulumi.set(__self__, "mtls", mtls)
+            _setter("mtls", mtls)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -209,34 +234,69 @@ class _VirtualServiceState:
         :param pulumi.Input[str] time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         """
+        _VirtualServiceState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            default_routing_policy=default_routing_policy,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            hosts=hosts,
+            lifecycle_details=lifecycle_details,
+            mesh_id=mesh_id,
+            mtls=mtls,
+            name=name,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             default_routing_policy: Optional[pulumi.Input['VirtualServiceDefaultRoutingPolicyArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             mesh_id: Optional[pulumi.Input[str]] = None,
+             mtls: Optional[pulumi.Input['VirtualServiceMtlsArgs']] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if default_routing_policy is not None:
-            pulumi.set(__self__, "default_routing_policy", default_routing_policy)
+            _setter("default_routing_policy", default_routing_policy)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hosts is not None:
-            pulumi.set(__self__, "hosts", hosts)
+            _setter("hosts", hosts)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if mesh_id is not None:
-            pulumi.set(__self__, "mesh_id", mesh_id)
+            _setter("mesh_id", mesh_id)
         if mtls is not None:
-            pulumi.set(__self__, "mtls", mtls)
+            _setter("mtls", mtls)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -536,6 +596,10 @@ class VirtualService(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            VirtualServiceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -562,6 +626,11 @@ class VirtualService(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            if default_routing_policy is not None and not isinstance(default_routing_policy, VirtualServiceDefaultRoutingPolicyArgs):
+                default_routing_policy = default_routing_policy or {}
+                def _setter(key, value):
+                    default_routing_policy[key] = value
+                VirtualServiceDefaultRoutingPolicyArgs._configure(_setter, **default_routing_policy)
             __props__.__dict__["default_routing_policy"] = default_routing_policy
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
@@ -570,6 +639,11 @@ class VirtualService(pulumi.CustomResource):
             if mesh_id is None and not opts.urn:
                 raise TypeError("Missing required property 'mesh_id'")
             __props__.__dict__["mesh_id"] = mesh_id
+            if mtls is not None and not isinstance(mtls, VirtualServiceMtlsArgs):
+                mtls = mtls or {}
+                def _setter(key, value):
+                    mtls[key] = value
+                VirtualServiceMtlsArgs._configure(_setter, **mtls)
             __props__.__dict__["mtls"] = mtls
             __props__.__dict__["name"] = name
             __props__.__dict__["lifecycle_details"] = None

@@ -196,9 +196,8 @@ func (o AutoScalingConfigurationAutoScalingResourcesPtrOutput) Type() pulumi.Str
 
 type AutoScalingConfigurationPolicy struct {
 	// The capacity requirements of the autoscaling policy.
-	Capacity *AutoScalingConfigurationPolicyCapacity `pulumi:"capacity"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName *string `pulumi:"displayName"`
+	Capacity    *AutoScalingConfigurationPolicyCapacity `pulumi:"capacity"`
+	DisplayName *string                                 `pulumi:"displayName"`
 	// An execution schedule for an autoscaling policy.
 	ExecutionSchedule *AutoScalingConfigurationPolicyExecutionSchedule `pulumi:"executionSchedule"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
@@ -227,9 +226,8 @@ type AutoScalingConfigurationPolicyInput interface {
 
 type AutoScalingConfigurationPolicyArgs struct {
 	// The capacity requirements of the autoscaling policy.
-	Capacity AutoScalingConfigurationPolicyCapacityPtrInput `pulumi:"capacity"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	Capacity    AutoScalingConfigurationPolicyCapacityPtrInput `pulumi:"capacity"`
+	DisplayName pulumi.StringPtrInput                          `pulumi:"displayName"`
 	// An execution schedule for an autoscaling policy.
 	ExecutionSchedule AutoScalingConfigurationPolicyExecutionSchedulePtrInput `pulumi:"executionSchedule"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
@@ -319,7 +317,6 @@ func (o AutoScalingConfigurationPolicyOutput) Capacity() AutoScalingConfiguratio
 	return o.ApplyT(func(v AutoScalingConfigurationPolicy) *AutoScalingConfigurationPolicyCapacity { return v.Capacity }).(AutoScalingConfigurationPolicyCapacityPtrOutput)
 }
 
-// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o AutoScalingConfigurationPolicyOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicy) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -1024,9 +1021,8 @@ func (o AutoScalingConfigurationPolicyResourceActionPtrOutput) ActionType() pulu
 
 type AutoScalingConfigurationPolicyRule struct {
 	// The action to take when autoscaling is triggered.
-	Action *AutoScalingConfigurationPolicyRuleAction `pulumi:"action"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	Action      *AutoScalingConfigurationPolicyRuleAction `pulumi:"action"`
+	DisplayName string                                    `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
 	Id *string `pulumi:"id"`
 	// Metric and threshold details for triggering an autoscaling action.
@@ -1046,9 +1042,8 @@ type AutoScalingConfigurationPolicyRuleInput interface {
 
 type AutoScalingConfigurationPolicyRuleArgs struct {
 	// The action to take when autoscaling is triggered.
-	Action AutoScalingConfigurationPolicyRuleActionPtrInput `pulumi:"action"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	Action      AutoScalingConfigurationPolicyRuleActionPtrInput `pulumi:"action"`
+	DisplayName pulumi.StringInput                               `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Metric and threshold details for triggering an autoscaling action.
@@ -1129,7 +1124,6 @@ func (o AutoScalingConfigurationPolicyRuleOutput) Action() AutoScalingConfigurat
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyRule) *AutoScalingConfigurationPolicyRuleAction { return v.Action }).(AutoScalingConfigurationPolicyRuleActionPtrOutput)
 }
 
-// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o AutoScalingConfigurationPolicyRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyRule) string { return v.DisplayName }).(pulumi.StringOutput)
 }

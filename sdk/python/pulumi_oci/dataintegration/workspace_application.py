@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -51,31 +51,66 @@ class WorkspaceApplicationArgs:
         :param pulumi.Input['WorkspaceApplicationSourceApplicationInfoArgs'] source_application_info: The information about the application.
         :param pulumi.Input[str] state: (Updatable) The current state of the workspace.
         """
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "model_type", model_type)
-        pulumi.set(__self__, "workspace_id", workspace_id)
+        WorkspaceApplicationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            identifier=identifier,
+            model_type=model_type,
+            workspace_id=workspace_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            key=key,
+            model_version=model_version,
+            name=name,
+            object_status=object_status,
+            registry_metadata=registry_metadata,
+            source_application_info=source_application_info,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             identifier: pulumi.Input[str],
+             model_type: pulumi.Input[str],
+             workspace_id: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             key: Optional[pulumi.Input[str]] = None,
+             model_version: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             object_status: Optional[pulumi.Input[int]] = None,
+             registry_metadata: Optional[pulumi.Input['WorkspaceApplicationRegistryMetadataArgs']] = None,
+             source_application_info: Optional[pulumi.Input['WorkspaceApplicationSourceApplicationInfoArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("identifier", identifier)
+        _setter("model_type", model_type)
+        _setter("workspace_id", workspace_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if model_version is not None:
-            pulumi.set(__self__, "model_version", model_version)
+            _setter("model_version", model_version)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if object_status is not None:
-            pulumi.set(__self__, "object_status", object_status)
+            _setter("object_status", object_status)
         if registry_metadata is not None:
-            pulumi.set(__self__, "registry_metadata", registry_metadata)
+            _setter("registry_metadata", registry_metadata)
         if source_application_info is not None:
-            pulumi.set(__self__, "source_application_info", source_application_info)
+            _setter("source_application_info", source_application_info)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter
@@ -310,56 +345,113 @@ class _WorkspaceApplicationState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _WorkspaceApplicationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            application_version=application_version,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            dependent_object_metadatas=dependent_object_metadatas,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            identifier=identifier,
+            key=key,
+            key_map=key_map,
+            metadatas=metadatas,
+            model_type=model_type,
+            model_version=model_version,
+            name=name,
+            object_status=object_status,
+            object_version=object_version,
+            parent_reves=parent_reves,
+            published_object_metadatas=published_object_metadatas,
+            registry_metadata=registry_metadata,
+            source_application_info=source_application_info,
+            state=state,
+            time_created=time_created,
+            time_patched=time_patched,
+            time_updated=time_updated,
+            workspace_id=workspace_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             application_version: Optional[pulumi.Input[int]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             dependent_object_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationDependentObjectMetadataArgs']]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             identifier: Optional[pulumi.Input[str]] = None,
+             key: Optional[pulumi.Input[str]] = None,
+             key_map: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationMetadataArgs']]]] = None,
+             model_type: Optional[pulumi.Input[str]] = None,
+             model_version: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             object_status: Optional[pulumi.Input[int]] = None,
+             object_version: Optional[pulumi.Input[int]] = None,
+             parent_reves: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationParentRefArgs']]]] = None,
+             published_object_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPublishedObjectMetadataArgs']]]] = None,
+             registry_metadata: Optional[pulumi.Input['WorkspaceApplicationRegistryMetadataArgs']] = None,
+             source_application_info: Optional[pulumi.Input['WorkspaceApplicationSourceApplicationInfoArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_patched: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             workspace_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if application_version is not None:
-            pulumi.set(__self__, "application_version", application_version)
+            _setter("application_version", application_version)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if dependent_object_metadatas is not None:
-            pulumi.set(__self__, "dependent_object_metadatas", dependent_object_metadatas)
+            _setter("dependent_object_metadatas", dependent_object_metadatas)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if identifier is not None:
-            pulumi.set(__self__, "identifier", identifier)
+            _setter("identifier", identifier)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if key_map is not None:
-            pulumi.set(__self__, "key_map", key_map)
+            _setter("key_map", key_map)
         if metadatas is not None:
-            pulumi.set(__self__, "metadatas", metadatas)
+            _setter("metadatas", metadatas)
         if model_type is not None:
-            pulumi.set(__self__, "model_type", model_type)
+            _setter("model_type", model_type)
         if model_version is not None:
-            pulumi.set(__self__, "model_version", model_version)
+            _setter("model_version", model_version)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if object_status is not None:
-            pulumi.set(__self__, "object_status", object_status)
+            _setter("object_status", object_status)
         if object_version is not None:
-            pulumi.set(__self__, "object_version", object_version)
+            _setter("object_version", object_version)
         if parent_reves is not None:
-            pulumi.set(__self__, "parent_reves", parent_reves)
+            _setter("parent_reves", parent_reves)
         if published_object_metadatas is not None:
-            pulumi.set(__self__, "published_object_metadatas", published_object_metadatas)
+            _setter("published_object_metadatas", published_object_metadatas)
         if registry_metadata is not None:
-            pulumi.set(__self__, "registry_metadata", registry_metadata)
+            _setter("registry_metadata", registry_metadata)
         if source_application_info is not None:
-            pulumi.set(__self__, "source_application_info", source_application_info)
+            _setter("source_application_info", source_application_info)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_patched is not None:
-            pulumi.set(__self__, "time_patched", time_patched)
+            _setter("time_patched", time_patched)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if workspace_id is not None:
-            pulumi.set(__self__, "workspace_id", workspace_id)
+            _setter("workspace_id", workspace_id)
 
     @property
     @pulumi.getter(name="applicationVersion")
@@ -821,6 +913,10 @@ class WorkspaceApplication(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            WorkspaceApplicationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -863,7 +959,17 @@ class WorkspaceApplication(pulumi.CustomResource):
             __props__.__dict__["model_version"] = model_version
             __props__.__dict__["name"] = name
             __props__.__dict__["object_status"] = object_status
+            if registry_metadata is not None and not isinstance(registry_metadata, WorkspaceApplicationRegistryMetadataArgs):
+                registry_metadata = registry_metadata or {}
+                def _setter(key, value):
+                    registry_metadata[key] = value
+                WorkspaceApplicationRegistryMetadataArgs._configure(_setter, **registry_metadata)
             __props__.__dict__["registry_metadata"] = registry_metadata
+            if source_application_info is not None and not isinstance(source_application_info, WorkspaceApplicationSourceApplicationInfoArgs):
+                source_application_info = source_application_info or {}
+                def _setter(key, value):
+                    source_application_info[key] = value
+                WorkspaceApplicationSourceApplicationInfoArgs._configure(_setter, **source_application_info)
             __props__.__dict__["source_application_info"] = source_application_info
             __props__.__dict__["state"] = state
             if workspace_id is None and not opts.urn:

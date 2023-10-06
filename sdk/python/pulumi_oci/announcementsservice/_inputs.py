@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -25,9 +25,20 @@ class AnnouncementSubscriptionFilterGroupsArgs:
         :param pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionFilterGroupsFilterArgs']]] filters: A list of filters against which the Announcements service matches announcements. You cannot have more than one of any given filter type within a filter group.
         :param pulumi.Input[str] name: The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
         """
-        pulumi.set(__self__, "filters", filters)
+        AnnouncementSubscriptionFilterGroupsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            filters=filters,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             filters: pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionFilterGroupsFilterArgs']]],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("filters", filters)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -63,8 +74,19 @@ class AnnouncementSubscriptionFilterGroupsFilterArgs:
         :param pulumi.Input[str] type: The type of filter.
         :param pulumi.Input[str] value: The value of the filter.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        AnnouncementSubscriptionFilterGroupsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: pulumi.Input[str],
+             value: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -100,8 +122,19 @@ class AnnouncementSubscriptionsFilterGroupFilterArgs:
         :param pulumi.Input[str] type: (Updatable) The type of filter.
         :param pulumi.Input[str] value: (Updatable) The value of the filter.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        AnnouncementSubscriptionsFilterGroupFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: pulumi.Input[str],
+             value: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -137,10 +170,23 @@ class GetAnnouncementSubscriptionsFilterArgs:
         """
         :param str name: The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAnnouncementSubscriptionsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

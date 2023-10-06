@@ -205,17 +205,9 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.metrics);
     }
 
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-     * 
-     */
     @Import(name="modelId")
     private @Nullable Output<String> modelId;
 
-    /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-     * 
-     */
     public Optional<Output<String>> modelId() {
         return Optional.ofNullable(this.modelId);
     }
@@ -730,23 +722,11 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
             return metrics(List.of(metrics));
         }
 
-        /**
-         * @param modelId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-         * 
-         * @return builder
-         * 
-         */
         public Builder modelId(@Nullable Output<String> modelId) {
             $.modelId = modelId;
             return this;
         }
 
-        /**
-         * @param modelId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-         * 
-         * @return builder
-         * 
-         */
         public Builder modelId(String modelId) {
             return modelId(Output.of(modelId));
         }

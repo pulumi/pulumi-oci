@@ -6,6 +6,7 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemAdvisorSetting;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetail;
+import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemDatapumpSetting;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemDumpTransferDetail;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsMigrationCollectionItemExcludeObject;
@@ -47,6 +48,7 @@ public final class GetMigrationsMigrationCollectionItem {
      * 
      */
     private List<GetMigrationsMigrationCollectionItemDataTransferMediumDetail> dataTransferMediumDetails;
+    private List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2> dataTransferMediumDetailsV2s;
     /**
      * @return Optional settings for Data Pump Export and Import jobs
      * 
@@ -201,6 +203,9 @@ public final class GetMigrationsMigrationCollectionItem {
      */
     public List<GetMigrationsMigrationCollectionItemDataTransferMediumDetail> dataTransferMediumDetails() {
         return this.dataTransferMediumDetails;
+    }
+    public List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2> dataTransferMediumDetailsV2s() {
+        return this.dataTransferMediumDetailsV2s;
     }
     /**
      * @return Optional settings for Data Pump Export and Import jobs
@@ -379,6 +384,7 @@ public final class GetMigrationsMigrationCollectionItem {
         private String credentialsSecretId;
         private String csvText;
         private List<GetMigrationsMigrationCollectionItemDataTransferMediumDetail> dataTransferMediumDetails;
+        private List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2> dataTransferMediumDetailsV2s;
         private List<GetMigrationsMigrationCollectionItemDatapumpSetting> datapumpSettings;
         private Map<String,Object> definedTags;
         private String displayName;
@@ -411,6 +417,7 @@ public final class GetMigrationsMigrationCollectionItem {
     	      this.credentialsSecretId = defaults.credentialsSecretId;
     	      this.csvText = defaults.csvText;
     	      this.dataTransferMediumDetails = defaults.dataTransferMediumDetails;
+    	      this.dataTransferMediumDetailsV2s = defaults.dataTransferMediumDetailsV2s;
     	      this.datapumpSettings = defaults.datapumpSettings;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
@@ -471,6 +478,14 @@ public final class GetMigrationsMigrationCollectionItem {
         }
         public Builder dataTransferMediumDetails(GetMigrationsMigrationCollectionItemDataTransferMediumDetail... dataTransferMediumDetails) {
             return dataTransferMediumDetails(List.of(dataTransferMediumDetails));
+        }
+        @CustomType.Setter
+        public Builder dataTransferMediumDetailsV2s(List<GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2> dataTransferMediumDetailsV2s) {
+            this.dataTransferMediumDetailsV2s = Objects.requireNonNull(dataTransferMediumDetailsV2s);
+            return this;
+        }
+        public Builder dataTransferMediumDetailsV2s(GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2... dataTransferMediumDetailsV2s) {
+            return dataTransferMediumDetailsV2s(List.of(dataTransferMediumDetailsV2s));
         }
         @CustomType.Setter
         public Builder datapumpSettings(List<GetMigrationsMigrationCollectionItemDatapumpSetting> datapumpSettings) {
@@ -616,6 +631,7 @@ public final class GetMigrationsMigrationCollectionItem {
             o.credentialsSecretId = credentialsSecretId;
             o.csvText = csvText;
             o.dataTransferMediumDetails = dataTransferMediumDetails;
+            o.dataTransferMediumDetailsV2s = dataTransferMediumDetailsV2s;
             o.datapumpSettings = datapumpSettings;
             o.definedTags = definedTags;
             o.displayName = displayName;

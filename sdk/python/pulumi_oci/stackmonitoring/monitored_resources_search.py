@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -65,39 +65,80 @@ class MonitoredResourcesSearchArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
+        MonitoredResourcesSearchArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            exclude_fields=exclude_fields,
+            external_id=external_id,
+            fields=fields,
+            host_name=host_name,
+            host_name_contains=host_name_contains,
+            management_agent_id=management_agent_id,
+            name=name,
+            name_contains=name_contains,
+            property_equals=property_equals,
+            resource_time_zone=resource_time_zone,
+            state=state,
+            time_created_greater_than_or_equal_to=time_created_greater_than_or_equal_to,
+            time_created_less_than=time_created_less_than,
+            time_updated_greater_than_or_equal_to=time_updated_greater_than_or_equal_to,
+            time_updated_less_than=time_updated_less_than,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             exclude_fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             external_id: Optional[pulumi.Input[str]] = None,
+             fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             host_name: Optional[pulumi.Input[str]] = None,
+             host_name_contains: Optional[pulumi.Input[str]] = None,
+             management_agent_id: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             name_contains: Optional[pulumi.Input[str]] = None,
+             property_equals: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             resource_time_zone: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created_greater_than_or_equal_to: Optional[pulumi.Input[str]] = None,
+             time_created_less_than: Optional[pulumi.Input[str]] = None,
+             time_updated_greater_than_or_equal_to: Optional[pulumi.Input[str]] = None,
+             time_updated_less_than: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
         if exclude_fields is not None:
-            pulumi.set(__self__, "exclude_fields", exclude_fields)
+            _setter("exclude_fields", exclude_fields)
         if external_id is not None:
-            pulumi.set(__self__, "external_id", external_id)
+            _setter("external_id", external_id)
         if fields is not None:
-            pulumi.set(__self__, "fields", fields)
+            _setter("fields", fields)
         if host_name is not None:
-            pulumi.set(__self__, "host_name", host_name)
+            _setter("host_name", host_name)
         if host_name_contains is not None:
-            pulumi.set(__self__, "host_name_contains", host_name_contains)
+            _setter("host_name_contains", host_name_contains)
         if management_agent_id is not None:
-            pulumi.set(__self__, "management_agent_id", management_agent_id)
+            _setter("management_agent_id", management_agent_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if name_contains is not None:
-            pulumi.set(__self__, "name_contains", name_contains)
+            _setter("name_contains", name_contains)
         if property_equals is not None:
-            pulumi.set(__self__, "property_equals", property_equals)
+            _setter("property_equals", property_equals)
         if resource_time_zone is not None:
-            pulumi.set(__self__, "resource_time_zone", resource_time_zone)
+            _setter("resource_time_zone", resource_time_zone)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created_greater_than_or_equal_to is not None:
-            pulumi.set(__self__, "time_created_greater_than_or_equal_to", time_created_greater_than_or_equal_to)
+            _setter("time_created_greater_than_or_equal_to", time_created_greater_than_or_equal_to)
         if time_created_less_than is not None:
-            pulumi.set(__self__, "time_created_less_than", time_created_less_than)
+            _setter("time_created_less_than", time_created_less_than)
         if time_updated_greater_than_or_equal_to is not None:
-            pulumi.set(__self__, "time_updated_greater_than_or_equal_to", time_updated_greater_than_or_equal_to)
+            _setter("time_updated_greater_than_or_equal_to", time_updated_greater_than_or_equal_to)
         if time_updated_less_than is not None:
-            pulumi.set(__self__, "time_updated_less_than", time_updated_less_than)
+            _setter("time_updated_less_than", time_updated_less_than)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -370,42 +411,85 @@ class _MonitoredResourcesSearchState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _MonitoredResourcesSearchState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            exclude_fields=exclude_fields,
+            external_id=external_id,
+            fields=fields,
+            host_name=host_name,
+            host_name_contains=host_name_contains,
+            items=items,
+            management_agent_id=management_agent_id,
+            name=name,
+            name_contains=name_contains,
+            property_equals=property_equals,
+            resource_time_zone=resource_time_zone,
+            state=state,
+            time_created_greater_than_or_equal_to=time_created_greater_than_or_equal_to,
+            time_created_less_than=time_created_less_than,
+            time_updated_greater_than_or_equal_to=time_updated_greater_than_or_equal_to,
+            time_updated_less_than=time_updated_less_than,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             exclude_fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             external_id: Optional[pulumi.Input[str]] = None,
+             fields: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             host_name: Optional[pulumi.Input[str]] = None,
+             host_name_contains: Optional[pulumi.Input[str]] = None,
+             items: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchItemArgs']]]] = None,
+             management_agent_id: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             name_contains: Optional[pulumi.Input[str]] = None,
+             property_equals: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             resource_time_zone: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created_greater_than_or_equal_to: Optional[pulumi.Input[str]] = None,
+             time_created_less_than: Optional[pulumi.Input[str]] = None,
+             time_updated_greater_than_or_equal_to: Optional[pulumi.Input[str]] = None,
+             time_updated_less_than: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if exclude_fields is not None:
-            pulumi.set(__self__, "exclude_fields", exclude_fields)
+            _setter("exclude_fields", exclude_fields)
         if external_id is not None:
-            pulumi.set(__self__, "external_id", external_id)
+            _setter("external_id", external_id)
         if fields is not None:
-            pulumi.set(__self__, "fields", fields)
+            _setter("fields", fields)
         if host_name is not None:
-            pulumi.set(__self__, "host_name", host_name)
+            _setter("host_name", host_name)
         if host_name_contains is not None:
-            pulumi.set(__self__, "host_name_contains", host_name_contains)
+            _setter("host_name_contains", host_name_contains)
         if items is not None:
-            pulumi.set(__self__, "items", items)
+            _setter("items", items)
         if management_agent_id is not None:
-            pulumi.set(__self__, "management_agent_id", management_agent_id)
+            _setter("management_agent_id", management_agent_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if name_contains is not None:
-            pulumi.set(__self__, "name_contains", name_contains)
+            _setter("name_contains", name_contains)
         if property_equals is not None:
-            pulumi.set(__self__, "property_equals", property_equals)
+            _setter("property_equals", property_equals)
         if resource_time_zone is not None:
-            pulumi.set(__self__, "resource_time_zone", resource_time_zone)
+            _setter("resource_time_zone", resource_time_zone)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created_greater_than_or_equal_to is not None:
-            pulumi.set(__self__, "time_created_greater_than_or_equal_to", time_created_greater_than_or_equal_to)
+            _setter("time_created_greater_than_or_equal_to", time_created_greater_than_or_equal_to)
         if time_created_less_than is not None:
-            pulumi.set(__self__, "time_created_less_than", time_created_less_than)
+            _setter("time_created_less_than", time_created_less_than)
         if time_updated_greater_than_or_equal_to is not None:
-            pulumi.set(__self__, "time_updated_greater_than_or_equal_to", time_updated_greater_than_or_equal_to)
+            _setter("time_updated_greater_than_or_equal_to", time_updated_greater_than_or_equal_to)
         if time_updated_less_than is not None:
-            pulumi.set(__self__, "time_updated_less_than", time_updated_less_than)
+            _setter("time_updated_less_than", time_updated_less_than)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -783,6 +867,10 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            MonitoredResourcesSearchArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

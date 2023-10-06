@@ -14,6 +14,7 @@ import com.pulumi.oci.Database.inputs.AutonomousDatabaseKeyHistoryEntryArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseLocalStandbyDbArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseLongTermBackupScheduleArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs;
+import com.pulumi.oci.Database.inputs.AutonomousDatabaseResourcePoolSummaryArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseScheduledOperationArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseStandbyDbArgs;
 import java.lang.Boolean;
@@ -1336,6 +1337,20 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         return Optional.ofNullable(this.remoteDisasterRecoveryType);
     }
 
+    @Import(name="resourcePoolLeaderId")
+    private @Nullable Output<String> resourcePoolLeaderId;
+
+    public Optional<Output<String>> resourcePoolLeaderId() {
+        return Optional.ofNullable(this.resourcePoolLeaderId);
+    }
+
+    @Import(name="resourcePoolSummary")
+    private @Nullable Output<AutonomousDatabaseResourcePoolSummaryArgs> resourcePoolSummary;
+
+    public Optional<Output<AutonomousDatabaseResourcePoolSummaryArgs>> resourcePoolSummary() {
+        return Optional.ofNullable(this.resourcePoolSummary);
+    }
+
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
@@ -1719,6 +1734,13 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         return Optional.ofNullable(this.timeMaintenanceEnd);
     }
 
+    @Import(name="timeOfJoiningResourcePool")
+    private @Nullable Output<String> timeOfJoiningResourcePool;
+
+    public Optional<Output<String>> timeOfJoiningResourcePool() {
+        return Optional.ofNullable(this.timeOfJoiningResourcePool);
+    }
+
     /**
      * The timestamp of the last failover operation.
      * 
@@ -2030,6 +2052,8 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.refreshableStatus = $.refreshableStatus;
         this.remoteDisasterRecoveryConfigurations = $.remoteDisasterRecoveryConfigurations;
         this.remoteDisasterRecoveryType = $.remoteDisasterRecoveryType;
+        this.resourcePoolLeaderId = $.resourcePoolLeaderId;
+        this.resourcePoolSummary = $.resourcePoolSummary;
         this.role = $.role;
         this.rotateKeyTrigger = $.rotateKeyTrigger;
         this.scheduledOperations = $.scheduledOperations;
@@ -2053,6 +2077,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.timeLocalDataGuardEnabled = $.timeLocalDataGuardEnabled;
         this.timeMaintenanceBegin = $.timeMaintenanceBegin;
         this.timeMaintenanceEnd = $.timeMaintenanceEnd;
+        this.timeOfJoiningResourcePool = $.timeOfJoiningResourcePool;
         this.timeOfLastFailover = $.timeOfLastFailover;
         this.timeOfLastRefresh = $.timeOfLastRefresh;
         this.timeOfLastRefreshPoint = $.timeOfLastRefreshPoint;
@@ -4014,6 +4039,24 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
             return remoteDisasterRecoveryType(Output.of(remoteDisasterRecoveryType));
         }
 
+        public Builder resourcePoolLeaderId(@Nullable Output<String> resourcePoolLeaderId) {
+            $.resourcePoolLeaderId = resourcePoolLeaderId;
+            return this;
+        }
+
+        public Builder resourcePoolLeaderId(String resourcePoolLeaderId) {
+            return resourcePoolLeaderId(Output.of(resourcePoolLeaderId));
+        }
+
+        public Builder resourcePoolSummary(@Nullable Output<AutonomousDatabaseResourcePoolSummaryArgs> resourcePoolSummary) {
+            $.resourcePoolSummary = resourcePoolSummary;
+            return this;
+        }
+
+        public Builder resourcePoolSummary(AutonomousDatabaseResourcePoolSummaryArgs resourcePoolSummary) {
+            return resourcePoolSummary(Output.of(resourcePoolSummary));
+        }
+
         /**
          * @param role The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
          * 
@@ -4581,6 +4624,15 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          */
         public Builder timeMaintenanceEnd(String timeMaintenanceEnd) {
             return timeMaintenanceEnd(Output.of(timeMaintenanceEnd));
+        }
+
+        public Builder timeOfJoiningResourcePool(@Nullable Output<String> timeOfJoiningResourcePool) {
+            $.timeOfJoiningResourcePool = timeOfJoiningResourcePool;
+            return this;
+        }
+
+        public Builder timeOfJoiningResourcePool(String timeOfJoiningResourcePool) {
+            return timeOfJoiningResourcePool(Output.of(timeOfJoiningResourcePool));
         }
 
         /**

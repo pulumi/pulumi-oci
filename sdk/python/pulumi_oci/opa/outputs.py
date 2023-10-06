@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -60,16 +60,33 @@ class OpaInstanceAttachment(dict):
         :param str target_role: The role of the target attachment.
         :param str target_service_type: The type of the target instance, such as "FUSION".
         """
+        OpaInstanceAttachment._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_implicit=is_implicit,
+            target_id=target_id,
+            target_instance_url=target_instance_url,
+            target_role=target_role,
+            target_service_type=target_service_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_implicit: Optional[bool] = None,
+             target_id: Optional[str] = None,
+             target_instance_url: Optional[str] = None,
+             target_role: Optional[str] = None,
+             target_service_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if is_implicit is not None:
-            pulumi.set(__self__, "is_implicit", is_implicit)
+            _setter("is_implicit", is_implicit)
         if target_id is not None:
-            pulumi.set(__self__, "target_id", target_id)
+            _setter("target_id", target_id)
         if target_instance_url is not None:
-            pulumi.set(__self__, "target_instance_url", target_instance_url)
+            _setter("target_instance_url", target_instance_url)
         if target_role is not None:
-            pulumi.set(__self__, "target_role", target_role)
+            _setter("target_role", target_role)
         if target_service_type is not None:
-            pulumi.set(__self__, "target_service_type", target_service_type)
+            _setter("target_service_type", target_service_type)
 
     @property
     @pulumi.getter(name="isImplicit")
@@ -129,11 +146,28 @@ class GetOpaInstanceAttachmentResult(dict):
         :param str target_role: The role of the target attachment.
         :param str target_service_type: The type of the target instance, such as "FUSION".
         """
-        pulumi.set(__self__, "is_implicit", is_implicit)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "target_instance_url", target_instance_url)
-        pulumi.set(__self__, "target_role", target_role)
-        pulumi.set(__self__, "target_service_type", target_service_type)
+        GetOpaInstanceAttachmentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_implicit=is_implicit,
+            target_id=target_id,
+            target_instance_url=target_instance_url,
+            target_role=target_role,
+            target_service_type=target_service_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_implicit: bool,
+             target_id: str,
+             target_instance_url: str,
+             target_role: str,
+             target_service_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_implicit", is_implicit)
+        _setter("target_id", target_id)
+        _setter("target_instance_url", target_instance_url)
+        _setter("target_role", target_role)
+        _setter("target_service_type", target_service_type)
 
     @property
     @pulumi.getter(name="isImplicit")
@@ -183,10 +217,23 @@ class GetOpaInstancesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOpaInstancesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -208,7 +255,16 @@ class GetOpaInstancesFilterResult(dict):
 class GetOpaInstancesOpaInstanceCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetOpaInstancesOpaInstanceCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetOpaInstancesOpaInstanceCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetOpaInstancesOpaInstanceCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -262,27 +318,76 @@ class GetOpaInstancesOpaInstanceCollectionItemResult(dict):
         :param str time_created: The time when OpaInstance was created. An RFC3339 formatted datetime string
         :param str time_updated: The time the OpaInstance was updated. An RFC3339 formatted datetime string
         """
-        pulumi.set(__self__, "attachments", attachments)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "consumption_model", consumption_model)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "idcs_at", idcs_at)
-        pulumi.set(__self__, "identity_app_display_name", identity_app_display_name)
-        pulumi.set(__self__, "identity_app_guid", identity_app_guid)
-        pulumi.set(__self__, "identity_app_opc_service_instance_guid", identity_app_opc_service_instance_guid)
-        pulumi.set(__self__, "identity_domain_url", identity_domain_url)
-        pulumi.set(__self__, "instance_url", instance_url)
-        pulumi.set(__self__, "is_breakglass_enabled", is_breakglass_enabled)
-        pulumi.set(__self__, "metering_type", metering_type)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetOpaInstancesOpaInstanceCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            attachments=attachments,
+            compartment_id=compartment_id,
+            consumption_model=consumption_model,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            idcs_at=idcs_at,
+            identity_app_display_name=identity_app_display_name,
+            identity_app_guid=identity_app_guid,
+            identity_app_opc_service_instance_guid=identity_app_opc_service_instance_guid,
+            identity_domain_url=identity_domain_url,
+            instance_url=instance_url,
+            is_breakglass_enabled=is_breakglass_enabled,
+            metering_type=metering_type,
+            shape_name=shape_name,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             attachments: Sequence['outputs.GetOpaInstancesOpaInstanceCollectionItemAttachmentResult'],
+             compartment_id: str,
+             consumption_model: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             idcs_at: str,
+             identity_app_display_name: str,
+             identity_app_guid: str,
+             identity_app_opc_service_instance_guid: str,
+             identity_domain_url: str,
+             instance_url: str,
+             is_breakglass_enabled: bool,
+             metering_type: str,
+             shape_name: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("attachments", attachments)
+        _setter("compartment_id", compartment_id)
+        _setter("consumption_model", consumption_model)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("idcs_at", idcs_at)
+        _setter("identity_app_display_name", identity_app_display_name)
+        _setter("identity_app_guid", identity_app_guid)
+        _setter("identity_app_opc_service_instance_guid", identity_app_opc_service_instance_guid)
+        _setter("identity_domain_url", identity_domain_url)
+        _setter("instance_url", instance_url)
+        _setter("is_breakglass_enabled", is_breakglass_enabled)
+        _setter("metering_type", metering_type)
+        _setter("shape_name", shape_name)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -466,11 +571,28 @@ class GetOpaInstancesOpaInstanceCollectionItemAttachmentResult(dict):
         :param str target_role: The role of the target attachment.
         :param str target_service_type: The type of the target instance, such as "FUSION".
         """
-        pulumi.set(__self__, "is_implicit", is_implicit)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "target_instance_url", target_instance_url)
-        pulumi.set(__self__, "target_role", target_role)
-        pulumi.set(__self__, "target_service_type", target_service_type)
+        GetOpaInstancesOpaInstanceCollectionItemAttachmentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_implicit=is_implicit,
+            target_id=target_id,
+            target_instance_url=target_instance_url,
+            target_role=target_role,
+            target_service_type=target_service_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_implicit: bool,
+             target_id: str,
+             target_instance_url: str,
+             target_role: str,
+             target_service_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_implicit", is_implicit)
+        _setter("target_id", target_id)
+        _setter("target_instance_url", target_instance_url)
+        _setter("target_role", target_role)
+        _setter("target_service_type", target_service_type)
 
     @property
     @pulumi.getter(name="isImplicit")

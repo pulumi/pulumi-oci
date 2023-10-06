@@ -23,6 +23,11 @@ public final class GetNotebookSessionNotebookSessionConfigurationDetail {
      */
     private List<GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail> notebookSessionShapeConfigDetails;
     /**
+     * @return The OCID of a Data Science private endpoint.
+     * 
+     */
+    private String privateEndpointId;
+    /**
      * @return The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
      * 
      */
@@ -47,6 +52,13 @@ public final class GetNotebookSessionNotebookSessionConfigurationDetail {
      */
     public List<GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail> notebookSessionShapeConfigDetails() {
         return this.notebookSessionShapeConfigDetails;
+    }
+    /**
+     * @return The OCID of a Data Science private endpoint.
+     * 
+     */
+    public String privateEndpointId() {
+        return this.privateEndpointId;
     }
     /**
      * @return The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
@@ -74,6 +86,7 @@ public final class GetNotebookSessionNotebookSessionConfigurationDetail {
     public static final class Builder {
         private Integer blockStorageSizeInGbs;
         private List<GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail> notebookSessionShapeConfigDetails;
+        private String privateEndpointId;
         private String shape;
         private String subnetId;
         public Builder() {}
@@ -81,6 +94,7 @@ public final class GetNotebookSessionNotebookSessionConfigurationDetail {
     	      Objects.requireNonNull(defaults);
     	      this.blockStorageSizeInGbs = defaults.blockStorageSizeInGbs;
     	      this.notebookSessionShapeConfigDetails = defaults.notebookSessionShapeConfigDetails;
+    	      this.privateEndpointId = defaults.privateEndpointId;
     	      this.shape = defaults.shape;
     	      this.subnetId = defaults.subnetId;
         }
@@ -99,6 +113,11 @@ public final class GetNotebookSessionNotebookSessionConfigurationDetail {
             return notebookSessionShapeConfigDetails(List.of(notebookSessionShapeConfigDetails));
         }
         @CustomType.Setter
+        public Builder privateEndpointId(String privateEndpointId) {
+            this.privateEndpointId = Objects.requireNonNull(privateEndpointId);
+            return this;
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             this.shape = Objects.requireNonNull(shape);
             return this;
@@ -112,6 +131,7 @@ public final class GetNotebookSessionNotebookSessionConfigurationDetail {
             final var o = new GetNotebookSessionNotebookSessionConfigurationDetail();
             o.blockStorageSizeInGbs = blockStorageSizeInGbs;
             o.notebookSessionShapeConfigDetails = notebookSessionShapeConfigDetails;
+            o.privateEndpointId = privateEndpointId;
             o.shape = shape;
             o.subnetId = subnetId;
             return o;

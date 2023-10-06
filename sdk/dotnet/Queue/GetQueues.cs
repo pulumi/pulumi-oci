@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Queue
         /// <summary>
         /// This data source provides the list of Queues in Oracle Cloud Infrastructure Queue service.
         /// 
-        /// Returns a list of Queues.
+        /// Returns a list of queues.
         /// 
         /// 
         /// {{% examples %}}
@@ -48,7 +48,7 @@ namespace Pulumi.Oci.Queue
         /// <summary>
         /// This data source provides the list of Queues in Oracle Cloud Infrastructure Queue service.
         /// 
-        /// Returns a list of Queues.
+        /// Returns a list of queues.
         /// 
         /// 
         /// {{% examples %}}
@@ -84,7 +84,7 @@ namespace Pulumi.Oci.Queue
     public sealed class GetQueuesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
@@ -104,7 +104,7 @@ namespace Pulumi.Oci.Queue
         }
 
         /// <summary>
-        /// unique Queue identifier
+        /// The unique queue identifier.
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
@@ -124,7 +124,7 @@ namespace Pulumi.Oci.Queue
     public sealed class GetQueuesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -144,7 +144,7 @@ namespace Pulumi.Oci.Queue
         }
 
         /// <summary>
-        /// unique Queue identifier
+        /// The unique queue identifier.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
@@ -166,16 +166,16 @@ namespace Pulumi.Oci.Queue
     public sealed class GetQueuesResult
     {
         /// <summary>
-        /// Compartment Identifier
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
-        /// Queue Identifier, can be renamed
+        /// A user-friendly name for the queue. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetQueuesFilterResult> Filters;
         /// <summary>
-        /// Unique identifier that is immutable on creation
+        /// A unique identifier for the queue that is immutable on creation.
         /// </summary>
         public readonly string? Id;
         /// <summary>
@@ -183,7 +183,7 @@ namespace Pulumi.Oci.Queue
         /// </summary>
         public readonly ImmutableArray<Outputs.GetQueuesQueueCollectionResult> QueueCollections;
         /// <summary>
-        /// The current state of the Queue.
+        /// The current state of the queue.
         /// </summary>
         public readonly string? State;
 

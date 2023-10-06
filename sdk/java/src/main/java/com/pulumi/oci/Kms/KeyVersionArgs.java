@@ -16,6 +16,21 @@ public final class KeyVersionArgs extends com.pulumi.resources.ResourceArgs {
     public static final KeyVersionArgs Empty = new KeyVersionArgs();
 
     /**
+     * Key version ID associated with the external key.
+     * 
+     */
+    @Import(name="externalKeyVersionId")
+    private @Nullable Output<String> externalKeyVersionId;
+
+    /**
+     * @return Key version ID associated with the external key.
+     * 
+     */
+    public Optional<Output<String>> externalKeyVersionId() {
+        return Optional.ofNullable(this.externalKeyVersionId);
+    }
+
+    /**
      * The OCID of the key.
      * 
      */
@@ -69,6 +84,7 @@ public final class KeyVersionArgs extends com.pulumi.resources.ResourceArgs {
     private KeyVersionArgs() {}
 
     private KeyVersionArgs(KeyVersionArgs $) {
+        this.externalKeyVersionId = $.externalKeyVersionId;
         this.keyId = $.keyId;
         this.managementEndpoint = $.managementEndpoint;
         this.timeOfDeletion = $.timeOfDeletion;
@@ -90,6 +106,27 @@ public final class KeyVersionArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(KeyVersionArgs defaults) {
             $ = new KeyVersionArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param externalKeyVersionId Key version ID associated with the external key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyVersionId(@Nullable Output<String> externalKeyVersionId) {
+            $.externalKeyVersionId = externalKeyVersionId;
+            return this;
+        }
+
+        /**
+         * @param externalKeyVersionId Key version ID associated with the external key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyVersionId(String externalKeyVersionId) {
+            return externalKeyVersionId(Output.of(externalKeyVersionId));
         }
 
         /**

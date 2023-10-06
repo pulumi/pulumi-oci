@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -41,14 +41,37 @@ class GetEventsAuditEventResult(dict):
         :param str event_type_version: The version of the event type. This version applies to the payload of the event, not the envelope. Use `cloudEventsVersion` to determine the version of the envelope.  Example: `2.0`
         :param str source: The source of the event.  Example: `ComputeApi`
         """
-        pulumi.set(__self__, "cloud_events_version", cloud_events_version)
-        pulumi.set(__self__, "content_type", content_type)
-        pulumi.set(__self__, "datas", datas)
-        pulumi.set(__self__, "event_id", event_id)
-        pulumi.set(__self__, "event_time", event_time)
-        pulumi.set(__self__, "event_type", event_type)
-        pulumi.set(__self__, "event_type_version", event_type_version)
-        pulumi.set(__self__, "source", source)
+        GetEventsAuditEventResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cloud_events_version=cloud_events_version,
+            content_type=content_type,
+            datas=datas,
+            event_id=event_id,
+            event_time=event_time,
+            event_type=event_type,
+            event_type_version=event_type_version,
+            source=source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cloud_events_version: str,
+             content_type: str,
+             datas: Sequence['outputs.GetEventsAuditEventDataResult'],
+             event_id: str,
+             event_time: str,
+             event_type: str,
+             event_type_version: str,
+             source: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cloud_events_version", cloud_events_version)
+        _setter("content_type", content_type)
+        _setter("datas", datas)
+        _setter("event_id", event_id)
+        _setter("event_time", event_time)
+        _setter("event_type", event_type)
+        _setter("event_type_version", event_type_version)
+        _setter("source", source)
 
     @property
     @pulumi.getter(name="cloudEventsVersion")
@@ -148,20 +171,55 @@ class GetEventsAuditEventDataResult(dict):
         :param Sequence['GetEventsAuditEventDataResponseArgs'] responses: A container object for response attributes.
         :param Sequence['GetEventsAuditEventDataStateChangeArgs'] state_changes: A container object for state change attributes.
         """
-        pulumi.set(__self__, "additional_details", additional_details)
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compartment_name", compartment_name)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "event_grouping_id", event_grouping_id)
-        pulumi.set(__self__, "event_name", event_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "identities", identities)
-        pulumi.set(__self__, "requests", requests)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_name", resource_name)
-        pulumi.set(__self__, "responses", responses)
-        pulumi.set(__self__, "state_changes", state_changes)
+        GetEventsAuditEventDataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_details=additional_details,
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            compartment_name=compartment_name,
+            defined_tags=defined_tags,
+            event_grouping_id=event_grouping_id,
+            event_name=event_name,
+            freeform_tags=freeform_tags,
+            identities=identities,
+            requests=requests,
+            resource_id=resource_id,
+            resource_name=resource_name,
+            responses=responses,
+            state_changes=state_changes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_details: Mapping[str, Any],
+             availability_domain: str,
+             compartment_id: str,
+             compartment_name: str,
+             defined_tags: Mapping[str, Any],
+             event_grouping_id: str,
+             event_name: str,
+             freeform_tags: Mapping[str, Any],
+             identities: Sequence['outputs.GetEventsAuditEventDataIdentityResult'],
+             requests: Sequence['outputs.GetEventsAuditEventDataRequestResult'],
+             resource_id: str,
+             resource_name: str,
+             responses: Sequence['outputs.GetEventsAuditEventDataResponseResult'],
+             state_changes: Sequence['outputs.GetEventsAuditEventDataStateChangeResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("additional_details", additional_details)
+        _setter("availability_domain", availability_domain)
+        _setter("compartment_id", compartment_id)
+        _setter("compartment_name", compartment_name)
+        _setter("defined_tags", defined_tags)
+        _setter("event_grouping_id", event_grouping_id)
+        _setter("event_name", event_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("identities", identities)
+        _setter("requests", requests)
+        _setter("resource_id", resource_id)
+        _setter("resource_name", resource_name)
+        _setter("responses", responses)
+        _setter("state_changes", state_changes)
 
     @property
     @pulumi.getter(name="additionalDetails")
@@ -301,16 +359,43 @@ class GetEventsAuditEventDataIdentityResult(dict):
         :param str tenant_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant.
         :param str user_agent: The user agent of the client that made the request.  Example: `Jersey/2.23 (HttpUrlConnection 1.8.0_212)`
         """
-        pulumi.set(__self__, "auth_type", auth_type)
-        pulumi.set(__self__, "caller_id", caller_id)
-        pulumi.set(__self__, "caller_name", caller_name)
-        pulumi.set(__self__, "console_session_id", console_session_id)
-        pulumi.set(__self__, "credentials", credentials)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "principal_id", principal_id)
-        pulumi.set(__self__, "principal_name", principal_name)
-        pulumi.set(__self__, "tenant_id", tenant_id)
-        pulumi.set(__self__, "user_agent", user_agent)
+        GetEventsAuditEventDataIdentityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auth_type=auth_type,
+            caller_id=caller_id,
+            caller_name=caller_name,
+            console_session_id=console_session_id,
+            credentials=credentials,
+            ip_address=ip_address,
+            principal_id=principal_id,
+            principal_name=principal_name,
+            tenant_id=tenant_id,
+            user_agent=user_agent,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auth_type: str,
+             caller_id: str,
+             caller_name: str,
+             console_session_id: str,
+             credentials: str,
+             ip_address: str,
+             principal_id: str,
+             principal_name: str,
+             tenant_id: str,
+             user_agent: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("auth_type", auth_type)
+        _setter("caller_id", caller_id)
+        _setter("caller_name", caller_name)
+        _setter("console_session_id", console_session_id)
+        _setter("credentials", credentials)
+        _setter("ip_address", ip_address)
+        _setter("principal_id", principal_id)
+        _setter("principal_name", principal_name)
+        _setter("tenant_id", tenant_id)
+        _setter("user_agent", user_agent)
 
     @property
     @pulumi.getter(name="authType")
@@ -408,11 +493,28 @@ class GetEventsAuditEventDataRequestResult(dict):
         :param Mapping[str, Any] parameters: The parameters supplied by the caller during this operation.
         :param str path: The full path of the API request.  Example: `/20160918/instances/ocid1.instance.oc1.phx.<unique_ID>`
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "path", path)
+        GetEventsAuditEventDataRequestResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            headers=headers,
+            id=id,
+            parameters=parameters,
+            path=path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: str,
+             headers: Mapping[str, Any],
+             id: str,
+             parameters: Mapping[str, Any],
+             path: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("headers", headers)
+        _setter("id", id)
+        _setter("parameters", parameters)
+        _setter("path", path)
 
     @property
     @pulumi.getter
@@ -470,11 +572,28 @@ class GetEventsAuditEventDataResponseResult(dict):
         :param str response_time: The time of the response to the audited request, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2019-09-18T00:10:59.278Z`
         :param str status: The status code of the response.  Example: `200`
         """
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "payload", payload)
-        pulumi.set(__self__, "response_time", response_time)
-        pulumi.set(__self__, "status", status)
+        GetEventsAuditEventDataResponseResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            headers=headers,
+            message=message,
+            payload=payload,
+            response_time=response_time,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             headers: Mapping[str, Any],
+             message: str,
+             payload: Mapping[str, Any],
+             response_time: str,
+             status: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("headers", headers)
+        _setter("message", message)
+        _setter("payload", payload)
+        _setter("response_time", response_time)
+        _setter("status", status)
 
     @property
     @pulumi.getter
@@ -526,8 +645,19 @@ class GetEventsAuditEventDataStateChangeResult(dict):
         :param Mapping[str, Any] current: Provides the current state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `previous`.
         :param Mapping[str, Any] previous: Provides the previous state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `current`.
         """
-        pulumi.set(__self__, "current", current)
-        pulumi.set(__self__, "previous", previous)
+        GetEventsAuditEventDataStateChangeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            current=current,
+            previous=previous,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             current: Mapping[str, Any],
+             previous: Mapping[str, Any],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("current", current)
+        _setter("previous", previous)
 
     @property
     @pulumi.getter
@@ -552,10 +682,23 @@ class GetEventsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetEventsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

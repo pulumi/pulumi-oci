@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -53,37 +53,79 @@ class DeploymentArgs:
         :param pulumi.Input['DeploymentMaintenanceWindowArgs'] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param pulumi.Input['DeploymentOggDataArgs'] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
-        :param pulumi.Input[str] state: Possible lifecycle states.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "cpu_core_count", cpu_core_count)
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
-        pulumi.set(__self__, "license_model", license_model)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        DeploymentArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            cpu_core_count=cpu_core_count,
+            deployment_type=deployment_type,
+            display_name=display_name,
+            is_auto_scaling_enabled=is_auto_scaling_enabled,
+            license_model=license_model,
+            subnet_id=subnet_id,
+            defined_tags=defined_tags,
+            deployment_backup_id=deployment_backup_id,
+            description=description,
+            fqdn=fqdn,
+            freeform_tags=freeform_tags,
+            is_public=is_public,
+            maintenance_configuration=maintenance_configuration,
+            maintenance_window=maintenance_window,
+            nsg_ids=nsg_ids,
+            ogg_data=ogg_data,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             cpu_core_count: pulumi.Input[int],
+             deployment_type: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             is_auto_scaling_enabled: pulumi.Input[bool],
+             license_model: pulumi.Input[str],
+             subnet_id: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             deployment_backup_id: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             fqdn: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_public: Optional[pulumi.Input[bool]] = None,
+             maintenance_configuration: Optional[pulumi.Input['DeploymentMaintenanceConfigurationArgs']] = None,
+             maintenance_window: Optional[pulumi.Input['DeploymentMaintenanceWindowArgs']] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             ogg_data: Optional[pulumi.Input['DeploymentOggDataArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("cpu_core_count", cpu_core_count)
+        _setter("deployment_type", deployment_type)
+        _setter("display_name", display_name)
+        _setter("is_auto_scaling_enabled", is_auto_scaling_enabled)
+        _setter("license_model", license_model)
+        _setter("subnet_id", subnet_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if deployment_backup_id is not None:
-            pulumi.set(__self__, "deployment_backup_id", deployment_backup_id)
+            _setter("deployment_backup_id", deployment_backup_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if fqdn is not None:
-            pulumi.set(__self__, "fqdn", fqdn)
+            _setter("fqdn", fqdn)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_public is not None:
-            pulumi.set(__self__, "is_public", is_public)
+            _setter("is_public", is_public)
         if maintenance_configuration is not None:
-            pulumi.set(__self__, "maintenance_configuration", maintenance_configuration)
+            _setter("maintenance_configuration", maintenance_configuration)
         if maintenance_window is not None:
-            pulumi.set(__self__, "maintenance_window", maintenance_window)
+            _setter("maintenance_window", maintenance_window)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if ogg_data is not None:
-            pulumi.set(__self__, "ogg_data", ogg_data)
+            _setter("ogg_data", ogg_data)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -292,9 +334,6 @@ class DeploymentArgs:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        Possible lifecycle states.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -370,7 +409,6 @@ class _DeploymentState:
         :param pulumi.Input['DeploymentOggDataArgs'] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
         :param pulumi.Input[str] private_ip_address: The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
         :param pulumi.Input[str] public_ip_address: The public IP address representing the access point for the Deployment.
-        :param pulumi.Input[str] state: Possible lifecycle states.
         :param pulumi.Input[str] storage_utilization_in_bytes: The amount of storage being utilized (in bytes)
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
         :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -380,78 +418,157 @@ class _DeploymentState:
         :param pulumi.Input[str] time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[str] time_upgrade_required: Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
+        _DeploymentState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            cpu_core_count=cpu_core_count,
+            defined_tags=defined_tags,
+            deployment_backup_id=deployment_backup_id,
+            deployment_diagnostic_datas=deployment_diagnostic_datas,
+            deployment_type=deployment_type,
+            deployment_url=deployment_url,
+            description=description,
+            display_name=display_name,
+            fqdn=fqdn,
+            freeform_tags=freeform_tags,
+            is_auto_scaling_enabled=is_auto_scaling_enabled,
+            is_healthy=is_healthy,
+            is_latest_version=is_latest_version,
+            is_public=is_public,
+            is_storage_utilization_limit_exceeded=is_storage_utilization_limit_exceeded,
+            license_model=license_model,
+            lifecycle_details=lifecycle_details,
+            lifecycle_sub_state=lifecycle_sub_state,
+            maintenance_configuration=maintenance_configuration,
+            maintenance_window=maintenance_window,
+            next_maintenance_action_type=next_maintenance_action_type,
+            next_maintenance_description=next_maintenance_description,
+            nsg_ids=nsg_ids,
+            ogg_data=ogg_data,
+            private_ip_address=private_ip_address,
+            public_ip_address=public_ip_address,
+            state=state,
+            storage_utilization_in_bytes=storage_utilization_in_bytes,
+            subnet_id=subnet_id,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_of_next_maintenance=time_of_next_maintenance,
+            time_ogg_version_supported_until=time_ogg_version_supported_until,
+            time_updated=time_updated,
+            time_upgrade_required=time_upgrade_required,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             cpu_core_count: Optional[pulumi.Input[int]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             deployment_backup_id: Optional[pulumi.Input[str]] = None,
+             deployment_diagnostic_datas: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentDiagnosticDataArgs']]]] = None,
+             deployment_type: Optional[pulumi.Input[str]] = None,
+             deployment_url: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             fqdn: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
+             is_healthy: Optional[pulumi.Input[bool]] = None,
+             is_latest_version: Optional[pulumi.Input[bool]] = None,
+             is_public: Optional[pulumi.Input[bool]] = None,
+             is_storage_utilization_limit_exceeded: Optional[pulumi.Input[bool]] = None,
+             license_model: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             lifecycle_sub_state: Optional[pulumi.Input[str]] = None,
+             maintenance_configuration: Optional[pulumi.Input['DeploymentMaintenanceConfigurationArgs']] = None,
+             maintenance_window: Optional[pulumi.Input['DeploymentMaintenanceWindowArgs']] = None,
+             next_maintenance_action_type: Optional[pulumi.Input[str]] = None,
+             next_maintenance_description: Optional[pulumi.Input[str]] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             ogg_data: Optional[pulumi.Input['DeploymentOggDataArgs']] = None,
+             private_ip_address: Optional[pulumi.Input[str]] = None,
+             public_ip_address: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             storage_utilization_in_bytes: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_of_next_maintenance: Optional[pulumi.Input[str]] = None,
+             time_ogg_version_supported_until: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             time_upgrade_required: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if cpu_core_count is not None:
-            pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+            _setter("cpu_core_count", cpu_core_count)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if deployment_backup_id is not None:
-            pulumi.set(__self__, "deployment_backup_id", deployment_backup_id)
+            _setter("deployment_backup_id", deployment_backup_id)
         if deployment_diagnostic_datas is not None:
-            pulumi.set(__self__, "deployment_diagnostic_datas", deployment_diagnostic_datas)
+            _setter("deployment_diagnostic_datas", deployment_diagnostic_datas)
         if deployment_type is not None:
-            pulumi.set(__self__, "deployment_type", deployment_type)
+            _setter("deployment_type", deployment_type)
         if deployment_url is not None:
-            pulumi.set(__self__, "deployment_url", deployment_url)
+            _setter("deployment_url", deployment_url)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if fqdn is not None:
-            pulumi.set(__self__, "fqdn", fqdn)
+            _setter("fqdn", fqdn)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_auto_scaling_enabled is not None:
-            pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
+            _setter("is_auto_scaling_enabled", is_auto_scaling_enabled)
         if is_healthy is not None:
-            pulumi.set(__self__, "is_healthy", is_healthy)
+            _setter("is_healthy", is_healthy)
         if is_latest_version is not None:
-            pulumi.set(__self__, "is_latest_version", is_latest_version)
+            _setter("is_latest_version", is_latest_version)
         if is_public is not None:
-            pulumi.set(__self__, "is_public", is_public)
+            _setter("is_public", is_public)
         if is_storage_utilization_limit_exceeded is not None:
-            pulumi.set(__self__, "is_storage_utilization_limit_exceeded", is_storage_utilization_limit_exceeded)
+            _setter("is_storage_utilization_limit_exceeded", is_storage_utilization_limit_exceeded)
         if license_model is not None:
-            pulumi.set(__self__, "license_model", license_model)
+            _setter("license_model", license_model)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if lifecycle_sub_state is not None:
-            pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
+            _setter("lifecycle_sub_state", lifecycle_sub_state)
         if maintenance_configuration is not None:
-            pulumi.set(__self__, "maintenance_configuration", maintenance_configuration)
+            _setter("maintenance_configuration", maintenance_configuration)
         if maintenance_window is not None:
-            pulumi.set(__self__, "maintenance_window", maintenance_window)
+            _setter("maintenance_window", maintenance_window)
         if next_maintenance_action_type is not None:
-            pulumi.set(__self__, "next_maintenance_action_type", next_maintenance_action_type)
+            _setter("next_maintenance_action_type", next_maintenance_action_type)
         if next_maintenance_description is not None:
-            pulumi.set(__self__, "next_maintenance_description", next_maintenance_description)
+            _setter("next_maintenance_description", next_maintenance_description)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if ogg_data is not None:
-            pulumi.set(__self__, "ogg_data", ogg_data)
+            _setter("ogg_data", ogg_data)
         if private_ip_address is not None:
-            pulumi.set(__self__, "private_ip_address", private_ip_address)
+            _setter("private_ip_address", private_ip_address)
         if public_ip_address is not None:
-            pulumi.set(__self__, "public_ip_address", public_ip_address)
+            _setter("public_ip_address", public_ip_address)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if storage_utilization_in_bytes is not None:
-            pulumi.set(__self__, "storage_utilization_in_bytes", storage_utilization_in_bytes)
+            _setter("storage_utilization_in_bytes", storage_utilization_in_bytes)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_of_next_maintenance is not None:
-            pulumi.set(__self__, "time_of_next_maintenance", time_of_next_maintenance)
+            _setter("time_of_next_maintenance", time_of_next_maintenance)
         if time_ogg_version_supported_until is not None:
-            pulumi.set(__self__, "time_ogg_version_supported_until", time_ogg_version_supported_until)
+            _setter("time_ogg_version_supported_until", time_ogg_version_supported_until)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if time_upgrade_required is not None:
-            pulumi.set(__self__, "time_upgrade_required", time_upgrade_required)
+            _setter("time_upgrade_required", time_upgrade_required)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -780,9 +897,6 @@ class _DeploymentState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        Possible lifecycle states.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -941,7 +1055,6 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DeploymentMaintenanceWindowArgs']] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param pulumi.Input[pulumi.InputType['DeploymentOggDataArgs']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
-        :param pulumi.Input[str] state: Possible lifecycle states.
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
         """
         ...
@@ -973,6 +1086,10 @@ class Deployment(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DeploymentArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1029,9 +1146,24 @@ class Deployment(pulumi.CustomResource):
             if license_model is None and not opts.urn:
                 raise TypeError("Missing required property 'license_model'")
             __props__.__dict__["license_model"] = license_model
+            if maintenance_configuration is not None and not isinstance(maintenance_configuration, DeploymentMaintenanceConfigurationArgs):
+                maintenance_configuration = maintenance_configuration or {}
+                def _setter(key, value):
+                    maintenance_configuration[key] = value
+                DeploymentMaintenanceConfigurationArgs._configure(_setter, **maintenance_configuration)
             __props__.__dict__["maintenance_configuration"] = maintenance_configuration
+            if maintenance_window is not None and not isinstance(maintenance_window, DeploymentMaintenanceWindowArgs):
+                maintenance_window = maintenance_window or {}
+                def _setter(key, value):
+                    maintenance_window[key] = value
+                DeploymentMaintenanceWindowArgs._configure(_setter, **maintenance_window)
             __props__.__dict__["maintenance_window"] = maintenance_window
             __props__.__dict__["nsg_ids"] = nsg_ids
+            if ogg_data is not None and not isinstance(ogg_data, DeploymentOggDataArgs):
+                ogg_data = ogg_data or {}
+                def _setter(key, value):
+                    ogg_data[key] = value
+                DeploymentOggDataArgs._configure(_setter, **ogg_data)
             __props__.__dict__["ogg_data"] = ogg_data
             __props__.__dict__["state"] = state
             if subnet_id is None and not opts.urn:
@@ -1135,7 +1267,6 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DeploymentOggDataArgs']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
         :param pulumi.Input[str] private_ip_address: The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
         :param pulumi.Input[str] public_ip_address: The public IP address representing the access point for the Deployment.
-        :param pulumi.Input[str] state: Possible lifecycle states.
         :param pulumi.Input[str] storage_utilization_in_bytes: The amount of storage being utilized (in bytes)
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
         :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -1406,9 +1537,6 @@ class Deployment(pulumi.CustomResource):
     @property
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
-        """
-        Possible lifecycle states.
-        """
         return pulumi.get(self, "state")
 
     @property

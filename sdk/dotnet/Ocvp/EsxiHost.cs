@@ -130,9 +130,6 @@ namespace Pulumi.Oci.Ocvp
         [Output("isBillingSwappingInProgress")]
         public Output<bool> IsBillingSwappingInProgress { get; private set; } = null!;
 
-        /// <summary>
-        /// The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
-        /// </summary>
         [Output("nextSku")]
         public Output<string> NextSku { get; private set; } = null!;
 
@@ -316,9 +313,6 @@ namespace Pulumi.Oci.Ocvp
         [Input("hostShapeName")]
         public Input<string>? HostShapeName { get; set; }
 
-        /// <summary>
-        /// The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
-        /// </summary>
         [Input("nextSku")]
         public Input<string>? NextSku { get; set; }
 
@@ -464,9 +458,6 @@ namespace Pulumi.Oci.Ocvp
         [Input("isBillingSwappingInProgress")]
         public Input<bool>? IsBillingSwappingInProgress { get; set; }
 
-        /// <summary>
-        /// The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
-        /// </summary>
         [Input("nextSku")]
         public Input<string>? NextSku { get; set; }
 

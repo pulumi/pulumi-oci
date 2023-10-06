@@ -73,8 +73,7 @@ type DataAsset struct {
 	Key pulumi.StringOutput `pulumi:"key"`
 	// A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
-	Properties pulumi.MapOutput `pulumi:"properties"`
+	Properties       pulumi.MapOutput    `pulumi:"properties"`
 	// The current state of the data asset.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
@@ -146,9 +145,8 @@ type dataAssetState struct {
 	// Unique data asset key that is immutable.
 	Key *string `pulumi:"key"`
 	// A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
-	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
-	Properties map[string]interface{} `pulumi:"properties"`
+	LifecycleDetails *string                `pulumi:"lifecycleDetails"`
+	Properties       map[string]interface{} `pulumi:"properties"`
 	// The current state of the data asset.
 	State *string `pulumi:"state"`
 	// The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
@@ -183,8 +181,7 @@ type DataAssetState struct {
 	Key pulumi.StringPtrInput
 	// A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
 	LifecycleDetails pulumi.StringPtrInput
-	// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
-	Properties pulumi.MapInput
+	Properties       pulumi.MapInput
 	// The current state of the data asset.
 	State pulumi.StringPtrInput
 	// The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
@@ -214,9 +211,8 @@ type dataAssetArgs struct {
 	// (Updatable) Detailed description of the data asset.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
-	// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
-	Properties map[string]interface{} `pulumi:"properties"`
+	DisplayName string                 `pulumi:"displayName"`
+	Properties  map[string]interface{} `pulumi:"properties"`
 	// The key of the data asset type. This can be obtained via the '/types' endpoint.
 	//
 	// ** IMPORTANT **
@@ -232,8 +228,7 @@ type DataAssetArgs struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
-	// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
-	Properties pulumi.MapInput
+	Properties  pulumi.MapInput
 	// The key of the data asset type. This can be obtained via the '/types' endpoint.
 	//
 	// ** IMPORTANT **
@@ -387,7 +382,6 @@ func (o DataAssetOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataAsset) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
 func (o DataAssetOutput) Properties() pulumi.MapOutput {
 	return o.ApplyT(func(v *DataAsset) pulumi.MapOutput { return v.Properties }).(pulumi.MapOutput)
 }

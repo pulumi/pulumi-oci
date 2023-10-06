@@ -12,9 +12,6 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
 
     public sealed class LoadBalancerReservedIpGetArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// Ocid of the pre-created public IP. That should be attahed to this load balancer.
-        /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 

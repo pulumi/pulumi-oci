@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -49,30 +49,63 @@ class BucketArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "namespace", namespace)
+        BucketArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            namespace=namespace,
+            access_type=access_type,
+            auto_tiering=auto_tiering,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            kms_key_id=kms_key_id,
+            metadata=metadata,
+            name=name,
+            object_events_enabled=object_events_enabled,
+            retention_rules=retention_rules,
+            storage_tier=storage_tier,
+            versioning=versioning,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             namespace: pulumi.Input[str],
+             access_type: Optional[pulumi.Input[str]] = None,
+             auto_tiering: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             object_events_enabled: Optional[pulumi.Input[bool]] = None,
+             retention_rules: Optional[pulumi.Input[Sequence[pulumi.Input['BucketRetentionRuleArgs']]]] = None,
+             storage_tier: Optional[pulumi.Input[str]] = None,
+             versioning: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("namespace", namespace)
         if access_type is not None:
-            pulumi.set(__self__, "access_type", access_type)
+            _setter("access_type", access_type)
         if auto_tiering is not None:
-            pulumi.set(__self__, "auto_tiering", auto_tiering)
+            _setter("auto_tiering", auto_tiering)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
+            _setter("metadata", metadata)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if object_events_enabled is not None:
-            pulumi.set(__self__, "object_events_enabled", object_events_enabled)
+            _setter("object_events_enabled", object_events_enabled)
         if retention_rules is not None:
-            pulumi.set(__self__, "retention_rules", retention_rules)
+            _setter("retention_rules", retention_rules)
         if storage_tier is not None:
-            pulumi.set(__self__, "storage_tier", storage_tier)
+            _setter("storage_tier", storage_tier)
         if versioning is not None:
-            pulumi.set(__self__, "versioning", versioning)
+            _setter("versioning", versioning)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -289,50 +322,101 @@ class _BucketState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _BucketState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_type=access_type,
+            approximate_count=approximate_count,
+            approximate_size=approximate_size,
+            auto_tiering=auto_tiering,
+            bucket_id=bucket_id,
+            compartment_id=compartment_id,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            etag=etag,
+            freeform_tags=freeform_tags,
+            is_read_only=is_read_only,
+            kms_key_id=kms_key_id,
+            metadata=metadata,
+            name=name,
+            namespace=namespace,
+            object_events_enabled=object_events_enabled,
+            object_lifecycle_policy_etag=object_lifecycle_policy_etag,
+            replication_enabled=replication_enabled,
+            retention_rules=retention_rules,
+            storage_tier=storage_tier,
+            time_created=time_created,
+            versioning=versioning,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_type: Optional[pulumi.Input[str]] = None,
+             approximate_count: Optional[pulumi.Input[str]] = None,
+             approximate_size: Optional[pulumi.Input[str]] = None,
+             auto_tiering: Optional[pulumi.Input[str]] = None,
+             bucket_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             created_by: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             etag: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_read_only: Optional[pulumi.Input[bool]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object_events_enabled: Optional[pulumi.Input[bool]] = None,
+             object_lifecycle_policy_etag: Optional[pulumi.Input[str]] = None,
+             replication_enabled: Optional[pulumi.Input[bool]] = None,
+             retention_rules: Optional[pulumi.Input[Sequence[pulumi.Input['BucketRetentionRuleArgs']]]] = None,
+             storage_tier: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             versioning: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if access_type is not None:
-            pulumi.set(__self__, "access_type", access_type)
+            _setter("access_type", access_type)
         if approximate_count is not None:
-            pulumi.set(__self__, "approximate_count", approximate_count)
+            _setter("approximate_count", approximate_count)
         if approximate_size is not None:
-            pulumi.set(__self__, "approximate_size", approximate_size)
+            _setter("approximate_size", approximate_size)
         if auto_tiering is not None:
-            pulumi.set(__self__, "auto_tiering", auto_tiering)
+            _setter("auto_tiering", auto_tiering)
         if bucket_id is not None:
-            pulumi.set(__self__, "bucket_id", bucket_id)
+            _setter("bucket_id", bucket_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if created_by is not None:
-            pulumi.set(__self__, "created_by", created_by)
+            _setter("created_by", created_by)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if etag is not None:
-            pulumi.set(__self__, "etag", etag)
+            _setter("etag", etag)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_read_only is not None:
-            pulumi.set(__self__, "is_read_only", is_read_only)
+            _setter("is_read_only", is_read_only)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
+            _setter("metadata", metadata)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object_events_enabled is not None:
-            pulumi.set(__self__, "object_events_enabled", object_events_enabled)
+            _setter("object_events_enabled", object_events_enabled)
         if object_lifecycle_policy_etag is not None:
-            pulumi.set(__self__, "object_lifecycle_policy_etag", object_lifecycle_policy_etag)
+            _setter("object_lifecycle_policy_etag", object_lifecycle_policy_etag)
         if replication_enabled is not None:
-            pulumi.set(__self__, "replication_enabled", replication_enabled)
+            _setter("replication_enabled", replication_enabled)
         if retention_rules is not None:
-            pulumi.set(__self__, "retention_rules", retention_rules)
+            _setter("retention_rules", retention_rules)
         if storage_tier is not None:
-            pulumi.set(__self__, "storage_tier", storage_tier)
+            _setter("storage_tier", storage_tier)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if versioning is not None:
-            pulumi.set(__self__, "versioning", versioning)
+            _setter("versioning", versioning)
 
     @property
     @pulumi.getter(name="accessType")
@@ -750,6 +834,10 @@ class Bucket(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            BucketArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

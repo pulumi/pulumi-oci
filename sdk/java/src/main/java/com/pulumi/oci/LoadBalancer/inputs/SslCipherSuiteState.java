@@ -16,17 +16,9 @@ public final class SslCipherSuiteState extends com.pulumi.resources.ResourceArgs
 
     public static final SslCipherSuiteState Empty = new SslCipherSuiteState();
 
-    /**
-     * A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
-     * 
-     */
     @Import(name="ciphers")
     private @Nullable Output<List<String>> ciphers;
 
-    /**
-     * @return A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
-     * 
-     */
     public Optional<Output<List<String>>> ciphers() {
         return Optional.ofNullable(this.ciphers);
     }
@@ -119,33 +111,15 @@ public final class SslCipherSuiteState extends com.pulumi.resources.ResourceArgs
             $ = new SslCipherSuiteState(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param ciphers A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ciphers(@Nullable Output<List<String>> ciphers) {
             $.ciphers = ciphers;
             return this;
         }
 
-        /**
-         * @param ciphers A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ciphers(List<String> ciphers) {
             return ciphers(Output.of(ciphers));
         }
 
-        /**
-         * @param ciphers A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ciphers(String... ciphers) {
             return ciphers(List.of(ciphers));
         }

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -622,106 +622,217 @@ class DomainsIdentityProviderArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "enabled", enabled)
-        pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
-        pulumi.set(__self__, "partner_name", partner_name)
-        pulumi.set(__self__, "schemas", schemas)
+        DomainsIdentityProviderArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enabled=enabled,
+            idcs_endpoint=idcs_endpoint,
+            partner_name=partner_name,
+            schemas=schemas,
+            assertion_attribute=assertion_attribute,
+            attribute_sets=attribute_sets,
+            attributes=attributes,
+            authn_request_binding=authn_request_binding,
+            authorization=authorization,
+            correlation_policy=correlation_policy,
+            description=description,
+            encryption_certificate=encryption_certificate,
+            external_id=external_id,
+            icon_url=icon_url,
+            idp_sso_url=idp_sso_url,
+            include_signing_cert_in_signature=include_signing_cert_in_signature,
+            jit_user_prov_assigned_groups=jit_user_prov_assigned_groups,
+            jit_user_prov_attribute_update_enabled=jit_user_prov_attribute_update_enabled,
+            jit_user_prov_attributes=jit_user_prov_attributes,
+            jit_user_prov_create_user_enabled=jit_user_prov_create_user_enabled,
+            jit_user_prov_enabled=jit_user_prov_enabled,
+            jit_user_prov_group_assertion_attribute_enabled=jit_user_prov_group_assertion_attribute_enabled,
+            jit_user_prov_group_assignment_method=jit_user_prov_group_assignment_method,
+            jit_user_prov_group_mapping_mode=jit_user_prov_group_mapping_mode,
+            jit_user_prov_group_mappings=jit_user_prov_group_mappings,
+            jit_user_prov_group_saml_attribute_name=jit_user_prov_group_saml_attribute_name,
+            jit_user_prov_group_static_list_enabled=jit_user_prov_group_static_list_enabled,
+            jit_user_prov_ignore_error_on_absent_groups=jit_user_prov_ignore_error_on_absent_groups,
+            logout_binding=logout_binding,
+            logout_enabled=logout_enabled,
+            logout_request_url=logout_request_url,
+            logout_response_url=logout_response_url,
+            metadata=metadata,
+            name_id_format=name_id_format,
+            ocid=ocid,
+            partner_provider_id=partner_provider_id,
+            requested_authentication_contexts=requested_authentication_contexts,
+            require_force_authn=require_force_authn,
+            requires_encrypted_assertion=requires_encrypted_assertion,
+            resource_type_schema_version=resource_type_schema_version,
+            saml_ho_krequired=saml_ho_krequired,
+            service_instance_identifier=service_instance_identifier,
+            shown_on_login_page=shown_on_login_page,
+            signature_hash_algorithm=signature_hash_algorithm,
+            signing_certificate=signing_certificate,
+            succinct_id=succinct_id,
+            tags=tags,
+            type=type,
+            urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider=urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider,
+            urnietfparamsscimschemasoracleidcsextensionx509identity_provider=urnietfparamsscimschemasoracleidcsextensionx509identity_provider,
+            user_mapping_method=user_mapping_method,
+            user_mapping_store_attribute=user_mapping_store_attribute,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enabled: pulumi.Input[bool],
+             idcs_endpoint: pulumi.Input[str],
+             partner_name: pulumi.Input[str],
+             schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
+             assertion_attribute: Optional[pulumi.Input[str]] = None,
+             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             attributes: Optional[pulumi.Input[str]] = None,
+             authn_request_binding: Optional[pulumi.Input[str]] = None,
+             authorization: Optional[pulumi.Input[str]] = None,
+             correlation_policy: Optional[pulumi.Input['DomainsIdentityProviderCorrelationPolicyArgs']] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             encryption_certificate: Optional[pulumi.Input[str]] = None,
+             external_id: Optional[pulumi.Input[str]] = None,
+             icon_url: Optional[pulumi.Input[str]] = None,
+             idp_sso_url: Optional[pulumi.Input[str]] = None,
+             include_signing_cert_in_signature: Optional[pulumi.Input[bool]] = None,
+             jit_user_prov_assigned_groups: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderJitUserProvAssignedGroupArgs']]]] = None,
+             jit_user_prov_attribute_update_enabled: Optional[pulumi.Input[bool]] = None,
+             jit_user_prov_attributes: Optional[pulumi.Input['DomainsIdentityProviderJitUserProvAttributesArgs']] = None,
+             jit_user_prov_create_user_enabled: Optional[pulumi.Input[bool]] = None,
+             jit_user_prov_enabled: Optional[pulumi.Input[bool]] = None,
+             jit_user_prov_group_assertion_attribute_enabled: Optional[pulumi.Input[bool]] = None,
+             jit_user_prov_group_assignment_method: Optional[pulumi.Input[str]] = None,
+             jit_user_prov_group_mapping_mode: Optional[pulumi.Input[str]] = None,
+             jit_user_prov_group_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderJitUserProvGroupMappingArgs']]]] = None,
+             jit_user_prov_group_saml_attribute_name: Optional[pulumi.Input[str]] = None,
+             jit_user_prov_group_static_list_enabled: Optional[pulumi.Input[bool]] = None,
+             jit_user_prov_ignore_error_on_absent_groups: Optional[pulumi.Input[bool]] = None,
+             logout_binding: Optional[pulumi.Input[str]] = None,
+             logout_enabled: Optional[pulumi.Input[bool]] = None,
+             logout_request_url: Optional[pulumi.Input[str]] = None,
+             logout_response_url: Optional[pulumi.Input[str]] = None,
+             metadata: Optional[pulumi.Input[str]] = None,
+             name_id_format: Optional[pulumi.Input[str]] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             partner_provider_id: Optional[pulumi.Input[str]] = None,
+             requested_authentication_contexts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             require_force_authn: Optional[pulumi.Input[bool]] = None,
+             requires_encrypted_assertion: Optional[pulumi.Input[bool]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             saml_ho_krequired: Optional[pulumi.Input[bool]] = None,
+             service_instance_identifier: Optional[pulumi.Input[str]] = None,
+             shown_on_login_page: Optional[pulumi.Input[bool]] = None,
+             signature_hash_algorithm: Optional[pulumi.Input[str]] = None,
+             signing_certificate: Optional[pulumi.Input[str]] = None,
+             succinct_id: Optional[pulumi.Input[str]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderTagArgs']]]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider: Optional[pulumi.Input['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionx509identity_provider: Optional[pulumi.Input['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs']] = None,
+             user_mapping_method: Optional[pulumi.Input[str]] = None,
+             user_mapping_store_attribute: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("enabled", enabled)
+        _setter("idcs_endpoint", idcs_endpoint)
+        _setter("partner_name", partner_name)
+        _setter("schemas", schemas)
         if assertion_attribute is not None:
-            pulumi.set(__self__, "assertion_attribute", assertion_attribute)
+            _setter("assertion_attribute", assertion_attribute)
         if attribute_sets is not None:
-            pulumi.set(__self__, "attribute_sets", attribute_sets)
+            _setter("attribute_sets", attribute_sets)
         if attributes is not None:
-            pulumi.set(__self__, "attributes", attributes)
+            _setter("attributes", attributes)
         if authn_request_binding is not None:
-            pulumi.set(__self__, "authn_request_binding", authn_request_binding)
+            _setter("authn_request_binding", authn_request_binding)
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if correlation_policy is not None:
-            pulumi.set(__self__, "correlation_policy", correlation_policy)
+            _setter("correlation_policy", correlation_policy)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if encryption_certificate is not None:
-            pulumi.set(__self__, "encryption_certificate", encryption_certificate)
+            _setter("encryption_certificate", encryption_certificate)
         if external_id is not None:
-            pulumi.set(__self__, "external_id", external_id)
+            _setter("external_id", external_id)
         if icon_url is not None:
-            pulumi.set(__self__, "icon_url", icon_url)
+            _setter("icon_url", icon_url)
         if idp_sso_url is not None:
-            pulumi.set(__self__, "idp_sso_url", idp_sso_url)
+            _setter("idp_sso_url", idp_sso_url)
         if include_signing_cert_in_signature is not None:
-            pulumi.set(__self__, "include_signing_cert_in_signature", include_signing_cert_in_signature)
+            _setter("include_signing_cert_in_signature", include_signing_cert_in_signature)
         if jit_user_prov_assigned_groups is not None:
-            pulumi.set(__self__, "jit_user_prov_assigned_groups", jit_user_prov_assigned_groups)
+            _setter("jit_user_prov_assigned_groups", jit_user_prov_assigned_groups)
         if jit_user_prov_attribute_update_enabled is not None:
-            pulumi.set(__self__, "jit_user_prov_attribute_update_enabled", jit_user_prov_attribute_update_enabled)
+            _setter("jit_user_prov_attribute_update_enabled", jit_user_prov_attribute_update_enabled)
         if jit_user_prov_attributes is not None:
-            pulumi.set(__self__, "jit_user_prov_attributes", jit_user_prov_attributes)
+            _setter("jit_user_prov_attributes", jit_user_prov_attributes)
         if jit_user_prov_create_user_enabled is not None:
-            pulumi.set(__self__, "jit_user_prov_create_user_enabled", jit_user_prov_create_user_enabled)
+            _setter("jit_user_prov_create_user_enabled", jit_user_prov_create_user_enabled)
         if jit_user_prov_enabled is not None:
-            pulumi.set(__self__, "jit_user_prov_enabled", jit_user_prov_enabled)
+            _setter("jit_user_prov_enabled", jit_user_prov_enabled)
         if jit_user_prov_group_assertion_attribute_enabled is not None:
-            pulumi.set(__self__, "jit_user_prov_group_assertion_attribute_enabled", jit_user_prov_group_assertion_attribute_enabled)
+            _setter("jit_user_prov_group_assertion_attribute_enabled", jit_user_prov_group_assertion_attribute_enabled)
         if jit_user_prov_group_assignment_method is not None:
-            pulumi.set(__self__, "jit_user_prov_group_assignment_method", jit_user_prov_group_assignment_method)
+            _setter("jit_user_prov_group_assignment_method", jit_user_prov_group_assignment_method)
         if jit_user_prov_group_mapping_mode is not None:
-            pulumi.set(__self__, "jit_user_prov_group_mapping_mode", jit_user_prov_group_mapping_mode)
+            _setter("jit_user_prov_group_mapping_mode", jit_user_prov_group_mapping_mode)
         if jit_user_prov_group_mappings is not None:
-            pulumi.set(__self__, "jit_user_prov_group_mappings", jit_user_prov_group_mappings)
+            _setter("jit_user_prov_group_mappings", jit_user_prov_group_mappings)
         if jit_user_prov_group_saml_attribute_name is not None:
-            pulumi.set(__self__, "jit_user_prov_group_saml_attribute_name", jit_user_prov_group_saml_attribute_name)
+            _setter("jit_user_prov_group_saml_attribute_name", jit_user_prov_group_saml_attribute_name)
         if jit_user_prov_group_static_list_enabled is not None:
-            pulumi.set(__self__, "jit_user_prov_group_static_list_enabled", jit_user_prov_group_static_list_enabled)
+            _setter("jit_user_prov_group_static_list_enabled", jit_user_prov_group_static_list_enabled)
         if jit_user_prov_ignore_error_on_absent_groups is not None:
-            pulumi.set(__self__, "jit_user_prov_ignore_error_on_absent_groups", jit_user_prov_ignore_error_on_absent_groups)
+            _setter("jit_user_prov_ignore_error_on_absent_groups", jit_user_prov_ignore_error_on_absent_groups)
         if logout_binding is not None:
-            pulumi.set(__self__, "logout_binding", logout_binding)
+            _setter("logout_binding", logout_binding)
         if logout_enabled is not None:
-            pulumi.set(__self__, "logout_enabled", logout_enabled)
+            _setter("logout_enabled", logout_enabled)
         if logout_request_url is not None:
-            pulumi.set(__self__, "logout_request_url", logout_request_url)
+            _setter("logout_request_url", logout_request_url)
         if logout_response_url is not None:
-            pulumi.set(__self__, "logout_response_url", logout_response_url)
+            _setter("logout_response_url", logout_response_url)
         if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
+            _setter("metadata", metadata)
         if name_id_format is not None:
-            pulumi.set(__self__, "name_id_format", name_id_format)
+            _setter("name_id_format", name_id_format)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if partner_provider_id is not None:
-            pulumi.set(__self__, "partner_provider_id", partner_provider_id)
+            _setter("partner_provider_id", partner_provider_id)
         if requested_authentication_contexts is not None:
-            pulumi.set(__self__, "requested_authentication_contexts", requested_authentication_contexts)
+            _setter("requested_authentication_contexts", requested_authentication_contexts)
         if require_force_authn is not None:
-            pulumi.set(__self__, "require_force_authn", require_force_authn)
+            _setter("require_force_authn", require_force_authn)
         if requires_encrypted_assertion is not None:
-            pulumi.set(__self__, "requires_encrypted_assertion", requires_encrypted_assertion)
+            _setter("requires_encrypted_assertion", requires_encrypted_assertion)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if saml_ho_krequired is not None:
-            pulumi.set(__self__, "saml_ho_krequired", saml_ho_krequired)
+            _setter("saml_ho_krequired", saml_ho_krequired)
         if service_instance_identifier is not None:
-            pulumi.set(__self__, "service_instance_identifier", service_instance_identifier)
+            _setter("service_instance_identifier", service_instance_identifier)
         if shown_on_login_page is not None:
-            pulumi.set(__self__, "shown_on_login_page", shown_on_login_page)
+            _setter("shown_on_login_page", shown_on_login_page)
         if signature_hash_algorithm is not None:
-            pulumi.set(__self__, "signature_hash_algorithm", signature_hash_algorithm)
+            _setter("signature_hash_algorithm", signature_hash_algorithm)
         if signing_certificate is not None:
-            pulumi.set(__self__, "signing_certificate", signing_certificate)
+            _setter("signing_certificate", signing_certificate)
         if succinct_id is not None:
-            pulumi.set(__self__, "succinct_id", succinct_id)
+            _setter("succinct_id", succinct_id)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider", urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider)
+            _setter("urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider", urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider)
         if urnietfparamsscimschemasoracleidcsextensionx509identity_provider is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionx509identity_provider", urnietfparamsscimschemasoracleidcsextensionx509identity_provider)
+            _setter("urnietfparamsscimschemasoracleidcsextensionx509identity_provider", urnietfparamsscimschemasoracleidcsextensionx509identity_provider)
         if user_mapping_method is not None:
-            pulumi.set(__self__, "user_mapping_method", user_mapping_method)
+            _setter("user_mapping_method", user_mapping_method)
         if user_mapping_store_attribute is not None:
-            pulumi.set(__self__, "user_mapping_store_attribute", user_mapping_store_attribute)
+            _setter("user_mapping_store_attribute", user_mapping_store_attribute)
 
     @property
     @pulumi.getter
@@ -2587,132 +2698,265 @@ class _DomainsIdentityProviderState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _DomainsIdentityProviderState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            assertion_attribute=assertion_attribute,
+            attribute_sets=attribute_sets,
+            attributes=attributes,
+            authn_request_binding=authn_request_binding,
+            authorization=authorization,
+            compartment_ocid=compartment_ocid,
+            correlation_policy=correlation_policy,
+            delete_in_progress=delete_in_progress,
+            description=description,
+            domain_ocid=domain_ocid,
+            enabled=enabled,
+            encryption_certificate=encryption_certificate,
+            external_id=external_id,
+            icon_url=icon_url,
+            idcs_created_bies=idcs_created_bies,
+            idcs_endpoint=idcs_endpoint,
+            idcs_last_modified_bies=idcs_last_modified_bies,
+            idcs_last_upgraded_in_release=idcs_last_upgraded_in_release,
+            idcs_prevented_operations=idcs_prevented_operations,
+            idp_sso_url=idp_sso_url,
+            include_signing_cert_in_signature=include_signing_cert_in_signature,
+            jit_user_prov_assigned_groups=jit_user_prov_assigned_groups,
+            jit_user_prov_attribute_update_enabled=jit_user_prov_attribute_update_enabled,
+            jit_user_prov_attributes=jit_user_prov_attributes,
+            jit_user_prov_create_user_enabled=jit_user_prov_create_user_enabled,
+            jit_user_prov_enabled=jit_user_prov_enabled,
+            jit_user_prov_group_assertion_attribute_enabled=jit_user_prov_group_assertion_attribute_enabled,
+            jit_user_prov_group_assignment_method=jit_user_prov_group_assignment_method,
+            jit_user_prov_group_mapping_mode=jit_user_prov_group_mapping_mode,
+            jit_user_prov_group_mappings=jit_user_prov_group_mappings,
+            jit_user_prov_group_saml_attribute_name=jit_user_prov_group_saml_attribute_name,
+            jit_user_prov_group_static_list_enabled=jit_user_prov_group_static_list_enabled,
+            jit_user_prov_ignore_error_on_absent_groups=jit_user_prov_ignore_error_on_absent_groups,
+            last_notification_sent_time=last_notification_sent_time,
+            logout_binding=logout_binding,
+            logout_enabled=logout_enabled,
+            logout_request_url=logout_request_url,
+            logout_response_url=logout_response_url,
+            metadata=metadata,
+            metas=metas,
+            name_id_format=name_id_format,
+            ocid=ocid,
+            partner_name=partner_name,
+            partner_provider_id=partner_provider_id,
+            requested_authentication_contexts=requested_authentication_contexts,
+            require_force_authn=require_force_authn,
+            requires_encrypted_assertion=requires_encrypted_assertion,
+            resource_type_schema_version=resource_type_schema_version,
+            saml_ho_krequired=saml_ho_krequired,
+            schemas=schemas,
+            service_instance_identifier=service_instance_identifier,
+            shown_on_login_page=shown_on_login_page,
+            signature_hash_algorithm=signature_hash_algorithm,
+            signing_certificate=signing_certificate,
+            succinct_id=succinct_id,
+            tags=tags,
+            tenancy_ocid=tenancy_ocid,
+            tenant_provider_id=tenant_provider_id,
+            type=type,
+            urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider=urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider,
+            urnietfparamsscimschemasoracleidcsextensionx509identity_provider=urnietfparamsscimschemasoracleidcsextensionx509identity_provider,
+            user_mapping_method=user_mapping_method,
+            user_mapping_store_attribute=user_mapping_store_attribute,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             assertion_attribute: Optional[pulumi.Input[str]] = None,
+             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             attributes: Optional[pulumi.Input[str]] = None,
+             authn_request_binding: Optional[pulumi.Input[str]] = None,
+             authorization: Optional[pulumi.Input[str]] = None,
+             compartment_ocid: Optional[pulumi.Input[str]] = None,
+             correlation_policy: Optional[pulumi.Input['DomainsIdentityProviderCorrelationPolicyArgs']] = None,
+             delete_in_progress: Optional[pulumi.Input[bool]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             domain_ocid: Optional[pulumi.Input[str]] = None,
+             enabled: Optional[pulumi.Input[bool]] = None,
+             encryption_certificate: Optional[pulumi.Input[str]] = None,
+             external_id: Optional[pulumi.Input[str]] = None,
+             icon_url: Optional[pulumi.Input[str]] = None,
+             idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderIdcsCreatedByArgs']]]] = None,
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderIdcsLastModifiedByArgs']]]] = None,
+             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
+             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             idp_sso_url: Optional[pulumi.Input[str]] = None,
+             include_signing_cert_in_signature: Optional[pulumi.Input[bool]] = None,
+             jit_user_prov_assigned_groups: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderJitUserProvAssignedGroupArgs']]]] = None,
+             jit_user_prov_attribute_update_enabled: Optional[pulumi.Input[bool]] = None,
+             jit_user_prov_attributes: Optional[pulumi.Input['DomainsIdentityProviderJitUserProvAttributesArgs']] = None,
+             jit_user_prov_create_user_enabled: Optional[pulumi.Input[bool]] = None,
+             jit_user_prov_enabled: Optional[pulumi.Input[bool]] = None,
+             jit_user_prov_group_assertion_attribute_enabled: Optional[pulumi.Input[bool]] = None,
+             jit_user_prov_group_assignment_method: Optional[pulumi.Input[str]] = None,
+             jit_user_prov_group_mapping_mode: Optional[pulumi.Input[str]] = None,
+             jit_user_prov_group_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderJitUserProvGroupMappingArgs']]]] = None,
+             jit_user_prov_group_saml_attribute_name: Optional[pulumi.Input[str]] = None,
+             jit_user_prov_group_static_list_enabled: Optional[pulumi.Input[bool]] = None,
+             jit_user_prov_ignore_error_on_absent_groups: Optional[pulumi.Input[bool]] = None,
+             last_notification_sent_time: Optional[pulumi.Input[str]] = None,
+             logout_binding: Optional[pulumi.Input[str]] = None,
+             logout_enabled: Optional[pulumi.Input[bool]] = None,
+             logout_request_url: Optional[pulumi.Input[str]] = None,
+             logout_response_url: Optional[pulumi.Input[str]] = None,
+             metadata: Optional[pulumi.Input[str]] = None,
+             metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderMetaArgs']]]] = None,
+             name_id_format: Optional[pulumi.Input[str]] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             partner_name: Optional[pulumi.Input[str]] = None,
+             partner_provider_id: Optional[pulumi.Input[str]] = None,
+             requested_authentication_contexts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             require_force_authn: Optional[pulumi.Input[bool]] = None,
+             requires_encrypted_assertion: Optional[pulumi.Input[bool]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             saml_ho_krequired: Optional[pulumi.Input[bool]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             service_instance_identifier: Optional[pulumi.Input[str]] = None,
+             shown_on_login_page: Optional[pulumi.Input[bool]] = None,
+             signature_hash_algorithm: Optional[pulumi.Input[str]] = None,
+             signing_certificate: Optional[pulumi.Input[str]] = None,
+             succinct_id: Optional[pulumi.Input[str]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProviderTagArgs']]]] = None,
+             tenancy_ocid: Optional[pulumi.Input[str]] = None,
+             tenant_provider_id: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider: Optional[pulumi.Input['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionx509identity_provider: Optional[pulumi.Input['DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs']] = None,
+             user_mapping_method: Optional[pulumi.Input[str]] = None,
+             user_mapping_store_attribute: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if assertion_attribute is not None:
-            pulumi.set(__self__, "assertion_attribute", assertion_attribute)
+            _setter("assertion_attribute", assertion_attribute)
         if attribute_sets is not None:
-            pulumi.set(__self__, "attribute_sets", attribute_sets)
+            _setter("attribute_sets", attribute_sets)
         if attributes is not None:
-            pulumi.set(__self__, "attributes", attributes)
+            _setter("attributes", attributes)
         if authn_request_binding is not None:
-            pulumi.set(__self__, "authn_request_binding", authn_request_binding)
+            _setter("authn_request_binding", authn_request_binding)
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if compartment_ocid is not None:
-            pulumi.set(__self__, "compartment_ocid", compartment_ocid)
+            _setter("compartment_ocid", compartment_ocid)
         if correlation_policy is not None:
-            pulumi.set(__self__, "correlation_policy", correlation_policy)
+            _setter("correlation_policy", correlation_policy)
         if delete_in_progress is not None:
-            pulumi.set(__self__, "delete_in_progress", delete_in_progress)
+            _setter("delete_in_progress", delete_in_progress)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if domain_ocid is not None:
-            pulumi.set(__self__, "domain_ocid", domain_ocid)
+            _setter("domain_ocid", domain_ocid)
         if enabled is not None:
-            pulumi.set(__self__, "enabled", enabled)
+            _setter("enabled", enabled)
         if encryption_certificate is not None:
-            pulumi.set(__self__, "encryption_certificate", encryption_certificate)
+            _setter("encryption_certificate", encryption_certificate)
         if external_id is not None:
-            pulumi.set(__self__, "external_id", external_id)
+            _setter("external_id", external_id)
         if icon_url is not None:
-            pulumi.set(__self__, "icon_url", icon_url)
+            _setter("icon_url", icon_url)
         if idcs_created_bies is not None:
-            pulumi.set(__self__, "idcs_created_bies", idcs_created_bies)
+            _setter("idcs_created_bies", idcs_created_bies)
         if idcs_endpoint is not None:
-            pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
+            _setter("idcs_endpoint", idcs_endpoint)
         if idcs_last_modified_bies is not None:
-            pulumi.set(__self__, "idcs_last_modified_bies", idcs_last_modified_bies)
+            _setter("idcs_last_modified_bies", idcs_last_modified_bies)
         if idcs_last_upgraded_in_release is not None:
-            pulumi.set(__self__, "idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
+            _setter("idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
         if idcs_prevented_operations is not None:
-            pulumi.set(__self__, "idcs_prevented_operations", idcs_prevented_operations)
+            _setter("idcs_prevented_operations", idcs_prevented_operations)
         if idp_sso_url is not None:
-            pulumi.set(__self__, "idp_sso_url", idp_sso_url)
+            _setter("idp_sso_url", idp_sso_url)
         if include_signing_cert_in_signature is not None:
-            pulumi.set(__self__, "include_signing_cert_in_signature", include_signing_cert_in_signature)
+            _setter("include_signing_cert_in_signature", include_signing_cert_in_signature)
         if jit_user_prov_assigned_groups is not None:
-            pulumi.set(__self__, "jit_user_prov_assigned_groups", jit_user_prov_assigned_groups)
+            _setter("jit_user_prov_assigned_groups", jit_user_prov_assigned_groups)
         if jit_user_prov_attribute_update_enabled is not None:
-            pulumi.set(__self__, "jit_user_prov_attribute_update_enabled", jit_user_prov_attribute_update_enabled)
+            _setter("jit_user_prov_attribute_update_enabled", jit_user_prov_attribute_update_enabled)
         if jit_user_prov_attributes is not None:
-            pulumi.set(__self__, "jit_user_prov_attributes", jit_user_prov_attributes)
+            _setter("jit_user_prov_attributes", jit_user_prov_attributes)
         if jit_user_prov_create_user_enabled is not None:
-            pulumi.set(__self__, "jit_user_prov_create_user_enabled", jit_user_prov_create_user_enabled)
+            _setter("jit_user_prov_create_user_enabled", jit_user_prov_create_user_enabled)
         if jit_user_prov_enabled is not None:
-            pulumi.set(__self__, "jit_user_prov_enabled", jit_user_prov_enabled)
+            _setter("jit_user_prov_enabled", jit_user_prov_enabled)
         if jit_user_prov_group_assertion_attribute_enabled is not None:
-            pulumi.set(__self__, "jit_user_prov_group_assertion_attribute_enabled", jit_user_prov_group_assertion_attribute_enabled)
+            _setter("jit_user_prov_group_assertion_attribute_enabled", jit_user_prov_group_assertion_attribute_enabled)
         if jit_user_prov_group_assignment_method is not None:
-            pulumi.set(__self__, "jit_user_prov_group_assignment_method", jit_user_prov_group_assignment_method)
+            _setter("jit_user_prov_group_assignment_method", jit_user_prov_group_assignment_method)
         if jit_user_prov_group_mapping_mode is not None:
-            pulumi.set(__self__, "jit_user_prov_group_mapping_mode", jit_user_prov_group_mapping_mode)
+            _setter("jit_user_prov_group_mapping_mode", jit_user_prov_group_mapping_mode)
         if jit_user_prov_group_mappings is not None:
-            pulumi.set(__self__, "jit_user_prov_group_mappings", jit_user_prov_group_mappings)
+            _setter("jit_user_prov_group_mappings", jit_user_prov_group_mappings)
         if jit_user_prov_group_saml_attribute_name is not None:
-            pulumi.set(__self__, "jit_user_prov_group_saml_attribute_name", jit_user_prov_group_saml_attribute_name)
+            _setter("jit_user_prov_group_saml_attribute_name", jit_user_prov_group_saml_attribute_name)
         if jit_user_prov_group_static_list_enabled is not None:
-            pulumi.set(__self__, "jit_user_prov_group_static_list_enabled", jit_user_prov_group_static_list_enabled)
+            _setter("jit_user_prov_group_static_list_enabled", jit_user_prov_group_static_list_enabled)
         if jit_user_prov_ignore_error_on_absent_groups is not None:
-            pulumi.set(__self__, "jit_user_prov_ignore_error_on_absent_groups", jit_user_prov_ignore_error_on_absent_groups)
+            _setter("jit_user_prov_ignore_error_on_absent_groups", jit_user_prov_ignore_error_on_absent_groups)
         if last_notification_sent_time is not None:
-            pulumi.set(__self__, "last_notification_sent_time", last_notification_sent_time)
+            _setter("last_notification_sent_time", last_notification_sent_time)
         if logout_binding is not None:
-            pulumi.set(__self__, "logout_binding", logout_binding)
+            _setter("logout_binding", logout_binding)
         if logout_enabled is not None:
-            pulumi.set(__self__, "logout_enabled", logout_enabled)
+            _setter("logout_enabled", logout_enabled)
         if logout_request_url is not None:
-            pulumi.set(__self__, "logout_request_url", logout_request_url)
+            _setter("logout_request_url", logout_request_url)
         if logout_response_url is not None:
-            pulumi.set(__self__, "logout_response_url", logout_response_url)
+            _setter("logout_response_url", logout_response_url)
         if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
+            _setter("metadata", metadata)
         if metas is not None:
-            pulumi.set(__self__, "metas", metas)
+            _setter("metas", metas)
         if name_id_format is not None:
-            pulumi.set(__self__, "name_id_format", name_id_format)
+            _setter("name_id_format", name_id_format)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if partner_name is not None:
-            pulumi.set(__self__, "partner_name", partner_name)
+            _setter("partner_name", partner_name)
         if partner_provider_id is not None:
-            pulumi.set(__self__, "partner_provider_id", partner_provider_id)
+            _setter("partner_provider_id", partner_provider_id)
         if requested_authentication_contexts is not None:
-            pulumi.set(__self__, "requested_authentication_contexts", requested_authentication_contexts)
+            _setter("requested_authentication_contexts", requested_authentication_contexts)
         if require_force_authn is not None:
-            pulumi.set(__self__, "require_force_authn", require_force_authn)
+            _setter("require_force_authn", require_force_authn)
         if requires_encrypted_assertion is not None:
-            pulumi.set(__self__, "requires_encrypted_assertion", requires_encrypted_assertion)
+            _setter("requires_encrypted_assertion", requires_encrypted_assertion)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if saml_ho_krequired is not None:
-            pulumi.set(__self__, "saml_ho_krequired", saml_ho_krequired)
+            _setter("saml_ho_krequired", saml_ho_krequired)
         if schemas is not None:
-            pulumi.set(__self__, "schemas", schemas)
+            _setter("schemas", schemas)
         if service_instance_identifier is not None:
-            pulumi.set(__self__, "service_instance_identifier", service_instance_identifier)
+            _setter("service_instance_identifier", service_instance_identifier)
         if shown_on_login_page is not None:
-            pulumi.set(__self__, "shown_on_login_page", shown_on_login_page)
+            _setter("shown_on_login_page", shown_on_login_page)
         if signature_hash_algorithm is not None:
-            pulumi.set(__self__, "signature_hash_algorithm", signature_hash_algorithm)
+            _setter("signature_hash_algorithm", signature_hash_algorithm)
         if signing_certificate is not None:
-            pulumi.set(__self__, "signing_certificate", signing_certificate)
+            _setter("signing_certificate", signing_certificate)
         if succinct_id is not None:
-            pulumi.set(__self__, "succinct_id", succinct_id)
+            _setter("succinct_id", succinct_id)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if tenancy_ocid is not None:
-            pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
+            _setter("tenancy_ocid", tenancy_ocid)
         if tenant_provider_id is not None:
-            pulumi.set(__self__, "tenant_provider_id", tenant_provider_id)
+            _setter("tenant_provider_id", tenant_provider_id)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider", urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider)
+            _setter("urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider", urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider)
         if urnietfparamsscimschemasoracleidcsextensionx509identity_provider is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionx509identity_provider", urnietfparamsscimschemasoracleidcsextensionx509identity_provider)
+            _setter("urnietfparamsscimschemasoracleidcsextensionx509identity_provider", urnietfparamsscimschemasoracleidcsextensionx509identity_provider)
         if user_mapping_method is not None:
-            pulumi.set(__self__, "user_mapping_method", user_mapping_method)
+            _setter("user_mapping_method", user_mapping_method)
         if user_mapping_store_attribute is not None:
-            pulumi.set(__self__, "user_mapping_store_attribute", user_mapping_store_attribute)
+            _setter("user_mapping_store_attribute", user_mapping_store_attribute)
 
     @property
     @pulumi.getter(name="assertionAttribute")
@@ -4733,6 +4977,10 @@ class DomainsIdentityProvider(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DomainsIdentityProviderArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -4804,6 +5052,11 @@ class DomainsIdentityProvider(pulumi.CustomResource):
             __props__.__dict__["attributes"] = attributes
             __props__.__dict__["authn_request_binding"] = authn_request_binding
             __props__.__dict__["authorization"] = authorization
+            if correlation_policy is not None and not isinstance(correlation_policy, DomainsIdentityProviderCorrelationPolicyArgs):
+                correlation_policy = correlation_policy or {}
+                def _setter(key, value):
+                    correlation_policy[key] = value
+                DomainsIdentityProviderCorrelationPolicyArgs._configure(_setter, **correlation_policy)
             __props__.__dict__["correlation_policy"] = correlation_policy
             __props__.__dict__["description"] = description
             if enabled is None and not opts.urn:
@@ -4819,6 +5072,11 @@ class DomainsIdentityProvider(pulumi.CustomResource):
             __props__.__dict__["include_signing_cert_in_signature"] = include_signing_cert_in_signature
             __props__.__dict__["jit_user_prov_assigned_groups"] = jit_user_prov_assigned_groups
             __props__.__dict__["jit_user_prov_attribute_update_enabled"] = jit_user_prov_attribute_update_enabled
+            if jit_user_prov_attributes is not None and not isinstance(jit_user_prov_attributes, DomainsIdentityProviderJitUserProvAttributesArgs):
+                jit_user_prov_attributes = jit_user_prov_attributes or {}
+                def _setter(key, value):
+                    jit_user_prov_attributes[key] = value
+                DomainsIdentityProviderJitUserProvAttributesArgs._configure(_setter, **jit_user_prov_attributes)
             __props__.__dict__["jit_user_prov_attributes"] = jit_user_prov_attributes
             __props__.__dict__["jit_user_prov_create_user_enabled"] = jit_user_prov_create_user_enabled
             __props__.__dict__["jit_user_prov_enabled"] = jit_user_prov_enabled
@@ -4855,7 +5113,17 @@ class DomainsIdentityProvider(pulumi.CustomResource):
             __props__.__dict__["succinct_id"] = succinct_id
             __props__.__dict__["tags"] = tags
             __props__.__dict__["type"] = type
+            if urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider, DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs):
+                urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider = urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider[key] = value
+                DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionsocialIdentityProviderArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider"] = urnietfparamsscimschemasoracleidcsextensionsocial_identity_provider
+            if urnietfparamsscimschemasoracleidcsextensionx509identity_provider is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionx509identity_provider, DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs):
+                urnietfparamsscimschemasoracleidcsextensionx509identity_provider = urnietfparamsscimschemasoracleidcsextensionx509identity_provider or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionx509identity_provider[key] = value
+                DomainsIdentityProviderUrnietfparamsscimschemasoracleidcsextensionx509identityProviderArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionx509identity_provider)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionx509identity_provider"] = urnietfparamsscimschemasoracleidcsextensionx509identity_provider
             __props__.__dict__["user_mapping_method"] = user_mapping_method
             __props__.__dict__["user_mapping_store_attribute"] = user_mapping_store_attribute

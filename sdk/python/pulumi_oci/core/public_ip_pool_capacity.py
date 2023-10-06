@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['PublicIpPoolCapacityArgs', 'PublicIpPoolCapacity']
@@ -26,9 +26,22 @@ class PublicIpPoolCapacityArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] public_ip_pool_id: The OCID of the pool object created by the current tenancy
         """
-        pulumi.set(__self__, "byoip_id", byoip_id)
-        pulumi.set(__self__, "cidr_block", cidr_block)
-        pulumi.set(__self__, "public_ip_pool_id", public_ip_pool_id)
+        PublicIpPoolCapacityArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            byoip_id=byoip_id,
+            cidr_block=cidr_block,
+            public_ip_pool_id=public_ip_pool_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             byoip_id: pulumi.Input[str],
+             cidr_block: pulumi.Input[str],
+             public_ip_pool_id: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("byoip_id", byoip_id)
+        _setter("cidr_block", cidr_block)
+        _setter("public_ip_pool_id", public_ip_pool_id)
 
     @property
     @pulumi.getter(name="byoipId")
@@ -85,12 +98,25 @@ class _PublicIpPoolCapacityState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] public_ip_pool_id: The OCID of the pool object created by the current tenancy
         """
+        _PublicIpPoolCapacityState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            byoip_id=byoip_id,
+            cidr_block=cidr_block,
+            public_ip_pool_id=public_ip_pool_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             byoip_id: Optional[pulumi.Input[str]] = None,
+             cidr_block: Optional[pulumi.Input[str]] = None,
+             public_ip_pool_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if byoip_id is not None:
-            pulumi.set(__self__, "byoip_id", byoip_id)
+            _setter("byoip_id", byoip_id)
         if cidr_block is not None:
-            pulumi.set(__self__, "cidr_block", cidr_block)
+            _setter("cidr_block", cidr_block)
         if public_ip_pool_id is not None:
-            pulumi.set(__self__, "public_ip_pool_id", public_ip_pool_id)
+            _setter("public_ip_pool_id", public_ip_pool_id)
 
     @property
     @pulumi.getter(name="byoipId")
@@ -208,6 +234,10 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            PublicIpPoolCapacityArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

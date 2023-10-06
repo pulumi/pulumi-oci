@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['AuditTrailArgs', 'AuditTrail']
@@ -37,21 +37,44 @@ class AuditTrailArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: (Updatable) The target state for the Audit Trail. Could be set to `ACTIVE` or `INACTIVE`.
         """
-        pulumi.set(__self__, "audit_trail_id", audit_trail_id)
+        AuditTrailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audit_trail_id=audit_trail_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            is_auto_purge_enabled=is_auto_purge_enabled,
+            resume_trigger=resume_trigger,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audit_trail_id: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_auto_purge_enabled: Optional[pulumi.Input[bool]] = None,
+             resume_trigger: Optional[pulumi.Input[int]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("audit_trail_id", audit_trail_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_auto_purge_enabled is not None:
-            pulumi.set(__self__, "is_auto_purge_enabled", is_auto_purge_enabled)
+            _setter("is_auto_purge_enabled", is_auto_purge_enabled)
         if resume_trigger is not None:
-            pulumi.set(__self__, "resume_trigger", resume_trigger)
+            _setter("resume_trigger", resume_trigger)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter(name="auditTrailId")
@@ -204,46 +227,93 @@ class _AuditTrailState:
         :param pulumi.Input[str] trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         :param pulumi.Input[str] work_request_id: The OCID of the workrequest for audit trail which collects audit records.
         """
+        _AuditTrailState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audit_collection_start_time=audit_collection_start_time,
+            audit_profile_id=audit_profile_id,
+            audit_trail_id=audit_trail_id,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            is_auto_purge_enabled=is_auto_purge_enabled,
+            lifecycle_details=lifecycle_details,
+            resume_trigger=resume_trigger,
+            state=state,
+            status=status,
+            system_tags=system_tags,
+            target_id=target_id,
+            time_created=time_created,
+            time_last_collected=time_last_collected,
+            time_updated=time_updated,
+            trail_location=trail_location,
+            work_request_id=work_request_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audit_collection_start_time: Optional[pulumi.Input[str]] = None,
+             audit_profile_id: Optional[pulumi.Input[str]] = None,
+             audit_trail_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_auto_purge_enabled: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             resume_trigger: Optional[pulumi.Input[int]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             target_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_last_collected: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             trail_location: Optional[pulumi.Input[str]] = None,
+             work_request_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if audit_collection_start_time is not None:
-            pulumi.set(__self__, "audit_collection_start_time", audit_collection_start_time)
+            _setter("audit_collection_start_time", audit_collection_start_time)
         if audit_profile_id is not None:
-            pulumi.set(__self__, "audit_profile_id", audit_profile_id)
+            _setter("audit_profile_id", audit_profile_id)
         if audit_trail_id is not None:
-            pulumi.set(__self__, "audit_trail_id", audit_trail_id)
+            _setter("audit_trail_id", audit_trail_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_auto_purge_enabled is not None:
-            pulumi.set(__self__, "is_auto_purge_enabled", is_auto_purge_enabled)
+            _setter("is_auto_purge_enabled", is_auto_purge_enabled)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if resume_trigger is not None:
-            pulumi.set(__self__, "resume_trigger", resume_trigger)
+            _setter("resume_trigger", resume_trigger)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if target_id is not None:
-            pulumi.set(__self__, "target_id", target_id)
+            _setter("target_id", target_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_last_collected is not None:
-            pulumi.set(__self__, "time_last_collected", time_last_collected)
+            _setter("time_last_collected", time_last_collected)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if trail_location is not None:
-            pulumi.set(__self__, "trail_location", trail_location)
+            _setter("trail_location", trail_location)
         if work_request_id is not None:
-            pulumi.set(__self__, "work_request_id", work_request_id)
+            _setter("work_request_id", work_request_id)
 
     @property
     @pulumi.getter(name="auditCollectionStartTime")
@@ -561,6 +631,10 @@ class AuditTrail(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AuditTrailArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

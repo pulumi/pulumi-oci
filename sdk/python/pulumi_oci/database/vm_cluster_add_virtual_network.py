@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -27,8 +27,19 @@ class VmClusterAddVirtualNetworkArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "db_servers", db_servers)
-        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+        VmClusterAddVirtualNetworkArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            db_servers=db_servers,
+            vm_cluster_id=vm_cluster_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             db_servers: pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkDbServerArgs']]],
+             vm_cluster_id: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("db_servers", db_servers)
+        _setter("vm_cluster_id", vm_cluster_id)
 
     @property
     @pulumi.getter(name="dbServers")
@@ -124,62 +135,125 @@ class _VmClusterAddVirtualNetworkState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] vm_cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         """
+        _VmClusterAddVirtualNetworkState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            cpus_enabled=cpus_enabled,
+            data_collection_options=data_collection_options,
+            data_storage_size_in_gb=data_storage_size_in_gb,
+            data_storage_size_in_tbs=data_storage_size_in_tbs,
+            db_node_storage_size_in_gbs=db_node_storage_size_in_gbs,
+            db_servers=db_servers,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            exadata_infrastructure_id=exadata_infrastructure_id,
+            freeform_tags=freeform_tags,
+            gi_version=gi_version,
+            is_local_backup_enabled=is_local_backup_enabled,
+            is_sparse_diskgroup_enabled=is_sparse_diskgroup_enabled,
+            last_patch_history_entry_id=last_patch_history_entry_id,
+            license_model=license_model,
+            lifecycle_details=lifecycle_details,
+            memory_size_in_gbs=memory_size_in_gbs,
+            ocpus_enabled=ocpus_enabled,
+            shape=shape,
+            ssh_public_keys=ssh_public_keys,
+            state=state,
+            system_version=system_version,
+            time_created=time_created,
+            time_zone=time_zone,
+            vm_cluster_id=vm_cluster_id,
+            vm_cluster_network_id=vm_cluster_network_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             cpus_enabled: Optional[pulumi.Input[int]] = None,
+             data_collection_options: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkDataCollectionOptionArgs']]]] = None,
+             data_storage_size_in_gb: Optional[pulumi.Input[float]] = None,
+             data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
+             db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+             db_servers: Optional[pulumi.Input[Sequence[pulumi.Input['VmClusterAddVirtualNetworkDbServerArgs']]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             gi_version: Optional[pulumi.Input[str]] = None,
+             is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
+             is_sparse_diskgroup_enabled: Optional[pulumi.Input[bool]] = None,
+             last_patch_history_entry_id: Optional[pulumi.Input[str]] = None,
+             license_model: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
+             ocpus_enabled: Optional[pulumi.Input[float]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_version: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_zone: Optional[pulumi.Input[str]] = None,
+             vm_cluster_id: Optional[pulumi.Input[str]] = None,
+             vm_cluster_network_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if cpus_enabled is not None:
-            pulumi.set(__self__, "cpus_enabled", cpus_enabled)
+            _setter("cpus_enabled", cpus_enabled)
         if data_collection_options is not None:
-            pulumi.set(__self__, "data_collection_options", data_collection_options)
+            _setter("data_collection_options", data_collection_options)
         if data_storage_size_in_gb is not None:
-            pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+            _setter("data_storage_size_in_gb", data_storage_size_in_gb)
         if data_storage_size_in_tbs is not None:
-            pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+            _setter("data_storage_size_in_tbs", data_storage_size_in_tbs)
         if db_node_storage_size_in_gbs is not None:
-            pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
+            _setter("db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
         if db_servers is not None:
-            pulumi.set(__self__, "db_servers", db_servers)
+            _setter("db_servers", db_servers)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if exadata_infrastructure_id is not None:
-            pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
+            _setter("exadata_infrastructure_id", exadata_infrastructure_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if gi_version is not None:
-            pulumi.set(__self__, "gi_version", gi_version)
+            _setter("gi_version", gi_version)
         if is_local_backup_enabled is not None:
-            pulumi.set(__self__, "is_local_backup_enabled", is_local_backup_enabled)
+            _setter("is_local_backup_enabled", is_local_backup_enabled)
         if is_sparse_diskgroup_enabled is not None:
-            pulumi.set(__self__, "is_sparse_diskgroup_enabled", is_sparse_diskgroup_enabled)
+            _setter("is_sparse_diskgroup_enabled", is_sparse_diskgroup_enabled)
         if last_patch_history_entry_id is not None:
-            pulumi.set(__self__, "last_patch_history_entry_id", last_patch_history_entry_id)
+            _setter("last_patch_history_entry_id", last_patch_history_entry_id)
         if license_model is not None:
-            pulumi.set(__self__, "license_model", license_model)
+            _setter("license_model", license_model)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if memory_size_in_gbs is not None:
-            pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+            _setter("memory_size_in_gbs", memory_size_in_gbs)
         if ocpus_enabled is not None:
-            pulumi.set(__self__, "ocpus_enabled", ocpus_enabled)
+            _setter("ocpus_enabled", ocpus_enabled)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if ssh_public_keys is not None:
-            pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
+            _setter("ssh_public_keys", ssh_public_keys)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_version is not None:
-            pulumi.set(__self__, "system_version", system_version)
+            _setter("system_version", system_version)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_zone is not None:
-            pulumi.set(__self__, "time_zone", time_zone)
+            _setter("time_zone", time_zone)
         if vm_cluster_id is not None:
-            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+            _setter("vm_cluster_id", vm_cluster_id)
         if vm_cluster_network_id is not None:
-            pulumi.set(__self__, "vm_cluster_network_id", vm_cluster_network_id)
+            _setter("vm_cluster_network_id", vm_cluster_network_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -608,6 +682,10 @@ class VmClusterAddVirtualNetwork(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            VmClusterAddVirtualNetworkArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

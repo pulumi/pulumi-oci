@@ -72,9 +72,13 @@ type LookupKeyVersionArgs struct {
 type LookupKeyVersionResult struct {
 	// The OCID of the compartment that contains this key version.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Key reference data to be returned to the customer as a response.
+	ExternalKeyReferenceDetails []GetKeyVersionExternalKeyReferenceDetail `pulumi:"externalKeyReferenceDetails"`
+	// Key version ID associated with the external key.
+	ExternalKeyVersionId string `pulumi:"externalKeyVersionId"`
 	// The OCID of the key version.
 	Id string `pulumi:"id"`
-	// A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+	// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
 	IsPrimary bool `pulumi:"isPrimary"`
 	// The OCID of the master encryption key associated with this key version.
 	KeyId string `pulumi:"keyId"`
@@ -151,12 +155,24 @@ func (o LookupKeyVersionResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyVersionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// Key reference data to be returned to the customer as a response.
+func (o LookupKeyVersionResultOutput) ExternalKeyReferenceDetails() GetKeyVersionExternalKeyReferenceDetailArrayOutput {
+	return o.ApplyT(func(v LookupKeyVersionResult) []GetKeyVersionExternalKeyReferenceDetail {
+		return v.ExternalKeyReferenceDetails
+	}).(GetKeyVersionExternalKeyReferenceDetailArrayOutput)
+}
+
+// Key version ID associated with the external key.
+func (o LookupKeyVersionResultOutput) ExternalKeyVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupKeyVersionResult) string { return v.ExternalKeyVersionId }).(pulumi.StringOutput)
+}
+
 // The OCID of the key version.
 func (o LookupKeyVersionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyVersionResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
 func (o LookupKeyVersionResultOutput) IsPrimary() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupKeyVersionResult) bool { return v.IsPrimary }).(pulumi.BoolOutput)
 }

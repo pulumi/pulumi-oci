@@ -41,6 +41,17 @@ namespace Pulumi.Oci.Kms
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
+    ///         ExternalKeyManagerMetadata = new Oci.Kms.Inputs.VaultExternalKeyManagerMetadataArgs
+    ///         {
+    ///             ExternalVaultEndpointUrl = @var.Vault_external_key_manager_metadata_external_vault_endpoint_url,
+    ///             OauthMetadata = new Oci.Kms.Inputs.VaultExternalKeyManagerMetadataOauthMetadataArgs
+    ///             {
+    ///                 ClientAppId = oci_kms_client_app.Test_client_app.Id,
+    ///                 ClientAppSecret = @var.Vault_external_key_manager_metadata_oauth_metadata_client_app_secret,
+    ///                 IdcsAccountNameUrl = @var.Vault_external_key_manager_metadata_oauth_metadata_idcs_account_name_url,
+    ///             },
+    ///             PrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
+    ///         },
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
@@ -86,13 +97,25 @@ namespace Pulumi.Oci.Kms
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// Metadata required for accessing External Key manager
+        /// </summary>
+        [Output("externalKeyManagerMetadata")]
+        public Output<Outputs.VaultExternalKeyManagerMetadata> ExternalKeyManagerMetadata { get; private set; } = null!;
+
+        /// <summary>
+        /// Summary about metadata of external key manager to be returned to the customer as a response.
+        /// </summary>
+        [Output("externalKeyManagerMetadataSummaries")]
+        public Output<ImmutableArray<Outputs.VaultExternalKeyManagerMetadataSummary>> ExternalKeyManagerMetadataSummaries { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// A boolean that will be true when vault is primary, and will be false when vault is a replica from a primary vault.
+        /// A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
         /// </summary>
         [Output("isPrimary")]
         public Output<bool> IsPrimary { get; private set; } = null!;
@@ -125,7 +148,7 @@ namespace Pulumi.Oci.Kms
         public Output<bool?> RestoreTrigger { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the vault from which this vault was restored, if it was restored from a backup file.  If you restore a vault to the same region, the vault retains the same OCID that it had when you  backed up the vault.
+        /// The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
         /// </summary>
         [Output("restoredFromVaultId")]
         public Output<string> RestoredFromVaultId { get; private set; } = null!;
@@ -227,6 +250,12 @@ namespace Pulumi.Oci.Kms
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
 
+        /// <summary>
+        /// Metadata required for accessing External Key manager
+        /// </summary>
+        [Input("externalKeyManagerMetadata")]
+        public Input<Inputs.VaultExternalKeyManagerMetadataArgs>? ExternalKeyManagerMetadata { get; set; }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -307,6 +336,24 @@ namespace Pulumi.Oci.Kms
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        /// <summary>
+        /// Metadata required for accessing External Key manager
+        /// </summary>
+        [Input("externalKeyManagerMetadata")]
+        public Input<Inputs.VaultExternalKeyManagerMetadataGetArgs>? ExternalKeyManagerMetadata { get; set; }
+
+        [Input("externalKeyManagerMetadataSummaries")]
+        private InputList<Inputs.VaultExternalKeyManagerMetadataSummaryGetArgs>? _externalKeyManagerMetadataSummaries;
+
+        /// <summary>
+        /// Summary about metadata of external key manager to be returned to the customer as a response.
+        /// </summary>
+        public InputList<Inputs.VaultExternalKeyManagerMetadataSummaryGetArgs> ExternalKeyManagerMetadataSummaries
+        {
+            get => _externalKeyManagerMetadataSummaries ?? (_externalKeyManagerMetadataSummaries = new InputList<Inputs.VaultExternalKeyManagerMetadataSummaryGetArgs>());
+            set => _externalKeyManagerMetadataSummaries = value;
+        }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -320,7 +367,7 @@ namespace Pulumi.Oci.Kms
         }
 
         /// <summary>
-        /// A boolean that will be true when vault is primary, and will be false when vault is a replica from a primary vault.
+        /// A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
         /// </summary>
         [Input("isPrimary")]
         public Input<bool>? IsPrimary { get; set; }
@@ -359,7 +406,7 @@ namespace Pulumi.Oci.Kms
         public Input<bool>? RestoreTrigger { get; set; }
 
         /// <summary>
-        /// The OCID of the vault from which this vault was restored, if it was restored from a backup file.  If you restore a vault to the same region, the vault retains the same OCID that it had when you  backed up the vault.
+        /// The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
         /// </summary>
         [Input("restoredFromVaultId")]
         public Input<string>? RestoredFromVaultId { get; set; }

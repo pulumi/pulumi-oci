@@ -5,6 +5,8 @@ package com.pulumi.oci.Kms.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Kms.inputs.KeyExternalKeyReferenceArgs;
+import com.pulumi.oci.Kms.inputs.KeyExternalKeyReferenceDetailArgs;
 import com.pulumi.oci.Kms.inputs.KeyKeyShapeArgs;
 import com.pulumi.oci.Kms.inputs.KeyReplicaDetailArgs;
 import com.pulumi.oci.Kms.inputs.KeyRestoreFromFileArgs;
@@ -99,6 +101,36 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * A reference to the key on external key manager.
+     * 
+     */
+    @Import(name="externalKeyReference")
+    private @Nullable Output<KeyExternalKeyReferenceArgs> externalKeyReference;
+
+    /**
+     * @return A reference to the key on external key manager.
+     * 
+     */
+    public Optional<Output<KeyExternalKeyReferenceArgs>> externalKeyReference() {
+        return Optional.ofNullable(this.externalKeyReference);
+    }
+
+    /**
+     * Key reference data to be returned to the customer as a response.
+     * 
+     */
+    @Import(name="externalKeyReferenceDetails")
+    private @Nullable Output<List<KeyExternalKeyReferenceDetailArgs>> externalKeyReferenceDetails;
+
+    /**
+     * @return Key reference data to be returned to the customer as a response.
+     * 
+     */
+    public Optional<Output<List<KeyExternalKeyReferenceDetailArgs>>> externalKeyReferenceDetails() {
+        return Optional.ofNullable(this.externalKeyReferenceDetails);
+    }
+
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -114,14 +146,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+     * A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
      * 
      */
     @Import(name="isPrimary")
     private @Nullable Output<Boolean> isPrimary;
 
     /**
-     * @return A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+     * @return A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
      * 
      */
     public Optional<Output<Boolean>> isPrimary() {
@@ -159,14 +191,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key&#39;s protection mode is set to `HSM`. You can&#39;t change a key&#39;s protection mode after the key is created or imported.
+     * The key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key&#39;s protection mode is set to `HSM`. You can&#39;t change a key&#39;s protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer&#39;s external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
      * 
      */
     @Import(name="protectionMode")
     private @Nullable Output<String> protectionMode;
 
     /**
-     * @return The key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key&#39;s protection mode is set to `HSM`. You can&#39;t change a key&#39;s protection mode after the key is created or imported.
+     * @return The key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key&#39;s protection mode is set to `HSM`. You can&#39;t change a key&#39;s protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer&#39;s external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
      * 
      */
     public Optional<Output<String>> protectionMode() {
@@ -322,6 +354,8 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.desiredState = $.desiredState;
         this.displayName = $.displayName;
+        this.externalKeyReference = $.externalKeyReference;
+        this.externalKeyReferenceDetails = $.externalKeyReferenceDetails;
         this.freeformTags = $.freeformTags;
         this.isPrimary = $.isPrimary;
         this.keyShape = $.keyShape;
@@ -462,6 +496,58 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param externalKeyReference A reference to the key on external key manager.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyReference(@Nullable Output<KeyExternalKeyReferenceArgs> externalKeyReference) {
+            $.externalKeyReference = externalKeyReference;
+            return this;
+        }
+
+        /**
+         * @param externalKeyReference A reference to the key on external key manager.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyReference(KeyExternalKeyReferenceArgs externalKeyReference) {
+            return externalKeyReference(Output.of(externalKeyReference));
+        }
+
+        /**
+         * @param externalKeyReferenceDetails Key reference data to be returned to the customer as a response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyReferenceDetails(@Nullable Output<List<KeyExternalKeyReferenceDetailArgs>> externalKeyReferenceDetails) {
+            $.externalKeyReferenceDetails = externalKeyReferenceDetails;
+            return this;
+        }
+
+        /**
+         * @param externalKeyReferenceDetails Key reference data to be returned to the customer as a response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyReferenceDetails(List<KeyExternalKeyReferenceDetailArgs> externalKeyReferenceDetails) {
+            return externalKeyReferenceDetails(Output.of(externalKeyReferenceDetails));
+        }
+
+        /**
+         * @param externalKeyReferenceDetails Key reference data to be returned to the customer as a response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyReferenceDetails(KeyExternalKeyReferenceDetailArgs... externalKeyReferenceDetails) {
+            return externalKeyReferenceDetails(List.of(externalKeyReferenceDetails));
+        }
+
+        /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
@@ -483,7 +569,7 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isPrimary A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+         * @param isPrimary A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
          * 
          * @return builder
          * 
@@ -494,7 +580,7 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isPrimary A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+         * @param isPrimary A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
          * 
          * @return builder
          * 
@@ -546,7 +632,7 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protectionMode The key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key&#39;s protection mode is set to `HSM`. You can&#39;t change a key&#39;s protection mode after the key is created or imported.
+         * @param protectionMode The key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key&#39;s protection mode is set to `HSM`. You can&#39;t change a key&#39;s protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer&#39;s external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
          * 
          * @return builder
          * 
@@ -557,7 +643,7 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param protectionMode The key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key&#39;s protection mode is set to `HSM`. You can&#39;t change a key&#39;s protection mode after the key is created or imported.
+         * @param protectionMode The key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key&#39;s protection mode is set to `HSM`. You can&#39;t change a key&#39;s protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer&#39;s external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
          * 
          * @return builder
          * 

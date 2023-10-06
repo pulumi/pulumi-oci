@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -93,11 +93,24 @@ class DrPlanExecutionExecutionOptions(dict):
         :param bool are_prechecks_enabled: A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
         :param bool are_warnings_ignored: A flag indicating whether warnings should be ignored during the switchover precheck.  Example: `true`
         """
-        pulumi.set(__self__, "plan_execution_type", plan_execution_type)
+        DrPlanExecutionExecutionOptions._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            plan_execution_type=plan_execution_type,
+            are_prechecks_enabled=are_prechecks_enabled,
+            are_warnings_ignored=are_warnings_ignored,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             plan_execution_type: str,
+             are_prechecks_enabled: Optional[bool] = None,
+             are_warnings_ignored: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("plan_execution_type", plan_execution_type)
         if are_prechecks_enabled is not None:
-            pulumi.set(__self__, "are_prechecks_enabled", are_prechecks_enabled)
+            _setter("are_prechecks_enabled", are_prechecks_enabled)
         if are_warnings_ignored is not None:
-            pulumi.set(__self__, "are_warnings_ignored", are_warnings_ignored)
+            _setter("are_warnings_ignored", are_warnings_ignored)
 
     @property
     @pulumi.getter(name="planExecutionType")
@@ -176,24 +189,49 @@ class DrPlanExecutionGroupExecution(dict):
         :param str time_started: The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param str type: The plan group type.
         """
+        DrPlanExecutionGroupExecution._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            execution_duration_in_sec=execution_duration_in_sec,
+            group_id=group_id,
+            status=status,
+            status_details=status_details,
+            step_executions=step_executions,
+            time_ended=time_ended,
+            time_started=time_started,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             execution_duration_in_sec: Optional[int] = None,
+             group_id: Optional[str] = None,
+             status: Optional[str] = None,
+             status_details: Optional[str] = None,
+             step_executions: Optional[Sequence['outputs.DrPlanExecutionGroupExecutionStepExecution']] = None,
+             time_ended: Optional[str] = None,
+             time_started: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if execution_duration_in_sec is not None:
-            pulumi.set(__self__, "execution_duration_in_sec", execution_duration_in_sec)
+            _setter("execution_duration_in_sec", execution_duration_in_sec)
         if group_id is not None:
-            pulumi.set(__self__, "group_id", group_id)
+            _setter("group_id", group_id)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if status_details is not None:
-            pulumi.set(__self__, "status_details", status_details)
+            _setter("status_details", status_details)
         if step_executions is not None:
-            pulumi.set(__self__, "step_executions", step_executions)
+            _setter("step_executions", step_executions)
         if time_ended is not None:
-            pulumi.set(__self__, "time_ended", time_ended)
+            _setter("time_ended", time_ended)
         if time_started is not None:
-            pulumi.set(__self__, "time_started", time_started)
+            _setter("time_started", time_started)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="displayName")
@@ -324,26 +362,53 @@ class DrPlanExecutionGroupExecutionStepExecution(dict):
         :param str time_started: The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param str type: The plan group type.
         """
+        DrPlanExecutionGroupExecutionStepExecution._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            execution_duration_in_sec=execution_duration_in_sec,
+            group_id=group_id,
+            log_locations=log_locations,
+            status=status,
+            status_details=status_details,
+            step_id=step_id,
+            time_ended=time_ended,
+            time_started=time_started,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             execution_duration_in_sec: Optional[int] = None,
+             group_id: Optional[str] = None,
+             log_locations: Optional[Sequence['outputs.DrPlanExecutionGroupExecutionStepExecutionLogLocation']] = None,
+             status: Optional[str] = None,
+             status_details: Optional[str] = None,
+             step_id: Optional[str] = None,
+             time_ended: Optional[str] = None,
+             time_started: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if execution_duration_in_sec is not None:
-            pulumi.set(__self__, "execution_duration_in_sec", execution_duration_in_sec)
+            _setter("execution_duration_in_sec", execution_duration_in_sec)
         if group_id is not None:
-            pulumi.set(__self__, "group_id", group_id)
+            _setter("group_id", group_id)
         if log_locations is not None:
-            pulumi.set(__self__, "log_locations", log_locations)
+            _setter("log_locations", log_locations)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if status_details is not None:
-            pulumi.set(__self__, "status_details", status_details)
+            _setter("status_details", status_details)
         if step_id is not None:
-            pulumi.set(__self__, "step_id", step_id)
+            _setter("step_id", step_id)
         if time_ended is not None:
-            pulumi.set(__self__, "time_ended", time_ended)
+            _setter("time_ended", time_ended)
         if time_started is not None:
-            pulumi.set(__self__, "time_started", time_started)
+            _setter("time_started", time_started)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="displayName")
@@ -437,12 +502,25 @@ class DrPlanExecutionGroupExecutionStepExecutionLogLocation(dict):
         :param str namespace: The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         :param str object: The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
         """
+        DrPlanExecutionGroupExecutionStepExecutionLogLocation._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter
@@ -480,12 +558,25 @@ class DrPlanExecutionLogLocation(dict):
         :param str namespace: The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         :param str object: The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
         """
+        DrPlanExecutionLogLocation._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter
@@ -546,14 +637,29 @@ class DrPlanPlanGroup(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        DrPlanPlanGroup._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+            steps=steps,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             steps: Optional[Sequence['outputs.DrPlanPlanGroupStep']] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if steps is not None:
-            pulumi.set(__self__, "steps", steps)
+            _setter("steps", steps)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="displayName")
@@ -646,24 +752,49 @@ class DrPlanPlanGroupStep(dict):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param Sequence['DrPlanPlanGroupStepUserDefinedStepArgs'] user_defined_steps: The details for a user-defined step in a DR Plan.
         """
+        DrPlanPlanGroupStep._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            error_mode=error_mode,
+            group_id=group_id,
+            id=id,
+            is_enabled=is_enabled,
+            member_id=member_id,
+            timeout=timeout,
+            type=type,
+            user_defined_steps=user_defined_steps,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             error_mode: Optional[str] = None,
+             group_id: Optional[str] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             member_id: Optional[str] = None,
+             timeout: Optional[int] = None,
+             type: Optional[str] = None,
+             user_defined_steps: Optional[Sequence['outputs.DrPlanPlanGroupStepUserDefinedStep']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if error_mode is not None:
-            pulumi.set(__self__, "error_mode", error_mode)
+            _setter("error_mode", error_mode)
         if group_id is not None:
-            pulumi.set(__self__, "group_id", group_id)
+            _setter("group_id", group_id)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if member_id is not None:
-            pulumi.set(__self__, "member_id", member_id)
+            _setter("member_id", member_id)
         if timeout is not None:
-            pulumi.set(__self__, "timeout", timeout)
+            _setter("timeout", timeout)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if user_defined_steps is not None:
-            pulumi.set(__self__, "user_defined_steps", user_defined_steps)
+            _setter("user_defined_steps", user_defined_steps)
 
     @property
     @pulumi.getter(name="displayName")
@@ -798,24 +929,49 @@ class DrPlanPlanGroupStepUserDefinedStep(dict):
         :param str script_command: The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
         :param str step_type: The type of the step.
         """
+        DrPlanPlanGroupStepUserDefinedStep._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            function_id=function_id,
+            function_region=function_region,
+            object_storage_script_locations=object_storage_script_locations,
+            request_body=request_body,
+            run_as_user=run_as_user,
+            run_on_instance_id=run_on_instance_id,
+            run_on_instance_region=run_on_instance_region,
+            script_command=script_command,
+            step_type=step_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             function_id: Optional[str] = None,
+             function_region: Optional[str] = None,
+             object_storage_script_locations: Optional[Sequence['outputs.DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation']] = None,
+             request_body: Optional[str] = None,
+             run_as_user: Optional[str] = None,
+             run_on_instance_id: Optional[str] = None,
+             run_on_instance_region: Optional[str] = None,
+             script_command: Optional[str] = None,
+             step_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if function_id is not None:
-            pulumi.set(__self__, "function_id", function_id)
+            _setter("function_id", function_id)
         if function_region is not None:
-            pulumi.set(__self__, "function_region", function_region)
+            _setter("function_region", function_region)
         if object_storage_script_locations is not None:
-            pulumi.set(__self__, "object_storage_script_locations", object_storage_script_locations)
+            _setter("object_storage_script_locations", object_storage_script_locations)
         if request_body is not None:
-            pulumi.set(__self__, "request_body", request_body)
+            _setter("request_body", request_body)
         if run_as_user is not None:
-            pulumi.set(__self__, "run_as_user", run_as_user)
+            _setter("run_as_user", run_as_user)
         if run_on_instance_id is not None:
-            pulumi.set(__self__, "run_on_instance_id", run_on_instance_id)
+            _setter("run_on_instance_id", run_on_instance_id)
         if run_on_instance_region is not None:
-            pulumi.set(__self__, "run_on_instance_region", run_on_instance_region)
+            _setter("run_on_instance_region", run_on_instance_region)
         if script_command is not None:
-            pulumi.set(__self__, "script_command", script_command)
+            _setter("script_command", script_command)
         if step_type is not None:
-            pulumi.set(__self__, "step_type", step_type)
+            _setter("step_type", step_type)
 
     @property
     @pulumi.getter(name="functionId")
@@ -901,12 +1057,25 @@ class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation(dict):
         :param str namespace: The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         :param str object: The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
         """
+        DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter
@@ -963,11 +1132,24 @@ class DrProtectionGroupAssociation(dict):
         :param str peer_id: The OCID of the peer (remote) DR Protection Group.  Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
         :param str peer_region: The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
         """
-        pulumi.set(__self__, "role", role)
+        DrProtectionGroupAssociation._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            role=role,
+            peer_id=peer_id,
+            peer_region=peer_region,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             role: str,
+             peer_id: Optional[str] = None,
+             peer_region: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("role", role)
         if peer_id is not None:
-            pulumi.set(__self__, "peer_id", peer_id)
+            _setter("peer_id", peer_id)
         if peer_region is not None:
-            pulumi.set(__self__, "peer_region", peer_region)
+            _setter("peer_region", peer_region)
 
     @property
     @pulumi.getter
@@ -1005,10 +1187,23 @@ class DrProtectionGroupLogLocation(dict):
         :param str namespace: (Updatable) The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         :param str object: The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
+        DrProtectionGroupLogLocation._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter
@@ -1095,24 +1290,51 @@ class DrProtectionGroupMember(dict):
         :param Sequence['DrProtectionGroupMemberVnicMappingArgs'] vnic_mapping: (Updatable) A list of Compute Instance VNIC mappings.
         :param Sequence['DrProtectionGroupMemberVnicMappingArgs'] vnic_mappings: (Updatable) A list of Compute Instance VNIC mappings.
         """
-        pulumi.set(__self__, "member_id", member_id)
-        pulumi.set(__self__, "member_type", member_type)
+        DrProtectionGroupMember._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            member_id=member_id,
+            member_type=member_type,
+            destination_capacity_reservation_id=destination_capacity_reservation_id,
+            destination_compartment_id=destination_compartment_id,
+            destination_dedicated_vm_host_id=destination_dedicated_vm_host_id,
+            is_movable=is_movable,
+            is_retain_fault_domain=is_retain_fault_domain,
+            password_vault_secret_id=password_vault_secret_id,
+            vnic_mapping=vnic_mapping,
+            vnic_mappings=vnic_mappings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             member_id: str,
+             member_type: str,
+             destination_capacity_reservation_id: Optional[str] = None,
+             destination_compartment_id: Optional[str] = None,
+             destination_dedicated_vm_host_id: Optional[str] = None,
+             is_movable: Optional[bool] = None,
+             is_retain_fault_domain: Optional[bool] = None,
+             password_vault_secret_id: Optional[str] = None,
+             vnic_mapping: Optional[Sequence['outputs.DrProtectionGroupMemberVnicMapping']] = None,
+             vnic_mappings: Optional[Sequence['outputs.DrProtectionGroupMemberVnicMapping']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("member_id", member_id)
+        _setter("member_type", member_type)
         if destination_capacity_reservation_id is not None:
-            pulumi.set(__self__, "destination_capacity_reservation_id", destination_capacity_reservation_id)
+            _setter("destination_capacity_reservation_id", destination_capacity_reservation_id)
         if destination_compartment_id is not None:
-            pulumi.set(__self__, "destination_compartment_id", destination_compartment_id)
+            _setter("destination_compartment_id", destination_compartment_id)
         if destination_dedicated_vm_host_id is not None:
-            pulumi.set(__self__, "destination_dedicated_vm_host_id", destination_dedicated_vm_host_id)
+            _setter("destination_dedicated_vm_host_id", destination_dedicated_vm_host_id)
         if is_movable is not None:
-            pulumi.set(__self__, "is_movable", is_movable)
+            _setter("is_movable", is_movable)
         if is_retain_fault_domain is not None:
-            pulumi.set(__self__, "is_retain_fault_domain", is_retain_fault_domain)
+            _setter("is_retain_fault_domain", is_retain_fault_domain)
         if password_vault_secret_id is not None:
-            pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
+            _setter("password_vault_secret_id", password_vault_secret_id)
         if vnic_mapping is not None:
-            pulumi.set(__self__, "vnic_mapping", vnic_mapping)
+            _setter("vnic_mapping", vnic_mapping)
         if vnic_mappings is not None:
-            pulumi.set(__self__, "vnic_mappings", vnic_mappings)
+            _setter("vnic_mappings", vnic_mappings)
 
     @property
     @pulumi.getter(name="memberId")
@@ -1235,16 +1457,33 @@ class DrProtectionGroupMemberVnicMapping(dict):
         :param str destination_subnet_id: (Updatable) The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
         :param str source_vnic_id: (Updatable) The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
         """
+        DrProtectionGroupMemberVnicMapping._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destination_nsg_id_lists=destination_nsg_id_lists,
+            destination_primary_private_ip_address=destination_primary_private_ip_address,
+            destination_primary_private_ip_hostname_label=destination_primary_private_ip_hostname_label,
+            destination_subnet_id=destination_subnet_id,
+            source_vnic_id=source_vnic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destination_nsg_id_lists: Optional[Sequence[str]] = None,
+             destination_primary_private_ip_address: Optional[str] = None,
+             destination_primary_private_ip_hostname_label: Optional[str] = None,
+             destination_subnet_id: Optional[str] = None,
+             source_vnic_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if destination_nsg_id_lists is not None:
-            pulumi.set(__self__, "destination_nsg_id_lists", destination_nsg_id_lists)
+            _setter("destination_nsg_id_lists", destination_nsg_id_lists)
         if destination_primary_private_ip_address is not None:
-            pulumi.set(__self__, "destination_primary_private_ip_address", destination_primary_private_ip_address)
+            _setter("destination_primary_private_ip_address", destination_primary_private_ip_address)
         if destination_primary_private_ip_hostname_label is not None:
-            pulumi.set(__self__, "destination_primary_private_ip_hostname_label", destination_primary_private_ip_hostname_label)
+            _setter("destination_primary_private_ip_hostname_label", destination_primary_private_ip_hostname_label)
         if destination_subnet_id is not None:
-            pulumi.set(__self__, "destination_subnet_id", destination_subnet_id)
+            _setter("destination_subnet_id", destination_subnet_id)
         if source_vnic_id is not None:
-            pulumi.set(__self__, "source_vnic_id", source_vnic_id)
+            _setter("source_vnic_id", source_vnic_id)
 
     @property
     @pulumi.getter(name="destinationNsgIdLists")
@@ -1298,9 +1537,22 @@ class GetDrPlanExecutionExecutionOptionResult(dict):
         :param bool are_warnings_ignored: A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
         :param str plan_execution_type: The type of the DR Plan executed.
         """
-        pulumi.set(__self__, "are_prechecks_enabled", are_prechecks_enabled)
-        pulumi.set(__self__, "are_warnings_ignored", are_warnings_ignored)
-        pulumi.set(__self__, "plan_execution_type", plan_execution_type)
+        GetDrPlanExecutionExecutionOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            are_prechecks_enabled=are_prechecks_enabled,
+            are_warnings_ignored=are_warnings_ignored,
+            plan_execution_type=plan_execution_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             are_prechecks_enabled: bool,
+             are_warnings_ignored: bool,
+             plan_execution_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("are_prechecks_enabled", are_prechecks_enabled)
+        _setter("are_warnings_ignored", are_warnings_ignored)
+        _setter("plan_execution_type", plan_execution_type)
 
     @property
     @pulumi.getter(name="arePrechecksEnabled")
@@ -1350,15 +1602,40 @@ class GetDrPlanExecutionGroupExecutionResult(dict):
         :param str time_started: The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param str type: The plan group type.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "execution_duration_in_sec", execution_duration_in_sec)
-        pulumi.set(__self__, "group_id", group_id)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_details", status_details)
-        pulumi.set(__self__, "step_executions", step_executions)
-        pulumi.set(__self__, "time_ended", time_ended)
-        pulumi.set(__self__, "time_started", time_started)
-        pulumi.set(__self__, "type", type)
+        GetDrPlanExecutionGroupExecutionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            execution_duration_in_sec=execution_duration_in_sec,
+            group_id=group_id,
+            status=status,
+            status_details=status_details,
+            step_executions=step_executions,
+            time_ended=time_ended,
+            time_started=time_started,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             execution_duration_in_sec: int,
+             group_id: str,
+             status: str,
+             status_details: str,
+             step_executions: Sequence['outputs.GetDrPlanExecutionGroupExecutionStepExecutionResult'],
+             time_ended: str,
+             time_started: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("execution_duration_in_sec", execution_duration_in_sec)
+        _setter("group_id", group_id)
+        _setter("status", status)
+        _setter("status_details", status_details)
+        _setter("step_executions", step_executions)
+        _setter("time_ended", time_ended)
+        _setter("time_started", time_started)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="displayName")
@@ -1458,16 +1735,43 @@ class GetDrPlanExecutionGroupExecutionStepExecutionResult(dict):
         :param str time_started: The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param str type: The plan group type.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "execution_duration_in_sec", execution_duration_in_sec)
-        pulumi.set(__self__, "group_id", group_id)
-        pulumi.set(__self__, "log_locations", log_locations)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_details", status_details)
-        pulumi.set(__self__, "step_id", step_id)
-        pulumi.set(__self__, "time_ended", time_ended)
-        pulumi.set(__self__, "time_started", time_started)
-        pulumi.set(__self__, "type", type)
+        GetDrPlanExecutionGroupExecutionStepExecutionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            execution_duration_in_sec=execution_duration_in_sec,
+            group_id=group_id,
+            log_locations=log_locations,
+            status=status,
+            status_details=status_details,
+            step_id=step_id,
+            time_ended=time_ended,
+            time_started=time_started,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             execution_duration_in_sec: int,
+             group_id: str,
+             log_locations: Sequence['outputs.GetDrPlanExecutionGroupExecutionStepExecutionLogLocationResult'],
+             status: str,
+             status_details: str,
+             step_id: str,
+             time_ended: str,
+             time_started: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("execution_duration_in_sec", execution_duration_in_sec)
+        _setter("group_id", group_id)
+        _setter("log_locations", log_locations)
+        _setter("status", status)
+        _setter("status_details", status_details)
+        _setter("step_id", step_id)
+        _setter("time_ended", time_ended)
+        _setter("time_started", time_started)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="displayName")
@@ -1561,9 +1865,22 @@ class GetDrPlanExecutionGroupExecutionStepExecutionLogLocationResult(dict):
         :param str namespace: The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         :param str object: The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+        GetDrPlanExecutionGroupExecutionStepExecutionLogLocationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             object: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -1601,9 +1918,22 @@ class GetDrPlanExecutionLogLocationResult(dict):
         :param str namespace: The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         :param str object: The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+        GetDrPlanExecutionLogLocationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             object: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -1634,7 +1964,16 @@ class GetDrPlanExecutionLogLocationResult(dict):
 class GetDrPlanExecutionsDrPlanExecutionCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetDrPlanExecutionsDrPlanExecutionCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1689,27 +2028,76 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
         :param str time_started: The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param str time_updated: The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "dr_protection_group_id", dr_protection_group_id)
-        pulumi.set(__self__, "execution_duration_in_sec", execution_duration_in_sec)
-        pulumi.set(__self__, "execution_options", execution_options)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "group_executions", group_executions)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "life_cycle_details", life_cycle_details)
-        pulumi.set(__self__, "log_locations", log_locations)
-        pulumi.set(__self__, "peer_dr_protection_group_id", peer_dr_protection_group_id)
-        pulumi.set(__self__, "peer_region", peer_region)
-        pulumi.set(__self__, "plan_execution_type", plan_execution_type)
-        pulumi.set(__self__, "plan_id", plan_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_ended", time_ended)
-        pulumi.set(__self__, "time_started", time_started)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetDrPlanExecutionsDrPlanExecutionCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            dr_protection_group_id=dr_protection_group_id,
+            execution_duration_in_sec=execution_duration_in_sec,
+            execution_options=execution_options,
+            freeform_tags=freeform_tags,
+            group_executions=group_executions,
+            id=id,
+            life_cycle_details=life_cycle_details,
+            log_locations=log_locations,
+            peer_dr_protection_group_id=peer_dr_protection_group_id,
+            peer_region=peer_region,
+            plan_execution_type=plan_execution_type,
+            plan_id=plan_id,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_ended=time_ended,
+            time_started=time_started,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             dr_protection_group_id: str,
+             execution_duration_in_sec: int,
+             execution_options: Sequence['outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionResult'],
+             freeform_tags: Mapping[str, Any],
+             group_executions: Sequence['outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionResult'],
+             id: str,
+             life_cycle_details: str,
+             log_locations: Sequence['outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationResult'],
+             peer_dr_protection_group_id: str,
+             peer_region: str,
+             plan_execution_type: str,
+             plan_id: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_ended: str,
+             time_started: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("dr_protection_group_id", dr_protection_group_id)
+        _setter("execution_duration_in_sec", execution_duration_in_sec)
+        _setter("execution_options", execution_options)
+        _setter("freeform_tags", freeform_tags)
+        _setter("group_executions", group_executions)
+        _setter("id", id)
+        _setter("life_cycle_details", life_cycle_details)
+        _setter("log_locations", log_locations)
+        _setter("peer_dr_protection_group_id", peer_dr_protection_group_id)
+        _setter("peer_region", peer_region)
+        _setter("plan_execution_type", plan_execution_type)
+        _setter("plan_id", plan_id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_ended", time_ended)
+        _setter("time_started", time_started)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1891,9 +2279,22 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionResult(dict
         :param bool are_warnings_ignored: A flag indicating whether warnings should be ignored during the plan execution.  Example: `false`
         :param str plan_execution_type: The type of the DR Plan executed.
         """
-        pulumi.set(__self__, "are_prechecks_enabled", are_prechecks_enabled)
-        pulumi.set(__self__, "are_warnings_ignored", are_warnings_ignored)
-        pulumi.set(__self__, "plan_execution_type", plan_execution_type)
+        GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            are_prechecks_enabled=are_prechecks_enabled,
+            are_warnings_ignored=are_warnings_ignored,
+            plan_execution_type=plan_execution_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             are_prechecks_enabled: bool,
+             are_warnings_ignored: bool,
+             plan_execution_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("are_prechecks_enabled", are_prechecks_enabled)
+        _setter("are_warnings_ignored", are_warnings_ignored)
+        _setter("plan_execution_type", plan_execution_type)
 
     @property
     @pulumi.getter(name="arePrechecksEnabled")
@@ -1943,15 +2344,40 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionResult(dict)
         :param str time_started: The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param str type: The plan group type.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "execution_duration_in_sec", execution_duration_in_sec)
-        pulumi.set(__self__, "group_id", group_id)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_details", status_details)
-        pulumi.set(__self__, "step_executions", step_executions)
-        pulumi.set(__self__, "time_ended", time_ended)
-        pulumi.set(__self__, "time_started", time_started)
-        pulumi.set(__self__, "type", type)
+        GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            execution_duration_in_sec=execution_duration_in_sec,
+            group_id=group_id,
+            status=status,
+            status_details=status_details,
+            step_executions=step_executions,
+            time_ended=time_ended,
+            time_started=time_started,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             execution_duration_in_sec: int,
+             group_id: str,
+             status: str,
+             status_details: str,
+             step_executions: Sequence['outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionResult'],
+             time_ended: str,
+             time_started: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("execution_duration_in_sec", execution_duration_in_sec)
+        _setter("group_id", group_id)
+        _setter("status", status)
+        _setter("status_details", status_details)
+        _setter("step_executions", step_executions)
+        _setter("time_ended", time_ended)
+        _setter("time_started", time_started)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="displayName")
@@ -2051,16 +2477,43 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutio
         :param str time_started: The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param str type: The plan group type.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "execution_duration_in_sec", execution_duration_in_sec)
-        pulumi.set(__self__, "group_id", group_id)
-        pulumi.set(__self__, "log_locations", log_locations)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_details", status_details)
-        pulumi.set(__self__, "step_id", step_id)
-        pulumi.set(__self__, "time_ended", time_ended)
-        pulumi.set(__self__, "time_started", time_started)
-        pulumi.set(__self__, "type", type)
+        GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            execution_duration_in_sec=execution_duration_in_sec,
+            group_id=group_id,
+            log_locations=log_locations,
+            status=status,
+            status_details=status_details,
+            step_id=step_id,
+            time_ended=time_ended,
+            time_started=time_started,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             execution_duration_in_sec: int,
+             group_id: str,
+             log_locations: Sequence['outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationResult'],
+             status: str,
+             status_details: str,
+             step_id: str,
+             time_ended: str,
+             time_started: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("execution_duration_in_sec", execution_duration_in_sec)
+        _setter("group_id", group_id)
+        _setter("log_locations", log_locations)
+        _setter("status", status)
+        _setter("status_details", status_details)
+        _setter("step_id", step_id)
+        _setter("time_ended", time_ended)
+        _setter("time_started", time_started)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="displayName")
@@ -2154,9 +2607,22 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutio
         :param str namespace: The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         :param str object: The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+        GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionStepExecutionLogLocationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             object: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -2194,9 +2660,22 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationResult(dict):
         :param str namespace: The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         :param str object: The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+        GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             object: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -2229,10 +2708,23 @@ class GetDrPlanExecutionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDrPlanExecutionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2263,10 +2755,25 @@ class GetDrPlanPlanGroupResult(dict):
         :param Sequence['GetDrPlanPlanGroupStepArgs'] steps: The list of steps in this plan group.
         :param str type: The type of this DR Plan.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "steps", steps)
-        pulumi.set(__self__, "type", type)
+        GetDrPlanPlanGroupResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+            steps=steps,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             id: str,
+             steps: Sequence['outputs.GetDrPlanPlanGroupStepResult'],
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("steps", steps)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="displayName")
@@ -2324,15 +2831,40 @@ class GetDrPlanPlanGroupStepResult(dict):
         :param str type: The type of this DR Plan.
         :param Sequence['GetDrPlanPlanGroupStepUserDefinedStepArgs'] user_defined_steps: The details for a user-defined step in a DR Plan.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "error_mode", error_mode)
-        pulumi.set(__self__, "group_id", group_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "member_id", member_id)
-        pulumi.set(__self__, "timeout", timeout)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "user_defined_steps", user_defined_steps)
+        GetDrPlanPlanGroupStepResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            error_mode=error_mode,
+            group_id=group_id,
+            id=id,
+            is_enabled=is_enabled,
+            member_id=member_id,
+            timeout=timeout,
+            type=type,
+            user_defined_steps=user_defined_steps,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             error_mode: str,
+             group_id: str,
+             id: str,
+             is_enabled: bool,
+             member_id: str,
+             timeout: int,
+             type: str,
+             user_defined_steps: Sequence['outputs.GetDrPlanPlanGroupStepUserDefinedStepResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("error_mode", error_mode)
+        _setter("group_id", group_id)
+        _setter("id", id)
+        _setter("is_enabled", is_enabled)
+        _setter("member_id", member_id)
+        _setter("timeout", timeout)
+        _setter("type", type)
+        _setter("user_defined_steps", user_defined_steps)
 
     @property
     @pulumi.getter(name="displayName")
@@ -2430,15 +2962,40 @@ class GetDrPlanPlanGroupStepUserDefinedStepResult(dict):
         :param str script_command: The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
         :param str step_type: The type of the step.
         """
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "function_region", function_region)
-        pulumi.set(__self__, "object_storage_script_locations", object_storage_script_locations)
-        pulumi.set(__self__, "request_body", request_body)
-        pulumi.set(__self__, "run_as_user", run_as_user)
-        pulumi.set(__self__, "run_on_instance_id", run_on_instance_id)
-        pulumi.set(__self__, "run_on_instance_region", run_on_instance_region)
-        pulumi.set(__self__, "script_command", script_command)
-        pulumi.set(__self__, "step_type", step_type)
+        GetDrPlanPlanGroupStepUserDefinedStepResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            function_id=function_id,
+            function_region=function_region,
+            object_storage_script_locations=object_storage_script_locations,
+            request_body=request_body,
+            run_as_user=run_as_user,
+            run_on_instance_id=run_on_instance_id,
+            run_on_instance_region=run_on_instance_region,
+            script_command=script_command,
+            step_type=step_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             function_id: str,
+             function_region: str,
+             object_storage_script_locations: Sequence['outputs.GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationResult'],
+             request_body: str,
+             run_as_user: str,
+             run_on_instance_id: str,
+             run_on_instance_region: str,
+             script_command: str,
+             step_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("function_id", function_id)
+        _setter("function_region", function_region)
+        _setter("object_storage_script_locations", object_storage_script_locations)
+        _setter("request_body", request_body)
+        _setter("run_as_user", run_as_user)
+        _setter("run_on_instance_id", run_on_instance_id)
+        _setter("run_on_instance_region", run_on_instance_region)
+        _setter("script_command", script_command)
+        _setter("step_type", step_type)
 
     @property
     @pulumi.getter(name="functionId")
@@ -2524,9 +3081,22 @@ class GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationResult(dic
         :param str namespace: The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         :param str object: The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+        GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             object: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -2557,7 +3127,16 @@ class GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationResult(dic
 class GetDrPlansDrPlanCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDrPlansDrPlanCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetDrPlansDrPlanCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDrPlansDrPlanCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2600,21 +3179,58 @@ class GetDrPlansDrPlanCollectionItemResult(dict):
         :param str time_updated: The date and time the DR Plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param str type: The type of this DR Plan.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "dr_protection_group_id", dr_protection_group_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "life_cycle_details", life_cycle_details)
-        pulumi.set(__self__, "peer_dr_protection_group_id", peer_dr_protection_group_id)
-        pulumi.set(__self__, "peer_region", peer_region)
-        pulumi.set(__self__, "plan_groups", plan_groups)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
+        GetDrPlansDrPlanCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            dr_protection_group_id=dr_protection_group_id,
+            freeform_tags=freeform_tags,
+            id=id,
+            life_cycle_details=life_cycle_details,
+            peer_dr_protection_group_id=peer_dr_protection_group_id,
+            peer_region=peer_region,
+            plan_groups=plan_groups,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             dr_protection_group_id: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             life_cycle_details: str,
+             peer_dr_protection_group_id: str,
+             peer_region: str,
+             plan_groups: Sequence['outputs.GetDrPlansDrPlanCollectionItemPlanGroupResult'],
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("dr_protection_group_id", dr_protection_group_id)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("life_cycle_details", life_cycle_details)
+        _setter("peer_dr_protection_group_id", peer_dr_protection_group_id)
+        _setter("peer_region", peer_region)
+        _setter("plan_groups", plan_groups)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2750,10 +3366,25 @@ class GetDrPlansDrPlanCollectionItemPlanGroupResult(dict):
         :param Sequence['GetDrPlansDrPlanCollectionItemPlanGroupStepArgs'] steps: The list of steps in this plan group.
         :param str type: The type of this DR Plan.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "steps", steps)
-        pulumi.set(__self__, "type", type)
+        GetDrPlansDrPlanCollectionItemPlanGroupResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+            steps=steps,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             id: str,
+             steps: Sequence['outputs.GetDrPlansDrPlanCollectionItemPlanGroupStepResult'],
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("steps", steps)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="displayName")
@@ -2811,15 +3442,40 @@ class GetDrPlansDrPlanCollectionItemPlanGroupStepResult(dict):
         :param str type: The type of this DR Plan.
         :param Sequence['GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArgs'] user_defined_steps: The details for a user-defined step in a DR Plan.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "error_mode", error_mode)
-        pulumi.set(__self__, "group_id", group_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "member_id", member_id)
-        pulumi.set(__self__, "timeout", timeout)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "user_defined_steps", user_defined_steps)
+        GetDrPlansDrPlanCollectionItemPlanGroupStepResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            error_mode=error_mode,
+            group_id=group_id,
+            id=id,
+            is_enabled=is_enabled,
+            member_id=member_id,
+            timeout=timeout,
+            type=type,
+            user_defined_steps=user_defined_steps,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             error_mode: str,
+             group_id: str,
+             id: str,
+             is_enabled: bool,
+             member_id: str,
+             timeout: int,
+             type: str,
+             user_defined_steps: Sequence['outputs.GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("error_mode", error_mode)
+        _setter("group_id", group_id)
+        _setter("id", id)
+        _setter("is_enabled", is_enabled)
+        _setter("member_id", member_id)
+        _setter("timeout", timeout)
+        _setter("type", type)
+        _setter("user_defined_steps", user_defined_steps)
 
     @property
     @pulumi.getter(name="displayName")
@@ -2917,15 +3573,40 @@ class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepResult(dict):
         :param str script_command: The script name and arguments.  Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`
         :param str step_type: The type of the step.
         """
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "function_region", function_region)
-        pulumi.set(__self__, "object_storage_script_locations", object_storage_script_locations)
-        pulumi.set(__self__, "request_body", request_body)
-        pulumi.set(__self__, "run_as_user", run_as_user)
-        pulumi.set(__self__, "run_on_instance_id", run_on_instance_id)
-        pulumi.set(__self__, "run_on_instance_region", run_on_instance_region)
-        pulumi.set(__self__, "script_command", script_command)
-        pulumi.set(__self__, "step_type", step_type)
+        GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            function_id=function_id,
+            function_region=function_region,
+            object_storage_script_locations=object_storage_script_locations,
+            request_body=request_body,
+            run_as_user=run_as_user,
+            run_on_instance_id=run_on_instance_id,
+            run_on_instance_region=run_on_instance_region,
+            script_command=script_command,
+            step_type=step_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             function_id: str,
+             function_region: str,
+             object_storage_script_locations: Sequence['outputs.GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationResult'],
+             request_body: str,
+             run_as_user: str,
+             run_on_instance_id: str,
+             run_on_instance_region: str,
+             script_command: str,
+             step_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("function_id", function_id)
+        _setter("function_region", function_region)
+        _setter("object_storage_script_locations", object_storage_script_locations)
+        _setter("request_body", request_body)
+        _setter("run_as_user", run_as_user)
+        _setter("run_on_instance_id", run_on_instance_id)
+        _setter("run_on_instance_region", run_on_instance_region)
+        _setter("script_command", script_command)
+        _setter("step_type", step_type)
 
     @property
     @pulumi.getter(name="functionId")
@@ -3011,9 +3692,22 @@ class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScr
         :param str namespace: The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         :param str object: The object name inside the Object Storage bucket.  Example: `validate_app_start.sh`
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+        GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             object: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -3046,10 +3740,23 @@ class GetDrPlansFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDrPlansFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3078,9 +3785,22 @@ class GetDrProtectionGroupAssociationResult(dict):
         :param str peer_region: The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
         :param str role: The role of the DR Protection Group.
         """
-        pulumi.set(__self__, "peer_id", peer_id)
-        pulumi.set(__self__, "peer_region", peer_region)
-        pulumi.set(__self__, "role", role)
+        GetDrProtectionGroupAssociationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            peer_id=peer_id,
+            peer_region=peer_region,
+            role=role,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             peer_id: str,
+             peer_region: str,
+             role: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("peer_id", peer_id)
+        _setter("peer_region", peer_region)
+        _setter("role", role)
 
     @property
     @pulumi.getter(name="peerId")
@@ -3118,9 +3838,22 @@ class GetDrProtectionGroupLogLocationResult(dict):
         :param str namespace: The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         :param str object: The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+        GetDrProtectionGroupLogLocationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             object: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -3172,16 +3905,43 @@ class GetDrProtectionGroupMemberResult(dict):
         :param Sequence['GetDrProtectionGroupMemberVnicMappingArgs'] vnic_mapping: A list of compute instance VNIC mappings.
         :param Sequence['GetDrProtectionGroupMemberVnicMappingArgs'] vnic_mappings: A list of compute instance VNIC mappings.
         """
-        pulumi.set(__self__, "destination_capacity_reservation_id", destination_capacity_reservation_id)
-        pulumi.set(__self__, "destination_compartment_id", destination_compartment_id)
-        pulumi.set(__self__, "destination_dedicated_vm_host_id", destination_dedicated_vm_host_id)
-        pulumi.set(__self__, "is_movable", is_movable)
-        pulumi.set(__self__, "is_retain_fault_domain", is_retain_fault_domain)
-        pulumi.set(__self__, "member_id", member_id)
-        pulumi.set(__self__, "member_type", member_type)
-        pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
-        pulumi.set(__self__, "vnic_mapping", vnic_mapping)
-        pulumi.set(__self__, "vnic_mappings", vnic_mappings)
+        GetDrProtectionGroupMemberResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destination_capacity_reservation_id=destination_capacity_reservation_id,
+            destination_compartment_id=destination_compartment_id,
+            destination_dedicated_vm_host_id=destination_dedicated_vm_host_id,
+            is_movable=is_movable,
+            is_retain_fault_domain=is_retain_fault_domain,
+            member_id=member_id,
+            member_type=member_type,
+            password_vault_secret_id=password_vault_secret_id,
+            vnic_mapping=vnic_mapping,
+            vnic_mappings=vnic_mappings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destination_capacity_reservation_id: str,
+             destination_compartment_id: str,
+             destination_dedicated_vm_host_id: str,
+             is_movable: bool,
+             is_retain_fault_domain: bool,
+             member_id: str,
+             member_type: str,
+             password_vault_secret_id: str,
+             vnic_mapping: Sequence['outputs.GetDrProtectionGroupMemberVnicMappingResult'],
+             vnic_mappings: Sequence['outputs.GetDrProtectionGroupMemberVnicMappingResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("destination_capacity_reservation_id", destination_capacity_reservation_id)
+        _setter("destination_compartment_id", destination_compartment_id)
+        _setter("destination_dedicated_vm_host_id", destination_dedicated_vm_host_id)
+        _setter("is_movable", is_movable)
+        _setter("is_retain_fault_domain", is_retain_fault_domain)
+        _setter("member_id", member_id)
+        _setter("member_type", member_type)
+        _setter("password_vault_secret_id", password_vault_secret_id)
+        _setter("vnic_mapping", vnic_mapping)
+        _setter("vnic_mappings", vnic_mappings)
 
     @property
     @pulumi.getter(name="destinationCapacityReservationId")
@@ -3279,11 +4039,28 @@ class GetDrProtectionGroupMemberVnicMappingResult(dict):
         :param str destination_subnet_id: The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
         :param str source_vnic_id: The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
         """
-        pulumi.set(__self__, "destination_nsg_id_lists", destination_nsg_id_lists)
-        pulumi.set(__self__, "destination_primary_private_ip_address", destination_primary_private_ip_address)
-        pulumi.set(__self__, "destination_primary_private_ip_hostname_label", destination_primary_private_ip_hostname_label)
-        pulumi.set(__self__, "destination_subnet_id", destination_subnet_id)
-        pulumi.set(__self__, "source_vnic_id", source_vnic_id)
+        GetDrProtectionGroupMemberVnicMappingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destination_nsg_id_lists=destination_nsg_id_lists,
+            destination_primary_private_ip_address=destination_primary_private_ip_address,
+            destination_primary_private_ip_hostname_label=destination_primary_private_ip_hostname_label,
+            destination_subnet_id=destination_subnet_id,
+            source_vnic_id=source_vnic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destination_nsg_id_lists: Sequence[str],
+             destination_primary_private_ip_address: str,
+             destination_primary_private_ip_hostname_label: str,
+             destination_subnet_id: str,
+             source_vnic_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("destination_nsg_id_lists", destination_nsg_id_lists)
+        _setter("destination_primary_private_ip_address", destination_primary_private_ip_address)
+        _setter("destination_primary_private_ip_hostname_label", destination_primary_private_ip_hostname_label)
+        _setter("destination_subnet_id", destination_subnet_id)
+        _setter("source_vnic_id", source_vnic_id)
 
     @property
     @pulumi.getter(name="destinationNsgIdLists")
@@ -3330,7 +4107,16 @@ class GetDrProtectionGroupMemberVnicMappingResult(dict):
 class GetDrProtectionGroupsDrProtectionGroupCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetDrProtectionGroupsDrProtectionGroupCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3375,23 +4161,64 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemResult(dict):
         :param str time_created: The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param str time_updated: The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
-        pulumi.set(__self__, "associations", associations)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "disassociate_trigger", disassociate_trigger)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "life_cycle_details", life_cycle_details)
-        pulumi.set(__self__, "log_locations", log_locations)
-        pulumi.set(__self__, "members", members)
-        pulumi.set(__self__, "peer_id", peer_id)
-        pulumi.set(__self__, "peer_region", peer_region)
-        pulumi.set(__self__, "role", role)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetDrProtectionGroupsDrProtectionGroupCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            associations=associations,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            disassociate_trigger=disassociate_trigger,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            life_cycle_details=life_cycle_details,
+            log_locations=log_locations,
+            members=members,
+            peer_id=peer_id,
+            peer_region=peer_region,
+            role=role,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             associations: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationResult'],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             disassociate_trigger: int,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             life_cycle_details: str,
+             log_locations: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationResult'],
+             members: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult'],
+             peer_id: str,
+             peer_region: str,
+             role: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("associations", associations)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("disassociate_trigger", disassociate_trigger)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("life_cycle_details", life_cycle_details)
+        _setter("log_locations", log_locations)
+        _setter("members", members)
+        _setter("peer_id", peer_id)
+        _setter("peer_region", peer_region)
+        _setter("role", role)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -3535,9 +4362,22 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationResult(dict
         :param str peer_region: The region of the peer (remote) DR Protection Group.  Example: `us-ashburn-1`
         :param str role: The DR Protection Group Role.
         """
-        pulumi.set(__self__, "peer_id", peer_id)
-        pulumi.set(__self__, "peer_region", peer_region)
-        pulumi.set(__self__, "role", role)
+        GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            peer_id=peer_id,
+            peer_region=peer_region,
+            role=role,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             peer_id: str,
+             peer_region: str,
+             role: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("peer_id", peer_id)
+        _setter("peer_region", peer_region)
+        _setter("role", role)
 
     @property
     @pulumi.getter(name="peerId")
@@ -3575,9 +4415,22 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationResult(dict
         :param str namespace: The namespace in Object Storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
         :param str object: The object name inside the Object Storage bucket.  Example: `switchover_plan_executions`
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+        GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             object: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -3629,16 +4482,43 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult(dict):
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArgs'] vnic_mapping: A list of compute instance VNIC mappings.
         :param Sequence['GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArgs'] vnic_mappings: A list of compute instance VNIC mappings.
         """
-        pulumi.set(__self__, "destination_capacity_reservation_id", destination_capacity_reservation_id)
-        pulumi.set(__self__, "destination_compartment_id", destination_compartment_id)
-        pulumi.set(__self__, "destination_dedicated_vm_host_id", destination_dedicated_vm_host_id)
-        pulumi.set(__self__, "is_movable", is_movable)
-        pulumi.set(__self__, "is_retain_fault_domain", is_retain_fault_domain)
-        pulumi.set(__self__, "member_id", member_id)
-        pulumi.set(__self__, "member_type", member_type)
-        pulumi.set(__self__, "password_vault_secret_id", password_vault_secret_id)
-        pulumi.set(__self__, "vnic_mapping", vnic_mapping)
-        pulumi.set(__self__, "vnic_mappings", vnic_mappings)
+        GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destination_capacity_reservation_id=destination_capacity_reservation_id,
+            destination_compartment_id=destination_compartment_id,
+            destination_dedicated_vm_host_id=destination_dedicated_vm_host_id,
+            is_movable=is_movable,
+            is_retain_fault_domain=is_retain_fault_domain,
+            member_id=member_id,
+            member_type=member_type,
+            password_vault_secret_id=password_vault_secret_id,
+            vnic_mapping=vnic_mapping,
+            vnic_mappings=vnic_mappings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destination_capacity_reservation_id: str,
+             destination_compartment_id: str,
+             destination_dedicated_vm_host_id: str,
+             is_movable: bool,
+             is_retain_fault_domain: bool,
+             member_id: str,
+             member_type: str,
+             password_vault_secret_id: str,
+             vnic_mapping: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingResult'],
+             vnic_mappings: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("destination_capacity_reservation_id", destination_capacity_reservation_id)
+        _setter("destination_compartment_id", destination_compartment_id)
+        _setter("destination_dedicated_vm_host_id", destination_dedicated_vm_host_id)
+        _setter("is_movable", is_movable)
+        _setter("is_retain_fault_domain", is_retain_fault_domain)
+        _setter("member_id", member_id)
+        _setter("member_type", member_type)
+        _setter("password_vault_secret_id", password_vault_secret_id)
+        _setter("vnic_mapping", vnic_mapping)
+        _setter("vnic_mappings", vnic_mappings)
 
     @property
     @pulumi.getter(name="destinationCapacityReservationId")
@@ -3736,11 +4616,28 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingResul
         :param str destination_subnet_id: The OCID of the destination (remote) subnet to which this VNIC should connect.  Example: `ocid1.subnet.oc1..&lt;unique_id&gt;`
         :param str source_vnic_id: The OCID of the VNIC.  Example: `ocid1.vnic.oc1..&lt;unique_id&gt;`
         """
-        pulumi.set(__self__, "destination_nsg_id_lists", destination_nsg_id_lists)
-        pulumi.set(__self__, "destination_primary_private_ip_address", destination_primary_private_ip_address)
-        pulumi.set(__self__, "destination_primary_private_ip_hostname_label", destination_primary_private_ip_hostname_label)
-        pulumi.set(__self__, "destination_subnet_id", destination_subnet_id)
-        pulumi.set(__self__, "source_vnic_id", source_vnic_id)
+        GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destination_nsg_id_lists=destination_nsg_id_lists,
+            destination_primary_private_ip_address=destination_primary_private_ip_address,
+            destination_primary_private_ip_hostname_label=destination_primary_private_ip_hostname_label,
+            destination_subnet_id=destination_subnet_id,
+            source_vnic_id=source_vnic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destination_nsg_id_lists: Sequence[str],
+             destination_primary_private_ip_address: str,
+             destination_primary_private_ip_hostname_label: str,
+             destination_subnet_id: str,
+             source_vnic_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("destination_nsg_id_lists", destination_nsg_id_lists)
+        _setter("destination_primary_private_ip_address", destination_primary_private_ip_address)
+        _setter("destination_primary_private_ip_hostname_label", destination_primary_private_ip_hostname_label)
+        _setter("destination_subnet_id", destination_subnet_id)
+        _setter("source_vnic_id", source_vnic_id)
 
     @property
     @pulumi.getter(name="destinationNsgIdLists")
@@ -3789,10 +4686,23 @@ class GetDrProtectionGroupsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDrProtectionGroupsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

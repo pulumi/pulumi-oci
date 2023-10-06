@@ -72,11 +72,14 @@ type LookupVaultResult struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
+	// Summary about metadata of external key manager to be returned to the customer as a response.
+	ExternalKeyManagerMetadataSummaries []GetVaultExternalKeyManagerMetadataSummary `pulumi:"externalKeyManagerMetadataSummaries"`
+	ExternalKeyManagerMetadatas         []GetVaultExternalKeyManagerMetadata        `pulumi:"externalKeyManagerMetadatas"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the vault.
 	Id string `pulumi:"id"`
-	// A boolean that will be true when vault is primary, and will be false when vault is a replica from a primary vault.
+	// A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
 	IsPrimary bool `pulumi:"isPrimary"`
 	// The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
 	ManagementEndpoint string `pulumi:"managementEndpoint"`
@@ -88,7 +91,7 @@ type LookupVaultResult struct {
 	RestoreFromObjectStores []GetVaultRestoreFromObjectStore `pulumi:"restoreFromObjectStores"`
 	// When flipped, triggers restore if restore options are provided. Values of 0 or 1 are supported
 	RestoreTrigger bool `pulumi:"restoreTrigger"`
-	// The OCID of the vault from which this vault was restored, if it was restored from a backup file.  If you restore a vault to the same region, the vault retains the same OCID that it had when you  backed up the vault.
+	// The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
 	RestoredFromVaultId string `pulumi:"restoredFromVaultId"`
 	// The vault's current lifecycle state.  Example: `DELETED`
 	State string `pulumi:"state"`
@@ -165,6 +168,17 @@ func (o LookupVaultResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVaultResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// Summary about metadata of external key manager to be returned to the customer as a response.
+func (o LookupVaultResultOutput) ExternalKeyManagerMetadataSummaries() GetVaultExternalKeyManagerMetadataSummaryArrayOutput {
+	return o.ApplyT(func(v LookupVaultResult) []GetVaultExternalKeyManagerMetadataSummary {
+		return v.ExternalKeyManagerMetadataSummaries
+	}).(GetVaultExternalKeyManagerMetadataSummaryArrayOutput)
+}
+
+func (o LookupVaultResultOutput) ExternalKeyManagerMetadatas() GetVaultExternalKeyManagerMetadataArrayOutput {
+	return o.ApplyT(func(v LookupVaultResult) []GetVaultExternalKeyManagerMetadata { return v.ExternalKeyManagerMetadatas }).(GetVaultExternalKeyManagerMetadataArrayOutput)
+}
+
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o LookupVaultResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupVaultResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
@@ -175,7 +189,7 @@ func (o LookupVaultResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVaultResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A boolean that will be true when vault is primary, and will be false when vault is a replica from a primary vault.
+// A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
 func (o LookupVaultResultOutput) IsPrimary() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupVaultResult) bool { return v.IsPrimary }).(pulumi.BoolOutput)
 }
@@ -205,7 +219,7 @@ func (o LookupVaultResultOutput) RestoreTrigger() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupVaultResult) bool { return v.RestoreTrigger }).(pulumi.BoolOutput)
 }
 
-// The OCID of the vault from which this vault was restored, if it was restored from a backup file.  If you restore a vault to the same region, the vault retains the same OCID that it had when you  backed up the vault.
+// The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
 func (o LookupVaultResultOutput) RestoredFromVaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVaultResult) string { return v.RestoredFromVaultId }).(pulumi.StringOutput)
 }

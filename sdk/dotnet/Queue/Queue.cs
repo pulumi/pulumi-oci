@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Queue
     /// <summary>
     /// This resource provides the Queue resource in Oracle Cloud Infrastructure Queue service.
     /// 
-    /// Creates a new Queue.
+    /// Creates a new queue.
     /// 
     /// ## Example Usage
     /// 
@@ -28,6 +28,7 @@ namespace Pulumi.Oci.Queue
     ///     {
     ///         CompartmentId = @var.Compartment_id,
     ///         DisplayName = @var.Queue_display_name,
+    ///         ChannelConsumptionLimit = @var.Queue_channel_consumption_limit,
     ///         CustomEncryptionKeyId = oci_kms_key.Test_key.Id,
     ///         DeadLetterQueueDeliveryCount = @var.Queue_dead_letter_queue_delivery_count,
     ///         DefinedTags = 
@@ -58,13 +59,19 @@ namespace Pulumi.Oci.Queue
     public partial class Queue : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+        /// </summary>
+        [Output("channelConsumptionLimit")]
+        public Output<int> ChannelConsumptionLimit { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         /// </summary>
         [Output("customEncryptionKeyId")]
         public Output<string> CustomEncryptionKeyId { get; private set; } = null!;
@@ -82,7 +89,7 @@ namespace Pulumi.Oci.Queue
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Queue Identifier
+        /// (Updatable) The user-friendly name of the queue.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -94,7 +101,7 @@ namespace Pulumi.Oci.Queue
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// Any additional details about the current state of the queue.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
@@ -112,13 +119,13 @@ namespace Pulumi.Oci.Queue
         public Output<string?> PurgeType { get; private set; } = null!;
 
         /// <summary>
-        /// The retention period of the messages in the queue, in seconds.
+        /// The retention period of messages in the queue, in seconds.
         /// </summary>
         [Output("retentionInSeconds")]
         public Output<int> RetentionInSeconds { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the Queue.
+        /// The current state of the queue.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -130,13 +137,13 @@ namespace Pulumi.Oci.Queue
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The time the the Queue was created. An RFC3339 formatted datetime string
+        /// The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The time the Queue was updated. An RFC3339 formatted datetime string
+        /// The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
@@ -148,7 +155,7 @@ namespace Pulumi.Oci.Queue
         public Output<int> TimeoutInSeconds { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The default visibility of the messages consumed from the queue.
+        /// (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
         /// </summary>
         [Output("visibilityInSeconds")]
         public Output<int> VisibilityInSeconds { get; private set; } = null!;
@@ -200,13 +207,19 @@ namespace Pulumi.Oci.Queue
     public sealed class QueueArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+        /// </summary>
+        [Input("channelConsumptionLimit")]
+        public Input<int>? ChannelConsumptionLimit { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         /// </summary>
         [Input("customEncryptionKeyId")]
         public Input<string>? CustomEncryptionKeyId { get; set; }
@@ -230,7 +243,7 @@ namespace Pulumi.Oci.Queue
         }
 
         /// <summary>
-        /// (Updatable) Queue Identifier
+        /// (Updatable) The user-friendly name of the queue.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -254,7 +267,7 @@ namespace Pulumi.Oci.Queue
         public Input<string>? PurgeType { get; set; }
 
         /// <summary>
-        /// The retention period of the messages in the queue, in seconds.
+        /// The retention period of messages in the queue, in seconds.
         /// </summary>
         [Input("retentionInSeconds")]
         public Input<int>? RetentionInSeconds { get; set; }
@@ -266,7 +279,7 @@ namespace Pulumi.Oci.Queue
         public Input<int>? TimeoutInSeconds { get; set; }
 
         /// <summary>
-        /// (Updatable) The default visibility of the messages consumed from the queue.
+        /// (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
         /// </summary>
         [Input("visibilityInSeconds")]
         public Input<int>? VisibilityInSeconds { get; set; }
@@ -280,13 +293,19 @@ namespace Pulumi.Oci.Queue
     public sealed class QueueState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+        /// </summary>
+        [Input("channelConsumptionLimit")]
+        public Input<int>? ChannelConsumptionLimit { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
         /// </summary>
         [Input("customEncryptionKeyId")]
         public Input<string>? CustomEncryptionKeyId { get; set; }
@@ -310,7 +329,7 @@ namespace Pulumi.Oci.Queue
         }
 
         /// <summary>
-        /// (Updatable) Queue Identifier
+        /// (Updatable) The user-friendly name of the queue.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -328,7 +347,7 @@ namespace Pulumi.Oci.Queue
         }
 
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// Any additional details about the current state of the queue.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
@@ -346,13 +365,13 @@ namespace Pulumi.Oci.Queue
         public Input<string>? PurgeType { get; set; }
 
         /// <summary>
-        /// The retention period of the messages in the queue, in seconds.
+        /// The retention period of messages in the queue, in seconds.
         /// </summary>
         [Input("retentionInSeconds")]
         public Input<int>? RetentionInSeconds { get; set; }
 
         /// <summary>
-        /// The current state of the Queue.
+        /// The current state of the queue.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -370,13 +389,13 @@ namespace Pulumi.Oci.Queue
         }
 
         /// <summary>
-        /// The time the the Queue was created. An RFC3339 formatted datetime string
+        /// The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The time the Queue was updated. An RFC3339 formatted datetime string
+        /// The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
@@ -388,7 +407,7 @@ namespace Pulumi.Oci.Queue
         public Input<int>? TimeoutInSeconds { get; set; }
 
         /// <summary>
-        /// (Updatable) The default visibility of the messages consumed from the queue.
+        /// (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
         /// </summary>
         [Input("visibilityInSeconds")]
         public Input<int>? VisibilityInSeconds { get; set; }

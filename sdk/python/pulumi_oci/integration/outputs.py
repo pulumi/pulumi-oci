@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -65,13 +65,28 @@ class IntegrationInstanceAlternateCustomEndpoint(dict):
         :param str certificate_secret_id: (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
         :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         """
-        pulumi.set(__self__, "hostname", hostname)
+        IntegrationInstanceAlternateCustomEndpoint._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            alias=alias,
+            certificate_secret_id=certificate_secret_id,
+            certificate_secret_version=certificate_secret_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: str,
+             alias: Optional[str] = None,
+             certificate_secret_id: Optional[str] = None,
+             certificate_secret_version: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hostname", hostname)
         if alias is not None:
-            pulumi.set(__self__, "alias", alias)
+            _setter("alias", alias)
         if certificate_secret_id is not None:
-            pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
+            _setter("certificate_secret_id", certificate_secret_id)
         if certificate_secret_version is not None:
-            pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
+            _setter("certificate_secret_version", certificate_secret_version)
 
     @property
     @pulumi.getter
@@ -147,16 +162,33 @@ class IntegrationInstanceAttachment(dict):
         :param str target_role: The role of the target attachment.
         :param str target_service_type: The type of the target instance, such as "FUSION".
         """
+        IntegrationInstanceAttachment._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_implicit=is_implicit,
+            target_id=target_id,
+            target_instance_url=target_instance_url,
+            target_role=target_role,
+            target_service_type=target_service_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_implicit: Optional[bool] = None,
+             target_id: Optional[str] = None,
+             target_instance_url: Optional[str] = None,
+             target_role: Optional[str] = None,
+             target_service_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if is_implicit is not None:
-            pulumi.set(__self__, "is_implicit", is_implicit)
+            _setter("is_implicit", is_implicit)
         if target_id is not None:
-            pulumi.set(__self__, "target_id", target_id)
+            _setter("target_id", target_id)
         if target_instance_url is not None:
-            pulumi.set(__self__, "target_instance_url", target_instance_url)
+            _setter("target_instance_url", target_instance_url)
         if target_role is not None:
-            pulumi.set(__self__, "target_role", target_role)
+            _setter("target_role", target_role)
         if target_service_type is not None:
-            pulumi.set(__self__, "target_service_type", target_service_type)
+            _setter("target_service_type", target_service_type)
 
     @property
     @pulumi.getter(name="isImplicit")
@@ -232,13 +264,28 @@ class IntegrationInstanceCustomEndpoint(dict):
         :param str certificate_secret_id: (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
         :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         """
-        pulumi.set(__self__, "hostname", hostname)
+        IntegrationInstanceCustomEndpoint._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            alias=alias,
+            certificate_secret_id=certificate_secret_id,
+            certificate_secret_version=certificate_secret_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: str,
+             alias: Optional[str] = None,
+             certificate_secret_id: Optional[str] = None,
+             certificate_secret_version: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hostname", hostname)
         if alias is not None:
-            pulumi.set(__self__, "alias", alias)
+            _setter("alias", alias)
         if certificate_secret_id is not None:
-            pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
+            _setter("certificate_secret_id", certificate_secret_id)
         if certificate_secret_version is not None:
-            pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
+            _setter("certificate_secret_version", certificate_secret_version)
 
     @property
     @pulumi.getter
@@ -313,16 +360,33 @@ class IntegrationInstanceIdcsInfo(dict):
         :param str idcs_app_name: The IDCS application name associated with the instance
         :param str instance_primary_audience_url: The URL used as the primary audience for integration flows in this instance type: string
         """
+        IntegrationInstanceIdcsInfo._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            idcs_app_display_name=idcs_app_display_name,
+            idcs_app_id=idcs_app_id,
+            idcs_app_location_url=idcs_app_location_url,
+            idcs_app_name=idcs_app_name,
+            instance_primary_audience_url=instance_primary_audience_url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             idcs_app_display_name: Optional[str] = None,
+             idcs_app_id: Optional[str] = None,
+             idcs_app_location_url: Optional[str] = None,
+             idcs_app_name: Optional[str] = None,
+             instance_primary_audience_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if idcs_app_display_name is not None:
-            pulumi.set(__self__, "idcs_app_display_name", idcs_app_display_name)
+            _setter("idcs_app_display_name", idcs_app_display_name)
         if idcs_app_id is not None:
-            pulumi.set(__self__, "idcs_app_id", idcs_app_id)
+            _setter("idcs_app_id", idcs_app_id)
         if idcs_app_location_url is not None:
-            pulumi.set(__self__, "idcs_app_location_url", idcs_app_location_url)
+            _setter("idcs_app_location_url", idcs_app_location_url)
         if idcs_app_name is not None:
-            pulumi.set(__self__, "idcs_app_name", idcs_app_name)
+            _setter("idcs_app_name", idcs_app_name)
         if instance_primary_audience_url is not None:
-            pulumi.set(__self__, "instance_primary_audience_url", instance_primary_audience_url)
+            _setter("instance_primary_audience_url", instance_primary_audience_url)
 
     @property
     @pulumi.getter(name="idcsAppDisplayName")
@@ -401,13 +465,28 @@ class IntegrationInstanceNetworkEndpointDetails(dict):
         :param Sequence['IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs'] allowlisted_http_vcns: Virtual Cloud Networks allowed to access this network endpoint.
         :param bool is_integration_vcn_allowlisted: The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
         """
-        pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
+        IntegrationInstanceNetworkEndpointDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            network_endpoint_type=network_endpoint_type,
+            allowlisted_http_ips=allowlisted_http_ips,
+            allowlisted_http_vcns=allowlisted_http_vcns,
+            is_integration_vcn_allowlisted=is_integration_vcn_allowlisted,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             network_endpoint_type: str,
+             allowlisted_http_ips: Optional[Sequence[str]] = None,
+             allowlisted_http_vcns: Optional[Sequence['outputs.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn']] = None,
+             is_integration_vcn_allowlisted: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("network_endpoint_type", network_endpoint_type)
         if allowlisted_http_ips is not None:
-            pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
+            _setter("allowlisted_http_ips", allowlisted_http_ips)
         if allowlisted_http_vcns is not None:
-            pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
+            _setter("allowlisted_http_vcns", allowlisted_http_vcns)
         if is_integration_vcn_allowlisted is not None:
-            pulumi.set(__self__, "is_integration_vcn_allowlisted", is_integration_vcn_allowlisted)
+            _setter("is_integration_vcn_allowlisted", is_integration_vcn_allowlisted)
 
     @property
     @pulumi.getter(name="networkEndpointType")
@@ -468,9 +547,20 @@ class IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn(dict):
         :param str id: The Virtual Cloud Network OCID.
         :param Sequence[str] allowlisted_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
         """
-        pulumi.set(__self__, "id", id)
+        IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            allowlisted_ips=allowlisted_ips,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             allowlisted_ips: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
         if allowlisted_ips is not None:
-            pulumi.set(__self__, "allowlisted_ips", allowlisted_ips)
+            _setter("allowlisted_ips", allowlisted_ips)
 
     @property
     @pulumi.getter
@@ -502,10 +592,25 @@ class GetIntegrationInstanceAlternateCustomEndpointResult(dict):
         :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         :param str hostname: A custom hostname to be used for the integration instance URL, in FQDN format.
         """
-        pulumi.set(__self__, "alias", alias)
-        pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
-        pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
-        pulumi.set(__self__, "hostname", hostname)
+        GetIntegrationInstanceAlternateCustomEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alias=alias,
+            certificate_secret_id=certificate_secret_id,
+            certificate_secret_version=certificate_secret_version,
+            hostname=hostname,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alias: str,
+             certificate_secret_id: str,
+             certificate_secret_version: int,
+             hostname: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("alias", alias)
+        _setter("certificate_secret_id", certificate_secret_id)
+        _setter("certificate_secret_version", certificate_secret_version)
+        _setter("hostname", hostname)
 
     @property
     @pulumi.getter
@@ -556,11 +661,28 @@ class GetIntegrationInstanceAttachmentResult(dict):
         :param str target_role: The role of the target attachment.
         :param str target_service_type: The type of the target instance, such as "FUSION".
         """
-        pulumi.set(__self__, "is_implicit", is_implicit)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "target_instance_url", target_instance_url)
-        pulumi.set(__self__, "target_role", target_role)
-        pulumi.set(__self__, "target_service_type", target_service_type)
+        GetIntegrationInstanceAttachmentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_implicit=is_implicit,
+            target_id=target_id,
+            target_instance_url=target_instance_url,
+            target_role=target_role,
+            target_service_type=target_service_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_implicit: bool,
+             target_id: str,
+             target_instance_url: str,
+             target_role: str,
+             target_service_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_implicit", is_implicit)
+        _setter("target_id", target_id)
+        _setter("target_instance_url", target_instance_url)
+        _setter("target_role", target_role)
+        _setter("target_service_type", target_service_type)
 
     @property
     @pulumi.getter(name="isImplicit")
@@ -617,10 +739,25 @@ class GetIntegrationInstanceCustomEndpointResult(dict):
         :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         :param str hostname: A custom hostname to be used for the integration instance URL, in FQDN format.
         """
-        pulumi.set(__self__, "alias", alias)
-        pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
-        pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
-        pulumi.set(__self__, "hostname", hostname)
+        GetIntegrationInstanceCustomEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alias=alias,
+            certificate_secret_id=certificate_secret_id,
+            certificate_secret_version=certificate_secret_version,
+            hostname=hostname,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alias: str,
+             certificate_secret_id: str,
+             certificate_secret_version: int,
+             hostname: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("alias", alias)
+        _setter("certificate_secret_id", certificate_secret_id)
+        _setter("certificate_secret_version", certificate_secret_version)
+        _setter("hostname", hostname)
 
     @property
     @pulumi.getter
@@ -670,11 +807,28 @@ class GetIntegrationInstanceIdcsInfoResult(dict):
         :param str idcs_app_name: The IDCS application name associated with the instance
         :param str instance_primary_audience_url: The URL used as the primary audience for integration flows in this instance type: string
         """
-        pulumi.set(__self__, "idcs_app_display_name", idcs_app_display_name)
-        pulumi.set(__self__, "idcs_app_id", idcs_app_id)
-        pulumi.set(__self__, "idcs_app_location_url", idcs_app_location_url)
-        pulumi.set(__self__, "idcs_app_name", idcs_app_name)
-        pulumi.set(__self__, "instance_primary_audience_url", instance_primary_audience_url)
+        GetIntegrationInstanceIdcsInfoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            idcs_app_display_name=idcs_app_display_name,
+            idcs_app_id=idcs_app_id,
+            idcs_app_location_url=idcs_app_location_url,
+            idcs_app_name=idcs_app_name,
+            instance_primary_audience_url=instance_primary_audience_url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             idcs_app_display_name: str,
+             idcs_app_id: str,
+             idcs_app_location_url: str,
+             idcs_app_name: str,
+             instance_primary_audience_url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("idcs_app_display_name", idcs_app_display_name)
+        _setter("idcs_app_id", idcs_app_id)
+        _setter("idcs_app_location_url", idcs_app_location_url)
+        _setter("idcs_app_name", idcs_app_name)
+        _setter("instance_primary_audience_url", instance_primary_audience_url)
 
     @property
     @pulumi.getter(name="idcsAppDisplayName")
@@ -730,10 +884,25 @@ class GetIntegrationInstanceNetworkEndpointDetailResult(dict):
         :param bool is_integration_vcn_allowlisted: The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
         :param str network_endpoint_type: The type of network endpoint.
         """
-        pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
-        pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
-        pulumi.set(__self__, "is_integration_vcn_allowlisted", is_integration_vcn_allowlisted)
-        pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
+        GetIntegrationInstanceNetworkEndpointDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowlisted_http_ips=allowlisted_http_ips,
+            allowlisted_http_vcns=allowlisted_http_vcns,
+            is_integration_vcn_allowlisted=is_integration_vcn_allowlisted,
+            network_endpoint_type=network_endpoint_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowlisted_http_ips: Sequence[str],
+             allowlisted_http_vcns: Sequence['outputs.GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult'],
+             is_integration_vcn_allowlisted: bool,
+             network_endpoint_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("allowlisted_http_ips", allowlisted_http_ips)
+        _setter("allowlisted_http_vcns", allowlisted_http_vcns)
+        _setter("is_integration_vcn_allowlisted", is_integration_vcn_allowlisted)
+        _setter("network_endpoint_type", network_endpoint_type)
 
     @property
     @pulumi.getter(name="allowlistedHttpIps")
@@ -777,8 +946,19 @@ class GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult(dict):
         :param Sequence[str] allowlisted_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
         :param str id: The Virtual Cloud Network OCID.
         """
-        pulumi.set(__self__, "allowlisted_ips", allowlisted_ips)
-        pulumi.set(__self__, "id", id)
+        GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowlisted_ips=allowlisted_ips,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowlisted_ips: Sequence[str],
+             id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("allowlisted_ips", allowlisted_ips)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="allowlistedIps")
@@ -803,10 +983,23 @@ class GetIntegrationInstancesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetIntegrationInstancesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -876,31 +1069,88 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         :param str time_created: The time the the Integration Instance was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
-        pulumi.set(__self__, "attachments", attachments)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "consumption_model", consumption_model)
-        pulumi.set(__self__, "custom_endpoints", custom_endpoints)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "domain_id", domain_id)
-        pulumi.set(__self__, "enable_process_automation_trigger", enable_process_automation_trigger)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "idcs_at", idcs_at)
-        pulumi.set(__self__, "idcs_infos", idcs_infos)
-        pulumi.set(__self__, "instance_url", instance_url)
-        pulumi.set(__self__, "integration_instance_type", integration_instance_type)
-        pulumi.set(__self__, "is_byol", is_byol)
-        pulumi.set(__self__, "is_file_server_enabled", is_file_server_enabled)
-        pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
-        pulumi.set(__self__, "message_packs", message_packs)
-        pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "state_message", state_message)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetIntegrationInstancesIntegrationInstanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alternate_custom_endpoints=alternate_custom_endpoints,
+            attachments=attachments,
+            compartment_id=compartment_id,
+            consumption_model=consumption_model,
+            custom_endpoints=custom_endpoints,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            domain_id=domain_id,
+            enable_process_automation_trigger=enable_process_automation_trigger,
+            freeform_tags=freeform_tags,
+            id=id,
+            idcs_at=idcs_at,
+            idcs_infos=idcs_infos,
+            instance_url=instance_url,
+            integration_instance_type=integration_instance_type,
+            is_byol=is_byol,
+            is_file_server_enabled=is_file_server_enabled,
+            is_visual_builder_enabled=is_visual_builder_enabled,
+            message_packs=message_packs,
+            network_endpoint_details=network_endpoint_details,
+            shape=shape,
+            state=state,
+            state_message=state_message,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alternate_custom_endpoints: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointResult'],
+             attachments: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceAttachmentResult'],
+             compartment_id: str,
+             consumption_model: str,
+             custom_endpoints: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceCustomEndpointResult'],
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             domain_id: str,
+             enable_process_automation_trigger: int,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             idcs_at: str,
+             idcs_infos: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceIdcsInfoResult'],
+             instance_url: str,
+             integration_instance_type: str,
+             is_byol: bool,
+             is_file_server_enabled: bool,
+             is_visual_builder_enabled: bool,
+             message_packs: int,
+             network_endpoint_details: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult'],
+             shape: str,
+             state: str,
+             state_message: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("alternate_custom_endpoints", alternate_custom_endpoints)
+        _setter("attachments", attachments)
+        _setter("compartment_id", compartment_id)
+        _setter("consumption_model", consumption_model)
+        _setter("custom_endpoints", custom_endpoints)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("domain_id", domain_id)
+        _setter("enable_process_automation_trigger", enable_process_automation_trigger)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("idcs_at", idcs_at)
+        _setter("idcs_infos", idcs_infos)
+        _setter("instance_url", instance_url)
+        _setter("integration_instance_type", integration_instance_type)
+        _setter("is_byol", is_byol)
+        _setter("is_file_server_enabled", is_file_server_enabled)
+        _setter("is_visual_builder_enabled", is_visual_builder_enabled)
+        _setter("message_packs", message_packs)
+        _setter("network_endpoint_details", network_endpoint_details)
+        _setter("shape", shape)
+        _setter("state", state)
+        _setter("state_message", state_message)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="alternateCustomEndpoints")
@@ -1107,10 +1357,25 @@ class GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointResult(di
         :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         :param str hostname: A custom hostname to be used for the integration instance URL, in FQDN format.
         """
-        pulumi.set(__self__, "alias", alias)
-        pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
-        pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
-        pulumi.set(__self__, "hostname", hostname)
+        GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alias=alias,
+            certificate_secret_id=certificate_secret_id,
+            certificate_secret_version=certificate_secret_version,
+            hostname=hostname,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alias: str,
+             certificate_secret_id: str,
+             certificate_secret_version: int,
+             hostname: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("alias", alias)
+        _setter("certificate_secret_id", certificate_secret_id)
+        _setter("certificate_secret_version", certificate_secret_version)
+        _setter("hostname", hostname)
 
     @property
     @pulumi.getter
@@ -1161,11 +1426,28 @@ class GetIntegrationInstancesIntegrationInstanceAttachmentResult(dict):
         :param str target_role: The role of the target attachment.
         :param str target_service_type: The type of the target instance, such as "FUSION".
         """
-        pulumi.set(__self__, "is_implicit", is_implicit)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "target_instance_url", target_instance_url)
-        pulumi.set(__self__, "target_role", target_role)
-        pulumi.set(__self__, "target_service_type", target_service_type)
+        GetIntegrationInstancesIntegrationInstanceAttachmentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_implicit=is_implicit,
+            target_id=target_id,
+            target_instance_url=target_instance_url,
+            target_role=target_role,
+            target_service_type=target_service_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_implicit: bool,
+             target_id: str,
+             target_instance_url: str,
+             target_role: str,
+             target_service_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_implicit", is_implicit)
+        _setter("target_id", target_id)
+        _setter("target_instance_url", target_instance_url)
+        _setter("target_role", target_role)
+        _setter("target_service_type", target_service_type)
 
     @property
     @pulumi.getter(name="isImplicit")
@@ -1222,10 +1504,25 @@ class GetIntegrationInstancesIntegrationInstanceCustomEndpointResult(dict):
         :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         :param str hostname: A custom hostname to be used for the integration instance URL, in FQDN format.
         """
-        pulumi.set(__self__, "alias", alias)
-        pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
-        pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
-        pulumi.set(__self__, "hostname", hostname)
+        GetIntegrationInstancesIntegrationInstanceCustomEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alias=alias,
+            certificate_secret_id=certificate_secret_id,
+            certificate_secret_version=certificate_secret_version,
+            hostname=hostname,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alias: str,
+             certificate_secret_id: str,
+             certificate_secret_version: int,
+             hostname: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("alias", alias)
+        _setter("certificate_secret_id", certificate_secret_id)
+        _setter("certificate_secret_version", certificate_secret_version)
+        _setter("hostname", hostname)
 
     @property
     @pulumi.getter
@@ -1275,11 +1572,28 @@ class GetIntegrationInstancesIntegrationInstanceIdcsInfoResult(dict):
         :param str idcs_app_name: The IDCS application name associated with the instance
         :param str instance_primary_audience_url: The URL used as the primary audience for integration flows in this instance type: string
         """
-        pulumi.set(__self__, "idcs_app_display_name", idcs_app_display_name)
-        pulumi.set(__self__, "idcs_app_id", idcs_app_id)
-        pulumi.set(__self__, "idcs_app_location_url", idcs_app_location_url)
-        pulumi.set(__self__, "idcs_app_name", idcs_app_name)
-        pulumi.set(__self__, "instance_primary_audience_url", instance_primary_audience_url)
+        GetIntegrationInstancesIntegrationInstanceIdcsInfoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            idcs_app_display_name=idcs_app_display_name,
+            idcs_app_id=idcs_app_id,
+            idcs_app_location_url=idcs_app_location_url,
+            idcs_app_name=idcs_app_name,
+            instance_primary_audience_url=instance_primary_audience_url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             idcs_app_display_name: str,
+             idcs_app_id: str,
+             idcs_app_location_url: str,
+             idcs_app_name: str,
+             instance_primary_audience_url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("idcs_app_display_name", idcs_app_display_name)
+        _setter("idcs_app_id", idcs_app_id)
+        _setter("idcs_app_location_url", idcs_app_location_url)
+        _setter("idcs_app_name", idcs_app_name)
+        _setter("instance_primary_audience_url", instance_primary_audience_url)
 
     @property
     @pulumi.getter(name="idcsAppDisplayName")
@@ -1335,10 +1649,25 @@ class GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult(dict
         :param bool is_integration_vcn_allowlisted: The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
         :param str network_endpoint_type: The type of network endpoint.
         """
-        pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
-        pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
-        pulumi.set(__self__, "is_integration_vcn_allowlisted", is_integration_vcn_allowlisted)
-        pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
+        GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowlisted_http_ips=allowlisted_http_ips,
+            allowlisted_http_vcns=allowlisted_http_vcns,
+            is_integration_vcn_allowlisted=is_integration_vcn_allowlisted,
+            network_endpoint_type=network_endpoint_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowlisted_http_ips: Sequence[str],
+             allowlisted_http_vcns: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult'],
+             is_integration_vcn_allowlisted: bool,
+             network_endpoint_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("allowlisted_http_ips", allowlisted_http_ips)
+        _setter("allowlisted_http_vcns", allowlisted_http_vcns)
+        _setter("is_integration_vcn_allowlisted", is_integration_vcn_allowlisted)
+        _setter("network_endpoint_type", network_endpoint_type)
 
     @property
     @pulumi.getter(name="allowlistedHttpIps")
@@ -1382,8 +1711,19 @@ class GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlisted
         :param Sequence[str] allowlisted_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
         :param str id: The Virtual Cloud Network OCID.
         """
-        pulumi.set(__self__, "allowlisted_ips", allowlisted_ips)
-        pulumi.set(__self__, "id", id)
+        GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowlisted_ips=allowlisted_ips,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowlisted_ips: Sequence[str],
+             id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("allowlisted_ips", allowlisted_ips)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="allowlistedIps")

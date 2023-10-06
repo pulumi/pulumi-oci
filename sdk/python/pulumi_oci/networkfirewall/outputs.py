@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -80,9 +80,20 @@ class NetworkFirewallPolicyApplicationList(dict):
         :param str application_list_name: (Updatable) The key is the identifier by which the application list is referenced.
         :param Sequence['NetworkFirewallPolicyApplicationListApplicationValueArgs'] application_values: (Updatable) Details about the application
         """
-        pulumi.set(__self__, "application_list_name", application_list_name)
+        NetworkFirewallPolicyApplicationList._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            application_list_name=application_list_name,
+            application_values=application_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             application_list_name: str,
+             application_values: Optional[Sequence['outputs.NetworkFirewallPolicyApplicationListApplicationValue']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("application_list_name", application_list_name)
         if application_values is not None:
-            pulumi.set(__self__, "application_values", application_values)
+            _setter("application_values", application_values)
 
     @property
     @pulumi.getter(name="applicationListName")
@@ -139,15 +150,32 @@ class NetworkFirewallPolicyApplicationListApplicationValue(dict):
         :param int maximum_port: (Updatable) Used when you select TCP or UDP. Enter a port number.
         :param int minimum_port: (Updatable) Used when you select TCP or UDP. Enter a port number.
         """
-        pulumi.set(__self__, "type", type)
+        NetworkFirewallPolicyApplicationListApplicationValue._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            icmp_code=icmp_code,
+            icmp_type=icmp_type,
+            maximum_port=maximum_port,
+            minimum_port=minimum_port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             icmp_code: Optional[int] = None,
+             icmp_type: Optional[int] = None,
+             maximum_port: Optional[int] = None,
+             minimum_port: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if icmp_code is not None:
-            pulumi.set(__self__, "icmp_code", icmp_code)
+            _setter("icmp_code", icmp_code)
         if icmp_type is not None:
-            pulumi.set(__self__, "icmp_type", icmp_type)
+            _setter("icmp_type", icmp_type)
         if maximum_port is not None:
-            pulumi.set(__self__, "maximum_port", maximum_port)
+            _setter("maximum_port", maximum_port)
         if minimum_port is not None:
-            pulumi.set(__self__, "minimum_port", minimum_port)
+            _setter("minimum_port", minimum_port)
 
     @property
     @pulumi.getter
@@ -250,26 +278,55 @@ class NetworkFirewallPolicyDecryptionProfile(dict):
         :param bool is_unsupported_version_blocked: (Updatable) Whether to block sessions if SSL version is not supported.
         :param bool is_untrusted_issuer_blocked: (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "type", type)
+        NetworkFirewallPolicyDecryptionProfile._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            type=type,
+            are_certificate_extensions_restricted=are_certificate_extensions_restricted,
+            is_auto_include_alt_name=is_auto_include_alt_name,
+            is_expired_certificate_blocked=is_expired_certificate_blocked,
+            is_out_of_capacity_blocked=is_out_of_capacity_blocked,
+            is_revocation_status_timeout_blocked=is_revocation_status_timeout_blocked,
+            is_unknown_revocation_status_blocked=is_unknown_revocation_status_blocked,
+            is_unsupported_cipher_blocked=is_unsupported_cipher_blocked,
+            is_unsupported_version_blocked=is_unsupported_version_blocked,
+            is_untrusted_issuer_blocked=is_untrusted_issuer_blocked,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             type: str,
+             are_certificate_extensions_restricted: Optional[bool] = None,
+             is_auto_include_alt_name: Optional[bool] = None,
+             is_expired_certificate_blocked: Optional[bool] = None,
+             is_out_of_capacity_blocked: Optional[bool] = None,
+             is_revocation_status_timeout_blocked: Optional[bool] = None,
+             is_unknown_revocation_status_blocked: Optional[bool] = None,
+             is_unsupported_cipher_blocked: Optional[bool] = None,
+             is_unsupported_version_blocked: Optional[bool] = None,
+             is_untrusted_issuer_blocked: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("type", type)
         if are_certificate_extensions_restricted is not None:
-            pulumi.set(__self__, "are_certificate_extensions_restricted", are_certificate_extensions_restricted)
+            _setter("are_certificate_extensions_restricted", are_certificate_extensions_restricted)
         if is_auto_include_alt_name is not None:
-            pulumi.set(__self__, "is_auto_include_alt_name", is_auto_include_alt_name)
+            _setter("is_auto_include_alt_name", is_auto_include_alt_name)
         if is_expired_certificate_blocked is not None:
-            pulumi.set(__self__, "is_expired_certificate_blocked", is_expired_certificate_blocked)
+            _setter("is_expired_certificate_blocked", is_expired_certificate_blocked)
         if is_out_of_capacity_blocked is not None:
-            pulumi.set(__self__, "is_out_of_capacity_blocked", is_out_of_capacity_blocked)
+            _setter("is_out_of_capacity_blocked", is_out_of_capacity_blocked)
         if is_revocation_status_timeout_blocked is not None:
-            pulumi.set(__self__, "is_revocation_status_timeout_blocked", is_revocation_status_timeout_blocked)
+            _setter("is_revocation_status_timeout_blocked", is_revocation_status_timeout_blocked)
         if is_unknown_revocation_status_blocked is not None:
-            pulumi.set(__self__, "is_unknown_revocation_status_blocked", is_unknown_revocation_status_blocked)
+            _setter("is_unknown_revocation_status_blocked", is_unknown_revocation_status_blocked)
         if is_unsupported_cipher_blocked is not None:
-            pulumi.set(__self__, "is_unsupported_cipher_blocked", is_unsupported_cipher_blocked)
+            _setter("is_unsupported_cipher_blocked", is_unsupported_cipher_blocked)
         if is_unsupported_version_blocked is not None:
-            pulumi.set(__self__, "is_unsupported_version_blocked", is_unsupported_version_blocked)
+            _setter("is_unsupported_version_blocked", is_unsupported_version_blocked)
         if is_untrusted_issuer_blocked is not None:
-            pulumi.set(__self__, "is_untrusted_issuer_blocked", is_untrusted_issuer_blocked)
+            _setter("is_untrusted_issuer_blocked", is_untrusted_issuer_blocked)
 
     @property
     @pulumi.getter
@@ -396,13 +453,30 @@ class NetworkFirewallPolicyDecryptionRule(dict):
         :param str decryption_profile: (Updatable) The name of the decryption profile to use.
         :param str secret: (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "name", name)
+        NetworkFirewallPolicyDecryptionRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            condition=condition,
+            name=name,
+            decryption_profile=decryption_profile,
+            secret=secret,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: str,
+             condition: 'outputs.NetworkFirewallPolicyDecryptionRuleCondition',
+             name: str,
+             decryption_profile: Optional[str] = None,
+             secret: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("condition", condition)
+        _setter("name", name)
         if decryption_profile is not None:
-            pulumi.set(__self__, "decryption_profile", decryption_profile)
+            _setter("decryption_profile", decryption_profile)
         if secret is not None:
-            pulumi.set(__self__, "secret", secret)
+            _setter("secret", secret)
 
     @property
     @pulumi.getter
@@ -458,10 +532,21 @@ class NetworkFirewallPolicyDecryptionRuleCondition(dict):
         :param Sequence[str] destinations: (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
         :param Sequence[str] sources: (Updatable) An array of IP address list names to be evaluated against the traffic source address.
         """
+        NetworkFirewallPolicyDecryptionRuleCondition._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destinations=destinations,
+            sources=sources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destinations: Optional[Sequence[str]] = None,
+             sources: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if destinations is not None:
-            pulumi.set(__self__, "destinations", destinations)
+            _setter("destinations", destinations)
         if sources is not None:
-            pulumi.set(__self__, "sources", sources)
+            _setter("sources", sources)
 
     @property
     @pulumi.getter
@@ -508,9 +593,20 @@ class NetworkFirewallPolicyIpAddressList(dict):
         :param str ip_address_list_name: (Updatable) The identifier by which the IP address list is referenced.
         :param Sequence[str] ip_address_list_values: (Updatable) List of IP address lists of the policy.
         """
-        pulumi.set(__self__, "ip_address_list_name", ip_address_list_name)
+        NetworkFirewallPolicyIpAddressList._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_address_list_name=ip_address_list_name,
+            ip_address_list_values=ip_address_list_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_address_list_name: str,
+             ip_address_list_values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ip_address_list_name", ip_address_list_name)
         if ip_address_list_values is not None:
-            pulumi.set(__self__, "ip_address_list_values", ip_address_list_values)
+            _setter("ip_address_list_values", ip_address_list_values)
 
     @property
     @pulumi.getter(name="ipAddressListName")
@@ -561,12 +657,27 @@ class NetworkFirewallPolicyMappedSecret(dict):
         :param str vault_secret_id: (Updatable) OCID for the Vault Secret to be used.
         :param int version_number: (Updatable) Version number of the secret to be used.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "type", type)
+        NetworkFirewallPolicyMappedSecret._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            type=type,
+            vault_secret_id=vault_secret_id,
+            version_number=version_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             type: str,
+             vault_secret_id: Optional[str] = None,
+             version_number: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("type", type)
         if vault_secret_id is not None:
-            pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+            _setter("vault_secret_id", vault_secret_id)
         if version_number is not None:
-            pulumi.set(__self__, "version_number", version_number)
+            _setter("version_number", version_number)
 
     @property
     @pulumi.getter
@@ -620,11 +731,26 @@ class NetworkFirewallPolicySecurityRule(dict):
                * INTRUSION_DETECTION - Intrusion Detection.
                * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "name", name)
+        NetworkFirewallPolicySecurityRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            condition=condition,
+            name=name,
+            inspection=inspection,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: str,
+             condition: 'outputs.NetworkFirewallPolicySecurityRuleCondition',
+             name: str,
+             inspection: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("condition", condition)
+        _setter("name", name)
         if inspection is not None:
-            pulumi.set(__self__, "inspection", inspection)
+            _setter("inspection", inspection)
 
     @property
     @pulumi.getter
@@ -678,14 +804,29 @@ class NetworkFirewallPolicySecurityRuleCondition(dict):
         :param Sequence[str] sources: (Updatable) An array of IP address list names to be evaluated against the traffic source address.
         :param Sequence[str] urls: (Updatable) An array of URL pattern list names to be evaluated against the HTTP(S) request target.
         """
+        NetworkFirewallPolicySecurityRuleCondition._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            applications=applications,
+            destinations=destinations,
+            sources=sources,
+            urls=urls,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             applications: Optional[Sequence[str]] = None,
+             destinations: Optional[Sequence[str]] = None,
+             sources: Optional[Sequence[str]] = None,
+             urls: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if applications is not None:
-            pulumi.set(__self__, "applications", applications)
+            _setter("applications", applications)
         if destinations is not None:
-            pulumi.set(__self__, "destinations", destinations)
+            _setter("destinations", destinations)
         if sources is not None:
-            pulumi.set(__self__, "sources", sources)
+            _setter("sources", sources)
         if urls is not None:
-            pulumi.set(__self__, "urls", urls)
+            _setter("urls", urls)
 
     @property
     @pulumi.getter
@@ -748,9 +889,20 @@ class NetworkFirewallPolicyUrlList(dict):
         :param str url_list_name: (Updatable) The identifier for the url list
         :param Sequence['NetworkFirewallPolicyUrlListUrlListValueArgs'] url_list_values: (Updatable) The list of Url Patterns.
         """
-        pulumi.set(__self__, "url_list_name", url_list_name)
+        NetworkFirewallPolicyUrlList._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            url_list_name=url_list_name,
+            url_list_values=url_list_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             url_list_name: str,
+             url_list_values: Optional[Sequence['outputs.NetworkFirewallPolicyUrlListUrlListValue']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("url_list_name", url_list_name)
         if url_list_values is not None:
-            pulumi.set(__self__, "url_list_values", url_list_values)
+            _setter("url_list_values", url_list_values)
 
     @property
     @pulumi.getter(name="urlListName")
@@ -782,9 +934,20 @@ class NetworkFirewallPolicyUrlListUrlListValue(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "type", type)
+        NetworkFirewallPolicyUrlListUrlListValue._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            pattern=pattern,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             pattern: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if pattern is not None:
-            pulumi.set(__self__, "pattern", pattern)
+            _setter("pattern", pattern)
 
     @property
     @pulumi.getter
@@ -816,10 +979,23 @@ class GetNetworkFirewallPoliciesFilterResult(dict):
         """
         :param str name: Name for the Security rule, must be unique within the policy.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetNetworkFirewallPoliciesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -844,7 +1020,16 @@ class GetNetworkFirewallPoliciesFilterResult(dict):
 class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -893,24 +1078,67 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemResult
         :param str time_updated: The time instant at which the Network Firewall Policy was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         :param Sequence['GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArgs'] url_lists: Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
         """
-        pulumi.set(__self__, "application_lists", application_lists)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "decryption_profiles", decryption_profiles)
-        pulumi.set(__self__, "decryption_rules", decryption_rules)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ip_address_lists", ip_address_lists)
-        pulumi.set(__self__, "is_firewall_attached", is_firewall_attached)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "mapped_secrets", mapped_secrets)
-        pulumi.set(__self__, "security_rules", security_rules)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "url_lists", url_lists)
+        GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            application_lists=application_lists,
+            compartment_id=compartment_id,
+            decryption_profiles=decryption_profiles,
+            decryption_rules=decryption_rules,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            ip_address_lists=ip_address_lists,
+            is_firewall_attached=is_firewall_attached,
+            lifecycle_details=lifecycle_details,
+            mapped_secrets=mapped_secrets,
+            security_rules=security_rules,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            url_lists=url_lists,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             application_lists: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListResult'],
+             compartment_id: str,
+             decryption_profiles: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileResult'],
+             decryption_rules: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleResult'],
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             ip_address_lists: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListResult'],
+             is_firewall_attached: bool,
+             lifecycle_details: str,
+             mapped_secrets: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretResult'],
+             security_rules: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleResult'],
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             url_lists: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("application_lists", application_lists)
+        _setter("compartment_id", compartment_id)
+        _setter("decryption_profiles", decryption_profiles)
+        _setter("decryption_rules", decryption_rules)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("ip_address_lists", ip_address_lists)
+        _setter("is_firewall_attached", is_firewall_attached)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("mapped_secrets", mapped_secrets)
+        _setter("security_rules", security_rules)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("url_lists", url_lists)
 
     @property
     @pulumi.getter(name="applicationLists")
@@ -1062,8 +1290,19 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplic
     def __init__(__self__, *,
                  application_list_name: str,
                  application_values: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueResult']):
-        pulumi.set(__self__, "application_list_name", application_list_name)
-        pulumi.set(__self__, "application_values", application_values)
+        GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            application_list_name=application_list_name,
+            application_values=application_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             application_list_name: str,
+             application_values: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("application_list_name", application_list_name)
+        _setter("application_values", application_values)
 
     @property
     @pulumi.getter(name="applicationListName")
@@ -1087,11 +1326,28 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplic
         """
         :param str type: Type of the secrets mapped based on the policy.
         """
-        pulumi.set(__self__, "icmp_code", icmp_code)
-        pulumi.set(__self__, "icmp_type", icmp_type)
-        pulumi.set(__self__, "maximum_port", maximum_port)
-        pulumi.set(__self__, "minimum_port", minimum_port)
-        pulumi.set(__self__, "type", type)
+        GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            icmp_code=icmp_code,
+            icmp_type=icmp_type,
+            maximum_port=maximum_port,
+            minimum_port=minimum_port,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             icmp_code: int,
+             icmp_type: int,
+             maximum_port: int,
+             minimum_port: int,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("icmp_code", icmp_code)
+        _setter("icmp_type", icmp_type)
+        _setter("maximum_port", maximum_port)
+        _setter("minimum_port", minimum_port)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="icmpCode")
@@ -1148,17 +1404,46 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryp
         :param bool is_untrusted_issuer_blocked: Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
         :param str type: Type of the secrets mapped based on the policy.
         """
-        pulumi.set(__self__, "are_certificate_extensions_restricted", are_certificate_extensions_restricted)
-        pulumi.set(__self__, "is_auto_include_alt_name", is_auto_include_alt_name)
-        pulumi.set(__self__, "is_expired_certificate_blocked", is_expired_certificate_blocked)
-        pulumi.set(__self__, "is_out_of_capacity_blocked", is_out_of_capacity_blocked)
-        pulumi.set(__self__, "is_revocation_status_timeout_blocked", is_revocation_status_timeout_blocked)
-        pulumi.set(__self__, "is_unknown_revocation_status_blocked", is_unknown_revocation_status_blocked)
-        pulumi.set(__self__, "is_unsupported_cipher_blocked", is_unsupported_cipher_blocked)
-        pulumi.set(__self__, "is_unsupported_version_blocked", is_unsupported_version_blocked)
-        pulumi.set(__self__, "is_untrusted_issuer_blocked", is_untrusted_issuer_blocked)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "type", type)
+        GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            are_certificate_extensions_restricted=are_certificate_extensions_restricted,
+            is_auto_include_alt_name=is_auto_include_alt_name,
+            is_expired_certificate_blocked=is_expired_certificate_blocked,
+            is_out_of_capacity_blocked=is_out_of_capacity_blocked,
+            is_revocation_status_timeout_blocked=is_revocation_status_timeout_blocked,
+            is_unknown_revocation_status_blocked=is_unknown_revocation_status_blocked,
+            is_unsupported_cipher_blocked=is_unsupported_cipher_blocked,
+            is_unsupported_version_blocked=is_unsupported_version_blocked,
+            is_untrusted_issuer_blocked=is_untrusted_issuer_blocked,
+            key=key,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             are_certificate_extensions_restricted: bool,
+             is_auto_include_alt_name: bool,
+             is_expired_certificate_blocked: bool,
+             is_out_of_capacity_blocked: bool,
+             is_revocation_status_timeout_blocked: bool,
+             is_unknown_revocation_status_blocked: bool,
+             is_unsupported_cipher_blocked: bool,
+             is_unsupported_version_blocked: bool,
+             is_untrusted_issuer_blocked: bool,
+             key: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("are_certificate_extensions_restricted", are_certificate_extensions_restricted)
+        _setter("is_auto_include_alt_name", is_auto_include_alt_name)
+        _setter("is_expired_certificate_blocked", is_expired_certificate_blocked)
+        _setter("is_out_of_capacity_blocked", is_out_of_capacity_blocked)
+        _setter("is_revocation_status_timeout_blocked", is_revocation_status_timeout_blocked)
+        _setter("is_unknown_revocation_status_blocked", is_unknown_revocation_status_blocked)
+        _setter("is_unsupported_cipher_blocked", is_unsupported_cipher_blocked)
+        _setter("is_unsupported_version_blocked", is_unsupported_version_blocked)
+        _setter("is_untrusted_issuer_blocked", is_untrusted_issuer_blocked)
+        _setter("key", key)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="areCertificateExtensionsRestricted")
@@ -1265,11 +1550,28 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryp
         :param str name: Name for the Security rule, must be unique within the policy.
         :param str secret: The name of a mapped secret. Its `type` must match that of the specified decryption profile.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "conditions", conditions)
-        pulumi.set(__self__, "decryption_profile", decryption_profile)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "secret", secret)
+        GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            conditions=conditions,
+            decryption_profile=decryption_profile,
+            name=name,
+            secret=secret,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: str,
+             conditions: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionResult'],
+             decryption_profile: str,
+             name: str,
+             secret: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("conditions", conditions)
+        _setter("decryption_profile", decryption_profile)
+        _setter("name", name)
+        _setter("secret", secret)
 
     @property
     @pulumi.getter
@@ -1325,8 +1627,19 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryp
         :param Sequence[str] destinations: An array of IP address list names to be evaluated against the traffic destination address.
         :param Sequence[str] sources: An array of IP address list names to be evaluated against the traffic source address.
         """
-        pulumi.set(__self__, "destinations", destinations)
-        pulumi.set(__self__, "sources", sources)
+        GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destinations=destinations,
+            sources=sources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destinations: Sequence[str],
+             sources: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("destinations", destinations)
+        _setter("sources", sources)
 
     @property
     @pulumi.getter
@@ -1350,8 +1663,19 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddr
     def __init__(__self__, *,
                  ip_address_list_name: str,
                  ip_address_list_values: Sequence[str]):
-        pulumi.set(__self__, "ip_address_list_name", ip_address_list_name)
-        pulumi.set(__self__, "ip_address_list_values", ip_address_list_values)
+        GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAddressListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_address_list_name=ip_address_list_name,
+            ip_address_list_values=ip_address_list_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_address_list_name: str,
+             ip_address_list_values: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ip_address_list_name", ip_address_list_name)
+        _setter("ip_address_list_values", ip_address_list_values)
 
     @property
     @pulumi.getter(name="ipAddressListName")
@@ -1376,10 +1700,25 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMapped
         :param str vault_secret_id: OCID for the Vault Secret to be used.
         :param int version_number: Version number of the secret to be used.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "vault_secret_id", vault_secret_id)
-        pulumi.set(__self__, "version_number", version_number)
+        GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            type=type,
+            vault_secret_id=vault_secret_id,
+            version_number=version_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             type: str,
+             vault_secret_id: str,
+             version_number: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("type", type)
+        _setter("vault_secret_id", vault_secret_id)
+        _setter("version_number", version_number)
 
     @property
     @pulumi.getter
@@ -1430,10 +1769,25 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecuri
                * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
         :param str name: Name for the Security rule, must be unique within the policy.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "conditions", conditions)
-        pulumi.set(__self__, "inspection", inspection)
-        pulumi.set(__self__, "name", name)
+        GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            conditions=conditions,
+            inspection=inspection,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: str,
+             conditions: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionResult'],
+             inspection: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("conditions", conditions)
+        _setter("inspection", inspection)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1487,10 +1841,25 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecuri
         :param Sequence[str] sources: An array of IP address list names to be evaluated against the traffic source address.
         :param Sequence[str] urls: An array of URL pattern list names to be evaluated against the HTTP(S) request target.
         """
-        pulumi.set(__self__, "applications", applications)
-        pulumi.set(__self__, "destinations", destinations)
-        pulumi.set(__self__, "sources", sources)
-        pulumi.set(__self__, "urls", urls)
+        GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            applications=applications,
+            destinations=destinations,
+            sources=sources,
+            urls=urls,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             applications: Sequence[str],
+             destinations: Sequence[str],
+             sources: Sequence[str],
+             urls: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("applications", applications)
+        _setter("destinations", destinations)
+        _setter("sources", sources)
+        _setter("urls", urls)
 
     @property
     @pulumi.getter
@@ -1530,8 +1899,19 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlLis
     def __init__(__self__, *,
                  url_list_name: str,
                  url_list_values: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueResult']):
-        pulumi.set(__self__, "url_list_name", url_list_name)
-        pulumi.set(__self__, "url_list_values", url_list_values)
+        GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            url_list_name=url_list_name,
+            url_list_values=url_list_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             url_list_name: str,
+             url_list_values: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("url_list_name", url_list_name)
+        _setter("url_list_values", url_list_values)
 
     @property
     @pulumi.getter(name="urlListName")
@@ -1552,8 +1932,19 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlLis
         """
         :param str type: Type of the secrets mapped based on the policy.
         """
-        pulumi.set(__self__, "pattern", pattern)
-        pulumi.set(__self__, "type", type)
+        GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            pattern=pattern,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             pattern: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("pattern", pattern)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -1574,8 +1965,19 @@ class GetNetworkFirewallPolicyApplicationListResult(dict):
     def __init__(__self__, *,
                  application_list_name: str,
                  application_values: Sequence['outputs.GetNetworkFirewallPolicyApplicationListApplicationValueResult']):
-        pulumi.set(__self__, "application_list_name", application_list_name)
-        pulumi.set(__self__, "application_values", application_values)
+        GetNetworkFirewallPolicyApplicationListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            application_list_name=application_list_name,
+            application_values=application_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             application_list_name: str,
+             application_values: Sequence['outputs.GetNetworkFirewallPolicyApplicationListApplicationValueResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("application_list_name", application_list_name)
+        _setter("application_values", application_values)
 
     @property
     @pulumi.getter(name="applicationListName")
@@ -1599,11 +2001,28 @@ class GetNetworkFirewallPolicyApplicationListApplicationValueResult(dict):
         """
         :param str type: Type of the secrets mapped based on the policy.
         """
-        pulumi.set(__self__, "icmp_code", icmp_code)
-        pulumi.set(__self__, "icmp_type", icmp_type)
-        pulumi.set(__self__, "maximum_port", maximum_port)
-        pulumi.set(__self__, "minimum_port", minimum_port)
-        pulumi.set(__self__, "type", type)
+        GetNetworkFirewallPolicyApplicationListApplicationValueResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            icmp_code=icmp_code,
+            icmp_type=icmp_type,
+            maximum_port=maximum_port,
+            minimum_port=minimum_port,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             icmp_code: int,
+             icmp_type: int,
+             maximum_port: int,
+             minimum_port: int,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("icmp_code", icmp_code)
+        _setter("icmp_type", icmp_type)
+        _setter("maximum_port", maximum_port)
+        _setter("minimum_port", minimum_port)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="icmpCode")
@@ -1660,17 +2079,46 @@ class GetNetworkFirewallPolicyDecryptionProfileResult(dict):
         :param bool is_untrusted_issuer_blocked: Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
         :param str type: Type of the secrets mapped based on the policy.
         """
-        pulumi.set(__self__, "are_certificate_extensions_restricted", are_certificate_extensions_restricted)
-        pulumi.set(__self__, "is_auto_include_alt_name", is_auto_include_alt_name)
-        pulumi.set(__self__, "is_expired_certificate_blocked", is_expired_certificate_blocked)
-        pulumi.set(__self__, "is_out_of_capacity_blocked", is_out_of_capacity_blocked)
-        pulumi.set(__self__, "is_revocation_status_timeout_blocked", is_revocation_status_timeout_blocked)
-        pulumi.set(__self__, "is_unknown_revocation_status_blocked", is_unknown_revocation_status_blocked)
-        pulumi.set(__self__, "is_unsupported_cipher_blocked", is_unsupported_cipher_blocked)
-        pulumi.set(__self__, "is_unsupported_version_blocked", is_unsupported_version_blocked)
-        pulumi.set(__self__, "is_untrusted_issuer_blocked", is_untrusted_issuer_blocked)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "type", type)
+        GetNetworkFirewallPolicyDecryptionProfileResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            are_certificate_extensions_restricted=are_certificate_extensions_restricted,
+            is_auto_include_alt_name=is_auto_include_alt_name,
+            is_expired_certificate_blocked=is_expired_certificate_blocked,
+            is_out_of_capacity_blocked=is_out_of_capacity_blocked,
+            is_revocation_status_timeout_blocked=is_revocation_status_timeout_blocked,
+            is_unknown_revocation_status_blocked=is_unknown_revocation_status_blocked,
+            is_unsupported_cipher_blocked=is_unsupported_cipher_blocked,
+            is_unsupported_version_blocked=is_unsupported_version_blocked,
+            is_untrusted_issuer_blocked=is_untrusted_issuer_blocked,
+            key=key,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             are_certificate_extensions_restricted: bool,
+             is_auto_include_alt_name: bool,
+             is_expired_certificate_blocked: bool,
+             is_out_of_capacity_blocked: bool,
+             is_revocation_status_timeout_blocked: bool,
+             is_unknown_revocation_status_blocked: bool,
+             is_unsupported_cipher_blocked: bool,
+             is_unsupported_version_blocked: bool,
+             is_untrusted_issuer_blocked: bool,
+             key: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("are_certificate_extensions_restricted", are_certificate_extensions_restricted)
+        _setter("is_auto_include_alt_name", is_auto_include_alt_name)
+        _setter("is_expired_certificate_blocked", is_expired_certificate_blocked)
+        _setter("is_out_of_capacity_blocked", is_out_of_capacity_blocked)
+        _setter("is_revocation_status_timeout_blocked", is_revocation_status_timeout_blocked)
+        _setter("is_unknown_revocation_status_blocked", is_unknown_revocation_status_blocked)
+        _setter("is_unsupported_cipher_blocked", is_unsupported_cipher_blocked)
+        _setter("is_unsupported_version_blocked", is_unsupported_version_blocked)
+        _setter("is_untrusted_issuer_blocked", is_untrusted_issuer_blocked)
+        _setter("key", key)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="areCertificateExtensionsRestricted")
@@ -1777,11 +2225,28 @@ class GetNetworkFirewallPolicyDecryptionRuleResult(dict):
         :param str name: Name for the Security rule, must be unique within the policy.
         :param str secret: The name of a mapped secret. Its `type` must match that of the specified decryption profile.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "conditions", conditions)
-        pulumi.set(__self__, "decryption_profile", decryption_profile)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "secret", secret)
+        GetNetworkFirewallPolicyDecryptionRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            conditions=conditions,
+            decryption_profile=decryption_profile,
+            name=name,
+            secret=secret,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: str,
+             conditions: Sequence['outputs.GetNetworkFirewallPolicyDecryptionRuleConditionResult'],
+             decryption_profile: str,
+             name: str,
+             secret: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("conditions", conditions)
+        _setter("decryption_profile", decryption_profile)
+        _setter("name", name)
+        _setter("secret", secret)
 
     @property
     @pulumi.getter
@@ -1837,8 +2302,19 @@ class GetNetworkFirewallPolicyDecryptionRuleConditionResult(dict):
         :param Sequence[str] destinations: An array of IP address list names to be evaluated against the traffic destination address.
         :param Sequence[str] sources: An array of IP address list names to be evaluated against the traffic source address.
         """
-        pulumi.set(__self__, "destinations", destinations)
-        pulumi.set(__self__, "sources", sources)
+        GetNetworkFirewallPolicyDecryptionRuleConditionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destinations=destinations,
+            sources=sources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destinations: Sequence[str],
+             sources: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("destinations", destinations)
+        _setter("sources", sources)
 
     @property
     @pulumi.getter
@@ -1862,8 +2338,19 @@ class GetNetworkFirewallPolicyIpAddressListResult(dict):
     def __init__(__self__, *,
                  ip_address_list_name: str,
                  ip_address_list_values: Sequence[str]):
-        pulumi.set(__self__, "ip_address_list_name", ip_address_list_name)
-        pulumi.set(__self__, "ip_address_list_values", ip_address_list_values)
+        GetNetworkFirewallPolicyIpAddressListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_address_list_name=ip_address_list_name,
+            ip_address_list_values=ip_address_list_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_address_list_name: str,
+             ip_address_list_values: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ip_address_list_name", ip_address_list_name)
+        _setter("ip_address_list_values", ip_address_list_values)
 
     @property
     @pulumi.getter(name="ipAddressListName")
@@ -1888,10 +2375,25 @@ class GetNetworkFirewallPolicyMappedSecretResult(dict):
         :param str vault_secret_id: OCID for the Vault Secret to be used.
         :param int version_number: Version number of the secret to be used.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "vault_secret_id", vault_secret_id)
-        pulumi.set(__self__, "version_number", version_number)
+        GetNetworkFirewallPolicyMappedSecretResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            type=type,
+            vault_secret_id=vault_secret_id,
+            version_number=version_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             type: str,
+             vault_secret_id: str,
+             version_number: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("type", type)
+        _setter("vault_secret_id", vault_secret_id)
+        _setter("version_number", version_number)
 
     @property
     @pulumi.getter
@@ -1942,10 +2444,25 @@ class GetNetworkFirewallPolicySecurityRuleResult(dict):
                * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
         :param str name: Name for the Security rule, must be unique within the policy.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "conditions", conditions)
-        pulumi.set(__self__, "inspection", inspection)
-        pulumi.set(__self__, "name", name)
+        GetNetworkFirewallPolicySecurityRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            conditions=conditions,
+            inspection=inspection,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: str,
+             conditions: Sequence['outputs.GetNetworkFirewallPolicySecurityRuleConditionResult'],
+             inspection: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("conditions", conditions)
+        _setter("inspection", inspection)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1999,10 +2516,25 @@ class GetNetworkFirewallPolicySecurityRuleConditionResult(dict):
         :param Sequence[str] sources: An array of IP address list names to be evaluated against the traffic source address.
         :param Sequence[str] urls: An array of URL pattern list names to be evaluated against the HTTP(S) request target.
         """
-        pulumi.set(__self__, "applications", applications)
-        pulumi.set(__self__, "destinations", destinations)
-        pulumi.set(__self__, "sources", sources)
-        pulumi.set(__self__, "urls", urls)
+        GetNetworkFirewallPolicySecurityRuleConditionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            applications=applications,
+            destinations=destinations,
+            sources=sources,
+            urls=urls,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             applications: Sequence[str],
+             destinations: Sequence[str],
+             sources: Sequence[str],
+             urls: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("applications", applications)
+        _setter("destinations", destinations)
+        _setter("sources", sources)
+        _setter("urls", urls)
 
     @property
     @pulumi.getter
@@ -2042,8 +2574,19 @@ class GetNetworkFirewallPolicyUrlListResult(dict):
     def __init__(__self__, *,
                  url_list_name: str,
                  url_list_values: Sequence['outputs.GetNetworkFirewallPolicyUrlListUrlListValueResult']):
-        pulumi.set(__self__, "url_list_name", url_list_name)
-        pulumi.set(__self__, "url_list_values", url_list_values)
+        GetNetworkFirewallPolicyUrlListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            url_list_name=url_list_name,
+            url_list_values=url_list_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             url_list_name: str,
+             url_list_values: Sequence['outputs.GetNetworkFirewallPolicyUrlListUrlListValueResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("url_list_name", url_list_name)
+        _setter("url_list_values", url_list_values)
 
     @property
     @pulumi.getter(name="urlListName")
@@ -2064,8 +2607,19 @@ class GetNetworkFirewallPolicyUrlListUrlListValueResult(dict):
         """
         :param str type: Type of the secrets mapped based on the policy.
         """
-        pulumi.set(__self__, "pattern", pattern)
-        pulumi.set(__self__, "type", type)
+        GetNetworkFirewallPolicyUrlListUrlListValueResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            pattern=pattern,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             pattern: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("pattern", pattern)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -2087,10 +2641,23 @@ class GetNetworkFirewallsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetNetworkFirewallsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2112,7 +2679,16 @@ class GetNetworkFirewallsFilterResult(dict):
 class GetNetworkFirewallsNetworkFirewallCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetNetworkFirewallsNetworkFirewallCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetNetworkFirewallsNetworkFirewallCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetNetworkFirewallsNetworkFirewallCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2157,22 +2733,61 @@ class GetNetworkFirewallsNetworkFirewallCollectionItemResult(dict):
         :param str time_created: The time instant at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         :param str time_updated: The time instant at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ipv4address", ipv4address)
-        pulumi.set(__self__, "ipv6address", ipv6address)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "network_firewall_policy_id", network_firewall_policy_id)
-        pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetNetworkFirewallsNetworkFirewallCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            ipv4address=ipv4address,
+            ipv6address=ipv6address,
+            lifecycle_details=lifecycle_details,
+            network_firewall_policy_id=network_firewall_policy_id,
+            network_security_group_ids=network_security_group_ids,
+            state=state,
+            subnet_id=subnet_id,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             ipv4address: str,
+             ipv6address: str,
+             lifecycle_details: str,
+             network_firewall_policy_id: str,
+             network_security_group_ids: Sequence[str],
+             state: str,
+             subnet_id: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("ipv4address", ipv4address)
+        _setter("ipv6address", ipv6address)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("network_firewall_policy_id", network_firewall_policy_id)
+        _setter("network_security_group_ids", network_security_group_ids)
+        _setter("state", state)
+        _setter("subnet_id", subnet_id)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="availabilityDomain")

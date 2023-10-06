@@ -9,24 +9,64 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Oci.Core
 {
+    /// <summary>
+    /// The `oci.Core.AppCatalogListingResourceVersionAgreement` resource creates AppCatalogListingResourceVersionAgreement for a particular resource version of a listing.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testAppCatalogListingResourceVersionAgreement = new Oci.Core.AppCatalogListingResourceVersionAgreement("testAppCatalogListingResourceVersionAgreement", new()
+    ///     {
+    ///         ListingId = data.Oci_core_app_catalog_listing.Test_listing.Id,
+    ///         ListingResourceVersion = @var.App_catalog_listing_resource_version_agreement_listing_resource_version,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [OciResourceType("oci:Core/listingResourceVersionAgreement:ListingResourceVersionAgreement")]
     public partial class ListingResourceVersionAgreement : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// EULA link
+        /// </summary>
         [Output("eulaLink")]
         public Output<string> EulaLink { get; private set; } = null!;
 
+        /// <summary>
+        /// The OCID of the listing.
+        /// </summary>
         [Output("listingId")]
         public Output<string> ListingId { get; private set; } = null!;
 
+        /// <summary>
+        /// Listing Resource Version.
+        /// </summary>
         [Output("listingResourceVersion")]
         public Output<string> ListingResourceVersion { get; private set; } = null!;
 
+        /// <summary>
+        /// Oracle TOU link
+        /// </summary>
         [Output("oracleTermsOfUseLink")]
         public Output<string> OracleTermsOfUseLink { get; private set; } = null!;
 
+        /// <summary>
+        /// A generated signature for this agreement retrieval operation which should be used in the create subscription call.
+        /// </summary>
         [Output("signature")]
         public Output<string> Signature { get; private set; } = null!;
 
+        /// <summary>
+        /// Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
+        /// </summary>
         [Output("timeRetrieved")]
         public Output<string> TimeRetrieved { get; private set; } = null!;
 
@@ -76,9 +116,15 @@ namespace Pulumi.Oci.Core
 
     public sealed class ListingResourceVersionAgreementArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The OCID of the listing.
+        /// </summary>
         [Input("listingId", required: true)]
         public Input<string> ListingId { get; set; } = null!;
 
+        /// <summary>
+        /// Listing Resource Version.
+        /// </summary>
         [Input("listingResourceVersion", required: true)]
         public Input<string> ListingResourceVersion { get; set; } = null!;
 
@@ -90,21 +136,39 @@ namespace Pulumi.Oci.Core
 
     public sealed class ListingResourceVersionAgreementState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// EULA link
+        /// </summary>
         [Input("eulaLink")]
         public Input<string>? EulaLink { get; set; }
 
+        /// <summary>
+        /// The OCID of the listing.
+        /// </summary>
         [Input("listingId")]
         public Input<string>? ListingId { get; set; }
 
+        /// <summary>
+        /// Listing Resource Version.
+        /// </summary>
         [Input("listingResourceVersion")]
         public Input<string>? ListingResourceVersion { get; set; }
 
+        /// <summary>
+        /// Oracle TOU link
+        /// </summary>
         [Input("oracleTermsOfUseLink")]
         public Input<string>? OracleTermsOfUseLink { get; set; }
 
+        /// <summary>
+        /// A generated signature for this agreement retrieval operation which should be used in the create subscription call.
+        /// </summary>
         [Input("signature")]
         public Input<string>? Signature { get; set; }
 
+        /// <summary>
+        /// Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
+        /// </summary>
         [Input("timeRetrieved")]
         public Input<string>? TimeRetrieved { get; set; }
 

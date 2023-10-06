@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['AppCatalogSubscriptionArgs', 'AppCatalogSubscription']
@@ -35,14 +35,35 @@ class AppCatalogSubscriptionArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] eula_link: EULA link
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "listing_id", listing_id)
-        pulumi.set(__self__, "listing_resource_version", listing_resource_version)
-        pulumi.set(__self__, "oracle_terms_of_use_link", oracle_terms_of_use_link)
-        pulumi.set(__self__, "signature", signature)
-        pulumi.set(__self__, "time_retrieved", time_retrieved)
+        AppCatalogSubscriptionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            listing_id=listing_id,
+            listing_resource_version=listing_resource_version,
+            oracle_terms_of_use_link=oracle_terms_of_use_link,
+            signature=signature,
+            time_retrieved=time_retrieved,
+            eula_link=eula_link,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             listing_id: pulumi.Input[str],
+             listing_resource_version: pulumi.Input[str],
+             oracle_terms_of_use_link: pulumi.Input[str],
+             signature: pulumi.Input[str],
+             time_retrieved: pulumi.Input[str],
+             eula_link: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("listing_id", listing_id)
+        _setter("listing_resource_version", listing_resource_version)
+        _setter("oracle_terms_of_use_link", oracle_terms_of_use_link)
+        _setter("signature", signature)
+        _setter("time_retrieved", time_retrieved)
         if eula_link is not None:
-            pulumi.set(__self__, "eula_link", eula_link)
+            _setter("eula_link", eula_link)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -167,30 +188,61 @@ class _AppCatalogSubscriptionState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _AppCatalogSubscriptionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            eula_link=eula_link,
+            listing_id=listing_id,
+            listing_resource_id=listing_resource_id,
+            listing_resource_version=listing_resource_version,
+            oracle_terms_of_use_link=oracle_terms_of_use_link,
+            publisher_name=publisher_name,
+            signature=signature,
+            summary=summary,
+            time_created=time_created,
+            time_retrieved=time_retrieved,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             eula_link: Optional[pulumi.Input[str]] = None,
+             listing_id: Optional[pulumi.Input[str]] = None,
+             listing_resource_id: Optional[pulumi.Input[str]] = None,
+             listing_resource_version: Optional[pulumi.Input[str]] = None,
+             oracle_terms_of_use_link: Optional[pulumi.Input[str]] = None,
+             publisher_name: Optional[pulumi.Input[str]] = None,
+             signature: Optional[pulumi.Input[str]] = None,
+             summary: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_retrieved: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if eula_link is not None:
-            pulumi.set(__self__, "eula_link", eula_link)
+            _setter("eula_link", eula_link)
         if listing_id is not None:
-            pulumi.set(__self__, "listing_id", listing_id)
+            _setter("listing_id", listing_id)
         if listing_resource_id is not None:
-            pulumi.set(__self__, "listing_resource_id", listing_resource_id)
+            _setter("listing_resource_id", listing_resource_id)
         if listing_resource_version is not None:
-            pulumi.set(__self__, "listing_resource_version", listing_resource_version)
+            _setter("listing_resource_version", listing_resource_version)
         if oracle_terms_of_use_link is not None:
-            pulumi.set(__self__, "oracle_terms_of_use_link", oracle_terms_of_use_link)
+            _setter("oracle_terms_of_use_link", oracle_terms_of_use_link)
         if publisher_name is not None:
-            pulumi.set(__self__, "publisher_name", publisher_name)
+            _setter("publisher_name", publisher_name)
         if signature is not None:
-            pulumi.set(__self__, "signature", signature)
+            _setter("signature", signature)
         if summary is not None:
-            pulumi.set(__self__, "summary", summary)
+            _setter("summary", summary)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_retrieved is not None:
-            pulumi.set(__self__, "time_retrieved", time_retrieved)
+            _setter("time_retrieved", time_retrieved)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -442,6 +494,10 @@ class AppCatalogSubscription(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppCatalogSubscriptionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

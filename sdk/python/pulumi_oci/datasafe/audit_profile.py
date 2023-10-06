@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,21 +39,44 @@ class AuditProfileArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_paid_usage_enabled: (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
         """
-        pulumi.set(__self__, "audit_profile_id", audit_profile_id)
+        AuditProfileArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audit_profile_id=audit_profile_id,
+            change_retention_trigger=change_retention_trigger,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            is_paid_usage_enabled=is_paid_usage_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audit_profile_id: pulumi.Input[str],
+             change_retention_trigger: Optional[pulumi.Input[int]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_paid_usage_enabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("audit_profile_id", audit_profile_id)
         if change_retention_trigger is not None:
-            pulumi.set(__self__, "change_retention_trigger", change_retention_trigger)
+            _setter("change_retention_trigger", change_retention_trigger)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_paid_usage_enabled is not None:
-            pulumi.set(__self__, "is_paid_usage_enabled", is_paid_usage_enabled)
+            _setter("is_paid_usage_enabled", is_paid_usage_enabled)
 
     @property
     @pulumi.getter(name="auditProfileId")
@@ -204,44 +227,89 @@ class _AuditProfileState:
         :param pulumi.Input[str] time_created: The date and time the audit profile was created, in the format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the audit profile was updated, in the format defined by RFC3339.
         """
+        _AuditProfileState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audit_collected_volume=audit_collected_volume,
+            audit_profile_id=audit_profile_id,
+            audit_trails=audit_trails,
+            change_retention_trigger=change_retention_trigger,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            is_override_global_retention_setting=is_override_global_retention_setting,
+            is_paid_usage_enabled=is_paid_usage_enabled,
+            lifecycle_details=lifecycle_details,
+            offline_months=offline_months,
+            online_months=online_months,
+            state=state,
+            system_tags=system_tags,
+            target_id=target_id,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audit_collected_volume: Optional[pulumi.Input[str]] = None,
+             audit_profile_id: Optional[pulumi.Input[str]] = None,
+             audit_trails: Optional[pulumi.Input[Sequence[pulumi.Input['AuditProfileAuditTrailArgs']]]] = None,
+             change_retention_trigger: Optional[pulumi.Input[int]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_override_global_retention_setting: Optional[pulumi.Input[bool]] = None,
+             is_paid_usage_enabled: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             offline_months: Optional[pulumi.Input[int]] = None,
+             online_months: Optional[pulumi.Input[int]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             target_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if audit_collected_volume is not None:
-            pulumi.set(__self__, "audit_collected_volume", audit_collected_volume)
+            _setter("audit_collected_volume", audit_collected_volume)
         if audit_profile_id is not None:
-            pulumi.set(__self__, "audit_profile_id", audit_profile_id)
+            _setter("audit_profile_id", audit_profile_id)
         if audit_trails is not None:
-            pulumi.set(__self__, "audit_trails", audit_trails)
+            _setter("audit_trails", audit_trails)
         if change_retention_trigger is not None:
-            pulumi.set(__self__, "change_retention_trigger", change_retention_trigger)
+            _setter("change_retention_trigger", change_retention_trigger)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_override_global_retention_setting is not None:
-            pulumi.set(__self__, "is_override_global_retention_setting", is_override_global_retention_setting)
+            _setter("is_override_global_retention_setting", is_override_global_retention_setting)
         if is_paid_usage_enabled is not None:
-            pulumi.set(__self__, "is_paid_usage_enabled", is_paid_usage_enabled)
+            _setter("is_paid_usage_enabled", is_paid_usage_enabled)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if offline_months is not None:
-            pulumi.set(__self__, "offline_months", offline_months)
+            _setter("offline_months", offline_months)
         if online_months is not None:
-            pulumi.set(__self__, "online_months", online_months)
+            _setter("online_months", online_months)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if target_id is not None:
-            pulumi.set(__self__, "target_id", target_id)
+            _setter("target_id", target_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="auditCollectedVolume")
@@ -547,6 +615,10 @@ class AuditProfile(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AuditProfileArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

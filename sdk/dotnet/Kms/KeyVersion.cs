@@ -20,25 +20,6 @@ namespace Pulumi.Oci.Kms
     /// otherwise valid request when the total rate of management write operations exceeds 10 requests per second
     /// for a given tenancy.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testKeyVersion = new Oci.Kms.KeyVersion("testKeyVersion", new()
-    ///     {
-    ///         KeyId = oci_kms_key.Test_key.Id,
-    ///         ManagementEndpoint = @var.Key_version_management_endpoint,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// KeyVersions can be imported using the `id`, e.g.
@@ -57,7 +38,19 @@ namespace Pulumi.Oci.Kms
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+        /// Key reference data to be returned to the customer as a response.
+        /// </summary>
+        [Output("externalKeyReferenceDetails")]
+        public Output<ImmutableArray<Outputs.KeyVersionExternalKeyReferenceDetail>> ExternalKeyReferenceDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// Key version ID associated with the external key.
+        /// </summary>
+        [Output("externalKeyVersionId")]
+        public Output<string> ExternalKeyVersionId { get; private set; } = null!;
+
+        /// <summary>
+        /// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
         /// </summary>
         [Output("isPrimary")]
         public Output<bool> IsPrimary { get; private set; } = null!;
@@ -172,6 +165,12 @@ namespace Pulumi.Oci.Kms
     public sealed class KeyVersionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Key version ID associated with the external key.
+        /// </summary>
+        [Input("externalKeyVersionId")]
+        public Input<string>? ExternalKeyVersionId { get; set; }
+
+        /// <summary>
         /// The OCID of the key.
         /// </summary>
         [Input("keyId", required: true)]
@@ -206,8 +205,26 @@ namespace Pulumi.Oci.Kms
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
+        [Input("externalKeyReferenceDetails")]
+        private InputList<Inputs.KeyVersionExternalKeyReferenceDetailGetArgs>? _externalKeyReferenceDetails;
+
         /// <summary>
-        /// A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+        /// Key reference data to be returned to the customer as a response.
+        /// </summary>
+        public InputList<Inputs.KeyVersionExternalKeyReferenceDetailGetArgs> ExternalKeyReferenceDetails
+        {
+            get => _externalKeyReferenceDetails ?? (_externalKeyReferenceDetails = new InputList<Inputs.KeyVersionExternalKeyReferenceDetailGetArgs>());
+            set => _externalKeyReferenceDetails = value;
+        }
+
+        /// <summary>
+        /// Key version ID associated with the external key.
+        /// </summary>
+        [Input("externalKeyVersionId")]
+        public Input<string>? ExternalKeyVersionId { get; set; }
+
+        /// <summary>
+        /// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
         /// </summary>
         [Input("isPrimary")]
         public Input<bool>? IsPrimary { get; set; }

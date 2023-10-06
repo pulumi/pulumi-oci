@@ -132,6 +132,9 @@ namespace Pulumi.Oci.Kms
         /// </summary>
         public readonly string Id;
         public readonly string ManagementEndpoint;
+        /// <summary>
+        /// Replica Details.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetReplicationStatusReplicaDetailResult> ReplicaDetails;
         public readonly string ReplicationId;
 

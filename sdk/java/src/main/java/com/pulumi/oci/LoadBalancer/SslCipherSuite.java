@@ -61,17 +61,9 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:LoadBalancer/sslCipherSuite:SslCipherSuite")
 public class SslCipherSuite extends com.pulumi.resources.CustomResource {
-    /**
-     * A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
-     * 
-     */
     @Export(name="ciphers", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ciphers;
 
-    /**
-     * @return A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
-     * 
-     */
     public Output<List<String>> ciphers() {
         return this.ciphers;
     }

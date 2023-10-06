@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ManagedListArgs', 'ManagedList']
@@ -43,20 +43,43 @@ class ManagedListArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
+        ManagedListArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            list_items=list_items,
+            list_type=list_type,
+            source_managed_list_id=source_managed_list_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             list_items: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             list_type: Optional[pulumi.Input[str]] = None,
+             source_managed_list_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if list_items is not None:
-            pulumi.set(__self__, "list_items", list_items)
+            _setter("list_items", list_items)
         if list_type is not None:
-            pulumi.set(__self__, "list_type", list_type)
+            _setter("list_type", list_type)
         if source_managed_list_id is not None:
-            pulumi.set(__self__, "source_managed_list_id", source_managed_list_id)
+            _setter("source_managed_list_id", source_managed_list_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -211,36 +234,73 @@ class _ManagedListState:
         :param pulumi.Input[str] time_created: The date and time the managed list was created. Format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the managed list was updated. Format defined by RFC3339.
         """
+        _ManagedListState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            feed_provider=feed_provider,
+            freeform_tags=freeform_tags,
+            is_editable=is_editable,
+            lifecyle_details=lifecyle_details,
+            list_items=list_items,
+            list_type=list_type,
+            source_managed_list_id=source_managed_list_id,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             feed_provider: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_editable: Optional[pulumi.Input[bool]] = None,
+             lifecyle_details: Optional[pulumi.Input[str]] = None,
+             list_items: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             list_type: Optional[pulumi.Input[str]] = None,
+             source_managed_list_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if feed_provider is not None:
-            pulumi.set(__self__, "feed_provider", feed_provider)
+            _setter("feed_provider", feed_provider)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_editable is not None:
-            pulumi.set(__self__, "is_editable", is_editable)
+            _setter("is_editable", is_editable)
         if lifecyle_details is not None:
-            pulumi.set(__self__, "lifecyle_details", lifecyle_details)
+            _setter("lifecyle_details", lifecyle_details)
         if list_items is not None:
-            pulumi.set(__self__, "list_items", list_items)
+            _setter("list_items", list_items)
         if list_type is not None:
-            pulumi.set(__self__, "list_type", list_type)
+            _setter("list_type", list_type)
         if source_managed_list_id is not None:
-            pulumi.set(__self__, "source_managed_list_id", source_managed_list_id)
+            _setter("source_managed_list_id", source_managed_list_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -510,6 +570,10 @@ class ManagedList(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ManagedListArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

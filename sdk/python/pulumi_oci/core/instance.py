@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -59,7 +59,6 @@ class InstanceArgs:
         :param pulumi.Input[str] dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         :param pulumi.Input[str] fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
                
                If you do not specify the fault domain, the system selects one for you.
@@ -143,75 +142,144 @@ class InstanceArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] subnet_id: Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
+        InstanceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            agent_config=agent_config,
+            async_=async_,
+            availability_config=availability_config,
+            capacity_reservation_id=capacity_reservation_id,
+            compute_cluster_id=compute_cluster_id,
+            create_vnic_details=create_vnic_details,
+            dedicated_vm_host_id=dedicated_vm_host_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            extended_metadata=extended_metadata,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            image=image,
+            instance_configuration_id=instance_configuration_id,
+            instance_options=instance_options,
+            ipxe_script=ipxe_script,
+            is_pv_encryption_in_transit_enabled=is_pv_encryption_in_transit_enabled,
+            launch_options=launch_options,
+            metadata=metadata,
+            platform_config=platform_config,
+            preemptible_instance_config=preemptible_instance_config,
+            preserve_boot_volume=preserve_boot_volume,
+            shape=shape,
+            shape_config=shape_config,
+            source_details=source_details,
+            state=state,
+            subnet_id=subnet_id,
+            update_operation_constraint=update_operation_constraint,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: pulumi.Input[str],
+             compartment_id: pulumi.Input[str],
+             agent_config: Optional[pulumi.Input['InstanceAgentConfigArgs']] = None,
+             async_: Optional[pulumi.Input[bool]] = None,
+             availability_config: Optional[pulumi.Input['InstanceAvailabilityConfigArgs']] = None,
+             capacity_reservation_id: Optional[pulumi.Input[str]] = None,
+             compute_cluster_id: Optional[pulumi.Input[str]] = None,
+             create_vnic_details: Optional[pulumi.Input['InstanceCreateVnicDetailsArgs']] = None,
+             dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             extended_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             fault_domain: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hostname_label: Optional[pulumi.Input[str]] = None,
+             image: Optional[pulumi.Input[str]] = None,
+             instance_configuration_id: Optional[pulumi.Input[str]] = None,
+             instance_options: Optional[pulumi.Input['InstanceInstanceOptionsArgs']] = None,
+             ipxe_script: Optional[pulumi.Input[str]] = None,
+             is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
+             launch_options: Optional[pulumi.Input['InstanceLaunchOptionsArgs']] = None,
+             metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             platform_config: Optional[pulumi.Input['InstancePlatformConfigArgs']] = None,
+             preemptible_instance_config: Optional[pulumi.Input['InstancePreemptibleInstanceConfigArgs']] = None,
+             preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             shape_config: Optional[pulumi.Input['InstanceShapeConfigArgs']] = None,
+             source_details: Optional[pulumi.Input['InstanceSourceDetailsArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             update_operation_constraint: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("compartment_id", compartment_id)
         if agent_config is not None:
-            pulumi.set(__self__, "agent_config", agent_config)
+            _setter("agent_config", agent_config)
         if async_ is not None:
-            pulumi.set(__self__, "async_", async_)
+            _setter("async_", async_)
         if availability_config is not None:
-            pulumi.set(__self__, "availability_config", availability_config)
+            _setter("availability_config", availability_config)
         if capacity_reservation_id is not None:
-            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+            _setter("capacity_reservation_id", capacity_reservation_id)
         if compute_cluster_id is not None:
-            pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
+            _setter("compute_cluster_id", compute_cluster_id)
         if create_vnic_details is not None:
-            pulumi.set(__self__, "create_vnic_details", create_vnic_details)
+            _setter("create_vnic_details", create_vnic_details)
         if dedicated_vm_host_id is not None:
-            pulumi.set(__self__, "dedicated_vm_host_id", dedicated_vm_host_id)
+            _setter("dedicated_vm_host_id", dedicated_vm_host_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if extended_metadata is not None:
-            pulumi.set(__self__, "extended_metadata", extended_metadata)
+            _setter("extended_metadata", extended_metadata)
         if fault_domain is not None:
-            pulumi.set(__self__, "fault_domain", fault_domain)
+            _setter("fault_domain", fault_domain)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hostname_label is not None:
             warnings.warn("""The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""", DeprecationWarning)
             pulumi.log.warn("""hostname_label is deprecated: The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""")
         if hostname_label is not None:
-            pulumi.set(__self__, "hostname_label", hostname_label)
+            _setter("hostname_label", hostname_label)
         if image is not None:
             warnings.warn("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""", DeprecationWarning)
             pulumi.log.warn("""image is deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
         if image is not None:
-            pulumi.set(__self__, "image", image)
+            _setter("image", image)
         if instance_configuration_id is not None:
-            pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
+            _setter("instance_configuration_id", instance_configuration_id)
         if instance_options is not None:
-            pulumi.set(__self__, "instance_options", instance_options)
+            _setter("instance_options", instance_options)
         if ipxe_script is not None:
-            pulumi.set(__self__, "ipxe_script", ipxe_script)
+            _setter("ipxe_script", ipxe_script)
         if is_pv_encryption_in_transit_enabled is not None:
-            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+            _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if launch_options is not None:
-            pulumi.set(__self__, "launch_options", launch_options)
+            _setter("launch_options", launch_options)
         if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
+            _setter("metadata", metadata)
         if platform_config is not None:
-            pulumi.set(__self__, "platform_config", platform_config)
+            _setter("platform_config", platform_config)
         if preemptible_instance_config is not None:
-            pulumi.set(__self__, "preemptible_instance_config", preemptible_instance_config)
+            _setter("preemptible_instance_config", preemptible_instance_config)
         if preserve_boot_volume is not None:
-            pulumi.set(__self__, "preserve_boot_volume", preserve_boot_volume)
+            _setter("preserve_boot_volume", preserve_boot_volume)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if shape_config is not None:
-            pulumi.set(__self__, "shape_config", shape_config)
+            _setter("shape_config", shape_config)
         if source_details is not None:
-            pulumi.set(__self__, "source_details", source_details)
+            _setter("source_details", source_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subnet_id is not None:
             warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""", DeprecationWarning)
             pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if update_operation_constraint is not None:
-            pulumi.set(__self__, "update_operation_constraint", update_operation_constraint)
+            _setter("update_operation_constraint", update_operation_constraint)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -345,9 +413,6 @@ class InstanceArgs:
     @property
     @pulumi.getter(name="extendedMetadata")
     def extended_metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-        """
         return pulumi.get(self, "extended_metadata")
 
     @extended_metadata.setter
@@ -709,7 +774,6 @@ class _InstanceState:
         :param pulumi.Input[str] dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         :param pulumi.Input[str] fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
                
                If you do not specify the fault domain, the system selects one for you.
@@ -805,95 +869,182 @@ class _InstanceState:
         :param pulumi.Input[str] time_created: The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_maintenance_reboot_due: The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
         """
+        _InstanceState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agent_config=agent_config,
+            async_=async_,
+            availability_config=availability_config,
+            availability_domain=availability_domain,
+            boot_volume_id=boot_volume_id,
+            capacity_reservation_id=capacity_reservation_id,
+            compartment_id=compartment_id,
+            compute_cluster_id=compute_cluster_id,
+            create_vnic_details=create_vnic_details,
+            dedicated_vm_host_id=dedicated_vm_host_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            extended_metadata=extended_metadata,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            image=image,
+            instance_configuration_id=instance_configuration_id,
+            instance_options=instance_options,
+            ipxe_script=ipxe_script,
+            is_cross_numa_node=is_cross_numa_node,
+            is_pv_encryption_in_transit_enabled=is_pv_encryption_in_transit_enabled,
+            launch_mode=launch_mode,
+            launch_options=launch_options,
+            metadata=metadata,
+            platform_config=platform_config,
+            preemptible_instance_config=preemptible_instance_config,
+            preserve_boot_volume=preserve_boot_volume,
+            private_ip=private_ip,
+            public_ip=public_ip,
+            region=region,
+            shape=shape,
+            shape_config=shape_config,
+            source_details=source_details,
+            state=state,
+            subnet_id=subnet_id,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_maintenance_reboot_due=time_maintenance_reboot_due,
+            update_operation_constraint=update_operation_constraint,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agent_config: Optional[pulumi.Input['InstanceAgentConfigArgs']] = None,
+             async_: Optional[pulumi.Input[bool]] = None,
+             availability_config: Optional[pulumi.Input['InstanceAvailabilityConfigArgs']] = None,
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             boot_volume_id: Optional[pulumi.Input[str]] = None,
+             capacity_reservation_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             compute_cluster_id: Optional[pulumi.Input[str]] = None,
+             create_vnic_details: Optional[pulumi.Input['InstanceCreateVnicDetailsArgs']] = None,
+             dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             extended_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             fault_domain: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hostname_label: Optional[pulumi.Input[str]] = None,
+             image: Optional[pulumi.Input[str]] = None,
+             instance_configuration_id: Optional[pulumi.Input[str]] = None,
+             instance_options: Optional[pulumi.Input['InstanceInstanceOptionsArgs']] = None,
+             ipxe_script: Optional[pulumi.Input[str]] = None,
+             is_cross_numa_node: Optional[pulumi.Input[bool]] = None,
+             is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
+             launch_mode: Optional[pulumi.Input[str]] = None,
+             launch_options: Optional[pulumi.Input['InstanceLaunchOptionsArgs']] = None,
+             metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             platform_config: Optional[pulumi.Input['InstancePlatformConfigArgs']] = None,
+             preemptible_instance_config: Optional[pulumi.Input['InstancePreemptibleInstanceConfigArgs']] = None,
+             preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
+             private_ip: Optional[pulumi.Input[str]] = None,
+             public_ip: Optional[pulumi.Input[str]] = None,
+             region: Optional[pulumi.Input[str]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             shape_config: Optional[pulumi.Input['InstanceShapeConfigArgs']] = None,
+             source_details: Optional[pulumi.Input['InstanceSourceDetailsArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_maintenance_reboot_due: Optional[pulumi.Input[str]] = None,
+             update_operation_constraint: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if agent_config is not None:
-            pulumi.set(__self__, "agent_config", agent_config)
+            _setter("agent_config", agent_config)
         if async_ is not None:
-            pulumi.set(__self__, "async_", async_)
+            _setter("async_", async_)
         if availability_config is not None:
-            pulumi.set(__self__, "availability_config", availability_config)
+            _setter("availability_config", availability_config)
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if boot_volume_id is not None:
-            pulumi.set(__self__, "boot_volume_id", boot_volume_id)
+            _setter("boot_volume_id", boot_volume_id)
         if capacity_reservation_id is not None:
-            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+            _setter("capacity_reservation_id", capacity_reservation_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if compute_cluster_id is not None:
-            pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
+            _setter("compute_cluster_id", compute_cluster_id)
         if create_vnic_details is not None:
-            pulumi.set(__self__, "create_vnic_details", create_vnic_details)
+            _setter("create_vnic_details", create_vnic_details)
         if dedicated_vm_host_id is not None:
-            pulumi.set(__self__, "dedicated_vm_host_id", dedicated_vm_host_id)
+            _setter("dedicated_vm_host_id", dedicated_vm_host_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if extended_metadata is not None:
-            pulumi.set(__self__, "extended_metadata", extended_metadata)
+            _setter("extended_metadata", extended_metadata)
         if fault_domain is not None:
-            pulumi.set(__self__, "fault_domain", fault_domain)
+            _setter("fault_domain", fault_domain)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hostname_label is not None:
             warnings.warn("""The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""", DeprecationWarning)
             pulumi.log.warn("""hostname_label is deprecated: The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""")
         if hostname_label is not None:
-            pulumi.set(__self__, "hostname_label", hostname_label)
+            _setter("hostname_label", hostname_label)
         if image is not None:
             warnings.warn("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""", DeprecationWarning)
             pulumi.log.warn("""image is deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
         if image is not None:
-            pulumi.set(__self__, "image", image)
+            _setter("image", image)
         if instance_configuration_id is not None:
-            pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
+            _setter("instance_configuration_id", instance_configuration_id)
         if instance_options is not None:
-            pulumi.set(__self__, "instance_options", instance_options)
+            _setter("instance_options", instance_options)
         if ipxe_script is not None:
-            pulumi.set(__self__, "ipxe_script", ipxe_script)
+            _setter("ipxe_script", ipxe_script)
         if is_cross_numa_node is not None:
-            pulumi.set(__self__, "is_cross_numa_node", is_cross_numa_node)
+            _setter("is_cross_numa_node", is_cross_numa_node)
         if is_pv_encryption_in_transit_enabled is not None:
-            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+            _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if launch_mode is not None:
-            pulumi.set(__self__, "launch_mode", launch_mode)
+            _setter("launch_mode", launch_mode)
         if launch_options is not None:
-            pulumi.set(__self__, "launch_options", launch_options)
+            _setter("launch_options", launch_options)
         if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
+            _setter("metadata", metadata)
         if platform_config is not None:
-            pulumi.set(__self__, "platform_config", platform_config)
+            _setter("platform_config", platform_config)
         if preemptible_instance_config is not None:
-            pulumi.set(__self__, "preemptible_instance_config", preemptible_instance_config)
+            _setter("preemptible_instance_config", preemptible_instance_config)
         if preserve_boot_volume is not None:
-            pulumi.set(__self__, "preserve_boot_volume", preserve_boot_volume)
+            _setter("preserve_boot_volume", preserve_boot_volume)
         if private_ip is not None:
-            pulumi.set(__self__, "private_ip", private_ip)
+            _setter("private_ip", private_ip)
         if public_ip is not None:
-            pulumi.set(__self__, "public_ip", public_ip)
+            _setter("public_ip", public_ip)
         if region is not None:
-            pulumi.set(__self__, "region", region)
+            _setter("region", region)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if shape_config is not None:
-            pulumi.set(__self__, "shape_config", shape_config)
+            _setter("shape_config", shape_config)
         if source_details is not None:
-            pulumi.set(__self__, "source_details", source_details)
+            _setter("source_details", source_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subnet_id is not None:
             warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""", DeprecationWarning)
             pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_maintenance_reboot_due is not None:
-            pulumi.set(__self__, "time_maintenance_reboot_due", time_maintenance_reboot_due)
+            _setter("time_maintenance_reboot_due", time_maintenance_reboot_due)
         if update_operation_constraint is not None:
-            pulumi.set(__self__, "update_operation_constraint", update_operation_constraint)
+            _setter("update_operation_constraint", update_operation_constraint)
 
     @property
     @pulumi.getter(name="agentConfig")
@@ -1039,9 +1190,6 @@ class _InstanceState:
     @property
     @pulumi.getter(name="extendedMetadata")
     def extended_metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-        """
         return pulumi.get(self, "extended_metadata")
 
     @extended_metadata.setter
@@ -1551,7 +1699,6 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         :param pulumi.Input[str] fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
                
                If you do not specify the fault domain, the system selects one for you.
@@ -1706,6 +1853,10 @@ class Instance(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            InstanceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1751,8 +1902,18 @@ class Instance(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = InstanceArgs.__new__(InstanceArgs)
 
+            if agent_config is not None and not isinstance(agent_config, InstanceAgentConfigArgs):
+                agent_config = agent_config or {}
+                def _setter(key, value):
+                    agent_config[key] = value
+                InstanceAgentConfigArgs._configure(_setter, **agent_config)
             __props__.__dict__["agent_config"] = agent_config
             __props__.__dict__["async_"] = async_
+            if availability_config is not None and not isinstance(availability_config, InstanceAvailabilityConfigArgs):
+                availability_config = availability_config or {}
+                def _setter(key, value):
+                    availability_config[key] = value
+                InstanceAvailabilityConfigArgs._configure(_setter, **availability_config)
             __props__.__dict__["availability_config"] = availability_config
             if availability_domain is None and not opts.urn:
                 raise TypeError("Missing required property 'availability_domain'")
@@ -1762,6 +1923,11 @@ class Instance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["compute_cluster_id"] = compute_cluster_id
+            if create_vnic_details is not None and not isinstance(create_vnic_details, InstanceCreateVnicDetailsArgs):
+                create_vnic_details = create_vnic_details or {}
+                def _setter(key, value):
+                    create_vnic_details[key] = value
+                InstanceCreateVnicDetailsArgs._configure(_setter, **create_vnic_details)
             __props__.__dict__["create_vnic_details"] = create_vnic_details
             __props__.__dict__["dedicated_vm_host_id"] = dedicated_vm_host_id
             __props__.__dict__["defined_tags"] = defined_tags
@@ -1769,30 +1935,51 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["extended_metadata"] = extended_metadata
             __props__.__dict__["fault_domain"] = fault_domain
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if hostname_label is not None and not opts.urn:
-                warnings.warn("""The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""", DeprecationWarning)
-                pulumi.log.warn("""hostname_label is deprecated: The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""")
             __props__.__dict__["hostname_label"] = hostname_label
-            if image is not None and not opts.urn:
-                warnings.warn("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""", DeprecationWarning)
-                pulumi.log.warn("""image is deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
             __props__.__dict__["image"] = image
             __props__.__dict__["instance_configuration_id"] = instance_configuration_id
+            if instance_options is not None and not isinstance(instance_options, InstanceInstanceOptionsArgs):
+                instance_options = instance_options or {}
+                def _setter(key, value):
+                    instance_options[key] = value
+                InstanceInstanceOptionsArgs._configure(_setter, **instance_options)
             __props__.__dict__["instance_options"] = instance_options
             __props__.__dict__["ipxe_script"] = ipxe_script
             __props__.__dict__["is_pv_encryption_in_transit_enabled"] = is_pv_encryption_in_transit_enabled
+            if launch_options is not None and not isinstance(launch_options, InstanceLaunchOptionsArgs):
+                launch_options = launch_options or {}
+                def _setter(key, value):
+                    launch_options[key] = value
+                InstanceLaunchOptionsArgs._configure(_setter, **launch_options)
             __props__.__dict__["launch_options"] = launch_options
             __props__.__dict__["metadata"] = metadata
+            if platform_config is not None and not isinstance(platform_config, InstancePlatformConfigArgs):
+                platform_config = platform_config or {}
+                def _setter(key, value):
+                    platform_config[key] = value
+                InstancePlatformConfigArgs._configure(_setter, **platform_config)
             __props__.__dict__["platform_config"] = platform_config
+            if preemptible_instance_config is not None and not isinstance(preemptible_instance_config, InstancePreemptibleInstanceConfigArgs):
+                preemptible_instance_config = preemptible_instance_config or {}
+                def _setter(key, value):
+                    preemptible_instance_config[key] = value
+                InstancePreemptibleInstanceConfigArgs._configure(_setter, **preemptible_instance_config)
             __props__.__dict__["preemptible_instance_config"] = preemptible_instance_config
             __props__.__dict__["preserve_boot_volume"] = preserve_boot_volume
             __props__.__dict__["shape"] = shape
+            if shape_config is not None and not isinstance(shape_config, InstanceShapeConfigArgs):
+                shape_config = shape_config or {}
+                def _setter(key, value):
+                    shape_config[key] = value
+                InstanceShapeConfigArgs._configure(_setter, **shape_config)
             __props__.__dict__["shape_config"] = shape_config
+            if source_details is not None and not isinstance(source_details, InstanceSourceDetailsArgs):
+                source_details = source_details or {}
+                def _setter(key, value):
+                    source_details[key] = value
+                InstanceSourceDetailsArgs._configure(_setter, **source_details)
             __props__.__dict__["source_details"] = source_details
             __props__.__dict__["state"] = state
-            if subnet_id is not None and not opts.urn:
-                warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""", DeprecationWarning)
-                pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
             __props__.__dict__["subnet_id"] = subnet_id
             __props__.__dict__["update_operation_constraint"] = update_operation_constraint
             __props__.__dict__["boot_volume_id"] = None
@@ -1872,7 +2059,6 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         :param pulumi.Input[str] fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
                
                If you do not specify the fault domain, the system selects one for you.
@@ -2110,9 +2296,6 @@ class Instance(pulumi.CustomResource):
     @property
     @pulumi.getter(name="extendedMetadata")
     def extended_metadata(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-        """
         return pulumi.get(self, "extended_metadata")
 
     @property

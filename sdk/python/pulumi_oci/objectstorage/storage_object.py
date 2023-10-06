@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -55,35 +55,74 @@ class StorageObjectArgs:
                Note: To enable object copy, you must authorize the service to manage objects on your behalf.
         :param pulumi.Input[str] storage_tier: (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+        StorageObjectArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+            cache_control=cache_control,
+            content=content,
+            content_disposition=content_disposition,
+            content_encoding=content_encoding,
+            content_language=content_language,
+            content_md5=content_md5,
+            content_type=content_type,
+            delete_all_object_versions=delete_all_object_versions,
+            metadata=metadata,
+            opc_sse_kms_key_id=opc_sse_kms_key_id,
+            source=source,
+            source_uri_details=source_uri_details,
+            storage_tier=storage_tier,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: pulumi.Input[str],
+             namespace: pulumi.Input[str],
+             object: pulumi.Input[str],
+             cache_control: Optional[pulumi.Input[str]] = None,
+             content: Optional[pulumi.Input[str]] = None,
+             content_disposition: Optional[pulumi.Input[str]] = None,
+             content_encoding: Optional[pulumi.Input[str]] = None,
+             content_language: Optional[pulumi.Input[str]] = None,
+             content_md5: Optional[pulumi.Input[str]] = None,
+             content_type: Optional[pulumi.Input[str]] = None,
+             delete_all_object_versions: Optional[pulumi.Input[bool]] = None,
+             metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opc_sse_kms_key_id: Optional[pulumi.Input[str]] = None,
+             source: Optional[pulumi.Input[str]] = None,
+             source_uri_details: Optional[pulumi.Input['StorageObjectSourceUriDetailsArgs']] = None,
+             storage_tier: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("object", object)
         if cache_control is not None:
-            pulumi.set(__self__, "cache_control", cache_control)
+            _setter("cache_control", cache_control)
         if content is not None:
-            pulumi.set(__self__, "content", content)
+            _setter("content", content)
         if content_disposition is not None:
-            pulumi.set(__self__, "content_disposition", content_disposition)
+            _setter("content_disposition", content_disposition)
         if content_encoding is not None:
-            pulumi.set(__self__, "content_encoding", content_encoding)
+            _setter("content_encoding", content_encoding)
         if content_language is not None:
-            pulumi.set(__self__, "content_language", content_language)
+            _setter("content_language", content_language)
         if content_md5 is not None:
-            pulumi.set(__self__, "content_md5", content_md5)
+            _setter("content_md5", content_md5)
         if content_type is not None:
-            pulumi.set(__self__, "content_type", content_type)
+            _setter("content_type", content_type)
         if delete_all_object_versions is not None:
-            pulumi.set(__self__, "delete_all_object_versions", delete_all_object_versions)
+            _setter("delete_all_object_versions", delete_all_object_versions)
         if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
+            _setter("metadata", metadata)
         if opc_sse_kms_key_id is not None:
-            pulumi.set(__self__, "opc_sse_kms_key_id", opc_sse_kms_key_id)
+            _setter("opc_sse_kms_key_id", opc_sse_kms_key_id)
         if source is not None:
-            pulumi.set(__self__, "source", source)
+            _setter("source", source)
         if source_uri_details is not None:
-            pulumi.set(__self__, "source_uri_details", source_uri_details)
+            _setter("source_uri_details", source_uri_details)
         if storage_tier is not None:
-            pulumi.set(__self__, "storage_tier", storage_tier)
+            _setter("storage_tier", storage_tier)
 
     @property
     @pulumi.getter
@@ -329,46 +368,93 @@ class _StorageObjectState:
                Note: To enable object copy, you must authorize the service to manage objects on your behalf.
         :param pulumi.Input[str] storage_tier: (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
         """
+        _StorageObjectState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            cache_control=cache_control,
+            content=content,
+            content_disposition=content_disposition,
+            content_encoding=content_encoding,
+            content_language=content_language,
+            content_length=content_length,
+            content_md5=content_md5,
+            content_type=content_type,
+            delete_all_object_versions=delete_all_object_versions,
+            metadata=metadata,
+            namespace=namespace,
+            object=object,
+            opc_sse_kms_key_id=opc_sse_kms_key_id,
+            source=source,
+            source_uri_details=source_uri_details,
+            state=state,
+            storage_tier=storage_tier,
+            version_id=version_id,
+            work_request_id=work_request_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[pulumi.Input[str]] = None,
+             cache_control: Optional[pulumi.Input[str]] = None,
+             content: Optional[pulumi.Input[str]] = None,
+             content_disposition: Optional[pulumi.Input[str]] = None,
+             content_encoding: Optional[pulumi.Input[str]] = None,
+             content_language: Optional[pulumi.Input[str]] = None,
+             content_length: Optional[pulumi.Input[str]] = None,
+             content_md5: Optional[pulumi.Input[str]] = None,
+             content_type: Optional[pulumi.Input[str]] = None,
+             delete_all_object_versions: Optional[pulumi.Input[bool]] = None,
+             metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             opc_sse_kms_key_id: Optional[pulumi.Input[str]] = None,
+             source: Optional[pulumi.Input[str]] = None,
+             source_uri_details: Optional[pulumi.Input['StorageObjectSourceUriDetailsArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             storage_tier: Optional[pulumi.Input[str]] = None,
+             version_id: Optional[pulumi.Input[str]] = None,
+             work_request_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if cache_control is not None:
-            pulumi.set(__self__, "cache_control", cache_control)
+            _setter("cache_control", cache_control)
         if content is not None:
-            pulumi.set(__self__, "content", content)
+            _setter("content", content)
         if content_disposition is not None:
-            pulumi.set(__self__, "content_disposition", content_disposition)
+            _setter("content_disposition", content_disposition)
         if content_encoding is not None:
-            pulumi.set(__self__, "content_encoding", content_encoding)
+            _setter("content_encoding", content_encoding)
         if content_language is not None:
-            pulumi.set(__self__, "content_language", content_language)
+            _setter("content_language", content_language)
         if content_length is not None:
-            pulumi.set(__self__, "content_length", content_length)
+            _setter("content_length", content_length)
         if content_md5 is not None:
-            pulumi.set(__self__, "content_md5", content_md5)
+            _setter("content_md5", content_md5)
         if content_type is not None:
-            pulumi.set(__self__, "content_type", content_type)
+            _setter("content_type", content_type)
         if delete_all_object_versions is not None:
-            pulumi.set(__self__, "delete_all_object_versions", delete_all_object_versions)
+            _setter("delete_all_object_versions", delete_all_object_versions)
         if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
+            _setter("metadata", metadata)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
         if opc_sse_kms_key_id is not None:
-            pulumi.set(__self__, "opc_sse_kms_key_id", opc_sse_kms_key_id)
+            _setter("opc_sse_kms_key_id", opc_sse_kms_key_id)
         if source is not None:
-            pulumi.set(__self__, "source", source)
+            _setter("source", source)
         if source_uri_details is not None:
-            pulumi.set(__self__, "source_uri_details", source_uri_details)
+            _setter("source_uri_details", source_uri_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if storage_tier is not None:
-            pulumi.set(__self__, "storage_tier", storage_tier)
+            _setter("storage_tier", storage_tier)
         if version_id is not None:
-            pulumi.set(__self__, "version_id", version_id)
+            _setter("version_id", version_id)
         if work_request_id is not None:
-            pulumi.set(__self__, "work_request_id", work_request_id)
+            _setter("work_request_id", work_request_id)
 
     @property
     @pulumi.getter
@@ -751,6 +837,10 @@ class StorageObject(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            StorageObjectArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -801,6 +891,11 @@ class StorageObject(pulumi.CustomResource):
             __props__.__dict__["object"] = object
             __props__.__dict__["opc_sse_kms_key_id"] = opc_sse_kms_key_id
             __props__.__dict__["source"] = source
+            if source_uri_details is not None and not isinstance(source_uri_details, StorageObjectSourceUriDetailsArgs):
+                source_uri_details = source_uri_details or {}
+                def _setter(key, value):
+                    source_uri_details[key] = value
+                StorageObjectSourceUriDetailsArgs._configure(_setter, **source_uri_details)
             __props__.__dict__["source_uri_details"] = source_uri_details
             __props__.__dict__["storage_tier"] = storage_tier
             __props__.__dict__["content_length"] = None

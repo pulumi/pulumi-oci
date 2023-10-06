@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -65,6 +65,7 @@ __all__ = [
     'GetNotebookSessionsFilterArgs',
     'GetPipelineRunsFilterArgs',
     'GetPipelinesFilterArgs',
+    'GetPrivateEndpointsFilterArgs',
     'GetProjectsFilterArgs',
 ]
 
@@ -81,13 +82,28 @@ class JobJobConfigurationDetailsArgs:
         :param pulumi.Input[Mapping[str, Any]] environment_variables: Environment variables to set for the job.
         :param pulumi.Input[str] maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
-        pulumi.set(__self__, "job_type", job_type)
+        JobJobConfigurationDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            job_type=job_type,
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             job_type: pulumi.Input[str],
+             command_line_arguments: Optional[pulumi.Input[str]] = None,
+             environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("job_type", job_type)
         if command_line_arguments is not None:
-            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+            _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
-            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+            _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="jobType")
@@ -153,13 +169,30 @@ class JobJobInfrastructureConfigurationDetailsArgs:
         :param pulumi.Input['JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs'] job_shape_config_details: (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
         :param pulumi.Input[str] subnet_id: (Updatable) The subnet to create a secondary vnic in to attach to the instance running the job
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
-        pulumi.set(__self__, "shape_name", shape_name)
+        JobJobInfrastructureConfigurationDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            job_infrastructure_type=job_infrastructure_type,
+            shape_name=shape_name,
+            job_shape_config_details=job_shape_config_details,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: pulumi.Input[int],
+             job_infrastructure_type: pulumi.Input[str],
+             shape_name: pulumi.Input[str],
+             job_shape_config_details: Optional[pulumi.Input['JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs']] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("job_infrastructure_type", job_infrastructure_type)
+        _setter("shape_name", shape_name)
         if job_shape_config_details is not None:
-            pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+            _setter("job_shape_config_details", job_shape_config_details)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -231,10 +264,21 @@ class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs:
         :param pulumi.Input[float] memory_in_gbs: (Updatable) The total amount of memory available to the job run instance, in gigabytes.
         :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs available to the job run instance.
         """
+        JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[pulumi.Input[float]] = None,
+             ocpus: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -274,14 +318,29 @@ class JobJobLogConfigurationDetailsArgs:
         :param pulumi.Input[str] log_group_id: The log group id for where log objects are for job runs.
         :param pulumi.Input[str] log_id: The log id the job run will push logs too.
         """
+        JobJobLogConfigurationDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: Optional[pulumi.Input[bool]] = None,
+             enable_logging: Optional[pulumi.Input[bool]] = None,
+             log_group_id: Optional[pulumi.Input[str]] = None,
+             log_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if enable_auto_log_creation is not None:
-            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+            _setter("enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
-            pulumi.set(__self__, "enable_logging", enable_logging)
+            _setter("enable_logging", enable_logging)
         if log_group_id is not None:
-            pulumi.set(__self__, "log_group_id", log_group_id)
+            _setter("log_group_id", log_group_id)
         if log_id is not None:
-            pulumi.set(__self__, "log_id", log_id)
+            _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -345,13 +404,28 @@ class JobRunJobConfigurationOverrideDetailsArgs:
         :param pulumi.Input[Mapping[str, Any]] environment_variables: Environment variables to set for the job.
         :param pulumi.Input[str] maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
-        pulumi.set(__self__, "job_type", job_type)
+        JobRunJobConfigurationOverrideDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            job_type=job_type,
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             job_type: pulumi.Input[str],
+             command_line_arguments: Optional[pulumi.Input[str]] = None,
+             environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("job_type", job_type)
         if command_line_arguments is not None:
-            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+            _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
-            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+            _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="jobType")
@@ -417,16 +491,33 @@ class JobRunJobInfrastructureConfigurationDetailArgs:
         :param pulumi.Input[str] shape_name: The shape used to launch the job run instances.
         :param pulumi.Input[str] subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
+        JobRunJobInfrastructureConfigurationDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            job_infrastructure_type=job_infrastructure_type,
+            job_shape_config_details=job_shape_config_details,
+            shape_name=shape_name,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+             job_infrastructure_type: Optional[pulumi.Input[str]] = None,
+             job_shape_config_details: Optional[pulumi.Input[Sequence[pulumi.Input['JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs']]]] = None,
+             shape_name: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if block_storage_size_in_gbs is not None:
-            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+            _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         if job_infrastructure_type is not None:
-            pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
+            _setter("job_infrastructure_type", job_infrastructure_type)
         if job_shape_config_details is not None:
-            pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+            _setter("job_shape_config_details", job_shape_config_details)
         if shape_name is not None:
-            pulumi.set(__self__, "shape_name", shape_name)
+            _setter("shape_name", shape_name)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -498,10 +589,21 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs:
         :param pulumi.Input[float] memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
         :param pulumi.Input[float] ocpus: The total number of OCPUs available to the job run instance.
         """
+        JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[pulumi.Input[float]] = None,
+             ocpus: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -541,14 +643,29 @@ class JobRunJobLogConfigurationOverrideDetailsArgs:
         :param pulumi.Input[str] log_group_id: The log group id for where log objects are for job runs.
         :param pulumi.Input[str] log_id: The log id the job run will push logs too.
         """
+        JobRunJobLogConfigurationOverrideDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: Optional[pulumi.Input[bool]] = None,
+             enable_logging: Optional[pulumi.Input[bool]] = None,
+             log_group_id: Optional[pulumi.Input[str]] = None,
+             log_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if enable_auto_log_creation is not None:
-            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+            _setter("enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
-            pulumi.set(__self__, "enable_logging", enable_logging)
+            _setter("enable_logging", enable_logging)
         if log_group_id is not None:
-            pulumi.set(__self__, "log_group_id", log_group_id)
+            _setter("log_group_id", log_group_id)
         if log_id is not None:
-            pulumi.set(__self__, "log_id", log_id)
+            _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -608,10 +725,21 @@ class JobRunLogDetailArgs:
         :param pulumi.Input[str] log_group_id: The log group id for where log objects are for job runs.
         :param pulumi.Input[str] log_id: The log id the job run will push logs too.
         """
+        JobRunLogDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[pulumi.Input[str]] = None,
+             log_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if log_group_id is not None:
-            pulumi.set(__self__, "log_group_id", log_group_id)
+            _setter("log_group_id", log_group_id)
         if log_id is not None:
-            pulumi.set(__self__, "log_id", log_id)
+            _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -659,14 +787,29 @@ class ModelCustomMetadataListArgs:
                
                Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
         """
+        ModelCustomMetadataListArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            description=description,
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if category is not None:
-            pulumi.set(__self__, "category", category)
+            _setter("category", category)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -746,14 +889,29 @@ class ModelDefinedMetadataListArgs:
                
                Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
         """
+        ModelDefinedMetadataListArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            description=description,
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             key: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if category is not None:
-            pulumi.set(__self__, "category", category)
+            _setter("category", category)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -821,10 +979,21 @@ class ModelDeploymentCategoryLogDetailsArgs:
         :param pulumi.Input['ModelDeploymentCategoryLogDetailsAccessArgs'] access: (Updatable) The log details.
         :param pulumi.Input['ModelDeploymentCategoryLogDetailsPredictArgs'] predict: (Updatable) The log details.
         """
+        ModelDeploymentCategoryLogDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access=access,
+            predict=predict,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access: Optional[pulumi.Input['ModelDeploymentCategoryLogDetailsAccessArgs']] = None,
+             predict: Optional[pulumi.Input['ModelDeploymentCategoryLogDetailsPredictArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if access is not None:
-            pulumi.set(__self__, "access", access)
+            _setter("access", access)
         if predict is not None:
-            pulumi.set(__self__, "predict", predict)
+            _setter("predict", predict)
 
     @property
     @pulumi.getter
@@ -860,8 +1029,19 @@ class ModelDeploymentCategoryLogDetailsAccessArgs:
         :param pulumi.Input[str] log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
         :param pulumi.Input[str] log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        ModelDeploymentCategoryLogDetailsAccessArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: pulumi.Input[str],
+             log_id: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -897,8 +1077,19 @@ class ModelDeploymentCategoryLogDetailsPredictArgs:
         :param pulumi.Input[str] log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
         :param pulumi.Input[str] log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        ModelDeploymentCategoryLogDetailsPredictArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: pulumi.Input[str],
+             log_id: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -936,10 +1127,23 @@ class ModelDeploymentModelDeploymentConfigurationDetailsArgs:
         :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs'] model_configuration_details: (Updatable) The model configuration details.
         :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs'] environment_configuration_details: (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
         """
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "model_configuration_details", model_configuration_details)
+        ModelDeploymentModelDeploymentConfigurationDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            deployment_type=deployment_type,
+            model_configuration_details=model_configuration_details,
+            environment_configuration_details=environment_configuration_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             deployment_type: pulumi.Input[str],
+             model_configuration_details: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs'],
+             environment_configuration_details: Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("deployment_type", deployment_type)
+        _setter("model_configuration_details", model_configuration_details)
         if environment_configuration_details is not None:
-            pulumi.set(__self__, "environment_configuration_details", environment_configuration_details)
+            _setter("environment_configuration_details", environment_configuration_details)
 
     @property
     @pulumi.getter(name="deploymentType")
@@ -999,21 +1203,44 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
         :param pulumi.Input[str] image_digest: (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
         :param pulumi.Input[int] server_port: (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         """
-        pulumi.set(__self__, "environment_configuration_type", environment_configuration_type)
+        ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            environment_configuration_type=environment_configuration_type,
+            cmds=cmds,
+            entrypoints=entrypoints,
+            environment_variables=environment_variables,
+            health_check_port=health_check_port,
+            image=image,
+            image_digest=image_digest,
+            server_port=server_port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             environment_configuration_type: pulumi.Input[str],
+             cmds: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             entrypoints: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             health_check_port: Optional[pulumi.Input[int]] = None,
+             image: Optional[pulumi.Input[str]] = None,
+             image_digest: Optional[pulumi.Input[str]] = None,
+             server_port: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("environment_configuration_type", environment_configuration_type)
         if cmds is not None:
-            pulumi.set(__self__, "cmds", cmds)
+            _setter("cmds", cmds)
         if entrypoints is not None:
-            pulumi.set(__self__, "entrypoints", entrypoints)
+            _setter("entrypoints", entrypoints)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if health_check_port is not None:
-            pulumi.set(__self__, "health_check_port", health_check_port)
+            _setter("health_check_port", health_check_port)
         if image is not None:
-            pulumi.set(__self__, "image", image)
+            _setter("image", image)
         if image_digest is not None:
-            pulumi.set(__self__, "image_digest", image_digest)
+            _setter("image_digest", image_digest)
         if server_port is not None:
-            pulumi.set(__self__, "server_port", server_port)
+            _setter("server_port", server_port)
 
     @property
     @pulumi.getter(name="environmentConfigurationType")
@@ -1122,15 +1349,30 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         """
         :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs'] instance_configuration: (Updatable) The model deployment instance configuration
         :param pulumi.Input[str] model_id: (Updatable) The OCID of the model you want to deploy.
-        :param pulumi.Input[int] bandwidth_mbps: (Updatable) The network bandwidth for the model.
+        :param pulumi.Input[int] bandwidth_mbps: (Updatable) The minimum network bandwidth for the model deployment.
         :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs'] scaling_policy: (Updatable) The scaling policy to apply to each model of the deployment.
         """
-        pulumi.set(__self__, "instance_configuration", instance_configuration)
-        pulumi.set(__self__, "model_id", model_id)
+        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            instance_configuration=instance_configuration,
+            model_id=model_id,
+            bandwidth_mbps=bandwidth_mbps,
+            scaling_policy=scaling_policy,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             instance_configuration: pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs'],
+             model_id: pulumi.Input[str],
+             bandwidth_mbps: Optional[pulumi.Input[int]] = None,
+             scaling_policy: Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("instance_configuration", instance_configuration)
+        _setter("model_id", model_id)
         if bandwidth_mbps is not None:
-            pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
+            _setter("bandwidth_mbps", bandwidth_mbps)
         if scaling_policy is not None:
-            pulumi.set(__self__, "scaling_policy", scaling_policy)
+            _setter("scaling_policy", scaling_policy)
 
     @property
     @pulumi.getter(name="instanceConfiguration")
@@ -1160,7 +1402,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @pulumi.getter(name="bandwidthMbps")
     def bandwidth_mbps(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The network bandwidth for the model.
+        (Updatable) The minimum network bandwidth for the model deployment.
         """
         return pulumi.get(self, "bandwidth_mbps")
 
@@ -1190,9 +1432,20 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         :param pulumi.Input[str] instance_shape_name: (Updatable) The shape used to launch the model deployment instances.
         :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs'] model_deployment_instance_shape_config_details: (Updatable) Details for the model-deployment instance shape configuration.
         """
-        pulumi.set(__self__, "instance_shape_name", instance_shape_name)
+        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            instance_shape_name=instance_shape_name,
+            model_deployment_instance_shape_config_details=model_deployment_instance_shape_config_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             instance_shape_name: pulumi.Input[str],
+             model_deployment_instance_shape_config_details: Optional[pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("instance_shape_name", instance_shape_name)
         if model_deployment_instance_shape_config_details is not None:
-            pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+            _setter("model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
 
     @property
     @pulumi.getter(name="instanceShapeName")
@@ -1228,10 +1481,21 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         :param pulumi.Input[float] memory_in_gbs: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
         :param pulumi.Input[float] ocpus: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
+        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[pulumi.Input[float]] = None,
+             ocpus: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -1267,8 +1531,19 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         :param pulumi.Input[int] instance_count: (Updatable) The number of instances for the model deployment.
         :param pulumi.Input[str] policy_type: (Updatable) The type of scaling policy.
         """
-        pulumi.set(__self__, "instance_count", instance_count)
-        pulumi.set(__self__, "policy_type", policy_type)
+        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            instance_count=instance_count,
+            policy_type=policy_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             instance_count: pulumi.Input[int],
+             policy_type: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("instance_count", instance_count)
+        _setter("policy_type", policy_type)
 
     @property
     @pulumi.getter(name="instanceCount")
@@ -1301,20 +1576,41 @@ class NotebookSessionNotebookSessionConfigDetailsArgs:
                  shape: pulumi.Input[str],
                  block_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  notebook_session_shape_config_details: Optional[pulumi.Input['NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs']] = None,
+                 private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] shape: (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
         :param pulumi.Input[int] block_storage_size_in_gbs: (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
         :param pulumi.Input['NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs'] notebook_session_shape_config_details: (Updatable) Details for the notebook session shape configuration.
+        :param pulumi.Input[str] private_endpoint_id: (Updatable) The OCID of a Data Science private endpoint.
         :param pulumi.Input[str] subnet_id: (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
         """
-        pulumi.set(__self__, "shape", shape)
+        NotebookSessionNotebookSessionConfigDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            shape=shape,
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            notebook_session_shape_config_details=notebook_session_shape_config_details,
+            private_endpoint_id=private_endpoint_id,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             shape: pulumi.Input[str],
+             block_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+             notebook_session_shape_config_details: Optional[pulumi.Input['NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs']] = None,
+             private_endpoint_id: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("shape", shape)
         if block_storage_size_in_gbs is not None:
-            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+            _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         if notebook_session_shape_config_details is not None:
-            pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
+            _setter("notebook_session_shape_config_details", notebook_session_shape_config_details)
+        if private_endpoint_id is not None:
+            _setter("private_endpoint_id", private_endpoint_id)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter
@@ -1353,6 +1649,18 @@ class NotebookSessionNotebookSessionConfigDetailsArgs:
         pulumi.set(self, "notebook_session_shape_config_details", value)
 
     @property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of a Data Science private endpoint.
+        """
+        return pulumi.get(self, "private_endpoint_id")
+
+    @private_endpoint_id.setter
+    def private_endpoint_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_endpoint_id", value)
+
+    @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1374,10 +1682,21 @@ class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetai
         :param pulumi.Input[float] memory_in_gbs: (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
         :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs available to the notebook session instance.
         """
+        NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[pulumi.Input[float]] = None,
+             ocpus: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -1410,19 +1729,40 @@ class NotebookSessionNotebookSessionConfigurationDetailsArgs:
                  shape: pulumi.Input[str],
                  subnet_id: pulumi.Input[str],
                  block_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
-                 notebook_session_shape_config_details: Optional[pulumi.Input['NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs']] = None):
+                 notebook_session_shape_config_details: Optional[pulumi.Input['NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs']] = None,
+                 private_endpoint_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] shape: (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
         :param pulumi.Input[str] subnet_id: (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
         :param pulumi.Input[int] block_storage_size_in_gbs: (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
         :param pulumi.Input['NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs'] notebook_session_shape_config_details: (Updatable) Details for the notebook session shape configuration.
+        :param pulumi.Input[str] private_endpoint_id: (Updatable) The OCID of a Data Science private endpoint.
         """
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        NotebookSessionNotebookSessionConfigurationDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            shape=shape,
+            subnet_id=subnet_id,
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            notebook_session_shape_config_details=notebook_session_shape_config_details,
+            private_endpoint_id=private_endpoint_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             shape: pulumi.Input[str],
+             subnet_id: pulumi.Input[str],
+             block_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+             notebook_session_shape_config_details: Optional[pulumi.Input['NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs']] = None,
+             private_endpoint_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("shape", shape)
+        _setter("subnet_id", subnet_id)
         if block_storage_size_in_gbs is not None:
-            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+            _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         if notebook_session_shape_config_details is not None:
-            pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
+            _setter("notebook_session_shape_config_details", notebook_session_shape_config_details)
+        if private_endpoint_id is not None:
+            _setter("private_endpoint_id", private_endpoint_id)
 
     @property
     @pulumi.getter
@@ -1472,6 +1812,18 @@ class NotebookSessionNotebookSessionConfigurationDetailsArgs:
     def notebook_session_shape_config_details(self, value: Optional[pulumi.Input['NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs']]):
         pulumi.set(self, "notebook_session_shape_config_details", value)
 
+    @property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of a Data Science private endpoint.
+        """
+        return pulumi.get(self, "private_endpoint_id")
+
+    @private_endpoint_id.setter
+    def private_endpoint_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_endpoint_id", value)
+
 
 @pulumi.input_type
 class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs:
@@ -1482,10 +1834,21 @@ class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConf
         :param pulumi.Input[float] memory_in_gbs: (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
         :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs available to the notebook session instance.
         """
+        NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[pulumi.Input[float]] = None,
+             ocpus: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -1521,10 +1884,21 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsArgs:
         :param pulumi.Input[Mapping[str, Any]] custom_environment_variables: (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
         :param pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs'] notebook_session_git_config_details: (Updatable) Git configuration Details.
         """
+        NotebookSessionNotebookSessionRuntimeConfigDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_environment_variables=custom_environment_variables,
+            notebook_session_git_config_details=notebook_session_git_config_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             notebook_session_git_config_details: Optional[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if custom_environment_variables is not None:
-            pulumi.set(__self__, "custom_environment_variables", custom_environment_variables)
+            _setter("custom_environment_variables", custom_environment_variables)
         if notebook_session_git_config_details is not None:
-            pulumi.set(__self__, "notebook_session_git_config_details", notebook_session_git_config_details)
+            _setter("notebook_session_git_config_details", notebook_session_git_config_details)
 
     @property
     @pulumi.getter(name="customEnvironmentVariables")
@@ -1558,8 +1932,17 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfig
         """
         :param pulumi.Input[Sequence[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs']]] notebook_session_git_repo_config_collections: (Updatable) A collection of Git repository configurations.
         """
+        NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            notebook_session_git_repo_config_collections=notebook_session_git_repo_config_collections,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             notebook_session_git_repo_config_collections: Optional[pulumi.Input[Sequence[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if notebook_session_git_repo_config_collections is not None:
-            pulumi.set(__self__, "notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
+            _setter("notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
 
     @property
     @pulumi.getter(name="notebookSessionGitRepoConfigCollections")
@@ -1581,7 +1964,16 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfig
         """
         :param pulumi.Input[str] url: (Updatable) The repository URL
         """
-        pulumi.set(__self__, "url", url)
+        NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             url: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("url", url)
 
     @property
     @pulumi.getter
@@ -1609,13 +2001,28 @@ class PipelineConfigurationDetailsArgs:
         :param pulumi.Input[Mapping[str, Any]] environment_variables: (Updatable) Environment variables to set for step.
         :param pulumi.Input[str] maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the step.
         """
-        pulumi.set(__self__, "type", type)
+        PipelineConfigurationDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: pulumi.Input[str],
+             command_line_arguments: Optional[pulumi.Input[str]] = None,
+             environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if command_line_arguments is not None:
-            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+            _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
-            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+            _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter
@@ -1677,10 +2084,23 @@ class PipelineInfrastructureConfigurationDetailsArgs:
         :param pulumi.Input[str] shape_name: The shape used to launch the instance for all step runs in the pipeline.
         :param pulumi.Input['PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "shape_name", shape_name)
+        PipelineInfrastructureConfigurationDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            shape_name=shape_name,
+            shape_config_details=shape_config_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: pulumi.Input[int],
+             shape_name: pulumi.Input[str],
+             shape_config_details: Optional[pulumi.Input['PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("shape_name", shape_name)
         if shape_config_details is not None:
-            pulumi.set(__self__, "shape_config_details", shape_config_details)
+            _setter("shape_config_details", shape_config_details)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -1728,10 +2148,21 @@ class PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs:
         :param pulumi.Input[float] memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param pulumi.Input[float] ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
+        PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[pulumi.Input[float]] = None,
+             ocpus: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -1771,14 +2202,29 @@ class PipelineLogConfigurationDetailsArgs:
         :param pulumi.Input[str] log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param pulumi.Input[str] log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
+        PipelineLogConfigurationDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: Optional[pulumi.Input[bool]] = None,
+             enable_logging: Optional[pulumi.Input[bool]] = None,
+             log_group_id: Optional[pulumi.Input[str]] = None,
+             log_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if enable_auto_log_creation is not None:
-            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+            _setter("enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
-            pulumi.set(__self__, "enable_logging", enable_logging)
+            _setter("enable_logging", enable_logging)
         if log_group_id is not None:
-            pulumi.set(__self__, "log_group_id", log_group_id)
+            _setter("log_group_id", log_group_id)
         if log_id is not None:
-            pulumi.set(__self__, "log_id", log_id)
+            _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -1842,14 +2288,29 @@ class PipelineRunConfigurationDetailArgs:
         :param pulumi.Input[str] maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param pulumi.Input[str] type: The type of pipeline.
         """
+        PipelineRunConfigurationDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[pulumi.Input[str]] = None,
+             environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if command_line_arguments is not None:
-            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+            _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
-            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+            _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -1913,13 +2374,28 @@ class PipelineRunConfigurationOverrideDetailsArgs:
         :param pulumi.Input[Mapping[str, Any]] environment_variables: Environment variables to set for step.
         :param pulumi.Input[str] maximum_runtime_in_minutes: A time bound for the execution of the step.
         """
-        pulumi.set(__self__, "type", type)
+        PipelineRunConfigurationOverrideDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: pulumi.Input[str],
+             command_line_arguments: Optional[pulumi.Input[str]] = None,
+             environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if command_line_arguments is not None:
-            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+            _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
-            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+            _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter
@@ -1983,14 +2459,29 @@ class PipelineRunLogConfigurationOverrideDetailsArgs:
         :param pulumi.Input[str] log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param pulumi.Input[str] log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
+        PipelineRunLogConfigurationOverrideDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: Optional[pulumi.Input[bool]] = None,
+             enable_logging: Optional[pulumi.Input[bool]] = None,
+             log_group_id: Optional[pulumi.Input[str]] = None,
+             log_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if enable_auto_log_creation is not None:
-            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+            _setter("enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
-            pulumi.set(__self__, "enable_logging", enable_logging)
+            _setter("enable_logging", enable_logging)
         if log_group_id is not None:
-            pulumi.set(__self__, "log_group_id", log_group_id)
+            _setter("log_group_id", log_group_id)
         if log_id is not None:
-            pulumi.set(__self__, "log_id", log_id)
+            _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -2050,10 +2541,21 @@ class PipelineRunLogDetailArgs:
         :param pulumi.Input[str] log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param pulumi.Input[str] log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
+        PipelineRunLogDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[pulumi.Input[str]] = None,
+             log_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if log_group_id is not None:
-            pulumi.set(__self__, "log_group_id", log_group_id)
+            _setter("log_group_id", log_group_id)
         if log_id is not None:
-            pulumi.set(__self__, "log_id", log_id)
+            _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -2089,8 +2591,19 @@ class PipelineRunStepOverrideDetailArgs:
         :param pulumi.Input['PipelineRunStepOverrideDetailStepConfigurationDetailsArgs'] step_configuration_details: The configuration details of a step.
         :param pulumi.Input[str] step_name: The name of the step.
         """
-        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
-        pulumi.set(__self__, "step_name", step_name)
+        PipelineRunStepOverrideDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            step_configuration_details=step_configuration_details,
+            step_name=step_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             step_configuration_details: pulumi.Input['PipelineRunStepOverrideDetailStepConfigurationDetailsArgs'],
+             step_name: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("step_configuration_details", step_configuration_details)
+        _setter("step_name", step_name)
 
     @property
     @pulumi.getter(name="stepConfigurationDetails")
@@ -2128,12 +2641,25 @@ class PipelineRunStepOverrideDetailStepConfigurationDetailsArgs:
         :param pulumi.Input[Mapping[str, Any]] environment_variables: Environment variables to set for step.
         :param pulumi.Input[str] maximum_runtime_in_minutes: A time bound for the execution of the step.
         """
+        PipelineRunStepOverrideDetailStepConfigurationDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[pulumi.Input[str]] = None,
+             environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if command_line_arguments is not None:
-            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+            _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
-            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+            _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -2191,20 +2717,41 @@ class PipelineRunStepRunArgs:
         :param pulumi.Input[str] time_finished: The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_started: The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
+        PipelineRunStepRunArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            job_run_id=job_run_id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            step_name=step_name,
+            step_type=step_type,
+            time_finished=time_finished,
+            time_started=time_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             job_run_id: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             step_name: Optional[pulumi.Input[str]] = None,
+             step_type: Optional[pulumi.Input[str]] = None,
+             time_finished: Optional[pulumi.Input[str]] = None,
+             time_started: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if job_run_id is not None:
-            pulumi.set(__self__, "job_run_id", job_run_id)
+            _setter("job_run_id", job_run_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if step_name is not None:
-            pulumi.set(__self__, "step_name", step_name)
+            _setter("step_name", step_name)
         if step_type is not None:
-            pulumi.set(__self__, "step_type", step_type)
+            _setter("step_type", step_type)
         if time_finished is not None:
-            pulumi.set(__self__, "time_finished", time_finished)
+            _setter("time_finished", time_finished)
         if time_started is not None:
-            pulumi.set(__self__, "time_started", time_started)
+            _setter("time_started", time_started)
 
     @property
     @pulumi.getter(name="jobRunId")
@@ -2303,15 +2850,34 @@ class PipelineStepArtifactArgs:
         """
         :param pulumi.Input[str] step_name: (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         """
-        pulumi.set(__self__, "artifact_content_length", artifact_content_length)
-        pulumi.set(__self__, "pipeline_step_artifact", pipeline_step_artifact)
-        pulumi.set(__self__, "step_name", step_name)
+        PipelineStepArtifactArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            artifact_content_length=artifact_content_length,
+            pipeline_step_artifact=pipeline_step_artifact,
+            step_name=step_name,
+            artifact_content_disposition=artifact_content_disposition,
+            artifact_content_md5=artifact_content_md5,
+            artifact_last_modified=artifact_last_modified,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             artifact_content_length: pulumi.Input[str],
+             pipeline_step_artifact: pulumi.Input[str],
+             step_name: pulumi.Input[str],
+             artifact_content_disposition: Optional[pulumi.Input[str]] = None,
+             artifact_content_md5: Optional[pulumi.Input[str]] = None,
+             artifact_last_modified: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("artifact_content_length", artifact_content_length)
+        _setter("pipeline_step_artifact", pipeline_step_artifact)
+        _setter("step_name", step_name)
         if artifact_content_disposition is not None:
-            pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
+            _setter("artifact_content_disposition", artifact_content_disposition)
         if artifact_content_md5 is not None:
-            pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
+            _setter("artifact_content_md5", artifact_content_md5)
         if artifact_last_modified is not None:
-            pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
+            _setter("artifact_last_modified", artifact_last_modified)
 
     @property
     @pulumi.getter(name="artifactContentLength")
@@ -2396,20 +2962,43 @@ class PipelineStepDetailArgs:
         :param pulumi.Input['PipelineStepDetailStepConfigurationDetailsArgs'] step_configuration_details: (Updatable) The configuration details of a step.
         :param pulumi.Input['PipelineStepDetailStepInfrastructureConfigurationDetailsArgs'] step_infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
         """
-        pulumi.set(__self__, "step_name", step_name)
-        pulumi.set(__self__, "step_type", step_type)
+        PipelineStepDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            step_name=step_name,
+            step_type=step_type,
+            depends_ons=depends_ons,
+            description=description,
+            is_artifact_uploaded=is_artifact_uploaded,
+            job_id=job_id,
+            step_configuration_details=step_configuration_details,
+            step_infrastructure_configuration_details=step_infrastructure_configuration_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             step_name: pulumi.Input[str],
+             step_type: pulumi.Input[str],
+             depends_ons: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             is_artifact_uploaded: Optional[pulumi.Input[bool]] = None,
+             job_id: Optional[pulumi.Input[str]] = None,
+             step_configuration_details: Optional[pulumi.Input['PipelineStepDetailStepConfigurationDetailsArgs']] = None,
+             step_infrastructure_configuration_details: Optional[pulumi.Input['PipelineStepDetailStepInfrastructureConfigurationDetailsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("step_name", step_name)
+        _setter("step_type", step_type)
         if depends_ons is not None:
-            pulumi.set(__self__, "depends_ons", depends_ons)
+            _setter("depends_ons", depends_ons)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if is_artifact_uploaded is not None:
-            pulumi.set(__self__, "is_artifact_uploaded", is_artifact_uploaded)
+            _setter("is_artifact_uploaded", is_artifact_uploaded)
         if job_id is not None:
-            pulumi.set(__self__, "job_id", job_id)
+            _setter("job_id", job_id)
         if step_configuration_details is not None:
-            pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+            _setter("step_configuration_details", step_configuration_details)
         if step_infrastructure_configuration_details is not None:
-            pulumi.set(__self__, "step_infrastructure_configuration_details", step_infrastructure_configuration_details)
+            _setter("step_infrastructure_configuration_details", step_infrastructure_configuration_details)
 
     @property
     @pulumi.getter(name="stepName")
@@ -2523,12 +3112,25 @@ class PipelineStepDetailStepConfigurationDetailsArgs:
         :param pulumi.Input[Mapping[str, Any]] environment_variables: (Updatable) Environment variables to set for step.
         :param pulumi.Input[str] maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the step.
         """
+        PipelineStepDetailStepConfigurationDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[pulumi.Input[str]] = None,
+             environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if command_line_arguments is not None:
-            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+            _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
-            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+            _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -2578,10 +3180,23 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsArgs:
         :param pulumi.Input[str] shape_name: The shape used to launch the instance for all step runs in the pipeline.
         :param pulumi.Input['PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "shape_name", shape_name)
+        PipelineStepDetailStepInfrastructureConfigurationDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            shape_name=shape_name,
+            shape_config_details=shape_config_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: pulumi.Input[int],
+             shape_name: pulumi.Input[str],
+             shape_config_details: Optional[pulumi.Input['PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("shape_name", shape_name)
         if shape_config_details is not None:
-            pulumi.set(__self__, "shape_config_details", shape_config_details)
+            _setter("shape_config_details", shape_config_details)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -2629,10 +3244,21 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails
         :param pulumi.Input[float] memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param pulumi.Input[float] ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
+        PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[pulumi.Input[float]] = None,
+             ocpus: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -2668,10 +3294,23 @@ class GetFastLaunchJobConfigsFilterArgs:
         """
         :param str name: The name of the fast launch job config
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetFastLaunchJobConfigsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2710,10 +3349,23 @@ class GetJobRunsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetJobRunsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2752,10 +3404,23 @@ class GetJobShapesFilterArgs:
         """
         :param str name: The name of the job shape.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetJobShapesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2794,10 +3459,23 @@ class GetJobsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetJobsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2836,10 +3514,23 @@ class GetModelDeploymentShapesFilterArgs:
         """
         :param str name: The name of the model deployment shape.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetModelDeploymentShapesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2878,10 +3569,23 @@ class GetModelDeploymentsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetModelDeploymentsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2920,10 +3624,23 @@ class GetModelVersionSetsFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetModelVersionSetsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2962,10 +3679,23 @@ class GetModelsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetModelsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3004,10 +3734,23 @@ class GetNotebookSessionShapesFilterArgs:
         """
         :param str name: The name of the notebook session shape.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetNotebookSessionShapesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3046,10 +3789,23 @@ class GetNotebookSessionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetNotebookSessionsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3085,10 +3841,23 @@ class GetPipelineRunsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPipelineRunsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3124,10 +3893,75 @@ class GetPipelinesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPipelinesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetPrivateEndpointsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        GetPrivateEndpointsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
+        if regex is not None:
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3163,10 +3997,23 @@ class GetProjectsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProjectsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

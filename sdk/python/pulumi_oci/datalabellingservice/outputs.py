@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -75,9 +75,20 @@ class DatasetDatasetFormatDetails(dict):
         :param str format_type: It defines the format type of text files.
         :param 'DatasetDatasetFormatDetailsTextFileTypeMetadataArgs' text_file_type_metadata: Metadata for files with text content.
         """
-        pulumi.set(__self__, "format_type", format_type)
+        DatasetDatasetFormatDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            format_type=format_type,
+            text_file_type_metadata=text_file_type_metadata,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             format_type: str,
+             text_file_type_metadata: Optional['outputs.DatasetDatasetFormatDetailsTextFileTypeMetadata'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("format_type", format_type)
         if text_file_type_metadata is not None:
-            pulumi.set(__self__, "text_file_type_metadata", text_file_type_metadata)
+            _setter("text_file_type_metadata", text_file_type_metadata)
 
     @property
     @pulumi.getter(name="formatType")
@@ -140,16 +151,35 @@ class DatasetDatasetFormatDetailsTextFileTypeMetadata(dict):
         :param str escape_character: An escape character.
         :param str line_delimiter: A line delimiter.
         """
-        pulumi.set(__self__, "column_index", column_index)
-        pulumi.set(__self__, "format_type", format_type)
+        DatasetDatasetFormatDetailsTextFileTypeMetadata._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_index=column_index,
+            format_type=format_type,
+            column_delimiter=column_delimiter,
+            column_name=column_name,
+            escape_character=escape_character,
+            line_delimiter=line_delimiter,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_index: int,
+             format_type: str,
+             column_delimiter: Optional[str] = None,
+             column_name: Optional[str] = None,
+             escape_character: Optional[str] = None,
+             line_delimiter: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("column_index", column_index)
+        _setter("format_type", format_type)
         if column_delimiter is not None:
-            pulumi.set(__self__, "column_delimiter", column_delimiter)
+            _setter("column_delimiter", column_delimiter)
         if column_name is not None:
-            pulumi.set(__self__, "column_name", column_name)
+            _setter("column_name", column_name)
         if escape_character is not None:
-            pulumi.set(__self__, "escape_character", escape_character)
+            _setter("escape_character", escape_character)
         if line_delimiter is not None:
-            pulumi.set(__self__, "line_delimiter", line_delimiter)
+            _setter("line_delimiter", line_delimiter)
 
     @property
     @pulumi.getter(name="columnIndex")
@@ -230,11 +260,26 @@ class DatasetDatasetSourceDetails(dict):
         :param str source_type: The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
         :param str prefix: A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "source_type", source_type)
+        DatasetDatasetSourceDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            source_type=source_type,
+            prefix=prefix,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             source_type: str,
+             prefix: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("source_type", source_type)
         if prefix is not None:
-            pulumi.set(__self__, "prefix", prefix)
+            _setter("prefix", prefix)
 
     @property
     @pulumi.getter
@@ -297,8 +342,19 @@ class DatasetInitialImportDatasetConfiguration(dict):
         :param 'DatasetInitialImportDatasetConfigurationImportFormatArgs' import_format: File format details used for importing dataset
         :param 'DatasetInitialImportDatasetConfigurationImportMetadataPathArgs' import_metadata_path: Object storage path for the metadata file
         """
-        pulumi.set(__self__, "import_format", import_format)
-        pulumi.set(__self__, "import_metadata_path", import_metadata_path)
+        DatasetInitialImportDatasetConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            import_format=import_format,
+            import_metadata_path=import_metadata_path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             import_format: 'outputs.DatasetInitialImportDatasetConfigurationImportFormat',
+             import_metadata_path: 'outputs.DatasetInitialImportDatasetConfigurationImportMetadataPath',
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("import_format", import_format)
+        _setter("import_metadata_path", import_metadata_path)
 
     @property
     @pulumi.getter(name="importFormat")
@@ -326,9 +382,20 @@ class DatasetInitialImportDatasetConfigurationImportFormat(dict):
         :param str name: An unique name for a label within its dataset.
         :param str version: Version of import format
         """
-        pulumi.set(__self__, "name", name)
+        DatasetInitialImportDatasetConfigurationImportFormat._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter
@@ -377,10 +444,25 @@ class DatasetInitialImportDatasetConfigurationImportMetadataPath(dict):
         :param str path: Path for the metadata file.
         :param str source_type: The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "source_type", source_type)
+        DatasetInitialImportDatasetConfigurationImportMetadataPath._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            path=path,
+            source_type=source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             path: str,
+             source_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("path", path)
+        _setter("source_type", source_type)
 
     @property
     @pulumi.getter
@@ -419,6 +501,11 @@ class DatasetInitialImportDatasetConfigurationImportMetadataPath(dict):
 class DatasetInitialRecordGenerationConfiguration(dict):
     def __init__(__self__):
         pass
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        pass
 
 
 @pulumi.output_type
@@ -428,7 +515,16 @@ class DatasetLabelSet(dict):
         """
         :param Sequence['DatasetLabelSetItemArgs'] items: An ordered collection of labels that are unique by name.
         """
-        pulumi.set(__self__, "items", items)
+        DatasetLabelSet._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.DatasetLabelSetItem'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -446,7 +542,16 @@ class DatasetLabelSetItem(dict):
         """
         :param str name: An unique name for a label within its dataset.
         """
-        pulumi.set(__self__, "name", name)
+        DatasetLabelSetItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -464,7 +569,16 @@ class GetAnnotationFormatItemResult(dict):
         """
         :param str name: A unique name for the target AnnotationFormat for the Dataset.
         """
-        pulumi.set(__self__, "name", name)
+        GetAnnotationFormatItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -482,7 +596,16 @@ class GetAnnotationFormatsAnnotationFormatCollectionResult(dict):
         """
         :param Sequence['GetAnnotationFormatsAnnotationFormatCollectionItemArgs'] items: List of annotation formats.
         """
-        pulumi.set(__self__, "items", items)
+        GetAnnotationFormatsAnnotationFormatCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAnnotationFormatsAnnotationFormatCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -500,7 +623,16 @@ class GetAnnotationFormatsAnnotationFormatCollectionItemResult(dict):
         """
         :param str name: A unique name for the target AnnotationFormat for the Dataset.
         """
-        pulumi.set(__self__, "name", name)
+        GetAnnotationFormatsAnnotationFormatCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -520,10 +652,23 @@ class GetAnnotationFormatsFilterResult(dict):
         """
         :param str name: A unique name for the target AnnotationFormat for the Dataset.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAnnotationFormatsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -553,8 +698,19 @@ class GetDatasetDatasetFormatDetailResult(dict):
         :param str format_type: It defines the format type of text files.
         :param Sequence['GetDatasetDatasetFormatDetailTextFileTypeMetadataArgs'] text_file_type_metadatas: Metadata for files with text content.
         """
-        pulumi.set(__self__, "format_type", format_type)
-        pulumi.set(__self__, "text_file_type_metadatas", text_file_type_metadatas)
+        GetDatasetDatasetFormatDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            format_type=format_type,
+            text_file_type_metadatas=text_file_type_metadatas,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             format_type: str,
+             text_file_type_metadatas: Sequence['outputs.GetDatasetDatasetFormatDetailTextFileTypeMetadataResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("format_type", format_type)
+        _setter("text_file_type_metadatas", text_file_type_metadatas)
 
     @property
     @pulumi.getter(name="formatType")
@@ -590,12 +746,31 @@ class GetDatasetDatasetFormatDetailTextFileTypeMetadataResult(dict):
         :param str format_type: It defines the format type of text files.
         :param str line_delimiter: A line delimiter.
         """
-        pulumi.set(__self__, "column_delimiter", column_delimiter)
-        pulumi.set(__self__, "column_index", column_index)
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "escape_character", escape_character)
-        pulumi.set(__self__, "format_type", format_type)
-        pulumi.set(__self__, "line_delimiter", line_delimiter)
+        GetDatasetDatasetFormatDetailTextFileTypeMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_delimiter=column_delimiter,
+            column_index=column_index,
+            column_name=column_name,
+            escape_character=escape_character,
+            format_type=format_type,
+            line_delimiter=line_delimiter,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_delimiter: str,
+             column_index: int,
+             column_name: str,
+             escape_character: str,
+             format_type: str,
+             line_delimiter: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("column_delimiter", column_delimiter)
+        _setter("column_index", column_index)
+        _setter("column_name", column_name)
+        _setter("escape_character", escape_character)
+        _setter("format_type", format_type)
+        _setter("line_delimiter", line_delimiter)
 
     @property
     @pulumi.getter(name="columnDelimiter")
@@ -659,10 +834,25 @@ class GetDatasetDatasetSourceDetailResult(dict):
         :param str prefix: A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
         :param str source_type: The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "prefix", prefix)
-        pulumi.set(__self__, "source_type", source_type)
+        GetDatasetDatasetSourceDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            prefix=prefix,
+            source_type=source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             prefix: str,
+             source_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("prefix", prefix)
+        _setter("source_type", source_type)
 
     @property
     @pulumi.getter
@@ -706,8 +896,19 @@ class GetDatasetInitialImportDatasetConfigurationResult(dict):
         :param Sequence['GetDatasetInitialImportDatasetConfigurationImportFormatArgs'] import_formats: File format details used for importing dataset
         :param Sequence['GetDatasetInitialImportDatasetConfigurationImportMetadataPathArgs'] import_metadata_paths: Object storage path for the metadata file
         """
-        pulumi.set(__self__, "import_formats", import_formats)
-        pulumi.set(__self__, "import_metadata_paths", import_metadata_paths)
+        GetDatasetInitialImportDatasetConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            import_formats=import_formats,
+            import_metadata_paths=import_metadata_paths,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             import_formats: Sequence['outputs.GetDatasetInitialImportDatasetConfigurationImportFormatResult'],
+             import_metadata_paths: Sequence['outputs.GetDatasetInitialImportDatasetConfigurationImportMetadataPathResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("import_formats", import_formats)
+        _setter("import_metadata_paths", import_metadata_paths)
 
     @property
     @pulumi.getter(name="importFormats")
@@ -735,8 +936,19 @@ class GetDatasetInitialImportDatasetConfigurationImportFormatResult(dict):
         :param str name: An unique name for a label within its dataset.
         :param str version: Version of import format
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "version", version)
+        GetDatasetInitialImportDatasetConfigurationImportFormatResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("version", version)
 
     @property
     @pulumi.getter
@@ -768,10 +980,25 @@ class GetDatasetInitialImportDatasetConfigurationImportMetadataPathResult(dict):
         :param str path: Path for the metadata file.
         :param str source_type: The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "source_type", source_type)
+        GetDatasetInitialImportDatasetConfigurationImportMetadataPathResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            path=path,
+            source_type=source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             path: str,
+             source_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("path", path)
+        _setter("source_type", source_type)
 
     @property
     @pulumi.getter
@@ -810,6 +1037,11 @@ class GetDatasetInitialImportDatasetConfigurationImportMetadataPathResult(dict):
 class GetDatasetInitialRecordGenerationConfigurationResult(dict):
     def __init__(__self__):
         pass
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        pass
 
 
 @pulumi.output_type
@@ -819,7 +1051,16 @@ class GetDatasetLabelSetResult(dict):
         """
         :param Sequence['GetDatasetLabelSetItemArgs'] items: An ordered collection of labels that are unique by name.
         """
-        pulumi.set(__self__, "items", items)
+        GetDatasetLabelSetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDatasetLabelSetItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -837,7 +1078,16 @@ class GetDatasetLabelSetItemResult(dict):
         """
         :param str name: An unique name for a label within its dataset.
         """
-        pulumi.set(__self__, "name", name)
+        GetDatasetLabelSetItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -855,7 +1105,16 @@ class GetDatasetsDatasetCollectionResult(dict):
         """
         :param Sequence['GetDatasetsDatasetCollectionItemArgs'] items: An ordered collection of labels that are unique by name.
         """
-        pulumi.set(__self__, "items", items)
+        GetDatasetsDatasetCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDatasetsDatasetCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -909,25 +1168,70 @@ class GetDatasetsDatasetCollectionItemResult(dict):
         :param str time_created: The date and time the resource was created, in the timestamp format defined by RFC3339.
         :param str time_updated: The date and time the resource was last updated, in the timestamp format defined by RFC3339.
         """
-        pulumi.set(__self__, "additional_properties", additional_properties)
-        pulumi.set(__self__, "annotation_format", annotation_format)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "dataset_format_details", dataset_format_details)
-        pulumi.set(__self__, "dataset_source_details", dataset_source_details)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "initial_import_dataset_configurations", initial_import_dataset_configurations)
-        pulumi.set(__self__, "initial_record_generation_configurations", initial_record_generation_configurations)
-        pulumi.set(__self__, "label_sets", label_sets)
-        pulumi.set(__self__, "labeling_instructions", labeling_instructions)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "lifecycle_substate", lifecycle_substate)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetDatasetsDatasetCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_properties=additional_properties,
+            annotation_format=annotation_format,
+            compartment_id=compartment_id,
+            dataset_format_details=dataset_format_details,
+            dataset_source_details=dataset_source_details,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            initial_import_dataset_configurations=initial_import_dataset_configurations,
+            initial_record_generation_configurations=initial_record_generation_configurations,
+            label_sets=label_sets,
+            labeling_instructions=labeling_instructions,
+            lifecycle_details=lifecycle_details,
+            lifecycle_substate=lifecycle_substate,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_properties: Mapping[str, Any],
+             annotation_format: str,
+             compartment_id: str,
+             dataset_format_details: Sequence['outputs.GetDatasetsDatasetCollectionItemDatasetFormatDetailResult'],
+             dataset_source_details: Sequence['outputs.GetDatasetsDatasetCollectionItemDatasetSourceDetailResult'],
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             initial_import_dataset_configurations: Sequence['outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationResult'],
+             initial_record_generation_configurations: Sequence['outputs.GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationResult'],
+             label_sets: Sequence['outputs.GetDatasetsDatasetCollectionItemLabelSetResult'],
+             labeling_instructions: str,
+             lifecycle_details: str,
+             lifecycle_substate: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("additional_properties", additional_properties)
+        _setter("annotation_format", annotation_format)
+        _setter("compartment_id", compartment_id)
+        _setter("dataset_format_details", dataset_format_details)
+        _setter("dataset_source_details", dataset_source_details)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("initial_import_dataset_configurations", initial_import_dataset_configurations)
+        _setter("initial_record_generation_configurations", initial_record_generation_configurations)
+        _setter("label_sets", label_sets)
+        _setter("labeling_instructions", labeling_instructions)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("lifecycle_substate", lifecycle_substate)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="additionalProperties")
@@ -1091,8 +1395,19 @@ class GetDatasetsDatasetCollectionItemDatasetFormatDetailResult(dict):
         :param str format_type: It defines the format type of text files.
         :param Sequence['GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataArgs'] text_file_type_metadatas: Metadata for files with text content.
         """
-        pulumi.set(__self__, "format_type", format_type)
-        pulumi.set(__self__, "text_file_type_metadatas", text_file_type_metadatas)
+        GetDatasetsDatasetCollectionItemDatasetFormatDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            format_type=format_type,
+            text_file_type_metadatas=text_file_type_metadatas,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             format_type: str,
+             text_file_type_metadatas: Sequence['outputs.GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("format_type", format_type)
+        _setter("text_file_type_metadatas", text_file_type_metadatas)
 
     @property
     @pulumi.getter(name="formatType")
@@ -1128,12 +1443,31 @@ class GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataRes
         :param str format_type: It defines the format type of text files.
         :param str line_delimiter: A line delimiter.
         """
-        pulumi.set(__self__, "column_delimiter", column_delimiter)
-        pulumi.set(__self__, "column_index", column_index)
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "escape_character", escape_character)
-        pulumi.set(__self__, "format_type", format_type)
-        pulumi.set(__self__, "line_delimiter", line_delimiter)
+        GetDatasetsDatasetCollectionItemDatasetFormatDetailTextFileTypeMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_delimiter=column_delimiter,
+            column_index=column_index,
+            column_name=column_name,
+            escape_character=escape_character,
+            format_type=format_type,
+            line_delimiter=line_delimiter,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_delimiter: str,
+             column_index: int,
+             column_name: str,
+             escape_character: str,
+             format_type: str,
+             line_delimiter: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("column_delimiter", column_delimiter)
+        _setter("column_index", column_index)
+        _setter("column_name", column_name)
+        _setter("escape_character", escape_character)
+        _setter("format_type", format_type)
+        _setter("line_delimiter", line_delimiter)
 
     @property
     @pulumi.getter(name="columnDelimiter")
@@ -1197,10 +1531,25 @@ class GetDatasetsDatasetCollectionItemDatasetSourceDetailResult(dict):
         :param str prefix: A common path prefix shared by the objects that make up the dataset. Except for the CSV file type, records are not generated for the objects whose names exactly match with the prefix.
         :param str source_type: The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "prefix", prefix)
-        pulumi.set(__self__, "source_type", source_type)
+        GetDatasetsDatasetCollectionItemDatasetSourceDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            prefix=prefix,
+            source_type=source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             prefix: str,
+             source_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("prefix", prefix)
+        _setter("source_type", source_type)
 
     @property
     @pulumi.getter
@@ -1244,8 +1593,19 @@ class GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationResult(di
         :param Sequence['GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatArgs'] import_formats: File format details used for importing dataset
         :param Sequence['GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathArgs'] import_metadata_paths: Object storage path for the metadata file
         """
-        pulumi.set(__self__, "import_formats", import_formats)
-        pulumi.set(__self__, "import_metadata_paths", import_metadata_paths)
+        GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            import_formats=import_formats,
+            import_metadata_paths=import_metadata_paths,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             import_formats: Sequence['outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatResult'],
+             import_metadata_paths: Sequence['outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("import_formats", import_formats)
+        _setter("import_metadata_paths", import_metadata_paths)
 
     @property
     @pulumi.getter(name="importFormats")
@@ -1273,8 +1633,19 @@ class GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFor
         :param str name: An unique name for a label within its dataset.
         :param str version: Version of import format
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "version", version)
+        GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportFormatResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("version", version)
 
     @property
     @pulumi.getter
@@ -1306,10 +1677,25 @@ class GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMet
         :param str path: Path for the metadata file.
         :param str source_type: The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "source_type", source_type)
+        GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMetadataPathResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            path=path,
+            source_type=source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             namespace: str,
+             path: str,
+             source_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("path", path)
+        _setter("source_type", source_type)
 
     @property
     @pulumi.getter
@@ -1348,6 +1734,11 @@ class GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationImportMet
 class GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationResult(dict):
     def __init__(__self__):
         pass
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        pass
 
 
 @pulumi.output_type
@@ -1357,7 +1748,16 @@ class GetDatasetsDatasetCollectionItemLabelSetResult(dict):
         """
         :param Sequence['GetDatasetsDatasetCollectionItemLabelSetItemArgs'] items: An ordered collection of labels that are unique by name.
         """
-        pulumi.set(__self__, "items", items)
+        GetDatasetsDatasetCollectionItemLabelSetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDatasetsDatasetCollectionItemLabelSetItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1375,7 +1775,16 @@ class GetDatasetsDatasetCollectionItemLabelSetItemResult(dict):
         """
         :param str name: An unique name for a label within its dataset.
         """
-        pulumi.set(__self__, "name", name)
+        GetDatasetsDatasetCollectionItemLabelSetItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1395,10 +1804,23 @@ class GetDatasetsFilterResult(dict):
         """
         :param str name: An unique name for a label within its dataset.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDatasetsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

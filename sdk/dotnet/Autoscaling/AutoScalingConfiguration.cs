@@ -134,9 +134,6 @@ namespace Pulumi.Oci.Autoscaling
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
-        /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
@@ -256,9 +253,6 @@ namespace Pulumi.Oci.Autoscaling
             set => _definedTags = value;
         }
 
-        /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
@@ -334,9 +328,6 @@ namespace Pulumi.Oci.Autoscaling
             set => _definedTags = value;
         }
 
-        /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 

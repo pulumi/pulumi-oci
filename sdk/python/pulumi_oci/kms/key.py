@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -22,6 +22,7 @@ class KeyArgs:
                  management_endpoint: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  desired_state: Optional[pulumi.Input[str]] = None,
+                 external_key_reference: Optional[pulumi.Input['KeyExternalKeyReferenceArgs']] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  protection_mode: Optional[pulumi.Input[str]] = None,
                  restore_from_file: Optional[pulumi.Input['KeyRestoreFromFileArgs']] = None,
@@ -36,8 +37,9 @@ class KeyArgs:
         :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] desired_state: (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
+        :param pulumi.Input['KeyExternalKeyReferenceArgs'] external_key_reference: A reference to the key on external key manager.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] protection_mode: The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+        :param pulumi.Input[str] protection_mode: The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
         :param pulumi.Input['KeyRestoreFromFileArgs'] restore_from_file: (Updatable) Details where key was backed up.
         :param pulumi.Input['KeyRestoreFromObjectStoreArgs'] restore_from_object_store: (Updatable) Details where key was backed up
         :param pulumi.Input[bool] restore_trigger: (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
@@ -46,26 +48,61 @@ class KeyArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "key_shape", key_shape)
-        pulumi.set(__self__, "management_endpoint", management_endpoint)
+        KeyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            key_shape=key_shape,
+            management_endpoint=management_endpoint,
+            defined_tags=defined_tags,
+            desired_state=desired_state,
+            external_key_reference=external_key_reference,
+            freeform_tags=freeform_tags,
+            protection_mode=protection_mode,
+            restore_from_file=restore_from_file,
+            restore_from_object_store=restore_from_object_store,
+            restore_trigger=restore_trigger,
+            time_of_deletion=time_of_deletion,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             key_shape: pulumi.Input['KeyKeyShapeArgs'],
+             management_endpoint: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             desired_state: Optional[pulumi.Input[str]] = None,
+             external_key_reference: Optional[pulumi.Input['KeyExternalKeyReferenceArgs']] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             protection_mode: Optional[pulumi.Input[str]] = None,
+             restore_from_file: Optional[pulumi.Input['KeyRestoreFromFileArgs']] = None,
+             restore_from_object_store: Optional[pulumi.Input['KeyRestoreFromObjectStoreArgs']] = None,
+             restore_trigger: Optional[pulumi.Input[bool]] = None,
+             time_of_deletion: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("key_shape", key_shape)
+        _setter("management_endpoint", management_endpoint)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if desired_state is not None:
-            pulumi.set(__self__, "desired_state", desired_state)
+            _setter("desired_state", desired_state)
+        if external_key_reference is not None:
+            _setter("external_key_reference", external_key_reference)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if protection_mode is not None:
-            pulumi.set(__self__, "protection_mode", protection_mode)
+            _setter("protection_mode", protection_mode)
         if restore_from_file is not None:
-            pulumi.set(__self__, "restore_from_file", restore_from_file)
+            _setter("restore_from_file", restore_from_file)
         if restore_from_object_store is not None:
-            pulumi.set(__self__, "restore_from_object_store", restore_from_object_store)
+            _setter("restore_from_object_store", restore_from_object_store)
         if restore_trigger is not None:
-            pulumi.set(__self__, "restore_trigger", restore_trigger)
+            _setter("restore_trigger", restore_trigger)
         if time_of_deletion is not None:
-            pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+            _setter("time_of_deletion", time_of_deletion)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -140,6 +177,18 @@ class KeyArgs:
         pulumi.set(self, "desired_state", value)
 
     @property
+    @pulumi.getter(name="externalKeyReference")
+    def external_key_reference(self) -> Optional[pulumi.Input['KeyExternalKeyReferenceArgs']]:
+        """
+        A reference to the key on external key manager.
+        """
+        return pulumi.get(self, "external_key_reference")
+
+    @external_key_reference.setter
+    def external_key_reference(self, value: Optional[pulumi.Input['KeyExternalKeyReferenceArgs']]):
+        pulumi.set(self, "external_key_reference", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -155,7 +204,7 @@ class KeyArgs:
     @pulumi.getter(name="protectionMode")
     def protection_mode(self) -> Optional[pulumi.Input[str]]:
         """
-        The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+        The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
         """
         return pulumi.get(self, "protection_mode")
 
@@ -223,6 +272,8 @@ class _KeyState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  desired_state: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 external_key_reference: Optional[pulumi.Input['KeyExternalKeyReferenceArgs']] = None,
+                 external_key_reference_details: Optional[pulumi.Input[Sequence[pulumi.Input['KeyExternalKeyReferenceDetailArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_primary: Optional[pulumi.Input[bool]] = None,
                  key_shape: Optional[pulumi.Input['KeyKeyShapeArgs']] = None,
@@ -244,11 +295,13 @@ class _KeyState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] desired_state: (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
+        :param pulumi.Input['KeyExternalKeyReferenceArgs'] external_key_reference: A reference to the key on external key manager.
+        :param pulumi.Input[Sequence[pulumi.Input['KeyExternalKeyReferenceDetailArgs']]] external_key_reference_details: Key reference data to be returned to the customer as a response.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_primary: A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+        :param pulumi.Input[bool] is_primary: A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
         :param pulumi.Input['KeyKeyShapeArgs'] key_shape: The cryptographic properties of a key.
         :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
-        :param pulumi.Input[str] protection_mode: The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+        :param pulumi.Input[str] protection_mode: The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
         :param pulumi.Input[Sequence[pulumi.Input['KeyReplicaDetailArgs']]] replica_details: Key replica details
         :param pulumi.Input['KeyRestoreFromFileArgs'] restore_from_file: (Updatable) Details where key was backed up.
         :param pulumi.Input['KeyRestoreFromObjectStoreArgs'] restore_from_object_store: (Updatable) Details where key was backed up
@@ -262,44 +315,97 @@ class _KeyState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] vault_id: The OCID of the vault that contains this key.
         """
+        _KeyState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            current_key_version=current_key_version,
+            defined_tags=defined_tags,
+            desired_state=desired_state,
+            display_name=display_name,
+            external_key_reference=external_key_reference,
+            external_key_reference_details=external_key_reference_details,
+            freeform_tags=freeform_tags,
+            is_primary=is_primary,
+            key_shape=key_shape,
+            management_endpoint=management_endpoint,
+            protection_mode=protection_mode,
+            replica_details=replica_details,
+            restore_from_file=restore_from_file,
+            restore_from_object_store=restore_from_object_store,
+            restore_trigger=restore_trigger,
+            restored_from_key_id=restored_from_key_id,
+            state=state,
+            time_created=time_created,
+            time_of_deletion=time_of_deletion,
+            vault_id=vault_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             current_key_version: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             desired_state: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             external_key_reference: Optional[pulumi.Input['KeyExternalKeyReferenceArgs']] = None,
+             external_key_reference_details: Optional[pulumi.Input[Sequence[pulumi.Input['KeyExternalKeyReferenceDetailArgs']]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_primary: Optional[pulumi.Input[bool]] = None,
+             key_shape: Optional[pulumi.Input['KeyKeyShapeArgs']] = None,
+             management_endpoint: Optional[pulumi.Input[str]] = None,
+             protection_mode: Optional[pulumi.Input[str]] = None,
+             replica_details: Optional[pulumi.Input[Sequence[pulumi.Input['KeyReplicaDetailArgs']]]] = None,
+             restore_from_file: Optional[pulumi.Input['KeyRestoreFromFileArgs']] = None,
+             restore_from_object_store: Optional[pulumi.Input['KeyRestoreFromObjectStoreArgs']] = None,
+             restore_trigger: Optional[pulumi.Input[bool]] = None,
+             restored_from_key_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_of_deletion: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if current_key_version is not None:
-            pulumi.set(__self__, "current_key_version", current_key_version)
+            _setter("current_key_version", current_key_version)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if desired_state is not None:
-            pulumi.set(__self__, "desired_state", desired_state)
+            _setter("desired_state", desired_state)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
+        if external_key_reference is not None:
+            _setter("external_key_reference", external_key_reference)
+        if external_key_reference_details is not None:
+            _setter("external_key_reference_details", external_key_reference_details)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_primary is not None:
-            pulumi.set(__self__, "is_primary", is_primary)
+            _setter("is_primary", is_primary)
         if key_shape is not None:
-            pulumi.set(__self__, "key_shape", key_shape)
+            _setter("key_shape", key_shape)
         if management_endpoint is not None:
-            pulumi.set(__self__, "management_endpoint", management_endpoint)
+            _setter("management_endpoint", management_endpoint)
         if protection_mode is not None:
-            pulumi.set(__self__, "protection_mode", protection_mode)
+            _setter("protection_mode", protection_mode)
         if replica_details is not None:
-            pulumi.set(__self__, "replica_details", replica_details)
+            _setter("replica_details", replica_details)
         if restore_from_file is not None:
-            pulumi.set(__self__, "restore_from_file", restore_from_file)
+            _setter("restore_from_file", restore_from_file)
         if restore_from_object_store is not None:
-            pulumi.set(__self__, "restore_from_object_store", restore_from_object_store)
+            _setter("restore_from_object_store", restore_from_object_store)
         if restore_trigger is not None:
-            pulumi.set(__self__, "restore_trigger", restore_trigger)
+            _setter("restore_trigger", restore_trigger)
         if restored_from_key_id is not None:
-            pulumi.set(__self__, "restored_from_key_id", restored_from_key_id)
+            _setter("restored_from_key_id", restored_from_key_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_of_deletion is not None:
-            pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+            _setter("time_of_deletion", time_of_deletion)
         if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
+            _setter("vault_id", vault_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -362,6 +468,30 @@ class _KeyState:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter(name="externalKeyReference")
+    def external_key_reference(self) -> Optional[pulumi.Input['KeyExternalKeyReferenceArgs']]:
+        """
+        A reference to the key on external key manager.
+        """
+        return pulumi.get(self, "external_key_reference")
+
+    @external_key_reference.setter
+    def external_key_reference(self, value: Optional[pulumi.Input['KeyExternalKeyReferenceArgs']]):
+        pulumi.set(self, "external_key_reference", value)
+
+    @property
+    @pulumi.getter(name="externalKeyReferenceDetails")
+    def external_key_reference_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['KeyExternalKeyReferenceDetailArgs']]]]:
+        """
+        Key reference data to be returned to the customer as a response.
+        """
+        return pulumi.get(self, "external_key_reference_details")
+
+    @external_key_reference_details.setter
+    def external_key_reference_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['KeyExternalKeyReferenceDetailArgs']]]]):
+        pulumi.set(self, "external_key_reference_details", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -377,7 +507,7 @@ class _KeyState:
     @pulumi.getter(name="isPrimary")
     def is_primary(self) -> Optional[pulumi.Input[bool]]:
         """
-        A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+        A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
         """
         return pulumi.get(self, "is_primary")
 
@@ -413,7 +543,7 @@ class _KeyState:
     @pulumi.getter(name="protectionMode")
     def protection_mode(self) -> Optional[pulumi.Input[str]]:
         """
-        The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+        The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
         """
         return pulumi.get(self, "protection_mode")
 
@@ -542,6 +672,7 @@ class Key(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  desired_state: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 external_key_reference: Optional[pulumi.Input[pulumi.InputType['KeyExternalKeyReferenceArgs']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  key_shape: Optional[pulumi.Input[pulumi.InputType['KeyKeyShapeArgs']]] = None,
                  management_endpoint: Optional[pulumi.Input[str]] = None,
@@ -561,30 +692,6 @@ class Key(pulumi.CustomResource):
         to reject an otherwise valid request when the total rate of management write operations exceeds 10
         requests per second for a given tenancy.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_key = oci.kms.Key("testKey",
-            compartment_id=var["compartment_id"],
-            display_name=var["key_display_name"],
-            key_shape=oci.kms.KeyKeyShapeArgs(
-                algorithm=var["key_key_shape_algorithm"],
-                length=var["key_key_shape_length"],
-                curve_id=oci_kms_curve["test_curve"]["id"],
-            ),
-            management_endpoint=var["key_management_endpoint"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            protection_mode=var["key_protection_mode"])
-        ```
-
         ## Import
 
         Keys can be imported using the `id`, e.g.
@@ -599,10 +706,11 @@ class Key(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] desired_state: (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
+        :param pulumi.Input[pulumi.InputType['KeyExternalKeyReferenceArgs']] external_key_reference: A reference to the key on external key manager.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[pulumi.InputType['KeyKeyShapeArgs']] key_shape: The cryptographic properties of a key.
         :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
-        :param pulumi.Input[str] protection_mode: The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+        :param pulumi.Input[str] protection_mode: The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
         :param pulumi.Input[pulumi.InputType['KeyRestoreFromFileArgs']] restore_from_file: (Updatable) Details where key was backed up.
         :param pulumi.Input[pulumi.InputType['KeyRestoreFromObjectStoreArgs']] restore_from_object_store: (Updatable) Details where key was backed up
         :param pulumi.Input[bool] restore_trigger: (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
@@ -627,30 +735,6 @@ class Key(pulumi.CustomResource):
         to reject an otherwise valid request when the total rate of management write operations exceeds 10
         requests per second for a given tenancy.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_key = oci.kms.Key("testKey",
-            compartment_id=var["compartment_id"],
-            display_name=var["key_display_name"],
-            key_shape=oci.kms.KeyKeyShapeArgs(
-                algorithm=var["key_key_shape_algorithm"],
-                length=var["key_key_shape_length"],
-                curve_id=oci_kms_curve["test_curve"]["id"],
-            ),
-            management_endpoint=var["key_management_endpoint"],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            protection_mode=var["key_protection_mode"])
-        ```
-
         ## Import
 
         Keys can be imported using the `id`, e.g.
@@ -669,6 +753,10 @@ class Key(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            KeyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -678,6 +766,7 @@ class Key(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  desired_state: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 external_key_reference: Optional[pulumi.Input[pulumi.InputType['KeyExternalKeyReferenceArgs']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  key_shape: Optional[pulumi.Input[pulumi.InputType['KeyKeyShapeArgs']]] = None,
                  management_endpoint: Optional[pulumi.Input[str]] = None,
@@ -703,7 +792,18 @@ class Key(pulumi.CustomResource):
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
+            if external_key_reference is not None and not isinstance(external_key_reference, KeyExternalKeyReferenceArgs):
+                external_key_reference = external_key_reference or {}
+                def _setter(key, value):
+                    external_key_reference[key] = value
+                KeyExternalKeyReferenceArgs._configure(_setter, **external_key_reference)
+            __props__.__dict__["external_key_reference"] = external_key_reference
             __props__.__dict__["freeform_tags"] = freeform_tags
+            if key_shape is not None and not isinstance(key_shape, KeyKeyShapeArgs):
+                key_shape = key_shape or {}
+                def _setter(key, value):
+                    key_shape[key] = value
+                KeyKeyShapeArgs._configure(_setter, **key_shape)
             if key_shape is None and not opts.urn:
                 raise TypeError("Missing required property 'key_shape'")
             __props__.__dict__["key_shape"] = key_shape
@@ -711,11 +811,22 @@ class Key(pulumi.CustomResource):
                 raise TypeError("Missing required property 'management_endpoint'")
             __props__.__dict__["management_endpoint"] = management_endpoint
             __props__.__dict__["protection_mode"] = protection_mode
+            if restore_from_file is not None and not isinstance(restore_from_file, KeyRestoreFromFileArgs):
+                restore_from_file = restore_from_file or {}
+                def _setter(key, value):
+                    restore_from_file[key] = value
+                KeyRestoreFromFileArgs._configure(_setter, **restore_from_file)
             __props__.__dict__["restore_from_file"] = restore_from_file
+            if restore_from_object_store is not None and not isinstance(restore_from_object_store, KeyRestoreFromObjectStoreArgs):
+                restore_from_object_store = restore_from_object_store or {}
+                def _setter(key, value):
+                    restore_from_object_store[key] = value
+                KeyRestoreFromObjectStoreArgs._configure(_setter, **restore_from_object_store)
             __props__.__dict__["restore_from_object_store"] = restore_from_object_store
             __props__.__dict__["restore_trigger"] = restore_trigger
             __props__.__dict__["time_of_deletion"] = time_of_deletion
             __props__.__dict__["current_key_version"] = None
+            __props__.__dict__["external_key_reference_details"] = None
             __props__.__dict__["is_primary"] = None
             __props__.__dict__["replica_details"] = None
             __props__.__dict__["restored_from_key_id"] = None
@@ -737,6 +848,8 @@ class Key(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             desired_state: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            external_key_reference: Optional[pulumi.Input[pulumi.InputType['KeyExternalKeyReferenceArgs']]] = None,
+            external_key_reference_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KeyExternalKeyReferenceDetailArgs']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_primary: Optional[pulumi.Input[bool]] = None,
             key_shape: Optional[pulumi.Input[pulumi.InputType['KeyKeyShapeArgs']]] = None,
@@ -763,11 +876,13 @@ class Key(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] desired_state: (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
+        :param pulumi.Input[pulumi.InputType['KeyExternalKeyReferenceArgs']] external_key_reference: A reference to the key on external key manager.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KeyExternalKeyReferenceDetailArgs']]]] external_key_reference_details: Key reference data to be returned to the customer as a response.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_primary: A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+        :param pulumi.Input[bool] is_primary: A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
         :param pulumi.Input[pulumi.InputType['KeyKeyShapeArgs']] key_shape: The cryptographic properties of a key.
         :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
-        :param pulumi.Input[str] protection_mode: The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+        :param pulumi.Input[str] protection_mode: The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KeyReplicaDetailArgs']]]] replica_details: Key replica details
         :param pulumi.Input[pulumi.InputType['KeyRestoreFromFileArgs']] restore_from_file: (Updatable) Details where key was backed up.
         :param pulumi.Input[pulumi.InputType['KeyRestoreFromObjectStoreArgs']] restore_from_object_store: (Updatable) Details where key was backed up
@@ -790,6 +905,8 @@ class Key(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["desired_state"] = desired_state
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["external_key_reference"] = external_key_reference
+        __props__.__dict__["external_key_reference_details"] = external_key_reference_details
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_primary"] = is_primary
         __props__.__dict__["key_shape"] = key_shape
@@ -847,6 +964,22 @@ class Key(pulumi.CustomResource):
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="externalKeyReference")
+    def external_key_reference(self) -> pulumi.Output['outputs.KeyExternalKeyReference']:
+        """
+        A reference to the key on external key manager.
+        """
+        return pulumi.get(self, "external_key_reference")
+
+    @property
+    @pulumi.getter(name="externalKeyReferenceDetails")
+    def external_key_reference_details(self) -> pulumi.Output[Sequence['outputs.KeyExternalKeyReferenceDetail']]:
+        """
+        Key reference data to be returned to the customer as a response.
+        """
+        return pulumi.get(self, "external_key_reference_details")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
@@ -858,7 +991,7 @@ class Key(pulumi.CustomResource):
     @pulumi.getter(name="isPrimary")
     def is_primary(self) -> pulumi.Output[bool]:
         """
-        A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+        A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
         """
         return pulumi.get(self, "is_primary")
 
@@ -882,7 +1015,7 @@ class Key(pulumi.CustomResource):
     @pulumi.getter(name="protectionMode")
     def protection_mode(self) -> pulumi.Output[str]:
         """
-        The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+        The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
         """
         return pulumi.get(self, "protection_mode")
 

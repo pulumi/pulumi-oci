@@ -57,6 +57,8 @@ if typing.TYPE_CHECKING:
     cloudguard = __cloudguard
     import pulumi_oci.cloudmigrations as __cloudmigrations
     cloudmigrations = __cloudmigrations
+    import pulumi_oci.computecloud as __computecloud
+    computecloud = __computecloud
     import pulumi_oci.computeinstanceagent as __computeinstanceagent
     computeinstanceagent = __computeinstanceagent
     import pulumi_oci.config as __config
@@ -248,6 +250,7 @@ else:
     cloudbridge = _utilities.lazy_import('pulumi_oci.cloudbridge')
     cloudguard = _utilities.lazy_import('pulumi_oci.cloudguard')
     cloudmigrations = _utilities.lazy_import('pulumi_oci.cloudmigrations')
+    computecloud = _utilities.lazy_import('pulumi_oci.computecloud')
     computeinstanceagent = _utilities.lazy_import('pulumi_oci.computeinstanceagent')
     config = _utilities.lazy_import('pulumi_oci.config')
     containerengine = _utilities.lazy_import('pulumi_oci.containerengine')
@@ -949,6 +952,22 @@ _utilities.register(
   "fqn": "pulumi_oci.cloudmigrations",
   "classes": {
    "oci:CloudMigrations/targetAsset:TargetAsset": "TargetAsset"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "ComputeCloud/atCustomerCccInfrastructure",
+  "fqn": "pulumi_oci.computecloud",
+  "classes": {
+   "oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure": "AtCustomerCccInfrastructure"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "ComputeCloud/atCustomerCccUpgradeSchedule",
+  "fqn": "pulumi_oci.computecloud",
+  "classes": {
+   "oci:ComputeCloud/atCustomerCccUpgradeSchedule:AtCustomerCccUpgradeSchedule": "AtCustomerCccUpgradeSchedule"
   }
  },
  {
@@ -2013,6 +2032,14 @@ _utilities.register(
   "fqn": "pulumi_oci.datascience",
   "classes": {
    "oci:DataScience/pipelineRun:PipelineRun": "PipelineRun"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataScience/privateEndpoint",
+  "fqn": "pulumi_oci.datascience",
+  "classes": {
+   "oci:DataScience/privateEndpoint:PrivateEndpoint": "PrivateEndpoint"
   }
  },
  {
@@ -3581,6 +3608,14 @@ _utilities.register(
   "fqn": "pulumi_oci.jms",
   "classes": {
    "oci:Jms/fleet:Fleet": "Fleet"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Kms/ekmsPrivateEndpoint",
+  "fqn": "pulumi_oci.kms",
+  "classes": {
+   "oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint": "EkmsPrivateEndpoint"
   }
  },
  {

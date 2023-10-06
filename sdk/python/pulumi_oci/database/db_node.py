@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['DbNodeArgs', 'DbNode']
@@ -27,11 +27,24 @@ class DbNodeArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "db_node_id", db_node_id)
+        DbNodeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            db_node_id=db_node_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             db_node_id: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("db_node_id", db_node_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="dbNodeId")
@@ -132,54 +145,109 @@ class _DbNodeState:
         :param pulumi.Input[str] vnic2id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
         :param pulumi.Input[str] vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
         """
+        _DbNodeState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_details=additional_details,
+            backup_ip_id=backup_ip_id,
+            backup_vnic2id=backup_vnic2id,
+            backup_vnic_id=backup_vnic_id,
+            cpu_core_count=cpu_core_count,
+            db_node_id=db_node_id,
+            db_node_storage_size_in_gbs=db_node_storage_size_in_gbs,
+            db_server_id=db_server_id,
+            db_system_id=db_system_id,
+            defined_tags=defined_tags,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            host_ip_id=host_ip_id,
+            hostname=hostname,
+            lifecycle_details=lifecycle_details,
+            maintenance_type=maintenance_type,
+            memory_size_in_gbs=memory_size_in_gbs,
+            software_storage_size_in_gb=software_storage_size_in_gb,
+            state=state,
+            time_created=time_created,
+            time_maintenance_window_end=time_maintenance_window_end,
+            time_maintenance_window_start=time_maintenance_window_start,
+            vnic2id=vnic2id,
+            vnic_id=vnic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_details: Optional[pulumi.Input[str]] = None,
+             backup_ip_id: Optional[pulumi.Input[str]] = None,
+             backup_vnic2id: Optional[pulumi.Input[str]] = None,
+             backup_vnic_id: Optional[pulumi.Input[str]] = None,
+             cpu_core_count: Optional[pulumi.Input[int]] = None,
+             db_node_id: Optional[pulumi.Input[str]] = None,
+             db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+             db_server_id: Optional[pulumi.Input[str]] = None,
+             db_system_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             fault_domain: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             host_ip_id: Optional[pulumi.Input[str]] = None,
+             hostname: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             maintenance_type: Optional[pulumi.Input[str]] = None,
+             memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
+             software_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_maintenance_window_end: Optional[pulumi.Input[str]] = None,
+             time_maintenance_window_start: Optional[pulumi.Input[str]] = None,
+             vnic2id: Optional[pulumi.Input[str]] = None,
+             vnic_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if additional_details is not None:
-            pulumi.set(__self__, "additional_details", additional_details)
+            _setter("additional_details", additional_details)
         if backup_ip_id is not None:
-            pulumi.set(__self__, "backup_ip_id", backup_ip_id)
+            _setter("backup_ip_id", backup_ip_id)
         if backup_vnic2id is not None:
-            pulumi.set(__self__, "backup_vnic2id", backup_vnic2id)
+            _setter("backup_vnic2id", backup_vnic2id)
         if backup_vnic_id is not None:
-            pulumi.set(__self__, "backup_vnic_id", backup_vnic_id)
+            _setter("backup_vnic_id", backup_vnic_id)
         if cpu_core_count is not None:
-            pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+            _setter("cpu_core_count", cpu_core_count)
         if db_node_id is not None:
-            pulumi.set(__self__, "db_node_id", db_node_id)
+            _setter("db_node_id", db_node_id)
         if db_node_storage_size_in_gbs is not None:
-            pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
+            _setter("db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
         if db_server_id is not None:
-            pulumi.set(__self__, "db_server_id", db_server_id)
+            _setter("db_server_id", db_server_id)
         if db_system_id is not None:
-            pulumi.set(__self__, "db_system_id", db_system_id)
+            _setter("db_system_id", db_system_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if fault_domain is not None:
-            pulumi.set(__self__, "fault_domain", fault_domain)
+            _setter("fault_domain", fault_domain)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if host_ip_id is not None:
-            pulumi.set(__self__, "host_ip_id", host_ip_id)
+            _setter("host_ip_id", host_ip_id)
         if hostname is not None:
-            pulumi.set(__self__, "hostname", hostname)
+            _setter("hostname", hostname)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if maintenance_type is not None:
-            pulumi.set(__self__, "maintenance_type", maintenance_type)
+            _setter("maintenance_type", maintenance_type)
         if memory_size_in_gbs is not None:
-            pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+            _setter("memory_size_in_gbs", memory_size_in_gbs)
         if software_storage_size_in_gb is not None:
-            pulumi.set(__self__, "software_storage_size_in_gb", software_storage_size_in_gb)
+            _setter("software_storage_size_in_gb", software_storage_size_in_gb)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_maintenance_window_end is not None:
-            pulumi.set(__self__, "time_maintenance_window_end", time_maintenance_window_end)
+            _setter("time_maintenance_window_end", time_maintenance_window_end)
         if time_maintenance_window_start is not None:
-            pulumi.set(__self__, "time_maintenance_window_start", time_maintenance_window_start)
+            _setter("time_maintenance_window_start", time_maintenance_window_start)
         if vnic2id is not None:
-            pulumi.set(__self__, "vnic2id", vnic2id)
+            _setter("vnic2id", vnic2id)
         if vnic_id is not None:
-            pulumi.set(__self__, "vnic_id", vnic_id)
+            _setter("vnic_id", vnic_id)
 
     @property
     @pulumi.getter(name="additionalDetails")
@@ -535,6 +603,10 @@ class DbNode(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DbNodeArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

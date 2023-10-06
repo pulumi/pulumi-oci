@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,21 +39,44 @@ class MonitoredResourcesSearchAssociationArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
+        MonitoredResourcesSearchAssociationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            association_type=association_type,
+            destination_resource_id=destination_resource_id,
+            destination_resource_name=destination_resource_name,
+            destination_resource_type=destination_resource_type,
+            source_resource_id=source_resource_id,
+            source_resource_name=source_resource_name,
+            source_resource_type=source_resource_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             association_type: Optional[pulumi.Input[str]] = None,
+             destination_resource_id: Optional[pulumi.Input[str]] = None,
+             destination_resource_name: Optional[pulumi.Input[str]] = None,
+             destination_resource_type: Optional[pulumi.Input[str]] = None,
+             source_resource_id: Optional[pulumi.Input[str]] = None,
+             source_resource_name: Optional[pulumi.Input[str]] = None,
+             source_resource_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
         if association_type is not None:
-            pulumi.set(__self__, "association_type", association_type)
+            _setter("association_type", association_type)
         if destination_resource_id is not None:
-            pulumi.set(__self__, "destination_resource_id", destination_resource_id)
+            _setter("destination_resource_id", destination_resource_id)
         if destination_resource_name is not None:
-            pulumi.set(__self__, "destination_resource_name", destination_resource_name)
+            _setter("destination_resource_name", destination_resource_name)
         if destination_resource_type is not None:
-            pulumi.set(__self__, "destination_resource_type", destination_resource_type)
+            _setter("destination_resource_type", destination_resource_type)
         if source_resource_id is not None:
-            pulumi.set(__self__, "source_resource_id", source_resource_id)
+            _setter("source_resource_id", source_resource_id)
         if source_resource_name is not None:
-            pulumi.set(__self__, "source_resource_name", source_resource_name)
+            _setter("source_resource_name", source_resource_name)
         if source_resource_type is not None:
-            pulumi.set(__self__, "source_resource_type", source_resource_type)
+            _setter("source_resource_type", source_resource_type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -184,24 +207,49 @@ class _MonitoredResourcesSearchAssociationState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _MonitoredResourcesSearchAssociationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            association_type=association_type,
+            compartment_id=compartment_id,
+            destination_resource_id=destination_resource_id,
+            destination_resource_name=destination_resource_name,
+            destination_resource_type=destination_resource_type,
+            items=items,
+            source_resource_id=source_resource_id,
+            source_resource_name=source_resource_name,
+            source_resource_type=source_resource_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             association_type: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             destination_resource_id: Optional[pulumi.Input[str]] = None,
+             destination_resource_name: Optional[pulumi.Input[str]] = None,
+             destination_resource_type: Optional[pulumi.Input[str]] = None,
+             items: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchAssociationItemArgs']]]] = None,
+             source_resource_id: Optional[pulumi.Input[str]] = None,
+             source_resource_name: Optional[pulumi.Input[str]] = None,
+             source_resource_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if association_type is not None:
-            pulumi.set(__self__, "association_type", association_type)
+            _setter("association_type", association_type)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if destination_resource_id is not None:
-            pulumi.set(__self__, "destination_resource_id", destination_resource_id)
+            _setter("destination_resource_id", destination_resource_id)
         if destination_resource_name is not None:
-            pulumi.set(__self__, "destination_resource_name", destination_resource_name)
+            _setter("destination_resource_name", destination_resource_name)
         if destination_resource_type is not None:
-            pulumi.set(__self__, "destination_resource_type", destination_resource_type)
+            _setter("destination_resource_type", destination_resource_type)
         if items is not None:
-            pulumi.set(__self__, "items", items)
+            _setter("items", items)
         if source_resource_id is not None:
-            pulumi.set(__self__, "source_resource_id", source_resource_id)
+            _setter("source_resource_id", source_resource_id)
         if source_resource_name is not None:
-            pulumi.set(__self__, "source_resource_name", source_resource_name)
+            _setter("source_resource_name", source_resource_name)
         if source_resource_type is not None:
-            pulumi.set(__self__, "source_resource_type", source_resource_type)
+            _setter("source_resource_type", source_resource_type)
 
     @property
     @pulumi.getter(name="associationType")
@@ -421,6 +469,10 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            MonitoredResourcesSearchAssociationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

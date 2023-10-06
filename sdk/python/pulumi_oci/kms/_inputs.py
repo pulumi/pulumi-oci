@@ -6,19 +6,27 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
     'GeneratedKeyKeyShapeArgs',
+    'KeyExternalKeyReferenceArgs',
+    'KeyExternalKeyReferenceDetailArgs',
     'KeyKeyShapeArgs',
     'KeyReplicaDetailArgs',
     'KeyRestoreFromFileArgs',
     'KeyRestoreFromObjectStoreArgs',
+    'KeyVersionExternalKeyReferenceDetailArgs',
     'KeyVersionReplicaDetailArgs',
+    'VaultExternalKeyManagerMetadataArgs',
+    'VaultExternalKeyManagerMetadataOauthMetadataArgs',
+    'VaultExternalKeyManagerMetadataSummaryArgs',
+    'VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs',
     'VaultReplicaDetailArgs',
     'VaultRestoreFromFileArgs',
     'VaultRestoreFromObjectStoreArgs',
+    'GetEkmsPrivateEndpointsFilterArgs',
     'GetKeyVersionsFilterArgs',
     'GetKeysFilterArgs',
     'GetVaultReplicasFilterArgs',
@@ -32,23 +40,36 @@ class GeneratedKeyKeyShapeArgs:
                  length: pulumi.Input[int],
                  curve_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] algorithm: The algorithm used by a key's key versions to encrypt or decrypt.
+        :param pulumi.Input[str] algorithm: The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
         :param pulumi.Input[int] length: The length of the key in bytes, expressed as an integer. Supported values include the following:
                * AES: 16, 24, or 32
                * RSA: 256, 384, or 512
                * ECDSA: 32, 48, or 66
         :param pulumi.Input[str] curve_id: Supported curve IDs for ECDSA keys.
         """
-        pulumi.set(__self__, "algorithm", algorithm)
-        pulumi.set(__self__, "length", length)
+        GeneratedKeyKeyShapeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            algorithm=algorithm,
+            length=length,
+            curve_id=curve_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             algorithm: pulumi.Input[str],
+             length: pulumi.Input[int],
+             curve_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("algorithm", algorithm)
+        _setter("length", length)
         if curve_id is not None:
-            pulumi.set(__self__, "curve_id", curve_id)
+            _setter("curve_id", curve_id)
 
     @property
     @pulumi.getter
     def algorithm(self) -> pulumi.Input[str]:
         """
-        The algorithm used by a key's key versions to encrypt or decrypt.
+        The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
         """
         return pulumi.get(self, "algorithm")
 
@@ -85,29 +106,123 @@ class GeneratedKeyKeyShapeArgs:
 
 
 @pulumi.input_type
+class KeyExternalKeyReferenceArgs:
+    def __init__(__self__, *,
+                 external_key_id: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] external_key_id: ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+        """
+        KeyExternalKeyReferenceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            external_key_id=external_key_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             external_key_id: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("external_key_id", external_key_id)
+
+    @property
+    @pulumi.getter(name="externalKeyId")
+    def external_key_id(self) -> pulumi.Input[str]:
+        """
+        ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+        """
+        return pulumi.get(self, "external_key_id")
+
+    @external_key_id.setter
+    def external_key_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "external_key_id", value)
+
+
+@pulumi.input_type
+class KeyExternalKeyReferenceDetailArgs:
+    def __init__(__self__, *,
+                 external_key_id: Optional[pulumi.Input[str]] = None,
+                 external_key_version_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] external_key_id: ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+        :param pulumi.Input[str] external_key_version_id: Key version ID associated with the external key.
+        """
+        KeyExternalKeyReferenceDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            external_key_id=external_key_id,
+            external_key_version_id=external_key_version_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             external_key_id: Optional[pulumi.Input[str]] = None,
+             external_key_version_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        if external_key_id is not None:
+            _setter("external_key_id", external_key_id)
+        if external_key_version_id is not None:
+            _setter("external_key_version_id", external_key_version_id)
+
+    @property
+    @pulumi.getter(name="externalKeyId")
+    def external_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+        """
+        return pulumi.get(self, "external_key_id")
+
+    @external_key_id.setter
+    def external_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "external_key_id", value)
+
+    @property
+    @pulumi.getter(name="externalKeyVersionId")
+    def external_key_version_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Key version ID associated with the external key.
+        """
+        return pulumi.get(self, "external_key_version_id")
+
+    @external_key_version_id.setter
+    def external_key_version_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "external_key_version_id", value)
+
+
+@pulumi.input_type
 class KeyKeyShapeArgs:
     def __init__(__self__, *,
                  algorithm: pulumi.Input[str],
                  length: pulumi.Input[int],
                  curve_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] algorithm: The algorithm used by a key's key versions to encrypt or decrypt.
+        :param pulumi.Input[str] algorithm: The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
         :param pulumi.Input[int] length: The length of the key in bytes, expressed as an integer. Supported values include the following:
                * AES: 16, 24, or 32
                * RSA: 256, 384, or 512
                * ECDSA: 32, 48, or 66
         :param pulumi.Input[str] curve_id: Supported curve IDs for ECDSA keys.
         """
-        pulumi.set(__self__, "algorithm", algorithm)
-        pulumi.set(__self__, "length", length)
+        KeyKeyShapeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            algorithm=algorithm,
+            length=length,
+            curve_id=curve_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             algorithm: pulumi.Input[str],
+             length: pulumi.Input[int],
+             curve_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("algorithm", algorithm)
+        _setter("length", length)
         if curve_id is not None:
-            pulumi.set(__self__, "curve_id", curve_id)
+            _setter("curve_id", curve_id)
 
     @property
     @pulumi.getter
     def algorithm(self) -> pulumi.Input[str]:
         """
-        The algorithm used by a key's key versions to encrypt or decrypt.
+        The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
         """
         return pulumi.get(self, "algorithm")
 
@@ -150,8 +265,17 @@ class KeyReplicaDetailArgs:
         """
         :param pulumi.Input[str] replication_id: ReplicationId associated with a key operation
         """
+        KeyReplicaDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            replication_id=replication_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             replication_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if replication_id is not None:
-            pulumi.set(__self__, "replication_id", replication_id)
+            _setter("replication_id", replication_id)
 
     @property
     @pulumi.getter(name="replicationId")
@@ -177,10 +301,23 @@ class KeyRestoreFromFileArgs:
         :param pulumi.Input[str] restore_key_from_file_details: Key backup file content.
         :param pulumi.Input[str] content_md5: (Updatable) content md5 hashed value of key's backup file
         """
-        pulumi.set(__self__, "content_length", content_length)
-        pulumi.set(__self__, "restore_key_from_file_details", restore_key_from_file_details)
+        KeyRestoreFromFileArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            content_length=content_length,
+            restore_key_from_file_details=restore_key_from_file_details,
+            content_md5=content_md5,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             content_length: pulumi.Input[str],
+             restore_key_from_file_details: pulumi.Input[str],
+             content_md5: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("content_length", content_length)
+        _setter("restore_key_from_file_details", restore_key_from_file_details)
         if content_md5 is not None:
-            pulumi.set(__self__, "content_md5", content_md5)
+            _setter("content_md5", content_md5)
 
     @property
     @pulumi.getter(name="contentLength")
@@ -234,15 +371,32 @@ class KeyRestoreFromObjectStoreArgs:
         :param pulumi.Input[str] object: (Updatable) Object containing the backup
         :param pulumi.Input[str] uri: (Updatable) Pre-authenticated-request-uri of the backup
         """
-        pulumi.set(__self__, "destination", destination)
+        KeyRestoreFromObjectStoreArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destination=destination,
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destination: pulumi.Input[str],
+             bucket: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             uri: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("destination", destination)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
         if uri is not None:
-            pulumi.set(__self__, "uri", uri)
+            _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -306,14 +460,73 @@ class KeyRestoreFromObjectStoreArgs:
 
 
 @pulumi.input_type
+class KeyVersionExternalKeyReferenceDetailArgs:
+    def __init__(__self__, *,
+                 external_key_id: Optional[pulumi.Input[str]] = None,
+                 external_key_version_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] external_key_id: ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+        :param pulumi.Input[str] external_key_version_id: Key version ID associated with the external key.
+        """
+        KeyVersionExternalKeyReferenceDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            external_key_id=external_key_id,
+            external_key_version_id=external_key_version_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             external_key_id: Optional[pulumi.Input[str]] = None,
+             external_key_version_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        if external_key_id is not None:
+            _setter("external_key_id", external_key_id)
+        if external_key_version_id is not None:
+            _setter("external_key_version_id", external_key_version_id)
+
+    @property
+    @pulumi.getter(name="externalKeyId")
+    def external_key_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+        """
+        return pulumi.get(self, "external_key_id")
+
+    @external_key_id.setter
+    def external_key_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "external_key_id", value)
+
+    @property
+    @pulumi.getter(name="externalKeyVersionId")
+    def external_key_version_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Key version ID associated with the external key.
+        """
+        return pulumi.get(self, "external_key_version_id")
+
+    @external_key_version_id.setter
+    def external_key_version_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "external_key_version_id", value)
+
+
+@pulumi.input_type
 class KeyVersionReplicaDetailArgs:
     def __init__(__self__, *,
                  replication_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] replication_id: ReplicationId associated with a key version operation
         """
+        KeyVersionReplicaDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            replication_id=replication_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             replication_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if replication_id is not None:
-            pulumi.set(__self__, "replication_id", replication_id)
+            _setter("replication_id", replication_id)
 
     @property
     @pulumi.getter(name="replicationId")
@@ -329,14 +542,289 @@ class KeyVersionReplicaDetailArgs:
 
 
 @pulumi.input_type
+class VaultExternalKeyManagerMetadataArgs:
+    def __init__(__self__, *,
+                 external_vault_endpoint_url: pulumi.Input[str],
+                 oauth_metadata: pulumi.Input['VaultExternalKeyManagerMetadataOauthMetadataArgs'],
+                 private_endpoint_id: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] external_vault_endpoint_url: URI of the vault on external key manager.
+        :param pulumi.Input['VaultExternalKeyManagerMetadataOauthMetadataArgs'] oauth_metadata: Authorization details required to get access token from IDP for accessing protected resources.
+        :param pulumi.Input[str] private_endpoint_id: OCID of private endpoint created by customer.
+        """
+        VaultExternalKeyManagerMetadataArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            external_vault_endpoint_url=external_vault_endpoint_url,
+            oauth_metadata=oauth_metadata,
+            private_endpoint_id=private_endpoint_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             external_vault_endpoint_url: pulumi.Input[str],
+             oauth_metadata: pulumi.Input['VaultExternalKeyManagerMetadataOauthMetadataArgs'],
+             private_endpoint_id: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("external_vault_endpoint_url", external_vault_endpoint_url)
+        _setter("oauth_metadata", oauth_metadata)
+        _setter("private_endpoint_id", private_endpoint_id)
+
+    @property
+    @pulumi.getter(name="externalVaultEndpointUrl")
+    def external_vault_endpoint_url(self) -> pulumi.Input[str]:
+        """
+        URI of the vault on external key manager.
+        """
+        return pulumi.get(self, "external_vault_endpoint_url")
+
+    @external_vault_endpoint_url.setter
+    def external_vault_endpoint_url(self, value: pulumi.Input[str]):
+        pulumi.set(self, "external_vault_endpoint_url", value)
+
+    @property
+    @pulumi.getter(name="oauthMetadata")
+    def oauth_metadata(self) -> pulumi.Input['VaultExternalKeyManagerMetadataOauthMetadataArgs']:
+        """
+        Authorization details required to get access token from IDP for accessing protected resources.
+        """
+        return pulumi.get(self, "oauth_metadata")
+
+    @oauth_metadata.setter
+    def oauth_metadata(self, value: pulumi.Input['VaultExternalKeyManagerMetadataOauthMetadataArgs']):
+        pulumi.set(self, "oauth_metadata", value)
+
+    @property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> pulumi.Input[str]:
+        """
+        OCID of private endpoint created by customer.
+        """
+        return pulumi.get(self, "private_endpoint_id")
+
+    @private_endpoint_id.setter
+    def private_endpoint_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "private_endpoint_id", value)
+
+
+@pulumi.input_type
+class VaultExternalKeyManagerMetadataOauthMetadataArgs:
+    def __init__(__self__, *,
+                 client_app_id: pulumi.Input[str],
+                 client_app_secret: pulumi.Input[str],
+                 idcs_account_name_url: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] client_app_id: ID of the client app created in IDP.
+        :param pulumi.Input[str] client_app_secret: Secret of the client app created in IDP.
+        :param pulumi.Input[str] idcs_account_name_url: Base URL of the IDCS account where confidential client app is created.
+        """
+        VaultExternalKeyManagerMetadataOauthMetadataArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_app_id=client_app_id,
+            client_app_secret=client_app_secret,
+            idcs_account_name_url=idcs_account_name_url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_app_id: pulumi.Input[str],
+             client_app_secret: pulumi.Input[str],
+             idcs_account_name_url: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("client_app_id", client_app_id)
+        _setter("client_app_secret", client_app_secret)
+        _setter("idcs_account_name_url", idcs_account_name_url)
+
+    @property
+    @pulumi.getter(name="clientAppId")
+    def client_app_id(self) -> pulumi.Input[str]:
+        """
+        ID of the client app created in IDP.
+        """
+        return pulumi.get(self, "client_app_id")
+
+    @client_app_id.setter
+    def client_app_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "client_app_id", value)
+
+    @property
+    @pulumi.getter(name="clientAppSecret")
+    def client_app_secret(self) -> pulumi.Input[str]:
+        """
+        Secret of the client app created in IDP.
+        """
+        return pulumi.get(self, "client_app_secret")
+
+    @client_app_secret.setter
+    def client_app_secret(self, value: pulumi.Input[str]):
+        pulumi.set(self, "client_app_secret", value)
+
+    @property
+    @pulumi.getter(name="idcsAccountNameUrl")
+    def idcs_account_name_url(self) -> pulumi.Input[str]:
+        """
+        Base URL of the IDCS account where confidential client app is created.
+        """
+        return pulumi.get(self, "idcs_account_name_url")
+
+    @idcs_account_name_url.setter
+    def idcs_account_name_url(self, value: pulumi.Input[str]):
+        pulumi.set(self, "idcs_account_name_url", value)
+
+
+@pulumi.input_type
+class VaultExternalKeyManagerMetadataSummaryArgs:
+    def __init__(__self__, *,
+                 external_vault_endpoint_url: Optional[pulumi.Input[str]] = None,
+                 oauth_metadata_summaries: Optional[pulumi.Input[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs']]]] = None,
+                 private_endpoint_id: Optional[pulumi.Input[str]] = None,
+                 vendor: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] external_vault_endpoint_url: URI of the vault on external key manager.
+        :param pulumi.Input[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs']]] oauth_metadata_summaries: Summary about authorization to be returned to the customer as a response.
+        :param pulumi.Input[str] private_endpoint_id: OCID of private endpoint created by customer.
+        :param pulumi.Input[str] vendor: Vendor of the external key manager.
+        """
+        VaultExternalKeyManagerMetadataSummaryArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            external_vault_endpoint_url=external_vault_endpoint_url,
+            oauth_metadata_summaries=oauth_metadata_summaries,
+            private_endpoint_id=private_endpoint_id,
+            vendor=vendor,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             external_vault_endpoint_url: Optional[pulumi.Input[str]] = None,
+             oauth_metadata_summaries: Optional[pulumi.Input[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs']]]] = None,
+             private_endpoint_id: Optional[pulumi.Input[str]] = None,
+             vendor: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        if external_vault_endpoint_url is not None:
+            _setter("external_vault_endpoint_url", external_vault_endpoint_url)
+        if oauth_metadata_summaries is not None:
+            _setter("oauth_metadata_summaries", oauth_metadata_summaries)
+        if private_endpoint_id is not None:
+            _setter("private_endpoint_id", private_endpoint_id)
+        if vendor is not None:
+            _setter("vendor", vendor)
+
+    @property
+    @pulumi.getter(name="externalVaultEndpointUrl")
+    def external_vault_endpoint_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        URI of the vault on external key manager.
+        """
+        return pulumi.get(self, "external_vault_endpoint_url")
+
+    @external_vault_endpoint_url.setter
+    def external_vault_endpoint_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "external_vault_endpoint_url", value)
+
+    @property
+    @pulumi.getter(name="oauthMetadataSummaries")
+    def oauth_metadata_summaries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs']]]]:
+        """
+        Summary about authorization to be returned to the customer as a response.
+        """
+        return pulumi.get(self, "oauth_metadata_summaries")
+
+    @oauth_metadata_summaries.setter
+    def oauth_metadata_summaries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs']]]]):
+        pulumi.set(self, "oauth_metadata_summaries", value)
+
+    @property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        OCID of private endpoint created by customer.
+        """
+        return pulumi.get(self, "private_endpoint_id")
+
+    @private_endpoint_id.setter
+    def private_endpoint_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_endpoint_id", value)
+
+    @property
+    @pulumi.getter
+    def vendor(self) -> Optional[pulumi.Input[str]]:
+        """
+        Vendor of the external key manager.
+        """
+        return pulumi.get(self, "vendor")
+
+    @vendor.setter
+    def vendor(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vendor", value)
+
+
+@pulumi.input_type
+class VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs:
+    def __init__(__self__, *,
+                 client_app_id: Optional[pulumi.Input[str]] = None,
+                 idcs_account_name_url: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] client_app_id: ID of the client app created in IDP.
+        :param pulumi.Input[str] idcs_account_name_url: Base URL of the IDCS account where confidential client app is created.
+        """
+        VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_app_id=client_app_id,
+            idcs_account_name_url=idcs_account_name_url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_app_id: Optional[pulumi.Input[str]] = None,
+             idcs_account_name_url: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        if client_app_id is not None:
+            _setter("client_app_id", client_app_id)
+        if idcs_account_name_url is not None:
+            _setter("idcs_account_name_url", idcs_account_name_url)
+
+    @property
+    @pulumi.getter(name="clientAppId")
+    def client_app_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        ID of the client app created in IDP.
+        """
+        return pulumi.get(self, "client_app_id")
+
+    @client_app_id.setter
+    def client_app_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "client_app_id", value)
+
+    @property
+    @pulumi.getter(name="idcsAccountNameUrl")
+    def idcs_account_name_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        Base URL of the IDCS account where confidential client app is created.
+        """
+        return pulumi.get(self, "idcs_account_name_url")
+
+    @idcs_account_name_url.setter
+    def idcs_account_name_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "idcs_account_name_url", value)
+
+
+@pulumi.input_type
 class VaultReplicaDetailArgs:
     def __init__(__self__, *,
                  replication_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] replication_id: ReplicationId associated with a vault operation
         """
+        VaultReplicaDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            replication_id=replication_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             replication_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if replication_id is not None:
-            pulumi.set(__self__, "replication_id", replication_id)
+            _setter("replication_id", replication_id)
 
     @property
     @pulumi.getter(name="replicationId")
@@ -362,10 +850,23 @@ class VaultRestoreFromFileArgs:
         :param pulumi.Input[str] restore_vault_from_file_details: Vault backup file content
         :param pulumi.Input[str] content_md5: (Updatable) content md5 hashed value of vault's backup file
         """
-        pulumi.set(__self__, "content_length", content_length)
-        pulumi.set(__self__, "restore_vault_from_file_details", restore_vault_from_file_details)
+        VaultRestoreFromFileArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            content_length=content_length,
+            restore_vault_from_file_details=restore_vault_from_file_details,
+            content_md5=content_md5,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             content_length: pulumi.Input[str],
+             restore_vault_from_file_details: pulumi.Input[str],
+             content_md5: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("content_length", content_length)
+        _setter("restore_vault_from_file_details", restore_vault_from_file_details)
         if content_md5 is not None:
-            pulumi.set(__self__, "content_md5", content_md5)
+            _setter("content_md5", content_md5)
 
     @property
     @pulumi.getter(name="contentLength")
@@ -419,15 +920,32 @@ class VaultRestoreFromObjectStoreArgs:
         :param pulumi.Input[str] object: (Updatable) Object containing the backup
         :param pulumi.Input[str] uri: (Updatable) Pre-authenticated-request-uri of the backup* `restore_trigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
         """
-        pulumi.set(__self__, "destination", destination)
+        VaultRestoreFromObjectStoreArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destination=destination,
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+            uri=uri,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destination: pulumi.Input[str],
+             bucket: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             uri: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("destination", destination)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
         if uri is not None:
-            pulumi.set(__self__, "uri", uri)
+            _setter("uri", uri)
 
     @property
     @pulumi.getter
@@ -491,15 +1009,80 @@ class VaultRestoreFromObjectStoreArgs:
 
 
 @pulumi.input_type
+class GetEkmsPrivateEndpointsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        GetEkmsPrivateEndpointsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
+        if regex is not None:
+            _setter("regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
 class GetKeyVersionsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetKeyVersionsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -535,10 +1118,23 @@ class GetKeysFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetKeysFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -574,10 +1170,23 @@ class GetVaultReplicasFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetVaultReplicasFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -613,10 +1222,23 @@ class GetVaultsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetVaultsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

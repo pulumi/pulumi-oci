@@ -554,6 +554,12 @@ namespace Pulumi.Oci.Database
         [Output("remoteDisasterRecoveryType")]
         public Output<string> RemoteDisasterRecoveryType { get; private set; } = null!;
 
+        [Output("resourcePoolLeaderId")]
+        public Output<string> ResourcePoolLeaderId { get; private set; } = null!;
+
+        [Output("resourcePoolSummary")]
+        public Output<Outputs.AutonomousDatabaseResourcePoolSummary> ResourcePoolSummary { get; private set; } = null!;
+
         /// <summary>
         /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         /// </summary>
@@ -710,6 +716,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("timeMaintenanceEnd")]
         public Output<string> TimeMaintenanceEnd { get; private set; } = null!;
+
+        [Output("timeOfJoiningResourcePool")]
+        public Output<string> TimeOfJoiningResourcePool { get; private set; } = null!;
 
         /// <summary>
         /// The timestamp of the last failover operation.
@@ -1229,6 +1238,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("remoteDisasterRecoveryType")]
         public Input<string>? RemoteDisasterRecoveryType { get; set; }
+
+        [Input("resourcePoolLeaderId")]
+        public Input<string>? ResourcePoolLeaderId { get; set; }
+
+        [Input("resourcePoolSummary")]
+        public Input<Inputs.AutonomousDatabaseResourcePoolSummaryArgs>? ResourcePoolSummary { get; set; }
 
         /// <summary>
         /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
@@ -2002,6 +2017,12 @@ namespace Pulumi.Oci.Database
         [Input("remoteDisasterRecoveryType")]
         public Input<string>? RemoteDisasterRecoveryType { get; set; }
 
+        [Input("resourcePoolLeaderId")]
+        public Input<string>? ResourcePoolLeaderId { get; set; }
+
+        [Input("resourcePoolSummary")]
+        public Input<Inputs.AutonomousDatabaseResourcePoolSummaryGetArgs>? ResourcePoolSummary { get; set; }
+
         /// <summary>
         /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         /// </summary>
@@ -2188,6 +2209,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("timeMaintenanceEnd")]
         public Input<string>? TimeMaintenanceEnd { get; set; }
+
+        [Input("timeOfJoiningResourcePool")]
+        public Input<string>? TimeOfJoiningResourcePool { get; set; }
 
         /// <summary>
         /// The timestamp of the last failover operation.

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -14,6 +14,7 @@ __all__ = [
     'GetCompatibleFormatsForDataTypeResult',
     'AwaitableGetCompatibleFormatsForDataTypeResult',
     'get_compatible_formats_for_data_type',
+    'get_compatible_formats_for_data_type_output',
 ]
 
 @pulumi.output_type
@@ -84,3 +85,28 @@ def get_compatible_formats_for_data_type(opts: Optional[pulumi.InvokeOptions] = 
     return AwaitableGetCompatibleFormatsForDataTypeResult(
         formats_for_data_types=pulumi.get(__ret__, 'formats_for_data_types'),
         id=pulumi.get(__ret__, 'id'))
+
+
+@_utilities.lift_output_func(get_compatible_formats_for_data_type)
+def get_compatible_formats_for_data_type_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCompatibleFormatsForDataTypeResult]:
+    """
+    This data source provides details about a specific Compatible Formats For Data Type resource in Oracle Cloud Infrastructure Data Safe service.
+
+    Gets a list of basic masking formats compatible with the supported data types.
+    The data types are grouped into the following categories -
+    Character - Includes CHAR, NCHAR, VARCHAR2, and NVARCHAR2
+    Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE
+    Date - Includes DATE and TIMESTAMP
+    LOB - Includes BLOB, CLOB, and NCLOB
+    All - Includes all the supported data types
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_compatible_formats_for_data_type = oci.DataSafe.get_compatible_formats_for_data_type()
+    ```
+    """
+    ...

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ReplicationPolicyArgs', 'ReplicationPolicy']
@@ -32,17 +32,36 @@ class ReplicationPolicyArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] name: The name of the policy. Avoid entering confidential information.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "destination_bucket_name", destination_bucket_name)
-        pulumi.set(__self__, "destination_region_name", destination_region_name)
-        pulumi.set(__self__, "namespace", namespace)
+        ReplicationPolicyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            destination_bucket_name=destination_bucket_name,
+            destination_region_name=destination_region_name,
+            namespace=namespace,
+            delete_object_in_destination_bucket=delete_object_in_destination_bucket,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: pulumi.Input[str],
+             destination_bucket_name: pulumi.Input[str],
+             destination_region_name: pulumi.Input[str],
+             namespace: pulumi.Input[str],
+             delete_object_in_destination_bucket: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("destination_bucket_name", destination_bucket_name)
+        _setter("destination_region_name", destination_region_name)
+        _setter("namespace", namespace)
         if delete_object_in_destination_bucket is not None:
             warnings.warn("""The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""", DeprecationWarning)
             pulumi.log.warn("""delete_object_in_destination_bucket is deprecated: The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""")
         if delete_object_in_destination_bucket is not None:
-            pulumi.set(__self__, "delete_object_in_destination_bucket", delete_object_in_destination_bucket)
+            _setter("delete_object_in_destination_bucket", delete_object_in_destination_bucket)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -150,29 +169,56 @@ class _ReplicationPolicyState:
         :param pulumi.Input[str] time_created: The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_last_sync: Changes made to the source bucket before this time has been replicated.
         """
+        _ReplicationPolicyState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            delete_object_in_destination_bucket=delete_object_in_destination_bucket,
+            destination_bucket_name=destination_bucket_name,
+            destination_region_name=destination_region_name,
+            name=name,
+            namespace=namespace,
+            status=status,
+            status_message=status_message,
+            time_created=time_created,
+            time_last_sync=time_last_sync,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[pulumi.Input[str]] = None,
+             delete_object_in_destination_bucket: Optional[pulumi.Input[str]] = None,
+             destination_bucket_name: Optional[pulumi.Input[str]] = None,
+             destination_region_name: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             status_message: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_last_sync: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if delete_object_in_destination_bucket is not None:
             warnings.warn("""The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""", DeprecationWarning)
             pulumi.log.warn("""delete_object_in_destination_bucket is deprecated: The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""")
         if delete_object_in_destination_bucket is not None:
-            pulumi.set(__self__, "delete_object_in_destination_bucket", delete_object_in_destination_bucket)
+            _setter("delete_object_in_destination_bucket", delete_object_in_destination_bucket)
         if destination_bucket_name is not None:
-            pulumi.set(__self__, "destination_bucket_name", destination_bucket_name)
+            _setter("destination_bucket_name", destination_bucket_name)
         if destination_region_name is not None:
-            pulumi.set(__self__, "destination_region_name", destination_region_name)
+            _setter("destination_region_name", destination_region_name)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if status_message is not None:
-            pulumi.set(__self__, "status_message", status_message)
+            _setter("status_message", status_message)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_last_sync is not None:
-            pulumi.set(__self__, "time_last_sync", time_last_sync)
+            _setter("time_last_sync", time_last_sync)
 
     @property
     @pulumi.getter
@@ -391,6 +437,10 @@ class ReplicationPolicy(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ReplicationPolicyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -414,9 +464,6 @@ class ReplicationPolicy(pulumi.CustomResource):
             if bucket is None and not opts.urn:
                 raise TypeError("Missing required property 'bucket'")
             __props__.__dict__["bucket"] = bucket
-            if delete_object_in_destination_bucket is not None and not opts.urn:
-                warnings.warn("""The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""", DeprecationWarning)
-                pulumi.log.warn("""delete_object_in_destination_bucket is deprecated: The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""")
             __props__.__dict__["delete_object_in_destination_bucket"] = delete_object_in_destination_bucket
             if destination_bucket_name is None and not opts.urn:
                 raise TypeError("Missing required property 'destination_bucket_name'")

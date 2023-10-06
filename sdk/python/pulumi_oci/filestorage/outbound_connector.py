@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -43,21 +43,48 @@ class OutboundConnectorArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "bind_distinguished_name", bind_distinguished_name)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connector_type", connector_type)
-        pulumi.set(__self__, "endpoints", endpoints)
+        OutboundConnectorArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            bind_distinguished_name=bind_distinguished_name,
+            compartment_id=compartment_id,
+            connector_type=connector_type,
+            endpoints=endpoints,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            password_secret_id=password_secret_id,
+            password_secret_version=password_secret_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: pulumi.Input[str],
+             bind_distinguished_name: pulumi.Input[str],
+             compartment_id: pulumi.Input[str],
+             connector_type: pulumi.Input[str],
+             endpoints: pulumi.Input[Sequence[pulumi.Input['OutboundConnectorEndpointArgs']]],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             password_secret_id: Optional[pulumi.Input[str]] = None,
+             password_secret_version: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("bind_distinguished_name", bind_distinguished_name)
+        _setter("compartment_id", compartment_id)
+        _setter("connector_type", connector_type)
+        _setter("endpoints", endpoints)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if password_secret_id is not None:
-            pulumi.set(__self__, "password_secret_id", password_secret_id)
+            _setter("password_secret_id", password_secret_id)
         if password_secret_version is not None:
-            pulumi.set(__self__, "password_secret_version", password_secret_version)
+            _setter("password_secret_version", password_secret_version)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -218,30 +245,61 @@ class _OutboundConnectorState:
         :param pulumi.Input[str] state: The current state of this outbound connector.
         :param pulumi.Input[str] time_created: The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
+        _OutboundConnectorState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            bind_distinguished_name=bind_distinguished_name,
+            compartment_id=compartment_id,
+            connector_type=connector_type,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            endpoints=endpoints,
+            freeform_tags=freeform_tags,
+            password_secret_id=password_secret_id,
+            password_secret_version=password_secret_version,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             bind_distinguished_name: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             connector_type: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['OutboundConnectorEndpointArgs']]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             password_secret_id: Optional[pulumi.Input[str]] = None,
+             password_secret_version: Optional[pulumi.Input[int]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if bind_distinguished_name is not None:
-            pulumi.set(__self__, "bind_distinguished_name", bind_distinguished_name)
+            _setter("bind_distinguished_name", bind_distinguished_name)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if connector_type is not None:
-            pulumi.set(__self__, "connector_type", connector_type)
+            _setter("connector_type", connector_type)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if endpoints is not None:
-            pulumi.set(__self__, "endpoints", endpoints)
+            _setter("endpoints", endpoints)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if password_secret_id is not None:
-            pulumi.set(__self__, "password_secret_id", password_secret_id)
+            _setter("password_secret_id", password_secret_id)
         if password_secret_version is not None:
-            pulumi.set(__self__, "password_secret_version", password_secret_version)
+            _setter("password_secret_version", password_secret_version)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -557,6 +615,10 @@ class OutboundConnector(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            OutboundConnectorArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

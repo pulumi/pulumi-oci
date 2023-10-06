@@ -177,17 +177,9 @@ public class AutoScalingConfiguration extends com.pulumi.resources.CustomResourc
     public Output<Map<String,Object>> definedTags() {
         return this.definedTags;
     }
-    /**
-     * A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
-     * 
-     */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
-    /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
-     * 
-     */
     public Output<String> displayName() {
         return this.displayName;
     }

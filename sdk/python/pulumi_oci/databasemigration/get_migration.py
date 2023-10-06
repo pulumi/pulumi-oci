@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -22,7 +22,7 @@ class GetMigrationResult:
     """
     A collection of values returned by getMigration.
     """
-    def __init__(__self__, advisor_settings=None, agent_id=None, compartment_id=None, credentials_secret_id=None, csv_text=None, data_transfer_medium_details=None, datapump_settings=None, defined_tags=None, display_name=None, dump_transfer_details=None, exclude_objects=None, executing_job_id=None, freeform_tags=None, golden_gate_details=None, golden_gate_service_details=None, id=None, include_objects=None, lifecycle_details=None, migration_id=None, source_container_database_connection_id=None, source_database_connection_id=None, state=None, system_tags=None, target_database_connection_id=None, time_created=None, time_last_migration=None, time_updated=None, type=None, vault_details=None, wait_after=None):
+    def __init__(__self__, advisor_settings=None, agent_id=None, compartment_id=None, credentials_secret_id=None, csv_text=None, data_transfer_medium_details=None, data_transfer_medium_details_v2s=None, datapump_settings=None, defined_tags=None, display_name=None, dump_transfer_details=None, exclude_objects=None, executing_job_id=None, freeform_tags=None, golden_gate_details=None, golden_gate_service_details=None, id=None, include_objects=None, lifecycle_details=None, migration_id=None, source_container_database_connection_id=None, source_database_connection_id=None, state=None, system_tags=None, target_database_connection_id=None, time_created=None, time_last_migration=None, time_updated=None, type=None, vault_details=None, wait_after=None):
         if advisor_settings and not isinstance(advisor_settings, list):
             raise TypeError("Expected argument 'advisor_settings' to be a list")
         pulumi.set(__self__, "advisor_settings", advisor_settings)
@@ -41,6 +41,9 @@ class GetMigrationResult:
         if data_transfer_medium_details and not isinstance(data_transfer_medium_details, list):
             raise TypeError("Expected argument 'data_transfer_medium_details' to be a list")
         pulumi.set(__self__, "data_transfer_medium_details", data_transfer_medium_details)
+        if data_transfer_medium_details_v2s and not isinstance(data_transfer_medium_details_v2s, list):
+            raise TypeError("Expected argument 'data_transfer_medium_details_v2s' to be a list")
+        pulumi.set(__self__, "data_transfer_medium_details_v2s", data_transfer_medium_details_v2s)
         if datapump_settings and not isinstance(datapump_settings, list):
             raise TypeError("Expected argument 'datapump_settings' to be a list")
         pulumi.set(__self__, "datapump_settings", datapump_settings)
@@ -158,6 +161,11 @@ class GetMigrationResult:
         Data Transfer Medium details for the Migration.
         """
         return pulumi.get(self, "data_transfer_medium_details")
+
+    @property
+    @pulumi.getter(name="dataTransferMediumDetailsV2s")
+    def data_transfer_medium_details_v2s(self) -> Sequence['outputs.GetMigrationDataTransferMediumDetailsV2Result']:
+        return pulumi.get(self, "data_transfer_medium_details_v2s")
 
     @property
     @pulumi.getter(name="datapumpSettings")
@@ -361,6 +369,7 @@ class AwaitableGetMigrationResult(GetMigrationResult):
             credentials_secret_id=self.credentials_secret_id,
             csv_text=self.csv_text,
             data_transfer_medium_details=self.data_transfer_medium_details,
+            data_transfer_medium_details_v2s=self.data_transfer_medium_details_v2s,
             datapump_settings=self.datapump_settings,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
@@ -418,6 +427,7 @@ def get_migration(migration_id: Optional[str] = None,
         credentials_secret_id=pulumi.get(__ret__, 'credentials_secret_id'),
         csv_text=pulumi.get(__ret__, 'csv_text'),
         data_transfer_medium_details=pulumi.get(__ret__, 'data_transfer_medium_details'),
+        data_transfer_medium_details_v2s=pulumi.get(__ret__, 'data_transfer_medium_details_v2s'),
         datapump_settings=pulumi.get(__ret__, 'datapump_settings'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),

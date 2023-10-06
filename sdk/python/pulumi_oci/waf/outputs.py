@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -139,14 +139,31 @@ class AppFirewallPolicyAction(dict):
                * Transfer-Encoding
                * Upgrade
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        AppFirewallPolicyAction._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            type=type,
+            body=body,
+            code=code,
+            headers=headers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             type: str,
+             body: Optional['outputs.AppFirewallPolicyActionBody'] = None,
+             code: Optional[int] = None,
+             headers: Optional[Sequence['outputs.AppFirewallPolicyActionHeader']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("type", type)
         if body is not None:
-            pulumi.set(__self__, "body", body)
+            _setter("body", body)
         if code is not None:
-            pulumi.set(__self__, "code", code)
+            _setter("code", code)
         if headers is not None:
-            pulumi.set(__self__, "headers", headers)
+            _setter("headers", headers)
 
     @property
     @pulumi.getter
@@ -224,8 +241,19 @@ class AppFirewallPolicyActionBody(dict):
         :param str text: (Updatable) Static response body text.
         :param str type: (Updatable) Type of WebAppFirewallPolicyRule.
         """
-        pulumi.set(__self__, "text", text)
-        pulumi.set(__self__, "type", type)
+        AppFirewallPolicyActionBody._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            text=text,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             text: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("text", text)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -253,10 +281,21 @@ class AppFirewallPolicyActionHeader(dict):
         :param str name: (Updatable) Rule name. Must be unique within the module.
         :param str value: (Updatable) The value of the header field.
         """
+        AppFirewallPolicyActionHeader._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -303,9 +342,20 @@ class AppFirewallPolicyRequestAccessControl(dict):
                * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
         :param Sequence['AppFirewallPolicyRequestAccessControlRuleArgs'] rules: (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
         """
-        pulumi.set(__self__, "default_action_name", default_action_name)
+        AppFirewallPolicyRequestAccessControl._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_action_name=default_action_name,
+            rules=rules,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_action_name: str,
+             rules: Optional[Sequence['outputs.AppFirewallPolicyRequestAccessControlRule']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_action_name", default_action_name)
         if rules is not None:
-            pulumi.set(__self__, "rules", rules)
+            _setter("rules", rules)
 
     @property
     @pulumi.getter(name="defaultActionName")
@@ -361,13 +411,30 @@ class AppFirewallPolicyRequestAccessControlRule(dict):
         :param str condition_language: (Updatable) The language used to parse condition from field `condition`. Available languages:
                * **JMESPATH** an extended JMESPath language syntax.
         """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        AppFirewallPolicyRequestAccessControlRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_name=action_name,
+            name=name,
+            type=type,
+            condition=condition,
+            condition_language=condition_language,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_name: str,
+             name: str,
+             type: str,
+             condition: Optional[str] = None,
+             condition_language: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_name", action_name)
+        _setter("name", name)
+        _setter("type", type)
         if condition is not None:
-            pulumi.set(__self__, "condition", condition)
+            _setter("condition", condition)
         if condition_language is not None:
-            pulumi.set(__self__, "condition_language", condition_language)
+            _setter("condition_language", condition_language)
 
     @property
     @pulumi.getter(name="actionName")
@@ -450,12 +517,25 @@ class AppFirewallPolicyRequestProtection(dict):
                For steps to request a limit increase, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
         :param Sequence['AppFirewallPolicyRequestProtectionRuleArgs'] rules: (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
         """
+        AppFirewallPolicyRequestProtection._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            body_inspection_size_limit_exceeded_action_name=body_inspection_size_limit_exceeded_action_name,
+            body_inspection_size_limit_in_bytes=body_inspection_size_limit_in_bytes,
+            rules=rules,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             body_inspection_size_limit_exceeded_action_name: Optional[str] = None,
+             body_inspection_size_limit_in_bytes: Optional[int] = None,
+             rules: Optional[Sequence['outputs.AppFirewallPolicyRequestProtectionRule']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if body_inspection_size_limit_exceeded_action_name is not None:
-            pulumi.set(__self__, "body_inspection_size_limit_exceeded_action_name", body_inspection_size_limit_exceeded_action_name)
+            _setter("body_inspection_size_limit_exceeded_action_name", body_inspection_size_limit_exceeded_action_name)
         if body_inspection_size_limit_in_bytes is not None:
-            pulumi.set(__self__, "body_inspection_size_limit_in_bytes", body_inspection_size_limit_in_bytes)
+            _setter("body_inspection_size_limit_in_bytes", body_inspection_size_limit_in_bytes)
         if rules is not None:
-            pulumi.set(__self__, "rules", rules)
+            _setter("rules", rules)
 
     @property
     @pulumi.getter(name="bodyInspectionSizeLimitExceededActionName")
@@ -538,18 +618,41 @@ class AppFirewallPolicyRequestProtectionRule(dict):
         :param bool is_body_inspection_enabled: (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
         :param 'AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs' protection_capability_settings: (Updatable) Settings for protection capabilities
         """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "protection_capabilities", protection_capabilities)
-        pulumi.set(__self__, "type", type)
+        AppFirewallPolicyRequestProtectionRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_name=action_name,
+            name=name,
+            protection_capabilities=protection_capabilities,
+            type=type,
+            condition=condition,
+            condition_language=condition_language,
+            is_body_inspection_enabled=is_body_inspection_enabled,
+            protection_capability_settings=protection_capability_settings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_name: str,
+             name: str,
+             protection_capabilities: Sequence['outputs.AppFirewallPolicyRequestProtectionRuleProtectionCapability'],
+             type: str,
+             condition: Optional[str] = None,
+             condition_language: Optional[str] = None,
+             is_body_inspection_enabled: Optional[bool] = None,
+             protection_capability_settings: Optional['outputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_name", action_name)
+        _setter("name", name)
+        _setter("protection_capabilities", protection_capabilities)
+        _setter("type", type)
         if condition is not None:
-            pulumi.set(__self__, "condition", condition)
+            _setter("condition", condition)
         if condition_language is not None:
-            pulumi.set(__self__, "condition_language", condition_language)
+            _setter("condition_language", condition_language)
         if is_body_inspection_enabled is not None:
-            pulumi.set(__self__, "is_body_inspection_enabled", is_body_inspection_enabled)
+            _setter("is_body_inspection_enabled", is_body_inspection_enabled)
         if protection_capability_settings is not None:
-            pulumi.set(__self__, "protection_capability_settings", protection_capability_settings)
+            _setter("protection_capability_settings", protection_capability_settings)
 
     @property
     @pulumi.getter(name="actionName")
@@ -655,16 +758,35 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapability(dict):
         :param Sequence['AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs'] collaborative_weights: (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
         :param 'AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs' exclusions: (Updatable) Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "version", version)
+        AppFirewallPolicyRequestProtectionRuleProtectionCapability._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            version=version,
+            action_name=action_name,
+            collaborative_action_threshold=collaborative_action_threshold,
+            collaborative_weights=collaborative_weights,
+            exclusions=exclusions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             version: int,
+             action_name: Optional[str] = None,
+             collaborative_action_threshold: Optional[int] = None,
+             collaborative_weights: Optional[Sequence['outputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight']] = None,
+             exclusions: Optional['outputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("version", version)
         if action_name is not None:
-            pulumi.set(__self__, "action_name", action_name)
+            _setter("action_name", action_name)
         if collaborative_action_threshold is not None:
-            pulumi.set(__self__, "collaborative_action_threshold", collaborative_action_threshold)
+            _setter("collaborative_action_threshold", collaborative_action_threshold)
         if collaborative_weights is not None:
-            pulumi.set(__self__, "collaborative_weights", collaborative_weights)
+            _setter("collaborative_weights", collaborative_weights)
         if exclusions is not None:
-            pulumi.set(__self__, "exclusions", exclusions)
+            _setter("exclusions", exclusions)
 
     @property
     @pulumi.getter
@@ -724,8 +846,19 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWei
         :param str key: (Updatable) Unique key of referenced protection capability.
         :param int weight: (Updatable) The value of weight to set.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "weight", weight)
+        AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             weight: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("weight", weight)
 
     @property
     @pulumi.getter
@@ -770,10 +903,21 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions(dict)
         :param Sequence[str] args: (Updatable) List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
         :param Sequence[str] request_cookies: (Updatable) List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
         """
+        AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusions._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            args=args,
+            request_cookies=request_cookies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             args: Optional[Sequence[str]] = None,
+             request_cookies: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if args is not None:
-            pulumi.set(__self__, "args", args)
+            _setter("args", args)
         if request_cookies is not None:
-            pulumi.set(__self__, "request_cookies", request_cookies)
+            _setter("request_cookies", request_cookies)
 
     @property
     @pulumi.getter
@@ -836,18 +980,37 @@ class AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings(dict):
         :param int max_single_argument_length: (Updatable) Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
         :param int max_total_argument_length: (Updatable) Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
         """
+        AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettings._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_http_methods=allowed_http_methods,
+            max_http_request_header_length=max_http_request_header_length,
+            max_http_request_headers=max_http_request_headers,
+            max_number_of_arguments=max_number_of_arguments,
+            max_single_argument_length=max_single_argument_length,
+            max_total_argument_length=max_total_argument_length,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_http_methods: Optional[Sequence[str]] = None,
+             max_http_request_header_length: Optional[int] = None,
+             max_http_request_headers: Optional[int] = None,
+             max_number_of_arguments: Optional[int] = None,
+             max_single_argument_length: Optional[int] = None,
+             max_total_argument_length: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if allowed_http_methods is not None:
-            pulumi.set(__self__, "allowed_http_methods", allowed_http_methods)
+            _setter("allowed_http_methods", allowed_http_methods)
         if max_http_request_header_length is not None:
-            pulumi.set(__self__, "max_http_request_header_length", max_http_request_header_length)
+            _setter("max_http_request_header_length", max_http_request_header_length)
         if max_http_request_headers is not None:
-            pulumi.set(__self__, "max_http_request_headers", max_http_request_headers)
+            _setter("max_http_request_headers", max_http_request_headers)
         if max_number_of_arguments is not None:
-            pulumi.set(__self__, "max_number_of_arguments", max_number_of_arguments)
+            _setter("max_number_of_arguments", max_number_of_arguments)
         if max_single_argument_length is not None:
-            pulumi.set(__self__, "max_single_argument_length", max_single_argument_length)
+            _setter("max_single_argument_length", max_single_argument_length)
         if max_total_argument_length is not None:
-            pulumi.set(__self__, "max_total_argument_length", max_total_argument_length)
+            _setter("max_total_argument_length", max_total_argument_length)
 
     @property
     @pulumi.getter(name="allowedHttpMethods")
@@ -905,8 +1068,17 @@ class AppFirewallPolicyRequestRateLimiting(dict):
         """
         :param Sequence['AppFirewallPolicyRequestRateLimitingRuleArgs'] rules: (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
         """
+        AppFirewallPolicyRequestRateLimiting._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            rules=rules,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             rules: Optional[Sequence['outputs.AppFirewallPolicyRequestRateLimitingRule']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if rules is not None:
-            pulumi.set(__self__, "rules", rules)
+            _setter("rules", rules)
 
     @property
     @pulumi.getter
@@ -954,14 +1126,33 @@ class AppFirewallPolicyRequestRateLimitingRule(dict):
         :param str condition_language: (Updatable) The language used to parse condition from field `condition`. Available languages:
                * **JMESPATH** an extended JMESPath language syntax.
         """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        AppFirewallPolicyRequestRateLimitingRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_name=action_name,
+            configurations=configurations,
+            name=name,
+            type=type,
+            condition=condition,
+            condition_language=condition_language,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_name: str,
+             configurations: Sequence['outputs.AppFirewallPolicyRequestRateLimitingRuleConfiguration'],
+             name: str,
+             type: str,
+             condition: Optional[str] = None,
+             condition_language: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_name", action_name)
+        _setter("configurations", configurations)
+        _setter("name", name)
+        _setter("type", type)
         if condition is not None:
-            pulumi.set(__self__, "condition", condition)
+            _setter("condition", condition)
         if condition_language is not None:
-            pulumi.set(__self__, "condition_language", condition_language)
+            _setter("condition_language", condition_language)
 
     @property
     @pulumi.getter(name="actionName")
@@ -1045,10 +1236,23 @@ class AppFirewallPolicyRequestRateLimitingRuleConfiguration(dict):
         :param int requests_limit: (Updatable) Requests allowed per evaluation period.
         :param int action_duration_in_seconds: (Updatable) Duration of block action application in seconds when `requestsLimit` is reached. Optional and can be 0 (no block duration).
         """
-        pulumi.set(__self__, "period_in_seconds", period_in_seconds)
-        pulumi.set(__self__, "requests_limit", requests_limit)
+        AppFirewallPolicyRequestRateLimitingRuleConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            period_in_seconds=period_in_seconds,
+            requests_limit=requests_limit,
+            action_duration_in_seconds=action_duration_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             period_in_seconds: int,
+             requests_limit: int,
+             action_duration_in_seconds: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("period_in_seconds", period_in_seconds)
+        _setter("requests_limit", requests_limit)
         if action_duration_in_seconds is not None:
-            pulumi.set(__self__, "action_duration_in_seconds", action_duration_in_seconds)
+            _setter("action_duration_in_seconds", action_duration_in_seconds)
 
     @property
     @pulumi.getter(name="periodInSeconds")
@@ -1082,8 +1286,17 @@ class AppFirewallPolicyResponseAccessControl(dict):
         """
         :param Sequence['AppFirewallPolicyResponseAccessControlRuleArgs'] rules: (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
         """
+        AppFirewallPolicyResponseAccessControl._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            rules=rules,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             rules: Optional[Sequence['outputs.AppFirewallPolicyResponseAccessControlRule']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if rules is not None:
-            pulumi.set(__self__, "rules", rules)
+            _setter("rules", rules)
 
     @property
     @pulumi.getter
@@ -1129,13 +1342,30 @@ class AppFirewallPolicyResponseAccessControlRule(dict):
         :param str condition_language: (Updatable) The language used to parse condition from field `condition`. Available languages:
                * **JMESPATH** an extended JMESPath language syntax.
         """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        AppFirewallPolicyResponseAccessControlRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_name=action_name,
+            name=name,
+            type=type,
+            condition=condition,
+            condition_language=condition_language,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_name: str,
+             name: str,
+             type: str,
+             condition: Optional[str] = None,
+             condition_language: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_name", action_name)
+        _setter("name", name)
+        _setter("type", type)
         if condition is not None:
-            pulumi.set(__self__, "condition", condition)
+            _setter("condition", condition)
         if condition_language is not None:
-            pulumi.set(__self__, "condition_language", condition_language)
+            _setter("condition_language", condition_language)
 
     @property
     @pulumi.getter(name="actionName")
@@ -1186,8 +1416,17 @@ class AppFirewallPolicyResponseProtection(dict):
         """
         :param Sequence['AppFirewallPolicyResponseProtectionRuleArgs'] rules: (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
         """
+        AppFirewallPolicyResponseProtection._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            rules=rules,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             rules: Optional[Sequence['outputs.AppFirewallPolicyResponseProtectionRule']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if rules is not None:
-            pulumi.set(__self__, "rules", rules)
+            _setter("rules", rules)
 
     @property
     @pulumi.getter
@@ -1245,18 +1484,41 @@ class AppFirewallPolicyResponseProtectionRule(dict):
         :param bool is_body_inspection_enabled: (Updatable) Enables/disables body inspection for this protection rule. Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will be available at a later date.
         :param 'AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs' protection_capability_settings: (Updatable) Settings for protection capabilities
         """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "protection_capabilities", protection_capabilities)
-        pulumi.set(__self__, "type", type)
+        AppFirewallPolicyResponseProtectionRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_name=action_name,
+            name=name,
+            protection_capabilities=protection_capabilities,
+            type=type,
+            condition=condition,
+            condition_language=condition_language,
+            is_body_inspection_enabled=is_body_inspection_enabled,
+            protection_capability_settings=protection_capability_settings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_name: str,
+             name: str,
+             protection_capabilities: Sequence['outputs.AppFirewallPolicyResponseProtectionRuleProtectionCapability'],
+             type: str,
+             condition: Optional[str] = None,
+             condition_language: Optional[str] = None,
+             is_body_inspection_enabled: Optional[bool] = None,
+             protection_capability_settings: Optional['outputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_name", action_name)
+        _setter("name", name)
+        _setter("protection_capabilities", protection_capabilities)
+        _setter("type", type)
         if condition is not None:
-            pulumi.set(__self__, "condition", condition)
+            _setter("condition", condition)
         if condition_language is not None:
-            pulumi.set(__self__, "condition_language", condition_language)
+            _setter("condition_language", condition_language)
         if is_body_inspection_enabled is not None:
-            pulumi.set(__self__, "is_body_inspection_enabled", is_body_inspection_enabled)
+            _setter("is_body_inspection_enabled", is_body_inspection_enabled)
         if protection_capability_settings is not None:
-            pulumi.set(__self__, "protection_capability_settings", protection_capability_settings)
+            _setter("protection_capability_settings", protection_capability_settings)
 
     @property
     @pulumi.getter(name="actionName")
@@ -1362,16 +1624,35 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapability(dict):
         :param Sequence['AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs'] collaborative_weights: (Updatable) Explicit weight values to use for associated collaborative protection capabilities.
         :param 'AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs' exclusions: (Updatable) Identifies specific HTTP message parameters to exclude from inspection by a protection capability.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "version", version)
+        AppFirewallPolicyResponseProtectionRuleProtectionCapability._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            version=version,
+            action_name=action_name,
+            collaborative_action_threshold=collaborative_action_threshold,
+            collaborative_weights=collaborative_weights,
+            exclusions=exclusions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             version: int,
+             action_name: Optional[str] = None,
+             collaborative_action_threshold: Optional[int] = None,
+             collaborative_weights: Optional[Sequence['outputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight']] = None,
+             exclusions: Optional['outputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("version", version)
         if action_name is not None:
-            pulumi.set(__self__, "action_name", action_name)
+            _setter("action_name", action_name)
         if collaborative_action_threshold is not None:
-            pulumi.set(__self__, "collaborative_action_threshold", collaborative_action_threshold)
+            _setter("collaborative_action_threshold", collaborative_action_threshold)
         if collaborative_weights is not None:
-            pulumi.set(__self__, "collaborative_weights", collaborative_weights)
+            _setter("collaborative_weights", collaborative_weights)
         if exclusions is not None:
-            pulumi.set(__self__, "exclusions", exclusions)
+            _setter("exclusions", exclusions)
 
     @property
     @pulumi.getter
@@ -1431,8 +1712,19 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWe
         :param str key: (Updatable) Unique key of referenced protection capability.
         :param int weight: (Updatable) The value of weight to set.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "weight", weight)
+        AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             weight: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("weight", weight)
 
     @property
     @pulumi.getter
@@ -1477,10 +1769,21 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions(dict
         :param Sequence[str] args: (Updatable) List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
         :param Sequence[str] request_cookies: (Updatable) List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
         """
+        AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusions._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            args=args,
+            request_cookies=request_cookies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             args: Optional[Sequence[str]] = None,
+             request_cookies: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if args is not None:
-            pulumi.set(__self__, "args", args)
+            _setter("args", args)
         if request_cookies is not None:
-            pulumi.set(__self__, "request_cookies", request_cookies)
+            _setter("request_cookies", request_cookies)
 
     @property
     @pulumi.getter
@@ -1543,18 +1846,37 @@ class AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings(dict):
         :param int max_single_argument_length: (Updatable) Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
         :param int max_total_argument_length: (Updatable) Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
         """
+        AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettings._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_http_methods=allowed_http_methods,
+            max_http_request_header_length=max_http_request_header_length,
+            max_http_request_headers=max_http_request_headers,
+            max_number_of_arguments=max_number_of_arguments,
+            max_single_argument_length=max_single_argument_length,
+            max_total_argument_length=max_total_argument_length,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_http_methods: Optional[Sequence[str]] = None,
+             max_http_request_header_length: Optional[int] = None,
+             max_http_request_headers: Optional[int] = None,
+             max_number_of_arguments: Optional[int] = None,
+             max_single_argument_length: Optional[int] = None,
+             max_total_argument_length: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if allowed_http_methods is not None:
-            pulumi.set(__self__, "allowed_http_methods", allowed_http_methods)
+            _setter("allowed_http_methods", allowed_http_methods)
         if max_http_request_header_length is not None:
-            pulumi.set(__self__, "max_http_request_header_length", max_http_request_header_length)
+            _setter("max_http_request_header_length", max_http_request_header_length)
         if max_http_request_headers is not None:
-            pulumi.set(__self__, "max_http_request_headers", max_http_request_headers)
+            _setter("max_http_request_headers", max_http_request_headers)
         if max_number_of_arguments is not None:
-            pulumi.set(__self__, "max_number_of_arguments", max_number_of_arguments)
+            _setter("max_number_of_arguments", max_number_of_arguments)
         if max_single_argument_length is not None:
-            pulumi.set(__self__, "max_single_argument_length", max_single_argument_length)
+            _setter("max_single_argument_length", max_single_argument_length)
         if max_total_argument_length is not None:
-            pulumi.set(__self__, "max_total_argument_length", max_total_argument_length)
+            _setter("max_total_argument_length", max_total_argument_length)
 
     @property
     @pulumi.getter(name="allowedHttpMethods")
@@ -1635,10 +1957,21 @@ class NetworkAddressListVcnAddress(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        NetworkAddressListVcnAddress._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            addresses=addresses,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             addresses: Optional[str] = None,
+             vcn_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if addresses is not None:
-            pulumi.set(__self__, "addresses", addresses)
+            _setter("addresses", addresses)
         if vcn_id is not None:
-            pulumi.set(__self__, "vcn_id", vcn_id)
+            _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter
@@ -1667,10 +2000,23 @@ class GetFirewallsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetFirewallsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1692,7 +2038,16 @@ class GetFirewallsFilterResult(dict):
 class GetFirewallsWebAppFirewallCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetFirewallsWebAppFirewallCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetFirewallsWebAppFirewallCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetFirewallsWebAppFirewallCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1731,19 +2086,52 @@ class GetFirewallsWebAppFirewallCollectionItemResult(dict):
         :param str time_updated: The time the WebAppFirewall was updated. An RFC3339 formatted datetime string.
         :param str web_app_firewall_policy_id: A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related WebAppFirewallPolicy.
         """
-        pulumi.set(__self__, "backend_type", backend_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "web_app_firewall_policy_id", web_app_firewall_policy_id)
+        GetFirewallsWebAppFirewallCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backend_type=backend_type,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            load_balancer_id=load_balancer_id,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            web_app_firewall_policy_id=web_app_firewall_policy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backend_type: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             load_balancer_id: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             web_app_firewall_policy_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("backend_type", backend_type)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("load_balancer_id", load_balancer_id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("web_app_firewall_policy_id", web_app_firewall_policy_id)
 
     @property
     @pulumi.getter(name="backendType")
@@ -1859,8 +2247,19 @@ class GetNetworkAddressListVcnAddressResult(dict):
         :param str addresses: A private IP address or CIDR IP address range.
         :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         """
-        pulumi.set(__self__, "addresses", addresses)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        GetNetworkAddressListVcnAddressResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            addresses=addresses,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             addresses: str,
+             vcn_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("addresses", addresses)
+        _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter
@@ -1885,10 +2284,23 @@ class GetNetworkAddressListsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetNetworkAddressListsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1910,7 +2322,16 @@ class GetNetworkAddressListsFilterResult(dict):
 class GetNetworkAddressListsNetworkAddressListCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetNetworkAddressListsNetworkAddressListCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetNetworkAddressListsNetworkAddressListCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetNetworkAddressListsNetworkAddressListCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1949,19 +2370,52 @@ class GetNetworkAddressListsNetworkAddressListCollectionItemResult(dict):
         :param str type: Type of NetworkAddressList.
         :param Sequence['GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressArgs'] vcn_addresses: A list of private address prefixes, each associated with a particular VCN. To specify all addresses in a VCN, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
         """
-        pulumi.set(__self__, "addresses", addresses)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "vcn_addresses", vcn_addresses)
+        GetNetworkAddressListsNetworkAddressListCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            addresses=addresses,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+            vcn_addresses=vcn_addresses,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             addresses: Sequence[str],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             type: str,
+             vcn_addresses: Sequence['outputs.GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("addresses", addresses)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("type", type)
+        _setter("vcn_addresses", vcn_addresses)
 
     @property
     @pulumi.getter
@@ -2077,8 +2531,19 @@ class GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressResult(dic
         :param str addresses: A private IP address or CIDR IP address range.
         :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         """
-        pulumi.set(__self__, "addresses", addresses)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddressResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            addresses=addresses,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             addresses: str,
+             vcn_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("addresses", addresses)
+        _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter
@@ -2103,10 +2568,23 @@ class GetProtectionCapabilitiesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProtectionCapabilitiesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2131,7 +2609,16 @@ class GetProtectionCapabilitiesProtectionCapabilityCollectionResult(dict):
         """
         :param Sequence['GetProtectionCapabilitiesProtectionCapabilityCollectionItemArgs'] items: List of protection capabilities.
         """
-        pulumi.set(__self__, "items", items)
+        GetProtectionCapabilitiesProtectionCapabilityCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetProtectionCapabilitiesProtectionCapabilityCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2165,15 +2652,40 @@ class GetProtectionCapabilitiesProtectionCapabilityCollectionItemResult(dict):
         :param str type: A filter to return only resources that matches given type.
         :param int version: The version of protection capability.
         """
-        pulumi.set(__self__, "collaborative_action_threshold", collaborative_action_threshold)
-        pulumi.set(__self__, "collaborative_weights", collaborative_weights)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "group_tags", group_tags)
-        pulumi.set(__self__, "is_latest_version", is_latest_version)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "version", version)
+        GetProtectionCapabilitiesProtectionCapabilityCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            collaborative_action_threshold=collaborative_action_threshold,
+            collaborative_weights=collaborative_weights,
+            description=description,
+            display_name=display_name,
+            group_tags=group_tags,
+            is_latest_version=is_latest_version,
+            key=key,
+            type=type,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             collaborative_action_threshold: int,
+             collaborative_weights: Sequence['outputs.GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightResult'],
+             description: str,
+             display_name: str,
+             group_tags: Sequence[str],
+             is_latest_version: bool,
+             key: str,
+             type: str,
+             version: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("collaborative_action_threshold", collaborative_action_threshold)
+        _setter("collaborative_weights", collaborative_weights)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("group_tags", group_tags)
+        _setter("is_latest_version", is_latest_version)
+        _setter("key", key)
+        _setter("type", type)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="collaborativeActionThreshold")
@@ -2259,9 +2771,22 @@ class GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWe
         :param str key: The unique key of protection capability to filter by.
         :param int weight: The weight of contributing protection capability.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "weight", weight)
+        GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeightResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            key=key,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             key: str,
+             weight: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("key", key)
+        _setter("weight", weight)
 
     @property
     @pulumi.getter(name="displayName")
@@ -2297,10 +2822,23 @@ class GetProtectionCapabilityGroupTagsFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProtectionCapabilityGroupTagsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2328,7 +2866,16 @@ class GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionResu
         """
         :param Sequence['GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemArgs'] items: List of protection capabilities group tags.
         """
-        pulumi.set(__self__, "items", items)
+        GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2346,7 +2893,16 @@ class GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        pulumi.set(__self__, "name", name)
+        GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2366,10 +2922,23 @@ class GetWebAppFirewallPoliciesFilterResult(dict):
         """
         :param str name: Rule name. Must be unique within the module.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetWebAppFirewallPoliciesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2394,7 +2963,16 @@ class GetWebAppFirewallPoliciesFilterResult(dict):
 class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2439,22 +3017,61 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResult(dict):
         :param str time_created: The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "actions", actions)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "request_access_controls", request_access_controls)
-        pulumi.set(__self__, "request_protections", request_protections)
-        pulumi.set(__self__, "request_rate_limitings", request_rate_limitings)
-        pulumi.set(__self__, "response_access_controls", response_access_controls)
-        pulumi.set(__self__, "response_protections", response_protections)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actions=actions,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            request_access_controls=request_access_controls,
+            request_protections=request_protections,
+            request_rate_limitings=request_rate_limitings,
+            response_access_controls=response_access_controls,
+            response_protections=response_protections,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actions: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionResult'],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             request_access_controls: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlResult'],
+             request_protections: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionResult'],
+             request_rate_limitings: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingResult'],
+             response_access_controls: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlResult'],
+             response_protections: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionResult'],
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("actions", actions)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("request_access_controls", request_access_controls)
+        _setter("request_protections", request_protections)
+        _setter("request_rate_limitings", request_rate_limitings)
+        _setter("response_access_controls", response_access_controls)
+        _setter("response_protections", response_protections)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -2600,11 +3217,28 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionResult(di
         :param str name: Rule name. Must be unique within the module.
         :param str type: Type of WebAppFirewallPolicyRule.
         """
-        pulumi.set(__self__, "bodies", bodies)
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bodies=bodies,
+            code=code,
+            headers=headers,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bodies: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyResult'],
+             code: int,
+             headers: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderResult'],
+             name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bodies", bodies)
+        _setter("code", code)
+        _setter("headers", headers)
+        _setter("name", name)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -2656,8 +3290,19 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyResul
         :param str text: Static response body text.
         :param str type: Type of WebAppFirewallPolicyRule.
         """
-        pulumi.set(__self__, "text", text)
-        pulumi.set(__self__, "type", type)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionBodyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            text=text,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             text: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("text", text)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -2685,8 +3330,19 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderRes
         :param str name: Rule name. Must be unique within the module.
         :param str value: The value of the header field.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -2716,8 +3372,19 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessCo
                * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
         :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleArgs'] rules: Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
         """
-        pulumi.set(__self__, "default_action_name", default_action_name)
-        pulumi.set(__self__, "rules", rules)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_action_name=default_action_name,
+            rules=rules,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_action_name: str,
+             rules: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_action_name", default_action_name)
+        _setter("rules", rules)
 
     @property
     @pulumi.getter(name="defaultActionName")
@@ -2754,11 +3421,28 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessCo
         :param str name: Rule name. Must be unique within the module.
         :param str type: Type of WebAppFirewallPolicyRule.
         """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "condition_language", condition_language)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_name=action_name,
+            condition=condition,
+            condition_language=condition_language,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_name: str,
+             condition: str,
+             condition_language: str,
+             name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_name", action_name)
+        _setter("condition", condition)
+        _setter("condition_language", condition_language)
+        _setter("name", name)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="actionName")
@@ -2813,9 +3497,22 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtecti
         :param int body_inspection_size_limit_in_bytes: Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
         :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleArgs'] rules: Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
         """
-        pulumi.set(__self__, "body_inspection_size_limit_exceeded_action_name", body_inspection_size_limit_exceeded_action_name)
-        pulumi.set(__self__, "body_inspection_size_limit_in_bytes", body_inspection_size_limit_in_bytes)
-        pulumi.set(__self__, "rules", rules)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            body_inspection_size_limit_exceeded_action_name=body_inspection_size_limit_exceeded_action_name,
+            body_inspection_size_limit_in_bytes=body_inspection_size_limit_in_bytes,
+            rules=rules,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             body_inspection_size_limit_exceeded_action_name: str,
+             body_inspection_size_limit_in_bytes: int,
+             rules: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("body_inspection_size_limit_exceeded_action_name", body_inspection_size_limit_exceeded_action_name)
+        _setter("body_inspection_size_limit_in_bytes", body_inspection_size_limit_in_bytes)
+        _setter("rules", rules)
 
     @property
     @pulumi.getter(name="bodyInspectionSizeLimitExceededActionName")
@@ -2864,14 +3561,37 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtecti
         :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingArgs'] protection_capability_settings: Settings for protection capabilities
         :param str type: Type of WebAppFirewallPolicyRule.
         """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "condition_language", condition_language)
-        pulumi.set(__self__, "is_body_inspection_enabled", is_body_inspection_enabled)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "protection_capabilities", protection_capabilities)
-        pulumi.set(__self__, "protection_capability_settings", protection_capability_settings)
-        pulumi.set(__self__, "type", type)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_name=action_name,
+            condition=condition,
+            condition_language=condition_language,
+            is_body_inspection_enabled=is_body_inspection_enabled,
+            name=name,
+            protection_capabilities=protection_capabilities,
+            protection_capability_settings=protection_capability_settings,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_name: str,
+             condition: str,
+             condition_language: str,
+             is_body_inspection_enabled: bool,
+             name: str,
+             protection_capabilities: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityResult'],
+             protection_capability_settings: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingResult'],
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_name", action_name)
+        _setter("condition", condition)
+        _setter("condition_language", condition_language)
+        _setter("is_body_inspection_enabled", is_body_inspection_enabled)
+        _setter("name", name)
+        _setter("protection_capabilities", protection_capabilities)
+        _setter("protection_capability_settings", protection_capability_settings)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="actionName")
@@ -2956,12 +3676,31 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtecti
         :param str key: Unique key of referenced protection capability.
         :param int version: Version of referenced protection capability.
         """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "collaborative_action_threshold", collaborative_action_threshold)
-        pulumi.set(__self__, "collaborative_weights", collaborative_weights)
-        pulumi.set(__self__, "exclusions", exclusions)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "version", version)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_name=action_name,
+            collaborative_action_threshold=collaborative_action_threshold,
+            collaborative_weights=collaborative_weights,
+            exclusions=exclusions,
+            key=key,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_name: str,
+             collaborative_action_threshold: int,
+             collaborative_weights: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightResult'],
+             exclusions: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionResult'],
+             key: str,
+             version: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_name", action_name)
+        _setter("collaborative_action_threshold", collaborative_action_threshold)
+        _setter("collaborative_weights", collaborative_weights)
+        _setter("exclusions", exclusions)
+        _setter("key", key)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="actionName")
@@ -3021,8 +3760,19 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtecti
         :param str key: Unique key of referenced protection capability.
         :param int weight: The value of weight to set.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "weight", weight)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityCollaborativeWeightResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             weight: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("weight", weight)
 
     @property
     @pulumi.getter
@@ -3050,8 +3800,19 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtecti
         :param Sequence[str] args: List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
         :param Sequence[str] request_cookies: List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
         """
-        pulumi.set(__self__, "args", args)
-        pulumi.set(__self__, "request_cookies", request_cookies)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilityExclusionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            args=args,
+            request_cookies=request_cookies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             args: Sequence[str],
+             request_cookies: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("args", args)
+        _setter("request_cookies", request_cookies)
 
     @property
     @pulumi.getter
@@ -3087,12 +3848,31 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtecti
         :param int max_single_argument_length: Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
         :param int max_total_argument_length: Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
         """
-        pulumi.set(__self__, "allowed_http_methods", allowed_http_methods)
-        pulumi.set(__self__, "max_http_request_header_length", max_http_request_header_length)
-        pulumi.set(__self__, "max_http_request_headers", max_http_request_headers)
-        pulumi.set(__self__, "max_number_of_arguments", max_number_of_arguments)
-        pulumi.set(__self__, "max_single_argument_length", max_single_argument_length)
-        pulumi.set(__self__, "max_total_argument_length", max_total_argument_length)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestProtectionRuleProtectionCapabilitySettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_http_methods=allowed_http_methods,
+            max_http_request_header_length=max_http_request_header_length,
+            max_http_request_headers=max_http_request_headers,
+            max_number_of_arguments=max_number_of_arguments,
+            max_single_argument_length=max_single_argument_length,
+            max_total_argument_length=max_total_argument_length,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_http_methods: Sequence[str],
+             max_http_request_header_length: int,
+             max_http_request_headers: int,
+             max_number_of_arguments: int,
+             max_single_argument_length: int,
+             max_total_argument_length: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("allowed_http_methods", allowed_http_methods)
+        _setter("max_http_request_header_length", max_http_request_header_length)
+        _setter("max_http_request_headers", max_http_request_headers)
+        _setter("max_number_of_arguments", max_number_of_arguments)
+        _setter("max_single_argument_length", max_single_argument_length)
+        _setter("max_total_argument_length", max_total_argument_length)
 
     @property
     @pulumi.getter(name="allowedHttpMethods")
@@ -3150,7 +3930,16 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimi
         """
         :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleArgs'] rules: Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
         """
-        pulumi.set(__self__, "rules", rules)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            rules=rules,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             rules: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("rules", rules)
 
     @property
     @pulumi.getter
@@ -3179,12 +3968,31 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimi
         :param str name: Rule name. Must be unique within the module.
         :param str type: Type of WebAppFirewallPolicyRule.
         """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "condition_language", condition_language)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_name=action_name,
+            condition=condition,
+            condition_language=condition_language,
+            configurations=configurations,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_name: str,
+             condition: str,
+             condition_language: str,
+             configurations: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationResult'],
+             name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_name", action_name)
+        _setter("condition", condition)
+        _setter("condition_language", condition_language)
+        _setter("configurations", configurations)
+        _setter("name", name)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="actionName")
@@ -3247,9 +4055,22 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimi
         :param int period_in_seconds: Evaluation period in seconds.
         :param int requests_limit: Requests allowed per evaluation period.
         """
-        pulumi.set(__self__, "action_duration_in_seconds", action_duration_in_seconds)
-        pulumi.set(__self__, "period_in_seconds", period_in_seconds)
-        pulumi.set(__self__, "requests_limit", requests_limit)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_duration_in_seconds=action_duration_in_seconds,
+            period_in_seconds=period_in_seconds,
+            requests_limit=requests_limit,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_duration_in_seconds: int,
+             period_in_seconds: int,
+             requests_limit: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_duration_in_seconds", action_duration_in_seconds)
+        _setter("period_in_seconds", period_in_seconds)
+        _setter("requests_limit", requests_limit)
 
     @property
     @pulumi.getter(name="actionDurationInSeconds")
@@ -3283,7 +4104,16 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessC
         """
         :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleArgs'] rules: Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
         """
-        pulumi.set(__self__, "rules", rules)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            rules=rules,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             rules: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("rules", rules)
 
     @property
     @pulumi.getter
@@ -3310,11 +4140,28 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessC
         :param str name: Rule name. Must be unique within the module.
         :param str type: Type of WebAppFirewallPolicyRule.
         """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "condition_language", condition_language)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_name=action_name,
+            condition=condition,
+            condition_language=condition_language,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_name: str,
+             condition: str,
+             condition_language: str,
+             name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_name", action_name)
+        _setter("condition", condition)
+        _setter("condition_language", condition_language)
+        _setter("name", name)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="actionName")
@@ -3365,7 +4212,16 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtect
         """
         :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleArgs'] rules: Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
         """
-        pulumi.set(__self__, "rules", rules)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            rules=rules,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             rules: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("rules", rules)
 
     @property
     @pulumi.getter
@@ -3398,14 +4254,37 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtect
         :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingArgs'] protection_capability_settings: Settings for protection capabilities
         :param str type: Type of WebAppFirewallPolicyRule.
         """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "condition_language", condition_language)
-        pulumi.set(__self__, "is_body_inspection_enabled", is_body_inspection_enabled)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "protection_capabilities", protection_capabilities)
-        pulumi.set(__self__, "protection_capability_settings", protection_capability_settings)
-        pulumi.set(__self__, "type", type)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_name=action_name,
+            condition=condition,
+            condition_language=condition_language,
+            is_body_inspection_enabled=is_body_inspection_enabled,
+            name=name,
+            protection_capabilities=protection_capabilities,
+            protection_capability_settings=protection_capability_settings,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_name: str,
+             condition: str,
+             condition_language: str,
+             is_body_inspection_enabled: bool,
+             name: str,
+             protection_capabilities: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityResult'],
+             protection_capability_settings: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingResult'],
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_name", action_name)
+        _setter("condition", condition)
+        _setter("condition_language", condition_language)
+        _setter("is_body_inspection_enabled", is_body_inspection_enabled)
+        _setter("name", name)
+        _setter("protection_capabilities", protection_capabilities)
+        _setter("protection_capability_settings", protection_capability_settings)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="actionName")
@@ -3490,12 +4369,31 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtect
         :param str key: Unique key of referenced protection capability.
         :param int version: Version of referenced protection capability.
         """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "collaborative_action_threshold", collaborative_action_threshold)
-        pulumi.set(__self__, "collaborative_weights", collaborative_weights)
-        pulumi.set(__self__, "exclusions", exclusions)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "version", version)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_name=action_name,
+            collaborative_action_threshold=collaborative_action_threshold,
+            collaborative_weights=collaborative_weights,
+            exclusions=exclusions,
+            key=key,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_name: str,
+             collaborative_action_threshold: int,
+             collaborative_weights: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightResult'],
+             exclusions: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionResult'],
+             key: str,
+             version: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_name", action_name)
+        _setter("collaborative_action_threshold", collaborative_action_threshold)
+        _setter("collaborative_weights", collaborative_weights)
+        _setter("exclusions", exclusions)
+        _setter("key", key)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="actionName")
@@ -3555,8 +4453,19 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtect
         :param str key: Unique key of referenced protection capability.
         :param int weight: The value of weight to set.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "weight", weight)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityCollaborativeWeightResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             weight: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("weight", weight)
 
     @property
     @pulumi.getter
@@ -3584,8 +4493,19 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtect
         :param Sequence[str] args: List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
         :param Sequence[str] request_cookies: List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
         """
-        pulumi.set(__self__, "args", args)
-        pulumi.set(__self__, "request_cookies", request_cookies)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilityExclusionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            args=args,
+            request_cookies=request_cookies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             args: Sequence[str],
+             request_cookies: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("args", args)
+        _setter("request_cookies", request_cookies)
 
     @property
     @pulumi.getter
@@ -3621,12 +4541,31 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtect
         :param int max_single_argument_length: Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
         :param int max_total_argument_length: Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
         """
-        pulumi.set(__self__, "allowed_http_methods", allowed_http_methods)
-        pulumi.set(__self__, "max_http_request_header_length", max_http_request_header_length)
-        pulumi.set(__self__, "max_http_request_headers", max_http_request_headers)
-        pulumi.set(__self__, "max_number_of_arguments", max_number_of_arguments)
-        pulumi.set(__self__, "max_single_argument_length", max_single_argument_length)
-        pulumi.set(__self__, "max_total_argument_length", max_total_argument_length)
+        GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionRuleProtectionCapabilitySettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_http_methods=allowed_http_methods,
+            max_http_request_header_length=max_http_request_header_length,
+            max_http_request_headers=max_http_request_headers,
+            max_number_of_arguments=max_number_of_arguments,
+            max_single_argument_length=max_single_argument_length,
+            max_total_argument_length=max_total_argument_length,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_http_methods: Sequence[str],
+             max_http_request_header_length: int,
+             max_http_request_headers: int,
+             max_number_of_arguments: int,
+             max_single_argument_length: int,
+             max_total_argument_length: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("allowed_http_methods", allowed_http_methods)
+        _setter("max_http_request_header_length", max_http_request_header_length)
+        _setter("max_http_request_headers", max_http_request_headers)
+        _setter("max_number_of_arguments", max_number_of_arguments)
+        _setter("max_single_argument_length", max_single_argument_length)
+        _setter("max_total_argument_length", max_total_argument_length)
 
     @property
     @pulumi.getter(name="allowedHttpMethods")
@@ -3692,11 +4631,28 @@ class GetWebAppFirewallPolicyActionResult(dict):
         :param str name: Rule name. Must be unique within the module.
         :param str type: Type of WebAppFirewallPolicyRule.
         """
-        pulumi.set(__self__, "bodies", bodies)
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        GetWebAppFirewallPolicyActionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bodies=bodies,
+            code=code,
+            headers=headers,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bodies: Sequence['outputs.GetWebAppFirewallPolicyActionBodyResult'],
+             code: int,
+             headers: Sequence['outputs.GetWebAppFirewallPolicyActionHeaderResult'],
+             name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bodies", bodies)
+        _setter("code", code)
+        _setter("headers", headers)
+        _setter("name", name)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -3748,8 +4704,19 @@ class GetWebAppFirewallPolicyActionBodyResult(dict):
         :param str text: Static response body text.
         :param str type: Type of WebAppFirewallPolicyRule.
         """
-        pulumi.set(__self__, "text", text)
-        pulumi.set(__self__, "type", type)
+        GetWebAppFirewallPolicyActionBodyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            text=text,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             text: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("text", text)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -3777,8 +4744,19 @@ class GetWebAppFirewallPolicyActionHeaderResult(dict):
         :param str name: Rule name. Must be unique within the module.
         :param str value: The value of the header field.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetWebAppFirewallPolicyActionHeaderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -3808,8 +4786,19 @@ class GetWebAppFirewallPolicyRequestAccessControlResult(dict):
                * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
         :param Sequence['GetWebAppFirewallPolicyRequestAccessControlRuleArgs'] rules: Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
         """
-        pulumi.set(__self__, "default_action_name", default_action_name)
-        pulumi.set(__self__, "rules", rules)
+        GetWebAppFirewallPolicyRequestAccessControlResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_action_name=default_action_name,
+            rules=rules,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_action_name: str,
+             rules: Sequence['outputs.GetWebAppFirewallPolicyRequestAccessControlRuleResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_action_name", default_action_name)
+        _setter("rules", rules)
 
     @property
     @pulumi.getter(name="defaultActionName")
@@ -3846,11 +4835,28 @@ class GetWebAppFirewallPolicyRequestAccessControlRuleResult(dict):
         :param str name: Rule name. Must be unique within the module.
         :param str type: Type of WebAppFirewallPolicyRule.
         """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "condition_language", condition_language)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        GetWebAppFirewallPolicyRequestAccessControlRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_name=action_name,
+            condition=condition,
+            condition_language=condition_language,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_name: str,
+             condition: str,
+             condition_language: str,
+             name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_name", action_name)
+        _setter("condition", condition)
+        _setter("condition_language", condition_language)
+        _setter("name", name)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="actionName")
@@ -3905,9 +4911,22 @@ class GetWebAppFirewallPolicyRequestProtectionResult(dict):
         :param int body_inspection_size_limit_in_bytes: Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
         :param Sequence['GetWebAppFirewallPolicyRequestProtectionRuleArgs'] rules: Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
         """
-        pulumi.set(__self__, "body_inspection_size_limit_exceeded_action_name", body_inspection_size_limit_exceeded_action_name)
-        pulumi.set(__self__, "body_inspection_size_limit_in_bytes", body_inspection_size_limit_in_bytes)
-        pulumi.set(__self__, "rules", rules)
+        GetWebAppFirewallPolicyRequestProtectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            body_inspection_size_limit_exceeded_action_name=body_inspection_size_limit_exceeded_action_name,
+            body_inspection_size_limit_in_bytes=body_inspection_size_limit_in_bytes,
+            rules=rules,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             body_inspection_size_limit_exceeded_action_name: str,
+             body_inspection_size_limit_in_bytes: int,
+             rules: Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("body_inspection_size_limit_exceeded_action_name", body_inspection_size_limit_exceeded_action_name)
+        _setter("body_inspection_size_limit_in_bytes", body_inspection_size_limit_in_bytes)
+        _setter("rules", rules)
 
     @property
     @pulumi.getter(name="bodyInspectionSizeLimitExceededActionName")
@@ -3956,14 +4975,37 @@ class GetWebAppFirewallPolicyRequestProtectionRuleResult(dict):
         :param Sequence['GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingArgs'] protection_capability_settings: Settings for protection capabilities
         :param str type: Type of WebAppFirewallPolicyRule.
         """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "condition_language", condition_language)
-        pulumi.set(__self__, "is_body_inspection_enabled", is_body_inspection_enabled)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "protection_capabilities", protection_capabilities)
-        pulumi.set(__self__, "protection_capability_settings", protection_capability_settings)
-        pulumi.set(__self__, "type", type)
+        GetWebAppFirewallPolicyRequestProtectionRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_name=action_name,
+            condition=condition,
+            condition_language=condition_language,
+            is_body_inspection_enabled=is_body_inspection_enabled,
+            name=name,
+            protection_capabilities=protection_capabilities,
+            protection_capability_settings=protection_capability_settings,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_name: str,
+             condition: str,
+             condition_language: str,
+             is_body_inspection_enabled: bool,
+             name: str,
+             protection_capabilities: Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityResult'],
+             protection_capability_settings: Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingResult'],
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_name", action_name)
+        _setter("condition", condition)
+        _setter("condition_language", condition_language)
+        _setter("is_body_inspection_enabled", is_body_inspection_enabled)
+        _setter("name", name)
+        _setter("protection_capabilities", protection_capabilities)
+        _setter("protection_capability_settings", protection_capability_settings)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="actionName")
@@ -4048,12 +5090,31 @@ class GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityResult(dic
         :param str key: Unique key of referenced protection capability.
         :param int version: Version of referenced protection capability.
         """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "collaborative_action_threshold", collaborative_action_threshold)
-        pulumi.set(__self__, "collaborative_weights", collaborative_weights)
-        pulumi.set(__self__, "exclusions", exclusions)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "version", version)
+        GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_name=action_name,
+            collaborative_action_threshold=collaborative_action_threshold,
+            collaborative_weights=collaborative_weights,
+            exclusions=exclusions,
+            key=key,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_name: str,
+             collaborative_action_threshold: int,
+             collaborative_weights: Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightResult'],
+             exclusions: Sequence['outputs.GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionResult'],
+             key: str,
+             version: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_name", action_name)
+        _setter("collaborative_action_threshold", collaborative_action_threshold)
+        _setter("collaborative_weights", collaborative_weights)
+        _setter("exclusions", exclusions)
+        _setter("key", key)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="actionName")
@@ -4113,8 +5174,19 @@ class GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborat
         :param str key: Unique key of referenced protection capability.
         :param int weight: The value of weight to set.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "weight", weight)
+        GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             weight: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("weight", weight)
 
     @property
     @pulumi.getter
@@ -4142,8 +5214,19 @@ class GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionR
         :param Sequence[str] args: List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
         :param Sequence[str] request_cookies: List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
         """
-        pulumi.set(__self__, "args", args)
-        pulumi.set(__self__, "request_cookies", request_cookies)
+        GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            args=args,
+            request_cookies=request_cookies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             args: Sequence[str],
+             request_cookies: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("args", args)
+        _setter("request_cookies", request_cookies)
 
     @property
     @pulumi.getter
@@ -4179,12 +5262,31 @@ class GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingRes
         :param int max_single_argument_length: Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
         :param int max_total_argument_length: Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
         """
-        pulumi.set(__self__, "allowed_http_methods", allowed_http_methods)
-        pulumi.set(__self__, "max_http_request_header_length", max_http_request_header_length)
-        pulumi.set(__self__, "max_http_request_headers", max_http_request_headers)
-        pulumi.set(__self__, "max_number_of_arguments", max_number_of_arguments)
-        pulumi.set(__self__, "max_single_argument_length", max_single_argument_length)
-        pulumi.set(__self__, "max_total_argument_length", max_total_argument_length)
+        GetWebAppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_http_methods=allowed_http_methods,
+            max_http_request_header_length=max_http_request_header_length,
+            max_http_request_headers=max_http_request_headers,
+            max_number_of_arguments=max_number_of_arguments,
+            max_single_argument_length=max_single_argument_length,
+            max_total_argument_length=max_total_argument_length,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_http_methods: Sequence[str],
+             max_http_request_header_length: int,
+             max_http_request_headers: int,
+             max_number_of_arguments: int,
+             max_single_argument_length: int,
+             max_total_argument_length: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("allowed_http_methods", allowed_http_methods)
+        _setter("max_http_request_header_length", max_http_request_header_length)
+        _setter("max_http_request_headers", max_http_request_headers)
+        _setter("max_number_of_arguments", max_number_of_arguments)
+        _setter("max_single_argument_length", max_single_argument_length)
+        _setter("max_total_argument_length", max_total_argument_length)
 
     @property
     @pulumi.getter(name="allowedHttpMethods")
@@ -4242,7 +5344,16 @@ class GetWebAppFirewallPolicyRequestRateLimitingResult(dict):
         """
         :param Sequence['GetWebAppFirewallPolicyRequestRateLimitingRuleArgs'] rules: Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
         """
-        pulumi.set(__self__, "rules", rules)
+        GetWebAppFirewallPolicyRequestRateLimitingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            rules=rules,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             rules: Sequence['outputs.GetWebAppFirewallPolicyRequestRateLimitingRuleResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("rules", rules)
 
     @property
     @pulumi.getter
@@ -4271,12 +5382,31 @@ class GetWebAppFirewallPolicyRequestRateLimitingRuleResult(dict):
         :param str name: Rule name. Must be unique within the module.
         :param str type: Type of WebAppFirewallPolicyRule.
         """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "condition_language", condition_language)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        GetWebAppFirewallPolicyRequestRateLimitingRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_name=action_name,
+            condition=condition,
+            condition_language=condition_language,
+            configurations=configurations,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_name: str,
+             condition: str,
+             condition_language: str,
+             configurations: Sequence['outputs.GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationResult'],
+             name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_name", action_name)
+        _setter("condition", condition)
+        _setter("condition_language", condition_language)
+        _setter("configurations", configurations)
+        _setter("name", name)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="actionName")
@@ -4339,9 +5469,22 @@ class GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationResult(dict):
         :param int period_in_seconds: Evaluation period in seconds.
         :param int requests_limit: Requests allowed per evaluation period.
         """
-        pulumi.set(__self__, "action_duration_in_seconds", action_duration_in_seconds)
-        pulumi.set(__self__, "period_in_seconds", period_in_seconds)
-        pulumi.set(__self__, "requests_limit", requests_limit)
+        GetWebAppFirewallPolicyRequestRateLimitingRuleConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_duration_in_seconds=action_duration_in_seconds,
+            period_in_seconds=period_in_seconds,
+            requests_limit=requests_limit,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_duration_in_seconds: int,
+             period_in_seconds: int,
+             requests_limit: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_duration_in_seconds", action_duration_in_seconds)
+        _setter("period_in_seconds", period_in_seconds)
+        _setter("requests_limit", requests_limit)
 
     @property
     @pulumi.getter(name="actionDurationInSeconds")
@@ -4375,7 +5518,16 @@ class GetWebAppFirewallPolicyResponseAccessControlResult(dict):
         """
         :param Sequence['GetWebAppFirewallPolicyResponseAccessControlRuleArgs'] rules: Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
         """
-        pulumi.set(__self__, "rules", rules)
+        GetWebAppFirewallPolicyResponseAccessControlResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            rules=rules,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             rules: Sequence['outputs.GetWebAppFirewallPolicyResponseAccessControlRuleResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("rules", rules)
 
     @property
     @pulumi.getter
@@ -4402,11 +5554,28 @@ class GetWebAppFirewallPolicyResponseAccessControlRuleResult(dict):
         :param str name: Rule name. Must be unique within the module.
         :param str type: Type of WebAppFirewallPolicyRule.
         """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "condition_language", condition_language)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        GetWebAppFirewallPolicyResponseAccessControlRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_name=action_name,
+            condition=condition,
+            condition_language=condition_language,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_name: str,
+             condition: str,
+             condition_language: str,
+             name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_name", action_name)
+        _setter("condition", condition)
+        _setter("condition_language", condition_language)
+        _setter("name", name)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="actionName")
@@ -4457,7 +5626,16 @@ class GetWebAppFirewallPolicyResponseProtectionResult(dict):
         """
         :param Sequence['GetWebAppFirewallPolicyResponseProtectionRuleArgs'] rules: Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
         """
-        pulumi.set(__self__, "rules", rules)
+        GetWebAppFirewallPolicyResponseProtectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            rules=rules,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             rules: Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("rules", rules)
 
     @property
     @pulumi.getter
@@ -4490,14 +5668,37 @@ class GetWebAppFirewallPolicyResponseProtectionRuleResult(dict):
         :param Sequence['GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingArgs'] protection_capability_settings: Settings for protection capabilities
         :param str type: Type of WebAppFirewallPolicyRule.
         """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "condition_language", condition_language)
-        pulumi.set(__self__, "is_body_inspection_enabled", is_body_inspection_enabled)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "protection_capabilities", protection_capabilities)
-        pulumi.set(__self__, "protection_capability_settings", protection_capability_settings)
-        pulumi.set(__self__, "type", type)
+        GetWebAppFirewallPolicyResponseProtectionRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_name=action_name,
+            condition=condition,
+            condition_language=condition_language,
+            is_body_inspection_enabled=is_body_inspection_enabled,
+            name=name,
+            protection_capabilities=protection_capabilities,
+            protection_capability_settings=protection_capability_settings,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_name: str,
+             condition: str,
+             condition_language: str,
+             is_body_inspection_enabled: bool,
+             name: str,
+             protection_capabilities: Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityResult'],
+             protection_capability_settings: Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingResult'],
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_name", action_name)
+        _setter("condition", condition)
+        _setter("condition_language", condition_language)
+        _setter("is_body_inspection_enabled", is_body_inspection_enabled)
+        _setter("name", name)
+        _setter("protection_capabilities", protection_capabilities)
+        _setter("protection_capability_settings", protection_capability_settings)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="actionName")
@@ -4582,12 +5783,31 @@ class GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityResult(di
         :param str key: Unique key of referenced protection capability.
         :param int version: Version of referenced protection capability.
         """
-        pulumi.set(__self__, "action_name", action_name)
-        pulumi.set(__self__, "collaborative_action_threshold", collaborative_action_threshold)
-        pulumi.set(__self__, "collaborative_weights", collaborative_weights)
-        pulumi.set(__self__, "exclusions", exclusions)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "version", version)
+        GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_name=action_name,
+            collaborative_action_threshold=collaborative_action_threshold,
+            collaborative_weights=collaborative_weights,
+            exclusions=exclusions,
+            key=key,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_name: str,
+             collaborative_action_threshold: int,
+             collaborative_weights: Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightResult'],
+             exclusions: Sequence['outputs.GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionResult'],
+             key: str,
+             version: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_name", action_name)
+        _setter("collaborative_action_threshold", collaborative_action_threshold)
+        _setter("collaborative_weights", collaborative_weights)
+        _setter("exclusions", exclusions)
+        _setter("key", key)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="actionName")
@@ -4647,8 +5867,19 @@ class GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollabora
         :param str key: Unique key of referenced protection capability.
         :param int weight: The value of weight to set.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "weight", weight)
+        GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             weight: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("weight", weight)
 
     @property
     @pulumi.getter
@@ -4676,8 +5907,19 @@ class GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusion
         :param Sequence[str] args: List of URL query parameter values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from inspecting. Example: If we have query parameter 'argumentName=argumentValue' and args=['argumentName'], both 'argumentName' and 'argumentValue' will not be inspected.
         :param Sequence[str] request_cookies: List of HTTP request cookie values (by cookie name) to exclude from inspecting. Example: If we have cookie 'cookieName=cookieValue' and requestCookies=['cookieName'], both 'cookieName' and 'cookieValue' will not be inspected.
         """
-        pulumi.set(__self__, "args", args)
-        pulumi.set(__self__, "request_cookies", request_cookies)
+        GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            args=args,
+            request_cookies=request_cookies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             args: Sequence[str],
+             request_cookies: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("args", args)
+        _setter("request_cookies", request_cookies)
 
     @property
     @pulumi.getter
@@ -4713,12 +5955,31 @@ class GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingRe
         :param int max_single_argument_length: Maximum allowed length of a single argument. Used in protection capability 920370: Limit argument value length.
         :param int max_total_argument_length: Maximum allowed total length of all arguments. Used in protection capability 920390: Limit arguments total length.
         """
-        pulumi.set(__self__, "allowed_http_methods", allowed_http_methods)
-        pulumi.set(__self__, "max_http_request_header_length", max_http_request_header_length)
-        pulumi.set(__self__, "max_http_request_headers", max_http_request_headers)
-        pulumi.set(__self__, "max_number_of_arguments", max_number_of_arguments)
-        pulumi.set(__self__, "max_single_argument_length", max_single_argument_length)
-        pulumi.set(__self__, "max_total_argument_length", max_total_argument_length)
+        GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_http_methods=allowed_http_methods,
+            max_http_request_header_length=max_http_request_header_length,
+            max_http_request_headers=max_http_request_headers,
+            max_number_of_arguments=max_number_of_arguments,
+            max_single_argument_length=max_single_argument_length,
+            max_total_argument_length=max_total_argument_length,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_http_methods: Sequence[str],
+             max_http_request_header_length: int,
+             max_http_request_headers: int,
+             max_number_of_arguments: int,
+             max_single_argument_length: int,
+             max_total_argument_length: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("allowed_http_methods", allowed_http_methods)
+        _setter("max_http_request_header_length", max_http_request_header_length)
+        _setter("max_http_request_headers", max_http_request_headers)
+        _setter("max_number_of_arguments", max_number_of_arguments)
+        _setter("max_single_argument_length", max_single_argument_length)
+        _setter("max_total_argument_length", max_total_argument_length)
 
     @property
     @pulumi.getter(name="allowedHttpMethods")

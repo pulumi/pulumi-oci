@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Kms.inputs.KeyVersionExternalKeyReferenceDetailArgs;
 import com.pulumi.oci.Kms.inputs.KeyVersionReplicaDetailArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -34,14 +35,44 @@ public final class KeyVersionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+     * Key reference data to be returned to the customer as a response.
+     * 
+     */
+    @Import(name="externalKeyReferenceDetails")
+    private @Nullable Output<List<KeyVersionExternalKeyReferenceDetailArgs>> externalKeyReferenceDetails;
+
+    /**
+     * @return Key reference data to be returned to the customer as a response.
+     * 
+     */
+    public Optional<Output<List<KeyVersionExternalKeyReferenceDetailArgs>>> externalKeyReferenceDetails() {
+        return Optional.ofNullable(this.externalKeyReferenceDetails);
+    }
+
+    /**
+     * Key version ID associated with the external key.
+     * 
+     */
+    @Import(name="externalKeyVersionId")
+    private @Nullable Output<String> externalKeyVersionId;
+
+    /**
+     * @return Key version ID associated with the external key.
+     * 
+     */
+    public Optional<Output<String>> externalKeyVersionId() {
+        return Optional.ofNullable(this.externalKeyVersionId);
+    }
+
+    /**
+     * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      * 
      */
     @Import(name="isPrimary")
     private @Nullable Output<Boolean> isPrimary;
 
     /**
-     * @return A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+     * @return A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      * 
      */
     public Optional<Output<Boolean>> isPrimary() {
@@ -207,6 +238,8 @@ public final class KeyVersionState extends com.pulumi.resources.ResourceArgs {
 
     private KeyVersionState(KeyVersionState $) {
         this.compartmentId = $.compartmentId;
+        this.externalKeyReferenceDetails = $.externalKeyReferenceDetails;
+        this.externalKeyVersionId = $.externalKeyVersionId;
         this.isPrimary = $.isPrimary;
         this.keyId = $.keyId;
         this.keyVersionId = $.keyVersionId;
@@ -261,7 +294,59 @@ public final class KeyVersionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isPrimary A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+         * @param externalKeyReferenceDetails Key reference data to be returned to the customer as a response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyReferenceDetails(@Nullable Output<List<KeyVersionExternalKeyReferenceDetailArgs>> externalKeyReferenceDetails) {
+            $.externalKeyReferenceDetails = externalKeyReferenceDetails;
+            return this;
+        }
+
+        /**
+         * @param externalKeyReferenceDetails Key reference data to be returned to the customer as a response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyReferenceDetails(List<KeyVersionExternalKeyReferenceDetailArgs> externalKeyReferenceDetails) {
+            return externalKeyReferenceDetails(Output.of(externalKeyReferenceDetails));
+        }
+
+        /**
+         * @param externalKeyReferenceDetails Key reference data to be returned to the customer as a response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyReferenceDetails(KeyVersionExternalKeyReferenceDetailArgs... externalKeyReferenceDetails) {
+            return externalKeyReferenceDetails(List.of(externalKeyReferenceDetails));
+        }
+
+        /**
+         * @param externalKeyVersionId Key version ID associated with the external key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyVersionId(@Nullable Output<String> externalKeyVersionId) {
+            $.externalKeyVersionId = externalKeyVersionId;
+            return this;
+        }
+
+        /**
+         * @param externalKeyVersionId Key version ID associated with the external key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyVersionId(String externalKeyVersionId) {
+            return externalKeyVersionId(Output.of(externalKeyVersionId));
+        }
+
+        /**
+         * @param isPrimary A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
          * 
          * @return builder
          * 
@@ -272,7 +357,7 @@ public final class KeyVersionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isPrimary A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+         * @param isPrimary A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
          * 
          * @return builder
          * 

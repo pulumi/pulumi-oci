@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['VtapArgs', 'Vtap']
@@ -57,38 +57,81 @@ class VtapArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "capture_filter_id", capture_filter_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "source_id", source_id)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        VtapArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capture_filter_id=capture_filter_id,
+            compartment_id=compartment_id,
+            source_id=source_id,
+            vcn_id=vcn_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            encapsulation_protocol=encapsulation_protocol,
+            freeform_tags=freeform_tags,
+            is_vtap_enabled=is_vtap_enabled,
+            max_packet_size=max_packet_size,
+            source_private_endpoint_ip=source_private_endpoint_ip,
+            source_private_endpoint_subnet_id=source_private_endpoint_subnet_id,
+            source_type=source_type,
+            target_id=target_id,
+            target_ip=target_ip,
+            target_type=target_type,
+            traffic_mode=traffic_mode,
+            vxlan_network_identifier=vxlan_network_identifier,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capture_filter_id: pulumi.Input[str],
+             compartment_id: pulumi.Input[str],
+             source_id: pulumi.Input[str],
+             vcn_id: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             encapsulation_protocol: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_vtap_enabled: Optional[pulumi.Input[bool]] = None,
+             max_packet_size: Optional[pulumi.Input[int]] = None,
+             source_private_endpoint_ip: Optional[pulumi.Input[str]] = None,
+             source_private_endpoint_subnet_id: Optional[pulumi.Input[str]] = None,
+             source_type: Optional[pulumi.Input[str]] = None,
+             target_id: Optional[pulumi.Input[str]] = None,
+             target_ip: Optional[pulumi.Input[str]] = None,
+             target_type: Optional[pulumi.Input[str]] = None,
+             traffic_mode: Optional[pulumi.Input[str]] = None,
+             vxlan_network_identifier: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("capture_filter_id", capture_filter_id)
+        _setter("compartment_id", compartment_id)
+        _setter("source_id", source_id)
+        _setter("vcn_id", vcn_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if encapsulation_protocol is not None:
-            pulumi.set(__self__, "encapsulation_protocol", encapsulation_protocol)
+            _setter("encapsulation_protocol", encapsulation_protocol)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_vtap_enabled is not None:
-            pulumi.set(__self__, "is_vtap_enabled", is_vtap_enabled)
+            _setter("is_vtap_enabled", is_vtap_enabled)
         if max_packet_size is not None:
-            pulumi.set(__self__, "max_packet_size", max_packet_size)
+            _setter("max_packet_size", max_packet_size)
         if source_private_endpoint_ip is not None:
-            pulumi.set(__self__, "source_private_endpoint_ip", source_private_endpoint_ip)
+            _setter("source_private_endpoint_ip", source_private_endpoint_ip)
         if source_private_endpoint_subnet_id is not None:
-            pulumi.set(__self__, "source_private_endpoint_subnet_id", source_private_endpoint_subnet_id)
+            _setter("source_private_endpoint_subnet_id", source_private_endpoint_subnet_id)
         if source_type is not None:
-            pulumi.set(__self__, "source_type", source_type)
+            _setter("source_type", source_type)
         if target_id is not None:
-            pulumi.set(__self__, "target_id", target_id)
+            _setter("target_id", target_id)
         if target_ip is not None:
-            pulumi.set(__self__, "target_ip", target_ip)
+            _setter("target_ip", target_ip)
         if target_type is not None:
-            pulumi.set(__self__, "target_type", target_type)
+            _setter("target_type", target_type)
         if traffic_mode is not None:
-            pulumi.set(__self__, "traffic_mode", traffic_mode)
+            _setter("traffic_mode", traffic_mode)
         if vxlan_network_identifier is not None:
-            pulumi.set(__self__, "vxlan_network_identifier", vxlan_network_identifier)
+            _setter("vxlan_network_identifier", vxlan_network_identifier)
 
     @property
     @pulumi.getter(name="captureFilterId")
@@ -363,48 +406,97 @@ class _VtapState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _VtapState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capture_filter_id=capture_filter_id,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            encapsulation_protocol=encapsulation_protocol,
+            freeform_tags=freeform_tags,
+            is_vtap_enabled=is_vtap_enabled,
+            lifecycle_state_details=lifecycle_state_details,
+            max_packet_size=max_packet_size,
+            source_id=source_id,
+            source_private_endpoint_ip=source_private_endpoint_ip,
+            source_private_endpoint_subnet_id=source_private_endpoint_subnet_id,
+            source_type=source_type,
+            state=state,
+            target_id=target_id,
+            target_ip=target_ip,
+            target_type=target_type,
+            time_created=time_created,
+            traffic_mode=traffic_mode,
+            vcn_id=vcn_id,
+            vxlan_network_identifier=vxlan_network_identifier,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capture_filter_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             encapsulation_protocol: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_vtap_enabled: Optional[pulumi.Input[bool]] = None,
+             lifecycle_state_details: Optional[pulumi.Input[str]] = None,
+             max_packet_size: Optional[pulumi.Input[int]] = None,
+             source_id: Optional[pulumi.Input[str]] = None,
+             source_private_endpoint_ip: Optional[pulumi.Input[str]] = None,
+             source_private_endpoint_subnet_id: Optional[pulumi.Input[str]] = None,
+             source_type: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             target_id: Optional[pulumi.Input[str]] = None,
+             target_ip: Optional[pulumi.Input[str]] = None,
+             target_type: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             traffic_mode: Optional[pulumi.Input[str]] = None,
+             vcn_id: Optional[pulumi.Input[str]] = None,
+             vxlan_network_identifier: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if capture_filter_id is not None:
-            pulumi.set(__self__, "capture_filter_id", capture_filter_id)
+            _setter("capture_filter_id", capture_filter_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if encapsulation_protocol is not None:
-            pulumi.set(__self__, "encapsulation_protocol", encapsulation_protocol)
+            _setter("encapsulation_protocol", encapsulation_protocol)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_vtap_enabled is not None:
-            pulumi.set(__self__, "is_vtap_enabled", is_vtap_enabled)
+            _setter("is_vtap_enabled", is_vtap_enabled)
         if lifecycle_state_details is not None:
-            pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+            _setter("lifecycle_state_details", lifecycle_state_details)
         if max_packet_size is not None:
-            pulumi.set(__self__, "max_packet_size", max_packet_size)
+            _setter("max_packet_size", max_packet_size)
         if source_id is not None:
-            pulumi.set(__self__, "source_id", source_id)
+            _setter("source_id", source_id)
         if source_private_endpoint_ip is not None:
-            pulumi.set(__self__, "source_private_endpoint_ip", source_private_endpoint_ip)
+            _setter("source_private_endpoint_ip", source_private_endpoint_ip)
         if source_private_endpoint_subnet_id is not None:
-            pulumi.set(__self__, "source_private_endpoint_subnet_id", source_private_endpoint_subnet_id)
+            _setter("source_private_endpoint_subnet_id", source_private_endpoint_subnet_id)
         if source_type is not None:
-            pulumi.set(__self__, "source_type", source_type)
+            _setter("source_type", source_type)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if target_id is not None:
-            pulumi.set(__self__, "target_id", target_id)
+            _setter("target_id", target_id)
         if target_ip is not None:
-            pulumi.set(__self__, "target_ip", target_ip)
+            _setter("target_ip", target_ip)
         if target_type is not None:
-            pulumi.set(__self__, "target_type", target_type)
+            _setter("target_type", target_type)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if traffic_mode is not None:
-            pulumi.set(__self__, "traffic_mode", traffic_mode)
+            _setter("traffic_mode", traffic_mode)
         if vcn_id is not None:
-            pulumi.set(__self__, "vcn_id", vcn_id)
+            _setter("vcn_id", vcn_id)
         if vxlan_network_identifier is not None:
-            pulumi.set(__self__, "vxlan_network_identifier", vxlan_network_identifier)
+            _setter("vxlan_network_identifier", vxlan_network_identifier)
 
     @property
     @pulumi.getter(name="captureFilterId")
@@ -832,6 +924,10 @@ class Vtap(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            VtapArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

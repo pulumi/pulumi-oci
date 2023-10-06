@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -31,10 +31,23 @@ class RecommendationArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "recommendation_id", recommendation_id)
-        pulumi.set(__self__, "status", status)
+        RecommendationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            recommendation_id=recommendation_id,
+            status=status,
+            time_status_end=time_status_end,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             recommendation_id: pulumi.Input[str],
+             status: pulumi.Input[str],
+             time_status_end: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("recommendation_id", recommendation_id)
+        _setter("status", status)
         if time_status_end is not None:
-            pulumi.set(__self__, "time_status_end", time_status_end)
+            _setter("time_status_end", time_status_end)
 
     @property
     @pulumi.getter(name="recommendationId")
@@ -123,38 +136,77 @@ class _RecommendationState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_updated: The date and time the recommendation details were last updated, in the format defined by RFC3339.
         """
+        _RecommendationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category_id=category_id,
+            compartment_id=compartment_id,
+            description=description,
+            estimated_cost_saving=estimated_cost_saving,
+            extended_metadata=extended_metadata,
+            importance=importance,
+            name=name,
+            recommendation_id=recommendation_id,
+            resource_counts=resource_counts,
+            state=state,
+            status=status,
+            supported_levels=supported_levels,
+            time_created=time_created,
+            time_status_begin=time_status_begin,
+            time_status_end=time_status_end,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             estimated_cost_saving: Optional[pulumi.Input[float]] = None,
+             extended_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             importance: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             recommendation_id: Optional[pulumi.Input[str]] = None,
+             resource_counts: Optional[pulumi.Input[Sequence[pulumi.Input['RecommendationResourceCountArgs']]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             supported_levels: Optional[pulumi.Input[Sequence[pulumi.Input['RecommendationSupportedLevelArgs']]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_status_begin: Optional[pulumi.Input[str]] = None,
+             time_status_end: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if category_id is not None:
-            pulumi.set(__self__, "category_id", category_id)
+            _setter("category_id", category_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if estimated_cost_saving is not None:
-            pulumi.set(__self__, "estimated_cost_saving", estimated_cost_saving)
+            _setter("estimated_cost_saving", estimated_cost_saving)
         if extended_metadata is not None:
-            pulumi.set(__self__, "extended_metadata", extended_metadata)
+            _setter("extended_metadata", extended_metadata)
         if importance is not None:
-            pulumi.set(__self__, "importance", importance)
+            _setter("importance", importance)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if recommendation_id is not None:
-            pulumi.set(__self__, "recommendation_id", recommendation_id)
+            _setter("recommendation_id", recommendation_id)
         if resource_counts is not None:
-            pulumi.set(__self__, "resource_counts", resource_counts)
+            _setter("resource_counts", resource_counts)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if supported_levels is not None:
-            pulumi.set(__self__, "supported_levels", supported_levels)
+            _setter("supported_levels", supported_levels)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_status_begin is not None:
-            pulumi.set(__self__, "time_status_begin", time_status_begin)
+            _setter("time_status_begin", time_status_begin)
         if time_status_end is not None:
-            pulumi.set(__self__, "time_status_end", time_status_end)
+            _setter("time_status_end", time_status_end)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="categoryId")
@@ -428,6 +480,10 @@ class Recommendation(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            RecommendationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

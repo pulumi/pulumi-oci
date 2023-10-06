@@ -315,6 +315,14 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult> RemoteDisasterRecoveryConfigurations;
         /// <summary>
+        /// The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        public readonly string ResourcePoolLeaderId;
+        /// <summary>
+        /// The configuration details for resource pool
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryResult> ResourcePoolSummaries;
+        /// <summary>
         /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         /// </summary>
         public readonly string Role;
@@ -382,6 +390,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The date and time when maintenance will end.
         /// </summary>
         public readonly string TimeMaintenanceEnd;
+        public readonly string TimeOfJoiningResourcePool;
         /// <summary>
         /// The timestamp of the last failover operation.
         /// </summary>
@@ -581,6 +590,10 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult> remoteDisasterRecoveryConfigurations,
 
+            string resourcePoolLeaderId,
+
+            ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryResult> resourcePoolSummaries,
+
             string role,
 
             ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationResult> scheduledOperations,
@@ -614,6 +627,8 @@ namespace Pulumi.Oci.Database.Outputs
             string timeMaintenanceBegin,
 
             string timeMaintenanceEnd,
+
+            string timeOfJoiningResourcePool,
 
             string timeOfLastFailover,
 
@@ -713,6 +728,8 @@ namespace Pulumi.Oci.Database.Outputs
             RefreshableMode = refreshableMode;
             RefreshableStatus = refreshableStatus;
             RemoteDisasterRecoveryConfigurations = remoteDisasterRecoveryConfigurations;
+            ResourcePoolLeaderId = resourcePoolLeaderId;
+            ResourcePoolSummaries = resourcePoolSummaries;
             Role = role;
             ScheduledOperations = scheduledOperations;
             ServiceConsoleUrl = serviceConsoleUrl;
@@ -730,6 +747,7 @@ namespace Pulumi.Oci.Database.Outputs
             TimeLocalDataGuardEnabled = timeLocalDataGuardEnabled;
             TimeMaintenanceBegin = timeMaintenanceBegin;
             TimeMaintenanceEnd = timeMaintenanceEnd;
+            TimeOfJoiningResourcePool = timeOfJoiningResourcePool;
             TimeOfLastFailover = timeOfLastFailover;
             TimeOfLastRefresh = timeOfLastRefresh;
             TimeOfLastRefreshPoint = timeOfLastRefreshPoint;

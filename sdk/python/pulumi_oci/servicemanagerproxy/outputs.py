@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -31,9 +31,22 @@ class GetServiceEnvironmentServiceDefinitionResult(dict):
         :param str short_display_name: Short display name of the service. For example, "Retail Order Management".
         :param str type: The service definition type. For example, a service definition type "RGBUOROMS"  would be for the service "Oracle Retail Order Management Cloud Service".
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "short_display_name", short_display_name)
-        pulumi.set(__self__, "type", type)
+        GetServiceEnvironmentServiceDefinitionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            short_display_name=short_display_name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             short_display_name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("short_display_name", short_display_name)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="displayName")
@@ -71,9 +84,22 @@ class GetServiceEnvironmentServiceEnvironmentEndpointResult(dict):
         :param str environment_type: Service environment endpoint type.
         :param str url: Service environment instance URL.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "environment_type", environment_type)
-        pulumi.set(__self__, "url", url)
+        GetServiceEnvironmentServiceEnvironmentEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            environment_type=environment_type,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             environment_type: str,
+             url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("environment_type", environment_type)
+        _setter("url", url)
 
     @property
     @pulumi.getter
@@ -106,10 +132,23 @@ class GetServiceEnvironmentsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetServiceEnvironmentsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -131,7 +170,16 @@ class GetServiceEnvironmentsFilterResult(dict):
 class GetServiceEnvironmentsServiceEnvironmentCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetServiceEnvironmentsServiceEnvironmentCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -160,15 +208,40 @@ class GetServiceEnvironmentsServiceEnvironmentCollectionItemResult(dict):
         :param str status: Status of the entitlement registration for the service.
         :param str subscription_id: The unique subscription ID associated with the service environment ID.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "console_url", console_url)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "service_definitions", service_definitions)
-        pulumi.set(__self__, "service_environment_endpoints", service_environment_endpoints)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "subscription_id", subscription_id)
+        GetServiceEnvironmentsServiceEnvironmentCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            console_url=console_url,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            id=id,
+            service_definitions=service_definitions,
+            service_environment_endpoints=service_environment_endpoints,
+            status=status,
+            subscription_id=subscription_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             console_url: str,
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             service_definitions: Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionResult'],
+             service_environment_endpoints: Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointResult'],
+             status: str,
+             subscription_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("console_url", console_url)
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("service_definitions", service_definitions)
+        _setter("service_environment_endpoints", service_environment_endpoints)
+        _setter("status", status)
+        _setter("subscription_id", subscription_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -248,9 +321,22 @@ class GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionRes
         :param str short_display_name: Short display name of the service. For example, "Retail Order Management".
         :param str type: The service definition type. For example, a service definition type "RGBUOROMS"  would be for the service "Oracle Retail Order Management Cloud Service".
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "short_display_name", short_display_name)
-        pulumi.set(__self__, "type", type)
+        GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            short_display_name=short_display_name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             short_display_name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("short_display_name", short_display_name)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="displayName")
@@ -288,9 +374,22 @@ class GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEn
         :param str environment_type: Service environment endpoint type.
         :param str url: Service environment instance URL.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "environment_type", environment_type)
-        pulumi.set(__self__, "url", url)
+        GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            environment_type=environment_type,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             environment_type: str,
+             url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("environment_type", environment_type)
+        _setter("url", url)
 
     @property
     @pulumi.getter

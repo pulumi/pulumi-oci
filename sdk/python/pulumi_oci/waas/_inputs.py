@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -64,12 +64,25 @@ class CertificateExtensionArgs:
         :param pulumi.Input[str] name: The certificate extension name.
         :param pulumi.Input[str] value: The certificate extension value.
         """
+        CertificateExtensionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_critical=is_critical,
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_critical: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if is_critical is not None:
-            pulumi.set(__self__, "is_critical", is_critical)
+            _setter("is_critical", is_critical)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter(name="isCritical")
@@ -127,20 +140,41 @@ class CertificateIssuerNameArgs:
         :param pulumi.Input[str] organizational_unit: The field to differentiate between divisions within an organization.
         :param pulumi.Input[str] state_province: The province where the organization is located.
         """
+        CertificateIssuerNameArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            common_name=common_name,
+            country=country,
+            email_address=email_address,
+            locality=locality,
+            organization=organization,
+            organizational_unit=organizational_unit,
+            state_province=state_province,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             common_name: Optional[pulumi.Input[str]] = None,
+             country: Optional[pulumi.Input[str]] = None,
+             email_address: Optional[pulumi.Input[str]] = None,
+             locality: Optional[pulumi.Input[str]] = None,
+             organization: Optional[pulumi.Input[str]] = None,
+             organizational_unit: Optional[pulumi.Input[str]] = None,
+             state_province: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if common_name is not None:
-            pulumi.set(__self__, "common_name", common_name)
+            _setter("common_name", common_name)
         if country is not None:
-            pulumi.set(__self__, "country", country)
+            _setter("country", country)
         if email_address is not None:
-            pulumi.set(__self__, "email_address", email_address)
+            _setter("email_address", email_address)
         if locality is not None:
-            pulumi.set(__self__, "locality", locality)
+            _setter("locality", locality)
         if organization is not None:
-            pulumi.set(__self__, "organization", organization)
+            _setter("organization", organization)
         if organizational_unit is not None:
-            pulumi.set(__self__, "organizational_unit", organizational_unit)
+            _setter("organizational_unit", organizational_unit)
         if state_province is not None:
-            pulumi.set(__self__, "state_province", state_province)
+            _setter("state_province", state_province)
 
     @property
     @pulumi.getter(name="commonName")
@@ -238,12 +272,25 @@ class CertificatePublicKeyInfoArgs:
         :param pulumi.Input[int] exponent: The private key exponent.
         :param pulumi.Input[int] key_size: The number of bits in a key used by a cryptographic algorithm.
         """
+        CertificatePublicKeyInfoArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            algorithm=algorithm,
+            exponent=exponent,
+            key_size=key_size,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             algorithm: Optional[pulumi.Input[str]] = None,
+             exponent: Optional[pulumi.Input[int]] = None,
+             key_size: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if algorithm is not None:
-            pulumi.set(__self__, "algorithm", algorithm)
+            _setter("algorithm", algorithm)
         if exponent is not None:
-            pulumi.set(__self__, "exponent", exponent)
+            _setter("exponent", exponent)
         if key_size is not None:
-            pulumi.set(__self__, "key_size", key_size)
+            _setter("key_size", key_size)
 
     @property
     @pulumi.getter
@@ -301,20 +348,41 @@ class CertificateSubjectNameArgs:
         :param pulumi.Input[str] organizational_unit: The field to differentiate between divisions within an organization.
         :param pulumi.Input[str] state_province: The province where the organization is located.
         """
+        CertificateSubjectNameArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            common_name=common_name,
+            country=country,
+            email_address=email_address,
+            locality=locality,
+            organization=organization,
+            organizational_unit=organizational_unit,
+            state_province=state_province,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             common_name: Optional[pulumi.Input[str]] = None,
+             country: Optional[pulumi.Input[str]] = None,
+             email_address: Optional[pulumi.Input[str]] = None,
+             locality: Optional[pulumi.Input[str]] = None,
+             organization: Optional[pulumi.Input[str]] = None,
+             organizational_unit: Optional[pulumi.Input[str]] = None,
+             state_province: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if common_name is not None:
-            pulumi.set(__self__, "common_name", common_name)
+            _setter("common_name", common_name)
         if country is not None:
-            pulumi.set(__self__, "country", country)
+            _setter("country", country)
         if email_address is not None:
-            pulumi.set(__self__, "email_address", email_address)
+            _setter("email_address", email_address)
         if locality is not None:
-            pulumi.set(__self__, "locality", locality)
+            _setter("locality", locality)
         if organization is not None:
-            pulumi.set(__self__, "organization", organization)
+            _setter("organization", organization)
         if organizational_unit is not None:
-            pulumi.set(__self__, "organizational_unit", organizational_unit)
+            _setter("organizational_unit", organizational_unit)
         if state_province is not None:
-            pulumi.set(__self__, "state_province", state_province)
+            _setter("state_province", state_province)
 
     @property
     @pulumi.getter(name="commonName")
@@ -420,12 +488,29 @@ class HttpRedirectTargetArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[int] port: (Updatable) Port number of the target destination of the redirect, default to match protocol
         """
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "query", query)
+        HttpRedirectTargetArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host=host,
+            path=path,
+            protocol=protocol,
+            query=query,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host: pulumi.Input[str],
+             path: pulumi.Input[str],
+             protocol: pulumi.Input[str],
+             query: pulumi.Input[str],
+             port: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("host", host)
+        _setter("path", path)
+        _setter("protocol", protocol)
+        _setter("query", query)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
 
     @property
     @pulumi.getter
@@ -506,14 +591,31 @@ class PolicyOriginArgs:
         :param pulumi.Input[int] http_port: (Updatable) The HTTP port on the origin that the web application listens on. If unspecified, defaults to `80`. If `0` is specified - the origin is not used for HTTP traffic.
         :param pulumi.Input[int] https_port: (Updatable) The HTTPS port on the origin that the web application listens on. If unspecified, defaults to `443`. If `0` is specified - the origin is not used for HTTPS traffic.
         """
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "uri", uri)
+        PolicyOriginArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            label=label,
+            uri=uri,
+            custom_headers=custom_headers,
+            http_port=http_port,
+            https_port=https_port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             label: pulumi.Input[str],
+             uri: pulumi.Input[str],
+             custom_headers: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginCustomHeaderArgs']]]] = None,
+             http_port: Optional[pulumi.Input[int]] = None,
+             https_port: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("label", label)
+        _setter("uri", uri)
         if custom_headers is not None:
-            pulumi.set(__self__, "custom_headers", custom_headers)
+            _setter("custom_headers", custom_headers)
         if http_port is not None:
-            pulumi.set(__self__, "http_port", http_port)
+            _setter("http_port", http_port)
         if https_port is not None:
-            pulumi.set(__self__, "https_port", https_port)
+            _setter("https_port", https_port)
 
     @property
     @pulumi.getter
@@ -586,8 +688,19 @@ class PolicyOriginCustomHeaderArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] value: (Updatable) The value of the header.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        PolicyOriginCustomHeaderArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: pulumi.Input[str],
+             value: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -623,8 +736,19 @@ class PolicyOriginGroupArgs:
     def __init__(__self__, *,
                  label: pulumi.Input[str],
                  origin_groups: pulumi.Input[Sequence[pulumi.Input['PolicyOriginGroupOriginGroupArgs']]]):
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "origin_groups", origin_groups)
+        PolicyOriginGroupArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            label=label,
+            origin_groups=origin_groups,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             label: pulumi.Input[str],
+             origin_groups: pulumi.Input[Sequence[pulumi.Input['PolicyOriginGroupOriginGroupArgs']]],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("label", label)
+        _setter("origin_groups", origin_groups)
 
     @property
     @pulumi.getter
@@ -653,9 +777,20 @@ class PolicyOriginGroupOriginGroupArgs:
         """
         :param pulumi.Input[str] origin: (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
         """
-        pulumi.set(__self__, "origin", origin)
+        PolicyOriginGroupOriginGroupArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            origin=origin,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             origin: pulumi.Input[str],
+             weight: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("origin", origin)
         if weight is not None:
-            pulumi.set(__self__, "weight", weight)
+            _setter("weight", weight)
 
     @property
     @pulumi.getter
@@ -730,34 +865,69 @@ class PolicyPolicyConfigArgs:
                Enabled TLS protocols must go in a row. For example if `TLS_v1_1` and `TLS_V1_3` are enabled, `TLS_V1_2` must be enabled too.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] websocket_path_prefixes: (Updatable) ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF disabled if Connection request header from the client has the value Upgrade (case insensitive matching) and Upgrade request header has the value websocket (case insensitive matching). Paths matches if the concatenation of request URL path and query starts with the contents of the one of `websocketPathPrefixes` array value. In All other cases challenges, like JSC, HIC and etc., remain active.
         """
+        PolicyPolicyConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_id=certificate_id,
+            cipher_group=cipher_group,
+            client_address_header=client_address_header,
+            health_checks=health_checks,
+            is_behind_cdn=is_behind_cdn,
+            is_cache_control_respected=is_cache_control_respected,
+            is_https_enabled=is_https_enabled,
+            is_https_forced=is_https_forced,
+            is_origin_compression_enabled=is_origin_compression_enabled,
+            is_response_buffering_enabled=is_response_buffering_enabled,
+            is_sni_enabled=is_sni_enabled,
+            load_balancing_method=load_balancing_method,
+            tls_protocols=tls_protocols,
+            websocket_path_prefixes=websocket_path_prefixes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_id: Optional[pulumi.Input[str]] = None,
+             cipher_group: Optional[pulumi.Input[str]] = None,
+             client_address_header: Optional[pulumi.Input[str]] = None,
+             health_checks: Optional[pulumi.Input['PolicyPolicyConfigHealthChecksArgs']] = None,
+             is_behind_cdn: Optional[pulumi.Input[bool]] = None,
+             is_cache_control_respected: Optional[pulumi.Input[bool]] = None,
+             is_https_enabled: Optional[pulumi.Input[bool]] = None,
+             is_https_forced: Optional[pulumi.Input[bool]] = None,
+             is_origin_compression_enabled: Optional[pulumi.Input[bool]] = None,
+             is_response_buffering_enabled: Optional[pulumi.Input[bool]] = None,
+             is_sni_enabled: Optional[pulumi.Input[bool]] = None,
+             load_balancing_method: Optional[pulumi.Input['PolicyPolicyConfigLoadBalancingMethodArgs']] = None,
+             tls_protocols: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             websocket_path_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if certificate_id is not None:
-            pulumi.set(__self__, "certificate_id", certificate_id)
+            _setter("certificate_id", certificate_id)
         if cipher_group is not None:
-            pulumi.set(__self__, "cipher_group", cipher_group)
+            _setter("cipher_group", cipher_group)
         if client_address_header is not None:
-            pulumi.set(__self__, "client_address_header", client_address_header)
+            _setter("client_address_header", client_address_header)
         if health_checks is not None:
-            pulumi.set(__self__, "health_checks", health_checks)
+            _setter("health_checks", health_checks)
         if is_behind_cdn is not None:
-            pulumi.set(__self__, "is_behind_cdn", is_behind_cdn)
+            _setter("is_behind_cdn", is_behind_cdn)
         if is_cache_control_respected is not None:
-            pulumi.set(__self__, "is_cache_control_respected", is_cache_control_respected)
+            _setter("is_cache_control_respected", is_cache_control_respected)
         if is_https_enabled is not None:
-            pulumi.set(__self__, "is_https_enabled", is_https_enabled)
+            _setter("is_https_enabled", is_https_enabled)
         if is_https_forced is not None:
-            pulumi.set(__self__, "is_https_forced", is_https_forced)
+            _setter("is_https_forced", is_https_forced)
         if is_origin_compression_enabled is not None:
-            pulumi.set(__self__, "is_origin_compression_enabled", is_origin_compression_enabled)
+            _setter("is_origin_compression_enabled", is_origin_compression_enabled)
         if is_response_buffering_enabled is not None:
-            pulumi.set(__self__, "is_response_buffering_enabled", is_response_buffering_enabled)
+            _setter("is_response_buffering_enabled", is_response_buffering_enabled)
         if is_sni_enabled is not None:
-            pulumi.set(__self__, "is_sni_enabled", is_sni_enabled)
+            _setter("is_sni_enabled", is_sni_enabled)
         if load_balancing_method is not None:
-            pulumi.set(__self__, "load_balancing_method", load_balancing_method)
+            _setter("load_balancing_method", load_balancing_method)
         if tls_protocols is not None:
-            pulumi.set(__self__, "tls_protocols", tls_protocols)
+            _setter("tls_protocols", tls_protocols)
         if websocket_path_prefixes is not None:
-            pulumi.set(__self__, "websocket_path_prefixes", websocket_path_prefixes)
+            _setter("websocket_path_prefixes", websocket_path_prefixes)
 
     @property
     @pulumi.getter(name="certificateId")
@@ -982,28 +1152,57 @@ class PolicyPolicyConfigHealthChecksArgs:
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Response timeout represents wait time until request is considered failed, in seconds.
         :param pulumi.Input[int] unhealthy_threshold: (Updatable) Number of failed health checks after which the server is marked down.
         """
+        PolicyPolicyConfigHealthChecksArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            expected_response_code_groups=expected_response_code_groups,
+            expected_response_text=expected_response_text,
+            headers=headers,
+            healthy_threshold=healthy_threshold,
+            interval_in_seconds=interval_in_seconds,
+            is_enabled=is_enabled,
+            is_response_text_check_enabled=is_response_text_check_enabled,
+            method=method,
+            path=path,
+            timeout_in_seconds=timeout_in_seconds,
+            unhealthy_threshold=unhealthy_threshold,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             expected_response_code_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             expected_response_text: Optional[pulumi.Input[str]] = None,
+             headers: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             healthy_threshold: Optional[pulumi.Input[int]] = None,
+             interval_in_seconds: Optional[pulumi.Input[int]] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             is_response_text_check_enabled: Optional[pulumi.Input[bool]] = None,
+             method: Optional[pulumi.Input[str]] = None,
+             path: Optional[pulumi.Input[str]] = None,
+             timeout_in_seconds: Optional[pulumi.Input[int]] = None,
+             unhealthy_threshold: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if expected_response_code_groups is not None:
-            pulumi.set(__self__, "expected_response_code_groups", expected_response_code_groups)
+            _setter("expected_response_code_groups", expected_response_code_groups)
         if expected_response_text is not None:
-            pulumi.set(__self__, "expected_response_text", expected_response_text)
+            _setter("expected_response_text", expected_response_text)
         if headers is not None:
-            pulumi.set(__self__, "headers", headers)
+            _setter("headers", headers)
         if healthy_threshold is not None:
-            pulumi.set(__self__, "healthy_threshold", healthy_threshold)
+            _setter("healthy_threshold", healthy_threshold)
         if interval_in_seconds is not None:
-            pulumi.set(__self__, "interval_in_seconds", interval_in_seconds)
+            _setter("interval_in_seconds", interval_in_seconds)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if is_response_text_check_enabled is not None:
-            pulumi.set(__self__, "is_response_text_check_enabled", is_response_text_check_enabled)
+            _setter("is_response_text_check_enabled", is_response_text_check_enabled)
         if method is not None:
-            pulumi.set(__self__, "method", method)
+            _setter("method", method)
         if path is not None:
-            pulumi.set(__self__, "path", path)
+            _setter("path", path)
         if timeout_in_seconds is not None:
-            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+            _setter("timeout_in_seconds", timeout_in_seconds)
         if unhealthy_threshold is not None:
-            pulumi.set(__self__, "unhealthy_threshold", unhealthy_threshold)
+            _setter("unhealthy_threshold", unhealthy_threshold)
 
     @property
     @pulumi.getter(name="expectedResponseCodeGroups")
@@ -1167,13 +1366,28 @@ class PolicyPolicyConfigLoadBalancingMethodArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "method", method)
+        PolicyPolicyConfigLoadBalancingMethodArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            method=method,
+            domain=domain,
+            expiration_time_in_seconds=expiration_time_in_seconds,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             method: pulumi.Input[str],
+             domain: Optional[pulumi.Input[str]] = None,
+             expiration_time_in_seconds: Optional[pulumi.Input[int]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("method", method)
         if domain is not None:
-            pulumi.set(__self__, "domain", domain)
+            _setter("domain", domain)
         if expiration_time_in_seconds is not None:
-            pulumi.set(__self__, "expiration_time_in_seconds", expiration_time_in_seconds)
+            _setter("expiration_time_in_seconds", expiration_time_in_seconds)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1260,30 +1474,61 @@ class PolicyWafConfigArgs:
         :param pulumi.Input['PolicyWafConfigProtectionSettingsArgs'] protection_settings: (Updatable) The settings applied to protection rules.
         :param pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigWhitelistArgs']]] whitelists: (Updatable) A list of IP addresses that bypass the Web Application Firewall.
         """
+        PolicyWafConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_rules=access_rules,
+            address_rate_limiting=address_rate_limiting,
+            caching_rules=caching_rules,
+            captchas=captchas,
+            custom_protection_rules=custom_protection_rules,
+            device_fingerprint_challenge=device_fingerprint_challenge,
+            human_interaction_challenge=human_interaction_challenge,
+            js_challenge=js_challenge,
+            origin=origin,
+            origin_groups=origin_groups,
+            protection_settings=protection_settings,
+            whitelists=whitelists,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_rules: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleArgs']]]] = None,
+             address_rate_limiting: Optional[pulumi.Input['PolicyWafConfigAddressRateLimitingArgs']] = None,
+             caching_rules: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCachingRuleArgs']]]] = None,
+             captchas: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCaptchaArgs']]]] = None,
+             custom_protection_rules: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleArgs']]]] = None,
+             device_fingerprint_challenge: Optional[pulumi.Input['PolicyWafConfigDeviceFingerprintChallengeArgs']] = None,
+             human_interaction_challenge: Optional[pulumi.Input['PolicyWafConfigHumanInteractionChallengeArgs']] = None,
+             js_challenge: Optional[pulumi.Input['PolicyWafConfigJsChallengeArgs']] = None,
+             origin: Optional[pulumi.Input[str]] = None,
+             origin_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             protection_settings: Optional[pulumi.Input['PolicyWafConfigProtectionSettingsArgs']] = None,
+             whitelists: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigWhitelistArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if access_rules is not None:
-            pulumi.set(__self__, "access_rules", access_rules)
+            _setter("access_rules", access_rules)
         if address_rate_limiting is not None:
-            pulumi.set(__self__, "address_rate_limiting", address_rate_limiting)
+            _setter("address_rate_limiting", address_rate_limiting)
         if caching_rules is not None:
-            pulumi.set(__self__, "caching_rules", caching_rules)
+            _setter("caching_rules", caching_rules)
         if captchas is not None:
-            pulumi.set(__self__, "captchas", captchas)
+            _setter("captchas", captchas)
         if custom_protection_rules is not None:
-            pulumi.set(__self__, "custom_protection_rules", custom_protection_rules)
+            _setter("custom_protection_rules", custom_protection_rules)
         if device_fingerprint_challenge is not None:
-            pulumi.set(__self__, "device_fingerprint_challenge", device_fingerprint_challenge)
+            _setter("device_fingerprint_challenge", device_fingerprint_challenge)
         if human_interaction_challenge is not None:
-            pulumi.set(__self__, "human_interaction_challenge", human_interaction_challenge)
+            _setter("human_interaction_challenge", human_interaction_challenge)
         if js_challenge is not None:
-            pulumi.set(__self__, "js_challenge", js_challenge)
+            _setter("js_challenge", js_challenge)
         if origin is not None:
-            pulumi.set(__self__, "origin", origin)
+            _setter("origin", origin)
         if origin_groups is not None:
-            pulumi.set(__self__, "origin_groups", origin_groups)
+            _setter("origin_groups", origin_groups)
         if protection_settings is not None:
-            pulumi.set(__self__, "protection_settings", protection_settings)
+            _setter("protection_settings", protection_settings)
         if whitelists is not None:
-            pulumi.set(__self__, "whitelists", whitelists)
+            _setter("whitelists", whitelists)
 
     @property
     @pulumi.getter(name="accessRules")
@@ -1477,35 +1722,74 @@ class PolicyWafConfigAccessRuleArgs:
         :param pulumi.Input[str] redirect_url: (Updatable) The target to which the request should be redirected, represented as a URI reference. Required when `action` is `REDIRECT`.
         :param pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleResponseHeaderManipulationArgs']]] response_header_manipulations: (Updatable) An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `action` value.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "criterias", criterias)
-        pulumi.set(__self__, "name", name)
+        PolicyWafConfigAccessRuleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            criterias=criterias,
+            name=name,
+            block_action=block_action,
+            block_error_page_code=block_error_page_code,
+            block_error_page_description=block_error_page_description,
+            block_error_page_message=block_error_page_message,
+            block_response_code=block_response_code,
+            bypass_challenges=bypass_challenges,
+            captcha_footer=captcha_footer,
+            captcha_header=captcha_header,
+            captcha_submit_label=captcha_submit_label,
+            captcha_title=captcha_title,
+            redirect_response_code=redirect_response_code,
+            redirect_url=redirect_url,
+            response_header_manipulations=response_header_manipulations,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: pulumi.Input[str],
+             criterias: pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleCriteriaArgs']]],
+             name: pulumi.Input[str],
+             block_action: Optional[pulumi.Input[str]] = None,
+             block_error_page_code: Optional[pulumi.Input[str]] = None,
+             block_error_page_description: Optional[pulumi.Input[str]] = None,
+             block_error_page_message: Optional[pulumi.Input[str]] = None,
+             block_response_code: Optional[pulumi.Input[int]] = None,
+             bypass_challenges: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             captcha_footer: Optional[pulumi.Input[str]] = None,
+             captcha_header: Optional[pulumi.Input[str]] = None,
+             captcha_submit_label: Optional[pulumi.Input[str]] = None,
+             captcha_title: Optional[pulumi.Input[str]] = None,
+             redirect_response_code: Optional[pulumi.Input[str]] = None,
+             redirect_url: Optional[pulumi.Input[str]] = None,
+             response_header_manipulations: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigAccessRuleResponseHeaderManipulationArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("criterias", criterias)
+        _setter("name", name)
         if block_action is not None:
-            pulumi.set(__self__, "block_action", block_action)
+            _setter("block_action", block_action)
         if block_error_page_code is not None:
-            pulumi.set(__self__, "block_error_page_code", block_error_page_code)
+            _setter("block_error_page_code", block_error_page_code)
         if block_error_page_description is not None:
-            pulumi.set(__self__, "block_error_page_description", block_error_page_description)
+            _setter("block_error_page_description", block_error_page_description)
         if block_error_page_message is not None:
-            pulumi.set(__self__, "block_error_page_message", block_error_page_message)
+            _setter("block_error_page_message", block_error_page_message)
         if block_response_code is not None:
-            pulumi.set(__self__, "block_response_code", block_response_code)
+            _setter("block_response_code", block_response_code)
         if bypass_challenges is not None:
-            pulumi.set(__self__, "bypass_challenges", bypass_challenges)
+            _setter("bypass_challenges", bypass_challenges)
         if captcha_footer is not None:
-            pulumi.set(__self__, "captcha_footer", captcha_footer)
+            _setter("captcha_footer", captcha_footer)
         if captcha_header is not None:
-            pulumi.set(__self__, "captcha_header", captcha_header)
+            _setter("captcha_header", captcha_header)
         if captcha_submit_label is not None:
-            pulumi.set(__self__, "captcha_submit_label", captcha_submit_label)
+            _setter("captcha_submit_label", captcha_submit_label)
         if captcha_title is not None:
-            pulumi.set(__self__, "captcha_title", captcha_title)
+            _setter("captcha_title", captcha_title)
         if redirect_response_code is not None:
-            pulumi.set(__self__, "redirect_response_code", redirect_response_code)
+            _setter("redirect_response_code", redirect_response_code)
         if redirect_url is not None:
-            pulumi.set(__self__, "redirect_url", redirect_url)
+            _setter("redirect_url", redirect_url)
         if response_header_manipulations is not None:
-            pulumi.set(__self__, "response_header_manipulations", response_header_manipulations)
+            _setter("response_header_manipulations", response_header_manipulations)
 
     @property
     @pulumi.getter
@@ -1746,10 +2030,23 @@ class PolicyWafConfigAccessRuleCriteriaArgs:
         :param pulumi.Input[str] value: (Updatable) The value of the header.
         :param pulumi.Input[bool] is_case_sensitive: (Updatable) When enabled, the condition will be matched with case-sensitive rules.
         """
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "value", value)
+        PolicyWafConfigAccessRuleCriteriaArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition=condition,
+            value=value,
+            is_case_sensitive=is_case_sensitive,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition: pulumi.Input[str],
+             value: pulumi.Input[str],
+             is_case_sensitive: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition", condition)
+        _setter("value", value)
         if is_case_sensitive is not None:
-            pulumi.set(__self__, "is_case_sensitive", is_case_sensitive)
+            _setter("is_case_sensitive", is_case_sensitive)
 
     @property
     @pulumi.getter
@@ -1824,10 +2121,23 @@ class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs:
         :param pulumi.Input[str] header: (Updatable) A header field name that conforms to RFC 7230.  Example: `example_header_name`
         :param pulumi.Input[str] value: (Updatable) The value of the header.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "header", header)
+        PolicyWafConfigAccessRuleResponseHeaderManipulationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            header=header,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: pulumi.Input[str],
+             header: pulumi.Input[str],
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("header", header)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -1879,13 +2189,28 @@ class PolicyWafConfigAddressRateLimitingArgs:
         :param pulumi.Input[int] block_response_code: (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
         :param pulumi.Input[int] max_delayed_count_per_address: (Updatable) The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        PolicyWafConfigAddressRateLimitingArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            allowed_rate_per_address=allowed_rate_per_address,
+            block_response_code=block_response_code,
+            max_delayed_count_per_address=max_delayed_count_per_address,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: pulumi.Input[bool],
+             allowed_rate_per_address: Optional[pulumi.Input[int]] = None,
+             block_response_code: Optional[pulumi.Input[int]] = None,
+             max_delayed_count_per_address: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
         if allowed_rate_per_address is not None:
-            pulumi.set(__self__, "allowed_rate_per_address", allowed_rate_per_address)
+            _setter("allowed_rate_per_address", allowed_rate_per_address)
         if block_response_code is not None:
-            pulumi.set(__self__, "block_response_code", block_response_code)
+            _setter("block_response_code", block_response_code)
         if max_delayed_count_per_address is not None:
-            pulumi.set(__self__, "max_delayed_count_per_address", max_delayed_count_per_address)
+            _setter("max_delayed_count_per_address", max_delayed_count_per_address)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -1959,17 +2284,38 @@ class PolicyWafConfigCachingRuleArgs:
         :param pulumi.Input[bool] is_client_caching_enabled: (Updatable) Enables or disables client caching. Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
         :param pulumi.Input[str] key: (Updatable) The unique key for the caching rule.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "criterias", criterias)
-        pulumi.set(__self__, "name", name)
+        PolicyWafConfigCachingRuleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            criterias=criterias,
+            name=name,
+            caching_duration=caching_duration,
+            client_caching_duration=client_caching_duration,
+            is_client_caching_enabled=is_client_caching_enabled,
+            key=key,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: pulumi.Input[str],
+             criterias: pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCachingRuleCriteriaArgs']]],
+             name: pulumi.Input[str],
+             caching_duration: Optional[pulumi.Input[str]] = None,
+             client_caching_duration: Optional[pulumi.Input[str]] = None,
+             is_client_caching_enabled: Optional[pulumi.Input[bool]] = None,
+             key: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("criterias", criterias)
+        _setter("name", name)
         if caching_duration is not None:
-            pulumi.set(__self__, "caching_duration", caching_duration)
+            _setter("caching_duration", caching_duration)
         if client_caching_duration is not None:
-            pulumi.set(__self__, "client_caching_duration", client_caching_duration)
+            _setter("client_caching_duration", client_caching_duration)
         if is_client_caching_enabled is not None:
-            pulumi.set(__self__, "is_client_caching_enabled", is_client_caching_enabled)
+            _setter("is_client_caching_enabled", is_client_caching_enabled)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
 
     @property
     @pulumi.getter
@@ -2094,8 +2440,19 @@ class PolicyWafConfigCachingRuleCriteriaArgs:
                * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
         :param pulumi.Input[str] value: (Updatable) The value of the header.
         """
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "value", value)
+        PolicyWafConfigCachingRuleCriteriaArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition=condition,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition: pulumi.Input[str],
+             value: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition", condition)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -2166,15 +2523,36 @@ class PolicyWafConfigCaptchaArgs:
         :param pulumi.Input[str] footer_text: (Updatable) The text to show in the footer when showing a CAPTCHA challenge. If unspecified, defaults to 'Enter the letters and numbers as they are shown in the image above.'
         :param pulumi.Input[str] header_text: (Updatable) The text to show in the header when showing a CAPTCHA challenge. If unspecified, defaults to 'We have detected an increased number of attempts to access this website. To help us keep this site secure, please let us know that you are not a robot by entering the text from the image below.'
         """
-        pulumi.set(__self__, "failure_message", failure_message)
-        pulumi.set(__self__, "session_expiration_in_seconds", session_expiration_in_seconds)
-        pulumi.set(__self__, "submit_label", submit_label)
-        pulumi.set(__self__, "title", title)
-        pulumi.set(__self__, "url", url)
+        PolicyWafConfigCaptchaArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            failure_message=failure_message,
+            session_expiration_in_seconds=session_expiration_in_seconds,
+            submit_label=submit_label,
+            title=title,
+            url=url,
+            footer_text=footer_text,
+            header_text=header_text,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             failure_message: pulumi.Input[str],
+             session_expiration_in_seconds: pulumi.Input[int],
+             submit_label: pulumi.Input[str],
+             title: pulumi.Input[str],
+             url: pulumi.Input[str],
+             footer_text: Optional[pulumi.Input[str]] = None,
+             header_text: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("failure_message", failure_message)
+        _setter("session_expiration_in_seconds", session_expiration_in_seconds)
+        _setter("submit_label", submit_label)
+        _setter("title", title)
+        _setter("url", url)
         if footer_text is not None:
-            pulumi.set(__self__, "footer_text", footer_text)
+            _setter("footer_text", footer_text)
         if header_text is not None:
-            pulumi.set(__self__, "header_text", header_text)
+            _setter("header_text", header_text)
 
     @property
     @pulumi.getter(name="failureMessage")
@@ -2272,12 +2650,25 @@ class PolicyWafConfigCustomProtectionRuleArgs:
         :param pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleExclusionArgs']]] exclusions: (Updatable) An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
         :param pulumi.Input[str] id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
         """
+        PolicyWafConfigCustomProtectionRuleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            exclusions=exclusions,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: Optional[pulumi.Input[str]] = None,
+             exclusions: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigCustomProtectionRuleExclusionArgs']]]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if action is not None:
-            pulumi.set(__self__, "action", action)
+            _setter("action", action)
         if exclusions is not None:
-            pulumi.set(__self__, "exclusions", exclusions)
+            _setter("exclusions", exclusions)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter
@@ -2325,10 +2716,21 @@ class PolicyWafConfigCustomProtectionRuleExclusionArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] exclusions: (Updatable) An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
         :param pulumi.Input[str] target: (Updatable) The target of the exclusion.
         """
+        PolicyWafConfigCustomProtectionRuleExclusionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            exclusions=exclusions,
+            target=target,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             exclusions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             target: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if exclusions is not None:
-            pulumi.set(__self__, "exclusions", exclusions)
+            _setter("exclusions", exclusions)
         if target is not None:
-            pulumi.set(__self__, "target", target)
+            _setter("target", target)
 
     @property
     @pulumi.getter
@@ -2376,21 +2778,44 @@ class PolicyWafConfigDeviceFingerprintChallengeArgs:
         :param pulumi.Input[int] max_address_count: (Updatable) The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to `20`.
         :param pulumi.Input[int] max_address_count_expiration_in_seconds: (Updatable) The number of seconds before the maximum addresses count resets. If unspecified, defaults to `60`.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        PolicyWafConfigDeviceFingerprintChallengeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            action=action,
+            action_expiration_in_seconds=action_expiration_in_seconds,
+            challenge_settings=challenge_settings,
+            failure_threshold=failure_threshold,
+            failure_threshold_expiration_in_seconds=failure_threshold_expiration_in_seconds,
+            max_address_count=max_address_count,
+            max_address_count_expiration_in_seconds=max_address_count_expiration_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: pulumi.Input[bool],
+             action: Optional[pulumi.Input[str]] = None,
+             action_expiration_in_seconds: Optional[pulumi.Input[int]] = None,
+             challenge_settings: Optional[pulumi.Input['PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs']] = None,
+             failure_threshold: Optional[pulumi.Input[int]] = None,
+             failure_threshold_expiration_in_seconds: Optional[pulumi.Input[int]] = None,
+             max_address_count: Optional[pulumi.Input[int]] = None,
+             max_address_count_expiration_in_seconds: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
         if action is not None:
-            pulumi.set(__self__, "action", action)
+            _setter("action", action)
         if action_expiration_in_seconds is not None:
-            pulumi.set(__self__, "action_expiration_in_seconds", action_expiration_in_seconds)
+            _setter("action_expiration_in_seconds", action_expiration_in_seconds)
         if challenge_settings is not None:
-            pulumi.set(__self__, "challenge_settings", challenge_settings)
+            _setter("challenge_settings", challenge_settings)
         if failure_threshold is not None:
-            pulumi.set(__self__, "failure_threshold", failure_threshold)
+            _setter("failure_threshold", failure_threshold)
         if failure_threshold_expiration_in_seconds is not None:
-            pulumi.set(__self__, "failure_threshold_expiration_in_seconds", failure_threshold_expiration_in_seconds)
+            _setter("failure_threshold_expiration_in_seconds", failure_threshold_expiration_in_seconds)
         if max_address_count is not None:
-            pulumi.set(__self__, "max_address_count", max_address_count)
+            _setter("max_address_count", max_address_count)
         if max_address_count_expiration_in_seconds is not None:
-            pulumi.set(__self__, "max_address_count_expiration_in_seconds", max_address_count_expiration_in_seconds)
+            _setter("max_address_count_expiration_in_seconds", max_address_count_expiration_in_seconds)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -2512,24 +2937,49 @@ class PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs:
         :param pulumi.Input[str] captcha_submit_label: (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
         :param pulumi.Input[str] captcha_title: (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
         """
+        PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_action=block_action,
+            block_error_page_code=block_error_page_code,
+            block_error_page_description=block_error_page_description,
+            block_error_page_message=block_error_page_message,
+            block_response_code=block_response_code,
+            captcha_footer=captcha_footer,
+            captcha_header=captcha_header,
+            captcha_submit_label=captcha_submit_label,
+            captcha_title=captcha_title,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_action: Optional[pulumi.Input[str]] = None,
+             block_error_page_code: Optional[pulumi.Input[str]] = None,
+             block_error_page_description: Optional[pulumi.Input[str]] = None,
+             block_error_page_message: Optional[pulumi.Input[str]] = None,
+             block_response_code: Optional[pulumi.Input[int]] = None,
+             captcha_footer: Optional[pulumi.Input[str]] = None,
+             captcha_header: Optional[pulumi.Input[str]] = None,
+             captcha_submit_label: Optional[pulumi.Input[str]] = None,
+             captcha_title: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if block_action is not None:
-            pulumi.set(__self__, "block_action", block_action)
+            _setter("block_action", block_action)
         if block_error_page_code is not None:
-            pulumi.set(__self__, "block_error_page_code", block_error_page_code)
+            _setter("block_error_page_code", block_error_page_code)
         if block_error_page_description is not None:
-            pulumi.set(__self__, "block_error_page_description", block_error_page_description)
+            _setter("block_error_page_description", block_error_page_description)
         if block_error_page_message is not None:
-            pulumi.set(__self__, "block_error_page_message", block_error_page_message)
+            _setter("block_error_page_message", block_error_page_message)
         if block_response_code is not None:
-            pulumi.set(__self__, "block_response_code", block_response_code)
+            _setter("block_response_code", block_response_code)
         if captcha_footer is not None:
-            pulumi.set(__self__, "captcha_footer", captcha_footer)
+            _setter("captcha_footer", captcha_footer)
         if captcha_header is not None:
-            pulumi.set(__self__, "captcha_header", captcha_header)
+            _setter("captcha_header", captcha_header)
         if captcha_submit_label is not None:
-            pulumi.set(__self__, "captcha_submit_label", captcha_submit_label)
+            _setter("captcha_submit_label", captcha_submit_label)
         if captcha_title is not None:
-            pulumi.set(__self__, "captcha_title", captcha_title)
+            _setter("captcha_title", captcha_title)
 
     @property
     @pulumi.getter(name="blockAction")
@@ -2665,25 +3115,52 @@ class PolicyWafConfigHumanInteractionChallengeArgs:
         :param pulumi.Input[int] recording_period_in_seconds: (Updatable) The number of seconds to record the interactions from the user. If unspecified, defaults to `15`.
         :param pulumi.Input['PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs'] set_http_header: (Updatable) Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        PolicyWafConfigHumanInteractionChallengeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            action=action,
+            action_expiration_in_seconds=action_expiration_in_seconds,
+            challenge_settings=challenge_settings,
+            failure_threshold=failure_threshold,
+            failure_threshold_expiration_in_seconds=failure_threshold_expiration_in_seconds,
+            interaction_threshold=interaction_threshold,
+            is_nat_enabled=is_nat_enabled,
+            recording_period_in_seconds=recording_period_in_seconds,
+            set_http_header=set_http_header,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: pulumi.Input[bool],
+             action: Optional[pulumi.Input[str]] = None,
+             action_expiration_in_seconds: Optional[pulumi.Input[int]] = None,
+             challenge_settings: Optional[pulumi.Input['PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs']] = None,
+             failure_threshold: Optional[pulumi.Input[int]] = None,
+             failure_threshold_expiration_in_seconds: Optional[pulumi.Input[int]] = None,
+             interaction_threshold: Optional[pulumi.Input[int]] = None,
+             is_nat_enabled: Optional[pulumi.Input[bool]] = None,
+             recording_period_in_seconds: Optional[pulumi.Input[int]] = None,
+             set_http_header: Optional[pulumi.Input['PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
         if action is not None:
-            pulumi.set(__self__, "action", action)
+            _setter("action", action)
         if action_expiration_in_seconds is not None:
-            pulumi.set(__self__, "action_expiration_in_seconds", action_expiration_in_seconds)
+            _setter("action_expiration_in_seconds", action_expiration_in_seconds)
         if challenge_settings is not None:
-            pulumi.set(__self__, "challenge_settings", challenge_settings)
+            _setter("challenge_settings", challenge_settings)
         if failure_threshold is not None:
-            pulumi.set(__self__, "failure_threshold", failure_threshold)
+            _setter("failure_threshold", failure_threshold)
         if failure_threshold_expiration_in_seconds is not None:
-            pulumi.set(__self__, "failure_threshold_expiration_in_seconds", failure_threshold_expiration_in_seconds)
+            _setter("failure_threshold_expiration_in_seconds", failure_threshold_expiration_in_seconds)
         if interaction_threshold is not None:
-            pulumi.set(__self__, "interaction_threshold", interaction_threshold)
+            _setter("interaction_threshold", interaction_threshold)
         if is_nat_enabled is not None:
-            pulumi.set(__self__, "is_nat_enabled", is_nat_enabled)
+            _setter("is_nat_enabled", is_nat_enabled)
         if recording_period_in_seconds is not None:
-            pulumi.set(__self__, "recording_period_in_seconds", recording_period_in_seconds)
+            _setter("recording_period_in_seconds", recording_period_in_seconds)
         if set_http_header is not None:
-            pulumi.set(__self__, "set_http_header", set_http_header)
+            _setter("set_http_header", set_http_header)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -2829,24 +3306,49 @@ class PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs:
         :param pulumi.Input[str] captcha_submit_label: (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
         :param pulumi.Input[str] captcha_title: (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
         """
+        PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_action=block_action,
+            block_error_page_code=block_error_page_code,
+            block_error_page_description=block_error_page_description,
+            block_error_page_message=block_error_page_message,
+            block_response_code=block_response_code,
+            captcha_footer=captcha_footer,
+            captcha_header=captcha_header,
+            captcha_submit_label=captcha_submit_label,
+            captcha_title=captcha_title,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_action: Optional[pulumi.Input[str]] = None,
+             block_error_page_code: Optional[pulumi.Input[str]] = None,
+             block_error_page_description: Optional[pulumi.Input[str]] = None,
+             block_error_page_message: Optional[pulumi.Input[str]] = None,
+             block_response_code: Optional[pulumi.Input[int]] = None,
+             captcha_footer: Optional[pulumi.Input[str]] = None,
+             captcha_header: Optional[pulumi.Input[str]] = None,
+             captcha_submit_label: Optional[pulumi.Input[str]] = None,
+             captcha_title: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if block_action is not None:
-            pulumi.set(__self__, "block_action", block_action)
+            _setter("block_action", block_action)
         if block_error_page_code is not None:
-            pulumi.set(__self__, "block_error_page_code", block_error_page_code)
+            _setter("block_error_page_code", block_error_page_code)
         if block_error_page_description is not None:
-            pulumi.set(__self__, "block_error_page_description", block_error_page_description)
+            _setter("block_error_page_description", block_error_page_description)
         if block_error_page_message is not None:
-            pulumi.set(__self__, "block_error_page_message", block_error_page_message)
+            _setter("block_error_page_message", block_error_page_message)
         if block_response_code is not None:
-            pulumi.set(__self__, "block_response_code", block_response_code)
+            _setter("block_response_code", block_response_code)
         if captcha_footer is not None:
-            pulumi.set(__self__, "captcha_footer", captcha_footer)
+            _setter("captcha_footer", captcha_footer)
         if captcha_header is not None:
-            pulumi.set(__self__, "captcha_header", captcha_header)
+            _setter("captcha_header", captcha_header)
         if captcha_submit_label is not None:
-            pulumi.set(__self__, "captcha_submit_label", captcha_submit_label)
+            _setter("captcha_submit_label", captcha_submit_label)
         if captcha_title is not None:
-            pulumi.set(__self__, "captcha_title", captcha_title)
+            _setter("captcha_title", captcha_title)
 
     @property
     @pulumi.getter(name="blockAction")
@@ -2970,8 +3472,19 @@ class PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] value: (Updatable) The value of the header.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: pulumi.Input[str],
+             value: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -3025,23 +3538,48 @@ class PolicyWafConfigJsChallengeArgs:
         :param pulumi.Input[bool] is_nat_enabled: (Updatable) When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
         :param pulumi.Input['PolicyWafConfigJsChallengeSetHttpHeaderArgs'] set_http_header: (Updatable) Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        PolicyWafConfigJsChallengeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            action=action,
+            action_expiration_in_seconds=action_expiration_in_seconds,
+            are_redirects_challenged=are_redirects_challenged,
+            challenge_settings=challenge_settings,
+            criterias=criterias,
+            failure_threshold=failure_threshold,
+            is_nat_enabled=is_nat_enabled,
+            set_http_header=set_http_header,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: pulumi.Input[bool],
+             action: Optional[pulumi.Input[str]] = None,
+             action_expiration_in_seconds: Optional[pulumi.Input[int]] = None,
+             are_redirects_challenged: Optional[pulumi.Input[bool]] = None,
+             challenge_settings: Optional[pulumi.Input['PolicyWafConfigJsChallengeChallengeSettingsArgs']] = None,
+             criterias: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyWafConfigJsChallengeCriteriaArgs']]]] = None,
+             failure_threshold: Optional[pulumi.Input[int]] = None,
+             is_nat_enabled: Optional[pulumi.Input[bool]] = None,
+             set_http_header: Optional[pulumi.Input['PolicyWafConfigJsChallengeSetHttpHeaderArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
         if action is not None:
-            pulumi.set(__self__, "action", action)
+            _setter("action", action)
         if action_expiration_in_seconds is not None:
-            pulumi.set(__self__, "action_expiration_in_seconds", action_expiration_in_seconds)
+            _setter("action_expiration_in_seconds", action_expiration_in_seconds)
         if are_redirects_challenged is not None:
-            pulumi.set(__self__, "are_redirects_challenged", are_redirects_challenged)
+            _setter("are_redirects_challenged", are_redirects_challenged)
         if challenge_settings is not None:
-            pulumi.set(__self__, "challenge_settings", challenge_settings)
+            _setter("challenge_settings", challenge_settings)
         if criterias is not None:
-            pulumi.set(__self__, "criterias", criterias)
+            _setter("criterias", criterias)
         if failure_threshold is not None:
-            pulumi.set(__self__, "failure_threshold", failure_threshold)
+            _setter("failure_threshold", failure_threshold)
         if is_nat_enabled is not None:
-            pulumi.set(__self__, "is_nat_enabled", is_nat_enabled)
+            _setter("is_nat_enabled", is_nat_enabled)
         if set_http_header is not None:
-            pulumi.set(__self__, "set_http_header", set_http_header)
+            _setter("set_http_header", set_http_header)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -3175,24 +3713,49 @@ class PolicyWafConfigJsChallengeChallengeSettingsArgs:
         :param pulumi.Input[str] captcha_submit_label: (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
         :param pulumi.Input[str] captcha_title: (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
         """
+        PolicyWafConfigJsChallengeChallengeSettingsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_action=block_action,
+            block_error_page_code=block_error_page_code,
+            block_error_page_description=block_error_page_description,
+            block_error_page_message=block_error_page_message,
+            block_response_code=block_response_code,
+            captcha_footer=captcha_footer,
+            captcha_header=captcha_header,
+            captcha_submit_label=captcha_submit_label,
+            captcha_title=captcha_title,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_action: Optional[pulumi.Input[str]] = None,
+             block_error_page_code: Optional[pulumi.Input[str]] = None,
+             block_error_page_description: Optional[pulumi.Input[str]] = None,
+             block_error_page_message: Optional[pulumi.Input[str]] = None,
+             block_response_code: Optional[pulumi.Input[int]] = None,
+             captcha_footer: Optional[pulumi.Input[str]] = None,
+             captcha_header: Optional[pulumi.Input[str]] = None,
+             captcha_submit_label: Optional[pulumi.Input[str]] = None,
+             captcha_title: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if block_action is not None:
-            pulumi.set(__self__, "block_action", block_action)
+            _setter("block_action", block_action)
         if block_error_page_code is not None:
-            pulumi.set(__self__, "block_error_page_code", block_error_page_code)
+            _setter("block_error_page_code", block_error_page_code)
         if block_error_page_description is not None:
-            pulumi.set(__self__, "block_error_page_description", block_error_page_description)
+            _setter("block_error_page_description", block_error_page_description)
         if block_error_page_message is not None:
-            pulumi.set(__self__, "block_error_page_message", block_error_page_message)
+            _setter("block_error_page_message", block_error_page_message)
         if block_response_code is not None:
-            pulumi.set(__self__, "block_response_code", block_response_code)
+            _setter("block_response_code", block_response_code)
         if captcha_footer is not None:
-            pulumi.set(__self__, "captcha_footer", captcha_footer)
+            _setter("captcha_footer", captcha_footer)
         if captcha_header is not None:
-            pulumi.set(__self__, "captcha_header", captcha_header)
+            _setter("captcha_header", captcha_header)
         if captcha_submit_label is not None:
-            pulumi.set(__self__, "captcha_submit_label", captcha_submit_label)
+            _setter("captcha_submit_label", captcha_submit_label)
         if captcha_title is not None:
-            pulumi.set(__self__, "captcha_title", captcha_title)
+            _setter("captcha_title", captcha_title)
 
     @property
     @pulumi.getter(name="blockAction")
@@ -3339,10 +3902,23 @@ class PolicyWafConfigJsChallengeCriteriaArgs:
         :param pulumi.Input[str] value: (Updatable) The value of the header.
         :param pulumi.Input[bool] is_case_sensitive: (Updatable) When enabled, the condition will be matched with case-sensitive rules.
         """
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "value", value)
+        PolicyWafConfigJsChallengeCriteriaArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition=condition,
+            value=value,
+            is_case_sensitive=is_case_sensitive,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition: pulumi.Input[str],
+             value: pulumi.Input[str],
+             is_case_sensitive: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition", condition)
+        _setter("value", value)
         if is_case_sensitive is not None:
-            pulumi.set(__self__, "is_case_sensitive", is_case_sensitive)
+            _setter("is_case_sensitive", is_case_sensitive)
 
     @property
     @pulumi.getter
@@ -3419,8 +3995,19 @@ class PolicyWafConfigJsChallengeSetHttpHeaderArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] value: (Updatable) The value of the header.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        PolicyWafConfigJsChallengeSetHttpHeaderArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: pulumi.Input[str],
+             value: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -3506,32 +4093,65 @@ class PolicyWafConfigProtectionSettingsArgs:
                
                Use `GET /waasPolicies/{waasPolicyId}/wafRecommendations` to view WAF recommendations.
         """
+        PolicyWafConfigProtectionSettingsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_http_methods=allowed_http_methods,
+            block_action=block_action,
+            block_error_page_code=block_error_page_code,
+            block_error_page_description=block_error_page_description,
+            block_error_page_message=block_error_page_message,
+            block_response_code=block_response_code,
+            is_response_inspected=is_response_inspected,
+            max_argument_count=max_argument_count,
+            max_name_length_per_argument=max_name_length_per_argument,
+            max_response_size_in_ki_b=max_response_size_in_ki_b,
+            max_total_name_length_of_arguments=max_total_name_length_of_arguments,
+            media_types=media_types,
+            recommendations_period_in_days=recommendations_period_in_days,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_http_methods: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             block_action: Optional[pulumi.Input[str]] = None,
+             block_error_page_code: Optional[pulumi.Input[str]] = None,
+             block_error_page_description: Optional[pulumi.Input[str]] = None,
+             block_error_page_message: Optional[pulumi.Input[str]] = None,
+             block_response_code: Optional[pulumi.Input[int]] = None,
+             is_response_inspected: Optional[pulumi.Input[bool]] = None,
+             max_argument_count: Optional[pulumi.Input[int]] = None,
+             max_name_length_per_argument: Optional[pulumi.Input[int]] = None,
+             max_response_size_in_ki_b: Optional[pulumi.Input[int]] = None,
+             max_total_name_length_of_arguments: Optional[pulumi.Input[int]] = None,
+             media_types: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             recommendations_period_in_days: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if allowed_http_methods is not None:
-            pulumi.set(__self__, "allowed_http_methods", allowed_http_methods)
+            _setter("allowed_http_methods", allowed_http_methods)
         if block_action is not None:
-            pulumi.set(__self__, "block_action", block_action)
+            _setter("block_action", block_action)
         if block_error_page_code is not None:
-            pulumi.set(__self__, "block_error_page_code", block_error_page_code)
+            _setter("block_error_page_code", block_error_page_code)
         if block_error_page_description is not None:
-            pulumi.set(__self__, "block_error_page_description", block_error_page_description)
+            _setter("block_error_page_description", block_error_page_description)
         if block_error_page_message is not None:
-            pulumi.set(__self__, "block_error_page_message", block_error_page_message)
+            _setter("block_error_page_message", block_error_page_message)
         if block_response_code is not None:
-            pulumi.set(__self__, "block_response_code", block_response_code)
+            _setter("block_response_code", block_response_code)
         if is_response_inspected is not None:
-            pulumi.set(__self__, "is_response_inspected", is_response_inspected)
+            _setter("is_response_inspected", is_response_inspected)
         if max_argument_count is not None:
-            pulumi.set(__self__, "max_argument_count", max_argument_count)
+            _setter("max_argument_count", max_argument_count)
         if max_name_length_per_argument is not None:
-            pulumi.set(__self__, "max_name_length_per_argument", max_name_length_per_argument)
+            _setter("max_name_length_per_argument", max_name_length_per_argument)
         if max_response_size_in_ki_b is not None:
-            pulumi.set(__self__, "max_response_size_in_ki_b", max_response_size_in_ki_b)
+            _setter("max_response_size_in_ki_b", max_response_size_in_ki_b)
         if max_total_name_length_of_arguments is not None:
-            pulumi.set(__self__, "max_total_name_length_of_arguments", max_total_name_length_of_arguments)
+            _setter("max_total_name_length_of_arguments", max_total_name_length_of_arguments)
         if media_types is not None:
-            pulumi.set(__self__, "media_types", media_types)
+            _setter("media_types", media_types)
         if recommendations_period_in_days is not None:
-            pulumi.set(__self__, "recommendations_period_in_days", recommendations_period_in_days)
+            _setter("recommendations_period_in_days", recommendations_period_in_days)
 
     @property
     @pulumi.getter(name="allowedHttpMethods")
@@ -3729,11 +4349,24 @@ class PolicyWafConfigWhitelistArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] address_lists: (Updatable) A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] addresses: (Updatable) A set of IP addresses or CIDR notations to include in the whitelist.
         """
-        pulumi.set(__self__, "name", name)
+        PolicyWafConfigWhitelistArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            address_lists=address_lists,
+            addresses=addresses,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: pulumi.Input[str],
+             address_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
         if address_lists is not None:
-            pulumi.set(__self__, "address_lists", address_lists)
+            _setter("address_lists", address_lists)
         if addresses is not None:
-            pulumi.set(__self__, "addresses", addresses)
+            _setter("addresses", addresses)
 
     @property
     @pulumi.getter
@@ -3788,10 +4421,21 @@ class ProtectionRuleExclusionArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        ProtectionRuleExclusionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            exclusions=exclusions,
+            target=target,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             exclusions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             target: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if exclusions is not None:
-            pulumi.set(__self__, "exclusions", exclusions)
+            _setter("exclusions", exclusions)
         if target is not None:
-            pulumi.set(__self__, "target", target)
+            _setter("target", target)
 
     @property
     @pulumi.getter
@@ -3827,10 +4471,23 @@ class GetAddressListsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAddressListsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3869,10 +4526,23 @@ class GetCertificatesFilterArgs:
         """
         :param str name: The certificate extension name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetCertificatesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3911,10 +4581,23 @@ class GetCustomProtectionRulesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetCustomProtectionRulesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3950,10 +4633,23 @@ class GetEdgeSubnetsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetEdgeSubnetsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3989,10 +4685,23 @@ class GetHttpRedirectsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetHttpRedirectsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4031,10 +4740,23 @@ class GetProtectionRulesFilterArgs:
         """
         :param str name: The name of the protection rule.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProtectionRulesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4076,10 +4798,23 @@ class GetWaasPoliciesFilterArgs:
         """
         :param str name: The unique name of the whitelist.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetWaasPoliciesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

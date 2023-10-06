@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -49,27 +49,60 @@ class AnalyticsInstanceArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "capacity", capacity)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "feature_set", feature_set)
-        pulumi.set(__self__, "idcs_access_token", idcs_access_token)
-        pulumi.set(__self__, "license_type", license_type)
+        AnalyticsInstanceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacity=capacity,
+            compartment_id=compartment_id,
+            feature_set=feature_set,
+            idcs_access_token=idcs_access_token,
+            license_type=license_type,
+            defined_tags=defined_tags,
+            description=description,
+            email_notification=email_notification,
+            freeform_tags=freeform_tags,
+            kms_key_id=kms_key_id,
+            name=name,
+            network_endpoint_details=network_endpoint_details,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacity: pulumi.Input['AnalyticsInstanceCapacityArgs'],
+             compartment_id: pulumi.Input[str],
+             feature_set: pulumi.Input[str],
+             idcs_access_token: pulumi.Input[str],
+             license_type: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             email_notification: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             network_endpoint_details: Optional[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("capacity", capacity)
+        _setter("compartment_id", compartment_id)
+        _setter("feature_set", feature_set)
+        _setter("idcs_access_token", idcs_access_token)
+        _setter("license_type", license_type)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if email_notification is not None:
-            pulumi.set(__self__, "email_notification", email_notification)
+            _setter("email_notification", email_notification)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if network_endpoint_details is not None:
-            pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
+            _setter("network_endpoint_details", network_endpoint_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter
@@ -274,38 +307,77 @@ class _AnalyticsInstanceState:
         :param pulumi.Input[str] time_created: The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
         """
+        _AnalyticsInstanceState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacity=capacity,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            email_notification=email_notification,
+            feature_set=feature_set,
+            freeform_tags=freeform_tags,
+            idcs_access_token=idcs_access_token,
+            kms_key_id=kms_key_id,
+            license_type=license_type,
+            name=name,
+            network_endpoint_details=network_endpoint_details,
+            service_url=service_url,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacity: Optional[pulumi.Input['AnalyticsInstanceCapacityArgs']] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             email_notification: Optional[pulumi.Input[str]] = None,
+             feature_set: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             idcs_access_token: Optional[pulumi.Input[str]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             license_type: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             network_endpoint_details: Optional[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs']] = None,
+             service_url: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if capacity is not None:
-            pulumi.set(__self__, "capacity", capacity)
+            _setter("capacity", capacity)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if email_notification is not None:
-            pulumi.set(__self__, "email_notification", email_notification)
+            _setter("email_notification", email_notification)
         if feature_set is not None:
-            pulumi.set(__self__, "feature_set", feature_set)
+            _setter("feature_set", feature_set)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if idcs_access_token is not None:
-            pulumi.set(__self__, "idcs_access_token", idcs_access_token)
+            _setter("idcs_access_token", idcs_access_token)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if license_type is not None:
-            pulumi.set(__self__, "license_type", license_type)
+            _setter("license_type", license_type)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if network_endpoint_details is not None:
-            pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
+            _setter("network_endpoint_details", network_endpoint_details)
         if service_url is not None:
-            pulumi.set(__self__, "service_url", service_url)
+            _setter("service_url", service_url)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -663,6 +735,10 @@ class AnalyticsInstance(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AnalyticsInstanceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -690,6 +766,11 @@ class AnalyticsInstance(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = AnalyticsInstanceArgs.__new__(AnalyticsInstanceArgs)
 
+            if capacity is not None and not isinstance(capacity, AnalyticsInstanceCapacityArgs):
+                capacity = capacity or {}
+                def _setter(key, value):
+                    capacity[key] = value
+                AnalyticsInstanceCapacityArgs._configure(_setter, **capacity)
             if capacity is None and not opts.urn:
                 raise TypeError("Missing required property 'capacity'")
             __props__.__dict__["capacity"] = capacity
@@ -711,6 +792,11 @@ class AnalyticsInstance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'license_type'")
             __props__.__dict__["license_type"] = license_type
             __props__.__dict__["name"] = name
+            if network_endpoint_details is not None and not isinstance(network_endpoint_details, AnalyticsInstanceNetworkEndpointDetailsArgs):
+                network_endpoint_details = network_endpoint_details or {}
+                def _setter(key, value):
+                    network_endpoint_details[key] = value
+                AnalyticsInstanceNetworkEndpointDetailsArgs._configure(_setter, **network_endpoint_details)
             __props__.__dict__["network_endpoint_details"] = network_endpoint_details
             __props__.__dict__["state"] = state
             __props__.__dict__["service_url"] = None

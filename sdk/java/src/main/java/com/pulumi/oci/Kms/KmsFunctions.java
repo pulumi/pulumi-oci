@@ -9,6 +9,10 @@ import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.oci.Kms.inputs.GetDecryptedDataArgs;
 import com.pulumi.oci.Kms.inputs.GetDecryptedDataPlainArgs;
+import com.pulumi.oci.Kms.inputs.GetEkmsPrivateEndpointArgs;
+import com.pulumi.oci.Kms.inputs.GetEkmsPrivateEndpointPlainArgs;
+import com.pulumi.oci.Kms.inputs.GetEkmsPrivateEndpointsArgs;
+import com.pulumi.oci.Kms.inputs.GetEkmsPrivateEndpointsPlainArgs;
 import com.pulumi.oci.Kms.inputs.GetEncryptedDataArgs;
 import com.pulumi.oci.Kms.inputs.GetEncryptedDataPlainArgs;
 import com.pulumi.oci.Kms.inputs.GetKeyArgs;
@@ -30,6 +34,8 @@ import com.pulumi.oci.Kms.inputs.GetVaultUsagePlainArgs;
 import com.pulumi.oci.Kms.inputs.GetVaultsArgs;
 import com.pulumi.oci.Kms.inputs.GetVaultsPlainArgs;
 import com.pulumi.oci.Kms.outputs.GetDecryptedDataResult;
+import com.pulumi.oci.Kms.outputs.GetEkmsPrivateEndpointResult;
+import com.pulumi.oci.Kms.outputs.GetEkmsPrivateEndpointsResult;
 import com.pulumi.oci.Kms.outputs.GetEncryptedDataResult;
 import com.pulumi.oci.Kms.outputs.GetKeyResult;
 import com.pulumi.oci.Kms.outputs.GetKeyVersionResult;
@@ -211,6 +217,318 @@ public final class KmsFunctions {
      */
     public static CompletableFuture<GetDecryptedDataResult> getDecryptedDataPlain(GetDecryptedDataPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Kms/getDecryptedData:getDecryptedData", TypeShape.of(GetDecryptedDataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ekms Private Endpoint resource in Oracle Cloud Infrastructure Kms service.
+     * 
+     * Gets a specific EKMS private by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetEkmsPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEkmsPrivateEndpoint = KmsFunctions.getEkmsPrivateEndpoint(GetEkmsPrivateEndpointArgs.builder()
+     *             .ekmsPrivateEndpointId(oci_kms_ekms_private_endpoint.test_ekms_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetEkmsPrivateEndpointResult> getEkmsPrivateEndpoint(GetEkmsPrivateEndpointArgs args) {
+        return getEkmsPrivateEndpoint(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Ekms Private Endpoint resource in Oracle Cloud Infrastructure Kms service.
+     * 
+     * Gets a specific EKMS private by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetEkmsPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEkmsPrivateEndpoint = KmsFunctions.getEkmsPrivateEndpoint(GetEkmsPrivateEndpointArgs.builder()
+     *             .ekmsPrivateEndpointId(oci_kms_ekms_private_endpoint.test_ekms_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetEkmsPrivateEndpointResult> getEkmsPrivateEndpointPlain(GetEkmsPrivateEndpointPlainArgs args) {
+        return getEkmsPrivateEndpointPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Ekms Private Endpoint resource in Oracle Cloud Infrastructure Kms service.
+     * 
+     * Gets a specific EKMS private by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetEkmsPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEkmsPrivateEndpoint = KmsFunctions.getEkmsPrivateEndpoint(GetEkmsPrivateEndpointArgs.builder()
+     *             .ekmsPrivateEndpointId(oci_kms_ekms_private_endpoint.test_ekms_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetEkmsPrivateEndpointResult> getEkmsPrivateEndpoint(GetEkmsPrivateEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Kms/getEkmsPrivateEndpoint:getEkmsPrivateEndpoint", TypeShape.of(GetEkmsPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Ekms Private Endpoint resource in Oracle Cloud Infrastructure Kms service.
+     * 
+     * Gets a specific EKMS private by identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetEkmsPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEkmsPrivateEndpoint = KmsFunctions.getEkmsPrivateEndpoint(GetEkmsPrivateEndpointArgs.builder()
+     *             .ekmsPrivateEndpointId(oci_kms_ekms_private_endpoint.test_ekms_private_endpoint().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetEkmsPrivateEndpointResult> getEkmsPrivateEndpointPlain(GetEkmsPrivateEndpointPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Kms/getEkmsPrivateEndpoint:getEkmsPrivateEndpoint", TypeShape.of(GetEkmsPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ekms Private Endpoints in Oracle Cloud Infrastructure Kms service.
+     * 
+     * Returns a list of all the EKMS private endpoints in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetEkmsPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEkmsPrivateEndpoints = KmsFunctions.getEkmsPrivateEndpoints(GetEkmsPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetEkmsPrivateEndpointsResult> getEkmsPrivateEndpoints(GetEkmsPrivateEndpointsArgs args) {
+        return getEkmsPrivateEndpoints(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Ekms Private Endpoints in Oracle Cloud Infrastructure Kms service.
+     * 
+     * Returns a list of all the EKMS private endpoints in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetEkmsPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEkmsPrivateEndpoints = KmsFunctions.getEkmsPrivateEndpoints(GetEkmsPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetEkmsPrivateEndpointsResult> getEkmsPrivateEndpointsPlain(GetEkmsPrivateEndpointsPlainArgs args) {
+        return getEkmsPrivateEndpointsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Ekms Private Endpoints in Oracle Cloud Infrastructure Kms service.
+     * 
+     * Returns a list of all the EKMS private endpoints in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetEkmsPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEkmsPrivateEndpoints = KmsFunctions.getEkmsPrivateEndpoints(GetEkmsPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetEkmsPrivateEndpointsResult> getEkmsPrivateEndpoints(GetEkmsPrivateEndpointsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Kms/getEkmsPrivateEndpoints:getEkmsPrivateEndpoints", TypeShape.of(GetEkmsPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ekms Private Endpoints in Oracle Cloud Infrastructure Kms service.
+     * 
+     * Returns a list of all the EKMS private endpoints in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Kms.KmsFunctions;
+     * import com.pulumi.oci.Kms.inputs.GetEkmsPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testEkmsPrivateEndpoints = KmsFunctions.getEkmsPrivateEndpoints(GetEkmsPrivateEndpointsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetEkmsPrivateEndpointsResult> getEkmsPrivateEndpointsPlain(GetEkmsPrivateEndpointsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Kms/getEkmsPrivateEndpoints:getEkmsPrivateEndpoints", TypeShape.of(GetEkmsPrivateEndpointsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * The `oci.Kms.EncryptedData` data source provides details about a specific EncryptedData

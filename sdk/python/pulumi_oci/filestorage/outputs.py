@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -95,21 +95,44 @@ class ExportExportOption(dict):
         :param bool is_anonymous_access_allowed: (Updatable) Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
         :param bool require_privileged_source_port: (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
         """
-        pulumi.set(__self__, "source", source)
+        ExportExportOption._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            source=source,
+            access=access,
+            allowed_auths=allowed_auths,
+            anonymous_gid=anonymous_gid,
+            anonymous_uid=anonymous_uid,
+            identity_squash=identity_squash,
+            is_anonymous_access_allowed=is_anonymous_access_allowed,
+            require_privileged_source_port=require_privileged_source_port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             source: str,
+             access: Optional[str] = None,
+             allowed_auths: Optional[Sequence[str]] = None,
+             anonymous_gid: Optional[str] = None,
+             anonymous_uid: Optional[str] = None,
+             identity_squash: Optional[str] = None,
+             is_anonymous_access_allowed: Optional[bool] = None,
+             require_privileged_source_port: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("source", source)
         if access is not None:
-            pulumi.set(__self__, "access", access)
+            _setter("access", access)
         if allowed_auths is not None:
-            pulumi.set(__self__, "allowed_auths", allowed_auths)
+            _setter("allowed_auths", allowed_auths)
         if anonymous_gid is not None:
-            pulumi.set(__self__, "anonymous_gid", anonymous_gid)
+            _setter("anonymous_gid", anonymous_gid)
         if anonymous_uid is not None:
-            pulumi.set(__self__, "anonymous_uid", anonymous_uid)
+            _setter("anonymous_uid", anonymous_uid)
         if identity_squash is not None:
-            pulumi.set(__self__, "identity_squash", identity_squash)
+            _setter("identity_squash", identity_squash)
         if is_anonymous_access_allowed is not None:
-            pulumi.set(__self__, "is_anonymous_access_allowed", is_anonymous_access_allowed)
+            _setter("is_anonymous_access_allowed", is_anonymous_access_allowed)
         if require_privileged_source_port is not None:
-            pulumi.set(__self__, "require_privileged_source_port", require_privileged_source_port)
+            _setter("require_privileged_source_port", require_privileged_source_port)
 
     @property
     @pulumi.getter
@@ -210,10 +233,21 @@ class FileSystemSourceDetail(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        FileSystemSourceDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            parent_file_system_id=parent_file_system_id,
+            source_snapshot_id=source_snapshot_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             parent_file_system_id: Optional[str] = None,
+             source_snapshot_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if parent_file_system_id is not None:
-            pulumi.set(__self__, "parent_file_system_id", parent_file_system_id)
+            _setter("parent_file_system_id", parent_file_system_id)
         if source_snapshot_id is not None:
-            pulumi.set(__self__, "source_snapshot_id", source_snapshot_id)
+            _setter("source_snapshot_id", source_snapshot_id)
 
     @property
     @pulumi.getter(name="parentFileSystemId")
@@ -288,22 +322,47 @@ class FilesystemSnapshotPolicySchedule(dict):
         :param str schedule_prefix: (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
         :param str time_schedule_start: (Updatable) The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
         """
-        pulumi.set(__self__, "period", period)
-        pulumi.set(__self__, "time_zone", time_zone)
+        FilesystemSnapshotPolicySchedule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            period=period,
+            time_zone=time_zone,
+            day_of_month=day_of_month,
+            day_of_week=day_of_week,
+            hour_of_day=hour_of_day,
+            month=month,
+            retention_duration_in_seconds=retention_duration_in_seconds,
+            schedule_prefix=schedule_prefix,
+            time_schedule_start=time_schedule_start,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             period: str,
+             time_zone: str,
+             day_of_month: Optional[int] = None,
+             day_of_week: Optional[str] = None,
+             hour_of_day: Optional[int] = None,
+             month: Optional[str] = None,
+             retention_duration_in_seconds: Optional[str] = None,
+             schedule_prefix: Optional[str] = None,
+             time_schedule_start: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("period", period)
+        _setter("time_zone", time_zone)
         if day_of_month is not None:
-            pulumi.set(__self__, "day_of_month", day_of_month)
+            _setter("day_of_month", day_of_month)
         if day_of_week is not None:
-            pulumi.set(__self__, "day_of_week", day_of_week)
+            _setter("day_of_week", day_of_week)
         if hour_of_day is not None:
-            pulumi.set(__self__, "hour_of_day", hour_of_day)
+            _setter("hour_of_day", hour_of_day)
         if month is not None:
-            pulumi.set(__self__, "month", month)
+            _setter("month", month)
         if retention_duration_in_seconds is not None:
-            pulumi.set(__self__, "retention_duration_in_seconds", retention_duration_in_seconds)
+            _setter("retention_duration_in_seconds", retention_duration_in_seconds)
         if schedule_prefix is not None:
-            pulumi.set(__self__, "schedule_prefix", schedule_prefix)
+            _setter("schedule_prefix", schedule_prefix)
         if time_schedule_start is not None:
-            pulumi.set(__self__, "time_schedule_start", time_schedule_start)
+            _setter("time_schedule_start", time_schedule_start)
 
     @property
     @pulumi.getter
@@ -418,15 +477,32 @@ class MountTargetKerberos(dict):
         :param bool is_kerberos_enabled: (Updatable) Specifies whether to enable or disable Kerberos.
         :param str key_tab_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab Secret in the Vault.
         """
-        pulumi.set(__self__, "kerberos_realm", kerberos_realm)
+        MountTargetKerberos._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kerberos_realm=kerberos_realm,
+            backup_key_tab_secret_version=backup_key_tab_secret_version,
+            current_key_tab_secret_version=current_key_tab_secret_version,
+            is_kerberos_enabled=is_kerberos_enabled,
+            key_tab_secret_id=key_tab_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kerberos_realm: str,
+             backup_key_tab_secret_version: Optional[int] = None,
+             current_key_tab_secret_version: Optional[int] = None,
+             is_kerberos_enabled: Optional[bool] = None,
+             key_tab_secret_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("kerberos_realm", kerberos_realm)
         if backup_key_tab_secret_version is not None:
-            pulumi.set(__self__, "backup_key_tab_secret_version", backup_key_tab_secret_version)
+            _setter("backup_key_tab_secret_version", backup_key_tab_secret_version)
         if current_key_tab_secret_version is not None:
-            pulumi.set(__self__, "current_key_tab_secret_version", current_key_tab_secret_version)
+            _setter("current_key_tab_secret_version", current_key_tab_secret_version)
         if is_kerberos_enabled is not None:
-            pulumi.set(__self__, "is_kerberos_enabled", is_kerberos_enabled)
+            _setter("is_kerberos_enabled", is_kerberos_enabled)
         if key_tab_secret_id is not None:
-            pulumi.set(__self__, "key_tab_secret_id", key_tab_secret_id)
+            _setter("key_tab_secret_id", key_tab_secret_id)
 
     @property
     @pulumi.getter(name="kerberosRealm")
@@ -521,22 +597,45 @@ class MountTargetLdapIdmap(dict):
         :param str schema_type: (Updatable) Schema type of the LDAP account.
         :param str user_search_base: (Updatable) All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
         """
+        MountTargetLdapIdmap._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cache_lifetime_seconds=cache_lifetime_seconds,
+            cache_refresh_interval_seconds=cache_refresh_interval_seconds,
+            group_search_base=group_search_base,
+            negative_cache_lifetime_seconds=negative_cache_lifetime_seconds,
+            outbound_connector1id=outbound_connector1id,
+            outbound_connector2id=outbound_connector2id,
+            schema_type=schema_type,
+            user_search_base=user_search_base,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cache_lifetime_seconds: Optional[int] = None,
+             cache_refresh_interval_seconds: Optional[int] = None,
+             group_search_base: Optional[str] = None,
+             negative_cache_lifetime_seconds: Optional[int] = None,
+             outbound_connector1id: Optional[str] = None,
+             outbound_connector2id: Optional[str] = None,
+             schema_type: Optional[str] = None,
+             user_search_base: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if cache_lifetime_seconds is not None:
-            pulumi.set(__self__, "cache_lifetime_seconds", cache_lifetime_seconds)
+            _setter("cache_lifetime_seconds", cache_lifetime_seconds)
         if cache_refresh_interval_seconds is not None:
-            pulumi.set(__self__, "cache_refresh_interval_seconds", cache_refresh_interval_seconds)
+            _setter("cache_refresh_interval_seconds", cache_refresh_interval_seconds)
         if group_search_base is not None:
-            pulumi.set(__self__, "group_search_base", group_search_base)
+            _setter("group_search_base", group_search_base)
         if negative_cache_lifetime_seconds is not None:
-            pulumi.set(__self__, "negative_cache_lifetime_seconds", negative_cache_lifetime_seconds)
+            _setter("negative_cache_lifetime_seconds", negative_cache_lifetime_seconds)
         if outbound_connector1id is not None:
-            pulumi.set(__self__, "outbound_connector1id", outbound_connector1id)
+            _setter("outbound_connector1id", outbound_connector1id)
         if outbound_connector2id is not None:
-            pulumi.set(__self__, "outbound_connector2id", outbound_connector2id)
+            _setter("outbound_connector2id", outbound_connector2id)
         if schema_type is not None:
-            pulumi.set(__self__, "schema_type", schema_type)
+            _setter("schema_type", schema_type)
         if user_search_base is not None:
-            pulumi.set(__self__, "user_search_base", user_search_base)
+            _setter("user_search_base", user_search_base)
 
     @property
     @pulumi.getter(name="cacheLifetimeSeconds")
@@ -612,8 +711,19 @@ class OutboundConnectorEndpoint(dict):
         :param str hostname: Name of the DNS server.
         :param str port: Port of the DNS server.
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "port", port)
+        OutboundConnectorEndpoint._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: str,
+             port: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hostname", hostname)
+        _setter("port", port)
 
     @property
     @pulumi.getter
@@ -656,16 +766,43 @@ class GetExportSetsExportSetResult(dict):
         :param str time_created: The date and time the export set was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual cloud network (VCN) the export set is in.
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "max_fs_stat_bytes", max_fs_stat_bytes)
-        pulumi.set(__self__, "max_fs_stat_files", max_fs_stat_files)
-        pulumi.set(__self__, "mount_target_id", mount_target_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        GetExportSetsExportSetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            display_name=display_name,
+            id=id,
+            max_fs_stat_bytes=max_fs_stat_bytes,
+            max_fs_stat_files=max_fs_stat_files,
+            mount_target_id=mount_target_id,
+            state=state,
+            time_created=time_created,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: str,
+             compartment_id: str,
+             display_name: str,
+             id: str,
+             max_fs_stat_bytes: str,
+             max_fs_stat_files: str,
+             mount_target_id: str,
+             state: str,
+             time_created: str,
+             vcn_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("max_fs_stat_bytes", max_fs_stat_bytes)
+        _setter("max_fs_stat_files", max_fs_stat_files)
+        _setter("mount_target_id", mount_target_id)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -751,10 +888,23 @@ class GetExportSetsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExportSetsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -793,14 +943,37 @@ class GetExportsExportResult(dict):
         :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         :param str time_created: The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
-        pulumi.set(__self__, "export_options", export_options)
-        pulumi.set(__self__, "export_set_id", export_set_id)
-        pulumi.set(__self__, "file_system_id", file_system_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_idmap_groups_for_sys_auth", is_idmap_groups_for_sys_auth)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetExportsExportResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            export_options=export_options,
+            export_set_id=export_set_id,
+            file_system_id=file_system_id,
+            id=id,
+            is_idmap_groups_for_sys_auth=is_idmap_groups_for_sys_auth,
+            path=path,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             export_options: Sequence['outputs.GetExportsExportExportOptionResult'],
+             export_set_id: str,
+             file_system_id: str,
+             id: str,
+             is_idmap_groups_for_sys_auth: bool,
+             path: str,
+             state: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("export_options", export_options)
+        _setter("export_set_id", export_set_id)
+        _setter("file_system_id", file_system_id)
+        _setter("id", id)
+        _setter("is_idmap_groups_for_sys_auth", is_idmap_groups_for_sys_auth)
+        _setter("path", path)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="exportOptions")
@@ -888,14 +1061,37 @@ class GetExportsExportExportOptionResult(dict):
         :param bool require_privileged_source_port: If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
         :param str source: Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
         """
-        pulumi.set(__self__, "access", access)
-        pulumi.set(__self__, "allowed_auths", allowed_auths)
-        pulumi.set(__self__, "anonymous_gid", anonymous_gid)
-        pulumi.set(__self__, "anonymous_uid", anonymous_uid)
-        pulumi.set(__self__, "identity_squash", identity_squash)
-        pulumi.set(__self__, "is_anonymous_access_allowed", is_anonymous_access_allowed)
-        pulumi.set(__self__, "require_privileged_source_port", require_privileged_source_port)
-        pulumi.set(__self__, "source", source)
+        GetExportsExportExportOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access=access,
+            allowed_auths=allowed_auths,
+            anonymous_gid=anonymous_gid,
+            anonymous_uid=anonymous_uid,
+            identity_squash=identity_squash,
+            is_anonymous_access_allowed=is_anonymous_access_allowed,
+            require_privileged_source_port=require_privileged_source_port,
+            source=source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access: str,
+             allowed_auths: Sequence[str],
+             anonymous_gid: str,
+             anonymous_uid: str,
+             identity_squash: str,
+             is_anonymous_access_allowed: bool,
+             require_privileged_source_port: bool,
+             source: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("access", access)
+        _setter("allowed_auths", allowed_auths)
+        _setter("anonymous_gid", anonymous_gid)
+        _setter("anonymous_uid", anonymous_uid)
+        _setter("identity_squash", identity_squash)
+        _setter("is_anonymous_access_allowed", is_anonymous_access_allowed)
+        _setter("require_privileged_source_port", require_privileged_source_port)
+        _setter("source", source)
 
     @property
     @pulumi.getter
@@ -968,10 +1164,23 @@ class GetExportsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExportsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1030,24 +1239,67 @@ class GetFileSystemsFileSystemResult(dict):
         :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         :param str time_created: The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_clone_parent", is_clone_parent)
-        pulumi.set(__self__, "is_hydrated", is_hydrated)
-        pulumi.set(__self__, "is_targetable", is_targetable)
-        pulumi.set(__self__, "kms_key_id", kms_key_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "metered_bytes", metered_bytes)
-        pulumi.set(__self__, "replication_target_id", replication_target_id)
-        pulumi.set(__self__, "source_details", source_details)
-        pulumi.set(__self__, "source_snapshot_id", source_snapshot_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetFileSystemsFileSystemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            filesystem_snapshot_policy_id=filesystem_snapshot_policy_id,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_clone_parent=is_clone_parent,
+            is_hydrated=is_hydrated,
+            is_targetable=is_targetable,
+            kms_key_id=kms_key_id,
+            lifecycle_details=lifecycle_details,
+            metered_bytes=metered_bytes,
+            replication_target_id=replication_target_id,
+            source_details=source_details,
+            source_snapshot_id=source_snapshot_id,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             filesystem_snapshot_policy_id: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_clone_parent: bool,
+             is_hydrated: bool,
+             is_targetable: bool,
+             kms_key_id: str,
+             lifecycle_details: str,
+             metered_bytes: str,
+             replication_target_id: str,
+             source_details: Sequence['outputs.GetFileSystemsFileSystemSourceDetailResult'],
+             source_snapshot_id: str,
+             state: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_clone_parent", is_clone_parent)
+        _setter("is_hydrated", is_hydrated)
+        _setter("is_targetable", is_targetable)
+        _setter("kms_key_id", kms_key_id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("metered_bytes", metered_bytes)
+        _setter("replication_target_id", replication_target_id)
+        _setter("source_details", source_details)
+        _setter("source_snapshot_id", source_snapshot_id)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -1203,8 +1455,19 @@ class GetFileSystemsFileSystemSourceDetailResult(dict):
         :param str parent_file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         :param str source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
-        pulumi.set(__self__, "parent_file_system_id", parent_file_system_id)
-        pulumi.set(__self__, "source_snapshot_id", source_snapshot_id)
+        GetFileSystemsFileSystemSourceDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            parent_file_system_id=parent_file_system_id,
+            source_snapshot_id=source_snapshot_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             parent_file_system_id: str,
+             source_snapshot_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("parent_file_system_id", parent_file_system_id)
+        _setter("source_snapshot_id", source_snapshot_id)
 
     @property
     @pulumi.getter(name="parentFileSystemId")
@@ -1229,10 +1492,23 @@ class GetFileSystemsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetFileSystemsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1275,16 +1551,43 @@ class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyResult(dict):
         :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         :param str time_created: The date and time the file system snapshot policy was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "policy_prefix", policy_prefix)
-        pulumi.set(__self__, "schedules", schedules)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            policy_prefix=policy_prefix,
+            schedules=schedules,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             policy_prefix: str,
+             schedules: Sequence['outputs.GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleResult'],
+             state: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("policy_prefix", policy_prefix)
+        _setter("schedules", schedules)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -1390,15 +1693,40 @@ class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleResult(dict):
         :param str time_schedule_start: The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
         :param str time_zone: Time zone used for scheduling the snapshot.
         """
-        pulumi.set(__self__, "day_of_month", day_of_month)
-        pulumi.set(__self__, "day_of_week", day_of_week)
-        pulumi.set(__self__, "hour_of_day", hour_of_day)
-        pulumi.set(__self__, "month", month)
-        pulumi.set(__self__, "period", period)
-        pulumi.set(__self__, "retention_duration_in_seconds", retention_duration_in_seconds)
-        pulumi.set(__self__, "schedule_prefix", schedule_prefix)
-        pulumi.set(__self__, "time_schedule_start", time_schedule_start)
-        pulumi.set(__self__, "time_zone", time_zone)
+        GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            day_of_month=day_of_month,
+            day_of_week=day_of_week,
+            hour_of_day=hour_of_day,
+            month=month,
+            period=period,
+            retention_duration_in_seconds=retention_duration_in_seconds,
+            schedule_prefix=schedule_prefix,
+            time_schedule_start=time_schedule_start,
+            time_zone=time_zone,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             day_of_month: int,
+             day_of_week: str,
+             hour_of_day: int,
+             month: str,
+             period: str,
+             retention_duration_in_seconds: str,
+             schedule_prefix: str,
+             time_schedule_start: str,
+             time_zone: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("day_of_month", day_of_month)
+        _setter("day_of_week", day_of_week)
+        _setter("hour_of_day", hour_of_day)
+        _setter("month", month)
+        _setter("period", period)
+        _setter("retention_duration_in_seconds", retention_duration_in_seconds)
+        _setter("schedule_prefix", schedule_prefix)
+        _setter("time_schedule_start", time_schedule_start)
+        _setter("time_zone", time_zone)
 
     @property
     @pulumi.getter(name="dayOfMonth")
@@ -1479,10 +1807,23 @@ class GetFilesystemSnapshotPoliciesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetFilesystemSnapshotPoliciesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1523,15 +1864,40 @@ class GetFilesystemSnapshotPolicyScheduleResult(dict):
         :param str time_schedule_start: The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
         :param str time_zone: Time zone used for scheduling the snapshot.
         """
-        pulumi.set(__self__, "day_of_month", day_of_month)
-        pulumi.set(__self__, "day_of_week", day_of_week)
-        pulumi.set(__self__, "hour_of_day", hour_of_day)
-        pulumi.set(__self__, "month", month)
-        pulumi.set(__self__, "period", period)
-        pulumi.set(__self__, "retention_duration_in_seconds", retention_duration_in_seconds)
-        pulumi.set(__self__, "schedule_prefix", schedule_prefix)
-        pulumi.set(__self__, "time_schedule_start", time_schedule_start)
-        pulumi.set(__self__, "time_zone", time_zone)
+        GetFilesystemSnapshotPolicyScheduleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            day_of_month=day_of_month,
+            day_of_week=day_of_week,
+            hour_of_day=hour_of_day,
+            month=month,
+            period=period,
+            retention_duration_in_seconds=retention_duration_in_seconds,
+            schedule_prefix=schedule_prefix,
+            time_schedule_start=time_schedule_start,
+            time_zone=time_zone,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             day_of_month: int,
+             day_of_week: str,
+             hour_of_day: int,
+             month: str,
+             period: str,
+             retention_duration_in_seconds: str,
+             schedule_prefix: str,
+             time_schedule_start: str,
+             time_zone: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("day_of_month", day_of_month)
+        _setter("day_of_week", day_of_week)
+        _setter("hour_of_day", hour_of_day)
+        _setter("month", month)
+        _setter("period", period)
+        _setter("retention_duration_in_seconds", retention_duration_in_seconds)
+        _setter("schedule_prefix", schedule_prefix)
+        _setter("time_schedule_start", time_schedule_start)
+        _setter("time_zone", time_zone)
 
     @property
     @pulumi.getter(name="dayOfMonth")
@@ -1612,10 +1978,23 @@ class GetMountTargetsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMountTargetsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1672,24 +2051,67 @@ class GetMountTargetsMountTargetResult(dict):
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the mount target is in.
         :param str time_created: The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "export_set_id", export_set_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "hostname_label", hostname_label)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "idmap_type", idmap_type)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "kerberos", kerberos)
-        pulumi.set(__self__, "ldap_idmaps", ldap_idmaps)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "private_ip_ids", private_ip_ids)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "time_created", time_created)
+        GetMountTargetsMountTargetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            export_set_id=export_set_id,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            id=id,
+            idmap_type=idmap_type,
+            ip_address=ip_address,
+            kerberos=kerberos,
+            ldap_idmaps=ldap_idmaps,
+            lifecycle_details=lifecycle_details,
+            nsg_ids=nsg_ids,
+            private_ip_ids=private_ip_ids,
+            state=state,
+            subnet_id=subnet_id,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             export_set_id: str,
+             freeform_tags: Mapping[str, Any],
+             hostname_label: str,
+             id: str,
+             idmap_type: str,
+             ip_address: str,
+             kerberos: Sequence['outputs.GetMountTargetsMountTargetKerberoResult'],
+             ldap_idmaps: Sequence['outputs.GetMountTargetsMountTargetLdapIdmapResult'],
+             lifecycle_details: str,
+             nsg_ids: Sequence[str],
+             private_ip_ids: Sequence[str],
+             state: str,
+             subnet_id: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("export_set_id", export_set_id)
+        _setter("freeform_tags", freeform_tags)
+        _setter("hostname_label", hostname_label)
+        _setter("id", id)
+        _setter("idmap_type", idmap_type)
+        _setter("ip_address", ip_address)
+        _setter("kerberos", kerberos)
+        _setter("ldap_idmaps", ldap_idmaps)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("nsg_ids", nsg_ids)
+        _setter("private_ip_ids", private_ip_ids)
+        _setter("state", state)
+        _setter("subnet_id", subnet_id)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -1845,11 +2267,28 @@ class GetMountTargetsMountTargetKerberoResult(dict):
         :param str kerberos_realm: The Kerberos realm that the mount target will join.
         :param str key_tab_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab secret in the Vault.
         """
-        pulumi.set(__self__, "backup_key_tab_secret_version", backup_key_tab_secret_version)
-        pulumi.set(__self__, "current_key_tab_secret_version", current_key_tab_secret_version)
-        pulumi.set(__self__, "is_kerberos_enabled", is_kerberos_enabled)
-        pulumi.set(__self__, "kerberos_realm", kerberos_realm)
-        pulumi.set(__self__, "key_tab_secret_id", key_tab_secret_id)
+        GetMountTargetsMountTargetKerberoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup_key_tab_secret_version=backup_key_tab_secret_version,
+            current_key_tab_secret_version=current_key_tab_secret_version,
+            is_kerberos_enabled=is_kerberos_enabled,
+            kerberos_realm=kerberos_realm,
+            key_tab_secret_id=key_tab_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup_key_tab_secret_version: int,
+             current_key_tab_secret_version: int,
+             is_kerberos_enabled: bool,
+             kerberos_realm: str,
+             key_tab_secret_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("backup_key_tab_secret_version", backup_key_tab_secret_version)
+        _setter("current_key_tab_secret_version", current_key_tab_secret_version)
+        _setter("is_kerberos_enabled", is_kerberos_enabled)
+        _setter("kerberos_realm", kerberos_realm)
+        _setter("key_tab_secret_id", key_tab_secret_id)
 
     @property
     @pulumi.getter(name="backupKeyTabSecretVersion")
@@ -1913,14 +2352,37 @@ class GetMountTargetsMountTargetLdapIdmapResult(dict):
         :param str schema_type: Schema type of the LDAP account.
         :param str user_search_base: All LDAP searches are recursive starting at this user.  Example: `CN=User,DC=domain,DC=com`
         """
-        pulumi.set(__self__, "cache_lifetime_seconds", cache_lifetime_seconds)
-        pulumi.set(__self__, "cache_refresh_interval_seconds", cache_refresh_interval_seconds)
-        pulumi.set(__self__, "group_search_base", group_search_base)
-        pulumi.set(__self__, "negative_cache_lifetime_seconds", negative_cache_lifetime_seconds)
-        pulumi.set(__self__, "outbound_connector1id", outbound_connector1id)
-        pulumi.set(__self__, "outbound_connector2id", outbound_connector2id)
-        pulumi.set(__self__, "schema_type", schema_type)
-        pulumi.set(__self__, "user_search_base", user_search_base)
+        GetMountTargetsMountTargetLdapIdmapResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cache_lifetime_seconds=cache_lifetime_seconds,
+            cache_refresh_interval_seconds=cache_refresh_interval_seconds,
+            group_search_base=group_search_base,
+            negative_cache_lifetime_seconds=negative_cache_lifetime_seconds,
+            outbound_connector1id=outbound_connector1id,
+            outbound_connector2id=outbound_connector2id,
+            schema_type=schema_type,
+            user_search_base=user_search_base,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cache_lifetime_seconds: int,
+             cache_refresh_interval_seconds: int,
+             group_search_base: str,
+             negative_cache_lifetime_seconds: int,
+             outbound_connector1id: str,
+             outbound_connector2id: str,
+             schema_type: str,
+             user_search_base: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cache_lifetime_seconds", cache_lifetime_seconds)
+        _setter("cache_refresh_interval_seconds", cache_refresh_interval_seconds)
+        _setter("group_search_base", group_search_base)
+        _setter("negative_cache_lifetime_seconds", negative_cache_lifetime_seconds)
+        _setter("outbound_connector1id", outbound_connector1id)
+        _setter("outbound_connector2id", outbound_connector2id)
+        _setter("schema_type", schema_type)
+        _setter("user_search_base", user_search_base)
 
     @property
     @pulumi.getter(name="cacheLifetimeSeconds")
@@ -1996,8 +2458,19 @@ class GetOutboundConnectorEndpointResult(dict):
         :param str hostname: Name of the DNS server.
         :param str port: Port of the DNS server.
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "port", port)
+        GetOutboundConnectorEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: str,
+             port: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hostname", hostname)
+        _setter("port", port)
 
     @property
     @pulumi.getter
@@ -2022,10 +2495,23 @@ class GetOutboundConnectorsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOutboundConnectorsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2074,19 +2560,52 @@ class GetOutboundConnectorsOutboundConnectorResult(dict):
         :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         :param str time_created: The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "bind_distinguished_name", bind_distinguished_name)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connector_type", connector_type)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "endpoints", endpoints)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
-        pulumi.set(__self__, "password_secret_version", password_secret_version)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetOutboundConnectorsOutboundConnectorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            bind_distinguished_name=bind_distinguished_name,
+            compartment_id=compartment_id,
+            connector_type=connector_type,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            endpoints=endpoints,
+            freeform_tags=freeform_tags,
+            id=id,
+            password_secret_id=password_secret_id,
+            password_secret_version=password_secret_version,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: str,
+             bind_distinguished_name: str,
+             compartment_id: str,
+             connector_type: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             endpoints: Sequence['outputs.GetOutboundConnectorsOutboundConnectorEndpointResult'],
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             password_secret_id: str,
+             password_secret_version: int,
+             state: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("bind_distinguished_name", bind_distinguished_name)
+        _setter("compartment_id", compartment_id)
+        _setter("connector_type", connector_type)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("endpoints", endpoints)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("password_secret_id", password_secret_id)
+        _setter("password_secret_version", password_secret_version)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -2202,8 +2721,19 @@ class GetOutboundConnectorsOutboundConnectorEndpointResult(dict):
         :param str hostname: Name of the DNS server.
         :param str port: Port of the DNS server.
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "port", port)
+        GetOutboundConnectorsOutboundConnectorEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: str,
+             port: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hostname", hostname)
+        _setter("port", port)
 
     @property
     @pulumi.getter
@@ -2228,10 +2758,23 @@ class GetReplicationTargetsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetReplicationTargetsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2286,22 +2829,61 @@ class GetReplicationTargetsReplicationTargetResult(dict):
         :param str target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.
         :param str time_created: The date and time the replication target was created in target region. in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-01-04T20:01:29.100Z`
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "delta_progress", delta_progress)
-        pulumi.set(__self__, "delta_status", delta_status)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "last_snapshot_id", last_snapshot_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "recovery_point_time", recovery_point_time)
-        pulumi.set(__self__, "replication_id", replication_id)
-        pulumi.set(__self__, "source_id", source_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "time_created", time_created)
+        GetReplicationTargetsReplicationTargetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            delta_progress=delta_progress,
+            delta_status=delta_status,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            last_snapshot_id=last_snapshot_id,
+            lifecycle_details=lifecycle_details,
+            recovery_point_time=recovery_point_time,
+            replication_id=replication_id,
+            source_id=source_id,
+            state=state,
+            target_id=target_id,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             delta_progress: str,
+             delta_status: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             last_snapshot_id: str,
+             lifecycle_details: str,
+             recovery_point_time: str,
+             replication_id: str,
+             source_id: str,
+             state: str,
+             target_id: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("delta_progress", delta_progress)
+        _setter("delta_status", delta_status)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("last_snapshot_id", last_snapshot_id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("recovery_point_time", recovery_point_time)
+        _setter("replication_id", replication_id)
+        _setter("source_id", source_id)
+        _setter("state", state)
+        _setter("target_id", target_id)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -2438,10 +3020,23 @@ class GetReplicationsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetReplicationsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2498,23 +3093,64 @@ class GetReplicationsReplicationResult(dict):
         :param str target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
         :param str time_created: The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "delta_progress", delta_progress)
-        pulumi.set(__self__, "delta_status", delta_status)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "last_snapshot_id", last_snapshot_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "recovery_point_time", recovery_point_time)
-        pulumi.set(__self__, "replication_interval", replication_interval)
-        pulumi.set(__self__, "replication_target_id", replication_target_id)
-        pulumi.set(__self__, "source_id", source_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "time_created", time_created)
+        GetReplicationsReplicationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            delta_progress=delta_progress,
+            delta_status=delta_status,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            last_snapshot_id=last_snapshot_id,
+            lifecycle_details=lifecycle_details,
+            recovery_point_time=recovery_point_time,
+            replication_interval=replication_interval,
+            replication_target_id=replication_target_id,
+            source_id=source_id,
+            state=state,
+            target_id=target_id,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             delta_progress: str,
+             delta_status: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             last_snapshot_id: str,
+             lifecycle_details: str,
+             recovery_point_time: str,
+             replication_interval: str,
+             replication_target_id: str,
+             source_id: str,
+             state: str,
+             target_id: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("delta_progress", delta_progress)
+        _setter("delta_status", delta_status)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("last_snapshot_id", last_snapshot_id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("recovery_point_time", recovery_point_time)
+        _setter("replication_interval", replication_interval)
+        _setter("replication_target_id", replication_target_id)
+        _setter("source_id", source_id)
+        _setter("state", state)
+        _setter("target_id", target_id)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -2662,10 +3298,23 @@ class GetSnapshotsFilterResult(dict):
         """
         :param str name: Name of the snapshot. This value is immutable.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSnapshotsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2722,20 +3371,55 @@ class GetSnapshotsSnapshotResult(dict):
         :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         :param str time_created: The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "expiration_time", expiration_time)
-        pulumi.set(__self__, "file_system_id", file_system_id)
-        pulumi.set(__self__, "filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_clone_source", is_clone_source)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "provenance_id", provenance_id)
-        pulumi.set(__self__, "snapshot_time", snapshot_time)
-        pulumi.set(__self__, "snapshot_type", snapshot_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetSnapshotsSnapshotResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            expiration_time=expiration_time,
+            file_system_id=file_system_id,
+            filesystem_snapshot_policy_id=filesystem_snapshot_policy_id,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_clone_source=is_clone_source,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            provenance_id=provenance_id,
+            snapshot_time=snapshot_time,
+            snapshot_type=snapshot_type,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Mapping[str, Any],
+             expiration_time: str,
+             file_system_id: str,
+             filesystem_snapshot_policy_id: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_clone_source: bool,
+             lifecycle_details: str,
+             name: str,
+             provenance_id: str,
+             snapshot_time: str,
+             snapshot_type: str,
+             state: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("defined_tags", defined_tags)
+        _setter("expiration_time", expiration_time)
+        _setter("file_system_id", file_system_id)
+        _setter("filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_clone_source", is_clone_source)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("name", name)
+        _setter("provenance_id", provenance_id)
+        _setter("snapshot_time", snapshot_time)
+        _setter("snapshot_type", snapshot_type)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="definedTags")

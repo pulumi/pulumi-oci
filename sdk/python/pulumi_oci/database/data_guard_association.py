@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -118,66 +118,139 @@ class DataGuardAssociationArgs:
                These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
         :param pulumi.Input[str] time_zone: The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
-        pulumi.set(__self__, "creation_type", creation_type)
-        pulumi.set(__self__, "database_admin_password", database_admin_password)
-        pulumi.set(__self__, "database_id", database_id)
-        pulumi.set(__self__, "delete_standby_db_home_on_delete", delete_standby_db_home_on_delete)
-        pulumi.set(__self__, "protection_mode", protection_mode)
-        pulumi.set(__self__, "transport_type", transport_type)
+        DataGuardAssociationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            creation_type=creation_type,
+            database_admin_password=database_admin_password,
+            database_id=database_id,
+            delete_standby_db_home_on_delete=delete_standby_db_home_on_delete,
+            protection_mode=protection_mode,
+            transport_type=transport_type,
+            availability_domain=availability_domain,
+            backup_network_nsg_ids=backup_network_nsg_ids,
+            cpu_core_count=cpu_core_count,
+            create_async=create_async,
+            data_collection_options=data_collection_options,
+            database_defined_tags=database_defined_tags,
+            database_freeform_tags=database_freeform_tags,
+            database_software_image_id=database_software_image_id,
+            db_system_defined_tags=db_system_defined_tags,
+            db_system_freeform_tags=db_system_freeform_tags,
+            display_name=display_name,
+            fault_domains=fault_domains,
+            hostname=hostname,
+            is_active_data_guard_enabled=is_active_data_guard_enabled,
+            license_model=license_model,
+            node_count=node_count,
+            nsg_ids=nsg_ids,
+            peer_db_home_id=peer_db_home_id,
+            peer_db_system_id=peer_db_system_id,
+            peer_db_unique_name=peer_db_unique_name,
+            peer_sid_prefix=peer_sid_prefix,
+            peer_vm_cluster_id=peer_vm_cluster_id,
+            private_ip=private_ip,
+            shape=shape,
+            storage_volume_performance_mode=storage_volume_performance_mode,
+            subnet_id=subnet_id,
+            time_zone=time_zone,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             creation_type: pulumi.Input[str],
+             database_admin_password: pulumi.Input[str],
+             database_id: pulumi.Input[str],
+             delete_standby_db_home_on_delete: pulumi.Input[str],
+             protection_mode: pulumi.Input[str],
+             transport_type: pulumi.Input[str],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             cpu_core_count: Optional[pulumi.Input[int]] = None,
+             create_async: Optional[pulumi.Input[bool]] = None,
+             data_collection_options: Optional[pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs']] = None,
+             database_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             database_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             database_software_image_id: Optional[pulumi.Input[str]] = None,
+             db_system_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             hostname: Optional[pulumi.Input[str]] = None,
+             is_active_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
+             license_model: Optional[pulumi.Input[str]] = None,
+             node_count: Optional[pulumi.Input[int]] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             peer_db_home_id: Optional[pulumi.Input[str]] = None,
+             peer_db_system_id: Optional[pulumi.Input[str]] = None,
+             peer_db_unique_name: Optional[pulumi.Input[str]] = None,
+             peer_sid_prefix: Optional[pulumi.Input[str]] = None,
+             peer_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+             private_ip: Optional[pulumi.Input[str]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             storage_volume_performance_mode: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             time_zone: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("creation_type", creation_type)
+        _setter("database_admin_password", database_admin_password)
+        _setter("database_id", database_id)
+        _setter("delete_standby_db_home_on_delete", delete_standby_db_home_on_delete)
+        _setter("protection_mode", protection_mode)
+        _setter("transport_type", transport_type)
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if backup_network_nsg_ids is not None:
-            pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+            _setter("backup_network_nsg_ids", backup_network_nsg_ids)
         if cpu_core_count is not None:
-            pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+            _setter("cpu_core_count", cpu_core_count)
         if create_async is not None:
-            pulumi.set(__self__, "create_async", create_async)
+            _setter("create_async", create_async)
         if data_collection_options is not None:
-            pulumi.set(__self__, "data_collection_options", data_collection_options)
+            _setter("data_collection_options", data_collection_options)
         if database_defined_tags is not None:
-            pulumi.set(__self__, "database_defined_tags", database_defined_tags)
+            _setter("database_defined_tags", database_defined_tags)
         if database_freeform_tags is not None:
-            pulumi.set(__self__, "database_freeform_tags", database_freeform_tags)
+            _setter("database_freeform_tags", database_freeform_tags)
         if database_software_image_id is not None:
-            pulumi.set(__self__, "database_software_image_id", database_software_image_id)
+            _setter("database_software_image_id", database_software_image_id)
         if db_system_defined_tags is not None:
-            pulumi.set(__self__, "db_system_defined_tags", db_system_defined_tags)
+            _setter("db_system_defined_tags", db_system_defined_tags)
         if db_system_freeform_tags is not None:
-            pulumi.set(__self__, "db_system_freeform_tags", db_system_freeform_tags)
+            _setter("db_system_freeform_tags", db_system_freeform_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if fault_domains is not None:
-            pulumi.set(__self__, "fault_domains", fault_domains)
+            _setter("fault_domains", fault_domains)
         if hostname is not None:
-            pulumi.set(__self__, "hostname", hostname)
+            _setter("hostname", hostname)
         if is_active_data_guard_enabled is not None:
-            pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+            _setter("is_active_data_guard_enabled", is_active_data_guard_enabled)
         if license_model is not None:
-            pulumi.set(__self__, "license_model", license_model)
+            _setter("license_model", license_model)
         if node_count is not None:
-            pulumi.set(__self__, "node_count", node_count)
+            _setter("node_count", node_count)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if peer_db_home_id is not None:
-            pulumi.set(__self__, "peer_db_home_id", peer_db_home_id)
+            _setter("peer_db_home_id", peer_db_home_id)
         if peer_db_system_id is not None:
-            pulumi.set(__self__, "peer_db_system_id", peer_db_system_id)
+            _setter("peer_db_system_id", peer_db_system_id)
         if peer_db_unique_name is not None:
-            pulumi.set(__self__, "peer_db_unique_name", peer_db_unique_name)
+            _setter("peer_db_unique_name", peer_db_unique_name)
         if peer_sid_prefix is not None:
-            pulumi.set(__self__, "peer_sid_prefix", peer_sid_prefix)
+            _setter("peer_sid_prefix", peer_sid_prefix)
         if peer_vm_cluster_id is not None:
-            pulumi.set(__self__, "peer_vm_cluster_id", peer_vm_cluster_id)
+            _setter("peer_vm_cluster_id", peer_vm_cluster_id)
         if private_ip is not None:
-            pulumi.set(__self__, "private_ip", private_ip)
+            _setter("private_ip", private_ip)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if storage_volume_performance_mode is not None:
-            pulumi.set(__self__, "storage_volume_performance_mode", storage_volume_performance_mode)
+            _setter("storage_volume_performance_mode", storage_volume_performance_mode)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if time_zone is not None:
-            pulumi.set(__self__, "time_zone", time_zone)
+            _setter("time_zone", time_zone)
 
     @property
     @pulumi.getter(name="creationType")
@@ -728,90 +801,181 @@ class _DataGuardAssociationState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _DataGuardAssociationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            apply_lag=apply_lag,
+            apply_rate=apply_rate,
+            availability_domain=availability_domain,
+            backup_network_nsg_ids=backup_network_nsg_ids,
+            cpu_core_count=cpu_core_count,
+            create_async=create_async,
+            creation_type=creation_type,
+            data_collection_options=data_collection_options,
+            database_admin_password=database_admin_password,
+            database_defined_tags=database_defined_tags,
+            database_freeform_tags=database_freeform_tags,
+            database_id=database_id,
+            database_software_image_id=database_software_image_id,
+            db_system_defined_tags=db_system_defined_tags,
+            db_system_freeform_tags=db_system_freeform_tags,
+            delete_standby_db_home_on_delete=delete_standby_db_home_on_delete,
+            display_name=display_name,
+            fault_domains=fault_domains,
+            hostname=hostname,
+            is_active_data_guard_enabled=is_active_data_guard_enabled,
+            license_model=license_model,
+            lifecycle_details=lifecycle_details,
+            node_count=node_count,
+            nsg_ids=nsg_ids,
+            peer_data_guard_association_id=peer_data_guard_association_id,
+            peer_database_id=peer_database_id,
+            peer_db_home_id=peer_db_home_id,
+            peer_db_system_id=peer_db_system_id,
+            peer_db_unique_name=peer_db_unique_name,
+            peer_role=peer_role,
+            peer_sid_prefix=peer_sid_prefix,
+            peer_vm_cluster_id=peer_vm_cluster_id,
+            private_ip=private_ip,
+            protection_mode=protection_mode,
+            role=role,
+            shape=shape,
+            state=state,
+            storage_volume_performance_mode=storage_volume_performance_mode,
+            subnet_id=subnet_id,
+            time_created=time_created,
+            time_zone=time_zone,
+            transport_type=transport_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             apply_lag: Optional[pulumi.Input[str]] = None,
+             apply_rate: Optional[pulumi.Input[str]] = None,
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             cpu_core_count: Optional[pulumi.Input[int]] = None,
+             create_async: Optional[pulumi.Input[bool]] = None,
+             creation_type: Optional[pulumi.Input[str]] = None,
+             data_collection_options: Optional[pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs']] = None,
+             database_admin_password: Optional[pulumi.Input[str]] = None,
+             database_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             database_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             database_id: Optional[pulumi.Input[str]] = None,
+             database_software_image_id: Optional[pulumi.Input[str]] = None,
+             db_system_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             delete_standby_db_home_on_delete: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             hostname: Optional[pulumi.Input[str]] = None,
+             is_active_data_guard_enabled: Optional[pulumi.Input[bool]] = None,
+             license_model: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             node_count: Optional[pulumi.Input[int]] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             peer_data_guard_association_id: Optional[pulumi.Input[str]] = None,
+             peer_database_id: Optional[pulumi.Input[str]] = None,
+             peer_db_home_id: Optional[pulumi.Input[str]] = None,
+             peer_db_system_id: Optional[pulumi.Input[str]] = None,
+             peer_db_unique_name: Optional[pulumi.Input[str]] = None,
+             peer_role: Optional[pulumi.Input[str]] = None,
+             peer_sid_prefix: Optional[pulumi.Input[str]] = None,
+             peer_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+             private_ip: Optional[pulumi.Input[str]] = None,
+             protection_mode: Optional[pulumi.Input[str]] = None,
+             role: Optional[pulumi.Input[str]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             storage_volume_performance_mode: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_zone: Optional[pulumi.Input[str]] = None,
+             transport_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if apply_lag is not None:
-            pulumi.set(__self__, "apply_lag", apply_lag)
+            _setter("apply_lag", apply_lag)
         if apply_rate is not None:
-            pulumi.set(__self__, "apply_rate", apply_rate)
+            _setter("apply_rate", apply_rate)
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if backup_network_nsg_ids is not None:
-            pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+            _setter("backup_network_nsg_ids", backup_network_nsg_ids)
         if cpu_core_count is not None:
-            pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+            _setter("cpu_core_count", cpu_core_count)
         if create_async is not None:
-            pulumi.set(__self__, "create_async", create_async)
+            _setter("create_async", create_async)
         if creation_type is not None:
-            pulumi.set(__self__, "creation_type", creation_type)
+            _setter("creation_type", creation_type)
         if data_collection_options is not None:
-            pulumi.set(__self__, "data_collection_options", data_collection_options)
+            _setter("data_collection_options", data_collection_options)
         if database_admin_password is not None:
-            pulumi.set(__self__, "database_admin_password", database_admin_password)
+            _setter("database_admin_password", database_admin_password)
         if database_defined_tags is not None:
-            pulumi.set(__self__, "database_defined_tags", database_defined_tags)
+            _setter("database_defined_tags", database_defined_tags)
         if database_freeform_tags is not None:
-            pulumi.set(__self__, "database_freeform_tags", database_freeform_tags)
+            _setter("database_freeform_tags", database_freeform_tags)
         if database_id is not None:
-            pulumi.set(__self__, "database_id", database_id)
+            _setter("database_id", database_id)
         if database_software_image_id is not None:
-            pulumi.set(__self__, "database_software_image_id", database_software_image_id)
+            _setter("database_software_image_id", database_software_image_id)
         if db_system_defined_tags is not None:
-            pulumi.set(__self__, "db_system_defined_tags", db_system_defined_tags)
+            _setter("db_system_defined_tags", db_system_defined_tags)
         if db_system_freeform_tags is not None:
-            pulumi.set(__self__, "db_system_freeform_tags", db_system_freeform_tags)
+            _setter("db_system_freeform_tags", db_system_freeform_tags)
         if delete_standby_db_home_on_delete is not None:
-            pulumi.set(__self__, "delete_standby_db_home_on_delete", delete_standby_db_home_on_delete)
+            _setter("delete_standby_db_home_on_delete", delete_standby_db_home_on_delete)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if fault_domains is not None:
-            pulumi.set(__self__, "fault_domains", fault_domains)
+            _setter("fault_domains", fault_domains)
         if hostname is not None:
-            pulumi.set(__self__, "hostname", hostname)
+            _setter("hostname", hostname)
         if is_active_data_guard_enabled is not None:
-            pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+            _setter("is_active_data_guard_enabled", is_active_data_guard_enabled)
         if license_model is not None:
-            pulumi.set(__self__, "license_model", license_model)
+            _setter("license_model", license_model)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if node_count is not None:
-            pulumi.set(__self__, "node_count", node_count)
+            _setter("node_count", node_count)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if peer_data_guard_association_id is not None:
-            pulumi.set(__self__, "peer_data_guard_association_id", peer_data_guard_association_id)
+            _setter("peer_data_guard_association_id", peer_data_guard_association_id)
         if peer_database_id is not None:
-            pulumi.set(__self__, "peer_database_id", peer_database_id)
+            _setter("peer_database_id", peer_database_id)
         if peer_db_home_id is not None:
-            pulumi.set(__self__, "peer_db_home_id", peer_db_home_id)
+            _setter("peer_db_home_id", peer_db_home_id)
         if peer_db_system_id is not None:
-            pulumi.set(__self__, "peer_db_system_id", peer_db_system_id)
+            _setter("peer_db_system_id", peer_db_system_id)
         if peer_db_unique_name is not None:
-            pulumi.set(__self__, "peer_db_unique_name", peer_db_unique_name)
+            _setter("peer_db_unique_name", peer_db_unique_name)
         if peer_role is not None:
-            pulumi.set(__self__, "peer_role", peer_role)
+            _setter("peer_role", peer_role)
         if peer_sid_prefix is not None:
-            pulumi.set(__self__, "peer_sid_prefix", peer_sid_prefix)
+            _setter("peer_sid_prefix", peer_sid_prefix)
         if peer_vm_cluster_id is not None:
-            pulumi.set(__self__, "peer_vm_cluster_id", peer_vm_cluster_id)
+            _setter("peer_vm_cluster_id", peer_vm_cluster_id)
         if private_ip is not None:
-            pulumi.set(__self__, "private_ip", private_ip)
+            _setter("private_ip", private_ip)
         if protection_mode is not None:
-            pulumi.set(__self__, "protection_mode", protection_mode)
+            _setter("protection_mode", protection_mode)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if storage_volume_performance_mode is not None:
-            pulumi.set(__self__, "storage_volume_performance_mode", storage_volume_performance_mode)
+            _setter("storage_volume_performance_mode", storage_volume_performance_mode)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_zone is not None:
-            pulumi.set(__self__, "time_zone", time_zone)
+            _setter("time_zone", time_zone)
         if transport_type is not None:
-            pulumi.set(__self__, "transport_type", transport_type)
+            _setter("transport_type", transport_type)
 
     @property
     @pulumi.getter(name="applyLag")
@@ -1593,6 +1757,10 @@ class DataGuardAssociation(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DataGuardAssociationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1647,6 +1815,11 @@ class DataGuardAssociation(pulumi.CustomResource):
             if creation_type is None and not opts.urn:
                 raise TypeError("Missing required property 'creation_type'")
             __props__.__dict__["creation_type"] = creation_type
+            if data_collection_options is not None and not isinstance(data_collection_options, DataGuardAssociationDataCollectionOptionsArgs):
+                data_collection_options = data_collection_options or {}
+                def _setter(key, value):
+                    data_collection_options[key] = value
+                DataGuardAssociationDataCollectionOptionsArgs._configure(_setter, **data_collection_options)
             __props__.__dict__["data_collection_options"] = data_collection_options
             if database_admin_password is None and not opts.urn:
                 raise TypeError("Missing required property 'database_admin_password'")

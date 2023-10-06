@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -65,10 +65,23 @@ class SddcDatastore(dict):
         :param str datastore_type: Type of the datastore.
         :param float capacity: Size of the Block Storage Volume in GB.
         """
-        pulumi.set(__self__, "block_volume_ids", block_volume_ids)
-        pulumi.set(__self__, "datastore_type", datastore_type)
+        SddcDatastore._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_volume_ids=block_volume_ids,
+            datastore_type=datastore_type,
+            capacity=capacity,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_volume_ids: Sequence[str],
+             datastore_type: str,
+             capacity: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("block_volume_ids", block_volume_ids)
+        _setter("datastore_type", datastore_type)
         if capacity is not None:
-            pulumi.set(__self__, "capacity", capacity)
+            _setter("capacity", capacity)
 
     @property
     @pulumi.getter(name="blockVolumeIds")
@@ -125,12 +138,25 @@ class SddcHcxOnPremLicense(dict):
         :param str status: status of HCX on-premise license.
         :param str system_name: Name of the system that consumed the HCX on-premise license
         """
+        SddcHcxOnPremLicense._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            activation_key=activation_key,
+            status=status,
+            system_name=system_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             activation_key: Optional[str] = None,
+             status: Optional[str] = None,
+             system_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if activation_key is not None:
-            pulumi.set(__self__, "activation_key", activation_key)
+            _setter("activation_key", activation_key)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if system_name is not None:
-            pulumi.set(__self__, "system_name", system_name)
+            _setter("system_name", system_name)
 
     @property
     @pulumi.getter(name="activationKey")
@@ -185,10 +211,21 @@ class SddcUpgradeLicense(dict):
         :param str license_key: vSphere license key value.
         :param str license_type: vSphere license type.
         """
+        SddcUpgradeLicense._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            license_key=license_key,
+            license_type=license_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             license_key: Optional[str] = None,
+             license_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if license_key is not None:
-            pulumi.set(__self__, "license_key", license_key)
+            _setter("license_key", license_key)
         if license_type is not None:
-            pulumi.set(__self__, "license_type", license_type)
+            _setter("license_type", license_type)
 
     @property
     @pulumi.getter(name="licenseKey")
@@ -235,10 +272,21 @@ class SddcVsphereUpgradeObject(dict):
         :param str download_link: Binary object download link.
         :param str link_description: Binary object description.
         """
+        SddcVsphereUpgradeObject._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            download_link=download_link,
+            link_description=link_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             download_link: Optional[str] = None,
+             link_description: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if download_link is not None:
-            pulumi.set(__self__, "download_link", download_link)
+            _setter("download_link", download_link)
         if link_description is not None:
-            pulumi.set(__self__, "link_description", link_description)
+            _setter("link_description", link_description)
 
     @property
     @pulumi.getter(name="downloadLink")
@@ -316,33 +364,94 @@ class GetExsiHostsEsxiHostCollectionResult(dict):
         :param str upgraded_replacement_esxi_host_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is newly created to upgrade the original host.
         :param str vmware_software_version: The version of VMware software that Oracle Cloud VMware Solution installed on the ESXi hosts.
         """
-        pulumi.set(__self__, "billing_contract_end_date", billing_contract_end_date)
-        pulumi.set(__self__, "billing_donor_host_id", billing_donor_host_id)
-        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
-        pulumi.set(__self__, "compute_instance_id", compute_instance_id)
-        pulumi.set(__self__, "current_sku", current_sku)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "failed_esxi_host_id", failed_esxi_host_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "grace_period_end_date", grace_period_end_date)
-        pulumi.set(__self__, "host_ocpu_count", host_ocpu_count)
-        pulumi.set(__self__, "host_shape_name", host_shape_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_billing_continuation_in_progress", is_billing_continuation_in_progress)
-        pulumi.set(__self__, "is_billing_swapping_in_progress", is_billing_swapping_in_progress)
-        pulumi.set(__self__, "next_sku", next_sku)
-        pulumi.set(__self__, "non_upgraded_esxi_host_id", non_upgraded_esxi_host_id)
-        pulumi.set(__self__, "replacement_esxi_host_id", replacement_esxi_host_id)
-        pulumi.set(__self__, "sddc_id", sddc_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "swap_billing_host_id", swap_billing_host_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "upgraded_replacement_esxi_host_id", upgraded_replacement_esxi_host_id)
-        pulumi.set(__self__, "vmware_software_version", vmware_software_version)
+        GetExsiHostsEsxiHostCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            billing_contract_end_date=billing_contract_end_date,
+            billing_donor_host_id=billing_donor_host_id,
+            capacity_reservation_id=capacity_reservation_id,
+            compartment_id=compartment_id,
+            compute_availability_domain=compute_availability_domain,
+            compute_instance_id=compute_instance_id,
+            current_sku=current_sku,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            failed_esxi_host_id=failed_esxi_host_id,
+            freeform_tags=freeform_tags,
+            grace_period_end_date=grace_period_end_date,
+            host_ocpu_count=host_ocpu_count,
+            host_shape_name=host_shape_name,
+            id=id,
+            is_billing_continuation_in_progress=is_billing_continuation_in_progress,
+            is_billing_swapping_in_progress=is_billing_swapping_in_progress,
+            next_sku=next_sku,
+            non_upgraded_esxi_host_id=non_upgraded_esxi_host_id,
+            replacement_esxi_host_id=replacement_esxi_host_id,
+            sddc_id=sddc_id,
+            state=state,
+            swap_billing_host_id=swap_billing_host_id,
+            time_created=time_created,
+            time_updated=time_updated,
+            upgraded_replacement_esxi_host_id=upgraded_replacement_esxi_host_id,
+            vmware_software_version=vmware_software_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             billing_contract_end_date: str,
+             billing_donor_host_id: str,
+             capacity_reservation_id: str,
+             compartment_id: str,
+             compute_availability_domain: str,
+             compute_instance_id: str,
+             current_sku: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             failed_esxi_host_id: str,
+             freeform_tags: Mapping[str, Any],
+             grace_period_end_date: str,
+             host_ocpu_count: float,
+             host_shape_name: str,
+             id: str,
+             is_billing_continuation_in_progress: bool,
+             is_billing_swapping_in_progress: bool,
+             next_sku: str,
+             non_upgraded_esxi_host_id: str,
+             replacement_esxi_host_id: str,
+             sddc_id: str,
+             state: str,
+             swap_billing_host_id: str,
+             time_created: str,
+             time_updated: str,
+             upgraded_replacement_esxi_host_id: str,
+             vmware_software_version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("billing_contract_end_date", billing_contract_end_date)
+        _setter("billing_donor_host_id", billing_donor_host_id)
+        _setter("capacity_reservation_id", capacity_reservation_id)
+        _setter("compartment_id", compartment_id)
+        _setter("compute_availability_domain", compute_availability_domain)
+        _setter("compute_instance_id", compute_instance_id)
+        _setter("current_sku", current_sku)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("failed_esxi_host_id", failed_esxi_host_id)
+        _setter("freeform_tags", freeform_tags)
+        _setter("grace_period_end_date", grace_period_end_date)
+        _setter("host_ocpu_count", host_ocpu_count)
+        _setter("host_shape_name", host_shape_name)
+        _setter("id", id)
+        _setter("is_billing_continuation_in_progress", is_billing_continuation_in_progress)
+        _setter("is_billing_swapping_in_progress", is_billing_swapping_in_progress)
+        _setter("next_sku", next_sku)
+        _setter("non_upgraded_esxi_host_id", non_upgraded_esxi_host_id)
+        _setter("replacement_esxi_host_id", replacement_esxi_host_id)
+        _setter("sddc_id", sddc_id)
+        _setter("state", state)
+        _setter("swap_billing_host_id", swap_billing_host_id)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("upgraded_replacement_esxi_host_id", upgraded_replacement_esxi_host_id)
+        _setter("vmware_software_version", vmware_software_version)
 
     @property
     @pulumi.getter(name="billingContractEndDate")
@@ -567,10 +676,23 @@ class GetExsiHostsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExsiHostsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -599,9 +721,22 @@ class GetSddcDatastoreResult(dict):
         :param float capacity: Size of the Block Storage Volume in GB.
         :param str datastore_type: Type of the datastore.
         """
-        pulumi.set(__self__, "block_volume_ids", block_volume_ids)
-        pulumi.set(__self__, "capacity", capacity)
-        pulumi.set(__self__, "datastore_type", datastore_type)
+        GetSddcDatastoreResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_volume_ids=block_volume_ids,
+            capacity=capacity,
+            datastore_type=datastore_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_volume_ids: Sequence[str],
+             capacity: float,
+             datastore_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("block_volume_ids", block_volume_ids)
+        _setter("capacity", capacity)
+        _setter("datastore_type", datastore_type)
 
     @property
     @pulumi.getter(name="blockVolumeIds")
@@ -639,9 +774,22 @@ class GetSddcHcxOnPremLicenseResult(dict):
         :param str status: status of HCX on-premise license.
         :param str system_name: Name of the system that consumed the HCX on-premise license
         """
-        pulumi.set(__self__, "activation_key", activation_key)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "system_name", system_name)
+        GetSddcHcxOnPremLicenseResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            activation_key=activation_key,
+            status=status,
+            system_name=system_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             activation_key: str,
+             status: str,
+             system_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("activation_key", activation_key)
+        _setter("status", status)
+        _setter("system_name", system_name)
 
     @property
     @pulumi.getter(name="activationKey")
@@ -677,8 +825,19 @@ class GetSddcUpgradeLicenseResult(dict):
         :param str license_key: vSphere license key value.
         :param str license_type: vSphere license type.
         """
-        pulumi.set(__self__, "license_key", license_key)
-        pulumi.set(__self__, "license_type", license_type)
+        GetSddcUpgradeLicenseResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            license_key=license_key,
+            license_type=license_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             license_key: str,
+             license_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("license_key", license_key)
+        _setter("license_type", license_type)
 
     @property
     @pulumi.getter(name="licenseKey")
@@ -706,8 +865,19 @@ class GetSddcVsphereUpgradeObjectResult(dict):
         :param str download_link: Binary object download link.
         :param str link_description: Binary object description.
         """
-        pulumi.set(__self__, "download_link", download_link)
-        pulumi.set(__self__, "link_description", link_description)
+        GetSddcVsphereUpgradeObjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            download_link=download_link,
+            link_description=link_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             download_link: str,
+             link_description: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("download_link", download_link)
+        _setter("link_description", link_description)
 
     @property
     @pulumi.getter(name="downloadLink")
@@ -732,10 +902,23 @@ class GetSddcsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSddcsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -873,65 +1056,190 @@ class GetSddcsSddcCollectionResult(dict):
         :param str vsphere_vlan_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
         :param str workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
         """
-        pulumi.set(__self__, "actual_esxi_hosts_count", actual_esxi_hosts_count)
-        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compute_availability_domain", compute_availability_domain)
-        pulumi.set(__self__, "datastores", datastores)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "esxi_hosts_count", esxi_hosts_count)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "hcx_action", hcx_action)
-        pulumi.set(__self__, "hcx_fqdn", hcx_fqdn)
-        pulumi.set(__self__, "hcx_initial_password", hcx_initial_password)
-        pulumi.set(__self__, "hcx_on_prem_key", hcx_on_prem_key)
-        pulumi.set(__self__, "hcx_on_prem_licenses", hcx_on_prem_licenses)
-        pulumi.set(__self__, "hcx_private_ip_id", hcx_private_ip_id)
-        pulumi.set(__self__, "hcx_vlan_id", hcx_vlan_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "initial_host_ocpu_count", initial_host_ocpu_count)
-        pulumi.set(__self__, "initial_host_shape_name", initial_host_shape_name)
-        pulumi.set(__self__, "initial_sku", initial_sku)
-        pulumi.set(__self__, "instance_display_name_prefix", instance_display_name_prefix)
-        pulumi.set(__self__, "is_hcx_enabled", is_hcx_enabled)
-        pulumi.set(__self__, "is_hcx_enterprise_enabled", is_hcx_enterprise_enabled)
-        pulumi.set(__self__, "is_hcx_pending_downgrade", is_hcx_pending_downgrade)
-        pulumi.set(__self__, "is_shielded_instance_enabled", is_shielded_instance_enabled)
-        pulumi.set(__self__, "is_single_host_sddc", is_single_host_sddc)
-        pulumi.set(__self__, "nsx_edge_uplink1vlan_id", nsx_edge_uplink1vlan_id)
-        pulumi.set(__self__, "nsx_edge_uplink2vlan_id", nsx_edge_uplink2vlan_id)
-        pulumi.set(__self__, "nsx_edge_uplink_ip_id", nsx_edge_uplink_ip_id)
-        pulumi.set(__self__, "nsx_edge_vtep_vlan_id", nsx_edge_vtep_vlan_id)
-        pulumi.set(__self__, "nsx_manager_fqdn", nsx_manager_fqdn)
-        pulumi.set(__self__, "nsx_manager_initial_password", nsx_manager_initial_password)
-        pulumi.set(__self__, "nsx_manager_private_ip_id", nsx_manager_private_ip_id)
-        pulumi.set(__self__, "nsx_manager_username", nsx_manager_username)
-        pulumi.set(__self__, "nsx_overlay_segment_name", nsx_overlay_segment_name)
-        pulumi.set(__self__, "nsx_vtep_vlan_id", nsx_vtep_vlan_id)
-        pulumi.set(__self__, "provisioning_subnet_id", provisioning_subnet_id)
-        pulumi.set(__self__, "provisioning_vlan_id", provisioning_vlan_id)
-        pulumi.set(__self__, "refresh_hcx_license_status", refresh_hcx_license_status)
-        pulumi.set(__self__, "replication_vlan_id", replication_vlan_id)
-        pulumi.set(__self__, "reserving_hcx_on_premise_license_keys", reserving_hcx_on_premise_license_keys)
-        pulumi.set(__self__, "ssh_authorized_keys", ssh_authorized_keys)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_hcx_billing_cycle_end", time_hcx_billing_cycle_end)
-        pulumi.set(__self__, "time_hcx_license_status_updated", time_hcx_license_status_updated)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "upgrade_licenses", upgrade_licenses)
-        pulumi.set(__self__, "vcenter_fqdn", vcenter_fqdn)
-        pulumi.set(__self__, "vcenter_initial_password", vcenter_initial_password)
-        pulumi.set(__self__, "vcenter_private_ip_id", vcenter_private_ip_id)
-        pulumi.set(__self__, "vcenter_username", vcenter_username)
-        pulumi.set(__self__, "vmotion_vlan_id", vmotion_vlan_id)
-        pulumi.set(__self__, "vmware_software_version", vmware_software_version)
-        pulumi.set(__self__, "vsan_vlan_id", vsan_vlan_id)
-        pulumi.set(__self__, "vsphere_upgrade_guide", vsphere_upgrade_guide)
-        pulumi.set(__self__, "vsphere_upgrade_objects", vsphere_upgrade_objects)
-        pulumi.set(__self__, "vsphere_vlan_id", vsphere_vlan_id)
-        pulumi.set(__self__, "workload_network_cidr", workload_network_cidr)
+        GetSddcsSddcCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actual_esxi_hosts_count=actual_esxi_hosts_count,
+            capacity_reservation_id=capacity_reservation_id,
+            compartment_id=compartment_id,
+            compute_availability_domain=compute_availability_domain,
+            datastores=datastores,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            esxi_hosts_count=esxi_hosts_count,
+            freeform_tags=freeform_tags,
+            hcx_action=hcx_action,
+            hcx_fqdn=hcx_fqdn,
+            hcx_initial_password=hcx_initial_password,
+            hcx_on_prem_key=hcx_on_prem_key,
+            hcx_on_prem_licenses=hcx_on_prem_licenses,
+            hcx_private_ip_id=hcx_private_ip_id,
+            hcx_vlan_id=hcx_vlan_id,
+            id=id,
+            initial_host_ocpu_count=initial_host_ocpu_count,
+            initial_host_shape_name=initial_host_shape_name,
+            initial_sku=initial_sku,
+            instance_display_name_prefix=instance_display_name_prefix,
+            is_hcx_enabled=is_hcx_enabled,
+            is_hcx_enterprise_enabled=is_hcx_enterprise_enabled,
+            is_hcx_pending_downgrade=is_hcx_pending_downgrade,
+            is_shielded_instance_enabled=is_shielded_instance_enabled,
+            is_single_host_sddc=is_single_host_sddc,
+            nsx_edge_uplink1vlan_id=nsx_edge_uplink1vlan_id,
+            nsx_edge_uplink2vlan_id=nsx_edge_uplink2vlan_id,
+            nsx_edge_uplink_ip_id=nsx_edge_uplink_ip_id,
+            nsx_edge_vtep_vlan_id=nsx_edge_vtep_vlan_id,
+            nsx_manager_fqdn=nsx_manager_fqdn,
+            nsx_manager_initial_password=nsx_manager_initial_password,
+            nsx_manager_private_ip_id=nsx_manager_private_ip_id,
+            nsx_manager_username=nsx_manager_username,
+            nsx_overlay_segment_name=nsx_overlay_segment_name,
+            nsx_vtep_vlan_id=nsx_vtep_vlan_id,
+            provisioning_subnet_id=provisioning_subnet_id,
+            provisioning_vlan_id=provisioning_vlan_id,
+            refresh_hcx_license_status=refresh_hcx_license_status,
+            replication_vlan_id=replication_vlan_id,
+            reserving_hcx_on_premise_license_keys=reserving_hcx_on_premise_license_keys,
+            ssh_authorized_keys=ssh_authorized_keys,
+            state=state,
+            time_created=time_created,
+            time_hcx_billing_cycle_end=time_hcx_billing_cycle_end,
+            time_hcx_license_status_updated=time_hcx_license_status_updated,
+            time_updated=time_updated,
+            upgrade_licenses=upgrade_licenses,
+            vcenter_fqdn=vcenter_fqdn,
+            vcenter_initial_password=vcenter_initial_password,
+            vcenter_private_ip_id=vcenter_private_ip_id,
+            vcenter_username=vcenter_username,
+            vmotion_vlan_id=vmotion_vlan_id,
+            vmware_software_version=vmware_software_version,
+            vsan_vlan_id=vsan_vlan_id,
+            vsphere_upgrade_guide=vsphere_upgrade_guide,
+            vsphere_upgrade_objects=vsphere_upgrade_objects,
+            vsphere_vlan_id=vsphere_vlan_id,
+            workload_network_cidr=workload_network_cidr,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actual_esxi_hosts_count: int,
+             capacity_reservation_id: str,
+             compartment_id: str,
+             compute_availability_domain: str,
+             datastores: Sequence['outputs.GetSddcsSddcCollectionDatastoreResult'],
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             esxi_hosts_count: int,
+             freeform_tags: Mapping[str, Any],
+             hcx_action: str,
+             hcx_fqdn: str,
+             hcx_initial_password: str,
+             hcx_on_prem_key: str,
+             hcx_on_prem_licenses: Sequence['outputs.GetSddcsSddcCollectionHcxOnPremLicenseResult'],
+             hcx_private_ip_id: str,
+             hcx_vlan_id: str,
+             id: str,
+             initial_host_ocpu_count: float,
+             initial_host_shape_name: str,
+             initial_sku: str,
+             instance_display_name_prefix: str,
+             is_hcx_enabled: bool,
+             is_hcx_enterprise_enabled: bool,
+             is_hcx_pending_downgrade: bool,
+             is_shielded_instance_enabled: bool,
+             is_single_host_sddc: bool,
+             nsx_edge_uplink1vlan_id: str,
+             nsx_edge_uplink2vlan_id: str,
+             nsx_edge_uplink_ip_id: str,
+             nsx_edge_vtep_vlan_id: str,
+             nsx_manager_fqdn: str,
+             nsx_manager_initial_password: str,
+             nsx_manager_private_ip_id: str,
+             nsx_manager_username: str,
+             nsx_overlay_segment_name: str,
+             nsx_vtep_vlan_id: str,
+             provisioning_subnet_id: str,
+             provisioning_vlan_id: str,
+             refresh_hcx_license_status: bool,
+             replication_vlan_id: str,
+             reserving_hcx_on_premise_license_keys: Sequence[str],
+             ssh_authorized_keys: str,
+             state: str,
+             time_created: str,
+             time_hcx_billing_cycle_end: str,
+             time_hcx_license_status_updated: str,
+             time_updated: str,
+             upgrade_licenses: Sequence['outputs.GetSddcsSddcCollectionUpgradeLicenseResult'],
+             vcenter_fqdn: str,
+             vcenter_initial_password: str,
+             vcenter_private_ip_id: str,
+             vcenter_username: str,
+             vmotion_vlan_id: str,
+             vmware_software_version: str,
+             vsan_vlan_id: str,
+             vsphere_upgrade_guide: str,
+             vsphere_upgrade_objects: Sequence['outputs.GetSddcsSddcCollectionVsphereUpgradeObjectResult'],
+             vsphere_vlan_id: str,
+             workload_network_cidr: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("actual_esxi_hosts_count", actual_esxi_hosts_count)
+        _setter("capacity_reservation_id", capacity_reservation_id)
+        _setter("compartment_id", compartment_id)
+        _setter("compute_availability_domain", compute_availability_domain)
+        _setter("datastores", datastores)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("esxi_hosts_count", esxi_hosts_count)
+        _setter("freeform_tags", freeform_tags)
+        _setter("hcx_action", hcx_action)
+        _setter("hcx_fqdn", hcx_fqdn)
+        _setter("hcx_initial_password", hcx_initial_password)
+        _setter("hcx_on_prem_key", hcx_on_prem_key)
+        _setter("hcx_on_prem_licenses", hcx_on_prem_licenses)
+        _setter("hcx_private_ip_id", hcx_private_ip_id)
+        _setter("hcx_vlan_id", hcx_vlan_id)
+        _setter("id", id)
+        _setter("initial_host_ocpu_count", initial_host_ocpu_count)
+        _setter("initial_host_shape_name", initial_host_shape_name)
+        _setter("initial_sku", initial_sku)
+        _setter("instance_display_name_prefix", instance_display_name_prefix)
+        _setter("is_hcx_enabled", is_hcx_enabled)
+        _setter("is_hcx_enterprise_enabled", is_hcx_enterprise_enabled)
+        _setter("is_hcx_pending_downgrade", is_hcx_pending_downgrade)
+        _setter("is_shielded_instance_enabled", is_shielded_instance_enabled)
+        _setter("is_single_host_sddc", is_single_host_sddc)
+        _setter("nsx_edge_uplink1vlan_id", nsx_edge_uplink1vlan_id)
+        _setter("nsx_edge_uplink2vlan_id", nsx_edge_uplink2vlan_id)
+        _setter("nsx_edge_uplink_ip_id", nsx_edge_uplink_ip_id)
+        _setter("nsx_edge_vtep_vlan_id", nsx_edge_vtep_vlan_id)
+        _setter("nsx_manager_fqdn", nsx_manager_fqdn)
+        _setter("nsx_manager_initial_password", nsx_manager_initial_password)
+        _setter("nsx_manager_private_ip_id", nsx_manager_private_ip_id)
+        _setter("nsx_manager_username", nsx_manager_username)
+        _setter("nsx_overlay_segment_name", nsx_overlay_segment_name)
+        _setter("nsx_vtep_vlan_id", nsx_vtep_vlan_id)
+        _setter("provisioning_subnet_id", provisioning_subnet_id)
+        _setter("provisioning_vlan_id", provisioning_vlan_id)
+        _setter("refresh_hcx_license_status", refresh_hcx_license_status)
+        _setter("replication_vlan_id", replication_vlan_id)
+        _setter("reserving_hcx_on_premise_license_keys", reserving_hcx_on_premise_license_keys)
+        _setter("ssh_authorized_keys", ssh_authorized_keys)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_hcx_billing_cycle_end", time_hcx_billing_cycle_end)
+        _setter("time_hcx_license_status_updated", time_hcx_license_status_updated)
+        _setter("time_updated", time_updated)
+        _setter("upgrade_licenses", upgrade_licenses)
+        _setter("vcenter_fqdn", vcenter_fqdn)
+        _setter("vcenter_initial_password", vcenter_initial_password)
+        _setter("vcenter_private_ip_id", vcenter_private_ip_id)
+        _setter("vcenter_username", vcenter_username)
+        _setter("vmotion_vlan_id", vmotion_vlan_id)
+        _setter("vmware_software_version", vmware_software_version)
+        _setter("vsan_vlan_id", vsan_vlan_id)
+        _setter("vsphere_upgrade_guide", vsphere_upgrade_guide)
+        _setter("vsphere_upgrade_objects", vsphere_upgrade_objects)
+        _setter("vsphere_vlan_id", vsphere_vlan_id)
+        _setter("workload_network_cidr", workload_network_cidr)
 
     @property
     @pulumi.getter(name="actualEsxiHostsCount")
@@ -1408,9 +1716,22 @@ class GetSddcsSddcCollectionDatastoreResult(dict):
         :param float capacity: Size of the Block Storage Volume in GB.
         :param str datastore_type: Type of the datastore.
         """
-        pulumi.set(__self__, "block_volume_ids", block_volume_ids)
-        pulumi.set(__self__, "capacity", capacity)
-        pulumi.set(__self__, "datastore_type", datastore_type)
+        GetSddcsSddcCollectionDatastoreResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_volume_ids=block_volume_ids,
+            capacity=capacity,
+            datastore_type=datastore_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_volume_ids: Sequence[str],
+             capacity: float,
+             datastore_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("block_volume_ids", block_volume_ids)
+        _setter("capacity", capacity)
+        _setter("datastore_type", datastore_type)
 
     @property
     @pulumi.getter(name="blockVolumeIds")
@@ -1448,9 +1769,22 @@ class GetSddcsSddcCollectionHcxOnPremLicenseResult(dict):
         :param str status: status of HCX on-premise license.
         :param str system_name: Name of the system that consumed the HCX on-premise license
         """
-        pulumi.set(__self__, "activation_key", activation_key)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "system_name", system_name)
+        GetSddcsSddcCollectionHcxOnPremLicenseResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            activation_key=activation_key,
+            status=status,
+            system_name=system_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             activation_key: str,
+             status: str,
+             system_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("activation_key", activation_key)
+        _setter("status", status)
+        _setter("system_name", system_name)
 
     @property
     @pulumi.getter(name="activationKey")
@@ -1486,8 +1820,19 @@ class GetSddcsSddcCollectionUpgradeLicenseResult(dict):
         :param str license_key: vSphere license key value.
         :param str license_type: vSphere license type.
         """
-        pulumi.set(__self__, "license_key", license_key)
-        pulumi.set(__self__, "license_type", license_type)
+        GetSddcsSddcCollectionUpgradeLicenseResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            license_key=license_key,
+            license_type=license_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             license_key: str,
+             license_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("license_key", license_key)
+        _setter("license_type", license_type)
 
     @property
     @pulumi.getter(name="licenseKey")
@@ -1515,8 +1860,19 @@ class GetSddcsSddcCollectionVsphereUpgradeObjectResult(dict):
         :param str download_link: Binary object download link.
         :param str link_description: Binary object description.
         """
-        pulumi.set(__self__, "download_link", download_link)
-        pulumi.set(__self__, "link_description", link_description)
+        GetSddcsSddcCollectionVsphereUpgradeObjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            download_link=download_link,
+            link_description=link_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             download_link: str,
+             link_description: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("download_link", download_link)
+        _setter("link_description", link_description)
 
     @property
     @pulumi.getter(name="downloadLink")
@@ -1544,10 +1900,23 @@ class GetSupportedHostShapesFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the given name exactly.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSupportedHostShapesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1593,16 +1962,43 @@ class GetSupportedHostShapesItemResult(dict):
         :param Sequence[str] supported_sddc_types: The supported SDDC types for the shape.
         :param Sequence[str] supported_vmware_software_versions: The VMware software versions supported by the shape.
         """
-        pulumi.set(__self__, "default_ocpu_count", default_ocpu_count)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "is_support_monthly_sku", is_support_monthly_sku)
-        pulumi.set(__self__, "is_support_shielded_instances", is_support_shielded_instances)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "shape_family", shape_family)
-        pulumi.set(__self__, "supported_ocpu_counts", supported_ocpu_counts)
-        pulumi.set(__self__, "supported_operations", supported_operations)
-        pulumi.set(__self__, "supported_sddc_types", supported_sddc_types)
-        pulumi.set(__self__, "supported_vmware_software_versions", supported_vmware_software_versions)
+        GetSupportedHostShapesItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_ocpu_count=default_ocpu_count,
+            description=description,
+            is_support_monthly_sku=is_support_monthly_sku,
+            is_support_shielded_instances=is_support_shielded_instances,
+            name=name,
+            shape_family=shape_family,
+            supported_ocpu_counts=supported_ocpu_counts,
+            supported_operations=supported_operations,
+            supported_sddc_types=supported_sddc_types,
+            supported_vmware_software_versions=supported_vmware_software_versions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_ocpu_count: float,
+             description: str,
+             is_support_monthly_sku: bool,
+             is_support_shielded_instances: bool,
+             name: str,
+             shape_family: str,
+             supported_ocpu_counts: Sequence[float],
+             supported_operations: Sequence[str],
+             supported_sddc_types: Sequence[str],
+             supported_vmware_software_versions: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_ocpu_count", default_ocpu_count)
+        _setter("description", description)
+        _setter("is_support_monthly_sku", is_support_monthly_sku)
+        _setter("is_support_shielded_instances", is_support_shielded_instances)
+        _setter("name", name)
+        _setter("shape_family", shape_family)
+        _setter("supported_ocpu_counts", supported_ocpu_counts)
+        _setter("supported_operations", supported_operations)
+        _setter("supported_sddc_types", supported_sddc_types)
+        _setter("supported_vmware_software_versions", supported_vmware_software_versions)
 
     @property
     @pulumi.getter(name="defaultOcpuCount")
@@ -1694,10 +2090,23 @@ class GetSupportedSkusFilterResult(dict):
         """
         :param str name: name of SKU
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSupportedSkusFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1725,7 +2134,16 @@ class GetSupportedSkusItemResult(dict):
         """
         :param str name: name of SKU
         """
-        pulumi.set(__self__, "name", name)
+        GetSupportedSkusItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1742,10 +2160,23 @@ class GetSupportedVmwareSoftwareVersionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSupportedVmwareSoftwareVersionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1772,8 +2203,19 @@ class GetSupportedVmwareSoftwareVersionsItemResult(dict):
         :param str description: A description of the software in the bundle.
         :param str version: A short, unique string that identifies the version of bundled software.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "version", version)
+        GetSupportedVmwareSoftwareVersionsItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("version", version)
 
     @property
     @pulumi.getter

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -31,10 +31,25 @@ class OdaPrivateEndpointScanProxyArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "oda_private_endpoint_id", oda_private_endpoint_id)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "scan_listener_infos", scan_listener_infos)
-        pulumi.set(__self__, "scan_listener_type", scan_listener_type)
+        OdaPrivateEndpointScanProxyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            oda_private_endpoint_id=oda_private_endpoint_id,
+            protocol=protocol,
+            scan_listener_infos=scan_listener_infos,
+            scan_listener_type=scan_listener_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             oda_private_endpoint_id: pulumi.Input[str],
+             protocol: pulumi.Input[str],
+             scan_listener_infos: pulumi.Input[Sequence[pulumi.Input['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]],
+             scan_listener_type: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("oda_private_endpoint_id", oda_private_endpoint_id)
+        _setter("protocol", protocol)
+        _setter("scan_listener_infos", scan_listener_infos)
+        _setter("scan_listener_type", scan_listener_type)
 
     @property
     @pulumi.getter(name="odaPrivateEndpointId")
@@ -111,18 +126,37 @@ class _OdaPrivateEndpointScanProxyState:
         :param pulumi.Input[str] state: The current state of the ODA Private Endpoint Scan Proxy.
         :param pulumi.Input[str] time_created: When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
+        _OdaPrivateEndpointScanProxyState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            oda_private_endpoint_id=oda_private_endpoint_id,
+            protocol=protocol,
+            scan_listener_infos=scan_listener_infos,
+            scan_listener_type=scan_listener_type,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             oda_private_endpoint_id: Optional[pulumi.Input[str]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             scan_listener_infos: Optional[pulumi.Input[Sequence[pulumi.Input['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]]] = None,
+             scan_listener_type: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if oda_private_endpoint_id is not None:
-            pulumi.set(__self__, "oda_private_endpoint_id", oda_private_endpoint_id)
+            _setter("oda_private_endpoint_id", oda_private_endpoint_id)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if scan_listener_infos is not None:
-            pulumi.set(__self__, "scan_listener_infos", scan_listener_infos)
+            _setter("scan_listener_infos", scan_listener_infos)
         if scan_listener_type is not None:
-            pulumi.set(__self__, "scan_listener_type", scan_listener_type)
+            _setter("scan_listener_type", scan_listener_type)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="odaPrivateEndpointId")
@@ -304,6 +338,10 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            OdaPrivateEndpointScanProxyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

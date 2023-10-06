@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationDumpTransferDetailsSourceArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationDumpTransferDetailsTargetArgs;
+import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -15,6 +16,13 @@ import javax.annotation.Nullable;
 public final class MigrationDumpTransferDetailsArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final MigrationDumpTransferDetailsArgs Empty = new MigrationDumpTransferDetailsArgs();
+
+    @Import(name="sharedStorageMountTargetId")
+    private @Nullable Output<String> sharedStorageMountTargetId;
+
+    public Optional<Output<String>> sharedStorageMountTargetId() {
+        return Optional.ofNullable(this.sharedStorageMountTargetId);
+    }
 
     /**
      * (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
@@ -49,6 +57,7 @@ public final class MigrationDumpTransferDetailsArgs extends com.pulumi.resources
     private MigrationDumpTransferDetailsArgs() {}
 
     private MigrationDumpTransferDetailsArgs(MigrationDumpTransferDetailsArgs $) {
+        this.sharedStorageMountTargetId = $.sharedStorageMountTargetId;
         this.source = $.source;
         this.target = $.target;
     }
@@ -69,6 +78,15 @@ public final class MigrationDumpTransferDetailsArgs extends com.pulumi.resources
 
         public Builder(MigrationDumpTransferDetailsArgs defaults) {
             $ = new MigrationDumpTransferDetailsArgs(Objects.requireNonNull(defaults));
+        }
+
+        public Builder sharedStorageMountTargetId(@Nullable Output<String> sharedStorageMountTargetId) {
+            $.sharedStorageMountTargetId = sharedStorageMountTargetId;
+            return this;
+        }
+
+        public Builder sharedStorageMountTargetId(String sharedStorageMountTargetId) {
+            return sharedStorageMountTargetId(Output.of(sharedStorageMountTargetId));
         }
 
         /**

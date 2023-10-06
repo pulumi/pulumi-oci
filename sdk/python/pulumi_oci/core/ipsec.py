@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['IpsecArgs', 'Ipsec']
@@ -51,20 +51,45 @@ class IpsecArgs:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "cpe_id", cpe_id)
-        pulumi.set(__self__, "drg_id", drg_id)
-        pulumi.set(__self__, "static_routes", static_routes)
+        IpsecArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            cpe_id=cpe_id,
+            drg_id=drg_id,
+            static_routes=static_routes,
+            cpe_local_identifier=cpe_local_identifier,
+            cpe_local_identifier_type=cpe_local_identifier_type,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             cpe_id: pulumi.Input[str],
+             drg_id: pulumi.Input[str],
+             static_routes: pulumi.Input[Sequence[pulumi.Input[str]]],
+             cpe_local_identifier: Optional[pulumi.Input[str]] = None,
+             cpe_local_identifier_type: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("cpe_id", cpe_id)
+        _setter("drg_id", drg_id)
+        _setter("static_routes", static_routes)
         if cpe_local_identifier is not None:
-            pulumi.set(__self__, "cpe_local_identifier", cpe_local_identifier)
+            _setter("cpe_local_identifier", cpe_local_identifier)
         if cpe_local_identifier_type is not None:
-            pulumi.set(__self__, "cpe_local_identifier_type", cpe_local_identifier_type)
+            _setter("cpe_local_identifier_type", cpe_local_identifier_type)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -237,30 +262,61 @@ class _IpsecState:
         :param pulumi.Input[str] time_created: The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] transport_type: The transport type used for the IPSec connection.
         """
+        _IpsecState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            cpe_id=cpe_id,
+            cpe_local_identifier=cpe_local_identifier,
+            cpe_local_identifier_type=cpe_local_identifier_type,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            drg_id=drg_id,
+            freeform_tags=freeform_tags,
+            state=state,
+            static_routes=static_routes,
+            time_created=time_created,
+            transport_type=transport_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             cpe_id: Optional[pulumi.Input[str]] = None,
+             cpe_local_identifier: Optional[pulumi.Input[str]] = None,
+             cpe_local_identifier_type: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             drg_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             static_routes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             transport_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if cpe_id is not None:
-            pulumi.set(__self__, "cpe_id", cpe_id)
+            _setter("cpe_id", cpe_id)
         if cpe_local_identifier is not None:
-            pulumi.set(__self__, "cpe_local_identifier", cpe_local_identifier)
+            _setter("cpe_local_identifier", cpe_local_identifier)
         if cpe_local_identifier_type is not None:
-            pulumi.set(__self__, "cpe_local_identifier_type", cpe_local_identifier_type)
+            _setter("cpe_local_identifier_type", cpe_local_identifier_type)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if drg_id is not None:
-            pulumi.set(__self__, "drg_id", drg_id)
+            _setter("drg_id", drg_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if static_routes is not None:
-            pulumi.set(__self__, "static_routes", static_routes)
+            _setter("static_routes", static_routes)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if transport_type is not None:
-            pulumi.set(__self__, "transport_type", transport_type)
+            _setter("transport_type", transport_type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -606,6 +662,10 @@ class Ipsec(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            IpsecArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

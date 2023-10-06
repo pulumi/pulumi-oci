@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -45,12 +45,25 @@ class ManagementAgentManagementAgentProperty(dict):
         :param str units: Unit for the property
         :param Sequence[str] values: Values of the property
         """
+        ManagementAgentManagementAgentProperty._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            units=units,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             units: Optional[str] = None,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if units is not None:
-            pulumi.set(__self__, "units", units)
+            _setter("units", units)
         if values is not None:
-            pulumi.set(__self__, "values", values)
+            _setter("values", values)
 
     @property
     @pulumi.getter
@@ -125,20 +138,41 @@ class ManagementAgentPluginList(dict):
         :param str plugin_status_message: Status message of the Plugin
         :param str plugin_version: Plugin Version
         """
+        ManagementAgentPluginList._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            plugin_display_name=plugin_display_name,
+            plugin_id=plugin_id,
+            plugin_name=plugin_name,
+            plugin_status=plugin_status,
+            plugin_status_message=plugin_status_message,
+            plugin_version=plugin_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             plugin_display_name: Optional[str] = None,
+             plugin_id: Optional[str] = None,
+             plugin_name: Optional[str] = None,
+             plugin_status: Optional[str] = None,
+             plugin_status_message: Optional[str] = None,
+             plugin_version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if plugin_display_name is not None:
-            pulumi.set(__self__, "plugin_display_name", plugin_display_name)
+            _setter("plugin_display_name", plugin_display_name)
         if plugin_id is not None:
-            pulumi.set(__self__, "plugin_id", plugin_id)
+            _setter("plugin_id", plugin_id)
         if plugin_name is not None:
-            pulumi.set(__self__, "plugin_name", plugin_name)
+            _setter("plugin_name", plugin_name)
         if plugin_status is not None:
-            pulumi.set(__self__, "plugin_status", plugin_status)
+            _setter("plugin_status", plugin_status)
         if plugin_status_message is not None:
-            pulumi.set(__self__, "plugin_status_message", plugin_status_message)
+            _setter("plugin_status_message", plugin_status_message)
         if plugin_version is not None:
-            pulumi.set(__self__, "plugin_version", plugin_version)
+            _setter("plugin_version", plugin_version)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -210,10 +244,25 @@ class GetManagementAgentAvailableHistoriesAvailabilityHistoryResult(dict):
         :param str time_availability_status_ended: The time till which the Management Agent was known to be in the availability status. An RFC3339 formatted datetime string
         :param str time_availability_status_started: The time at which the Management Agent moved to the availability status. An RFC3339 formatted datetime string
         """
-        pulumi.set(__self__, "availability_status", availability_status)
-        pulumi.set(__self__, "management_agent_id", management_agent_id)
-        pulumi.set(__self__, "time_availability_status_ended", time_availability_status_ended)
-        pulumi.set(__self__, "time_availability_status_started", time_availability_status_started)
+        GetManagementAgentAvailableHistoriesAvailabilityHistoryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_status=availability_status,
+            management_agent_id=management_agent_id,
+            time_availability_status_ended=time_availability_status_ended,
+            time_availability_status_started=time_availability_status_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_status: str,
+             management_agent_id: str,
+             time_availability_status_ended: str,
+             time_availability_status_started: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_status", availability_status)
+        _setter("management_agent_id", management_agent_id)
+        _setter("time_availability_status_ended", time_availability_status_ended)
+        _setter("time_availability_status_started", time_availability_status_started)
 
     @property
     @pulumi.getter(name="availabilityStatus")
@@ -254,10 +303,23 @@ class GetManagementAgentAvailableHistoriesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagementAgentAvailableHistoriesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -284,8 +346,19 @@ class GetManagementAgentCountItemResult(dict):
         :param int count: The number of Management Agents in this group
         :param Sequence['GetManagementAgentCountItemDimensionArgs'] dimensions: The Aggregation of Management Agent Dimensions
         """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "dimensions", dimensions)
+        GetManagementAgentCountItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            count=count,
+            dimensions=dimensions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             count: int,
+             dimensions: Sequence['outputs.GetManagementAgentCountItemDimensionResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("count", count)
+        _setter("dimensions", dimensions)
 
     @property
     @pulumi.getter
@@ -319,11 +392,28 @@ class GetManagementAgentCountItemDimensionResult(dict):
         :param str platform_type: Platform Type
         :param str version: Agent image version
         """
-        pulumi.set(__self__, "availability_status", availability_status)
-        pulumi.set(__self__, "has_plugins", has_plugins)
-        pulumi.set(__self__, "install_type", install_type)
-        pulumi.set(__self__, "platform_type", platform_type)
-        pulumi.set(__self__, "version", version)
+        GetManagementAgentCountItemDimensionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_status=availability_status,
+            has_plugins=has_plugins,
+            install_type=install_type,
+            platform_type=platform_type,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_status: str,
+             has_plugins: bool,
+             install_type: str,
+             platform_type: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_status", availability_status)
+        _setter("has_plugins", has_plugins)
+        _setter("install_type", install_type)
+        _setter("platform_type", platform_type)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="availabilityStatus")
@@ -375,10 +465,23 @@ class GetManagementAgentImagesFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the entire platform name given.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagementAgentImagesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -426,17 +529,46 @@ class GetManagementAgentImagesManagementAgentImageResult(dict):
         :param str state: Filter to return only Management Agents in the particular lifecycle state.
         :param str version: Agent image version
         """
-        pulumi.set(__self__, "checksum", checksum)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "image_object_storage_details", image_object_storage_details)
-        pulumi.set(__self__, "object_url", object_url)
-        pulumi.set(__self__, "package_architecture_type", package_architecture_type)
-        pulumi.set(__self__, "package_type", package_type)
-        pulumi.set(__self__, "platform_name", platform_name)
-        pulumi.set(__self__, "platform_type", platform_type)
-        pulumi.set(__self__, "size", size)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "version", version)
+        GetManagementAgentImagesManagementAgentImageResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            checksum=checksum,
+            id=id,
+            image_object_storage_details=image_object_storage_details,
+            object_url=object_url,
+            package_architecture_type=package_architecture_type,
+            package_type=package_type,
+            platform_name=platform_name,
+            platform_type=platform_type,
+            size=size,
+            state=state,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             checksum: str,
+             id: str,
+             image_object_storage_details: Sequence['outputs.GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailResult'],
+             object_url: str,
+             package_architecture_type: str,
+             package_type: str,
+             platform_name: str,
+             platform_type: str,
+             size: float,
+             state: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("checksum", checksum)
+        _setter("id", id)
+        _setter("image_object_storage_details", image_object_storage_details)
+        _setter("object_url", object_url)
+        _setter("package_architecture_type", package_architecture_type)
+        _setter("package_type", package_type)
+        _setter("platform_name", platform_name)
+        _setter("platform_type", platform_type)
+        _setter("size", size)
+        _setter("state", state)
+        _setter("version", version)
 
     @property
     @pulumi.getter
@@ -542,11 +674,28 @@ class GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailResult
         :param str object_namespace: Objectstorage namespace reference providing the original location of this object
         :param str object_url: Object storage URL for download
         """
-        pulumi.set(__self__, "checksum", checksum)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "object_bucket", object_bucket)
-        pulumi.set(__self__, "object_namespace", object_namespace)
-        pulumi.set(__self__, "object_url", object_url)
+        GetManagementAgentImagesManagementAgentImageImageObjectStorageDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            checksum=checksum,
+            object=object,
+            object_bucket=object_bucket,
+            object_namespace=object_namespace,
+            object_url=object_url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             checksum: str,
+             object: str,
+             object_bucket: str,
+             object_namespace: str,
+             object_url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("checksum", checksum)
+        _setter("object", object)
+        _setter("object_bucket", object_bucket)
+        _setter("object_namespace", object_namespace)
+        _setter("object_url", object_url)
 
     @property
     @pulumi.getter
@@ -595,10 +744,23 @@ class GetManagementAgentInstallKeysFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagementAgentInstallKeysFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -647,19 +809,52 @@ class GetManagementAgentInstallKeysManagementAgentInstallKeyResult(dict):
         :param str time_expires: date after which key would expire after creation
         :param str time_updated: The time when Management Agent install Key was updated. An RFC3339 formatted date time string
         """
-        pulumi.set(__self__, "allowed_key_install_count", allowed_key_install_count)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by_principal_id", created_by_principal_id)
-        pulumi.set(__self__, "current_key_install_count", current_key_install_count)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_unlimited", is_unlimited)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_expires", time_expires)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetManagementAgentInstallKeysManagementAgentInstallKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_key_install_count=allowed_key_install_count,
+            compartment_id=compartment_id,
+            created_by_principal_id=created_by_principal_id,
+            current_key_install_count=current_key_install_count,
+            display_name=display_name,
+            id=id,
+            is_unlimited=is_unlimited,
+            key=key,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            time_created=time_created,
+            time_expires=time_expires,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_key_install_count: int,
+             compartment_id: str,
+             created_by_principal_id: str,
+             current_key_install_count: int,
+             display_name: str,
+             id: str,
+             is_unlimited: bool,
+             key: str,
+             lifecycle_details: str,
+             state: str,
+             time_created: str,
+             time_expires: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("allowed_key_install_count", allowed_key_install_count)
+        _setter("compartment_id", compartment_id)
+        _setter("created_by_principal_id", created_by_principal_id)
+        _setter("current_key_install_count", current_key_install_count)
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("is_unlimited", is_unlimited)
+        _setter("key", key)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_expires", time_expires)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="allowedKeyInstallCount")
@@ -777,9 +972,22 @@ class GetManagementAgentManagementAgentPropertyResult(dict):
         :param str units: Unit for the property
         :param Sequence[str] values: Values of the property
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "units", units)
-        pulumi.set(__self__, "values", values)
+        GetManagementAgentManagementAgentPropertyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            units=units,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             units: str,
+             values: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("units", units)
+        _setter("values", values)
 
     @property
     @pulumi.getter
@@ -815,8 +1023,19 @@ class GetManagementAgentPluginCountItemResult(dict):
         :param int count: The number of Management Agent Plugins in this group
         :param Sequence['GetManagementAgentPluginCountItemDimensionArgs'] dimensions: The Aggregation of Management Agent Plugin Dimensions
         """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "dimensions", dimensions)
+        GetManagementAgentPluginCountItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            count=count,
+            dimensions=dimensions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             count: int,
+             dimensions: Sequence['outputs.GetManagementAgentPluginCountItemDimensionResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("count", count)
+        _setter("dimensions", dimensions)
 
     @property
     @pulumi.getter
@@ -844,8 +1063,19 @@ class GetManagementAgentPluginCountItemDimensionResult(dict):
         :param str plugin_display_name: Management Agent Plugin Display Name
         :param str plugin_name: Management Agent Plugin Name
         """
-        pulumi.set(__self__, "plugin_display_name", plugin_display_name)
-        pulumi.set(__self__, "plugin_name", plugin_name)
+        GetManagementAgentPluginCountItemDimensionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            plugin_display_name=plugin_display_name,
+            plugin_name=plugin_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             plugin_display_name: str,
+             plugin_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("plugin_display_name", plugin_display_name)
+        _setter("plugin_name", plugin_name)
 
     @property
     @pulumi.getter(name="pluginDisplayName")
@@ -883,13 +1113,34 @@ class GetManagementAgentPluginListResult(dict):
         :param str plugin_status_message: Status message of the Plugin
         :param str plugin_version: Plugin Version
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "plugin_display_name", plugin_display_name)
-        pulumi.set(__self__, "plugin_id", plugin_id)
-        pulumi.set(__self__, "plugin_name", plugin_name)
-        pulumi.set(__self__, "plugin_status", plugin_status)
-        pulumi.set(__self__, "plugin_status_message", plugin_status_message)
-        pulumi.set(__self__, "plugin_version", plugin_version)
+        GetManagementAgentPluginListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            plugin_display_name=plugin_display_name,
+            plugin_id=plugin_id,
+            plugin_name=plugin_name,
+            plugin_status=plugin_status,
+            plugin_status_message=plugin_status_message,
+            plugin_version=plugin_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: bool,
+             plugin_display_name: str,
+             plugin_id: str,
+             plugin_name: str,
+             plugin_status: str,
+             plugin_status_message: str,
+             plugin_version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
+        _setter("plugin_display_name", plugin_display_name)
+        _setter("plugin_id", plugin_id)
+        _setter("plugin_name", plugin_name)
+        _setter("plugin_status", plugin_status)
+        _setter("plugin_status_message", plugin_status_message)
+        _setter("plugin_version", plugin_version)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -957,10 +1208,23 @@ class GetManagementAgentPluginsFilterResult(dict):
         """
         :param str name: Management Agent Plugin Name
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagementAgentPluginsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1002,14 +1266,37 @@ class GetManagementAgentPluginsManagementAgentPluginResult(dict):
         :param Sequence[str] supported_platform_types: Supported Platform Types
         :param int version: Management Agent Plugin Version
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_console_deployable", is_console_deployable)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "supported_platform_types", supported_platform_types)
-        pulumi.set(__self__, "version", version)
+        GetManagementAgentPluginsManagementAgentPluginResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            display_name=display_name,
+            id=id,
+            is_console_deployable=is_console_deployable,
+            name=name,
+            state=state,
+            supported_platform_types=supported_platform_types,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             display_name: str,
+             id: str,
+             is_console_deployable: bool,
+             name: str,
+             state: str,
+             supported_platform_types: Sequence[str],
+             version: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("is_console_deployable", is_console_deployable)
+        _setter("name", name)
+        _setter("state", state)
+        _setter("supported_platform_types", supported_platform_types)
+        _setter("version", version)
 
     @property
     @pulumi.getter
@@ -1086,10 +1373,23 @@ class GetManagementAgentsFilterResult(dict):
         :param str name: Name of the property
         :param Sequence[str] values: Values of the property
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagementAgentsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1170,33 +1470,94 @@ class GetManagementAgentsManagementAgentResult(dict):
         :param str time_updated: The time the Management Agent was last updated. An RFC3339 formatted datetime string
         :param str version: Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
         """
-        pulumi.set(__self__, "availability_status", availability_status)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deploy_plugins_ids", deploy_plugins_ids)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "host_id", host_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "install_key_id", install_key_id)
-        pulumi.set(__self__, "install_path", install_path)
-        pulumi.set(__self__, "install_type", install_type)
-        pulumi.set(__self__, "is_agent_auto_upgradable", is_agent_auto_upgradable)
-        pulumi.set(__self__, "is_customer_deployed", is_customer_deployed)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "managed_agent_id", managed_agent_id)
-        pulumi.set(__self__, "management_agent_properties", management_agent_properties)
-        pulumi.set(__self__, "platform_name", platform_name)
-        pulumi.set(__self__, "platform_type", platform_type)
-        pulumi.set(__self__, "platform_version", platform_version)
-        pulumi.set(__self__, "plugin_lists", plugin_lists)
-        pulumi.set(__self__, "resource_artifact_version", resource_artifact_version)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_heartbeat", time_last_heartbeat)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "version", version)
+        GetManagementAgentsManagementAgentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_status=availability_status,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            deploy_plugins_ids=deploy_plugins_ids,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            host=host,
+            host_id=host_id,
+            id=id,
+            install_key_id=install_key_id,
+            install_path=install_path,
+            install_type=install_type,
+            is_agent_auto_upgradable=is_agent_auto_upgradable,
+            is_customer_deployed=is_customer_deployed,
+            lifecycle_details=lifecycle_details,
+            managed_agent_id=managed_agent_id,
+            management_agent_properties=management_agent_properties,
+            platform_name=platform_name,
+            platform_type=platform_type,
+            platform_version=platform_version,
+            plugin_lists=plugin_lists,
+            resource_artifact_version=resource_artifact_version,
+            state=state,
+            time_created=time_created,
+            time_last_heartbeat=time_last_heartbeat,
+            time_updated=time_updated,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_status: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             deploy_plugins_ids: Sequence[str],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             host: str,
+             host_id: str,
+             id: str,
+             install_key_id: str,
+             install_path: str,
+             install_type: str,
+             is_agent_auto_upgradable: bool,
+             is_customer_deployed: bool,
+             lifecycle_details: str,
+             managed_agent_id: str,
+             management_agent_properties: Sequence['outputs.GetManagementAgentsManagementAgentManagementAgentPropertyResult'],
+             platform_name: str,
+             platform_type: str,
+             platform_version: str,
+             plugin_lists: Sequence['outputs.GetManagementAgentsManagementAgentPluginListResult'],
+             resource_artifact_version: str,
+             state: str,
+             time_created: str,
+             time_last_heartbeat: str,
+             time_updated: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_status", availability_status)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("deploy_plugins_ids", deploy_plugins_ids)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("host", host)
+        _setter("host_id", host_id)
+        _setter("id", id)
+        _setter("install_key_id", install_key_id)
+        _setter("install_path", install_path)
+        _setter("install_type", install_type)
+        _setter("is_agent_auto_upgradable", is_agent_auto_upgradable)
+        _setter("is_customer_deployed", is_customer_deployed)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("managed_agent_id", managed_agent_id)
+        _setter("management_agent_properties", management_agent_properties)
+        _setter("platform_name", platform_name)
+        _setter("platform_type", platform_type)
+        _setter("platform_version", platform_version)
+        _setter("plugin_lists", plugin_lists)
+        _setter("resource_artifact_version", resource_artifact_version)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_last_heartbeat", time_last_heartbeat)
+        _setter("time_updated", time_updated)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="availabilityStatus")
@@ -1420,9 +1781,22 @@ class GetManagementAgentsManagementAgentManagementAgentPropertyResult(dict):
         :param str units: Unit for the property
         :param Sequence[str] values: Values of the property
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "units", units)
-        pulumi.set(__self__, "values", values)
+        GetManagementAgentsManagementAgentManagementAgentPropertyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            units=units,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             units: str,
+             values: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("units", units)
+        _setter("values", values)
 
     @property
     @pulumi.getter
@@ -1468,13 +1842,34 @@ class GetManagementAgentsManagementAgentPluginListResult(dict):
         :param str plugin_status_message: Status message of the Plugin
         :param str plugin_version: Plugin Version
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "plugin_display_name", plugin_display_name)
-        pulumi.set(__self__, "plugin_id", plugin_id)
-        pulumi.set(__self__, "plugin_name", plugin_name)
-        pulumi.set(__self__, "plugin_status", plugin_status)
-        pulumi.set(__self__, "plugin_status_message", plugin_status_message)
-        pulumi.set(__self__, "plugin_version", plugin_version)
+        GetManagementAgentsManagementAgentPluginListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            plugin_display_name=plugin_display_name,
+            plugin_id=plugin_id,
+            plugin_name=plugin_name,
+            plugin_status=plugin_status,
+            plugin_status_message=plugin_status_message,
+            plugin_version=plugin_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: bool,
+             plugin_display_name: str,
+             plugin_id: str,
+             plugin_name: str,
+             plugin_status: str,
+             plugin_status_message: str,
+             plugin_version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
+        _setter("plugin_display_name", plugin_display_name)
+        _setter("plugin_id", plugin_id)
+        _setter("plugin_name", plugin_name)
+        _setter("plugin_status", plugin_status)
+        _setter("plugin_status_message", plugin_status_message)
+        _setter("plugin_version", plugin_version)
 
     @property
     @pulumi.getter(name="isEnabled")

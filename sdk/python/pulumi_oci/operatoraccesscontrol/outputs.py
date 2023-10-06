@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -47,13 +47,34 @@ class GetAccessRequestHistoryItemResult(dict):
         :param str time_of_action: Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
         :param str user_id: Approver who modified the access request.
         """
-        pulumi.set(__self__, "actions_lists", actions_lists)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "duration", duration)
-        pulumi.set(__self__, "is_auto_approved", is_auto_approved)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_of_action", time_of_action)
-        pulumi.set(__self__, "user_id", user_id)
+        GetAccessRequestHistoryItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actions_lists=actions_lists,
+            description=description,
+            duration=duration,
+            is_auto_approved=is_auto_approved,
+            state=state,
+            time_of_action=time_of_action,
+            user_id=user_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actions_lists: Sequence[str],
+             description: str,
+             duration: int,
+             is_auto_approved: bool,
+             state: str,
+             time_of_action: str,
+             user_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("actions_lists", actions_lists)
+        _setter("description", description)
+        _setter("duration", duration)
+        _setter("is_auto_approved", is_auto_approved)
+        _setter("state", state)
+        _setter("time_of_action", time_of_action)
+        _setter("user_id", user_id)
 
     @property
     @pulumi.getter(name="actionsLists")
@@ -116,7 +137,16 @@ class GetAccessRequestHistoryItemResult(dict):
 class GetAccessRequestsAccessRequestCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAccessRequestsAccessRequestCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetAccessRequestsAccessRequestCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAccessRequestsAccessRequestCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -191,37 +221,106 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
         :param str user_id: The OCID of the user that last modified the access request.
         :param Sequence[str] workflow_ids: The OCID of the workflow associated with the access request. This is needed if you want to contact Oracle Support for a stuck access request or for an access request that encounters an internal error.
         """
-        pulumi.set(__self__, "access_reason_summary", access_reason_summary)
-        pulumi.set(__self__, "action_requests_lists", action_requests_lists)
-        pulumi.set(__self__, "approver_comment", approver_comment)
-        pulumi.set(__self__, "audit_types", audit_types)
-        pulumi.set(__self__, "closure_comment", closure_comment)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "duration", duration)
-        pulumi.set(__self__, "extend_duration", extend_duration)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_auto_approved", is_auto_approved)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "opctl_additional_message", opctl_additional_message)
-        pulumi.set(__self__, "opctl_id", opctl_id)
-        pulumi.set(__self__, "opctl_name", opctl_name)
-        pulumi.set(__self__, "operator_id", operator_id)
-        pulumi.set(__self__, "reason", reason)
-        pulumi.set(__self__, "request_id", request_id)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_name", resource_name)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "sub_resource_lists", sub_resource_lists)
-        pulumi.set(__self__, "system_message", system_message)
-        pulumi.set(__self__, "time_of_creation", time_of_creation)
-        pulumi.set(__self__, "time_of_modification", time_of_modification)
-        pulumi.set(__self__, "time_of_user_creation", time_of_user_creation)
-        pulumi.set(__self__, "user_id", user_id)
-        pulumi.set(__self__, "workflow_ids", workflow_ids)
+        GetAccessRequestsAccessRequestCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_reason_summary=access_reason_summary,
+            action_requests_lists=action_requests_lists,
+            approver_comment=approver_comment,
+            audit_types=audit_types,
+            closure_comment=closure_comment,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            duration=duration,
+            extend_duration=extend_duration,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_auto_approved=is_auto_approved,
+            lifecycle_details=lifecycle_details,
+            opctl_additional_message=opctl_additional_message,
+            opctl_id=opctl_id,
+            opctl_name=opctl_name,
+            operator_id=operator_id,
+            reason=reason,
+            request_id=request_id,
+            resource_id=resource_id,
+            resource_name=resource_name,
+            resource_type=resource_type,
+            severity=severity,
+            state=state,
+            sub_resource_lists=sub_resource_lists,
+            system_message=system_message,
+            time_of_creation=time_of_creation,
+            time_of_modification=time_of_modification,
+            time_of_user_creation=time_of_user_creation,
+            user_id=user_id,
+            workflow_ids=workflow_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_reason_summary: str,
+             action_requests_lists: Sequence[str],
+             approver_comment: str,
+             audit_types: Sequence[str],
+             closure_comment: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             duration: int,
+             extend_duration: int,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_auto_approved: bool,
+             lifecycle_details: str,
+             opctl_additional_message: str,
+             opctl_id: str,
+             opctl_name: str,
+             operator_id: str,
+             reason: str,
+             request_id: str,
+             resource_id: str,
+             resource_name: str,
+             resource_type: str,
+             severity: str,
+             state: str,
+             sub_resource_lists: Sequence[str],
+             system_message: str,
+             time_of_creation: str,
+             time_of_modification: str,
+             time_of_user_creation: str,
+             user_id: str,
+             workflow_ids: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("access_reason_summary", access_reason_summary)
+        _setter("action_requests_lists", action_requests_lists)
+        _setter("approver_comment", approver_comment)
+        _setter("audit_types", audit_types)
+        _setter("closure_comment", closure_comment)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("duration", duration)
+        _setter("extend_duration", extend_duration)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_auto_approved", is_auto_approved)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("opctl_additional_message", opctl_additional_message)
+        _setter("opctl_id", opctl_id)
+        _setter("opctl_name", opctl_name)
+        _setter("operator_id", operator_id)
+        _setter("reason", reason)
+        _setter("request_id", request_id)
+        _setter("resource_id", resource_id)
+        _setter("resource_name", resource_name)
+        _setter("resource_type", resource_type)
+        _setter("severity", severity)
+        _setter("state", state)
+        _setter("sub_resource_lists", sub_resource_lists)
+        _setter("system_message", system_message)
+        _setter("time_of_creation", time_of_creation)
+        _setter("time_of_modification", time_of_modification)
+        _setter("time_of_user_creation", time_of_user_creation)
+        _setter("user_id", user_id)
+        _setter("workflow_ids", workflow_ids)
 
     @property
     @pulumi.getter(name="accessReasonSummary")
@@ -478,10 +577,23 @@ class GetAccessRequestsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAccessRequestsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -508,8 +620,19 @@ class GetActionPropertyResult(dict):
         :param str name: Name of the property
         :param str value: value of the property
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetActionPropertyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -537,10 +660,23 @@ class GetActionsFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the entire display name given.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetActionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -565,7 +701,16 @@ class GetActionsFilterResult(dict):
 class GetActionsOperatorActionCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetActionsOperatorActionCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetActionsOperatorActionCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetActionsOperatorActionCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -596,17 +741,42 @@ class GetActionsOperatorActionCollectionItemResult(dict):
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param str state: A filter to return only resources whose lifecycleState matches the given OperatorAction lifecycleState.
         """
-        pulumi.set(__self__, "component", component)
-        pulumi.set(__self__, "customer_display_name", customer_display_name)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "properties", properties)
-        pulumi.set(__self__, "resource_type", resource_type)
+        GetActionsOperatorActionCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            component=component,
+            customer_display_name=customer_display_name,
+            description=description,
+            id=id,
+            name=name,
+            properties=properties,
+            resource_type=resource_type,
+            compartment_id=compartment_id,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             component: str,
+             customer_display_name: str,
+             description: str,
+             id: str,
+             name: str,
+             properties: Sequence['outputs.GetActionsOperatorActionCollectionItemPropertyResult'],
+             resource_type: str,
+             compartment_id: Optional[str] = None,
+             state: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("component", component)
+        _setter("customer_display_name", customer_display_name)
+        _setter("description", description)
+        _setter("id", id)
+        _setter("name", name)
+        _setter("properties", properties)
+        _setter("resource_type", resource_type)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter
@@ -690,8 +860,19 @@ class GetActionsOperatorActionCollectionItemPropertyResult(dict):
         :param str name: A filter to return only resources that match the entire display name given.
         :param str value: value of the property
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetActionsOperatorActionCollectionItemPropertyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -716,10 +897,23 @@ class GetControlAssignmentsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetControlAssignmentsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -741,7 +935,16 @@ class GetControlAssignmentsFilterResult(dict):
 class GetControlAssignmentsOperatorControlAssignmentCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetControlAssignmentsOperatorControlAssignmentCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetControlAssignmentsOperatorControlAssignmentCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetControlAssignmentsOperatorControlAssignmentCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -810,34 +1013,97 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
         :param str time_of_deletion: Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
         :param str unassigner_id: User id who released the operatorControl.
         """
-        pulumi.set(__self__, "assigner_id", assigner_id)
-        pulumi.set(__self__, "comment", comment)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "detachment_description", detachment_description)
-        pulumi.set(__self__, "error_code", error_code)
-        pulumi.set(__self__, "error_message", error_message)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_auto_approve_during_maintenance", is_auto_approve_during_maintenance)
-        pulumi.set(__self__, "is_default_assignment", is_default_assignment)
-        pulumi.set(__self__, "is_enforced_always", is_enforced_always)
-        pulumi.set(__self__, "is_log_forwarded", is_log_forwarded)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "operator_control_id", operator_control_id)
-        pulumi.set(__self__, "remote_syslog_server_address", remote_syslog_server_address)
-        pulumi.set(__self__, "remote_syslog_server_ca_cert", remote_syslog_server_ca_cert)
-        pulumi.set(__self__, "remote_syslog_server_port", remote_syslog_server_port)
-        pulumi.set(__self__, "resource_compartment_id", resource_compartment_id)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_name", resource_name)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_assignment_from", time_assignment_from)
-        pulumi.set(__self__, "time_assignment_to", time_assignment_to)
-        pulumi.set(__self__, "time_of_assignment", time_of_assignment)
-        pulumi.set(__self__, "time_of_deletion", time_of_deletion)
-        pulumi.set(__self__, "unassigner_id", unassigner_id)
+        GetControlAssignmentsOperatorControlAssignmentCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            assigner_id=assigner_id,
+            comment=comment,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            detachment_description=detachment_description,
+            error_code=error_code,
+            error_message=error_message,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_auto_approve_during_maintenance=is_auto_approve_during_maintenance,
+            is_default_assignment=is_default_assignment,
+            is_enforced_always=is_enforced_always,
+            is_log_forwarded=is_log_forwarded,
+            lifecycle_details=lifecycle_details,
+            operator_control_id=operator_control_id,
+            remote_syslog_server_address=remote_syslog_server_address,
+            remote_syslog_server_ca_cert=remote_syslog_server_ca_cert,
+            remote_syslog_server_port=remote_syslog_server_port,
+            resource_compartment_id=resource_compartment_id,
+            resource_id=resource_id,
+            resource_name=resource_name,
+            resource_type=resource_type,
+            state=state,
+            time_assignment_from=time_assignment_from,
+            time_assignment_to=time_assignment_to,
+            time_of_assignment=time_of_assignment,
+            time_of_deletion=time_of_deletion,
+            unassigner_id=unassigner_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             assigner_id: str,
+             comment: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             detachment_description: str,
+             error_code: int,
+             error_message: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_auto_approve_during_maintenance: bool,
+             is_default_assignment: bool,
+             is_enforced_always: bool,
+             is_log_forwarded: bool,
+             lifecycle_details: str,
+             operator_control_id: str,
+             remote_syslog_server_address: str,
+             remote_syslog_server_ca_cert: str,
+             remote_syslog_server_port: int,
+             resource_compartment_id: str,
+             resource_id: str,
+             resource_name: str,
+             resource_type: str,
+             state: str,
+             time_assignment_from: str,
+             time_assignment_to: str,
+             time_of_assignment: str,
+             time_of_deletion: str,
+             unassigner_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("assigner_id", assigner_id)
+        _setter("comment", comment)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("detachment_description", detachment_description)
+        _setter("error_code", error_code)
+        _setter("error_message", error_message)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_auto_approve_during_maintenance", is_auto_approve_during_maintenance)
+        _setter("is_default_assignment", is_default_assignment)
+        _setter("is_enforced_always", is_enforced_always)
+        _setter("is_log_forwarded", is_log_forwarded)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("operator_control_id", operator_control_id)
+        _setter("remote_syslog_server_address", remote_syslog_server_address)
+        _setter("remote_syslog_server_ca_cert", remote_syslog_server_ca_cert)
+        _setter("remote_syslog_server_port", remote_syslog_server_port)
+        _setter("resource_compartment_id", resource_compartment_id)
+        _setter("resource_id", resource_id)
+        _setter("resource_name", resource_name)
+        _setter("resource_type", resource_type)
+        _setter("state", state)
+        _setter("time_assignment_from", time_assignment_from)
+        _setter("time_assignment_to", time_assignment_to)
+        _setter("time_of_assignment", time_of_assignment)
+        _setter("time_of_deletion", time_of_deletion)
+        _setter("unassigner_id", unassigner_id)
 
     @property
     @pulumi.getter(name="assignerId")
@@ -1070,10 +1336,23 @@ class GetControlsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetControlsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1095,7 +1374,16 @@ class GetControlsFilterResult(dict):
 class GetControlsOperatorControlCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetControlsOperatorControlCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetControlsOperatorControlCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetControlsOperatorControlCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1148,26 +1436,73 @@ class GetControlsOperatorControlCollectionItemResult(dict):
         :param str time_of_deletion: Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
         :param str time_of_modification: Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
         """
-        pulumi.set(__self__, "approval_required_op_action_lists", approval_required_op_action_lists)
-        pulumi.set(__self__, "approver_groups_lists", approver_groups_lists)
-        pulumi.set(__self__, "approvers_lists", approvers_lists)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "email_id_lists", email_id_lists)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_default_operator_control", is_default_operator_control)
-        pulumi.set(__self__, "is_fully_pre_approved", is_fully_pre_approved)
-        pulumi.set(__self__, "last_modified_info", last_modified_info)
-        pulumi.set(__self__, "operator_control_name", operator_control_name)
-        pulumi.set(__self__, "pre_approved_op_action_lists", pre_approved_op_action_lists)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_message", system_message)
-        pulumi.set(__self__, "time_of_creation", time_of_creation)
-        pulumi.set(__self__, "time_of_deletion", time_of_deletion)
-        pulumi.set(__self__, "time_of_modification", time_of_modification)
+        GetControlsOperatorControlCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            approval_required_op_action_lists=approval_required_op_action_lists,
+            approver_groups_lists=approver_groups_lists,
+            approvers_lists=approvers_lists,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            email_id_lists=email_id_lists,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_default_operator_control=is_default_operator_control,
+            is_fully_pre_approved=is_fully_pre_approved,
+            last_modified_info=last_modified_info,
+            operator_control_name=operator_control_name,
+            pre_approved_op_action_lists=pre_approved_op_action_lists,
+            resource_type=resource_type,
+            state=state,
+            system_message=system_message,
+            time_of_creation=time_of_creation,
+            time_of_deletion=time_of_deletion,
+            time_of_modification=time_of_modification,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             approval_required_op_action_lists: Sequence[str],
+             approver_groups_lists: Sequence[str],
+             approvers_lists: Sequence[str],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             email_id_lists: Sequence[str],
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_default_operator_control: bool,
+             is_fully_pre_approved: bool,
+             last_modified_info: str,
+             operator_control_name: str,
+             pre_approved_op_action_lists: Sequence[str],
+             resource_type: str,
+             state: str,
+             system_message: str,
+             time_of_creation: str,
+             time_of_deletion: str,
+             time_of_modification: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("approval_required_op_action_lists", approval_required_op_action_lists)
+        _setter("approver_groups_lists", approver_groups_lists)
+        _setter("approvers_lists", approvers_lists)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("email_id_lists", email_id_lists)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_default_operator_control", is_default_operator_control)
+        _setter("is_fully_pre_approved", is_fully_pre_approved)
+        _setter("last_modified_info", last_modified_info)
+        _setter("operator_control_name", operator_control_name)
+        _setter("pre_approved_op_action_lists", pre_approved_op_action_lists)
+        _setter("resource_type", resource_type)
+        _setter("state", state)
+        _setter("system_message", system_message)
+        _setter("time_of_creation", time_of_creation)
+        _setter("time_of_deletion", time_of_deletion)
+        _setter("time_of_modification", time_of_modification)
 
     @property
     @pulumi.getter(name="approvalRequiredOpActionLists")

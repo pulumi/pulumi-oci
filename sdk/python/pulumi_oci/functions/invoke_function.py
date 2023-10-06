@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['InvokeFunctionArgs', 'InvokeFunction']
@@ -32,19 +32,40 @@ class InvokeFunctionArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] invoke_function_body: The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
         """
-        pulumi.set(__self__, "function_id", function_id)
+        InvokeFunctionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            function_id=function_id,
+            base64_encode_content=base64_encode_content,
+            fn_intent=fn_intent,
+            fn_invoke_type=fn_invoke_type,
+            input_body_source_path=input_body_source_path,
+            invoke_function_body=invoke_function_body,
+            invoke_function_body_base64_encoded=invoke_function_body_base64_encoded,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             function_id: pulumi.Input[str],
+             base64_encode_content: Optional[pulumi.Input[bool]] = None,
+             fn_intent: Optional[pulumi.Input[str]] = None,
+             fn_invoke_type: Optional[pulumi.Input[str]] = None,
+             input_body_source_path: Optional[pulumi.Input[str]] = None,
+             invoke_function_body: Optional[pulumi.Input[str]] = None,
+             invoke_function_body_base64_encoded: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("function_id", function_id)
         if base64_encode_content is not None:
-            pulumi.set(__self__, "base64_encode_content", base64_encode_content)
+            _setter("base64_encode_content", base64_encode_content)
         if fn_intent is not None:
-            pulumi.set(__self__, "fn_intent", fn_intent)
+            _setter("fn_intent", fn_intent)
         if fn_invoke_type is not None:
-            pulumi.set(__self__, "fn_invoke_type", fn_invoke_type)
+            _setter("fn_invoke_type", fn_invoke_type)
         if input_body_source_path is not None:
-            pulumi.set(__self__, "input_body_source_path", input_body_source_path)
+            _setter("input_body_source_path", input_body_source_path)
         if invoke_function_body is not None:
-            pulumi.set(__self__, "invoke_function_body", invoke_function_body)
+            _setter("invoke_function_body", invoke_function_body)
         if invoke_function_body_base64_encoded is not None:
-            pulumi.set(__self__, "invoke_function_body_base64_encoded", invoke_function_body_base64_encoded)
+            _setter("invoke_function_body_base64_encoded", invoke_function_body_base64_encoded)
 
     @property
     @pulumi.getter(name="functionId")
@@ -152,24 +173,49 @@ class _InvokeFunctionState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] invoke_function_body: The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
         """
+        _InvokeFunctionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            base64_encode_content=base64_encode_content,
+            content=content,
+            fn_intent=fn_intent,
+            fn_invoke_type=fn_invoke_type,
+            function_id=function_id,
+            input_body_source_path=input_body_source_path,
+            invoke_endpoint=invoke_endpoint,
+            invoke_function_body=invoke_function_body,
+            invoke_function_body_base64_encoded=invoke_function_body_base64_encoded,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             base64_encode_content: Optional[pulumi.Input[bool]] = None,
+             content: Optional[pulumi.Input[str]] = None,
+             fn_intent: Optional[pulumi.Input[str]] = None,
+             fn_invoke_type: Optional[pulumi.Input[str]] = None,
+             function_id: Optional[pulumi.Input[str]] = None,
+             input_body_source_path: Optional[pulumi.Input[str]] = None,
+             invoke_endpoint: Optional[pulumi.Input[str]] = None,
+             invoke_function_body: Optional[pulumi.Input[str]] = None,
+             invoke_function_body_base64_encoded: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if base64_encode_content is not None:
-            pulumi.set(__self__, "base64_encode_content", base64_encode_content)
+            _setter("base64_encode_content", base64_encode_content)
         if content is not None:
-            pulumi.set(__self__, "content", content)
+            _setter("content", content)
         if fn_intent is not None:
-            pulumi.set(__self__, "fn_intent", fn_intent)
+            _setter("fn_intent", fn_intent)
         if fn_invoke_type is not None:
-            pulumi.set(__self__, "fn_invoke_type", fn_invoke_type)
+            _setter("fn_invoke_type", fn_invoke_type)
         if function_id is not None:
-            pulumi.set(__self__, "function_id", function_id)
+            _setter("function_id", function_id)
         if input_body_source_path is not None:
-            pulumi.set(__self__, "input_body_source_path", input_body_source_path)
+            _setter("input_body_source_path", input_body_source_path)
         if invoke_endpoint is not None:
-            pulumi.set(__self__, "invoke_endpoint", invoke_endpoint)
+            _setter("invoke_endpoint", invoke_endpoint)
         if invoke_function_body is not None:
-            pulumi.set(__self__, "invoke_function_body", invoke_function_body)
+            _setter("invoke_function_body", invoke_function_body)
         if invoke_function_body_base64_encoded is not None:
-            pulumi.set(__self__, "invoke_function_body_base64_encoded", invoke_function_body_base64_encoded)
+            _setter("invoke_function_body_base64_encoded", invoke_function_body_base64_encoded)
 
     @property
     @pulumi.getter(name="base64EncodeContent")
@@ -360,6 +406,10 @@ class InvokeFunction(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            InvokeFunctionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

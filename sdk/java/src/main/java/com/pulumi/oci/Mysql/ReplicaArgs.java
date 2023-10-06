@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Mysql.inputs.ReplicaReplicaOverridesArgs;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -96,9 +97,6 @@ public final class ReplicaArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="isDeleteProtected")
     private @Nullable Output<Boolean> isDeleteProtected;
@@ -106,12 +104,24 @@ public final class ReplicaArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Optional<Output<Boolean>> isDeleteProtected() {
         return Optional.ofNullable(this.isDeleteProtected);
+    }
+
+    /**
+     * (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to &#34;&#34;, then the value is inherited from its  source DB system.
+     * 
+     */
+    @Import(name="replicaOverrides")
+    private @Nullable Output<ReplicaReplicaOverridesArgs> replicaOverrides;
+
+    /**
+     * @return (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to &#34;&#34;, then the value is inherited from its  source DB system.
+     * 
+     */
+    public Optional<Output<ReplicaReplicaOverridesArgs>> replicaOverrides() {
+        return Optional.ofNullable(this.replicaOverrides);
     }
 
     private ReplicaArgs() {}
@@ -123,6 +133,7 @@ public final class ReplicaArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.isDeleteProtected = $.isDeleteProtected;
+        this.replicaOverrides = $.replicaOverrides;
     }
 
     public static Builder builder() {
@@ -251,9 +262,6 @@ public final class ReplicaArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param isDeleteProtected (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -265,14 +273,32 @@ public final class ReplicaArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param isDeleteProtected (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
         public Builder isDeleteProtected(Boolean isDeleteProtected) {
             return isDeleteProtected(Output.of(isDeleteProtected));
+        }
+
+        /**
+         * @param replicaOverrides (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to &#34;&#34;, then the value is inherited from its  source DB system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicaOverrides(@Nullable Output<ReplicaReplicaOverridesArgs> replicaOverrides) {
+            $.replicaOverrides = replicaOverrides;
+            return this;
+        }
+
+        /**
+         * @param replicaOverrides (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to &#34;&#34;, then the value is inherited from its  source DB system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicaOverrides(ReplicaReplicaOverridesArgs replicaOverrides) {
+            return replicaOverrides(Output.of(replicaOverrides));
         }
 
         public ReplicaArgs build() {

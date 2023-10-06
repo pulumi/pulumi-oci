@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ExternalNonContainerDatabaseManagementArgs', 'ExternalNonContainerDatabaseManagement']
@@ -27,11 +27,26 @@ class ExternalNonContainerDatabaseManagementArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "enable_management", enable_management)
-        pulumi.set(__self__, "external_database_connector_id", external_database_connector_id)
-        pulumi.set(__self__, "external_non_container_database_id", external_non_container_database_id)
+        ExternalNonContainerDatabaseManagementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_management=enable_management,
+            external_database_connector_id=external_database_connector_id,
+            external_non_container_database_id=external_non_container_database_id,
+            license_model=license_model,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_management: pulumi.Input[bool],
+             external_database_connector_id: pulumi.Input[str],
+             external_non_container_database_id: pulumi.Input[str],
+             license_model: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("enable_management", enable_management)
+        _setter("external_database_connector_id", external_database_connector_id)
+        _setter("external_non_container_database_id", external_non_container_database_id)
         if license_model is not None:
-            pulumi.set(__self__, "license_model", license_model)
+            _setter("license_model", license_model)
 
     @property
     @pulumi.getter(name="enableManagement")
@@ -98,14 +113,29 @@ class _ExternalNonContainerDatabaseManagementState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _ExternalNonContainerDatabaseManagementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_management=enable_management,
+            external_database_connector_id=external_database_connector_id,
+            external_non_container_database_id=external_non_container_database_id,
+            license_model=license_model,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_management: Optional[pulumi.Input[bool]] = None,
+             external_database_connector_id: Optional[pulumi.Input[str]] = None,
+             external_non_container_database_id: Optional[pulumi.Input[str]] = None,
+             license_model: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if enable_management is not None:
-            pulumi.set(__self__, "enable_management", enable_management)
+            _setter("enable_management", enable_management)
         if external_database_connector_id is not None:
-            pulumi.set(__self__, "external_database_connector_id", external_database_connector_id)
+            _setter("external_database_connector_id", external_database_connector_id)
         if external_non_container_database_id is not None:
-            pulumi.set(__self__, "external_non_container_database_id", external_non_container_database_id)
+            _setter("external_non_container_database_id", external_non_container_database_id)
         if license_model is not None:
-            pulumi.set(__self__, "license_model", license_model)
+            _setter("license_model", license_model)
 
     @property
     @pulumi.getter(name="enableManagement")
@@ -213,6 +243,10 @@ class ExternalNonContainerDatabaseManagement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ExternalNonContainerDatabaseManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

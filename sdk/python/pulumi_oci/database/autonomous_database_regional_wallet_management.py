@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['AutonomousDatabaseRegionalWalletManagementArgs', 'AutonomousDatabaseRegionalWalletManagement']
@@ -25,10 +25,21 @@ class AutonomousDatabaseRegionalWalletManagementArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        AutonomousDatabaseRegionalWalletManagementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            grace_period=grace_period,
+            should_rotate=should_rotate,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             grace_period: Optional[pulumi.Input[int]] = None,
+             should_rotate: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if grace_period is not None:
-            pulumi.set(__self__, "grace_period", grace_period)
+            _setter("grace_period", grace_period)
         if should_rotate is not None:
-            pulumi.set(__self__, "should_rotate", should_rotate)
+            _setter("should_rotate", should_rotate)
 
     @property
     @pulumi.getter(name="gracePeriod")
@@ -77,14 +88,29 @@ class _AutonomousDatabaseRegionalWalletManagementState:
         :param pulumi.Input[str] state: The current lifecycle state of the Autonomous Database wallet.
         :param pulumi.Input[str] time_rotated: The date and time the wallet was last rotated.
         """
+        _AutonomousDatabaseRegionalWalletManagementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            grace_period=grace_period,
+            should_rotate=should_rotate,
+            state=state,
+            time_rotated=time_rotated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             grace_period: Optional[pulumi.Input[int]] = None,
+             should_rotate: Optional[pulumi.Input[bool]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_rotated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if grace_period is not None:
-            pulumi.set(__self__, "grace_period", grace_period)
+            _setter("grace_period", grace_period)
         if should_rotate is not None:
-            pulumi.set(__self__, "should_rotate", should_rotate)
+            _setter("should_rotate", should_rotate)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_rotated is not None:
-            pulumi.set(__self__, "time_rotated", time_rotated)
+            _setter("time_rotated", time_rotated)
 
     @property
     @pulumi.getter(name="gracePeriod")
@@ -212,6 +238,10 @@ class AutonomousDatabaseRegionalWalletManagement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AutonomousDatabaseRegionalWalletManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

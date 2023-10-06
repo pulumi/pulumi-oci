@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -47,24 +47,53 @@ class InstancePoolArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
-        pulumi.set(__self__, "placement_configurations", placement_configurations)
-        pulumi.set(__self__, "size", size)
+        InstancePoolArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            instance_configuration_id=instance_configuration_id,
+            placement_configurations=placement_configurations,
+            size=size,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            instance_display_name_formatter=instance_display_name_formatter,
+            instance_hostname_formatter=instance_hostname_formatter,
+            load_balancers=load_balancers,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             instance_configuration_id: pulumi.Input[str],
+             placement_configurations: pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]],
+             size: pulumi.Input[int],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             instance_display_name_formatter: Optional[pulumi.Input[str]] = None,
+             instance_hostname_formatter: Optional[pulumi.Input[str]] = None,
+             load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("instance_configuration_id", instance_configuration_id)
+        _setter("placement_configurations", placement_configurations)
+        _setter("size", size)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if instance_display_name_formatter is not None:
-            pulumi.set(__self__, "instance_display_name_formatter", instance_display_name_formatter)
+            _setter("instance_display_name_formatter", instance_display_name_formatter)
         if instance_hostname_formatter is not None:
-            pulumi.set(__self__, "instance_hostname_formatter", instance_hostname_formatter)
+            _setter("instance_hostname_formatter", instance_hostname_formatter)
         if load_balancers is not None:
-            pulumi.set(__self__, "load_balancers", load_balancers)
+            _setter("load_balancers", load_balancers)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -243,32 +272,65 @@ class _InstancePoolState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
+        _InstancePoolState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actual_size=actual_size,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            instance_configuration_id=instance_configuration_id,
+            instance_display_name_formatter=instance_display_name_formatter,
+            instance_hostname_formatter=instance_hostname_formatter,
+            load_balancers=load_balancers,
+            placement_configurations=placement_configurations,
+            size=size,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actual_size: Optional[pulumi.Input[int]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             instance_configuration_id: Optional[pulumi.Input[str]] = None,
+             instance_display_name_formatter: Optional[pulumi.Input[str]] = None,
+             instance_hostname_formatter: Optional[pulumi.Input[str]] = None,
+             load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]] = None,
+             placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]]] = None,
+             size: Optional[pulumi.Input[int]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if actual_size is not None:
-            pulumi.set(__self__, "actual_size", actual_size)
+            _setter("actual_size", actual_size)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if instance_configuration_id is not None:
-            pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
+            _setter("instance_configuration_id", instance_configuration_id)
         if instance_display_name_formatter is not None:
-            pulumi.set(__self__, "instance_display_name_formatter", instance_display_name_formatter)
+            _setter("instance_display_name_formatter", instance_display_name_formatter)
         if instance_hostname_formatter is not None:
-            pulumi.set(__self__, "instance_hostname_formatter", instance_hostname_formatter)
+            _setter("instance_hostname_formatter", instance_hostname_formatter)
         if load_balancers is not None:
-            pulumi.set(__self__, "load_balancers", load_balancers)
+            _setter("load_balancers", load_balancers)
         if placement_configurations is not None:
-            pulumi.set(__self__, "placement_configurations", placement_configurations)
+            _setter("placement_configurations", placement_configurations)
         if size is not None:
-            pulumi.set(__self__, "size", size)
+            _setter("size", size)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="actualSize")
@@ -614,6 +676,10 @@ class InstancePool(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            InstancePoolArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

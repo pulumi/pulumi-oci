@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -44,25 +44,54 @@ class PipelineRunArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "pipeline_id", pipeline_id)
-        pulumi.set(__self__, "project_id", project_id)
+        PipelineRunArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            pipeline_id=pipeline_id,
+            project_id=project_id,
+            configuration_override_details=configuration_override_details,
+            defined_tags=defined_tags,
+            delete_related_job_runs=delete_related_job_runs,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            log_configuration_override_details=log_configuration_override_details,
+            step_override_details=step_override_details,
+            system_tags=system_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             pipeline_id: pulumi.Input[str],
+             project_id: pulumi.Input[str],
+             configuration_override_details: Optional[pulumi.Input['PipelineRunConfigurationOverrideDetailsArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             delete_related_job_runs: Optional[pulumi.Input[bool]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             log_configuration_override_details: Optional[pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs']] = None,
+             step_override_details: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("pipeline_id", pipeline_id)
+        _setter("project_id", project_id)
         if configuration_override_details is not None:
-            pulumi.set(__self__, "configuration_override_details", configuration_override_details)
+            _setter("configuration_override_details", configuration_override_details)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if delete_related_job_runs is not None:
-            pulumi.set(__self__, "delete_related_job_runs", delete_related_job_runs)
+            _setter("delete_related_job_runs", delete_related_job_runs)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if log_configuration_override_details is not None:
-            pulumi.set(__self__, "log_configuration_override_details", log_configuration_override_details)
+            _setter("log_configuration_override_details", log_configuration_override_details)
         if step_override_details is not None:
-            pulumi.set(__self__, "step_override_details", step_override_details)
+            _setter("step_override_details", step_override_details)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -249,48 +278,97 @@ class _PipelineRunState:
         :param pulumi.Input[str] time_started: The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated: The date and time the pipeline run was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
+        _PipelineRunState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            configuration_details=configuration_details,
+            configuration_override_details=configuration_override_details,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            delete_related_job_runs=delete_related_job_runs,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            log_configuration_override_details=log_configuration_override_details,
+            log_details=log_details,
+            pipeline_id=pipeline_id,
+            project_id=project_id,
+            state=state,
+            step_override_details=step_override_details,
+            step_runs=step_runs,
+            system_tags=system_tags,
+            time_accepted=time_accepted,
+            time_finished=time_finished,
+            time_started=time_started,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunConfigurationDetailArgs']]]] = None,
+             configuration_override_details: Optional[pulumi.Input['PipelineRunConfigurationOverrideDetailsArgs']] = None,
+             created_by: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             delete_related_job_runs: Optional[pulumi.Input[bool]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             log_configuration_override_details: Optional[pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs']] = None,
+             log_details: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunLogDetailArgs']]]] = None,
+             pipeline_id: Optional[pulumi.Input[str]] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             step_override_details: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]] = None,
+             step_runs: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepRunArgs']]]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_accepted: Optional[pulumi.Input[str]] = None,
+             time_finished: Optional[pulumi.Input[str]] = None,
+             time_started: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if configuration_details is not None:
-            pulumi.set(__self__, "configuration_details", configuration_details)
+            _setter("configuration_details", configuration_details)
         if configuration_override_details is not None:
-            pulumi.set(__self__, "configuration_override_details", configuration_override_details)
+            _setter("configuration_override_details", configuration_override_details)
         if created_by is not None:
-            pulumi.set(__self__, "created_by", created_by)
+            _setter("created_by", created_by)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if delete_related_job_runs is not None:
-            pulumi.set(__self__, "delete_related_job_runs", delete_related_job_runs)
+            _setter("delete_related_job_runs", delete_related_job_runs)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if log_configuration_override_details is not None:
-            pulumi.set(__self__, "log_configuration_override_details", log_configuration_override_details)
+            _setter("log_configuration_override_details", log_configuration_override_details)
         if log_details is not None:
-            pulumi.set(__self__, "log_details", log_details)
+            _setter("log_details", log_details)
         if pipeline_id is not None:
-            pulumi.set(__self__, "pipeline_id", pipeline_id)
+            _setter("pipeline_id", pipeline_id)
         if project_id is not None:
-            pulumi.set(__self__, "project_id", project_id)
+            _setter("project_id", project_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if step_override_details is not None:
-            pulumi.set(__self__, "step_override_details", step_override_details)
+            _setter("step_override_details", step_override_details)
         if step_runs is not None:
-            pulumi.set(__self__, "step_runs", step_runs)
+            _setter("step_runs", step_runs)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_accepted is not None:
-            pulumi.set(__self__, "time_accepted", time_accepted)
+            _setter("time_accepted", time_accepted)
         if time_finished is not None:
-            pulumi.set(__self__, "time_finished", time_finished)
+            _setter("time_finished", time_finished)
         if time_started is not None:
-            pulumi.set(__self__, "time_started", time_started)
+            _setter("time_started", time_started)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -702,6 +780,10 @@ class PipelineRun(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            PipelineRunArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -730,11 +812,21 @@ class PipelineRun(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            if configuration_override_details is not None and not isinstance(configuration_override_details, PipelineRunConfigurationOverrideDetailsArgs):
+                configuration_override_details = configuration_override_details or {}
+                def _setter(key, value):
+                    configuration_override_details[key] = value
+                PipelineRunConfigurationOverrideDetailsArgs._configure(_setter, **configuration_override_details)
             __props__.__dict__["configuration_override_details"] = configuration_override_details
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["delete_related_job_runs"] = delete_related_job_runs
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            if log_configuration_override_details is not None and not isinstance(log_configuration_override_details, PipelineRunLogConfigurationOverrideDetailsArgs):
+                log_configuration_override_details = log_configuration_override_details or {}
+                def _setter(key, value):
+                    log_configuration_override_details[key] = value
+                PipelineRunLogConfigurationOverrideDetailsArgs._configure(_setter, **log_configuration_override_details)
             __props__.__dict__["log_configuration_override_details"] = log_configuration_override_details
             if pipeline_id is None and not opts.urn:
                 raise TypeError("Missing required property 'pipeline_id'")

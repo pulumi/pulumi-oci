@@ -22,46 +22,6 @@ import (
 // to reject an otherwise valid request when the total rate of management write operations exceeds 10
 // requests per second for a given tenancy.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Kms.NewKey(ctx, "testKey", &Kms.KeyArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Key_display_name),
-//				KeyShape: &kms.KeyKeyShapeArgs{
-//					Algorithm: pulumi.Any(_var.Key_key_shape_algorithm),
-//					Length:    pulumi.Any(_var.Key_key_shape_length),
-//					CurveId:   pulumi.Any(oci_kms_curve.Test_curve.Id),
-//				},
-//				ManagementEndpoint: pulumi.Any(_var.Key_management_endpoint),
-//				DefinedTags: pulumi.AnyMap{
-//					"Operations.CostCenter": pulumi.Any("42"),
-//				},
-//				FreeformTags: pulumi.AnyMap{
-//					"Department": pulumi.Any("Finance"),
-//				},
-//				ProtectionMode: pulumi.Any(_var.Key_protection_mode),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // Keys can be imported using the `id`, e.g.
@@ -84,15 +44,19 @@ type Key struct {
 	DesiredState pulumi.StringOutput `pulumi:"desiredState"`
 	// (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// A reference to the key on external key manager.
+	ExternalKeyReference KeyExternalKeyReferenceOutput `pulumi:"externalKeyReference"`
+	// Key reference data to be returned to the customer as a response.
+	ExternalKeyReferenceDetails KeyExternalKeyReferenceDetailArrayOutput `pulumi:"externalKeyReferenceDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+	// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
 	IsPrimary pulumi.BoolOutput `pulumi:"isPrimary"`
 	// The cryptographic properties of a key.
 	KeyShape KeyKeyShapeOutput `pulumi:"keyShape"`
 	// The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
 	ManagementEndpoint pulumi.StringOutput `pulumi:"managementEndpoint"`
-	// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+	// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
 	ProtectionMode pulumi.StringOutput `pulumi:"protectionMode"`
 	// Key replica details
 	ReplicaDetails KeyReplicaDetailArrayOutput `pulumi:"replicaDetails"`
@@ -169,15 +133,19 @@ type keyState struct {
 	DesiredState *string `pulumi:"desiredState"`
 	// (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
+	// A reference to the key on external key manager.
+	ExternalKeyReference *KeyExternalKeyReference `pulumi:"externalKeyReference"`
+	// Key reference data to be returned to the customer as a response.
+	ExternalKeyReferenceDetails []KeyExternalKeyReferenceDetail `pulumi:"externalKeyReferenceDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+	// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
 	IsPrimary *bool `pulumi:"isPrimary"`
 	// The cryptographic properties of a key.
 	KeyShape *KeyKeyShape `pulumi:"keyShape"`
 	// The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
 	ManagementEndpoint *string `pulumi:"managementEndpoint"`
-	// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+	// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
 	ProtectionMode *string `pulumi:"protectionMode"`
 	// Key replica details
 	ReplicaDetails []KeyReplicaDetail `pulumi:"replicaDetails"`
@@ -213,15 +181,19 @@ type KeyState struct {
 	DesiredState pulumi.StringPtrInput
 	// (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
+	// A reference to the key on external key manager.
+	ExternalKeyReference KeyExternalKeyReferencePtrInput
+	// Key reference data to be returned to the customer as a response.
+	ExternalKeyReferenceDetails KeyExternalKeyReferenceDetailArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+	// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
 	IsPrimary pulumi.BoolPtrInput
 	// The cryptographic properties of a key.
 	KeyShape KeyKeyShapePtrInput
 	// The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
 	ManagementEndpoint pulumi.StringPtrInput
-	// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+	// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
 	ProtectionMode pulumi.StringPtrInput
 	// Key replica details
 	ReplicaDetails KeyReplicaDetailArrayInput
@@ -259,13 +231,15 @@ type keyArgs struct {
 	DesiredState *string `pulumi:"desiredState"`
 	// (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
+	// A reference to the key on external key manager.
+	ExternalKeyReference *KeyExternalKeyReference `pulumi:"externalKeyReference"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The cryptographic properties of a key.
 	KeyShape KeyKeyShape `pulumi:"keyShape"`
 	// The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
 	ManagementEndpoint string `pulumi:"managementEndpoint"`
-	// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+	// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
 	ProtectionMode *string `pulumi:"protectionMode"`
 	// (Updatable) Details where key was backed up.
 	RestoreFromFile *KeyRestoreFromFile `pulumi:"restoreFromFile"`
@@ -290,13 +264,15 @@ type KeyArgs struct {
 	DesiredState pulumi.StringPtrInput
 	// (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
+	// A reference to the key on external key manager.
+	ExternalKeyReference KeyExternalKeyReferencePtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The cryptographic properties of a key.
 	KeyShape KeyKeyShapeInput
 	// The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
 	ManagementEndpoint pulumi.StringInput
-	// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+	// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
 	ProtectionMode pulumi.StringPtrInput
 	// (Updatable) Details where key was backed up.
 	RestoreFromFile KeyRestoreFromFilePtrInput
@@ -447,12 +423,22 @@ func (o KeyOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Key) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// A reference to the key on external key manager.
+func (o KeyOutput) ExternalKeyReference() KeyExternalKeyReferenceOutput {
+	return o.ApplyT(func(v *Key) KeyExternalKeyReferenceOutput { return v.ExternalKeyReference }).(KeyExternalKeyReferenceOutput)
+}
+
+// Key reference data to be returned to the customer as a response.
+func (o KeyOutput) ExternalKeyReferenceDetails() KeyExternalKeyReferenceDetailArrayOutput {
+	return o.ApplyT(func(v *Key) KeyExternalKeyReferenceDetailArrayOutput { return v.ExternalKeyReferenceDetails }).(KeyExternalKeyReferenceDetailArrayOutput)
+}
+
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o KeyOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Key) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
 func (o KeyOutput) IsPrimary() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Key) pulumi.BoolOutput { return v.IsPrimary }).(pulumi.BoolOutput)
 }
@@ -467,7 +453,7 @@ func (o KeyOutput) ManagementEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v *Key) pulumi.StringOutput { return v.ManagementEndpoint }).(pulumi.StringOutput)
 }
 
-// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
 func (o KeyOutput) ProtectionMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *Key) pulumi.StringOutput { return v.ProtectionMode }).(pulumi.StringOutput)
 }

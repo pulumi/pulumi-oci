@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -35,23 +35,45 @@ class AutoScalingConfigurationArgs:
                
                For schedule-based autoscaling policies, this value is not used.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_enabled: Whether the autoscaling policy is enabled.
         """
-        pulumi.set(__self__, "auto_scaling_resources", auto_scaling_resources)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "policies", policies)
+        AutoScalingConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auto_scaling_resources=auto_scaling_resources,
+            compartment_id=compartment_id,
+            policies=policies,
+            cool_down_in_seconds=cool_down_in_seconds,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auto_scaling_resources: pulumi.Input['AutoScalingConfigurationAutoScalingResourcesArgs'],
+             compartment_id: pulumi.Input[str],
+             policies: pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyArgs']]],
+             cool_down_in_seconds: Optional[pulumi.Input[int]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("auto_scaling_resources", auto_scaling_resources)
+        _setter("compartment_id", compartment_id)
+        _setter("policies", policies)
         if cool_down_in_seconds is not None:
-            pulumi.set(__self__, "cool_down_in_seconds", cool_down_in_seconds)
+            _setter("cool_down_in_seconds", cool_down_in_seconds)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="autoScalingResources")
@@ -120,9 +142,6 @@ class AutoScalingConfigurationArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -178,7 +197,6 @@ class _AutoScalingConfigurationState:
                
                For schedule-based autoscaling policies, this value is not used.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_enabled: Whether the autoscaling policy is enabled.
         :param pulumi.Input[int] max_resource_count: The maximum number of resources to scale out to.
@@ -186,28 +204,57 @@ class _AutoScalingConfigurationState:
         :param pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyArgs']]] policies: Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
         :param pulumi.Input[str] time_created: The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
+        _AutoScalingConfigurationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auto_scaling_resources=auto_scaling_resources,
+            compartment_id=compartment_id,
+            cool_down_in_seconds=cool_down_in_seconds,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            is_enabled=is_enabled,
+            max_resource_count=max_resource_count,
+            min_resource_count=min_resource_count,
+            policies=policies,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auto_scaling_resources: Optional[pulumi.Input['AutoScalingConfigurationAutoScalingResourcesArgs']] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             cool_down_in_seconds: Optional[pulumi.Input[int]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             max_resource_count: Optional[pulumi.Input[int]] = None,
+             min_resource_count: Optional[pulumi.Input[int]] = None,
+             policies: Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyArgs']]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if auto_scaling_resources is not None:
-            pulumi.set(__self__, "auto_scaling_resources", auto_scaling_resources)
+            _setter("auto_scaling_resources", auto_scaling_resources)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if cool_down_in_seconds is not None:
-            pulumi.set(__self__, "cool_down_in_seconds", cool_down_in_seconds)
+            _setter("cool_down_in_seconds", cool_down_in_seconds)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if max_resource_count is not None:
-            pulumi.set(__self__, "max_resource_count", max_resource_count)
+            _setter("max_resource_count", max_resource_count)
         if min_resource_count is not None:
-            pulumi.set(__self__, "min_resource_count", min_resource_count)
+            _setter("min_resource_count", min_resource_count)
         if policies is not None:
-            pulumi.set(__self__, "policies", policies)
+            _setter("policies", policies)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="autoScalingResources")
@@ -264,9 +311,6 @@ class _AutoScalingConfigurationState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -439,7 +483,6 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                
                For schedule-based autoscaling policies, this value is not used.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_enabled: Whether the autoscaling policy is enabled.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']]]] policies: Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
@@ -529,6 +572,10 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AutoScalingConfigurationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -551,6 +598,11 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = AutoScalingConfigurationArgs.__new__(AutoScalingConfigurationArgs)
 
+            if auto_scaling_resources is not None and not isinstance(auto_scaling_resources, AutoScalingConfigurationAutoScalingResourcesArgs):
+                auto_scaling_resources = auto_scaling_resources or {}
+                def _setter(key, value):
+                    auto_scaling_resources[key] = value
+                AutoScalingConfigurationAutoScalingResourcesArgs._configure(_setter, **auto_scaling_resources)
             if auto_scaling_resources is None and not opts.urn:
                 raise TypeError("Missing required property 'auto_scaling_resources'")
             __props__.__dict__["auto_scaling_resources"] = auto_scaling_resources
@@ -604,7 +656,6 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                
                For schedule-based autoscaling policies, this value is not used.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_enabled: Whether the autoscaling policy is enabled.
         :param pulumi.Input[int] max_resource_count: The maximum number of resources to scale out to.
@@ -668,9 +719,6 @@ class AutoScalingConfiguration(pulumi.CustomResource):
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -62,10 +62,21 @@ class BlockchainPlatformComponentDetail(dict):
         :param Sequence['BlockchainPlatformComponentDetailOsnArgs'] osns: List of OSNs
         :param Sequence['BlockchainPlatformComponentDetailPeerArgs'] peers: List of Peers
         """
+        BlockchainPlatformComponentDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            osns=osns,
+            peers=peers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             osns: Optional[Sequence['outputs.BlockchainPlatformComponentDetailOsn']] = None,
+             peers: Optional[Sequence['outputs.BlockchainPlatformComponentDetailPeer']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if osns is not None:
-            pulumi.set(__self__, "osns", osns)
+            _setter("osns", osns)
         if peers is not None:
-            pulumi.set(__self__, "peers", peers)
+            _setter("peers", peers)
 
     @property
     @pulumi.getter
@@ -116,14 +127,29 @@ class BlockchainPlatformComponentDetailOsn(dict):
         :param str osn_key: OSN identifier
         :param str state: The current state of the Platform Instance.
         """
+        BlockchainPlatformComponentDetailOsn._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ad=ad,
+            ocpu_allocation_params=ocpu_allocation_params,
+            osn_key=osn_key,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ad: Optional[str] = None,
+             ocpu_allocation_params: Optional[Sequence['outputs.BlockchainPlatformComponentDetailOsnOcpuAllocationParam']] = None,
+             osn_key: Optional[str] = None,
+             state: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if ad is not None:
-            pulumi.set(__self__, "ad", ad)
+            _setter("ad", ad)
         if ocpu_allocation_params is not None:
-            pulumi.set(__self__, "ocpu_allocation_params", ocpu_allocation_params)
+            _setter("ocpu_allocation_params", ocpu_allocation_params)
         if osn_key is not None:
-            pulumi.set(__self__, "osn_key", osn_key)
+            _setter("osn_key", osn_key)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter
@@ -182,8 +208,17 @@ class BlockchainPlatformComponentDetailOsnOcpuAllocationParam(dict):
         """
         :param float ocpu_allocation_number: Number of OCPU allocation
         """
+        BlockchainPlatformComponentDetailOsnOcpuAllocationParam._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ocpu_allocation_number=ocpu_allocation_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ocpu_allocation_number: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if ocpu_allocation_number is not None:
-            pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
+            _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -232,20 +267,41 @@ class BlockchainPlatformComponentDetailPeer(dict):
         :param str role: Peer role
         :param str state: The current state of the Platform Instance.
         """
+        BlockchainPlatformComponentDetailPeer._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ad=ad,
+            alias=alias,
+            host=host,
+            ocpu_allocation_params=ocpu_allocation_params,
+            peer_key=peer_key,
+            role=role,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ad: Optional[str] = None,
+             alias: Optional[str] = None,
+             host: Optional[str] = None,
+             ocpu_allocation_params: Optional[Sequence['outputs.BlockchainPlatformComponentDetailPeerOcpuAllocationParam']] = None,
+             peer_key: Optional[str] = None,
+             role: Optional[str] = None,
+             state: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if ad is not None:
-            pulumi.set(__self__, "ad", ad)
+            _setter("ad", ad)
         if alias is not None:
-            pulumi.set(__self__, "alias", alias)
+            _setter("alias", alias)
         if host is not None:
-            pulumi.set(__self__, "host", host)
+            _setter("host", host)
         if ocpu_allocation_params is not None:
-            pulumi.set(__self__, "ocpu_allocation_params", ocpu_allocation_params)
+            _setter("ocpu_allocation_params", ocpu_allocation_params)
         if peer_key is not None:
-            pulumi.set(__self__, "peer_key", peer_key)
+            _setter("peer_key", peer_key)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter
@@ -328,8 +384,17 @@ class BlockchainPlatformComponentDetailPeerOcpuAllocationParam(dict):
         """
         :param float ocpu_allocation_number: Number of OCPU allocation
         """
+        BlockchainPlatformComponentDetailPeerOcpuAllocationParam._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ocpu_allocation_number=ocpu_allocation_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ocpu_allocation_number: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if ocpu_allocation_number is not None:
-            pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
+            _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -370,12 +435,25 @@ class BlockchainPlatformHostOcpuUtilizationInfo(dict):
         :param float ocpu_capacity_number: Number of total OCPU capacity on the host
         :param float ocpu_utilization_number: Number of OCPU utilized
         """
+        BlockchainPlatformHostOcpuUtilizationInfo._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host=host,
+            ocpu_capacity_number=ocpu_capacity_number,
+            ocpu_utilization_number=ocpu_utilization_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host: Optional[str] = None,
+             ocpu_capacity_number: Optional[float] = None,
+             ocpu_utilization_number: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if host is not None:
-            pulumi.set(__self__, "host", host)
+            _setter("host", host)
         if ocpu_capacity_number is not None:
-            pulumi.set(__self__, "ocpu_capacity_number", ocpu_capacity_number)
+            _setter("ocpu_capacity_number", ocpu_capacity_number)
         if ocpu_utilization_number is not None:
-            pulumi.set(__self__, "ocpu_utilization_number", ocpu_utilization_number)
+            _setter("ocpu_utilization_number", ocpu_utilization_number)
 
     @property
     @pulumi.getter
@@ -434,12 +512,25 @@ class BlockchainPlatformReplicas(dict):
         :param int console_count: Number of console replicas
         :param int proxy_count: Number of REST proxy replicas
         """
+        BlockchainPlatformReplicas._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ca_count=ca_count,
+            console_count=console_count,
+            proxy_count=proxy_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ca_count: Optional[int] = None,
+             console_count: Optional[int] = None,
+             proxy_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if ca_count is not None:
-            pulumi.set(__self__, "ca_count", ca_count)
+            _setter("ca_count", ca_count)
         if console_count is not None:
-            pulumi.set(__self__, "console_count", console_count)
+            _setter("console_count", console_count)
         if proxy_count is not None:
-            pulumi.set(__self__, "proxy_count", proxy_count)
+            _setter("proxy_count", proxy_count)
 
     @property
     @pulumi.getter(name="caCount")
@@ -494,7 +585,16 @@ class OsnOcpuAllocationParam(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
+        OsnOcpuAllocationParam._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ocpu_allocation_number=ocpu_allocation_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ocpu_allocation_number: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -533,7 +633,16 @@ class PeerOcpuAllocationParam(dict):
         """
         :param float ocpu_allocation_number: (Updatable) Number of OCPU allocation
         """
-        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
+        PeerOcpuAllocationParam._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ocpu_allocation_number=ocpu_allocation_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ocpu_allocation_number: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -553,8 +662,19 @@ class GetBlockchainPlatformComponentDetailResult(dict):
         :param Sequence['GetBlockchainPlatformComponentDetailOsnArgs'] osns: List of OSNs
         :param Sequence['GetBlockchainPlatformComponentDetailPeerArgs'] peers: List of Peers
         """
-        pulumi.set(__self__, "osns", osns)
-        pulumi.set(__self__, "peers", peers)
+        GetBlockchainPlatformComponentDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            osns=osns,
+            peers=peers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             osns: Sequence['outputs.GetBlockchainPlatformComponentDetailOsnResult'],
+             peers: Sequence['outputs.GetBlockchainPlatformComponentDetailPeerResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("osns", osns)
+        _setter("peers", peers)
 
     @property
     @pulumi.getter
@@ -586,10 +706,25 @@ class GetBlockchainPlatformComponentDetailOsnResult(dict):
         :param str osn_key: OSN identifier
         :param str state: The current state of the Platform Instance.
         """
-        pulumi.set(__self__, "ad", ad)
-        pulumi.set(__self__, "ocpu_allocation_params", ocpu_allocation_params)
-        pulumi.set(__self__, "osn_key", osn_key)
-        pulumi.set(__self__, "state", state)
+        GetBlockchainPlatformComponentDetailOsnResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ad=ad,
+            ocpu_allocation_params=ocpu_allocation_params,
+            osn_key=osn_key,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ad: str,
+             ocpu_allocation_params: Sequence['outputs.GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamResult'],
+             osn_key: str,
+             state: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ad", ad)
+        _setter("ocpu_allocation_params", ocpu_allocation_params)
+        _setter("osn_key", osn_key)
+        _setter("state", state)
 
     @property
     @pulumi.getter
@@ -631,7 +766,16 @@ class GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamResult(dict):
         """
         :param float ocpu_allocation_number: Number of OCPU allocation
         """
-        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
+        GetBlockchainPlatformComponentDetailOsnOcpuAllocationParamResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ocpu_allocation_number=ocpu_allocation_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ocpu_allocation_number: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -661,13 +805,34 @@ class GetBlockchainPlatformComponentDetailPeerResult(dict):
         :param str role: Peer role
         :param str state: The current state of the Platform Instance.
         """
-        pulumi.set(__self__, "ad", ad)
-        pulumi.set(__self__, "alias", alias)
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "ocpu_allocation_params", ocpu_allocation_params)
-        pulumi.set(__self__, "peer_key", peer_key)
-        pulumi.set(__self__, "role", role)
-        pulumi.set(__self__, "state", state)
+        GetBlockchainPlatformComponentDetailPeerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ad=ad,
+            alias=alias,
+            host=host,
+            ocpu_allocation_params=ocpu_allocation_params,
+            peer_key=peer_key,
+            role=role,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ad: str,
+             alias: str,
+             host: str,
+             ocpu_allocation_params: Sequence['outputs.GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamResult'],
+             peer_key: str,
+             role: str,
+             state: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ad", ad)
+        _setter("alias", alias)
+        _setter("host", host)
+        _setter("ocpu_allocation_params", ocpu_allocation_params)
+        _setter("peer_key", peer_key)
+        _setter("role", role)
+        _setter("state", state)
 
     @property
     @pulumi.getter
@@ -733,7 +898,16 @@ class GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamResult(dict):
         """
         :param float ocpu_allocation_number: Number of OCPU allocation
         """
-        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
+        GetBlockchainPlatformComponentDetailPeerOcpuAllocationParamResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ocpu_allocation_number=ocpu_allocation_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ocpu_allocation_number: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -755,9 +929,22 @@ class GetBlockchainPlatformHostOcpuUtilizationInfoResult(dict):
         :param float ocpu_capacity_number: Number of total OCPU capacity on the host
         :param float ocpu_utilization_number: Number of OCPU utilized
         """
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "ocpu_capacity_number", ocpu_capacity_number)
-        pulumi.set(__self__, "ocpu_utilization_number", ocpu_utilization_number)
+        GetBlockchainPlatformHostOcpuUtilizationInfoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host=host,
+            ocpu_capacity_number=ocpu_capacity_number,
+            ocpu_utilization_number=ocpu_utilization_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host: str,
+             ocpu_capacity_number: float,
+             ocpu_utilization_number: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("host", host)
+        _setter("ocpu_capacity_number", ocpu_capacity_number)
+        _setter("ocpu_utilization_number", ocpu_utilization_number)
 
     @property
     @pulumi.getter
@@ -791,7 +978,16 @@ class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionResult(dict):
         """
         :param Sequence['GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemArgs'] items: Collection of PatchSummary
         """
-        pulumi.set(__self__, "items", items)
+        GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -809,7 +1005,16 @@ class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemResult(di
         """
         :param Sequence['GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemArgs'] items: Collection of PatchSummary
         """
-        pulumi.set(__self__, "items", items)
+        GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -833,10 +1038,25 @@ class GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemResul
         :param str service_version: patch service version
         :param str time_patch_due: patch due date for customer initiated patching
         """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "patch_info_url", patch_info_url)
-        pulumi.set(__self__, "service_version", service_version)
-        pulumi.set(__self__, "time_patch_due", time_patch_due)
+        GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionItemItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            patch_info_url=patch_info_url,
+            service_version=service_version,
+            time_patch_due=time_patch_due,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             patch_info_url: str,
+             service_version: str,
+             time_patch_due: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
+        _setter("patch_info_url", patch_info_url)
+        _setter("service_version", service_version)
+        _setter("time_patch_due", time_patch_due)
 
     @property
     @pulumi.getter
@@ -877,10 +1097,23 @@ class GetBlockchainPlatformPatchesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetBlockchainPlatformPatchesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -909,9 +1142,22 @@ class GetBlockchainPlatformReplicaResult(dict):
         :param int console_count: Number of console replicas
         :param int proxy_count: Number of REST proxy replicas
         """
-        pulumi.set(__self__, "ca_count", ca_count)
-        pulumi.set(__self__, "console_count", console_count)
-        pulumi.set(__self__, "proxy_count", proxy_count)
+        GetBlockchainPlatformReplicaResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ca_count=ca_count,
+            console_count=console_count,
+            proxy_count=proxy_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ca_count: int,
+             console_count: int,
+             proxy_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ca_count", ca_count)
+        _setter("console_count", console_count)
+        _setter("proxy_count", proxy_count)
 
     @property
     @pulumi.getter(name="caCount")
@@ -942,7 +1188,16 @@ class GetBlockchainPlatformReplicaResult(dict):
 class GetBlockchainPlatformsBlockchainPlatformCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetBlockchainPlatformsBlockchainPlatformCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1008,34 +1263,97 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemResult(dict):
         :param str time_updated: The time the Platform Instance was updated. An RFC3339 formatted datetime string
         :param int total_ocpu_capacity: Number of total OCPUs allocated to the platform cluster
         """
-        pulumi.set(__self__, "ca_cert_archive_text", ca_cert_archive_text)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "component_details", component_details)
-        pulumi.set(__self__, "compute_shape", compute_shape)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "federated_user_id", federated_user_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "host_ocpu_utilization_infos", host_ocpu_utilization_infos)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "idcs_access_token", idcs_access_token)
-        pulumi.set(__self__, "is_byol", is_byol)
-        pulumi.set(__self__, "is_multi_ad", is_multi_ad)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "load_balancer_shape", load_balancer_shape)
-        pulumi.set(__self__, "platform_role", platform_role)
-        pulumi.set(__self__, "platform_shape_type", platform_shape_type)
-        pulumi.set(__self__, "platform_version", platform_version)
-        pulumi.set(__self__, "replicas", replicas)
-        pulumi.set(__self__, "service_endpoint", service_endpoint)
-        pulumi.set(__self__, "service_version", service_version)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "storage_size_in_tbs", storage_size_in_tbs)
-        pulumi.set(__self__, "storage_used_in_tbs", storage_used_in_tbs)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "total_ocpu_capacity", total_ocpu_capacity)
+        GetBlockchainPlatformsBlockchainPlatformCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ca_cert_archive_text=ca_cert_archive_text,
+            compartment_id=compartment_id,
+            component_details=component_details,
+            compute_shape=compute_shape,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            federated_user_id=federated_user_id,
+            freeform_tags=freeform_tags,
+            host_ocpu_utilization_infos=host_ocpu_utilization_infos,
+            id=id,
+            idcs_access_token=idcs_access_token,
+            is_byol=is_byol,
+            is_multi_ad=is_multi_ad,
+            lifecycle_details=lifecycle_details,
+            load_balancer_shape=load_balancer_shape,
+            platform_role=platform_role,
+            platform_shape_type=platform_shape_type,
+            platform_version=platform_version,
+            replicas=replicas,
+            service_endpoint=service_endpoint,
+            service_version=service_version,
+            state=state,
+            storage_size_in_tbs=storage_size_in_tbs,
+            storage_used_in_tbs=storage_used_in_tbs,
+            time_created=time_created,
+            time_updated=time_updated,
+            total_ocpu_capacity=total_ocpu_capacity,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ca_cert_archive_text: str,
+             compartment_id: str,
+             component_details: Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailResult'],
+             compute_shape: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             federated_user_id: str,
+             freeform_tags: Mapping[str, Any],
+             host_ocpu_utilization_infos: Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoResult'],
+             id: str,
+             idcs_access_token: str,
+             is_byol: bool,
+             is_multi_ad: bool,
+             lifecycle_details: str,
+             load_balancer_shape: str,
+             platform_role: str,
+             platform_shape_type: str,
+             platform_version: str,
+             replicas: Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaResult'],
+             service_endpoint: str,
+             service_version: str,
+             state: str,
+             storage_size_in_tbs: float,
+             storage_used_in_tbs: float,
+             time_created: str,
+             time_updated: str,
+             total_ocpu_capacity: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ca_cert_archive_text", ca_cert_archive_text)
+        _setter("compartment_id", compartment_id)
+        _setter("component_details", component_details)
+        _setter("compute_shape", compute_shape)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("federated_user_id", federated_user_id)
+        _setter("freeform_tags", freeform_tags)
+        _setter("host_ocpu_utilization_infos", host_ocpu_utilization_infos)
+        _setter("id", id)
+        _setter("idcs_access_token", idcs_access_token)
+        _setter("is_byol", is_byol)
+        _setter("is_multi_ad", is_multi_ad)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("load_balancer_shape", load_balancer_shape)
+        _setter("platform_role", platform_role)
+        _setter("platform_shape_type", platform_shape_type)
+        _setter("platform_version", platform_version)
+        _setter("replicas", replicas)
+        _setter("service_endpoint", service_endpoint)
+        _setter("service_version", service_version)
+        _setter("state", state)
+        _setter("storage_size_in_tbs", storage_size_in_tbs)
+        _setter("storage_used_in_tbs", storage_used_in_tbs)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("total_ocpu_capacity", total_ocpu_capacity)
 
     @property
     @pulumi.getter(name="caCertArchiveText")
@@ -1262,8 +1580,19 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailResul
         :param Sequence['GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnArgs'] osns: List of OSNs
         :param Sequence['GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerArgs'] peers: List of Peers
         """
-        pulumi.set(__self__, "osns", osns)
-        pulumi.set(__self__, "peers", peers)
+        GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            osns=osns,
+            peers=peers,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             osns: Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnResult'],
+             peers: Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("osns", osns)
+        _setter("peers", peers)
 
     @property
     @pulumi.getter
@@ -1295,10 +1624,25 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnRe
         :param str osn_key: OSN identifier
         :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
         """
-        pulumi.set(__self__, "ad", ad)
-        pulumi.set(__self__, "ocpu_allocation_params", ocpu_allocation_params)
-        pulumi.set(__self__, "osn_key", osn_key)
-        pulumi.set(__self__, "state", state)
+        GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ad=ad,
+            ocpu_allocation_params=ocpu_allocation_params,
+            osn_key=osn_key,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ad: str,
+             ocpu_allocation_params: Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamResult'],
+             osn_key: str,
+             state: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ad", ad)
+        _setter("ocpu_allocation_params", ocpu_allocation_params)
+        _setter("osn_key", osn_key)
+        _setter("state", state)
 
     @property
     @pulumi.getter
@@ -1340,7 +1684,16 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOc
         """
         :param float ocpu_allocation_number: Number of OCPU allocation
         """
-        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
+        GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ocpu_allocation_number=ocpu_allocation_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ocpu_allocation_number: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -1370,13 +1723,34 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerR
         :param str role: Peer role
         :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
         """
-        pulumi.set(__self__, "ad", ad)
-        pulumi.set(__self__, "alias", alias)
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "ocpu_allocation_params", ocpu_allocation_params)
-        pulumi.set(__self__, "peer_key", peer_key)
-        pulumi.set(__self__, "role", role)
-        pulumi.set(__self__, "state", state)
+        GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ad=ad,
+            alias=alias,
+            host=host,
+            ocpu_allocation_params=ocpu_allocation_params,
+            peer_key=peer_key,
+            role=role,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ad: str,
+             alias: str,
+             host: str,
+             ocpu_allocation_params: Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamResult'],
+             peer_key: str,
+             role: str,
+             state: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ad", ad)
+        _setter("alias", alias)
+        _setter("host", host)
+        _setter("ocpu_allocation_params", ocpu_allocation_params)
+        _setter("peer_key", peer_key)
+        _setter("role", role)
+        _setter("state", state)
 
     @property
     @pulumi.getter
@@ -1442,7 +1816,16 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerO
         """
         :param float ocpu_allocation_number: Number of OCPU allocation
         """
-        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
+        GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeerOcpuAllocationParamResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ocpu_allocation_number=ocpu_allocation_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ocpu_allocation_number: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -1464,9 +1847,22 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationI
         :param float ocpu_capacity_number: Number of total OCPU capacity on the host
         :param float ocpu_utilization_number: Number of OCPU utilized
         """
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "ocpu_capacity_number", ocpu_capacity_number)
-        pulumi.set(__self__, "ocpu_utilization_number", ocpu_utilization_number)
+        GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host=host,
+            ocpu_capacity_number=ocpu_capacity_number,
+            ocpu_utilization_number=ocpu_utilization_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host: str,
+             ocpu_capacity_number: float,
+             ocpu_utilization_number: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("host", host)
+        _setter("ocpu_capacity_number", ocpu_capacity_number)
+        _setter("ocpu_utilization_number", ocpu_utilization_number)
 
     @property
     @pulumi.getter
@@ -1504,9 +1900,22 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaResult(dict):
         :param int console_count: Number of console replicas
         :param int proxy_count: Number of REST proxy replicas
         """
-        pulumi.set(__self__, "ca_count", ca_count)
-        pulumi.set(__self__, "console_count", console_count)
-        pulumi.set(__self__, "proxy_count", proxy_count)
+        GetBlockchainPlatformsBlockchainPlatformCollectionItemReplicaResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ca_count=ca_count,
+            console_count=console_count,
+            proxy_count=proxy_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ca_count: int,
+             console_count: int,
+             proxy_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ca_count", ca_count)
+        _setter("console_count", console_count)
+        _setter("proxy_count", proxy_count)
 
     @property
     @pulumi.getter(name="caCount")
@@ -1539,10 +1948,23 @@ class GetBlockchainPlatformsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetBlockchainPlatformsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1567,7 +1989,16 @@ class GetOsnOcpuAllocationParamResult(dict):
         """
         :param float ocpu_allocation_number: Number of OCPU allocation
         """
-        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
+        GetOsnOcpuAllocationParamResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ocpu_allocation_number=ocpu_allocation_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ocpu_allocation_number: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -1584,10 +2015,23 @@ class GetOsnsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOsnsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1609,7 +2053,16 @@ class GetOsnsFilterResult(dict):
 class GetOsnsOsnCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetOsnsOsnCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetOsnsOsnCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetOsnsOsnCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1632,11 +2085,28 @@ class GetOsnsOsnCollectionItemResult(dict):
         :param str osn_key: OSN identifier
         :param str state: The current state of the OSN.
         """
-        pulumi.set(__self__, "ad", ad)
-        pulumi.set(__self__, "blockchain_platform_id", blockchain_platform_id)
-        pulumi.set(__self__, "ocpu_allocation_param", ocpu_allocation_param)
-        pulumi.set(__self__, "osn_key", osn_key)
-        pulumi.set(__self__, "state", state)
+        GetOsnsOsnCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ad=ad,
+            blockchain_platform_id=blockchain_platform_id,
+            ocpu_allocation_param=ocpu_allocation_param,
+            osn_key=osn_key,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ad: str,
+             blockchain_platform_id: str,
+             ocpu_allocation_param: 'outputs.GetOsnsOsnCollectionItemOcpuAllocationParamResult',
+             osn_key: str,
+             state: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ad", ad)
+        _setter("blockchain_platform_id", blockchain_platform_id)
+        _setter("ocpu_allocation_param", ocpu_allocation_param)
+        _setter("osn_key", osn_key)
+        _setter("state", state)
 
     @property
     @pulumi.getter
@@ -1686,7 +2156,16 @@ class GetOsnsOsnCollectionItemOcpuAllocationParamResult(dict):
         """
         :param float ocpu_allocation_number: Number of OCPU allocation
         """
-        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
+        GetOsnsOsnCollectionItemOcpuAllocationParamResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ocpu_allocation_number=ocpu_allocation_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ocpu_allocation_number: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -1704,7 +2183,16 @@ class GetPeerOcpuAllocationParamResult(dict):
         """
         :param float ocpu_allocation_number: Number of OCPU allocation
         """
-        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
+        GetPeerOcpuAllocationParamResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ocpu_allocation_number=ocpu_allocation_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ocpu_allocation_number: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")
@@ -1721,10 +2209,23 @@ class GetPeersFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPeersFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1746,7 +2247,16 @@ class GetPeersFilterResult(dict):
 class GetPeersPeerCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetPeersPeerCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetPeersPeerCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetPeersPeerCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1775,14 +2285,37 @@ class GetPeersPeerCollectionItemResult(dict):
         :param str role: Peer role
         :param str state: The current state of the peer.
         """
-        pulumi.set(__self__, "ad", ad)
-        pulumi.set(__self__, "alias", alias)
-        pulumi.set(__self__, "blockchain_platform_id", blockchain_platform_id)
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "ocpu_allocation_param", ocpu_allocation_param)
-        pulumi.set(__self__, "peer_key", peer_key)
-        pulumi.set(__self__, "role", role)
-        pulumi.set(__self__, "state", state)
+        GetPeersPeerCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ad=ad,
+            alias=alias,
+            blockchain_platform_id=blockchain_platform_id,
+            host=host,
+            ocpu_allocation_param=ocpu_allocation_param,
+            peer_key=peer_key,
+            role=role,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ad: str,
+             alias: str,
+             blockchain_platform_id: str,
+             host: str,
+             ocpu_allocation_param: 'outputs.GetPeersPeerCollectionItemOcpuAllocationParamResult',
+             peer_key: str,
+             role: str,
+             state: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ad", ad)
+        _setter("alias", alias)
+        _setter("blockchain_platform_id", blockchain_platform_id)
+        _setter("host", host)
+        _setter("ocpu_allocation_param", ocpu_allocation_param)
+        _setter("peer_key", peer_key)
+        _setter("role", role)
+        _setter("state", state)
 
     @property
     @pulumi.getter
@@ -1856,7 +2389,16 @@ class GetPeersPeerCollectionItemOcpuAllocationParamResult(dict):
         """
         :param float ocpu_allocation_number: Number of OCPU allocation
         """
-        pulumi.set(__self__, "ocpu_allocation_number", ocpu_allocation_number)
+        GetPeersPeerCollectionItemOcpuAllocationParamResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ocpu_allocation_number=ocpu_allocation_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ocpu_allocation_number: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ocpu_allocation_number", ocpu_allocation_number)
 
     @property
     @pulumi.getter(name="ocpuAllocationNumber")

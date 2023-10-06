@@ -15,7 +15,7 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type GeneratedKeyKeyShape struct {
-	// The algorithm used by a key's key versions to encrypt or decrypt.
+	// The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
 	Algorithm string `pulumi:"algorithm"`
 	// Supported curve IDs for ECDSA keys.
 	CurveId *string `pulumi:"curveId"`
@@ -38,7 +38,7 @@ type GeneratedKeyKeyShapeInput interface {
 }
 
 type GeneratedKeyKeyShapeArgs struct {
-	// The algorithm used by a key's key versions to encrypt or decrypt.
+	// The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
 	Algorithm pulumi.StringInput `pulumi:"algorithm"`
 	// Supported curve IDs for ECDSA keys.
 	CurveId pulumi.StringPtrInput `pulumi:"curveId"`
@@ -144,7 +144,7 @@ func (o GeneratedKeyKeyShapeOutput) ToOutput(ctx context.Context) pulumix.Output
 	}
 }
 
-// The algorithm used by a key's key versions to encrypt or decrypt.
+// The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
 func (o GeneratedKeyKeyShapeOutput) Algorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v GeneratedKeyKeyShape) string { return v.Algorithm }).(pulumi.StringOutput)
 }
@@ -192,7 +192,7 @@ func (o GeneratedKeyKeyShapePtrOutput) Elem() GeneratedKeyKeyShapeOutput {
 	}).(GeneratedKeyKeyShapeOutput)
 }
 
-// The algorithm used by a key's key versions to encrypt or decrypt.
+// The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
 func (o GeneratedKeyKeyShapePtrOutput) Algorithm() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GeneratedKeyKeyShape) *string {
 		if v == nil {
@@ -225,8 +225,299 @@ func (o GeneratedKeyKeyShapePtrOutput) Length() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
+type KeyExternalKeyReference struct {
+	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+	ExternalKeyId string `pulumi:"externalKeyId"`
+}
+
+// KeyExternalKeyReferenceInput is an input type that accepts KeyExternalKeyReferenceArgs and KeyExternalKeyReferenceOutput values.
+// You can construct a concrete instance of `KeyExternalKeyReferenceInput` via:
+//
+//	KeyExternalKeyReferenceArgs{...}
+type KeyExternalKeyReferenceInput interface {
+	pulumi.Input
+
+	ToKeyExternalKeyReferenceOutput() KeyExternalKeyReferenceOutput
+	ToKeyExternalKeyReferenceOutputWithContext(context.Context) KeyExternalKeyReferenceOutput
+}
+
+type KeyExternalKeyReferenceArgs struct {
+	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+	ExternalKeyId pulumi.StringInput `pulumi:"externalKeyId"`
+}
+
+func (KeyExternalKeyReferenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyExternalKeyReference)(nil)).Elem()
+}
+
+func (i KeyExternalKeyReferenceArgs) ToKeyExternalKeyReferenceOutput() KeyExternalKeyReferenceOutput {
+	return i.ToKeyExternalKeyReferenceOutputWithContext(context.Background())
+}
+
+func (i KeyExternalKeyReferenceArgs) ToKeyExternalKeyReferenceOutputWithContext(ctx context.Context) KeyExternalKeyReferenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyExternalKeyReferenceOutput)
+}
+
+func (i KeyExternalKeyReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[KeyExternalKeyReference] {
+	return pulumix.Output[KeyExternalKeyReference]{
+		OutputState: i.ToKeyExternalKeyReferenceOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i KeyExternalKeyReferenceArgs) ToKeyExternalKeyReferencePtrOutput() KeyExternalKeyReferencePtrOutput {
+	return i.ToKeyExternalKeyReferencePtrOutputWithContext(context.Background())
+}
+
+func (i KeyExternalKeyReferenceArgs) ToKeyExternalKeyReferencePtrOutputWithContext(ctx context.Context) KeyExternalKeyReferencePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyExternalKeyReferenceOutput).ToKeyExternalKeyReferencePtrOutputWithContext(ctx)
+}
+
+// KeyExternalKeyReferencePtrInput is an input type that accepts KeyExternalKeyReferenceArgs, KeyExternalKeyReferencePtr and KeyExternalKeyReferencePtrOutput values.
+// You can construct a concrete instance of `KeyExternalKeyReferencePtrInput` via:
+//
+//	        KeyExternalKeyReferenceArgs{...}
+//
+//	or:
+//
+//	        nil
+type KeyExternalKeyReferencePtrInput interface {
+	pulumi.Input
+
+	ToKeyExternalKeyReferencePtrOutput() KeyExternalKeyReferencePtrOutput
+	ToKeyExternalKeyReferencePtrOutputWithContext(context.Context) KeyExternalKeyReferencePtrOutput
+}
+
+type keyExternalKeyReferencePtrType KeyExternalKeyReferenceArgs
+
+func KeyExternalKeyReferencePtr(v *KeyExternalKeyReferenceArgs) KeyExternalKeyReferencePtrInput {
+	return (*keyExternalKeyReferencePtrType)(v)
+}
+
+func (*keyExternalKeyReferencePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**KeyExternalKeyReference)(nil)).Elem()
+}
+
+func (i *keyExternalKeyReferencePtrType) ToKeyExternalKeyReferencePtrOutput() KeyExternalKeyReferencePtrOutput {
+	return i.ToKeyExternalKeyReferencePtrOutputWithContext(context.Background())
+}
+
+func (i *keyExternalKeyReferencePtrType) ToKeyExternalKeyReferencePtrOutputWithContext(ctx context.Context) KeyExternalKeyReferencePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyExternalKeyReferencePtrOutput)
+}
+
+func (i *keyExternalKeyReferencePtrType) ToOutput(ctx context.Context) pulumix.Output[*KeyExternalKeyReference] {
+	return pulumix.Output[*KeyExternalKeyReference]{
+		OutputState: i.ToKeyExternalKeyReferencePtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type KeyExternalKeyReferenceOutput struct{ *pulumi.OutputState }
+
+func (KeyExternalKeyReferenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyExternalKeyReference)(nil)).Elem()
+}
+
+func (o KeyExternalKeyReferenceOutput) ToKeyExternalKeyReferenceOutput() KeyExternalKeyReferenceOutput {
+	return o
+}
+
+func (o KeyExternalKeyReferenceOutput) ToKeyExternalKeyReferenceOutputWithContext(ctx context.Context) KeyExternalKeyReferenceOutput {
+	return o
+}
+
+func (o KeyExternalKeyReferenceOutput) ToKeyExternalKeyReferencePtrOutput() KeyExternalKeyReferencePtrOutput {
+	return o.ToKeyExternalKeyReferencePtrOutputWithContext(context.Background())
+}
+
+func (o KeyExternalKeyReferenceOutput) ToKeyExternalKeyReferencePtrOutputWithContext(ctx context.Context) KeyExternalKeyReferencePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v KeyExternalKeyReference) *KeyExternalKeyReference {
+		return &v
+	}).(KeyExternalKeyReferencePtrOutput)
+}
+
+func (o KeyExternalKeyReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[KeyExternalKeyReference] {
+	return pulumix.Output[KeyExternalKeyReference]{
+		OutputState: o.OutputState,
+	}
+}
+
+// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+func (o KeyExternalKeyReferenceOutput) ExternalKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v KeyExternalKeyReference) string { return v.ExternalKeyId }).(pulumi.StringOutput)
+}
+
+type KeyExternalKeyReferencePtrOutput struct{ *pulumi.OutputState }
+
+func (KeyExternalKeyReferencePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**KeyExternalKeyReference)(nil)).Elem()
+}
+
+func (o KeyExternalKeyReferencePtrOutput) ToKeyExternalKeyReferencePtrOutput() KeyExternalKeyReferencePtrOutput {
+	return o
+}
+
+func (o KeyExternalKeyReferencePtrOutput) ToKeyExternalKeyReferencePtrOutputWithContext(ctx context.Context) KeyExternalKeyReferencePtrOutput {
+	return o
+}
+
+func (o KeyExternalKeyReferencePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*KeyExternalKeyReference] {
+	return pulumix.Output[*KeyExternalKeyReference]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o KeyExternalKeyReferencePtrOutput) Elem() KeyExternalKeyReferenceOutput {
+	return o.ApplyT(func(v *KeyExternalKeyReference) KeyExternalKeyReference {
+		if v != nil {
+			return *v
+		}
+		var ret KeyExternalKeyReference
+		return ret
+	}).(KeyExternalKeyReferenceOutput)
+}
+
+// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+func (o KeyExternalKeyReferencePtrOutput) ExternalKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *KeyExternalKeyReference) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ExternalKeyId
+	}).(pulumi.StringPtrOutput)
+}
+
+type KeyExternalKeyReferenceDetail struct {
+	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+	ExternalKeyId *string `pulumi:"externalKeyId"`
+	// Key version ID associated with the external key.
+	ExternalKeyVersionId *string `pulumi:"externalKeyVersionId"`
+}
+
+// KeyExternalKeyReferenceDetailInput is an input type that accepts KeyExternalKeyReferenceDetailArgs and KeyExternalKeyReferenceDetailOutput values.
+// You can construct a concrete instance of `KeyExternalKeyReferenceDetailInput` via:
+//
+//	KeyExternalKeyReferenceDetailArgs{...}
+type KeyExternalKeyReferenceDetailInput interface {
+	pulumi.Input
+
+	ToKeyExternalKeyReferenceDetailOutput() KeyExternalKeyReferenceDetailOutput
+	ToKeyExternalKeyReferenceDetailOutputWithContext(context.Context) KeyExternalKeyReferenceDetailOutput
+}
+
+type KeyExternalKeyReferenceDetailArgs struct {
+	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+	ExternalKeyId pulumi.StringPtrInput `pulumi:"externalKeyId"`
+	// Key version ID associated with the external key.
+	ExternalKeyVersionId pulumi.StringPtrInput `pulumi:"externalKeyVersionId"`
+}
+
+func (KeyExternalKeyReferenceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (i KeyExternalKeyReferenceDetailArgs) ToKeyExternalKeyReferenceDetailOutput() KeyExternalKeyReferenceDetailOutput {
+	return i.ToKeyExternalKeyReferenceDetailOutputWithContext(context.Background())
+}
+
+func (i KeyExternalKeyReferenceDetailArgs) ToKeyExternalKeyReferenceDetailOutputWithContext(ctx context.Context) KeyExternalKeyReferenceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyExternalKeyReferenceDetailOutput)
+}
+
+func (i KeyExternalKeyReferenceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[KeyExternalKeyReferenceDetail] {
+	return pulumix.Output[KeyExternalKeyReferenceDetail]{
+		OutputState: i.ToKeyExternalKeyReferenceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// KeyExternalKeyReferenceDetailArrayInput is an input type that accepts KeyExternalKeyReferenceDetailArray and KeyExternalKeyReferenceDetailArrayOutput values.
+// You can construct a concrete instance of `KeyExternalKeyReferenceDetailArrayInput` via:
+//
+//	KeyExternalKeyReferenceDetailArray{ KeyExternalKeyReferenceDetailArgs{...} }
+type KeyExternalKeyReferenceDetailArrayInput interface {
+	pulumi.Input
+
+	ToKeyExternalKeyReferenceDetailArrayOutput() KeyExternalKeyReferenceDetailArrayOutput
+	ToKeyExternalKeyReferenceDetailArrayOutputWithContext(context.Context) KeyExternalKeyReferenceDetailArrayOutput
+}
+
+type KeyExternalKeyReferenceDetailArray []KeyExternalKeyReferenceDetailInput
+
+func (KeyExternalKeyReferenceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]KeyExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (i KeyExternalKeyReferenceDetailArray) ToKeyExternalKeyReferenceDetailArrayOutput() KeyExternalKeyReferenceDetailArrayOutput {
+	return i.ToKeyExternalKeyReferenceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i KeyExternalKeyReferenceDetailArray) ToKeyExternalKeyReferenceDetailArrayOutputWithContext(ctx context.Context) KeyExternalKeyReferenceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyExternalKeyReferenceDetailArrayOutput)
+}
+
+func (i KeyExternalKeyReferenceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]KeyExternalKeyReferenceDetail] {
+	return pulumix.Output[[]KeyExternalKeyReferenceDetail]{
+		OutputState: i.ToKeyExternalKeyReferenceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type KeyExternalKeyReferenceDetailOutput struct{ *pulumi.OutputState }
+
+func (KeyExternalKeyReferenceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (o KeyExternalKeyReferenceDetailOutput) ToKeyExternalKeyReferenceDetailOutput() KeyExternalKeyReferenceDetailOutput {
+	return o
+}
+
+func (o KeyExternalKeyReferenceDetailOutput) ToKeyExternalKeyReferenceDetailOutputWithContext(ctx context.Context) KeyExternalKeyReferenceDetailOutput {
+	return o
+}
+
+func (o KeyExternalKeyReferenceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[KeyExternalKeyReferenceDetail] {
+	return pulumix.Output[KeyExternalKeyReferenceDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+func (o KeyExternalKeyReferenceDetailOutput) ExternalKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyExternalKeyReferenceDetail) *string { return v.ExternalKeyId }).(pulumi.StringPtrOutput)
+}
+
+// Key version ID associated with the external key.
+func (o KeyExternalKeyReferenceDetailOutput) ExternalKeyVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyExternalKeyReferenceDetail) *string { return v.ExternalKeyVersionId }).(pulumi.StringPtrOutput)
+}
+
+type KeyExternalKeyReferenceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (KeyExternalKeyReferenceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]KeyExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (o KeyExternalKeyReferenceDetailArrayOutput) ToKeyExternalKeyReferenceDetailArrayOutput() KeyExternalKeyReferenceDetailArrayOutput {
+	return o
+}
+
+func (o KeyExternalKeyReferenceDetailArrayOutput) ToKeyExternalKeyReferenceDetailArrayOutputWithContext(ctx context.Context) KeyExternalKeyReferenceDetailArrayOutput {
+	return o
+}
+
+func (o KeyExternalKeyReferenceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]KeyExternalKeyReferenceDetail] {
+	return pulumix.Output[[]KeyExternalKeyReferenceDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o KeyExternalKeyReferenceDetailArrayOutput) Index(i pulumi.IntInput) KeyExternalKeyReferenceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) KeyExternalKeyReferenceDetail {
+		return vs[0].([]KeyExternalKeyReferenceDetail)[vs[1].(int)]
+	}).(KeyExternalKeyReferenceDetailOutput)
+}
+
 type KeyKeyShape struct {
-	// The algorithm used by a key's key versions to encrypt or decrypt.
+	// The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
 	Algorithm string `pulumi:"algorithm"`
 	// Supported curve IDs for ECDSA keys.
 	CurveId *string `pulumi:"curveId"`
@@ -249,7 +540,7 @@ type KeyKeyShapeInput interface {
 }
 
 type KeyKeyShapeArgs struct {
-	// The algorithm used by a key's key versions to encrypt or decrypt.
+	// The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
 	Algorithm pulumi.StringInput `pulumi:"algorithm"`
 	// Supported curve IDs for ECDSA keys.
 	CurveId pulumi.StringPtrInput `pulumi:"curveId"`
@@ -355,7 +646,7 @@ func (o KeyKeyShapeOutput) ToOutput(ctx context.Context) pulumix.Output[KeyKeySh
 	}
 }
 
-// The algorithm used by a key's key versions to encrypt or decrypt.
+// The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
 func (o KeyKeyShapeOutput) Algorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v KeyKeyShape) string { return v.Algorithm }).(pulumi.StringOutput)
 }
@@ -403,7 +694,7 @@ func (o KeyKeyShapePtrOutput) Elem() KeyKeyShapeOutput {
 	}).(KeyKeyShapeOutput)
 }
 
-// The algorithm used by a key's key versions to encrypt or decrypt.
+// The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
 func (o KeyKeyShapePtrOutput) Algorithm() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KeyKeyShape) *string {
 		if v == nil {
@@ -993,6 +1284,136 @@ func (o KeyRestoreFromObjectStorePtrOutput) Uri() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type KeyVersionExternalKeyReferenceDetail struct {
+	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+	ExternalKeyId *string `pulumi:"externalKeyId"`
+	// Key version ID associated with the external key.
+	ExternalKeyVersionId *string `pulumi:"externalKeyVersionId"`
+}
+
+// KeyVersionExternalKeyReferenceDetailInput is an input type that accepts KeyVersionExternalKeyReferenceDetailArgs and KeyVersionExternalKeyReferenceDetailOutput values.
+// You can construct a concrete instance of `KeyVersionExternalKeyReferenceDetailInput` via:
+//
+//	KeyVersionExternalKeyReferenceDetailArgs{...}
+type KeyVersionExternalKeyReferenceDetailInput interface {
+	pulumi.Input
+
+	ToKeyVersionExternalKeyReferenceDetailOutput() KeyVersionExternalKeyReferenceDetailOutput
+	ToKeyVersionExternalKeyReferenceDetailOutputWithContext(context.Context) KeyVersionExternalKeyReferenceDetailOutput
+}
+
+type KeyVersionExternalKeyReferenceDetailArgs struct {
+	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+	ExternalKeyId pulumi.StringPtrInput `pulumi:"externalKeyId"`
+	// Key version ID associated with the external key.
+	ExternalKeyVersionId pulumi.StringPtrInput `pulumi:"externalKeyVersionId"`
+}
+
+func (KeyVersionExternalKeyReferenceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyVersionExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (i KeyVersionExternalKeyReferenceDetailArgs) ToKeyVersionExternalKeyReferenceDetailOutput() KeyVersionExternalKeyReferenceDetailOutput {
+	return i.ToKeyVersionExternalKeyReferenceDetailOutputWithContext(context.Background())
+}
+
+func (i KeyVersionExternalKeyReferenceDetailArgs) ToKeyVersionExternalKeyReferenceDetailOutputWithContext(ctx context.Context) KeyVersionExternalKeyReferenceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyVersionExternalKeyReferenceDetailOutput)
+}
+
+func (i KeyVersionExternalKeyReferenceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[KeyVersionExternalKeyReferenceDetail] {
+	return pulumix.Output[KeyVersionExternalKeyReferenceDetail]{
+		OutputState: i.ToKeyVersionExternalKeyReferenceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// KeyVersionExternalKeyReferenceDetailArrayInput is an input type that accepts KeyVersionExternalKeyReferenceDetailArray and KeyVersionExternalKeyReferenceDetailArrayOutput values.
+// You can construct a concrete instance of `KeyVersionExternalKeyReferenceDetailArrayInput` via:
+//
+//	KeyVersionExternalKeyReferenceDetailArray{ KeyVersionExternalKeyReferenceDetailArgs{...} }
+type KeyVersionExternalKeyReferenceDetailArrayInput interface {
+	pulumi.Input
+
+	ToKeyVersionExternalKeyReferenceDetailArrayOutput() KeyVersionExternalKeyReferenceDetailArrayOutput
+	ToKeyVersionExternalKeyReferenceDetailArrayOutputWithContext(context.Context) KeyVersionExternalKeyReferenceDetailArrayOutput
+}
+
+type KeyVersionExternalKeyReferenceDetailArray []KeyVersionExternalKeyReferenceDetailInput
+
+func (KeyVersionExternalKeyReferenceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]KeyVersionExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (i KeyVersionExternalKeyReferenceDetailArray) ToKeyVersionExternalKeyReferenceDetailArrayOutput() KeyVersionExternalKeyReferenceDetailArrayOutput {
+	return i.ToKeyVersionExternalKeyReferenceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i KeyVersionExternalKeyReferenceDetailArray) ToKeyVersionExternalKeyReferenceDetailArrayOutputWithContext(ctx context.Context) KeyVersionExternalKeyReferenceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(KeyVersionExternalKeyReferenceDetailArrayOutput)
+}
+
+func (i KeyVersionExternalKeyReferenceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]KeyVersionExternalKeyReferenceDetail] {
+	return pulumix.Output[[]KeyVersionExternalKeyReferenceDetail]{
+		OutputState: i.ToKeyVersionExternalKeyReferenceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type KeyVersionExternalKeyReferenceDetailOutput struct{ *pulumi.OutputState }
+
+func (KeyVersionExternalKeyReferenceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*KeyVersionExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (o KeyVersionExternalKeyReferenceDetailOutput) ToKeyVersionExternalKeyReferenceDetailOutput() KeyVersionExternalKeyReferenceDetailOutput {
+	return o
+}
+
+func (o KeyVersionExternalKeyReferenceDetailOutput) ToKeyVersionExternalKeyReferenceDetailOutputWithContext(ctx context.Context) KeyVersionExternalKeyReferenceDetailOutput {
+	return o
+}
+
+func (o KeyVersionExternalKeyReferenceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[KeyVersionExternalKeyReferenceDetail] {
+	return pulumix.Output[KeyVersionExternalKeyReferenceDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+func (o KeyVersionExternalKeyReferenceDetailOutput) ExternalKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyVersionExternalKeyReferenceDetail) *string { return v.ExternalKeyId }).(pulumi.StringPtrOutput)
+}
+
+// Key version ID associated with the external key.
+func (o KeyVersionExternalKeyReferenceDetailOutput) ExternalKeyVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v KeyVersionExternalKeyReferenceDetail) *string { return v.ExternalKeyVersionId }).(pulumi.StringPtrOutput)
+}
+
+type KeyVersionExternalKeyReferenceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (KeyVersionExternalKeyReferenceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]KeyVersionExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (o KeyVersionExternalKeyReferenceDetailArrayOutput) ToKeyVersionExternalKeyReferenceDetailArrayOutput() KeyVersionExternalKeyReferenceDetailArrayOutput {
+	return o
+}
+
+func (o KeyVersionExternalKeyReferenceDetailArrayOutput) ToKeyVersionExternalKeyReferenceDetailArrayOutputWithContext(ctx context.Context) KeyVersionExternalKeyReferenceDetailArrayOutput {
+	return o
+}
+
+func (o KeyVersionExternalKeyReferenceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]KeyVersionExternalKeyReferenceDetail] {
+	return pulumix.Output[[]KeyVersionExternalKeyReferenceDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o KeyVersionExternalKeyReferenceDetailArrayOutput) Index(i pulumi.IntInput) KeyVersionExternalKeyReferenceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) KeyVersionExternalKeyReferenceDetail {
+		return vs[0].([]KeyVersionExternalKeyReferenceDetail)[vs[1].(int)]
+	}).(KeyVersionExternalKeyReferenceDetailOutput)
+}
+
 type KeyVersionReplicaDetail struct {
 	// ReplicationId associated with a key version operation
 	ReplicationId *string `pulumi:"replicationId"`
@@ -1112,6 +1533,688 @@ func (o KeyVersionReplicaDetailArrayOutput) Index(i pulumi.IntInput) KeyVersionR
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) KeyVersionReplicaDetail {
 		return vs[0].([]KeyVersionReplicaDetail)[vs[1].(int)]
 	}).(KeyVersionReplicaDetailOutput)
+}
+
+type VaultExternalKeyManagerMetadata struct {
+	// URI of the vault on external key manager.
+	ExternalVaultEndpointUrl string `pulumi:"externalVaultEndpointUrl"`
+	// Authorization details required to get access token from IDP for accessing protected resources.
+	OauthMetadata VaultExternalKeyManagerMetadataOauthMetadata `pulumi:"oauthMetadata"`
+	// OCID of private endpoint created by customer.
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
+}
+
+// VaultExternalKeyManagerMetadataInput is an input type that accepts VaultExternalKeyManagerMetadataArgs and VaultExternalKeyManagerMetadataOutput values.
+// You can construct a concrete instance of `VaultExternalKeyManagerMetadataInput` via:
+//
+//	VaultExternalKeyManagerMetadataArgs{...}
+type VaultExternalKeyManagerMetadataInput interface {
+	pulumi.Input
+
+	ToVaultExternalKeyManagerMetadataOutput() VaultExternalKeyManagerMetadataOutput
+	ToVaultExternalKeyManagerMetadataOutputWithContext(context.Context) VaultExternalKeyManagerMetadataOutput
+}
+
+type VaultExternalKeyManagerMetadataArgs struct {
+	// URI of the vault on external key manager.
+	ExternalVaultEndpointUrl pulumi.StringInput `pulumi:"externalVaultEndpointUrl"`
+	// Authorization details required to get access token from IDP for accessing protected resources.
+	OauthMetadata VaultExternalKeyManagerMetadataOauthMetadataInput `pulumi:"oauthMetadata"`
+	// OCID of private endpoint created by customer.
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
+}
+
+func (VaultExternalKeyManagerMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VaultExternalKeyManagerMetadata)(nil)).Elem()
+}
+
+func (i VaultExternalKeyManagerMetadataArgs) ToVaultExternalKeyManagerMetadataOutput() VaultExternalKeyManagerMetadataOutput {
+	return i.ToVaultExternalKeyManagerMetadataOutputWithContext(context.Background())
+}
+
+func (i VaultExternalKeyManagerMetadataArgs) ToVaultExternalKeyManagerMetadataOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VaultExternalKeyManagerMetadataOutput)
+}
+
+func (i VaultExternalKeyManagerMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[VaultExternalKeyManagerMetadata] {
+	return pulumix.Output[VaultExternalKeyManagerMetadata]{
+		OutputState: i.ToVaultExternalKeyManagerMetadataOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i VaultExternalKeyManagerMetadataArgs) ToVaultExternalKeyManagerMetadataPtrOutput() VaultExternalKeyManagerMetadataPtrOutput {
+	return i.ToVaultExternalKeyManagerMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i VaultExternalKeyManagerMetadataArgs) ToVaultExternalKeyManagerMetadataPtrOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VaultExternalKeyManagerMetadataOutput).ToVaultExternalKeyManagerMetadataPtrOutputWithContext(ctx)
+}
+
+// VaultExternalKeyManagerMetadataPtrInput is an input type that accepts VaultExternalKeyManagerMetadataArgs, VaultExternalKeyManagerMetadataPtr and VaultExternalKeyManagerMetadataPtrOutput values.
+// You can construct a concrete instance of `VaultExternalKeyManagerMetadataPtrInput` via:
+//
+//	        VaultExternalKeyManagerMetadataArgs{...}
+//
+//	or:
+//
+//	        nil
+type VaultExternalKeyManagerMetadataPtrInput interface {
+	pulumi.Input
+
+	ToVaultExternalKeyManagerMetadataPtrOutput() VaultExternalKeyManagerMetadataPtrOutput
+	ToVaultExternalKeyManagerMetadataPtrOutputWithContext(context.Context) VaultExternalKeyManagerMetadataPtrOutput
+}
+
+type vaultExternalKeyManagerMetadataPtrType VaultExternalKeyManagerMetadataArgs
+
+func VaultExternalKeyManagerMetadataPtr(v *VaultExternalKeyManagerMetadataArgs) VaultExternalKeyManagerMetadataPtrInput {
+	return (*vaultExternalKeyManagerMetadataPtrType)(v)
+}
+
+func (*vaultExternalKeyManagerMetadataPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VaultExternalKeyManagerMetadata)(nil)).Elem()
+}
+
+func (i *vaultExternalKeyManagerMetadataPtrType) ToVaultExternalKeyManagerMetadataPtrOutput() VaultExternalKeyManagerMetadataPtrOutput {
+	return i.ToVaultExternalKeyManagerMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i *vaultExternalKeyManagerMetadataPtrType) ToVaultExternalKeyManagerMetadataPtrOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VaultExternalKeyManagerMetadataPtrOutput)
+}
+
+func (i *vaultExternalKeyManagerMetadataPtrType) ToOutput(ctx context.Context) pulumix.Output[*VaultExternalKeyManagerMetadata] {
+	return pulumix.Output[*VaultExternalKeyManagerMetadata]{
+		OutputState: i.ToVaultExternalKeyManagerMetadataPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type VaultExternalKeyManagerMetadataOutput struct{ *pulumi.OutputState }
+
+func (VaultExternalKeyManagerMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VaultExternalKeyManagerMetadata)(nil)).Elem()
+}
+
+func (o VaultExternalKeyManagerMetadataOutput) ToVaultExternalKeyManagerMetadataOutput() VaultExternalKeyManagerMetadataOutput {
+	return o
+}
+
+func (o VaultExternalKeyManagerMetadataOutput) ToVaultExternalKeyManagerMetadataOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataOutput {
+	return o
+}
+
+func (o VaultExternalKeyManagerMetadataOutput) ToVaultExternalKeyManagerMetadataPtrOutput() VaultExternalKeyManagerMetadataPtrOutput {
+	return o.ToVaultExternalKeyManagerMetadataPtrOutputWithContext(context.Background())
+}
+
+func (o VaultExternalKeyManagerMetadataOutput) ToVaultExternalKeyManagerMetadataPtrOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VaultExternalKeyManagerMetadata) *VaultExternalKeyManagerMetadata {
+		return &v
+	}).(VaultExternalKeyManagerMetadataPtrOutput)
+}
+
+func (o VaultExternalKeyManagerMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[VaultExternalKeyManagerMetadata] {
+	return pulumix.Output[VaultExternalKeyManagerMetadata]{
+		OutputState: o.OutputState,
+	}
+}
+
+// URI of the vault on external key manager.
+func (o VaultExternalKeyManagerMetadataOutput) ExternalVaultEndpointUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v VaultExternalKeyManagerMetadata) string { return v.ExternalVaultEndpointUrl }).(pulumi.StringOutput)
+}
+
+// Authorization details required to get access token from IDP for accessing protected resources.
+func (o VaultExternalKeyManagerMetadataOutput) OauthMetadata() VaultExternalKeyManagerMetadataOauthMetadataOutput {
+	return o.ApplyT(func(v VaultExternalKeyManagerMetadata) VaultExternalKeyManagerMetadataOauthMetadata {
+		return v.OauthMetadata
+	}).(VaultExternalKeyManagerMetadataOauthMetadataOutput)
+}
+
+// OCID of private endpoint created by customer.
+func (o VaultExternalKeyManagerMetadataOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v VaultExternalKeyManagerMetadata) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
+}
+
+type VaultExternalKeyManagerMetadataPtrOutput struct{ *pulumi.OutputState }
+
+func (VaultExternalKeyManagerMetadataPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VaultExternalKeyManagerMetadata)(nil)).Elem()
+}
+
+func (o VaultExternalKeyManagerMetadataPtrOutput) ToVaultExternalKeyManagerMetadataPtrOutput() VaultExternalKeyManagerMetadataPtrOutput {
+	return o
+}
+
+func (o VaultExternalKeyManagerMetadataPtrOutput) ToVaultExternalKeyManagerMetadataPtrOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataPtrOutput {
+	return o
+}
+
+func (o VaultExternalKeyManagerMetadataPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VaultExternalKeyManagerMetadata] {
+	return pulumix.Output[*VaultExternalKeyManagerMetadata]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o VaultExternalKeyManagerMetadataPtrOutput) Elem() VaultExternalKeyManagerMetadataOutput {
+	return o.ApplyT(func(v *VaultExternalKeyManagerMetadata) VaultExternalKeyManagerMetadata {
+		if v != nil {
+			return *v
+		}
+		var ret VaultExternalKeyManagerMetadata
+		return ret
+	}).(VaultExternalKeyManagerMetadataOutput)
+}
+
+// URI of the vault on external key manager.
+func (o VaultExternalKeyManagerMetadataPtrOutput) ExternalVaultEndpointUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VaultExternalKeyManagerMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ExternalVaultEndpointUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+// Authorization details required to get access token from IDP for accessing protected resources.
+func (o VaultExternalKeyManagerMetadataPtrOutput) OauthMetadata() VaultExternalKeyManagerMetadataOauthMetadataPtrOutput {
+	return o.ApplyT(func(v *VaultExternalKeyManagerMetadata) *VaultExternalKeyManagerMetadataOauthMetadata {
+		if v == nil {
+			return nil
+		}
+		return &v.OauthMetadata
+	}).(VaultExternalKeyManagerMetadataOauthMetadataPtrOutput)
+}
+
+// OCID of private endpoint created by customer.
+func (o VaultExternalKeyManagerMetadataPtrOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VaultExternalKeyManagerMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.PrivateEndpointId
+	}).(pulumi.StringPtrOutput)
+}
+
+type VaultExternalKeyManagerMetadataOauthMetadata struct {
+	// ID of the client app created in IDP.
+	ClientAppId string `pulumi:"clientAppId"`
+	// Secret of the client app created in IDP.
+	ClientAppSecret string `pulumi:"clientAppSecret"`
+	// Base URL of the IDCS account where confidential client app is created.
+	IdcsAccountNameUrl string `pulumi:"idcsAccountNameUrl"`
+}
+
+// VaultExternalKeyManagerMetadataOauthMetadataInput is an input type that accepts VaultExternalKeyManagerMetadataOauthMetadataArgs and VaultExternalKeyManagerMetadataOauthMetadataOutput values.
+// You can construct a concrete instance of `VaultExternalKeyManagerMetadataOauthMetadataInput` via:
+//
+//	VaultExternalKeyManagerMetadataOauthMetadataArgs{...}
+type VaultExternalKeyManagerMetadataOauthMetadataInput interface {
+	pulumi.Input
+
+	ToVaultExternalKeyManagerMetadataOauthMetadataOutput() VaultExternalKeyManagerMetadataOauthMetadataOutput
+	ToVaultExternalKeyManagerMetadataOauthMetadataOutputWithContext(context.Context) VaultExternalKeyManagerMetadataOauthMetadataOutput
+}
+
+type VaultExternalKeyManagerMetadataOauthMetadataArgs struct {
+	// ID of the client app created in IDP.
+	ClientAppId pulumi.StringInput `pulumi:"clientAppId"`
+	// Secret of the client app created in IDP.
+	ClientAppSecret pulumi.StringInput `pulumi:"clientAppSecret"`
+	// Base URL of the IDCS account where confidential client app is created.
+	IdcsAccountNameUrl pulumi.StringInput `pulumi:"idcsAccountNameUrl"`
+}
+
+func (VaultExternalKeyManagerMetadataOauthMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VaultExternalKeyManagerMetadataOauthMetadata)(nil)).Elem()
+}
+
+func (i VaultExternalKeyManagerMetadataOauthMetadataArgs) ToVaultExternalKeyManagerMetadataOauthMetadataOutput() VaultExternalKeyManagerMetadataOauthMetadataOutput {
+	return i.ToVaultExternalKeyManagerMetadataOauthMetadataOutputWithContext(context.Background())
+}
+
+func (i VaultExternalKeyManagerMetadataOauthMetadataArgs) ToVaultExternalKeyManagerMetadataOauthMetadataOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataOauthMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VaultExternalKeyManagerMetadataOauthMetadataOutput)
+}
+
+func (i VaultExternalKeyManagerMetadataOauthMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[VaultExternalKeyManagerMetadataOauthMetadata] {
+	return pulumix.Output[VaultExternalKeyManagerMetadataOauthMetadata]{
+		OutputState: i.ToVaultExternalKeyManagerMetadataOauthMetadataOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i VaultExternalKeyManagerMetadataOauthMetadataArgs) ToVaultExternalKeyManagerMetadataOauthMetadataPtrOutput() VaultExternalKeyManagerMetadataOauthMetadataPtrOutput {
+	return i.ToVaultExternalKeyManagerMetadataOauthMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i VaultExternalKeyManagerMetadataOauthMetadataArgs) ToVaultExternalKeyManagerMetadataOauthMetadataPtrOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataOauthMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VaultExternalKeyManagerMetadataOauthMetadataOutput).ToVaultExternalKeyManagerMetadataOauthMetadataPtrOutputWithContext(ctx)
+}
+
+// VaultExternalKeyManagerMetadataOauthMetadataPtrInput is an input type that accepts VaultExternalKeyManagerMetadataOauthMetadataArgs, VaultExternalKeyManagerMetadataOauthMetadataPtr and VaultExternalKeyManagerMetadataOauthMetadataPtrOutput values.
+// You can construct a concrete instance of `VaultExternalKeyManagerMetadataOauthMetadataPtrInput` via:
+//
+//	        VaultExternalKeyManagerMetadataOauthMetadataArgs{...}
+//
+//	or:
+//
+//	        nil
+type VaultExternalKeyManagerMetadataOauthMetadataPtrInput interface {
+	pulumi.Input
+
+	ToVaultExternalKeyManagerMetadataOauthMetadataPtrOutput() VaultExternalKeyManagerMetadataOauthMetadataPtrOutput
+	ToVaultExternalKeyManagerMetadataOauthMetadataPtrOutputWithContext(context.Context) VaultExternalKeyManagerMetadataOauthMetadataPtrOutput
+}
+
+type vaultExternalKeyManagerMetadataOauthMetadataPtrType VaultExternalKeyManagerMetadataOauthMetadataArgs
+
+func VaultExternalKeyManagerMetadataOauthMetadataPtr(v *VaultExternalKeyManagerMetadataOauthMetadataArgs) VaultExternalKeyManagerMetadataOauthMetadataPtrInput {
+	return (*vaultExternalKeyManagerMetadataOauthMetadataPtrType)(v)
+}
+
+func (*vaultExternalKeyManagerMetadataOauthMetadataPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VaultExternalKeyManagerMetadataOauthMetadata)(nil)).Elem()
+}
+
+func (i *vaultExternalKeyManagerMetadataOauthMetadataPtrType) ToVaultExternalKeyManagerMetadataOauthMetadataPtrOutput() VaultExternalKeyManagerMetadataOauthMetadataPtrOutput {
+	return i.ToVaultExternalKeyManagerMetadataOauthMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i *vaultExternalKeyManagerMetadataOauthMetadataPtrType) ToVaultExternalKeyManagerMetadataOauthMetadataPtrOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataOauthMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VaultExternalKeyManagerMetadataOauthMetadataPtrOutput)
+}
+
+func (i *vaultExternalKeyManagerMetadataOauthMetadataPtrType) ToOutput(ctx context.Context) pulumix.Output[*VaultExternalKeyManagerMetadataOauthMetadata] {
+	return pulumix.Output[*VaultExternalKeyManagerMetadataOauthMetadata]{
+		OutputState: i.ToVaultExternalKeyManagerMetadataOauthMetadataPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type VaultExternalKeyManagerMetadataOauthMetadataOutput struct{ *pulumi.OutputState }
+
+func (VaultExternalKeyManagerMetadataOauthMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VaultExternalKeyManagerMetadataOauthMetadata)(nil)).Elem()
+}
+
+func (o VaultExternalKeyManagerMetadataOauthMetadataOutput) ToVaultExternalKeyManagerMetadataOauthMetadataOutput() VaultExternalKeyManagerMetadataOauthMetadataOutput {
+	return o
+}
+
+func (o VaultExternalKeyManagerMetadataOauthMetadataOutput) ToVaultExternalKeyManagerMetadataOauthMetadataOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataOauthMetadataOutput {
+	return o
+}
+
+func (o VaultExternalKeyManagerMetadataOauthMetadataOutput) ToVaultExternalKeyManagerMetadataOauthMetadataPtrOutput() VaultExternalKeyManagerMetadataOauthMetadataPtrOutput {
+	return o.ToVaultExternalKeyManagerMetadataOauthMetadataPtrOutputWithContext(context.Background())
+}
+
+func (o VaultExternalKeyManagerMetadataOauthMetadataOutput) ToVaultExternalKeyManagerMetadataOauthMetadataPtrOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataOauthMetadataPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VaultExternalKeyManagerMetadataOauthMetadata) *VaultExternalKeyManagerMetadataOauthMetadata {
+		return &v
+	}).(VaultExternalKeyManagerMetadataOauthMetadataPtrOutput)
+}
+
+func (o VaultExternalKeyManagerMetadataOauthMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[VaultExternalKeyManagerMetadataOauthMetadata] {
+	return pulumix.Output[VaultExternalKeyManagerMetadataOauthMetadata]{
+		OutputState: o.OutputState,
+	}
+}
+
+// ID of the client app created in IDP.
+func (o VaultExternalKeyManagerMetadataOauthMetadataOutput) ClientAppId() pulumi.StringOutput {
+	return o.ApplyT(func(v VaultExternalKeyManagerMetadataOauthMetadata) string { return v.ClientAppId }).(pulumi.StringOutput)
+}
+
+// Secret of the client app created in IDP.
+func (o VaultExternalKeyManagerMetadataOauthMetadataOutput) ClientAppSecret() pulumi.StringOutput {
+	return o.ApplyT(func(v VaultExternalKeyManagerMetadataOauthMetadata) string { return v.ClientAppSecret }).(pulumi.StringOutput)
+}
+
+// Base URL of the IDCS account where confidential client app is created.
+func (o VaultExternalKeyManagerMetadataOauthMetadataOutput) IdcsAccountNameUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v VaultExternalKeyManagerMetadataOauthMetadata) string { return v.IdcsAccountNameUrl }).(pulumi.StringOutput)
+}
+
+type VaultExternalKeyManagerMetadataOauthMetadataPtrOutput struct{ *pulumi.OutputState }
+
+func (VaultExternalKeyManagerMetadataOauthMetadataPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VaultExternalKeyManagerMetadataOauthMetadata)(nil)).Elem()
+}
+
+func (o VaultExternalKeyManagerMetadataOauthMetadataPtrOutput) ToVaultExternalKeyManagerMetadataOauthMetadataPtrOutput() VaultExternalKeyManagerMetadataOauthMetadataPtrOutput {
+	return o
+}
+
+func (o VaultExternalKeyManagerMetadataOauthMetadataPtrOutput) ToVaultExternalKeyManagerMetadataOauthMetadataPtrOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataOauthMetadataPtrOutput {
+	return o
+}
+
+func (o VaultExternalKeyManagerMetadataOauthMetadataPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VaultExternalKeyManagerMetadataOauthMetadata] {
+	return pulumix.Output[*VaultExternalKeyManagerMetadataOauthMetadata]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o VaultExternalKeyManagerMetadataOauthMetadataPtrOutput) Elem() VaultExternalKeyManagerMetadataOauthMetadataOutput {
+	return o.ApplyT(func(v *VaultExternalKeyManagerMetadataOauthMetadata) VaultExternalKeyManagerMetadataOauthMetadata {
+		if v != nil {
+			return *v
+		}
+		var ret VaultExternalKeyManagerMetadataOauthMetadata
+		return ret
+	}).(VaultExternalKeyManagerMetadataOauthMetadataOutput)
+}
+
+// ID of the client app created in IDP.
+func (o VaultExternalKeyManagerMetadataOauthMetadataPtrOutput) ClientAppId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VaultExternalKeyManagerMetadataOauthMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ClientAppId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Secret of the client app created in IDP.
+func (o VaultExternalKeyManagerMetadataOauthMetadataPtrOutput) ClientAppSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VaultExternalKeyManagerMetadataOauthMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ClientAppSecret
+	}).(pulumi.StringPtrOutput)
+}
+
+// Base URL of the IDCS account where confidential client app is created.
+func (o VaultExternalKeyManagerMetadataOauthMetadataPtrOutput) IdcsAccountNameUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VaultExternalKeyManagerMetadataOauthMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.IdcsAccountNameUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+type VaultExternalKeyManagerMetadataSummary struct {
+	// URI of the vault on external key manager.
+	ExternalVaultEndpointUrl *string `pulumi:"externalVaultEndpointUrl"`
+	// Summary about authorization to be returned to the customer as a response.
+	OauthMetadataSummaries []VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary `pulumi:"oauthMetadataSummaries"`
+	// OCID of private endpoint created by customer.
+	PrivateEndpointId *string `pulumi:"privateEndpointId"`
+	// Vendor of the external key manager.
+	Vendor *string `pulumi:"vendor"`
+}
+
+// VaultExternalKeyManagerMetadataSummaryInput is an input type that accepts VaultExternalKeyManagerMetadataSummaryArgs and VaultExternalKeyManagerMetadataSummaryOutput values.
+// You can construct a concrete instance of `VaultExternalKeyManagerMetadataSummaryInput` via:
+//
+//	VaultExternalKeyManagerMetadataSummaryArgs{...}
+type VaultExternalKeyManagerMetadataSummaryInput interface {
+	pulumi.Input
+
+	ToVaultExternalKeyManagerMetadataSummaryOutput() VaultExternalKeyManagerMetadataSummaryOutput
+	ToVaultExternalKeyManagerMetadataSummaryOutputWithContext(context.Context) VaultExternalKeyManagerMetadataSummaryOutput
+}
+
+type VaultExternalKeyManagerMetadataSummaryArgs struct {
+	// URI of the vault on external key manager.
+	ExternalVaultEndpointUrl pulumi.StringPtrInput `pulumi:"externalVaultEndpointUrl"`
+	// Summary about authorization to be returned to the customer as a response.
+	OauthMetadataSummaries VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput `pulumi:"oauthMetadataSummaries"`
+	// OCID of private endpoint created by customer.
+	PrivateEndpointId pulumi.StringPtrInput `pulumi:"privateEndpointId"`
+	// Vendor of the external key manager.
+	Vendor pulumi.StringPtrInput `pulumi:"vendor"`
+}
+
+func (VaultExternalKeyManagerMetadataSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VaultExternalKeyManagerMetadataSummary)(nil)).Elem()
+}
+
+func (i VaultExternalKeyManagerMetadataSummaryArgs) ToVaultExternalKeyManagerMetadataSummaryOutput() VaultExternalKeyManagerMetadataSummaryOutput {
+	return i.ToVaultExternalKeyManagerMetadataSummaryOutputWithContext(context.Background())
+}
+
+func (i VaultExternalKeyManagerMetadataSummaryArgs) ToVaultExternalKeyManagerMetadataSummaryOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VaultExternalKeyManagerMetadataSummaryOutput)
+}
+
+func (i VaultExternalKeyManagerMetadataSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[VaultExternalKeyManagerMetadataSummary] {
+	return pulumix.Output[VaultExternalKeyManagerMetadataSummary]{
+		OutputState: i.ToVaultExternalKeyManagerMetadataSummaryOutputWithContext(ctx).OutputState,
+	}
+}
+
+// VaultExternalKeyManagerMetadataSummaryArrayInput is an input type that accepts VaultExternalKeyManagerMetadataSummaryArray and VaultExternalKeyManagerMetadataSummaryArrayOutput values.
+// You can construct a concrete instance of `VaultExternalKeyManagerMetadataSummaryArrayInput` via:
+//
+//	VaultExternalKeyManagerMetadataSummaryArray{ VaultExternalKeyManagerMetadataSummaryArgs{...} }
+type VaultExternalKeyManagerMetadataSummaryArrayInput interface {
+	pulumi.Input
+
+	ToVaultExternalKeyManagerMetadataSummaryArrayOutput() VaultExternalKeyManagerMetadataSummaryArrayOutput
+	ToVaultExternalKeyManagerMetadataSummaryArrayOutputWithContext(context.Context) VaultExternalKeyManagerMetadataSummaryArrayOutput
+}
+
+type VaultExternalKeyManagerMetadataSummaryArray []VaultExternalKeyManagerMetadataSummaryInput
+
+func (VaultExternalKeyManagerMetadataSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VaultExternalKeyManagerMetadataSummary)(nil)).Elem()
+}
+
+func (i VaultExternalKeyManagerMetadataSummaryArray) ToVaultExternalKeyManagerMetadataSummaryArrayOutput() VaultExternalKeyManagerMetadataSummaryArrayOutput {
+	return i.ToVaultExternalKeyManagerMetadataSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i VaultExternalKeyManagerMetadataSummaryArray) ToVaultExternalKeyManagerMetadataSummaryArrayOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VaultExternalKeyManagerMetadataSummaryArrayOutput)
+}
+
+func (i VaultExternalKeyManagerMetadataSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]VaultExternalKeyManagerMetadataSummary] {
+	return pulumix.Output[[]VaultExternalKeyManagerMetadataSummary]{
+		OutputState: i.ToVaultExternalKeyManagerMetadataSummaryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type VaultExternalKeyManagerMetadataSummaryOutput struct{ *pulumi.OutputState }
+
+func (VaultExternalKeyManagerMetadataSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VaultExternalKeyManagerMetadataSummary)(nil)).Elem()
+}
+
+func (o VaultExternalKeyManagerMetadataSummaryOutput) ToVaultExternalKeyManagerMetadataSummaryOutput() VaultExternalKeyManagerMetadataSummaryOutput {
+	return o
+}
+
+func (o VaultExternalKeyManagerMetadataSummaryOutput) ToVaultExternalKeyManagerMetadataSummaryOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataSummaryOutput {
+	return o
+}
+
+func (o VaultExternalKeyManagerMetadataSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[VaultExternalKeyManagerMetadataSummary] {
+	return pulumix.Output[VaultExternalKeyManagerMetadataSummary]{
+		OutputState: o.OutputState,
+	}
+}
+
+// URI of the vault on external key manager.
+func (o VaultExternalKeyManagerMetadataSummaryOutput) ExternalVaultEndpointUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VaultExternalKeyManagerMetadataSummary) *string { return v.ExternalVaultEndpointUrl }).(pulumi.StringPtrOutput)
+}
+
+// Summary about authorization to be returned to the customer as a response.
+func (o VaultExternalKeyManagerMetadataSummaryOutput) OauthMetadataSummaries() VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput {
+	return o.ApplyT(func(v VaultExternalKeyManagerMetadataSummary) []VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary {
+		return v.OauthMetadataSummaries
+	}).(VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput)
+}
+
+// OCID of private endpoint created by customer.
+func (o VaultExternalKeyManagerMetadataSummaryOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VaultExternalKeyManagerMetadataSummary) *string { return v.PrivateEndpointId }).(pulumi.StringPtrOutput)
+}
+
+// Vendor of the external key manager.
+func (o VaultExternalKeyManagerMetadataSummaryOutput) Vendor() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VaultExternalKeyManagerMetadataSummary) *string { return v.Vendor }).(pulumi.StringPtrOutput)
+}
+
+type VaultExternalKeyManagerMetadataSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (VaultExternalKeyManagerMetadataSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VaultExternalKeyManagerMetadataSummary)(nil)).Elem()
+}
+
+func (o VaultExternalKeyManagerMetadataSummaryArrayOutput) ToVaultExternalKeyManagerMetadataSummaryArrayOutput() VaultExternalKeyManagerMetadataSummaryArrayOutput {
+	return o
+}
+
+func (o VaultExternalKeyManagerMetadataSummaryArrayOutput) ToVaultExternalKeyManagerMetadataSummaryArrayOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataSummaryArrayOutput {
+	return o
+}
+
+func (o VaultExternalKeyManagerMetadataSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VaultExternalKeyManagerMetadataSummary] {
+	return pulumix.Output[[]VaultExternalKeyManagerMetadataSummary]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o VaultExternalKeyManagerMetadataSummaryArrayOutput) Index(i pulumi.IntInput) VaultExternalKeyManagerMetadataSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VaultExternalKeyManagerMetadataSummary {
+		return vs[0].([]VaultExternalKeyManagerMetadataSummary)[vs[1].(int)]
+	}).(VaultExternalKeyManagerMetadataSummaryOutput)
+}
+
+type VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary struct {
+	// ID of the client app created in IDP.
+	ClientAppId *string `pulumi:"clientAppId"`
+	// Base URL of the IDCS account where confidential client app is created.
+	IdcsAccountNameUrl *string `pulumi:"idcsAccountNameUrl"`
+}
+
+// VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryInput is an input type that accepts VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs and VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput values.
+// You can construct a concrete instance of `VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryInput` via:
+//
+//	VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs{...}
+type VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryInput interface {
+	pulumi.Input
+
+	ToVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput() VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput
+	ToVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputWithContext(context.Context) VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput
+}
+
+type VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs struct {
+	// ID of the client app created in IDP.
+	ClientAppId pulumi.StringPtrInput `pulumi:"clientAppId"`
+	// Base URL of the IDCS account where confidential client app is created.
+	IdcsAccountNameUrl pulumi.StringPtrInput `pulumi:"idcsAccountNameUrl"`
+}
+
+func (VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary)(nil)).Elem()
+}
+
+func (i VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs) ToVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput() VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput {
+	return i.ToVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputWithContext(context.Background())
+}
+
+func (i VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs) ToVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput)
+}
+
+func (i VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
+	return pulumix.Output[VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
+		OutputState: i.ToVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputWithContext(ctx).OutputState,
+	}
+}
+
+// VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput is an input type that accepts VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray and VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput values.
+// You can construct a concrete instance of `VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput` via:
+//
+//	VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray{ VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs{...} }
+type VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput interface {
+	pulumi.Input
+
+	ToVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput() VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput
+	ToVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutputWithContext(context.Context) VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput
+}
+
+type VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray []VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryInput
+
+func (VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary)(nil)).Elem()
+}
+
+func (i VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray) ToVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput() VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput {
+	return i.ToVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray) ToVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput)
+}
+
+func (i VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
+	return pulumix.Output[[]VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
+		OutputState: i.ToVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput struct{ *pulumi.OutputState }
+
+func (VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary)(nil)).Elem()
+}
+
+func (o VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ToVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput() VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput {
+	return o
+}
+
+func (o VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ToVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput {
+	return o
+}
+
+func (o VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
+	return pulumix.Output[VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
+		OutputState: o.OutputState,
+	}
+}
+
+// ID of the client app created in IDP.
+func (o VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ClientAppId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary) *string { return v.ClientAppId }).(pulumi.StringPtrOutput)
+}
+
+// Base URL of the IDCS account where confidential client app is created.
+func (o VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) IdcsAccountNameUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary) *string {
+		return v.IdcsAccountNameUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+type VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary)(nil)).Elem()
+}
+
+func (o VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) ToVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput() VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput {
+	return o
+}
+
+func (o VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) ToVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutputWithContext(ctx context.Context) VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput {
+	return o
+}
+
+func (o VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
+	return pulumix.Output[[]VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) Index(i pulumi.IntInput) VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary {
+		return vs[0].([]VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary)[vs[1].(int)]
+	}).(VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput)
 }
 
 type VaultReplicaDetail struct {
@@ -1671,8 +2774,627 @@ func (o VaultRestoreFromObjectStorePtrOutput) Uri() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type GetEkmsPrivateEndpointsEkmsPrivateEndpoint struct {
+	// CABundle to validate TLS certificate of the external key manager system in PEM format
+	CaBundle string `pulumi:"caBundle"`
+	// The OCID of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Mutable name of the EKMS private endpoint
+	DisplayName string `pulumi:"displayName"`
+	// Private IP of the external key manager system to connect to from the EKMS private endpoint
+	ExternalKeyManagerIp string `pulumi:"externalKeyManagerIp"`
+	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Unique identifier that is immutable
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The port of the external key manager system
+	Port int `pulumi:"port"`
+	// The IP address in the customer's VCN for the EKMS private endpoint. This is taken from subnet
+	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
+	// The current state of the EKMS private endpoint resource.
+	State string `pulumi:"state"`
+	// Subnet Identifier
+	SubnetId string `pulumi:"subnetId"`
+	// The time the EKMS private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the EKMS private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetEkmsPrivateEndpointsEkmsPrivateEndpointInput is an input type that accepts GetEkmsPrivateEndpointsEkmsPrivateEndpointArgs and GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput values.
+// You can construct a concrete instance of `GetEkmsPrivateEndpointsEkmsPrivateEndpointInput` via:
+//
+//	GetEkmsPrivateEndpointsEkmsPrivateEndpointArgs{...}
+type GetEkmsPrivateEndpointsEkmsPrivateEndpointInput interface {
+	pulumi.Input
+
+	ToGetEkmsPrivateEndpointsEkmsPrivateEndpointOutput() GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput
+	ToGetEkmsPrivateEndpointsEkmsPrivateEndpointOutputWithContext(context.Context) GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput
+}
+
+type GetEkmsPrivateEndpointsEkmsPrivateEndpointArgs struct {
+	// CABundle to validate TLS certificate of the external key manager system in PEM format
+	CaBundle pulumi.StringInput `pulumi:"caBundle"`
+	// The OCID of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Mutable name of the EKMS private endpoint
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Private IP of the external key manager system to connect to from the EKMS private endpoint
+	ExternalKeyManagerIp pulumi.StringInput `pulumi:"externalKeyManagerIp"`
+	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Unique identifier that is immutable
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The port of the external key manager system
+	Port pulumi.IntInput `pulumi:"port"`
+	// The IP address in the customer's VCN for the EKMS private endpoint. This is taken from subnet
+	PrivateEndpointIp pulumi.StringInput `pulumi:"privateEndpointIp"`
+	// The current state of the EKMS private endpoint resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// Subnet Identifier
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The time the EKMS private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the EKMS private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetEkmsPrivateEndpointsEkmsPrivateEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEkmsPrivateEndpointsEkmsPrivateEndpoint)(nil)).Elem()
+}
+
+func (i GetEkmsPrivateEndpointsEkmsPrivateEndpointArgs) ToGetEkmsPrivateEndpointsEkmsPrivateEndpointOutput() GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput {
+	return i.ToGetEkmsPrivateEndpointsEkmsPrivateEndpointOutputWithContext(context.Background())
+}
+
+func (i GetEkmsPrivateEndpointsEkmsPrivateEndpointArgs) ToGetEkmsPrivateEndpointsEkmsPrivateEndpointOutputWithContext(ctx context.Context) GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput)
+}
+
+func (i GetEkmsPrivateEndpointsEkmsPrivateEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetEkmsPrivateEndpointsEkmsPrivateEndpoint] {
+	return pulumix.Output[GetEkmsPrivateEndpointsEkmsPrivateEndpoint]{
+		OutputState: i.ToGetEkmsPrivateEndpointsEkmsPrivateEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayInput is an input type that accepts GetEkmsPrivateEndpointsEkmsPrivateEndpointArray and GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput values.
+// You can construct a concrete instance of `GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayInput` via:
+//
+//	GetEkmsPrivateEndpointsEkmsPrivateEndpointArray{ GetEkmsPrivateEndpointsEkmsPrivateEndpointArgs{...} }
+type GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayInput interface {
+	pulumi.Input
+
+	ToGetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput() GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput
+	ToGetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutputWithContext(context.Context) GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput
+}
+
+type GetEkmsPrivateEndpointsEkmsPrivateEndpointArray []GetEkmsPrivateEndpointsEkmsPrivateEndpointInput
+
+func (GetEkmsPrivateEndpointsEkmsPrivateEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEkmsPrivateEndpointsEkmsPrivateEndpoint)(nil)).Elem()
+}
+
+func (i GetEkmsPrivateEndpointsEkmsPrivateEndpointArray) ToGetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput() GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput {
+	return i.ToGetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i GetEkmsPrivateEndpointsEkmsPrivateEndpointArray) ToGetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutputWithContext(ctx context.Context) GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput)
+}
+
+func (i GetEkmsPrivateEndpointsEkmsPrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEkmsPrivateEndpointsEkmsPrivateEndpoint] {
+	return pulumix.Output[[]GetEkmsPrivateEndpointsEkmsPrivateEndpoint]{
+		OutputState: i.ToGetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput struct{ *pulumi.OutputState }
+
+func (GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEkmsPrivateEndpointsEkmsPrivateEndpoint)(nil)).Elem()
+}
+
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) ToGetEkmsPrivateEndpointsEkmsPrivateEndpointOutput() GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput {
+	return o
+}
+
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) ToGetEkmsPrivateEndpointsEkmsPrivateEndpointOutputWithContext(ctx context.Context) GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput {
+	return o
+}
+
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetEkmsPrivateEndpointsEkmsPrivateEndpoint] {
+	return pulumix.Output[GetEkmsPrivateEndpointsEkmsPrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
+}
+
+// CABundle to validate TLS certificate of the external key manager system in PEM format
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) CaBundle() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEkmsPrivateEndpointsEkmsPrivateEndpoint) string { return v.CaBundle }).(pulumi.StringOutput)
+}
+
+// The OCID of the compartment.
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEkmsPrivateEndpointsEkmsPrivateEndpoint) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetEkmsPrivateEndpointsEkmsPrivateEndpoint) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// Mutable name of the EKMS private endpoint
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEkmsPrivateEndpointsEkmsPrivateEndpoint) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Private IP of the external key manager system to connect to from the EKMS private endpoint
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) ExternalKeyManagerIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEkmsPrivateEndpointsEkmsPrivateEndpoint) string { return v.ExternalKeyManagerIp }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetEkmsPrivateEndpointsEkmsPrivateEndpoint) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// Unique identifier that is immutable
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEkmsPrivateEndpointsEkmsPrivateEndpoint) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEkmsPrivateEndpointsEkmsPrivateEndpoint) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The port of the external key manager system
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetEkmsPrivateEndpointsEkmsPrivateEndpoint) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// The IP address in the customer's VCN for the EKMS private endpoint. This is taken from subnet
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) PrivateEndpointIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEkmsPrivateEndpointsEkmsPrivateEndpoint) string { return v.PrivateEndpointIp }).(pulumi.StringOutput)
+}
+
+// The current state of the EKMS private endpoint resource.
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEkmsPrivateEndpointsEkmsPrivateEndpoint) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Subnet Identifier
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEkmsPrivateEndpointsEkmsPrivateEndpoint) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The time the EKMS private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEkmsPrivateEndpointsEkmsPrivateEndpoint) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the EKMS private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEkmsPrivateEndpointsEkmsPrivateEndpoint) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEkmsPrivateEndpointsEkmsPrivateEndpoint)(nil)).Elem()
+}
+
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput) ToGetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput() GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput {
+	return o
+}
+
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput) ToGetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutputWithContext(ctx context.Context) GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput {
+	return o
+}
+
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEkmsPrivateEndpointsEkmsPrivateEndpoint] {
+	return pulumix.Output[[]GetEkmsPrivateEndpointsEkmsPrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput) Index(i pulumi.IntInput) GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEkmsPrivateEndpointsEkmsPrivateEndpoint {
+		return vs[0].([]GetEkmsPrivateEndpointsEkmsPrivateEndpoint)[vs[1].(int)]
+	}).(GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput)
+}
+
+type GetEkmsPrivateEndpointsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetEkmsPrivateEndpointsFilterInput is an input type that accepts GetEkmsPrivateEndpointsFilterArgs and GetEkmsPrivateEndpointsFilterOutput values.
+// You can construct a concrete instance of `GetEkmsPrivateEndpointsFilterInput` via:
+//
+//	GetEkmsPrivateEndpointsFilterArgs{...}
+type GetEkmsPrivateEndpointsFilterInput interface {
+	pulumi.Input
+
+	ToGetEkmsPrivateEndpointsFilterOutput() GetEkmsPrivateEndpointsFilterOutput
+	ToGetEkmsPrivateEndpointsFilterOutputWithContext(context.Context) GetEkmsPrivateEndpointsFilterOutput
+}
+
+type GetEkmsPrivateEndpointsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetEkmsPrivateEndpointsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEkmsPrivateEndpointsFilter)(nil)).Elem()
+}
+
+func (i GetEkmsPrivateEndpointsFilterArgs) ToGetEkmsPrivateEndpointsFilterOutput() GetEkmsPrivateEndpointsFilterOutput {
+	return i.ToGetEkmsPrivateEndpointsFilterOutputWithContext(context.Background())
+}
+
+func (i GetEkmsPrivateEndpointsFilterArgs) ToGetEkmsPrivateEndpointsFilterOutputWithContext(ctx context.Context) GetEkmsPrivateEndpointsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEkmsPrivateEndpointsFilterOutput)
+}
+
+func (i GetEkmsPrivateEndpointsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetEkmsPrivateEndpointsFilter] {
+	return pulumix.Output[GetEkmsPrivateEndpointsFilter]{
+		OutputState: i.ToGetEkmsPrivateEndpointsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetEkmsPrivateEndpointsFilterArrayInput is an input type that accepts GetEkmsPrivateEndpointsFilterArray and GetEkmsPrivateEndpointsFilterArrayOutput values.
+// You can construct a concrete instance of `GetEkmsPrivateEndpointsFilterArrayInput` via:
+//
+//	GetEkmsPrivateEndpointsFilterArray{ GetEkmsPrivateEndpointsFilterArgs{...} }
+type GetEkmsPrivateEndpointsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetEkmsPrivateEndpointsFilterArrayOutput() GetEkmsPrivateEndpointsFilterArrayOutput
+	ToGetEkmsPrivateEndpointsFilterArrayOutputWithContext(context.Context) GetEkmsPrivateEndpointsFilterArrayOutput
+}
+
+type GetEkmsPrivateEndpointsFilterArray []GetEkmsPrivateEndpointsFilterInput
+
+func (GetEkmsPrivateEndpointsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEkmsPrivateEndpointsFilter)(nil)).Elem()
+}
+
+func (i GetEkmsPrivateEndpointsFilterArray) ToGetEkmsPrivateEndpointsFilterArrayOutput() GetEkmsPrivateEndpointsFilterArrayOutput {
+	return i.ToGetEkmsPrivateEndpointsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetEkmsPrivateEndpointsFilterArray) ToGetEkmsPrivateEndpointsFilterArrayOutputWithContext(ctx context.Context) GetEkmsPrivateEndpointsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEkmsPrivateEndpointsFilterArrayOutput)
+}
+
+func (i GetEkmsPrivateEndpointsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEkmsPrivateEndpointsFilter] {
+	return pulumix.Output[[]GetEkmsPrivateEndpointsFilter]{
+		OutputState: i.ToGetEkmsPrivateEndpointsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetEkmsPrivateEndpointsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetEkmsPrivateEndpointsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEkmsPrivateEndpointsFilter)(nil)).Elem()
+}
+
+func (o GetEkmsPrivateEndpointsFilterOutput) ToGetEkmsPrivateEndpointsFilterOutput() GetEkmsPrivateEndpointsFilterOutput {
+	return o
+}
+
+func (o GetEkmsPrivateEndpointsFilterOutput) ToGetEkmsPrivateEndpointsFilterOutputWithContext(ctx context.Context) GetEkmsPrivateEndpointsFilterOutput {
+	return o
+}
+
+func (o GetEkmsPrivateEndpointsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetEkmsPrivateEndpointsFilter] {
+	return pulumix.Output[GetEkmsPrivateEndpointsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetEkmsPrivateEndpointsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEkmsPrivateEndpointsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetEkmsPrivateEndpointsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetEkmsPrivateEndpointsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetEkmsPrivateEndpointsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetEkmsPrivateEndpointsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetEkmsPrivateEndpointsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEkmsPrivateEndpointsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEkmsPrivateEndpointsFilter)(nil)).Elem()
+}
+
+func (o GetEkmsPrivateEndpointsFilterArrayOutput) ToGetEkmsPrivateEndpointsFilterArrayOutput() GetEkmsPrivateEndpointsFilterArrayOutput {
+	return o
+}
+
+func (o GetEkmsPrivateEndpointsFilterArrayOutput) ToGetEkmsPrivateEndpointsFilterArrayOutputWithContext(ctx context.Context) GetEkmsPrivateEndpointsFilterArrayOutput {
+	return o
+}
+
+func (o GetEkmsPrivateEndpointsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEkmsPrivateEndpointsFilter] {
+	return pulumix.Output[[]GetEkmsPrivateEndpointsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetEkmsPrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetEkmsPrivateEndpointsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEkmsPrivateEndpointsFilter {
+		return vs[0].([]GetEkmsPrivateEndpointsFilter)[vs[1].(int)]
+	}).(GetEkmsPrivateEndpointsFilterOutput)
+}
+
+type GetKeyExternalKeyReference struct {
+	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+	ExternalKeyId string `pulumi:"externalKeyId"`
+}
+
+// GetKeyExternalKeyReferenceInput is an input type that accepts GetKeyExternalKeyReferenceArgs and GetKeyExternalKeyReferenceOutput values.
+// You can construct a concrete instance of `GetKeyExternalKeyReferenceInput` via:
+//
+//	GetKeyExternalKeyReferenceArgs{...}
+type GetKeyExternalKeyReferenceInput interface {
+	pulumi.Input
+
+	ToGetKeyExternalKeyReferenceOutput() GetKeyExternalKeyReferenceOutput
+	ToGetKeyExternalKeyReferenceOutputWithContext(context.Context) GetKeyExternalKeyReferenceOutput
+}
+
+type GetKeyExternalKeyReferenceArgs struct {
+	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+	ExternalKeyId pulumi.StringInput `pulumi:"externalKeyId"`
+}
+
+func (GetKeyExternalKeyReferenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyExternalKeyReference)(nil)).Elem()
+}
+
+func (i GetKeyExternalKeyReferenceArgs) ToGetKeyExternalKeyReferenceOutput() GetKeyExternalKeyReferenceOutput {
+	return i.ToGetKeyExternalKeyReferenceOutputWithContext(context.Background())
+}
+
+func (i GetKeyExternalKeyReferenceArgs) ToGetKeyExternalKeyReferenceOutputWithContext(ctx context.Context) GetKeyExternalKeyReferenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyExternalKeyReferenceOutput)
+}
+
+func (i GetKeyExternalKeyReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyExternalKeyReference] {
+	return pulumix.Output[GetKeyExternalKeyReference]{
+		OutputState: i.ToGetKeyExternalKeyReferenceOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetKeyExternalKeyReferenceArrayInput is an input type that accepts GetKeyExternalKeyReferenceArray and GetKeyExternalKeyReferenceArrayOutput values.
+// You can construct a concrete instance of `GetKeyExternalKeyReferenceArrayInput` via:
+//
+//	GetKeyExternalKeyReferenceArray{ GetKeyExternalKeyReferenceArgs{...} }
+type GetKeyExternalKeyReferenceArrayInput interface {
+	pulumi.Input
+
+	ToGetKeyExternalKeyReferenceArrayOutput() GetKeyExternalKeyReferenceArrayOutput
+	ToGetKeyExternalKeyReferenceArrayOutputWithContext(context.Context) GetKeyExternalKeyReferenceArrayOutput
+}
+
+type GetKeyExternalKeyReferenceArray []GetKeyExternalKeyReferenceInput
+
+func (GetKeyExternalKeyReferenceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyExternalKeyReference)(nil)).Elem()
+}
+
+func (i GetKeyExternalKeyReferenceArray) ToGetKeyExternalKeyReferenceArrayOutput() GetKeyExternalKeyReferenceArrayOutput {
+	return i.ToGetKeyExternalKeyReferenceArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeyExternalKeyReferenceArray) ToGetKeyExternalKeyReferenceArrayOutputWithContext(ctx context.Context) GetKeyExternalKeyReferenceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyExternalKeyReferenceArrayOutput)
+}
+
+func (i GetKeyExternalKeyReferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyExternalKeyReference] {
+	return pulumix.Output[[]GetKeyExternalKeyReference]{
+		OutputState: i.ToGetKeyExternalKeyReferenceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetKeyExternalKeyReferenceOutput struct{ *pulumi.OutputState }
+
+func (GetKeyExternalKeyReferenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyExternalKeyReference)(nil)).Elem()
+}
+
+func (o GetKeyExternalKeyReferenceOutput) ToGetKeyExternalKeyReferenceOutput() GetKeyExternalKeyReferenceOutput {
+	return o
+}
+
+func (o GetKeyExternalKeyReferenceOutput) ToGetKeyExternalKeyReferenceOutputWithContext(ctx context.Context) GetKeyExternalKeyReferenceOutput {
+	return o
+}
+
+func (o GetKeyExternalKeyReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyExternalKeyReference] {
+	return pulumix.Output[GetKeyExternalKeyReference]{
+		OutputState: o.OutputState,
+	}
+}
+
+// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+func (o GetKeyExternalKeyReferenceOutput) ExternalKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyExternalKeyReference) string { return v.ExternalKeyId }).(pulumi.StringOutput)
+}
+
+type GetKeyExternalKeyReferenceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeyExternalKeyReferenceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyExternalKeyReference)(nil)).Elem()
+}
+
+func (o GetKeyExternalKeyReferenceArrayOutput) ToGetKeyExternalKeyReferenceArrayOutput() GetKeyExternalKeyReferenceArrayOutput {
+	return o
+}
+
+func (o GetKeyExternalKeyReferenceArrayOutput) ToGetKeyExternalKeyReferenceArrayOutputWithContext(ctx context.Context) GetKeyExternalKeyReferenceArrayOutput {
+	return o
+}
+
+func (o GetKeyExternalKeyReferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyExternalKeyReference] {
+	return pulumix.Output[[]GetKeyExternalKeyReference]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetKeyExternalKeyReferenceArrayOutput) Index(i pulumi.IntInput) GetKeyExternalKeyReferenceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyExternalKeyReference {
+		return vs[0].([]GetKeyExternalKeyReference)[vs[1].(int)]
+	}).(GetKeyExternalKeyReferenceOutput)
+}
+
+type GetKeyExternalKeyReferenceDetail struct {
+	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+	ExternalKeyId string `pulumi:"externalKeyId"`
+	// Key version ID associated with the external key.
+	ExternalKeyVersionId string `pulumi:"externalKeyVersionId"`
+}
+
+// GetKeyExternalKeyReferenceDetailInput is an input type that accepts GetKeyExternalKeyReferenceDetailArgs and GetKeyExternalKeyReferenceDetailOutput values.
+// You can construct a concrete instance of `GetKeyExternalKeyReferenceDetailInput` via:
+//
+//	GetKeyExternalKeyReferenceDetailArgs{...}
+type GetKeyExternalKeyReferenceDetailInput interface {
+	pulumi.Input
+
+	ToGetKeyExternalKeyReferenceDetailOutput() GetKeyExternalKeyReferenceDetailOutput
+	ToGetKeyExternalKeyReferenceDetailOutputWithContext(context.Context) GetKeyExternalKeyReferenceDetailOutput
+}
+
+type GetKeyExternalKeyReferenceDetailArgs struct {
+	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+	ExternalKeyId pulumi.StringInput `pulumi:"externalKeyId"`
+	// Key version ID associated with the external key.
+	ExternalKeyVersionId pulumi.StringInput `pulumi:"externalKeyVersionId"`
+}
+
+func (GetKeyExternalKeyReferenceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (i GetKeyExternalKeyReferenceDetailArgs) ToGetKeyExternalKeyReferenceDetailOutput() GetKeyExternalKeyReferenceDetailOutput {
+	return i.ToGetKeyExternalKeyReferenceDetailOutputWithContext(context.Background())
+}
+
+func (i GetKeyExternalKeyReferenceDetailArgs) ToGetKeyExternalKeyReferenceDetailOutputWithContext(ctx context.Context) GetKeyExternalKeyReferenceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyExternalKeyReferenceDetailOutput)
+}
+
+func (i GetKeyExternalKeyReferenceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyExternalKeyReferenceDetail] {
+	return pulumix.Output[GetKeyExternalKeyReferenceDetail]{
+		OutputState: i.ToGetKeyExternalKeyReferenceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetKeyExternalKeyReferenceDetailArrayInput is an input type that accepts GetKeyExternalKeyReferenceDetailArray and GetKeyExternalKeyReferenceDetailArrayOutput values.
+// You can construct a concrete instance of `GetKeyExternalKeyReferenceDetailArrayInput` via:
+//
+//	GetKeyExternalKeyReferenceDetailArray{ GetKeyExternalKeyReferenceDetailArgs{...} }
+type GetKeyExternalKeyReferenceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetKeyExternalKeyReferenceDetailArrayOutput() GetKeyExternalKeyReferenceDetailArrayOutput
+	ToGetKeyExternalKeyReferenceDetailArrayOutputWithContext(context.Context) GetKeyExternalKeyReferenceDetailArrayOutput
+}
+
+type GetKeyExternalKeyReferenceDetailArray []GetKeyExternalKeyReferenceDetailInput
+
+func (GetKeyExternalKeyReferenceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (i GetKeyExternalKeyReferenceDetailArray) ToGetKeyExternalKeyReferenceDetailArrayOutput() GetKeyExternalKeyReferenceDetailArrayOutput {
+	return i.ToGetKeyExternalKeyReferenceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeyExternalKeyReferenceDetailArray) ToGetKeyExternalKeyReferenceDetailArrayOutputWithContext(ctx context.Context) GetKeyExternalKeyReferenceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyExternalKeyReferenceDetailArrayOutput)
+}
+
+func (i GetKeyExternalKeyReferenceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyExternalKeyReferenceDetail] {
+	return pulumix.Output[[]GetKeyExternalKeyReferenceDetail]{
+		OutputState: i.ToGetKeyExternalKeyReferenceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetKeyExternalKeyReferenceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetKeyExternalKeyReferenceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (o GetKeyExternalKeyReferenceDetailOutput) ToGetKeyExternalKeyReferenceDetailOutput() GetKeyExternalKeyReferenceDetailOutput {
+	return o
+}
+
+func (o GetKeyExternalKeyReferenceDetailOutput) ToGetKeyExternalKeyReferenceDetailOutputWithContext(ctx context.Context) GetKeyExternalKeyReferenceDetailOutput {
+	return o
+}
+
+func (o GetKeyExternalKeyReferenceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyExternalKeyReferenceDetail] {
+	return pulumix.Output[GetKeyExternalKeyReferenceDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+func (o GetKeyExternalKeyReferenceDetailOutput) ExternalKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyExternalKeyReferenceDetail) string { return v.ExternalKeyId }).(pulumi.StringOutput)
+}
+
+// Key version ID associated with the external key.
+func (o GetKeyExternalKeyReferenceDetailOutput) ExternalKeyVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyExternalKeyReferenceDetail) string { return v.ExternalKeyVersionId }).(pulumi.StringOutput)
+}
+
+type GetKeyExternalKeyReferenceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeyExternalKeyReferenceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (o GetKeyExternalKeyReferenceDetailArrayOutput) ToGetKeyExternalKeyReferenceDetailArrayOutput() GetKeyExternalKeyReferenceDetailArrayOutput {
+	return o
+}
+
+func (o GetKeyExternalKeyReferenceDetailArrayOutput) ToGetKeyExternalKeyReferenceDetailArrayOutputWithContext(ctx context.Context) GetKeyExternalKeyReferenceDetailArrayOutput {
+	return o
+}
+
+func (o GetKeyExternalKeyReferenceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyExternalKeyReferenceDetail] {
+	return pulumix.Output[[]GetKeyExternalKeyReferenceDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetKeyExternalKeyReferenceDetailArrayOutput) Index(i pulumi.IntInput) GetKeyExternalKeyReferenceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyExternalKeyReferenceDetail {
+		return vs[0].([]GetKeyExternalKeyReferenceDetail)[vs[1].(int)]
+	}).(GetKeyExternalKeyReferenceDetailOutput)
+}
+
 type GetKeyKeyShape struct {
-	// The algorithm used by a key's key versions to encrypt or decrypt.
+	// The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
 	Algorithm string `pulumi:"algorithm"`
 	// Supported curve IDs for ECDSA keys.
 	CurveId string `pulumi:"curveId"`
@@ -1695,7 +3417,7 @@ type GetKeyKeyShapeInput interface {
 }
 
 type GetKeyKeyShapeArgs struct {
-	// The algorithm used by a key's key versions to encrypt or decrypt.
+	// The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
 	Algorithm pulumi.StringInput `pulumi:"algorithm"`
 	// Supported curve IDs for ECDSA keys.
 	CurveId pulumi.StringInput `pulumi:"curveId"`
@@ -1775,7 +3497,7 @@ func (o GetKeyKeyShapeOutput) ToOutput(ctx context.Context) pulumix.Output[GetKe
 	}
 }
 
-// The algorithm used by a key's key versions to encrypt or decrypt.
+// The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
 func (o GetKeyKeyShapeOutput) Algorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyKeyShape) string { return v.Algorithm }).(pulumi.StringOutput)
 }
@@ -2236,6 +3958,136 @@ func (o GetKeyRestoreFromObjectStoreArrayOutput) Index(i pulumi.IntInput) GetKey
 	}).(GetKeyRestoreFromObjectStoreOutput)
 }
 
+type GetKeyVersionExternalKeyReferenceDetail struct {
+	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+	ExternalKeyId string `pulumi:"externalKeyId"`
+	// Key version ID associated with the external key.
+	ExternalKeyVersionId string `pulumi:"externalKeyVersionId"`
+}
+
+// GetKeyVersionExternalKeyReferenceDetailInput is an input type that accepts GetKeyVersionExternalKeyReferenceDetailArgs and GetKeyVersionExternalKeyReferenceDetailOutput values.
+// You can construct a concrete instance of `GetKeyVersionExternalKeyReferenceDetailInput` via:
+//
+//	GetKeyVersionExternalKeyReferenceDetailArgs{...}
+type GetKeyVersionExternalKeyReferenceDetailInput interface {
+	pulumi.Input
+
+	ToGetKeyVersionExternalKeyReferenceDetailOutput() GetKeyVersionExternalKeyReferenceDetailOutput
+	ToGetKeyVersionExternalKeyReferenceDetailOutputWithContext(context.Context) GetKeyVersionExternalKeyReferenceDetailOutput
+}
+
+type GetKeyVersionExternalKeyReferenceDetailArgs struct {
+	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+	ExternalKeyId pulumi.StringInput `pulumi:"externalKeyId"`
+	// Key version ID associated with the external key.
+	ExternalKeyVersionId pulumi.StringInput `pulumi:"externalKeyVersionId"`
+}
+
+func (GetKeyVersionExternalKeyReferenceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyVersionExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (i GetKeyVersionExternalKeyReferenceDetailArgs) ToGetKeyVersionExternalKeyReferenceDetailOutput() GetKeyVersionExternalKeyReferenceDetailOutput {
+	return i.ToGetKeyVersionExternalKeyReferenceDetailOutputWithContext(context.Background())
+}
+
+func (i GetKeyVersionExternalKeyReferenceDetailArgs) ToGetKeyVersionExternalKeyReferenceDetailOutputWithContext(ctx context.Context) GetKeyVersionExternalKeyReferenceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionExternalKeyReferenceDetailOutput)
+}
+
+func (i GetKeyVersionExternalKeyReferenceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionExternalKeyReferenceDetail] {
+	return pulumix.Output[GetKeyVersionExternalKeyReferenceDetail]{
+		OutputState: i.ToGetKeyVersionExternalKeyReferenceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetKeyVersionExternalKeyReferenceDetailArrayInput is an input type that accepts GetKeyVersionExternalKeyReferenceDetailArray and GetKeyVersionExternalKeyReferenceDetailArrayOutput values.
+// You can construct a concrete instance of `GetKeyVersionExternalKeyReferenceDetailArrayInput` via:
+//
+//	GetKeyVersionExternalKeyReferenceDetailArray{ GetKeyVersionExternalKeyReferenceDetailArgs{...} }
+type GetKeyVersionExternalKeyReferenceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetKeyVersionExternalKeyReferenceDetailArrayOutput() GetKeyVersionExternalKeyReferenceDetailArrayOutput
+	ToGetKeyVersionExternalKeyReferenceDetailArrayOutputWithContext(context.Context) GetKeyVersionExternalKeyReferenceDetailArrayOutput
+}
+
+type GetKeyVersionExternalKeyReferenceDetailArray []GetKeyVersionExternalKeyReferenceDetailInput
+
+func (GetKeyVersionExternalKeyReferenceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyVersionExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (i GetKeyVersionExternalKeyReferenceDetailArray) ToGetKeyVersionExternalKeyReferenceDetailArrayOutput() GetKeyVersionExternalKeyReferenceDetailArrayOutput {
+	return i.ToGetKeyVersionExternalKeyReferenceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeyVersionExternalKeyReferenceDetailArray) ToGetKeyVersionExternalKeyReferenceDetailArrayOutputWithContext(ctx context.Context) GetKeyVersionExternalKeyReferenceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionExternalKeyReferenceDetailArrayOutput)
+}
+
+func (i GetKeyVersionExternalKeyReferenceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionExternalKeyReferenceDetail] {
+	return pulumix.Output[[]GetKeyVersionExternalKeyReferenceDetail]{
+		OutputState: i.ToGetKeyVersionExternalKeyReferenceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetKeyVersionExternalKeyReferenceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetKeyVersionExternalKeyReferenceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyVersionExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (o GetKeyVersionExternalKeyReferenceDetailOutput) ToGetKeyVersionExternalKeyReferenceDetailOutput() GetKeyVersionExternalKeyReferenceDetailOutput {
+	return o
+}
+
+func (o GetKeyVersionExternalKeyReferenceDetailOutput) ToGetKeyVersionExternalKeyReferenceDetailOutputWithContext(ctx context.Context) GetKeyVersionExternalKeyReferenceDetailOutput {
+	return o
+}
+
+func (o GetKeyVersionExternalKeyReferenceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionExternalKeyReferenceDetail] {
+	return pulumix.Output[GetKeyVersionExternalKeyReferenceDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+func (o GetKeyVersionExternalKeyReferenceDetailOutput) ExternalKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyVersionExternalKeyReferenceDetail) string { return v.ExternalKeyId }).(pulumi.StringOutput)
+}
+
+// Key version ID associated with the external key.
+func (o GetKeyVersionExternalKeyReferenceDetailOutput) ExternalKeyVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyVersionExternalKeyReferenceDetail) string { return v.ExternalKeyVersionId }).(pulumi.StringOutput)
+}
+
+type GetKeyVersionExternalKeyReferenceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeyVersionExternalKeyReferenceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyVersionExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (o GetKeyVersionExternalKeyReferenceDetailArrayOutput) ToGetKeyVersionExternalKeyReferenceDetailArrayOutput() GetKeyVersionExternalKeyReferenceDetailArrayOutput {
+	return o
+}
+
+func (o GetKeyVersionExternalKeyReferenceDetailArrayOutput) ToGetKeyVersionExternalKeyReferenceDetailArrayOutputWithContext(ctx context.Context) GetKeyVersionExternalKeyReferenceDetailArrayOutput {
+	return o
+}
+
+func (o GetKeyVersionExternalKeyReferenceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionExternalKeyReferenceDetail] {
+	return pulumix.Output[[]GetKeyVersionExternalKeyReferenceDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetKeyVersionExternalKeyReferenceDetailArrayOutput) Index(i pulumi.IntInput) GetKeyVersionExternalKeyReferenceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyVersionExternalKeyReferenceDetail {
+		return vs[0].([]GetKeyVersionExternalKeyReferenceDetail)[vs[1].(int)]
+	}).(GetKeyVersionExternalKeyReferenceDetailOutput)
+}
+
 type GetKeyVersionReplicaDetail struct {
 	// ReplicationId associated with a key version operation
 	ReplicationId string `pulumi:"replicationId"`
@@ -2490,9 +4342,13 @@ func (o GetKeyVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetKeyVersions
 type GetKeyVersionsKeyVersion struct {
 	// The OCID of the compartment that contains this key version.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Key reference data to be returned to the customer as a response.
+	ExternalKeyReferenceDetails []GetKeyVersionsKeyVersionExternalKeyReferenceDetail `pulumi:"externalKeyReferenceDetails"`
+	// Key version ID associated with the external key.
+	ExternalKeyVersionId string `pulumi:"externalKeyVersionId"`
 	// The OCID of the key version.
 	Id string `pulumi:"id"`
-	// A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+	// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
 	IsPrimary bool `pulumi:"isPrimary"`
 	// The OCID of the key.
 	KeyId string `pulumi:"keyId"`
@@ -2531,9 +4387,13 @@ type GetKeyVersionsKeyVersionInput interface {
 type GetKeyVersionsKeyVersionArgs struct {
 	// The OCID of the compartment that contains this key version.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Key reference data to be returned to the customer as a response.
+	ExternalKeyReferenceDetails GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayInput `pulumi:"externalKeyReferenceDetails"`
+	// Key version ID associated with the external key.
+	ExternalKeyVersionId pulumi.StringInput `pulumi:"externalKeyVersionId"`
 	// The OCID of the key version.
 	Id pulumi.StringInput `pulumi:"id"`
-	// A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+	// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
 	IsPrimary pulumi.BoolInput `pulumi:"isPrimary"`
 	// The OCID of the key.
 	KeyId pulumi.StringInput `pulumi:"keyId"`
@@ -2632,12 +4492,24 @@ func (o GetKeyVersionsKeyVersionOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyVersionsKeyVersion) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// Key reference data to be returned to the customer as a response.
+func (o GetKeyVersionsKeyVersionOutput) ExternalKeyReferenceDetails() GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput {
+	return o.ApplyT(func(v GetKeyVersionsKeyVersion) []GetKeyVersionsKeyVersionExternalKeyReferenceDetail {
+		return v.ExternalKeyReferenceDetails
+	}).(GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput)
+}
+
+// Key version ID associated with the external key.
+func (o GetKeyVersionsKeyVersionOutput) ExternalKeyVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyVersionsKeyVersion) string { return v.ExternalKeyVersionId }).(pulumi.StringOutput)
+}
+
 // The OCID of the key version.
 func (o GetKeyVersionsKeyVersionOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyVersionsKeyVersion) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
 func (o GetKeyVersionsKeyVersionOutput) IsPrimary() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetKeyVersionsKeyVersion) bool { return v.IsPrimary }).(pulumi.BoolOutput)
 }
@@ -2720,6 +4592,136 @@ func (o GetKeyVersionsKeyVersionArrayOutput) Index(i pulumi.IntInput) GetKeyVers
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyVersionsKeyVersion {
 		return vs[0].([]GetKeyVersionsKeyVersion)[vs[1].(int)]
 	}).(GetKeyVersionsKeyVersionOutput)
+}
+
+type GetKeyVersionsKeyVersionExternalKeyReferenceDetail struct {
+	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+	ExternalKeyId string `pulumi:"externalKeyId"`
+	// Key version ID associated with the external key.
+	ExternalKeyVersionId string `pulumi:"externalKeyVersionId"`
+}
+
+// GetKeyVersionsKeyVersionExternalKeyReferenceDetailInput is an input type that accepts GetKeyVersionsKeyVersionExternalKeyReferenceDetailArgs and GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput values.
+// You can construct a concrete instance of `GetKeyVersionsKeyVersionExternalKeyReferenceDetailInput` via:
+//
+//	GetKeyVersionsKeyVersionExternalKeyReferenceDetailArgs{...}
+type GetKeyVersionsKeyVersionExternalKeyReferenceDetailInput interface {
+	pulumi.Input
+
+	ToGetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput() GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput
+	ToGetKeyVersionsKeyVersionExternalKeyReferenceDetailOutputWithContext(context.Context) GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput
+}
+
+type GetKeyVersionsKeyVersionExternalKeyReferenceDetailArgs struct {
+	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+	ExternalKeyId pulumi.StringInput `pulumi:"externalKeyId"`
+	// Key version ID associated with the external key.
+	ExternalKeyVersionId pulumi.StringInput `pulumi:"externalKeyVersionId"`
+}
+
+func (GetKeyVersionsKeyVersionExternalKeyReferenceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyVersionsKeyVersionExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (i GetKeyVersionsKeyVersionExternalKeyReferenceDetailArgs) ToGetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput() GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput {
+	return i.ToGetKeyVersionsKeyVersionExternalKeyReferenceDetailOutputWithContext(context.Background())
+}
+
+func (i GetKeyVersionsKeyVersionExternalKeyReferenceDetailArgs) ToGetKeyVersionsKeyVersionExternalKeyReferenceDetailOutputWithContext(ctx context.Context) GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput)
+}
+
+func (i GetKeyVersionsKeyVersionExternalKeyReferenceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionsKeyVersionExternalKeyReferenceDetail] {
+	return pulumix.Output[GetKeyVersionsKeyVersionExternalKeyReferenceDetail]{
+		OutputState: i.ToGetKeyVersionsKeyVersionExternalKeyReferenceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayInput is an input type that accepts GetKeyVersionsKeyVersionExternalKeyReferenceDetailArray and GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput values.
+// You can construct a concrete instance of `GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayInput` via:
+//
+//	GetKeyVersionsKeyVersionExternalKeyReferenceDetailArray{ GetKeyVersionsKeyVersionExternalKeyReferenceDetailArgs{...} }
+type GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput() GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput
+	ToGetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutputWithContext(context.Context) GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput
+}
+
+type GetKeyVersionsKeyVersionExternalKeyReferenceDetailArray []GetKeyVersionsKeyVersionExternalKeyReferenceDetailInput
+
+func (GetKeyVersionsKeyVersionExternalKeyReferenceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyVersionsKeyVersionExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (i GetKeyVersionsKeyVersionExternalKeyReferenceDetailArray) ToGetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput() GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput {
+	return i.ToGetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeyVersionsKeyVersionExternalKeyReferenceDetailArray) ToGetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutputWithContext(ctx context.Context) GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput)
+}
+
+func (i GetKeyVersionsKeyVersionExternalKeyReferenceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionsKeyVersionExternalKeyReferenceDetail] {
+	return pulumix.Output[[]GetKeyVersionsKeyVersionExternalKeyReferenceDetail]{
+		OutputState: i.ToGetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyVersionsKeyVersionExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (o GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput) ToGetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput() GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput {
+	return o
+}
+
+func (o GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput) ToGetKeyVersionsKeyVersionExternalKeyReferenceDetailOutputWithContext(ctx context.Context) GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput {
+	return o
+}
+
+func (o GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeyVersionsKeyVersionExternalKeyReferenceDetail] {
+	return pulumix.Output[GetKeyVersionsKeyVersionExternalKeyReferenceDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+func (o GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput) ExternalKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyVersionsKeyVersionExternalKeyReferenceDetail) string { return v.ExternalKeyId }).(pulumi.StringOutput)
+}
+
+// Key version ID associated with the external key.
+func (o GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput) ExternalKeyVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyVersionsKeyVersionExternalKeyReferenceDetail) string { return v.ExternalKeyVersionId }).(pulumi.StringOutput)
+}
+
+type GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyVersionsKeyVersionExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (o GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput) ToGetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput() GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput {
+	return o
+}
+
+func (o GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput) ToGetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutputWithContext(ctx context.Context) GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput {
+	return o
+}
+
+func (o GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeyVersionsKeyVersionExternalKeyReferenceDetail] {
+	return pulumix.Output[[]GetKeyVersionsKeyVersionExternalKeyReferenceDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput) Index(i pulumi.IntInput) GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyVersionsKeyVersionExternalKeyReferenceDetail {
+		return vs[0].([]GetKeyVersionsKeyVersionExternalKeyReferenceDetail)[vs[1].(int)]
+	}).(GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput)
 }
 
 type GetKeyVersionsKeyVersionReplicaDetail struct {
@@ -2983,17 +4985,20 @@ type GetKeysKey struct {
 	DesiredState string                 `pulumi:"desiredState"`
 	// A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
+	// Key reference data to be returned to the customer as a response.
+	ExternalKeyReferenceDetails []GetKeysKeyExternalKeyReferenceDetail `pulumi:"externalKeyReferenceDetails"`
+	ExternalKeyReferences       []GetKeysKeyExternalKeyReference       `pulumi:"externalKeyReferences"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the key.
 	Id string `pulumi:"id"`
-	// A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+	// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
 	IsPrimary bool `pulumi:"isPrimary"`
 	// The cryptographic properties of a key.
 	KeyShapes []GetKeysKeyKeyShape `pulumi:"keyShapes"`
 	// The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
 	ManagementEndpoint string `pulumi:"managementEndpoint"`
-	// A key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A  protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are  performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's  RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of  `SOFTWARE` are performed on the server.
+	// A key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
 	ProtectionMode string `pulumi:"protectionMode"`
 	// Key replica details
 	ReplicaDetails          []GetKeysKeyReplicaDetail          `pulumi:"replicaDetails"`
@@ -3032,17 +5037,20 @@ type GetKeysKeyArgs struct {
 	DesiredState pulumi.StringInput `pulumi:"desiredState"`
 	// A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Key reference data to be returned to the customer as a response.
+	ExternalKeyReferenceDetails GetKeysKeyExternalKeyReferenceDetailArrayInput `pulumi:"externalKeyReferenceDetails"`
+	ExternalKeyReferences       GetKeysKeyExternalKeyReferenceArrayInput       `pulumi:"externalKeyReferences"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the key.
 	Id pulumi.StringInput `pulumi:"id"`
-	// A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+	// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
 	IsPrimary pulumi.BoolInput `pulumi:"isPrimary"`
 	// The cryptographic properties of a key.
 	KeyShapes GetKeysKeyKeyShapeArrayInput `pulumi:"keyShapes"`
 	// The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
 	ManagementEndpoint pulumi.StringInput `pulumi:"managementEndpoint"`
-	// A key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A  protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are  performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's  RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of  `SOFTWARE` are performed on the server.
+	// A key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
 	ProtectionMode pulumi.StringInput `pulumi:"protectionMode"`
 	// Key replica details
 	ReplicaDetails          GetKeysKeyReplicaDetailArrayInput          `pulumi:"replicaDetails"`
@@ -3153,6 +5161,15 @@ func (o GetKeysKeyOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeysKey) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// Key reference data to be returned to the customer as a response.
+func (o GetKeysKeyOutput) ExternalKeyReferenceDetails() GetKeysKeyExternalKeyReferenceDetailArrayOutput {
+	return o.ApplyT(func(v GetKeysKey) []GetKeysKeyExternalKeyReferenceDetail { return v.ExternalKeyReferenceDetails }).(GetKeysKeyExternalKeyReferenceDetailArrayOutput)
+}
+
+func (o GetKeysKeyOutput) ExternalKeyReferences() GetKeysKeyExternalKeyReferenceArrayOutput {
+	return o.ApplyT(func(v GetKeysKey) []GetKeysKeyExternalKeyReference { return v.ExternalKeyReferences }).(GetKeysKeyExternalKeyReferenceArrayOutput)
+}
+
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o GetKeysKeyOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetKeysKey) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
@@ -3163,7 +5180,7 @@ func (o GetKeysKeyOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeysKey) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
 func (o GetKeysKeyOutput) IsPrimary() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetKeysKey) bool { return v.IsPrimary }).(pulumi.BoolOutput)
 }
@@ -3178,7 +5195,7 @@ func (o GetKeysKeyOutput) ManagementEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeysKey) string { return v.ManagementEndpoint }).(pulumi.StringOutput)
 }
 
-// A key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A  protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are  performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's  RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of  `SOFTWARE` are performed on the server.
+// A key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
 func (o GetKeysKeyOutput) ProtectionMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeysKey) string { return v.ProtectionMode }).(pulumi.StringOutput)
 }
@@ -3248,6 +5265,257 @@ func (o GetKeysKeyArrayOutput) Index(i pulumi.IntInput) GetKeysKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeysKey {
 		return vs[0].([]GetKeysKey)[vs[1].(int)]
 	}).(GetKeysKeyOutput)
+}
+
+type GetKeysKeyExternalKeyReference struct {
+	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+	ExternalKeyId string `pulumi:"externalKeyId"`
+}
+
+// GetKeysKeyExternalKeyReferenceInput is an input type that accepts GetKeysKeyExternalKeyReferenceArgs and GetKeysKeyExternalKeyReferenceOutput values.
+// You can construct a concrete instance of `GetKeysKeyExternalKeyReferenceInput` via:
+//
+//	GetKeysKeyExternalKeyReferenceArgs{...}
+type GetKeysKeyExternalKeyReferenceInput interface {
+	pulumi.Input
+
+	ToGetKeysKeyExternalKeyReferenceOutput() GetKeysKeyExternalKeyReferenceOutput
+	ToGetKeysKeyExternalKeyReferenceOutputWithContext(context.Context) GetKeysKeyExternalKeyReferenceOutput
+}
+
+type GetKeysKeyExternalKeyReferenceArgs struct {
+	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+	ExternalKeyId pulumi.StringInput `pulumi:"externalKeyId"`
+}
+
+func (GetKeysKeyExternalKeyReferenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeysKeyExternalKeyReference)(nil)).Elem()
+}
+
+func (i GetKeysKeyExternalKeyReferenceArgs) ToGetKeysKeyExternalKeyReferenceOutput() GetKeysKeyExternalKeyReferenceOutput {
+	return i.ToGetKeysKeyExternalKeyReferenceOutputWithContext(context.Background())
+}
+
+func (i GetKeysKeyExternalKeyReferenceArgs) ToGetKeysKeyExternalKeyReferenceOutputWithContext(ctx context.Context) GetKeysKeyExternalKeyReferenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyExternalKeyReferenceOutput)
+}
+
+func (i GetKeysKeyExternalKeyReferenceArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyExternalKeyReference] {
+	return pulumix.Output[GetKeysKeyExternalKeyReference]{
+		OutputState: i.ToGetKeysKeyExternalKeyReferenceOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetKeysKeyExternalKeyReferenceArrayInput is an input type that accepts GetKeysKeyExternalKeyReferenceArray and GetKeysKeyExternalKeyReferenceArrayOutput values.
+// You can construct a concrete instance of `GetKeysKeyExternalKeyReferenceArrayInput` via:
+//
+//	GetKeysKeyExternalKeyReferenceArray{ GetKeysKeyExternalKeyReferenceArgs{...} }
+type GetKeysKeyExternalKeyReferenceArrayInput interface {
+	pulumi.Input
+
+	ToGetKeysKeyExternalKeyReferenceArrayOutput() GetKeysKeyExternalKeyReferenceArrayOutput
+	ToGetKeysKeyExternalKeyReferenceArrayOutputWithContext(context.Context) GetKeysKeyExternalKeyReferenceArrayOutput
+}
+
+type GetKeysKeyExternalKeyReferenceArray []GetKeysKeyExternalKeyReferenceInput
+
+func (GetKeysKeyExternalKeyReferenceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeysKeyExternalKeyReference)(nil)).Elem()
+}
+
+func (i GetKeysKeyExternalKeyReferenceArray) ToGetKeysKeyExternalKeyReferenceArrayOutput() GetKeysKeyExternalKeyReferenceArrayOutput {
+	return i.ToGetKeysKeyExternalKeyReferenceArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeysKeyExternalKeyReferenceArray) ToGetKeysKeyExternalKeyReferenceArrayOutputWithContext(ctx context.Context) GetKeysKeyExternalKeyReferenceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyExternalKeyReferenceArrayOutput)
+}
+
+func (i GetKeysKeyExternalKeyReferenceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyExternalKeyReference] {
+	return pulumix.Output[[]GetKeysKeyExternalKeyReference]{
+		OutputState: i.ToGetKeysKeyExternalKeyReferenceArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetKeysKeyExternalKeyReferenceOutput struct{ *pulumi.OutputState }
+
+func (GetKeysKeyExternalKeyReferenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeysKeyExternalKeyReference)(nil)).Elem()
+}
+
+func (o GetKeysKeyExternalKeyReferenceOutput) ToGetKeysKeyExternalKeyReferenceOutput() GetKeysKeyExternalKeyReferenceOutput {
+	return o
+}
+
+func (o GetKeysKeyExternalKeyReferenceOutput) ToGetKeysKeyExternalKeyReferenceOutputWithContext(ctx context.Context) GetKeysKeyExternalKeyReferenceOutput {
+	return o
+}
+
+func (o GetKeysKeyExternalKeyReferenceOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyExternalKeyReference] {
+	return pulumix.Output[GetKeysKeyExternalKeyReference]{
+		OutputState: o.OutputState,
+	}
+}
+
+// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+func (o GetKeysKeyExternalKeyReferenceOutput) ExternalKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeysKeyExternalKeyReference) string { return v.ExternalKeyId }).(pulumi.StringOutput)
+}
+
+type GetKeysKeyExternalKeyReferenceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeysKeyExternalKeyReferenceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeysKeyExternalKeyReference)(nil)).Elem()
+}
+
+func (o GetKeysKeyExternalKeyReferenceArrayOutput) ToGetKeysKeyExternalKeyReferenceArrayOutput() GetKeysKeyExternalKeyReferenceArrayOutput {
+	return o
+}
+
+func (o GetKeysKeyExternalKeyReferenceArrayOutput) ToGetKeysKeyExternalKeyReferenceArrayOutputWithContext(ctx context.Context) GetKeysKeyExternalKeyReferenceArrayOutput {
+	return o
+}
+
+func (o GetKeysKeyExternalKeyReferenceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyExternalKeyReference] {
+	return pulumix.Output[[]GetKeysKeyExternalKeyReference]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetKeysKeyExternalKeyReferenceArrayOutput) Index(i pulumi.IntInput) GetKeysKeyExternalKeyReferenceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeysKeyExternalKeyReference {
+		return vs[0].([]GetKeysKeyExternalKeyReference)[vs[1].(int)]
+	}).(GetKeysKeyExternalKeyReferenceOutput)
+}
+
+type GetKeysKeyExternalKeyReferenceDetail struct {
+	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+	ExternalKeyId string `pulumi:"externalKeyId"`
+	// Key version ID associated with the external key.
+	ExternalKeyVersionId string `pulumi:"externalKeyVersionId"`
+}
+
+// GetKeysKeyExternalKeyReferenceDetailInput is an input type that accepts GetKeysKeyExternalKeyReferenceDetailArgs and GetKeysKeyExternalKeyReferenceDetailOutput values.
+// You can construct a concrete instance of `GetKeysKeyExternalKeyReferenceDetailInput` via:
+//
+//	GetKeysKeyExternalKeyReferenceDetailArgs{...}
+type GetKeysKeyExternalKeyReferenceDetailInput interface {
+	pulumi.Input
+
+	ToGetKeysKeyExternalKeyReferenceDetailOutput() GetKeysKeyExternalKeyReferenceDetailOutput
+	ToGetKeysKeyExternalKeyReferenceDetailOutputWithContext(context.Context) GetKeysKeyExternalKeyReferenceDetailOutput
+}
+
+type GetKeysKeyExternalKeyReferenceDetailArgs struct {
+	// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+	ExternalKeyId pulumi.StringInput `pulumi:"externalKeyId"`
+	// Key version ID associated with the external key.
+	ExternalKeyVersionId pulumi.StringInput `pulumi:"externalKeyVersionId"`
+}
+
+func (GetKeysKeyExternalKeyReferenceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeysKeyExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (i GetKeysKeyExternalKeyReferenceDetailArgs) ToGetKeysKeyExternalKeyReferenceDetailOutput() GetKeysKeyExternalKeyReferenceDetailOutput {
+	return i.ToGetKeysKeyExternalKeyReferenceDetailOutputWithContext(context.Background())
+}
+
+func (i GetKeysKeyExternalKeyReferenceDetailArgs) ToGetKeysKeyExternalKeyReferenceDetailOutputWithContext(ctx context.Context) GetKeysKeyExternalKeyReferenceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyExternalKeyReferenceDetailOutput)
+}
+
+func (i GetKeysKeyExternalKeyReferenceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyExternalKeyReferenceDetail] {
+	return pulumix.Output[GetKeysKeyExternalKeyReferenceDetail]{
+		OutputState: i.ToGetKeysKeyExternalKeyReferenceDetailOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetKeysKeyExternalKeyReferenceDetailArrayInput is an input type that accepts GetKeysKeyExternalKeyReferenceDetailArray and GetKeysKeyExternalKeyReferenceDetailArrayOutput values.
+// You can construct a concrete instance of `GetKeysKeyExternalKeyReferenceDetailArrayInput` via:
+//
+//	GetKeysKeyExternalKeyReferenceDetailArray{ GetKeysKeyExternalKeyReferenceDetailArgs{...} }
+type GetKeysKeyExternalKeyReferenceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetKeysKeyExternalKeyReferenceDetailArrayOutput() GetKeysKeyExternalKeyReferenceDetailArrayOutput
+	ToGetKeysKeyExternalKeyReferenceDetailArrayOutputWithContext(context.Context) GetKeysKeyExternalKeyReferenceDetailArrayOutput
+}
+
+type GetKeysKeyExternalKeyReferenceDetailArray []GetKeysKeyExternalKeyReferenceDetailInput
+
+func (GetKeysKeyExternalKeyReferenceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeysKeyExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (i GetKeysKeyExternalKeyReferenceDetailArray) ToGetKeysKeyExternalKeyReferenceDetailArrayOutput() GetKeysKeyExternalKeyReferenceDetailArrayOutput {
+	return i.ToGetKeysKeyExternalKeyReferenceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeysKeyExternalKeyReferenceDetailArray) ToGetKeysKeyExternalKeyReferenceDetailArrayOutputWithContext(ctx context.Context) GetKeysKeyExternalKeyReferenceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeysKeyExternalKeyReferenceDetailArrayOutput)
+}
+
+func (i GetKeysKeyExternalKeyReferenceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyExternalKeyReferenceDetail] {
+	return pulumix.Output[[]GetKeysKeyExternalKeyReferenceDetail]{
+		OutputState: i.ToGetKeysKeyExternalKeyReferenceDetailArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetKeysKeyExternalKeyReferenceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetKeysKeyExternalKeyReferenceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeysKeyExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (o GetKeysKeyExternalKeyReferenceDetailOutput) ToGetKeysKeyExternalKeyReferenceDetailOutput() GetKeysKeyExternalKeyReferenceDetailOutput {
+	return o
+}
+
+func (o GetKeysKeyExternalKeyReferenceDetailOutput) ToGetKeysKeyExternalKeyReferenceDetailOutputWithContext(ctx context.Context) GetKeysKeyExternalKeyReferenceDetailOutput {
+	return o
+}
+
+func (o GetKeysKeyExternalKeyReferenceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetKeysKeyExternalKeyReferenceDetail] {
+	return pulumix.Output[GetKeysKeyExternalKeyReferenceDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+func (o GetKeysKeyExternalKeyReferenceDetailOutput) ExternalKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeysKeyExternalKeyReferenceDetail) string { return v.ExternalKeyId }).(pulumi.StringOutput)
+}
+
+// Key version ID associated with the external key.
+func (o GetKeysKeyExternalKeyReferenceDetailOutput) ExternalKeyVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeysKeyExternalKeyReferenceDetail) string { return v.ExternalKeyVersionId }).(pulumi.StringOutput)
+}
+
+type GetKeysKeyExternalKeyReferenceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeysKeyExternalKeyReferenceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeysKeyExternalKeyReferenceDetail)(nil)).Elem()
+}
+
+func (o GetKeysKeyExternalKeyReferenceDetailArrayOutput) ToGetKeysKeyExternalKeyReferenceDetailArrayOutput() GetKeysKeyExternalKeyReferenceDetailArrayOutput {
+	return o
+}
+
+func (o GetKeysKeyExternalKeyReferenceDetailArrayOutput) ToGetKeysKeyExternalKeyReferenceDetailArrayOutputWithContext(ctx context.Context) GetKeysKeyExternalKeyReferenceDetailArrayOutput {
+	return o
+}
+
+func (o GetKeysKeyExternalKeyReferenceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKeysKeyExternalKeyReferenceDetail] {
+	return pulumix.Output[[]GetKeysKeyExternalKeyReferenceDetail]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetKeysKeyExternalKeyReferenceDetailArrayOutput) Index(i pulumi.IntInput) GetKeysKeyExternalKeyReferenceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeysKeyExternalKeyReferenceDetail {
+		return vs[0].([]GetKeysKeyExternalKeyReferenceDetail)[vs[1].(int)]
+	}).(GetKeysKeyExternalKeyReferenceDetailOutput)
 }
 
 type GetKeysKeyKeyShape struct {
@@ -3912,6 +6180,562 @@ func (o GetReplicationStatusReplicaDetailArrayOutput) Index(i pulumi.IntInput) G
 	}).(GetReplicationStatusReplicaDetailOutput)
 }
 
+type GetVaultExternalKeyManagerMetadata struct {
+	// URL of the vault on external key manager.
+	ExternalVaultEndpointUrl string                                            `pulumi:"externalVaultEndpointUrl"`
+	OauthMetadatas           []GetVaultExternalKeyManagerMetadataOauthMetadata `pulumi:"oauthMetadatas"`
+	// OCID of the private endpoint.
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
+}
+
+// GetVaultExternalKeyManagerMetadataInput is an input type that accepts GetVaultExternalKeyManagerMetadataArgs and GetVaultExternalKeyManagerMetadataOutput values.
+// You can construct a concrete instance of `GetVaultExternalKeyManagerMetadataInput` via:
+//
+//	GetVaultExternalKeyManagerMetadataArgs{...}
+type GetVaultExternalKeyManagerMetadataInput interface {
+	pulumi.Input
+
+	ToGetVaultExternalKeyManagerMetadataOutput() GetVaultExternalKeyManagerMetadataOutput
+	ToGetVaultExternalKeyManagerMetadataOutputWithContext(context.Context) GetVaultExternalKeyManagerMetadataOutput
+}
+
+type GetVaultExternalKeyManagerMetadataArgs struct {
+	// URL of the vault on external key manager.
+	ExternalVaultEndpointUrl pulumi.StringInput                                        `pulumi:"externalVaultEndpointUrl"`
+	OauthMetadatas           GetVaultExternalKeyManagerMetadataOauthMetadataArrayInput `pulumi:"oauthMetadatas"`
+	// OCID of the private endpoint.
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
+}
+
+func (GetVaultExternalKeyManagerMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVaultExternalKeyManagerMetadata)(nil)).Elem()
+}
+
+func (i GetVaultExternalKeyManagerMetadataArgs) ToGetVaultExternalKeyManagerMetadataOutput() GetVaultExternalKeyManagerMetadataOutput {
+	return i.ToGetVaultExternalKeyManagerMetadataOutputWithContext(context.Background())
+}
+
+func (i GetVaultExternalKeyManagerMetadataArgs) ToGetVaultExternalKeyManagerMetadataOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVaultExternalKeyManagerMetadataOutput)
+}
+
+func (i GetVaultExternalKeyManagerMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultExternalKeyManagerMetadata] {
+	return pulumix.Output[GetVaultExternalKeyManagerMetadata]{
+		OutputState: i.ToGetVaultExternalKeyManagerMetadataOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVaultExternalKeyManagerMetadataArrayInput is an input type that accepts GetVaultExternalKeyManagerMetadataArray and GetVaultExternalKeyManagerMetadataArrayOutput values.
+// You can construct a concrete instance of `GetVaultExternalKeyManagerMetadataArrayInput` via:
+//
+//	GetVaultExternalKeyManagerMetadataArray{ GetVaultExternalKeyManagerMetadataArgs{...} }
+type GetVaultExternalKeyManagerMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetVaultExternalKeyManagerMetadataArrayOutput() GetVaultExternalKeyManagerMetadataArrayOutput
+	ToGetVaultExternalKeyManagerMetadataArrayOutputWithContext(context.Context) GetVaultExternalKeyManagerMetadataArrayOutput
+}
+
+type GetVaultExternalKeyManagerMetadataArray []GetVaultExternalKeyManagerMetadataInput
+
+func (GetVaultExternalKeyManagerMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVaultExternalKeyManagerMetadata)(nil)).Elem()
+}
+
+func (i GetVaultExternalKeyManagerMetadataArray) ToGetVaultExternalKeyManagerMetadataArrayOutput() GetVaultExternalKeyManagerMetadataArrayOutput {
+	return i.ToGetVaultExternalKeyManagerMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetVaultExternalKeyManagerMetadataArray) ToGetVaultExternalKeyManagerMetadataArrayOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVaultExternalKeyManagerMetadataArrayOutput)
+}
+
+func (i GetVaultExternalKeyManagerMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultExternalKeyManagerMetadata] {
+	return pulumix.Output[[]GetVaultExternalKeyManagerMetadata]{
+		OutputState: i.ToGetVaultExternalKeyManagerMetadataArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVaultExternalKeyManagerMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetVaultExternalKeyManagerMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVaultExternalKeyManagerMetadata)(nil)).Elem()
+}
+
+func (o GetVaultExternalKeyManagerMetadataOutput) ToGetVaultExternalKeyManagerMetadataOutput() GetVaultExternalKeyManagerMetadataOutput {
+	return o
+}
+
+func (o GetVaultExternalKeyManagerMetadataOutput) ToGetVaultExternalKeyManagerMetadataOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataOutput {
+	return o
+}
+
+func (o GetVaultExternalKeyManagerMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultExternalKeyManagerMetadata] {
+	return pulumix.Output[GetVaultExternalKeyManagerMetadata]{
+		OutputState: o.OutputState,
+	}
+}
+
+// URL of the vault on external key manager.
+func (o GetVaultExternalKeyManagerMetadataOutput) ExternalVaultEndpointUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVaultExternalKeyManagerMetadata) string { return v.ExternalVaultEndpointUrl }).(pulumi.StringOutput)
+}
+
+func (o GetVaultExternalKeyManagerMetadataOutput) OauthMetadatas() GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput {
+	return o.ApplyT(func(v GetVaultExternalKeyManagerMetadata) []GetVaultExternalKeyManagerMetadataOauthMetadata {
+		return v.OauthMetadatas
+	}).(GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput)
+}
+
+// OCID of the private endpoint.
+func (o GetVaultExternalKeyManagerMetadataOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVaultExternalKeyManagerMetadata) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
+}
+
+type GetVaultExternalKeyManagerMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVaultExternalKeyManagerMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVaultExternalKeyManagerMetadata)(nil)).Elem()
+}
+
+func (o GetVaultExternalKeyManagerMetadataArrayOutput) ToGetVaultExternalKeyManagerMetadataArrayOutput() GetVaultExternalKeyManagerMetadataArrayOutput {
+	return o
+}
+
+func (o GetVaultExternalKeyManagerMetadataArrayOutput) ToGetVaultExternalKeyManagerMetadataArrayOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataArrayOutput {
+	return o
+}
+
+func (o GetVaultExternalKeyManagerMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultExternalKeyManagerMetadata] {
+	return pulumix.Output[[]GetVaultExternalKeyManagerMetadata]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVaultExternalKeyManagerMetadataArrayOutput) Index(i pulumi.IntInput) GetVaultExternalKeyManagerMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVaultExternalKeyManagerMetadata {
+		return vs[0].([]GetVaultExternalKeyManagerMetadata)[vs[1].(int)]
+	}).(GetVaultExternalKeyManagerMetadataOutput)
+}
+
+type GetVaultExternalKeyManagerMetadataOauthMetadata struct {
+	// ID of the client app created in IDP.
+	ClientAppId     string `pulumi:"clientAppId"`
+	ClientAppSecret string `pulumi:"clientAppSecret"`
+	// Base URL of the IDCS account where confidential client app is created.
+	IdcsAccountNameUrl string `pulumi:"idcsAccountNameUrl"`
+}
+
+// GetVaultExternalKeyManagerMetadataOauthMetadataInput is an input type that accepts GetVaultExternalKeyManagerMetadataOauthMetadataArgs and GetVaultExternalKeyManagerMetadataOauthMetadataOutput values.
+// You can construct a concrete instance of `GetVaultExternalKeyManagerMetadataOauthMetadataInput` via:
+//
+//	GetVaultExternalKeyManagerMetadataOauthMetadataArgs{...}
+type GetVaultExternalKeyManagerMetadataOauthMetadataInput interface {
+	pulumi.Input
+
+	ToGetVaultExternalKeyManagerMetadataOauthMetadataOutput() GetVaultExternalKeyManagerMetadataOauthMetadataOutput
+	ToGetVaultExternalKeyManagerMetadataOauthMetadataOutputWithContext(context.Context) GetVaultExternalKeyManagerMetadataOauthMetadataOutput
+}
+
+type GetVaultExternalKeyManagerMetadataOauthMetadataArgs struct {
+	// ID of the client app created in IDP.
+	ClientAppId     pulumi.StringInput `pulumi:"clientAppId"`
+	ClientAppSecret pulumi.StringInput `pulumi:"clientAppSecret"`
+	// Base URL of the IDCS account where confidential client app is created.
+	IdcsAccountNameUrl pulumi.StringInput `pulumi:"idcsAccountNameUrl"`
+}
+
+func (GetVaultExternalKeyManagerMetadataOauthMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVaultExternalKeyManagerMetadataOauthMetadata)(nil)).Elem()
+}
+
+func (i GetVaultExternalKeyManagerMetadataOauthMetadataArgs) ToGetVaultExternalKeyManagerMetadataOauthMetadataOutput() GetVaultExternalKeyManagerMetadataOauthMetadataOutput {
+	return i.ToGetVaultExternalKeyManagerMetadataOauthMetadataOutputWithContext(context.Background())
+}
+
+func (i GetVaultExternalKeyManagerMetadataOauthMetadataArgs) ToGetVaultExternalKeyManagerMetadataOauthMetadataOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataOauthMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVaultExternalKeyManagerMetadataOauthMetadataOutput)
+}
+
+func (i GetVaultExternalKeyManagerMetadataOauthMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultExternalKeyManagerMetadataOauthMetadata] {
+	return pulumix.Output[GetVaultExternalKeyManagerMetadataOauthMetadata]{
+		OutputState: i.ToGetVaultExternalKeyManagerMetadataOauthMetadataOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVaultExternalKeyManagerMetadataOauthMetadataArrayInput is an input type that accepts GetVaultExternalKeyManagerMetadataOauthMetadataArray and GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput values.
+// You can construct a concrete instance of `GetVaultExternalKeyManagerMetadataOauthMetadataArrayInput` via:
+//
+//	GetVaultExternalKeyManagerMetadataOauthMetadataArray{ GetVaultExternalKeyManagerMetadataOauthMetadataArgs{...} }
+type GetVaultExternalKeyManagerMetadataOauthMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput() GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput
+	ToGetVaultExternalKeyManagerMetadataOauthMetadataArrayOutputWithContext(context.Context) GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput
+}
+
+type GetVaultExternalKeyManagerMetadataOauthMetadataArray []GetVaultExternalKeyManagerMetadataOauthMetadataInput
+
+func (GetVaultExternalKeyManagerMetadataOauthMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVaultExternalKeyManagerMetadataOauthMetadata)(nil)).Elem()
+}
+
+func (i GetVaultExternalKeyManagerMetadataOauthMetadataArray) ToGetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput() GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput {
+	return i.ToGetVaultExternalKeyManagerMetadataOauthMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetVaultExternalKeyManagerMetadataOauthMetadataArray) ToGetVaultExternalKeyManagerMetadataOauthMetadataArrayOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput)
+}
+
+func (i GetVaultExternalKeyManagerMetadataOauthMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultExternalKeyManagerMetadataOauthMetadata] {
+	return pulumix.Output[[]GetVaultExternalKeyManagerMetadataOauthMetadata]{
+		OutputState: i.ToGetVaultExternalKeyManagerMetadataOauthMetadataArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVaultExternalKeyManagerMetadataOauthMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetVaultExternalKeyManagerMetadataOauthMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVaultExternalKeyManagerMetadataOauthMetadata)(nil)).Elem()
+}
+
+func (o GetVaultExternalKeyManagerMetadataOauthMetadataOutput) ToGetVaultExternalKeyManagerMetadataOauthMetadataOutput() GetVaultExternalKeyManagerMetadataOauthMetadataOutput {
+	return o
+}
+
+func (o GetVaultExternalKeyManagerMetadataOauthMetadataOutput) ToGetVaultExternalKeyManagerMetadataOauthMetadataOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataOauthMetadataOutput {
+	return o
+}
+
+func (o GetVaultExternalKeyManagerMetadataOauthMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultExternalKeyManagerMetadataOauthMetadata] {
+	return pulumix.Output[GetVaultExternalKeyManagerMetadataOauthMetadata]{
+		OutputState: o.OutputState,
+	}
+}
+
+// ID of the client app created in IDP.
+func (o GetVaultExternalKeyManagerMetadataOauthMetadataOutput) ClientAppId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVaultExternalKeyManagerMetadataOauthMetadata) string { return v.ClientAppId }).(pulumi.StringOutput)
+}
+
+func (o GetVaultExternalKeyManagerMetadataOauthMetadataOutput) ClientAppSecret() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVaultExternalKeyManagerMetadataOauthMetadata) string { return v.ClientAppSecret }).(pulumi.StringOutput)
+}
+
+// Base URL of the IDCS account where confidential client app is created.
+func (o GetVaultExternalKeyManagerMetadataOauthMetadataOutput) IdcsAccountNameUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVaultExternalKeyManagerMetadataOauthMetadata) string { return v.IdcsAccountNameUrl }).(pulumi.StringOutput)
+}
+
+type GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVaultExternalKeyManagerMetadataOauthMetadata)(nil)).Elem()
+}
+
+func (o GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput) ToGetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput() GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput {
+	return o
+}
+
+func (o GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput) ToGetVaultExternalKeyManagerMetadataOauthMetadataArrayOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput {
+	return o
+}
+
+func (o GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultExternalKeyManagerMetadataOauthMetadata] {
+	return pulumix.Output[[]GetVaultExternalKeyManagerMetadataOauthMetadata]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput) Index(i pulumi.IntInput) GetVaultExternalKeyManagerMetadataOauthMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVaultExternalKeyManagerMetadataOauthMetadata {
+		return vs[0].([]GetVaultExternalKeyManagerMetadataOauthMetadata)[vs[1].(int)]
+	}).(GetVaultExternalKeyManagerMetadataOauthMetadataOutput)
+}
+
+type GetVaultExternalKeyManagerMetadataSummary struct {
+	// URL of the vault on external key manager.
+	ExternalVaultEndpointUrl string `pulumi:"externalVaultEndpointUrl"`
+	// Summary about authorization to be returned to the customer as a response.
+	OauthMetadataSummaries []GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary `pulumi:"oauthMetadataSummaries"`
+	// OCID of the private endpoint.
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
+	// Vendor of the external key manager.
+	Vendor string `pulumi:"vendor"`
+}
+
+// GetVaultExternalKeyManagerMetadataSummaryInput is an input type that accepts GetVaultExternalKeyManagerMetadataSummaryArgs and GetVaultExternalKeyManagerMetadataSummaryOutput values.
+// You can construct a concrete instance of `GetVaultExternalKeyManagerMetadataSummaryInput` via:
+//
+//	GetVaultExternalKeyManagerMetadataSummaryArgs{...}
+type GetVaultExternalKeyManagerMetadataSummaryInput interface {
+	pulumi.Input
+
+	ToGetVaultExternalKeyManagerMetadataSummaryOutput() GetVaultExternalKeyManagerMetadataSummaryOutput
+	ToGetVaultExternalKeyManagerMetadataSummaryOutputWithContext(context.Context) GetVaultExternalKeyManagerMetadataSummaryOutput
+}
+
+type GetVaultExternalKeyManagerMetadataSummaryArgs struct {
+	// URL of the vault on external key manager.
+	ExternalVaultEndpointUrl pulumi.StringInput `pulumi:"externalVaultEndpointUrl"`
+	// Summary about authorization to be returned to the customer as a response.
+	OauthMetadataSummaries GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput `pulumi:"oauthMetadataSummaries"`
+	// OCID of the private endpoint.
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
+	// Vendor of the external key manager.
+	Vendor pulumi.StringInput `pulumi:"vendor"`
+}
+
+func (GetVaultExternalKeyManagerMetadataSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVaultExternalKeyManagerMetadataSummary)(nil)).Elem()
+}
+
+func (i GetVaultExternalKeyManagerMetadataSummaryArgs) ToGetVaultExternalKeyManagerMetadataSummaryOutput() GetVaultExternalKeyManagerMetadataSummaryOutput {
+	return i.ToGetVaultExternalKeyManagerMetadataSummaryOutputWithContext(context.Background())
+}
+
+func (i GetVaultExternalKeyManagerMetadataSummaryArgs) ToGetVaultExternalKeyManagerMetadataSummaryOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVaultExternalKeyManagerMetadataSummaryOutput)
+}
+
+func (i GetVaultExternalKeyManagerMetadataSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultExternalKeyManagerMetadataSummary] {
+	return pulumix.Output[GetVaultExternalKeyManagerMetadataSummary]{
+		OutputState: i.ToGetVaultExternalKeyManagerMetadataSummaryOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVaultExternalKeyManagerMetadataSummaryArrayInput is an input type that accepts GetVaultExternalKeyManagerMetadataSummaryArray and GetVaultExternalKeyManagerMetadataSummaryArrayOutput values.
+// You can construct a concrete instance of `GetVaultExternalKeyManagerMetadataSummaryArrayInput` via:
+//
+//	GetVaultExternalKeyManagerMetadataSummaryArray{ GetVaultExternalKeyManagerMetadataSummaryArgs{...} }
+type GetVaultExternalKeyManagerMetadataSummaryArrayInput interface {
+	pulumi.Input
+
+	ToGetVaultExternalKeyManagerMetadataSummaryArrayOutput() GetVaultExternalKeyManagerMetadataSummaryArrayOutput
+	ToGetVaultExternalKeyManagerMetadataSummaryArrayOutputWithContext(context.Context) GetVaultExternalKeyManagerMetadataSummaryArrayOutput
+}
+
+type GetVaultExternalKeyManagerMetadataSummaryArray []GetVaultExternalKeyManagerMetadataSummaryInput
+
+func (GetVaultExternalKeyManagerMetadataSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVaultExternalKeyManagerMetadataSummary)(nil)).Elem()
+}
+
+func (i GetVaultExternalKeyManagerMetadataSummaryArray) ToGetVaultExternalKeyManagerMetadataSummaryArrayOutput() GetVaultExternalKeyManagerMetadataSummaryArrayOutput {
+	return i.ToGetVaultExternalKeyManagerMetadataSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i GetVaultExternalKeyManagerMetadataSummaryArray) ToGetVaultExternalKeyManagerMetadataSummaryArrayOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVaultExternalKeyManagerMetadataSummaryArrayOutput)
+}
+
+func (i GetVaultExternalKeyManagerMetadataSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultExternalKeyManagerMetadataSummary] {
+	return pulumix.Output[[]GetVaultExternalKeyManagerMetadataSummary]{
+		OutputState: i.ToGetVaultExternalKeyManagerMetadataSummaryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVaultExternalKeyManagerMetadataSummaryOutput struct{ *pulumi.OutputState }
+
+func (GetVaultExternalKeyManagerMetadataSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVaultExternalKeyManagerMetadataSummary)(nil)).Elem()
+}
+
+func (o GetVaultExternalKeyManagerMetadataSummaryOutput) ToGetVaultExternalKeyManagerMetadataSummaryOutput() GetVaultExternalKeyManagerMetadataSummaryOutput {
+	return o
+}
+
+func (o GetVaultExternalKeyManagerMetadataSummaryOutput) ToGetVaultExternalKeyManagerMetadataSummaryOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataSummaryOutput {
+	return o
+}
+
+func (o GetVaultExternalKeyManagerMetadataSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultExternalKeyManagerMetadataSummary] {
+	return pulumix.Output[GetVaultExternalKeyManagerMetadataSummary]{
+		OutputState: o.OutputState,
+	}
+}
+
+// URL of the vault on external key manager.
+func (o GetVaultExternalKeyManagerMetadataSummaryOutput) ExternalVaultEndpointUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVaultExternalKeyManagerMetadataSummary) string { return v.ExternalVaultEndpointUrl }).(pulumi.StringOutput)
+}
+
+// Summary about authorization to be returned to the customer as a response.
+func (o GetVaultExternalKeyManagerMetadataSummaryOutput) OauthMetadataSummaries() GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput {
+	return o.ApplyT(func(v GetVaultExternalKeyManagerMetadataSummary) []GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary {
+		return v.OauthMetadataSummaries
+	}).(GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput)
+}
+
+// OCID of the private endpoint.
+func (o GetVaultExternalKeyManagerMetadataSummaryOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVaultExternalKeyManagerMetadataSummary) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
+}
+
+// Vendor of the external key manager.
+func (o GetVaultExternalKeyManagerMetadataSummaryOutput) Vendor() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVaultExternalKeyManagerMetadataSummary) string { return v.Vendor }).(pulumi.StringOutput)
+}
+
+type GetVaultExternalKeyManagerMetadataSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVaultExternalKeyManagerMetadataSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVaultExternalKeyManagerMetadataSummary)(nil)).Elem()
+}
+
+func (o GetVaultExternalKeyManagerMetadataSummaryArrayOutput) ToGetVaultExternalKeyManagerMetadataSummaryArrayOutput() GetVaultExternalKeyManagerMetadataSummaryArrayOutput {
+	return o
+}
+
+func (o GetVaultExternalKeyManagerMetadataSummaryArrayOutput) ToGetVaultExternalKeyManagerMetadataSummaryArrayOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataSummaryArrayOutput {
+	return o
+}
+
+func (o GetVaultExternalKeyManagerMetadataSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultExternalKeyManagerMetadataSummary] {
+	return pulumix.Output[[]GetVaultExternalKeyManagerMetadataSummary]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVaultExternalKeyManagerMetadataSummaryArrayOutput) Index(i pulumi.IntInput) GetVaultExternalKeyManagerMetadataSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVaultExternalKeyManagerMetadataSummary {
+		return vs[0].([]GetVaultExternalKeyManagerMetadataSummary)[vs[1].(int)]
+	}).(GetVaultExternalKeyManagerMetadataSummaryOutput)
+}
+
+type GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary struct {
+	// ID of the client app created in IDP.
+	ClientAppId string `pulumi:"clientAppId"`
+	// Base URL of the IDCS account where confidential client app is created.
+	IdcsAccountNameUrl string `pulumi:"idcsAccountNameUrl"`
+}
+
+// GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryInput is an input type that accepts GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs and GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput values.
+// You can construct a concrete instance of `GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryInput` via:
+//
+//	GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs{...}
+type GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryInput interface {
+	pulumi.Input
+
+	ToGetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput() GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput
+	ToGetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputWithContext(context.Context) GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput
+}
+
+type GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs struct {
+	// ID of the client app created in IDP.
+	ClientAppId pulumi.StringInput `pulumi:"clientAppId"`
+	// Base URL of the IDCS account where confidential client app is created.
+	IdcsAccountNameUrl pulumi.StringInput `pulumi:"idcsAccountNameUrl"`
+}
+
+func (GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary)(nil)).Elem()
+}
+
+func (i GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs) ToGetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput() GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput {
+	return i.ToGetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputWithContext(context.Background())
+}
+
+func (i GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs) ToGetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput)
+}
+
+func (i GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
+	return pulumix.Output[GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
+		OutputState: i.ToGetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput is an input type that accepts GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray and GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput values.
+// You can construct a concrete instance of `GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput` via:
+//
+//	GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray{ GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs{...} }
+type GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput interface {
+	pulumi.Input
+
+	ToGetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput() GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput
+	ToGetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutputWithContext(context.Context) GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput
+}
+
+type GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray []GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryInput
+
+func (GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary)(nil)).Elem()
+}
+
+func (i GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray) ToGetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput() GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput {
+	return i.ToGetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray) ToGetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput)
+}
+
+func (i GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
+	return pulumix.Output[[]GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
+		OutputState: i.ToGetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput struct{ *pulumi.OutputState }
+
+func (GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary)(nil)).Elem()
+}
+
+func (o GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ToGetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput() GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput {
+	return o
+}
+
+func (o GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ToGetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput {
+	return o
+}
+
+func (o GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
+	return pulumix.Output[GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
+		OutputState: o.OutputState,
+	}
+}
+
+// ID of the client app created in IDP.
+func (o GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ClientAppId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary) string { return v.ClientAppId }).(pulumi.StringOutput)
+}
+
+// Base URL of the IDCS account where confidential client app is created.
+func (o GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) IdcsAccountNameUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary) string {
+		return v.IdcsAccountNameUrl
+	}).(pulumi.StringOutput)
+}
+
+type GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary)(nil)).Elem()
+}
+
+func (o GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) ToGetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput() GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput {
+	return o
+}
+
+func (o GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) ToGetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutputWithContext(ctx context.Context) GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput {
+	return o
+}
+
+func (o GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
+	return pulumix.Output[[]GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) Index(i pulumi.IntInput) GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary {
+		return vs[0].([]GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary)[vs[1].(int)]
+	}).(GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput)
+}
+
 type GetVaultReplicaDetail struct {
 	// ReplicationId associated with a vault operation
 	ReplicationId string `pulumi:"replicationId"`
@@ -4170,7 +6994,7 @@ type GetVaultReplicasVaultReplica struct {
 	ManagementEndpoint string `pulumi:"managementEndpoint"`
 	// Region to which vault is replicated to
 	Region string `pulumi:"region"`
-	// The vault replica's status
+	// Status of the Vault
 	Status string `pulumi:"status"`
 }
 
@@ -4192,7 +7016,7 @@ type GetVaultReplicasVaultReplicaArgs struct {
 	ManagementEndpoint pulumi.StringInput `pulumi:"managementEndpoint"`
 	// Region to which vault is replicated to
 	Region pulumi.StringInput `pulumi:"region"`
-	// The vault replica's status
+	// Status of the Vault
 	Status pulumi.StringInput `pulumi:"status"`
 }
 
@@ -4280,7 +7104,7 @@ func (o GetVaultReplicasVaultReplicaOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVaultReplicasVaultReplica) string { return v.Region }).(pulumi.StringOutput)
 }
 
-// The vault replica's status
+// Status of the Vault
 func (o GetVaultReplicasVaultReplicaOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVaultReplicasVaultReplica) string { return v.Status }).(pulumi.StringOutput)
 }
@@ -4746,11 +7570,14 @@ type GetVaultsVault struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
+	// Summary about metadata of external key manager to be returned to the customer as a response.
+	ExternalKeyManagerMetadataSummaries []GetVaultsVaultExternalKeyManagerMetadataSummary `pulumi:"externalKeyManagerMetadataSummaries"`
+	ExternalKeyManagerMetadatas         []GetVaultsVaultExternalKeyManagerMetadata        `pulumi:"externalKeyManagerMetadatas"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the vault.
 	Id string `pulumi:"id"`
-	// A boolean that will be true when vault is primary, and will be false when vault is a replica from a primary vault.
+	// A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
 	IsPrimary bool `pulumi:"isPrimary"`
 	// The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
 	ManagementEndpoint string `pulumi:"managementEndpoint"`
@@ -4759,7 +7586,7 @@ type GetVaultsVault struct {
 	RestoreFromFiles        []GetVaultsVaultRestoreFromFile        `pulumi:"restoreFromFiles"`
 	RestoreFromObjectStores []GetVaultsVaultRestoreFromObjectStore `pulumi:"restoreFromObjectStores"`
 	RestoreTrigger          bool                                   `pulumi:"restoreTrigger"`
-	// The OCID of the vault from which this vault was restored, if it was restored from a backup file.  If you restore a vault to the same region, the vault retains the same OCID that it had when you  backed up the vault.
+	// The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
 	RestoredFromVaultId string `pulumi:"restoredFromVaultId"`
 	// The vault's current lifecycle state.  Example: `DELETED`
 	State string `pulumi:"state"`
@@ -4791,11 +7618,14 @@ type GetVaultsVaultArgs struct {
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Summary about metadata of external key manager to be returned to the customer as a response.
+	ExternalKeyManagerMetadataSummaries GetVaultsVaultExternalKeyManagerMetadataSummaryArrayInput `pulumi:"externalKeyManagerMetadataSummaries"`
+	ExternalKeyManagerMetadatas         GetVaultsVaultExternalKeyManagerMetadataArrayInput        `pulumi:"externalKeyManagerMetadatas"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the vault.
 	Id pulumi.StringInput `pulumi:"id"`
-	// A boolean that will be true when vault is primary, and will be false when vault is a replica from a primary vault.
+	// A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
 	IsPrimary pulumi.BoolInput `pulumi:"isPrimary"`
 	// The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
 	ManagementEndpoint pulumi.StringInput `pulumi:"managementEndpoint"`
@@ -4804,7 +7634,7 @@ type GetVaultsVaultArgs struct {
 	RestoreFromFiles        GetVaultsVaultRestoreFromFileArrayInput        `pulumi:"restoreFromFiles"`
 	RestoreFromObjectStores GetVaultsVaultRestoreFromObjectStoreArrayInput `pulumi:"restoreFromObjectStores"`
 	RestoreTrigger          pulumi.BoolInput                               `pulumi:"restoreTrigger"`
-	// The OCID of the vault from which this vault was restored, if it was restored from a backup file.  If you restore a vault to the same region, the vault retains the same OCID that it had when you  backed up the vault.
+	// The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
 	RestoredFromVaultId pulumi.StringInput `pulumi:"restoredFromVaultId"`
 	// The vault's current lifecycle state.  Example: `DELETED`
 	State pulumi.StringInput `pulumi:"state"`
@@ -4905,6 +7735,19 @@ func (o GetVaultsVaultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVaultsVault) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// Summary about metadata of external key manager to be returned to the customer as a response.
+func (o GetVaultsVaultOutput) ExternalKeyManagerMetadataSummaries() GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput {
+	return o.ApplyT(func(v GetVaultsVault) []GetVaultsVaultExternalKeyManagerMetadataSummary {
+		return v.ExternalKeyManagerMetadataSummaries
+	}).(GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput)
+}
+
+func (o GetVaultsVaultOutput) ExternalKeyManagerMetadatas() GetVaultsVaultExternalKeyManagerMetadataArrayOutput {
+	return o.ApplyT(func(v GetVaultsVault) []GetVaultsVaultExternalKeyManagerMetadata {
+		return v.ExternalKeyManagerMetadatas
+	}).(GetVaultsVaultExternalKeyManagerMetadataArrayOutput)
+}
+
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o GetVaultsVaultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetVaultsVault) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
@@ -4915,7 +7758,7 @@ func (o GetVaultsVaultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVaultsVault) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A boolean that will be true when vault is primary, and will be false when vault is a replica from a primary vault.
+// A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
 func (o GetVaultsVaultOutput) IsPrimary() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetVaultsVault) bool { return v.IsPrimary }).(pulumi.BoolOutput)
 }
@@ -4942,7 +7785,7 @@ func (o GetVaultsVaultOutput) RestoreTrigger() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetVaultsVault) bool { return v.RestoreTrigger }).(pulumi.BoolOutput)
 }
 
-// The OCID of the vault from which this vault was restored, if it was restored from a backup file.  If you restore a vault to the same region, the vault retains the same OCID that it had when you  backed up the vault.
+// The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
 func (o GetVaultsVaultOutput) RestoredFromVaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVaultsVault) string { return v.RestoredFromVaultId }).(pulumi.StringOutput)
 }
@@ -4991,6 +7834,564 @@ func (o GetVaultsVaultArrayOutput) Index(i pulumi.IntInput) GetVaultsVaultOutput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVaultsVault {
 		return vs[0].([]GetVaultsVault)[vs[1].(int)]
 	}).(GetVaultsVaultOutput)
+}
+
+type GetVaultsVaultExternalKeyManagerMetadata struct {
+	// URL of the vault on external key manager.
+	ExternalVaultEndpointUrl string                                                  `pulumi:"externalVaultEndpointUrl"`
+	OauthMetadatas           []GetVaultsVaultExternalKeyManagerMetadataOauthMetadata `pulumi:"oauthMetadatas"`
+	// OCID of the private endpoint.
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
+}
+
+// GetVaultsVaultExternalKeyManagerMetadataInput is an input type that accepts GetVaultsVaultExternalKeyManagerMetadataArgs and GetVaultsVaultExternalKeyManagerMetadataOutput values.
+// You can construct a concrete instance of `GetVaultsVaultExternalKeyManagerMetadataInput` via:
+//
+//	GetVaultsVaultExternalKeyManagerMetadataArgs{...}
+type GetVaultsVaultExternalKeyManagerMetadataInput interface {
+	pulumi.Input
+
+	ToGetVaultsVaultExternalKeyManagerMetadataOutput() GetVaultsVaultExternalKeyManagerMetadataOutput
+	ToGetVaultsVaultExternalKeyManagerMetadataOutputWithContext(context.Context) GetVaultsVaultExternalKeyManagerMetadataOutput
+}
+
+type GetVaultsVaultExternalKeyManagerMetadataArgs struct {
+	// URL of the vault on external key manager.
+	ExternalVaultEndpointUrl pulumi.StringInput                                              `pulumi:"externalVaultEndpointUrl"`
+	OauthMetadatas           GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayInput `pulumi:"oauthMetadatas"`
+	// OCID of the private endpoint.
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
+}
+
+func (GetVaultsVaultExternalKeyManagerMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVaultsVaultExternalKeyManagerMetadata)(nil)).Elem()
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataArgs) ToGetVaultsVaultExternalKeyManagerMetadataOutput() GetVaultsVaultExternalKeyManagerMetadataOutput {
+	return i.ToGetVaultsVaultExternalKeyManagerMetadataOutputWithContext(context.Background())
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataArgs) ToGetVaultsVaultExternalKeyManagerMetadataOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultExternalKeyManagerMetadataOutput)
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultExternalKeyManagerMetadata] {
+	return pulumix.Output[GetVaultsVaultExternalKeyManagerMetadata]{
+		OutputState: i.ToGetVaultsVaultExternalKeyManagerMetadataOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVaultsVaultExternalKeyManagerMetadataArrayInput is an input type that accepts GetVaultsVaultExternalKeyManagerMetadataArray and GetVaultsVaultExternalKeyManagerMetadataArrayOutput values.
+// You can construct a concrete instance of `GetVaultsVaultExternalKeyManagerMetadataArrayInput` via:
+//
+//	GetVaultsVaultExternalKeyManagerMetadataArray{ GetVaultsVaultExternalKeyManagerMetadataArgs{...} }
+type GetVaultsVaultExternalKeyManagerMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetVaultsVaultExternalKeyManagerMetadataArrayOutput() GetVaultsVaultExternalKeyManagerMetadataArrayOutput
+	ToGetVaultsVaultExternalKeyManagerMetadataArrayOutputWithContext(context.Context) GetVaultsVaultExternalKeyManagerMetadataArrayOutput
+}
+
+type GetVaultsVaultExternalKeyManagerMetadataArray []GetVaultsVaultExternalKeyManagerMetadataInput
+
+func (GetVaultsVaultExternalKeyManagerMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVaultsVaultExternalKeyManagerMetadata)(nil)).Elem()
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataArray) ToGetVaultsVaultExternalKeyManagerMetadataArrayOutput() GetVaultsVaultExternalKeyManagerMetadataArrayOutput {
+	return i.ToGetVaultsVaultExternalKeyManagerMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataArray) ToGetVaultsVaultExternalKeyManagerMetadataArrayOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultExternalKeyManagerMetadataArrayOutput)
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadata] {
+	return pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadata]{
+		OutputState: i.ToGetVaultsVaultExternalKeyManagerMetadataArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVaultsVaultExternalKeyManagerMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetVaultsVaultExternalKeyManagerMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVaultsVaultExternalKeyManagerMetadata)(nil)).Elem()
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataOutput) ToGetVaultsVaultExternalKeyManagerMetadataOutput() GetVaultsVaultExternalKeyManagerMetadataOutput {
+	return o
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataOutput) ToGetVaultsVaultExternalKeyManagerMetadataOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataOutput {
+	return o
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultExternalKeyManagerMetadata] {
+	return pulumix.Output[GetVaultsVaultExternalKeyManagerMetadata]{
+		OutputState: o.OutputState,
+	}
+}
+
+// URL of the vault on external key manager.
+func (o GetVaultsVaultExternalKeyManagerMetadataOutput) ExternalVaultEndpointUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVaultsVaultExternalKeyManagerMetadata) string { return v.ExternalVaultEndpointUrl }).(pulumi.StringOutput)
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataOutput) OauthMetadatas() GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput {
+	return o.ApplyT(func(v GetVaultsVaultExternalKeyManagerMetadata) []GetVaultsVaultExternalKeyManagerMetadataOauthMetadata {
+		return v.OauthMetadatas
+	}).(GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput)
+}
+
+// OCID of the private endpoint.
+func (o GetVaultsVaultExternalKeyManagerMetadataOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVaultsVaultExternalKeyManagerMetadata) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
+}
+
+type GetVaultsVaultExternalKeyManagerMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVaultsVaultExternalKeyManagerMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVaultsVaultExternalKeyManagerMetadata)(nil)).Elem()
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataArrayOutput) ToGetVaultsVaultExternalKeyManagerMetadataArrayOutput() GetVaultsVaultExternalKeyManagerMetadataArrayOutput {
+	return o
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataArrayOutput) ToGetVaultsVaultExternalKeyManagerMetadataArrayOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataArrayOutput {
+	return o
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadata] {
+	return pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadata]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataArrayOutput) Index(i pulumi.IntInput) GetVaultsVaultExternalKeyManagerMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVaultsVaultExternalKeyManagerMetadata {
+		return vs[0].([]GetVaultsVaultExternalKeyManagerMetadata)[vs[1].(int)]
+	}).(GetVaultsVaultExternalKeyManagerMetadataOutput)
+}
+
+type GetVaultsVaultExternalKeyManagerMetadataOauthMetadata struct {
+	// ID of the client app created in IDP.
+	ClientAppId     string `pulumi:"clientAppId"`
+	ClientAppSecret string `pulumi:"clientAppSecret"`
+	// Base URL of the IDCS account where confidential client app is created.
+	IdcsAccountNameUrl string `pulumi:"idcsAccountNameUrl"`
+}
+
+// GetVaultsVaultExternalKeyManagerMetadataOauthMetadataInput is an input type that accepts GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArgs and GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput values.
+// You can construct a concrete instance of `GetVaultsVaultExternalKeyManagerMetadataOauthMetadataInput` via:
+//
+//	GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArgs{...}
+type GetVaultsVaultExternalKeyManagerMetadataOauthMetadataInput interface {
+	pulumi.Input
+
+	ToGetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput() GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput
+	ToGetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutputWithContext(context.Context) GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput
+}
+
+type GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArgs struct {
+	// ID of the client app created in IDP.
+	ClientAppId     pulumi.StringInput `pulumi:"clientAppId"`
+	ClientAppSecret pulumi.StringInput `pulumi:"clientAppSecret"`
+	// Base URL of the IDCS account where confidential client app is created.
+	IdcsAccountNameUrl pulumi.StringInput `pulumi:"idcsAccountNameUrl"`
+}
+
+func (GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVaultsVaultExternalKeyManagerMetadataOauthMetadata)(nil)).Elem()
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArgs) ToGetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput() GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput {
+	return i.ToGetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutputWithContext(context.Background())
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArgs) ToGetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput)
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataOauthMetadata] {
+	return pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataOauthMetadata]{
+		OutputState: i.ToGetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayInput is an input type that accepts GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArray and GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput values.
+// You can construct a concrete instance of `GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayInput` via:
+//
+//	GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArray{ GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArgs{...} }
+type GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput() GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput
+	ToGetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutputWithContext(context.Context) GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput
+}
+
+type GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArray []GetVaultsVaultExternalKeyManagerMetadataOauthMetadataInput
+
+func (GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVaultsVaultExternalKeyManagerMetadataOauthMetadata)(nil)).Elem()
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArray) ToGetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput() GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput {
+	return i.ToGetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArray) ToGetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput)
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataOauthMetadata] {
+	return pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataOauthMetadata]{
+		OutputState: i.ToGetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVaultsVaultExternalKeyManagerMetadataOauthMetadata)(nil)).Elem()
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput) ToGetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput() GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput {
+	return o
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput) ToGetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput {
+	return o
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataOauthMetadata] {
+	return pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataOauthMetadata]{
+		OutputState: o.OutputState,
+	}
+}
+
+// ID of the client app created in IDP.
+func (o GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput) ClientAppId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVaultsVaultExternalKeyManagerMetadataOauthMetadata) string { return v.ClientAppId }).(pulumi.StringOutput)
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput) ClientAppSecret() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVaultsVaultExternalKeyManagerMetadataOauthMetadata) string { return v.ClientAppSecret }).(pulumi.StringOutput)
+}
+
+// Base URL of the IDCS account where confidential client app is created.
+func (o GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput) IdcsAccountNameUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVaultsVaultExternalKeyManagerMetadataOauthMetadata) string { return v.IdcsAccountNameUrl }).(pulumi.StringOutput)
+}
+
+type GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVaultsVaultExternalKeyManagerMetadataOauthMetadata)(nil)).Elem()
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput) ToGetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput() GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput {
+	return o
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput) ToGetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput {
+	return o
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataOauthMetadata] {
+	return pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataOauthMetadata]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput) Index(i pulumi.IntInput) GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVaultsVaultExternalKeyManagerMetadataOauthMetadata {
+		return vs[0].([]GetVaultsVaultExternalKeyManagerMetadataOauthMetadata)[vs[1].(int)]
+	}).(GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput)
+}
+
+type GetVaultsVaultExternalKeyManagerMetadataSummary struct {
+	// URL of the vault on external key manager.
+	ExternalVaultEndpointUrl string `pulumi:"externalVaultEndpointUrl"`
+	// Summary about authorization to be returned to the customer as a response.
+	OauthMetadataSummaries []GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary `pulumi:"oauthMetadataSummaries"`
+	// OCID of the private endpoint.
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
+	// Vendor of the external key manager.
+	Vendor string `pulumi:"vendor"`
+}
+
+// GetVaultsVaultExternalKeyManagerMetadataSummaryInput is an input type that accepts GetVaultsVaultExternalKeyManagerMetadataSummaryArgs and GetVaultsVaultExternalKeyManagerMetadataSummaryOutput values.
+// You can construct a concrete instance of `GetVaultsVaultExternalKeyManagerMetadataSummaryInput` via:
+//
+//	GetVaultsVaultExternalKeyManagerMetadataSummaryArgs{...}
+type GetVaultsVaultExternalKeyManagerMetadataSummaryInput interface {
+	pulumi.Input
+
+	ToGetVaultsVaultExternalKeyManagerMetadataSummaryOutput() GetVaultsVaultExternalKeyManagerMetadataSummaryOutput
+	ToGetVaultsVaultExternalKeyManagerMetadataSummaryOutputWithContext(context.Context) GetVaultsVaultExternalKeyManagerMetadataSummaryOutput
+}
+
+type GetVaultsVaultExternalKeyManagerMetadataSummaryArgs struct {
+	// URL of the vault on external key manager.
+	ExternalVaultEndpointUrl pulumi.StringInput `pulumi:"externalVaultEndpointUrl"`
+	// Summary about authorization to be returned to the customer as a response.
+	OauthMetadataSummaries GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput `pulumi:"oauthMetadataSummaries"`
+	// OCID of the private endpoint.
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
+	// Vendor of the external key manager.
+	Vendor pulumi.StringInput `pulumi:"vendor"`
+}
+
+func (GetVaultsVaultExternalKeyManagerMetadataSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVaultsVaultExternalKeyManagerMetadataSummary)(nil)).Elem()
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataSummaryArgs) ToGetVaultsVaultExternalKeyManagerMetadataSummaryOutput() GetVaultsVaultExternalKeyManagerMetadataSummaryOutput {
+	return i.ToGetVaultsVaultExternalKeyManagerMetadataSummaryOutputWithContext(context.Background())
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataSummaryArgs) ToGetVaultsVaultExternalKeyManagerMetadataSummaryOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultExternalKeyManagerMetadataSummaryOutput)
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataSummary] {
+	return pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataSummary]{
+		OutputState: i.ToGetVaultsVaultExternalKeyManagerMetadataSummaryOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVaultsVaultExternalKeyManagerMetadataSummaryArrayInput is an input type that accepts GetVaultsVaultExternalKeyManagerMetadataSummaryArray and GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput values.
+// You can construct a concrete instance of `GetVaultsVaultExternalKeyManagerMetadataSummaryArrayInput` via:
+//
+//	GetVaultsVaultExternalKeyManagerMetadataSummaryArray{ GetVaultsVaultExternalKeyManagerMetadataSummaryArgs{...} }
+type GetVaultsVaultExternalKeyManagerMetadataSummaryArrayInput interface {
+	pulumi.Input
+
+	ToGetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput() GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput
+	ToGetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutputWithContext(context.Context) GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput
+}
+
+type GetVaultsVaultExternalKeyManagerMetadataSummaryArray []GetVaultsVaultExternalKeyManagerMetadataSummaryInput
+
+func (GetVaultsVaultExternalKeyManagerMetadataSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVaultsVaultExternalKeyManagerMetadataSummary)(nil)).Elem()
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataSummaryArray) ToGetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput() GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput {
+	return i.ToGetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataSummaryArray) ToGetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput)
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataSummary] {
+	return pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataSummary]{
+		OutputState: i.ToGetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVaultsVaultExternalKeyManagerMetadataSummaryOutput struct{ *pulumi.OutputState }
+
+func (GetVaultsVaultExternalKeyManagerMetadataSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVaultsVaultExternalKeyManagerMetadataSummary)(nil)).Elem()
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOutput) ToGetVaultsVaultExternalKeyManagerMetadataSummaryOutput() GetVaultsVaultExternalKeyManagerMetadataSummaryOutput {
+	return o
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOutput) ToGetVaultsVaultExternalKeyManagerMetadataSummaryOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataSummaryOutput {
+	return o
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataSummary] {
+	return pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataSummary]{
+		OutputState: o.OutputState,
+	}
+}
+
+// URL of the vault on external key manager.
+func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOutput) ExternalVaultEndpointUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVaultsVaultExternalKeyManagerMetadataSummary) string { return v.ExternalVaultEndpointUrl }).(pulumi.StringOutput)
+}
+
+// Summary about authorization to be returned to the customer as a response.
+func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOutput) OauthMetadataSummaries() GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput {
+	return o.ApplyT(func(v GetVaultsVaultExternalKeyManagerMetadataSummary) []GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary {
+		return v.OauthMetadataSummaries
+	}).(GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput)
+}
+
+// OCID of the private endpoint.
+func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVaultsVaultExternalKeyManagerMetadataSummary) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
+}
+
+// Vendor of the external key manager.
+func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOutput) Vendor() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVaultsVaultExternalKeyManagerMetadataSummary) string { return v.Vendor }).(pulumi.StringOutput)
+}
+
+type GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVaultsVaultExternalKeyManagerMetadataSummary)(nil)).Elem()
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput) ToGetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput() GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput {
+	return o
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput) ToGetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput {
+	return o
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataSummary] {
+	return pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataSummary]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput) Index(i pulumi.IntInput) GetVaultsVaultExternalKeyManagerMetadataSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVaultsVaultExternalKeyManagerMetadataSummary {
+		return vs[0].([]GetVaultsVaultExternalKeyManagerMetadataSummary)[vs[1].(int)]
+	}).(GetVaultsVaultExternalKeyManagerMetadataSummaryOutput)
+}
+
+type GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary struct {
+	// ID of the client app created in IDP.
+	ClientAppId string `pulumi:"clientAppId"`
+	// Base URL of the IDCS account where confidential client app is created.
+	IdcsAccountNameUrl string `pulumi:"idcsAccountNameUrl"`
+}
+
+// GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryInput is an input type that accepts GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs and GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput values.
+// You can construct a concrete instance of `GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryInput` via:
+//
+//	GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs{...}
+type GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryInput interface {
+	pulumi.Input
+
+	ToGetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput() GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput
+	ToGetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputWithContext(context.Context) GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput
+}
+
+type GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs struct {
+	// ID of the client app created in IDP.
+	ClientAppId pulumi.StringInput `pulumi:"clientAppId"`
+	// Base URL of the IDCS account where confidential client app is created.
+	IdcsAccountNameUrl pulumi.StringInput `pulumi:"idcsAccountNameUrl"`
+}
+
+func (GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary)(nil)).Elem()
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs) ToGetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput() GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput {
+	return i.ToGetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputWithContext(context.Background())
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs) ToGetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput)
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
+	return pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
+		OutputState: i.ToGetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput is an input type that accepts GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray and GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput values.
+// You can construct a concrete instance of `GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput` via:
+//
+//	GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray{ GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs{...} }
+type GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput interface {
+	pulumi.Input
+
+	ToGetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput() GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput
+	ToGetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutputWithContext(context.Context) GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput
+}
+
+type GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray []GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryInput
+
+func (GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary)(nil)).Elem()
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray) ToGetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput() GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput {
+	return i.ToGetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutputWithContext(context.Background())
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray) ToGetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput)
+}
+
+func (i GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
+	return pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
+		OutputState: i.ToGetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput struct{ *pulumi.OutputState }
+
+func (GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary)(nil)).Elem()
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ToGetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput() GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput {
+	return o
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ToGetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput {
+	return o
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
+	return pulumix.Output[GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
+		OutputState: o.OutputState,
+	}
+}
+
+// ID of the client app created in IDP.
+func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) ClientAppId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary) string {
+		return v.ClientAppId
+	}).(pulumi.StringOutput)
+}
+
+// Base URL of the IDCS account where confidential client app is created.
+func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput) IdcsAccountNameUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary) string {
+		return v.IdcsAccountNameUrl
+	}).(pulumi.StringOutput)
+}
+
+type GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary)(nil)).Elem()
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) ToGetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput() GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput {
+	return o
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) ToGetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutputWithContext(ctx context.Context) GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput {
+	return o
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary] {
+	return pulumix.Output[[]GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput) Index(i pulumi.IntInput) GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary {
+		return vs[0].([]GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary)[vs[1].(int)]
+	}).(GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput)
 }
 
 type GetVaultsVaultReplicaDetail struct {
@@ -5389,6 +8790,10 @@ func (o GetVaultsVaultRestoreFromObjectStoreArrayOutput) Index(i pulumi.IntInput
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GeneratedKeyKeyShapeInput)(nil)).Elem(), GeneratedKeyKeyShapeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GeneratedKeyKeyShapePtrInput)(nil)).Elem(), GeneratedKeyKeyShapeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyExternalKeyReferenceInput)(nil)).Elem(), KeyExternalKeyReferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyExternalKeyReferencePtrInput)(nil)).Elem(), KeyExternalKeyReferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyExternalKeyReferenceDetailInput)(nil)).Elem(), KeyExternalKeyReferenceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyExternalKeyReferenceDetailArrayInput)(nil)).Elem(), KeyExternalKeyReferenceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyKeyShapeInput)(nil)).Elem(), KeyKeyShapeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyKeyShapePtrInput)(nil)).Elem(), KeyKeyShapeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyReplicaDetailInput)(nil)).Elem(), KeyReplicaDetailArgs{})
@@ -5397,14 +8802,32 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyRestoreFromFilePtrInput)(nil)).Elem(), KeyRestoreFromFileArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyRestoreFromObjectStoreInput)(nil)).Elem(), KeyRestoreFromObjectStoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyRestoreFromObjectStorePtrInput)(nil)).Elem(), KeyRestoreFromObjectStoreArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyVersionExternalKeyReferenceDetailInput)(nil)).Elem(), KeyVersionExternalKeyReferenceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*KeyVersionExternalKeyReferenceDetailArrayInput)(nil)).Elem(), KeyVersionExternalKeyReferenceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyVersionReplicaDetailInput)(nil)).Elem(), KeyVersionReplicaDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyVersionReplicaDetailArrayInput)(nil)).Elem(), KeyVersionReplicaDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VaultExternalKeyManagerMetadataInput)(nil)).Elem(), VaultExternalKeyManagerMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VaultExternalKeyManagerMetadataPtrInput)(nil)).Elem(), VaultExternalKeyManagerMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VaultExternalKeyManagerMetadataOauthMetadataInput)(nil)).Elem(), VaultExternalKeyManagerMetadataOauthMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VaultExternalKeyManagerMetadataOauthMetadataPtrInput)(nil)).Elem(), VaultExternalKeyManagerMetadataOauthMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VaultExternalKeyManagerMetadataSummaryInput)(nil)).Elem(), VaultExternalKeyManagerMetadataSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VaultExternalKeyManagerMetadataSummaryArrayInput)(nil)).Elem(), VaultExternalKeyManagerMetadataSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryInput)(nil)).Elem(), VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput)(nil)).Elem(), VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VaultReplicaDetailInput)(nil)).Elem(), VaultReplicaDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VaultReplicaDetailArrayInput)(nil)).Elem(), VaultReplicaDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VaultRestoreFromFileInput)(nil)).Elem(), VaultRestoreFromFileArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VaultRestoreFromFilePtrInput)(nil)).Elem(), VaultRestoreFromFileArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VaultRestoreFromObjectStoreInput)(nil)).Elem(), VaultRestoreFromObjectStoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VaultRestoreFromObjectStorePtrInput)(nil)).Elem(), VaultRestoreFromObjectStoreArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEkmsPrivateEndpointsEkmsPrivateEndpointInput)(nil)).Elem(), GetEkmsPrivateEndpointsEkmsPrivateEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayInput)(nil)).Elem(), GetEkmsPrivateEndpointsEkmsPrivateEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEkmsPrivateEndpointsFilterInput)(nil)).Elem(), GetEkmsPrivateEndpointsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEkmsPrivateEndpointsFilterArrayInput)(nil)).Elem(), GetEkmsPrivateEndpointsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyExternalKeyReferenceInput)(nil)).Elem(), GetKeyExternalKeyReferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyExternalKeyReferenceArrayInput)(nil)).Elem(), GetKeyExternalKeyReferenceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyExternalKeyReferenceDetailInput)(nil)).Elem(), GetKeyExternalKeyReferenceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyExternalKeyReferenceDetailArrayInput)(nil)).Elem(), GetKeyExternalKeyReferenceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyKeyShapeInput)(nil)).Elem(), GetKeyKeyShapeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyKeyShapeArrayInput)(nil)).Elem(), GetKeyKeyShapeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyReplicaDetailInput)(nil)).Elem(), GetKeyReplicaDetailArgs{})
@@ -5413,18 +8836,26 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyRestoreFromFileArrayInput)(nil)).Elem(), GetKeyRestoreFromFileArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyRestoreFromObjectStoreInput)(nil)).Elem(), GetKeyRestoreFromObjectStoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyRestoreFromObjectStoreArrayInput)(nil)).Elem(), GetKeyRestoreFromObjectStoreArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyVersionExternalKeyReferenceDetailInput)(nil)).Elem(), GetKeyVersionExternalKeyReferenceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyVersionExternalKeyReferenceDetailArrayInput)(nil)).Elem(), GetKeyVersionExternalKeyReferenceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyVersionReplicaDetailInput)(nil)).Elem(), GetKeyVersionReplicaDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyVersionReplicaDetailArrayInput)(nil)).Elem(), GetKeyVersionReplicaDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyVersionsFilterInput)(nil)).Elem(), GetKeyVersionsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyVersionsFilterArrayInput)(nil)).Elem(), GetKeyVersionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyVersionsKeyVersionInput)(nil)).Elem(), GetKeyVersionsKeyVersionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyVersionsKeyVersionArrayInput)(nil)).Elem(), GetKeyVersionsKeyVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyVersionsKeyVersionExternalKeyReferenceDetailInput)(nil)).Elem(), GetKeyVersionsKeyVersionExternalKeyReferenceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayInput)(nil)).Elem(), GetKeyVersionsKeyVersionExternalKeyReferenceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyVersionsKeyVersionReplicaDetailInput)(nil)).Elem(), GetKeyVersionsKeyVersionReplicaDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyVersionsKeyVersionReplicaDetailArrayInput)(nil)).Elem(), GetKeyVersionsKeyVersionReplicaDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeysFilterInput)(nil)).Elem(), GetKeysFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeysFilterArrayInput)(nil)).Elem(), GetKeysFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeysKeyInput)(nil)).Elem(), GetKeysKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeysKeyArrayInput)(nil)).Elem(), GetKeysKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeysKeyExternalKeyReferenceInput)(nil)).Elem(), GetKeysKeyExternalKeyReferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeysKeyExternalKeyReferenceArrayInput)(nil)).Elem(), GetKeysKeyExternalKeyReferenceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeysKeyExternalKeyReferenceDetailInput)(nil)).Elem(), GetKeysKeyExternalKeyReferenceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeysKeyExternalKeyReferenceDetailArrayInput)(nil)).Elem(), GetKeysKeyExternalKeyReferenceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeysKeyKeyShapeInput)(nil)).Elem(), GetKeysKeyKeyShapeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeysKeyKeyShapeArrayInput)(nil)).Elem(), GetKeysKeyKeyShapeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeysKeyReplicaDetailInput)(nil)).Elem(), GetKeysKeyReplicaDetailArgs{})
@@ -5435,6 +8866,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeysKeyRestoreFromObjectStoreArrayInput)(nil)).Elem(), GetKeysKeyRestoreFromObjectStoreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationStatusReplicaDetailInput)(nil)).Elem(), GetReplicationStatusReplicaDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationStatusReplicaDetailArrayInput)(nil)).Elem(), GetReplicationStatusReplicaDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultExternalKeyManagerMetadataInput)(nil)).Elem(), GetVaultExternalKeyManagerMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultExternalKeyManagerMetadataArrayInput)(nil)).Elem(), GetVaultExternalKeyManagerMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultExternalKeyManagerMetadataOauthMetadataInput)(nil)).Elem(), GetVaultExternalKeyManagerMetadataOauthMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultExternalKeyManagerMetadataOauthMetadataArrayInput)(nil)).Elem(), GetVaultExternalKeyManagerMetadataOauthMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultExternalKeyManagerMetadataSummaryInput)(nil)).Elem(), GetVaultExternalKeyManagerMetadataSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultExternalKeyManagerMetadataSummaryArrayInput)(nil)).Elem(), GetVaultExternalKeyManagerMetadataSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryInput)(nil)).Elem(), GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput)(nil)).Elem(), GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultReplicaDetailInput)(nil)).Elem(), GetVaultReplicaDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultReplicaDetailArrayInput)(nil)).Elem(), GetVaultReplicaDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultReplicasFilterInput)(nil)).Elem(), GetVaultReplicasFilterArgs{})
@@ -5449,6 +8888,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultsFilterArrayInput)(nil)).Elem(), GetVaultsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultsVaultInput)(nil)).Elem(), GetVaultsVaultArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultsVaultArrayInput)(nil)).Elem(), GetVaultsVaultArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultsVaultExternalKeyManagerMetadataInput)(nil)).Elem(), GetVaultsVaultExternalKeyManagerMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultsVaultExternalKeyManagerMetadataArrayInput)(nil)).Elem(), GetVaultsVaultExternalKeyManagerMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultsVaultExternalKeyManagerMetadataOauthMetadataInput)(nil)).Elem(), GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayInput)(nil)).Elem(), GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultsVaultExternalKeyManagerMetadataSummaryInput)(nil)).Elem(), GetVaultsVaultExternalKeyManagerMetadataSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultsVaultExternalKeyManagerMetadataSummaryArrayInput)(nil)).Elem(), GetVaultsVaultExternalKeyManagerMetadataSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryInput)(nil)).Elem(), GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayInput)(nil)).Elem(), GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultsVaultReplicaDetailInput)(nil)).Elem(), GetVaultsVaultReplicaDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultsVaultReplicaDetailArrayInput)(nil)).Elem(), GetVaultsVaultReplicaDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultsVaultRestoreFromFileInput)(nil)).Elem(), GetVaultsVaultRestoreFromFileArgs{})
@@ -5457,6 +8904,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVaultsVaultRestoreFromObjectStoreArrayInput)(nil)).Elem(), GetVaultsVaultRestoreFromObjectStoreArray{})
 	pulumi.RegisterOutputType(GeneratedKeyKeyShapeOutput{})
 	pulumi.RegisterOutputType(GeneratedKeyKeyShapePtrOutput{})
+	pulumi.RegisterOutputType(KeyExternalKeyReferenceOutput{})
+	pulumi.RegisterOutputType(KeyExternalKeyReferencePtrOutput{})
+	pulumi.RegisterOutputType(KeyExternalKeyReferenceDetailOutput{})
+	pulumi.RegisterOutputType(KeyExternalKeyReferenceDetailArrayOutput{})
 	pulumi.RegisterOutputType(KeyKeyShapeOutput{})
 	pulumi.RegisterOutputType(KeyKeyShapePtrOutput{})
 	pulumi.RegisterOutputType(KeyReplicaDetailOutput{})
@@ -5465,14 +8916,32 @@ func init() {
 	pulumi.RegisterOutputType(KeyRestoreFromFilePtrOutput{})
 	pulumi.RegisterOutputType(KeyRestoreFromObjectStoreOutput{})
 	pulumi.RegisterOutputType(KeyRestoreFromObjectStorePtrOutput{})
+	pulumi.RegisterOutputType(KeyVersionExternalKeyReferenceDetailOutput{})
+	pulumi.RegisterOutputType(KeyVersionExternalKeyReferenceDetailArrayOutput{})
 	pulumi.RegisterOutputType(KeyVersionReplicaDetailOutput{})
 	pulumi.RegisterOutputType(KeyVersionReplicaDetailArrayOutput{})
+	pulumi.RegisterOutputType(VaultExternalKeyManagerMetadataOutput{})
+	pulumi.RegisterOutputType(VaultExternalKeyManagerMetadataPtrOutput{})
+	pulumi.RegisterOutputType(VaultExternalKeyManagerMetadataOauthMetadataOutput{})
+	pulumi.RegisterOutputType(VaultExternalKeyManagerMetadataOauthMetadataPtrOutput{})
+	pulumi.RegisterOutputType(VaultExternalKeyManagerMetadataSummaryOutput{})
+	pulumi.RegisterOutputType(VaultExternalKeyManagerMetadataSummaryArrayOutput{})
+	pulumi.RegisterOutputType(VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput{})
+	pulumi.RegisterOutputType(VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput{})
 	pulumi.RegisterOutputType(VaultReplicaDetailOutput{})
 	pulumi.RegisterOutputType(VaultReplicaDetailArrayOutput{})
 	pulumi.RegisterOutputType(VaultRestoreFromFileOutput{})
 	pulumi.RegisterOutputType(VaultRestoreFromFilePtrOutput{})
 	pulumi.RegisterOutputType(VaultRestoreFromObjectStoreOutput{})
 	pulumi.RegisterOutputType(VaultRestoreFromObjectStorePtrOutput{})
+	pulumi.RegisterOutputType(GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput{})
+	pulumi.RegisterOutputType(GetEkmsPrivateEndpointsEkmsPrivateEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetEkmsPrivateEndpointsFilterOutput{})
+	pulumi.RegisterOutputType(GetEkmsPrivateEndpointsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetKeyExternalKeyReferenceOutput{})
+	pulumi.RegisterOutputType(GetKeyExternalKeyReferenceArrayOutput{})
+	pulumi.RegisterOutputType(GetKeyExternalKeyReferenceDetailOutput{})
+	pulumi.RegisterOutputType(GetKeyExternalKeyReferenceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyKeyShapeOutput{})
 	pulumi.RegisterOutputType(GetKeyKeyShapeArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyReplicaDetailOutput{})
@@ -5481,18 +8950,26 @@ func init() {
 	pulumi.RegisterOutputType(GetKeyRestoreFromFileArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyRestoreFromObjectStoreOutput{})
 	pulumi.RegisterOutputType(GetKeyRestoreFromObjectStoreArrayOutput{})
+	pulumi.RegisterOutputType(GetKeyVersionExternalKeyReferenceDetailOutput{})
+	pulumi.RegisterOutputType(GetKeyVersionExternalKeyReferenceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyVersionReplicaDetailOutput{})
 	pulumi.RegisterOutputType(GetKeyVersionReplicaDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyVersionsFilterOutput{})
 	pulumi.RegisterOutputType(GetKeyVersionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyVersionsKeyVersionOutput{})
 	pulumi.RegisterOutputType(GetKeyVersionsKeyVersionArrayOutput{})
+	pulumi.RegisterOutputType(GetKeyVersionsKeyVersionExternalKeyReferenceDetailOutput{})
+	pulumi.RegisterOutputType(GetKeyVersionsKeyVersionExternalKeyReferenceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyVersionsKeyVersionReplicaDetailOutput{})
 	pulumi.RegisterOutputType(GetKeyVersionsKeyVersionReplicaDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetKeysFilterOutput{})
 	pulumi.RegisterOutputType(GetKeysFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetKeysKeyOutput{})
 	pulumi.RegisterOutputType(GetKeysKeyArrayOutput{})
+	pulumi.RegisterOutputType(GetKeysKeyExternalKeyReferenceOutput{})
+	pulumi.RegisterOutputType(GetKeysKeyExternalKeyReferenceArrayOutput{})
+	pulumi.RegisterOutputType(GetKeysKeyExternalKeyReferenceDetailOutput{})
+	pulumi.RegisterOutputType(GetKeysKeyExternalKeyReferenceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetKeysKeyKeyShapeOutput{})
 	pulumi.RegisterOutputType(GetKeysKeyKeyShapeArrayOutput{})
 	pulumi.RegisterOutputType(GetKeysKeyReplicaDetailOutput{})
@@ -5503,6 +8980,14 @@ func init() {
 	pulumi.RegisterOutputType(GetKeysKeyRestoreFromObjectStoreArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicationStatusReplicaDetailOutput{})
 	pulumi.RegisterOutputType(GetReplicationStatusReplicaDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetVaultExternalKeyManagerMetadataOutput{})
+	pulumi.RegisterOutputType(GetVaultExternalKeyManagerMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetVaultExternalKeyManagerMetadataOauthMetadataOutput{})
+	pulumi.RegisterOutputType(GetVaultExternalKeyManagerMetadataOauthMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetVaultExternalKeyManagerMetadataSummaryOutput{})
+	pulumi.RegisterOutputType(GetVaultExternalKeyManagerMetadataSummaryArrayOutput{})
+	pulumi.RegisterOutputType(GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput{})
+	pulumi.RegisterOutputType(GetVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput{})
 	pulumi.RegisterOutputType(GetVaultReplicaDetailOutput{})
 	pulumi.RegisterOutputType(GetVaultReplicaDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetVaultReplicasFilterOutput{})
@@ -5517,6 +9002,14 @@ func init() {
 	pulumi.RegisterOutputType(GetVaultsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetVaultsVaultOutput{})
 	pulumi.RegisterOutputType(GetVaultsVaultArrayOutput{})
+	pulumi.RegisterOutputType(GetVaultsVaultExternalKeyManagerMetadataOutput{})
+	pulumi.RegisterOutputType(GetVaultsVaultExternalKeyManagerMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetVaultsVaultExternalKeyManagerMetadataOauthMetadataOutput{})
+	pulumi.RegisterOutputType(GetVaultsVaultExternalKeyManagerMetadataOauthMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetVaultsVaultExternalKeyManagerMetadataSummaryOutput{})
+	pulumi.RegisterOutputType(GetVaultsVaultExternalKeyManagerMetadataSummaryArrayOutput{})
+	pulumi.RegisterOutputType(GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutput{})
+	pulumi.RegisterOutputType(GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArrayOutput{})
 	pulumi.RegisterOutputType(GetVaultsVaultReplicaDetailOutput{})
 	pulumi.RegisterOutputType(GetVaultsVaultReplicaDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetVaultsVaultRestoreFromFileOutput{})

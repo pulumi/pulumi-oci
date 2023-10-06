@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -29,9 +29,22 @@ class CustomTableArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "saved_custom_table", saved_custom_table)
-        pulumi.set(__self__, "saved_report_id", saved_report_id)
+        CustomTableArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            saved_custom_table=saved_custom_table,
+            saved_report_id=saved_report_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             saved_custom_table: pulumi.Input['CustomTableSavedCustomTableArgs'],
+             saved_report_id: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("saved_custom_table", saved_custom_table)
+        _setter("saved_report_id", saved_report_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -90,12 +103,25 @@ class _CustomTableState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _CustomTableState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            saved_custom_table=saved_custom_table,
+            saved_report_id=saved_report_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             saved_custom_table: Optional[pulumi.Input['CustomTableSavedCustomTableArgs']] = None,
+             saved_report_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if saved_custom_table is not None:
-            pulumi.set(__self__, "saved_custom_table", saved_custom_table)
+            _setter("saved_custom_table", saved_custom_table)
         if saved_report_id is not None:
-            pulumi.set(__self__, "saved_report_id", saved_report_id)
+            _setter("saved_report_id", saved_report_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -245,6 +271,10 @@ class CustomTable(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CustomTableArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -265,6 +295,11 @@ class CustomTable(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            if saved_custom_table is not None and not isinstance(saved_custom_table, CustomTableSavedCustomTableArgs):
+                saved_custom_table = saved_custom_table or {}
+                def _setter(key, value):
+                    saved_custom_table[key] = value
+                CustomTableSavedCustomTableArgs._configure(_setter, **saved_custom_table)
             if saved_custom_table is None and not opts.urn:
                 raise TypeError("Missing required property 'saved_custom_table'")
             __props__.__dict__["saved_custom_table"] = saved_custom_table

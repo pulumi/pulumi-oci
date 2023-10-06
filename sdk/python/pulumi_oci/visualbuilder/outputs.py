@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -60,11 +60,24 @@ class VbInstanceAlternateCustomEndpoint(dict):
         :param str certificate_secret_id: (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
         :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         """
-        pulumi.set(__self__, "hostname", hostname)
+        VbInstanceAlternateCustomEndpoint._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            certificate_secret_id=certificate_secret_id,
+            certificate_secret_version=certificate_secret_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: str,
+             certificate_secret_id: Optional[str] = None,
+             certificate_secret_version: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hostname", hostname)
         if certificate_secret_id is not None:
-            pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
+            _setter("certificate_secret_id", certificate_secret_id)
         if certificate_secret_version is not None:
-            pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
+            _setter("certificate_secret_version", certificate_secret_version)
 
     @property
     @pulumi.getter
@@ -132,16 +145,33 @@ class VbInstanceAttachment(dict):
         :param str target_role: The role of the target attachment.
         :param str target_service_type: The type of the target instance, such as "FUSION".
         """
+        VbInstanceAttachment._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_implicit=is_implicit,
+            target_id=target_id,
+            target_instance_url=target_instance_url,
+            target_role=target_role,
+            target_service_type=target_service_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_implicit: Optional[bool] = None,
+             target_id: Optional[str] = None,
+             target_instance_url: Optional[str] = None,
+             target_role: Optional[str] = None,
+             target_service_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if is_implicit is not None:
-            pulumi.set(__self__, "is_implicit", is_implicit)
+            _setter("is_implicit", is_implicit)
         if target_id is not None:
-            pulumi.set(__self__, "target_id", target_id)
+            _setter("target_id", target_id)
         if target_instance_url is not None:
-            pulumi.set(__self__, "target_instance_url", target_instance_url)
+            _setter("target_instance_url", target_instance_url)
         if target_role is not None:
-            pulumi.set(__self__, "target_role", target_role)
+            _setter("target_role", target_role)
         if target_service_type is not None:
-            pulumi.set(__self__, "target_service_type", target_service_type)
+            _setter("target_service_type", target_service_type)
 
     @property
     @pulumi.getter(name="isImplicit")
@@ -215,11 +245,24 @@ class VbInstanceCustomEndpoint(dict):
         :param str certificate_secret_id: (Updatable) Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname. All certificates should be stored in a single base64 encoded secret Note the update will fail if this is not a valid certificate.
         :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         """
-        pulumi.set(__self__, "hostname", hostname)
+        VbInstanceCustomEndpoint._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            certificate_secret_id=certificate_secret_id,
+            certificate_secret_version=certificate_secret_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: str,
+             certificate_secret_id: Optional[str] = None,
+             certificate_secret_version: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hostname", hostname)
         if certificate_secret_id is not None:
-            pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
+            _setter("certificate_secret_id", certificate_secret_id)
         if certificate_secret_version is not None:
-            pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
+            _setter("certificate_secret_version", certificate_secret_version)
 
     @property
     @pulumi.getter
@@ -286,16 +329,33 @@ class VbInstanceIdcsInfo(dict):
         :param str idcs_app_name: The IDCS application name associated with the instance
         :param str instance_primary_audience_url: The URL used as the primary audience for visual builder flows in this instance type: string
         """
+        VbInstanceIdcsInfo._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            idcs_app_display_name=idcs_app_display_name,
+            idcs_app_id=idcs_app_id,
+            idcs_app_location_url=idcs_app_location_url,
+            idcs_app_name=idcs_app_name,
+            instance_primary_audience_url=instance_primary_audience_url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             idcs_app_display_name: Optional[str] = None,
+             idcs_app_id: Optional[str] = None,
+             idcs_app_location_url: Optional[str] = None,
+             idcs_app_name: Optional[str] = None,
+             instance_primary_audience_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if idcs_app_display_name is not None:
-            pulumi.set(__self__, "idcs_app_display_name", idcs_app_display_name)
+            _setter("idcs_app_display_name", idcs_app_display_name)
         if idcs_app_id is not None:
-            pulumi.set(__self__, "idcs_app_id", idcs_app_id)
+            _setter("idcs_app_id", idcs_app_id)
         if idcs_app_location_url is not None:
-            pulumi.set(__self__, "idcs_app_location_url", idcs_app_location_url)
+            _setter("idcs_app_location_url", idcs_app_location_url)
         if idcs_app_name is not None:
-            pulumi.set(__self__, "idcs_app_name", idcs_app_name)
+            _setter("idcs_app_name", idcs_app_name)
         if instance_primary_audience_url is not None:
-            pulumi.set(__self__, "instance_primary_audience_url", instance_primary_audience_url)
+            _setter("instance_primary_audience_url", instance_primary_audience_url)
 
     @property
     @pulumi.getter(name="idcsAppDisplayName")
@@ -349,9 +409,22 @@ class GetVbInstanceAlternateCustomEndpointResult(dict):
         :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         :param str hostname: A custom hostname to be used for the vb instance URL, in FQDN format.
         """
-        pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
-        pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
-        pulumi.set(__self__, "hostname", hostname)
+        GetVbInstanceAlternateCustomEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_secret_id=certificate_secret_id,
+            certificate_secret_version=certificate_secret_version,
+            hostname=hostname,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_secret_id: str,
+             certificate_secret_version: int,
+             hostname: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_secret_id", certificate_secret_id)
+        _setter("certificate_secret_version", certificate_secret_version)
+        _setter("hostname", hostname)
 
     @property
     @pulumi.getter(name="certificateSecretId")
@@ -382,7 +455,16 @@ class GetVbInstanceAlternateCustomEndpointResult(dict):
 class GetVbInstanceApplicationsApplicationSummaryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetVbInstanceApplicationsApplicationSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetVbInstanceApplicationsApplicationSummaryCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetVbInstanceApplicationsApplicationSummaryCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -403,10 +485,25 @@ class GetVbInstanceApplicationsApplicationSummaryCollectionItemResult(dict):
         :param str state: The state of visual builder application. Either LIVE or STAGED
         :param str version: The Visual Builder application version
         """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "version", version)
+        GetVbInstanceApplicationsApplicationSummaryCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            project_id=project_id,
+            state=state,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             project_id: str,
+             state: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
+        _setter("project_id", project_id)
+        _setter("state", state)
+        _setter("version", version)
 
     @property
     @pulumi.getter
@@ -457,11 +554,28 @@ class GetVbInstanceAttachmentResult(dict):
         :param str target_role: The role of the target attachment.
         :param str target_service_type: The type of the target instance, such as "FUSION".
         """
-        pulumi.set(__self__, "is_implicit", is_implicit)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "target_instance_url", target_instance_url)
-        pulumi.set(__self__, "target_role", target_role)
-        pulumi.set(__self__, "target_service_type", target_service_type)
+        GetVbInstanceAttachmentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_implicit=is_implicit,
+            target_id=target_id,
+            target_instance_url=target_instance_url,
+            target_role=target_role,
+            target_service_type=target_service_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_implicit: bool,
+             target_id: str,
+             target_instance_url: str,
+             target_role: str,
+             target_service_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_implicit", is_implicit)
+        _setter("target_id", target_id)
+        _setter("target_instance_url", target_instance_url)
+        _setter("target_role", target_role)
+        _setter("target_service_type", target_service_type)
 
     @property
     @pulumi.getter(name="isImplicit")
@@ -516,9 +630,22 @@ class GetVbInstanceCustomEndpointResult(dict):
         :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         :param str hostname: A custom hostname to be used for the vb instance URL, in FQDN format.
         """
-        pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
-        pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
-        pulumi.set(__self__, "hostname", hostname)
+        GetVbInstanceCustomEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_secret_id=certificate_secret_id,
+            certificate_secret_version=certificate_secret_version,
+            hostname=hostname,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_secret_id: str,
+             certificate_secret_version: int,
+             hostname: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_secret_id", certificate_secret_id)
+        _setter("certificate_secret_version", certificate_secret_version)
+        _setter("hostname", hostname)
 
     @property
     @pulumi.getter(name="certificateSecretId")
@@ -560,11 +687,28 @@ class GetVbInstanceIdcsInfoResult(dict):
         :param str idcs_app_name: The IDCS application name associated with the instance
         :param str instance_primary_audience_url: The URL used as the primary audience for visual builder flows in this instance type: string
         """
-        pulumi.set(__self__, "idcs_app_display_name", idcs_app_display_name)
-        pulumi.set(__self__, "idcs_app_id", idcs_app_id)
-        pulumi.set(__self__, "idcs_app_location_url", idcs_app_location_url)
-        pulumi.set(__self__, "idcs_app_name", idcs_app_name)
-        pulumi.set(__self__, "instance_primary_audience_url", instance_primary_audience_url)
+        GetVbInstanceIdcsInfoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            idcs_app_display_name=idcs_app_display_name,
+            idcs_app_id=idcs_app_id,
+            idcs_app_location_url=idcs_app_location_url,
+            idcs_app_name=idcs_app_name,
+            instance_primary_audience_url=instance_primary_audience_url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             idcs_app_display_name: str,
+             idcs_app_id: str,
+             idcs_app_location_url: str,
+             idcs_app_name: str,
+             instance_primary_audience_url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("idcs_app_display_name", idcs_app_display_name)
+        _setter("idcs_app_id", idcs_app_id)
+        _setter("idcs_app_location_url", idcs_app_location_url)
+        _setter("idcs_app_name", idcs_app_name)
+        _setter("instance_primary_audience_url", instance_primary_audience_url)
 
     @property
     @pulumi.getter(name="idcsAppDisplayName")
@@ -613,10 +757,23 @@ class GetVbInstancesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetVbInstancesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -638,7 +795,16 @@ class GetVbInstancesFilterResult(dict):
 class GetVbInstancesVbInstanceSummaryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetVbInstancesVbInstanceSummaryCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -696,29 +862,82 @@ class GetVbInstancesVbInstanceSummaryCollectionItemResult(dict):
         :param str time_created: The time the the VbInstance was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the VbInstance was updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
-        pulumi.set(__self__, "attachments", attachments)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "consumption_model", consumption_model)
-        pulumi.set(__self__, "custom_endpoints", custom_endpoints)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "idcs_infos", idcs_infos)
-        pulumi.set(__self__, "idcs_open_id", idcs_open_id)
-        pulumi.set(__self__, "instance_url", instance_url)
-        pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
-        pulumi.set(__self__, "management_nat_gateway_ip", management_nat_gateway_ip)
-        pulumi.set(__self__, "management_vcn_id", management_vcn_id)
-        pulumi.set(__self__, "node_count", node_count)
-        pulumi.set(__self__, "service_nat_gateway_ip", service_nat_gateway_ip)
-        pulumi.set(__self__, "service_vcn_id", service_vcn_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "state_message", state_message)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetVbInstancesVbInstanceSummaryCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alternate_custom_endpoints=alternate_custom_endpoints,
+            attachments=attachments,
+            compartment_id=compartment_id,
+            consumption_model=consumption_model,
+            custom_endpoints=custom_endpoints,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            idcs_infos=idcs_infos,
+            idcs_open_id=idcs_open_id,
+            instance_url=instance_url,
+            is_visual_builder_enabled=is_visual_builder_enabled,
+            management_nat_gateway_ip=management_nat_gateway_ip,
+            management_vcn_id=management_vcn_id,
+            node_count=node_count,
+            service_nat_gateway_ip=service_nat_gateway_ip,
+            service_vcn_id=service_vcn_id,
+            state=state,
+            state_message=state_message,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alternate_custom_endpoints: Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointResult'],
+             attachments: Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemAttachmentResult'],
+             compartment_id: str,
+             consumption_model: str,
+             custom_endpoints: Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointResult'],
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             idcs_infos: Sequence['outputs.GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoResult'],
+             idcs_open_id: str,
+             instance_url: str,
+             is_visual_builder_enabled: bool,
+             management_nat_gateway_ip: str,
+             management_vcn_id: str,
+             node_count: int,
+             service_nat_gateway_ip: str,
+             service_vcn_id: str,
+             state: str,
+             state_message: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("alternate_custom_endpoints", alternate_custom_endpoints)
+        _setter("attachments", attachments)
+        _setter("compartment_id", compartment_id)
+        _setter("consumption_model", consumption_model)
+        _setter("custom_endpoints", custom_endpoints)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("idcs_infos", idcs_infos)
+        _setter("idcs_open_id", idcs_open_id)
+        _setter("instance_url", instance_url)
+        _setter("is_visual_builder_enabled", is_visual_builder_enabled)
+        _setter("management_nat_gateway_ip", management_nat_gateway_ip)
+        _setter("management_vcn_id", management_vcn_id)
+        _setter("node_count", node_count)
+        _setter("service_nat_gateway_ip", service_nat_gateway_ip)
+        _setter("service_vcn_id", service_vcn_id)
+        _setter("state", state)
+        _setter("state_message", state_message)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="alternateCustomEndpoints")
@@ -913,9 +1132,22 @@ class GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointResult
         :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         :param str hostname: A custom hostname to be used for the vb instance URL, in FQDN format.
         """
-        pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
-        pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
-        pulumi.set(__self__, "hostname", hostname)
+        GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_secret_id=certificate_secret_id,
+            certificate_secret_version=certificate_secret_version,
+            hostname=hostname,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_secret_id: str,
+             certificate_secret_version: int,
+             hostname: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_secret_id", certificate_secret_id)
+        _setter("certificate_secret_version", certificate_secret_version)
+        _setter("hostname", hostname)
 
     @property
     @pulumi.getter(name="certificateSecretId")
@@ -958,11 +1190,28 @@ class GetVbInstancesVbInstanceSummaryCollectionItemAttachmentResult(dict):
         :param str target_role: The role of the target attachment.
         :param str target_service_type: The type of the target instance, such as "FUSION".
         """
-        pulumi.set(__self__, "is_implicit", is_implicit)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "target_instance_url", target_instance_url)
-        pulumi.set(__self__, "target_role", target_role)
-        pulumi.set(__self__, "target_service_type", target_service_type)
+        GetVbInstancesVbInstanceSummaryCollectionItemAttachmentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_implicit=is_implicit,
+            target_id=target_id,
+            target_instance_url=target_instance_url,
+            target_role=target_role,
+            target_service_type=target_service_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_implicit: bool,
+             target_id: str,
+             target_instance_url: str,
+             target_role: str,
+             target_service_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_implicit", is_implicit)
+        _setter("target_id", target_id)
+        _setter("target_instance_url", target_instance_url)
+        _setter("target_role", target_role)
+        _setter("target_service_type", target_service_type)
 
     @property
     @pulumi.getter(name="isImplicit")
@@ -1017,9 +1266,22 @@ class GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointResult(dict):
         :param int certificate_secret_version: The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
         :param str hostname: A custom hostname to be used for the vb instance URL, in FQDN format.
         """
-        pulumi.set(__self__, "certificate_secret_id", certificate_secret_id)
-        pulumi.set(__self__, "certificate_secret_version", certificate_secret_version)
-        pulumi.set(__self__, "hostname", hostname)
+        GetVbInstancesVbInstanceSummaryCollectionItemCustomEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_secret_id=certificate_secret_id,
+            certificate_secret_version=certificate_secret_version,
+            hostname=hostname,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_secret_id: str,
+             certificate_secret_version: int,
+             hostname: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_secret_id", certificate_secret_id)
+        _setter("certificate_secret_version", certificate_secret_version)
+        _setter("hostname", hostname)
 
     @property
     @pulumi.getter(name="certificateSecretId")
@@ -1061,11 +1323,28 @@ class GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoResult(dict):
         :param str idcs_app_name: The IDCS application name associated with the instance
         :param str instance_primary_audience_url: The URL used as the primary audience for visual builder flows in this instance type: string
         """
-        pulumi.set(__self__, "idcs_app_display_name", idcs_app_display_name)
-        pulumi.set(__self__, "idcs_app_id", idcs_app_id)
-        pulumi.set(__self__, "idcs_app_location_url", idcs_app_location_url)
-        pulumi.set(__self__, "idcs_app_name", idcs_app_name)
-        pulumi.set(__self__, "instance_primary_audience_url", instance_primary_audience_url)
+        GetVbInstancesVbInstanceSummaryCollectionItemIdcsInfoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            idcs_app_display_name=idcs_app_display_name,
+            idcs_app_id=idcs_app_id,
+            idcs_app_location_url=idcs_app_location_url,
+            idcs_app_name=idcs_app_name,
+            instance_primary_audience_url=instance_primary_audience_url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             idcs_app_display_name: str,
+             idcs_app_id: str,
+             idcs_app_location_url: str,
+             idcs_app_name: str,
+             instance_primary_audience_url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("idcs_app_display_name", idcs_app_display_name)
+        _setter("idcs_app_id", idcs_app_id)
+        _setter("idcs_app_location_url", idcs_app_location_url)
+        _setter("idcs_app_name", idcs_app_name)
+        _setter("instance_primary_audience_url", instance_primary_audience_url)
 
     @property
     @pulumi.getter(name="idcsAppDisplayName")

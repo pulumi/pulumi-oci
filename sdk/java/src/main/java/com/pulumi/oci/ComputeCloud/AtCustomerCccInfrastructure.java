@@ -78,7 +78,7 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
      * 
      */
-    @Export(name="cccUpgradeScheduleId", type=String.class, parameters={})
+    @Export(name="cccUpgradeScheduleId", refs={String.class}, tree="[0]")
     private Output<String> cccUpgradeScheduleId;
 
     /**
@@ -92,7 +92,7 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
      * 
      */
-    @Export(name="compartmentId", type=String.class, parameters={})
+    @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
@@ -106,7 +106,7 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * (Updatable) A message describing the current connection state in more detail.
      * 
      */
-    @Export(name="connectionDetails", type=String.class, parameters={})
+    @Export(name="connectionDetails", refs={String.class}, tree="[0]")
     private Output<String> connectionDetails;
 
     /**
@@ -120,7 +120,7 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
      * 
      */
-    @Export(name="connectionState", type=String.class, parameters={})
+    @Export(name="connectionState", refs={String.class}, tree="[0]")
     private Output<String> connectionState;
 
     /**
@@ -134,7 +134,7 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
@@ -148,7 +148,7 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
@@ -162,7 +162,7 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
      * 
      */
-    @Export(name="displayName", type=String.class, parameters={})
+    @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
@@ -176,7 +176,7 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
@@ -190,7 +190,7 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
-    @Export(name="infrastructureInventories", type=List.class, parameters={AtCustomerCccInfrastructureInfrastructureInventory.class})
+    @Export(name="infrastructureInventories", refs={List.class,AtCustomerCccInfrastructureInfrastructureInventory.class}, tree="[0,1]")
     private Output<List<AtCustomerCccInfrastructureInfrastructureInventory>> infrastructureInventories;
 
     /**
@@ -204,7 +204,7 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
      * 
      */
-    @Export(name="infrastructureNetworkConfigurations", type=List.class, parameters={AtCustomerCccInfrastructureInfrastructureNetworkConfiguration.class})
+    @Export(name="infrastructureNetworkConfigurations", refs={List.class,AtCustomerCccInfrastructureInfrastructureNetworkConfiguration.class}, tree="[0,1]")
     private Output<List<AtCustomerCccInfrastructureInfrastructureNetworkConfiguration>> infrastructureNetworkConfigurations;
 
     /**
@@ -218,7 +218,7 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
      * 
      */
-    @Export(name="lifecycleDetails", type=String.class, parameters={})
+    @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
@@ -232,7 +232,7 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * Fingerprint of a Compute Cloud@Customer infrastructure in a data center generated during the initial connection to this resource. The fingerprint should be verified by the administrator when changing the connectionState from REQUEST to READY.
      * 
      */
-    @Export(name="provisioningFingerprint", type=String.class, parameters={})
+    @Export(name="provisioningFingerprint", refs={String.class}, tree="[0]")
     private Output<String> provisioningFingerprint;
 
     /**
@@ -246,7 +246,7 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * Code that is required for service personnel to connect a Compute Cloud@Customer infrastructure in a data center to this resource. This code will only be available when the connectionState is REJECT (usually at create time of the Compute Cloud@Customer infrastructure).
      * 
      */
-    @Export(name="provisioningPin", type=String.class, parameters={})
+    @Export(name="provisioningPin", refs={String.class}, tree="[0]")
     private Output<String> provisioningPin;
 
     /**
@@ -260,7 +260,7 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
      * 
      */
-    @Export(name="shortName", type=String.class, parameters={})
+    @Export(name="shortName", refs={String.class}, tree="[0]")
     private Output<String> shortName;
 
     /**
@@ -274,7 +274,7 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * The current state of the Compute Cloud@Customer infrastructure.
      * 
      */
-    @Export(name="state", type=String.class, parameters={})
+    @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
@@ -291,7 +291,7 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="subnetId", type=String.class, parameters={})
+    @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
@@ -308,7 +308,7 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> systemTags;
 
     /**
@@ -322,7 +322,7 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeCreated", type=String.class, parameters={})
+    @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
@@ -336,7 +336,7 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
      * 
      */
-    @Export(name="timeUpdated", type=String.class, parameters={})
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
@@ -350,7 +350,7 @@ public class AtCustomerCccInfrastructure extends com.pulumi.resources.CustomReso
      * Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
      * 
      */
-    @Export(name="upgradeInformations", type=List.class, parameters={AtCustomerCccInfrastructureUpgradeInformation.class})
+    @Export(name="upgradeInformations", refs={List.class,AtCustomerCccInfrastructureUpgradeInformation.class}, tree="[0,1]")
     private Output<List<AtCustomerCccInfrastructureUpgradeInformation>> upgradeInformations;
 
     /**

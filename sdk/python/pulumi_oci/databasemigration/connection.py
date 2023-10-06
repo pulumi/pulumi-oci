@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -51,34 +51,73 @@ class ConnectionArgs:
         :param pulumi.Input[str] tls_keystore: (Updatable) keystore.jks file contents; base64 encoded String. Requires a TLS wallet to be specified. Not required for source container database connections.
         :param pulumi.Input[str] tls_wallet: (Updatable) cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
         """
-        pulumi.set(__self__, "admin_credentials", admin_credentials)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "database_type", database_type)
-        pulumi.set(__self__, "vault_details", vault_details)
+        ConnectionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_credentials=admin_credentials,
+            compartment_id=compartment_id,
+            database_type=database_type,
+            vault_details=vault_details,
+            certificate_tdn=certificate_tdn,
+            connect_descriptor=connect_descriptor,
+            database_id=database_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            nsg_ids=nsg_ids,
+            private_endpoint=private_endpoint,
+            replication_credentials=replication_credentials,
+            ssh_details=ssh_details,
+            tls_keystore=tls_keystore,
+            tls_wallet=tls_wallet,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_credentials: pulumi.Input['ConnectionAdminCredentialsArgs'],
+             compartment_id: pulumi.Input[str],
+             database_type: pulumi.Input[str],
+             vault_details: pulumi.Input['ConnectionVaultDetailsArgs'],
+             certificate_tdn: Optional[pulumi.Input[str]] = None,
+             connect_descriptor: Optional[pulumi.Input['ConnectionConnectDescriptorArgs']] = None,
+             database_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             private_endpoint: Optional[pulumi.Input['ConnectionPrivateEndpointArgs']] = None,
+             replication_credentials: Optional[pulumi.Input['ConnectionReplicationCredentialsArgs']] = None,
+             ssh_details: Optional[pulumi.Input['ConnectionSshDetailsArgs']] = None,
+             tls_keystore: Optional[pulumi.Input[str]] = None,
+             tls_wallet: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("admin_credentials", admin_credentials)
+        _setter("compartment_id", compartment_id)
+        _setter("database_type", database_type)
+        _setter("vault_details", vault_details)
         if certificate_tdn is not None:
-            pulumi.set(__self__, "certificate_tdn", certificate_tdn)
+            _setter("certificate_tdn", certificate_tdn)
         if connect_descriptor is not None:
-            pulumi.set(__self__, "connect_descriptor", connect_descriptor)
+            _setter("connect_descriptor", connect_descriptor)
         if database_id is not None:
-            pulumi.set(__self__, "database_id", database_id)
+            _setter("database_id", database_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if private_endpoint is not None:
-            pulumi.set(__self__, "private_endpoint", private_endpoint)
+            _setter("private_endpoint", private_endpoint)
         if replication_credentials is not None:
-            pulumi.set(__self__, "replication_credentials", replication_credentials)
+            _setter("replication_credentials", replication_credentials)
         if ssh_details is not None:
-            pulumi.set(__self__, "ssh_details", ssh_details)
+            _setter("ssh_details", ssh_details)
         if tls_keystore is not None:
-            pulumi.set(__self__, "tls_keystore", tls_keystore)
+            _setter("tls_keystore", tls_keystore)
         if tls_wallet is not None:
-            pulumi.set(__self__, "tls_wallet", tls_wallet)
+            _setter("tls_wallet", tls_wallet)
 
     @property
     @pulumi.getter(name="adminCredentials")
@@ -323,50 +362,101 @@ class _ConnectionState:
         :param pulumi.Input[str] tls_wallet: (Updatable) cwallet.sso containing containing the TCPS/SSL certificate; base64 encoded String. Not required for source container database connections.
         :param pulumi.Input['ConnectionVaultDetailsArgs'] vault_details: (Updatable) Oracle Cloud Infrastructure Vault details to store migration and connection credentials secrets
         """
+        _ConnectionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_credentials=admin_credentials,
+            certificate_tdn=certificate_tdn,
+            compartment_id=compartment_id,
+            connect_descriptor=connect_descriptor,
+            credentials_secret_id=credentials_secret_id,
+            database_id=database_id,
+            database_type=database_type,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            nsg_ids=nsg_ids,
+            private_endpoint=private_endpoint,
+            replication_credentials=replication_credentials,
+            ssh_details=ssh_details,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            tls_keystore=tls_keystore,
+            tls_wallet=tls_wallet,
+            vault_details=vault_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_credentials: Optional[pulumi.Input['ConnectionAdminCredentialsArgs']] = None,
+             certificate_tdn: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             connect_descriptor: Optional[pulumi.Input['ConnectionConnectDescriptorArgs']] = None,
+             credentials_secret_id: Optional[pulumi.Input[str]] = None,
+             database_id: Optional[pulumi.Input[str]] = None,
+             database_type: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             private_endpoint: Optional[pulumi.Input['ConnectionPrivateEndpointArgs']] = None,
+             replication_credentials: Optional[pulumi.Input['ConnectionReplicationCredentialsArgs']] = None,
+             ssh_details: Optional[pulumi.Input['ConnectionSshDetailsArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             tls_keystore: Optional[pulumi.Input[str]] = None,
+             tls_wallet: Optional[pulumi.Input[str]] = None,
+             vault_details: Optional[pulumi.Input['ConnectionVaultDetailsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if admin_credentials is not None:
-            pulumi.set(__self__, "admin_credentials", admin_credentials)
+            _setter("admin_credentials", admin_credentials)
         if certificate_tdn is not None:
-            pulumi.set(__self__, "certificate_tdn", certificate_tdn)
+            _setter("certificate_tdn", certificate_tdn)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if connect_descriptor is not None:
-            pulumi.set(__self__, "connect_descriptor", connect_descriptor)
+            _setter("connect_descriptor", connect_descriptor)
         if credentials_secret_id is not None:
-            pulumi.set(__self__, "credentials_secret_id", credentials_secret_id)
+            _setter("credentials_secret_id", credentials_secret_id)
         if database_id is not None:
-            pulumi.set(__self__, "database_id", database_id)
+            _setter("database_id", database_id)
         if database_type is not None:
-            pulumi.set(__self__, "database_type", database_type)
+            _setter("database_type", database_type)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if private_endpoint is not None:
-            pulumi.set(__self__, "private_endpoint", private_endpoint)
+            _setter("private_endpoint", private_endpoint)
         if replication_credentials is not None:
-            pulumi.set(__self__, "replication_credentials", replication_credentials)
+            _setter("replication_credentials", replication_credentials)
         if ssh_details is not None:
-            pulumi.set(__self__, "ssh_details", ssh_details)
+            _setter("ssh_details", ssh_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if tls_keystore is not None:
-            pulumi.set(__self__, "tls_keystore", tls_keystore)
+            _setter("tls_keystore", tls_keystore)
         if tls_wallet is not None:
-            pulumi.set(__self__, "tls_wallet", tls_wallet)
+            _setter("tls_wallet", tls_wallet)
         if vault_details is not None:
-            pulumi.set(__self__, "vault_details", vault_details)
+            _setter("vault_details", vault_details)
 
     @property
     @pulumi.getter(name="adminCredentials")
@@ -824,6 +914,10 @@ class Connection(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ConnectionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -854,6 +948,11 @@ class Connection(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ConnectionArgs.__new__(ConnectionArgs)
 
+            if admin_credentials is not None and not isinstance(admin_credentials, ConnectionAdminCredentialsArgs):
+                admin_credentials = admin_credentials or {}
+                def _setter(key, value):
+                    admin_credentials[key] = value
+                ConnectionAdminCredentialsArgs._configure(_setter, **admin_credentials)
             if admin_credentials is None and not opts.urn:
                 raise TypeError("Missing required property 'admin_credentials'")
             __props__.__dict__["admin_credentials"] = admin_credentials
@@ -861,6 +960,11 @@ class Connection(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            if connect_descriptor is not None and not isinstance(connect_descriptor, ConnectionConnectDescriptorArgs):
+                connect_descriptor = connect_descriptor or {}
+                def _setter(key, value):
+                    connect_descriptor[key] = value
+                ConnectionConnectDescriptorArgs._configure(_setter, **connect_descriptor)
             __props__.__dict__["connect_descriptor"] = connect_descriptor
             __props__.__dict__["database_id"] = database_id
             if database_type is None and not opts.urn:
@@ -870,11 +974,31 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["nsg_ids"] = nsg_ids
+            if private_endpoint is not None and not isinstance(private_endpoint, ConnectionPrivateEndpointArgs):
+                private_endpoint = private_endpoint or {}
+                def _setter(key, value):
+                    private_endpoint[key] = value
+                ConnectionPrivateEndpointArgs._configure(_setter, **private_endpoint)
             __props__.__dict__["private_endpoint"] = private_endpoint
+            if replication_credentials is not None and not isinstance(replication_credentials, ConnectionReplicationCredentialsArgs):
+                replication_credentials = replication_credentials or {}
+                def _setter(key, value):
+                    replication_credentials[key] = value
+                ConnectionReplicationCredentialsArgs._configure(_setter, **replication_credentials)
             __props__.__dict__["replication_credentials"] = replication_credentials
+            if ssh_details is not None and not isinstance(ssh_details, ConnectionSshDetailsArgs):
+                ssh_details = ssh_details or {}
+                def _setter(key, value):
+                    ssh_details[key] = value
+                ConnectionSshDetailsArgs._configure(_setter, **ssh_details)
             __props__.__dict__["ssh_details"] = ssh_details
             __props__.__dict__["tls_keystore"] = tls_keystore
             __props__.__dict__["tls_wallet"] = tls_wallet
+            if vault_details is not None and not isinstance(vault_details, ConnectionVaultDetailsArgs):
+                vault_details = vault_details or {}
+                def _setter(key, value):
+                    vault_details[key] = value
+                ConnectionVaultDetailsArgs._configure(_setter, **vault_details)
             if vault_details is None and not opts.urn:
                 raise TypeError("Missing required property 'vault_details'")
             __props__.__dict__["vault_details"] = vault_details

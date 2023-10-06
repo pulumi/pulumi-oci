@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['LogAnalyticsEntityArgs', 'LogAnalyticsEntity']
@@ -45,27 +45,58 @@ class LogAnalyticsEntityArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "entity_type_name", entity_type_name)
-        pulumi.set(__self__, "namespace", namespace)
+        LogAnalyticsEntityArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            entity_type_name=entity_type_name,
+            namespace=namespace,
+            cloud_resource_id=cloud_resource_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            hostname=hostname,
+            management_agent_id=management_agent_id,
+            name=name,
+            properties=properties,
+            source_id=source_id,
+            timezone_region=timezone_region,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             entity_type_name: pulumi.Input[str],
+             namespace: pulumi.Input[str],
+             cloud_resource_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hostname: Optional[pulumi.Input[str]] = None,
+             management_agent_id: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             source_id: Optional[pulumi.Input[str]] = None,
+             timezone_region: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("entity_type_name", entity_type_name)
+        _setter("namespace", namespace)
         if cloud_resource_id is not None:
-            pulumi.set(__self__, "cloud_resource_id", cloud_resource_id)
+            _setter("cloud_resource_id", cloud_resource_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hostname is not None:
-            pulumi.set(__self__, "hostname", hostname)
+            _setter("hostname", hostname)
         if management_agent_id is not None:
-            pulumi.set(__self__, "management_agent_id", management_agent_id)
+            _setter("management_agent_id", management_agent_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if properties is not None:
-            pulumi.set(__self__, "properties", properties)
+            _setter("properties", properties)
         if source_id is not None:
-            pulumi.set(__self__, "source_id", source_id)
+            _setter("source_id", source_id)
         if timezone_region is not None:
-            pulumi.set(__self__, "timezone_region", timezone_region)
+            _setter("timezone_region", timezone_region)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -266,46 +297,93 @@ class _LogAnalyticsEntityState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _LogAnalyticsEntityState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            are_logs_collected=are_logs_collected,
+            cloud_resource_id=cloud_resource_id,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            entity_type_internal_name=entity_type_internal_name,
+            entity_type_name=entity_type_name,
+            freeform_tags=freeform_tags,
+            hostname=hostname,
+            lifecycle_details=lifecycle_details,
+            management_agent_compartment_id=management_agent_compartment_id,
+            management_agent_display_name=management_agent_display_name,
+            management_agent_id=management_agent_id,
+            name=name,
+            namespace=namespace,
+            properties=properties,
+            source_id=source_id,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+            timezone_region=timezone_region,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             are_logs_collected: Optional[pulumi.Input[bool]] = None,
+             cloud_resource_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             entity_type_internal_name: Optional[pulumi.Input[str]] = None,
+             entity_type_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hostname: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             management_agent_compartment_id: Optional[pulumi.Input[str]] = None,
+             management_agent_display_name: Optional[pulumi.Input[str]] = None,
+             management_agent_id: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             source_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             timezone_region: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if are_logs_collected is not None:
-            pulumi.set(__self__, "are_logs_collected", are_logs_collected)
+            _setter("are_logs_collected", are_logs_collected)
         if cloud_resource_id is not None:
-            pulumi.set(__self__, "cloud_resource_id", cloud_resource_id)
+            _setter("cloud_resource_id", cloud_resource_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if entity_type_internal_name is not None:
-            pulumi.set(__self__, "entity_type_internal_name", entity_type_internal_name)
+            _setter("entity_type_internal_name", entity_type_internal_name)
         if entity_type_name is not None:
-            pulumi.set(__self__, "entity_type_name", entity_type_name)
+            _setter("entity_type_name", entity_type_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hostname is not None:
-            pulumi.set(__self__, "hostname", hostname)
+            _setter("hostname", hostname)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if management_agent_compartment_id is not None:
-            pulumi.set(__self__, "management_agent_compartment_id", management_agent_compartment_id)
+            _setter("management_agent_compartment_id", management_agent_compartment_id)
         if management_agent_display_name is not None:
-            pulumi.set(__self__, "management_agent_display_name", management_agent_display_name)
+            _setter("management_agent_display_name", management_agent_display_name)
         if management_agent_id is not None:
-            pulumi.set(__self__, "management_agent_id", management_agent_id)
+            _setter("management_agent_id", management_agent_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if properties is not None:
-            pulumi.set(__self__, "properties", properties)
+            _setter("properties", properties)
         if source_id is not None:
-            pulumi.set(__self__, "source_id", source_id)
+            _setter("source_id", source_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if timezone_region is not None:
-            pulumi.set(__self__, "timezone_region", timezone_region)
+            _setter("timezone_region", timezone_region)
 
     @property
     @pulumi.getter(name="areLogsCollected")
@@ -679,6 +757,10 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            LogAnalyticsEntityArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

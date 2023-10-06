@@ -5,6 +5,8 @@ package com.pulumi.oci.Kms.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Kms.inputs.VaultExternalKeyManagerMetadataArgs;
+import com.pulumi.oci.Kms.inputs.VaultExternalKeyManagerMetadataSummaryArgs;
 import com.pulumi.oci.Kms.inputs.VaultReplicaDetailArgs;
 import com.pulumi.oci.Kms.inputs.VaultRestoreFromFileArgs;
 import com.pulumi.oci.Kms.inputs.VaultRestoreFromObjectStoreArgs;
@@ -83,6 +85,36 @@ public final class VaultState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Metadata required for accessing External Key manager
+     * 
+     */
+    @Import(name="externalKeyManagerMetadata")
+    private @Nullable Output<VaultExternalKeyManagerMetadataArgs> externalKeyManagerMetadata;
+
+    /**
+     * @return Metadata required for accessing External Key manager
+     * 
+     */
+    public Optional<Output<VaultExternalKeyManagerMetadataArgs>> externalKeyManagerMetadata() {
+        return Optional.ofNullable(this.externalKeyManagerMetadata);
+    }
+
+    /**
+     * Summary about metadata of external key manager to be returned to the customer as a response.
+     * 
+     */
+    @Import(name="externalKeyManagerMetadataSummaries")
+    private @Nullable Output<List<VaultExternalKeyManagerMetadataSummaryArgs>> externalKeyManagerMetadataSummaries;
+
+    /**
+     * @return Summary about metadata of external key manager to be returned to the customer as a response.
+     * 
+     */
+    public Optional<Output<List<VaultExternalKeyManagerMetadataSummaryArgs>>> externalKeyManagerMetadataSummaries() {
+        return Optional.ofNullable(this.externalKeyManagerMetadataSummaries);
+    }
+
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -98,14 +130,14 @@ public final class VaultState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A boolean that will be true when vault is primary, and will be false when vault is a replica from a primary vault.
+     * A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
      * 
      */
     @Import(name="isPrimary")
     private @Nullable Output<Boolean> isPrimary;
 
     /**
-     * @return A boolean that will be true when vault is primary, and will be false when vault is a replica from a primary vault.
+     * @return A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
      * 
      */
     public Optional<Output<Boolean>> isPrimary() {
@@ -180,14 +212,14 @@ public final class VaultState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the vault from which this vault was restored, if it was restored from a backup file.  If you restore a vault to the same region, the vault retains the same OCID that it had when you  backed up the vault.
+     * The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
      * 
      */
     @Import(name="restoredFromVaultId")
     private @Nullable Output<String> restoredFromVaultId;
 
     /**
-     * @return The OCID of the vault from which this vault was restored, if it was restored from a backup file.  If you restore a vault to the same region, the vault retains the same OCID that it had when you  backed up the vault.
+     * @return The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
      * 
      */
     public Optional<Output<String>> restoredFromVaultId() {
@@ -267,6 +299,8 @@ public final class VaultState extends com.pulumi.resources.ResourceArgs {
         this.cryptoEndpoint = $.cryptoEndpoint;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
+        this.externalKeyManagerMetadata = $.externalKeyManagerMetadata;
+        this.externalKeyManagerMetadataSummaries = $.externalKeyManagerMetadataSummaries;
         this.freeformTags = $.freeformTags;
         this.isPrimary = $.isPrimary;
         this.managementEndpoint = $.managementEndpoint;
@@ -384,6 +418,58 @@ public final class VaultState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param externalKeyManagerMetadata Metadata required for accessing External Key manager
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyManagerMetadata(@Nullable Output<VaultExternalKeyManagerMetadataArgs> externalKeyManagerMetadata) {
+            $.externalKeyManagerMetadata = externalKeyManagerMetadata;
+            return this;
+        }
+
+        /**
+         * @param externalKeyManagerMetadata Metadata required for accessing External Key manager
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyManagerMetadata(VaultExternalKeyManagerMetadataArgs externalKeyManagerMetadata) {
+            return externalKeyManagerMetadata(Output.of(externalKeyManagerMetadata));
+        }
+
+        /**
+         * @param externalKeyManagerMetadataSummaries Summary about metadata of external key manager to be returned to the customer as a response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyManagerMetadataSummaries(@Nullable Output<List<VaultExternalKeyManagerMetadataSummaryArgs>> externalKeyManagerMetadataSummaries) {
+            $.externalKeyManagerMetadataSummaries = externalKeyManagerMetadataSummaries;
+            return this;
+        }
+
+        /**
+         * @param externalKeyManagerMetadataSummaries Summary about metadata of external key manager to be returned to the customer as a response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyManagerMetadataSummaries(List<VaultExternalKeyManagerMetadataSummaryArgs> externalKeyManagerMetadataSummaries) {
+            return externalKeyManagerMetadataSummaries(Output.of(externalKeyManagerMetadataSummaries));
+        }
+
+        /**
+         * @param externalKeyManagerMetadataSummaries Summary about metadata of external key manager to be returned to the customer as a response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyManagerMetadataSummaries(VaultExternalKeyManagerMetadataSummaryArgs... externalKeyManagerMetadataSummaries) {
+            return externalKeyManagerMetadataSummaries(List.of(externalKeyManagerMetadataSummaries));
+        }
+
+        /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
@@ -405,7 +491,7 @@ public final class VaultState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isPrimary A boolean that will be true when vault is primary, and will be false when vault is a replica from a primary vault.
+         * @param isPrimary A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
          * 
          * @return builder
          * 
@@ -416,7 +502,7 @@ public final class VaultState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isPrimary A boolean that will be true when vault is primary, and will be false when vault is a replica from a primary vault.
+         * @param isPrimary A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
          * 
          * @return builder
          * 
@@ -529,7 +615,7 @@ public final class VaultState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param restoredFromVaultId The OCID of the vault from which this vault was restored, if it was restored from a backup file.  If you restore a vault to the same region, the vault retains the same OCID that it had when you  backed up the vault.
+         * @param restoredFromVaultId The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
          * 
          * @return builder
          * 
@@ -540,7 +626,7 @@ public final class VaultState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param restoredFromVaultId The OCID of the vault from which this vault was restored, if it was restored from a backup file.  If you restore a vault to the same region, the vault retains the same OCID that it had when you  backed up the vault.
+         * @param restoredFromVaultId The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
          * 
          * @return builder
          * 

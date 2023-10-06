@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,21 +41,46 @@ class CertificateAuthorityArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "certificate_authority_config", certificate_authority_config)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "kms_key_id", kms_key_id)
+        CertificateAuthorityArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_authority_config=certificate_authority_config,
+            compartment_id=compartment_id,
+            kms_key_id=kms_key_id,
+            certificate_authority_rules=certificate_authority_rules,
+            certificate_revocation_list_details=certificate_revocation_list_details,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_authority_config: pulumi.Input['CertificateAuthorityCertificateAuthorityConfigArgs'],
+             compartment_id: pulumi.Input[str],
+             kms_key_id: pulumi.Input[str],
+             certificate_authority_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]]] = None,
+             certificate_revocation_list_details: Optional[pulumi.Input['CertificateAuthorityCertificateRevocationListDetailsArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_authority_config", certificate_authority_config)
+        _setter("compartment_id", compartment_id)
+        _setter("kms_key_id", kms_key_id)
         if certificate_authority_rules is not None:
-            pulumi.set(__self__, "certificate_authority_rules", certificate_authority_rules)
+            _setter("certificate_authority_rules", certificate_authority_rules)
         if certificate_revocation_list_details is not None:
-            pulumi.set(__self__, "certificate_revocation_list_details", certificate_revocation_list_details)
+            _setter("certificate_revocation_list_details", certificate_revocation_list_details)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="certificateAuthorityConfig")
@@ -216,42 +241,85 @@ class _CertificateAuthorityState:
         :param pulumi.Input[str] time_created: A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param pulumi.Input[str] time_of_deletion: An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
+        _CertificateAuthorityState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_authority_config=certificate_authority_config,
+            certificate_authority_rules=certificate_authority_rules,
+            certificate_revocation_list_details=certificate_revocation_list_details,
+            compartment_id=compartment_id,
+            config_type=config_type,
+            current_versions=current_versions,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            issuer_certificate_authority_id=issuer_certificate_authority_id,
+            kms_key_id=kms_key_id,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            signing_algorithm=signing_algorithm,
+            state=state,
+            subjects=subjects,
+            time_created=time_created,
+            time_of_deletion=time_of_deletion,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_authority_config: Optional[pulumi.Input['CertificateAuthorityCertificateAuthorityConfigArgs']] = None,
+             certificate_authority_rules: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]]] = None,
+             certificate_revocation_list_details: Optional[pulumi.Input['CertificateAuthorityCertificateRevocationListDetailsArgs']] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             config_type: Optional[pulumi.Input[str]] = None,
+             current_versions: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCurrentVersionArgs']]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             issuer_certificate_authority_id: Optional[pulumi.Input[str]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             signing_algorithm: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subjects: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateAuthoritySubjectArgs']]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_of_deletion: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if certificate_authority_config is not None:
-            pulumi.set(__self__, "certificate_authority_config", certificate_authority_config)
+            _setter("certificate_authority_config", certificate_authority_config)
         if certificate_authority_rules is not None:
-            pulumi.set(__self__, "certificate_authority_rules", certificate_authority_rules)
+            _setter("certificate_authority_rules", certificate_authority_rules)
         if certificate_revocation_list_details is not None:
-            pulumi.set(__self__, "certificate_revocation_list_details", certificate_revocation_list_details)
+            _setter("certificate_revocation_list_details", certificate_revocation_list_details)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if config_type is not None:
-            pulumi.set(__self__, "config_type", config_type)
+            _setter("config_type", config_type)
         if current_versions is not None:
-            pulumi.set(__self__, "current_versions", current_versions)
+            _setter("current_versions", current_versions)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if issuer_certificate_authority_id is not None:
-            pulumi.set(__self__, "issuer_certificate_authority_id", issuer_certificate_authority_id)
+            _setter("issuer_certificate_authority_id", issuer_certificate_authority_id)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if signing_algorithm is not None:
-            pulumi.set(__self__, "signing_algorithm", signing_algorithm)
+            _setter("signing_algorithm", signing_algorithm)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subjects is not None:
-            pulumi.set(__self__, "subjects", subjects)
+            _setter("subjects", subjects)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_of_deletion is not None:
-            pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+            _setter("time_of_deletion", time_of_deletion)
 
     @property
     @pulumi.getter(name="certificateAuthorityConfig")
@@ -547,6 +615,10 @@ class CertificateAuthority(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CertificateAuthorityArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -570,10 +642,20 @@ class CertificateAuthority(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = CertificateAuthorityArgs.__new__(CertificateAuthorityArgs)
 
+            if certificate_authority_config is not None and not isinstance(certificate_authority_config, CertificateAuthorityCertificateAuthorityConfigArgs):
+                certificate_authority_config = certificate_authority_config or {}
+                def _setter(key, value):
+                    certificate_authority_config[key] = value
+                CertificateAuthorityCertificateAuthorityConfigArgs._configure(_setter, **certificate_authority_config)
             if certificate_authority_config is None and not opts.urn:
                 raise TypeError("Missing required property 'certificate_authority_config'")
             __props__.__dict__["certificate_authority_config"] = certificate_authority_config
             __props__.__dict__["certificate_authority_rules"] = certificate_authority_rules
+            if certificate_revocation_list_details is not None and not isinstance(certificate_revocation_list_details, CertificateAuthorityCertificateRevocationListDetailsArgs):
+                certificate_revocation_list_details = certificate_revocation_list_details or {}
+                def _setter(key, value):
+                    certificate_revocation_list_details[key] = value
+                CertificateAuthorityCertificateRevocationListDetailsArgs._configure(_setter, **certificate_revocation_list_details)
             __props__.__dict__["certificate_revocation_list_details"] = certificate_revocation_list_details
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")

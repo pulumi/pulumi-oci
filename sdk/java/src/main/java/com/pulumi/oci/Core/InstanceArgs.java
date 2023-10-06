@@ -184,17 +184,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.displayName);
     }
 
-    /**
-     * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-     * 
-     */
     @Import(name="extendedMetadata")
     private @Nullable Output<Map<String,Object>> extendedMetadata;
 
-    /**
-     * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-     * 
-     */
     public Optional<Output<Map<String,Object>>> extendedMetadata() {
         return Optional.ofNullable(this.extendedMetadata);
     }
@@ -935,23 +927,11 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
             return displayName(Output.of(displayName));
         }
 
-        /**
-         * @param extendedMetadata Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-         * 
-         * @return builder
-         * 
-         */
         public Builder extendedMetadata(@Nullable Output<Map<String,Object>> extendedMetadata) {
             $.extendedMetadata = extendedMetadata;
             return this;
         }
 
-        /**
-         * @param extendedMetadata Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-         * 
-         * @return builder
-         * 
-         */
         public Builder extendedMetadata(Map<String,Object> extendedMetadata) {
             return extendedMetadata(Output.of(extendedMetadata));
         }

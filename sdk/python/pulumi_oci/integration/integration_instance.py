@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -59,37 +59,80 @@ class IntegrationInstanceArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "integration_instance_type", integration_instance_type)
-        pulumi.set(__self__, "is_byol", is_byol)
-        pulumi.set(__self__, "message_packs", message_packs)
+        IntegrationInstanceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            integration_instance_type=integration_instance_type,
+            is_byol=is_byol,
+            message_packs=message_packs,
+            alternate_custom_endpoints=alternate_custom_endpoints,
+            consumption_model=consumption_model,
+            custom_endpoint=custom_endpoint,
+            defined_tags=defined_tags,
+            domain_id=domain_id,
+            enable_process_automation_trigger=enable_process_automation_trigger,
+            freeform_tags=freeform_tags,
+            idcs_at=idcs_at,
+            is_file_server_enabled=is_file_server_enabled,
+            is_visual_builder_enabled=is_visual_builder_enabled,
+            network_endpoint_details=network_endpoint_details,
+            shape=shape,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             integration_instance_type: pulumi.Input[str],
+             is_byol: pulumi.Input[bool],
+             message_packs: pulumi.Input[int],
+             alternate_custom_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAlternateCustomEndpointArgs']]]] = None,
+             consumption_model: Optional[pulumi.Input[str]] = None,
+             custom_endpoint: Optional[pulumi.Input['IntegrationInstanceCustomEndpointArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             domain_id: Optional[pulumi.Input[str]] = None,
+             enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             idcs_at: Optional[pulumi.Input[str]] = None,
+             is_file_server_enabled: Optional[pulumi.Input[bool]] = None,
+             is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
+             network_endpoint_details: Optional[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs']] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("integration_instance_type", integration_instance_type)
+        _setter("is_byol", is_byol)
+        _setter("message_packs", message_packs)
         if alternate_custom_endpoints is not None:
-            pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
+            _setter("alternate_custom_endpoints", alternate_custom_endpoints)
         if consumption_model is not None:
-            pulumi.set(__self__, "consumption_model", consumption_model)
+            _setter("consumption_model", consumption_model)
         if custom_endpoint is not None:
-            pulumi.set(__self__, "custom_endpoint", custom_endpoint)
+            _setter("custom_endpoint", custom_endpoint)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if domain_id is not None:
-            pulumi.set(__self__, "domain_id", domain_id)
+            _setter("domain_id", domain_id)
         if enable_process_automation_trigger is not None:
-            pulumi.set(__self__, "enable_process_automation_trigger", enable_process_automation_trigger)
+            _setter("enable_process_automation_trigger", enable_process_automation_trigger)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if idcs_at is not None:
-            pulumi.set(__self__, "idcs_at", idcs_at)
+            _setter("idcs_at", idcs_at)
         if is_file_server_enabled is not None:
-            pulumi.set(__self__, "is_file_server_enabled", is_file_server_enabled)
+            _setter("is_file_server_enabled", is_file_server_enabled)
         if is_visual_builder_enabled is not None:
-            pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
+            _setter("is_visual_builder_enabled", is_visual_builder_enabled)
         if network_endpoint_details is not None:
-            pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
+            _setter("network_endpoint_details", network_endpoint_details)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -370,54 +413,109 @@ class _IntegrationInstanceState:
         :param pulumi.Input[str] time_created: The time the the Integration Instance was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
         """
+        _IntegrationInstanceState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alternate_custom_endpoints=alternate_custom_endpoints,
+            attachments=attachments,
+            compartment_id=compartment_id,
+            consumption_model=consumption_model,
+            custom_endpoint=custom_endpoint,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            domain_id=domain_id,
+            enable_process_automation_trigger=enable_process_automation_trigger,
+            freeform_tags=freeform_tags,
+            idcs_at=idcs_at,
+            idcs_infos=idcs_infos,
+            instance_url=instance_url,
+            integration_instance_type=integration_instance_type,
+            is_byol=is_byol,
+            is_file_server_enabled=is_file_server_enabled,
+            is_visual_builder_enabled=is_visual_builder_enabled,
+            message_packs=message_packs,
+            network_endpoint_details=network_endpoint_details,
+            shape=shape,
+            state=state,
+            state_message=state_message,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alternate_custom_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAlternateCustomEndpointArgs']]]] = None,
+             attachments: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceAttachmentArgs']]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             consumption_model: Optional[pulumi.Input[str]] = None,
+             custom_endpoint: Optional[pulumi.Input['IntegrationInstanceCustomEndpointArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             domain_id: Optional[pulumi.Input[str]] = None,
+             enable_process_automation_trigger: Optional[pulumi.Input[int]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             idcs_at: Optional[pulumi.Input[str]] = None,
+             idcs_infos: Optional[pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceIdcsInfoArgs']]]] = None,
+             instance_url: Optional[pulumi.Input[str]] = None,
+             integration_instance_type: Optional[pulumi.Input[str]] = None,
+             is_byol: Optional[pulumi.Input[bool]] = None,
+             is_file_server_enabled: Optional[pulumi.Input[bool]] = None,
+             is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
+             message_packs: Optional[pulumi.Input[int]] = None,
+             network_endpoint_details: Optional[pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs']] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             state_message: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if alternate_custom_endpoints is not None:
-            pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
+            _setter("alternate_custom_endpoints", alternate_custom_endpoints)
         if attachments is not None:
-            pulumi.set(__self__, "attachments", attachments)
+            _setter("attachments", attachments)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if consumption_model is not None:
-            pulumi.set(__self__, "consumption_model", consumption_model)
+            _setter("consumption_model", consumption_model)
         if custom_endpoint is not None:
-            pulumi.set(__self__, "custom_endpoint", custom_endpoint)
+            _setter("custom_endpoint", custom_endpoint)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if domain_id is not None:
-            pulumi.set(__self__, "domain_id", domain_id)
+            _setter("domain_id", domain_id)
         if enable_process_automation_trigger is not None:
-            pulumi.set(__self__, "enable_process_automation_trigger", enable_process_automation_trigger)
+            _setter("enable_process_automation_trigger", enable_process_automation_trigger)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if idcs_at is not None:
-            pulumi.set(__self__, "idcs_at", idcs_at)
+            _setter("idcs_at", idcs_at)
         if idcs_infos is not None:
-            pulumi.set(__self__, "idcs_infos", idcs_infos)
+            _setter("idcs_infos", idcs_infos)
         if instance_url is not None:
-            pulumi.set(__self__, "instance_url", instance_url)
+            _setter("instance_url", instance_url)
         if integration_instance_type is not None:
-            pulumi.set(__self__, "integration_instance_type", integration_instance_type)
+            _setter("integration_instance_type", integration_instance_type)
         if is_byol is not None:
-            pulumi.set(__self__, "is_byol", is_byol)
+            _setter("is_byol", is_byol)
         if is_file_server_enabled is not None:
-            pulumi.set(__self__, "is_file_server_enabled", is_file_server_enabled)
+            _setter("is_file_server_enabled", is_file_server_enabled)
         if is_visual_builder_enabled is not None:
-            pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
+            _setter("is_visual_builder_enabled", is_visual_builder_enabled)
         if message_packs is not None:
-            pulumi.set(__self__, "message_packs", message_packs)
+            _setter("message_packs", message_packs)
         if network_endpoint_details is not None:
-            pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
+            _setter("network_endpoint_details", network_endpoint_details)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if state_message is not None:
-            pulumi.set(__self__, "state_message", state_message)
+            _setter("state_message", state_message)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="alternateCustomEndpoints")
@@ -891,6 +989,10 @@ class IntegrationInstance(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            IntegrationInstanceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -928,6 +1030,11 @@ class IntegrationInstance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["consumption_model"] = consumption_model
+            if custom_endpoint is not None and not isinstance(custom_endpoint, IntegrationInstanceCustomEndpointArgs):
+                custom_endpoint = custom_endpoint or {}
+                def _setter(key, value):
+                    custom_endpoint[key] = value
+                IntegrationInstanceCustomEndpointArgs._configure(_setter, **custom_endpoint)
             __props__.__dict__["custom_endpoint"] = custom_endpoint
             __props__.__dict__["defined_tags"] = defined_tags
             if display_name is None and not opts.urn:
@@ -948,6 +1055,11 @@ class IntegrationInstance(pulumi.CustomResource):
             if message_packs is None and not opts.urn:
                 raise TypeError("Missing required property 'message_packs'")
             __props__.__dict__["message_packs"] = message_packs
+            if network_endpoint_details is not None and not isinstance(network_endpoint_details, IntegrationInstanceNetworkEndpointDetailsArgs):
+                network_endpoint_details = network_endpoint_details or {}
+                def _setter(key, value):
+                    network_endpoint_details[key] = value
+                IntegrationInstanceNetworkEndpointDetailsArgs._configure(_setter, **network_endpoint_details)
             __props__.__dict__["network_endpoint_details"] = network_endpoint_details
             __props__.__dict__["shape"] = shape
             __props__.__dict__["state"] = state

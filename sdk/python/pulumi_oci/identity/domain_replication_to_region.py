@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['DomainReplicationToRegionArgs', 'DomainReplicationToRegion']
@@ -25,9 +25,20 @@ class DomainReplicationToRegionArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "domain_id", domain_id)
+        DomainReplicationToRegionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            domain_id=domain_id,
+            replica_region=replica_region,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             domain_id: pulumi.Input[str],
+             replica_region: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("domain_id", domain_id)
         if replica_region is not None:
-            pulumi.set(__self__, "replica_region", replica_region)
+            _setter("replica_region", replica_region)
 
     @property
     @pulumi.getter(name="domainId")
@@ -72,10 +83,21 @@ class _DomainReplicationToRegionState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _DomainReplicationToRegionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            domain_id=domain_id,
+            replica_region=replica_region,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             domain_id: Optional[pulumi.Input[str]] = None,
+             replica_region: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if domain_id is not None:
-            pulumi.set(__self__, "domain_id", domain_id)
+            _setter("domain_id", domain_id)
         if replica_region is not None:
-            pulumi.set(__self__, "replica_region", replica_region)
+            _setter("replica_region", replica_region)
 
     @property
     @pulumi.getter(name="domainId")
@@ -203,6 +225,10 @@ class DomainReplicationToRegion(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DomainReplicationToRegionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

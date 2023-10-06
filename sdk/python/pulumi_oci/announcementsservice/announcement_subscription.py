@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,21 +41,46 @@ class AnnouncementSubscriptionArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "ons_topic_id", ons_topic_id)
+        AnnouncementSubscriptionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            ons_topic_id=ons_topic_id,
+            defined_tags=defined_tags,
+            description=description,
+            filter_groups=filter_groups,
+            freeform_tags=freeform_tags,
+            preferred_language=preferred_language,
+            preferred_time_zone=preferred_time_zone,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             ons_topic_id: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             filter_groups: Optional[pulumi.Input['AnnouncementSubscriptionFilterGroupsArgs']] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             preferred_language: Optional[pulumi.Input[str]] = None,
+             preferred_time_zone: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("ons_topic_id", ons_topic_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if filter_groups is not None:
-            pulumi.set(__self__, "filter_groups", filter_groups)
+            _setter("filter_groups", filter_groups)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if preferred_language is not None:
-            pulumi.set(__self__, "preferred_language", preferred_language)
+            _setter("preferred_language", preferred_language)
         if preferred_time_zone is not None:
-            pulumi.set(__self__, "preferred_time_zone", preferred_time_zone)
+            _setter("preferred_time_zone", preferred_time_zone)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -208,34 +233,69 @@ class _AnnouncementSubscriptionState:
         :param pulumi.Input[str] time_created: The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         :param pulumi.Input[str] time_updated: The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         """
+        _AnnouncementSubscriptionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            filter_groups=filter_groups,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            ons_topic_id=ons_topic_id,
+            preferred_language=preferred_language,
+            preferred_time_zone=preferred_time_zone,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             filter_groups: Optional[pulumi.Input['AnnouncementSubscriptionFilterGroupsArgs']] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             ons_topic_id: Optional[pulumi.Input[str]] = None,
+             preferred_language: Optional[pulumi.Input[str]] = None,
+             preferred_time_zone: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if filter_groups is not None:
-            pulumi.set(__self__, "filter_groups", filter_groups)
+            _setter("filter_groups", filter_groups)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if ons_topic_id is not None:
-            pulumi.set(__self__, "ons_topic_id", ons_topic_id)
+            _setter("ons_topic_id", ons_topic_id)
         if preferred_language is not None:
-            pulumi.set(__self__, "preferred_language", preferred_language)
+            _setter("preferred_language", preferred_language)
         if preferred_time_zone is not None:
-            pulumi.set(__self__, "preferred_time_zone", preferred_time_zone)
+            _setter("preferred_time_zone", preferred_time_zone)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -541,6 +601,10 @@ class AnnouncementSubscription(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AnnouncementSubscriptionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -572,6 +636,11 @@ class AnnouncementSubscription(pulumi.CustomResource):
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
+            if filter_groups is not None and not isinstance(filter_groups, AnnouncementSubscriptionFilterGroupsArgs):
+                filter_groups = filter_groups or {}
+                def _setter(key, value):
+                    filter_groups[key] = value
+                AnnouncementSubscriptionFilterGroupsArgs._configure(_setter, **filter_groups)
             __props__.__dict__["filter_groups"] = filter_groups
             __props__.__dict__["freeform_tags"] = freeform_tags
             if ons_topic_id is None and not opts.urn:

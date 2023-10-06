@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -29,11 +29,24 @@ class DrgAttachmentsListArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "drg_id", drg_id)
+        DrgAttachmentsListArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            drg_id=drg_id,
+            attachment_type=attachment_type,
+            is_cross_tenancy=is_cross_tenancy,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             drg_id: pulumi.Input[str],
+             attachment_type: Optional[pulumi.Input[str]] = None,
+             is_cross_tenancy: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("drg_id", drg_id)
         if attachment_type is not None:
-            pulumi.set(__self__, "attachment_type", attachment_type)
+            _setter("attachment_type", attachment_type)
         if is_cross_tenancy is not None:
-            pulumi.set(__self__, "is_cross_tenancy", is_cross_tenancy)
+            _setter("is_cross_tenancy", is_cross_tenancy)
 
     @property
     @pulumi.getter(name="drgId")
@@ -94,14 +107,29 @@ class _DrgAttachmentsListState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _DrgAttachmentsListState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            attachment_type=attachment_type,
+            drg_all_attachments=drg_all_attachments,
+            drg_id=drg_id,
+            is_cross_tenancy=is_cross_tenancy,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             attachment_type: Optional[pulumi.Input[str]] = None,
+             drg_all_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['DrgAttachmentsListDrgAllAttachmentArgs']]]] = None,
+             drg_id: Optional[pulumi.Input[str]] = None,
+             is_cross_tenancy: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if attachment_type is not None:
-            pulumi.set(__self__, "attachment_type", attachment_type)
+            _setter("attachment_type", attachment_type)
         if drg_all_attachments is not None:
-            pulumi.set(__self__, "drg_all_attachments", drg_all_attachments)
+            _setter("drg_all_attachments", drg_all_attachments)
         if drg_id is not None:
-            pulumi.set(__self__, "drg_id", drg_id)
+            _setter("drg_id", drg_id)
         if is_cross_tenancy is not None:
-            pulumi.set(__self__, "is_cross_tenancy", is_cross_tenancy)
+            _setter("is_cross_tenancy", is_cross_tenancy)
 
     @property
     @pulumi.getter(name="attachmentType")
@@ -233,6 +261,10 @@ class DrgAttachmentsList(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DrgAttachmentsListArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

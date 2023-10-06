@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Mysql.inputs.GetReplicasFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -29,6 +30,21 @@ public final class GetReplicasPlainArgs extends com.pulumi.resources.InvokeArgs 
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+
+    /**
+     * The requested Configuration instance.
+     * 
+     */
+    @Import(name="configurationId")
+    private @Nullable String configurationId;
+
+    /**
+     * @return The requested Configuration instance.
+     * 
+     */
+    public Optional<String> configurationId() {
+        return Optional.ofNullable(this.configurationId);
     }
 
     /**
@@ -69,6 +85,21 @@ public final class GetReplicasPlainArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
+     * Filter instances if they are using the latest revision of the Configuration they are associated with.
+     * 
+     */
+    @Import(name="isUpToDate")
+    private @Nullable Boolean isUpToDate;
+
+    /**
+     * @return Filter instances if they are using the latest revision of the Configuration they are associated with.
+     * 
+     */
+    public Optional<Boolean> isUpToDate() {
+        return Optional.ofNullable(this.isUpToDate);
+    }
+
+    /**
      * The read replica [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -102,9 +133,11 @@ public final class GetReplicasPlainArgs extends com.pulumi.resources.InvokeArgs 
 
     private GetReplicasPlainArgs(GetReplicasPlainArgs $) {
         this.compartmentId = $.compartmentId;
+        this.configurationId = $.configurationId;
         this.dbSystemId = $.dbSystemId;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.isUpToDate = $.isUpToDate;
         this.replicaId = $.replicaId;
         this.state = $.state;
     }
@@ -139,6 +172,17 @@ public final class GetReplicasPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
+         * @param configurationId The requested Configuration instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configurationId(@Nullable String configurationId) {
+            $.configurationId = configurationId;
+            return this;
+        }
+
+        /**
          * @param dbSystemId The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
@@ -167,6 +211,17 @@ public final class GetReplicasPlainArgs extends com.pulumi.resources.InvokeArgs 
 
         public Builder filters(GetReplicasFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param isUpToDate Filter instances if they are using the latest revision of the Configuration they are associated with.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isUpToDate(@Nullable Boolean isUpToDate) {
+            $.isUpToDate = isUpToDate;
+            return this;
         }
 
         /**

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ClusterArgs', 'Cluster']
@@ -75,41 +75,102 @@ class ClusterArgs:
         :param pulumi.Input[str] security_mode: (Updatable) The security mode of the cluster.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "data_node_count", data_node_count)
-        pulumi.set(__self__, "data_node_host_memory_gb", data_node_host_memory_gb)
-        pulumi.set(__self__, "data_node_host_ocpu_count", data_node_host_ocpu_count)
-        pulumi.set(__self__, "data_node_host_type", data_node_host_type)
-        pulumi.set(__self__, "data_node_storage_gb", data_node_storage_gb)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "master_node_count", master_node_count)
-        pulumi.set(__self__, "master_node_host_memory_gb", master_node_host_memory_gb)
-        pulumi.set(__self__, "master_node_host_ocpu_count", master_node_host_ocpu_count)
-        pulumi.set(__self__, "master_node_host_type", master_node_host_type)
-        pulumi.set(__self__, "opendashboard_node_count", opendashboard_node_count)
-        pulumi.set(__self__, "opendashboard_node_host_memory_gb", opendashboard_node_host_memory_gb)
-        pulumi.set(__self__, "opendashboard_node_host_ocpu_count", opendashboard_node_host_ocpu_count)
-        pulumi.set(__self__, "software_version", software_version)
-        pulumi.set(__self__, "subnet_compartment_id", subnet_compartment_id)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "vcn_compartment_id", vcn_compartment_id)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        ClusterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            data_node_count=data_node_count,
+            data_node_host_memory_gb=data_node_host_memory_gb,
+            data_node_host_ocpu_count=data_node_host_ocpu_count,
+            data_node_host_type=data_node_host_type,
+            data_node_storage_gb=data_node_storage_gb,
+            display_name=display_name,
+            master_node_count=master_node_count,
+            master_node_host_memory_gb=master_node_host_memory_gb,
+            master_node_host_ocpu_count=master_node_host_ocpu_count,
+            master_node_host_type=master_node_host_type,
+            opendashboard_node_count=opendashboard_node_count,
+            opendashboard_node_host_memory_gb=opendashboard_node_host_memory_gb,
+            opendashboard_node_host_ocpu_count=opendashboard_node_host_ocpu_count,
+            software_version=software_version,
+            subnet_compartment_id=subnet_compartment_id,
+            subnet_id=subnet_id,
+            vcn_compartment_id=vcn_compartment_id,
+            vcn_id=vcn_id,
+            data_node_host_bare_metal_shape=data_node_host_bare_metal_shape,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            master_node_host_bare_metal_shape=master_node_host_bare_metal_shape,
+            security_master_user_name=security_master_user_name,
+            security_master_user_password_hash=security_master_user_password_hash,
+            security_mode=security_mode,
+            system_tags=system_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             data_node_count: pulumi.Input[int],
+             data_node_host_memory_gb: pulumi.Input[int],
+             data_node_host_ocpu_count: pulumi.Input[int],
+             data_node_host_type: pulumi.Input[str],
+             data_node_storage_gb: pulumi.Input[int],
+             display_name: pulumi.Input[str],
+             master_node_count: pulumi.Input[int],
+             master_node_host_memory_gb: pulumi.Input[int],
+             master_node_host_ocpu_count: pulumi.Input[int],
+             master_node_host_type: pulumi.Input[str],
+             opendashboard_node_count: pulumi.Input[int],
+             opendashboard_node_host_memory_gb: pulumi.Input[int],
+             opendashboard_node_host_ocpu_count: pulumi.Input[int],
+             software_version: pulumi.Input[str],
+             subnet_compartment_id: pulumi.Input[str],
+             subnet_id: pulumi.Input[str],
+             vcn_compartment_id: pulumi.Input[str],
+             vcn_id: pulumi.Input[str],
+             data_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             master_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
+             security_master_user_name: Optional[pulumi.Input[str]] = None,
+             security_master_user_password_hash: Optional[pulumi.Input[str]] = None,
+             security_mode: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("data_node_count", data_node_count)
+        _setter("data_node_host_memory_gb", data_node_host_memory_gb)
+        _setter("data_node_host_ocpu_count", data_node_host_ocpu_count)
+        _setter("data_node_host_type", data_node_host_type)
+        _setter("data_node_storage_gb", data_node_storage_gb)
+        _setter("display_name", display_name)
+        _setter("master_node_count", master_node_count)
+        _setter("master_node_host_memory_gb", master_node_host_memory_gb)
+        _setter("master_node_host_ocpu_count", master_node_host_ocpu_count)
+        _setter("master_node_host_type", master_node_host_type)
+        _setter("opendashboard_node_count", opendashboard_node_count)
+        _setter("opendashboard_node_host_memory_gb", opendashboard_node_host_memory_gb)
+        _setter("opendashboard_node_host_ocpu_count", opendashboard_node_host_ocpu_count)
+        _setter("software_version", software_version)
+        _setter("subnet_compartment_id", subnet_compartment_id)
+        _setter("subnet_id", subnet_id)
+        _setter("vcn_compartment_id", vcn_compartment_id)
+        _setter("vcn_id", vcn_id)
         if data_node_host_bare_metal_shape is not None:
-            pulumi.set(__self__, "data_node_host_bare_metal_shape", data_node_host_bare_metal_shape)
+            _setter("data_node_host_bare_metal_shape", data_node_host_bare_metal_shape)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if master_node_host_bare_metal_shape is not None:
-            pulumi.set(__self__, "master_node_host_bare_metal_shape", master_node_host_bare_metal_shape)
+            _setter("master_node_host_bare_metal_shape", master_node_host_bare_metal_shape)
         if security_master_user_name is not None:
-            pulumi.set(__self__, "security_master_user_name", security_master_user_name)
+            _setter("security_master_user_name", security_master_user_name)
         if security_master_user_password_hash is not None:
-            pulumi.set(__self__, "security_master_user_password_hash", security_master_user_password_hash)
+            _setter("security_master_user_password_hash", security_master_user_password_hash)
         if security_mode is not None:
-            pulumi.set(__self__, "security_mode", security_mode)
+            _setter("security_mode", security_mode)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -528,84 +589,169 @@ class _ClusterState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _ClusterState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domains=availability_domains,
+            compartment_id=compartment_id,
+            data_node_count=data_node_count,
+            data_node_host_bare_metal_shape=data_node_host_bare_metal_shape,
+            data_node_host_memory_gb=data_node_host_memory_gb,
+            data_node_host_ocpu_count=data_node_host_ocpu_count,
+            data_node_host_type=data_node_host_type,
+            data_node_storage_gb=data_node_storage_gb,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            fqdn=fqdn,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            master_node_count=master_node_count,
+            master_node_host_bare_metal_shape=master_node_host_bare_metal_shape,
+            master_node_host_memory_gb=master_node_host_memory_gb,
+            master_node_host_ocpu_count=master_node_host_ocpu_count,
+            master_node_host_type=master_node_host_type,
+            opendashboard_fqdn=opendashboard_fqdn,
+            opendashboard_node_count=opendashboard_node_count,
+            opendashboard_node_host_memory_gb=opendashboard_node_host_memory_gb,
+            opendashboard_node_host_ocpu_count=opendashboard_node_host_ocpu_count,
+            opendashboard_private_ip=opendashboard_private_ip,
+            opensearch_fqdn=opensearch_fqdn,
+            opensearch_private_ip=opensearch_private_ip,
+            security_master_user_name=security_master_user_name,
+            security_master_user_password_hash=security_master_user_password_hash,
+            security_mode=security_mode,
+            software_version=software_version,
+            state=state,
+            subnet_compartment_id=subnet_compartment_id,
+            subnet_id=subnet_id,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_deleted=time_deleted,
+            time_updated=time_updated,
+            total_storage_gb=total_storage_gb,
+            vcn_compartment_id=vcn_compartment_id,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             data_node_count: Optional[pulumi.Input[int]] = None,
+             data_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
+             data_node_host_memory_gb: Optional[pulumi.Input[int]] = None,
+             data_node_host_ocpu_count: Optional[pulumi.Input[int]] = None,
+             data_node_host_type: Optional[pulumi.Input[str]] = None,
+             data_node_storage_gb: Optional[pulumi.Input[int]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             fqdn: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             master_node_count: Optional[pulumi.Input[int]] = None,
+             master_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
+             master_node_host_memory_gb: Optional[pulumi.Input[int]] = None,
+             master_node_host_ocpu_count: Optional[pulumi.Input[int]] = None,
+             master_node_host_type: Optional[pulumi.Input[str]] = None,
+             opendashboard_fqdn: Optional[pulumi.Input[str]] = None,
+             opendashboard_node_count: Optional[pulumi.Input[int]] = None,
+             opendashboard_node_host_memory_gb: Optional[pulumi.Input[int]] = None,
+             opendashboard_node_host_ocpu_count: Optional[pulumi.Input[int]] = None,
+             opendashboard_private_ip: Optional[pulumi.Input[str]] = None,
+             opensearch_fqdn: Optional[pulumi.Input[str]] = None,
+             opensearch_private_ip: Optional[pulumi.Input[str]] = None,
+             security_master_user_name: Optional[pulumi.Input[str]] = None,
+             security_master_user_password_hash: Optional[pulumi.Input[str]] = None,
+             security_mode: Optional[pulumi.Input[str]] = None,
+             software_version: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subnet_compartment_id: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_deleted: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             total_storage_gb: Optional[pulumi.Input[int]] = None,
+             vcn_compartment_id: Optional[pulumi.Input[str]] = None,
+             vcn_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if availability_domains is not None:
-            pulumi.set(__self__, "availability_domains", availability_domains)
+            _setter("availability_domains", availability_domains)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if data_node_count is not None:
-            pulumi.set(__self__, "data_node_count", data_node_count)
+            _setter("data_node_count", data_node_count)
         if data_node_host_bare_metal_shape is not None:
-            pulumi.set(__self__, "data_node_host_bare_metal_shape", data_node_host_bare_metal_shape)
+            _setter("data_node_host_bare_metal_shape", data_node_host_bare_metal_shape)
         if data_node_host_memory_gb is not None:
-            pulumi.set(__self__, "data_node_host_memory_gb", data_node_host_memory_gb)
+            _setter("data_node_host_memory_gb", data_node_host_memory_gb)
         if data_node_host_ocpu_count is not None:
-            pulumi.set(__self__, "data_node_host_ocpu_count", data_node_host_ocpu_count)
+            _setter("data_node_host_ocpu_count", data_node_host_ocpu_count)
         if data_node_host_type is not None:
-            pulumi.set(__self__, "data_node_host_type", data_node_host_type)
+            _setter("data_node_host_type", data_node_host_type)
         if data_node_storage_gb is not None:
-            pulumi.set(__self__, "data_node_storage_gb", data_node_storage_gb)
+            _setter("data_node_storage_gb", data_node_storage_gb)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if fqdn is not None:
-            pulumi.set(__self__, "fqdn", fqdn)
+            _setter("fqdn", fqdn)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if master_node_count is not None:
-            pulumi.set(__self__, "master_node_count", master_node_count)
+            _setter("master_node_count", master_node_count)
         if master_node_host_bare_metal_shape is not None:
-            pulumi.set(__self__, "master_node_host_bare_metal_shape", master_node_host_bare_metal_shape)
+            _setter("master_node_host_bare_metal_shape", master_node_host_bare_metal_shape)
         if master_node_host_memory_gb is not None:
-            pulumi.set(__self__, "master_node_host_memory_gb", master_node_host_memory_gb)
+            _setter("master_node_host_memory_gb", master_node_host_memory_gb)
         if master_node_host_ocpu_count is not None:
-            pulumi.set(__self__, "master_node_host_ocpu_count", master_node_host_ocpu_count)
+            _setter("master_node_host_ocpu_count", master_node_host_ocpu_count)
         if master_node_host_type is not None:
-            pulumi.set(__self__, "master_node_host_type", master_node_host_type)
+            _setter("master_node_host_type", master_node_host_type)
         if opendashboard_fqdn is not None:
-            pulumi.set(__self__, "opendashboard_fqdn", opendashboard_fqdn)
+            _setter("opendashboard_fqdn", opendashboard_fqdn)
         if opendashboard_node_count is not None:
-            pulumi.set(__self__, "opendashboard_node_count", opendashboard_node_count)
+            _setter("opendashboard_node_count", opendashboard_node_count)
         if opendashboard_node_host_memory_gb is not None:
-            pulumi.set(__self__, "opendashboard_node_host_memory_gb", opendashboard_node_host_memory_gb)
+            _setter("opendashboard_node_host_memory_gb", opendashboard_node_host_memory_gb)
         if opendashboard_node_host_ocpu_count is not None:
-            pulumi.set(__self__, "opendashboard_node_host_ocpu_count", opendashboard_node_host_ocpu_count)
+            _setter("opendashboard_node_host_ocpu_count", opendashboard_node_host_ocpu_count)
         if opendashboard_private_ip is not None:
-            pulumi.set(__self__, "opendashboard_private_ip", opendashboard_private_ip)
+            _setter("opendashboard_private_ip", opendashboard_private_ip)
         if opensearch_fqdn is not None:
-            pulumi.set(__self__, "opensearch_fqdn", opensearch_fqdn)
+            _setter("opensearch_fqdn", opensearch_fqdn)
         if opensearch_private_ip is not None:
-            pulumi.set(__self__, "opensearch_private_ip", opensearch_private_ip)
+            _setter("opensearch_private_ip", opensearch_private_ip)
         if security_master_user_name is not None:
-            pulumi.set(__self__, "security_master_user_name", security_master_user_name)
+            _setter("security_master_user_name", security_master_user_name)
         if security_master_user_password_hash is not None:
-            pulumi.set(__self__, "security_master_user_password_hash", security_master_user_password_hash)
+            _setter("security_master_user_password_hash", security_master_user_password_hash)
         if security_mode is not None:
-            pulumi.set(__self__, "security_mode", security_mode)
+            _setter("security_mode", security_mode)
         if software_version is not None:
-            pulumi.set(__self__, "software_version", software_version)
+            _setter("software_version", software_version)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subnet_compartment_id is not None:
-            pulumi.set(__self__, "subnet_compartment_id", subnet_compartment_id)
+            _setter("subnet_compartment_id", subnet_compartment_id)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_deleted is not None:
-            pulumi.set(__self__, "time_deleted", time_deleted)
+            _setter("time_deleted", time_deleted)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if total_storage_gb is not None:
-            pulumi.set(__self__, "total_storage_gb", total_storage_gb)
+            _setter("total_storage_gb", total_storage_gb)
         if vcn_compartment_id is not None:
-            pulumi.set(__self__, "vcn_compartment_id", vcn_compartment_id)
+            _setter("vcn_compartment_id", vcn_compartment_id)
         if vcn_id is not None:
-            pulumi.set(__self__, "vcn_id", vcn_id)
+            _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="availabilityDomains")
@@ -1293,6 +1439,10 @@ class Cluster(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ClusterArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

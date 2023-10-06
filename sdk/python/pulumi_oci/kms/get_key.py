@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -22,7 +22,7 @@ class GetKeyResult:
     """
     A collection of values returned by getKey.
     """
-    def __init__(__self__, compartment_id=None, current_key_version=None, defined_tags=None, desired_state=None, display_name=None, freeform_tags=None, id=None, is_primary=None, key_id=None, key_shapes=None, management_endpoint=None, protection_mode=None, replica_details=None, restore_from_files=None, restore_from_object_stores=None, restore_trigger=None, restored_from_key_id=None, state=None, time_created=None, time_of_deletion=None, vault_id=None):
+    def __init__(__self__, compartment_id=None, current_key_version=None, defined_tags=None, desired_state=None, display_name=None, external_key_reference_details=None, external_key_references=None, freeform_tags=None, id=None, is_primary=None, key_id=None, key_shapes=None, management_endpoint=None, protection_mode=None, replica_details=None, restore_from_files=None, restore_from_object_stores=None, restore_trigger=None, restored_from_key_id=None, state=None, time_created=None, time_of_deletion=None, vault_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -38,6 +38,12 @@ class GetKeyResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if external_key_reference_details and not isinstance(external_key_reference_details, list):
+            raise TypeError("Expected argument 'external_key_reference_details' to be a list")
+        pulumi.set(__self__, "external_key_reference_details", external_key_reference_details)
+        if external_key_references and not isinstance(external_key_references, list):
+            raise TypeError("Expected argument 'external_key_references' to be a list")
+        pulumi.set(__self__, "external_key_references", external_key_references)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -125,6 +131,19 @@ class GetKeyResult:
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="externalKeyReferenceDetails")
+    def external_key_reference_details(self) -> Sequence['outputs.GetKeyExternalKeyReferenceDetailResult']:
+        """
+        Key reference data to be returned to the customer as a response.
+        """
+        return pulumi.get(self, "external_key_reference_details")
+
+    @property
+    @pulumi.getter(name="externalKeyReferences")
+    def external_key_references(self) -> Sequence['outputs.GetKeyExternalKeyReferenceResult']:
+        return pulumi.get(self, "external_key_references")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
@@ -144,7 +163,7 @@ class GetKeyResult:
     @pulumi.getter(name="isPrimary")
     def is_primary(self) -> bool:
         """
-        A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+        A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
         """
         return pulumi.get(self, "is_primary")
 
@@ -170,7 +189,7 @@ class GetKeyResult:
     @pulumi.getter(name="protectionMode")
     def protection_mode(self) -> str:
         """
-        The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+        The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key.  All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
         """
         return pulumi.get(self, "protection_mode")
 
@@ -258,6 +277,8 @@ class AwaitableGetKeyResult(GetKeyResult):
             defined_tags=self.defined_tags,
             desired_state=self.desired_state,
             display_name=self.display_name,
+            external_key_reference_details=self.external_key_reference_details,
+            external_key_references=self.external_key_references,
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_primary=self.is_primary,
@@ -315,6 +336,8 @@ def get_key(key_id: Optional[str] = None,
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         desired_state=pulumi.get(__ret__, 'desired_state'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        external_key_reference_details=pulumi.get(__ret__, 'external_key_reference_details'),
+        external_key_references=pulumi.get(__ret__, 'external_key_references'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_primary=pulumi.get(__ret__, 'is_primary'),

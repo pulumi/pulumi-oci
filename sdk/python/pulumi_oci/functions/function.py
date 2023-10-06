@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -45,27 +45,58 @@ class FunctionArgs:
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout for executions of the function. Value in seconds.
         :param pulumi.Input['FunctionTraceConfigArgs'] trace_config: (Updatable) Define the tracing configuration for a function.
         """
-        pulumi.set(__self__, "application_id", application_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "memory_in_mbs", memory_in_mbs)
+        FunctionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            application_id=application_id,
+            display_name=display_name,
+            memory_in_mbs=memory_in_mbs,
+            config=config,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            image=image,
+            image_digest=image_digest,
+            provisioned_concurrency_config=provisioned_concurrency_config,
+            source_details=source_details,
+            timeout_in_seconds=timeout_in_seconds,
+            trace_config=trace_config,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             application_id: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             memory_in_mbs: pulumi.Input[str],
+             config: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             image: Optional[pulumi.Input[str]] = None,
+             image_digest: Optional[pulumi.Input[str]] = None,
+             provisioned_concurrency_config: Optional[pulumi.Input['FunctionProvisionedConcurrencyConfigArgs']] = None,
+             source_details: Optional[pulumi.Input['FunctionSourceDetailsArgs']] = None,
+             timeout_in_seconds: Optional[pulumi.Input[int]] = None,
+             trace_config: Optional[pulumi.Input['FunctionTraceConfigArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("application_id", application_id)
+        _setter("display_name", display_name)
+        _setter("memory_in_mbs", memory_in_mbs)
         if config is not None:
-            pulumi.set(__self__, "config", config)
+            _setter("config", config)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if image is not None:
-            pulumi.set(__self__, "image", image)
+            _setter("image", image)
         if image_digest is not None:
-            pulumi.set(__self__, "image_digest", image_digest)
+            _setter("image_digest", image_digest)
         if provisioned_concurrency_config is not None:
-            pulumi.set(__self__, "provisioned_concurrency_config", provisioned_concurrency_config)
+            _setter("provisioned_concurrency_config", provisioned_concurrency_config)
         if source_details is not None:
-            pulumi.set(__self__, "source_details", source_details)
+            _setter("source_details", source_details)
         if timeout_in_seconds is not None:
-            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+            _setter("timeout_in_seconds", timeout_in_seconds)
         if trace_config is not None:
-            pulumi.set(__self__, "trace_config", trace_config)
+            _setter("trace_config", trace_config)
 
     @property
     @pulumi.getter(name="applicationId")
@@ -258,42 +289,85 @@ class _FunctionState:
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout for executions of the function. Value in seconds.
         :param pulumi.Input['FunctionTraceConfigArgs'] trace_config: (Updatable) Define the tracing configuration for a function.
         """
+        _FunctionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            application_id=application_id,
+            compartment_id=compartment_id,
+            config=config,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            image=image,
+            image_digest=image_digest,
+            invoke_endpoint=invoke_endpoint,
+            memory_in_mbs=memory_in_mbs,
+            provisioned_concurrency_config=provisioned_concurrency_config,
+            shape=shape,
+            source_details=source_details,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+            timeout_in_seconds=timeout_in_seconds,
+            trace_config=trace_config,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             application_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             config: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             image: Optional[pulumi.Input[str]] = None,
+             image_digest: Optional[pulumi.Input[str]] = None,
+             invoke_endpoint: Optional[pulumi.Input[str]] = None,
+             memory_in_mbs: Optional[pulumi.Input[str]] = None,
+             provisioned_concurrency_config: Optional[pulumi.Input['FunctionProvisionedConcurrencyConfigArgs']] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             source_details: Optional[pulumi.Input['FunctionSourceDetailsArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             timeout_in_seconds: Optional[pulumi.Input[int]] = None,
+             trace_config: Optional[pulumi.Input['FunctionTraceConfigArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if application_id is not None:
-            pulumi.set(__self__, "application_id", application_id)
+            _setter("application_id", application_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if config is not None:
-            pulumi.set(__self__, "config", config)
+            _setter("config", config)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if image is not None:
-            pulumi.set(__self__, "image", image)
+            _setter("image", image)
         if image_digest is not None:
-            pulumi.set(__self__, "image_digest", image_digest)
+            _setter("image_digest", image_digest)
         if invoke_endpoint is not None:
-            pulumi.set(__self__, "invoke_endpoint", invoke_endpoint)
+            _setter("invoke_endpoint", invoke_endpoint)
         if memory_in_mbs is not None:
-            pulumi.set(__self__, "memory_in_mbs", memory_in_mbs)
+            _setter("memory_in_mbs", memory_in_mbs)
         if provisioned_concurrency_config is not None:
-            pulumi.set(__self__, "provisioned_concurrency_config", provisioned_concurrency_config)
+            _setter("provisioned_concurrency_config", provisioned_concurrency_config)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if source_details is not None:
-            pulumi.set(__self__, "source_details", source_details)
+            _setter("source_details", source_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if timeout_in_seconds is not None:
-            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+            _setter("timeout_in_seconds", timeout_in_seconds)
         if trace_config is not None:
-            pulumi.set(__self__, "trace_config", trace_config)
+            _setter("trace_config", trace_config)
 
     @property
     @pulumi.getter(name="applicationId")
@@ -657,6 +731,10 @@ class Function(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            FunctionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -697,9 +775,24 @@ class Function(pulumi.CustomResource):
             if memory_in_mbs is None and not opts.urn:
                 raise TypeError("Missing required property 'memory_in_mbs'")
             __props__.__dict__["memory_in_mbs"] = memory_in_mbs
+            if provisioned_concurrency_config is not None and not isinstance(provisioned_concurrency_config, FunctionProvisionedConcurrencyConfigArgs):
+                provisioned_concurrency_config = provisioned_concurrency_config or {}
+                def _setter(key, value):
+                    provisioned_concurrency_config[key] = value
+                FunctionProvisionedConcurrencyConfigArgs._configure(_setter, **provisioned_concurrency_config)
             __props__.__dict__["provisioned_concurrency_config"] = provisioned_concurrency_config
+            if source_details is not None and not isinstance(source_details, FunctionSourceDetailsArgs):
+                source_details = source_details or {}
+                def _setter(key, value):
+                    source_details[key] = value
+                FunctionSourceDetailsArgs._configure(_setter, **source_details)
             __props__.__dict__["source_details"] = source_details
             __props__.__dict__["timeout_in_seconds"] = timeout_in_seconds
+            if trace_config is not None and not isinstance(trace_config, FunctionTraceConfigArgs):
+                trace_config = trace_config or {}
+                def _setter(key, value):
+                    trace_config[key] = value
+                FunctionTraceConfigArgs._configure(_setter, **trace_config)
             __props__.__dict__["trace_config"] = trace_config
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["invoke_endpoint"] = None

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -47,30 +47,61 @@ class VolumeAttachmentArgs:
         :param pulumi.Input[bool] is_shareable: Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
         :param pulumi.Input[bool] use_chap: Whether to use CHAP authentication for the volume attachment. Defaults to false.
         """
-        pulumi.set(__self__, "attachment_type", attachment_type)
-        pulumi.set(__self__, "instance_id", instance_id)
-        pulumi.set(__self__, "volume_id", volume_id)
+        VolumeAttachmentArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            attachment_type=attachment_type,
+            instance_id=instance_id,
+            volume_id=volume_id,
+            compartment_id=compartment_id,
+            device=device,
+            display_name=display_name,
+            encryption_in_transit_type=encryption_in_transit_type,
+            is_agent_auto_iscsi_login_enabled=is_agent_auto_iscsi_login_enabled,
+            is_pv_encryption_in_transit_enabled=is_pv_encryption_in_transit_enabled,
+            is_read_only=is_read_only,
+            is_shareable=is_shareable,
+            use_chap=use_chap,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             attachment_type: pulumi.Input[str],
+             instance_id: pulumi.Input[str],
+             volume_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             device: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             encryption_in_transit_type: Optional[pulumi.Input[str]] = None,
+             is_agent_auto_iscsi_login_enabled: Optional[pulumi.Input[bool]] = None,
+             is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
+             is_read_only: Optional[pulumi.Input[bool]] = None,
+             is_shareable: Optional[pulumi.Input[bool]] = None,
+             use_chap: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("attachment_type", attachment_type)
+        _setter("instance_id", instance_id)
+        _setter("volume_id", volume_id)
         if compartment_id is not None:
             warnings.warn("""The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
             pulumi.log.warn("""compartment_id is deprecated: The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""")
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if device is not None:
-            pulumi.set(__self__, "device", device)
+            _setter("device", device)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if encryption_in_transit_type is not None:
-            pulumi.set(__self__, "encryption_in_transit_type", encryption_in_transit_type)
+            _setter("encryption_in_transit_type", encryption_in_transit_type)
         if is_agent_auto_iscsi_login_enabled is not None:
-            pulumi.set(__self__, "is_agent_auto_iscsi_login_enabled", is_agent_auto_iscsi_login_enabled)
+            _setter("is_agent_auto_iscsi_login_enabled", is_agent_auto_iscsi_login_enabled)
         if is_pv_encryption_in_transit_enabled is not None:
-            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+            _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if is_read_only is not None:
-            pulumi.set(__self__, "is_read_only", is_read_only)
+            _setter("is_read_only", is_read_only)
         if is_shareable is not None:
-            pulumi.set(__self__, "is_shareable", is_shareable)
+            _setter("is_shareable", is_shareable)
         if use_chap is not None:
-            pulumi.set(__self__, "use_chap", use_chap)
+            _setter("use_chap", use_chap)
 
     @property
     @pulumi.getter(name="attachmentType")
@@ -280,55 +311,108 @@ class _VolumeAttachmentState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _VolumeAttachmentState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            attachment_type=attachment_type,
+            availability_domain=availability_domain,
+            chap_secret=chap_secret,
+            chap_username=chap_username,
+            compartment_id=compartment_id,
+            device=device,
+            display_name=display_name,
+            encryption_in_transit_type=encryption_in_transit_type,
+            instance_id=instance_id,
+            ipv4=ipv4,
+            iqn=iqn,
+            is_agent_auto_iscsi_login_enabled=is_agent_auto_iscsi_login_enabled,
+            is_multipath=is_multipath,
+            is_pv_encryption_in_transit_enabled=is_pv_encryption_in_transit_enabled,
+            is_read_only=is_read_only,
+            is_shareable=is_shareable,
+            iscsi_login_state=iscsi_login_state,
+            multipath_devices=multipath_devices,
+            port=port,
+            state=state,
+            time_created=time_created,
+            use_chap=use_chap,
+            volume_id=volume_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             attachment_type: Optional[pulumi.Input[str]] = None,
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             chap_secret: Optional[pulumi.Input[str]] = None,
+             chap_username: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             device: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             encryption_in_transit_type: Optional[pulumi.Input[str]] = None,
+             instance_id: Optional[pulumi.Input[str]] = None,
+             ipv4: Optional[pulumi.Input[str]] = None,
+             iqn: Optional[pulumi.Input[str]] = None,
+             is_agent_auto_iscsi_login_enabled: Optional[pulumi.Input[bool]] = None,
+             is_multipath: Optional[pulumi.Input[bool]] = None,
+             is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
+             is_read_only: Optional[pulumi.Input[bool]] = None,
+             is_shareable: Optional[pulumi.Input[bool]] = None,
+             iscsi_login_state: Optional[pulumi.Input[str]] = None,
+             multipath_devices: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeAttachmentMultipathDeviceArgs']]]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             use_chap: Optional[pulumi.Input[bool]] = None,
+             volume_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if attachment_type is not None:
-            pulumi.set(__self__, "attachment_type", attachment_type)
+            _setter("attachment_type", attachment_type)
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if chap_secret is not None:
-            pulumi.set(__self__, "chap_secret", chap_secret)
+            _setter("chap_secret", chap_secret)
         if chap_username is not None:
-            pulumi.set(__self__, "chap_username", chap_username)
+            _setter("chap_username", chap_username)
         if compartment_id is not None:
             warnings.warn("""The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
             pulumi.log.warn("""compartment_id is deprecated: The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""")
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if device is not None:
-            pulumi.set(__self__, "device", device)
+            _setter("device", device)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if encryption_in_transit_type is not None:
-            pulumi.set(__self__, "encryption_in_transit_type", encryption_in_transit_type)
+            _setter("encryption_in_transit_type", encryption_in_transit_type)
         if instance_id is not None:
-            pulumi.set(__self__, "instance_id", instance_id)
+            _setter("instance_id", instance_id)
         if ipv4 is not None:
-            pulumi.set(__self__, "ipv4", ipv4)
+            _setter("ipv4", ipv4)
         if iqn is not None:
-            pulumi.set(__self__, "iqn", iqn)
+            _setter("iqn", iqn)
         if is_agent_auto_iscsi_login_enabled is not None:
-            pulumi.set(__self__, "is_agent_auto_iscsi_login_enabled", is_agent_auto_iscsi_login_enabled)
+            _setter("is_agent_auto_iscsi_login_enabled", is_agent_auto_iscsi_login_enabled)
         if is_multipath is not None:
-            pulumi.set(__self__, "is_multipath", is_multipath)
+            _setter("is_multipath", is_multipath)
         if is_pv_encryption_in_transit_enabled is not None:
-            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+            _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if is_read_only is not None:
-            pulumi.set(__self__, "is_read_only", is_read_only)
+            _setter("is_read_only", is_read_only)
         if is_shareable is not None:
-            pulumi.set(__self__, "is_shareable", is_shareable)
+            _setter("is_shareable", is_shareable)
         if iscsi_login_state is not None:
-            pulumi.set(__self__, "iscsi_login_state", iscsi_login_state)
+            _setter("iscsi_login_state", iscsi_login_state)
         if multipath_devices is not None:
-            pulumi.set(__self__, "multipath_devices", multipath_devices)
+            _setter("multipath_devices", multipath_devices)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if use_chap is not None:
-            pulumi.set(__self__, "use_chap", use_chap)
+            _setter("use_chap", use_chap)
         if volume_id is not None:
-            pulumi.set(__self__, "volume_id", volume_id)
+            _setter("volume_id", volume_id)
 
     @property
     @pulumi.getter(name="attachmentType")
@@ -733,6 +817,10 @@ class VolumeAttachment(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            VolumeAttachmentArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -762,9 +850,6 @@ class VolumeAttachment(pulumi.CustomResource):
             if attachment_type is None and not opts.urn:
                 raise TypeError("Missing required property 'attachment_type'")
             __props__.__dict__["attachment_type"] = attachment_type
-            if compartment_id is not None and not opts.urn:
-                warnings.warn("""The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
-                pulumi.log.warn("""compartment_id is deprecated: The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["device"] = device
             __props__.__dict__["display_name"] = display_name

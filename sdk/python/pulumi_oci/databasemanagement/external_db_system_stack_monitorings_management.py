@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ExternalDbSystemStackMonitoringsManagementArgs', 'ExternalDbSystemStackMonitoringsManagement']
@@ -29,12 +29,27 @@ class ExternalDbSystemStackMonitoringsManagementArgs:
         :param pulumi.Input[bool] is_enabled: The status of the associated service.
         :param pulumi.Input[str] metadata: The associated service-specific inputs in JSON string format, which Database Management can identify.
         """
-        pulumi.set(__self__, "enable_stack_monitoring", enable_stack_monitoring)
-        pulumi.set(__self__, "external_db_system_id", external_db_system_id)
+        ExternalDbSystemStackMonitoringsManagementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_stack_monitoring=enable_stack_monitoring,
+            external_db_system_id=external_db_system_id,
+            is_enabled=is_enabled,
+            metadata=metadata,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_stack_monitoring: pulumi.Input[bool],
+             external_db_system_id: pulumi.Input[str],
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             metadata: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("enable_stack_monitoring", enable_stack_monitoring)
+        _setter("external_db_system_id", external_db_system_id)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
+            _setter("metadata", metadata)
 
     @property
     @pulumi.getter(name="enableStackMonitoring")
@@ -107,14 +122,29 @@ class _ExternalDbSystemStackMonitoringsManagementState:
         :param pulumi.Input[bool] is_enabled: The status of the associated service.
         :param pulumi.Input[str] metadata: The associated service-specific inputs in JSON string format, which Database Management can identify.
         """
+        _ExternalDbSystemStackMonitoringsManagementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_stack_monitoring=enable_stack_monitoring,
+            external_db_system_id=external_db_system_id,
+            is_enabled=is_enabled,
+            metadata=metadata,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_stack_monitoring: Optional[pulumi.Input[bool]] = None,
+             external_db_system_id: Optional[pulumi.Input[str]] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             metadata: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if enable_stack_monitoring is not None:
-            pulumi.set(__self__, "enable_stack_monitoring", enable_stack_monitoring)
+            _setter("enable_stack_monitoring", enable_stack_monitoring)
         if external_db_system_id is not None:
-            pulumi.set(__self__, "external_db_system_id", external_db_system_id)
+            _setter("external_db_system_id", external_db_system_id)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
+            _setter("metadata", metadata)
 
     @property
     @pulumi.getter(name="enableStackMonitoring")
@@ -244,6 +274,10 @@ class ExternalDbSystemStackMonitoringsManagement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ExternalDbSystemStackMonitoringsManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

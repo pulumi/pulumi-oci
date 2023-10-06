@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -68,48 +68,107 @@ class BdsInstanceArgs:
         :param pulumi.Input[str] os_patch_version: (Updatable) The version of the patch to be upated.
         :param pulumi.Input[str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         """
-        pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
-        pulumi.set(__self__, "cluster_public_key", cluster_public_key)
-        pulumi.set(__self__, "cluster_version", cluster_version)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "is_high_availability", is_high_availability)
-        pulumi.set(__self__, "is_secure", is_secure)
-        pulumi.set(__self__, "master_node", master_node)
-        pulumi.set(__self__, "util_node", util_node)
-        pulumi.set(__self__, "worker_node", worker_node)
+        BdsInstanceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cluster_admin_password=cluster_admin_password,
+            cluster_public_key=cluster_public_key,
+            cluster_version=cluster_version,
+            compartment_id=compartment_id,
+            display_name=display_name,
+            is_high_availability=is_high_availability,
+            is_secure=is_secure,
+            master_node=master_node,
+            util_node=util_node,
+            worker_node=worker_node,
+            bootstrap_script_url=bootstrap_script_url,
+            cloud_sql_details=cloud_sql_details,
+            cluster_profile=cluster_profile,
+            compute_only_worker_node=compute_only_worker_node,
+            defined_tags=defined_tags,
+            edge_node=edge_node,
+            freeform_tags=freeform_tags,
+            is_cloud_sql_configured=is_cloud_sql_configured,
+            is_force_stop_jobs=is_force_stop_jobs,
+            is_kafka_configured=is_kafka_configured,
+            kafka_broker_node=kafka_broker_node,
+            kerberos_realm_name=kerberos_realm_name,
+            kms_key_id=kms_key_id,
+            network_config=network_config,
+            os_patch_version=os_patch_version,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cluster_admin_password: pulumi.Input[str],
+             cluster_public_key: pulumi.Input[str],
+             cluster_version: pulumi.Input[str],
+             compartment_id: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             is_high_availability: pulumi.Input[bool],
+             is_secure: pulumi.Input[bool],
+             master_node: pulumi.Input['BdsInstanceMasterNodeArgs'],
+             util_node: pulumi.Input['BdsInstanceUtilNodeArgs'],
+             worker_node: pulumi.Input['BdsInstanceWorkerNodeArgs'],
+             bootstrap_script_url: Optional[pulumi.Input[str]] = None,
+             cloud_sql_details: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]] = None,
+             cluster_profile: Optional[pulumi.Input[str]] = None,
+             compute_only_worker_node: Optional[pulumi.Input['BdsInstanceComputeOnlyWorkerNodeArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             edge_node: Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
+             is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
+             is_kafka_configured: Optional[pulumi.Input[bool]] = None,
+             kafka_broker_node: Optional[pulumi.Input['BdsInstanceKafkaBrokerNodeArgs']] = None,
+             kerberos_realm_name: Optional[pulumi.Input[str]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             network_config: Optional[pulumi.Input['BdsInstanceNetworkConfigArgs']] = None,
+             os_patch_version: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cluster_admin_password", cluster_admin_password)
+        _setter("cluster_public_key", cluster_public_key)
+        _setter("cluster_version", cluster_version)
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("is_high_availability", is_high_availability)
+        _setter("is_secure", is_secure)
+        _setter("master_node", master_node)
+        _setter("util_node", util_node)
+        _setter("worker_node", worker_node)
         if bootstrap_script_url is not None:
-            pulumi.set(__self__, "bootstrap_script_url", bootstrap_script_url)
+            _setter("bootstrap_script_url", bootstrap_script_url)
         if cloud_sql_details is not None:
-            pulumi.set(__self__, "cloud_sql_details", cloud_sql_details)
+            _setter("cloud_sql_details", cloud_sql_details)
         if cluster_profile is not None:
-            pulumi.set(__self__, "cluster_profile", cluster_profile)
+            _setter("cluster_profile", cluster_profile)
         if compute_only_worker_node is not None:
-            pulumi.set(__self__, "compute_only_worker_node", compute_only_worker_node)
+            _setter("compute_only_worker_node", compute_only_worker_node)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if edge_node is not None:
-            pulumi.set(__self__, "edge_node", edge_node)
+            _setter("edge_node", edge_node)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_cloud_sql_configured is not None:
-            pulumi.set(__self__, "is_cloud_sql_configured", is_cloud_sql_configured)
+            _setter("is_cloud_sql_configured", is_cloud_sql_configured)
         if is_force_stop_jobs is not None:
-            pulumi.set(__self__, "is_force_stop_jobs", is_force_stop_jobs)
+            _setter("is_force_stop_jobs", is_force_stop_jobs)
         if is_kafka_configured is not None:
-            pulumi.set(__self__, "is_kafka_configured", is_kafka_configured)
+            _setter("is_kafka_configured", is_kafka_configured)
         if kafka_broker_node is not None:
-            pulumi.set(__self__, "kafka_broker_node", kafka_broker_node)
+            _setter("kafka_broker_node", kafka_broker_node)
         if kerberos_realm_name is not None:
-            pulumi.set(__self__, "kerberos_realm_name", kerberos_realm_name)
+            _setter("kerberos_realm_name", kerberos_realm_name)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if network_config is not None:
-            pulumi.set(__self__, "network_config", network_config)
+            _setter("network_config", network_config)
         if os_patch_version is not None:
-            pulumi.set(__self__, "os_patch_version", os_patch_version)
+            _setter("os_patch_version", os_patch_version)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter(name="clusterAdminPassword")
@@ -484,72 +543,145 @@ class _BdsInstanceState:
         :param pulumi.Input[str] time_updated: The time the BDS instance was updated. An RFC3339 formatted datetime string
         :param pulumi.Input['BdsInstanceUtilNodeArgs'] util_node: The utility node in the BDS instance
         """
+        _BdsInstanceState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bootstrap_script_url=bootstrap_script_url,
+            cloud_sql_details=cloud_sql_details,
+            cluster_admin_password=cluster_admin_password,
+            cluster_details=cluster_details,
+            cluster_profile=cluster_profile,
+            cluster_public_key=cluster_public_key,
+            cluster_version=cluster_version,
+            compartment_id=compartment_id,
+            compute_only_worker_node=compute_only_worker_node,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            edge_node=edge_node,
+            freeform_tags=freeform_tags,
+            is_cloud_sql_configured=is_cloud_sql_configured,
+            is_force_stop_jobs=is_force_stop_jobs,
+            is_high_availability=is_high_availability,
+            is_kafka_configured=is_kafka_configured,
+            is_secure=is_secure,
+            kafka_broker_node=kafka_broker_node,
+            kerberos_realm_name=kerberos_realm_name,
+            kms_key_id=kms_key_id,
+            master_node=master_node,
+            network_config=network_config,
+            nodes=nodes,
+            number_of_nodes=number_of_nodes,
+            number_of_nodes_requiring_maintenance_reboot=number_of_nodes_requiring_maintenance_reboot,
+            os_patch_version=os_patch_version,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+            util_node=util_node,
+            worker_node=worker_node,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bootstrap_script_url: Optional[pulumi.Input[str]] = None,
+             cloud_sql_details: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]] = None,
+             cluster_admin_password: Optional[pulumi.Input[str]] = None,
+             cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceClusterDetailArgs']]]] = None,
+             cluster_profile: Optional[pulumi.Input[str]] = None,
+             cluster_public_key: Optional[pulumi.Input[str]] = None,
+             cluster_version: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             compute_only_worker_node: Optional[pulumi.Input['BdsInstanceComputeOnlyWorkerNodeArgs']] = None,
+             created_by: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             edge_node: Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
+             is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
+             is_high_availability: Optional[pulumi.Input[bool]] = None,
+             is_kafka_configured: Optional[pulumi.Input[bool]] = None,
+             is_secure: Optional[pulumi.Input[bool]] = None,
+             kafka_broker_node: Optional[pulumi.Input['BdsInstanceKafkaBrokerNodeArgs']] = None,
+             kerberos_realm_name: Optional[pulumi.Input[str]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             master_node: Optional[pulumi.Input['BdsInstanceMasterNodeArgs']] = None,
+             network_config: Optional[pulumi.Input['BdsInstanceNetworkConfigArgs']] = None,
+             nodes: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceNodeArgs']]]] = None,
+             number_of_nodes: Optional[pulumi.Input[int]] = None,
+             number_of_nodes_requiring_maintenance_reboot: Optional[pulumi.Input[int]] = None,
+             os_patch_version: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             util_node: Optional[pulumi.Input['BdsInstanceUtilNodeArgs']] = None,
+             worker_node: Optional[pulumi.Input['BdsInstanceWorkerNodeArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if bootstrap_script_url is not None:
-            pulumi.set(__self__, "bootstrap_script_url", bootstrap_script_url)
+            _setter("bootstrap_script_url", bootstrap_script_url)
         if cloud_sql_details is not None:
-            pulumi.set(__self__, "cloud_sql_details", cloud_sql_details)
+            _setter("cloud_sql_details", cloud_sql_details)
         if cluster_admin_password is not None:
-            pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
+            _setter("cluster_admin_password", cluster_admin_password)
         if cluster_details is not None:
-            pulumi.set(__self__, "cluster_details", cluster_details)
+            _setter("cluster_details", cluster_details)
         if cluster_profile is not None:
-            pulumi.set(__self__, "cluster_profile", cluster_profile)
+            _setter("cluster_profile", cluster_profile)
         if cluster_public_key is not None:
-            pulumi.set(__self__, "cluster_public_key", cluster_public_key)
+            _setter("cluster_public_key", cluster_public_key)
         if cluster_version is not None:
-            pulumi.set(__self__, "cluster_version", cluster_version)
+            _setter("cluster_version", cluster_version)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if compute_only_worker_node is not None:
-            pulumi.set(__self__, "compute_only_worker_node", compute_only_worker_node)
+            _setter("compute_only_worker_node", compute_only_worker_node)
         if created_by is not None:
-            pulumi.set(__self__, "created_by", created_by)
+            _setter("created_by", created_by)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if edge_node is not None:
-            pulumi.set(__self__, "edge_node", edge_node)
+            _setter("edge_node", edge_node)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_cloud_sql_configured is not None:
-            pulumi.set(__self__, "is_cloud_sql_configured", is_cloud_sql_configured)
+            _setter("is_cloud_sql_configured", is_cloud_sql_configured)
         if is_force_stop_jobs is not None:
-            pulumi.set(__self__, "is_force_stop_jobs", is_force_stop_jobs)
+            _setter("is_force_stop_jobs", is_force_stop_jobs)
         if is_high_availability is not None:
-            pulumi.set(__self__, "is_high_availability", is_high_availability)
+            _setter("is_high_availability", is_high_availability)
         if is_kafka_configured is not None:
-            pulumi.set(__self__, "is_kafka_configured", is_kafka_configured)
+            _setter("is_kafka_configured", is_kafka_configured)
         if is_secure is not None:
-            pulumi.set(__self__, "is_secure", is_secure)
+            _setter("is_secure", is_secure)
         if kafka_broker_node is not None:
-            pulumi.set(__self__, "kafka_broker_node", kafka_broker_node)
+            _setter("kafka_broker_node", kafka_broker_node)
         if kerberos_realm_name is not None:
-            pulumi.set(__self__, "kerberos_realm_name", kerberos_realm_name)
+            _setter("kerberos_realm_name", kerberos_realm_name)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if master_node is not None:
-            pulumi.set(__self__, "master_node", master_node)
+            _setter("master_node", master_node)
         if network_config is not None:
-            pulumi.set(__self__, "network_config", network_config)
+            _setter("network_config", network_config)
         if nodes is not None:
-            pulumi.set(__self__, "nodes", nodes)
+            _setter("nodes", nodes)
         if number_of_nodes is not None:
-            pulumi.set(__self__, "number_of_nodes", number_of_nodes)
+            _setter("number_of_nodes", number_of_nodes)
         if number_of_nodes_requiring_maintenance_reboot is not None:
-            pulumi.set(__self__, "number_of_nodes_requiring_maintenance_reboot", number_of_nodes_requiring_maintenance_reboot)
+            _setter("number_of_nodes_requiring_maintenance_reboot", number_of_nodes_requiring_maintenance_reboot)
         if os_patch_version is not None:
-            pulumi.set(__self__, "os_patch_version", os_patch_version)
+            _setter("os_patch_version", os_patch_version)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if util_node is not None:
-            pulumi.set(__self__, "util_node", util_node)
+            _setter("util_node", util_node)
         if worker_node is not None:
-            pulumi.set(__self__, "worker_node", worker_node)
+            _setter("worker_node", worker_node)
 
     @property
     @pulumi.getter(name="bootstrapScriptUrl")
@@ -1039,6 +1171,10 @@ class BdsInstance(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            BdsInstanceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1094,11 +1230,21 @@ class BdsInstance(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            if compute_only_worker_node is not None and not isinstance(compute_only_worker_node, BdsInstanceComputeOnlyWorkerNodeArgs):
+                compute_only_worker_node = compute_only_worker_node or {}
+                def _setter(key, value):
+                    compute_only_worker_node[key] = value
+                BdsInstanceComputeOnlyWorkerNodeArgs._configure(_setter, **compute_only_worker_node)
             __props__.__dict__["compute_only_worker_node"] = compute_only_worker_node
             __props__.__dict__["defined_tags"] = defined_tags
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
+            if edge_node is not None and not isinstance(edge_node, BdsInstanceEdgeNodeArgs):
+                edge_node = edge_node or {}
+                def _setter(key, value):
+                    edge_node[key] = value
+                BdsInstanceEdgeNodeArgs._configure(_setter, **edge_node)
             __props__.__dict__["edge_node"] = edge_node
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_cloud_sql_configured"] = is_cloud_sql_configured
@@ -1110,18 +1256,43 @@ class BdsInstance(pulumi.CustomResource):
             if is_secure is None and not opts.urn:
                 raise TypeError("Missing required property 'is_secure'")
             __props__.__dict__["is_secure"] = is_secure
+            if kafka_broker_node is not None and not isinstance(kafka_broker_node, BdsInstanceKafkaBrokerNodeArgs):
+                kafka_broker_node = kafka_broker_node or {}
+                def _setter(key, value):
+                    kafka_broker_node[key] = value
+                BdsInstanceKafkaBrokerNodeArgs._configure(_setter, **kafka_broker_node)
             __props__.__dict__["kafka_broker_node"] = kafka_broker_node
             __props__.__dict__["kerberos_realm_name"] = kerberos_realm_name
             __props__.__dict__["kms_key_id"] = kms_key_id
+            if master_node is not None and not isinstance(master_node, BdsInstanceMasterNodeArgs):
+                master_node = master_node or {}
+                def _setter(key, value):
+                    master_node[key] = value
+                BdsInstanceMasterNodeArgs._configure(_setter, **master_node)
             if master_node is None and not opts.urn:
                 raise TypeError("Missing required property 'master_node'")
             __props__.__dict__["master_node"] = master_node
+            if network_config is not None and not isinstance(network_config, BdsInstanceNetworkConfigArgs):
+                network_config = network_config or {}
+                def _setter(key, value):
+                    network_config[key] = value
+                BdsInstanceNetworkConfigArgs._configure(_setter, **network_config)
             __props__.__dict__["network_config"] = network_config
             __props__.__dict__["os_patch_version"] = os_patch_version
             __props__.__dict__["state"] = state
+            if util_node is not None and not isinstance(util_node, BdsInstanceUtilNodeArgs):
+                util_node = util_node or {}
+                def _setter(key, value):
+                    util_node[key] = value
+                BdsInstanceUtilNodeArgs._configure(_setter, **util_node)
             if util_node is None and not opts.urn:
                 raise TypeError("Missing required property 'util_node'")
             __props__.__dict__["util_node"] = util_node
+            if worker_node is not None and not isinstance(worker_node, BdsInstanceWorkerNodeArgs):
+                worker_node = worker_node or {}
+                def _setter(key, value):
+                    worker_node[key] = value
+                BdsInstanceWorkerNodeArgs._configure(_setter, **worker_node)
             if worker_node is None and not opts.urn:
                 raise TypeError("Missing required property 'worker_node'")
             __props__.__dict__["worker_node"] = worker_node

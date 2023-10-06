@@ -17,14 +17,14 @@ public final class KeyKeyShapeArgs extends com.pulumi.resources.ResourceArgs {
     public static final KeyKeyShapeArgs Empty = new KeyKeyShapeArgs();
 
     /**
-     * The algorithm used by a key&#39;s key versions to encrypt or decrypt.
+     * The algorithm used by a key&#39;s key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
      * 
      */
     @Import(name="algorithm", required=true)
     private Output<String> algorithm;
 
     /**
-     * @return The algorithm used by a key&#39;s key versions to encrypt or decrypt.
+     * @return The algorithm used by a key&#39;s key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
      * 
      */
     public Output<String> algorithm() {
@@ -94,7 +94,7 @@ public final class KeyKeyShapeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param algorithm The algorithm used by a key&#39;s key versions to encrypt or decrypt.
+         * @param algorithm The algorithm used by a key&#39;s key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
          * 
          * @return builder
          * 
@@ -105,7 +105,7 @@ public final class KeyKeyShapeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param algorithm The algorithm used by a key&#39;s key versions to encrypt or decrypt.
+         * @param algorithm The algorithm used by a key&#39;s key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
          * 
          * @return builder
          * 

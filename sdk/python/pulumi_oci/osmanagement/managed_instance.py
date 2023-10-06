@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -29,11 +29,24 @@ class ManagedInstanceArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        ManagedInstanceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            managed_instance_id=managed_instance_id,
+            is_data_collection_authorized=is_data_collection_authorized,
+            notification_topic_id=notification_topic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             managed_instance_id: pulumi.Input[str],
+             is_data_collection_authorized: Optional[pulumi.Input[bool]] = None,
+             notification_topic_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("managed_instance_id", managed_instance_id)
         if is_data_collection_authorized is not None:
-            pulumi.set(__self__, "is_data_collection_authorized", is_data_collection_authorized)
+            _setter("is_data_collection_authorized", is_data_collection_authorized)
         if notification_topic_id is not None:
-            pulumi.set(__self__, "notification_topic_id", notification_topic_id)
+            _setter("notification_topic_id", notification_topic_id)
 
     @property
     @pulumi.getter(name="managedInstanceId")
@@ -138,58 +151,117 @@ class _ManagedInstanceState:
         :param pulumi.Input[int] updates_available: Number of updates available to be installed
         :param pulumi.Input[int] work_request_count: Number of work requests associated with this instance
         """
+        _ManagedInstanceState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            autonomouses=autonomouses,
+            bug_updates_available=bug_updates_available,
+            child_software_sources=child_software_sources,
+            compartment_id=compartment_id,
+            description=description,
+            display_name=display_name,
+            enhancement_updates_available=enhancement_updates_available,
+            is_data_collection_authorized=is_data_collection_authorized,
+            is_reboot_required=is_reboot_required,
+            ksplice_effective_kernel_version=ksplice_effective_kernel_version,
+            last_boot=last_boot,
+            last_checkin=last_checkin,
+            managed_instance_groups=managed_instance_groups,
+            managed_instance_id=managed_instance_id,
+            notification_topic_id=notification_topic_id,
+            os_family=os_family,
+            os_kernel_version=os_kernel_version,
+            os_name=os_name,
+            os_version=os_version,
+            other_updates_available=other_updates_available,
+            parent_software_sources=parent_software_sources,
+            scheduled_job_count=scheduled_job_count,
+            security_updates_available=security_updates_available,
+            status=status,
+            updates_available=updates_available,
+            work_request_count=work_request_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             autonomouses: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceAutonomouseArgs']]]] = None,
+             bug_updates_available: Optional[pulumi.Input[int]] = None,
+             child_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceChildSoftwareSourceArgs']]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             enhancement_updates_available: Optional[pulumi.Input[int]] = None,
+             is_data_collection_authorized: Optional[pulumi.Input[bool]] = None,
+             is_reboot_required: Optional[pulumi.Input[bool]] = None,
+             ksplice_effective_kernel_version: Optional[pulumi.Input[str]] = None,
+             last_boot: Optional[pulumi.Input[str]] = None,
+             last_checkin: Optional[pulumi.Input[str]] = None,
+             managed_instance_groups: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceManagedInstanceGroupArgs']]]] = None,
+             managed_instance_id: Optional[pulumi.Input[str]] = None,
+             notification_topic_id: Optional[pulumi.Input[str]] = None,
+             os_family: Optional[pulumi.Input[str]] = None,
+             os_kernel_version: Optional[pulumi.Input[str]] = None,
+             os_name: Optional[pulumi.Input[str]] = None,
+             os_version: Optional[pulumi.Input[str]] = None,
+             other_updates_available: Optional[pulumi.Input[int]] = None,
+             parent_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceParentSoftwareSourceArgs']]]] = None,
+             scheduled_job_count: Optional[pulumi.Input[int]] = None,
+             security_updates_available: Optional[pulumi.Input[int]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             updates_available: Optional[pulumi.Input[int]] = None,
+             work_request_count: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if autonomouses is not None:
-            pulumi.set(__self__, "autonomouses", autonomouses)
+            _setter("autonomouses", autonomouses)
         if bug_updates_available is not None:
-            pulumi.set(__self__, "bug_updates_available", bug_updates_available)
+            _setter("bug_updates_available", bug_updates_available)
         if child_software_sources is not None:
-            pulumi.set(__self__, "child_software_sources", child_software_sources)
+            _setter("child_software_sources", child_software_sources)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if enhancement_updates_available is not None:
-            pulumi.set(__self__, "enhancement_updates_available", enhancement_updates_available)
+            _setter("enhancement_updates_available", enhancement_updates_available)
         if is_data_collection_authorized is not None:
-            pulumi.set(__self__, "is_data_collection_authorized", is_data_collection_authorized)
+            _setter("is_data_collection_authorized", is_data_collection_authorized)
         if is_reboot_required is not None:
-            pulumi.set(__self__, "is_reboot_required", is_reboot_required)
+            _setter("is_reboot_required", is_reboot_required)
         if ksplice_effective_kernel_version is not None:
-            pulumi.set(__self__, "ksplice_effective_kernel_version", ksplice_effective_kernel_version)
+            _setter("ksplice_effective_kernel_version", ksplice_effective_kernel_version)
         if last_boot is not None:
-            pulumi.set(__self__, "last_boot", last_boot)
+            _setter("last_boot", last_boot)
         if last_checkin is not None:
-            pulumi.set(__self__, "last_checkin", last_checkin)
+            _setter("last_checkin", last_checkin)
         if managed_instance_groups is not None:
-            pulumi.set(__self__, "managed_instance_groups", managed_instance_groups)
+            _setter("managed_instance_groups", managed_instance_groups)
         if managed_instance_id is not None:
-            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+            _setter("managed_instance_id", managed_instance_id)
         if notification_topic_id is not None:
-            pulumi.set(__self__, "notification_topic_id", notification_topic_id)
+            _setter("notification_topic_id", notification_topic_id)
         if os_family is not None:
-            pulumi.set(__self__, "os_family", os_family)
+            _setter("os_family", os_family)
         if os_kernel_version is not None:
-            pulumi.set(__self__, "os_kernel_version", os_kernel_version)
+            _setter("os_kernel_version", os_kernel_version)
         if os_name is not None:
-            pulumi.set(__self__, "os_name", os_name)
+            _setter("os_name", os_name)
         if os_version is not None:
-            pulumi.set(__self__, "os_version", os_version)
+            _setter("os_version", os_version)
         if other_updates_available is not None:
-            pulumi.set(__self__, "other_updates_available", other_updates_available)
+            _setter("other_updates_available", other_updates_available)
         if parent_software_sources is not None:
-            pulumi.set(__self__, "parent_software_sources", parent_software_sources)
+            _setter("parent_software_sources", parent_software_sources)
         if scheduled_job_count is not None:
-            pulumi.set(__self__, "scheduled_job_count", scheduled_job_count)
+            _setter("scheduled_job_count", scheduled_job_count)
         if security_updates_available is not None:
-            pulumi.set(__self__, "security_updates_available", security_updates_available)
+            _setter("security_updates_available", security_updates_available)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if updates_available is not None:
-            pulumi.set(__self__, "updates_available", updates_available)
+            _setter("updates_available", updates_available)
         if work_request_count is not None:
-            pulumi.set(__self__, "work_request_count", work_request_count)
+            _setter("work_request_count", work_request_count)
 
     @property
     @pulumi.getter
@@ -569,6 +641,10 @@ class ManagedInstance(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ManagedInstanceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

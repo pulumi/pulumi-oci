@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,17 +39,38 @@ class RrsetArgs:
                This value will be null for zones in the global DNS and `PRIVATE` when creating private Rrsets.
         :param pulumi.Input[str] view_id: The OCID of the view the resource is associated with.
         """
-        pulumi.set(__self__, "domain", domain)
-        pulumi.set(__self__, "rtype", rtype)
-        pulumi.set(__self__, "zone_name_or_id", zone_name_or_id)
+        RrsetArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            domain=domain,
+            rtype=rtype,
+            zone_name_or_id=zone_name_or_id,
+            compartment_id=compartment_id,
+            items=items,
+            scope=scope,
+            view_id=view_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             domain: pulumi.Input[str],
+             rtype: pulumi.Input[str],
+             zone_name_or_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             items: Optional[pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]]] = None,
+             scope: Optional[pulumi.Input[str]] = None,
+             view_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("domain", domain)
+        _setter("rtype", rtype)
+        _setter("zone_name_or_id", zone_name_or_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if items is not None:
-            pulumi.set(__self__, "items", items)
+            _setter("items", items)
         if scope is not None:
-            pulumi.set(__self__, "scope", scope)
+            _setter("scope", scope)
         if view_id is not None:
-            pulumi.set(__self__, "view_id", view_id)
+            _setter("view_id", view_id)
 
     @property
     @pulumi.getter
@@ -168,20 +189,41 @@ class _RrsetState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _RrsetState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            domain=domain,
+            items=items,
+            rtype=rtype,
+            scope=scope,
+            view_id=view_id,
+            zone_name_or_id=zone_name_or_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             domain: Optional[pulumi.Input[str]] = None,
+             items: Optional[pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]]] = None,
+             rtype: Optional[pulumi.Input[str]] = None,
+             scope: Optional[pulumi.Input[str]] = None,
+             view_id: Optional[pulumi.Input[str]] = None,
+             zone_name_or_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if domain is not None:
-            pulumi.set(__self__, "domain", domain)
+            _setter("domain", domain)
         if items is not None:
-            pulumi.set(__self__, "items", items)
+            _setter("items", items)
         if rtype is not None:
-            pulumi.set(__self__, "rtype", rtype)
+            _setter("rtype", rtype)
         if scope is not None:
-            pulumi.set(__self__, "scope", scope)
+            _setter("scope", scope)
         if view_id is not None:
-            pulumi.set(__self__, "view_id", view_id)
+            _setter("view_id", view_id)
         if zone_name_or_id is not None:
-            pulumi.set(__self__, "zone_name_or_id", zone_name_or_id)
+            _setter("zone_name_or_id", zone_name_or_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -401,6 +443,10 @@ class Rrset(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            RrsetArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

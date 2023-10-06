@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -164,6 +164,8 @@ __all__ = [
     'GetPipelinesPipelineStepDetailStepConfigurationDetailResult',
     'GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult',
     'GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult',
+    'GetPrivateEndpointsDataSciencePrivateEndpointResult',
+    'GetPrivateEndpointsFilterResult',
     'GetProjectsFilterResult',
     'GetProjectsProjectResult',
 ]
@@ -204,13 +206,28 @@ class JobJobConfigurationDetails(dict):
         :param Mapping[str, Any] environment_variables: Environment variables to set for the job.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
-        pulumi.set(__self__, "job_type", job_type)
+        JobJobConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            job_type=job_type,
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             job_type: str,
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("job_type", job_type)
         if command_line_arguments is not None:
-            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+            _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
-            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+            _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="jobType")
@@ -285,13 +302,30 @@ class JobJobInfrastructureConfigurationDetails(dict):
         :param 'JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs' job_shape_config_details: (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
         :param str subnet_id: (Updatable) The subnet to create a secondary vnic in to attach to the instance running the job
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
-        pulumi.set(__self__, "shape_name", shape_name)
+        JobJobInfrastructureConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            job_infrastructure_type=job_infrastructure_type,
+            shape_name=shape_name,
+            job_shape_config_details=job_shape_config_details,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: int,
+             job_infrastructure_type: str,
+             shape_name: str,
+             job_shape_config_details: Optional['outputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails'] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("job_infrastructure_type", job_infrastructure_type)
+        _setter("shape_name", shape_name)
         if job_shape_config_details is not None:
-            pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+            _setter("job_shape_config_details", job_shape_config_details)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -360,10 +394,21 @@ class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails(dict):
         :param float memory_in_gbs: (Updatable) The total amount of memory available to the job run instance, in gigabytes.
         :param float ocpus: (Updatable) The total number of OCPUs available to the job run instance.
         """
+        JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -418,14 +463,29 @@ class JobJobLogConfigurationDetails(dict):
         :param str log_group_id: The log group id for where log objects are for job runs.
         :param str log_id: The log id the job run will push logs too.
         """
+        JobJobLogConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: Optional[bool] = None,
+             enable_logging: Optional[bool] = None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if enable_auto_log_creation is not None:
-            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+            _setter("enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
-            pulumi.set(__self__, "enable_logging", enable_logging)
+            _setter("enable_logging", enable_logging)
         if log_group_id is not None:
-            pulumi.set(__self__, "log_group_id", log_group_id)
+            _setter("log_group_id", log_group_id)
         if log_id is not None:
-            pulumi.set(__self__, "log_id", log_id)
+            _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -496,13 +556,28 @@ class JobRunJobConfigurationOverrideDetails(dict):
         :param Mapping[str, Any] environment_variables: Environment variables to set for the job.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
-        pulumi.set(__self__, "job_type", job_type)
+        JobRunJobConfigurationOverrideDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            job_type=job_type,
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             job_type: str,
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("job_type", job_type)
         if command_line_arguments is not None:
-            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+            _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
-            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+            _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="jobType")
@@ -577,16 +652,33 @@ class JobRunJobInfrastructureConfigurationDetail(dict):
         :param str shape_name: The shape used to launch the job run instances.
         :param str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
+        JobRunJobInfrastructureConfigurationDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            job_infrastructure_type=job_infrastructure_type,
+            job_shape_config_details=job_shape_config_details,
+            shape_name=shape_name,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: Optional[int] = None,
+             job_infrastructure_type: Optional[str] = None,
+             job_shape_config_details: Optional[Sequence['outputs.JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail']] = None,
+             shape_name: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if block_storage_size_in_gbs is not None:
-            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+            _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         if job_infrastructure_type is not None:
-            pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
+            _setter("job_infrastructure_type", job_infrastructure_type)
         if job_shape_config_details is not None:
-            pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+            _setter("job_shape_config_details", job_shape_config_details)
         if shape_name is not None:
-            pulumi.set(__self__, "shape_name", shape_name)
+            _setter("shape_name", shape_name)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -655,10 +747,21 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail(dict):
         :param float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
         :param float ocpus: The total number of OCPUs available to the job run instance.
         """
+        JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -713,14 +816,29 @@ class JobRunJobLogConfigurationOverrideDetails(dict):
         :param str log_group_id: The log group id for where log objects are for job runs.
         :param str log_id: The log id the job run will push logs too.
         """
+        JobRunJobLogConfigurationOverrideDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: Optional[bool] = None,
+             enable_logging: Optional[bool] = None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if enable_auto_log_creation is not None:
-            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+            _setter("enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
-            pulumi.set(__self__, "enable_logging", enable_logging)
+            _setter("enable_logging", enable_logging)
         if log_group_id is not None:
-            pulumi.set(__self__, "log_group_id", log_group_id)
+            _setter("log_group_id", log_group_id)
         if log_id is not None:
-            pulumi.set(__self__, "log_id", log_id)
+            _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -783,10 +901,21 @@ class JobRunLogDetail(dict):
         :param str log_group_id: The log group id for where log objects are for job runs.
         :param str log_id: The log id the job run will push logs too.
         """
+        JobRunLogDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if log_group_id is not None:
-            pulumi.set(__self__, "log_group_id", log_group_id)
+            _setter("log_group_id", log_group_id)
         if log_id is not None:
-            pulumi.set(__self__, "log_id", log_id)
+            _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -826,14 +955,29 @@ class ModelCustomMetadataList(dict):
                
                Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
         """
+        ModelCustomMetadataList._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            description=description,
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: Optional[str] = None,
+             description: Optional[str] = None,
+             key: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if category is not None:
-            pulumi.set(__self__, "category", category)
+            _setter("category", category)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -897,14 +1041,29 @@ class ModelDefinedMetadataList(dict):
                
                Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
         """
+        ModelDefinedMetadataList._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            description=description,
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: Optional[str] = None,
+             description: Optional[str] = None,
+             key: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if category is not None:
-            pulumi.set(__self__, "category", category)
+            _setter("category", category)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -956,10 +1115,21 @@ class ModelDeploymentCategoryLogDetails(dict):
         :param 'ModelDeploymentCategoryLogDetailsAccessArgs' access: (Updatable) The log details.
         :param 'ModelDeploymentCategoryLogDetailsPredictArgs' predict: (Updatable) The log details.
         """
+        ModelDeploymentCategoryLogDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access=access,
+            predict=predict,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access: Optional['outputs.ModelDeploymentCategoryLogDetailsAccess'] = None,
+             predict: Optional['outputs.ModelDeploymentCategoryLogDetailsPredict'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if access is not None:
-            pulumi.set(__self__, "access", access)
+            _setter("access", access)
         if predict is not None:
-            pulumi.set(__self__, "predict", predict)
+            _setter("predict", predict)
 
     @property
     @pulumi.getter
@@ -1006,8 +1176,19 @@ class ModelDeploymentCategoryLogDetailsAccess(dict):
         :param str log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
         :param str log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        ModelDeploymentCategoryLogDetailsAccess._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -1054,8 +1235,19 @@ class ModelDeploymentCategoryLogDetailsPredict(dict):
         :param str log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
         :param str log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        ModelDeploymentCategoryLogDetailsPredict._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -1106,10 +1298,23 @@ class ModelDeploymentModelDeploymentConfigurationDetails(dict):
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs' model_configuration_details: (Updatable) The model configuration details.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs' environment_configuration_details: (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
         """
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "model_configuration_details", model_configuration_details)
+        ModelDeploymentModelDeploymentConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            deployment_type=deployment_type,
+            model_configuration_details=model_configuration_details,
+            environment_configuration_details=environment_configuration_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             deployment_type: str,
+             model_configuration_details: 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails',
+             environment_configuration_details: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("deployment_type", deployment_type)
+        _setter("model_configuration_details", model_configuration_details)
         if environment_configuration_details is not None:
-            pulumi.set(__self__, "environment_configuration_details", environment_configuration_details)
+            _setter("environment_configuration_details", environment_configuration_details)
 
     @property
     @pulumi.getter(name="deploymentType")
@@ -1182,21 +1387,44 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
         :param str image_digest: (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
         :param int server_port: (Updatable) The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         """
-        pulumi.set(__self__, "environment_configuration_type", environment_configuration_type)
+        ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            environment_configuration_type=environment_configuration_type,
+            cmds=cmds,
+            entrypoints=entrypoints,
+            environment_variables=environment_variables,
+            health_check_port=health_check_port,
+            image=image,
+            image_digest=image_digest,
+            server_port=server_port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             environment_configuration_type: str,
+             cmds: Optional[Sequence[str]] = None,
+             entrypoints: Optional[Sequence[str]] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             health_check_port: Optional[int] = None,
+             image: Optional[str] = None,
+             image_digest: Optional[str] = None,
+             server_port: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("environment_configuration_type", environment_configuration_type)
         if cmds is not None:
-            pulumi.set(__self__, "cmds", cmds)
+            _setter("cmds", cmds)
         if entrypoints is not None:
-            pulumi.set(__self__, "entrypoints", entrypoints)
+            _setter("entrypoints", entrypoints)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if health_check_port is not None:
-            pulumi.set(__self__, "health_check_port", health_check_port)
+            _setter("health_check_port", health_check_port)
         if image is not None:
-            pulumi.set(__self__, "image", image)
+            _setter("image", image)
         if image_digest is not None:
-            pulumi.set(__self__, "image_digest", image_digest)
+            _setter("image_digest", image_digest)
         if server_port is not None:
-            pulumi.set(__self__, "server_port", server_port)
+            _setter("server_port", server_port)
 
     @property
     @pulumi.getter(name="environmentConfigurationType")
@@ -1296,15 +1524,30 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         """
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs' instance_configuration: (Updatable) The model deployment instance configuration
         :param str model_id: (Updatable) The OCID of the model you want to deploy.
-        :param int bandwidth_mbps: (Updatable) The network bandwidth for the model.
+        :param int bandwidth_mbps: (Updatable) The minimum network bandwidth for the model deployment.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs' scaling_policy: (Updatable) The scaling policy to apply to each model of the deployment.
         """
-        pulumi.set(__self__, "instance_configuration", instance_configuration)
-        pulumi.set(__self__, "model_id", model_id)
+        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            instance_configuration=instance_configuration,
+            model_id=model_id,
+            bandwidth_mbps=bandwidth_mbps,
+            scaling_policy=scaling_policy,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             instance_configuration: 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration',
+             model_id: str,
+             bandwidth_mbps: Optional[int] = None,
+             scaling_policy: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("instance_configuration", instance_configuration)
+        _setter("model_id", model_id)
         if bandwidth_mbps is not None:
-            pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
+            _setter("bandwidth_mbps", bandwidth_mbps)
         if scaling_policy is not None:
-            pulumi.set(__self__, "scaling_policy", scaling_policy)
+            _setter("scaling_policy", scaling_policy)
 
     @property
     @pulumi.getter(name="instanceConfiguration")
@@ -1326,7 +1569,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @pulumi.getter(name="bandwidthMbps")
     def bandwidth_mbps(self) -> Optional[int]:
         """
-        (Updatable) The network bandwidth for the model.
+        (Updatable) The minimum network bandwidth for the model deployment.
         """
         return pulumi.get(self, "bandwidth_mbps")
 
@@ -1367,9 +1610,20 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         :param str instance_shape_name: (Updatable) The shape used to launch the model deployment instances.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs' model_deployment_instance_shape_config_details: (Updatable) Details for the model-deployment instance shape configuration.
         """
-        pulumi.set(__self__, "instance_shape_name", instance_shape_name)
+        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            instance_shape_name=instance_shape_name,
+            model_deployment_instance_shape_config_details=model_deployment_instance_shape_config_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             instance_shape_name: str,
+             model_deployment_instance_shape_config_details: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("instance_shape_name", instance_shape_name)
         if model_deployment_instance_shape_config_details is not None:
-            pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+            _setter("model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
 
     @property
     @pulumi.getter(name="instanceShapeName")
@@ -1414,10 +1668,21 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         :param float memory_in_gbs: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
         :param float ocpus: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
+        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -1464,8 +1729,19 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         :param int instance_count: (Updatable) The number of instances for the model deployment.
         :param str policy_type: (Updatable) The type of scaling policy.
         """
-        pulumi.set(__self__, "instance_count", instance_count)
-        pulumi.set(__self__, "policy_type", policy_type)
+        ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            instance_count=instance_count,
+            policy_type=policy_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             instance_count: int,
+             policy_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("instance_count", instance_count)
+        _setter("policy_type", policy_type)
 
     @property
     @pulumi.getter(name="instanceCount")
@@ -1493,6 +1769,8 @@ class NotebookSessionNotebookSessionConfigDetails(dict):
             suggest = "block_storage_size_in_gbs"
         elif key == "notebookSessionShapeConfigDetails":
             suggest = "notebook_session_shape_config_details"
+        elif key == "privateEndpointId":
+            suggest = "private_endpoint_id"
         elif key == "subnetId":
             suggest = "subnet_id"
 
@@ -1511,20 +1789,41 @@ class NotebookSessionNotebookSessionConfigDetails(dict):
                  shape: str,
                  block_storage_size_in_gbs: Optional[int] = None,
                  notebook_session_shape_config_details: Optional['outputs.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails'] = None,
+                 private_endpoint_id: Optional[str] = None,
                  subnet_id: Optional[str] = None):
         """
         :param str shape: (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
         :param int block_storage_size_in_gbs: (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
         :param 'NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs' notebook_session_shape_config_details: (Updatable) Details for the notebook session shape configuration.
+        :param str private_endpoint_id: (Updatable) The OCID of a Data Science private endpoint.
         :param str subnet_id: (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
         """
-        pulumi.set(__self__, "shape", shape)
+        NotebookSessionNotebookSessionConfigDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            shape=shape,
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            notebook_session_shape_config_details=notebook_session_shape_config_details,
+            private_endpoint_id=private_endpoint_id,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             shape: str,
+             block_storage_size_in_gbs: Optional[int] = None,
+             notebook_session_shape_config_details: Optional['outputs.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails'] = None,
+             private_endpoint_id: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("shape", shape)
         if block_storage_size_in_gbs is not None:
-            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+            _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         if notebook_session_shape_config_details is not None:
-            pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
+            _setter("notebook_session_shape_config_details", notebook_session_shape_config_details)
+        if private_endpoint_id is not None:
+            _setter("private_endpoint_id", private_endpoint_id)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter
@@ -1549,6 +1848,14 @@ class NotebookSessionNotebookSessionConfigDetails(dict):
         (Updatable) Details for the notebook session shape configuration.
         """
         return pulumi.get(self, "notebook_session_shape_config_details")
+
+    @property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> Optional[str]:
+        """
+        (Updatable) The OCID of a Data Science private endpoint.
+        """
+        return pulumi.get(self, "private_endpoint_id")
 
     @property
     @pulumi.getter(name="subnetId")
@@ -1585,10 +1892,21 @@ class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetai
         :param float memory_in_gbs: (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
         :param float ocpus: (Updatable) The total number of OCPUs available to the notebook session instance.
         """
+        NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -1618,6 +1936,8 @@ class NotebookSessionNotebookSessionConfigurationDetails(dict):
             suggest = "block_storage_size_in_gbs"
         elif key == "notebookSessionShapeConfigDetails":
             suggest = "notebook_session_shape_config_details"
+        elif key == "privateEndpointId":
+            suggest = "private_endpoint_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in NotebookSessionNotebookSessionConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
@@ -1634,19 +1954,40 @@ class NotebookSessionNotebookSessionConfigurationDetails(dict):
                  shape: str,
                  subnet_id: str,
                  block_storage_size_in_gbs: Optional[int] = None,
-                 notebook_session_shape_config_details: Optional['outputs.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails'] = None):
+                 notebook_session_shape_config_details: Optional['outputs.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails'] = None,
+                 private_endpoint_id: Optional[str] = None):
         """
         :param str shape: (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
         :param str subnet_id: (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
         :param int block_storage_size_in_gbs: (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
         :param 'NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs' notebook_session_shape_config_details: (Updatable) Details for the notebook session shape configuration.
+        :param str private_endpoint_id: (Updatable) The OCID of a Data Science private endpoint.
         """
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        NotebookSessionNotebookSessionConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            shape=shape,
+            subnet_id=subnet_id,
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            notebook_session_shape_config_details=notebook_session_shape_config_details,
+            private_endpoint_id=private_endpoint_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             shape: str,
+             subnet_id: str,
+             block_storage_size_in_gbs: Optional[int] = None,
+             notebook_session_shape_config_details: Optional['outputs.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails'] = None,
+             private_endpoint_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("shape", shape)
+        _setter("subnet_id", subnet_id)
         if block_storage_size_in_gbs is not None:
-            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+            _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
         if notebook_session_shape_config_details is not None:
-            pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
+            _setter("notebook_session_shape_config_details", notebook_session_shape_config_details)
+        if private_endpoint_id is not None:
+            _setter("private_endpoint_id", private_endpoint_id)
 
     @property
     @pulumi.getter
@@ -1680,6 +2021,14 @@ class NotebookSessionNotebookSessionConfigurationDetails(dict):
         """
         return pulumi.get(self, "notebook_session_shape_config_details")
 
+    @property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> Optional[str]:
+        """
+        (Updatable) The OCID of a Data Science private endpoint.
+        """
+        return pulumi.get(self, "private_endpoint_id")
+
 
 @pulumi.output_type
 class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails(dict):
@@ -1707,10 +2056,21 @@ class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConf
         :param float memory_in_gbs: (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
         :param float ocpus: (Updatable) The total number of OCPUs available to the notebook session instance.
         """
+        NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -1757,10 +2117,21 @@ class NotebookSessionNotebookSessionRuntimeConfigDetails(dict):
         :param Mapping[str, Any] custom_environment_variables: (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
         :param 'NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs' notebook_session_git_config_details: (Updatable) Git configuration Details.
         """
+        NotebookSessionNotebookSessionRuntimeConfigDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_environment_variables=custom_environment_variables,
+            notebook_session_git_config_details=notebook_session_git_config_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_environment_variables: Optional[Mapping[str, Any]] = None,
+             notebook_session_git_config_details: Optional['outputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if custom_environment_variables is not None:
-            pulumi.set(__self__, "custom_environment_variables", custom_environment_variables)
+            _setter("custom_environment_variables", custom_environment_variables)
         if notebook_session_git_config_details is not None:
-            pulumi.set(__self__, "notebook_session_git_config_details", notebook_session_git_config_details)
+            _setter("notebook_session_git_config_details", notebook_session_git_config_details)
 
     @property
     @pulumi.getter(name="customEnvironmentVariables")
@@ -1803,8 +2174,17 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfig
         """
         :param Sequence['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs'] notebook_session_git_repo_config_collections: (Updatable) A collection of Git repository configurations.
         """
+        NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            notebook_session_git_repo_config_collections=notebook_session_git_repo_config_collections,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             notebook_session_git_repo_config_collections: Optional[Sequence['outputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if notebook_session_git_repo_config_collections is not None:
-            pulumi.set(__self__, "notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
+            _setter("notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
 
     @property
     @pulumi.getter(name="notebookSessionGitRepoConfigCollections")
@@ -1822,7 +2202,16 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfig
         """
         :param str url: (Updatable) The repository URL
         """
-        pulumi.set(__self__, "url", url)
+        NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("url", url)
 
     @property
     @pulumi.getter
@@ -1867,13 +2256,28 @@ class PipelineConfigurationDetails(dict):
         :param Mapping[str, Any] environment_variables: (Updatable) Environment variables to set for step.
         :param str maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the step.
         """
-        pulumi.set(__self__, "type", type)
+        PipelineConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if command_line_arguments is not None:
-            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+            _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
-            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+            _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter
@@ -1940,10 +2344,23 @@ class PipelineInfrastructureConfigurationDetails(dict):
         :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
         :param 'PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs' shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "shape_name", shape_name)
+        PipelineInfrastructureConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            shape_name=shape_name,
+            shape_config_details=shape_config_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: int,
+             shape_name: str,
+             shape_config_details: Optional['outputs.PipelineInfrastructureConfigurationDetailsShapeConfigDetails'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("shape_name", shape_name)
         if shape_config_details is not None:
-            pulumi.set(__self__, "shape_config_details", shape_config_details)
+            _setter("shape_config_details", shape_config_details)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -1996,10 +2413,21 @@ class PipelineInfrastructureConfigurationDetailsShapeConfigDetails(dict):
         :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
+        PipelineInfrastructureConfigurationDetailsShapeConfigDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -2054,14 +2482,29 @@ class PipelineLogConfigurationDetails(dict):
         :param str log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param str log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
+        PipelineLogConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: Optional[bool] = None,
+             enable_logging: Optional[bool] = None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if enable_auto_log_creation is not None:
-            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+            _setter("enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
-            pulumi.set(__self__, "enable_logging", enable_logging)
+            _setter("enable_logging", enable_logging)
         if log_group_id is not None:
-            pulumi.set(__self__, "log_group_id", log_group_id)
+            _setter("log_group_id", log_group_id)
         if log_id is not None:
-            pulumi.set(__self__, "log_id", log_id)
+            _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -2130,14 +2573,29 @@ class PipelineRunConfigurationDetail(dict):
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param str type: The type of pipeline.
         """
+        PipelineRunConfigurationDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if command_line_arguments is not None:
-            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+            _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
-            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+            _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -2206,13 +2664,28 @@ class PipelineRunConfigurationOverrideDetails(dict):
         :param Mapping[str, Any] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         """
-        pulumi.set(__self__, "type", type)
+        PipelineRunConfigurationOverrideDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if command_line_arguments is not None:
-            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+            _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
-            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+            _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter
@@ -2283,14 +2756,29 @@ class PipelineRunLogConfigurationOverrideDetails(dict):
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
+        PipelineRunLogConfigurationOverrideDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: Optional[bool] = None,
+             enable_logging: Optional[bool] = None,
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if enable_auto_log_creation is not None:
-            pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
+            _setter("enable_auto_log_creation", enable_auto_log_creation)
         if enable_logging is not None:
-            pulumi.set(__self__, "enable_logging", enable_logging)
+            _setter("enable_logging", enable_logging)
         if log_group_id is not None:
-            pulumi.set(__self__, "log_group_id", log_group_id)
+            _setter("log_group_id", log_group_id)
         if log_id is not None:
-            pulumi.set(__self__, "log_id", log_id)
+            _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -2353,10 +2841,21 @@ class PipelineRunLogDetail(dict):
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
+        PipelineRunLogDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: Optional[str] = None,
+             log_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if log_group_id is not None:
-            pulumi.set(__self__, "log_group_id", log_group_id)
+            _setter("log_group_id", log_group_id)
         if log_id is not None:
-            pulumi.set(__self__, "log_id", log_id)
+            _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -2403,8 +2902,19 @@ class PipelineRunStepOverrideDetail(dict):
         :param 'PipelineRunStepOverrideDetailStepConfigurationDetailsArgs' step_configuration_details: The configuration details of a step.
         :param str step_name: The name of the step.
         """
-        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
-        pulumi.set(__self__, "step_name", step_name)
+        PipelineRunStepOverrideDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            step_configuration_details=step_configuration_details,
+            step_name=step_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             step_configuration_details: 'outputs.PipelineRunStepOverrideDetailStepConfigurationDetails',
+             step_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("step_configuration_details", step_configuration_details)
+        _setter("step_name", step_name)
 
     @property
     @pulumi.getter(name="stepConfigurationDetails")
@@ -2455,12 +2965,25 @@ class PipelineRunStepOverrideDetailStepConfigurationDetails(dict):
         :param Mapping[str, Any] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         """
+        PipelineRunStepOverrideDetailStepConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if command_line_arguments is not None:
-            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+            _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
-            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+            _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -2533,20 +3056,41 @@ class PipelineRunStepRun(dict):
         :param str time_finished: The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_started: The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
+        PipelineRunStepRun._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            job_run_id=job_run_id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            step_name=step_name,
+            step_type=step_type,
+            time_finished=time_finished,
+            time_started=time_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             job_run_id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             step_name: Optional[str] = None,
+             step_type: Optional[str] = None,
+             time_finished: Optional[str] = None,
+             time_started: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if job_run_id is not None:
-            pulumi.set(__self__, "job_run_id", job_run_id)
+            _setter("job_run_id", job_run_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if step_name is not None:
-            pulumi.set(__self__, "step_name", step_name)
+            _setter("step_name", step_name)
         if step_type is not None:
-            pulumi.set(__self__, "step_type", step_type)
+            _setter("step_type", step_type)
         if time_finished is not None:
-            pulumi.set(__self__, "time_finished", time_finished)
+            _setter("time_finished", time_finished)
         if time_started is not None:
-            pulumi.set(__self__, "time_started", time_started)
+            _setter("time_started", time_started)
 
     @property
     @pulumi.getter(name="jobRunId")
@@ -2644,15 +3188,34 @@ class PipelineStepArtifact(dict):
         """
         :param str step_name: (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         """
-        pulumi.set(__self__, "artifact_content_length", artifact_content_length)
-        pulumi.set(__self__, "pipeline_step_artifact", pipeline_step_artifact)
-        pulumi.set(__self__, "step_name", step_name)
+        PipelineStepArtifact._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            artifact_content_length=artifact_content_length,
+            pipeline_step_artifact=pipeline_step_artifact,
+            step_name=step_name,
+            artifact_content_disposition=artifact_content_disposition,
+            artifact_content_md5=artifact_content_md5,
+            artifact_last_modified=artifact_last_modified,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             artifact_content_length: str,
+             pipeline_step_artifact: str,
+             step_name: str,
+             artifact_content_disposition: Optional[str] = None,
+             artifact_content_md5: Optional[str] = None,
+             artifact_last_modified: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("artifact_content_length", artifact_content_length)
+        _setter("pipeline_step_artifact", pipeline_step_artifact)
+        _setter("step_name", step_name)
         if artifact_content_disposition is not None:
-            pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
+            _setter("artifact_content_disposition", artifact_content_disposition)
         if artifact_content_md5 is not None:
-            pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
+            _setter("artifact_content_md5", artifact_content_md5)
         if artifact_last_modified is not None:
-            pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
+            _setter("artifact_last_modified", artifact_last_modified)
 
     @property
     @pulumi.getter(name="artifactContentLength")
@@ -2742,20 +3305,43 @@ class PipelineStepDetail(dict):
         :param 'PipelineStepDetailStepConfigurationDetailsArgs' step_configuration_details: (Updatable) The configuration details of a step.
         :param 'PipelineStepDetailStepInfrastructureConfigurationDetailsArgs' step_infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
         """
-        pulumi.set(__self__, "step_name", step_name)
-        pulumi.set(__self__, "step_type", step_type)
+        PipelineStepDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            step_name=step_name,
+            step_type=step_type,
+            depends_ons=depends_ons,
+            description=description,
+            is_artifact_uploaded=is_artifact_uploaded,
+            job_id=job_id,
+            step_configuration_details=step_configuration_details,
+            step_infrastructure_configuration_details=step_infrastructure_configuration_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             step_name: str,
+             step_type: str,
+             depends_ons: Optional[Sequence[str]] = None,
+             description: Optional[str] = None,
+             is_artifact_uploaded: Optional[bool] = None,
+             job_id: Optional[str] = None,
+             step_configuration_details: Optional['outputs.PipelineStepDetailStepConfigurationDetails'] = None,
+             step_infrastructure_configuration_details: Optional['outputs.PipelineStepDetailStepInfrastructureConfigurationDetails'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("step_name", step_name)
+        _setter("step_type", step_type)
         if depends_ons is not None:
-            pulumi.set(__self__, "depends_ons", depends_ons)
+            _setter("depends_ons", depends_ons)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if is_artifact_uploaded is not None:
-            pulumi.set(__self__, "is_artifact_uploaded", is_artifact_uploaded)
+            _setter("is_artifact_uploaded", is_artifact_uploaded)
         if job_id is not None:
-            pulumi.set(__self__, "job_id", job_id)
+            _setter("job_id", job_id)
         if step_configuration_details is not None:
-            pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+            _setter("step_configuration_details", step_configuration_details)
         if step_infrastructure_configuration_details is not None:
-            pulumi.set(__self__, "step_infrastructure_configuration_details", step_infrastructure_configuration_details)
+            _setter("step_infrastructure_configuration_details", step_infrastructure_configuration_details)
 
     @property
     @pulumi.getter(name="stepName")
@@ -2858,12 +3444,25 @@ class PipelineStepDetailStepConfigurationDetails(dict):
         :param Mapping[str, Any] environment_variables: (Updatable) Environment variables to set for step.
         :param str maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the step.
         """
+        PipelineStepDetailStepConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             maximum_runtime_in_minutes: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if command_line_arguments is not None:
-            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+            _setter("command_line_arguments", command_line_arguments)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
-            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+            _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -2922,10 +3521,23 @@ class PipelineStepDetailStepInfrastructureConfigurationDetails(dict):
         :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
         :param 'PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs' shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "shape_name", shape_name)
+        PipelineStepDetailStepInfrastructureConfigurationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            shape_name=shape_name,
+            shape_config_details=shape_config_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: int,
+             shape_name: str,
+             shape_config_details: Optional['outputs.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("shape_name", shape_name)
         if shape_config_details is not None:
-            pulumi.set(__self__, "shape_config_details", shape_config_details)
+            _setter("shape_config_details", shape_config_details)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -2978,10 +3590,21 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails
         :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
+        PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -3017,12 +3640,31 @@ class GetFastLaunchJobConfigsFastLaunchJobConfigResult(dict):
         :param str shape_name: The name of the fast launch job shape.
         :param str shape_series: The family that the compute shape belongs to.
         """
-        pulumi.set(__self__, "core_count", core_count)
-        pulumi.set(__self__, "managed_egress_support", managed_egress_support)
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "shape_series", shape_series)
+        GetFastLaunchJobConfigsFastLaunchJobConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            core_count=core_count,
+            managed_egress_support=managed_egress_support,
+            memory_in_gbs=memory_in_gbs,
+            name=name,
+            shape_name=shape_name,
+            shape_series=shape_series,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             core_count: int,
+             managed_egress_support: str,
+             memory_in_gbs: int,
+             name: str,
+             shape_name: str,
+             shape_series: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("core_count", core_count)
+        _setter("managed_egress_support", managed_egress_support)
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("name", name)
+        _setter("shape_name", shape_name)
+        _setter("shape_series", shape_series)
 
     @property
     @pulumi.getter(name="coreCount")
@@ -3082,10 +3724,23 @@ class GetFastLaunchJobConfigsFilterResult(dict):
         """
         :param str name: The name of the fast launch job config
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetFastLaunchJobConfigsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3119,10 +3774,25 @@ class GetJobJobConfigurationDetailResult(dict):
         :param str job_type: The type of job.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "job_type", job_type)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        GetJobJobConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            job_type=job_type,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: str,
+             environment_variables: Mapping[str, Any],
+             job_type: str,
+             maximum_runtime_in_minutes: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("job_type", job_type)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -3172,11 +3842,28 @@ class GetJobJobInfrastructureConfigurationDetailResult(dict):
         :param str shape_name: The shape used to launch the job run instances.
         :param str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
-        pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetJobJobInfrastructureConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            job_infrastructure_type=job_infrastructure_type,
+            job_shape_config_details=job_shape_config_details,
+            shape_name=shape_name,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: int,
+             job_infrastructure_type: str,
+             job_shape_config_details: Sequence['outputs.GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
+             shape_name: str,
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("job_infrastructure_type", job_infrastructure_type)
+        _setter("job_shape_config_details", job_shape_config_details)
+        _setter("shape_name", shape_name)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -3228,8 +3915,19 @@ class GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(dict)
         :param float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
         :param float ocpus: The total number of OCPUs available to the job run instance.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: float,
+             ocpus: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -3261,10 +3959,25 @@ class GetJobJobLogConfigurationDetailResult(dict):
         :param str log_group_id: The log group id for where log objects are for job runs.
         :param str log_id: The log id the job run will push logs too.
         """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetJobJobLogConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: bool,
+             enable_logging: bool,
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("enable_auto_log_creation", enable_auto_log_creation)
+        _setter("enable_logging", enable_logging)
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -3312,10 +4025,25 @@ class GetJobRunJobConfigurationOverrideDetailResult(dict):
         :param str job_type: The type of job.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "job_type", job_type)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        GetJobRunJobConfigurationOverrideDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            job_type=job_type,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: str,
+             environment_variables: Mapping[str, Any],
+             job_type: str,
+             maximum_runtime_in_minutes: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("job_type", job_type)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -3365,11 +4093,28 @@ class GetJobRunJobInfrastructureConfigurationDetailResult(dict):
         :param str shape_name: The shape used to launch the job run instances.
         :param str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
-        pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetJobRunJobInfrastructureConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            job_infrastructure_type=job_infrastructure_type,
+            job_shape_config_details=job_shape_config_details,
+            shape_name=shape_name,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: int,
+             job_infrastructure_type: str,
+             job_shape_config_details: Sequence['outputs.GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
+             shape_name: str,
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("job_infrastructure_type", job_infrastructure_type)
+        _setter("job_shape_config_details", job_shape_config_details)
+        _setter("shape_name", shape_name)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -3421,8 +4166,19 @@ class GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(di
         :param float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
         :param float ocpus: The total number of OCPUs available to the job run instance.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: float,
+             ocpus: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -3454,10 +4210,25 @@ class GetJobRunJobLogConfigurationOverrideDetailResult(dict):
         :param str log_group_id: The log group id for where log objects will be for job runs.
         :param str log_id: The log id of the log object the job run logs will be shipped to.
         """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetJobRunJobLogConfigurationOverrideDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: bool,
+             enable_logging: bool,
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("enable_auto_log_creation", enable_auto_log_creation)
+        _setter("enable_logging", enable_logging)
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -3501,8 +4272,19 @@ class GetJobRunLogDetailResult(dict):
         :param str log_group_id: The log group id for where log objects will be for job runs.
         :param str log_id: The log id of the log object the job run logs will be shipped to.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetJobRunLogDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -3527,10 +4309,23 @@ class GetJobRunsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetJobRunsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3588,24 +4383,67 @@ class GetJobRunsJobRunResult(dict):
         :param str time_finished: The date and time the job run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_started: The date and time the job run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        pulumi.set(__self__, "asynchronous", asynchronous)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "job_configuration_override_details", job_configuration_override_details)
-        pulumi.set(__self__, "job_id", job_id)
-        pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
-        pulumi.set(__self__, "job_log_configuration_override_details", job_log_configuration_override_details)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "log_details", log_details)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_accepted", time_accepted)
-        pulumi.set(__self__, "time_finished", time_finished)
-        pulumi.set(__self__, "time_started", time_started)
+        GetJobRunsJobRunResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            asynchronous=asynchronous,
+            compartment_id=compartment_id,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            job_configuration_override_details=job_configuration_override_details,
+            job_id=job_id,
+            job_infrastructure_configuration_details=job_infrastructure_configuration_details,
+            job_log_configuration_override_details=job_log_configuration_override_details,
+            lifecycle_details=lifecycle_details,
+            log_details=log_details,
+            project_id=project_id,
+            state=state,
+            time_accepted=time_accepted,
+            time_finished=time_finished,
+            time_started=time_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             asynchronous: bool,
+             compartment_id: str,
+             created_by: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             job_configuration_override_details: Sequence['outputs.GetJobRunsJobRunJobConfigurationOverrideDetailResult'],
+             job_id: str,
+             job_infrastructure_configuration_details: Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailResult'],
+             job_log_configuration_override_details: Sequence['outputs.GetJobRunsJobRunJobLogConfigurationOverrideDetailResult'],
+             lifecycle_details: str,
+             log_details: Sequence['outputs.GetJobRunsJobRunLogDetailResult'],
+             project_id: str,
+             state: str,
+             time_accepted: str,
+             time_finished: str,
+             time_started: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("asynchronous", asynchronous)
+        _setter("compartment_id", compartment_id)
+        _setter("created_by", created_by)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("job_configuration_override_details", job_configuration_override_details)
+        _setter("job_id", job_id)
+        _setter("job_infrastructure_configuration_details", job_infrastructure_configuration_details)
+        _setter("job_log_configuration_override_details", job_log_configuration_override_details)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("log_details", log_details)
+        _setter("project_id", project_id)
+        _setter("state", state)
+        _setter("time_accepted", time_accepted)
+        _setter("time_finished", time_finished)
+        _setter("time_started", time_started)
 
     @property
     @pulumi.getter
@@ -3762,10 +4600,25 @@ class GetJobRunsJobRunJobConfigurationOverrideDetailResult(dict):
         :param str job_type: The type of job.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "job_type", job_type)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        GetJobRunsJobRunJobConfigurationOverrideDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            job_type=job_type,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: str,
+             environment_variables: Mapping[str, Any],
+             job_type: str,
+             maximum_runtime_in_minutes: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("job_type", job_type)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -3815,11 +4668,28 @@ class GetJobRunsJobRunJobInfrastructureConfigurationDetailResult(dict):
         :param str shape_name: The shape used to launch the job run instances.
         :param str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
-        pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetJobRunsJobRunJobInfrastructureConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            job_infrastructure_type=job_infrastructure_type,
+            job_shape_config_details=job_shape_config_details,
+            shape_name=shape_name,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: int,
+             job_infrastructure_type: str,
+             job_shape_config_details: Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
+             shape_name: str,
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("job_infrastructure_type", job_infrastructure_type)
+        _setter("job_shape_config_details", job_shape_config_details)
+        _setter("shape_name", shape_name)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -3871,8 +4741,19 @@ class GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailRe
         :param float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
         :param float ocpus: The total number of OCPUs available to the job run instance.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: float,
+             ocpus: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -3904,10 +4785,25 @@ class GetJobRunsJobRunJobLogConfigurationOverrideDetailResult(dict):
         :param str log_group_id: The log group id for where log objects will be for job runs.
         :param str log_id: The log id of the log object the job run logs will be shipped to.
         """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetJobRunsJobRunJobLogConfigurationOverrideDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: bool,
+             enable_logging: bool,
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("enable_auto_log_creation", enable_auto_log_creation)
+        _setter("enable_logging", enable_logging)
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -3951,8 +4847,19 @@ class GetJobRunsJobRunLogDetailResult(dict):
         :param str log_group_id: The log group id for where log objects will be for job runs.
         :param str log_id: The log id of the log object the job run logs will be shipped to.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetJobRunsJobRunLogDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -3980,10 +4887,23 @@ class GetJobShapesFilterResult(dict):
         """
         :param str name: The name of the job shape.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetJobShapesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4017,10 +4937,25 @@ class GetJobShapesJobShapeResult(dict):
         :param str name: The name of the job shape.
         :param str shape_series: The family that the compute shape belongs to.
         """
-        pulumi.set(__self__, "core_count", core_count)
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "shape_series", shape_series)
+        GetJobShapesJobShapeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            core_count=core_count,
+            memory_in_gbs=memory_in_gbs,
+            name=name,
+            shape_series=shape_series,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             core_count: int,
+             memory_in_gbs: int,
+             name: str,
+             shape_series: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("core_count", core_count)
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("name", name)
+        _setter("shape_series", shape_series)
 
     @property
     @pulumi.getter(name="coreCount")
@@ -4061,10 +4996,23 @@ class GetJobsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetJobsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4122,27 +5070,76 @@ class GetJobsJobResult(dict):
         :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
         :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
         """
-        pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
-        pulumi.set(__self__, "artifact_content_length", artifact_content_length)
-        pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
-        pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "delete_related_job_runs", delete_related_job_runs)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "empty_artifact", empty_artifact)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "job_artifact", job_artifact)
-        pulumi.set(__self__, "job_configuration_details", job_configuration_details)
-        pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
-        pulumi.set(__self__, "job_log_configuration_details", job_log_configuration_details)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetJobsJobResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            artifact_content_disposition=artifact_content_disposition,
+            artifact_content_length=artifact_content_length,
+            artifact_content_md5=artifact_content_md5,
+            artifact_last_modified=artifact_last_modified,
+            compartment_id=compartment_id,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            delete_related_job_runs=delete_related_job_runs,
+            description=description,
+            display_name=display_name,
+            empty_artifact=empty_artifact,
+            freeform_tags=freeform_tags,
+            id=id,
+            job_artifact=job_artifact,
+            job_configuration_details=job_configuration_details,
+            job_infrastructure_configuration_details=job_infrastructure_configuration_details,
+            job_log_configuration_details=job_log_configuration_details,
+            lifecycle_details=lifecycle_details,
+            project_id=project_id,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             artifact_content_disposition: str,
+             artifact_content_length: str,
+             artifact_content_md5: str,
+             artifact_last_modified: str,
+             compartment_id: str,
+             created_by: str,
+             defined_tags: Mapping[str, Any],
+             delete_related_job_runs: bool,
+             description: str,
+             display_name: str,
+             empty_artifact: bool,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             job_artifact: str,
+             job_configuration_details: Sequence['outputs.GetJobsJobJobConfigurationDetailResult'],
+             job_infrastructure_configuration_details: Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailResult'],
+             job_log_configuration_details: Sequence['outputs.GetJobsJobJobLogConfigurationDetailResult'],
+             lifecycle_details: str,
+             project_id: str,
+             state: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("artifact_content_disposition", artifact_content_disposition)
+        _setter("artifact_content_length", artifact_content_length)
+        _setter("artifact_content_md5", artifact_content_md5)
+        _setter("artifact_last_modified", artifact_last_modified)
+        _setter("compartment_id", compartment_id)
+        _setter("created_by", created_by)
+        _setter("defined_tags", defined_tags)
+        _setter("delete_related_job_runs", delete_related_job_runs)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("empty_artifact", empty_artifact)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("job_artifact", job_artifact)
+        _setter("job_configuration_details", job_configuration_details)
+        _setter("job_infrastructure_configuration_details", job_infrastructure_configuration_details)
+        _setter("job_log_configuration_details", job_log_configuration_details)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("project_id", project_id)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="artifactContentDisposition")
@@ -4305,10 +5302,25 @@ class GetJobsJobJobConfigurationDetailResult(dict):
         :param str job_type: The type of job.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "job_type", job_type)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        GetJobsJobJobConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            job_type=job_type,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: str,
+             environment_variables: Mapping[str, Any],
+             job_type: str,
+             maximum_runtime_in_minutes: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("job_type", job_type)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -4358,11 +5370,28 @@ class GetJobsJobJobInfrastructureConfigurationDetailResult(dict):
         :param str shape_name: The shape used to launch the job run instances.
         :param str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
-        pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetJobsJobJobInfrastructureConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            job_infrastructure_type=job_infrastructure_type,
+            job_shape_config_details=job_shape_config_details,
+            shape_name=shape_name,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: int,
+             job_infrastructure_type: str,
+             job_shape_config_details: Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
+             shape_name: str,
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("job_infrastructure_type", job_infrastructure_type)
+        _setter("job_shape_config_details", job_shape_config_details)
+        _setter("shape_name", shape_name)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -4414,8 +5443,19 @@ class GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(d
         :param float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
         :param float ocpus: The total number of OCPUs available to the job run instance.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: float,
+             ocpus: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -4447,10 +5487,25 @@ class GetJobsJobJobLogConfigurationDetailResult(dict):
         :param str log_group_id: The log group id for where log objects are for job runs.
         :param str log_id: The log id the job run will push logs too.
         """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetJobsJobJobLogConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: bool,
+             enable_logging: bool,
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("enable_auto_log_creation", enable_auto_log_creation)
+        _setter("enable_logging", enable_logging)
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -4504,10 +5559,25 @@ class GetModelCustomMetadataListResult(dict):
                * testartifactresults
         :param str value: Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
         """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        GetModelCustomMetadataListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            description=description,
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: str,
+             description: str,
+             key: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("category", category)
+        _setter("description", description)
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -4567,10 +5637,25 @@ class GetModelDefinedMetadataListResult(dict):
                * testartifactresults
         :param str value: Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
         """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        GetModelDefinedMetadataListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            description=description,
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: str,
+             description: str,
+             key: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("category", category)
+        _setter("description", description)
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -4620,8 +5705,19 @@ class GetModelDeploymentCategoryLogDetailResult(dict):
         :param Sequence['GetModelDeploymentCategoryLogDetailAccessArgs'] accesses: The log details.
         :param Sequence['GetModelDeploymentCategoryLogDetailPredictArgs'] predicts: The log details.
         """
-        pulumi.set(__self__, "accesses", accesses)
-        pulumi.set(__self__, "predicts", predicts)
+        GetModelDeploymentCategoryLogDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            accesses=accesses,
+            predicts=predicts,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             accesses: Sequence['outputs.GetModelDeploymentCategoryLogDetailAccessResult'],
+             predicts: Sequence['outputs.GetModelDeploymentCategoryLogDetailPredictResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("accesses", accesses)
+        _setter("predicts", predicts)
 
     @property
     @pulumi.getter
@@ -4649,8 +5745,19 @@ class GetModelDeploymentCategoryLogDetailAccessResult(dict):
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetModelDeploymentCategoryLogDetailAccessResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -4678,8 +5785,19 @@ class GetModelDeploymentCategoryLogDetailPredictResult(dict):
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetModelDeploymentCategoryLogDetailPredictResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -4709,9 +5827,22 @@ class GetModelDeploymentModelDeploymentConfigurationDetailResult(dict):
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs'] environment_configuration_details: The configuration to carry the environment details thats used in Model Deployment creation
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs'] model_configuration_details: The model configuration details.
         """
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "environment_configuration_details", environment_configuration_details)
-        pulumi.set(__self__, "model_configuration_details", model_configuration_details)
+        GetModelDeploymentModelDeploymentConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            deployment_type=deployment_type,
+            environment_configuration_details=environment_configuration_details,
+            model_configuration_details=model_configuration_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             deployment_type: str,
+             environment_configuration_details: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult'],
+             model_configuration_details: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("deployment_type", deployment_type)
+        _setter("environment_configuration_details", environment_configuration_details)
+        _setter("model_configuration_details", model_configuration_details)
 
     @property
     @pulumi.getter(name="deploymentType")
@@ -4759,14 +5890,37 @@ class GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurati
         :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
         :param int server_port: The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         """
-        pulumi.set(__self__, "cmds", cmds)
-        pulumi.set(__self__, "entrypoints", entrypoints)
-        pulumi.set(__self__, "environment_configuration_type", environment_configuration_type)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "health_check_port", health_check_port)
-        pulumi.set(__self__, "image", image)
-        pulumi.set(__self__, "image_digest", image_digest)
-        pulumi.set(__self__, "server_port", server_port)
+        GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cmds=cmds,
+            entrypoints=entrypoints,
+            environment_configuration_type=environment_configuration_type,
+            environment_variables=environment_variables,
+            health_check_port=health_check_port,
+            image=image,
+            image_digest=image_digest,
+            server_port=server_port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cmds: Sequence[str],
+             entrypoints: Sequence[str],
+             environment_configuration_type: str,
+             environment_variables: Mapping[str, Any],
+             health_check_port: int,
+             image: str,
+             image_digest: str,
+             server_port: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cmds", cmds)
+        _setter("entrypoints", entrypoints)
+        _setter("environment_configuration_type", environment_configuration_type)
+        _setter("environment_variables", environment_variables)
+        _setter("health_check_port", health_check_port)
+        _setter("image", image)
+        _setter("image_digest", image_digest)
+        _setter("server_port", server_port)
 
     @property
     @pulumi.getter
@@ -4841,21 +5995,36 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
                  model_id: str,
                  scaling_policies: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult']):
         """
-        :param int bandwidth_mbps: The network bandwidth for the model.
+        :param int bandwidth_mbps: The minimum network bandwidth for the model deployment.
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs'] instance_configurations: The model deployment instance configuration
         :param str model_id: The OCID of the model you want to deploy.
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs'] scaling_policies: The scaling policy to apply to each model of the deployment.
         """
-        pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
-        pulumi.set(__self__, "instance_configurations", instance_configurations)
-        pulumi.set(__self__, "model_id", model_id)
-        pulumi.set(__self__, "scaling_policies", scaling_policies)
+        GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bandwidth_mbps=bandwidth_mbps,
+            instance_configurations=instance_configurations,
+            model_id=model_id,
+            scaling_policies=scaling_policies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bandwidth_mbps: int,
+             instance_configurations: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult'],
+             model_id: str,
+             scaling_policies: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bandwidth_mbps", bandwidth_mbps)
+        _setter("instance_configurations", instance_configurations)
+        _setter("model_id", model_id)
+        _setter("scaling_policies", scaling_policies)
 
     @property
     @pulumi.getter(name="bandwidthMbps")
     def bandwidth_mbps(self) -> int:
         """
-        The network bandwidth for the model.
+        The minimum network bandwidth for the model deployment.
         """
         return pulumi.get(self, "bandwidth_mbps")
 
@@ -4893,8 +6062,19 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
         :param str instance_shape_name: The shape used to launch the model deployment instances.
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
         """
-        pulumi.set(__self__, "instance_shape_name", instance_shape_name)
-        pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+        GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            instance_shape_name=instance_shape_name,
+            model_deployment_instance_shape_config_details=model_deployment_instance_shape_config_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             instance_shape_name: str,
+             model_deployment_instance_shape_config_details: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("instance_shape_name", instance_shape_name)
+        _setter("model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
 
     @property
     @pulumi.getter(name="instanceShapeName")
@@ -4922,8 +6102,19 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
         :param float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
         :param float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: float,
+             ocpus: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -4951,8 +6142,19 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
         :param int instance_count: The number of instances for the model deployment.
         :param str policy_type: The type of scaling policy.
         """
-        pulumi.set(__self__, "instance_count", instance_count)
-        pulumi.set(__self__, "policy_type", policy_type)
+        GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            instance_count=instance_count,
+            policy_type=policy_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             instance_count: int,
+             policy_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("instance_count", instance_count)
+        _setter("policy_type", policy_type)
 
     @property
     @pulumi.getter(name="instanceCount")
@@ -4980,10 +6182,23 @@ class GetModelDeploymentShapesFilterResult(dict):
         """
         :param str name: The name of the model deployment shape.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetModelDeploymentShapesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5017,10 +6232,25 @@ class GetModelDeploymentShapesModelDeploymentShapeResult(dict):
         :param str name: The name of the model deployment shape.
         :param str shape_series: The family that the compute shape belongs to.
         """
-        pulumi.set(__self__, "core_count", core_count)
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "shape_series", shape_series)
+        GetModelDeploymentShapesModelDeploymentShapeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            core_count=core_count,
+            memory_in_gbs=memory_in_gbs,
+            name=name,
+            shape_series=shape_series,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             core_count: int,
+             memory_in_gbs: int,
+             name: str,
+             shape_series: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("core_count", core_count)
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("name", name)
+        _setter("shape_series", shape_series)
 
     @property
     @pulumi.getter(name="coreCount")
@@ -5061,10 +6291,23 @@ class GetModelDeploymentsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetModelDeploymentsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5115,20 +6358,55 @@ class GetModelDeploymentsModelDeploymentResult(dict):
         :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
         :param str time_created: The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
-        pulumi.set(__self__, "category_log_details", category_log_details)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "model_deployment_configuration_details", model_deployment_configuration_details)
-        pulumi.set(__self__, "model_deployment_url", model_deployment_url)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetModelDeploymentsModelDeploymentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category_log_details=category_log_details,
+            compartment_id=compartment_id,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            model_deployment_configuration_details=model_deployment_configuration_details,
+            model_deployment_url=model_deployment_url,
+            project_id=project_id,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category_log_details: Sequence['outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailResult'],
+             compartment_id: str,
+             created_by: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             model_deployment_configuration_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailResult'],
+             model_deployment_url: str,
+             project_id: str,
+             state: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("category_log_details", category_log_details)
+        _setter("compartment_id", compartment_id)
+        _setter("created_by", created_by)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("model_deployment_configuration_details", model_deployment_configuration_details)
+        _setter("model_deployment_url", model_deployment_url)
+        _setter("project_id", project_id)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="categoryLogDetails")
@@ -5252,8 +6530,19 @@ class GetModelDeploymentsModelDeploymentCategoryLogDetailResult(dict):
         :param Sequence['GetModelDeploymentsModelDeploymentCategoryLogDetailAccessArgs'] accesses: The log details.
         :param Sequence['GetModelDeploymentsModelDeploymentCategoryLogDetailPredictArgs'] predicts: The log details.
         """
-        pulumi.set(__self__, "accesses", accesses)
-        pulumi.set(__self__, "predicts", predicts)
+        GetModelDeploymentsModelDeploymentCategoryLogDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            accesses=accesses,
+            predicts=predicts,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             accesses: Sequence['outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailAccessResult'],
+             predicts: Sequence['outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailPredictResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("accesses", accesses)
+        _setter("predicts", predicts)
 
     @property
     @pulumi.getter
@@ -5281,8 +6570,19 @@ class GetModelDeploymentsModelDeploymentCategoryLogDetailAccessResult(dict):
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetModelDeploymentsModelDeploymentCategoryLogDetailAccessResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -5310,8 +6610,19 @@ class GetModelDeploymentsModelDeploymentCategoryLogDetailPredictResult(dict):
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log group to work with.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a log to work with.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetModelDeploymentsModelDeploymentCategoryLogDetailPredictResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -5341,9 +6652,22 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailResult
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs'] environment_configuration_details: The configuration to carry the environment details thats used in Model Deployment creation
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs'] model_configuration_details: The model configuration details.
         """
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "environment_configuration_details", environment_configuration_details)
-        pulumi.set(__self__, "model_configuration_details", model_configuration_details)
+        GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            deployment_type=deployment_type,
+            environment_configuration_details=environment_configuration_details,
+            model_configuration_details=model_configuration_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             deployment_type: str,
+             environment_configuration_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult'],
+             model_configuration_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("deployment_type", deployment_type)
+        _setter("environment_configuration_details", environment_configuration_details)
+        _setter("model_configuration_details", model_configuration_details)
 
     @property
     @pulumi.getter(name="deploymentType")
@@ -5391,14 +6715,37 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnviro
         :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
         :param int server_port: The port on which the web server serving the inference is running. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         """
-        pulumi.set(__self__, "cmds", cmds)
-        pulumi.set(__self__, "entrypoints", entrypoints)
-        pulumi.set(__self__, "environment_configuration_type", environment_configuration_type)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "health_check_port", health_check_port)
-        pulumi.set(__self__, "image", image)
-        pulumi.set(__self__, "image_digest", image_digest)
-        pulumi.set(__self__, "server_port", server_port)
+        GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cmds=cmds,
+            entrypoints=entrypoints,
+            environment_configuration_type=environment_configuration_type,
+            environment_variables=environment_variables,
+            health_check_port=health_check_port,
+            image=image,
+            image_digest=image_digest,
+            server_port=server_port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cmds: Sequence[str],
+             entrypoints: Sequence[str],
+             environment_configuration_type: str,
+             environment_variables: Mapping[str, Any],
+             health_check_port: int,
+             image: str,
+             image_digest: str,
+             server_port: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cmds", cmds)
+        _setter("entrypoints", entrypoints)
+        _setter("environment_configuration_type", environment_configuration_type)
+        _setter("environment_variables", environment_variables)
+        _setter("health_check_port", health_check_port)
+        _setter("image", image)
+        _setter("image_digest", image_digest)
+        _setter("server_port", server_port)
 
     @property
     @pulumi.getter
@@ -5473,21 +6820,36 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
                  model_id: str,
                  scaling_policies: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult']):
         """
-        :param int bandwidth_mbps: The network bandwidth for the model.
+        :param int bandwidth_mbps: The minimum network bandwidth for the model deployment.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs'] instance_configurations: The model deployment instance configuration
         :param str model_id: The OCID of the model you want to deploy.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs'] scaling_policies: The scaling policy to apply to each model of the deployment.
         """
-        pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
-        pulumi.set(__self__, "instance_configurations", instance_configurations)
-        pulumi.set(__self__, "model_id", model_id)
-        pulumi.set(__self__, "scaling_policies", scaling_policies)
+        GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bandwidth_mbps=bandwidth_mbps,
+            instance_configurations=instance_configurations,
+            model_id=model_id,
+            scaling_policies=scaling_policies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bandwidth_mbps: int,
+             instance_configurations: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult'],
+             model_id: str,
+             scaling_policies: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bandwidth_mbps", bandwidth_mbps)
+        _setter("instance_configurations", instance_configurations)
+        _setter("model_id", model_id)
+        _setter("scaling_policies", scaling_policies)
 
     @property
     @pulumi.getter(name="bandwidthMbps")
     def bandwidth_mbps(self) -> int:
         """
-        The network bandwidth for the model.
+        The minimum network bandwidth for the model deployment.
         """
         return pulumi.get(self, "bandwidth_mbps")
 
@@ -5525,8 +6887,19 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
         :param str instance_shape_name: The shape used to launch the model deployment instances.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
         """
-        pulumi.set(__self__, "instance_shape_name", instance_shape_name)
-        pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+        GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            instance_shape_name=instance_shape_name,
+            model_deployment_instance_shape_config_details=model_deployment_instance_shape_config_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             instance_shape_name: str,
+             model_deployment_instance_shape_config_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("instance_shape_name", instance_shape_name)
+        _setter("model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
 
     @property
     @pulumi.getter(name="instanceShapeName")
@@ -5554,8 +6927,19 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
         :param float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
         :param float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: float,
+             ocpus: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -5583,8 +6967,19 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
         :param int instance_count: The number of instances for the model deployment.
         :param str policy_type: The type of scaling policy.
         """
-        pulumi.set(__self__, "instance_count", instance_count)
-        pulumi.set(__self__, "policy_type", policy_type)
+        GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            instance_count=instance_count,
+            policy_type=policy_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             instance_count: int,
+             policy_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("instance_count", instance_count)
+        _setter("policy_type", policy_type)
 
     @property
     @pulumi.getter(name="instanceCount")
@@ -5612,10 +7007,23 @@ class GetModelVersionSetsFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetModelVersionSetsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5663,17 +7071,46 @@ class GetModelVersionSetsModelVersionSetResult(dict):
         :param str time_created: The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         :param str time_updated: The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetModelVersionSetsModelVersionSetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            id=id,
+            name=name,
+            project_id=project_id,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             created_by: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             name: str,
+             project_id: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("created_by", created_by)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("name", name)
+        _setter("project_id", project_id)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -5770,10 +7207,23 @@ class GetModelsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetModelsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5830,26 +7280,73 @@ class GetModelsModelResult(dict):
         :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
         :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
-        pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
-        pulumi.set(__self__, "artifact_content_length", artifact_content_length)
-        pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
-        pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "custom_metadata_lists", custom_metadata_lists)
-        pulumi.set(__self__, "defined_metadata_lists", defined_metadata_lists)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "empty_model", empty_model)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "input_schema", input_schema)
-        pulumi.set(__self__, "model_artifact", model_artifact)
-        pulumi.set(__self__, "output_schema", output_schema)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetModelsModelResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            artifact_content_disposition=artifact_content_disposition,
+            artifact_content_length=artifact_content_length,
+            artifact_content_md5=artifact_content_md5,
+            artifact_last_modified=artifact_last_modified,
+            compartment_id=compartment_id,
+            created_by=created_by,
+            custom_metadata_lists=custom_metadata_lists,
+            defined_metadata_lists=defined_metadata_lists,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            empty_model=empty_model,
+            freeform_tags=freeform_tags,
+            id=id,
+            input_schema=input_schema,
+            model_artifact=model_artifact,
+            output_schema=output_schema,
+            project_id=project_id,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             artifact_content_disposition: str,
+             artifact_content_length: str,
+             artifact_content_md5: str,
+             artifact_last_modified: str,
+             compartment_id: str,
+             created_by: str,
+             custom_metadata_lists: Sequence['outputs.GetModelsModelCustomMetadataListResult'],
+             defined_metadata_lists: Sequence['outputs.GetModelsModelDefinedMetadataListResult'],
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             empty_model: bool,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             input_schema: str,
+             model_artifact: str,
+             output_schema: str,
+             project_id: str,
+             state: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("artifact_content_disposition", artifact_content_disposition)
+        _setter("artifact_content_length", artifact_content_length)
+        _setter("artifact_content_md5", artifact_content_md5)
+        _setter("artifact_last_modified", artifact_last_modified)
+        _setter("compartment_id", compartment_id)
+        _setter("created_by", created_by)
+        _setter("custom_metadata_lists", custom_metadata_lists)
+        _setter("defined_metadata_lists", defined_metadata_lists)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("empty_model", empty_model)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("input_schema", input_schema)
+        _setter("model_artifact", model_artifact)
+        _setter("output_schema", output_schema)
+        _setter("project_id", project_id)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="artifactContentDisposition")
@@ -6013,10 +7510,25 @@ class GetModelsModelCustomMetadataListResult(dict):
                * testartifactresults
         :param str value: Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
         """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        GetModelsModelCustomMetadataListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            description=description,
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: str,
+             description: str,
+             key: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("category", category)
+        _setter("description", description)
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -6076,10 +7588,25 @@ class GetModelsModelDefinedMetadataListResult(dict):
                * testartifactresults
         :param str value: Allowed values for useCaseType: binary_classification, regression, multinomial_classification, clustering, recommender, dimensionality_reduction/representation, time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
         """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        GetModelsModelDefinedMetadataListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            description=description,
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: str,
+             description: str,
+             key: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("category", category)
+        _setter("description", description)
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -6125,18 +7652,38 @@ class GetNotebookSessionNotebookSessionConfigDetailResult(dict):
     def __init__(__self__, *,
                  block_storage_size_in_gbs: int,
                  notebook_session_shape_config_details: Sequence['outputs.GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult'],
+                 private_endpoint_id: str,
                  shape: str,
                  subnet_id: str):
         """
         :param int block_storage_size_in_gbs: A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
         :param Sequence['GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs'] notebook_session_shape_config_details: Details for the notebook session shape configuration.
+        :param str private_endpoint_id: The OCID of a Data Science private endpoint.
         :param str shape: The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
         :param str subnet_id: A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetNotebookSessionNotebookSessionConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            notebook_session_shape_config_details=notebook_session_shape_config_details,
+            private_endpoint_id=private_endpoint_id,
+            shape=shape,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: int,
+             notebook_session_shape_config_details: Sequence['outputs.GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult'],
+             private_endpoint_id: str,
+             shape: str,
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("notebook_session_shape_config_details", notebook_session_shape_config_details)
+        _setter("private_endpoint_id", private_endpoint_id)
+        _setter("shape", shape)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -6153,6 +7700,14 @@ class GetNotebookSessionNotebookSessionConfigDetailResult(dict):
         Details for the notebook session shape configuration.
         """
         return pulumi.get(self, "notebook_session_shape_config_details")
+
+    @property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> str:
+        """
+        The OCID of a Data Science private endpoint.
+        """
+        return pulumi.get(self, "private_endpoint_id")
 
     @property
     @pulumi.getter
@@ -6180,8 +7735,19 @@ class GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDet
         :param float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
         :param float ocpus: The total number of OCPUs available to the notebook session instance.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: float,
+             ocpus: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -6205,18 +7771,38 @@ class GetNotebookSessionNotebookSessionConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  block_storage_size_in_gbs: int,
                  notebook_session_shape_config_details: Sequence['outputs.GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult'],
+                 private_endpoint_id: str,
                  shape: str,
                  subnet_id: str):
         """
         :param int block_storage_size_in_gbs: A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
         :param Sequence['GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs'] notebook_session_shape_config_details: Details for the notebook session shape configuration.
+        :param str private_endpoint_id: The OCID of a Data Science private endpoint.
         :param str shape: The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
         :param str subnet_id: A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetNotebookSessionNotebookSessionConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            notebook_session_shape_config_details=notebook_session_shape_config_details,
+            private_endpoint_id=private_endpoint_id,
+            shape=shape,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: int,
+             notebook_session_shape_config_details: Sequence['outputs.GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult'],
+             private_endpoint_id: str,
+             shape: str,
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("notebook_session_shape_config_details", notebook_session_shape_config_details)
+        _setter("private_endpoint_id", private_endpoint_id)
+        _setter("shape", shape)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -6233,6 +7819,14 @@ class GetNotebookSessionNotebookSessionConfigurationDetailResult(dict):
         Details for the notebook session shape configuration.
         """
         return pulumi.get(self, "notebook_session_shape_config_details")
+
+    @property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> str:
+        """
+        The OCID of a Data Science private endpoint.
+        """
+        return pulumi.get(self, "private_endpoint_id")
 
     @property
     @pulumi.getter
@@ -6260,8 +7854,19 @@ class GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeCo
         :param float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
         :param float ocpus: The total number of OCPUs available to the notebook session instance.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: float,
+             ocpus: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -6289,8 +7894,19 @@ class GetNotebookSessionNotebookSessionRuntimeConfigDetailResult(dict):
         :param Mapping[str, Any] custom_environment_variables: Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
         :param Sequence['GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs'] notebook_session_git_config_details: Git configuration Details.
         """
-        pulumi.set(__self__, "custom_environment_variables", custom_environment_variables)
-        pulumi.set(__self__, "notebook_session_git_config_details", notebook_session_git_config_details)
+        GetNotebookSessionNotebookSessionRuntimeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_environment_variables=custom_environment_variables,
+            notebook_session_git_config_details=notebook_session_git_config_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_environment_variables: Mapping[str, Any],
+             notebook_session_git_config_details: Sequence['outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("custom_environment_variables", custom_environment_variables)
+        _setter("notebook_session_git_config_details", notebook_session_git_config_details)
 
     @property
     @pulumi.getter(name="customEnvironmentVariables")
@@ -6316,7 +7932,16 @@ class GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConf
         """
         :param Sequence['GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs'] notebook_session_git_repo_config_collections: A collection of Git repository configurations.
         """
-        pulumi.set(__self__, "notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
+        GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            notebook_session_git_repo_config_collections=notebook_session_git_repo_config_collections,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             notebook_session_git_repo_config_collections: Sequence['outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
 
     @property
     @pulumi.getter(name="notebookSessionGitRepoConfigCollections")
@@ -6334,7 +7959,16 @@ class GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConf
         """
         :param str url: The repository URL
         """
-        pulumi.set(__self__, "url", url)
+        GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("url", url)
 
     @property
     @pulumi.getter
@@ -6354,10 +7988,23 @@ class GetNotebookSessionShapesFilterResult(dict):
         """
         :param str name: The name of the notebook session shape.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetNotebookSessionShapesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6391,10 +8038,25 @@ class GetNotebookSessionShapesNotebookSessionShapeResult(dict):
         :param str name: The name of the notebook session shape.
         :param str shape_series: The family that the compute shape belongs to.
         """
-        pulumi.set(__self__, "core_count", core_count)
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "shape_series", shape_series)
+        GetNotebookSessionShapesNotebookSessionShapeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            core_count=core_count,
+            memory_in_gbs=memory_in_gbs,
+            name=name,
+            shape_series=shape_series,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             core_count: int,
+             memory_in_gbs: int,
+             name: str,
+             shape_series: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("core_count", core_count)
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("name", name)
+        _setter("shape_series", shape_series)
 
     @property
     @pulumi.getter(name="coreCount")
@@ -6435,10 +8097,23 @@ class GetNotebookSessionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetNotebookSessionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6489,20 +8164,55 @@ class GetNotebookSessionsNotebookSessionResult(dict):
         :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
         :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "notebook_session_config_details", notebook_session_config_details)
-        pulumi.set(__self__, "notebook_session_configuration_details", notebook_session_configuration_details)
-        pulumi.set(__self__, "notebook_session_runtime_config_details", notebook_session_runtime_config_details)
-        pulumi.set(__self__, "notebook_session_url", notebook_session_url)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetNotebookSessionsNotebookSessionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            notebook_session_config_details=notebook_session_config_details,
+            notebook_session_configuration_details=notebook_session_configuration_details,
+            notebook_session_runtime_config_details=notebook_session_runtime_config_details,
+            notebook_session_url=notebook_session_url,
+            project_id=project_id,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             created_by: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             notebook_session_config_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailResult'],
+             notebook_session_configuration_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailResult'],
+             notebook_session_runtime_config_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailResult'],
+             notebook_session_url: str,
+             project_id: str,
+             state: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("created_by", created_by)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("notebook_session_config_details", notebook_session_config_details)
+        _setter("notebook_session_configuration_details", notebook_session_configuration_details)
+        _setter("notebook_session_runtime_config_details", notebook_session_runtime_config_details)
+        _setter("notebook_session_url", notebook_session_url)
+        _setter("project_id", project_id)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -6622,18 +8332,38 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailResult(dict):
     def __init__(__self__, *,
                  block_storage_size_in_gbs: int,
                  notebook_session_shape_config_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult'],
+                 private_endpoint_id: str,
                  shape: str,
                  subnet_id: str):
         """
         :param int block_storage_size_in_gbs: A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
         :param Sequence['GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArgs'] notebook_session_shape_config_details: Details for the notebook session shape configuration.
+        :param str private_endpoint_id: The OCID of a Data Science private endpoint.
         :param str shape: The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
         :param str subnet_id: A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            notebook_session_shape_config_details=notebook_session_shape_config_details,
+            private_endpoint_id=private_endpoint_id,
+            shape=shape,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: int,
+             notebook_session_shape_config_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult'],
+             private_endpoint_id: str,
+             shape: str,
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("notebook_session_shape_config_details", notebook_session_shape_config_details)
+        _setter("private_endpoint_id", private_endpoint_id)
+        _setter("shape", shape)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -6650,6 +8380,14 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailResult(dict):
         Details for the notebook session shape configuration.
         """
         return pulumi.get(self, "notebook_session_shape_config_details")
+
+    @property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> str:
+        """
+        The OCID of a Data Science private endpoint.
+        """
+        return pulumi.get(self, "private_endpoint_id")
 
     @property
     @pulumi.getter
@@ -6677,8 +8415,19 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessi
         :param float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
         :param float ocpus: The total number of OCPUs available to the notebook session instance.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: float,
+             ocpus: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -6702,18 +8451,38 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailResult
     def __init__(__self__, *,
                  block_storage_size_in_gbs: int,
                  notebook_session_shape_config_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult'],
+                 private_endpoint_id: str,
                  shape: str,
                  subnet_id: str):
         """
         :param int block_storage_size_in_gbs: A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
         :param Sequence['GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArgs'] notebook_session_shape_config_details: Details for the notebook session shape configuration.
+        :param str private_endpoint_id: The OCID of a Data Science private endpoint.
         :param str shape: The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
         :param str subnet_id: A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "notebook_session_shape_config_details", notebook_session_shape_config_details)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            notebook_session_shape_config_details=notebook_session_shape_config_details,
+            private_endpoint_id=private_endpoint_id,
+            shape=shape,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: int,
+             notebook_session_shape_config_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult'],
+             private_endpoint_id: str,
+             shape: str,
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("notebook_session_shape_config_details", notebook_session_shape_config_details)
+        _setter("private_endpoint_id", private_endpoint_id)
+        _setter("shape", shape)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -6730,6 +8499,14 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailResult
         Details for the notebook session shape configuration.
         """
         return pulumi.get(self, "notebook_session_shape_config_details")
+
+    @property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> str:
+        """
+        The OCID of a Data Science private endpoint.
+        """
+        return pulumi.get(self, "private_endpoint_id")
 
     @property
     @pulumi.getter
@@ -6757,8 +8534,19 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebo
         :param float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
         :param float ocpus: The total number of OCPUs available to the notebook session instance.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: float,
+             ocpus: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -6786,8 +8574,19 @@ class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailResult
         :param Mapping[str, Any] custom_environment_variables: Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
         :param Sequence['GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs'] notebook_session_git_config_details: Git configuration Details.
         """
-        pulumi.set(__self__, "custom_environment_variables", custom_environment_variables)
-        pulumi.set(__self__, "notebook_session_git_config_details", notebook_session_git_config_details)
+        GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_environment_variables=custom_environment_variables,
+            notebook_session_git_config_details=notebook_session_git_config_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_environment_variables: Mapping[str, Any],
+             notebook_session_git_config_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("custom_environment_variables", custom_environment_variables)
+        _setter("notebook_session_git_config_details", notebook_session_git_config_details)
 
     @property
     @pulumi.getter(name="customEnvironmentVariables")
@@ -6813,7 +8612,16 @@ class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebo
         """
         :param Sequence['GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionArgs'] notebook_session_git_repo_config_collections: A collection of Git repository configurations.
         """
-        pulumi.set(__self__, "notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
+        GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            notebook_session_git_repo_config_collections=notebook_session_git_repo_config_collections,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             notebook_session_git_repo_config_collections: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("notebook_session_git_repo_config_collections", notebook_session_git_repo_config_collections)
 
     @property
     @pulumi.getter(name="notebookSessionGitRepoConfigCollections")
@@ -6831,7 +8639,16 @@ class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebo
         """
         :param str url: The repository URL
         """
-        pulumi.set(__self__, "url", url)
+        GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailNotebookSessionGitRepoConfigCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("url", url)
 
     @property
     @pulumi.getter
@@ -6855,10 +8672,25 @@ class GetPipelineConfigurationDetailResult(dict):
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param str type: The type of pipeline.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
-        pulumi.set(__self__, "type", type)
+        GetPipelineConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: str,
+             environment_variables: Mapping[str, Any],
+             maximum_runtime_in_minutes: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -6904,9 +8736,22 @@ class GetPipelineInfrastructureConfigurationDetailResult(dict):
         :param Sequence['GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "shape_config_details", shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
+        GetPipelineInfrastructureConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            shape_config_details=shape_config_details,
+            shape_name=shape_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: int,
+             shape_config_details: Sequence['outputs.GetPipelineInfrastructureConfigurationDetailShapeConfigDetailResult'],
+             shape_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("shape_config_details", shape_config_details)
+        _setter("shape_name", shape_name)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -6942,8 +8787,19 @@ class GetPipelineInfrastructureConfigurationDetailShapeConfigDetailResult(dict):
         :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetPipelineInfrastructureConfigurationDetailShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: float,
+             ocpus: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -6975,10 +8831,25 @@ class GetPipelineLogConfigurationDetailResult(dict):
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetPipelineLogConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: bool,
+             enable_logging: bool,
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("enable_auto_log_creation", enable_auto_log_creation)
+        _setter("enable_logging", enable_logging)
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -7026,10 +8897,25 @@ class GetPipelineRunConfigurationDetailResult(dict):
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param str type: The type of pipeline.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
-        pulumi.set(__self__, "type", type)
+        GetPipelineRunConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: str,
+             environment_variables: Mapping[str, Any],
+             maximum_runtime_in_minutes: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -7077,10 +8963,25 @@ class GetPipelineRunConfigurationOverrideDetailResult(dict):
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param str type: The type of pipeline.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
-        pulumi.set(__self__, "type", type)
+        GetPipelineRunConfigurationOverrideDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: str,
+             environment_variables: Mapping[str, Any],
+             maximum_runtime_in_minutes: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -7128,10 +9029,25 @@ class GetPipelineRunLogConfigurationOverrideDetailResult(dict):
         :param str log_group_id: The log group id for where log objects will be for pipeline runs.
         :param str log_id: The log id of the log object the pipeline run logs will be shipped to.
         """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetPipelineRunLogConfigurationOverrideDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: bool,
+             enable_logging: bool,
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("enable_auto_log_creation", enable_auto_log_creation)
+        _setter("enable_logging", enable_logging)
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -7175,8 +9091,19 @@ class GetPipelineRunLogDetailResult(dict):
         :param str log_group_id: The log group id for where log objects will be for pipeline runs.
         :param str log_id: The log id of the log object the pipeline run logs will be shipped to.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetPipelineRunLogDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -7204,8 +9131,19 @@ class GetPipelineRunStepOverrideDetailResult(dict):
         :param Sequence['GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs'] step_configuration_details: The configuration details of a step.
         :param str step_name: The name of the step.
         """
-        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
-        pulumi.set(__self__, "step_name", step_name)
+        GetPipelineRunStepOverrideDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            step_configuration_details=step_configuration_details,
+            step_name=step_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             step_configuration_details: Sequence['outputs.GetPipelineRunStepOverrideDetailStepConfigurationDetailResult'],
+             step_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("step_configuration_details", step_configuration_details)
+        _setter("step_name", step_name)
 
     @property
     @pulumi.getter(name="stepConfigurationDetails")
@@ -7235,9 +9173,22 @@ class GetPipelineRunStepOverrideDetailStepConfigurationDetailResult(dict):
         :param Mapping[str, Any] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        GetPipelineRunStepOverrideDetailStepConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: str,
+             environment_variables: Mapping[str, Any],
+             maximum_runtime_in_minutes: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -7283,13 +9234,34 @@ class GetPipelineRunStepRunResult(dict):
         :param str time_finished: The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_started: The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        pulumi.set(__self__, "job_run_id", job_run_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "step_name", step_name)
-        pulumi.set(__self__, "step_type", step_type)
-        pulumi.set(__self__, "time_finished", time_finished)
-        pulumi.set(__self__, "time_started", time_started)
+        GetPipelineRunStepRunResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            job_run_id=job_run_id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            step_name=step_name,
+            step_type=step_type,
+            time_finished=time_finished,
+            time_started=time_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             job_run_id: str,
+             lifecycle_details: str,
+             state: str,
+             step_name: str,
+             step_type: str,
+             time_finished: str,
+             time_started: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("job_run_id", job_run_id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("step_name", step_name)
+        _setter("step_type", step_type)
+        _setter("time_finished", time_finished)
+        _setter("time_started", time_started)
 
     @property
     @pulumi.getter(name="jobRunId")
@@ -7354,10 +9326,23 @@ class GetPipelineRunsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPipelineRunsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -7423,28 +9408,79 @@ class GetPipelineRunsPipelineRunResult(dict):
         :param str time_started: The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: The date and time the pipeline run was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configuration_details", configuration_details)
-        pulumi.set(__self__, "configuration_override_details", configuration_override_details)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "delete_related_job_runs", delete_related_job_runs)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "log_configuration_override_details", log_configuration_override_details)
-        pulumi.set(__self__, "log_details", log_details)
-        pulumi.set(__self__, "pipeline_id", pipeline_id)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "step_override_details", step_override_details)
-        pulumi.set(__self__, "step_runs", step_runs)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_accepted", time_accepted)
-        pulumi.set(__self__, "time_finished", time_finished)
-        pulumi.set(__self__, "time_started", time_started)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetPipelineRunsPipelineRunResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            configuration_details=configuration_details,
+            configuration_override_details=configuration_override_details,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            delete_related_job_runs=delete_related_job_runs,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            log_configuration_override_details=log_configuration_override_details,
+            log_details=log_details,
+            pipeline_id=pipeline_id,
+            project_id=project_id,
+            state=state,
+            step_override_details=step_override_details,
+            step_runs=step_runs,
+            system_tags=system_tags,
+            time_accepted=time_accepted,
+            time_finished=time_finished,
+            time_started=time_started,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             configuration_details: Sequence['outputs.GetPipelineRunsPipelineRunConfigurationDetailResult'],
+             configuration_override_details: Sequence['outputs.GetPipelineRunsPipelineRunConfigurationOverrideDetailResult'],
+             created_by: str,
+             defined_tags: Mapping[str, Any],
+             delete_related_job_runs: bool,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             log_configuration_override_details: Sequence['outputs.GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult'],
+             log_details: Sequence['outputs.GetPipelineRunsPipelineRunLogDetailResult'],
+             pipeline_id: str,
+             project_id: str,
+             state: str,
+             step_override_details: Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailResult'],
+             step_runs: Sequence['outputs.GetPipelineRunsPipelineRunStepRunResult'],
+             system_tags: Mapping[str, Any],
+             time_accepted: str,
+             time_finished: str,
+             time_started: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("configuration_details", configuration_details)
+        _setter("configuration_override_details", configuration_override_details)
+        _setter("created_by", created_by)
+        _setter("defined_tags", defined_tags)
+        _setter("delete_related_job_runs", delete_related_job_runs)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("log_configuration_override_details", log_configuration_override_details)
+        _setter("log_details", log_details)
+        _setter("pipeline_id", pipeline_id)
+        _setter("project_id", project_id)
+        _setter("state", state)
+        _setter("step_override_details", step_override_details)
+        _setter("step_runs", step_runs)
+        _setter("system_tags", system_tags)
+        _setter("time_accepted", time_accepted)
+        _setter("time_finished", time_finished)
+        _setter("time_started", time_started)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -7633,10 +9669,25 @@ class GetPipelineRunsPipelineRunConfigurationDetailResult(dict):
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param str type: The type of pipeline.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
-        pulumi.set(__self__, "type", type)
+        GetPipelineRunsPipelineRunConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: str,
+             environment_variables: Mapping[str, Any],
+             maximum_runtime_in_minutes: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -7684,10 +9735,25 @@ class GetPipelineRunsPipelineRunConfigurationOverrideDetailResult(dict):
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param str type: The type of pipeline.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
-        pulumi.set(__self__, "type", type)
+        GetPipelineRunsPipelineRunConfigurationOverrideDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: str,
+             environment_variables: Mapping[str, Any],
+             maximum_runtime_in_minutes: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -7735,10 +9801,25 @@ class GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult(dict):
         :param str log_group_id: The log group id for where log objects will be for pipeline runs.
         :param str log_id: The log id of the log object the pipeline run logs will be shipped to.
         """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: bool,
+             enable_logging: bool,
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("enable_auto_log_creation", enable_auto_log_creation)
+        _setter("enable_logging", enable_logging)
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -7782,8 +9863,19 @@ class GetPipelineRunsPipelineRunLogDetailResult(dict):
         :param str log_group_id: The log group id for where log objects will be for pipeline runs.
         :param str log_id: The log id of the log object the pipeline run logs will be shipped to.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetPipelineRunsPipelineRunLogDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -7811,8 +9903,19 @@ class GetPipelineRunsPipelineRunStepOverrideDetailResult(dict):
         :param Sequence['GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailArgs'] step_configuration_details: The configuration details of a step.
         :param str step_name: The name of the step.
         """
-        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
-        pulumi.set(__self__, "step_name", step_name)
+        GetPipelineRunsPipelineRunStepOverrideDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            step_configuration_details=step_configuration_details,
+            step_name=step_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             step_configuration_details: Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult'],
+             step_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("step_configuration_details", step_configuration_details)
+        _setter("step_name", step_name)
 
     @property
     @pulumi.getter(name="stepConfigurationDetails")
@@ -7842,9 +9945,22 @@ class GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult(
         :param Mapping[str, Any] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: str,
+             environment_variables: Mapping[str, Any],
+             maximum_runtime_in_minutes: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -7890,13 +10006,34 @@ class GetPipelineRunsPipelineRunStepRunResult(dict):
         :param str time_finished: The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_started: The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        pulumi.set(__self__, "job_run_id", job_run_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "step_name", step_name)
-        pulumi.set(__self__, "step_type", step_type)
-        pulumi.set(__self__, "time_finished", time_finished)
-        pulumi.set(__self__, "time_started", time_started)
+        GetPipelineRunsPipelineRunStepRunResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            job_run_id=job_run_id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            step_name=step_name,
+            step_type=step_type,
+            time_finished=time_finished,
+            time_started=time_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             job_run_id: str,
+             lifecycle_details: str,
+             state: str,
+             step_name: str,
+             step_type: str,
+             time_finished: str,
+             time_started: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("job_run_id", job_run_id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("step_name", step_name)
+        _setter("step_type", step_type)
+        _setter("time_finished", time_finished)
+        _setter("time_started", time_started)
 
     @property
     @pulumi.getter(name="jobRunId")
@@ -7967,12 +10104,31 @@ class GetPipelineStepArtifactResult(dict):
         """
         :param str step_name: The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         """
-        pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
-        pulumi.set(__self__, "artifact_content_length", artifact_content_length)
-        pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
-        pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
-        pulumi.set(__self__, "pipeline_step_artifact", pipeline_step_artifact)
-        pulumi.set(__self__, "step_name", step_name)
+        GetPipelineStepArtifactResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            artifact_content_disposition=artifact_content_disposition,
+            artifact_content_length=artifact_content_length,
+            artifact_content_md5=artifact_content_md5,
+            artifact_last_modified=artifact_last_modified,
+            pipeline_step_artifact=pipeline_step_artifact,
+            step_name=step_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             artifact_content_disposition: str,
+             artifact_content_length: str,
+             artifact_content_md5: str,
+             artifact_last_modified: str,
+             pipeline_step_artifact: str,
+             step_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("artifact_content_disposition", artifact_content_disposition)
+        _setter("artifact_content_length", artifact_content_length)
+        _setter("artifact_content_md5", artifact_content_md5)
+        _setter("artifact_last_modified", artifact_last_modified)
+        _setter("pipeline_step_artifact", pipeline_step_artifact)
+        _setter("step_name", step_name)
 
     @property
     @pulumi.getter(name="artifactContentDisposition")
@@ -8029,14 +10185,37 @@ class GetPipelineStepDetailResult(dict):
         :param str step_name: The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         :param str step_type: The type of step.
         """
-        pulumi.set(__self__, "depends_ons", depends_ons)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "is_artifact_uploaded", is_artifact_uploaded)
-        pulumi.set(__self__, "job_id", job_id)
-        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
-        pulumi.set(__self__, "step_infrastructure_configuration_details", step_infrastructure_configuration_details)
-        pulumi.set(__self__, "step_name", step_name)
-        pulumi.set(__self__, "step_type", step_type)
+        GetPipelineStepDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            depends_ons=depends_ons,
+            description=description,
+            is_artifact_uploaded=is_artifact_uploaded,
+            job_id=job_id,
+            step_configuration_details=step_configuration_details,
+            step_infrastructure_configuration_details=step_infrastructure_configuration_details,
+            step_name=step_name,
+            step_type=step_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             depends_ons: Sequence[str],
+             description: str,
+             is_artifact_uploaded: bool,
+             job_id: str,
+             step_configuration_details: Sequence['outputs.GetPipelineStepDetailStepConfigurationDetailResult'],
+             step_infrastructure_configuration_details: Sequence['outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailResult'],
+             step_name: str,
+             step_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("depends_ons", depends_ons)
+        _setter("description", description)
+        _setter("is_artifact_uploaded", is_artifact_uploaded)
+        _setter("job_id", job_id)
+        _setter("step_configuration_details", step_configuration_details)
+        _setter("step_infrastructure_configuration_details", step_infrastructure_configuration_details)
+        _setter("step_name", step_name)
+        _setter("step_type", step_type)
 
     @property
     @pulumi.getter(name="dependsOns")
@@ -8114,9 +10293,22 @@ class GetPipelineStepDetailStepConfigurationDetailResult(dict):
         :param Mapping[str, Any] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        GetPipelineStepDetailStepConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: str,
+             environment_variables: Mapping[str, Any],
+             maximum_runtime_in_minutes: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -8154,9 +10346,22 @@ class GetPipelineStepDetailStepInfrastructureConfigurationDetailResult(dict):
         :param Sequence['GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "shape_config_details", shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
+        GetPipelineStepDetailStepInfrastructureConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            shape_config_details=shape_config_details,
+            shape_name=shape_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: int,
+             shape_config_details: Sequence['outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult'],
+             shape_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("shape_config_details", shape_config_details)
+        _setter("shape_name", shape_name)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -8192,8 +10397,19 @@ class GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetai
         :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: float,
+             ocpus: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -8218,10 +10434,23 @@ class GetPipelinesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPipelinesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -8280,25 +10509,70 @@ class GetPipelinesPipelineResult(dict):
         :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
         :param str time_updated: The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configuration_details", configuration_details)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "delete_related_pipeline_runs", delete_related_pipeline_runs)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "infrastructure_configuration_details", infrastructure_configuration_details)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "log_configuration_details", log_configuration_details)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "step_artifacts", step_artifacts)
-        pulumi.set(__self__, "step_details", step_details)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetPipelinesPipelineResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            configuration_details=configuration_details,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            delete_related_pipeline_runs=delete_related_pipeline_runs,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            infrastructure_configuration_details=infrastructure_configuration_details,
+            lifecycle_details=lifecycle_details,
+            log_configuration_details=log_configuration_details,
+            project_id=project_id,
+            state=state,
+            step_artifacts=step_artifacts,
+            step_details=step_details,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             configuration_details: Sequence['outputs.GetPipelinesPipelineConfigurationDetailResult'],
+             created_by: str,
+             defined_tags: Mapping[str, Any],
+             delete_related_pipeline_runs: bool,
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             infrastructure_configuration_details: Sequence['outputs.GetPipelinesPipelineInfrastructureConfigurationDetailResult'],
+             lifecycle_details: str,
+             log_configuration_details: Sequence['outputs.GetPipelinesPipelineLogConfigurationDetailResult'],
+             project_id: str,
+             state: str,
+             step_artifacts: Sequence['outputs.GetPipelinesPipelineStepArtifactResult'],
+             step_details: Sequence['outputs.GetPipelinesPipelineStepDetailResult'],
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("configuration_details", configuration_details)
+        _setter("created_by", created_by)
+        _setter("defined_tags", defined_tags)
+        _setter("delete_related_pipeline_runs", delete_related_pipeline_runs)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("infrastructure_configuration_details", infrastructure_configuration_details)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("log_configuration_details", log_configuration_details)
+        _setter("project_id", project_id)
+        _setter("state", state)
+        _setter("step_artifacts", step_artifacts)
+        _setter("step_details", step_details)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -8460,10 +10734,25 @@ class GetPipelinesPipelineConfigurationDetailResult(dict):
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param str type: The type of pipeline.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
-        pulumi.set(__self__, "type", type)
+        GetPipelinesPipelineConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: str,
+             environment_variables: Mapping[str, Any],
+             maximum_runtime_in_minutes: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -8509,9 +10798,22 @@ class GetPipelinesPipelineInfrastructureConfigurationDetailResult(dict):
         :param Sequence['GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "shape_config_details", shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
+        GetPipelinesPipelineInfrastructureConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            shape_config_details=shape_config_details,
+            shape_name=shape_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: int,
+             shape_config_details: Sequence['outputs.GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailResult'],
+             shape_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("shape_config_details", shape_config_details)
+        _setter("shape_name", shape_name)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -8547,8 +10849,19 @@ class GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailResu
         :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: float,
+             ocpus: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -8580,10 +10893,25 @@ class GetPipelinesPipelineLogConfigurationDetailResult(dict):
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
-        pulumi.set(__self__, "enable_auto_log_creation", enable_auto_log_creation)
-        pulumi.set(__self__, "enable_logging", enable_logging)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetPipelinesPipelineLogConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_auto_log_creation=enable_auto_log_creation,
+            enable_logging=enable_logging,
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_auto_log_creation: bool,
+             enable_logging: bool,
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("enable_auto_log_creation", enable_auto_log_creation)
+        _setter("enable_logging", enable_logging)
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="enableAutoLogCreation")
@@ -8630,12 +10958,31 @@ class GetPipelinesPipelineStepArtifactResult(dict):
         """
         :param str step_name: The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         """
-        pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
-        pulumi.set(__self__, "artifact_content_length", artifact_content_length)
-        pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
-        pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
-        pulumi.set(__self__, "pipeline_step_artifact", pipeline_step_artifact)
-        pulumi.set(__self__, "step_name", step_name)
+        GetPipelinesPipelineStepArtifactResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            artifact_content_disposition=artifact_content_disposition,
+            artifact_content_length=artifact_content_length,
+            artifact_content_md5=artifact_content_md5,
+            artifact_last_modified=artifact_last_modified,
+            pipeline_step_artifact=pipeline_step_artifact,
+            step_name=step_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             artifact_content_disposition: str,
+             artifact_content_length: str,
+             artifact_content_md5: str,
+             artifact_last_modified: str,
+             pipeline_step_artifact: str,
+             step_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("artifact_content_disposition", artifact_content_disposition)
+        _setter("artifact_content_length", artifact_content_length)
+        _setter("artifact_content_md5", artifact_content_md5)
+        _setter("artifact_last_modified", artifact_last_modified)
+        _setter("pipeline_step_artifact", pipeline_step_artifact)
+        _setter("step_name", step_name)
 
     @property
     @pulumi.getter(name="artifactContentDisposition")
@@ -8692,14 +11039,37 @@ class GetPipelinesPipelineStepDetailResult(dict):
         :param str step_name: The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         :param str step_type: The type of step.
         """
-        pulumi.set(__self__, "depends_ons", depends_ons)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "is_artifact_uploaded", is_artifact_uploaded)
-        pulumi.set(__self__, "job_id", job_id)
-        pulumi.set(__self__, "step_configuration_details", step_configuration_details)
-        pulumi.set(__self__, "step_infrastructure_configuration_details", step_infrastructure_configuration_details)
-        pulumi.set(__self__, "step_name", step_name)
-        pulumi.set(__self__, "step_type", step_type)
+        GetPipelinesPipelineStepDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            depends_ons=depends_ons,
+            description=description,
+            is_artifact_uploaded=is_artifact_uploaded,
+            job_id=job_id,
+            step_configuration_details=step_configuration_details,
+            step_infrastructure_configuration_details=step_infrastructure_configuration_details,
+            step_name=step_name,
+            step_type=step_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             depends_ons: Sequence[str],
+             description: str,
+             is_artifact_uploaded: bool,
+             job_id: str,
+             step_configuration_details: Sequence['outputs.GetPipelinesPipelineStepDetailStepConfigurationDetailResult'],
+             step_infrastructure_configuration_details: Sequence['outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult'],
+             step_name: str,
+             step_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("depends_ons", depends_ons)
+        _setter("description", description)
+        _setter("is_artifact_uploaded", is_artifact_uploaded)
+        _setter("job_id", job_id)
+        _setter("step_configuration_details", step_configuration_details)
+        _setter("step_infrastructure_configuration_details", step_infrastructure_configuration_details)
+        _setter("step_name", step_name)
+        _setter("step_type", step_type)
 
     @property
     @pulumi.getter(name="dependsOns")
@@ -8777,9 +11147,22 @@ class GetPipelinesPipelineStepDetailStepConfigurationDetailResult(dict):
         :param Mapping[str, Any] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         """
-        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
-        pulumi.set(__self__, "environment_variables", environment_variables)
-        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        GetPipelinesPipelineStepDetailStepConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            command_line_arguments=command_line_arguments,
+            environment_variables=environment_variables,
+            maximum_runtime_in_minutes=maximum_runtime_in_minutes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             command_line_arguments: str,
+             environment_variables: Mapping[str, Any],
+             maximum_runtime_in_minutes: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("command_line_arguments", command_line_arguments)
+        _setter("environment_variables", environment_variables)
+        _setter("maximum_runtime_in_minutes", maximum_runtime_in_minutes)
 
     @property
     @pulumi.getter(name="commandLineArguments")
@@ -8817,9 +11200,22 @@ class GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult(
         :param Sequence['GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
-        pulumi.set(__self__, "shape_config_details", shape_config_details)
-        pulumi.set(__self__, "shape_name", shape_name)
+        GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            block_storage_size_in_gbs=block_storage_size_in_gbs,
+            shape_config_details=shape_config_details,
+            shape_name=shape_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             block_storage_size_in_gbs: int,
+             shape_config_details: Sequence['outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult'],
+             shape_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("block_storage_size_in_gbs", block_storage_size_in_gbs)
+        _setter("shape_config_details", shape_config_details)
+        _setter("shape_name", shape_name)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -8855,8 +11251,19 @@ class GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeCo
         :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: float,
+             ocpus: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -8876,15 +11283,286 @@ class GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeCo
 
 
 @pulumi.output_type
+class GetPrivateEndpointsDataSciencePrivateEndpointResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 created_by: str,
+                 data_science_resource_type: str,
+                 defined_tags: Mapping[str, Any],
+                 description: str,
+                 display_name: str,
+                 fqdn: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 lifecycle_details: str,
+                 nsg_ids: Sequence[str],
+                 state: str,
+                 sub_domain: str,
+                 subnet_id: str,
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+        :param str data_science_resource_type: Resource types in the Data Science service such as notebooks.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str description: A user friendly description. Avoid entering confidential information.
+        :param str display_name: <b>Filter</b> results by its user-friendly name.
+        :param str fqdn: Accesing the Data Science resource using FQDN.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param str id: The OCID of a private endpoint.
+        :param str lifecycle_details: Details of the state of Data Science private endpoint.
+        :param Sequence[str] nsg_ids: An array of network security group OCIDs.
+        :param str state: The lifecycle state of the private endpoint.
+        :param str subnet_id: The OCID of a subnet.
+        :param str time_created: The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        :param str time_updated: The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        """
+        GetPrivateEndpointsDataSciencePrivateEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            created_by=created_by,
+            data_science_resource_type=data_science_resource_type,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            fqdn=fqdn,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            nsg_ids=nsg_ids,
+            state=state,
+            sub_domain=sub_domain,
+            subnet_id=subnet_id,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             created_by: str,
+             data_science_resource_type: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             fqdn: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             nsg_ids: Sequence[str],
+             state: str,
+             sub_domain: str,
+             subnet_id: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("created_by", created_by)
+        _setter("data_science_resource_type", data_science_resource_type)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("fqdn", fqdn)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("nsg_ids", nsg_ids)
+        _setter("state", state)
+        _setter("sub_domain", sub_domain)
+        _setter("subnet_id", subnet_id)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+        """
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="dataScienceResourceType")
+    def data_science_resource_type(self) -> str:
+        """
+        Resource types in the Data Science service such as notebooks.
+        """
+        return pulumi.get(self, "data_science_resource_type")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A user friendly description. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        <b>Filter</b> results by its user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def fqdn(self) -> str:
+        """
+        Accesing the Data Science resource using FQDN.
+        """
+        return pulumi.get(self, "fqdn")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of a private endpoint.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details of the state of Data Science private endpoint.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        An array of network security group OCIDs.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The lifecycle state of the private endpoint.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="subDomain")
+    def sub_domain(self) -> str:
+        return pulumi.get(self, "sub_domain")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The OCID of a subnet.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetPrivateEndpointsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        GetPrivateEndpointsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
+        if regex is not None:
+            _setter("regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetProjectsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProjectsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -8925,15 +11603,40 @@ class GetProjectsProjectResult(dict):
         :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
         :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetProjectsProjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             created_by: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             state: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("created_by", created_by)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")

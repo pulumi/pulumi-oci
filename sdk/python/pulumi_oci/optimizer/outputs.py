@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -84,8 +84,17 @@ class ProfileLevelsConfiguration(dict):
         """
         :param Sequence['ProfileLevelsConfigurationItemArgs'] items: (Updatable) The list of tags specified in the current profile override.
         """
+        ProfileLevelsConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.ProfileLevelsConfigurationItem']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if items is not None:
-            pulumi.set(__self__, "items", items)
+            _setter("items", items)
 
     @property
     @pulumi.getter
@@ -122,10 +131,21 @@ class ProfileLevelsConfigurationItem(dict):
         :param str level: (Updatable) The pre-defined profile level.
         :param str recommendation_id: (Updatable) The unique OCID of the recommendation.
         """
+        ProfileLevelsConfigurationItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            level=level,
+            recommendation_id=recommendation_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             level: Optional[str] = None,
+             recommendation_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if level is not None:
-            pulumi.set(__self__, "level", level)
+            _setter("level", level)
         if recommendation_id is not None:
-            pulumi.set(__self__, "recommendation_id", recommendation_id)
+            _setter("recommendation_id", recommendation_id)
 
     @property
     @pulumi.getter
@@ -151,7 +171,16 @@ class ProfileTargetCompartments(dict):
         """
         :param Sequence[str] items: (Updatable) The list of tags specified in the current profile override.
         """
-        pulumi.set(__self__, "items", items)
+        ProfileTargetCompartments._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -169,7 +198,16 @@ class ProfileTargetTags(dict):
         """
         :param Sequence['ProfileTargetTagsItemArgs'] items: (Updatable) The list of tags specified in the current profile override.
         """
-        pulumi.set(__self__, "items", items)
+        ProfileTargetTags._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.ProfileTargetTagsItem'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -224,11 +262,26 @@ class ProfileTargetTagsItem(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "tag_definition_name", tag_definition_name)
-        pulumi.set(__self__, "tag_namespace_name", tag_namespace_name)
-        pulumi.set(__self__, "tag_value_type", tag_value_type)
+        ProfileTargetTagsItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            tag_definition_name=tag_definition_name,
+            tag_namespace_name=tag_namespace_name,
+            tag_value_type=tag_value_type,
+            tag_values=tag_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             tag_definition_name: str,
+             tag_namespace_name: str,
+             tag_value_type: str,
+             tag_values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("tag_definition_name", tag_definition_name)
+        _setter("tag_namespace_name", tag_namespace_name)
+        _setter("tag_value_type", tag_value_type)
         if tag_values is not None:
-            pulumi.set(__self__, "tag_values", tag_values)
+            _setter("tag_values", tag_values)
 
     @property
     @pulumi.getter(name="tagDefinitionName")
@@ -280,10 +333,21 @@ class RecommendationResourceCount(dict):
         :param int count: The count of resources.
         :param str status: (Updatable) The status of the recommendation.
         """
+        RecommendationResourceCount._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            count=count,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             count: Optional[int] = None,
+             status: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if count is not None:
-            pulumi.set(__self__, "count", count)
+            _setter("count", count)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
 
     @property
     @pulumi.getter
@@ -309,8 +373,17 @@ class RecommendationSupportedLevel(dict):
         """
         :param Sequence['RecommendationSupportedLevelItemArgs'] items: The list of supported levels.
         """
+        RecommendationSupportedLevel._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[Sequence['outputs.RecommendationSupportedLevelItem']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if items is not None:
-            pulumi.set(__self__, "items", items)
+            _setter("items", items)
 
     @property
     @pulumi.getter
@@ -328,8 +401,17 @@ class RecommendationSupportedLevelItem(dict):
         """
         :param str name: The name of the profile level.
         """
+        RecommendationSupportedLevelItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -351,12 +433,25 @@ class ResourceActionAction(dict):
         :param str type: The status of the resource action.
         :param str url: The URL path to documentation that explains how to perform the action.
         """
+        ResourceActionAction._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            type=type,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             type: Optional[str] = None,
+             url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if url is not None:
-            pulumi.set(__self__, "url", url)
+            _setter("url", url)
 
     @property
     @pulumi.getter
@@ -387,7 +482,16 @@ class ResourceActionAction(dict):
 class GetCategoriesCategoryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetCategoriesCategoryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetCategoriesCategoryCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetCategoriesCategoryCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -424,18 +528,49 @@ class GetCategoriesCategoryCollectionItemResult(dict):
         :param str time_created: The date and time the category details were created, in the format defined by RFC3339.
         :param str time_updated: The date and time the category details were last updated, in the format defined by RFC3339.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compartment_name", compartment_name)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "estimated_cost_saving", estimated_cost_saving)
-        pulumi.set(__self__, "extended_metadata", extended_metadata)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "recommendation_counts", recommendation_counts)
-        pulumi.set(__self__, "resource_counts", resource_counts)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetCategoriesCategoryCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            compartment_name=compartment_name,
+            description=description,
+            estimated_cost_saving=estimated_cost_saving,
+            extended_metadata=extended_metadata,
+            id=id,
+            name=name,
+            recommendation_counts=recommendation_counts,
+            resource_counts=resource_counts,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             compartment_name: str,
+             description: str,
+             estimated_cost_saving: float,
+             extended_metadata: Mapping[str, Any],
+             id: str,
+             name: str,
+             recommendation_counts: Sequence['outputs.GetCategoriesCategoryCollectionItemRecommendationCountResult'],
+             resource_counts: Sequence['outputs.GetCategoriesCategoryCollectionItemResourceCountResult'],
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("compartment_name", compartment_name)
+        _setter("description", description)
+        _setter("estimated_cost_saving", estimated_cost_saving)
+        _setter("extended_metadata", extended_metadata)
+        _setter("id", id)
+        _setter("name", name)
+        _setter("recommendation_counts", recommendation_counts)
+        _setter("resource_counts", resource_counts)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -543,8 +678,19 @@ class GetCategoriesCategoryCollectionItemRecommendationCountResult(dict):
         :param int count: The count of resources.
         :param str importance: The level of importance assigned to the recommendation.
         """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "importance", importance)
+        GetCategoriesCategoryCollectionItemRecommendationCountResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            count=count,
+            importance=importance,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             count: int,
+             importance: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("count", count)
+        _setter("importance", importance)
 
     @property
     @pulumi.getter
@@ -572,8 +718,19 @@ class GetCategoriesCategoryCollectionItemResourceCountResult(dict):
         :param int count: The count of resources.
         :param str status: The recommendation status of the resource.
         """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "status", status)
+        GetCategoriesCategoryCollectionItemResourceCountResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            count=count,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             count: int,
+             status: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("count", count)
+        _setter("status", status)
 
     @property
     @pulumi.getter
@@ -601,10 +758,23 @@ class GetCategoriesFilterResult(dict):
         """
         :param str name: Optional. A filter that returns results that match the name specified.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetCategoriesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -634,8 +804,19 @@ class GetCategoryRecommendationCountResult(dict):
         :param int count: The count of resources.
         :param str importance: The level of importance assigned to the recommendation.
         """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "importance", importance)
+        GetCategoryRecommendationCountResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            count=count,
+            importance=importance,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             count: int,
+             importance: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("count", count)
+        _setter("importance", importance)
 
     @property
     @pulumi.getter
@@ -663,8 +844,19 @@ class GetCategoryResourceCountResult(dict):
         :param int count: The count of resources.
         :param str status: The recommendation status of the resource.
         """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "status", status)
+        GetCategoryResourceCountResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            count=count,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             count: int,
+             status: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("count", count)
+        _setter("status", status)
 
     @property
     @pulumi.getter
@@ -687,7 +879,16 @@ class GetCategoryResourceCountResult(dict):
 class GetEnrollmentStatusesEnrollmentStatusCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetEnrollmentStatusesEnrollmentStatusCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetEnrollmentStatusesEnrollmentStatusCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetEnrollmentStatusesEnrollmentStatusCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -715,14 +916,37 @@ class GetEnrollmentStatusesEnrollmentStatusCollectionItemResult(dict):
         :param str time_created: The date and time the enrollment status was created, in the format defined by RFC3339.
         :param str time_updated: The date and time the enrollment status was last updated, in the format defined by RFC3339.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "enrollment_status_id", enrollment_status_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_reason", status_reason)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetEnrollmentStatusesEnrollmentStatusCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            enrollment_status_id=enrollment_status_id,
+            id=id,
+            state=state,
+            status=status,
+            status_reason=status_reason,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             enrollment_status_id: str,
+             id: str,
+             state: str,
+             status: str,
+             status_reason: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("enrollment_status_id", enrollment_status_id)
+        _setter("id", id)
+        _setter("state", state)
+        _setter("status", status)
+        _setter("status_reason", status_reason)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -792,10 +1016,23 @@ class GetEnrollmentStatusesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetEnrollmentStatusesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -822,10 +1059,23 @@ class GetHistoriesFilterResult(dict):
         """
         :param str name: Optional. A filter that returns results that match the name specified.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetHistoriesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -853,7 +1103,16 @@ class GetHistoriesHistoryCollectionResult(dict):
         """
         :param Sequence['GetHistoriesHistoryCollectionItemArgs'] items: A collection of history summaries.
         """
-        pulumi.set(__self__, "items", items)
+        GetHistoriesHistoryCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetHistoriesHistoryCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -903,23 +1162,64 @@ class GetHistoriesHistoryCollectionItemResult(dict):
         :param str status: A filter that returns recommendations that match the status specified.
         :param str time_created: The date and time the recommendation history was created, in the format defined by RFC3339.
         """
-        pulumi.set(__self__, "actions", actions)
-        pulumi.set(__self__, "category_id", category_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compartment_name", compartment_name)
-        pulumi.set(__self__, "estimated_cost_saving", estimated_cost_saving)
-        pulumi.set(__self__, "extended_metadata", extended_metadata)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "metadata", metadata)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "recommendation_id", recommendation_id)
-        pulumi.set(__self__, "recommendation_name", recommendation_name)
-        pulumi.set(__self__, "resource_action_id", resource_action_id)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "time_created", time_created)
+        GetHistoriesHistoryCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actions=actions,
+            category_id=category_id,
+            compartment_id=compartment_id,
+            compartment_name=compartment_name,
+            estimated_cost_saving=estimated_cost_saving,
+            extended_metadata=extended_metadata,
+            id=id,
+            metadata=metadata,
+            name=name,
+            recommendation_id=recommendation_id,
+            recommendation_name=recommendation_name,
+            resource_action_id=resource_action_id,
+            resource_id=resource_id,
+            resource_type=resource_type,
+            state=state,
+            status=status,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actions: Sequence['outputs.GetHistoriesHistoryCollectionItemActionResult'],
+             category_id: str,
+             compartment_id: str,
+             compartment_name: str,
+             estimated_cost_saving: float,
+             extended_metadata: Mapping[str, Any],
+             id: str,
+             metadata: Mapping[str, Any],
+             name: str,
+             recommendation_id: str,
+             recommendation_name: str,
+             resource_action_id: str,
+             resource_id: str,
+             resource_type: str,
+             state: str,
+             status: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("actions", actions)
+        _setter("category_id", category_id)
+        _setter("compartment_id", compartment_id)
+        _setter("compartment_name", compartment_name)
+        _setter("estimated_cost_saving", estimated_cost_saving)
+        _setter("extended_metadata", extended_metadata)
+        _setter("id", id)
+        _setter("metadata", metadata)
+        _setter("name", name)
+        _setter("recommendation_id", recommendation_id)
+        _setter("recommendation_name", recommendation_name)
+        _setter("resource_action_id", resource_action_id)
+        _setter("resource_id", resource_id)
+        _setter("resource_type", resource_type)
+        _setter("state", state)
+        _setter("status", status)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter
@@ -1069,9 +1369,22 @@ class GetHistoriesHistoryCollectionItemActionResult(dict):
         :param str type: The status of the resource action.
         :param str url: The URL path to documentation that explains how to perform the action.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "url", url)
+        GetHistoriesHistoryCollectionItemActionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            type=type,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             type: str,
+             url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("type", type)
+        _setter("url", url)
 
     @property
     @pulumi.getter
@@ -1117,13 +1430,34 @@ class GetProfileLevelItemResult(dict):
         :param str time_updated: The date and time the category details were last updated, in the format defined by RFC3339.
         :param Sequence[int] valid_intervals: An array of aggregation intervals (in days) allowed for profiles using this profile level.
         """
-        pulumi.set(__self__, "default_interval", default_interval)
-        pulumi.set(__self__, "metrics", metrics)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "recommendation_name", recommendation_name)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "valid_intervals", valid_intervals)
+        GetProfileLevelItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_interval=default_interval,
+            metrics=metrics,
+            name=name,
+            recommendation_name=recommendation_name,
+            time_created=time_created,
+            time_updated=time_updated,
+            valid_intervals=valid_intervals,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_interval: int,
+             metrics: Sequence['outputs.GetProfileLevelItemMetricResult'],
+             name: str,
+             recommendation_name: str,
+             time_created: str,
+             time_updated: str,
+             valid_intervals: Sequence[int],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_interval", default_interval)
+        _setter("metrics", metrics)
+        _setter("name", name)
+        _setter("recommendation_name", recommendation_name)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("valid_intervals", valid_intervals)
 
     @property
     @pulumi.getter(name="defaultInterval")
@@ -1195,10 +1529,25 @@ class GetProfileLevelItemMetricResult(dict):
         :param float target: Optional. The metric value that the recommendation will target.
         :param float threshold: The threshold that must be crossed for the recommendation to appear.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "statistic", statistic)
-        pulumi.set(__self__, "target", target)
-        pulumi.set(__self__, "threshold", threshold)
+        GetProfileLevelItemMetricResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            statistic=statistic,
+            target=target,
+            threshold=threshold,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             statistic: str,
+             target: float,
+             threshold: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("statistic", statistic)
+        _setter("target", target)
+        _setter("threshold", threshold)
 
     @property
     @pulumi.getter
@@ -1240,7 +1589,16 @@ class GetProfileLevelsConfigurationResult(dict):
         """
         :param Sequence['GetProfileLevelsConfigurationItemArgs'] items: The list of tags specified in the current profile override.
         """
-        pulumi.set(__self__, "items", items)
+        GetProfileLevelsConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetProfileLevelsConfigurationItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1260,8 +1618,19 @@ class GetProfileLevelsConfigurationItemResult(dict):
         :param str level: The pre-defined profile level.
         :param str recommendation_id: The unique OCID of the recommendation.
         """
-        pulumi.set(__self__, "level", level)
-        pulumi.set(__self__, "recommendation_id", recommendation_id)
+        GetProfileLevelsConfigurationItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            level=level,
+            recommendation_id=recommendation_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             level: str,
+             recommendation_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("level", level)
+        _setter("recommendation_id", recommendation_id)
 
     @property
     @pulumi.getter
@@ -1289,10 +1658,23 @@ class GetProfileLevelsFilterResult(dict):
         """
         :param str name: Optional. A filter that returns results that match the name specified.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProfileLevelsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1320,7 +1702,16 @@ class GetProfileLevelsProfileLevelCollectionResult(dict):
         """
         :param Sequence['GetProfileLevelsProfileLevelCollectionItemArgs'] items: A collection of profile levels.
         """
-        pulumi.set(__self__, "items", items)
+        GetProfileLevelsProfileLevelCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetProfileLevelsProfileLevelCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1350,13 +1741,34 @@ class GetProfileLevelsProfileLevelCollectionItemResult(dict):
         :param str time_updated: The date and time the category details were last updated, in the format defined by RFC3339.
         :param Sequence[int] valid_intervals: An array of aggregation intervals (in days) allowed for profiles using this profile level.
         """
-        pulumi.set(__self__, "default_interval", default_interval)
-        pulumi.set(__self__, "metrics", metrics)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "recommendation_name", recommendation_name)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "valid_intervals", valid_intervals)
+        GetProfileLevelsProfileLevelCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_interval=default_interval,
+            metrics=metrics,
+            name=name,
+            recommendation_name=recommendation_name,
+            time_created=time_created,
+            time_updated=time_updated,
+            valid_intervals=valid_intervals,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_interval: int,
+             metrics: Sequence['outputs.GetProfileLevelsProfileLevelCollectionItemMetricResult'],
+             name: str,
+             recommendation_name: str,
+             time_created: str,
+             time_updated: str,
+             valid_intervals: Sequence[int],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_interval", default_interval)
+        _setter("metrics", metrics)
+        _setter("name", name)
+        _setter("recommendation_name", recommendation_name)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("valid_intervals", valid_intervals)
 
     @property
     @pulumi.getter(name="defaultInterval")
@@ -1428,10 +1840,25 @@ class GetProfileLevelsProfileLevelCollectionItemMetricResult(dict):
         :param float target: Optional. The metric value that the recommendation will target.
         :param float threshold: The threshold that must be crossed for the recommendation to appear.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "statistic", statistic)
-        pulumi.set(__self__, "target", target)
-        pulumi.set(__self__, "threshold", threshold)
+        GetProfileLevelsProfileLevelCollectionItemMetricResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            statistic=statistic,
+            target=target,
+            threshold=threshold,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             statistic: str,
+             target: float,
+             threshold: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("statistic", statistic)
+        _setter("target", target)
+        _setter("threshold", threshold)
 
     @property
     @pulumi.getter
@@ -1473,7 +1900,16 @@ class GetProfileTargetCompartmentResult(dict):
         """
         :param Sequence[str] items: The list of tags specified in the current profile override.
         """
-        pulumi.set(__self__, "items", items)
+        GetProfileTargetCompartmentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1491,7 +1927,16 @@ class GetProfileTargetTagResult(dict):
         """
         :param Sequence['GetProfileTargetTagItemArgs'] items: The list of tags specified in the current profile override.
         """
-        pulumi.set(__self__, "items", items)
+        GetProfileTargetTagResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetProfileTargetTagItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1515,10 +1960,25 @@ class GetProfileTargetTagItemResult(dict):
         :param str tag_value_type: Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
         :param Sequence[str] tag_values: The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
         """
-        pulumi.set(__self__, "tag_definition_name", tag_definition_name)
-        pulumi.set(__self__, "tag_namespace_name", tag_namespace_name)
-        pulumi.set(__self__, "tag_value_type", tag_value_type)
-        pulumi.set(__self__, "tag_values", tag_values)
+        GetProfileTargetTagItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            tag_definition_name=tag_definition_name,
+            tag_namespace_name=tag_namespace_name,
+            tag_value_type=tag_value_type,
+            tag_values=tag_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             tag_definition_name: str,
+             tag_namespace_name: str,
+             tag_value_type: str,
+             tag_values: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("tag_definition_name", tag_definition_name)
+        _setter("tag_namespace_name", tag_namespace_name)
+        _setter("tag_value_type", tag_value_type)
+        _setter("tag_values", tag_values)
 
     @property
     @pulumi.getter(name="tagDefinitionName")
@@ -1562,10 +2022,23 @@ class GetProfilesFilterResult(dict):
         """
         :param str name: Optional. A filter that returns results that match the name specified.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProfilesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1593,7 +2066,16 @@ class GetProfilesProfileCollectionResult(dict):
         """
         :param Sequence['GetProfilesProfileCollectionItemArgs'] items: The list of tags specified in the current profile override.
         """
-        pulumi.set(__self__, "items", items)
+        GetProfilesProfileCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetProfilesProfileCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1635,19 +2117,52 @@ class GetProfilesProfileCollectionItemResult(dict):
         :param str time_created: The date and time the profile was created, in the format defined by RFC3339.
         :param str time_updated: The date and time the profile was last updated, in the format defined by RFC3339.
         """
-        pulumi.set(__self__, "aggregation_interval_in_days", aggregation_interval_in_days)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "levels_configurations", levels_configurations)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "target_compartments", target_compartments)
-        pulumi.set(__self__, "target_tags", target_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetProfilesProfileCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregation_interval_in_days=aggregation_interval_in_days,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            id=id,
+            levels_configurations=levels_configurations,
+            name=name,
+            state=state,
+            target_compartments=target_compartments,
+            target_tags=target_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregation_interval_in_days: int,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             levels_configurations: Sequence['outputs.GetProfilesProfileCollectionItemLevelsConfigurationResult'],
+             name: str,
+             state: str,
+             target_compartments: Sequence['outputs.GetProfilesProfileCollectionItemTargetCompartmentResult'],
+             target_tags: Sequence['outputs.GetProfilesProfileCollectionItemTargetTagResult'],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("aggregation_interval_in_days", aggregation_interval_in_days)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("levels_configurations", levels_configurations)
+        _setter("name", name)
+        _setter("state", state)
+        _setter("target_compartments", target_compartments)
+        _setter("target_tags", target_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="aggregationIntervalInDays")
@@ -1761,7 +2276,16 @@ class GetProfilesProfileCollectionItemLevelsConfigurationResult(dict):
         """
         :param Sequence['GetProfilesProfileCollectionItemLevelsConfigurationItemArgs'] items: The list of tags specified in the current profile override.
         """
-        pulumi.set(__self__, "items", items)
+        GetProfilesProfileCollectionItemLevelsConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetProfilesProfileCollectionItemLevelsConfigurationItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1781,8 +2305,19 @@ class GetProfilesProfileCollectionItemLevelsConfigurationItemResult(dict):
         :param str level: The pre-defined profile level.
         :param str recommendation_id: The unique OCID of the recommendation.
         """
-        pulumi.set(__self__, "level", level)
-        pulumi.set(__self__, "recommendation_id", recommendation_id)
+        GetProfilesProfileCollectionItemLevelsConfigurationItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            level=level,
+            recommendation_id=recommendation_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             level: str,
+             recommendation_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("level", level)
+        _setter("recommendation_id", recommendation_id)
 
     @property
     @pulumi.getter
@@ -1808,7 +2343,16 @@ class GetProfilesProfileCollectionItemTargetCompartmentResult(dict):
         """
         :param Sequence[str] items: The list of tags specified in the current profile override.
         """
-        pulumi.set(__self__, "items", items)
+        GetProfilesProfileCollectionItemTargetCompartmentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1826,7 +2370,16 @@ class GetProfilesProfileCollectionItemTargetTagResult(dict):
         """
         :param Sequence['GetProfilesProfileCollectionItemTargetTagItemArgs'] items: The list of tags specified in the current profile override.
         """
-        pulumi.set(__self__, "items", items)
+        GetProfilesProfileCollectionItemTargetTagResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetProfilesProfileCollectionItemTargetTagItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1850,10 +2403,25 @@ class GetProfilesProfileCollectionItemTargetTagItemResult(dict):
         :param str tag_value_type: Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
         :param Sequence[str] tag_values: The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
         """
-        pulumi.set(__self__, "tag_definition_name", tag_definition_name)
-        pulumi.set(__self__, "tag_namespace_name", tag_namespace_name)
-        pulumi.set(__self__, "tag_value_type", tag_value_type)
-        pulumi.set(__self__, "tag_values", tag_values)
+        GetProfilesProfileCollectionItemTargetTagItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            tag_definition_name=tag_definition_name,
+            tag_namespace_name=tag_namespace_name,
+            tag_value_type=tag_value_type,
+            tag_values=tag_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             tag_definition_name: str,
+             tag_namespace_name: str,
+             tag_value_type: str,
+             tag_values: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("tag_definition_name", tag_definition_name)
+        _setter("tag_namespace_name", tag_namespace_name)
+        _setter("tag_value_type", tag_value_type)
+        _setter("tag_values", tag_values)
 
     @property
     @pulumi.getter(name="tagDefinitionName")
@@ -1897,8 +2465,19 @@ class GetRecommendationResourceCountResult(dict):
         :param int count: The count of resources.
         :param str status: The current status of the recommendation.
         """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "status", status)
+        GetRecommendationResourceCountResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            count=count,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             count: int,
+             status: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("count", count)
+        _setter("status", status)
 
     @property
     @pulumi.getter
@@ -1926,10 +2505,23 @@ class GetRecommendationStrategiesFilterResult(dict):
         """
         :param str name: Optional. A filter that returns results that match the name specified.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetRecommendationStrategiesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1957,7 +2549,16 @@ class GetRecommendationStrategiesRecommendationStrategyCollectionResult(dict):
         """
         :param Sequence['GetRecommendationStrategiesRecommendationStrategyCollectionItemArgs'] items: A collection of recommendation strategy summaries.
         """
-        pulumi.set(__self__, "items", items)
+        GetRecommendationStrategiesRecommendationStrategyCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1977,8 +2578,19 @@ class GetRecommendationStrategiesRecommendationStrategyCollectionItemResult(dict
         :param str name: Optional. A filter that returns results that match the name specified.
         :param Sequence['GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArgs'] strategies: The list of strategies used.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "strategies", strategies)
+        GetRecommendationStrategiesRecommendationStrategyCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            strategies=strategies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             strategies: Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("strategies", strategies)
 
     @property
     @pulumi.getter
@@ -2008,9 +2620,22 @@ class GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyRes
         :param Sequence['GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArgs'] parameters_definitions: The list of strategies for the parameters.
         :param str strategy_name: The name of the strategy.
         """
-        pulumi.set(__self__, "is_default", is_default)
-        pulumi.set(__self__, "parameters_definitions", parameters_definitions)
-        pulumi.set(__self__, "strategy_name", strategy_name)
+        GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_default=is_default,
+            parameters_definitions=parameters_definitions,
+            strategy_name=strategy_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_default: bool,
+             parameters_definitions: Sequence['outputs.GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionResult'],
+             strategy_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_default", is_default)
+        _setter("parameters_definitions", parameters_definitions)
+        _setter("strategy_name", strategy_name)
 
     @property
     @pulumi.getter(name="isDefault")
@@ -2054,12 +2679,31 @@ class GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyPar
         :param Sequence[Any] possible_values: The list of possible values used for these strategy parameters.
         :param str type: The type of strategy parameter.
         """
-        pulumi.set(__self__, "default_values", default_values)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "possible_values", possible_values)
-        pulumi.set(__self__, "type", type)
+        GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_values=default_values,
+            description=description,
+            is_required=is_required,
+            name=name,
+            possible_values=possible_values,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_values: Sequence[Any],
+             description: str,
+             is_required: bool,
+             name: str,
+             possible_values: Sequence[Any],
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_values", default_values)
+        _setter("description", description)
+        _setter("is_required", is_required)
+        _setter("name", name)
+        _setter("possible_values", possible_values)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="defaultValues")
@@ -2119,8 +2763,19 @@ class GetRecommendationStrategyItemResult(dict):
         :param str name: Optional. A filter that returns results that match the name specified.
         :param Sequence['GetRecommendationStrategyItemStrategyArgs'] strategies: The list of strategies used.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "strategies", strategies)
+        GetRecommendationStrategyItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            strategies=strategies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             strategies: Sequence['outputs.GetRecommendationStrategyItemStrategyResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("strategies", strategies)
 
     @property
     @pulumi.getter
@@ -2150,9 +2805,22 @@ class GetRecommendationStrategyItemStrategyResult(dict):
         :param Sequence['GetRecommendationStrategyItemStrategyParametersDefinitionArgs'] parameters_definitions: The list of strategies for the parameters.
         :param str strategy_name: The name of the strategy.
         """
-        pulumi.set(__self__, "is_default", is_default)
-        pulumi.set(__self__, "parameters_definitions", parameters_definitions)
-        pulumi.set(__self__, "strategy_name", strategy_name)
+        GetRecommendationStrategyItemStrategyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_default=is_default,
+            parameters_definitions=parameters_definitions,
+            strategy_name=strategy_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_default: bool,
+             parameters_definitions: Sequence['outputs.GetRecommendationStrategyItemStrategyParametersDefinitionResult'],
+             strategy_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_default", is_default)
+        _setter("parameters_definitions", parameters_definitions)
+        _setter("strategy_name", strategy_name)
 
     @property
     @pulumi.getter(name="isDefault")
@@ -2196,12 +2864,31 @@ class GetRecommendationStrategyItemStrategyParametersDefinitionResult(dict):
         :param Sequence[Any] possible_values: The list of possible values used for these strategy parameters.
         :param str type: The type of strategy parameter.
         """
-        pulumi.set(__self__, "default_values", default_values)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "possible_values", possible_values)
-        pulumi.set(__self__, "type", type)
+        GetRecommendationStrategyItemStrategyParametersDefinitionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_values=default_values,
+            description=description,
+            is_required=is_required,
+            name=name,
+            possible_values=possible_values,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_values: Sequence[Any],
+             description: str,
+             is_required: bool,
+             name: str,
+             possible_values: Sequence[Any],
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_values", default_values)
+        _setter("description", description)
+        _setter("is_required", is_required)
+        _setter("name", name)
+        _setter("possible_values", possible_values)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="defaultValues")
@@ -2259,7 +2946,16 @@ class GetRecommendationSupportedLevelResult(dict):
         """
         :param Sequence['GetRecommendationSupportedLevelItemArgs'] items: The list of supported levels.
         """
-        pulumi.set(__self__, "items", items)
+        GetRecommendationSupportedLevelResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetRecommendationSupportedLevelItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2277,7 +2973,16 @@ class GetRecommendationSupportedLevelItemResult(dict):
         """
         :param str name: The name of the profile level.
         """
-        pulumi.set(__self__, "name", name)
+        GetRecommendationSupportedLevelItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2297,10 +3002,23 @@ class GetRecommendationsFilterResult(dict):
         """
         :param str name: Optional. A filter that returns results that match the name specified.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetRecommendationsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2328,7 +3046,16 @@ class GetRecommendationsRecommendationCollectionResult(dict):
         """
         :param Sequence['GetRecommendationsRecommendationCollectionItemArgs'] items: The list of supported levels.
         """
-        pulumi.set(__self__, "items", items)
+        GetRecommendationsRecommendationCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetRecommendationsRecommendationCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2377,23 +3104,64 @@ class GetRecommendationsRecommendationCollectionItemResult(dict):
         :param str time_status_end: The date and time the current status will change. The format is defined by RFC3339.
         :param str time_updated: The date and time the recommendation details were last updated, in the format defined by RFC3339.
         """
-        pulumi.set(__self__, "category_id", category_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "estimated_cost_saving", estimated_cost_saving)
-        pulumi.set(__self__, "extended_metadata", extended_metadata)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "importance", importance)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "recommendation_id", recommendation_id)
-        pulumi.set(__self__, "resource_counts", resource_counts)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "supported_levels", supported_levels)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_status_begin", time_status_begin)
-        pulumi.set(__self__, "time_status_end", time_status_end)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetRecommendationsRecommendationCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category_id=category_id,
+            compartment_id=compartment_id,
+            description=description,
+            estimated_cost_saving=estimated_cost_saving,
+            extended_metadata=extended_metadata,
+            id=id,
+            importance=importance,
+            name=name,
+            recommendation_id=recommendation_id,
+            resource_counts=resource_counts,
+            state=state,
+            status=status,
+            supported_levels=supported_levels,
+            time_created=time_created,
+            time_status_begin=time_status_begin,
+            time_status_end=time_status_end,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category_id: str,
+             compartment_id: str,
+             description: str,
+             estimated_cost_saving: float,
+             extended_metadata: Mapping[str, Any],
+             id: str,
+             importance: str,
+             name: str,
+             recommendation_id: str,
+             resource_counts: Sequence['outputs.GetRecommendationsRecommendationCollectionItemResourceCountResult'],
+             state: str,
+             status: str,
+             supported_levels: Sequence['outputs.GetRecommendationsRecommendationCollectionItemSupportedLevelResult'],
+             time_created: str,
+             time_status_begin: str,
+             time_status_end: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("category_id", category_id)
+        _setter("compartment_id", compartment_id)
+        _setter("description", description)
+        _setter("estimated_cost_saving", estimated_cost_saving)
+        _setter("extended_metadata", extended_metadata)
+        _setter("id", id)
+        _setter("importance", importance)
+        _setter("name", name)
+        _setter("recommendation_id", recommendation_id)
+        _setter("resource_counts", resource_counts)
+        _setter("state", state)
+        _setter("status", status)
+        _setter("supported_levels", supported_levels)
+        _setter("time_created", time_created)
+        _setter("time_status_begin", time_status_begin)
+        _setter("time_status_end", time_status_end)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="categoryId")
@@ -2538,8 +3306,19 @@ class GetRecommendationsRecommendationCollectionItemResourceCountResult(dict):
         :param int count: The count of resources.
         :param str status: A filter that returns recommendations that match the status specified.
         """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "status", status)
+        GetRecommendationsRecommendationCollectionItemResourceCountResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            count=count,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             count: int,
+             status: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("count", count)
+        _setter("status", status)
 
     @property
     @pulumi.getter
@@ -2565,7 +3344,16 @@ class GetRecommendationsRecommendationCollectionItemSupportedLevelResult(dict):
         """
         :param Sequence['GetRecommendationsRecommendationCollectionItemSupportedLevelItemArgs'] items: The list of supported levels.
         """
-        pulumi.set(__self__, "items", items)
+        GetRecommendationsRecommendationCollectionItemSupportedLevelResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetRecommendationsRecommendationCollectionItemSupportedLevelItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2583,7 +3371,16 @@ class GetRecommendationsRecommendationCollectionItemSupportedLevelItemResult(dic
         """
         :param str name: Optional. A filter that returns results that match the name specified.
         """
-        pulumi.set(__self__, "name", name)
+        GetRecommendationsRecommendationCollectionItemSupportedLevelItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2605,9 +3402,22 @@ class GetResourceActionActionResult(dict):
         :param str type: The status of the resource action.
         :param str url: The URL path to documentation that explains how to perform the action.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "url", url)
+        GetResourceActionActionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            type=type,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             type: str,
+             url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("type", type)
+        _setter("url", url)
 
     @property
     @pulumi.getter
@@ -2643,10 +3453,23 @@ class GetResourceActionsFilterResult(dict):
         """
         :param str name: Optional. A filter that returns results that match the name specified.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetResourceActionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2671,7 +3494,16 @@ class GetResourceActionsFilterResult(dict):
 class GetResourceActionsResourceActionCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetResourceActionsResourceActionCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetResourceActionsResourceActionCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetResourceActionsResourceActionCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2721,25 +3553,70 @@ class GetResourceActionsResourceActionCollectionItemResult(dict):
         :param str time_status_end: The date and time the current status will change. The format is defined by RFC3339.
         :param str time_updated: The date and time the resource action details were last updated, in the format defined by RFC3339.
         """
-        pulumi.set(__self__, "actions", actions)
-        pulumi.set(__self__, "category_id", category_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compartment_name", compartment_name)
-        pulumi.set(__self__, "estimated_cost_saving", estimated_cost_saving)
-        pulumi.set(__self__, "extended_metadata", extended_metadata)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "metadata", metadata)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "recommendation_id", recommendation_id)
-        pulumi.set(__self__, "resource_action_id", resource_action_id)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_status_begin", time_status_begin)
-        pulumi.set(__self__, "time_status_end", time_status_end)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetResourceActionsResourceActionCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actions=actions,
+            category_id=category_id,
+            compartment_id=compartment_id,
+            compartment_name=compartment_name,
+            estimated_cost_saving=estimated_cost_saving,
+            extended_metadata=extended_metadata,
+            id=id,
+            metadata=metadata,
+            name=name,
+            recommendation_id=recommendation_id,
+            resource_action_id=resource_action_id,
+            resource_id=resource_id,
+            resource_type=resource_type,
+            state=state,
+            status=status,
+            time_created=time_created,
+            time_status_begin=time_status_begin,
+            time_status_end=time_status_end,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actions: Sequence['outputs.GetResourceActionsResourceActionCollectionItemActionResult'],
+             category_id: str,
+             compartment_id: str,
+             compartment_name: str,
+             estimated_cost_saving: float,
+             extended_metadata: Mapping[str, Any],
+             id: str,
+             metadata: Mapping[str, Any],
+             name: str,
+             recommendation_id: str,
+             resource_action_id: str,
+             resource_id: str,
+             resource_type: str,
+             state: str,
+             status: str,
+             time_created: str,
+             time_status_begin: str,
+             time_status_end: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("actions", actions)
+        _setter("category_id", category_id)
+        _setter("compartment_id", compartment_id)
+        _setter("compartment_name", compartment_name)
+        _setter("estimated_cost_saving", estimated_cost_saving)
+        _setter("extended_metadata", extended_metadata)
+        _setter("id", id)
+        _setter("metadata", metadata)
+        _setter("name", name)
+        _setter("recommendation_id", recommendation_id)
+        _setter("resource_action_id", resource_action_id)
+        _setter("resource_id", resource_id)
+        _setter("resource_type", resource_type)
+        _setter("state", state)
+        _setter("status", status)
+        _setter("time_created", time_created)
+        _setter("time_status_begin", time_status_begin)
+        _setter("time_status_end", time_status_end)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -2902,9 +3779,22 @@ class GetResourceActionsResourceActionCollectionItemActionResult(dict):
         :param str type: The status of the resource action.
         :param str url: The URL path to documentation that explains how to perform the action.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "url", url)
+        GetResourceActionsResourceActionCollectionItemActionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            type=type,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             type: str,
+             url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("type", type)
+        _setter("url", url)
 
     @property
     @pulumi.getter

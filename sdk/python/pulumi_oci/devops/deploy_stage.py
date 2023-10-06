@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -139,123 +139,250 @@ class DeployStageArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] values_artifact_ids: (Updatable) List of values.yaml file artifact OCIDs.
         :param pulumi.Input['DeployStageWaitCriteriaArgs'] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
         """
-        pulumi.set(__self__, "deploy_pipeline_id", deploy_pipeline_id)
-        pulumi.set(__self__, "deploy_stage_predecessor_collection", deploy_stage_predecessor_collection)
-        pulumi.set(__self__, "deploy_stage_type", deploy_stage_type)
+        DeployStageArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            deploy_pipeline_id=deploy_pipeline_id,
+            deploy_stage_predecessor_collection=deploy_stage_predecessor_collection,
+            deploy_stage_type=deploy_stage_type,
+            approval_policy=approval_policy,
+            are_hooks_enabled=are_hooks_enabled,
+            blue_backend_ips=blue_backend_ips,
+            blue_green_strategy=blue_green_strategy,
+            canary_strategy=canary_strategy,
+            command_spec_deploy_artifact_id=command_spec_deploy_artifact_id,
+            compute_instance_group_blue_green_deployment_deploy_stage_id=compute_instance_group_blue_green_deployment_deploy_stage_id,
+            compute_instance_group_canary_deploy_stage_id=compute_instance_group_canary_deploy_stage_id,
+            compute_instance_group_canary_traffic_shift_deploy_stage_id=compute_instance_group_canary_traffic_shift_deploy_stage_id,
+            compute_instance_group_deploy_environment_id=compute_instance_group_deploy_environment_id,
+            config=config,
+            container_config=container_config,
+            defined_tags=defined_tags,
+            deploy_artifact_id=deploy_artifact_id,
+            deploy_artifact_ids=deploy_artifact_ids,
+            deploy_environment_id_a=deploy_environment_id_a,
+            deploy_environment_id_b=deploy_environment_id_b,
+            deployment_spec_deploy_artifact_id=deployment_spec_deploy_artifact_id,
+            description=description,
+            display_name=display_name,
+            docker_image_deploy_artifact_id=docker_image_deploy_artifact_id,
+            failure_policy=failure_policy,
+            freeform_tags=freeform_tags,
+            function_deploy_environment_id=function_deploy_environment_id,
+            function_timeout_in_seconds=function_timeout_in_seconds,
+            green_backend_ips=green_backend_ips,
+            helm_chart_deploy_artifact_id=helm_chart_deploy_artifact_id,
+            is_async=is_async,
+            is_debug_enabled=is_debug_enabled,
+            is_force_enabled=is_force_enabled,
+            is_validation_enabled=is_validation_enabled,
+            kubernetes_manifest_deploy_artifact_ids=kubernetes_manifest_deploy_artifact_ids,
+            load_balancer_config=load_balancer_config,
+            max_history=max_history,
+            max_memory_in_mbs=max_memory_in_mbs,
+            namespace=namespace,
+            oke_blue_green_deploy_stage_id=oke_blue_green_deploy_stage_id,
+            oke_canary_deploy_stage_id=oke_canary_deploy_stage_id,
+            oke_canary_traffic_shift_deploy_stage_id=oke_canary_traffic_shift_deploy_stage_id,
+            oke_cluster_deploy_environment_id=oke_cluster_deploy_environment_id,
+            production_load_balancer_config=production_load_balancer_config,
+            release_name=release_name,
+            rollback_policy=rollback_policy,
+            rollout_policy=rollout_policy,
+            set_string=set_string,
+            set_values=set_values,
+            should_cleanup_on_fail=should_cleanup_on_fail,
+            should_not_wait=should_not_wait,
+            should_reset_values=should_reset_values,
+            should_reuse_values=should_reuse_values,
+            should_skip_crds=should_skip_crds,
+            should_skip_render_subchart_notes=should_skip_render_subchart_notes,
+            test_load_balancer_config=test_load_balancer_config,
+            timeout_in_seconds=timeout_in_seconds,
+            traffic_shift_target=traffic_shift_target,
+            values_artifact_ids=values_artifact_ids,
+            wait_criteria=wait_criteria,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             deploy_pipeline_id: pulumi.Input[str],
+             deploy_stage_predecessor_collection: pulumi.Input['DeployStageDeployStagePredecessorCollectionArgs'],
+             deploy_stage_type: pulumi.Input[str],
+             approval_policy: Optional[pulumi.Input['DeployStageApprovalPolicyArgs']] = None,
+             are_hooks_enabled: Optional[pulumi.Input[bool]] = None,
+             blue_backend_ips: Optional[pulumi.Input['DeployStageBlueBackendIpsArgs']] = None,
+             blue_green_strategy: Optional[pulumi.Input['DeployStageBlueGreenStrategyArgs']] = None,
+             canary_strategy: Optional[pulumi.Input['DeployStageCanaryStrategyArgs']] = None,
+             command_spec_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
+             compute_instance_group_blue_green_deployment_deploy_stage_id: Optional[pulumi.Input[str]] = None,
+             compute_instance_group_canary_deploy_stage_id: Optional[pulumi.Input[str]] = None,
+             compute_instance_group_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[str]] = None,
+             compute_instance_group_deploy_environment_id: Optional[pulumi.Input[str]] = None,
+             config: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             container_config: Optional[pulumi.Input['DeployStageContainerConfigArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             deploy_artifact_id: Optional[pulumi.Input[str]] = None,
+             deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             deploy_environment_id_a: Optional[pulumi.Input[str]] = None,
+             deploy_environment_id_b: Optional[pulumi.Input[str]] = None,
+             deployment_spec_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             docker_image_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
+             failure_policy: Optional[pulumi.Input['DeployStageFailurePolicyArgs']] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             function_deploy_environment_id: Optional[pulumi.Input[str]] = None,
+             function_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
+             green_backend_ips: Optional[pulumi.Input['DeployStageGreenBackendIpsArgs']] = None,
+             helm_chart_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
+             is_async: Optional[pulumi.Input[bool]] = None,
+             is_debug_enabled: Optional[pulumi.Input[bool]] = None,
+             is_force_enabled: Optional[pulumi.Input[bool]] = None,
+             is_validation_enabled: Optional[pulumi.Input[bool]] = None,
+             kubernetes_manifest_deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             load_balancer_config: Optional[pulumi.Input['DeployStageLoadBalancerConfigArgs']] = None,
+             max_history: Optional[pulumi.Input[int]] = None,
+             max_memory_in_mbs: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             oke_blue_green_deploy_stage_id: Optional[pulumi.Input[str]] = None,
+             oke_canary_deploy_stage_id: Optional[pulumi.Input[str]] = None,
+             oke_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[str]] = None,
+             oke_cluster_deploy_environment_id: Optional[pulumi.Input[str]] = None,
+             production_load_balancer_config: Optional[pulumi.Input['DeployStageProductionLoadBalancerConfigArgs']] = None,
+             release_name: Optional[pulumi.Input[str]] = None,
+             rollback_policy: Optional[pulumi.Input['DeployStageRollbackPolicyArgs']] = None,
+             rollout_policy: Optional[pulumi.Input['DeployStageRolloutPolicyArgs']] = None,
+             set_string: Optional[pulumi.Input['DeployStageSetStringArgs']] = None,
+             set_values: Optional[pulumi.Input['DeployStageSetValuesArgs']] = None,
+             should_cleanup_on_fail: Optional[pulumi.Input[bool]] = None,
+             should_not_wait: Optional[pulumi.Input[bool]] = None,
+             should_reset_values: Optional[pulumi.Input[bool]] = None,
+             should_reuse_values: Optional[pulumi.Input[bool]] = None,
+             should_skip_crds: Optional[pulumi.Input[bool]] = None,
+             should_skip_render_subchart_notes: Optional[pulumi.Input[bool]] = None,
+             test_load_balancer_config: Optional[pulumi.Input['DeployStageTestLoadBalancerConfigArgs']] = None,
+             timeout_in_seconds: Optional[pulumi.Input[int]] = None,
+             traffic_shift_target: Optional[pulumi.Input[str]] = None,
+             values_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             wait_criteria: Optional[pulumi.Input['DeployStageWaitCriteriaArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("deploy_pipeline_id", deploy_pipeline_id)
+        _setter("deploy_stage_predecessor_collection", deploy_stage_predecessor_collection)
+        _setter("deploy_stage_type", deploy_stage_type)
         if approval_policy is not None:
-            pulumi.set(__self__, "approval_policy", approval_policy)
+            _setter("approval_policy", approval_policy)
         if are_hooks_enabled is not None:
-            pulumi.set(__self__, "are_hooks_enabled", are_hooks_enabled)
+            _setter("are_hooks_enabled", are_hooks_enabled)
         if blue_backend_ips is not None:
-            pulumi.set(__self__, "blue_backend_ips", blue_backend_ips)
+            _setter("blue_backend_ips", blue_backend_ips)
         if blue_green_strategy is not None:
-            pulumi.set(__self__, "blue_green_strategy", blue_green_strategy)
+            _setter("blue_green_strategy", blue_green_strategy)
         if canary_strategy is not None:
-            pulumi.set(__self__, "canary_strategy", canary_strategy)
+            _setter("canary_strategy", canary_strategy)
         if command_spec_deploy_artifact_id is not None:
-            pulumi.set(__self__, "command_spec_deploy_artifact_id", command_spec_deploy_artifact_id)
+            _setter("command_spec_deploy_artifact_id", command_spec_deploy_artifact_id)
         if compute_instance_group_blue_green_deployment_deploy_stage_id is not None:
-            pulumi.set(__self__, "compute_instance_group_blue_green_deployment_deploy_stage_id", compute_instance_group_blue_green_deployment_deploy_stage_id)
+            _setter("compute_instance_group_blue_green_deployment_deploy_stage_id", compute_instance_group_blue_green_deployment_deploy_stage_id)
         if compute_instance_group_canary_deploy_stage_id is not None:
-            pulumi.set(__self__, "compute_instance_group_canary_deploy_stage_id", compute_instance_group_canary_deploy_stage_id)
+            _setter("compute_instance_group_canary_deploy_stage_id", compute_instance_group_canary_deploy_stage_id)
         if compute_instance_group_canary_traffic_shift_deploy_stage_id is not None:
-            pulumi.set(__self__, "compute_instance_group_canary_traffic_shift_deploy_stage_id", compute_instance_group_canary_traffic_shift_deploy_stage_id)
+            _setter("compute_instance_group_canary_traffic_shift_deploy_stage_id", compute_instance_group_canary_traffic_shift_deploy_stage_id)
         if compute_instance_group_deploy_environment_id is not None:
-            pulumi.set(__self__, "compute_instance_group_deploy_environment_id", compute_instance_group_deploy_environment_id)
+            _setter("compute_instance_group_deploy_environment_id", compute_instance_group_deploy_environment_id)
         if config is not None:
-            pulumi.set(__self__, "config", config)
+            _setter("config", config)
         if container_config is not None:
-            pulumi.set(__self__, "container_config", container_config)
+            _setter("container_config", container_config)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if deploy_artifact_id is not None:
-            pulumi.set(__self__, "deploy_artifact_id", deploy_artifact_id)
+            _setter("deploy_artifact_id", deploy_artifact_id)
         if deploy_artifact_ids is not None:
-            pulumi.set(__self__, "deploy_artifact_ids", deploy_artifact_ids)
+            _setter("deploy_artifact_ids", deploy_artifact_ids)
         if deploy_environment_id_a is not None:
-            pulumi.set(__self__, "deploy_environment_id_a", deploy_environment_id_a)
+            _setter("deploy_environment_id_a", deploy_environment_id_a)
         if deploy_environment_id_b is not None:
-            pulumi.set(__self__, "deploy_environment_id_b", deploy_environment_id_b)
+            _setter("deploy_environment_id_b", deploy_environment_id_b)
         if deployment_spec_deploy_artifact_id is not None:
-            pulumi.set(__self__, "deployment_spec_deploy_artifact_id", deployment_spec_deploy_artifact_id)
+            _setter("deployment_spec_deploy_artifact_id", deployment_spec_deploy_artifact_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if docker_image_deploy_artifact_id is not None:
-            pulumi.set(__self__, "docker_image_deploy_artifact_id", docker_image_deploy_artifact_id)
+            _setter("docker_image_deploy_artifact_id", docker_image_deploy_artifact_id)
         if failure_policy is not None:
-            pulumi.set(__self__, "failure_policy", failure_policy)
+            _setter("failure_policy", failure_policy)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if function_deploy_environment_id is not None:
-            pulumi.set(__self__, "function_deploy_environment_id", function_deploy_environment_id)
+            _setter("function_deploy_environment_id", function_deploy_environment_id)
         if function_timeout_in_seconds is not None:
-            pulumi.set(__self__, "function_timeout_in_seconds", function_timeout_in_seconds)
+            _setter("function_timeout_in_seconds", function_timeout_in_seconds)
         if green_backend_ips is not None:
-            pulumi.set(__self__, "green_backend_ips", green_backend_ips)
+            _setter("green_backend_ips", green_backend_ips)
         if helm_chart_deploy_artifact_id is not None:
-            pulumi.set(__self__, "helm_chart_deploy_artifact_id", helm_chart_deploy_artifact_id)
+            _setter("helm_chart_deploy_artifact_id", helm_chart_deploy_artifact_id)
         if is_async is not None:
-            pulumi.set(__self__, "is_async", is_async)
+            _setter("is_async", is_async)
         if is_debug_enabled is not None:
-            pulumi.set(__self__, "is_debug_enabled", is_debug_enabled)
+            _setter("is_debug_enabled", is_debug_enabled)
         if is_force_enabled is not None:
-            pulumi.set(__self__, "is_force_enabled", is_force_enabled)
+            _setter("is_force_enabled", is_force_enabled)
         if is_validation_enabled is not None:
-            pulumi.set(__self__, "is_validation_enabled", is_validation_enabled)
+            _setter("is_validation_enabled", is_validation_enabled)
         if kubernetes_manifest_deploy_artifact_ids is not None:
-            pulumi.set(__self__, "kubernetes_manifest_deploy_artifact_ids", kubernetes_manifest_deploy_artifact_ids)
+            _setter("kubernetes_manifest_deploy_artifact_ids", kubernetes_manifest_deploy_artifact_ids)
         if load_balancer_config is not None:
-            pulumi.set(__self__, "load_balancer_config", load_balancer_config)
+            _setter("load_balancer_config", load_balancer_config)
         if max_history is not None:
-            pulumi.set(__self__, "max_history", max_history)
+            _setter("max_history", max_history)
         if max_memory_in_mbs is not None:
-            pulumi.set(__self__, "max_memory_in_mbs", max_memory_in_mbs)
+            _setter("max_memory_in_mbs", max_memory_in_mbs)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if oke_blue_green_deploy_stage_id is not None:
-            pulumi.set(__self__, "oke_blue_green_deploy_stage_id", oke_blue_green_deploy_stage_id)
+            _setter("oke_blue_green_deploy_stage_id", oke_blue_green_deploy_stage_id)
         if oke_canary_deploy_stage_id is not None:
-            pulumi.set(__self__, "oke_canary_deploy_stage_id", oke_canary_deploy_stage_id)
+            _setter("oke_canary_deploy_stage_id", oke_canary_deploy_stage_id)
         if oke_canary_traffic_shift_deploy_stage_id is not None:
-            pulumi.set(__self__, "oke_canary_traffic_shift_deploy_stage_id", oke_canary_traffic_shift_deploy_stage_id)
+            _setter("oke_canary_traffic_shift_deploy_stage_id", oke_canary_traffic_shift_deploy_stage_id)
         if oke_cluster_deploy_environment_id is not None:
-            pulumi.set(__self__, "oke_cluster_deploy_environment_id", oke_cluster_deploy_environment_id)
+            _setter("oke_cluster_deploy_environment_id", oke_cluster_deploy_environment_id)
         if production_load_balancer_config is not None:
-            pulumi.set(__self__, "production_load_balancer_config", production_load_balancer_config)
+            _setter("production_load_balancer_config", production_load_balancer_config)
         if release_name is not None:
-            pulumi.set(__self__, "release_name", release_name)
+            _setter("release_name", release_name)
         if rollback_policy is not None:
-            pulumi.set(__self__, "rollback_policy", rollback_policy)
+            _setter("rollback_policy", rollback_policy)
         if rollout_policy is not None:
-            pulumi.set(__self__, "rollout_policy", rollout_policy)
+            _setter("rollout_policy", rollout_policy)
         if set_string is not None:
-            pulumi.set(__self__, "set_string", set_string)
+            _setter("set_string", set_string)
         if set_values is not None:
-            pulumi.set(__self__, "set_values", set_values)
+            _setter("set_values", set_values)
         if should_cleanup_on_fail is not None:
-            pulumi.set(__self__, "should_cleanup_on_fail", should_cleanup_on_fail)
+            _setter("should_cleanup_on_fail", should_cleanup_on_fail)
         if should_not_wait is not None:
-            pulumi.set(__self__, "should_not_wait", should_not_wait)
+            _setter("should_not_wait", should_not_wait)
         if should_reset_values is not None:
-            pulumi.set(__self__, "should_reset_values", should_reset_values)
+            _setter("should_reset_values", should_reset_values)
         if should_reuse_values is not None:
-            pulumi.set(__self__, "should_reuse_values", should_reuse_values)
+            _setter("should_reuse_values", should_reuse_values)
         if should_skip_crds is not None:
-            pulumi.set(__self__, "should_skip_crds", should_skip_crds)
+            _setter("should_skip_crds", should_skip_crds)
         if should_skip_render_subchart_notes is not None:
-            pulumi.set(__self__, "should_skip_render_subchart_notes", should_skip_render_subchart_notes)
+            _setter("should_skip_render_subchart_notes", should_skip_render_subchart_notes)
         if test_load_balancer_config is not None:
-            pulumi.set(__self__, "test_load_balancer_config", test_load_balancer_config)
+            _setter("test_load_balancer_config", test_load_balancer_config)
         if timeout_in_seconds is not None:
-            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+            _setter("timeout_in_seconds", timeout_in_seconds)
         if traffic_shift_target is not None:
-            pulumi.set(__self__, "traffic_shift_target", traffic_shift_target)
+            _setter("traffic_shift_target", traffic_shift_target)
         if values_artifact_ids is not None:
-            pulumi.set(__self__, "values_artifact_ids", values_artifact_ids)
+            _setter("values_artifact_ids", values_artifact_ids)
         if wait_criteria is not None:
-            pulumi.set(__self__, "wait_criteria", wait_criteria)
+            _setter("wait_criteria", wait_criteria)
 
     @property
     @pulumi.getter(name="deployPipelineId")
@@ -1118,140 +1245,281 @@ class _DeployStageState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] values_artifact_ids: (Updatable) List of values.yaml file artifact OCIDs.
         :param pulumi.Input['DeployStageWaitCriteriaArgs'] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
         """
+        _DeployStageState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            approval_policy=approval_policy,
+            are_hooks_enabled=are_hooks_enabled,
+            blue_backend_ips=blue_backend_ips,
+            blue_green_strategy=blue_green_strategy,
+            canary_strategy=canary_strategy,
+            command_spec_deploy_artifact_id=command_spec_deploy_artifact_id,
+            compartment_id=compartment_id,
+            compute_instance_group_blue_green_deployment_deploy_stage_id=compute_instance_group_blue_green_deployment_deploy_stage_id,
+            compute_instance_group_canary_deploy_stage_id=compute_instance_group_canary_deploy_stage_id,
+            compute_instance_group_canary_traffic_shift_deploy_stage_id=compute_instance_group_canary_traffic_shift_deploy_stage_id,
+            compute_instance_group_deploy_environment_id=compute_instance_group_deploy_environment_id,
+            config=config,
+            container_config=container_config,
+            defined_tags=defined_tags,
+            deploy_artifact_id=deploy_artifact_id,
+            deploy_artifact_ids=deploy_artifact_ids,
+            deploy_environment_id_a=deploy_environment_id_a,
+            deploy_environment_id_b=deploy_environment_id_b,
+            deploy_pipeline_id=deploy_pipeline_id,
+            deploy_stage_predecessor_collection=deploy_stage_predecessor_collection,
+            deploy_stage_type=deploy_stage_type,
+            deployment_spec_deploy_artifact_id=deployment_spec_deploy_artifact_id,
+            description=description,
+            display_name=display_name,
+            docker_image_deploy_artifact_id=docker_image_deploy_artifact_id,
+            failure_policy=failure_policy,
+            freeform_tags=freeform_tags,
+            function_deploy_environment_id=function_deploy_environment_id,
+            function_timeout_in_seconds=function_timeout_in_seconds,
+            green_backend_ips=green_backend_ips,
+            helm_chart_deploy_artifact_id=helm_chart_deploy_artifact_id,
+            is_async=is_async,
+            is_debug_enabled=is_debug_enabled,
+            is_force_enabled=is_force_enabled,
+            is_validation_enabled=is_validation_enabled,
+            kubernetes_manifest_deploy_artifact_ids=kubernetes_manifest_deploy_artifact_ids,
+            lifecycle_details=lifecycle_details,
+            load_balancer_config=load_balancer_config,
+            max_history=max_history,
+            max_memory_in_mbs=max_memory_in_mbs,
+            namespace=namespace,
+            oke_blue_green_deploy_stage_id=oke_blue_green_deploy_stage_id,
+            oke_canary_deploy_stage_id=oke_canary_deploy_stage_id,
+            oke_canary_traffic_shift_deploy_stage_id=oke_canary_traffic_shift_deploy_stage_id,
+            oke_cluster_deploy_environment_id=oke_cluster_deploy_environment_id,
+            production_load_balancer_config=production_load_balancer_config,
+            project_id=project_id,
+            release_name=release_name,
+            rollback_policy=rollback_policy,
+            rollout_policy=rollout_policy,
+            set_string=set_string,
+            set_values=set_values,
+            should_cleanup_on_fail=should_cleanup_on_fail,
+            should_not_wait=should_not_wait,
+            should_reset_values=should_reset_values,
+            should_reuse_values=should_reuse_values,
+            should_skip_crds=should_skip_crds,
+            should_skip_render_subchart_notes=should_skip_render_subchart_notes,
+            state=state,
+            system_tags=system_tags,
+            test_load_balancer_config=test_load_balancer_config,
+            time_created=time_created,
+            time_updated=time_updated,
+            timeout_in_seconds=timeout_in_seconds,
+            traffic_shift_target=traffic_shift_target,
+            values_artifact_ids=values_artifact_ids,
+            wait_criteria=wait_criteria,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             approval_policy: Optional[pulumi.Input['DeployStageApprovalPolicyArgs']] = None,
+             are_hooks_enabled: Optional[pulumi.Input[bool]] = None,
+             blue_backend_ips: Optional[pulumi.Input['DeployStageBlueBackendIpsArgs']] = None,
+             blue_green_strategy: Optional[pulumi.Input['DeployStageBlueGreenStrategyArgs']] = None,
+             canary_strategy: Optional[pulumi.Input['DeployStageCanaryStrategyArgs']] = None,
+             command_spec_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             compute_instance_group_blue_green_deployment_deploy_stage_id: Optional[pulumi.Input[str]] = None,
+             compute_instance_group_canary_deploy_stage_id: Optional[pulumi.Input[str]] = None,
+             compute_instance_group_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[str]] = None,
+             compute_instance_group_deploy_environment_id: Optional[pulumi.Input[str]] = None,
+             config: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             container_config: Optional[pulumi.Input['DeployStageContainerConfigArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             deploy_artifact_id: Optional[pulumi.Input[str]] = None,
+             deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             deploy_environment_id_a: Optional[pulumi.Input[str]] = None,
+             deploy_environment_id_b: Optional[pulumi.Input[str]] = None,
+             deploy_pipeline_id: Optional[pulumi.Input[str]] = None,
+             deploy_stage_predecessor_collection: Optional[pulumi.Input['DeployStageDeployStagePredecessorCollectionArgs']] = None,
+             deploy_stage_type: Optional[pulumi.Input[str]] = None,
+             deployment_spec_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             docker_image_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
+             failure_policy: Optional[pulumi.Input['DeployStageFailurePolicyArgs']] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             function_deploy_environment_id: Optional[pulumi.Input[str]] = None,
+             function_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
+             green_backend_ips: Optional[pulumi.Input['DeployStageGreenBackendIpsArgs']] = None,
+             helm_chart_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
+             is_async: Optional[pulumi.Input[bool]] = None,
+             is_debug_enabled: Optional[pulumi.Input[bool]] = None,
+             is_force_enabled: Optional[pulumi.Input[bool]] = None,
+             is_validation_enabled: Optional[pulumi.Input[bool]] = None,
+             kubernetes_manifest_deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             load_balancer_config: Optional[pulumi.Input['DeployStageLoadBalancerConfigArgs']] = None,
+             max_history: Optional[pulumi.Input[int]] = None,
+             max_memory_in_mbs: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             oke_blue_green_deploy_stage_id: Optional[pulumi.Input[str]] = None,
+             oke_canary_deploy_stage_id: Optional[pulumi.Input[str]] = None,
+             oke_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[str]] = None,
+             oke_cluster_deploy_environment_id: Optional[pulumi.Input[str]] = None,
+             production_load_balancer_config: Optional[pulumi.Input['DeployStageProductionLoadBalancerConfigArgs']] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
+             release_name: Optional[pulumi.Input[str]] = None,
+             rollback_policy: Optional[pulumi.Input['DeployStageRollbackPolicyArgs']] = None,
+             rollout_policy: Optional[pulumi.Input['DeployStageRolloutPolicyArgs']] = None,
+             set_string: Optional[pulumi.Input['DeployStageSetStringArgs']] = None,
+             set_values: Optional[pulumi.Input['DeployStageSetValuesArgs']] = None,
+             should_cleanup_on_fail: Optional[pulumi.Input[bool]] = None,
+             should_not_wait: Optional[pulumi.Input[bool]] = None,
+             should_reset_values: Optional[pulumi.Input[bool]] = None,
+             should_reuse_values: Optional[pulumi.Input[bool]] = None,
+             should_skip_crds: Optional[pulumi.Input[bool]] = None,
+             should_skip_render_subchart_notes: Optional[pulumi.Input[bool]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             test_load_balancer_config: Optional[pulumi.Input['DeployStageTestLoadBalancerConfigArgs']] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             timeout_in_seconds: Optional[pulumi.Input[int]] = None,
+             traffic_shift_target: Optional[pulumi.Input[str]] = None,
+             values_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             wait_criteria: Optional[pulumi.Input['DeployStageWaitCriteriaArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if approval_policy is not None:
-            pulumi.set(__self__, "approval_policy", approval_policy)
+            _setter("approval_policy", approval_policy)
         if are_hooks_enabled is not None:
-            pulumi.set(__self__, "are_hooks_enabled", are_hooks_enabled)
+            _setter("are_hooks_enabled", are_hooks_enabled)
         if blue_backend_ips is not None:
-            pulumi.set(__self__, "blue_backend_ips", blue_backend_ips)
+            _setter("blue_backend_ips", blue_backend_ips)
         if blue_green_strategy is not None:
-            pulumi.set(__self__, "blue_green_strategy", blue_green_strategy)
+            _setter("blue_green_strategy", blue_green_strategy)
         if canary_strategy is not None:
-            pulumi.set(__self__, "canary_strategy", canary_strategy)
+            _setter("canary_strategy", canary_strategy)
         if command_spec_deploy_artifact_id is not None:
-            pulumi.set(__self__, "command_spec_deploy_artifact_id", command_spec_deploy_artifact_id)
+            _setter("command_spec_deploy_artifact_id", command_spec_deploy_artifact_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if compute_instance_group_blue_green_deployment_deploy_stage_id is not None:
-            pulumi.set(__self__, "compute_instance_group_blue_green_deployment_deploy_stage_id", compute_instance_group_blue_green_deployment_deploy_stage_id)
+            _setter("compute_instance_group_blue_green_deployment_deploy_stage_id", compute_instance_group_blue_green_deployment_deploy_stage_id)
         if compute_instance_group_canary_deploy_stage_id is not None:
-            pulumi.set(__self__, "compute_instance_group_canary_deploy_stage_id", compute_instance_group_canary_deploy_stage_id)
+            _setter("compute_instance_group_canary_deploy_stage_id", compute_instance_group_canary_deploy_stage_id)
         if compute_instance_group_canary_traffic_shift_deploy_stage_id is not None:
-            pulumi.set(__self__, "compute_instance_group_canary_traffic_shift_deploy_stage_id", compute_instance_group_canary_traffic_shift_deploy_stage_id)
+            _setter("compute_instance_group_canary_traffic_shift_deploy_stage_id", compute_instance_group_canary_traffic_shift_deploy_stage_id)
         if compute_instance_group_deploy_environment_id is not None:
-            pulumi.set(__self__, "compute_instance_group_deploy_environment_id", compute_instance_group_deploy_environment_id)
+            _setter("compute_instance_group_deploy_environment_id", compute_instance_group_deploy_environment_id)
         if config is not None:
-            pulumi.set(__self__, "config", config)
+            _setter("config", config)
         if container_config is not None:
-            pulumi.set(__self__, "container_config", container_config)
+            _setter("container_config", container_config)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if deploy_artifact_id is not None:
-            pulumi.set(__self__, "deploy_artifact_id", deploy_artifact_id)
+            _setter("deploy_artifact_id", deploy_artifact_id)
         if deploy_artifact_ids is not None:
-            pulumi.set(__self__, "deploy_artifact_ids", deploy_artifact_ids)
+            _setter("deploy_artifact_ids", deploy_artifact_ids)
         if deploy_environment_id_a is not None:
-            pulumi.set(__self__, "deploy_environment_id_a", deploy_environment_id_a)
+            _setter("deploy_environment_id_a", deploy_environment_id_a)
         if deploy_environment_id_b is not None:
-            pulumi.set(__self__, "deploy_environment_id_b", deploy_environment_id_b)
+            _setter("deploy_environment_id_b", deploy_environment_id_b)
         if deploy_pipeline_id is not None:
-            pulumi.set(__self__, "deploy_pipeline_id", deploy_pipeline_id)
+            _setter("deploy_pipeline_id", deploy_pipeline_id)
         if deploy_stage_predecessor_collection is not None:
-            pulumi.set(__self__, "deploy_stage_predecessor_collection", deploy_stage_predecessor_collection)
+            _setter("deploy_stage_predecessor_collection", deploy_stage_predecessor_collection)
         if deploy_stage_type is not None:
-            pulumi.set(__self__, "deploy_stage_type", deploy_stage_type)
+            _setter("deploy_stage_type", deploy_stage_type)
         if deployment_spec_deploy_artifact_id is not None:
-            pulumi.set(__self__, "deployment_spec_deploy_artifact_id", deployment_spec_deploy_artifact_id)
+            _setter("deployment_spec_deploy_artifact_id", deployment_spec_deploy_artifact_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if docker_image_deploy_artifact_id is not None:
-            pulumi.set(__self__, "docker_image_deploy_artifact_id", docker_image_deploy_artifact_id)
+            _setter("docker_image_deploy_artifact_id", docker_image_deploy_artifact_id)
         if failure_policy is not None:
-            pulumi.set(__self__, "failure_policy", failure_policy)
+            _setter("failure_policy", failure_policy)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if function_deploy_environment_id is not None:
-            pulumi.set(__self__, "function_deploy_environment_id", function_deploy_environment_id)
+            _setter("function_deploy_environment_id", function_deploy_environment_id)
         if function_timeout_in_seconds is not None:
-            pulumi.set(__self__, "function_timeout_in_seconds", function_timeout_in_seconds)
+            _setter("function_timeout_in_seconds", function_timeout_in_seconds)
         if green_backend_ips is not None:
-            pulumi.set(__self__, "green_backend_ips", green_backend_ips)
+            _setter("green_backend_ips", green_backend_ips)
         if helm_chart_deploy_artifact_id is not None:
-            pulumi.set(__self__, "helm_chart_deploy_artifact_id", helm_chart_deploy_artifact_id)
+            _setter("helm_chart_deploy_artifact_id", helm_chart_deploy_artifact_id)
         if is_async is not None:
-            pulumi.set(__self__, "is_async", is_async)
+            _setter("is_async", is_async)
         if is_debug_enabled is not None:
-            pulumi.set(__self__, "is_debug_enabled", is_debug_enabled)
+            _setter("is_debug_enabled", is_debug_enabled)
         if is_force_enabled is not None:
-            pulumi.set(__self__, "is_force_enabled", is_force_enabled)
+            _setter("is_force_enabled", is_force_enabled)
         if is_validation_enabled is not None:
-            pulumi.set(__self__, "is_validation_enabled", is_validation_enabled)
+            _setter("is_validation_enabled", is_validation_enabled)
         if kubernetes_manifest_deploy_artifact_ids is not None:
-            pulumi.set(__self__, "kubernetes_manifest_deploy_artifact_ids", kubernetes_manifest_deploy_artifact_ids)
+            _setter("kubernetes_manifest_deploy_artifact_ids", kubernetes_manifest_deploy_artifact_ids)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if load_balancer_config is not None:
-            pulumi.set(__self__, "load_balancer_config", load_balancer_config)
+            _setter("load_balancer_config", load_balancer_config)
         if max_history is not None:
-            pulumi.set(__self__, "max_history", max_history)
+            _setter("max_history", max_history)
         if max_memory_in_mbs is not None:
-            pulumi.set(__self__, "max_memory_in_mbs", max_memory_in_mbs)
+            _setter("max_memory_in_mbs", max_memory_in_mbs)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if oke_blue_green_deploy_stage_id is not None:
-            pulumi.set(__self__, "oke_blue_green_deploy_stage_id", oke_blue_green_deploy_stage_id)
+            _setter("oke_blue_green_deploy_stage_id", oke_blue_green_deploy_stage_id)
         if oke_canary_deploy_stage_id is not None:
-            pulumi.set(__self__, "oke_canary_deploy_stage_id", oke_canary_deploy_stage_id)
+            _setter("oke_canary_deploy_stage_id", oke_canary_deploy_stage_id)
         if oke_canary_traffic_shift_deploy_stage_id is not None:
-            pulumi.set(__self__, "oke_canary_traffic_shift_deploy_stage_id", oke_canary_traffic_shift_deploy_stage_id)
+            _setter("oke_canary_traffic_shift_deploy_stage_id", oke_canary_traffic_shift_deploy_stage_id)
         if oke_cluster_deploy_environment_id is not None:
-            pulumi.set(__self__, "oke_cluster_deploy_environment_id", oke_cluster_deploy_environment_id)
+            _setter("oke_cluster_deploy_environment_id", oke_cluster_deploy_environment_id)
         if production_load_balancer_config is not None:
-            pulumi.set(__self__, "production_load_balancer_config", production_load_balancer_config)
+            _setter("production_load_balancer_config", production_load_balancer_config)
         if project_id is not None:
-            pulumi.set(__self__, "project_id", project_id)
+            _setter("project_id", project_id)
         if release_name is not None:
-            pulumi.set(__self__, "release_name", release_name)
+            _setter("release_name", release_name)
         if rollback_policy is not None:
-            pulumi.set(__self__, "rollback_policy", rollback_policy)
+            _setter("rollback_policy", rollback_policy)
         if rollout_policy is not None:
-            pulumi.set(__self__, "rollout_policy", rollout_policy)
+            _setter("rollout_policy", rollout_policy)
         if set_string is not None:
-            pulumi.set(__self__, "set_string", set_string)
+            _setter("set_string", set_string)
         if set_values is not None:
-            pulumi.set(__self__, "set_values", set_values)
+            _setter("set_values", set_values)
         if should_cleanup_on_fail is not None:
-            pulumi.set(__self__, "should_cleanup_on_fail", should_cleanup_on_fail)
+            _setter("should_cleanup_on_fail", should_cleanup_on_fail)
         if should_not_wait is not None:
-            pulumi.set(__self__, "should_not_wait", should_not_wait)
+            _setter("should_not_wait", should_not_wait)
         if should_reset_values is not None:
-            pulumi.set(__self__, "should_reset_values", should_reset_values)
+            _setter("should_reset_values", should_reset_values)
         if should_reuse_values is not None:
-            pulumi.set(__self__, "should_reuse_values", should_reuse_values)
+            _setter("should_reuse_values", should_reuse_values)
         if should_skip_crds is not None:
-            pulumi.set(__self__, "should_skip_crds", should_skip_crds)
+            _setter("should_skip_crds", should_skip_crds)
         if should_skip_render_subchart_notes is not None:
-            pulumi.set(__self__, "should_skip_render_subchart_notes", should_skip_render_subchart_notes)
+            _setter("should_skip_render_subchart_notes", should_skip_render_subchart_notes)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if test_load_balancer_config is not None:
-            pulumi.set(__self__, "test_load_balancer_config", test_load_balancer_config)
+            _setter("test_load_balancer_config", test_load_balancer_config)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if timeout_in_seconds is not None:
-            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+            _setter("timeout_in_seconds", timeout_in_seconds)
         if traffic_shift_target is not None:
-            pulumi.set(__self__, "traffic_shift_target", traffic_shift_target)
+            _setter("traffic_shift_target", traffic_shift_target)
         if values_artifact_ids is not None:
-            pulumi.set(__self__, "values_artifact_ids", values_artifact_ids)
+            _setter("values_artifact_ids", values_artifact_ids)
         if wait_criteria is not None:
-            pulumi.set(__self__, "wait_criteria", wait_criteria)
+            _setter("wait_criteria", wait_criteria)
 
     @property
     @pulumi.getter(name="approvalPolicy")
@@ -2229,6 +2497,10 @@ class DeployStage(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DeployStageArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -2303,10 +2575,30 @@ class DeployStage(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DeployStageArgs.__new__(DeployStageArgs)
 
+            if approval_policy is not None and not isinstance(approval_policy, DeployStageApprovalPolicyArgs):
+                approval_policy = approval_policy or {}
+                def _setter(key, value):
+                    approval_policy[key] = value
+                DeployStageApprovalPolicyArgs._configure(_setter, **approval_policy)
             __props__.__dict__["approval_policy"] = approval_policy
             __props__.__dict__["are_hooks_enabled"] = are_hooks_enabled
+            if blue_backend_ips is not None and not isinstance(blue_backend_ips, DeployStageBlueBackendIpsArgs):
+                blue_backend_ips = blue_backend_ips or {}
+                def _setter(key, value):
+                    blue_backend_ips[key] = value
+                DeployStageBlueBackendIpsArgs._configure(_setter, **blue_backend_ips)
             __props__.__dict__["blue_backend_ips"] = blue_backend_ips
+            if blue_green_strategy is not None and not isinstance(blue_green_strategy, DeployStageBlueGreenStrategyArgs):
+                blue_green_strategy = blue_green_strategy or {}
+                def _setter(key, value):
+                    blue_green_strategy[key] = value
+                DeployStageBlueGreenStrategyArgs._configure(_setter, **blue_green_strategy)
             __props__.__dict__["blue_green_strategy"] = blue_green_strategy
+            if canary_strategy is not None and not isinstance(canary_strategy, DeployStageCanaryStrategyArgs):
+                canary_strategy = canary_strategy or {}
+                def _setter(key, value):
+                    canary_strategy[key] = value
+                DeployStageCanaryStrategyArgs._configure(_setter, **canary_strategy)
             __props__.__dict__["canary_strategy"] = canary_strategy
             __props__.__dict__["command_spec_deploy_artifact_id"] = command_spec_deploy_artifact_id
             __props__.__dict__["compute_instance_group_blue_green_deployment_deploy_stage_id"] = compute_instance_group_blue_green_deployment_deploy_stage_id
@@ -2314,6 +2606,11 @@ class DeployStage(pulumi.CustomResource):
             __props__.__dict__["compute_instance_group_canary_traffic_shift_deploy_stage_id"] = compute_instance_group_canary_traffic_shift_deploy_stage_id
             __props__.__dict__["compute_instance_group_deploy_environment_id"] = compute_instance_group_deploy_environment_id
             __props__.__dict__["config"] = config
+            if container_config is not None and not isinstance(container_config, DeployStageContainerConfigArgs):
+                container_config = container_config or {}
+                def _setter(key, value):
+                    container_config[key] = value
+                DeployStageContainerConfigArgs._configure(_setter, **container_config)
             __props__.__dict__["container_config"] = container_config
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["deploy_artifact_id"] = deploy_artifact_id
@@ -2323,6 +2620,11 @@ class DeployStage(pulumi.CustomResource):
             if deploy_pipeline_id is None and not opts.urn:
                 raise TypeError("Missing required property 'deploy_pipeline_id'")
             __props__.__dict__["deploy_pipeline_id"] = deploy_pipeline_id
+            if deploy_stage_predecessor_collection is not None and not isinstance(deploy_stage_predecessor_collection, DeployStageDeployStagePredecessorCollectionArgs):
+                deploy_stage_predecessor_collection = deploy_stage_predecessor_collection or {}
+                def _setter(key, value):
+                    deploy_stage_predecessor_collection[key] = value
+                DeployStageDeployStagePredecessorCollectionArgs._configure(_setter, **deploy_stage_predecessor_collection)
             if deploy_stage_predecessor_collection is None and not opts.urn:
                 raise TypeError("Missing required property 'deploy_stage_predecessor_collection'")
             __props__.__dict__["deploy_stage_predecessor_collection"] = deploy_stage_predecessor_collection
@@ -2333,10 +2635,20 @@ class DeployStage(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["docker_image_deploy_artifact_id"] = docker_image_deploy_artifact_id
+            if failure_policy is not None and not isinstance(failure_policy, DeployStageFailurePolicyArgs):
+                failure_policy = failure_policy or {}
+                def _setter(key, value):
+                    failure_policy[key] = value
+                DeployStageFailurePolicyArgs._configure(_setter, **failure_policy)
             __props__.__dict__["failure_policy"] = failure_policy
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["function_deploy_environment_id"] = function_deploy_environment_id
             __props__.__dict__["function_timeout_in_seconds"] = function_timeout_in_seconds
+            if green_backend_ips is not None and not isinstance(green_backend_ips, DeployStageGreenBackendIpsArgs):
+                green_backend_ips = green_backend_ips or {}
+                def _setter(key, value):
+                    green_backend_ips[key] = value
+                DeployStageGreenBackendIpsArgs._configure(_setter, **green_backend_ips)
             __props__.__dict__["green_backend_ips"] = green_backend_ips
             __props__.__dict__["helm_chart_deploy_artifact_id"] = helm_chart_deploy_artifact_id
             __props__.__dict__["is_async"] = is_async
@@ -2344,6 +2656,11 @@ class DeployStage(pulumi.CustomResource):
             __props__.__dict__["is_force_enabled"] = is_force_enabled
             __props__.__dict__["is_validation_enabled"] = is_validation_enabled
             __props__.__dict__["kubernetes_manifest_deploy_artifact_ids"] = kubernetes_manifest_deploy_artifact_ids
+            if load_balancer_config is not None and not isinstance(load_balancer_config, DeployStageLoadBalancerConfigArgs):
+                load_balancer_config = load_balancer_config or {}
+                def _setter(key, value):
+                    load_balancer_config[key] = value
+                DeployStageLoadBalancerConfigArgs._configure(_setter, **load_balancer_config)
             __props__.__dict__["load_balancer_config"] = load_balancer_config
             __props__.__dict__["max_history"] = max_history
             __props__.__dict__["max_memory_in_mbs"] = max_memory_in_mbs
@@ -2352,11 +2669,36 @@ class DeployStage(pulumi.CustomResource):
             __props__.__dict__["oke_canary_deploy_stage_id"] = oke_canary_deploy_stage_id
             __props__.__dict__["oke_canary_traffic_shift_deploy_stage_id"] = oke_canary_traffic_shift_deploy_stage_id
             __props__.__dict__["oke_cluster_deploy_environment_id"] = oke_cluster_deploy_environment_id
+            if production_load_balancer_config is not None and not isinstance(production_load_balancer_config, DeployStageProductionLoadBalancerConfigArgs):
+                production_load_balancer_config = production_load_balancer_config or {}
+                def _setter(key, value):
+                    production_load_balancer_config[key] = value
+                DeployStageProductionLoadBalancerConfigArgs._configure(_setter, **production_load_balancer_config)
             __props__.__dict__["production_load_balancer_config"] = production_load_balancer_config
             __props__.__dict__["release_name"] = release_name
+            if rollback_policy is not None and not isinstance(rollback_policy, DeployStageRollbackPolicyArgs):
+                rollback_policy = rollback_policy or {}
+                def _setter(key, value):
+                    rollback_policy[key] = value
+                DeployStageRollbackPolicyArgs._configure(_setter, **rollback_policy)
             __props__.__dict__["rollback_policy"] = rollback_policy
+            if rollout_policy is not None and not isinstance(rollout_policy, DeployStageRolloutPolicyArgs):
+                rollout_policy = rollout_policy or {}
+                def _setter(key, value):
+                    rollout_policy[key] = value
+                DeployStageRolloutPolicyArgs._configure(_setter, **rollout_policy)
             __props__.__dict__["rollout_policy"] = rollout_policy
+            if set_string is not None and not isinstance(set_string, DeployStageSetStringArgs):
+                set_string = set_string or {}
+                def _setter(key, value):
+                    set_string[key] = value
+                DeployStageSetStringArgs._configure(_setter, **set_string)
             __props__.__dict__["set_string"] = set_string
+            if set_values is not None and not isinstance(set_values, DeployStageSetValuesArgs):
+                set_values = set_values or {}
+                def _setter(key, value):
+                    set_values[key] = value
+                DeployStageSetValuesArgs._configure(_setter, **set_values)
             __props__.__dict__["set_values"] = set_values
             __props__.__dict__["should_cleanup_on_fail"] = should_cleanup_on_fail
             __props__.__dict__["should_not_wait"] = should_not_wait
@@ -2364,10 +2706,20 @@ class DeployStage(pulumi.CustomResource):
             __props__.__dict__["should_reuse_values"] = should_reuse_values
             __props__.__dict__["should_skip_crds"] = should_skip_crds
             __props__.__dict__["should_skip_render_subchart_notes"] = should_skip_render_subchart_notes
+            if test_load_balancer_config is not None and not isinstance(test_load_balancer_config, DeployStageTestLoadBalancerConfigArgs):
+                test_load_balancer_config = test_load_balancer_config or {}
+                def _setter(key, value):
+                    test_load_balancer_config[key] = value
+                DeployStageTestLoadBalancerConfigArgs._configure(_setter, **test_load_balancer_config)
             __props__.__dict__["test_load_balancer_config"] = test_load_balancer_config
             __props__.__dict__["timeout_in_seconds"] = timeout_in_seconds
             __props__.__dict__["traffic_shift_target"] = traffic_shift_target
             __props__.__dict__["values_artifact_ids"] = values_artifact_ids
+            if wait_criteria is not None and not isinstance(wait_criteria, DeployStageWaitCriteriaArgs):
+                wait_criteria = wait_criteria or {}
+                def _setter(key, value):
+                    wait_criteria[key] = value
+                DeployStageWaitCriteriaArgs._configure(_setter, **wait_criteria)
             __props__.__dict__["wait_criteria"] = wait_criteria
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["lifecycle_details"] = None

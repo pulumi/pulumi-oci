@@ -66,6 +66,11 @@ export interface GetVaultResult {
      */
     readonly displayName: string;
     /**
+     * Summary about metadata of external key manager to be returned to the customer as a response.
+     */
+    readonly externalKeyManagerMetadataSummaries: outputs.Kms.GetVaultExternalKeyManagerMetadataSummary[];
+    readonly externalKeyManagerMetadatas: outputs.Kms.GetVaultExternalKeyManagerMetadata[];
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     readonly freeformTags: {[key: string]: any};
@@ -74,7 +79,7 @@ export interface GetVaultResult {
      */
     readonly id: string;
     /**
-     * A boolean that will be true when vault is primary, and will be false when vault is a replica from a primary vault.
+     * A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
      */
     readonly isPrimary: boolean;
     /**
@@ -98,7 +103,7 @@ export interface GetVaultResult {
      */
     readonly restoreTrigger: boolean;
     /**
-     * The OCID of the vault from which this vault was restored, if it was restored from a backup file.  If you restore a vault to the same region, the vault retains the same OCID that it had when you  backed up the vault.
+     * The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
      */
     readonly restoredFromVaultId: string;
     /**

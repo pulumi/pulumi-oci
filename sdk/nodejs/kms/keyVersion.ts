@@ -17,18 +17,6 @@ import * as utilities from "../utilities";
  * otherwise valid request when the total rate of management write operations exceeds 10 requests per second
  * for a given tenancy.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testKeyVersion = new oci.kms.KeyVersion("testKeyVersion", {
- *     keyId: oci_kms_key.test_key.id,
- *     managementEndpoint: _var.key_version_management_endpoint,
- * });
- * ```
- *
  * ## Import
  *
  * KeyVersions can be imported using the `id`, e.g.
@@ -70,7 +58,15 @@ export class KeyVersion extends pulumi.CustomResource {
      */
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
     /**
-     * A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+     * Key reference data to be returned to the customer as a response.
+     */
+    public /*out*/ readonly externalKeyReferenceDetails!: pulumi.Output<outputs.Kms.KeyVersionExternalKeyReferenceDetail[]>;
+    /**
+     * Key version ID associated with the external key.
+     */
+    public readonly externalKeyVersionId!: pulumi.Output<string>;
+    /**
+     * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      */
     public /*out*/ readonly isPrimary!: pulumi.Output<boolean>;
     /**
@@ -129,6 +125,8 @@ export class KeyVersion extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as KeyVersionState | undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["externalKeyReferenceDetails"] = state ? state.externalKeyReferenceDetails : undefined;
+            resourceInputs["externalKeyVersionId"] = state ? state.externalKeyVersionId : undefined;
             resourceInputs["isPrimary"] = state ? state.isPrimary : undefined;
             resourceInputs["keyId"] = state ? state.keyId : undefined;
             resourceInputs["keyVersionId"] = state ? state.keyVersionId : undefined;
@@ -149,10 +147,12 @@ export class KeyVersion extends pulumi.CustomResource {
             if ((!args || args.managementEndpoint === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'managementEndpoint'");
             }
+            resourceInputs["externalKeyVersionId"] = args ? args.externalKeyVersionId : undefined;
             resourceInputs["keyId"] = args ? args.keyId : undefined;
             resourceInputs["managementEndpoint"] = args ? args.managementEndpoint : undefined;
             resourceInputs["timeOfDeletion"] = args ? args.timeOfDeletion : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
+            resourceInputs["externalKeyReferenceDetails"] = undefined /*out*/;
             resourceInputs["isPrimary"] = undefined /*out*/;
             resourceInputs["keyVersionId"] = undefined /*out*/;
             resourceInputs["publicKey"] = undefined /*out*/;
@@ -177,7 +177,15 @@ export interface KeyVersionState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+     * Key reference data to be returned to the customer as a response.
+     */
+    externalKeyReferenceDetails?: pulumi.Input<pulumi.Input<inputs.Kms.KeyVersionExternalKeyReferenceDetail>[]>;
+    /**
+     * Key version ID associated with the external key.
+     */
+    externalKeyVersionId?: pulumi.Input<string>;
+    /**
+     * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      */
     isPrimary?: pulumi.Input<boolean>;
     /**
@@ -227,6 +235,10 @@ export interface KeyVersionState {
  * The set of arguments for constructing a KeyVersion resource.
  */
 export interface KeyVersionArgs {
+    /**
+     * Key version ID associated with the external key.
+     */
+    externalKeyVersionId?: pulumi.Input<string>;
     /**
      * The OCID of the key.
      */

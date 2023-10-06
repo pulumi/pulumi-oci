@@ -88,9 +88,6 @@ export class DataAsset extends pulumi.CustomResource {
      * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
-    /**
-     * A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
-     */
     public readonly properties!: pulumi.Output<{[key: string]: any}>;
     /**
      * The current state of the data asset.
@@ -217,9 +214,6 @@ export interface DataAssetState {
      * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
      */
     lifecycleDetails?: pulumi.Input<string>;
-    /**
-     * A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
-     */
     properties?: pulumi.Input<{[key: string]: any}>;
     /**
      * The current state of the data asset.
@@ -271,9 +265,6 @@ export interface DataAssetArgs {
      * (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     displayName: pulumi.Input<string>;
-    /**
-     * A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
-     */
     properties?: pulumi.Input<{[key: string]: any}>;
     /**
      * The key of the data asset type. This can be obtained via the '/types' endpoint.

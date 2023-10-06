@@ -134,9 +134,6 @@ export class Instance extends pulumi.CustomResource {
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
-    /**
-     * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-     */
     public readonly extendedMetadata!: pulumi.Output<{[key: string]: any}>;
     /**
      * (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
@@ -474,9 +471,6 @@ export interface InstanceState {
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
-    /**
-     * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-     */
     extendedMetadata?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
@@ -704,9 +698,6 @@ export interface InstanceArgs {
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
-    /**
-     * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-     */
     extendedMetadata?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.

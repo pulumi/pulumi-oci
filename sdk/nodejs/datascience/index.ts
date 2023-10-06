@@ -110,6 +110,16 @@ export const getPipelines: typeof import("./getPipelines").getPipelines = null a
 export const getPipelinesOutput: typeof import("./getPipelines").getPipelinesOutput = null as any;
 utilities.lazyLoad(exports, ["getPipelines","getPipelinesOutput"], () => require("./getPipelines"));
 
+export { GetPrivateEndpointArgs, GetPrivateEndpointResult, GetPrivateEndpointOutputArgs } from "./getPrivateEndpoint";
+export const getPrivateEndpoint: typeof import("./getPrivateEndpoint").getPrivateEndpoint = null as any;
+export const getPrivateEndpointOutput: typeof import("./getPrivateEndpoint").getPrivateEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getPrivateEndpoint","getPrivateEndpointOutput"], () => require("./getPrivateEndpoint"));
+
+export { GetPrivateEndpointsArgs, GetPrivateEndpointsResult, GetPrivateEndpointsOutputArgs } from "./getPrivateEndpoints";
+export const getPrivateEndpoints: typeof import("./getPrivateEndpoints").getPrivateEndpoints = null as any;
+export const getPrivateEndpointsOutput: typeof import("./getPrivateEndpoints").getPrivateEndpointsOutput = null as any;
+utilities.lazyLoad(exports, ["getPrivateEndpoints","getPrivateEndpointsOutput"], () => require("./getPrivateEndpoints"));
+
 export { GetProjectArgs, GetProjectResult, GetProjectOutputArgs } from "./getProject";
 export const getProject: typeof import("./getProject").getProject = null as any;
 export const getProjectOutput: typeof import("./getProject").getProjectOutput = null as any;
@@ -175,6 +185,11 @@ export type PipelineRun = import("./pipelineRun").PipelineRun;
 export const PipelineRun: typeof import("./pipelineRun").PipelineRun = null as any;
 utilities.lazyLoad(exports, ["PipelineRun"], () => require("./pipelineRun"));
 
+export { PrivateEndpointArgs, PrivateEndpointState } from "./privateEndpoint";
+export type PrivateEndpoint = import("./privateEndpoint").PrivateEndpoint;
+export const PrivateEndpoint: typeof import("./privateEndpoint").PrivateEndpoint = null as any;
+utilities.lazyLoad(exports, ["PrivateEndpoint"], () => require("./privateEndpoint"));
+
 export { ProjectArgs, ProjectState } from "./project";
 export type Project = import("./project").Project;
 export const Project: typeof import("./project").Project = null as any;
@@ -207,6 +222,8 @@ const _module = {
                 return new Pipeline(name, <any>undefined, { urn })
             case "oci:DataScience/pipelineRun:PipelineRun":
                 return new PipelineRun(name, <any>undefined, { urn })
+            case "oci:DataScience/privateEndpoint:PrivateEndpoint":
+                return new PrivateEndpoint(name, <any>undefined, { urn })
             case "oci:DataScience/project:Project":
                 return new Project(name, <any>undefined, { urn })
             default:
@@ -225,4 +242,5 @@ pulumi.runtime.registerResourceModule("oci", "DataScience/modelVersionSet", _mod
 pulumi.runtime.registerResourceModule("oci", "DataScience/notebookSession", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/pipeline", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/pipelineRun", _module)
+pulumi.runtime.registerResourceModule("oci", "DataScience/privateEndpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/project", _module)

@@ -58,6 +58,9 @@ export interface GetReplicationStatusResult {
      */
     readonly id: string;
     readonly managementEndpoint: string;
+    /**
+     * Replica Details.
+     */
     readonly replicaDetails: outputs.Kms.GetReplicationStatusReplicaDetail[];
     readonly replicationId: string;
 }

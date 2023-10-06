@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { EkmsPrivateEndpointArgs, EkmsPrivateEndpointState } from "./ekmsPrivateEndpoint";
+export type EkmsPrivateEndpoint = import("./ekmsPrivateEndpoint").EkmsPrivateEndpoint;
+export const EkmsPrivateEndpoint: typeof import("./ekmsPrivateEndpoint").EkmsPrivateEndpoint = null as any;
+utilities.lazyLoad(exports, ["EkmsPrivateEndpoint"], () => require("./ekmsPrivateEndpoint"));
+
 export { EncryptedDataArgs, EncryptedDataState } from "./encryptedData";
 export type EncryptedData = import("./encryptedData").EncryptedData;
 export const EncryptedData: typeof import("./encryptedData").EncryptedData = null as any;
@@ -19,6 +24,16 @@ export { GetDecryptedDataArgs, GetDecryptedDataResult, GetDecryptedDataOutputArg
 export const getDecryptedData: typeof import("./getDecryptedData").getDecryptedData = null as any;
 export const getDecryptedDataOutput: typeof import("./getDecryptedData").getDecryptedDataOutput = null as any;
 utilities.lazyLoad(exports, ["getDecryptedData","getDecryptedDataOutput"], () => require("./getDecryptedData"));
+
+export { GetEkmsPrivateEndpointArgs, GetEkmsPrivateEndpointResult, GetEkmsPrivateEndpointOutputArgs } from "./getEkmsPrivateEndpoint";
+export const getEkmsPrivateEndpoint: typeof import("./getEkmsPrivateEndpoint").getEkmsPrivateEndpoint = null as any;
+export const getEkmsPrivateEndpointOutput: typeof import("./getEkmsPrivateEndpoint").getEkmsPrivateEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getEkmsPrivateEndpoint","getEkmsPrivateEndpointOutput"], () => require("./getEkmsPrivateEndpoint"));
+
+export { GetEkmsPrivateEndpointsArgs, GetEkmsPrivateEndpointsResult, GetEkmsPrivateEndpointsOutputArgs } from "./getEkmsPrivateEndpoints";
+export const getEkmsPrivateEndpoints: typeof import("./getEkmsPrivateEndpoints").getEkmsPrivateEndpoints = null as any;
+export const getEkmsPrivateEndpointsOutput: typeof import("./getEkmsPrivateEndpoints").getEkmsPrivateEndpointsOutput = null as any;
+utilities.lazyLoad(exports, ["getEkmsPrivateEndpoints","getEkmsPrivateEndpointsOutput"], () => require("./getEkmsPrivateEndpoints"));
 
 export { GetEncryptedDataArgs, GetEncryptedDataResult, GetEncryptedDataOutputArgs } from "./getEncryptedData";
 export const getEncryptedData: typeof import("./getEncryptedData").getEncryptedData = null as any;
@@ -105,6 +120,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint":
+                return new EkmsPrivateEndpoint(name, <any>undefined, { urn })
             case "oci:Kms/encryptedData:EncryptedData":
                 return new EncryptedData(name, <any>undefined, { urn })
             case "oci:Kms/generatedKey:GeneratedKey":
@@ -126,6 +143,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "Kms/ekmsPrivateEndpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "Kms/encryptedData", _module)
 pulumi.runtime.registerResourceModule("oci", "Kms/generatedKey", _module)
 pulumi.runtime.registerResourceModule("oci", "Kms/key", _module)

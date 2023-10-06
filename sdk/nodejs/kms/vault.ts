@@ -32,6 +32,15 @@ import * as utilities from "../utilities";
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
+ *     externalKeyManagerMetadata: {
+ *         externalVaultEndpointUrl: _var.vault_external_key_manager_metadata_external_vault_endpoint_url,
+ *         oauthMetadata: {
+ *             clientAppId: oci_kms_client_app.test_client_app.id,
+ *             clientAppSecret: _var.vault_external_key_manager_metadata_oauth_metadata_client_app_secret,
+ *             idcsAccountNameUrl: _var.vault_external_key_manager_metadata_oauth_metadata_idcs_account_name_url,
+ *         },
+ *         privateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
+ *     },
  *     freeformTags: {
  *         Department: "Finance",
  *     },
@@ -91,11 +100,19 @@ export class Vault extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
+     * Metadata required for accessing External Key manager
+     */
+    public readonly externalKeyManagerMetadata!: pulumi.Output<outputs.Kms.VaultExternalKeyManagerMetadata>;
+    /**
+     * Summary about metadata of external key manager to be returned to the customer as a response.
+     */
+    public /*out*/ readonly externalKeyManagerMetadataSummaries!: pulumi.Output<outputs.Kms.VaultExternalKeyManagerMetadataSummary[]>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * A boolean that will be true when vault is primary, and will be false when vault is a replica from a primary vault.
+     * A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
      */
     public /*out*/ readonly isPrimary!: pulumi.Output<boolean>;
     /**
@@ -116,7 +133,7 @@ export class Vault extends pulumi.CustomResource {
     public readonly restoreFromObjectStore!: pulumi.Output<outputs.Kms.VaultRestoreFromObjectStore | undefined>;
     public readonly restoreTrigger!: pulumi.Output<boolean | undefined>;
     /**
-     * The OCID of the vault from which this vault was restored, if it was restored from a backup file.  If you restore a vault to the same region, the vault retains the same OCID that it had when you  backed up the vault.
+     * The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
      */
     public /*out*/ readonly restoredFromVaultId!: pulumi.Output<string>;
     /**
@@ -156,6 +173,8 @@ export class Vault extends pulumi.CustomResource {
             resourceInputs["cryptoEndpoint"] = state ? state.cryptoEndpoint : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["externalKeyManagerMetadata"] = state ? state.externalKeyManagerMetadata : undefined;
+            resourceInputs["externalKeyManagerMetadataSummaries"] = state ? state.externalKeyManagerMetadataSummaries : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isPrimary"] = state ? state.isPrimary : undefined;
             resourceInputs["managementEndpoint"] = state ? state.managementEndpoint : undefined;
@@ -182,6 +201,7 @@ export class Vault extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["externalKeyManagerMetadata"] = args ? args.externalKeyManagerMetadata : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["restoreFromFile"] = args ? args.restoreFromFile : undefined;
             resourceInputs["restoreFromObjectStore"] = args ? args.restoreFromObjectStore : undefined;
@@ -189,6 +209,7 @@ export class Vault extends pulumi.CustomResource {
             resourceInputs["timeOfDeletion"] = args ? args.timeOfDeletion : undefined;
             resourceInputs["vaultType"] = args ? args.vaultType : undefined;
             resourceInputs["cryptoEndpoint"] = undefined /*out*/;
+            resourceInputs["externalKeyManagerMetadataSummaries"] = undefined /*out*/;
             resourceInputs["isPrimary"] = undefined /*out*/;
             resourceInputs["managementEndpoint"] = undefined /*out*/;
             resourceInputs["replicaDetails"] = undefined /*out*/;
@@ -222,11 +243,19 @@ export interface VaultState {
      */
     displayName?: pulumi.Input<string>;
     /**
+     * Metadata required for accessing External Key manager
+     */
+    externalKeyManagerMetadata?: pulumi.Input<inputs.Kms.VaultExternalKeyManagerMetadata>;
+    /**
+     * Summary about metadata of external key manager to be returned to the customer as a response.
+     */
+    externalKeyManagerMetadataSummaries?: pulumi.Input<pulumi.Input<inputs.Kms.VaultExternalKeyManagerMetadataSummary>[]>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * A boolean that will be true when vault is primary, and will be false when vault is a replica from a primary vault.
+     * A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
      */
     isPrimary?: pulumi.Input<boolean>;
     /**
@@ -247,7 +276,7 @@ export interface VaultState {
     restoreFromObjectStore?: pulumi.Input<inputs.Kms.VaultRestoreFromObjectStore>;
     restoreTrigger?: pulumi.Input<boolean>;
     /**
-     * The OCID of the vault from which this vault was restored, if it was restored from a backup file.  If you restore a vault to the same region, the vault retains the same OCID that it had when you  backed up the vault.
+     * The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
      */
     restoredFromVaultId?: pulumi.Input<string>;
     /**
@@ -287,6 +316,10 @@ export interface VaultArgs {
      * (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
      */
     displayName: pulumi.Input<string>;
+    /**
+     * Metadata required for accessing External Key manager
+     */
+    externalKeyManagerMetadata?: pulumi.Input<inputs.Kms.VaultExternalKeyManagerMetadata>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */

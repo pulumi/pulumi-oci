@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Queue resource in Oracle Cloud Infrastructure Queue service.
  *
- * Gets a Queue by identifier
+ * Gets a queue by identifier.
  *
  * ## Example Usage
  *
@@ -33,7 +33,7 @@ export function getQueue(args: GetQueueArgs, opts?: pulumi.InvokeOptions): Promi
  */
 export interface GetQueueArgs {
     /**
-     * unique Queue identifier
+     * The unique queue identifier.
      */
     queueId: string;
 }
@@ -43,11 +43,15 @@ export interface GetQueueArgs {
  */
 export interface GetQueueResult {
     /**
-     * Compartment Identifier
+     * The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+     */
+    readonly channelConsumptionLimit: number;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
      */
     readonly compartmentId: string;
     /**
-     * Id of the custom master encryption key which will be used to encrypt messages content
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
      */
     readonly customEncryptionKeyId: string;
     /**
@@ -59,7 +63,7 @@ export interface GetQueueResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * Queue Identifier, can be renamed
+     * A user-friendly name for the queue. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     readonly displayName: string;
     /**
@@ -67,11 +71,11 @@ export interface GetQueueResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * Unique identifier that is immutable on creation
+     * A unique identifier for the queue that is immutable on creation.
      */
     readonly id: string;
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * Any additional details about the current state of the queue.
      */
     readonly lifecycleDetails: string;
     /**
@@ -86,7 +90,7 @@ export interface GetQueueResult {
      */
     readonly retentionInSeconds: number;
     /**
-     * The current state of the Queue.
+     * The current state of the queue.
      */
     readonly state: string;
     /**
@@ -94,11 +98,11 @@ export interface GetQueueResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The time the the Queue was created. An RFC3339 formatted datetime string
+     * The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      */
     readonly timeCreated: string;
     /**
-     * The time the Queue was updated. An RFC3339 formatted datetime string
+     * The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      */
     readonly timeUpdated: string;
     /**
@@ -106,14 +110,14 @@ export interface GetQueueResult {
      */
     readonly timeoutInSeconds: number;
     /**
-     * The default visibility of the messages consumed from the queue.
+     * The default visibility timeout of the messages consumed from the queue, in seconds.
      */
     readonly visibilityInSeconds: number;
 }
 /**
  * This data source provides details about a specific Queue resource in Oracle Cloud Infrastructure Queue service.
  *
- * Gets a Queue by identifier
+ * Gets a queue by identifier.
  *
  * ## Example Usage
  *
@@ -135,7 +139,7 @@ export function getQueueOutput(args: GetQueueOutputArgs, opts?: pulumi.InvokeOpt
  */
 export interface GetQueueOutputArgs {
     /**
-     * unique Queue identifier
+     * The unique queue identifier.
      */
     queueId: pulumi.Input<string>;
 }

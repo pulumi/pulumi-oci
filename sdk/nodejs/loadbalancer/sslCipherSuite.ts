@@ -57,9 +57,6 @@ export class SslCipherSuite extends pulumi.CustomResource {
         return obj['__pulumiType'] === SslCipherSuite.__pulumiType;
     }
 
-    /**
-     * A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
-     */
     public readonly ciphers!: pulumi.Output<string[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
@@ -123,9 +120,6 @@ export class SslCipherSuite extends pulumi.CustomResource {
  * Input properties used for looking up and filtering SslCipherSuite resources.
  */
 export interface SslCipherSuiteState {
-    /**
-     * A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
-     */
     ciphers?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
@@ -155,9 +149,6 @@ export interface SslCipherSuiteState {
  * The set of arguments for constructing a SslCipherSuite resource.
  */
 export interface SslCipherSuiteArgs {
-    /**
-     * A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
-     */
     ciphers: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.

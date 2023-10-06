@@ -361,6 +361,14 @@ export interface GetAutonomousDatabaseResult {
     readonly remoteDisasterRecoveryConfigurations: outputs.Database.GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration[];
     readonly remoteDisasterRecoveryType: string;
     /**
+     * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    readonly resourcePoolLeaderId: string;
+    /**
+     * The configuration details for resource pool
+     */
+    readonly resourcePoolSummaries: outputs.Database.GetAutonomousDatabaseResourcePoolSummary[];
+    /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      */
     readonly role: string;
@@ -434,6 +442,10 @@ export interface GetAutonomousDatabaseResult {
      * The date and time when maintenance will end.
      */
     readonly timeMaintenanceEnd: string;
+    /**
+     * The time the member joined the resource pool.
+     */
+    readonly timeOfJoiningResourcePool: string;
     /**
      * The timestamp of the last failover operation.
      */

@@ -34,6 +34,7 @@ import * as utilities from "../utilities";
  *             memoryInGbs: _var.notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs,
  *             ocpus: _var.notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus,
  *         },
+ *         privateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
  *         subnetId: oci_core_subnet.test_subnet.id,
  *     },
  *     notebookSessionConfigurationDetails: {
@@ -44,6 +45,7 @@ import * as utilities from "../utilities";
  *             memoryInGbs: _var.notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs,
  *             ocpus: _var.notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus,
  *         },
+ *         privateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
  *     },
  *     notebookSessionRuntimeConfigDetails: {
  *         customEnvironmentVariables: _var.notebook_session_notebook_session_runtime_config_details_custom_environment_variables,

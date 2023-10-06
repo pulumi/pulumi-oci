@@ -22,11 +22,12 @@ import (
 	"strings"
 
 	ociShim "github.com/oracle/terraform-provider-oci/shim"
-	"github.com/pulumi/pulumi-oci/provider/pkg/version"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
-	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/x"
+	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/tokens"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/util/contract"
+
+	"github.com/pulumi/pulumi-oci/provider/pkg/version"
 )
 
 // all of the token components used below.
@@ -178,6 +179,7 @@ var mappedMods = map[string]string{
 	"container_instances":            containerInstancesMod,
 	"core":                           coreMod,
 	"data_labelling_service":         dataLabellingServiceMod,
+	"data_labeling_service":          dataLabellingServiceMod,
 	"data_safe":                      dataSafeMod,
 	"database":                       databaseMod,
 	"database_management":            databaseManagementMod,
@@ -250,7 +252,7 @@ var mappedMods = map[string]string{
 	"vault":                          vaultMod,
 	"vbs":                            vbsMod,
 	"visual_builder":                 visualBuilderMod,
-	"vn_Monitoring":                  vnMonitoringMod,
+	"vn_monitoring":                  vnMonitoringMod,
 	"vulnerability_scanning":         vulnerabilityScanningMod,
 	"waa":                            waaMod,
 	"waas":                           waasMod,
@@ -421,10 +423,6 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_core_app_catalog_listing_resource_version_agreement": {
 				Tok: tfbridge.MakeResource(mainPkg, coreMod, "AppCatalogListingResourceVersionAgreement"),
 			},
-			"oci_core_app_catalog_subscription":           {Tok: tfbridge.MakeResource(mainPkg, coreMod, "AppCatalogSubscription")},
-			"oci_core_boot_volume":                        {Tok: tfbridge.MakeResource(mainPkg, coreMod, "BootVolume")},
-			"oci_core_boot_volume_backup":                 {Tok: tfbridge.MakeResource(mainPkg, coreMod, "BootVolumeBackup")},
-			"oci_core_cluster_network":                    {Tok: tfbridge.MakeResource(mainPkg, coreMod, "ClusterNetwork")},
 			"oci_core_compute_capacity_reservation":       {Tok: tfbridge.MakeResource(mainPkg, coreMod, "ComputeCapacityReservation")},
 			"oci_core_compute_image_capability_schema":    {Tok: tfbridge.MakeResource(mainPkg, coreMod, "ComputeImageCapabilitySchema")},
 			"oci_core_console_history":                    {Tok: tfbridge.MakeResource(mainPkg, coreMod, "ConsoleHistory")},
@@ -462,33 +460,6 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_core_nat_gateway":                          {Tok: tfbridge.MakeResource(mainPkg, coreMod, "NatGateway")},
 			"oci_core_network_security_group":               {Tok: tfbridge.MakeResource(mainPkg, coreMod, "NetworkSecurityGroup")},
 			"oci_core_network_security_group_security_rule": {Tok: tfbridge.MakeResource(mainPkg, coreMod, "NetworkSecurityGroupSecurityRule")},
-			"oci_core_private_ip":                           {Tok: tfbridge.MakeResource(mainPkg, coreMod, "PrivateIp")},
-			"oci_core_public_ip":                            {Tok: tfbridge.MakeResource(mainPkg, coreMod, "PublicIp")},
-			"oci_core_public_ip_pool":                       {Tok: tfbridge.MakeResource(mainPkg, coreMod, "PublicIpPool")},
-			"oci_core_public_ip_pool_capacity":              {Tok: tfbridge.MakeResource(mainPkg, coreMod, "PublicIpPoolCapacity")},
-			"oci_core_remote_peering_connection":            {Tok: tfbridge.MakeResource(mainPkg, coreMod, "RemotePeeringConnection")},
-			"oci_core_route_table":                          {Tok: tfbridge.MakeResource(mainPkg, coreMod, "RouteTable")},
-			"oci_core_route_table_attachment":               {Tok: tfbridge.MakeResource(mainPkg, coreMod, "RouteTableAttachment")},
-			"oci_core_security_list":                        {Tok: tfbridge.MakeResource(mainPkg, coreMod, "SecurityList")},
-			"oci_core_service_gateway":                      {Tok: tfbridge.MakeResource(mainPkg, coreMod, "ServiceGateway")},
-			"oci_core_shape_management":                     {Tok: tfbridge.MakeResource(mainPkg, coreMod, "ShapeManagement")},
-			"oci_core_subnet":                               {Tok: tfbridge.MakeResource(mainPkg, coreMod, "Subnet")},
-			"oci_core_vcn":                                  {Tok: tfbridge.MakeResource(mainPkg, coreMod, "Vcn")},
-			"oci_core_virtual_circuit":                      {Tok: tfbridge.MakeResource(mainPkg, coreMod, "VirtualCircuit")},
-			"oci_core_virtual_network":                      {Tok: tfbridge.MakeResource(mainPkg, coreMod, "VirtualNetwork")},
-			"oci_core_vlan":                                 {Tok: tfbridge.MakeResource(mainPkg, coreMod, "Vlan")},
-			"oci_core_vnic_attachment":                      {Tok: tfbridge.MakeResource(mainPkg, coreMod, "VnicAttachment")},
-			"oci_core_volume":                               {Tok: tfbridge.MakeResource(mainPkg, coreMod, "Volume")},
-			"oci_core_volume_attachment":                    {Tok: tfbridge.MakeResource(mainPkg, coreMod, "VolumeAttachment")},
-			"oci_core_volume_backup":                        {Tok: tfbridge.MakeResource(mainPkg, coreMod, "VolumeBackup")},
-			"oci_core_volume_backup_policy":                 {Tok: tfbridge.MakeResource(mainPkg, coreMod, "VolumeBackupPolicy")},
-			"oci_core_volume_backup_policy_assignment":      {Tok: tfbridge.MakeResource(mainPkg, coreMod, "VolumeBackupPolicyAssignment")},
-			"oci_core_volume_group":                         {Tok: tfbridge.MakeResource(mainPkg, coreMod, "VolumeGroup")},
-			"oci_core_volume_group_backup":                  {Tok: tfbridge.MakeResource(mainPkg, coreMod, "VolumeGroupBackup")},
-			"oci_core_capture_filter":                       {Tok: tfbridge.MakeResource(mainPkg, coreMod, "CaptureFilter")},
-			"oci_core_vtap":                                 {Tok: tfbridge.MakeResource(mainPkg, coreMod, "Vtap")},
-
-			"oci_data_labeling_service_dataset": {Tok: tfbridge.MakeResource(mainPkg, dataLabellingServiceMod, "Dataset")},
 
 			"oci_data_safe_add_sdm_columns":                 {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "AddSdmColumns")},
 			"oci_data_safe_alert":                           {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "Alert")},
@@ -2238,13 +2209,6 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_stack_monitoring_discovery_jobs":     {Tok: tfbridge.MakeDataSource(mainPkg, stackMonitoringMod, "getDiscoveryJobs")},
 			"oci_stack_monitoring_monitored_resource": {Tok: tfbridge.MakeDataSource(mainPkg, stackMonitoringMod, "getMonitoredResource")},
 
-			"oci_streaming_connect_harness":   {Tok: tfbridge.MakeDataSource(mainPkg, streamingMod, "getConnectHarness")},
-			"oci_streaming_connect_harnesses": {Tok: tfbridge.MakeDataSource(mainPkg, streamingMod, "getConnectHarnesses")},
-			"oci_streaming_stream":            {Tok: tfbridge.MakeDataSource(mainPkg, streamingMod, "getStream")},
-			"oci_streaming_stream_pool":       {Tok: tfbridge.MakeDataSource(mainPkg, streamingMod, "getStreamPool")},
-			"oci_streaming_stream_pools":      {Tok: tfbridge.MakeDataSource(mainPkg, streamingMod, "getStreamPools")},
-			"oci_streaming_streams":           {Tok: tfbridge.MakeDataSource(mainPkg, streamingMod, "getStreams")},
-
 			"oci_usage_proxy_subscription_product":          {Tok: tfbridge.MakeDataSource(mainPkg, usageProxyMod, "getSubscriptionProduct")},
 			"oci_usage_proxy_subscription_products":         {Tok: tfbridge.MakeDataSource(mainPkg, usageProxyMod, "getSubscriptionProducts")},
 			"oci_usage_proxy_subscription_redeemable_user":  {Tok: tfbridge.MakeDataSource(mainPkg, usageProxyMod, "getSubscriptionRedeemableUser")},
@@ -2253,10 +2217,6 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_usage_proxy_subscription_redemptions":      {Tok: tfbridge.MakeDataSource(mainPkg, usageProxyMod, "getSubscriptionRedemptions")},
 			"oci_usage_proxy_subscription_reward":           {Tok: tfbridge.MakeDataSource(mainPkg, usageProxyMod, "getSubscriptionReward")},
 			"oci_usage_proxy_subscription_rewards":          {Tok: tfbridge.MakeDataSource(mainPkg, usageProxyMod, "getSubscriptionRewards")},
-
-			"oci_vault_secret":         {Tok: tfbridge.MakeDataSource(mainPkg, vaultMod, "getSecret")},
-			"oci_vault_secret_version": {Tok: tfbridge.MakeDataSource(mainPkg, vaultMod, "getSecretVersion")},
-			"oci_vault_secrets":        {Tok: tfbridge.MakeDataSource(mainPkg, vaultMod, "getSecrets")},
 
 			"oci_vn_monitoring_path_analyzer_test":  {Tok: tfbridge.MakeDataSource(mainPkg, vnMonitoringMod, "GetPathAnalyzerTest")},
 			"oci_vn_monitoring_path_analyzer_tests": {Tok: tfbridge.MakeDataSource(mainPkg, vnMonitoringMod, "GetPathAnalyzerTests")},
@@ -2343,32 +2303,7 @@ func Provider() tfbridge.ProviderInfo {
 		}, MetadataInfo: tfbridge.NewProviderMetadata(metadata),
 	}
 
-	mappedModKeys := make([]string, 0, len(mappedMods))
-	for k := range mappedMods {
-		mappedModKeys = append(mappedModKeys, k)
-	}
-
-	moduleNameMap := make(map[string]string, len(mappedMods))
-	for _, v := range mappedMods {
-		moduleNameMap[strings.ToLower(v)] = v
-	}
-
-	err := x.ComputeDefaults(&prov, x.TokensKnownModules("oci_", "", mappedModKeys,
-		func(mod, name string) (string, error) {
-			m, ok := moduleNameMap[strings.ToLower(mod)]
-			if !ok {
-				switch mod {
-				case "recovery":
-					m = recoveryMod
-				case "bds":
-					m = bigDataServiceMod
-				default:
-					return "", fmt.Errorf("'%s' has unmapped module '%s'", name, mod)
-				}
-			}
-			return tfbridge.MakeResource(mainPkg, m, name).String(), nil
-		}))
-	contract.AssertNoError(err)
+	prov.MustComputeTokens(tokens.MappedModules("oci_", "", mappedMods, tokens.MakeStandard(mainPkg)))
 
 	// These are not preset upstream
 	resourcesMissingDocs := []string{
@@ -2410,9 +2345,7 @@ func Provider() tfbridge.ProviderInfo {
 		prov.DataSources[d].Docs = &tfbridge.DocInfo{Markdown: []byte{' '}}
 	}
 
-	err = x.AutoAliasing(&prov, prov.GetMetadata())
-	contract.AssertNoErrorf(err, "auto aliasing apply failed")
-
+	prov.MustApplyAutoAliases()
 	prov.SetAutonaming(255, "-")
 
 	return prov

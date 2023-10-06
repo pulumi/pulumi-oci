@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -27,7 +27,16 @@ __all__ = [
 class GetDkimsDkimCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDkimsDkimCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetDkimsDkimCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDkimsDkimCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -70,21 +79,58 @@ class GetDkimsDkimCollectionItemResult(dict):
         :param str time_updated: The time of the last change to the DKIM configuration, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
         :param str txt_record_value: The DNS TXT record value to provision to the DKIM DNS subdomain in place of using a CNAME record. This is used in cases where a CNAME can not be used, such as when the cnameRecordValue would exceed the maximum length for a DNS entry. This can also be used by customers who have an existing procedure to directly provision TXT records for DKIM. Be aware that many DNS APIs will require you to break this string into segments of less than 255 characters.
         """
-        pulumi.set(__self__, "cname_record_value", cname_record_value)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "dns_subdomain_name", dns_subdomain_name)
-        pulumi.set(__self__, "email_domain_id", email_domain_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "txt_record_value", txt_record_value)
+        GetDkimsDkimCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cname_record_value=cname_record_value,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            dns_subdomain_name=dns_subdomain_name,
+            email_domain_id=email_domain_id,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            txt_record_value=txt_record_value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cname_record_value: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             dns_subdomain_name: str,
+             email_domain_id: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             name: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             txt_record_value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cname_record_value", cname_record_value)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("dns_subdomain_name", dns_subdomain_name)
+        _setter("email_domain_id", email_domain_id)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("name", name)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("txt_record_value", txt_record_value)
 
     @property
     @pulumi.getter(name="cnameRecordValue")
@@ -216,10 +262,23 @@ class GetDkimsFilterResult(dict):
         """
         :param str name: A filter to only return resources that match the given name exactly.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDkimsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -244,7 +303,16 @@ class GetDkimsFilterResult(dict):
 class GetEmailDomainsEmailDomainCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetEmailDomainsEmailDomainCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetEmailDomainsEmailDomainCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetEmailDomainsEmailDomainCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -279,17 +347,46 @@ class GetEmailDomainsEmailDomainCollectionItemResult(dict):
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
         """
-        pulumi.set(__self__, "active_dkim_id", active_dkim_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_spf", is_spf)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
+        GetEmailDomainsEmailDomainCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            active_dkim_id=active_dkim_id,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_spf=is_spf,
+            name=name,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             active_dkim_id: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_spf: bool,
+             name: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("active_dkim_id", active_dkim_id)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_spf", is_spf)
+        _setter("name", name)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="activeDkimId")
@@ -389,10 +486,23 @@ class GetEmailDomainsFilterResult(dict):
         """
         :param str name: A filter to only return resources that match the given name exactly.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetEmailDomainsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -419,10 +529,23 @@ class GetSendersFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSendersFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -463,15 +586,40 @@ class GetSendersSenderResult(dict):
         :param str state: The current state of a sender.
         :param str time_created: The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "email_address", email_address)
-        pulumi.set(__self__, "email_domain_id", email_domain_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_spf", is_spf)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetSendersSenderResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            email_address=email_address,
+            email_domain_id=email_domain_id,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_spf=is_spf,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             email_address: str,
+             email_domain_id: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_spf: bool,
+             state: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("email_address", email_address)
+        _setter("email_domain_id", email_domain_id)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_spf", is_spf)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -552,10 +700,23 @@ class GetSuppressionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSuppressionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -596,15 +757,40 @@ class GetSuppressionsSuppressionResult(dict):
         :param str time_created: The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
         :param str time_last_suppressed: The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "email_address", email_address)
-        pulumi.set(__self__, "error_detail", error_detail)
-        pulumi.set(__self__, "error_source", error_source)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "message_id", message_id)
-        pulumi.set(__self__, "reason", reason)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_suppressed", time_last_suppressed)
+        GetSuppressionsSuppressionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            email_address=email_address,
+            error_detail=error_detail,
+            error_source=error_source,
+            id=id,
+            message_id=message_id,
+            reason=reason,
+            time_created=time_created,
+            time_last_suppressed=time_last_suppressed,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             email_address: str,
+             error_detail: str,
+             error_source: str,
+             id: str,
+             message_id: str,
+             reason: str,
+             time_created: str,
+             time_last_suppressed: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("email_address", email_address)
+        _setter("error_detail", error_detail)
+        _setter("error_source", error_source)
+        _setter("id", id)
+        _setter("message_id", message_id)
+        _setter("reason", reason)
+        _setter("time_created", time_created)
+        _setter("time_last_suppressed", time_last_suppressed)
 
     @property
     @pulumi.getter(name="compartmentId")

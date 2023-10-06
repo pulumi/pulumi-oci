@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -40,36 +40,85 @@ class ExadataInfrastructureStorageArgs:
         """
         The set of arguments for constructing a ExadataInfrastructureStorage resource.
         """
-        pulumi.set(__self__, "admin_network_cidr", admin_network_cidr)
-        pulumi.set(__self__, "cloud_control_plane_server1", cloud_control_plane_server1)
-        pulumi.set(__self__, "cloud_control_plane_server2", cloud_control_plane_server2)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "dns_servers", dns_servers)
-        pulumi.set(__self__, "gateway", gateway)
-        pulumi.set(__self__, "infini_band_network_cidr", infini_band_network_cidr)
-        pulumi.set(__self__, "netmask", netmask)
-        pulumi.set(__self__, "ntp_servers", ntp_servers)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "time_zone", time_zone)
+        ExadataInfrastructureStorageArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_network_cidr=admin_network_cidr,
+            cloud_control_plane_server1=cloud_control_plane_server1,
+            cloud_control_plane_server2=cloud_control_plane_server2,
+            compartment_id=compartment_id,
+            display_name=display_name,
+            dns_servers=dns_servers,
+            gateway=gateway,
+            infini_band_network_cidr=infini_band_network_cidr,
+            netmask=netmask,
+            ntp_servers=ntp_servers,
+            shape=shape,
+            time_zone=time_zone,
+            activation_file=activation_file,
+            compute_count=compute_count,
+            contacts=contacts,
+            corporate_proxy=corporate_proxy,
+            defined_tags=defined_tags,
+            exadata_infrastructure_id=exadata_infrastructure_id,
+            freeform_tags=freeform_tags,
+            maintenance_window=maintenance_window,
+            storage_count=storage_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_network_cidr: pulumi.Input[str],
+             cloud_control_plane_server1: pulumi.Input[str],
+             cloud_control_plane_server2: pulumi.Input[str],
+             compartment_id: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             dns_servers: pulumi.Input[Sequence[pulumi.Input[str]]],
+             gateway: pulumi.Input[str],
+             infini_band_network_cidr: pulumi.Input[str],
+             netmask: pulumi.Input[str],
+             ntp_servers: pulumi.Input[Sequence[pulumi.Input[str]]],
+             shape: pulumi.Input[str],
+             time_zone: pulumi.Input[str],
+             activation_file: Optional[pulumi.Input[str]] = None,
+             compute_count: Optional[pulumi.Input[int]] = None,
+             contacts: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureStorageContactArgs']]]] = None,
+             corporate_proxy: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             maintenance_window: Optional[pulumi.Input['ExadataInfrastructureStorageMaintenanceWindowArgs']] = None,
+             storage_count: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("admin_network_cidr", admin_network_cidr)
+        _setter("cloud_control_plane_server1", cloud_control_plane_server1)
+        _setter("cloud_control_plane_server2", cloud_control_plane_server2)
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("dns_servers", dns_servers)
+        _setter("gateway", gateway)
+        _setter("infini_band_network_cidr", infini_band_network_cidr)
+        _setter("netmask", netmask)
+        _setter("ntp_servers", ntp_servers)
+        _setter("shape", shape)
+        _setter("time_zone", time_zone)
         if activation_file is not None:
-            pulumi.set(__self__, "activation_file", activation_file)
+            _setter("activation_file", activation_file)
         if compute_count is not None:
-            pulumi.set(__self__, "compute_count", compute_count)
+            _setter("compute_count", compute_count)
         if contacts is not None:
-            pulumi.set(__self__, "contacts", contacts)
+            _setter("contacts", contacts)
         if corporate_proxy is not None:
-            pulumi.set(__self__, "corporate_proxy", corporate_proxy)
+            _setter("corporate_proxy", corporate_proxy)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if exadata_infrastructure_id is not None:
-            pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
+            _setter("exadata_infrastructure_id", exadata_infrastructure_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if maintenance_window is not None:
-            pulumi.set(__self__, "maintenance_window", maintenance_window)
+            _setter("maintenance_window", maintenance_window)
         if storage_count is not None:
-            pulumi.set(__self__, "storage_count", storage_count)
+            _setter("storage_count", storage_count)
 
     @property
     @pulumi.getter(name="adminNetworkCidr")
@@ -303,78 +352,157 @@ class _ExadataInfrastructureStorageState:
         """
         Input properties used for looking up and filtering ExadataInfrastructureStorage resources.
         """
+        _ExadataInfrastructureStorageState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            activated_storage_count=activated_storage_count,
+            activation_file=activation_file,
+            additional_storage_count=additional_storage_count,
+            admin_network_cidr=admin_network_cidr,
+            cloud_control_plane_server1=cloud_control_plane_server1,
+            cloud_control_plane_server2=cloud_control_plane_server2,
+            compartment_id=compartment_id,
+            compute_count=compute_count,
+            contacts=contacts,
+            corporate_proxy=corporate_proxy,
+            cpus_enabled=cpus_enabled,
+            csi_number=csi_number,
+            data_storage_size_in_tbs=data_storage_size_in_tbs,
+            db_node_storage_size_in_gbs=db_node_storage_size_in_gbs,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            dns_servers=dns_servers,
+            exadata_infrastructure_id=exadata_infrastructure_id,
+            freeform_tags=freeform_tags,
+            gateway=gateway,
+            infini_band_network_cidr=infini_band_network_cidr,
+            lifecycle_details=lifecycle_details,
+            maintenance_slo_status=maintenance_slo_status,
+            maintenance_window=maintenance_window,
+            max_cpu_count=max_cpu_count,
+            max_data_storage_in_tbs=max_data_storage_in_tbs,
+            max_db_node_storage_in_gbs=max_db_node_storage_in_gbs,
+            max_memory_in_gbs=max_memory_in_gbs,
+            memory_size_in_gbs=memory_size_in_gbs,
+            netmask=netmask,
+            ntp_servers=ntp_servers,
+            shape=shape,
+            state=state,
+            storage_count=storage_count,
+            time_created=time_created,
+            time_zone=time_zone,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             activated_storage_count: Optional[pulumi.Input[int]] = None,
+             activation_file: Optional[pulumi.Input[str]] = None,
+             additional_storage_count: Optional[pulumi.Input[int]] = None,
+             admin_network_cidr: Optional[pulumi.Input[str]] = None,
+             cloud_control_plane_server1: Optional[pulumi.Input[str]] = None,
+             cloud_control_plane_server2: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             compute_count: Optional[pulumi.Input[int]] = None,
+             contacts: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureStorageContactArgs']]]] = None,
+             corporate_proxy: Optional[pulumi.Input[str]] = None,
+             cpus_enabled: Optional[pulumi.Input[int]] = None,
+             csi_number: Optional[pulumi.Input[str]] = None,
+             data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
+             db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             gateway: Optional[pulumi.Input[str]] = None,
+             infini_band_network_cidr: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             maintenance_slo_status: Optional[pulumi.Input[str]] = None,
+             maintenance_window: Optional[pulumi.Input['ExadataInfrastructureStorageMaintenanceWindowArgs']] = None,
+             max_cpu_count: Optional[pulumi.Input[int]] = None,
+             max_data_storage_in_tbs: Optional[pulumi.Input[float]] = None,
+             max_db_node_storage_in_gbs: Optional[pulumi.Input[int]] = None,
+             max_memory_in_gbs: Optional[pulumi.Input[int]] = None,
+             memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
+             netmask: Optional[pulumi.Input[str]] = None,
+             ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             storage_count: Optional[pulumi.Input[int]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_zone: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if activated_storage_count is not None:
-            pulumi.set(__self__, "activated_storage_count", activated_storage_count)
+            _setter("activated_storage_count", activated_storage_count)
         if activation_file is not None:
-            pulumi.set(__self__, "activation_file", activation_file)
+            _setter("activation_file", activation_file)
         if additional_storage_count is not None:
-            pulumi.set(__self__, "additional_storage_count", additional_storage_count)
+            _setter("additional_storage_count", additional_storage_count)
         if admin_network_cidr is not None:
-            pulumi.set(__self__, "admin_network_cidr", admin_network_cidr)
+            _setter("admin_network_cidr", admin_network_cidr)
         if cloud_control_plane_server1 is not None:
-            pulumi.set(__self__, "cloud_control_plane_server1", cloud_control_plane_server1)
+            _setter("cloud_control_plane_server1", cloud_control_plane_server1)
         if cloud_control_plane_server2 is not None:
-            pulumi.set(__self__, "cloud_control_plane_server2", cloud_control_plane_server2)
+            _setter("cloud_control_plane_server2", cloud_control_plane_server2)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if compute_count is not None:
-            pulumi.set(__self__, "compute_count", compute_count)
+            _setter("compute_count", compute_count)
         if contacts is not None:
-            pulumi.set(__self__, "contacts", contacts)
+            _setter("contacts", contacts)
         if corporate_proxy is not None:
-            pulumi.set(__self__, "corporate_proxy", corporate_proxy)
+            _setter("corporate_proxy", corporate_proxy)
         if cpus_enabled is not None:
-            pulumi.set(__self__, "cpus_enabled", cpus_enabled)
+            _setter("cpus_enabled", cpus_enabled)
         if csi_number is not None:
-            pulumi.set(__self__, "csi_number", csi_number)
+            _setter("csi_number", csi_number)
         if data_storage_size_in_tbs is not None:
-            pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+            _setter("data_storage_size_in_tbs", data_storage_size_in_tbs)
         if db_node_storage_size_in_gbs is not None:
-            pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
+            _setter("db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if dns_servers is not None:
-            pulumi.set(__self__, "dns_servers", dns_servers)
+            _setter("dns_servers", dns_servers)
         if exadata_infrastructure_id is not None:
-            pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
+            _setter("exadata_infrastructure_id", exadata_infrastructure_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if gateway is not None:
-            pulumi.set(__self__, "gateway", gateway)
+            _setter("gateway", gateway)
         if infini_band_network_cidr is not None:
-            pulumi.set(__self__, "infini_band_network_cidr", infini_band_network_cidr)
+            _setter("infini_band_network_cidr", infini_band_network_cidr)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if maintenance_slo_status is not None:
-            pulumi.set(__self__, "maintenance_slo_status", maintenance_slo_status)
+            _setter("maintenance_slo_status", maintenance_slo_status)
         if maintenance_window is not None:
-            pulumi.set(__self__, "maintenance_window", maintenance_window)
+            _setter("maintenance_window", maintenance_window)
         if max_cpu_count is not None:
-            pulumi.set(__self__, "max_cpu_count", max_cpu_count)
+            _setter("max_cpu_count", max_cpu_count)
         if max_data_storage_in_tbs is not None:
-            pulumi.set(__self__, "max_data_storage_in_tbs", max_data_storage_in_tbs)
+            _setter("max_data_storage_in_tbs", max_data_storage_in_tbs)
         if max_db_node_storage_in_gbs is not None:
-            pulumi.set(__self__, "max_db_node_storage_in_gbs", max_db_node_storage_in_gbs)
+            _setter("max_db_node_storage_in_gbs", max_db_node_storage_in_gbs)
         if max_memory_in_gbs is not None:
-            pulumi.set(__self__, "max_memory_in_gbs", max_memory_in_gbs)
+            _setter("max_memory_in_gbs", max_memory_in_gbs)
         if memory_size_in_gbs is not None:
-            pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+            _setter("memory_size_in_gbs", memory_size_in_gbs)
         if netmask is not None:
-            pulumi.set(__self__, "netmask", netmask)
+            _setter("netmask", netmask)
         if ntp_servers is not None:
-            pulumi.set(__self__, "ntp_servers", ntp_servers)
+            _setter("ntp_servers", ntp_servers)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if storage_count is not None:
-            pulumi.set(__self__, "storage_count", storage_count)
+            _setter("storage_count", storage_count)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_zone is not None:
-            pulumi.set(__self__, "time_zone", time_zone)
+            _setter("time_zone", time_zone)
 
     @property
     @pulumi.getter(name="activatedStorageCount")
@@ -751,6 +879,10 @@ class ExadataInfrastructureStorage(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ExadataInfrastructureStorageArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -817,6 +949,11 @@ class ExadataInfrastructureStorage(pulumi.CustomResource):
             if infini_band_network_cidr is None and not opts.urn:
                 raise TypeError("Missing required property 'infini_band_network_cidr'")
             __props__.__dict__["infini_band_network_cidr"] = infini_band_network_cidr
+            if maintenance_window is not None and not isinstance(maintenance_window, ExadataInfrastructureStorageMaintenanceWindowArgs):
+                maintenance_window = maintenance_window or {}
+                def _setter(key, value):
+                    maintenance_window[key] = value
+                ExadataInfrastructureStorageMaintenanceWindowArgs._configure(_setter, **maintenance_window)
             __props__.__dict__["maintenance_window"] = maintenance_window
             if netmask is None and not opts.urn:
                 raise TypeError("Missing required property 'netmask'")

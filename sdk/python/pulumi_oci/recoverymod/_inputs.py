@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -36,20 +36,41 @@ class ProtectedDatabaseMetricArgs:
         :param pulumi.Input[float] retention_period_in_days: The maximum number of days to retain backups for a protected database.
         :param pulumi.Input[float] unprotected_window_in_seconds: This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
         """
+        ProtectedDatabaseMetricArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup_space_estimate_in_gbs=backup_space_estimate_in_gbs,
+            backup_space_used_in_gbs=backup_space_used_in_gbs,
+            current_retention_period_in_seconds=current_retention_period_in_seconds,
+            db_size_in_gbs=db_size_in_gbs,
+            is_redo_logs_enabled=is_redo_logs_enabled,
+            retention_period_in_days=retention_period_in_days,
+            unprotected_window_in_seconds=unprotected_window_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup_space_estimate_in_gbs: Optional[pulumi.Input[float]] = None,
+             backup_space_used_in_gbs: Optional[pulumi.Input[float]] = None,
+             current_retention_period_in_seconds: Optional[pulumi.Input[float]] = None,
+             db_size_in_gbs: Optional[pulumi.Input[float]] = None,
+             is_redo_logs_enabled: Optional[pulumi.Input[bool]] = None,
+             retention_period_in_days: Optional[pulumi.Input[float]] = None,
+             unprotected_window_in_seconds: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if backup_space_estimate_in_gbs is not None:
-            pulumi.set(__self__, "backup_space_estimate_in_gbs", backup_space_estimate_in_gbs)
+            _setter("backup_space_estimate_in_gbs", backup_space_estimate_in_gbs)
         if backup_space_used_in_gbs is not None:
-            pulumi.set(__self__, "backup_space_used_in_gbs", backup_space_used_in_gbs)
+            _setter("backup_space_used_in_gbs", backup_space_used_in_gbs)
         if current_retention_period_in_seconds is not None:
-            pulumi.set(__self__, "current_retention_period_in_seconds", current_retention_period_in_seconds)
+            _setter("current_retention_period_in_seconds", current_retention_period_in_seconds)
         if db_size_in_gbs is not None:
-            pulumi.set(__self__, "db_size_in_gbs", db_size_in_gbs)
+            _setter("db_size_in_gbs", db_size_in_gbs)
         if is_redo_logs_enabled is not None:
-            pulumi.set(__self__, "is_redo_logs_enabled", is_redo_logs_enabled)
+            _setter("is_redo_logs_enabled", is_redo_logs_enabled)
         if retention_period_in_days is not None:
-            pulumi.set(__self__, "retention_period_in_days", retention_period_in_days)
+            _setter("retention_period_in_days", retention_period_in_days)
         if unprotected_window_in_seconds is not None:
-            pulumi.set(__self__, "unprotected_window_in_seconds", unprotected_window_in_seconds)
+            _setter("unprotected_window_in_seconds", unprotected_window_in_seconds)
 
     @property
     @pulumi.getter(name="backupSpaceEstimateInGbs")
@@ -149,9 +170,20 @@ class ProtectedDatabaseRecoveryServiceSubnetArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the Protected Database.
         """
-        pulumi.set(__self__, "recovery_service_subnet_id", recovery_service_subnet_id)
+        ProtectedDatabaseRecoveryServiceSubnetArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            recovery_service_subnet_id=recovery_service_subnet_id,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             recovery_service_subnet_id: pulumi.Input[str],
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("recovery_service_subnet_id", recovery_service_subnet_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter(name="recoveryServiceSubnetId")
@@ -188,10 +220,23 @@ class GetProtectedDatabasesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProtectedDatabasesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -227,10 +272,23 @@ class GetProtectionPoliciesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProtectionPoliciesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -266,10 +324,23 @@ class GetRecoveryServiceSubnetsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetRecoveryServiceSubnetsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

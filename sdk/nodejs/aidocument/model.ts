@@ -97,9 +97,6 @@ export class Model extends pulumi.CustomResource {
      * Trained Model Metrics.
      */
     public /*out*/ readonly metrics!: pulumi.Output<outputs.AiDocument.ModelMetric[]>;
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-     */
     public readonly modelId!: pulumi.Output<string | undefined>;
     /**
      * The type of the Document model.
@@ -282,9 +279,6 @@ export interface ModelState {
      * Trained Model Metrics.
      */
     metrics?: pulumi.Input<pulumi.Input<inputs.AiDocument.ModelMetric>[]>;
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-     */
     modelId?: pulumi.Input<string>;
     /**
      * The type of the Document model.
@@ -372,9 +366,6 @@ export interface ModelArgs {
      * The maximum model training time in hours, expressed as a decimal fraction.
      */
     maxTrainingTimeInHours?: pulumi.Input<number>;
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-     */
     modelId?: pulumi.Input<string>;
     /**
      * The type of the Document model.

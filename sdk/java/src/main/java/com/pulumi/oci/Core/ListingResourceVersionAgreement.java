@@ -13,41 +13,124 @@ import com.pulumi.oci.Utilities;
 import java.lang.String;
 import javax.annotation.Nullable;
 
+/**
+ * The `oci.Core.AppCatalogListingResourceVersionAgreement` resource creates AppCatalogListingResourceVersionAgreement for a particular resource version of a listing.
+ * 
+ * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.AppCatalogListingResourceVersionAgreement;
+ * import com.pulumi.oci.Core.AppCatalogListingResourceVersionAgreementArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAppCatalogListingResourceVersionAgreement = new AppCatalogListingResourceVersionAgreement(&#34;testAppCatalogListingResourceVersionAgreement&#34;, AppCatalogListingResourceVersionAgreementArgs.builder()        
+ *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+ *             .listingResourceVersion(var_.app_catalog_listing_resource_version_agreement_listing_resource_version())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
+ * 
+ */
 @ResourceType(type="oci:Core/listingResourceVersionAgreement:ListingResourceVersionAgreement")
 public class ListingResourceVersionAgreement extends com.pulumi.resources.CustomResource {
+    /**
+     * EULA link
+     * 
+     */
     @Export(name="eulaLink", refs={String.class}, tree="[0]")
     private Output<String> eulaLink;
 
+    /**
+     * @return EULA link
+     * 
+     */
     public Output<String> eulaLink() {
         return this.eulaLink;
     }
+    /**
+     * The OCID of the listing.
+     * 
+     */
     @Export(name="listingId", refs={String.class}, tree="[0]")
     private Output<String> listingId;
 
+    /**
+     * @return The OCID of the listing.
+     * 
+     */
     public Output<String> listingId() {
         return this.listingId;
     }
+    /**
+     * Listing Resource Version.
+     * 
+     */
     @Export(name="listingResourceVersion", refs={String.class}, tree="[0]")
     private Output<String> listingResourceVersion;
 
+    /**
+     * @return Listing Resource Version.
+     * 
+     */
     public Output<String> listingResourceVersion() {
         return this.listingResourceVersion;
     }
+    /**
+     * Oracle TOU link
+     * 
+     */
     @Export(name="oracleTermsOfUseLink", refs={String.class}, tree="[0]")
     private Output<String> oracleTermsOfUseLink;
 
+    /**
+     * @return Oracle TOU link
+     * 
+     */
     public Output<String> oracleTermsOfUseLink() {
         return this.oracleTermsOfUseLink;
     }
+    /**
+     * A generated signature for this agreement retrieval operation which should be used in the create subscription call.
+     * 
+     */
     @Export(name="signature", refs={String.class}, tree="[0]")
     private Output<String> signature;
 
+    /**
+     * @return A generated signature for this agreement retrieval operation which should be used in the create subscription call.
+     * 
+     */
     public Output<String> signature() {
         return this.signature;
     }
+    /**
+     * Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
+     * 
+     */
     @Export(name="timeRetrieved", refs={String.class}, tree="[0]")
     private Output<String> timeRetrieved;
 
+    /**
+     * @return Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
+     * 
+     */
     public Output<String> timeRetrieved() {
         return this.timeRetrieved;
     }

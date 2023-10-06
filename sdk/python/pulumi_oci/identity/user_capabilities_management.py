@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['UserCapabilitiesManagementArgs', 'UserCapabilitiesManagement']
@@ -33,17 +33,36 @@ class UserCapabilitiesManagementArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "user_id", user_id)
+        UserCapabilitiesManagementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            user_id=user_id,
+            can_use_api_keys=can_use_api_keys,
+            can_use_auth_tokens=can_use_auth_tokens,
+            can_use_console_password=can_use_console_password,
+            can_use_customer_secret_keys=can_use_customer_secret_keys,
+            can_use_smtp_credentials=can_use_smtp_credentials,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             user_id: pulumi.Input[str],
+             can_use_api_keys: Optional[pulumi.Input[bool]] = None,
+             can_use_auth_tokens: Optional[pulumi.Input[bool]] = None,
+             can_use_console_password: Optional[pulumi.Input[bool]] = None,
+             can_use_customer_secret_keys: Optional[pulumi.Input[bool]] = None,
+             can_use_smtp_credentials: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("user_id", user_id)
         if can_use_api_keys is not None:
-            pulumi.set(__self__, "can_use_api_keys", can_use_api_keys)
+            _setter("can_use_api_keys", can_use_api_keys)
         if can_use_auth_tokens is not None:
-            pulumi.set(__self__, "can_use_auth_tokens", can_use_auth_tokens)
+            _setter("can_use_auth_tokens", can_use_auth_tokens)
         if can_use_console_password is not None:
-            pulumi.set(__self__, "can_use_console_password", can_use_console_password)
+            _setter("can_use_console_password", can_use_console_password)
         if can_use_customer_secret_keys is not None:
-            pulumi.set(__self__, "can_use_customer_secret_keys", can_use_customer_secret_keys)
+            _setter("can_use_customer_secret_keys", can_use_customer_secret_keys)
         if can_use_smtp_credentials is not None:
-            pulumi.set(__self__, "can_use_smtp_credentials", can_use_smtp_credentials)
+            _setter("can_use_smtp_credentials", can_use_smtp_credentials)
 
     @property
     @pulumi.getter(name="userId")
@@ -144,18 +163,37 @@ class _UserCapabilitiesManagementState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] user_id: The OCID of the user.
         """
+        _UserCapabilitiesManagementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            can_use_api_keys=can_use_api_keys,
+            can_use_auth_tokens=can_use_auth_tokens,
+            can_use_console_password=can_use_console_password,
+            can_use_customer_secret_keys=can_use_customer_secret_keys,
+            can_use_smtp_credentials=can_use_smtp_credentials,
+            user_id=user_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             can_use_api_keys: Optional[pulumi.Input[bool]] = None,
+             can_use_auth_tokens: Optional[pulumi.Input[bool]] = None,
+             can_use_console_password: Optional[pulumi.Input[bool]] = None,
+             can_use_customer_secret_keys: Optional[pulumi.Input[bool]] = None,
+             can_use_smtp_credentials: Optional[pulumi.Input[bool]] = None,
+             user_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if can_use_api_keys is not None:
-            pulumi.set(__self__, "can_use_api_keys", can_use_api_keys)
+            _setter("can_use_api_keys", can_use_api_keys)
         if can_use_auth_tokens is not None:
-            pulumi.set(__self__, "can_use_auth_tokens", can_use_auth_tokens)
+            _setter("can_use_auth_tokens", can_use_auth_tokens)
         if can_use_console_password is not None:
-            pulumi.set(__self__, "can_use_console_password", can_use_console_password)
+            _setter("can_use_console_password", can_use_console_password)
         if can_use_customer_secret_keys is not None:
-            pulumi.set(__self__, "can_use_customer_secret_keys", can_use_customer_secret_keys)
+            _setter("can_use_customer_secret_keys", can_use_customer_secret_keys)
         if can_use_smtp_credentials is not None:
-            pulumi.set(__self__, "can_use_smtp_credentials", can_use_smtp_credentials)
+            _setter("can_use_smtp_credentials", can_use_smtp_credentials)
         if user_id is not None:
-            pulumi.set(__self__, "user_id", user_id)
+            _setter("user_id", user_id)
 
     @property
     @pulumi.getter(name="canUseApiKeys")
@@ -335,6 +373,10 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            UserCapabilitiesManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

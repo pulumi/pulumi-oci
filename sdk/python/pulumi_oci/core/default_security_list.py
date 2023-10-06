@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -26,19 +26,40 @@ class DefaultSecurityListArgs:
         """
         The set of arguments for constructing a DefaultSecurityList resource.
         """
-        pulumi.set(__self__, "manage_default_resource_id", manage_default_resource_id)
+        DefaultSecurityListArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            manage_default_resource_id=manage_default_resource_id,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            egress_security_rules=egress_security_rules,
+            freeform_tags=freeform_tags,
+            ingress_security_rules=ingress_security_rules,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             manage_default_resource_id: pulumi.Input[str],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             egress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DefaultSecurityListEgressSecurityRuleArgs']]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             ingress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DefaultSecurityListIngressSecurityRuleArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("manage_default_resource_id", manage_default_resource_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if egress_security_rules is not None:
-            pulumi.set(__self__, "egress_security_rules", egress_security_rules)
+            _setter("egress_security_rules", egress_security_rules)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if ingress_security_rules is not None:
-            pulumi.set(__self__, "ingress_security_rules", ingress_security_rules)
+            _setter("ingress_security_rules", ingress_security_rules)
 
     @property
     @pulumi.getter(name="manageDefaultResourceId")
@@ -119,24 +140,49 @@ class _DefaultSecurityListState:
         """
         Input properties used for looking up and filtering DefaultSecurityList resources.
         """
+        _DefaultSecurityListState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            egress_security_rules=egress_security_rules,
+            freeform_tags=freeform_tags,
+            ingress_security_rules=ingress_security_rules,
+            manage_default_resource_id=manage_default_resource_id,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             egress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DefaultSecurityListEgressSecurityRuleArgs']]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             ingress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DefaultSecurityListIngressSecurityRuleArgs']]]] = None,
+             manage_default_resource_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if egress_security_rules is not None:
-            pulumi.set(__self__, "egress_security_rules", egress_security_rules)
+            _setter("egress_security_rules", egress_security_rules)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if ingress_security_rules is not None:
-            pulumi.set(__self__, "ingress_security_rules", ingress_security_rules)
+            _setter("ingress_security_rules", ingress_security_rules)
         if manage_default_resource_id is not None:
-            pulumi.set(__self__, "manage_default_resource_id", manage_default_resource_id)
+            _setter("manage_default_resource_id", manage_default_resource_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -256,6 +302,10 @@ class DefaultSecurityList(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DefaultSecurityListArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -35,12 +35,31 @@ class FusionEnvironmentAdminUserArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "email_address", email_address)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
-        pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        FusionEnvironmentAdminUserArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            email_address=email_address,
+            first_name=first_name,
+            fusion_environment_id=fusion_environment_id,
+            last_name=last_name,
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             email_address: pulumi.Input[str],
+             first_name: pulumi.Input[str],
+             fusion_environment_id: pulumi.Input[str],
+             last_name: pulumi.Input[str],
+             password: pulumi.Input[str],
+             username: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("email_address", email_address)
+        _setter("first_name", first_name)
+        _setter("fusion_environment_id", fusion_environment_id)
+        _setter("last_name", last_name)
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter(name="emailAddress")
@@ -143,20 +162,41 @@ class _FusionEnvironmentAdminUserState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _FusionEnvironmentAdminUserState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            email_address=email_address,
+            first_name=first_name,
+            fusion_environment_id=fusion_environment_id,
+            items=items,
+            last_name=last_name,
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             email_address: Optional[pulumi.Input[str]] = None,
+             first_name: Optional[pulumi.Input[str]] = None,
+             fusion_environment_id: Optional[pulumi.Input[str]] = None,
+             items: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdminUserItemArgs']]]] = None,
+             last_name: Optional[pulumi.Input[str]] = None,
+             password: Optional[pulumi.Input[str]] = None,
+             username: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if email_address is not None:
-            pulumi.set(__self__, "email_address", email_address)
+            _setter("email_address", email_address)
         if first_name is not None:
-            pulumi.set(__self__, "first_name", first_name)
+            _setter("first_name", first_name)
         if fusion_environment_id is not None:
-            pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
+            _setter("fusion_environment_id", fusion_environment_id)
         if items is not None:
-            pulumi.set(__self__, "items", items)
+            _setter("items", items)
         if last_name is not None:
-            pulumi.set(__self__, "last_name", last_name)
+            _setter("last_name", last_name)
         if password is not None:
-            pulumi.set(__self__, "password", password)
+            _setter("password", password)
         if username is not None:
-            pulumi.set(__self__, "username", username)
+            _setter("username", username)
 
     @property
     @pulumi.getter(name="emailAddress")
@@ -344,6 +384,10 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            FusionEnvironmentAdminUserArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

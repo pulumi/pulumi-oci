@@ -16,17 +16,9 @@ public final class SslCipherSuiteArgs extends com.pulumi.resources.ResourceArgs 
 
     public static final SslCipherSuiteArgs Empty = new SslCipherSuiteArgs();
 
-    /**
-     * A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
-     * 
-     */
     @Import(name="ciphers", required=true)
     private Output<List<String>> ciphers;
 
-    /**
-     * @return A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
-     * 
-     */
     public Output<List<String>> ciphers() {
         return this.ciphers;
     }
@@ -111,33 +103,15 @@ public final class SslCipherSuiteArgs extends com.pulumi.resources.ResourceArgs 
             $ = new SslCipherSuiteArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param ciphers A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ciphers(Output<List<String>> ciphers) {
             $.ciphers = ciphers;
             return this;
         }
 
-        /**
-         * @param ciphers A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ciphers(List<String> ciphers) {
             return ciphers(Output.of(ciphers));
         }
 
-        /**
-         * @param ciphers A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ciphers(String... ciphers) {
             return ciphers(List.of(ciphers));
         }

@@ -19,6 +19,7 @@ import javax.annotation.Nullable;
  * Creates a digital signature for a message or message digest by using the private key of a public-private key pair,
  * also known as an asymmetric key. To verify the generated signature, you can use the [Verify](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/VerifiedData/Verify)
  * operation. Or, if you want to validate the signature outside of the service, you can do so by using the public key of the same asymmetric key.
+ * This operation is not supported for keys having protection mode `EXTERNAL`.
  * 
  * ## Example Usage
  * ```java
@@ -123,14 +124,14 @@ public class Sign extends com.pulumi.resources.CustomResource {
         return this.message;
     }
     /**
-     * Denotes whether the value of the message parameter is a raw message or a message digest.  The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
+     * Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
      * 
      */
     @Export(name="messageType", refs={String.class}, tree="[0]")
     private Output<String> messageType;
 
     /**
-     * @return Denotes whether the value of the message parameter is a raw message or a message digest.  The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
+     * @return Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
      * 
      */
     public Output<String> messageType() {
@@ -151,7 +152,7 @@ public class Sign extends com.pulumi.resources.CustomResource {
         return this.signature;
     }
     /**
-     * The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with  different hashing algorithms.  For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm  as used when creating the message digest.
+     * The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -161,7 +162,7 @@ public class Sign extends com.pulumi.resources.CustomResource {
     private Output<String> signingAlgorithm;
 
     /**
-     * @return The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with  different hashing algorithms.  For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm  as used when creating the message digest.
+     * @return The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

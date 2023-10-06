@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -22,10 +22,23 @@ class GetMonitoredInstancesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMonitoredInstancesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -47,7 +60,16 @@ class GetMonitoredInstancesFilterResult(dict):
 class GetMonitoredInstancesMonitoredInstanceCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetMonitoredInstancesMonitoredInstanceCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetMonitoredInstancesMonitoredInstanceCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetMonitoredInstancesMonitoredInstanceCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -78,15 +100,40 @@ class GetMonitoredInstancesMonitoredInstanceCollectionItemResult(dict):
         :param str time_created: The time the MonitoredInstance was created. An RFC3339 formatted datetime string
         :param str time_updated: The time the MonitoredInstance was updated. An RFC3339 formatted datetime string
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "instance_id", instance_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "management_agent_id", management_agent_id)
-        pulumi.set(__self__, "monitoring_state", monitoring_state)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetMonitoredInstancesMonitoredInstanceCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            instance_id=instance_id,
+            lifecycle_details=lifecycle_details,
+            management_agent_id=management_agent_id,
+            monitoring_state=monitoring_state,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             display_name: str,
+             instance_id: str,
+             lifecycle_details: str,
+             management_agent_id: str,
+             monitoring_state: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("instance_id", instance_id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("management_agent_id", management_agent_id)
+        _setter("monitoring_state", monitoring_state)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")

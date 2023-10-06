@@ -161,6 +161,36 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
     }
 
     /**
+     * Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
+     * 
+     */
+    @Import(name="isResourcePoolLeader")
+    private @Nullable Output<Boolean> isResourcePoolLeader;
+
+    /**
+     * @return Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
+     * 
+     */
+    public Optional<Output<Boolean>> isResourcePoolLeader() {
+        return Optional.ofNullable(this.isResourcePoolLeader);
+    }
+
+    /**
+     * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+     * 
+     */
+    @Import(name="resourcePoolLeaderId")
+    private @Nullable Output<String> resourcePoolLeaderId;
+
+    /**
+     * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+     * 
+     */
+    public Optional<Output<String>> resourcePoolLeaderId() {
+        return Optional.ofNullable(this.resourcePoolLeaderId);
+    }
+
+    /**
      * A filter to return only resources that match the given lifecycle state exactly.
      * 
      */
@@ -188,6 +218,8 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         this.isDataGuardEnabled = $.isDataGuardEnabled;
         this.isFreeTier = $.isFreeTier;
         this.isRefreshableClone = $.isRefreshableClone;
+        this.isResourcePoolLeader = $.isResourcePoolLeader;
+        this.resourcePoolLeaderId = $.resourcePoolLeaderId;
         this.state = $.state;
     }
 
@@ -409,6 +441,48 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
          */
         public Builder isRefreshableClone(Boolean isRefreshableClone) {
             return isRefreshableClone(Output.of(isRefreshableClone));
+        }
+
+        /**
+         * @param isResourcePoolLeader Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isResourcePoolLeader(@Nullable Output<Boolean> isResourcePoolLeader) {
+            $.isResourcePoolLeader = isResourcePoolLeader;
+            return this;
+        }
+
+        /**
+         * @param isResourcePoolLeader Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isResourcePoolLeader(Boolean isResourcePoolLeader) {
+            return isResourcePoolLeader(Output.of(isResourcePoolLeader));
+        }
+
+        /**
+         * @param resourcePoolLeaderId The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourcePoolLeaderId(@Nullable Output<String> resourcePoolLeaderId) {
+            $.resourcePoolLeaderId = resourcePoolLeaderId;
+            return this;
+        }
+
+        /**
+         * @param resourcePoolLeaderId The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourcePoolLeaderId(String resourcePoolLeaderId) {
+            return resourcePoolLeaderId(Output.of(resourcePoolLeaderId));
         }
 
         /**

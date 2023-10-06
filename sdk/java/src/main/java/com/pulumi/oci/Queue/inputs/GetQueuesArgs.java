@@ -18,14 +18,14 @@ public final class GetQueuesArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetQueuesArgs Empty = new GetQueuesArgs();
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -55,14 +55,14 @@ public final class GetQueuesArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * unique Queue identifier
+     * The unique queue identifier.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return unique Queue identifier
+     * @return The unique queue identifier.
      * 
      */
     public Optional<Output<String>> id() {
@@ -113,7 +113,7 @@ public final class GetQueuesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class GetQueuesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class GetQueuesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param id unique Queue identifier
+         * @param id The unique queue identifier.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class GetQueuesArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param id unique Queue identifier
+         * @param id The unique queue identifier.
          * 
          * @return builder
          * 

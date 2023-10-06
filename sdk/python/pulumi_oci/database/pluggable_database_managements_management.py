@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,19 +41,44 @@ class PluggableDatabaseManagementsManagementArgs:
         :param pulumi.Input[str] role: The role of the user that will be connecting to the pluggable database.
         :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
-        pulumi.set(__self__, "credential_details", credential_details)
-        pulumi.set(__self__, "enable_pluggabledatabasemanagement", enable_pluggabledatabasemanagement)
-        pulumi.set(__self__, "pluggable_database_id", pluggable_database_id)
-        pulumi.set(__self__, "private_end_point_id", private_end_point_id)
-        pulumi.set(__self__, "service_name", service_name)
+        PluggableDatabaseManagementsManagementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_details=credential_details,
+            enable_pluggabledatabasemanagement=enable_pluggabledatabasemanagement,
+            pluggable_database_id=pluggable_database_id,
+            private_end_point_id=private_end_point_id,
+            service_name=service_name,
+            port=port,
+            protocol=protocol,
+            role=role,
+            ssl_secret_id=ssl_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_details: pulumi.Input['PluggableDatabaseManagementsManagementCredentialDetailsArgs'],
+             enable_pluggabledatabasemanagement: pulumi.Input[bool],
+             pluggable_database_id: pulumi.Input[str],
+             private_end_point_id: pulumi.Input[str],
+             service_name: pulumi.Input[str],
+             port: Optional[pulumi.Input[int]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             role: Optional[pulumi.Input[str]] = None,
+             ssl_secret_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credential_details", credential_details)
+        _setter("enable_pluggabledatabasemanagement", enable_pluggabledatabasemanagement)
+        _setter("pluggable_database_id", pluggable_database_id)
+        _setter("private_end_point_id", private_end_point_id)
+        _setter("service_name", service_name)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if ssl_secret_id is not None:
-            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+            _setter("ssl_secret_id", ssl_secret_id)
 
     @property
     @pulumi.getter(name="credentialDetails")
@@ -220,48 +245,97 @@ class _PluggableDatabaseManagementsManagementState:
         :param pulumi.Input[str] state: The current state of the pluggable database.
         :param pulumi.Input[str] time_created: The date and time the pluggable database was created.
         """
+        _PluggableDatabaseManagementsManagementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            connection_strings=connection_strings,
+            container_database_id=container_database_id,
+            credential_details=credential_details,
+            defined_tags=defined_tags,
+            enable_pluggabledatabasemanagement=enable_pluggabledatabasemanagement,
+            freeform_tags=freeform_tags,
+            is_restricted=is_restricted,
+            lifecycle_details=lifecycle_details,
+            open_mode=open_mode,
+            pdb_name=pdb_name,
+            pluggable_database_id=pluggable_database_id,
+            pluggable_database_management_configs=pluggable_database_management_configs,
+            port=port,
+            private_end_point_id=private_end_point_id,
+            protocol=protocol,
+            role=role,
+            service_name=service_name,
+            ssl_secret_id=ssl_secret_id,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseManagementsManagementConnectionStringArgs']]]] = None,
+             container_database_id: Optional[pulumi.Input[str]] = None,
+             credential_details: Optional[pulumi.Input['PluggableDatabaseManagementsManagementCredentialDetailsArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             enable_pluggabledatabasemanagement: Optional[pulumi.Input[bool]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_restricted: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             open_mode: Optional[pulumi.Input[str]] = None,
+             pdb_name: Optional[pulumi.Input[str]] = None,
+             pluggable_database_id: Optional[pulumi.Input[str]] = None,
+             pluggable_database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgs']]]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             private_end_point_id: Optional[pulumi.Input[str]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             role: Optional[pulumi.Input[str]] = None,
+             service_name: Optional[pulumi.Input[str]] = None,
+             ssl_secret_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if connection_strings is not None:
-            pulumi.set(__self__, "connection_strings", connection_strings)
+            _setter("connection_strings", connection_strings)
         if container_database_id is not None:
-            pulumi.set(__self__, "container_database_id", container_database_id)
+            _setter("container_database_id", container_database_id)
         if credential_details is not None:
-            pulumi.set(__self__, "credential_details", credential_details)
+            _setter("credential_details", credential_details)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if enable_pluggabledatabasemanagement is not None:
-            pulumi.set(__self__, "enable_pluggabledatabasemanagement", enable_pluggabledatabasemanagement)
+            _setter("enable_pluggabledatabasemanagement", enable_pluggabledatabasemanagement)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_restricted is not None:
-            pulumi.set(__self__, "is_restricted", is_restricted)
+            _setter("is_restricted", is_restricted)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if open_mode is not None:
-            pulumi.set(__self__, "open_mode", open_mode)
+            _setter("open_mode", open_mode)
         if pdb_name is not None:
-            pulumi.set(__self__, "pdb_name", pdb_name)
+            _setter("pdb_name", pdb_name)
         if pluggable_database_id is not None:
-            pulumi.set(__self__, "pluggable_database_id", pluggable_database_id)
+            _setter("pluggable_database_id", pluggable_database_id)
         if pluggable_database_management_configs is not None:
-            pulumi.set(__self__, "pluggable_database_management_configs", pluggable_database_management_configs)
+            _setter("pluggable_database_management_configs", pluggable_database_management_configs)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if private_end_point_id is not None:
-            pulumi.set(__self__, "private_end_point_id", private_end_point_id)
+            _setter("private_end_point_id", private_end_point_id)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if service_name is not None:
-            pulumi.set(__self__, "service_name", service_name)
+            _setter("service_name", service_name)
         if ssl_secret_id is not None:
-            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+            _setter("ssl_secret_id", ssl_secret_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -619,6 +693,10 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            PluggableDatabaseManagementsManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -642,6 +720,11 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = PluggableDatabaseManagementsManagementArgs.__new__(PluggableDatabaseManagementsManagementArgs)
 
+            if credential_details is not None and not isinstance(credential_details, PluggableDatabaseManagementsManagementCredentialDetailsArgs):
+                credential_details = credential_details or {}
+                def _setter(key, value):
+                    credential_details[key] = value
+                PluggableDatabaseManagementsManagementCredentialDetailsArgs._configure(_setter, **credential_details)
             if credential_details is None and not opts.urn:
                 raise TypeError("Missing required property 'credential_details'")
             __props__.__dict__["credential_details"] = credential_details

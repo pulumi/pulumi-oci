@@ -4,6 +4,21 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
+/**
+ * The `oci.Core.AppCatalogListingResourceVersionAgreement` resource creates AppCatalogListingResourceVersionAgreement for a particular resource version of a listing.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAppCatalogListingResourceVersionAgreement = new oci.core.AppCatalogListingResourceVersionAgreement("testAppCatalogListingResourceVersionAgreement", {
+ *     listingId: data.oci_core_app_catalog_listing.test_listing.id,
+ *     listingResourceVersion: _var.app_catalog_listing_resource_version_agreement_listing_resource_version,
+ * });
+ * ```
+ */
 export class ListingResourceVersionAgreement extends pulumi.CustomResource {
     /**
      * Get an existing ListingResourceVersionAgreement resource's state with the given name, ID, and optional extra
@@ -32,11 +47,29 @@ export class ListingResourceVersionAgreement extends pulumi.CustomResource {
         return obj['__pulumiType'] === ListingResourceVersionAgreement.__pulumiType;
     }
 
+    /**
+     * EULA link
+     */
     public /*out*/ readonly eulaLink!: pulumi.Output<string>;
+    /**
+     * The OCID of the listing.
+     */
     public readonly listingId!: pulumi.Output<string>;
+    /**
+     * Listing Resource Version.
+     */
     public readonly listingResourceVersion!: pulumi.Output<string>;
+    /**
+     * Oracle TOU link
+     */
     public /*out*/ readonly oracleTermsOfUseLink!: pulumi.Output<string>;
+    /**
+     * A generated signature for this agreement retrieval operation which should be used in the create subscription call.
+     */
     public /*out*/ readonly signature!: pulumi.Output<string>;
+    /**
+     * Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
+     */
     public /*out*/ readonly timeRetrieved!: pulumi.Output<string>;
 
     /**
@@ -82,11 +115,29 @@ export class ListingResourceVersionAgreement extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ListingResourceVersionAgreement resources.
  */
 export interface ListingResourceVersionAgreementState {
+    /**
+     * EULA link
+     */
     eulaLink?: pulumi.Input<string>;
+    /**
+     * The OCID of the listing.
+     */
     listingId?: pulumi.Input<string>;
+    /**
+     * Listing Resource Version.
+     */
     listingResourceVersion?: pulumi.Input<string>;
+    /**
+     * Oracle TOU link
+     */
     oracleTermsOfUseLink?: pulumi.Input<string>;
+    /**
+     * A generated signature for this agreement retrieval operation which should be used in the create subscription call.
+     */
     signature?: pulumi.Input<string>;
+    /**
+     * Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
+     */
     timeRetrieved?: pulumi.Input<string>;
 }
 
@@ -94,6 +145,12 @@ export interface ListingResourceVersionAgreementState {
  * The set of arguments for constructing a ListingResourceVersionAgreement resource.
  */
 export interface ListingResourceVersionAgreementArgs {
+    /**
+     * The OCID of the listing.
+     */
     listingId: pulumi.Input<string>;
+    /**
+     * Listing Resource Version.
+     */
     listingResourceVersion: pulumi.Input<string>;
 }

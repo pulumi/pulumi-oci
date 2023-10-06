@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['ProviderArgs', 'Provider']
@@ -53,32 +53,65 @@ class ProviderArgs:
         :param pulumi.Input[str] user_ocid: (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if
                auth is set to 'ApiKey', ignored otherwise.
         """
+        ProviderArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auth=auth,
+            config_file_profile=config_file_profile,
+            disable_auto_retries=disable_auto_retries,
+            fingerprint=fingerprint,
+            ignore_defined_tags=ignore_defined_tags,
+            private_key=private_key,
+            private_key_password=private_key_password,
+            private_key_path=private_key_path,
+            realm_specific_service_endpoint_template_enabled=realm_specific_service_endpoint_template_enabled,
+            region=region,
+            retry_duration_seconds=retry_duration_seconds,
+            tenancy_ocid=tenancy_ocid,
+            user_ocid=user_ocid,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auth: Optional[pulumi.Input[str]] = None,
+             config_file_profile: Optional[pulumi.Input[str]] = None,
+             disable_auto_retries: Optional[pulumi.Input[bool]] = None,
+             fingerprint: Optional[pulumi.Input[str]] = None,
+             ignore_defined_tags: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             private_key: Optional[pulumi.Input[str]] = None,
+             private_key_password: Optional[pulumi.Input[str]] = None,
+             private_key_path: Optional[pulumi.Input[str]] = None,
+             realm_specific_service_endpoint_template_enabled: Optional[pulumi.Input[bool]] = None,
+             region: Optional[pulumi.Input[str]] = None,
+             retry_duration_seconds: Optional[pulumi.Input[int]] = None,
+             tenancy_ocid: Optional[pulumi.Input[str]] = None,
+             user_ocid: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if auth is not None:
-            pulumi.set(__self__, "auth", auth)
+            _setter("auth", auth)
         if config_file_profile is not None:
-            pulumi.set(__self__, "config_file_profile", config_file_profile)
+            _setter("config_file_profile", config_file_profile)
         if disable_auto_retries is not None:
-            pulumi.set(__self__, "disable_auto_retries", disable_auto_retries)
+            _setter("disable_auto_retries", disable_auto_retries)
         if fingerprint is not None:
-            pulumi.set(__self__, "fingerprint", fingerprint)
+            _setter("fingerprint", fingerprint)
         if ignore_defined_tags is not None:
-            pulumi.set(__self__, "ignore_defined_tags", ignore_defined_tags)
+            _setter("ignore_defined_tags", ignore_defined_tags)
         if private_key is not None:
-            pulumi.set(__self__, "private_key", private_key)
+            _setter("private_key", private_key)
         if private_key_password is not None:
-            pulumi.set(__self__, "private_key_password", private_key_password)
+            _setter("private_key_password", private_key_password)
         if private_key_path is not None:
-            pulumi.set(__self__, "private_key_path", private_key_path)
+            _setter("private_key_path", private_key_path)
         if realm_specific_service_endpoint_template_enabled is not None:
-            pulumi.set(__self__, "realm_specific_service_endpoint_template_enabled", realm_specific_service_endpoint_template_enabled)
+            _setter("realm_specific_service_endpoint_template_enabled", realm_specific_service_endpoint_template_enabled)
         if region is not None:
-            pulumi.set(__self__, "region", region)
+            _setter("region", region)
         if retry_duration_seconds is not None:
-            pulumi.set(__self__, "retry_duration_seconds", retry_duration_seconds)
+            _setter("retry_duration_seconds", retry_duration_seconds)
         if tenancy_ocid is not None:
-            pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
+            _setter("tenancy_ocid", tenancy_ocid)
         if user_ocid is not None:
-            pulumi.set(__self__, "user_ocid", user_ocid)
+            _setter("user_ocid", user_ocid)
 
     @property
     @pulumi.getter
@@ -320,6 +353,10 @@ class Provider(pulumi.ProviderResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ProviderArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

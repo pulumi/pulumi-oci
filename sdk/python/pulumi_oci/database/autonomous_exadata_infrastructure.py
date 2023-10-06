@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -52,29 +52,60 @@ class AutonomousExadataInfrastructureArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         """
+        AutonomousExadataInfrastructureArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            shape=shape,
+            subnet_id=subnet_id,
+            create_async=create_async,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            domain=domain,
+            freeform_tags=freeform_tags,
+            license_model=license_model,
+            maintenance_window_details=maintenance_window_details,
+            nsg_ids=nsg_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: pulumi.Input[str],
+             compartment_id: pulumi.Input[str],
+             shape: pulumi.Input[str],
+             subnet_id: pulumi.Input[str],
+             create_async: Optional[pulumi.Input[bool]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             domain: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             license_model: Optional[pulumi.Input[str]] = None,
+             maintenance_window_details: Optional[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs']] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if availability_domain is not None:
             warnings.warn("""Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""", DeprecationWarning)
             pulumi.log.warn("""availability_domain is deprecated: Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""")
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        _setter("availability_domain", availability_domain)
+        _setter("compartment_id", compartment_id)
+        _setter("shape", shape)
+        _setter("subnet_id", subnet_id)
         if create_async is not None:
-            pulumi.set(__self__, "create_async", create_async)
+            _setter("create_async", create_async)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if domain is not None:
-            pulumi.set(__self__, "domain", domain)
+            _setter("domain", domain)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if license_model is not None:
-            pulumi.set(__self__, "license_model", license_model)
+            _setter("license_model", license_model)
         if maintenance_window_details is not None:
-            pulumi.set(__self__, "maintenance_window_details", maintenance_window_details)
+            _setter("maintenance_window_details", maintenance_window_details)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -288,51 +319,100 @@ class _AutonomousExadataInfrastructureState:
         :param pulumi.Input[str] time_created: The date and time the Autonomous Exadata Infrastructure was created.
         :param pulumi.Input[str] zone_id: The OCID of the zone the Autonomous Exadata Infrastructure is associated with.
         """
+        _AutonomousExadataInfrastructureState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            create_async=create_async,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            domain=domain,
+            freeform_tags=freeform_tags,
+            hostname=hostname,
+            last_maintenance_run_id=last_maintenance_run_id,
+            license_model=license_model,
+            lifecycle_details=lifecycle_details,
+            maintenance_window_details=maintenance_window_details,
+            maintenance_windows=maintenance_windows,
+            next_maintenance_run_id=next_maintenance_run_id,
+            nsg_ids=nsg_ids,
+            scan_dns_name=scan_dns_name,
+            shape=shape,
+            state=state,
+            subnet_id=subnet_id,
+            time_created=time_created,
+            zone_id=zone_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             create_async: Optional[pulumi.Input[bool]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             domain: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hostname: Optional[pulumi.Input[str]] = None,
+             last_maintenance_run_id: Optional[pulumi.Input[str]] = None,
+             license_model: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             maintenance_window_details: Optional[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs']] = None,
+             maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousExadataInfrastructureMaintenanceWindowArgs']]]] = None,
+             next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             scan_dns_name: Optional[pulumi.Input[str]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             zone_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if availability_domain is not None:
             warnings.warn("""Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""", DeprecationWarning)
             pulumi.log.warn("""availability_domain is deprecated: Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""")
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if create_async is not None:
-            pulumi.set(__self__, "create_async", create_async)
+            _setter("create_async", create_async)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if domain is not None:
-            pulumi.set(__self__, "domain", domain)
+            _setter("domain", domain)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hostname is not None:
-            pulumi.set(__self__, "hostname", hostname)
+            _setter("hostname", hostname)
         if last_maintenance_run_id is not None:
-            pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
+            _setter("last_maintenance_run_id", last_maintenance_run_id)
         if license_model is not None:
-            pulumi.set(__self__, "license_model", license_model)
+            _setter("license_model", license_model)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if maintenance_window_details is not None:
-            pulumi.set(__self__, "maintenance_window_details", maintenance_window_details)
+            _setter("maintenance_window_details", maintenance_window_details)
         if maintenance_windows is not None:
-            pulumi.set(__self__, "maintenance_windows", maintenance_windows)
+            _setter("maintenance_windows", maintenance_windows)
         if next_maintenance_run_id is not None:
-            pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
+            _setter("next_maintenance_run_id", next_maintenance_run_id)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if scan_dns_name is not None:
-            pulumi.set(__self__, "scan_dns_name", scan_dns_name)
+            _setter("scan_dns_name", scan_dns_name)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if zone_id is not None:
-            pulumi.set(__self__, "zone_id", zone_id)
+            _setter("zone_id", zone_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -759,6 +839,10 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AutonomousExadataInfrastructureArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -785,9 +869,6 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = AutonomousExadataInfrastructureArgs.__new__(AutonomousExadataInfrastructureArgs)
 
-            if availability_domain is not None and not opts.urn:
-                warnings.warn("""Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""", DeprecationWarning)
-                pulumi.log.warn("""availability_domain is deprecated: Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""")
             if availability_domain is None and not opts.urn:
                 raise TypeError("Missing required property 'availability_domain'")
             __props__.__dict__["availability_domain"] = availability_domain
@@ -800,6 +881,11 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
             __props__.__dict__["domain"] = domain
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["license_model"] = license_model
+            if maintenance_window_details is not None and not isinstance(maintenance_window_details, AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs):
+                maintenance_window_details = maintenance_window_details or {}
+                def _setter(key, value):
+                    maintenance_window_details[key] = value
+                AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs._configure(_setter, **maintenance_window_details)
             __props__.__dict__["maintenance_window_details"] = maintenance_window_details
             __props__.__dict__["nsg_ids"] = nsg_ids
             if shape is None and not opts.urn:

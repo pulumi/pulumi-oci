@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -33,14 +33,31 @@ class DrPlanExecutionArgs:
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR Plan Execution.  Example: `Execution - EBS Switchover PHX to IAD`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         """
-        pulumi.set(__self__, "execution_options", execution_options)
-        pulumi.set(__self__, "plan_id", plan_id)
+        DrPlanExecutionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            execution_options=execution_options,
+            plan_id=plan_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             execution_options: pulumi.Input['DrPlanExecutionExecutionOptionsArgs'],
+             plan_id: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("execution_options", execution_options)
+        _setter("plan_id", plan_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="executionOptions")
@@ -157,46 +174,93 @@ class _DrPlanExecutionState:
         :param pulumi.Input[str] time_started: The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param pulumi.Input[str] time_updated: The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
+        _DrPlanExecutionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            dr_protection_group_id=dr_protection_group_id,
+            execution_duration_in_sec=execution_duration_in_sec,
+            execution_options=execution_options,
+            freeform_tags=freeform_tags,
+            group_executions=group_executions,
+            life_cycle_details=life_cycle_details,
+            log_locations=log_locations,
+            peer_dr_protection_group_id=peer_dr_protection_group_id,
+            peer_region=peer_region,
+            plan_execution_type=plan_execution_type,
+            plan_id=plan_id,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_ended=time_ended,
+            time_started=time_started,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             dr_protection_group_id: Optional[pulumi.Input[str]] = None,
+             execution_duration_in_sec: Optional[pulumi.Input[int]] = None,
+             execution_options: Optional[pulumi.Input['DrPlanExecutionExecutionOptionsArgs']] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             group_executions: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionGroupExecutionArgs']]]] = None,
+             life_cycle_details: Optional[pulumi.Input[str]] = None,
+             log_locations: Optional[pulumi.Input[Sequence[pulumi.Input['DrPlanExecutionLogLocationArgs']]]] = None,
+             peer_dr_protection_group_id: Optional[pulumi.Input[str]] = None,
+             peer_region: Optional[pulumi.Input[str]] = None,
+             plan_execution_type: Optional[pulumi.Input[str]] = None,
+             plan_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_ended: Optional[pulumi.Input[str]] = None,
+             time_started: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if dr_protection_group_id is not None:
-            pulumi.set(__self__, "dr_protection_group_id", dr_protection_group_id)
+            _setter("dr_protection_group_id", dr_protection_group_id)
         if execution_duration_in_sec is not None:
-            pulumi.set(__self__, "execution_duration_in_sec", execution_duration_in_sec)
+            _setter("execution_duration_in_sec", execution_duration_in_sec)
         if execution_options is not None:
-            pulumi.set(__self__, "execution_options", execution_options)
+            _setter("execution_options", execution_options)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if group_executions is not None:
-            pulumi.set(__self__, "group_executions", group_executions)
+            _setter("group_executions", group_executions)
         if life_cycle_details is not None:
-            pulumi.set(__self__, "life_cycle_details", life_cycle_details)
+            _setter("life_cycle_details", life_cycle_details)
         if log_locations is not None:
-            pulumi.set(__self__, "log_locations", log_locations)
+            _setter("log_locations", log_locations)
         if peer_dr_protection_group_id is not None:
-            pulumi.set(__self__, "peer_dr_protection_group_id", peer_dr_protection_group_id)
+            _setter("peer_dr_protection_group_id", peer_dr_protection_group_id)
         if peer_region is not None:
-            pulumi.set(__self__, "peer_region", peer_region)
+            _setter("peer_region", peer_region)
         if plan_execution_type is not None:
-            pulumi.set(__self__, "plan_execution_type", plan_execution_type)
+            _setter("plan_execution_type", plan_execution_type)
         if plan_id is not None:
-            pulumi.set(__self__, "plan_id", plan_id)
+            _setter("plan_id", plan_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_ended is not None:
-            pulumi.set(__self__, "time_ended", time_ended)
+            _setter("time_ended", time_ended)
         if time_started is not None:
-            pulumi.set(__self__, "time_started", time_started)
+            _setter("time_started", time_started)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -552,6 +616,10 @@ class DrPlanExecution(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DrPlanExecutionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -573,6 +641,11 @@ class DrPlanExecution(pulumi.CustomResource):
 
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
+            if execution_options is not None and not isinstance(execution_options, DrPlanExecutionExecutionOptionsArgs):
+                execution_options = execution_options or {}
+                def _setter(key, value):
+                    execution_options[key] = value
+                DrPlanExecutionExecutionOptionsArgs._configure(_setter, **execution_options)
             if execution_options is None and not opts.urn:
                 raise TypeError("Missing required property 'execution_options'")
             __props__.__dict__["execution_options"] = execution_options

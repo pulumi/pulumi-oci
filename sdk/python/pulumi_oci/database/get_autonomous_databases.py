@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -23,7 +23,7 @@ class GetAutonomousDatabasesResult:
     """
     A collection of values returned by getAutonomousDatabases.
     """
-    def __init__(__self__, autonomous_container_database_id=None, autonomous_databases=None, compartment_id=None, db_version=None, db_workload=None, display_name=None, filters=None, id=None, infrastructure_type=None, is_data_guard_enabled=None, is_free_tier=None, is_refreshable_clone=None, state=None):
+    def __init__(__self__, autonomous_container_database_id=None, autonomous_databases=None, compartment_id=None, db_version=None, db_workload=None, display_name=None, filters=None, id=None, infrastructure_type=None, is_data_guard_enabled=None, is_free_tier=None, is_refreshable_clone=None, is_resource_pool_leader=None, resource_pool_leader_id=None, state=None):
         if autonomous_container_database_id and not isinstance(autonomous_container_database_id, str):
             raise TypeError("Expected argument 'autonomous_container_database_id' to be a str")
         pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
@@ -60,6 +60,12 @@ class GetAutonomousDatabasesResult:
         if is_refreshable_clone and not isinstance(is_refreshable_clone, bool):
             raise TypeError("Expected argument 'is_refreshable_clone' to be a bool")
         pulumi.set(__self__, "is_refreshable_clone", is_refreshable_clone)
+        if is_resource_pool_leader and not isinstance(is_resource_pool_leader, bool):
+            raise TypeError("Expected argument 'is_resource_pool_leader' to be a bool")
+        pulumi.set(__self__, "is_resource_pool_leader", is_resource_pool_leader)
+        if resource_pool_leader_id and not isinstance(resource_pool_leader_id, str):
+            raise TypeError("Expected argument 'resource_pool_leader_id' to be a str")
+        pulumi.set(__self__, "resource_pool_leader_id", resource_pool_leader_id)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -162,6 +168,19 @@ class GetAutonomousDatabasesResult:
         return pulumi.get(self, "is_refreshable_clone")
 
     @property
+    @pulumi.getter(name="isResourcePoolLeader")
+    def is_resource_pool_leader(self) -> Optional[bool]:
+        return pulumi.get(self, "is_resource_pool_leader")
+
+    @property
+    @pulumi.getter(name="resourcePoolLeaderId")
+    def resource_pool_leader_id(self) -> Optional[str]:
+        """
+        The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "resource_pool_leader_id")
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
@@ -188,6 +207,8 @@ class AwaitableGetAutonomousDatabasesResult(GetAutonomousDatabasesResult):
             is_data_guard_enabled=self.is_data_guard_enabled,
             is_free_tier=self.is_free_tier,
             is_refreshable_clone=self.is_refreshable_clone,
+            is_resource_pool_leader=self.is_resource_pool_leader,
+            resource_pool_leader_id=self.resource_pool_leader_id,
             state=self.state)
 
 
@@ -201,6 +222,8 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[str] = N
                              is_data_guard_enabled: Optional[bool] = None,
                              is_free_tier: Optional[bool] = None,
                              is_refreshable_clone: Optional[bool] = None,
+                             is_resource_pool_leader: Optional[bool] = None,
+                             resource_pool_leader_id: Optional[str] = None,
                              state: Optional[str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAutonomousDatabasesResult:
     """
@@ -223,6 +246,8 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[str] = N
         is_data_guard_enabled=var["autonomous_database_is_data_guard_enabled"],
         is_free_tier=var["autonomous_database_is_free_tier"],
         is_refreshable_clone=var["autonomous_database_is_refreshable_clone"],
+        is_resource_pool_leader=var["autonomous_database_is_resource_pool_leader"],
+        resource_pool_leader_id=oci_database_resource_pool_leader["test_resource_pool_leader"]["id"],
         state=var["autonomous_database_state"])
     ```
 
@@ -236,6 +261,8 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[str] = N
     :param bool is_data_guard_enabled: A filter to return only resources that have Data Guard enabled.
     :param bool is_free_tier: Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
     :param bool is_refreshable_clone: Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
+    :param bool is_resource_pool_leader: Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
+    :param str resource_pool_leader_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
     :param str state: A filter to return only resources that match the given lifecycle state exactly.
     """
     __args__ = dict()
@@ -249,6 +276,8 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[str] = N
     __args__['isDataGuardEnabled'] = is_data_guard_enabled
     __args__['isFreeTier'] = is_free_tier
     __args__['isRefreshableClone'] = is_refreshable_clone
+    __args__['isResourcePoolLeader'] = is_resource_pool_leader
+    __args__['resourcePoolLeaderId'] = resource_pool_leader_id
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Database/getAutonomousDatabases:getAutonomousDatabases', __args__, opts=opts, typ=GetAutonomousDatabasesResult).value
@@ -266,6 +295,8 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[str] = N
         is_data_guard_enabled=pulumi.get(__ret__, 'is_data_guard_enabled'),
         is_free_tier=pulumi.get(__ret__, 'is_free_tier'),
         is_refreshable_clone=pulumi.get(__ret__, 'is_refreshable_clone'),
+        is_resource_pool_leader=pulumi.get(__ret__, 'is_resource_pool_leader'),
+        resource_pool_leader_id=pulumi.get(__ret__, 'resource_pool_leader_id'),
         state=pulumi.get(__ret__, 'state'))
 
 
@@ -280,6 +311,8 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
                                     is_data_guard_enabled: Optional[pulumi.Input[Optional[bool]]] = None,
                                     is_free_tier: Optional[pulumi.Input[Optional[bool]]] = None,
                                     is_refreshable_clone: Optional[pulumi.Input[Optional[bool]]] = None,
+                                    is_resource_pool_leader: Optional[pulumi.Input[Optional[bool]]] = None,
+                                    resource_pool_leader_id: Optional[pulumi.Input[Optional[str]]] = None,
                                     state: Optional[pulumi.Input[Optional[str]]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabasesResult]:
     """
@@ -302,6 +335,8 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
         is_data_guard_enabled=var["autonomous_database_is_data_guard_enabled"],
         is_free_tier=var["autonomous_database_is_free_tier"],
         is_refreshable_clone=var["autonomous_database_is_refreshable_clone"],
+        is_resource_pool_leader=var["autonomous_database_is_resource_pool_leader"],
+        resource_pool_leader_id=oci_database_resource_pool_leader["test_resource_pool_leader"]["id"],
         state=var["autonomous_database_state"])
     ```
 
@@ -315,6 +350,8 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
     :param bool is_data_guard_enabled: A filter to return only resources that have Data Guard enabled.
     :param bool is_free_tier: Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
     :param bool is_refreshable_clone: Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
+    :param bool is_resource_pool_leader: Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
+    :param str resource_pool_leader_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
     :param str state: A filter to return only resources that match the given lifecycle state exactly.
     """
     ...

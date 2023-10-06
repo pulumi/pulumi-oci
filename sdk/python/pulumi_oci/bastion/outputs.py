@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -47,7 +47,16 @@ class SessionKeyDetails(dict):
         """
         :param str public_key_content: The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
         """
-        pulumi.set(__self__, "public_key_content", public_key_content)
+        SessionKeyDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            public_key_content=public_key_content,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             public_key_content: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("public_key_content", public_key_content)
 
     @property
     @pulumi.getter(name="publicKeyContent")
@@ -110,19 +119,40 @@ class SessionTargetResourceDetails(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "session_type", session_type)
+        SessionTargetResourceDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            session_type=session_type,
+            target_resource_display_name=target_resource_display_name,
+            target_resource_fqdn=target_resource_fqdn,
+            target_resource_id=target_resource_id,
+            target_resource_operating_system_user_name=target_resource_operating_system_user_name,
+            target_resource_port=target_resource_port,
+            target_resource_private_ip_address=target_resource_private_ip_address,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             session_type: str,
+             target_resource_display_name: Optional[str] = None,
+             target_resource_fqdn: Optional[str] = None,
+             target_resource_id: Optional[str] = None,
+             target_resource_operating_system_user_name: Optional[str] = None,
+             target_resource_port: Optional[int] = None,
+             target_resource_private_ip_address: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("session_type", session_type)
         if target_resource_display_name is not None:
-            pulumi.set(__self__, "target_resource_display_name", target_resource_display_name)
+            _setter("target_resource_display_name", target_resource_display_name)
         if target_resource_fqdn is not None:
-            pulumi.set(__self__, "target_resource_fqdn", target_resource_fqdn)
+            _setter("target_resource_fqdn", target_resource_fqdn)
         if target_resource_id is not None:
-            pulumi.set(__self__, "target_resource_id", target_resource_id)
+            _setter("target_resource_id", target_resource_id)
         if target_resource_operating_system_user_name is not None:
-            pulumi.set(__self__, "target_resource_operating_system_user_name", target_resource_operating_system_user_name)
+            _setter("target_resource_operating_system_user_name", target_resource_operating_system_user_name)
         if target_resource_port is not None:
-            pulumi.set(__self__, "target_resource_port", target_resource_port)
+            _setter("target_resource_port", target_resource_port)
         if target_resource_private_ip_address is not None:
-            pulumi.set(__self__, "target_resource_private_ip_address", target_resource_private_ip_address)
+            _setter("target_resource_private_ip_address", target_resource_private_ip_address)
 
     @property
     @pulumi.getter(name="sessionType")
@@ -230,26 +260,73 @@ class GetBastionsBastionResult(dict):
         :param str time_created: The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         :param str time_updated: The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """
-        pulumi.set(__self__, "bastion_type", bastion_type)
-        pulumi.set(__self__, "client_cidr_block_allow_lists", client_cidr_block_allow_lists)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "dns_proxy_status", dns_proxy_status)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "max_session_ttl_in_seconds", max_session_ttl_in_seconds)
-        pulumi.set(__self__, "max_sessions_allowed", max_sessions_allowed)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "phone_book_entry", phone_book_entry)
-        pulumi.set(__self__, "private_endpoint_ip_address", private_endpoint_ip_address)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "static_jump_host_ip_addresses", static_jump_host_ip_addresses)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "target_subnet_id", target_subnet_id)
-        pulumi.set(__self__, "target_vcn_id", target_vcn_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetBastionsBastionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bastion_type=bastion_type,
+            client_cidr_block_allow_lists=client_cidr_block_allow_lists,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            dns_proxy_status=dns_proxy_status,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            max_session_ttl_in_seconds=max_session_ttl_in_seconds,
+            max_sessions_allowed=max_sessions_allowed,
+            name=name,
+            phone_book_entry=phone_book_entry,
+            private_endpoint_ip_address=private_endpoint_ip_address,
+            state=state,
+            static_jump_host_ip_addresses=static_jump_host_ip_addresses,
+            system_tags=system_tags,
+            target_subnet_id=target_subnet_id,
+            target_vcn_id=target_vcn_id,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bastion_type: str,
+             client_cidr_block_allow_lists: Sequence[str],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             dns_proxy_status: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             max_session_ttl_in_seconds: int,
+             max_sessions_allowed: int,
+             name: str,
+             phone_book_entry: str,
+             private_endpoint_ip_address: str,
+             state: str,
+             static_jump_host_ip_addresses: Sequence[str],
+             system_tags: Mapping[str, Any],
+             target_subnet_id: str,
+             target_vcn_id: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bastion_type", bastion_type)
+        _setter("client_cidr_block_allow_lists", client_cidr_block_allow_lists)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("dns_proxy_status", dns_proxy_status)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("max_session_ttl_in_seconds", max_session_ttl_in_seconds)
+        _setter("max_sessions_allowed", max_sessions_allowed)
+        _setter("name", name)
+        _setter("phone_book_entry", phone_book_entry)
+        _setter("private_endpoint_ip_address", private_endpoint_ip_address)
+        _setter("state", state)
+        _setter("static_jump_host_ip_addresses", static_jump_host_ip_addresses)
+        _setter("system_tags", system_tags)
+        _setter("target_subnet_id", target_subnet_id)
+        _setter("target_vcn_id", target_vcn_id)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="bastionType")
@@ -421,10 +498,23 @@ class GetBastionsFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetBastionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -452,7 +542,16 @@ class GetSessionKeyDetailResult(dict):
         """
         :param str public_key_content: The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
         """
-        pulumi.set(__self__, "public_key_content", public_key_content)
+        GetSessionKeyDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            public_key_content=public_key_content,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             public_key_content: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("public_key_content", public_key_content)
 
     @property
     @pulumi.getter(name="publicKeyContent")
@@ -482,13 +581,34 @@ class GetSessionTargetResourceDetailResult(dict):
         :param int target_resource_port: The port number to connect to on the target resource.
         :param str target_resource_private_ip_address: The private IP address of the target resource that the session connects to.
         """
-        pulumi.set(__self__, "session_type", session_type)
-        pulumi.set(__self__, "target_resource_display_name", target_resource_display_name)
-        pulumi.set(__self__, "target_resource_fqdn", target_resource_fqdn)
-        pulumi.set(__self__, "target_resource_id", target_resource_id)
-        pulumi.set(__self__, "target_resource_operating_system_user_name", target_resource_operating_system_user_name)
-        pulumi.set(__self__, "target_resource_port", target_resource_port)
-        pulumi.set(__self__, "target_resource_private_ip_address", target_resource_private_ip_address)
+        GetSessionTargetResourceDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            session_type=session_type,
+            target_resource_display_name=target_resource_display_name,
+            target_resource_fqdn=target_resource_fqdn,
+            target_resource_id=target_resource_id,
+            target_resource_operating_system_user_name=target_resource_operating_system_user_name,
+            target_resource_port=target_resource_port,
+            target_resource_private_ip_address=target_resource_private_ip_address,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             session_type: str,
+             target_resource_display_name: str,
+             target_resource_fqdn: str,
+             target_resource_id: str,
+             target_resource_operating_system_user_name: str,
+             target_resource_port: int,
+             target_resource_private_ip_address: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("session_type", session_type)
+        _setter("target_resource_display_name", target_resource_display_name)
+        _setter("target_resource_fqdn", target_resource_fqdn)
+        _setter("target_resource_id", target_resource_id)
+        _setter("target_resource_operating_system_user_name", target_resource_operating_system_user_name)
+        _setter("target_resource_port", target_resource_port)
+        _setter("target_resource_private_ip_address", target_resource_private_ip_address)
 
     @property
     @pulumi.getter(name="sessionType")
@@ -553,10 +673,23 @@ class GetSessionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSessionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -609,21 +742,58 @@ class GetSessionsSessionResult(dict):
         :param str time_created: The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         :param str time_updated: The time the session was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """
-        pulumi.set(__self__, "bastion_id", bastion_id)
-        pulumi.set(__self__, "bastion_name", bastion_name)
-        pulumi.set(__self__, "bastion_public_host_key_info", bastion_public_host_key_info)
-        pulumi.set(__self__, "bastion_user_name", bastion_user_name)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "key_details", key_details)
-        pulumi.set(__self__, "key_type", key_type)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "session_ttl_in_seconds", session_ttl_in_seconds)
-        pulumi.set(__self__, "ssh_metadata", ssh_metadata)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "target_resource_details", target_resource_details)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetSessionsSessionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bastion_id=bastion_id,
+            bastion_name=bastion_name,
+            bastion_public_host_key_info=bastion_public_host_key_info,
+            bastion_user_name=bastion_user_name,
+            display_name=display_name,
+            id=id,
+            key_details=key_details,
+            key_type=key_type,
+            lifecycle_details=lifecycle_details,
+            session_ttl_in_seconds=session_ttl_in_seconds,
+            ssh_metadata=ssh_metadata,
+            state=state,
+            target_resource_details=target_resource_details,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bastion_id: str,
+             bastion_name: str,
+             bastion_public_host_key_info: str,
+             bastion_user_name: str,
+             display_name: str,
+             id: str,
+             key_details: Sequence['outputs.GetSessionsSessionKeyDetailResult'],
+             key_type: str,
+             lifecycle_details: str,
+             session_ttl_in_seconds: int,
+             ssh_metadata: Mapping[str, Any],
+             state: str,
+             target_resource_details: Sequence['outputs.GetSessionsSessionTargetResourceDetailResult'],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bastion_id", bastion_id)
+        _setter("bastion_name", bastion_name)
+        _setter("bastion_public_host_key_info", bastion_public_host_key_info)
+        _setter("bastion_user_name", bastion_user_name)
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("key_details", key_details)
+        _setter("key_type", key_type)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("session_ttl_in_seconds", session_ttl_in_seconds)
+        _setter("ssh_metadata", ssh_metadata)
+        _setter("state", state)
+        _setter("target_resource_details", target_resource_details)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="bastionId")
@@ -753,7 +923,16 @@ class GetSessionsSessionKeyDetailResult(dict):
         """
         :param str public_key_content: The public key in OpenSSH format of the SSH key pair for the session. When you connect to the session, you must provide the private key of the same SSH key pair.
         """
-        pulumi.set(__self__, "public_key_content", public_key_content)
+        GetSessionsSessionKeyDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            public_key_content=public_key_content,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             public_key_content: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("public_key_content", public_key_content)
 
     @property
     @pulumi.getter(name="publicKeyContent")
@@ -783,13 +962,34 @@ class GetSessionsSessionTargetResourceDetailResult(dict):
         :param int target_resource_port: The port number to connect to on the target resource.
         :param str target_resource_private_ip_address: The private IP address of the target resource that the session connects to.
         """
-        pulumi.set(__self__, "session_type", session_type)
-        pulumi.set(__self__, "target_resource_display_name", target_resource_display_name)
-        pulumi.set(__self__, "target_resource_fqdn", target_resource_fqdn)
-        pulumi.set(__self__, "target_resource_id", target_resource_id)
-        pulumi.set(__self__, "target_resource_operating_system_user_name", target_resource_operating_system_user_name)
-        pulumi.set(__self__, "target_resource_port", target_resource_port)
-        pulumi.set(__self__, "target_resource_private_ip_address", target_resource_private_ip_address)
+        GetSessionsSessionTargetResourceDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            session_type=session_type,
+            target_resource_display_name=target_resource_display_name,
+            target_resource_fqdn=target_resource_fqdn,
+            target_resource_id=target_resource_id,
+            target_resource_operating_system_user_name=target_resource_operating_system_user_name,
+            target_resource_port=target_resource_port,
+            target_resource_private_ip_address=target_resource_private_ip_address,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             session_type: str,
+             target_resource_display_name: str,
+             target_resource_fqdn: str,
+             target_resource_id: str,
+             target_resource_operating_system_user_name: str,
+             target_resource_port: int,
+             target_resource_private_ip_address: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("session_type", session_type)
+        _setter("target_resource_display_name", target_resource_display_name)
+        _setter("target_resource_fqdn", target_resource_fqdn)
+        _setter("target_resource_id", target_resource_id)
+        _setter("target_resource_operating_system_user_name", target_resource_operating_system_user_name)
+        _setter("target_resource_port", target_resource_port)
+        _setter("target_resource_private_ip_address", target_resource_private_ip_address)
 
     @property
     @pulumi.getter(name="sessionType")

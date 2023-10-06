@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -78,11 +78,24 @@ class SubscriptionRedeemableUserItem(dict):
         :param str first_name: The first name of the user that can redeem rewards.
         :param str last_name: The last name of the user that can redeem rewards.
         """
-        pulumi.set(__self__, "email_id", email_id)
+        SubscriptionRedeemableUserItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            email_id=email_id,
+            first_name=first_name,
+            last_name=last_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             email_id: str,
+             first_name: Optional[str] = None,
+             last_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("email_id", email_id)
         if first_name is not None:
-            pulumi.set(__self__, "first_name", first_name)
+            _setter("first_name", first_name)
         if last_name is not None:
-            pulumi.set(__self__, "last_name", last_name)
+            _setter("last_name", last_name)
 
     @property
     @pulumi.getter(name="emailId")
@@ -118,10 +131,23 @@ class GetResourceQuotasFilterResult(dict):
         """
         :param str name: The resource name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetResourceQuotasFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -151,8 +177,19 @@ class GetResourceQuotasResourceQuotumCollectionResult(dict):
         :param bool is_allowed: Used to indicate if further quota consumption isAllowed.
         :param Sequence['GetResourceQuotasResourceQuotumCollectionItemArgs'] items: The list of resource quota details.
         """
-        pulumi.set(__self__, "is_allowed", is_allowed)
-        pulumi.set(__self__, "items", items)
+        GetResourceQuotasResourceQuotumCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_allowed=is_allowed,
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_allowed: bool,
+             items: Sequence['outputs.GetResourceQuotasResourceQuotumCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_allowed", is_allowed)
+        _setter("items", items)
 
     @property
     @pulumi.getter(name="isAllowed")
@@ -192,14 +229,37 @@ class GetResourceQuotasResourceQuotumCollectionItemResult(dict):
         :param float purchased_limit: The purchased quota limit.
         :param str service: The service name.
         """
-        pulumi.set(__self__, "affected_resource", affected_resource)
-        pulumi.set(__self__, "balance", balance)
-        pulumi.set(__self__, "is_allowed", is_allowed)
-        pulumi.set(__self__, "is_dependency", is_dependency)
-        pulumi.set(__self__, "is_overage", is_overage)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "purchased_limit", purchased_limit)
-        pulumi.set(__self__, "service", service)
+        GetResourceQuotasResourceQuotumCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            affected_resource=affected_resource,
+            balance=balance,
+            is_allowed=is_allowed,
+            is_dependency=is_dependency,
+            is_overage=is_overage,
+            name=name,
+            purchased_limit=purchased_limit,
+            service=service,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             affected_resource: str,
+             balance: float,
+             is_allowed: bool,
+             is_dependency: bool,
+             is_overage: bool,
+             name: str,
+             purchased_limit: float,
+             service: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("affected_resource", affected_resource)
+        _setter("balance", balance)
+        _setter("is_allowed", is_allowed)
+        _setter("is_dependency", is_dependency)
+        _setter("is_overage", is_overage)
+        _setter("name", name)
+        _setter("purchased_limit", purchased_limit)
+        _setter("service", service)
 
     @property
     @pulumi.getter(name="affectedResource")
@@ -275,10 +335,23 @@ class GetResourcesFilterResult(dict):
         """
         :param str name: Name of the resource.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetResourcesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -306,7 +379,16 @@ class GetResourcesResourcesCollectionResult(dict):
         """
         :param Sequence['GetResourcesResourcesCollectionItemArgs'] items: The list of resource details for a service.
         """
-        pulumi.set(__self__, "items", items)
+        GetResourcesResourcesCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetResourcesResourcesCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -344,17 +426,46 @@ class GetResourcesResourcesCollectionItemResult(dict):
         :param Sequence['GetResourcesResourcesCollectionItemSkusArgs'] skuses: The details of resource Skus.
         :param str usage_data_type: Usage data type of the resource.
         """
-        pulumi.set(__self__, "child_resources", child_resources)
-        pulumi.set(__self__, "daily_unit_display_name", daily_unit_display_name)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "hourly_unit_display_name", hourly_unit_display_name)
-        pulumi.set(__self__, "instance_type", instance_type)
-        pulumi.set(__self__, "is_purchased", is_purchased)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "raw_unit_display_name", raw_unit_display_name)
-        pulumi.set(__self__, "servicename", servicename)
-        pulumi.set(__self__, "skuses", skuses)
-        pulumi.set(__self__, "usage_data_type", usage_data_type)
+        GetResourcesResourcesCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            child_resources=child_resources,
+            daily_unit_display_name=daily_unit_display_name,
+            description=description,
+            hourly_unit_display_name=hourly_unit_display_name,
+            instance_type=instance_type,
+            is_purchased=is_purchased,
+            name=name,
+            raw_unit_display_name=raw_unit_display_name,
+            servicename=servicename,
+            skuses=skuses,
+            usage_data_type=usage_data_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             child_resources: Sequence[str],
+             daily_unit_display_name: str,
+             description: str,
+             hourly_unit_display_name: str,
+             instance_type: str,
+             is_purchased: bool,
+             name: str,
+             raw_unit_display_name: str,
+             servicename: str,
+             skuses: Sequence['outputs.GetResourcesResourcesCollectionItemSkusResult'],
+             usage_data_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("child_resources", child_resources)
+        _setter("daily_unit_display_name", daily_unit_display_name)
+        _setter("description", description)
+        _setter("hourly_unit_display_name", hourly_unit_display_name)
+        _setter("instance_type", instance_type)
+        _setter("is_purchased", is_purchased)
+        _setter("name", name)
+        _setter("raw_unit_display_name", raw_unit_display_name)
+        _setter("servicename", servicename)
+        _setter("skuses", skuses)
+        _setter("usage_data_type", usage_data_type)
 
     @property
     @pulumi.getter(name="childResources")
@@ -456,9 +567,22 @@ class GetResourcesResourcesCollectionItemSkusResult(dict):
         :param str sku_id: The Sku Id for the resource.
         :param str sku_type: The Sku type for the resource.
         """
-        pulumi.set(__self__, "cloud_credit_type", cloud_credit_type)
-        pulumi.set(__self__, "sku_id", sku_id)
-        pulumi.set(__self__, "sku_type", sku_type)
+        GetResourcesResourcesCollectionItemSkusResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cloud_credit_type=cloud_credit_type,
+            sku_id=sku_id,
+            sku_type=sku_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cloud_credit_type: str,
+             sku_id: str,
+             sku_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cloud_credit_type", cloud_credit_type)
+        _setter("sku_id", sku_id)
+        _setter("sku_type", sku_type)
 
     @property
     @pulumi.getter(name="cloudCreditType")
@@ -500,11 +624,28 @@ class GetSubscriptionProductItemResult(dict):
         :param str product_number: The rate card product number.
         :param float usage_amount: The rate card product usage amount.
         """
-        pulumi.set(__self__, "earned_rewards", earned_rewards)
-        pulumi.set(__self__, "is_eligible_to_earn_rewards", is_eligible_to_earn_rewards)
-        pulumi.set(__self__, "product_name", product_name)
-        pulumi.set(__self__, "product_number", product_number)
-        pulumi.set(__self__, "usage_amount", usage_amount)
+        GetSubscriptionProductItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            earned_rewards=earned_rewards,
+            is_eligible_to_earn_rewards=is_eligible_to_earn_rewards,
+            product_name=product_name,
+            product_number=product_number,
+            usage_amount=usage_amount,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             earned_rewards: float,
+             is_eligible_to_earn_rewards: bool,
+             product_name: str,
+             product_number: str,
+             usage_amount: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("earned_rewards", earned_rewards)
+        _setter("is_eligible_to_earn_rewards", is_eligible_to_earn_rewards)
+        _setter("product_name", product_name)
+        _setter("product_number", product_number)
+        _setter("usage_amount", usage_amount)
 
     @property
     @pulumi.getter(name="earnedRewards")
@@ -553,10 +694,23 @@ class GetSubscriptionProductsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSubscriptionProductsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -581,7 +735,16 @@ class GetSubscriptionProductsProductCollectionResult(dict):
         """
         :param Sequence['GetSubscriptionProductsProductCollectionItemArgs'] items: The list of product rewards summaries.
         """
-        pulumi.set(__self__, "items", items)
+        GetSubscriptionProductsProductCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetSubscriptionProductsProductCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -599,7 +762,16 @@ class GetSubscriptionProductsProductCollectionItemResult(dict):
         """
         :param Sequence['GetSubscriptionProductsProductCollectionItemItemArgs'] items: The list of product rewards summaries.
         """
-        pulumi.set(__self__, "items", items)
+        GetSubscriptionProductsProductCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetSubscriptionProductsProductCollectionItemItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -625,11 +797,28 @@ class GetSubscriptionProductsProductCollectionItemItemResult(dict):
         :param str product_number: The rate card product number.
         :param float usage_amount: The rate card product usage amount.
         """
-        pulumi.set(__self__, "earned_rewards", earned_rewards)
-        pulumi.set(__self__, "is_eligible_to_earn_rewards", is_eligible_to_earn_rewards)
-        pulumi.set(__self__, "product_name", product_name)
-        pulumi.set(__self__, "product_number", product_number)
-        pulumi.set(__self__, "usage_amount", usage_amount)
+        GetSubscriptionProductsProductCollectionItemItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            earned_rewards=earned_rewards,
+            is_eligible_to_earn_rewards=is_eligible_to_earn_rewards,
+            product_name=product_name,
+            product_number=product_number,
+            usage_amount=usage_amount,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             earned_rewards: float,
+             is_eligible_to_earn_rewards: bool,
+             product_name: str,
+             product_number: str,
+             usage_amount: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("earned_rewards", earned_rewards)
+        _setter("is_eligible_to_earn_rewards", is_eligible_to_earn_rewards)
+        _setter("product_name", product_name)
+        _setter("product_number", product_number)
+        _setter("usage_amount", usage_amount)
 
     @property
     @pulumi.getter(name="earnedRewards")
@@ -683,9 +872,22 @@ class GetSubscriptionRedeemableUserItemResult(dict):
         :param str first_name: The first name of the user that can redeem rewards.
         :param str last_name: The last name of the user that can redeem rewards.
         """
-        pulumi.set(__self__, "email_id", email_id)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "last_name", last_name)
+        GetSubscriptionRedeemableUserItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            email_id=email_id,
+            first_name=first_name,
+            last_name=last_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             email_id: str,
+             first_name: str,
+             last_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("email_id", email_id)
+        _setter("first_name", first_name)
+        _setter("last_name", last_name)
 
     @property
     @pulumi.getter(name="emailId")
@@ -718,10 +920,23 @@ class GetSubscriptionRedeemableUsersFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSubscriptionRedeemableUsersFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -746,7 +961,16 @@ class GetSubscriptionRedeemableUsersRedeemableUserCollectionResult(dict):
         """
         :param Sequence['GetSubscriptionRedeemableUsersRedeemableUserCollectionItemArgs'] items: The list of user summary that can redeem rewards.
         """
-        pulumi.set(__self__, "items", items)
+        GetSubscriptionRedeemableUsersRedeemableUserCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -769,10 +993,25 @@ class GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult(dict):
         :param str subscription_id: The subscription ID for which rewards information is requested for.
         :param str tenancy_id: The OCID of the tenancy.
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "subscription_id", subscription_id)
-        pulumi.set(__self__, "tenancy_id", tenancy_id)
-        pulumi.set(__self__, "user_id", user_id)
+        GetSubscriptionRedeemableUsersRedeemableUserCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            subscription_id=subscription_id,
+            tenancy_id=tenancy_id,
+            user_id=user_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemResult'],
+             subscription_id: str,
+             tenancy_id: str,
+             user_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
+        _setter("subscription_id", subscription_id)
+        _setter("tenancy_id", tenancy_id)
+        _setter("user_id", user_id)
 
     @property
     @pulumi.getter
@@ -815,9 +1054,22 @@ class GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemResult(dict)
         :param str first_name: The first name of the user that can redeem rewards.
         :param str last_name: The last name of the user that can redeem rewards.
         """
-        pulumi.set(__self__, "email_id", email_id)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "last_name", last_name)
+        GetSubscriptionRedeemableUsersRedeemableUserCollectionItemItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            email_id=email_id,
+            first_name=first_name,
+            last_name=last_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             email_id: str,
+             first_name: str,
+             last_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("email_id", email_id)
+        _setter("first_name", first_name)
+        _setter("last_name", last_name)
 
     @property
     @pulumi.getter(name="emailId")
@@ -869,16 +1121,43 @@ class GetSubscriptionRedemptionItemResult(dict):
         :param str time_invoiced: It provides the invoice date.
         :param str time_redeemed: It provides redeem date.
         """
-        pulumi.set(__self__, "base_rewards", base_rewards)
-        pulumi.set(__self__, "fx_rate", fx_rate)
-        pulumi.set(__self__, "invoice_currency", invoice_currency)
-        pulumi.set(__self__, "invoice_number", invoice_number)
-        pulumi.set(__self__, "invoice_total_amount", invoice_total_amount)
-        pulumi.set(__self__, "redeemed_rewards", redeemed_rewards)
-        pulumi.set(__self__, "redemption_code", redemption_code)
-        pulumi.set(__self__, "redemption_email", redemption_email)
-        pulumi.set(__self__, "time_invoiced", time_invoiced)
-        pulumi.set(__self__, "time_redeemed", time_redeemed)
+        GetSubscriptionRedemptionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            base_rewards=base_rewards,
+            fx_rate=fx_rate,
+            invoice_currency=invoice_currency,
+            invoice_number=invoice_number,
+            invoice_total_amount=invoice_total_amount,
+            redeemed_rewards=redeemed_rewards,
+            redemption_code=redemption_code,
+            redemption_email=redemption_email,
+            time_invoiced=time_invoiced,
+            time_redeemed=time_redeemed,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             base_rewards: float,
+             fx_rate: float,
+             invoice_currency: str,
+             invoice_number: str,
+             invoice_total_amount: float,
+             redeemed_rewards: float,
+             redemption_code: str,
+             redemption_email: str,
+             time_invoiced: str,
+             time_redeemed: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("base_rewards", base_rewards)
+        _setter("fx_rate", fx_rate)
+        _setter("invoice_currency", invoice_currency)
+        _setter("invoice_number", invoice_number)
+        _setter("invoice_total_amount", invoice_total_amount)
+        _setter("redeemed_rewards", redeemed_rewards)
+        _setter("redemption_code", redemption_code)
+        _setter("redemption_email", redemption_email)
+        _setter("time_invoiced", time_invoiced)
+        _setter("time_redeemed", time_redeemed)
 
     @property
     @pulumi.getter(name="baseRewards")
@@ -967,10 +1246,23 @@ class GetSubscriptionRedemptionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSubscriptionRedemptionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -995,7 +1287,16 @@ class GetSubscriptionRedemptionsRedemptionCollectionResult(dict):
         """
         :param Sequence['GetSubscriptionRedemptionsRedemptionCollectionItemArgs'] items: The list of redemption summary.
         """
-        pulumi.set(__self__, "items", items)
+        GetSubscriptionRedemptionsRedemptionCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1013,7 +1314,16 @@ class GetSubscriptionRedemptionsRedemptionCollectionItemResult(dict):
         """
         :param Sequence['GetSubscriptionRedemptionsRedemptionCollectionItemItemArgs'] items: The list of redemption summary.
         """
-        pulumi.set(__self__, "items", items)
+        GetSubscriptionRedemptionsRedemptionCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetSubscriptionRedemptionsRedemptionCollectionItemItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1049,16 +1359,43 @@ class GetSubscriptionRedemptionsRedemptionCollectionItemItemResult(dict):
         :param str time_invoiced: It provides the invoice date.
         :param str time_redeemed: It provides redeem date.
         """
-        pulumi.set(__self__, "base_rewards", base_rewards)
-        pulumi.set(__self__, "fx_rate", fx_rate)
-        pulumi.set(__self__, "invoice_currency", invoice_currency)
-        pulumi.set(__self__, "invoice_number", invoice_number)
-        pulumi.set(__self__, "invoice_total_amount", invoice_total_amount)
-        pulumi.set(__self__, "redeemed_rewards", redeemed_rewards)
-        pulumi.set(__self__, "redemption_code", redemption_code)
-        pulumi.set(__self__, "redemption_email", redemption_email)
-        pulumi.set(__self__, "time_invoiced", time_invoiced)
-        pulumi.set(__self__, "time_redeemed", time_redeemed)
+        GetSubscriptionRedemptionsRedemptionCollectionItemItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            base_rewards=base_rewards,
+            fx_rate=fx_rate,
+            invoice_currency=invoice_currency,
+            invoice_number=invoice_number,
+            invoice_total_amount=invoice_total_amount,
+            redeemed_rewards=redeemed_rewards,
+            redemption_code=redemption_code,
+            redemption_email=redemption_email,
+            time_invoiced=time_invoiced,
+            time_redeemed=time_redeemed,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             base_rewards: float,
+             fx_rate: float,
+             invoice_currency: str,
+             invoice_number: str,
+             invoice_total_amount: float,
+             redeemed_rewards: float,
+             redemption_code: str,
+             redemption_email: str,
+             time_invoiced: str,
+             time_redeemed: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("base_rewards", base_rewards)
+        _setter("fx_rate", fx_rate)
+        _setter("invoice_currency", invoice_currency)
+        _setter("invoice_number", invoice_number)
+        _setter("invoice_total_amount", invoice_total_amount)
+        _setter("redeemed_rewards", redeemed_rewards)
+        _setter("redemption_code", redemption_code)
+        _setter("redemption_email", redemption_email)
+        _setter("time_invoiced", time_invoiced)
+        _setter("time_redeemed", time_redeemed)
 
     @property
     @pulumi.getter(name="baseRewards")
@@ -1170,18 +1507,49 @@ class GetSubscriptionRewardItemResult(dict):
         :param float usage_amount: The usage amount for the usage period.
         :param str usage_period_key: The usage period ID.
         """
-        pulumi.set(__self__, "available_rewards", available_rewards)
-        pulumi.set(__self__, "earned_rewards", earned_rewards)
-        pulumi.set(__self__, "eligible_usage_amount", eligible_usage_amount)
-        pulumi.set(__self__, "ineligible_usage_amount", ineligible_usage_amount)
-        pulumi.set(__self__, "is_manual", is_manual)
-        pulumi.set(__self__, "redeemed_rewards", redeemed_rewards)
-        pulumi.set(__self__, "time_rewards_earned", time_rewards_earned)
-        pulumi.set(__self__, "time_rewards_expired", time_rewards_expired)
-        pulumi.set(__self__, "time_usage_ended", time_usage_ended)
-        pulumi.set(__self__, "time_usage_started", time_usage_started)
-        pulumi.set(__self__, "usage_amount", usage_amount)
-        pulumi.set(__self__, "usage_period_key", usage_period_key)
+        GetSubscriptionRewardItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            available_rewards=available_rewards,
+            earned_rewards=earned_rewards,
+            eligible_usage_amount=eligible_usage_amount,
+            ineligible_usage_amount=ineligible_usage_amount,
+            is_manual=is_manual,
+            redeemed_rewards=redeemed_rewards,
+            time_rewards_earned=time_rewards_earned,
+            time_rewards_expired=time_rewards_expired,
+            time_usage_ended=time_usage_ended,
+            time_usage_started=time_usage_started,
+            usage_amount=usage_amount,
+            usage_period_key=usage_period_key,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             available_rewards: float,
+             earned_rewards: float,
+             eligible_usage_amount: float,
+             ineligible_usage_amount: float,
+             is_manual: bool,
+             redeemed_rewards: float,
+             time_rewards_earned: str,
+             time_rewards_expired: str,
+             time_usage_ended: str,
+             time_usage_started: str,
+             usage_amount: float,
+             usage_period_key: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("available_rewards", available_rewards)
+        _setter("earned_rewards", earned_rewards)
+        _setter("eligible_usage_amount", eligible_usage_amount)
+        _setter("ineligible_usage_amount", ineligible_usage_amount)
+        _setter("is_manual", is_manual)
+        _setter("redeemed_rewards", redeemed_rewards)
+        _setter("time_rewards_earned", time_rewards_earned)
+        _setter("time_rewards_expired", time_rewards_expired)
+        _setter("time_usage_ended", time_usage_ended)
+        _setter("time_usage_started", time_usage_started)
+        _setter("usage_amount", usage_amount)
+        _setter("usage_period_key", usage_period_key)
 
     @property
     @pulumi.getter(name="availableRewards")
@@ -1297,12 +1665,31 @@ class GetSubscriptionRewardSummaryResult(dict):
         :param str tenancy_id: The OCID of the tenancy.
         :param float total_rewards_available: The total number of available rewards for a given subscription ID.
         """
-        pulumi.set(__self__, "currency", currency)
-        pulumi.set(__self__, "redemption_code", redemption_code)
-        pulumi.set(__self__, "rewards_rate", rewards_rate)
-        pulumi.set(__self__, "subscription_id", subscription_id)
-        pulumi.set(__self__, "tenancy_id", tenancy_id)
-        pulumi.set(__self__, "total_rewards_available", total_rewards_available)
+        GetSubscriptionRewardSummaryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            currency=currency,
+            redemption_code=redemption_code,
+            rewards_rate=rewards_rate,
+            subscription_id=subscription_id,
+            tenancy_id=tenancy_id,
+            total_rewards_available=total_rewards_available,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             currency: str,
+             redemption_code: str,
+             rewards_rate: float,
+             subscription_id: str,
+             tenancy_id: str,
+             total_rewards_available: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("currency", currency)
+        _setter("redemption_code", redemption_code)
+        _setter("rewards_rate", rewards_rate)
+        _setter("subscription_id", subscription_id)
+        _setter("tenancy_id", tenancy_id)
+        _setter("total_rewards_available", total_rewards_available)
 
     @property
     @pulumi.getter
@@ -1359,10 +1746,23 @@ class GetSubscriptionRewardsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSubscriptionRewardsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1387,7 +1787,16 @@ class GetSubscriptionRewardsRewardCollectionResult(dict):
         """
         :param Sequence['GetSubscriptionRewardsRewardCollectionItemArgs'] items: The monthly summary of rewards.
         """
-        pulumi.set(__self__, "items", items)
+        GetSubscriptionRewardsRewardCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1407,8 +1816,19 @@ class GetSubscriptionRewardsRewardCollectionItemResult(dict):
         :param Sequence['GetSubscriptionRewardsRewardCollectionItemItemArgs'] items: The monthly summary of rewards.
         :param Sequence['GetSubscriptionRewardsRewardCollectionItemSummaryArgs'] summaries: The overall monthly reward summary.
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "summaries", summaries)
+        GetSubscriptionRewardsRewardCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            summaries=summaries,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemItemResult'],
+             summaries: Sequence['outputs.GetSubscriptionRewardsRewardCollectionItemSummaryResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
+        _setter("summaries", summaries)
 
     @property
     @pulumi.getter
@@ -1456,18 +1876,49 @@ class GetSubscriptionRewardsRewardCollectionItemItemResult(dict):
         :param float usage_amount: The usage amount for the usage period.
         :param str usage_period_key: The usage period ID.
         """
-        pulumi.set(__self__, "available_rewards", available_rewards)
-        pulumi.set(__self__, "earned_rewards", earned_rewards)
-        pulumi.set(__self__, "eligible_usage_amount", eligible_usage_amount)
-        pulumi.set(__self__, "ineligible_usage_amount", ineligible_usage_amount)
-        pulumi.set(__self__, "is_manual", is_manual)
-        pulumi.set(__self__, "redeemed_rewards", redeemed_rewards)
-        pulumi.set(__self__, "time_rewards_earned", time_rewards_earned)
-        pulumi.set(__self__, "time_rewards_expired", time_rewards_expired)
-        pulumi.set(__self__, "time_usage_ended", time_usage_ended)
-        pulumi.set(__self__, "time_usage_started", time_usage_started)
-        pulumi.set(__self__, "usage_amount", usage_amount)
-        pulumi.set(__self__, "usage_period_key", usage_period_key)
+        GetSubscriptionRewardsRewardCollectionItemItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            available_rewards=available_rewards,
+            earned_rewards=earned_rewards,
+            eligible_usage_amount=eligible_usage_amount,
+            ineligible_usage_amount=ineligible_usage_amount,
+            is_manual=is_manual,
+            redeemed_rewards=redeemed_rewards,
+            time_rewards_earned=time_rewards_earned,
+            time_rewards_expired=time_rewards_expired,
+            time_usage_ended=time_usage_ended,
+            time_usage_started=time_usage_started,
+            usage_amount=usage_amount,
+            usage_period_key=usage_period_key,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             available_rewards: float,
+             earned_rewards: float,
+             eligible_usage_amount: float,
+             ineligible_usage_amount: float,
+             is_manual: bool,
+             redeemed_rewards: float,
+             time_rewards_earned: str,
+             time_rewards_expired: str,
+             time_usage_ended: str,
+             time_usage_started: str,
+             usage_amount: float,
+             usage_period_key: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("available_rewards", available_rewards)
+        _setter("earned_rewards", earned_rewards)
+        _setter("eligible_usage_amount", eligible_usage_amount)
+        _setter("ineligible_usage_amount", ineligible_usage_amount)
+        _setter("is_manual", is_manual)
+        _setter("redeemed_rewards", redeemed_rewards)
+        _setter("time_rewards_earned", time_rewards_earned)
+        _setter("time_rewards_expired", time_rewards_expired)
+        _setter("time_usage_ended", time_usage_ended)
+        _setter("time_usage_started", time_usage_started)
+        _setter("usage_amount", usage_amount)
+        _setter("usage_period_key", usage_period_key)
 
     @property
     @pulumi.getter(name="availableRewards")
@@ -1583,12 +2034,31 @@ class GetSubscriptionRewardsRewardCollectionItemSummaryResult(dict):
         :param str tenancy_id: The OCID of the tenancy.
         :param float total_rewards_available: The total number of available rewards for a given subscription ID.
         """
-        pulumi.set(__self__, "currency", currency)
-        pulumi.set(__self__, "redemption_code", redemption_code)
-        pulumi.set(__self__, "rewards_rate", rewards_rate)
-        pulumi.set(__self__, "subscription_id", subscription_id)
-        pulumi.set(__self__, "tenancy_id", tenancy_id)
-        pulumi.set(__self__, "total_rewards_available", total_rewards_available)
+        GetSubscriptionRewardsRewardCollectionItemSummaryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            currency=currency,
+            redemption_code=redemption_code,
+            rewards_rate=rewards_rate,
+            subscription_id=subscription_id,
+            tenancy_id=tenancy_id,
+            total_rewards_available=total_rewards_available,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             currency: str,
+             redemption_code: str,
+             rewards_rate: float,
+             subscription_id: str,
+             tenancy_id: str,
+             total_rewards_available: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("currency", currency)
+        _setter("redemption_code", redemption_code)
+        _setter("rewards_rate", rewards_rate)
+        _setter("subscription_id", subscription_id)
+        _setter("tenancy_id", tenancy_id)
+        _setter("total_rewards_available", total_rewards_available)
 
     @property
     @pulumi.getter
@@ -1645,10 +2115,23 @@ class GetUsagelimitsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetUsagelimitsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1673,7 +2156,16 @@ class GetUsagelimitsUsageLimitCollectionResult(dict):
         """
         :param Sequence['GetUsagelimitsUsageLimitCollectionItemArgs'] items: The list of usage limits.
         """
-        pulumi.set(__self__, "items", items)
+        GetUsagelimitsUsageLimitCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetUsagelimitsUsageLimitCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1720,22 +2212,61 @@ class GetUsagelimitsUsageLimitCollectionItemResult(dict):
         :param str time_modified: Time when the usage limit was modified
         :param str value_type: The value type of the usage limit
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "alert_level", alert_level)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "entitlement_id", entitlement_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "limit", limit)
-        pulumi.set(__self__, "limit_type", limit_type)
-        pulumi.set(__self__, "max_hard_limit", max_hard_limit)
-        pulumi.set(__self__, "modified_by", modified_by)
-        pulumi.set(__self__, "resource_name", resource_name)
-        pulumi.set(__self__, "service_name", service_name)
-        pulumi.set(__self__, "sku_part_id", sku_part_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_modified", time_modified)
-        pulumi.set(__self__, "value_type", value_type)
+        GetUsagelimitsUsageLimitCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            alert_level=alert_level,
+            created_by=created_by,
+            entitlement_id=entitlement_id,
+            id=id,
+            limit=limit,
+            limit_type=limit_type,
+            max_hard_limit=max_hard_limit,
+            modified_by=modified_by,
+            resource_name=resource_name,
+            service_name=service_name,
+            sku_part_id=sku_part_id,
+            state=state,
+            time_created=time_created,
+            time_modified=time_modified,
+            value_type=value_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: str,
+             alert_level: float,
+             created_by: str,
+             entitlement_id: str,
+             id: str,
+             limit: str,
+             limit_type: str,
+             max_hard_limit: str,
+             modified_by: str,
+             resource_name: str,
+             service_name: str,
+             sku_part_id: str,
+             state: str,
+             time_created: str,
+             time_modified: str,
+             value_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("alert_level", alert_level)
+        _setter("created_by", created_by)
+        _setter("entitlement_id", entitlement_id)
+        _setter("id", id)
+        _setter("limit", limit)
+        _setter("limit_type", limit_type)
+        _setter("max_hard_limit", max_hard_limit)
+        _setter("modified_by", modified_by)
+        _setter("resource_name", resource_name)
+        _setter("service_name", service_name)
+        _setter("sku_part_id", sku_part_id)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_modified", time_modified)
+        _setter("value_type", value_type)
 
     @property
     @pulumi.getter

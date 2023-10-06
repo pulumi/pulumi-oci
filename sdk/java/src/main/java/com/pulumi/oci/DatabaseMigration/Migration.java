@@ -11,6 +11,7 @@ import com.pulumi.oci.DatabaseMigration.MigrationArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationState;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationAdvisorSettings;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationDataTransferMediumDetails;
+import com.pulumi.oci.DatabaseMigration.outputs.MigrationDataTransferMediumDetailsV2;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationDatapumpSettings;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationDumpTransferDetails;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationExcludeObject;
@@ -328,6 +329,12 @@ public class Migration extends com.pulumi.resources.CustomResource {
      */
     public Output<MigrationDataTransferMediumDetails> dataTransferMediumDetails() {
         return this.dataTransferMediumDetails;
+    }
+    @Export(name="dataTransferMediumDetailsV2", refs={MigrationDataTransferMediumDetailsV2.class}, tree="[0]")
+    private Output<MigrationDataTransferMediumDetailsV2> dataTransferMediumDetailsV2;
+
+    public Output<MigrationDataTransferMediumDetailsV2> dataTransferMediumDetailsV2() {
+        return this.dataTransferMediumDetailsV2;
     }
     /**
      * (Updatable) Optional settings for Data Pump Export and Import jobs

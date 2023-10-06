@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -991,192 +991,389 @@ class DomainsAppArgs:
         :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs'] urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: (Updatable) This extension defines attributes related to the Service Providers configuration.
         :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs'] urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: (Updatable) WebTier Policy
         """
-        pulumi.set(__self__, "based_on_template", based_on_template)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
-        pulumi.set(__self__, "schemas", schemas)
+        DomainsAppArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            based_on_template=based_on_template,
+            display_name=display_name,
+            idcs_endpoint=idcs_endpoint,
+            schemas=schemas,
+            access_token_expiry=access_token_expiry,
+            active=active,
+            alias_apps=alias_apps,
+            all_url_schemes_allowed=all_url_schemes_allowed,
+            allow_access_control=allow_access_control,
+            allow_offline=allow_offline,
+            allowed_grants=allowed_grants,
+            allowed_operations=allowed_operations,
+            allowed_scopes=allowed_scopes,
+            allowed_tags=allowed_tags,
+            app_icon=app_icon,
+            app_signon_policy=app_signon_policy,
+            app_thumbnail=app_thumbnail,
+            apps_network_perimeters=apps_network_perimeters,
+            as_opc_service=as_opc_service,
+            attr_rendering_metadatas=attr_rendering_metadatas,
+            attribute_sets=attribute_sets,
+            attributes=attributes,
+            audience=audience,
+            authorization=authorization,
+            bypass_consent=bypass_consent,
+            certificates=certificates,
+            client_ip_checking=client_ip_checking,
+            client_type=client_type,
+            contact_email_address=contact_email_address,
+            delegated_service_names=delegated_service_names,
+            description=description,
+            disable_kmsi_token_authentication=disable_kmsi_token_authentication,
+            error_page_url=error_page_url,
+            home_page_url=home_page_url,
+            icon=icon,
+            id_token_enc_algo=id_token_enc_algo,
+            identity_providers=identity_providers,
+            idp_policy=idp_policy,
+            is_alias_app=is_alias_app,
+            is_enterprise_app=is_enterprise_app,
+            is_form_fill=is_form_fill,
+            is_kerberos_realm=is_kerberos_realm,
+            is_login_target=is_login_target,
+            is_mobile_target=is_mobile_target,
+            is_multicloud_service_app=is_multicloud_service_app,
+            is_oauth_client=is_oauth_client,
+            is_oauth_resource=is_oauth_resource,
+            is_obligation_capable=is_obligation_capable,
+            is_radius_app=is_radius_app,
+            is_saml_service_provider=is_saml_service_provider,
+            is_unmanaged_app=is_unmanaged_app,
+            is_web_tier_policy=is_web_tier_policy,
+            landing_page_url=landing_page_url,
+            linking_callback_url=linking_callback_url,
+            login_mechanism=login_mechanism,
+            login_page_url=login_page_url,
+            logout_page_url=logout_page_url,
+            logout_uri=logout_uri,
+            name=name,
+            ocid=ocid,
+            post_logout_redirect_uris=post_logout_redirect_uris,
+            privacy_policy_url=privacy_policy_url,
+            product_logo_url=product_logo_url,
+            product_name=product_name,
+            protectable_secondary_audiences=protectable_secondary_audiences,
+            radius_policy=radius_policy,
+            redirect_uris=redirect_uris,
+            refresh_token_expiry=refresh_token_expiry,
+            resource_type_schema_version=resource_type_schema_version,
+            saml_service_provider=saml_service_provider,
+            scopes=scopes,
+            secondary_audiences=secondary_audiences,
+            service_params=service_params,
+            service_type_urn=service_type_urn,
+            service_type_version=service_type_version,
+            show_in_my_apps=show_in_my_apps,
+            signon_policy=signon_policy,
+            tags=tags,
+            terms_of_service_url=terms_of_service_url,
+            terms_of_use=terms_of_use,
+            trust_policies=trust_policies,
+            trust_scope=trust_scope,
+            urnietfparamsscimschemasoracleidcsextension_oci_tags=urnietfparamsscimschemasoracleidcsextension_oci_tags,
+            urnietfparamsscimschemasoracleidcsextensiondbcs_app=urnietfparamsscimschemasoracleidcsextensiondbcs_app,
+            urnietfparamsscimschemasoracleidcsextensionenterprise_app_app=urnietfparamsscimschemasoracleidcsextensionenterprise_app_app,
+            urnietfparamsscimschemasoracleidcsextensionform_fill_app_app=urnietfparamsscimschemasoracleidcsextensionform_fill_app_app,
+            urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template=urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template,
+            urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app=urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app,
+            urnietfparamsscimschemasoracleidcsextensionmanagedapp_app=urnietfparamsscimschemasoracleidcsextensionmanagedapp_app,
+            urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app=urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app,
+            urnietfparamsscimschemasoracleidcsextensionopc_service_app=urnietfparamsscimschemasoracleidcsextensionopc_service_app,
+            urnietfparamsscimschemasoracleidcsextensionradius_app_app=urnietfparamsscimschemasoracleidcsextensionradius_app_app,
+            urnietfparamsscimschemasoracleidcsextensionrequestable_app=urnietfparamsscimschemasoracleidcsextensionrequestable_app,
+            urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app=urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app,
+            urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app=urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             based_on_template: pulumi.Input['DomainsAppBasedOnTemplateArgs'],
+             display_name: pulumi.Input[str],
+             idcs_endpoint: pulumi.Input[str],
+             schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
+             access_token_expiry: Optional[pulumi.Input[int]] = None,
+             active: Optional[pulumi.Input[bool]] = None,
+             alias_apps: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAliasAppArgs']]]] = None,
+             all_url_schemes_allowed: Optional[pulumi.Input[bool]] = None,
+             allow_access_control: Optional[pulumi.Input[bool]] = None,
+             allow_offline: Optional[pulumi.Input[bool]] = None,
+             allowed_grants: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             allowed_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             allowed_scopes: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedScopeArgs']]]] = None,
+             allowed_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedTagArgs']]]] = None,
+             app_icon: Optional[pulumi.Input[str]] = None,
+             app_signon_policy: Optional[pulumi.Input['DomainsAppAppSignonPolicyArgs']] = None,
+             app_thumbnail: Optional[pulumi.Input[str]] = None,
+             apps_network_perimeters: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAppsNetworkPerimeterArgs']]]] = None,
+             as_opc_service: Optional[pulumi.Input['DomainsAppAsOpcServiceArgs']] = None,
+             attr_rendering_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAttrRenderingMetadataArgs']]]] = None,
+             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             attributes: Optional[pulumi.Input[str]] = None,
+             audience: Optional[pulumi.Input[str]] = None,
+             authorization: Optional[pulumi.Input[str]] = None,
+             bypass_consent: Optional[pulumi.Input[bool]] = None,
+             certificates: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppCertificateArgs']]]] = None,
+             client_ip_checking: Optional[pulumi.Input[str]] = None,
+             client_type: Optional[pulumi.Input[str]] = None,
+             contact_email_address: Optional[pulumi.Input[str]] = None,
+             delegated_service_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             disable_kmsi_token_authentication: Optional[pulumi.Input[bool]] = None,
+             error_page_url: Optional[pulumi.Input[str]] = None,
+             home_page_url: Optional[pulumi.Input[str]] = None,
+             icon: Optional[pulumi.Input[str]] = None,
+             id_token_enc_algo: Optional[pulumi.Input[str]] = None,
+             identity_providers: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppIdentityProviderArgs']]]] = None,
+             idp_policy: Optional[pulumi.Input['DomainsAppIdpPolicyArgs']] = None,
+             is_alias_app: Optional[pulumi.Input[bool]] = None,
+             is_enterprise_app: Optional[pulumi.Input[bool]] = None,
+             is_form_fill: Optional[pulumi.Input[bool]] = None,
+             is_kerberos_realm: Optional[pulumi.Input[bool]] = None,
+             is_login_target: Optional[pulumi.Input[bool]] = None,
+             is_mobile_target: Optional[pulumi.Input[bool]] = None,
+             is_multicloud_service_app: Optional[pulumi.Input[bool]] = None,
+             is_oauth_client: Optional[pulumi.Input[bool]] = None,
+             is_oauth_resource: Optional[pulumi.Input[bool]] = None,
+             is_obligation_capable: Optional[pulumi.Input[bool]] = None,
+             is_radius_app: Optional[pulumi.Input[bool]] = None,
+             is_saml_service_provider: Optional[pulumi.Input[bool]] = None,
+             is_unmanaged_app: Optional[pulumi.Input[bool]] = None,
+             is_web_tier_policy: Optional[pulumi.Input[bool]] = None,
+             landing_page_url: Optional[pulumi.Input[str]] = None,
+             linking_callback_url: Optional[pulumi.Input[str]] = None,
+             login_mechanism: Optional[pulumi.Input[str]] = None,
+             login_page_url: Optional[pulumi.Input[str]] = None,
+             logout_page_url: Optional[pulumi.Input[str]] = None,
+             logout_uri: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             post_logout_redirect_uris: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             privacy_policy_url: Optional[pulumi.Input[str]] = None,
+             product_logo_url: Optional[pulumi.Input[str]] = None,
+             product_name: Optional[pulumi.Input[str]] = None,
+             protectable_secondary_audiences: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppProtectableSecondaryAudienceArgs']]]] = None,
+             radius_policy: Optional[pulumi.Input['DomainsAppRadiusPolicyArgs']] = None,
+             redirect_uris: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             refresh_token_expiry: Optional[pulumi.Input[int]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             saml_service_provider: Optional[pulumi.Input['DomainsAppSamlServiceProviderArgs']] = None,
+             scopes: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppScopeArgs']]]] = None,
+             secondary_audiences: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             service_params: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppServiceParamArgs']]]] = None,
+             service_type_urn: Optional[pulumi.Input[str]] = None,
+             service_type_version: Optional[pulumi.Input[str]] = None,
+             show_in_my_apps: Optional[pulumi.Input[bool]] = None,
+             signon_policy: Optional[pulumi.Input['DomainsAppSignonPolicyArgs']] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppTagArgs']]]] = None,
+             terms_of_service_url: Optional[pulumi.Input[str]] = None,
+             terms_of_use: Optional[pulumi.Input['DomainsAppTermsOfUseArgs']] = None,
+             trust_policies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppTrustPolicyArgs']]]] = None,
+             trust_scope: Optional[pulumi.Input[str]] = None,
+             urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensiondbcs_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionopc_service_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionradius_app_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionrequestable_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("based_on_template", based_on_template)
+        _setter("display_name", display_name)
+        _setter("idcs_endpoint", idcs_endpoint)
+        _setter("schemas", schemas)
         if access_token_expiry is not None:
-            pulumi.set(__self__, "access_token_expiry", access_token_expiry)
+            _setter("access_token_expiry", access_token_expiry)
         if active is not None:
-            pulumi.set(__self__, "active", active)
+            _setter("active", active)
         if alias_apps is not None:
-            pulumi.set(__self__, "alias_apps", alias_apps)
+            _setter("alias_apps", alias_apps)
         if all_url_schemes_allowed is not None:
-            pulumi.set(__self__, "all_url_schemes_allowed", all_url_schemes_allowed)
+            _setter("all_url_schemes_allowed", all_url_schemes_allowed)
         if allow_access_control is not None:
-            pulumi.set(__self__, "allow_access_control", allow_access_control)
+            _setter("allow_access_control", allow_access_control)
         if allow_offline is not None:
-            pulumi.set(__self__, "allow_offline", allow_offline)
+            _setter("allow_offline", allow_offline)
         if allowed_grants is not None:
-            pulumi.set(__self__, "allowed_grants", allowed_grants)
+            _setter("allowed_grants", allowed_grants)
         if allowed_operations is not None:
-            pulumi.set(__self__, "allowed_operations", allowed_operations)
+            _setter("allowed_operations", allowed_operations)
         if allowed_scopes is not None:
-            pulumi.set(__self__, "allowed_scopes", allowed_scopes)
+            _setter("allowed_scopes", allowed_scopes)
         if allowed_tags is not None:
-            pulumi.set(__self__, "allowed_tags", allowed_tags)
+            _setter("allowed_tags", allowed_tags)
         if app_icon is not None:
-            pulumi.set(__self__, "app_icon", app_icon)
+            _setter("app_icon", app_icon)
         if app_signon_policy is not None:
-            pulumi.set(__self__, "app_signon_policy", app_signon_policy)
+            _setter("app_signon_policy", app_signon_policy)
         if app_thumbnail is not None:
-            pulumi.set(__self__, "app_thumbnail", app_thumbnail)
+            _setter("app_thumbnail", app_thumbnail)
         if apps_network_perimeters is not None:
-            pulumi.set(__self__, "apps_network_perimeters", apps_network_perimeters)
+            _setter("apps_network_perimeters", apps_network_perimeters)
         if as_opc_service is not None:
-            pulumi.set(__self__, "as_opc_service", as_opc_service)
+            _setter("as_opc_service", as_opc_service)
         if attr_rendering_metadatas is not None:
-            pulumi.set(__self__, "attr_rendering_metadatas", attr_rendering_metadatas)
+            _setter("attr_rendering_metadatas", attr_rendering_metadatas)
         if attribute_sets is not None:
-            pulumi.set(__self__, "attribute_sets", attribute_sets)
+            _setter("attribute_sets", attribute_sets)
         if attributes is not None:
-            pulumi.set(__self__, "attributes", attributes)
+            _setter("attributes", attributes)
         if audience is not None:
-            pulumi.set(__self__, "audience", audience)
+            _setter("audience", audience)
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if bypass_consent is not None:
-            pulumi.set(__self__, "bypass_consent", bypass_consent)
+            _setter("bypass_consent", bypass_consent)
         if certificates is not None:
-            pulumi.set(__self__, "certificates", certificates)
+            _setter("certificates", certificates)
         if client_ip_checking is not None:
-            pulumi.set(__self__, "client_ip_checking", client_ip_checking)
+            _setter("client_ip_checking", client_ip_checking)
         if client_type is not None:
-            pulumi.set(__self__, "client_type", client_type)
+            _setter("client_type", client_type)
         if contact_email_address is not None:
-            pulumi.set(__self__, "contact_email_address", contact_email_address)
+            _setter("contact_email_address", contact_email_address)
         if delegated_service_names is not None:
-            pulumi.set(__self__, "delegated_service_names", delegated_service_names)
+            _setter("delegated_service_names", delegated_service_names)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if disable_kmsi_token_authentication is not None:
-            pulumi.set(__self__, "disable_kmsi_token_authentication", disable_kmsi_token_authentication)
+            _setter("disable_kmsi_token_authentication", disable_kmsi_token_authentication)
         if error_page_url is not None:
-            pulumi.set(__self__, "error_page_url", error_page_url)
+            _setter("error_page_url", error_page_url)
         if home_page_url is not None:
-            pulumi.set(__self__, "home_page_url", home_page_url)
+            _setter("home_page_url", home_page_url)
         if icon is not None:
-            pulumi.set(__self__, "icon", icon)
+            _setter("icon", icon)
         if id_token_enc_algo is not None:
-            pulumi.set(__self__, "id_token_enc_algo", id_token_enc_algo)
+            _setter("id_token_enc_algo", id_token_enc_algo)
         if identity_providers is not None:
-            pulumi.set(__self__, "identity_providers", identity_providers)
+            _setter("identity_providers", identity_providers)
         if idp_policy is not None:
-            pulumi.set(__self__, "idp_policy", idp_policy)
+            _setter("idp_policy", idp_policy)
         if is_alias_app is not None:
-            pulumi.set(__self__, "is_alias_app", is_alias_app)
+            _setter("is_alias_app", is_alias_app)
         if is_enterprise_app is not None:
-            pulumi.set(__self__, "is_enterprise_app", is_enterprise_app)
+            _setter("is_enterprise_app", is_enterprise_app)
         if is_form_fill is not None:
-            pulumi.set(__self__, "is_form_fill", is_form_fill)
+            _setter("is_form_fill", is_form_fill)
         if is_kerberos_realm is not None:
-            pulumi.set(__self__, "is_kerberos_realm", is_kerberos_realm)
+            _setter("is_kerberos_realm", is_kerberos_realm)
         if is_login_target is not None:
-            pulumi.set(__self__, "is_login_target", is_login_target)
+            _setter("is_login_target", is_login_target)
         if is_mobile_target is not None:
-            pulumi.set(__self__, "is_mobile_target", is_mobile_target)
+            _setter("is_mobile_target", is_mobile_target)
         if is_multicloud_service_app is not None:
-            pulumi.set(__self__, "is_multicloud_service_app", is_multicloud_service_app)
+            _setter("is_multicloud_service_app", is_multicloud_service_app)
         if is_oauth_client is not None:
-            pulumi.set(__self__, "is_oauth_client", is_oauth_client)
+            _setter("is_oauth_client", is_oauth_client)
         if is_oauth_resource is not None:
-            pulumi.set(__self__, "is_oauth_resource", is_oauth_resource)
+            _setter("is_oauth_resource", is_oauth_resource)
         if is_obligation_capable is not None:
-            pulumi.set(__self__, "is_obligation_capable", is_obligation_capable)
+            _setter("is_obligation_capable", is_obligation_capable)
         if is_radius_app is not None:
-            pulumi.set(__self__, "is_radius_app", is_radius_app)
+            _setter("is_radius_app", is_radius_app)
         if is_saml_service_provider is not None:
-            pulumi.set(__self__, "is_saml_service_provider", is_saml_service_provider)
+            _setter("is_saml_service_provider", is_saml_service_provider)
         if is_unmanaged_app is not None:
-            pulumi.set(__self__, "is_unmanaged_app", is_unmanaged_app)
+            _setter("is_unmanaged_app", is_unmanaged_app)
         if is_web_tier_policy is not None:
-            pulumi.set(__self__, "is_web_tier_policy", is_web_tier_policy)
+            _setter("is_web_tier_policy", is_web_tier_policy)
         if landing_page_url is not None:
-            pulumi.set(__self__, "landing_page_url", landing_page_url)
+            _setter("landing_page_url", landing_page_url)
         if linking_callback_url is not None:
-            pulumi.set(__self__, "linking_callback_url", linking_callback_url)
+            _setter("linking_callback_url", linking_callback_url)
         if login_mechanism is not None:
-            pulumi.set(__self__, "login_mechanism", login_mechanism)
+            _setter("login_mechanism", login_mechanism)
         if login_page_url is not None:
-            pulumi.set(__self__, "login_page_url", login_page_url)
+            _setter("login_page_url", login_page_url)
         if logout_page_url is not None:
-            pulumi.set(__self__, "logout_page_url", logout_page_url)
+            _setter("logout_page_url", logout_page_url)
         if logout_uri is not None:
-            pulumi.set(__self__, "logout_uri", logout_uri)
+            _setter("logout_uri", logout_uri)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if post_logout_redirect_uris is not None:
-            pulumi.set(__self__, "post_logout_redirect_uris", post_logout_redirect_uris)
+            _setter("post_logout_redirect_uris", post_logout_redirect_uris)
         if privacy_policy_url is not None:
-            pulumi.set(__self__, "privacy_policy_url", privacy_policy_url)
+            _setter("privacy_policy_url", privacy_policy_url)
         if product_logo_url is not None:
-            pulumi.set(__self__, "product_logo_url", product_logo_url)
+            _setter("product_logo_url", product_logo_url)
         if product_name is not None:
-            pulumi.set(__self__, "product_name", product_name)
+            _setter("product_name", product_name)
         if protectable_secondary_audiences is not None:
-            pulumi.set(__self__, "protectable_secondary_audiences", protectable_secondary_audiences)
+            _setter("protectable_secondary_audiences", protectable_secondary_audiences)
         if radius_policy is not None:
-            pulumi.set(__self__, "radius_policy", radius_policy)
+            _setter("radius_policy", radius_policy)
         if redirect_uris is not None:
-            pulumi.set(__self__, "redirect_uris", redirect_uris)
+            _setter("redirect_uris", redirect_uris)
         if refresh_token_expiry is not None:
-            pulumi.set(__self__, "refresh_token_expiry", refresh_token_expiry)
+            _setter("refresh_token_expiry", refresh_token_expiry)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if saml_service_provider is not None:
-            pulumi.set(__self__, "saml_service_provider", saml_service_provider)
+            _setter("saml_service_provider", saml_service_provider)
         if scopes is not None:
-            pulumi.set(__self__, "scopes", scopes)
+            _setter("scopes", scopes)
         if secondary_audiences is not None:
-            pulumi.set(__self__, "secondary_audiences", secondary_audiences)
+            _setter("secondary_audiences", secondary_audiences)
         if service_params is not None:
-            pulumi.set(__self__, "service_params", service_params)
+            _setter("service_params", service_params)
         if service_type_urn is not None:
-            pulumi.set(__self__, "service_type_urn", service_type_urn)
+            _setter("service_type_urn", service_type_urn)
         if service_type_version is not None:
-            pulumi.set(__self__, "service_type_version", service_type_version)
+            _setter("service_type_version", service_type_version)
         if show_in_my_apps is not None:
-            pulumi.set(__self__, "show_in_my_apps", show_in_my_apps)
+            _setter("show_in_my_apps", show_in_my_apps)
         if signon_policy is not None:
-            pulumi.set(__self__, "signon_policy", signon_policy)
+            _setter("signon_policy", signon_policy)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if terms_of_service_url is not None:
-            pulumi.set(__self__, "terms_of_service_url", terms_of_service_url)
+            _setter("terms_of_service_url", terms_of_service_url)
         if terms_of_use is not None:
-            pulumi.set(__self__, "terms_of_use", terms_of_use)
+            _setter("terms_of_use", terms_of_use)
         if trust_policies is not None:
-            pulumi.set(__self__, "trust_policies", trust_policies)
+            _setter("trust_policies", trust_policies)
         if trust_scope is not None:
-            pulumi.set(__self__, "trust_scope", trust_scope)
+            _setter("trust_scope", trust_scope)
         if urnietfparamsscimschemasoracleidcsextension_oci_tags is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextension_oci_tags", urnietfparamsscimschemasoracleidcsextension_oci_tags)
+            _setter("urnietfparamsscimschemasoracleidcsextension_oci_tags", urnietfparamsscimschemasoracleidcsextension_oci_tags)
         if urnietfparamsscimschemasoracleidcsextensiondbcs_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensiondbcs_app", urnietfparamsscimschemasoracleidcsextensiondbcs_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensiondbcs_app", urnietfparamsscimschemasoracleidcsextensiondbcs_app)
         if urnietfparamsscimschemasoracleidcsextensionenterprise_app_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionenterprise_app_app", urnietfparamsscimschemasoracleidcsextensionenterprise_app_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensionenterprise_app_app", urnietfparamsscimschemasoracleidcsextensionenterprise_app_app)
         if urnietfparamsscimschemasoracleidcsextensionform_fill_app_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionform_fill_app_app", urnietfparamsscimschemasoracleidcsextensionform_fill_app_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensionform_fill_app_app", urnietfparamsscimschemasoracleidcsextensionform_fill_app_app)
         if urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template", urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template)
+            _setter("urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template", urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template)
         if urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app", urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app", urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app)
         if urnietfparamsscimschemasoracleidcsextensionmanagedapp_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionmanagedapp_app", urnietfparamsscimschemasoracleidcsextensionmanagedapp_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensionmanagedapp_app", urnietfparamsscimschemasoracleidcsextensionmanagedapp_app)
         if urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app", urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app", urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app)
         if urnietfparamsscimschemasoracleidcsextensionopc_service_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionopc_service_app", urnietfparamsscimschemasoracleidcsextensionopc_service_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensionopc_service_app", urnietfparamsscimschemasoracleidcsextensionopc_service_app)
         if urnietfparamsscimschemasoracleidcsextensionradius_app_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionradius_app_app", urnietfparamsscimschemasoracleidcsextensionradius_app_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensionradius_app_app", urnietfparamsscimschemasoracleidcsextensionradius_app_app)
         if urnietfparamsscimschemasoracleidcsextensionrequestable_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionrequestable_app", urnietfparamsscimschemasoracleidcsextensionrequestable_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensionrequestable_app", urnietfparamsscimschemasoracleidcsextensionrequestable_app)
         if urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app", urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app", urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app)
         if urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app", urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app", urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app)
 
     @property
     @pulumi.getter(name="basedOnTemplate")
@@ -4388,248 +4585,497 @@ class _DomainsAppState:
                * returned: request
                * type: complex
         """
+        _DomainsAppState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_token_expiry=access_token_expiry,
+            accounts=accounts,
+            active=active,
+            admin_roles=admin_roles,
+            alias_apps=alias_apps,
+            all_url_schemes_allowed=all_url_schemes_allowed,
+            allow_access_control=allow_access_control,
+            allow_offline=allow_offline,
+            allowed_grants=allowed_grants,
+            allowed_operations=allowed_operations,
+            allowed_scopes=allowed_scopes,
+            allowed_tags=allowed_tags,
+            app_icon=app_icon,
+            app_signon_policy=app_signon_policy,
+            app_thumbnail=app_thumbnail,
+            apps_network_perimeters=apps_network_perimeters,
+            as_opc_service=as_opc_service,
+            attr_rendering_metadatas=attr_rendering_metadatas,
+            attribute_sets=attribute_sets,
+            attributes=attributes,
+            audience=audience,
+            authorization=authorization,
+            based_on_template=based_on_template,
+            bypass_consent=bypass_consent,
+            callback_service_url=callback_service_url,
+            certificates=certificates,
+            client_ip_checking=client_ip_checking,
+            client_secret=client_secret,
+            client_type=client_type,
+            cloud_control_properties=cloud_control_properties,
+            compartment_ocid=compartment_ocid,
+            contact_email_address=contact_email_address,
+            delegated_service_names=delegated_service_names,
+            delete_in_progress=delete_in_progress,
+            description=description,
+            disable_kmsi_token_authentication=disable_kmsi_token_authentication,
+            display_name=display_name,
+            domain_ocid=domain_ocid,
+            editable_attributes=editable_attributes,
+            error_page_url=error_page_url,
+            granted_app_roles=granted_app_roles,
+            grants=grants,
+            hashed_client_secret=hashed_client_secret,
+            home_page_url=home_page_url,
+            icon=icon,
+            id_token_enc_algo=id_token_enc_algo,
+            idcs_created_bies=idcs_created_bies,
+            idcs_endpoint=idcs_endpoint,
+            idcs_last_modified_bies=idcs_last_modified_bies,
+            idcs_last_upgraded_in_release=idcs_last_upgraded_in_release,
+            idcs_prevented_operations=idcs_prevented_operations,
+            identity_providers=identity_providers,
+            idp_policy=idp_policy,
+            infrastructure=infrastructure,
+            is_alias_app=is_alias_app,
+            is_database_service=is_database_service,
+            is_enterprise_app=is_enterprise_app,
+            is_form_fill=is_form_fill,
+            is_kerberos_realm=is_kerberos_realm,
+            is_login_target=is_login_target,
+            is_managed_app=is_managed_app,
+            is_mobile_target=is_mobile_target,
+            is_multicloud_service_app=is_multicloud_service_app,
+            is_oauth_client=is_oauth_client,
+            is_oauth_resource=is_oauth_resource,
+            is_obligation_capable=is_obligation_capable,
+            is_opc_service=is_opc_service,
+            is_radius_app=is_radius_app,
+            is_saml_service_provider=is_saml_service_provider,
+            is_unmanaged_app=is_unmanaged_app,
+            is_web_tier_policy=is_web_tier_policy,
+            landing_page_url=landing_page_url,
+            linking_callback_url=linking_callback_url,
+            login_mechanism=login_mechanism,
+            login_page_url=login_page_url,
+            logout_page_url=logout_page_url,
+            logout_uri=logout_uri,
+            metas=metas,
+            meter_as_opc_service=meter_as_opc_service,
+            migrated=migrated,
+            name=name,
+            ocid=ocid,
+            post_logout_redirect_uris=post_logout_redirect_uris,
+            privacy_policy_url=privacy_policy_url,
+            product_logo_url=product_logo_url,
+            product_name=product_name,
+            protectable_secondary_audiences=protectable_secondary_audiences,
+            radius_policy=radius_policy,
+            ready_to_upgrade=ready_to_upgrade,
+            redirect_uris=redirect_uris,
+            refresh_token_expiry=refresh_token_expiry,
+            resource_type_schema_version=resource_type_schema_version,
+            saml_service_provider=saml_service_provider,
+            schemas=schemas,
+            scopes=scopes,
+            secondary_audiences=secondary_audiences,
+            service_params=service_params,
+            service_type_urn=service_type_urn,
+            service_type_version=service_type_version,
+            show_in_my_apps=show_in_my_apps,
+            signon_policy=signon_policy,
+            tags=tags,
+            tenancy_ocid=tenancy_ocid,
+            terms_of_service_url=terms_of_service_url,
+            terms_of_use=terms_of_use,
+            trust_policies=trust_policies,
+            trust_scope=trust_scope,
+            urnietfparamsscimschemasoracleidcsextension_oci_tags=urnietfparamsscimschemasoracleidcsextension_oci_tags,
+            urnietfparamsscimschemasoracleidcsextensiondbcs_app=urnietfparamsscimschemasoracleidcsextensiondbcs_app,
+            urnietfparamsscimschemasoracleidcsextensionenterprise_app_app=urnietfparamsscimschemasoracleidcsextensionenterprise_app_app,
+            urnietfparamsscimschemasoracleidcsextensionform_fill_app_app=urnietfparamsscimschemasoracleidcsextensionform_fill_app_app,
+            urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template=urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template,
+            urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app=urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app,
+            urnietfparamsscimschemasoracleidcsextensionmanagedapp_app=urnietfparamsscimschemasoracleidcsextensionmanagedapp_app,
+            urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app=urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app,
+            urnietfparamsscimschemasoracleidcsextensionopc_service_app=urnietfparamsscimschemasoracleidcsextensionopc_service_app,
+            urnietfparamsscimschemasoracleidcsextensionradius_app_app=urnietfparamsscimschemasoracleidcsextensionradius_app_app,
+            urnietfparamsscimschemasoracleidcsextensionrequestable_app=urnietfparamsscimschemasoracleidcsextensionrequestable_app,
+            urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app=urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app,
+            urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app=urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app,
+            user_roles=user_roles,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_token_expiry: Optional[pulumi.Input[int]] = None,
+             accounts: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAccountArgs']]]] = None,
+             active: Optional[pulumi.Input[bool]] = None,
+             admin_roles: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAdminRoleArgs']]]] = None,
+             alias_apps: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAliasAppArgs']]]] = None,
+             all_url_schemes_allowed: Optional[pulumi.Input[bool]] = None,
+             allow_access_control: Optional[pulumi.Input[bool]] = None,
+             allow_offline: Optional[pulumi.Input[bool]] = None,
+             allowed_grants: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             allowed_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             allowed_scopes: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedScopeArgs']]]] = None,
+             allowed_tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedTagArgs']]]] = None,
+             app_icon: Optional[pulumi.Input[str]] = None,
+             app_signon_policy: Optional[pulumi.Input['DomainsAppAppSignonPolicyArgs']] = None,
+             app_thumbnail: Optional[pulumi.Input[str]] = None,
+             apps_network_perimeters: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAppsNetworkPerimeterArgs']]]] = None,
+             as_opc_service: Optional[pulumi.Input['DomainsAppAsOpcServiceArgs']] = None,
+             attr_rendering_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAttrRenderingMetadataArgs']]]] = None,
+             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             attributes: Optional[pulumi.Input[str]] = None,
+             audience: Optional[pulumi.Input[str]] = None,
+             authorization: Optional[pulumi.Input[str]] = None,
+             based_on_template: Optional[pulumi.Input['DomainsAppBasedOnTemplateArgs']] = None,
+             bypass_consent: Optional[pulumi.Input[bool]] = None,
+             callback_service_url: Optional[pulumi.Input[str]] = None,
+             certificates: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppCertificateArgs']]]] = None,
+             client_ip_checking: Optional[pulumi.Input[str]] = None,
+             client_secret: Optional[pulumi.Input[str]] = None,
+             client_type: Optional[pulumi.Input[str]] = None,
+             cloud_control_properties: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppCloudControlPropertyArgs']]]] = None,
+             compartment_ocid: Optional[pulumi.Input[str]] = None,
+             contact_email_address: Optional[pulumi.Input[str]] = None,
+             delegated_service_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             delete_in_progress: Optional[pulumi.Input[bool]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             disable_kmsi_token_authentication: Optional[pulumi.Input[bool]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             domain_ocid: Optional[pulumi.Input[str]] = None,
+             editable_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppEditableAttributeArgs']]]] = None,
+             error_page_url: Optional[pulumi.Input[str]] = None,
+             granted_app_roles: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppGrantedAppRoleArgs']]]] = None,
+             grants: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppGrantArgs']]]] = None,
+             hashed_client_secret: Optional[pulumi.Input[str]] = None,
+             home_page_url: Optional[pulumi.Input[str]] = None,
+             icon: Optional[pulumi.Input[str]] = None,
+             id_token_enc_algo: Optional[pulumi.Input[str]] = None,
+             idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppIdcsCreatedByArgs']]]] = None,
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppIdcsLastModifiedByArgs']]]] = None,
+             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
+             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             identity_providers: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppIdentityProviderArgs']]]] = None,
+             idp_policy: Optional[pulumi.Input['DomainsAppIdpPolicyArgs']] = None,
+             infrastructure: Optional[pulumi.Input[bool]] = None,
+             is_alias_app: Optional[pulumi.Input[bool]] = None,
+             is_database_service: Optional[pulumi.Input[bool]] = None,
+             is_enterprise_app: Optional[pulumi.Input[bool]] = None,
+             is_form_fill: Optional[pulumi.Input[bool]] = None,
+             is_kerberos_realm: Optional[pulumi.Input[bool]] = None,
+             is_login_target: Optional[pulumi.Input[bool]] = None,
+             is_managed_app: Optional[pulumi.Input[bool]] = None,
+             is_mobile_target: Optional[pulumi.Input[bool]] = None,
+             is_multicloud_service_app: Optional[pulumi.Input[bool]] = None,
+             is_oauth_client: Optional[pulumi.Input[bool]] = None,
+             is_oauth_resource: Optional[pulumi.Input[bool]] = None,
+             is_obligation_capable: Optional[pulumi.Input[bool]] = None,
+             is_opc_service: Optional[pulumi.Input[bool]] = None,
+             is_radius_app: Optional[pulumi.Input[bool]] = None,
+             is_saml_service_provider: Optional[pulumi.Input[bool]] = None,
+             is_unmanaged_app: Optional[pulumi.Input[bool]] = None,
+             is_web_tier_policy: Optional[pulumi.Input[bool]] = None,
+             landing_page_url: Optional[pulumi.Input[str]] = None,
+             linking_callback_url: Optional[pulumi.Input[str]] = None,
+             login_mechanism: Optional[pulumi.Input[str]] = None,
+             login_page_url: Optional[pulumi.Input[str]] = None,
+             logout_page_url: Optional[pulumi.Input[str]] = None,
+             logout_uri: Optional[pulumi.Input[str]] = None,
+             metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppMetaArgs']]]] = None,
+             meter_as_opc_service: Optional[pulumi.Input[bool]] = None,
+             migrated: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             post_logout_redirect_uris: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             privacy_policy_url: Optional[pulumi.Input[str]] = None,
+             product_logo_url: Optional[pulumi.Input[str]] = None,
+             product_name: Optional[pulumi.Input[str]] = None,
+             protectable_secondary_audiences: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppProtectableSecondaryAudienceArgs']]]] = None,
+             radius_policy: Optional[pulumi.Input['DomainsAppRadiusPolicyArgs']] = None,
+             ready_to_upgrade: Optional[pulumi.Input[bool]] = None,
+             redirect_uris: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             refresh_token_expiry: Optional[pulumi.Input[int]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             saml_service_provider: Optional[pulumi.Input['DomainsAppSamlServiceProviderArgs']] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             scopes: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppScopeArgs']]]] = None,
+             secondary_audiences: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             service_params: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppServiceParamArgs']]]] = None,
+             service_type_urn: Optional[pulumi.Input[str]] = None,
+             service_type_version: Optional[pulumi.Input[str]] = None,
+             show_in_my_apps: Optional[pulumi.Input[bool]] = None,
+             signon_policy: Optional[pulumi.Input['DomainsAppSignonPolicyArgs']] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppTagArgs']]]] = None,
+             tenancy_ocid: Optional[pulumi.Input[str]] = None,
+             terms_of_service_url: Optional[pulumi.Input[str]] = None,
+             terms_of_use: Optional[pulumi.Input['DomainsAppTermsOfUseArgs']] = None,
+             trust_policies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppTrustPolicyArgs']]]] = None,
+             trust_scope: Optional[pulumi.Input[str]] = None,
+             urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensiondbcs_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionopc_service_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionradius_app_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionrequestable_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']] = None,
+             user_roles: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUserRoleArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if access_token_expiry is not None:
-            pulumi.set(__self__, "access_token_expiry", access_token_expiry)
+            _setter("access_token_expiry", access_token_expiry)
         if accounts is not None:
-            pulumi.set(__self__, "accounts", accounts)
+            _setter("accounts", accounts)
         if active is not None:
-            pulumi.set(__self__, "active", active)
+            _setter("active", active)
         if admin_roles is not None:
-            pulumi.set(__self__, "admin_roles", admin_roles)
+            _setter("admin_roles", admin_roles)
         if alias_apps is not None:
-            pulumi.set(__self__, "alias_apps", alias_apps)
+            _setter("alias_apps", alias_apps)
         if all_url_schemes_allowed is not None:
-            pulumi.set(__self__, "all_url_schemes_allowed", all_url_schemes_allowed)
+            _setter("all_url_schemes_allowed", all_url_schemes_allowed)
         if allow_access_control is not None:
-            pulumi.set(__self__, "allow_access_control", allow_access_control)
+            _setter("allow_access_control", allow_access_control)
         if allow_offline is not None:
-            pulumi.set(__self__, "allow_offline", allow_offline)
+            _setter("allow_offline", allow_offline)
         if allowed_grants is not None:
-            pulumi.set(__self__, "allowed_grants", allowed_grants)
+            _setter("allowed_grants", allowed_grants)
         if allowed_operations is not None:
-            pulumi.set(__self__, "allowed_operations", allowed_operations)
+            _setter("allowed_operations", allowed_operations)
         if allowed_scopes is not None:
-            pulumi.set(__self__, "allowed_scopes", allowed_scopes)
+            _setter("allowed_scopes", allowed_scopes)
         if allowed_tags is not None:
-            pulumi.set(__self__, "allowed_tags", allowed_tags)
+            _setter("allowed_tags", allowed_tags)
         if app_icon is not None:
-            pulumi.set(__self__, "app_icon", app_icon)
+            _setter("app_icon", app_icon)
         if app_signon_policy is not None:
-            pulumi.set(__self__, "app_signon_policy", app_signon_policy)
+            _setter("app_signon_policy", app_signon_policy)
         if app_thumbnail is not None:
-            pulumi.set(__self__, "app_thumbnail", app_thumbnail)
+            _setter("app_thumbnail", app_thumbnail)
         if apps_network_perimeters is not None:
-            pulumi.set(__self__, "apps_network_perimeters", apps_network_perimeters)
+            _setter("apps_network_perimeters", apps_network_perimeters)
         if as_opc_service is not None:
-            pulumi.set(__self__, "as_opc_service", as_opc_service)
+            _setter("as_opc_service", as_opc_service)
         if attr_rendering_metadatas is not None:
-            pulumi.set(__self__, "attr_rendering_metadatas", attr_rendering_metadatas)
+            _setter("attr_rendering_metadatas", attr_rendering_metadatas)
         if attribute_sets is not None:
-            pulumi.set(__self__, "attribute_sets", attribute_sets)
+            _setter("attribute_sets", attribute_sets)
         if attributes is not None:
-            pulumi.set(__self__, "attributes", attributes)
+            _setter("attributes", attributes)
         if audience is not None:
-            pulumi.set(__self__, "audience", audience)
+            _setter("audience", audience)
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if based_on_template is not None:
-            pulumi.set(__self__, "based_on_template", based_on_template)
+            _setter("based_on_template", based_on_template)
         if bypass_consent is not None:
-            pulumi.set(__self__, "bypass_consent", bypass_consent)
+            _setter("bypass_consent", bypass_consent)
         if callback_service_url is not None:
-            pulumi.set(__self__, "callback_service_url", callback_service_url)
+            _setter("callback_service_url", callback_service_url)
         if certificates is not None:
-            pulumi.set(__self__, "certificates", certificates)
+            _setter("certificates", certificates)
         if client_ip_checking is not None:
-            pulumi.set(__self__, "client_ip_checking", client_ip_checking)
+            _setter("client_ip_checking", client_ip_checking)
         if client_secret is not None:
-            pulumi.set(__self__, "client_secret", client_secret)
+            _setter("client_secret", client_secret)
         if client_type is not None:
-            pulumi.set(__self__, "client_type", client_type)
+            _setter("client_type", client_type)
         if cloud_control_properties is not None:
-            pulumi.set(__self__, "cloud_control_properties", cloud_control_properties)
+            _setter("cloud_control_properties", cloud_control_properties)
         if compartment_ocid is not None:
-            pulumi.set(__self__, "compartment_ocid", compartment_ocid)
+            _setter("compartment_ocid", compartment_ocid)
         if contact_email_address is not None:
-            pulumi.set(__self__, "contact_email_address", contact_email_address)
+            _setter("contact_email_address", contact_email_address)
         if delegated_service_names is not None:
-            pulumi.set(__self__, "delegated_service_names", delegated_service_names)
+            _setter("delegated_service_names", delegated_service_names)
         if delete_in_progress is not None:
-            pulumi.set(__self__, "delete_in_progress", delete_in_progress)
+            _setter("delete_in_progress", delete_in_progress)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if disable_kmsi_token_authentication is not None:
-            pulumi.set(__self__, "disable_kmsi_token_authentication", disable_kmsi_token_authentication)
+            _setter("disable_kmsi_token_authentication", disable_kmsi_token_authentication)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if domain_ocid is not None:
-            pulumi.set(__self__, "domain_ocid", domain_ocid)
+            _setter("domain_ocid", domain_ocid)
         if editable_attributes is not None:
-            pulumi.set(__self__, "editable_attributes", editable_attributes)
+            _setter("editable_attributes", editable_attributes)
         if error_page_url is not None:
-            pulumi.set(__self__, "error_page_url", error_page_url)
+            _setter("error_page_url", error_page_url)
         if granted_app_roles is not None:
-            pulumi.set(__self__, "granted_app_roles", granted_app_roles)
+            _setter("granted_app_roles", granted_app_roles)
         if grants is not None:
-            pulumi.set(__self__, "grants", grants)
+            _setter("grants", grants)
         if hashed_client_secret is not None:
-            pulumi.set(__self__, "hashed_client_secret", hashed_client_secret)
+            _setter("hashed_client_secret", hashed_client_secret)
         if home_page_url is not None:
-            pulumi.set(__self__, "home_page_url", home_page_url)
+            _setter("home_page_url", home_page_url)
         if icon is not None:
-            pulumi.set(__self__, "icon", icon)
+            _setter("icon", icon)
         if id_token_enc_algo is not None:
-            pulumi.set(__self__, "id_token_enc_algo", id_token_enc_algo)
+            _setter("id_token_enc_algo", id_token_enc_algo)
         if idcs_created_bies is not None:
-            pulumi.set(__self__, "idcs_created_bies", idcs_created_bies)
+            _setter("idcs_created_bies", idcs_created_bies)
         if idcs_endpoint is not None:
-            pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
+            _setter("idcs_endpoint", idcs_endpoint)
         if idcs_last_modified_bies is not None:
-            pulumi.set(__self__, "idcs_last_modified_bies", idcs_last_modified_bies)
+            _setter("idcs_last_modified_bies", idcs_last_modified_bies)
         if idcs_last_upgraded_in_release is not None:
-            pulumi.set(__self__, "idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
+            _setter("idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
         if idcs_prevented_operations is not None:
-            pulumi.set(__self__, "idcs_prevented_operations", idcs_prevented_operations)
+            _setter("idcs_prevented_operations", idcs_prevented_operations)
         if identity_providers is not None:
-            pulumi.set(__self__, "identity_providers", identity_providers)
+            _setter("identity_providers", identity_providers)
         if idp_policy is not None:
-            pulumi.set(__self__, "idp_policy", idp_policy)
+            _setter("idp_policy", idp_policy)
         if infrastructure is not None:
-            pulumi.set(__self__, "infrastructure", infrastructure)
+            _setter("infrastructure", infrastructure)
         if is_alias_app is not None:
-            pulumi.set(__self__, "is_alias_app", is_alias_app)
+            _setter("is_alias_app", is_alias_app)
         if is_database_service is not None:
-            pulumi.set(__self__, "is_database_service", is_database_service)
+            _setter("is_database_service", is_database_service)
         if is_enterprise_app is not None:
-            pulumi.set(__self__, "is_enterprise_app", is_enterprise_app)
+            _setter("is_enterprise_app", is_enterprise_app)
         if is_form_fill is not None:
-            pulumi.set(__self__, "is_form_fill", is_form_fill)
+            _setter("is_form_fill", is_form_fill)
         if is_kerberos_realm is not None:
-            pulumi.set(__self__, "is_kerberos_realm", is_kerberos_realm)
+            _setter("is_kerberos_realm", is_kerberos_realm)
         if is_login_target is not None:
-            pulumi.set(__self__, "is_login_target", is_login_target)
+            _setter("is_login_target", is_login_target)
         if is_managed_app is not None:
-            pulumi.set(__self__, "is_managed_app", is_managed_app)
+            _setter("is_managed_app", is_managed_app)
         if is_mobile_target is not None:
-            pulumi.set(__self__, "is_mobile_target", is_mobile_target)
+            _setter("is_mobile_target", is_mobile_target)
         if is_multicloud_service_app is not None:
-            pulumi.set(__self__, "is_multicloud_service_app", is_multicloud_service_app)
+            _setter("is_multicloud_service_app", is_multicloud_service_app)
         if is_oauth_client is not None:
-            pulumi.set(__self__, "is_oauth_client", is_oauth_client)
+            _setter("is_oauth_client", is_oauth_client)
         if is_oauth_resource is not None:
-            pulumi.set(__self__, "is_oauth_resource", is_oauth_resource)
+            _setter("is_oauth_resource", is_oauth_resource)
         if is_obligation_capable is not None:
-            pulumi.set(__self__, "is_obligation_capable", is_obligation_capable)
+            _setter("is_obligation_capable", is_obligation_capable)
         if is_opc_service is not None:
-            pulumi.set(__self__, "is_opc_service", is_opc_service)
+            _setter("is_opc_service", is_opc_service)
         if is_radius_app is not None:
-            pulumi.set(__self__, "is_radius_app", is_radius_app)
+            _setter("is_radius_app", is_radius_app)
         if is_saml_service_provider is not None:
-            pulumi.set(__self__, "is_saml_service_provider", is_saml_service_provider)
+            _setter("is_saml_service_provider", is_saml_service_provider)
         if is_unmanaged_app is not None:
-            pulumi.set(__self__, "is_unmanaged_app", is_unmanaged_app)
+            _setter("is_unmanaged_app", is_unmanaged_app)
         if is_web_tier_policy is not None:
-            pulumi.set(__self__, "is_web_tier_policy", is_web_tier_policy)
+            _setter("is_web_tier_policy", is_web_tier_policy)
         if landing_page_url is not None:
-            pulumi.set(__self__, "landing_page_url", landing_page_url)
+            _setter("landing_page_url", landing_page_url)
         if linking_callback_url is not None:
-            pulumi.set(__self__, "linking_callback_url", linking_callback_url)
+            _setter("linking_callback_url", linking_callback_url)
         if login_mechanism is not None:
-            pulumi.set(__self__, "login_mechanism", login_mechanism)
+            _setter("login_mechanism", login_mechanism)
         if login_page_url is not None:
-            pulumi.set(__self__, "login_page_url", login_page_url)
+            _setter("login_page_url", login_page_url)
         if logout_page_url is not None:
-            pulumi.set(__self__, "logout_page_url", logout_page_url)
+            _setter("logout_page_url", logout_page_url)
         if logout_uri is not None:
-            pulumi.set(__self__, "logout_uri", logout_uri)
+            _setter("logout_uri", logout_uri)
         if metas is not None:
-            pulumi.set(__self__, "metas", metas)
+            _setter("metas", metas)
         if meter_as_opc_service is not None:
-            pulumi.set(__self__, "meter_as_opc_service", meter_as_opc_service)
+            _setter("meter_as_opc_service", meter_as_opc_service)
         if migrated is not None:
-            pulumi.set(__self__, "migrated", migrated)
+            _setter("migrated", migrated)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if post_logout_redirect_uris is not None:
-            pulumi.set(__self__, "post_logout_redirect_uris", post_logout_redirect_uris)
+            _setter("post_logout_redirect_uris", post_logout_redirect_uris)
         if privacy_policy_url is not None:
-            pulumi.set(__self__, "privacy_policy_url", privacy_policy_url)
+            _setter("privacy_policy_url", privacy_policy_url)
         if product_logo_url is not None:
-            pulumi.set(__self__, "product_logo_url", product_logo_url)
+            _setter("product_logo_url", product_logo_url)
         if product_name is not None:
-            pulumi.set(__self__, "product_name", product_name)
+            _setter("product_name", product_name)
         if protectable_secondary_audiences is not None:
-            pulumi.set(__self__, "protectable_secondary_audiences", protectable_secondary_audiences)
+            _setter("protectable_secondary_audiences", protectable_secondary_audiences)
         if radius_policy is not None:
-            pulumi.set(__self__, "radius_policy", radius_policy)
+            _setter("radius_policy", radius_policy)
         if ready_to_upgrade is not None:
-            pulumi.set(__self__, "ready_to_upgrade", ready_to_upgrade)
+            _setter("ready_to_upgrade", ready_to_upgrade)
         if redirect_uris is not None:
-            pulumi.set(__self__, "redirect_uris", redirect_uris)
+            _setter("redirect_uris", redirect_uris)
         if refresh_token_expiry is not None:
-            pulumi.set(__self__, "refresh_token_expiry", refresh_token_expiry)
+            _setter("refresh_token_expiry", refresh_token_expiry)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if saml_service_provider is not None:
-            pulumi.set(__self__, "saml_service_provider", saml_service_provider)
+            _setter("saml_service_provider", saml_service_provider)
         if schemas is not None:
-            pulumi.set(__self__, "schemas", schemas)
+            _setter("schemas", schemas)
         if scopes is not None:
-            pulumi.set(__self__, "scopes", scopes)
+            _setter("scopes", scopes)
         if secondary_audiences is not None:
-            pulumi.set(__self__, "secondary_audiences", secondary_audiences)
+            _setter("secondary_audiences", secondary_audiences)
         if service_params is not None:
-            pulumi.set(__self__, "service_params", service_params)
+            _setter("service_params", service_params)
         if service_type_urn is not None:
-            pulumi.set(__self__, "service_type_urn", service_type_urn)
+            _setter("service_type_urn", service_type_urn)
         if service_type_version is not None:
-            pulumi.set(__self__, "service_type_version", service_type_version)
+            _setter("service_type_version", service_type_version)
         if show_in_my_apps is not None:
-            pulumi.set(__self__, "show_in_my_apps", show_in_my_apps)
+            _setter("show_in_my_apps", show_in_my_apps)
         if signon_policy is not None:
-            pulumi.set(__self__, "signon_policy", signon_policy)
+            _setter("signon_policy", signon_policy)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if tenancy_ocid is not None:
-            pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
+            _setter("tenancy_ocid", tenancy_ocid)
         if terms_of_service_url is not None:
-            pulumi.set(__self__, "terms_of_service_url", terms_of_service_url)
+            _setter("terms_of_service_url", terms_of_service_url)
         if terms_of_use is not None:
-            pulumi.set(__self__, "terms_of_use", terms_of_use)
+            _setter("terms_of_use", terms_of_use)
         if trust_policies is not None:
-            pulumi.set(__self__, "trust_policies", trust_policies)
+            _setter("trust_policies", trust_policies)
         if trust_scope is not None:
-            pulumi.set(__self__, "trust_scope", trust_scope)
+            _setter("trust_scope", trust_scope)
         if urnietfparamsscimschemasoracleidcsextension_oci_tags is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextension_oci_tags", urnietfparamsscimschemasoracleidcsextension_oci_tags)
+            _setter("urnietfparamsscimschemasoracleidcsextension_oci_tags", urnietfparamsscimschemasoracleidcsextension_oci_tags)
         if urnietfparamsscimschemasoracleidcsextensiondbcs_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensiondbcs_app", urnietfparamsscimschemasoracleidcsextensiondbcs_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensiondbcs_app", urnietfparamsscimschemasoracleidcsextensiondbcs_app)
         if urnietfparamsscimschemasoracleidcsextensionenterprise_app_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionenterprise_app_app", urnietfparamsscimschemasoracleidcsextensionenterprise_app_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensionenterprise_app_app", urnietfparamsscimschemasoracleidcsextensionenterprise_app_app)
         if urnietfparamsscimschemasoracleidcsextensionform_fill_app_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionform_fill_app_app", urnietfparamsscimschemasoracleidcsextensionform_fill_app_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensionform_fill_app_app", urnietfparamsscimschemasoracleidcsextensionform_fill_app_app)
         if urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template", urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template)
+            _setter("urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template", urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template)
         if urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app", urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app", urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app)
         if urnietfparamsscimschemasoracleidcsextensionmanagedapp_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionmanagedapp_app", urnietfparamsscimschemasoracleidcsextensionmanagedapp_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensionmanagedapp_app", urnietfparamsscimschemasoracleidcsextensionmanagedapp_app)
         if urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app", urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app", urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app)
         if urnietfparamsscimschemasoracleidcsextensionopc_service_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionopc_service_app", urnietfparamsscimschemasoracleidcsextensionopc_service_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensionopc_service_app", urnietfparamsscimschemasoracleidcsextensionopc_service_app)
         if urnietfparamsscimschemasoracleidcsextensionradius_app_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionradius_app_app", urnietfparamsscimschemasoracleidcsextensionradius_app_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensionradius_app_app", urnietfparamsscimschemasoracleidcsextensionradius_app_app)
         if urnietfparamsscimschemasoracleidcsextensionrequestable_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionrequestable_app", urnietfparamsscimschemasoracleidcsextensionrequestable_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensionrequestable_app", urnietfparamsscimschemasoracleidcsextensionrequestable_app)
         if urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app", urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app", urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app)
         if urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app", urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app)
+            _setter("urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app", urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app)
         if user_roles is not None:
-            pulumi.set(__self__, "user_roles", user_roles)
+            _setter("user_roles", user_roles)
 
     @property
     @pulumi.getter(name="accessTokenExpiry")
@@ -8146,6 +8592,10 @@ class DomainsApp(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DomainsAppArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -8266,15 +8716,30 @@ class DomainsApp(pulumi.CustomResource):
             __props__.__dict__["allowed_scopes"] = allowed_scopes
             __props__.__dict__["allowed_tags"] = allowed_tags
             __props__.__dict__["app_icon"] = app_icon
+            if app_signon_policy is not None and not isinstance(app_signon_policy, DomainsAppAppSignonPolicyArgs):
+                app_signon_policy = app_signon_policy or {}
+                def _setter(key, value):
+                    app_signon_policy[key] = value
+                DomainsAppAppSignonPolicyArgs._configure(_setter, **app_signon_policy)
             __props__.__dict__["app_signon_policy"] = app_signon_policy
             __props__.__dict__["app_thumbnail"] = app_thumbnail
             __props__.__dict__["apps_network_perimeters"] = apps_network_perimeters
+            if as_opc_service is not None and not isinstance(as_opc_service, DomainsAppAsOpcServiceArgs):
+                as_opc_service = as_opc_service or {}
+                def _setter(key, value):
+                    as_opc_service[key] = value
+                DomainsAppAsOpcServiceArgs._configure(_setter, **as_opc_service)
             __props__.__dict__["as_opc_service"] = as_opc_service
             __props__.__dict__["attr_rendering_metadatas"] = attr_rendering_metadatas
             __props__.__dict__["attribute_sets"] = attribute_sets
             __props__.__dict__["attributes"] = attributes
             __props__.__dict__["audience"] = audience
             __props__.__dict__["authorization"] = authorization
+            if based_on_template is not None and not isinstance(based_on_template, DomainsAppBasedOnTemplateArgs):
+                based_on_template = based_on_template or {}
+                def _setter(key, value):
+                    based_on_template[key] = value
+                DomainsAppBasedOnTemplateArgs._configure(_setter, **based_on_template)
             if based_on_template is None and not opts.urn:
                 raise TypeError("Missing required property 'based_on_template'")
             __props__.__dict__["based_on_template"] = based_on_template
@@ -8297,6 +8762,11 @@ class DomainsApp(pulumi.CustomResource):
                 raise TypeError("Missing required property 'idcs_endpoint'")
             __props__.__dict__["idcs_endpoint"] = idcs_endpoint
             __props__.__dict__["identity_providers"] = identity_providers
+            if idp_policy is not None and not isinstance(idp_policy, DomainsAppIdpPolicyArgs):
+                idp_policy = idp_policy or {}
+                def _setter(key, value):
+                    idp_policy[key] = value
+                DomainsAppIdpPolicyArgs._configure(_setter, **idp_policy)
             __props__.__dict__["idp_policy"] = idp_policy
             __props__.__dict__["is_alias_app"] = is_alias_app
             __props__.__dict__["is_enterprise_app"] = is_enterprise_app
@@ -8325,10 +8795,20 @@ class DomainsApp(pulumi.CustomResource):
             __props__.__dict__["product_logo_url"] = product_logo_url
             __props__.__dict__["product_name"] = product_name
             __props__.__dict__["protectable_secondary_audiences"] = protectable_secondary_audiences
+            if radius_policy is not None and not isinstance(radius_policy, DomainsAppRadiusPolicyArgs):
+                radius_policy = radius_policy or {}
+                def _setter(key, value):
+                    radius_policy[key] = value
+                DomainsAppRadiusPolicyArgs._configure(_setter, **radius_policy)
             __props__.__dict__["radius_policy"] = radius_policy
             __props__.__dict__["redirect_uris"] = redirect_uris
             __props__.__dict__["refresh_token_expiry"] = refresh_token_expiry
             __props__.__dict__["resource_type_schema_version"] = resource_type_schema_version
+            if saml_service_provider is not None and not isinstance(saml_service_provider, DomainsAppSamlServiceProviderArgs):
+                saml_service_provider = saml_service_provider or {}
+                def _setter(key, value):
+                    saml_service_provider[key] = value
+                DomainsAppSamlServiceProviderArgs._configure(_setter, **saml_service_provider)
             __props__.__dict__["saml_service_provider"] = saml_service_provider
             if schemas is None and not opts.urn:
                 raise TypeError("Missing required property 'schemas'")
@@ -8339,24 +8819,99 @@ class DomainsApp(pulumi.CustomResource):
             __props__.__dict__["service_type_urn"] = service_type_urn
             __props__.__dict__["service_type_version"] = service_type_version
             __props__.__dict__["show_in_my_apps"] = show_in_my_apps
+            if signon_policy is not None and not isinstance(signon_policy, DomainsAppSignonPolicyArgs):
+                signon_policy = signon_policy or {}
+                def _setter(key, value):
+                    signon_policy[key] = value
+                DomainsAppSignonPolicyArgs._configure(_setter, **signon_policy)
             __props__.__dict__["signon_policy"] = signon_policy
             __props__.__dict__["tags"] = tags
             __props__.__dict__["terms_of_service_url"] = terms_of_service_url
+            if terms_of_use is not None and not isinstance(terms_of_use, DomainsAppTermsOfUseArgs):
+                terms_of_use = terms_of_use or {}
+                def _setter(key, value):
+                    terms_of_use[key] = value
+                DomainsAppTermsOfUseArgs._configure(_setter, **terms_of_use)
             __props__.__dict__["terms_of_use"] = terms_of_use
             __props__.__dict__["trust_policies"] = trust_policies
             __props__.__dict__["trust_scope"] = trust_scope
+            if urnietfparamsscimschemasoracleidcsextension_oci_tags is not None and not isinstance(urnietfparamsscimschemasoracleidcsextension_oci_tags, DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs):
+                urnietfparamsscimschemasoracleidcsextension_oci_tags = urnietfparamsscimschemasoracleidcsextension_oci_tags or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextension_oci_tags[key] = value
+                DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextension_oci_tags)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextension_oci_tags"] = urnietfparamsscimschemasoracleidcsextension_oci_tags
+            if urnietfparamsscimschemasoracleidcsextensiondbcs_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensiondbcs_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs):
+                urnietfparamsscimschemasoracleidcsextensiondbcs_app = urnietfparamsscimschemasoracleidcsextensiondbcs_app or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensiondbcs_app[key] = value
+                DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensiondbcs_app)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensiondbcs_app"] = urnietfparamsscimschemasoracleidcsextensiondbcs_app
+            if urnietfparamsscimschemasoracleidcsextensionenterprise_app_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionenterprise_app_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs):
+                urnietfparamsscimschemasoracleidcsextensionenterprise_app_app = urnietfparamsscimschemasoracleidcsextensionenterprise_app_app or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionenterprise_app_app[key] = value
+                DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionenterprise_app_app)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionenterprise_app_app"] = urnietfparamsscimschemasoracleidcsextensionenterprise_app_app
+            if urnietfparamsscimschemasoracleidcsextensionform_fill_app_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionform_fill_app_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs):
+                urnietfparamsscimschemasoracleidcsextensionform_fill_app_app = urnietfparamsscimschemasoracleidcsextensionform_fill_app_app or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionform_fill_app_app[key] = value
+                DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionform_fill_app_app)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionform_fill_app_app"] = urnietfparamsscimschemasoracleidcsextensionform_fill_app_app
+            if urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template, DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs):
+                urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template = urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template[key] = value
+                DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template"] = urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template
+            if urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs):
+                urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app = urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app[key] = value
+                DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app"] = urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app
+            if urnietfparamsscimschemasoracleidcsextensionmanagedapp_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionmanagedapp_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs):
+                urnietfparamsscimschemasoracleidcsextensionmanagedapp_app = urnietfparamsscimschemasoracleidcsextensionmanagedapp_app or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionmanagedapp_app[key] = value
+                DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionmanagedapp_app)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionmanagedapp_app"] = urnietfparamsscimschemasoracleidcsextensionmanagedapp_app
+            if urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs):
+                urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app = urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app[key] = value
+                DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app"] = urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app
+            if urnietfparamsscimschemasoracleidcsextensionopc_service_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionopc_service_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs):
+                urnietfparamsscimschemasoracleidcsextensionopc_service_app = urnietfparamsscimschemasoracleidcsextensionopc_service_app or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionopc_service_app[key] = value
+                DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionopc_service_app)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionopc_service_app"] = urnietfparamsscimschemasoracleidcsextensionopc_service_app
+            if urnietfparamsscimschemasoracleidcsextensionradius_app_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionradius_app_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs):
+                urnietfparamsscimschemasoracleidcsextensionradius_app_app = urnietfparamsscimschemasoracleidcsextensionradius_app_app or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionradius_app_app[key] = value
+                DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionradius_app_app)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionradius_app_app"] = urnietfparamsscimschemasoracleidcsextensionradius_app_app
+            if urnietfparamsscimschemasoracleidcsextensionrequestable_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionrequestable_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs):
+                urnietfparamsscimschemasoracleidcsextensionrequestable_app = urnietfparamsscimschemasoracleidcsextensionrequestable_app or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionrequestable_app[key] = value
+                DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionrequestable_app)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionrequestable_app"] = urnietfparamsscimschemasoracleidcsextensionrequestable_app
+            if urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs):
+                urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app = urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app[key] = value
+                DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app"] = urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app
+            if urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app, DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs):
+                urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app = urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app[key] = value
+                DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app"] = urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app
             __props__.__dict__["accounts"] = None
             __props__.__dict__["admin_roles"] = None

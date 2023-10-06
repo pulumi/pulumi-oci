@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -45,27 +45,60 @@ class AssetArgs:
         :param pulumi.Input['AssetVmwareVcenterArgs'] vmware_vcenter: (Updatable) VMware vCenter related properties.
         :param pulumi.Input['AssetVmwareVmArgs'] vmware_vm: (Updatable) VMware virtual machine related properties.
         """
-        pulumi.set(__self__, "asset_type", asset_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "external_asset_key", external_asset_key)
-        pulumi.set(__self__, "inventory_id", inventory_id)
-        pulumi.set(__self__, "source_key", source_key)
+        AssetArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            asset_type=asset_type,
+            compartment_id=compartment_id,
+            external_asset_key=external_asset_key,
+            inventory_id=inventory_id,
+            source_key=source_key,
+            asset_source_ids=asset_source_ids,
+            compute=compute,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            vm=vm,
+            vmware_vcenter=vmware_vcenter,
+            vmware_vm=vmware_vm,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             asset_type: pulumi.Input[str],
+             compartment_id: pulumi.Input[str],
+             external_asset_key: pulumi.Input[str],
+             inventory_id: pulumi.Input[str],
+             source_key: pulumi.Input[str],
+             asset_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             compute: Optional[pulumi.Input['AssetComputeArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             vm: Optional[pulumi.Input['AssetVmArgs']] = None,
+             vmware_vcenter: Optional[pulumi.Input['AssetVmwareVcenterArgs']] = None,
+             vmware_vm: Optional[pulumi.Input['AssetVmwareVmArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("asset_type", asset_type)
+        _setter("compartment_id", compartment_id)
+        _setter("external_asset_key", external_asset_key)
+        _setter("inventory_id", inventory_id)
+        _setter("source_key", source_key)
         if asset_source_ids is not None:
-            pulumi.set(__self__, "asset_source_ids", asset_source_ids)
+            _setter("asset_source_ids", asset_source_ids)
         if compute is not None:
-            pulumi.set(__self__, "compute", compute)
+            _setter("compute", compute)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if vm is not None:
-            pulumi.set(__self__, "vm", vm)
+            _setter("vm", vm)
         if vmware_vcenter is not None:
-            pulumi.set(__self__, "vmware_vcenter", vmware_vcenter)
+            _setter("vmware_vcenter", vmware_vcenter)
         if vmware_vm is not None:
-            pulumi.set(__self__, "vmware_vm", vmware_vm)
+            _setter("vmware_vm", vmware_vm)
 
     @property
     @pulumi.getter(name="assetType")
@@ -264,40 +297,81 @@ class _AssetState:
         :param pulumi.Input['AssetVmwareVcenterArgs'] vmware_vcenter: (Updatable) VMware vCenter related properties.
         :param pulumi.Input['AssetVmwareVmArgs'] vmware_vm: (Updatable) VMware virtual machine related properties.
         """
+        _AssetState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            asset_source_ids=asset_source_ids,
+            asset_type=asset_type,
+            compartment_id=compartment_id,
+            compute=compute,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            external_asset_key=external_asset_key,
+            freeform_tags=freeform_tags,
+            inventory_id=inventory_id,
+            source_key=source_key,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            vm=vm,
+            vmware_vcenter=vmware_vcenter,
+            vmware_vm=vmware_vm,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             asset_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             asset_type: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             compute: Optional[pulumi.Input['AssetComputeArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             external_asset_key: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             inventory_id: Optional[pulumi.Input[str]] = None,
+             source_key: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             vm: Optional[pulumi.Input['AssetVmArgs']] = None,
+             vmware_vcenter: Optional[pulumi.Input['AssetVmwareVcenterArgs']] = None,
+             vmware_vm: Optional[pulumi.Input['AssetVmwareVmArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if asset_source_ids is not None:
-            pulumi.set(__self__, "asset_source_ids", asset_source_ids)
+            _setter("asset_source_ids", asset_source_ids)
         if asset_type is not None:
-            pulumi.set(__self__, "asset_type", asset_type)
+            _setter("asset_type", asset_type)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if compute is not None:
-            pulumi.set(__self__, "compute", compute)
+            _setter("compute", compute)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if external_asset_key is not None:
-            pulumi.set(__self__, "external_asset_key", external_asset_key)
+            _setter("external_asset_key", external_asset_key)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if inventory_id is not None:
-            pulumi.set(__self__, "inventory_id", inventory_id)
+            _setter("inventory_id", inventory_id)
         if source_key is not None:
-            pulumi.set(__self__, "source_key", source_key)
+            _setter("source_key", source_key)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if vm is not None:
-            pulumi.set(__self__, "vm", vm)
+            _setter("vm", vm)
         if vmware_vcenter is not None:
-            pulumi.set(__self__, "vmware_vcenter", vmware_vcenter)
+            _setter("vmware_vcenter", vmware_vcenter)
         if vmware_vm is not None:
-            pulumi.set(__self__, "vmware_vm", vmware_vm)
+            _setter("vmware_vm", vmware_vm)
 
     @property
     @pulumi.getter(name="assetSourceIds")
@@ -803,6 +877,10 @@ class Asset(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AssetArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -837,6 +915,11 @@ class Asset(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            if compute is not None and not isinstance(compute, AssetComputeArgs):
+                compute = compute or {}
+                def _setter(key, value):
+                    compute[key] = value
+                AssetComputeArgs._configure(_setter, **compute)
             __props__.__dict__["compute"] = compute
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
@@ -850,8 +933,23 @@ class Asset(pulumi.CustomResource):
             if source_key is None and not opts.urn:
                 raise TypeError("Missing required property 'source_key'")
             __props__.__dict__["source_key"] = source_key
+            if vm is not None and not isinstance(vm, AssetVmArgs):
+                vm = vm or {}
+                def _setter(key, value):
+                    vm[key] = value
+                AssetVmArgs._configure(_setter, **vm)
             __props__.__dict__["vm"] = vm
+            if vmware_vcenter is not None and not isinstance(vmware_vcenter, AssetVmwareVcenterArgs):
+                vmware_vcenter = vmware_vcenter or {}
+                def _setter(key, value):
+                    vmware_vcenter[key] = value
+                AssetVmwareVcenterArgs._configure(_setter, **vmware_vcenter)
             __props__.__dict__["vmware_vcenter"] = vmware_vcenter
+            if vmware_vm is not None and not isinstance(vmware_vm, AssetVmwareVmArgs):
+                vmware_vm = vmware_vm or {}
+                def _setter(key, value):
+                    vmware_vm[key] = value
+                AssetVmwareVmArgs._configure(_setter, **vmware_vm)
             __props__.__dict__["vmware_vm"] = vmware_vm
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None

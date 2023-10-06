@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -29,12 +29,27 @@ class InstancePoolInstanceArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "instance_id", instance_id)
-        pulumi.set(__self__, "instance_pool_id", instance_pool_id)
+        InstancePoolInstanceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            instance_id=instance_id,
+            instance_pool_id=instance_pool_id,
+            auto_terminate_instance_on_delete=auto_terminate_instance_on_delete,
+            decrement_size_on_delete=decrement_size_on_delete,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             instance_id: pulumi.Input[str],
+             instance_pool_id: pulumi.Input[str],
+             auto_terminate_instance_on_delete: Optional[pulumi.Input[bool]] = None,
+             decrement_size_on_delete: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("instance_id", instance_id)
+        _setter("instance_pool_id", instance_pool_id)
         if auto_terminate_instance_on_delete is not None:
-            pulumi.set(__self__, "auto_terminate_instance_on_delete", auto_terminate_instance_on_delete)
+            _setter("auto_terminate_instance_on_delete", auto_terminate_instance_on_delete)
         if decrement_size_on_delete is not None:
-            pulumi.set(__self__, "decrement_size_on_delete", decrement_size_on_delete)
+            _setter("decrement_size_on_delete", decrement_size_on_delete)
 
     @property
     @pulumi.getter(name="instanceId")
@@ -119,34 +134,69 @@ class _InstancePoolInstanceState:
         :param pulumi.Input[str] state: The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
         :param pulumi.Input[str] time_created: The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
+        _InstancePoolInstanceState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auto_terminate_instance_on_delete=auto_terminate_instance_on_delete,
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            decrement_size_on_delete=decrement_size_on_delete,
+            display_name=display_name,
+            fault_domain=fault_domain,
+            instance_configuration_id=instance_configuration_id,
+            instance_id=instance_id,
+            instance_pool_id=instance_pool_id,
+            load_balancer_backends=load_balancer_backends,
+            region=region,
+            shape=shape,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auto_terminate_instance_on_delete: Optional[pulumi.Input[bool]] = None,
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             decrement_size_on_delete: Optional[pulumi.Input[bool]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             fault_domain: Optional[pulumi.Input[str]] = None,
+             instance_configuration_id: Optional[pulumi.Input[str]] = None,
+             instance_id: Optional[pulumi.Input[str]] = None,
+             instance_pool_id: Optional[pulumi.Input[str]] = None,
+             load_balancer_backends: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolInstanceLoadBalancerBackendArgs']]]] = None,
+             region: Optional[pulumi.Input[str]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if auto_terminate_instance_on_delete is not None:
-            pulumi.set(__self__, "auto_terminate_instance_on_delete", auto_terminate_instance_on_delete)
+            _setter("auto_terminate_instance_on_delete", auto_terminate_instance_on_delete)
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if decrement_size_on_delete is not None:
-            pulumi.set(__self__, "decrement_size_on_delete", decrement_size_on_delete)
+            _setter("decrement_size_on_delete", decrement_size_on_delete)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if fault_domain is not None:
-            pulumi.set(__self__, "fault_domain", fault_domain)
+            _setter("fault_domain", fault_domain)
         if instance_configuration_id is not None:
-            pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
+            _setter("instance_configuration_id", instance_configuration_id)
         if instance_id is not None:
-            pulumi.set(__self__, "instance_id", instance_id)
+            _setter("instance_id", instance_id)
         if instance_pool_id is not None:
-            pulumi.set(__self__, "instance_pool_id", instance_pool_id)
+            _setter("instance_pool_id", instance_pool_id)
         if load_balancer_backends is not None:
-            pulumi.set(__self__, "load_balancer_backends", load_balancer_backends)
+            _setter("load_balancer_backends", load_balancer_backends)
         if region is not None:
-            pulumi.set(__self__, "region", region)
+            _setter("region", region)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="autoTerminateInstanceOnDelete")
@@ -406,6 +456,10 @@ class InstancePoolInstance(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            InstancePoolInstanceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

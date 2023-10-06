@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -51,35 +51,74 @@ class ConfigArgs:
         :param pulumi.Input[str] options: (Updatable) The options are stored here as JSON.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigRuleArgs']]] rules: (Updatable)
         """
-        pulumi.set(__self__, "apm_domain_id", apm_domain_id)
-        pulumi.set(__self__, "config_type", config_type)
-        pulumi.set(__self__, "display_name", display_name)
+        ConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            apm_domain_id=apm_domain_id,
+            config_type=config_type,
+            display_name=display_name,
+            defined_tags=defined_tags,
+            description=description,
+            dimensions=dimensions,
+            filter_id=filter_id,
+            filter_text=filter_text,
+            freeform_tags=freeform_tags,
+            group=group,
+            in_use_bies=in_use_bies,
+            metrics=metrics,
+            namespace=namespace,
+            opc_dry_run=opc_dry_run,
+            options=options,
+            rules=rules,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             apm_domain_id: pulumi.Input[str],
+             config_type: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             dimensions: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigDimensionArgs']]]] = None,
+             filter_id: Optional[pulumi.Input[str]] = None,
+             filter_text: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             group: Optional[pulumi.Input[str]] = None,
+             in_use_bies: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigInUseByArgs']]]] = None,
+             metrics: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigMetricArgs']]]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             opc_dry_run: Optional[pulumi.Input[str]] = None,
+             options: Optional[pulumi.Input[str]] = None,
+             rules: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigRuleArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("apm_domain_id", apm_domain_id)
+        _setter("config_type", config_type)
+        _setter("display_name", display_name)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if dimensions is not None:
-            pulumi.set(__self__, "dimensions", dimensions)
+            _setter("dimensions", dimensions)
         if filter_id is not None:
-            pulumi.set(__self__, "filter_id", filter_id)
+            _setter("filter_id", filter_id)
         if filter_text is not None:
-            pulumi.set(__self__, "filter_text", filter_text)
+            _setter("filter_text", filter_text)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if group is not None:
-            pulumi.set(__self__, "group", group)
+            _setter("group", group)
         if in_use_bies is not None:
-            pulumi.set(__self__, "in_use_bies", in_use_bies)
+            _setter("in_use_bies", in_use_bies)
         if metrics is not None:
-            pulumi.set(__self__, "metrics", metrics)
+            _setter("metrics", metrics)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if opc_dry_run is not None:
-            pulumi.set(__self__, "opc_dry_run", opc_dry_run)
+            _setter("opc_dry_run", opc_dry_run)
         if options is not None:
-            pulumi.set(__self__, "options", options)
+            _setter("options", options)
         if rules is not None:
-            pulumi.set(__self__, "rules", rules)
+            _setter("rules", rules)
 
     @property
     @pulumi.getter(name="apmDomainId")
@@ -322,48 +361,97 @@ class _ConfigState:
         :param pulumi.Input[str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         :param pulumi.Input[str] updated_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
         """
+        _ConfigState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            apm_domain_id=apm_domain_id,
+            config_type=config_type,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            description=description,
+            dimensions=dimensions,
+            display_name=display_name,
+            etag=etag,
+            filter_id=filter_id,
+            filter_text=filter_text,
+            freeform_tags=freeform_tags,
+            group=group,
+            in_use_bies=in_use_bies,
+            metrics=metrics,
+            namespace=namespace,
+            opc_dry_run=opc_dry_run,
+            options=options,
+            rules=rules,
+            time_created=time_created,
+            time_updated=time_updated,
+            updated_by=updated_by,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             apm_domain_id: Optional[pulumi.Input[str]] = None,
+             config_type: Optional[pulumi.Input[str]] = None,
+             created_by: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             dimensions: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigDimensionArgs']]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             etag: Optional[pulumi.Input[str]] = None,
+             filter_id: Optional[pulumi.Input[str]] = None,
+             filter_text: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             group: Optional[pulumi.Input[str]] = None,
+             in_use_bies: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigInUseByArgs']]]] = None,
+             metrics: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigMetricArgs']]]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             opc_dry_run: Optional[pulumi.Input[str]] = None,
+             options: Optional[pulumi.Input[str]] = None,
+             rules: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigRuleArgs']]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             updated_by: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if apm_domain_id is not None:
-            pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+            _setter("apm_domain_id", apm_domain_id)
         if config_type is not None:
-            pulumi.set(__self__, "config_type", config_type)
+            _setter("config_type", config_type)
         if created_by is not None:
-            pulumi.set(__self__, "created_by", created_by)
+            _setter("created_by", created_by)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if dimensions is not None:
-            pulumi.set(__self__, "dimensions", dimensions)
+            _setter("dimensions", dimensions)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if etag is not None:
-            pulumi.set(__self__, "etag", etag)
+            _setter("etag", etag)
         if filter_id is not None:
-            pulumi.set(__self__, "filter_id", filter_id)
+            _setter("filter_id", filter_id)
         if filter_text is not None:
-            pulumi.set(__self__, "filter_text", filter_text)
+            _setter("filter_text", filter_text)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if group is not None:
-            pulumi.set(__self__, "group", group)
+            _setter("group", group)
         if in_use_bies is not None:
-            pulumi.set(__self__, "in_use_bies", in_use_bies)
+            _setter("in_use_bies", in_use_bies)
         if metrics is not None:
-            pulumi.set(__self__, "metrics", metrics)
+            _setter("metrics", metrics)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if opc_dry_run is not None:
-            pulumi.set(__self__, "opc_dry_run", opc_dry_run)
+            _setter("opc_dry_run", opc_dry_run)
         if options is not None:
-            pulumi.set(__self__, "options", options)
+            _setter("options", options)
         if rules is not None:
-            pulumi.set(__self__, "rules", rules)
+            _setter("rules", rules)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if updated_by is not None:
-            pulumi.set(__self__, "updated_by", updated_by)
+            _setter("updated_by", updated_by)
 
     @property
     @pulumi.getter(name="apmDomainId")
@@ -789,6 +877,10 @@ class Config(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ConfigArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

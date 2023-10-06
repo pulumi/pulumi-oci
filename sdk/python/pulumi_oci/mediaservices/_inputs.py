@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -40,9 +40,20 @@ class MediaAssetMediaAssetTagArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "value", value)
+        MediaAssetMediaAssetTagArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            value=value,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             value: pulumi.Input[str],
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("value", value)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter
@@ -80,7 +91,16 @@ class MediaAssetMetadataArgs:
         """
         :param pulumi.Input[str] metadata: (Updatable) JSON string containing the technial metadata for the media asset.
         """
-        pulumi.set(__self__, "metadata", metadata)
+        MediaAssetMetadataArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            metadata=metadata,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             metadata: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("metadata", metadata)
 
     @property
     @pulumi.getter
@@ -110,16 +130,33 @@ class MediaWorkflowJobOutputArgs:
         :param pulumi.Input[str] namespace: The namespace name of the job output.
         :param pulumi.Input[str] object: The object name of the job output.
         """
+        MediaWorkflowJobOutputArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            asset_type=asset_type,
+            bucket=bucket,
+            id=id,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             asset_type: Optional[pulumi.Input[str]] = None,
+             bucket: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if asset_type is not None:
-            pulumi.set(__self__, "asset_type", asset_type)
+            _setter("asset_type", asset_type)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter(name="assetType")
@@ -193,12 +230,25 @@ class MediaWorkflowJobTaskLifecycleStateArgs:
         :param pulumi.Input[str] lifecycle_details: The lifecycle details of MediaWorkflowJob task.
         :param pulumi.Input[str] state: The current state of the MediaWorkflowJob task.
         """
+        MediaWorkflowJobTaskLifecycleStateArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            lifecycle_details=lifecycle_details,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter
@@ -260,16 +310,37 @@ class MediaWorkflowTaskArgs:
         :param pulumi.Input[Mapping[str, Any]] enable_when_referenced_parameter_equals: (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] prerequisites: (Updatable) Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "version", version)
+        MediaWorkflowTaskArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            parameters=parameters,
+            type=type,
+            version=version,
+            enable_parameter_reference=enable_parameter_reference,
+            enable_when_referenced_parameter_equals=enable_when_referenced_parameter_equals,
+            prerequisites=prerequisites,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: pulumi.Input[str],
+             parameters: pulumi.Input[str],
+             type: pulumi.Input[str],
+             version: pulumi.Input[str],
+             enable_parameter_reference: Optional[pulumi.Input[str]] = None,
+             enable_when_referenced_parameter_equals: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             prerequisites: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("parameters", parameters)
+        _setter("type", type)
+        _setter("version", version)
         if enable_parameter_reference is not None:
-            pulumi.set(__self__, "enable_parameter_reference", enable_parameter_reference)
+            _setter("enable_parameter_reference", enable_parameter_reference)
         if enable_when_referenced_parameter_equals is not None:
-            pulumi.set(__self__, "enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
+            _setter("enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
         if prerequisites is not None:
-            pulumi.set(__self__, "prerequisites", prerequisites)
+            _setter("prerequisites", prerequisites)
 
     @property
     @pulumi.getter
@@ -389,29 +460,60 @@ class StreamCdnConfigConfigArgs:
         :param pulumi.Input[str] origin_auth_sign_encryption: (Updatable) The type of encryption used to compute the signature.
         :param pulumi.Input[str] origin_auth_sign_type: (Updatable) The type of data used to compute the signature.
         """
-        pulumi.set(__self__, "type", type)
+        StreamCdnConfigConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            edge_hostname=edge_hostname,
+            edge_path_prefix=edge_path_prefix,
+            edge_token_key=edge_token_key,
+            edge_token_salt=edge_token_salt,
+            is_edge_token_auth=is_edge_token_auth,
+            origin_auth_secret_key_a=origin_auth_secret_key_a,
+            origin_auth_secret_key_b=origin_auth_secret_key_b,
+            origin_auth_secret_key_nonce_a=origin_auth_secret_key_nonce_a,
+            origin_auth_secret_key_nonce_b=origin_auth_secret_key_nonce_b,
+            origin_auth_sign_encryption=origin_auth_sign_encryption,
+            origin_auth_sign_type=origin_auth_sign_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: pulumi.Input[str],
+             edge_hostname: Optional[pulumi.Input[str]] = None,
+             edge_path_prefix: Optional[pulumi.Input[str]] = None,
+             edge_token_key: Optional[pulumi.Input[str]] = None,
+             edge_token_salt: Optional[pulumi.Input[str]] = None,
+             is_edge_token_auth: Optional[pulumi.Input[bool]] = None,
+             origin_auth_secret_key_a: Optional[pulumi.Input[str]] = None,
+             origin_auth_secret_key_b: Optional[pulumi.Input[str]] = None,
+             origin_auth_secret_key_nonce_a: Optional[pulumi.Input[str]] = None,
+             origin_auth_secret_key_nonce_b: Optional[pulumi.Input[str]] = None,
+             origin_auth_sign_encryption: Optional[pulumi.Input[str]] = None,
+             origin_auth_sign_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if edge_hostname is not None:
-            pulumi.set(__self__, "edge_hostname", edge_hostname)
+            _setter("edge_hostname", edge_hostname)
         if edge_path_prefix is not None:
-            pulumi.set(__self__, "edge_path_prefix", edge_path_prefix)
+            _setter("edge_path_prefix", edge_path_prefix)
         if edge_token_key is not None:
-            pulumi.set(__self__, "edge_token_key", edge_token_key)
+            _setter("edge_token_key", edge_token_key)
         if edge_token_salt is not None:
-            pulumi.set(__self__, "edge_token_salt", edge_token_salt)
+            _setter("edge_token_salt", edge_token_salt)
         if is_edge_token_auth is not None:
-            pulumi.set(__self__, "is_edge_token_auth", is_edge_token_auth)
+            _setter("is_edge_token_auth", is_edge_token_auth)
         if origin_auth_secret_key_a is not None:
-            pulumi.set(__self__, "origin_auth_secret_key_a", origin_auth_secret_key_a)
+            _setter("origin_auth_secret_key_a", origin_auth_secret_key_a)
         if origin_auth_secret_key_b is not None:
-            pulumi.set(__self__, "origin_auth_secret_key_b", origin_auth_secret_key_b)
+            _setter("origin_auth_secret_key_b", origin_auth_secret_key_b)
         if origin_auth_secret_key_nonce_a is not None:
-            pulumi.set(__self__, "origin_auth_secret_key_nonce_a", origin_auth_secret_key_nonce_a)
+            _setter("origin_auth_secret_key_nonce_a", origin_auth_secret_key_nonce_a)
         if origin_auth_secret_key_nonce_b is not None:
-            pulumi.set(__self__, "origin_auth_secret_key_nonce_b", origin_auth_secret_key_nonce_b)
+            _setter("origin_auth_secret_key_nonce_b", origin_auth_secret_key_nonce_b)
         if origin_auth_sign_encryption is not None:
-            pulumi.set(__self__, "origin_auth_sign_encryption", origin_auth_sign_encryption)
+            _setter("origin_auth_sign_encryption", origin_auth_sign_encryption)
         if origin_auth_sign_type is not None:
-            pulumi.set(__self__, "origin_auth_sign_type", origin_auth_sign_type)
+            _setter("origin_auth_sign_type", origin_auth_sign_type)
 
     @property
     @pulumi.getter
@@ -567,9 +669,20 @@ class StreamPackagingConfigEncryptionArgs:
         :param pulumi.Input[str] algorithm: The encryption algorithm for the stream packaging configuration.
         :param pulumi.Input[str] kms_key_id: The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
         """
-        pulumi.set(__self__, "algorithm", algorithm)
+        StreamPackagingConfigEncryptionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            algorithm=algorithm,
+            kms_key_id=kms_key_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             algorithm: pulumi.Input[str],
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("algorithm", algorithm)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter
@@ -602,10 +715,23 @@ class GetMediaAssetsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMediaAssetsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -641,10 +767,23 @@ class GetMediaWorkflowConfigurationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMediaWorkflowConfigurationsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -683,10 +822,23 @@ class GetMediaWorkflowJobFactsFilterArgs:
         """
         :param str name: Unique name. It is read-only and generated for the fact.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMediaWorkflowJobFactsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -725,10 +877,23 @@ class GetMediaWorkflowJobsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMediaWorkflowJobsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -764,10 +929,23 @@ class GetMediaWorkflowsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMediaWorkflowsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -803,10 +981,23 @@ class GetStreamCdnConfigsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetStreamCdnConfigsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -842,10 +1033,23 @@ class GetStreamDistributionChannelsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetStreamDistributionChannelsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -881,10 +1085,23 @@ class GetStreamPackagingConfigsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetStreamPackagingConfigsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

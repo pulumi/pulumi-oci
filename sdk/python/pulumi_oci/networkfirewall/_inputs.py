@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -34,9 +34,20 @@ class NetworkFirewallPolicyApplicationListArgs:
         :param pulumi.Input[str] application_list_name: (Updatable) The key is the identifier by which the application list is referenced.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListApplicationValueArgs']]] application_values: (Updatable) Details about the application
         """
-        pulumi.set(__self__, "application_list_name", application_list_name)
+        NetworkFirewallPolicyApplicationListArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            application_list_name=application_list_name,
+            application_values=application_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             application_list_name: pulumi.Input[str],
+             application_values: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListApplicationValueArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("application_list_name", application_list_name)
         if application_values is not None:
-            pulumi.set(__self__, "application_values", application_values)
+            _setter("application_values", application_values)
 
     @property
     @pulumi.getter(name="applicationListName")
@@ -78,15 +89,32 @@ class NetworkFirewallPolicyApplicationListApplicationValueArgs:
         :param pulumi.Input[int] maximum_port: (Updatable) Used when you select TCP or UDP. Enter a port number.
         :param pulumi.Input[int] minimum_port: (Updatable) Used when you select TCP or UDP. Enter a port number.
         """
-        pulumi.set(__self__, "type", type)
+        NetworkFirewallPolicyApplicationListApplicationValueArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            icmp_code=icmp_code,
+            icmp_type=icmp_type,
+            maximum_port=maximum_port,
+            minimum_port=minimum_port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: pulumi.Input[str],
+             icmp_code: Optional[pulumi.Input[int]] = None,
+             icmp_type: Optional[pulumi.Input[int]] = None,
+             maximum_port: Optional[pulumi.Input[int]] = None,
+             minimum_port: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if icmp_code is not None:
-            pulumi.set(__self__, "icmp_code", icmp_code)
+            _setter("icmp_code", icmp_code)
         if icmp_type is not None:
-            pulumi.set(__self__, "icmp_type", icmp_type)
+            _setter("icmp_type", icmp_type)
         if maximum_port is not None:
-            pulumi.set(__self__, "maximum_port", maximum_port)
+            _setter("maximum_port", maximum_port)
         if minimum_port is not None:
-            pulumi.set(__self__, "minimum_port", minimum_port)
+            _setter("minimum_port", minimum_port)
 
     @property
     @pulumi.getter
@@ -176,26 +204,55 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
         :param pulumi.Input[bool] is_unsupported_version_blocked: (Updatable) Whether to block sessions if SSL version is not supported.
         :param pulumi.Input[bool] is_untrusted_issuer_blocked: (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "type", type)
+        NetworkFirewallPolicyDecryptionProfileArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            type=type,
+            are_certificate_extensions_restricted=are_certificate_extensions_restricted,
+            is_auto_include_alt_name=is_auto_include_alt_name,
+            is_expired_certificate_blocked=is_expired_certificate_blocked,
+            is_out_of_capacity_blocked=is_out_of_capacity_blocked,
+            is_revocation_status_timeout_blocked=is_revocation_status_timeout_blocked,
+            is_unknown_revocation_status_blocked=is_unknown_revocation_status_blocked,
+            is_unsupported_cipher_blocked=is_unsupported_cipher_blocked,
+            is_unsupported_version_blocked=is_unsupported_version_blocked,
+            is_untrusted_issuer_blocked=is_untrusted_issuer_blocked,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: pulumi.Input[str],
+             type: pulumi.Input[str],
+             are_certificate_extensions_restricted: Optional[pulumi.Input[bool]] = None,
+             is_auto_include_alt_name: Optional[pulumi.Input[bool]] = None,
+             is_expired_certificate_blocked: Optional[pulumi.Input[bool]] = None,
+             is_out_of_capacity_blocked: Optional[pulumi.Input[bool]] = None,
+             is_revocation_status_timeout_blocked: Optional[pulumi.Input[bool]] = None,
+             is_unknown_revocation_status_blocked: Optional[pulumi.Input[bool]] = None,
+             is_unsupported_cipher_blocked: Optional[pulumi.Input[bool]] = None,
+             is_unsupported_version_blocked: Optional[pulumi.Input[bool]] = None,
+             is_untrusted_issuer_blocked: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("type", type)
         if are_certificate_extensions_restricted is not None:
-            pulumi.set(__self__, "are_certificate_extensions_restricted", are_certificate_extensions_restricted)
+            _setter("are_certificate_extensions_restricted", are_certificate_extensions_restricted)
         if is_auto_include_alt_name is not None:
-            pulumi.set(__self__, "is_auto_include_alt_name", is_auto_include_alt_name)
+            _setter("is_auto_include_alt_name", is_auto_include_alt_name)
         if is_expired_certificate_blocked is not None:
-            pulumi.set(__self__, "is_expired_certificate_blocked", is_expired_certificate_blocked)
+            _setter("is_expired_certificate_blocked", is_expired_certificate_blocked)
         if is_out_of_capacity_blocked is not None:
-            pulumi.set(__self__, "is_out_of_capacity_blocked", is_out_of_capacity_blocked)
+            _setter("is_out_of_capacity_blocked", is_out_of_capacity_blocked)
         if is_revocation_status_timeout_blocked is not None:
-            pulumi.set(__self__, "is_revocation_status_timeout_blocked", is_revocation_status_timeout_blocked)
+            _setter("is_revocation_status_timeout_blocked", is_revocation_status_timeout_blocked)
         if is_unknown_revocation_status_blocked is not None:
-            pulumi.set(__self__, "is_unknown_revocation_status_blocked", is_unknown_revocation_status_blocked)
+            _setter("is_unknown_revocation_status_blocked", is_unknown_revocation_status_blocked)
         if is_unsupported_cipher_blocked is not None:
-            pulumi.set(__self__, "is_unsupported_cipher_blocked", is_unsupported_cipher_blocked)
+            _setter("is_unsupported_cipher_blocked", is_unsupported_cipher_blocked)
         if is_unsupported_version_blocked is not None:
-            pulumi.set(__self__, "is_unsupported_version_blocked", is_unsupported_version_blocked)
+            _setter("is_unsupported_version_blocked", is_unsupported_version_blocked)
         if is_untrusted_issuer_blocked is not None:
-            pulumi.set(__self__, "is_untrusted_issuer_blocked", is_untrusted_issuer_blocked)
+            _setter("is_untrusted_issuer_blocked", is_untrusted_issuer_blocked)
 
     @property
     @pulumi.getter
@@ -349,13 +406,30 @@ class NetworkFirewallPolicyDecryptionRuleArgs:
         :param pulumi.Input[str] decryption_profile: (Updatable) The name of the decryption profile to use.
         :param pulumi.Input[str] secret: (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "name", name)
+        NetworkFirewallPolicyDecryptionRuleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            condition=condition,
+            name=name,
+            decryption_profile=decryption_profile,
+            secret=secret,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: pulumi.Input[str],
+             condition: pulumi.Input['NetworkFirewallPolicyDecryptionRuleConditionArgs'],
+             name: pulumi.Input[str],
+             decryption_profile: Optional[pulumi.Input[str]] = None,
+             secret: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("condition", condition)
+        _setter("name", name)
         if decryption_profile is not None:
-            pulumi.set(__self__, "decryption_profile", decryption_profile)
+            _setter("decryption_profile", decryption_profile)
         if secret is not None:
-            pulumi.set(__self__, "secret", secret)
+            _setter("secret", secret)
 
     @property
     @pulumi.getter
@@ -431,10 +505,21 @@ class NetworkFirewallPolicyDecryptionRuleConditionArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] destinations: (Updatable) An array of IP address list names to be evaluated against the traffic destination address.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sources: (Updatable) An array of IP address list names to be evaluated against the traffic source address.
         """
+        NetworkFirewallPolicyDecryptionRuleConditionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destinations=destinations,
+            sources=sources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destinations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             sources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if destinations is not None:
-            pulumi.set(__self__, "destinations", destinations)
+            _setter("destinations", destinations)
         if sources is not None:
-            pulumi.set(__self__, "sources", sources)
+            _setter("sources", sources)
 
     @property
     @pulumi.getter
@@ -470,9 +555,20 @@ class NetworkFirewallPolicyIpAddressListArgs:
         :param pulumi.Input[str] ip_address_list_name: (Updatable) The identifier by which the IP address list is referenced.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_address_list_values: (Updatable) List of IP address lists of the policy.
         """
-        pulumi.set(__self__, "ip_address_list_name", ip_address_list_name)
+        NetworkFirewallPolicyIpAddressListArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_address_list_name=ip_address_list_name,
+            ip_address_list_values=ip_address_list_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_address_list_name: pulumi.Input[str],
+             ip_address_list_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ip_address_list_name", ip_address_list_name)
         if ip_address_list_values is not None:
-            pulumi.set(__self__, "ip_address_list_values", ip_address_list_values)
+            _setter("ip_address_list_values", ip_address_list_values)
 
     @property
     @pulumi.getter(name="ipAddressListName")
@@ -512,12 +608,27 @@ class NetworkFirewallPolicyMappedSecretArgs:
         :param pulumi.Input[str] vault_secret_id: (Updatable) OCID for the Vault Secret to be used.
         :param pulumi.Input[int] version_number: (Updatable) Version number of the secret to be used.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "type", type)
+        NetworkFirewallPolicyMappedSecretArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            type=type,
+            vault_secret_id=vault_secret_id,
+            version_number=version_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: pulumi.Input[str],
+             type: pulumi.Input[str],
+             vault_secret_id: Optional[pulumi.Input[str]] = None,
+             version_number: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("type", type)
         if vault_secret_id is not None:
-            pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+            _setter("vault_secret_id", vault_secret_id)
         if version_number is not None:
-            pulumi.set(__self__, "version_number", version_number)
+            _setter("version_number", version_number)
 
     @property
     @pulumi.getter
@@ -587,11 +698,26 @@ class NetworkFirewallPolicySecurityRuleArgs:
                * INTRUSION_DETECTION - Intrusion Detection.
                * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "name", name)
+        NetworkFirewallPolicySecurityRuleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            condition=condition,
+            name=name,
+            inspection=inspection,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: pulumi.Input[str],
+             condition: pulumi.Input['NetworkFirewallPolicySecurityRuleConditionArgs'],
+             name: pulumi.Input[str],
+             inspection: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("condition", condition)
+        _setter("name", name)
         if inspection is not None:
-            pulumi.set(__self__, "inspection", inspection)
+            _setter("inspection", inspection)
 
     @property
     @pulumi.getter
@@ -661,14 +787,29 @@ class NetworkFirewallPolicySecurityRuleConditionArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sources: (Updatable) An array of IP address list names to be evaluated against the traffic source address.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] urls: (Updatable) An array of URL pattern list names to be evaluated against the HTTP(S) request target.
         """
+        NetworkFirewallPolicySecurityRuleConditionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            applications=applications,
+            destinations=destinations,
+            sources=sources,
+            urls=urls,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             applications: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             destinations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             sources: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             urls: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if applications is not None:
-            pulumi.set(__self__, "applications", applications)
+            _setter("applications", applications)
         if destinations is not None:
-            pulumi.set(__self__, "destinations", destinations)
+            _setter("destinations", destinations)
         if sources is not None:
-            pulumi.set(__self__, "sources", sources)
+            _setter("sources", sources)
         if urls is not None:
-            pulumi.set(__self__, "urls", urls)
+            _setter("urls", urls)
 
     @property
     @pulumi.getter
@@ -728,9 +869,20 @@ class NetworkFirewallPolicyUrlListArgs:
         :param pulumi.Input[str] url_list_name: (Updatable) The identifier for the url list
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListUrlListValueArgs']]] url_list_values: (Updatable) The list of Url Patterns.
         """
-        pulumi.set(__self__, "url_list_name", url_list_name)
+        NetworkFirewallPolicyUrlListArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            url_list_name=url_list_name,
+            url_list_values=url_list_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             url_list_name: pulumi.Input[str],
+             url_list_values: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListUrlListValueArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("url_list_name", url_list_name)
         if url_list_values is not None:
-            pulumi.set(__self__, "url_list_values", url_list_values)
+            _setter("url_list_values", url_list_values)
 
     @property
     @pulumi.getter(name="urlListName")
@@ -770,9 +922,20 @@ class NetworkFirewallPolicyUrlListUrlListValueArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "type", type)
+        NetworkFirewallPolicyUrlListUrlListValueArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            pattern=pattern,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: pulumi.Input[str],
+             pattern: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if pattern is not None:
-            pulumi.set(__self__, "pattern", pattern)
+            _setter("pattern", pattern)
 
     @property
     @pulumi.getter
@@ -812,10 +975,23 @@ class GetNetworkFirewallPoliciesFilterArgs:
         """
         :param str name: Name for the Security rule, must be unique within the policy.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetNetworkFirewallPoliciesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -854,10 +1030,23 @@ class GetNetworkFirewallsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetNetworkFirewallsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

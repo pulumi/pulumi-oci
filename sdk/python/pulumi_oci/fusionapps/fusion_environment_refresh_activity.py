@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -27,8 +27,19 @@ class FusionEnvironmentRefreshActivityArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
-        pulumi.set(__self__, "source_fusion_environment_id", source_fusion_environment_id)
+        FusionEnvironmentRefreshActivityArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            fusion_environment_id=fusion_environment_id,
+            source_fusion_environment_id=source_fusion_environment_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             fusion_environment_id: pulumi.Input[str],
+             source_fusion_environment_id: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("fusion_environment_id", fusion_environment_id)
+        _setter("source_fusion_environment_id", source_fusion_environment_id)
 
     @property
     @pulumi.getter(name="fusionEnvironmentId")
@@ -94,32 +105,65 @@ class _FusionEnvironmentRefreshActivityState:
         :param pulumi.Input[str] time_of_restoration_point: The date and time of the most recent source environment backup used for the environment refresh.
         :param pulumi.Input[str] time_updated: The time the refresh activity record was updated. An RFC3339 formatted datetime string.
         """
+        _FusionEnvironmentRefreshActivityState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            fusion_environment_id=fusion_environment_id,
+            lifecycle_details=lifecycle_details,
+            refresh_activity_id=refresh_activity_id,
+            refresh_issue_details_lists=refresh_issue_details_lists,
+            service_availability=service_availability,
+            source_fusion_environment_id=source_fusion_environment_id,
+            state=state,
+            time_accepted=time_accepted,
+            time_expected_finish=time_expected_finish,
+            time_finished=time_finished,
+            time_of_restoration_point=time_of_restoration_point,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[pulumi.Input[str]] = None,
+             fusion_environment_id: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             refresh_activity_id: Optional[pulumi.Input[str]] = None,
+             refresh_issue_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs']]]] = None,
+             service_availability: Optional[pulumi.Input[str]] = None,
+             source_fusion_environment_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_accepted: Optional[pulumi.Input[str]] = None,
+             time_expected_finish: Optional[pulumi.Input[str]] = None,
+             time_finished: Optional[pulumi.Input[str]] = None,
+             time_of_restoration_point: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if fusion_environment_id is not None:
-            pulumi.set(__self__, "fusion_environment_id", fusion_environment_id)
+            _setter("fusion_environment_id", fusion_environment_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if refresh_activity_id is not None:
-            pulumi.set(__self__, "refresh_activity_id", refresh_activity_id)
+            _setter("refresh_activity_id", refresh_activity_id)
         if refresh_issue_details_lists is not None:
-            pulumi.set(__self__, "refresh_issue_details_lists", refresh_issue_details_lists)
+            _setter("refresh_issue_details_lists", refresh_issue_details_lists)
         if service_availability is not None:
-            pulumi.set(__self__, "service_availability", service_availability)
+            _setter("service_availability", service_availability)
         if source_fusion_environment_id is not None:
-            pulumi.set(__self__, "source_fusion_environment_id", source_fusion_environment_id)
+            _setter("source_fusion_environment_id", source_fusion_environment_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_accepted is not None:
-            pulumi.set(__self__, "time_accepted", time_accepted)
+            _setter("time_accepted", time_accepted)
         if time_expected_finish is not None:
-            pulumi.set(__self__, "time_expected_finish", time_expected_finish)
+            _setter("time_expected_finish", time_expected_finish)
         if time_finished is not None:
-            pulumi.set(__self__, "time_finished", time_finished)
+            _setter("time_finished", time_finished)
         if time_of_restoration_point is not None:
-            pulumi.set(__self__, "time_of_restoration_point", time_of_restoration_point)
+            _setter("time_of_restoration_point", time_of_restoration_point)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="displayName")
@@ -360,6 +404,10 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            FusionEnvironmentRefreshActivityArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

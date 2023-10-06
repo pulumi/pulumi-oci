@@ -31,8 +31,10 @@ namespace Pulumi.Oci.Mysql
         ///     var testReplicas = Oci.Mysql.GetReplicas.Invoke(new()
         ///     {
         ///         CompartmentId = @var.Compartment_id,
+        ///         ConfigurationId = oci_mysql_mysql_configuration.Test_mysql_configuration.Id,
         ///         DbSystemId = oci_mysql_mysql_db_system.Test_mysql_db_system.Id,
         ///         DisplayName = @var.Replica_display_name,
+        ///         IsUpToDate = @var.Replica_is_up_to_date,
         ///         ReplicaId = oci_mysql_replica.Test_replica.Id,
         ///         State = @var.Replica_state,
         ///     });
@@ -65,8 +67,10 @@ namespace Pulumi.Oci.Mysql
         ///     var testReplicas = Oci.Mysql.GetReplicas.Invoke(new()
         ///     {
         ///         CompartmentId = @var.Compartment_id,
+        ///         ConfigurationId = oci_mysql_mysql_configuration.Test_mysql_configuration.Id,
         ///         DbSystemId = oci_mysql_mysql_db_system.Test_mysql_db_system.Id,
         ///         DisplayName = @var.Replica_display_name,
+        ///         IsUpToDate = @var.Replica_is_up_to_date,
         ///         ReplicaId = oci_mysql_replica.Test_replica.Id,
         ///         State = @var.Replica_state,
         ///     });
@@ -90,6 +94,12 @@ namespace Pulumi.Oci.Mysql
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
+        /// The requested Configuration instance.
+        /// </summary>
+        [Input("configurationId")]
+        public string? ConfigurationId { get; set; }
+
+        /// <summary>
         /// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("dbSystemId")]
@@ -108,6 +118,12 @@ namespace Pulumi.Oci.Mysql
             get => _filters ?? (_filters = new List<Inputs.GetReplicasFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// Filter instances if they are using the latest revision of the Configuration they are associated with.
+        /// </summary>
+        [Input("isUpToDate")]
+        public bool? IsUpToDate { get; set; }
 
         /// <summary>
         /// The read replica [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -136,6 +152,12 @@ namespace Pulumi.Oci.Mysql
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
+        /// The requested Configuration instance.
+        /// </summary>
+        [Input("configurationId")]
+        public Input<string>? ConfigurationId { get; set; }
+
+        /// <summary>
         /// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("dbSystemId")]
@@ -154,6 +176,12 @@ namespace Pulumi.Oci.Mysql
             get => _filters ?? (_filters = new InputList<Inputs.GetReplicasFilterInputArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// Filter instances if they are using the latest revision of the Configuration they are associated with.
+        /// </summary>
+        [Input("isUpToDate")]
+        public Input<bool>? IsUpToDate { get; set; }
 
         /// <summary>
         /// The read replica [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -182,6 +210,10 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The OCID of the Configuration to be used by the read replica.
+        /// </summary>
+        public readonly string? ConfigurationId;
+        /// <summary>
         /// The OCID of the DB System the read replica is associated with.
         /// </summary>
         public readonly string? DbSystemId;
@@ -194,6 +226,7 @@ namespace Pulumi.Oci.Mysql
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly bool? IsUpToDate;
         public readonly string? ReplicaId;
         /// <summary>
         /// The list of replicas.
@@ -208,6 +241,8 @@ namespace Pulumi.Oci.Mysql
         private GetReplicasResult(
             string compartmentId,
 
+            string? configurationId,
+
             string? dbSystemId,
 
             string? displayName,
@@ -216,6 +251,8 @@ namespace Pulumi.Oci.Mysql
 
             string id,
 
+            bool? isUpToDate,
+
             string? replicaId,
 
             ImmutableArray<Outputs.GetReplicasReplicaResult> replicas,
@@ -223,10 +260,12 @@ namespace Pulumi.Oci.Mysql
             string? state)
         {
             CompartmentId = compartmentId;
+            ConfigurationId = configurationId;
             DbSystemId = dbSystemId;
             DisplayName = displayName;
             Filters = filters;
             Id = id;
+            IsUpToDate = isUpToDate;
             ReplicaId = replicaId;
             Replicas = replicas;
             State = state;

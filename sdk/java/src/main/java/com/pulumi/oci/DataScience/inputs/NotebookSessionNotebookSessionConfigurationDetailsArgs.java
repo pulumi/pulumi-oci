@@ -48,6 +48,21 @@ public final class NotebookSessionNotebookSessionConfigurationDetailsArgs extend
     }
 
     /**
+     * (Updatable) The OCID of a Data Science private endpoint.
+     * 
+     */
+    @Import(name="privateEndpointId")
+    private @Nullable Output<String> privateEndpointId;
+
+    /**
+     * @return (Updatable) The OCID of a Data Science private endpoint.
+     * 
+     */
+    public Optional<Output<String>> privateEndpointId() {
+        return Optional.ofNullable(this.privateEndpointId);
+    }
+
+    /**
      * (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
      * 
      */
@@ -82,6 +97,7 @@ public final class NotebookSessionNotebookSessionConfigurationDetailsArgs extend
     private NotebookSessionNotebookSessionConfigurationDetailsArgs(NotebookSessionNotebookSessionConfigurationDetailsArgs $) {
         this.blockStorageSizeInGbs = $.blockStorageSizeInGbs;
         this.notebookSessionShapeConfigDetails = $.notebookSessionShapeConfigDetails;
+        this.privateEndpointId = $.privateEndpointId;
         this.shape = $.shape;
         this.subnetId = $.subnetId;
     }
@@ -144,6 +160,27 @@ public final class NotebookSessionNotebookSessionConfigurationDetailsArgs extend
          */
         public Builder notebookSessionShapeConfigDetails(NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs notebookSessionShapeConfigDetails) {
             return notebookSessionShapeConfigDetails(Output.of(notebookSessionShapeConfigDetails));
+        }
+
+        /**
+         * @param privateEndpointId (Updatable) The OCID of a Data Science private endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateEndpointId(@Nullable Output<String> privateEndpointId) {
+            $.privateEndpointId = privateEndpointId;
+            return this;
+        }
+
+        /**
+         * @param privateEndpointId (Updatable) The OCID of a Data Science private endpoint.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateEndpointId(String privateEndpointId) {
+            return privateEndpointId(Output.of(privateEndpointId));
         }
 
         /**

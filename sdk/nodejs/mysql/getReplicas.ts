@@ -19,8 +19,10 @@ import * as utilities from "../utilities";
  *
  * const testReplicas = oci.Mysql.getReplicas({
  *     compartmentId: _var.compartment_id,
+ *     configurationId: oci_mysql_mysql_configuration.test_mysql_configuration.id,
  *     dbSystemId: oci_mysql_mysql_db_system.test_mysql_db_system.id,
  *     displayName: _var.replica_display_name,
+ *     isUpToDate: _var.replica_is_up_to_date,
  *     replicaId: oci_mysql_replica.test_replica.id,
  *     state: _var.replica_state,
  * });
@@ -31,9 +33,11 @@ export function getReplicas(args: GetReplicasArgs, opts?: pulumi.InvokeOptions):
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Mysql/getReplicas:getReplicas", {
         "compartmentId": args.compartmentId,
+        "configurationId": args.configurationId,
         "dbSystemId": args.dbSystemId,
         "displayName": args.displayName,
         "filters": args.filters,
+        "isUpToDate": args.isUpToDate,
         "replicaId": args.replicaId,
         "state": args.state,
     }, opts);
@@ -48,6 +52,10 @@ export interface GetReplicasArgs {
      */
     compartmentId: string;
     /**
+     * The requested Configuration instance.
+     */
+    configurationId?: string;
+    /**
      * The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     dbSystemId?: string;
@@ -56,6 +64,10 @@ export interface GetReplicasArgs {
      */
     displayName?: string;
     filters?: inputs.Mysql.GetReplicasFilter[];
+    /**
+     * Filter instances if they are using the latest revision of the Configuration they are associated with.
+     */
+    isUpToDate?: boolean;
     /**
      * The read replica [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -75,6 +87,10 @@ export interface GetReplicasResult {
      */
     readonly compartmentId: string;
     /**
+     * The OCID of the Configuration to be used by the read replica.
+     */
+    readonly configurationId?: string;
+    /**
      * The OCID of the DB System the read replica is associated with.
      */
     readonly dbSystemId?: string;
@@ -87,6 +103,7 @@ export interface GetReplicasResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly isUpToDate?: boolean;
     readonly replicaId?: string;
     /**
      * The list of replicas.
@@ -110,8 +127,10 @@ export interface GetReplicasResult {
  *
  * const testReplicas = oci.Mysql.getReplicas({
  *     compartmentId: _var.compartment_id,
+ *     configurationId: oci_mysql_mysql_configuration.test_mysql_configuration.id,
  *     dbSystemId: oci_mysql_mysql_db_system.test_mysql_db_system.id,
  *     displayName: _var.replica_display_name,
+ *     isUpToDate: _var.replica_is_up_to_date,
  *     replicaId: oci_mysql_replica.test_replica.id,
  *     state: _var.replica_state,
  * });
@@ -130,6 +149,10 @@ export interface GetReplicasOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
+     * The requested Configuration instance.
+     */
+    configurationId?: pulumi.Input<string>;
+    /**
      * The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     dbSystemId?: pulumi.Input<string>;
@@ -138,6 +161,10 @@ export interface GetReplicasOutputArgs {
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Mysql.GetReplicasFilterArgs>[]>;
+    /**
+     * Filter instances if they are using the latest revision of the Configuration they are associated with.
+     */
+    isUpToDate?: pulumi.Input<boolean>;
     /**
      * The read replica [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

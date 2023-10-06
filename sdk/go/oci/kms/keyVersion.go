@@ -23,33 +23,6 @@ import (
 // otherwise valid request when the total rate of management write operations exceeds 10 requests per second
 // for a given tenancy.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Kms"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Kms.NewKeyVersion(ctx, "testKeyVersion", &Kms.KeyVersionArgs{
-//				KeyId:              pulumi.Any(oci_kms_key.Test_key.Id),
-//				ManagementEndpoint: pulumi.Any(_var.Key_version_management_endpoint),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // KeyVersions can be imported using the `id`, e.g.
@@ -64,7 +37,11 @@ type KeyVersion struct {
 
 	// The OCID of the compartment that contains this key version.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+	// Key reference data to be returned to the customer as a response.
+	ExternalKeyReferenceDetails KeyVersionExternalKeyReferenceDetailArrayOutput `pulumi:"externalKeyReferenceDetails"`
+	// Key version ID associated with the external key.
+	ExternalKeyVersionId pulumi.StringOutput `pulumi:"externalKeyVersionId"`
+	// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
 	IsPrimary pulumi.BoolOutput `pulumi:"isPrimary"`
 	// The OCID of the key.
 	KeyId        pulumi.StringOutput `pulumi:"keyId"`
@@ -129,7 +106,11 @@ func GetKeyVersion(ctx *pulumi.Context,
 type keyVersionState struct {
 	// The OCID of the compartment that contains this key version.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+	// Key reference data to be returned to the customer as a response.
+	ExternalKeyReferenceDetails []KeyVersionExternalKeyReferenceDetail `pulumi:"externalKeyReferenceDetails"`
+	// Key version ID associated with the external key.
+	ExternalKeyVersionId *string `pulumi:"externalKeyVersionId"`
+	// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
 	IsPrimary *bool `pulumi:"isPrimary"`
 	// The OCID of the key.
 	KeyId        *string `pulumi:"keyId"`
@@ -159,7 +140,11 @@ type keyVersionState struct {
 type KeyVersionState struct {
 	// The OCID of the compartment that contains this key version.
 	CompartmentId pulumi.StringPtrInput
-	// A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+	// Key reference data to be returned to the customer as a response.
+	ExternalKeyReferenceDetails KeyVersionExternalKeyReferenceDetailArrayInput
+	// Key version ID associated with the external key.
+	ExternalKeyVersionId pulumi.StringPtrInput
+	// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
 	IsPrimary pulumi.BoolPtrInput
 	// The OCID of the key.
 	KeyId        pulumi.StringPtrInput
@@ -191,6 +176,8 @@ func (KeyVersionState) ElementType() reflect.Type {
 }
 
 type keyVersionArgs struct {
+	// Key version ID associated with the external key.
+	ExternalKeyVersionId *string `pulumi:"externalKeyVersionId"`
 	// The OCID of the key.
 	KeyId string `pulumi:"keyId"`
 	// The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
@@ -204,6 +191,8 @@ type keyVersionArgs struct {
 
 // The set of arguments for constructing a KeyVersion resource.
 type KeyVersionArgs struct {
+	// Key version ID associated with the external key.
+	ExternalKeyVersionId pulumi.StringPtrInput
 	// The OCID of the key.
 	KeyId pulumi.StringInput
 	// The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
@@ -331,7 +320,19 @@ func (o KeyVersionOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *KeyVersion) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+// Key reference data to be returned to the customer as a response.
+func (o KeyVersionOutput) ExternalKeyReferenceDetails() KeyVersionExternalKeyReferenceDetailArrayOutput {
+	return o.ApplyT(func(v *KeyVersion) KeyVersionExternalKeyReferenceDetailArrayOutput {
+		return v.ExternalKeyReferenceDetails
+	}).(KeyVersionExternalKeyReferenceDetailArrayOutput)
+}
+
+// Key version ID associated with the external key.
+func (o KeyVersionOutput) ExternalKeyVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v *KeyVersion) pulumi.StringOutput { return v.ExternalKeyVersionId }).(pulumi.StringOutput)
+}
+
+// A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
 func (o KeyVersionOutput) IsPrimary() pulumi.BoolOutput {
 	return o.ApplyT(func(v *KeyVersion) pulumi.BoolOutput { return v.IsPrimary }).(pulumi.BoolOutput)
 }

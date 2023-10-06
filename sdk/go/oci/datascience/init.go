@@ -43,6 +43,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Pipeline{}
 	case "oci:DataScience/pipelineRun:PipelineRun":
 		r = &PipelineRun{}
+	case "oci:DataScience/privateEndpoint:PrivateEndpoint":
+		r = &PrivateEndpoint{}
 	case "oci:DataScience/project:Project":
 		r = &Project{}
 	default:
@@ -111,6 +113,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataScience/pipelineRun",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataScience/privateEndpoint",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

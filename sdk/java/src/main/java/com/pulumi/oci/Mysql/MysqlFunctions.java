@@ -1927,8 +1927,10 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testReplicas = MysqlFunctions.getReplicas(GetReplicasArgs.builder()
      *             .compartmentId(var_.compartment_id())
+     *             .configurationId(oci_mysql_mysql_configuration.test_mysql_configuration().id())
      *             .dbSystemId(oci_mysql_mysql_db_system.test_mysql_db_system().id())
      *             .displayName(var_.replica_display_name())
+     *             .isUpToDate(var_.replica_is_up_to_date())
      *             .replicaId(oci_mysql_replica.test_replica().id())
      *             .state(var_.replica_state())
      *             .build());
@@ -1970,8 +1972,10 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testReplicas = MysqlFunctions.getReplicas(GetReplicasArgs.builder()
      *             .compartmentId(var_.compartment_id())
+     *             .configurationId(oci_mysql_mysql_configuration.test_mysql_configuration().id())
      *             .dbSystemId(oci_mysql_mysql_db_system.test_mysql_db_system().id())
      *             .displayName(var_.replica_display_name())
+     *             .isUpToDate(var_.replica_is_up_to_date())
      *             .replicaId(oci_mysql_replica.test_replica().id())
      *             .state(var_.replica_state())
      *             .build());
@@ -2013,8 +2017,10 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testReplicas = MysqlFunctions.getReplicas(GetReplicasArgs.builder()
      *             .compartmentId(var_.compartment_id())
+     *             .configurationId(oci_mysql_mysql_configuration.test_mysql_configuration().id())
      *             .dbSystemId(oci_mysql_mysql_db_system.test_mysql_db_system().id())
      *             .displayName(var_.replica_display_name())
+     *             .isUpToDate(var_.replica_is_up_to_date())
      *             .replicaId(oci_mysql_replica.test_replica().id())
      *             .state(var_.replica_state())
      *             .build());
@@ -2056,8 +2062,10 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testReplicas = MysqlFunctions.getReplicas(GetReplicasArgs.builder()
      *             .compartmentId(var_.compartment_id())
+     *             .configurationId(oci_mysql_mysql_configuration.test_mysql_configuration().id())
      *             .dbSystemId(oci_mysql_mysql_db_system.test_mysql_db_system().id())
      *             .displayName(var_.replica_display_name())
+     *             .isUpToDate(var_.replica_is_up_to_date())
      *             .replicaId(oci_mysql_replica.test_replica().id())
      *             .state(var_.replica_state())
      *             .build());

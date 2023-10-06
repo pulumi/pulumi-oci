@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -67,24 +67,53 @@ class LoadBalancerArgs:
         :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]] reserved_ips: An array of reserved Ips. Pre-created public IP that will be used as the IP of this load balancer. This reserved IP will not be deleted when load balancer is deleted. This ip should not be already mapped to any other resource.
         :param pulumi.Input['LoadBalancerShapeDetailsArgs'] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "subnet_ids", subnet_ids)
+        LoadBalancerArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            shape=shape,
+            subnet_ids=subnet_ids,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            ip_mode=ip_mode,
+            is_private=is_private,
+            network_security_group_ids=network_security_group_ids,
+            reserved_ips=reserved_ips,
+            shape_details=shape_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             shape: pulumi.Input[str],
+             subnet_ids: pulumi.Input[Sequence[pulumi.Input[str]]],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             ip_mode: Optional[pulumi.Input[str]] = None,
+             is_private: Optional[pulumi.Input[bool]] = None,
+             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]] = None,
+             shape_details: Optional[pulumi.Input['LoadBalancerShapeDetailsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("shape", shape)
+        _setter("subnet_ids", subnet_ids)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if ip_mode is not None:
-            pulumi.set(__self__, "ip_mode", ip_mode)
+            _setter("ip_mode", ip_mode)
         if is_private is not None:
-            pulumi.set(__self__, "is_private", is_private)
+            _setter("is_private", is_private)
         if network_security_group_ids is not None:
-            pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+            _setter("network_security_group_ids", network_security_group_ids)
         if reserved_ips is not None:
-            pulumi.set(__self__, "reserved_ips", reserved_ips)
+            _setter("reserved_ips", reserved_ips)
         if shape_details is not None:
-            pulumi.set(__self__, "shape_details", shape_details)
+            _setter("shape_details", shape_details)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -309,41 +338,80 @@ class _LoadBalancerState:
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
+        _LoadBalancerState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            ip_address_details=ip_address_details,
+            ip_addresses=ip_addresses,
+            ip_mode=ip_mode,
+            is_private=is_private,
+            network_security_group_ids=network_security_group_ids,
+            reserved_ips=reserved_ips,
+            shape=shape,
+            shape_details=shape_details,
+            state=state,
+            subnet_ids=subnet_ids,
+            system_tags=system_tags,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             ip_address_details: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerIpAddressDetailArgs']]]] = None,
+             ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             ip_mode: Optional[pulumi.Input[str]] = None,
+             is_private: Optional[pulumi.Input[bool]] = None,
+             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             reserved_ips: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerReservedIpArgs']]]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             shape_details: Optional[pulumi.Input['LoadBalancerShapeDetailsArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if ip_address_details is not None:
-            pulumi.set(__self__, "ip_address_details", ip_address_details)
+            _setter("ip_address_details", ip_address_details)
         if ip_addresses is not None:
             warnings.warn("""The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.""", DeprecationWarning)
             pulumi.log.warn("""ip_addresses is deprecated: The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.""")
         if ip_addresses is not None:
-            pulumi.set(__self__, "ip_addresses", ip_addresses)
+            _setter("ip_addresses", ip_addresses)
         if ip_mode is not None:
-            pulumi.set(__self__, "ip_mode", ip_mode)
+            _setter("ip_mode", ip_mode)
         if is_private is not None:
-            pulumi.set(__self__, "is_private", is_private)
+            _setter("is_private", is_private)
         if network_security_group_ids is not None:
-            pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+            _setter("network_security_group_ids", network_security_group_ids)
         if reserved_ips is not None:
-            pulumi.set(__self__, "reserved_ips", reserved_ips)
+            _setter("reserved_ips", reserved_ips)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if shape_details is not None:
-            pulumi.set(__self__, "shape_details", shape_details)
+            _setter("shape_details", shape_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subnet_ids is not None:
-            pulumi.set(__self__, "subnet_ids", subnet_ids)
+            _setter("subnet_ids", subnet_ids)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -778,6 +846,10 @@ class LoadBalancer(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            LoadBalancerArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -818,6 +890,11 @@ class LoadBalancer(pulumi.CustomResource):
             if shape is None and not opts.urn:
                 raise TypeError("Missing required property 'shape'")
             __props__.__dict__["shape"] = shape
+            if shape_details is not None and not isinstance(shape_details, LoadBalancerShapeDetailsArgs):
+                shape_details = shape_details or {}
+                def _setter(key, value):
+                    shape_details[key] = value
+                LoadBalancerShapeDetailsArgs._configure(_setter, **shape_details)
             __props__.__dict__["shape_details"] = shape_details
             if subnet_ids is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_ids'")

@@ -187,9 +187,6 @@ namespace Pulumi.Oci.GoldenGate
         [Output("publicIpAddress")]
         public Output<string> PublicIpAddress { get; private set; } = null!;
 
-        /// <summary>
-        /// Possible lifecycle states.
-        /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
@@ -401,9 +398,6 @@ namespace Pulumi.Oci.GoldenGate
         [Input("oggData")]
         public Input<Inputs.DeploymentOggDataArgs>? OggData { get; set; }
 
-        /// <summary>
-        /// Possible lifecycle states.
-        /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
@@ -607,9 +601,6 @@ namespace Pulumi.Oci.GoldenGate
         [Input("publicIpAddress")]
         public Input<string>? PublicIpAddress { get; set; }
 
-        /// <summary>
-        /// Possible lifecycle states.
-        /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 

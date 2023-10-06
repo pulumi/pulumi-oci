@@ -105,7 +105,7 @@ type FileSystem struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
 	//
 	// May be unset as a blank value.
-	FilesystemSnapshotPolicyId pulumi.StringOutput `pulumi:"filesystemSnapshotPolicyId"`
+	FilesystemSnapshotPolicyId pulumi.StringPtrOutput `pulumi:"filesystemSnapshotPolicyId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
@@ -441,8 +441,8 @@ func (o FileSystemOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
 //
 // May be unset as a blank value.
-func (o FileSystemOutput) FilesystemSnapshotPolicyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *FileSystem) pulumi.StringOutput { return v.FilesystemSnapshotPolicyId }).(pulumi.StringOutput)
+func (o FileSystemOutput) FilesystemSnapshotPolicyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FileSystem) pulumi.StringPtrOutput { return v.FilesystemSnapshotPolicyId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`

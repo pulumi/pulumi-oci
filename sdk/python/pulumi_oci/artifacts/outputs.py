@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -48,8 +48,19 @@ class ContainerRepositoryReadme(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "format", format)
+        ContainerRepositoryReadme._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            content=content,
+            format=format,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             content: str,
+             format: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("content", content)
+        _setter("format", format)
 
     @property
     @pulumi.getter
@@ -83,9 +94,22 @@ class GetContainerImageLayerResult(dict):
         :param str size_in_bytes: The size of the layer in bytes.
         :param str time_created: The creation time of the version.
         """
-        pulumi.set(__self__, "digest", digest)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "time_created", time_created)
+        GetContainerImageLayerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            digest=digest,
+            size_in_bytes=size_in_bytes,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             digest: str,
+             size_in_bytes: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("digest", digest)
+        _setter("size_in_bytes", size_in_bytes)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter
@@ -123,9 +147,22 @@ class GetContainerImageVersionResult(dict):
         :param str time_created: The creation time of the version.
         :param str version: The version name.
         """
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "version", version)
+        GetContainerImageVersionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            created_by=created_by,
+            time_created=time_created,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             created_by: str,
+             time_created: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("created_by", created_by)
+        _setter("time_created", time_created)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="createdBy")
@@ -157,8 +194,19 @@ class GetContainerImagesContainerImageCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetContainerImagesContainerImageCollectionItemResult'],
                  remaining_items_count: int):
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "remaining_items_count", remaining_items_count)
+        GetContainerImagesContainerImageCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            remaining_items_count=remaining_items_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetContainerImagesContainerImageCollectionItemResult'],
+             remaining_items_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
+        _setter("remaining_items_count", remaining_items_count)
 
     @property
     @pulumi.getter
@@ -214,25 +262,70 @@ class GetContainerImagesContainerImageCollectionItemResult(dict):
         :param str version: A filter to return container images that match the version.  Example: `foo` or `foo*`
         :param Sequence['GetContainerImagesContainerImageCollectionItemVersionArgs'] versions: The versions associated with this image.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "digest", digest)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "layers", layers)
-        pulumi.set(__self__, "layers_size_in_bytes", layers_size_in_bytes)
-        pulumi.set(__self__, "manifest_size_in_bytes", manifest_size_in_bytes)
-        pulumi.set(__self__, "pull_count", pull_count)
-        pulumi.set(__self__, "repository_id", repository_id)
-        pulumi.set(__self__, "repository_name", repository_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_pulled", time_last_pulled)
-        pulumi.set(__self__, "version", version)
-        pulumi.set(__self__, "versions", versions)
+        GetContainerImagesContainerImageCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            digest=digest,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            layers=layers,
+            layers_size_in_bytes=layers_size_in_bytes,
+            manifest_size_in_bytes=manifest_size_in_bytes,
+            pull_count=pull_count,
+            repository_id=repository_id,
+            repository_name=repository_name,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_last_pulled=time_last_pulled,
+            version=version,
+            versions=versions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             created_by: str,
+             defined_tags: Mapping[str, Any],
+             digest: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             layers: Sequence['outputs.GetContainerImagesContainerImageCollectionItemLayerResult'],
+             layers_size_in_bytes: str,
+             manifest_size_in_bytes: int,
+             pull_count: str,
+             repository_id: str,
+             repository_name: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_last_pulled: str,
+             version: str,
+             versions: Sequence['outputs.GetContainerImagesContainerImageCollectionItemVersionResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("created_by", created_by)
+        _setter("defined_tags", defined_tags)
+        _setter("digest", digest)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("layers", layers)
+        _setter("layers_size_in_bytes", layers_size_in_bytes)
+        _setter("manifest_size_in_bytes", manifest_size_in_bytes)
+        _setter("pull_count", pull_count)
+        _setter("repository_id", repository_id)
+        _setter("repository_name", repository_name)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_last_pulled", time_last_pulled)
+        _setter("version", version)
+        _setter("versions", versions)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -398,9 +491,22 @@ class GetContainerImagesContainerImageCollectionItemLayerResult(dict):
         :param str size_in_bytes: The size of the layer in bytes.
         :param str time_created: The creation time of the version.
         """
-        pulumi.set(__self__, "digest", digest)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "time_created", time_created)
+        GetContainerImagesContainerImageCollectionItemLayerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            digest=digest,
+            size_in_bytes=size_in_bytes,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             digest: str,
+             size_in_bytes: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("digest", digest)
+        _setter("size_in_bytes", size_in_bytes)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter
@@ -438,9 +544,22 @@ class GetContainerImagesContainerImageCollectionItemVersionResult(dict):
         :param str time_created: The creation time of the version.
         :param str version: A filter to return container images that match the version.  Example: `foo` or `foo*`
         """
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "version", version)
+        GetContainerImagesContainerImageCollectionItemVersionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            created_by=created_by,
+            time_created=time_created,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             created_by: str,
+             time_created: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("created_by", created_by)
+        _setter("time_created", time_created)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="createdBy")
@@ -473,10 +592,23 @@ class GetContainerImagesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetContainerImagesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -508,12 +640,31 @@ class GetContainerRepositoriesContainerRepositoryCollectionResult(dict):
         :param int layer_count: Total number of layers.
         :param str layers_size_in_bytes: Total storage in bytes consumed by layers.
         """
-        pulumi.set(__self__, "image_count", image_count)
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "layer_count", layer_count)
-        pulumi.set(__self__, "layers_size_in_bytes", layers_size_in_bytes)
-        pulumi.set(__self__, "remaining_items_count", remaining_items_count)
-        pulumi.set(__self__, "repository_count", repository_count)
+        GetContainerRepositoriesContainerRepositoryCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            image_count=image_count,
+            items=items,
+            layer_count=layer_count,
+            layers_size_in_bytes=layers_size_in_bytes,
+            remaining_items_count=remaining_items_count,
+            repository_count=repository_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             image_count: int,
+             items: Sequence['outputs.GetContainerRepositoriesContainerRepositoryCollectionItemResult'],
+             layer_count: int,
+             layers_size_in_bytes: str,
+             remaining_items_count: int,
+             repository_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("image_count", image_count)
+        _setter("items", items)
+        _setter("layer_count", layer_count)
+        _setter("layers_size_in_bytes", layers_size_in_bytes)
+        _setter("remaining_items_count", remaining_items_count)
+        _setter("repository_count", repository_count)
 
     @property
     @pulumi.getter(name="imageCount")
@@ -596,24 +747,67 @@ class GetContainerRepositoriesContainerRepositoryCollectionItemResult(dict):
         :param str time_created: An RFC 3339 timestamp indicating when the repository was created.
         :param str time_last_pushed: An RFC 3339 timestamp indicating when an image was last pushed to the repository.
         """
-        pulumi.set(__self__, "billable_size_in_gbs", billable_size_in_gbs)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "image_count", image_count)
-        pulumi.set(__self__, "is_immutable", is_immutable)
-        pulumi.set(__self__, "is_public", is_public)
-        pulumi.set(__self__, "layer_count", layer_count)
-        pulumi.set(__self__, "layers_size_in_bytes", layers_size_in_bytes)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "readmes", readmes)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_pushed", time_last_pushed)
+        GetContainerRepositoriesContainerRepositoryCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            billable_size_in_gbs=billable_size_in_gbs,
+            compartment_id=compartment_id,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            image_count=image_count,
+            is_immutable=is_immutable,
+            is_public=is_public,
+            layer_count=layer_count,
+            layers_size_in_bytes=layers_size_in_bytes,
+            namespace=namespace,
+            readmes=readmes,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_last_pushed=time_last_pushed,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             billable_size_in_gbs: str,
+             compartment_id: str,
+             created_by: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             image_count: int,
+             is_immutable: bool,
+             is_public: bool,
+             layer_count: int,
+             layers_size_in_bytes: str,
+             namespace: str,
+             readmes: Sequence['outputs.GetContainerRepositoriesContainerRepositoryCollectionItemReadmeResult'],
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_last_pushed: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("billable_size_in_gbs", billable_size_in_gbs)
+        _setter("compartment_id", compartment_id)
+        _setter("created_by", created_by)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("image_count", image_count)
+        _setter("is_immutable", is_immutable)
+        _setter("is_public", is_public)
+        _setter("layer_count", layer_count)
+        _setter("layers_size_in_bytes", layers_size_in_bytes)
+        _setter("namespace", namespace)
+        _setter("readmes", readmes)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_last_pushed", time_last_pushed)
 
     @property
     @pulumi.getter(name="billableSizeInGbs")
@@ -769,8 +963,19 @@ class GetContainerRepositoriesContainerRepositoryCollectionItemReadmeResult(dict
         :param str content: Readme content. Avoid entering confidential information.
         :param str format: Readme format. Supported formats are text/plain and text/markdown.
         """
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "format", format)
+        GetContainerRepositoriesContainerRepositoryCollectionItemReadmeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            content=content,
+            format=format,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             content: str,
+             format: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("content", content)
+        _setter("format", format)
 
     @property
     @pulumi.getter
@@ -795,10 +1000,23 @@ class GetContainerRepositoriesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetContainerRepositoriesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -825,8 +1043,19 @@ class GetContainerRepositoryReadmeResult(dict):
         :param str content: Readme content. Avoid entering confidential information.
         :param str format: Readme format. Supported formats are text/plain and text/markdown.
         """
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "format", format)
+        GetContainerRepositoryReadmeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            content=content,
+            format=format,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             content: str,
+             format: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("content", content)
+        _setter("format", format)
 
     @property
     @pulumi.getter
@@ -850,8 +1079,19 @@ class GetContainerSignaturesContainerImageSignatureCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetContainerSignaturesContainerImageSignatureCollectionItemResult'],
                  remaining_items_count: int):
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "remaining_items_count", remaining_items_count)
+        GetContainerSignaturesContainerImageSignatureCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            remaining_items_count=remaining_items_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetContainerSignaturesContainerImageSignatureCollectionItemResult'],
+             remaining_items_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
+        _setter("remaining_items_count", remaining_items_count)
 
     @property
     @pulumi.getter
@@ -899,21 +1139,58 @@ class GetContainerSignaturesContainerImageSignatureCollectionItemResult(dict):
         :param Mapping[str, Any] system_tags: The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: An RFC 3339 timestamp indicating when the image was created.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "image_id", image_id)
-        pulumi.set(__self__, "kms_key_id", kms_key_id)
-        pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "signature", signature)
-        pulumi.set(__self__, "signing_algorithm", signing_algorithm)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
+        GetContainerSignaturesContainerImageSignatureCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            image_id=image_id,
+            kms_key_id=kms_key_id,
+            kms_key_version_id=kms_key_version_id,
+            message=message,
+            signature=signature,
+            signing_algorithm=signing_algorithm,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             created_by: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             image_id: str,
+             kms_key_id: str,
+             kms_key_version_id: str,
+             message: str,
+             signature: str,
+             signing_algorithm: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("created_by", created_by)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("image_id", image_id)
+        _setter("kms_key_id", kms_key_id)
+        _setter("kms_key_version_id", kms_key_version_id)
+        _setter("message", message)
+        _setter("signature", signature)
+        _setter("signing_algorithm", signing_algorithm)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1042,10 +1319,23 @@ class GetContainerSignaturesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetContainerSignaturesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1069,10 +1359,23 @@ class GetGenericArtifactsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetGenericArtifactsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1094,7 +1397,16 @@ class GetGenericArtifactsFilterResult(dict):
 class GetGenericArtifactsGenericArtifactCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetGenericArtifactsGenericArtifactCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetGenericArtifactsGenericArtifactCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetGenericArtifactsGenericArtifactCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1132,19 +1444,52 @@ class GetGenericArtifactsGenericArtifactCollectionItemResult(dict):
         :param str time_created: An RFC 3339 timestamp indicating when the repository was created.
         :param str version: Filter results by a prefix for `version` and return artifacts that that begin with the specified prefix in their version.
         """
-        pulumi.set(__self__, "artifact_id", artifact_id)
-        pulumi.set(__self__, "artifact_path", artifact_path)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "repository_id", repository_id)
-        pulumi.set(__self__, "sha256", sha256)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "version", version)
+        GetGenericArtifactsGenericArtifactCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            artifact_id=artifact_id,
+            artifact_path=artifact_path,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            repository_id=repository_id,
+            sha256=sha256,
+            size_in_bytes=size_in_bytes,
+            state=state,
+            time_created=time_created,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             artifact_id: str,
+             artifact_path: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             repository_id: str,
+             sha256: str,
+             size_in_bytes: str,
+             state: str,
+             time_created: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("artifact_id", artifact_id)
+        _setter("artifact_path", artifact_path)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("repository_id", repository_id)
+        _setter("sha256", sha256)
+        _setter("size_in_bytes", size_in_bytes)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="artifactId")
@@ -1254,10 +1599,23 @@ class GetRepositoriesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetRepositoriesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1279,7 +1637,16 @@ class GetRepositoriesFilterResult(dict):
 class GetRepositoriesRepositoryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetRepositoriesRepositoryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetRepositoriesRepositoryCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetRepositoriesRepositoryCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1312,16 +1679,43 @@ class GetRepositoriesRepositoryCollectionItemResult(dict):
         :param str state: A filter to return only resources that match the given lifecycle state name exactly.
         :param str time_created: An RFC 3339 timestamp indicating when the repository was created.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_immutable", is_immutable)
-        pulumi.set(__self__, "repository_type", repository_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetRepositoriesRepositoryCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_immutable=is_immutable,
+            repository_type=repository_type,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_immutable: bool,
+             repository_type: str,
+             state: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_immutable", is_immutable)
+        _setter("repository_type", repository_type)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")

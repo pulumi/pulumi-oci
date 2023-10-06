@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -46,22 +46,47 @@ class ZoneArgs:
                This value will be null for zones in the global DNS and `PRIVATE` when creating a private zone.
         :param pulumi.Input[str] view_id: The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "zone_type", zone_type)
+        ZoneArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            zone_type=zone_type,
+            defined_tags=defined_tags,
+            external_downstreams=external_downstreams,
+            external_masters=external_masters,
+            freeform_tags=freeform_tags,
+            name=name,
+            scope=scope,
+            view_id=view_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             zone_type: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]] = None,
+             external_masters: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalMasterArgs']]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             scope: Optional[pulumi.Input[str]] = None,
+             view_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("zone_type", zone_type)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if external_downstreams is not None:
-            pulumi.set(__self__, "external_downstreams", external_downstreams)
+            _setter("external_downstreams", external_downstreams)
         if external_masters is not None:
-            pulumi.set(__self__, "external_masters", external_masters)
+            _setter("external_masters", external_masters)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if scope is not None:
-            pulumi.set(__self__, "scope", scope)
+            _setter("scope", scope)
         if view_id is not None:
-            pulumi.set(__self__, "view_id", view_id)
+            _setter("view_id", view_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -230,40 +255,81 @@ class _ZoneState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _ZoneState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            external_downstreams=external_downstreams,
+            external_masters=external_masters,
+            freeform_tags=freeform_tags,
+            is_protected=is_protected,
+            name=name,
+            nameservers=nameservers,
+            scope=scope,
+            self=self,
+            serial=serial,
+            state=state,
+            time_created=time_created,
+            version=version,
+            view_id=view_id,
+            zone_transfer_servers=zone_transfer_servers,
+            zone_type=zone_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalDownstreamArgs']]]] = None,
+             external_masters: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneExternalMasterArgs']]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_protected: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             nameservers: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneNameserverArgs']]]] = None,
+             scope: Optional[pulumi.Input[str]] = None,
+             self: Optional[pulumi.Input[str]] = None,
+             serial: Optional[pulumi.Input[int]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[str]] = None,
+             view_id: Optional[pulumi.Input[str]] = None,
+             zone_transfer_servers: Optional[pulumi.Input[Sequence[pulumi.Input['ZoneZoneTransferServerArgs']]]] = None,
+             zone_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if external_downstreams is not None:
-            pulumi.set(__self__, "external_downstreams", external_downstreams)
+            _setter("external_downstreams", external_downstreams)
         if external_masters is not None:
-            pulumi.set(__self__, "external_masters", external_masters)
+            _setter("external_masters", external_masters)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_protected is not None:
-            pulumi.set(__self__, "is_protected", is_protected)
+            _setter("is_protected", is_protected)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if nameservers is not None:
-            pulumi.set(__self__, "nameservers", nameservers)
+            _setter("nameservers", nameservers)
         if scope is not None:
-            pulumi.set(__self__, "scope", scope)
+            _setter("scope", scope)
         if self is not None:
-            pulumi.set(__self__, "self", self)
+            _setter("self", self)
         if serial is not None:
-            pulumi.set(__self__, "serial", serial)
+            _setter("serial", serial)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
         if view_id is not None:
-            pulumi.set(__self__, "view_id", view_id)
+            _setter("view_id", view_id)
         if zone_transfer_servers is not None:
-            pulumi.set(__self__, "zone_transfer_servers", zone_transfer_servers)
+            _setter("zone_transfer_servers", zone_transfer_servers)
         if zone_type is not None:
-            pulumi.set(__self__, "zone_type", zone_type)
+            _setter("zone_type", zone_type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -615,6 +681,10 @@ class Zone(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ZoneArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

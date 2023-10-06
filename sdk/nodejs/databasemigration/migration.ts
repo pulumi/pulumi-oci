@@ -229,6 +229,7 @@ export class Migration extends pulumi.CustomResource {
      * (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
      */
     public readonly dataTransferMediumDetails!: pulumi.Output<outputs.DatabaseMigration.MigrationDataTransferMediumDetails>;
+    public readonly dataTransferMediumDetailsV2!: pulumi.Output<outputs.DatabaseMigration.MigrationDataTransferMediumDetailsV2>;
     /**
      * (Updatable) Optional settings for Data Pump Export and Import jobs
      */
@@ -337,6 +338,7 @@ export class Migration extends pulumi.CustomResource {
             resourceInputs["credentialsSecretId"] = state ? state.credentialsSecretId : undefined;
             resourceInputs["csvText"] = state ? state.csvText : undefined;
             resourceInputs["dataTransferMediumDetails"] = state ? state.dataTransferMediumDetails : undefined;
+            resourceInputs["dataTransferMediumDetailsV2"] = state ? state.dataTransferMediumDetailsV2 : undefined;
             resourceInputs["datapumpSettings"] = state ? state.datapumpSettings : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
@@ -378,6 +380,7 @@ export class Migration extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["csvText"] = args ? args.csvText : undefined;
             resourceInputs["dataTransferMediumDetails"] = args ? args.dataTransferMediumDetails : undefined;
+            resourceInputs["dataTransferMediumDetailsV2"] = args ? args.dataTransferMediumDetailsV2 : undefined;
             resourceInputs["datapumpSettings"] = args ? args.datapumpSettings : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
@@ -435,6 +438,7 @@ export interface MigrationState {
      * (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
      */
     dataTransferMediumDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetails>;
+    dataTransferMediumDetailsV2?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetailsV2>;
     /**
      * (Updatable) Optional settings for Data Pump Export and Import jobs
      */
@@ -549,6 +553,7 @@ export interface MigrationArgs {
      * (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
      */
     dataTransferMediumDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetails>;
+    dataTransferMediumDetailsV2?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetailsV2>;
     /**
      * (Updatable) Optional settings for Data Pump Export and Import jobs
      */

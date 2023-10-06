@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -121,25 +121,54 @@ class DomainsMyUserDbCredentialArgs:
                * type: complex
                * uniqueness: none
         """
-        pulumi.set(__self__, "db_password", db_password)
-        pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
-        pulumi.set(__self__, "schemas", schemas)
+        DomainsMyUserDbCredentialArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            db_password=db_password,
+            idcs_endpoint=idcs_endpoint,
+            schemas=schemas,
+            authorization=authorization,
+            description=description,
+            expires_on=expires_on,
+            ocid=ocid,
+            resource_type_schema_version=resource_type_schema_version,
+            status=status,
+            tags=tags,
+            user=user,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             db_password: pulumi.Input[str],
+             idcs_endpoint: pulumi.Input[str],
+             schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
+             authorization: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             expires_on: Optional[pulumi.Input[str]] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyUserDbCredentialTagArgs']]]] = None,
+             user: Optional[pulumi.Input['DomainsMyUserDbCredentialUserArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("db_password", db_password)
+        _setter("idcs_endpoint", idcs_endpoint)
+        _setter("schemas", schemas)
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if expires_on is not None:
-            pulumi.set(__self__, "expires_on", expires_on)
+            _setter("expires_on", expires_on)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if user is not None:
-            pulumi.set(__self__, "user", user)
+            _setter("user", user)
 
     @property
     @pulumi.getter(name="dbPassword")
@@ -615,58 +644,117 @@ class _DomainsMyUserDbCredentialState:
                * type: complex
                * uniqueness: none
         """
+        _DomainsMyUserDbCredentialState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authorization=authorization,
+            compartment_ocid=compartment_ocid,
+            db_password=db_password,
+            delete_in_progress=delete_in_progress,
+            description=description,
+            domain_ocid=domain_ocid,
+            expired=expired,
+            expires_on=expires_on,
+            idcs_created_bies=idcs_created_bies,
+            idcs_endpoint=idcs_endpoint,
+            idcs_last_modified_bies=idcs_last_modified_bies,
+            idcs_last_upgraded_in_release=idcs_last_upgraded_in_release,
+            idcs_prevented_operations=idcs_prevented_operations,
+            last_set_date=last_set_date,
+            metas=metas,
+            mixed_db_password=mixed_db_password,
+            mixed_salt=mixed_salt,
+            name=name,
+            ocid=ocid,
+            resource_type_schema_version=resource_type_schema_version,
+            salt=salt,
+            schemas=schemas,
+            status=status,
+            tags=tags,
+            tenancy_ocid=tenancy_ocid,
+            user=user,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authorization: Optional[pulumi.Input[str]] = None,
+             compartment_ocid: Optional[pulumi.Input[str]] = None,
+             db_password: Optional[pulumi.Input[str]] = None,
+             delete_in_progress: Optional[pulumi.Input[bool]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             domain_ocid: Optional[pulumi.Input[str]] = None,
+             expired: Optional[pulumi.Input[bool]] = None,
+             expires_on: Optional[pulumi.Input[str]] = None,
+             idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyUserDbCredentialIdcsCreatedByArgs']]]] = None,
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyUserDbCredentialIdcsLastModifiedByArgs']]]] = None,
+             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
+             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             last_set_date: Optional[pulumi.Input[str]] = None,
+             metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyUserDbCredentialMetaArgs']]]] = None,
+             mixed_db_password: Optional[pulumi.Input[str]] = None,
+             mixed_salt: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             salt: Optional[pulumi.Input[str]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyUserDbCredentialTagArgs']]]] = None,
+             tenancy_ocid: Optional[pulumi.Input[str]] = None,
+             user: Optional[pulumi.Input['DomainsMyUserDbCredentialUserArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if compartment_ocid is not None:
-            pulumi.set(__self__, "compartment_ocid", compartment_ocid)
+            _setter("compartment_ocid", compartment_ocid)
         if db_password is not None:
-            pulumi.set(__self__, "db_password", db_password)
+            _setter("db_password", db_password)
         if delete_in_progress is not None:
-            pulumi.set(__self__, "delete_in_progress", delete_in_progress)
+            _setter("delete_in_progress", delete_in_progress)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if domain_ocid is not None:
-            pulumi.set(__self__, "domain_ocid", domain_ocid)
+            _setter("domain_ocid", domain_ocid)
         if expired is not None:
-            pulumi.set(__self__, "expired", expired)
+            _setter("expired", expired)
         if expires_on is not None:
-            pulumi.set(__self__, "expires_on", expires_on)
+            _setter("expires_on", expires_on)
         if idcs_created_bies is not None:
-            pulumi.set(__self__, "idcs_created_bies", idcs_created_bies)
+            _setter("idcs_created_bies", idcs_created_bies)
         if idcs_endpoint is not None:
-            pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
+            _setter("idcs_endpoint", idcs_endpoint)
         if idcs_last_modified_bies is not None:
-            pulumi.set(__self__, "idcs_last_modified_bies", idcs_last_modified_bies)
+            _setter("idcs_last_modified_bies", idcs_last_modified_bies)
         if idcs_last_upgraded_in_release is not None:
-            pulumi.set(__self__, "idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
+            _setter("idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
         if idcs_prevented_operations is not None:
-            pulumi.set(__self__, "idcs_prevented_operations", idcs_prevented_operations)
+            _setter("idcs_prevented_operations", idcs_prevented_operations)
         if last_set_date is not None:
-            pulumi.set(__self__, "last_set_date", last_set_date)
+            _setter("last_set_date", last_set_date)
         if metas is not None:
-            pulumi.set(__self__, "metas", metas)
+            _setter("metas", metas)
         if mixed_db_password is not None:
-            pulumi.set(__self__, "mixed_db_password", mixed_db_password)
+            _setter("mixed_db_password", mixed_db_password)
         if mixed_salt is not None:
-            pulumi.set(__self__, "mixed_salt", mixed_salt)
+            _setter("mixed_salt", mixed_salt)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if salt is not None:
-            pulumi.set(__self__, "salt", salt)
+            _setter("salt", salt)
         if schemas is not None:
-            pulumi.set(__self__, "schemas", schemas)
+            _setter("schemas", schemas)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if tenancy_ocid is not None:
-            pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
+            _setter("tenancy_ocid", tenancy_ocid)
         if user is not None:
-            pulumi.set(__self__, "user", user)
+            _setter("user", user)
 
     @property
     @pulumi.getter
@@ -1337,6 +1425,10 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DomainsMyUserDbCredentialArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1378,6 +1470,11 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
             __props__.__dict__["schemas"] = schemas
             __props__.__dict__["status"] = status
             __props__.__dict__["tags"] = tags
+            if user is not None and not isinstance(user, DomainsMyUserDbCredentialUserArgs):
+                user = user or {}
+                def _setter(key, value):
+                    user[key] = value
+                DomainsMyUserDbCredentialUserArgs._configure(_setter, **user)
             __props__.__dict__["user"] = user
             __props__.__dict__["compartment_ocid"] = None
             __props__.__dict__["delete_in_progress"] = None

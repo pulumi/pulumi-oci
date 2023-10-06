@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -43,20 +43,43 @@ class DetectorRecipeArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
+        DetectorRecipeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            defined_tags=defined_tags,
+            description=description,
+            detector=detector,
+            detector_rules=detector_rules,
+            freeform_tags=freeform_tags,
+            source_detector_recipe_id=source_detector_recipe_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             detector: Optional[pulumi.Input[str]] = None,
+             detector_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleArgs']]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             source_detector_recipe_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if detector is not None:
-            pulumi.set(__self__, "detector", detector)
+            _setter("detector", detector)
         if detector_rules is not None:
-            pulumi.set(__self__, "detector_rules", detector_rules)
+            _setter("detector_rules", detector_rules)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if source_detector_recipe_id is not None:
-            pulumi.set(__self__, "source_detector_recipe_id", source_detector_recipe_id)
+            _setter("source_detector_recipe_id", source_detector_recipe_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -207,36 +230,73 @@ class _DetectorRecipeState:
         :param pulumi.Input[str] time_created: The date and time the detector recipe was created. Format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the detector recipe was updated. Format defined by RFC3339.
         """
+        _DetectorRecipeState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            detector=detector,
+            detector_rules=detector_rules,
+            display_name=display_name,
+            effective_detector_rules=effective_detector_rules,
+            freeform_tags=freeform_tags,
+            owner=owner,
+            source_detector_recipe_id=source_detector_recipe_id,
+            state=state,
+            system_tags=system_tags,
+            target_ids=target_ids,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             detector: Optional[pulumi.Input[str]] = None,
+             detector_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleArgs']]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             effective_detector_rules: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleArgs']]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             owner: Optional[pulumi.Input[str]] = None,
+             source_detector_recipe_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if detector is not None:
-            pulumi.set(__self__, "detector", detector)
+            _setter("detector", detector)
         if detector_rules is not None:
-            pulumi.set(__self__, "detector_rules", detector_rules)
+            _setter("detector_rules", detector_rules)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if effective_detector_rules is not None:
-            pulumi.set(__self__, "effective_detector_rules", effective_detector_rules)
+            _setter("effective_detector_rules", effective_detector_rules)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if source_detector_recipe_id is not None:
-            pulumi.set(__self__, "source_detector_recipe_id", source_detector_recipe_id)
+            _setter("source_detector_recipe_id", source_detector_recipe_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if target_ids is not None:
-            pulumi.set(__self__, "target_ids", target_ids)
+            _setter("target_ids", target_ids)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -502,6 +562,10 @@ class DetectorRecipe(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DetectorRecipeArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

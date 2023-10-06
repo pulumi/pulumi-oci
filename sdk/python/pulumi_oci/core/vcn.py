@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -59,27 +59,56 @@ class VcnArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
+        VcnArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            byoipv6cidr_details=byoipv6cidr_details,
+            cidr_block=cidr_block,
+            cidr_blocks=cidr_blocks,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            dns_label=dns_label,
+            freeform_tags=freeform_tags,
+            ipv6private_cidr_blocks=ipv6private_cidr_blocks,
+            is_ipv6enabled=is_ipv6enabled,
+            is_oracle_gua_allocation_enabled=is_oracle_gua_allocation_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             byoipv6cidr_details: Optional[pulumi.Input[Sequence[pulumi.Input['VcnByoipv6cidrDetailArgs']]]] = None,
+             cidr_block: Optional[pulumi.Input[str]] = None,
+             cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             dns_label: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             ipv6private_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             is_ipv6enabled: Optional[pulumi.Input[bool]] = None,
+             is_oracle_gua_allocation_enabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
         if byoipv6cidr_details is not None:
-            pulumi.set(__self__, "byoipv6cidr_details", byoipv6cidr_details)
+            _setter("byoipv6cidr_details", byoipv6cidr_details)
         if cidr_block is not None:
-            pulumi.set(__self__, "cidr_block", cidr_block)
+            _setter("cidr_block", cidr_block)
         if cidr_blocks is not None:
-            pulumi.set(__self__, "cidr_blocks", cidr_blocks)
+            _setter("cidr_blocks", cidr_blocks)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if dns_label is not None:
-            pulumi.set(__self__, "dns_label", dns_label)
+            _setter("dns_label", dns_label)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if ipv6private_cidr_blocks is not None:
-            pulumi.set(__self__, "ipv6private_cidr_blocks", ipv6private_cidr_blocks)
+            _setter("ipv6private_cidr_blocks", ipv6private_cidr_blocks)
         if is_ipv6enabled is not None:
-            pulumi.set(__self__, "is_ipv6enabled", is_ipv6enabled)
+            _setter("is_ipv6enabled", is_ipv6enabled)
         if is_oracle_gua_allocation_enabled is not None:
-            pulumi.set(__self__, "is_oracle_gua_allocation_enabled", is_oracle_gua_allocation_enabled)
+            _setter("is_oracle_gua_allocation_enabled", is_oracle_gua_allocation_enabled)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -294,44 +323,89 @@ class _VcnState:
         :param pulumi.Input[str] time_created: The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] vcn_domain_name: The VCN's domain name, which consists of the VCN's DNS label, and the `oraclevcn.com` domain.
         """
+        _VcnState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            byoipv6cidr_blocks=byoipv6cidr_blocks,
+            byoipv6cidr_details=byoipv6cidr_details,
+            cidr_block=cidr_block,
+            cidr_blocks=cidr_blocks,
+            compartment_id=compartment_id,
+            default_dhcp_options_id=default_dhcp_options_id,
+            default_route_table_id=default_route_table_id,
+            default_security_list_id=default_security_list_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            dns_label=dns_label,
+            freeform_tags=freeform_tags,
+            ipv6cidr_blocks=ipv6cidr_blocks,
+            ipv6private_cidr_blocks=ipv6private_cidr_blocks,
+            is_ipv6enabled=is_ipv6enabled,
+            is_oracle_gua_allocation_enabled=is_oracle_gua_allocation_enabled,
+            state=state,
+            time_created=time_created,
+            vcn_domain_name=vcn_domain_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             byoipv6cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             byoipv6cidr_details: Optional[pulumi.Input[Sequence[pulumi.Input['VcnByoipv6cidrDetailArgs']]]] = None,
+             cidr_block: Optional[pulumi.Input[str]] = None,
+             cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             default_dhcp_options_id: Optional[pulumi.Input[str]] = None,
+             default_route_table_id: Optional[pulumi.Input[str]] = None,
+             default_security_list_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             dns_label: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             ipv6cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             ipv6private_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             is_ipv6enabled: Optional[pulumi.Input[bool]] = None,
+             is_oracle_gua_allocation_enabled: Optional[pulumi.Input[bool]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             vcn_domain_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if byoipv6cidr_blocks is not None:
-            pulumi.set(__self__, "byoipv6cidr_blocks", byoipv6cidr_blocks)
+            _setter("byoipv6cidr_blocks", byoipv6cidr_blocks)
         if byoipv6cidr_details is not None:
-            pulumi.set(__self__, "byoipv6cidr_details", byoipv6cidr_details)
+            _setter("byoipv6cidr_details", byoipv6cidr_details)
         if cidr_block is not None:
-            pulumi.set(__self__, "cidr_block", cidr_block)
+            _setter("cidr_block", cidr_block)
         if cidr_blocks is not None:
-            pulumi.set(__self__, "cidr_blocks", cidr_blocks)
+            _setter("cidr_blocks", cidr_blocks)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if default_dhcp_options_id is not None:
-            pulumi.set(__self__, "default_dhcp_options_id", default_dhcp_options_id)
+            _setter("default_dhcp_options_id", default_dhcp_options_id)
         if default_route_table_id is not None:
-            pulumi.set(__self__, "default_route_table_id", default_route_table_id)
+            _setter("default_route_table_id", default_route_table_id)
         if default_security_list_id is not None:
-            pulumi.set(__self__, "default_security_list_id", default_security_list_id)
+            _setter("default_security_list_id", default_security_list_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if dns_label is not None:
-            pulumi.set(__self__, "dns_label", dns_label)
+            _setter("dns_label", dns_label)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if ipv6cidr_blocks is not None:
-            pulumi.set(__self__, "ipv6cidr_blocks", ipv6cidr_blocks)
+            _setter("ipv6cidr_blocks", ipv6cidr_blocks)
         if ipv6private_cidr_blocks is not None:
-            pulumi.set(__self__, "ipv6private_cidr_blocks", ipv6private_cidr_blocks)
+            _setter("ipv6private_cidr_blocks", ipv6private_cidr_blocks)
         if is_ipv6enabled is not None:
-            pulumi.set(__self__, "is_ipv6enabled", is_ipv6enabled)
+            _setter("is_ipv6enabled", is_ipv6enabled)
         if is_oracle_gua_allocation_enabled is not None:
-            pulumi.set(__self__, "is_oracle_gua_allocation_enabled", is_oracle_gua_allocation_enabled)
+            _setter("is_oracle_gua_allocation_enabled", is_oracle_gua_allocation_enabled)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if vcn_domain_name is not None:
-            pulumi.set(__self__, "vcn_domain_name", vcn_domain_name)
+            _setter("vcn_domain_name", vcn_domain_name)
 
     @property
     @pulumi.getter(name="byoipv6cidrBlocks")
@@ -803,6 +877,10 @@ class Vcn(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            VcnArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

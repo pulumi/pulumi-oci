@@ -14,12 +14,17 @@ import java.util.Objects;
 @CustomType
 public final class GetQueueResult {
     /**
-     * @return Compartment Identifier
+     * @return The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue&#39;s resources.
+     * 
+     */
+    private Integer channelConsumptionLimit;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
      * 
      */
     private String compartmentId;
     /**
-     * @return Id of the custom master encryption key which will be used to encrypt messages content
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
      * 
      */
     private String customEncryptionKeyId;
@@ -34,7 +39,7 @@ public final class GetQueueResult {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return Queue Identifier, can be renamed
+     * @return A user-friendly name for the queue. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     private String displayName;
@@ -44,12 +49,12 @@ public final class GetQueueResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return A unique identifier for the queue that is immutable on creation.
      * 
      */
     private String id;
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return Any additional details about the current state of the queue.
      * 
      */
     private String lifecycleDetails;
@@ -67,7 +72,7 @@ public final class GetQueueResult {
      */
     private Integer retentionInSeconds;
     /**
-     * @return The current state of the Queue.
+     * @return The current state of the queue.
      * 
      */
     private String state;
@@ -77,12 +82,12 @@ public final class GetQueueResult {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The time the the Queue was created. An RFC3339 formatted datetime string
+     * @return The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
     private String timeCreated;
     /**
-     * @return The time the Queue was updated. An RFC3339 formatted datetime string
+     * @return The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
     private String timeUpdated;
@@ -92,21 +97,28 @@ public final class GetQueueResult {
      */
     private Integer timeoutInSeconds;
     /**
-     * @return The default visibility of the messages consumed from the queue.
+     * @return The default visibility timeout of the messages consumed from the queue, in seconds.
      * 
      */
     private Integer visibilityInSeconds;
 
     private GetQueueResult() {}
     /**
-     * @return Compartment Identifier
+     * @return The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue&#39;s resources.
+     * 
+     */
+    public Integer channelConsumptionLimit() {
+        return this.channelConsumptionLimit;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return Id of the custom master encryption key which will be used to encrypt messages content
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
      * 
      */
     public String customEncryptionKeyId() {
@@ -127,7 +139,7 @@ public final class GetQueueResult {
         return this.definedTags;
     }
     /**
-     * @return Queue Identifier, can be renamed
+     * @return A user-friendly name for the queue. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public String displayName() {
@@ -141,14 +153,14 @@ public final class GetQueueResult {
         return this.freeformTags;
     }
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return A unique identifier for the queue that is immutable on creation.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return Any additional details about the current state of the queue.
      * 
      */
     public String lifecycleDetails() {
@@ -178,7 +190,7 @@ public final class GetQueueResult {
         return this.retentionInSeconds;
     }
     /**
-     * @return The current state of the Queue.
+     * @return The current state of the queue.
      * 
      */
     public String state() {
@@ -192,14 +204,14 @@ public final class GetQueueResult {
         return this.systemTags;
     }
     /**
-     * @return The time the the Queue was created. An RFC3339 formatted datetime string
+     * @return The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The time the Queue was updated. An RFC3339 formatted datetime string
+     * @return The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
     public String timeUpdated() {
@@ -213,7 +225,7 @@ public final class GetQueueResult {
         return this.timeoutInSeconds;
     }
     /**
-     * @return The default visibility of the messages consumed from the queue.
+     * @return The default visibility timeout of the messages consumed from the queue, in seconds.
      * 
      */
     public Integer visibilityInSeconds() {
@@ -229,6 +241,7 @@ public final class GetQueueResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private Integer channelConsumptionLimit;
         private String compartmentId;
         private String customEncryptionKeyId;
         private Integer deadLetterQueueDeliveryCount;
@@ -251,6 +264,7 @@ public final class GetQueueResult {
         public Builder() {}
         public Builder(GetQueueResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.channelConsumptionLimit = defaults.channelConsumptionLimit;
     	      this.compartmentId = defaults.compartmentId;
     	      this.customEncryptionKeyId = defaults.customEncryptionKeyId;
     	      this.deadLetterQueueDeliveryCount = defaults.deadLetterQueueDeliveryCount;
@@ -272,6 +286,11 @@ public final class GetQueueResult {
     	      this.visibilityInSeconds = defaults.visibilityInSeconds;
         }
 
+        @CustomType.Setter
+        public Builder channelConsumptionLimit(Integer channelConsumptionLimit) {
+            this.channelConsumptionLimit = Objects.requireNonNull(channelConsumptionLimit);
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
@@ -369,6 +388,7 @@ public final class GetQueueResult {
         }
         public GetQueueResult build() {
             final var o = new GetQueueResult();
+            o.channelConsumptionLimit = channelConsumptionLimit;
             o.compartmentId = compartmentId;
             o.customEncryptionKeyId = customEncryptionKeyId;
             o.deadLetterQueueDeliveryCount = deadLetterQueueDeliveryCount;

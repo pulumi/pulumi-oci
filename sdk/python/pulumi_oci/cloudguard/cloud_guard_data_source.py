@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -37,15 +37,34 @@ class CloudGuardDataSourceArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "data_source_feed_provider", data_source_feed_provider)
-        pulumi.set(__self__, "display_name", display_name)
+        CloudGuardDataSourceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            data_source_feed_provider=data_source_feed_provider,
+            display_name=display_name,
+            data_source_details=data_source_details,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             data_source_feed_provider: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             data_source_details: Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("data_source_feed_provider", data_source_feed_provider)
+        _setter("display_name", display_name)
         if data_source_details is not None:
-            pulumi.set(__self__, "data_source_details", data_source_details)
+            _setter("data_source_details", data_source_details)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -164,32 +183,65 @@ class _CloudGuardDataSourceState:
         :param pulumi.Input[str] time_created: The date and time the Data source was created. Format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the Data source was updated. Format defined by RFC3339.
         """
+        _CloudGuardDataSourceState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            data_source_details=data_source_details,
+            data_source_detector_mapping_infos=data_source_detector_mapping_infos,
+            data_source_feed_provider=data_source_feed_provider,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            region_status_details=region_status_details,
+            state=state,
+            status=status,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             data_source_details: Optional[pulumi.Input['CloudGuardDataSourceDataSourceDetailsArgs']] = None,
+             data_source_detector_mapping_infos: Optional[pulumi.Input[Sequence[pulumi.Input['CloudGuardDataSourceDataSourceDetectorMappingInfoArgs']]]] = None,
+             data_source_feed_provider: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             region_status_details: Optional[pulumi.Input[Sequence[pulumi.Input['CloudGuardDataSourceRegionStatusDetailArgs']]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if data_source_details is not None:
-            pulumi.set(__self__, "data_source_details", data_source_details)
+            _setter("data_source_details", data_source_details)
         if data_source_detector_mapping_infos is not None:
-            pulumi.set(__self__, "data_source_detector_mapping_infos", data_source_detector_mapping_infos)
+            _setter("data_source_detector_mapping_infos", data_source_detector_mapping_infos)
         if data_source_feed_provider is not None:
-            pulumi.set(__self__, "data_source_feed_provider", data_source_feed_provider)
+            _setter("data_source_feed_provider", data_source_feed_provider)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if region_status_details is not None:
-            pulumi.set(__self__, "region_status_details", region_status_details)
+            _setter("region_status_details", region_status_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -495,6 +547,10 @@ class CloudGuardDataSource(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CloudGuardDataSourceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -518,6 +574,11 @@ class CloudGuardDataSource(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            if data_source_details is not None and not isinstance(data_source_details, CloudGuardDataSourceDataSourceDetailsArgs):
+                data_source_details = data_source_details or {}
+                def _setter(key, value):
+                    data_source_details[key] = value
+                CloudGuardDataSourceDataSourceDetailsArgs._configure(_setter, **data_source_details)
             __props__.__dict__["data_source_details"] = data_source_details
             if data_source_feed_provider is None and not opts.urn:
                 raise TypeError("Missing required property 'data_source_feed_provider'")

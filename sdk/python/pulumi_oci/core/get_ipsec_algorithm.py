@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -14,6 +14,7 @@ __all__ = [
     'GetIpsecAlgorithmResult',
     'AwaitableGetIpsecAlgorithmResult',
     'get_ipsec_algorithm',
+    'get_ipsec_algorithm_output',
 ]
 
 @pulumi.output_type
@@ -117,3 +118,22 @@ def get_ipsec_algorithm(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitabl
         default_phase_one_parameters=pulumi.get(__ret__, 'default_phase_one_parameters'),
         default_phase_two_parameters=pulumi.get(__ret__, 'default_phase_two_parameters'),
         id=pulumi.get(__ret__, 'id'))
+
+
+@_utilities.lift_output_func(get_ipsec_algorithm)
+def get_ipsec_algorithm_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetIpsecAlgorithmResult]:
+    """
+    This data source provides details about a specific Ipsec Algorithm resource in Oracle Cloud Infrastructure Core service.
+
+    The parameters allowed for IKE IPSec tunnels.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_ipsec_algorithm = oci.Core.get_ipsec_algorithm()
+    ```
+    """
+    ...

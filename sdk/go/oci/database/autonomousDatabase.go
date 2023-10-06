@@ -229,7 +229,9 @@ type AutonomousDatabase struct {
 	// Configurations of a Disaster Recovery.
 	RemoteDisasterRecoveryConfigurations AutonomousDatabaseRemoteDisasterRecoveryConfigurationArrayOutput `pulumi:"remoteDisasterRecoveryConfigurations"`
 	// Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
-	RemoteDisasterRecoveryType pulumi.StringOutput `pulumi:"remoteDisasterRecoveryType"`
+	RemoteDisasterRecoveryType pulumi.StringOutput                         `pulumi:"remoteDisasterRecoveryType"`
+	ResourcePoolLeaderId       pulumi.StringOutput                         `pulumi:"resourcePoolLeaderId"`
+	ResourcePoolSummary        AutonomousDatabaseResourcePoolSummaryOutput `pulumi:"resourcePoolSummary"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	Role pulumi.StringOutput `pulumi:"role"`
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
@@ -294,7 +296,8 @@ type AutonomousDatabase struct {
 	// The date and time when maintenance will begin.
 	TimeMaintenanceBegin pulumi.StringOutput `pulumi:"timeMaintenanceBegin"`
 	// The date and time when maintenance will end.
-	TimeMaintenanceEnd pulumi.StringOutput `pulumi:"timeMaintenanceEnd"`
+	TimeMaintenanceEnd        pulumi.StringOutput `pulumi:"timeMaintenanceEnd"`
+	TimeOfJoiningResourcePool pulumi.StringOutput `pulumi:"timeOfJoiningResourcePool"`
 	// The timestamp of the last failover operation.
 	TimeOfLastFailover pulumi.StringOutput `pulumi:"timeOfLastFailover"`
 	// The date and time when last refresh happened.
@@ -576,7 +579,9 @@ type autonomousDatabaseState struct {
 	// Configurations of a Disaster Recovery.
 	RemoteDisasterRecoveryConfigurations []AutonomousDatabaseRemoteDisasterRecoveryConfiguration `pulumi:"remoteDisasterRecoveryConfigurations"`
 	// Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
-	RemoteDisasterRecoveryType *string `pulumi:"remoteDisasterRecoveryType"`
+	RemoteDisasterRecoveryType *string                                `pulumi:"remoteDisasterRecoveryType"`
+	ResourcePoolLeaderId       *string                                `pulumi:"resourcePoolLeaderId"`
+	ResourcePoolSummary        *AutonomousDatabaseResourcePoolSummary `pulumi:"resourcePoolSummary"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	Role *string `pulumi:"role"`
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
@@ -641,7 +646,8 @@ type autonomousDatabaseState struct {
 	// The date and time when maintenance will begin.
 	TimeMaintenanceBegin *string `pulumi:"timeMaintenanceBegin"`
 	// The date and time when maintenance will end.
-	TimeMaintenanceEnd *string `pulumi:"timeMaintenanceEnd"`
+	TimeMaintenanceEnd        *string `pulumi:"timeMaintenanceEnd"`
+	TimeOfJoiningResourcePool *string `pulumi:"timeOfJoiningResourcePool"`
 	// The timestamp of the last failover operation.
 	TimeOfLastFailover *string `pulumi:"timeOfLastFailover"`
 	// The date and time when last refresh happened.
@@ -882,6 +888,8 @@ type AutonomousDatabaseState struct {
 	RemoteDisasterRecoveryConfigurations AutonomousDatabaseRemoteDisasterRecoveryConfigurationArrayInput
 	// Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
 	RemoteDisasterRecoveryType pulumi.StringPtrInput
+	ResourcePoolLeaderId       pulumi.StringPtrInput
+	ResourcePoolSummary        AutonomousDatabaseResourcePoolSummaryPtrInput
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	Role pulumi.StringPtrInput
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
@@ -946,7 +954,8 @@ type AutonomousDatabaseState struct {
 	// The date and time when maintenance will begin.
 	TimeMaintenanceBegin pulumi.StringPtrInput
 	// The date and time when maintenance will end.
-	TimeMaintenanceEnd pulumi.StringPtrInput
+	TimeMaintenanceEnd        pulumi.StringPtrInput
+	TimeOfJoiningResourcePool pulumi.StringPtrInput
 	// The timestamp of the last failover operation.
 	TimeOfLastFailover pulumi.StringPtrInput
 	// The date and time when last refresh happened.
@@ -1128,7 +1137,9 @@ type autonomousDatabaseArgs struct {
 	// (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
 	RefreshableMode *string `pulumi:"refreshableMode"`
 	// Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
-	RemoteDisasterRecoveryType *string `pulumi:"remoteDisasterRecoveryType"`
+	RemoteDisasterRecoveryType *string                                `pulumi:"remoteDisasterRecoveryType"`
+	ResourcePoolLeaderId       *string                                `pulumi:"resourcePoolLeaderId"`
+	ResourcePoolSummary        *AutonomousDatabaseResourcePoolSummary `pulumi:"resourcePoolSummary"`
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
 	RotateKeyTrigger *bool `pulumi:"rotateKeyTrigger"`
 	// (Updatable) The list of scheduled operations.
@@ -1329,6 +1340,8 @@ type AutonomousDatabaseArgs struct {
 	RefreshableMode pulumi.StringPtrInput
 	// Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
 	RemoteDisasterRecoveryType pulumi.StringPtrInput
+	ResourcePoolLeaderId       pulumi.StringPtrInput
+	ResourcePoolSummary        AutonomousDatabaseResourcePoolSummaryPtrInput
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
 	RotateKeyTrigger pulumi.BoolPtrInput
 	// (Updatable) The list of scheduled operations.
@@ -1950,6 +1963,14 @@ func (o AutonomousDatabaseOutput) RemoteDisasterRecoveryType() pulumi.StringOutp
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.RemoteDisasterRecoveryType }).(pulumi.StringOutput)
 }
 
+func (o AutonomousDatabaseOutput) ResourcePoolLeaderId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.ResourcePoolLeaderId }).(pulumi.StringOutput)
+}
+
+func (o AutonomousDatabaseOutput) ResourcePoolSummary() AutonomousDatabaseResourcePoolSummaryOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) AutonomousDatabaseResourcePoolSummaryOutput { return v.ResourcePoolSummary }).(AutonomousDatabaseResourcePoolSummaryOutput)
+}
+
 // The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 func (o AutonomousDatabaseOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.Role }).(pulumi.StringOutput)
@@ -2084,6 +2105,10 @@ func (o AutonomousDatabaseOutput) TimeMaintenanceBegin() pulumi.StringOutput {
 // The date and time when maintenance will end.
 func (o AutonomousDatabaseOutput) TimeMaintenanceEnd() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.TimeMaintenanceEnd }).(pulumi.StringOutput)
+}
+
+func (o AutonomousDatabaseOutput) TimeOfJoiningResourcePool() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.TimeOfJoiningResourcePool }).(pulumi.StringOutput)
 }
 
 // The timestamp of the last failover operation.

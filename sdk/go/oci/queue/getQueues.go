@@ -14,7 +14,7 @@ import (
 
 // This data source provides the list of Queues in Oracle Cloud Infrastructure Queue service.
 //
-// Returns a list of Queues.
+// Returns a list of queues.
 //
 // ## Example Usage
 //
@@ -56,12 +56,12 @@ func GetQueues(ctx *pulumi.Context, args *GetQueuesArgs, opts ...pulumi.InvokeOp
 
 // A collection of arguments for invoking getQueues.
 type GetQueuesArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string           `pulumi:"displayName"`
 	Filters     []GetQueuesFilter `pulumi:"filters"`
-	// unique Queue identifier
+	// The unique queue identifier.
 	Id *string `pulumi:"id"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State *string `pulumi:"state"`
@@ -69,16 +69,16 @@ type GetQueuesArgs struct {
 
 // A collection of values returned by getQueues.
 type GetQueuesResult struct {
-	// Compartment Identifier
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// Queue Identifier, can be renamed
+	// A user-friendly name for the queue. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string           `pulumi:"displayName"`
 	Filters     []GetQueuesFilter `pulumi:"filters"`
-	// Unique identifier that is immutable on creation
+	// A unique identifier for the queue that is immutable on creation.
 	Id *string `pulumi:"id"`
 	// The list of queue_collection.
 	QueueCollections []GetQueuesQueueCollection `pulumi:"queueCollections"`
-	// The current state of the Queue.
+	// The current state of the queue.
 	State *string `pulumi:"state"`
 }
 
@@ -97,12 +97,12 @@ func GetQueuesOutput(ctx *pulumi.Context, args GetQueuesOutputArgs, opts ...pulu
 
 // A collection of arguments for invoking getQueues.
 type GetQueuesOutputArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput     `pulumi:"displayName"`
 	Filters     GetQueuesFilterArrayInput `pulumi:"filters"`
-	// unique Queue identifier
+	// The unique queue identifier.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -133,12 +133,12 @@ func (o GetQueuesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetQ
 	}
 }
 
-// Compartment Identifier
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
 func (o GetQueuesResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetQueuesResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-// Queue Identifier, can be renamed
+// A user-friendly name for the queue. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o GetQueuesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetQueuesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -147,7 +147,7 @@ func (o GetQueuesResultOutput) Filters() GetQueuesFilterArrayOutput {
 	return o.ApplyT(func(v GetQueuesResult) []GetQueuesFilter { return v.Filters }).(GetQueuesFilterArrayOutput)
 }
 
-// Unique identifier that is immutable on creation
+// A unique identifier for the queue that is immutable on creation.
 func (o GetQueuesResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetQueuesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -157,7 +157,7 @@ func (o GetQueuesResultOutput) QueueCollections() GetQueuesQueueCollectionArrayO
 	return o.ApplyT(func(v GetQueuesResult) []GetQueuesQueueCollection { return v.QueueCollections }).(GetQueuesQueueCollectionArrayOutput)
 }
 
-// The current state of the Queue.
+// The current state of the queue.
 func (o GetQueuesResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetQueuesResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

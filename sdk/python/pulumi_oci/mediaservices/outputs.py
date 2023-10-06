@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -74,9 +74,20 @@ class MediaAssetMediaAssetTag(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "value", value)
+        MediaAssetMediaAssetTag._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            value=value,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             value: str,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("value", value)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter
@@ -106,7 +117,16 @@ class MediaAssetMetadata(dict):
         """
         :param str metadata: (Updatable) JSON string containing the technial metadata for the media asset.
         """
-        pulumi.set(__self__, "metadata", metadata)
+        MediaAssetMetadata._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            metadata=metadata,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             metadata: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("metadata", metadata)
 
     @property
     @pulumi.getter
@@ -149,16 +169,33 @@ class MediaWorkflowJobOutput(dict):
         :param str namespace: The namespace name of the job output.
         :param str object: The object name of the job output.
         """
+        MediaWorkflowJobOutput._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            asset_type=asset_type,
+            bucket=bucket,
+            id=id,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             asset_type: Optional[str] = None,
+             bucket: Optional[str] = None,
+             id: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if asset_type is not None:
-            pulumi.set(__self__, "asset_type", asset_type)
+            _setter("asset_type", asset_type)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter(name="assetType")
@@ -229,12 +266,25 @@ class MediaWorkflowJobTaskLifecycleState(dict):
         :param str lifecycle_details: The lifecycle details of MediaWorkflowJob task.
         :param str state: The current state of the MediaWorkflowJob task.
         """
+        MediaWorkflowJobTaskLifecycleState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            lifecycle_details=lifecycle_details,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter
@@ -303,16 +353,37 @@ class MediaWorkflowTask(dict):
         :param Mapping[str, Any] enable_when_referenced_parameter_equals: (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
         :param Sequence[str] prerequisites: (Updatable) Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "version", version)
+        MediaWorkflowTask._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            parameters=parameters,
+            type=type,
+            version=version,
+            enable_parameter_reference=enable_parameter_reference,
+            enable_when_referenced_parameter_equals=enable_when_referenced_parameter_equals,
+            prerequisites=prerequisites,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             parameters: str,
+             type: str,
+             version: str,
+             enable_parameter_reference: Optional[str] = None,
+             enable_when_referenced_parameter_equals: Optional[Mapping[str, Any]] = None,
+             prerequisites: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("parameters", parameters)
+        _setter("type", type)
+        _setter("version", version)
         if enable_parameter_reference is not None:
-            pulumi.set(__self__, "enable_parameter_reference", enable_parameter_reference)
+            _setter("enable_parameter_reference", enable_parameter_reference)
         if enable_when_referenced_parameter_equals is not None:
-            pulumi.set(__self__, "enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
+            _setter("enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
         if prerequisites is not None:
-            pulumi.set(__self__, "prerequisites", prerequisites)
+            _setter("prerequisites", prerequisites)
 
     @property
     @pulumi.getter
@@ -441,29 +512,60 @@ class StreamCdnConfigConfig(dict):
         :param str origin_auth_sign_encryption: (Updatable) The type of encryption used to compute the signature.
         :param str origin_auth_sign_type: (Updatable) The type of data used to compute the signature.
         """
-        pulumi.set(__self__, "type", type)
+        StreamCdnConfigConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            edge_hostname=edge_hostname,
+            edge_path_prefix=edge_path_prefix,
+            edge_token_key=edge_token_key,
+            edge_token_salt=edge_token_salt,
+            is_edge_token_auth=is_edge_token_auth,
+            origin_auth_secret_key_a=origin_auth_secret_key_a,
+            origin_auth_secret_key_b=origin_auth_secret_key_b,
+            origin_auth_secret_key_nonce_a=origin_auth_secret_key_nonce_a,
+            origin_auth_secret_key_nonce_b=origin_auth_secret_key_nonce_b,
+            origin_auth_sign_encryption=origin_auth_sign_encryption,
+            origin_auth_sign_type=origin_auth_sign_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             edge_hostname: Optional[str] = None,
+             edge_path_prefix: Optional[str] = None,
+             edge_token_key: Optional[str] = None,
+             edge_token_salt: Optional[str] = None,
+             is_edge_token_auth: Optional[bool] = None,
+             origin_auth_secret_key_a: Optional[str] = None,
+             origin_auth_secret_key_b: Optional[str] = None,
+             origin_auth_secret_key_nonce_a: Optional[str] = None,
+             origin_auth_secret_key_nonce_b: Optional[str] = None,
+             origin_auth_sign_encryption: Optional[str] = None,
+             origin_auth_sign_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if edge_hostname is not None:
-            pulumi.set(__self__, "edge_hostname", edge_hostname)
+            _setter("edge_hostname", edge_hostname)
         if edge_path_prefix is not None:
-            pulumi.set(__self__, "edge_path_prefix", edge_path_prefix)
+            _setter("edge_path_prefix", edge_path_prefix)
         if edge_token_key is not None:
-            pulumi.set(__self__, "edge_token_key", edge_token_key)
+            _setter("edge_token_key", edge_token_key)
         if edge_token_salt is not None:
-            pulumi.set(__self__, "edge_token_salt", edge_token_salt)
+            _setter("edge_token_salt", edge_token_salt)
         if is_edge_token_auth is not None:
-            pulumi.set(__self__, "is_edge_token_auth", is_edge_token_auth)
+            _setter("is_edge_token_auth", is_edge_token_auth)
         if origin_auth_secret_key_a is not None:
-            pulumi.set(__self__, "origin_auth_secret_key_a", origin_auth_secret_key_a)
+            _setter("origin_auth_secret_key_a", origin_auth_secret_key_a)
         if origin_auth_secret_key_b is not None:
-            pulumi.set(__self__, "origin_auth_secret_key_b", origin_auth_secret_key_b)
+            _setter("origin_auth_secret_key_b", origin_auth_secret_key_b)
         if origin_auth_secret_key_nonce_a is not None:
-            pulumi.set(__self__, "origin_auth_secret_key_nonce_a", origin_auth_secret_key_nonce_a)
+            _setter("origin_auth_secret_key_nonce_a", origin_auth_secret_key_nonce_a)
         if origin_auth_secret_key_nonce_b is not None:
-            pulumi.set(__self__, "origin_auth_secret_key_nonce_b", origin_auth_secret_key_nonce_b)
+            _setter("origin_auth_secret_key_nonce_b", origin_auth_secret_key_nonce_b)
         if origin_auth_sign_encryption is not None:
-            pulumi.set(__self__, "origin_auth_sign_encryption", origin_auth_sign_encryption)
+            _setter("origin_auth_sign_encryption", origin_auth_sign_encryption)
         if origin_auth_sign_type is not None:
-            pulumi.set(__self__, "origin_auth_sign_type", origin_auth_sign_type)
+            _setter("origin_auth_sign_type", origin_auth_sign_type)
 
     @property
     @pulumi.getter
@@ -588,9 +690,20 @@ class StreamPackagingConfigEncryption(dict):
         :param str algorithm: The encryption algorithm for the stream packaging configuration.
         :param str kms_key_id: The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
         """
-        pulumi.set(__self__, "algorithm", algorithm)
+        StreamPackagingConfigEncryption._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            algorithm=algorithm,
+            kms_key_id=kms_key_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             algorithm: str,
+             kms_key_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("algorithm", algorithm)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter
@@ -618,8 +731,19 @@ class GetMediaAssetMediaAssetTagResult(dict):
         :param str type: The type of the media asset.
         :param str value: Tag of the MediaAsset.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        GetMediaAssetMediaAssetTagResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -645,7 +769,16 @@ class GetMediaAssetMetadataResult(dict):
         """
         :param str metadata: JSON string containing the technial metadata for the media asset.
         """
-        pulumi.set(__self__, "metadata", metadata)
+        GetMediaAssetMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            metadata=metadata,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             metadata: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("metadata", metadata)
 
     @property
     @pulumi.getter
@@ -662,10 +795,23 @@ class GetMediaAssetsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMediaAssetsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -687,7 +833,16 @@ class GetMediaAssetsFilterResult(dict):
 class GetMediaAssetsMediaAssetCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetMediaAssetsMediaAssetCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -746,29 +901,82 @@ class GetMediaAssetsMediaAssetCollectionItemResult(dict):
         :param str time_updated: The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
         :param str type: Filter MediaAsset by the asset type.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "master_media_asset_id", master_media_asset_id)
-        pulumi.set(__self__, "media_asset_tags", media_asset_tags)
-        pulumi.set(__self__, "media_workflow_job_id", media_workflow_job_id)
-        pulumi.set(__self__, "metadatas", metadatas)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "object_etag", object_etag)
-        pulumi.set(__self__, "parent_media_asset_id", parent_media_asset_id)
-        pulumi.set(__self__, "segment_range_end_index", segment_range_end_index)
-        pulumi.set(__self__, "segment_range_start_index", segment_range_start_index)
-        pulumi.set(__self__, "source_media_workflow_id", source_media_workflow_id)
-        pulumi.set(__self__, "source_media_workflow_version", source_media_workflow_version)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
+        GetMediaAssetsMediaAssetCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            master_media_asset_id=master_media_asset_id,
+            media_asset_tags=media_asset_tags,
+            media_workflow_job_id=media_workflow_job_id,
+            metadatas=metadatas,
+            namespace=namespace,
+            object=object,
+            object_etag=object_etag,
+            parent_media_asset_id=parent_media_asset_id,
+            segment_range_end_index=segment_range_end_index,
+            segment_range_start_index=segment_range_start_index,
+            source_media_workflow_id=source_media_workflow_id,
+            source_media_workflow_version=source_media_workflow_version,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             master_media_asset_id: str,
+             media_asset_tags: Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemMediaAssetTagResult'],
+             media_workflow_job_id: str,
+             metadatas: Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemMetadataResult'],
+             namespace: str,
+             object: str,
+             object_etag: str,
+             parent_media_asset_id: str,
+             segment_range_end_index: str,
+             segment_range_start_index: str,
+             source_media_workflow_id: str,
+             source_media_workflow_version: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("master_media_asset_id", master_media_asset_id)
+        _setter("media_asset_tags", media_asset_tags)
+        _setter("media_workflow_job_id", media_workflow_job_id)
+        _setter("metadatas", metadatas)
+        _setter("namespace", namespace)
+        _setter("object", object)
+        _setter("object_etag", object_etag)
+        _setter("parent_media_asset_id", parent_media_asset_id)
+        _setter("segment_range_end_index", segment_range_end_index)
+        _setter("segment_range_start_index", segment_range_start_index)
+        _setter("source_media_workflow_id", source_media_workflow_id)
+        _setter("source_media_workflow_version", source_media_workflow_version)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -964,8 +1172,19 @@ class GetMediaAssetsMediaAssetCollectionItemMediaAssetTagResult(dict):
         :param str type: Filter MediaAsset by the asset type.
         :param str value: Tag of the MediaAsset.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        GetMediaAssetsMediaAssetCollectionItemMediaAssetTagResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -991,7 +1210,16 @@ class GetMediaAssetsMediaAssetCollectionItemMetadataResult(dict):
         """
         :param str metadata: JSON string containing the technial metadata for the media asset.
         """
-        pulumi.set(__self__, "metadata", metadata)
+        GetMediaAssetsMediaAssetCollectionItemMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            metadata=metadata,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             metadata: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("metadata", metadata)
 
     @property
     @pulumi.getter
@@ -1008,10 +1236,23 @@ class GetMediaWorkflowConfigurationsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMediaWorkflowConfigurationsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1033,7 +1274,16 @@ class GetMediaWorkflowConfigurationsFilterResult(dict):
 class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1068,17 +1318,46 @@ class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResu
         :param str time_created: The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecyle_details", lifecyle_details)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecyle_details=lifecyle_details,
+            parameters=parameters,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecyle_details: str,
+             parameters: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecyle_details", lifecyle_details)
+        _setter("parameters", parameters)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1178,10 +1457,23 @@ class GetMediaWorkflowJobFactsFilterResult(dict):
         """
         :param str name: Unique name. It is read-only and generated for the fact.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMediaWorkflowJobFactsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1206,7 +1498,16 @@ class GetMediaWorkflowJobFactsFilterResult(dict):
 class GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1229,11 +1530,28 @@ class GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemResult(dict):
         :param str name: Unique name. It is read-only and generated for the fact.
         :param str type: Types of details to include.
         """
-        pulumi.set(__self__, "detail", detail)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "media_workflow_job_id", media_workflow_job_id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            detail=detail,
+            key=key,
+            media_workflow_job_id=media_workflow_job_id,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             detail: str,
+             key: str,
+             media_workflow_job_id: str,
+             name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("detail", detail)
+        _setter("key", key)
+        _setter("media_workflow_job_id", media_workflow_job_id)
+        _setter("name", name)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -1291,11 +1609,28 @@ class GetMediaWorkflowJobOutputResult(dict):
         :param str namespace: The namespace name of the job output.
         :param str object: The object name of the job output.
         """
-        pulumi.set(__self__, "asset_type", asset_type)
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+        GetMediaWorkflowJobOutputResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            asset_type=asset_type,
+            bucket=bucket,
+            id=id,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             asset_type: str,
+             bucket: str,
+             id: str,
+             namespace: str,
+             object: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("asset_type", asset_type)
+        _setter("bucket", bucket)
+        _setter("id", id)
+        _setter("namespace", namespace)
+        _setter("object", object)
 
     @property
     @pulumi.getter(name="assetType")
@@ -1349,9 +1684,22 @@ class GetMediaWorkflowJobTaskLifecycleStateResult(dict):
         :param str lifecycle_details: The lifecycle details of MediaWorkflowJob task.
         :param str state: The current state of the MediaWorkflowJob task.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
+        GetMediaWorkflowJobTaskLifecycleStateResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            lifecycle_details=lifecycle_details,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             lifecycle_details: str,
+             state: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
 
     @property
     @pulumi.getter
@@ -1384,10 +1732,23 @@ class GetMediaWorkflowJobsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMediaWorkflowJobsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1409,7 +1770,16 @@ class GetMediaWorkflowJobsFilterResult(dict):
 class GetMediaWorkflowJobsMediaWorkflowJobCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetMediaWorkflowJobsMediaWorkflowJobCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1460,26 +1830,73 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult(dict):
         :param str time_started: Time when the job started to execute. An RFC3339 formatted datetime string.
         :param str time_updated: Updated time of the job. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "media_workflow_configuration_ids", media_workflow_configuration_ids)
-        pulumi.set(__self__, "media_workflow_id", media_workflow_id)
-        pulumi.set(__self__, "media_workflow_name", media_workflow_name)
-        pulumi.set(__self__, "outputs", outputs)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "runnable", runnable)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "task_lifecycle_states", task_lifecycle_states)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_ended", time_ended)
-        pulumi.set(__self__, "time_started", time_started)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "workflow_identifier_type", workflow_identifier_type)
+        GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            media_workflow_configuration_ids=media_workflow_configuration_ids,
+            media_workflow_id=media_workflow_id,
+            media_workflow_name=media_workflow_name,
+            outputs=outputs,
+            parameters=parameters,
+            runnable=runnable,
+            state=state,
+            system_tags=system_tags,
+            task_lifecycle_states=task_lifecycle_states,
+            time_created=time_created,
+            time_ended=time_ended,
+            time_started=time_started,
+            time_updated=time_updated,
+            workflow_identifier_type=workflow_identifier_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             media_workflow_configuration_ids: Sequence[str],
+             media_workflow_id: str,
+             media_workflow_name: str,
+             outputs: Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputResult'],
+             parameters: str,
+             runnable: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             task_lifecycle_states: Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateResult'],
+             time_created: str,
+             time_ended: str,
+             time_started: str,
+             time_updated: str,
+             workflow_identifier_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("media_workflow_configuration_ids", media_workflow_configuration_ids)
+        _setter("media_workflow_id", media_workflow_id)
+        _setter("media_workflow_name", media_workflow_name)
+        _setter("outputs", outputs)
+        _setter("parameters", parameters)
+        _setter("runnable", runnable)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("task_lifecycle_states", task_lifecycle_states)
+        _setter("time_created", time_created)
+        _setter("time_ended", time_ended)
+        _setter("time_started", time_started)
+        _setter("time_updated", time_updated)
+        _setter("workflow_identifier_type", workflow_identifier_type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1651,11 +2068,28 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputResult(dict):
         :param str namespace: The namespace name of the job output.
         :param str object: The object name of the job output.
         """
-        pulumi.set(__self__, "asset_type", asset_type)
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
+        GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutputResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            asset_type=asset_type,
+            bucket=bucket,
+            id=id,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             asset_type: str,
+             bucket: str,
+             id: str,
+             namespace: str,
+             object: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("asset_type", asset_type)
+        _setter("bucket", bucket)
+        _setter("id", id)
+        _setter("namespace", namespace)
+        _setter("object", object)
 
     @property
     @pulumi.getter(name="assetType")
@@ -1709,9 +2143,22 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateResult
         :param str lifecycle_details: The lifecycle details of MediaWorkflowJob task.
         :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
+        GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            lifecycle_details=lifecycle_details,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             lifecycle_details: str,
+             state: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
 
     @property
     @pulumi.getter
@@ -1757,13 +2204,34 @@ class GetMediaWorkflowTaskResult(dict):
         :param str type: The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
         :param str version: The version of the MediaWorkflow.
         """
-        pulumi.set(__self__, "enable_parameter_reference", enable_parameter_reference)
-        pulumi.set(__self__, "enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "prerequisites", prerequisites)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "version", version)
+        GetMediaWorkflowTaskResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_parameter_reference=enable_parameter_reference,
+            enable_when_referenced_parameter_equals=enable_when_referenced_parameter_equals,
+            key=key,
+            parameters=parameters,
+            prerequisites=prerequisites,
+            type=type,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_parameter_reference: str,
+             enable_when_referenced_parameter_equals: Mapping[str, Any],
+             key: str,
+             parameters: str,
+             prerequisites: Sequence[str],
+             type: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("enable_parameter_reference", enable_parameter_reference)
+        _setter("enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
+        _setter("key", key)
+        _setter("parameters", parameters)
+        _setter("prerequisites", prerequisites)
+        _setter("type", type)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="enableParameterReference")
@@ -1835,10 +2303,25 @@ class GetMediaWorkflowTaskDeclarationItemResult(dict):
         :param str parameters_schema_allowing_references: JSON schema similar to the parameterSchema, but permits parameter values to refer to other parameters using the ${/path/to/another/parmeter} syntax.  This is used to validate task parameters when workflows are created.
         :param int version: A filter to select MediaWorkflowTaskDeclaration by version.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "parameters_schema", parameters_schema)
-        pulumi.set(__self__, "parameters_schema_allowing_references", parameters_schema_allowing_references)
-        pulumi.set(__self__, "version", version)
+        GetMediaWorkflowTaskDeclarationItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            parameters_schema=parameters_schema,
+            parameters_schema_allowing_references=parameters_schema_allowing_references,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             parameters_schema: str,
+             parameters_schema_allowing_references: str,
+             version: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("parameters_schema", parameters_schema)
+        _setter("parameters_schema_allowing_references", parameters_schema_allowing_references)
+        _setter("version", version)
 
     @property
     @pulumi.getter
@@ -1879,10 +2362,23 @@ class GetMediaWorkflowsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMediaWorkflowsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1904,7 +2400,16 @@ class GetMediaWorkflowsFilterResult(dict):
 class GetMediaWorkflowsMediaWorkflowCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetMediaWorkflowsMediaWorkflowCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetMediaWorkflowsMediaWorkflowCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetMediaWorkflowsMediaWorkflowCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1945,20 +2450,55 @@ class GetMediaWorkflowsMediaWorkflowCollectionItemResult(dict):
         :param str time_updated: The time when the MediaWorkflow was updated. An RFC3339 formatted datetime string.
         :param str version: The version of the MediaWorkflow.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecyle_details", lifecyle_details)
-        pulumi.set(__self__, "media_workflow_configuration_ids", media_workflow_configuration_ids)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "tasks", tasks)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "version", version)
+        GetMediaWorkflowsMediaWorkflowCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecyle_details=lifecyle_details,
+            media_workflow_configuration_ids=media_workflow_configuration_ids,
+            parameters=parameters,
+            state=state,
+            system_tags=system_tags,
+            tasks=tasks,
+            time_created=time_created,
+            time_updated=time_updated,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecyle_details: str,
+             media_workflow_configuration_ids: Sequence[str],
+             parameters: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             tasks: Sequence['outputs.GetMediaWorkflowsMediaWorkflowCollectionItemTaskResult'],
+             time_created: str,
+             time_updated: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecyle_details", lifecyle_details)
+        _setter("media_workflow_configuration_ids", media_workflow_configuration_ids)
+        _setter("parameters", parameters)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("tasks", tasks)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2092,13 +2632,34 @@ class GetMediaWorkflowsMediaWorkflowCollectionItemTaskResult(dict):
         :param str type: The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
         :param str version: The version of the MediaWorkflow.
         """
-        pulumi.set(__self__, "enable_parameter_reference", enable_parameter_reference)
-        pulumi.set(__self__, "enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "prerequisites", prerequisites)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "version", version)
+        GetMediaWorkflowsMediaWorkflowCollectionItemTaskResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_parameter_reference=enable_parameter_reference,
+            enable_when_referenced_parameter_equals=enable_when_referenced_parameter_equals,
+            key=key,
+            parameters=parameters,
+            prerequisites=prerequisites,
+            type=type,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_parameter_reference: str,
+             enable_when_referenced_parameter_equals: Mapping[str, Any],
+             key: str,
+             parameters: str,
+             prerequisites: Sequence[str],
+             type: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("enable_parameter_reference", enable_parameter_reference)
+        _setter("enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
+        _setter("key", key)
+        _setter("parameters", parameters)
+        _setter("prerequisites", prerequisites)
+        _setter("type", type)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="enableParameterReference")
@@ -2186,18 +2747,49 @@ class GetStreamCdnConfigConfigResult(dict):
         :param str origin_auth_sign_type: The type of data used to compute the signature.
         :param str type: The name of the CDN configuration type.
         """
-        pulumi.set(__self__, "edge_hostname", edge_hostname)
-        pulumi.set(__self__, "edge_path_prefix", edge_path_prefix)
-        pulumi.set(__self__, "edge_token_key", edge_token_key)
-        pulumi.set(__self__, "edge_token_salt", edge_token_salt)
-        pulumi.set(__self__, "is_edge_token_auth", is_edge_token_auth)
-        pulumi.set(__self__, "origin_auth_secret_key_a", origin_auth_secret_key_a)
-        pulumi.set(__self__, "origin_auth_secret_key_b", origin_auth_secret_key_b)
-        pulumi.set(__self__, "origin_auth_secret_key_nonce_a", origin_auth_secret_key_nonce_a)
-        pulumi.set(__self__, "origin_auth_secret_key_nonce_b", origin_auth_secret_key_nonce_b)
-        pulumi.set(__self__, "origin_auth_sign_encryption", origin_auth_sign_encryption)
-        pulumi.set(__self__, "origin_auth_sign_type", origin_auth_sign_type)
-        pulumi.set(__self__, "type", type)
+        GetStreamCdnConfigConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            edge_hostname=edge_hostname,
+            edge_path_prefix=edge_path_prefix,
+            edge_token_key=edge_token_key,
+            edge_token_salt=edge_token_salt,
+            is_edge_token_auth=is_edge_token_auth,
+            origin_auth_secret_key_a=origin_auth_secret_key_a,
+            origin_auth_secret_key_b=origin_auth_secret_key_b,
+            origin_auth_secret_key_nonce_a=origin_auth_secret_key_nonce_a,
+            origin_auth_secret_key_nonce_b=origin_auth_secret_key_nonce_b,
+            origin_auth_sign_encryption=origin_auth_sign_encryption,
+            origin_auth_sign_type=origin_auth_sign_type,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             edge_hostname: str,
+             edge_path_prefix: str,
+             edge_token_key: str,
+             edge_token_salt: str,
+             is_edge_token_auth: bool,
+             origin_auth_secret_key_a: str,
+             origin_auth_secret_key_b: str,
+             origin_auth_secret_key_nonce_a: str,
+             origin_auth_secret_key_nonce_b: str,
+             origin_auth_sign_encryption: str,
+             origin_auth_sign_type: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("edge_hostname", edge_hostname)
+        _setter("edge_path_prefix", edge_path_prefix)
+        _setter("edge_token_key", edge_token_key)
+        _setter("edge_token_salt", edge_token_salt)
+        _setter("is_edge_token_auth", is_edge_token_auth)
+        _setter("origin_auth_secret_key_a", origin_auth_secret_key_a)
+        _setter("origin_auth_secret_key_b", origin_auth_secret_key_b)
+        _setter("origin_auth_secret_key_nonce_a", origin_auth_secret_key_nonce_a)
+        _setter("origin_auth_secret_key_nonce_b", origin_auth_secret_key_nonce_b)
+        _setter("origin_auth_sign_encryption", origin_auth_sign_encryption)
+        _setter("origin_auth_sign_type", origin_auth_sign_type)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="edgeHostname")
@@ -2302,10 +2894,23 @@ class GetStreamCdnConfigsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetStreamCdnConfigsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2327,7 +2932,16 @@ class GetStreamCdnConfigsFilterResult(dict):
 class GetStreamCdnConfigsStreamCdnConfigCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetStreamCdnConfigsStreamCdnConfigCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2366,19 +2980,52 @@ class GetStreamCdnConfigsStreamCdnConfigCollectionItemResult(dict):
         :param str time_created: The time when the CDN Config was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time when the CDN Config was updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configs", configs)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "distribution_channel_id", distribution_channel_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "lifecyle_details", lifecyle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetStreamCdnConfigsStreamCdnConfigCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            configs=configs,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            distribution_channel_id=distribution_channel_id,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_enabled=is_enabled,
+            lifecyle_details=lifecyle_details,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             configs: Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigResult'],
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             distribution_channel_id: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_enabled: bool,
+             lifecyle_details: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("configs", configs)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("distribution_channel_id", distribution_channel_id)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_enabled", is_enabled)
+        _setter("lifecyle_details", lifecyle_details)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2514,18 +3161,49 @@ class GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigResult(dict):
         :param str origin_auth_sign_type: The type of data used to compute the signature.
         :param str type: The name of the CDN configuration type.
         """
-        pulumi.set(__self__, "edge_hostname", edge_hostname)
-        pulumi.set(__self__, "edge_path_prefix", edge_path_prefix)
-        pulumi.set(__self__, "edge_token_key", edge_token_key)
-        pulumi.set(__self__, "edge_token_salt", edge_token_salt)
-        pulumi.set(__self__, "is_edge_token_auth", is_edge_token_auth)
-        pulumi.set(__self__, "origin_auth_secret_key_a", origin_auth_secret_key_a)
-        pulumi.set(__self__, "origin_auth_secret_key_b", origin_auth_secret_key_b)
-        pulumi.set(__self__, "origin_auth_secret_key_nonce_a", origin_auth_secret_key_nonce_a)
-        pulumi.set(__self__, "origin_auth_secret_key_nonce_b", origin_auth_secret_key_nonce_b)
-        pulumi.set(__self__, "origin_auth_sign_encryption", origin_auth_sign_encryption)
-        pulumi.set(__self__, "origin_auth_sign_type", origin_auth_sign_type)
-        pulumi.set(__self__, "type", type)
+        GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            edge_hostname=edge_hostname,
+            edge_path_prefix=edge_path_prefix,
+            edge_token_key=edge_token_key,
+            edge_token_salt=edge_token_salt,
+            is_edge_token_auth=is_edge_token_auth,
+            origin_auth_secret_key_a=origin_auth_secret_key_a,
+            origin_auth_secret_key_b=origin_auth_secret_key_b,
+            origin_auth_secret_key_nonce_a=origin_auth_secret_key_nonce_a,
+            origin_auth_secret_key_nonce_b=origin_auth_secret_key_nonce_b,
+            origin_auth_sign_encryption=origin_auth_sign_encryption,
+            origin_auth_sign_type=origin_auth_sign_type,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             edge_hostname: str,
+             edge_path_prefix: str,
+             edge_token_key: str,
+             edge_token_salt: str,
+             is_edge_token_auth: bool,
+             origin_auth_secret_key_a: str,
+             origin_auth_secret_key_b: str,
+             origin_auth_secret_key_nonce_a: str,
+             origin_auth_secret_key_nonce_b: str,
+             origin_auth_sign_encryption: str,
+             origin_auth_sign_type: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("edge_hostname", edge_hostname)
+        _setter("edge_path_prefix", edge_path_prefix)
+        _setter("edge_token_key", edge_token_key)
+        _setter("edge_token_salt", edge_token_salt)
+        _setter("is_edge_token_auth", is_edge_token_auth)
+        _setter("origin_auth_secret_key_a", origin_auth_secret_key_a)
+        _setter("origin_auth_secret_key_b", origin_auth_secret_key_b)
+        _setter("origin_auth_secret_key_nonce_a", origin_auth_secret_key_nonce_a)
+        _setter("origin_auth_secret_key_nonce_b", origin_auth_secret_key_nonce_b)
+        _setter("origin_auth_sign_encryption", origin_auth_sign_encryption)
+        _setter("origin_auth_sign_type", origin_auth_sign_type)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="edgeHostname")
@@ -2630,10 +3308,23 @@ class GetStreamDistributionChannelsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetStreamDistributionChannelsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2655,7 +3346,16 @@ class GetStreamDistributionChannelsFilterResult(dict):
 class GetStreamDistributionChannelsStreamDistributionChannelCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetStreamDistributionChannelsStreamDistributionChannelCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2688,16 +3388,43 @@ class GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult
         :param str time_created: The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "domain_name", domain_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            domain_name=domain_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             domain_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("domain_name", domain_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2789,8 +3516,19 @@ class GetStreamPackagingConfigEncryptionResult(dict):
         :param str algorithm: The encryption algorithm for the stream packaging configuration.
         :param str kms_key_id: The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
         """
-        pulumi.set(__self__, "algorithm", algorithm)
-        pulumi.set(__self__, "kms_key_id", kms_key_id)
+        GetStreamPackagingConfigEncryptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            algorithm=algorithm,
+            kms_key_id=kms_key_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             algorithm: str,
+             kms_key_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("algorithm", algorithm)
+        _setter("kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter
@@ -2815,10 +3553,23 @@ class GetStreamPackagingConfigsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetStreamPackagingConfigsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2840,7 +3591,16 @@ class GetStreamPackagingConfigsFilterResult(dict):
 class GetStreamPackagingConfigsStreamPackagingConfigCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetStreamPackagingConfigsStreamPackagingConfigCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2879,19 +3639,52 @@ class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult(dict):
         :param str time_created: The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "distribution_channel_id", distribution_channel_id)
-        pulumi.set(__self__, "encryptions", encryptions)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "segment_time_in_seconds", segment_time_in_seconds)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "stream_packaging_format", stream_packaging_format)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            distribution_channel_id=distribution_channel_id,
+            encryptions=encryptions,
+            freeform_tags=freeform_tags,
+            id=id,
+            segment_time_in_seconds=segment_time_in_seconds,
+            state=state,
+            stream_packaging_format=stream_packaging_format,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             distribution_channel_id: str,
+             encryptions: Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionResult'],
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             segment_time_in_seconds: int,
+             state: str,
+             stream_packaging_format: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("distribution_channel_id", distribution_channel_id)
+        _setter("encryptions", encryptions)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("segment_time_in_seconds", segment_time_in_seconds)
+        _setter("state", state)
+        _setter("stream_packaging_format", stream_packaging_format)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3007,8 +3800,19 @@ class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionResu
         :param str algorithm: The encryption algorithm for the stream packaging configuration.
         :param str kms_key_id: The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
         """
-        pulumi.set(__self__, "algorithm", algorithm)
-        pulumi.set(__self__, "kms_key_id", kms_key_id)
+        GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            algorithm=algorithm,
+            kms_key_id=kms_key_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             algorithm: str,
+             kms_key_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("algorithm", algorithm)
+        _setter("kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter
@@ -3040,10 +3844,25 @@ class GetSystemMediaWorkflowItemResult(dict):
         :param str parameters: Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
         :param Sequence['GetSystemMediaWorkflowItemTaskArgs'] tasks: The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique within the array. The order of the items is preserved from the order of the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "tasks", tasks)
+        GetSystemMediaWorkflowItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            name=name,
+            parameters=parameters,
+            tasks=tasks,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             name: str,
+             parameters: str,
+             tasks: Sequence['outputs.GetSystemMediaWorkflowItemTaskResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("name", name)
+        _setter("parameters", parameters)
+        _setter("tasks", tasks)
 
     @property
     @pulumi.getter
@@ -3097,13 +3916,34 @@ class GetSystemMediaWorkflowItemTaskResult(dict):
         :param str type: The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
         :param str version: The version of the MediaWorkflowTaskDeclaration.
         """
-        pulumi.set(__self__, "enable_parameter_reference", enable_parameter_reference)
-        pulumi.set(__self__, "enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "parameters", parameters)
-        pulumi.set(__self__, "prerequisites", prerequisites)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "version", version)
+        GetSystemMediaWorkflowItemTaskResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_parameter_reference=enable_parameter_reference,
+            enable_when_referenced_parameter_equals=enable_when_referenced_parameter_equals,
+            key=key,
+            parameters=parameters,
+            prerequisites=prerequisites,
+            type=type,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_parameter_reference: str,
+             enable_when_referenced_parameter_equals: Mapping[str, Any],
+             key: str,
+             parameters: str,
+             prerequisites: Sequence[str],
+             type: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("enable_parameter_reference", enable_parameter_reference)
+        _setter("enable_when_referenced_parameter_equals", enable_when_referenced_parameter_equals)
+        _setter("key", key)
+        _setter("parameters", parameters)
+        _setter("prerequisites", prerequisites)
+        _setter("type", type)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="enableParameterReference")

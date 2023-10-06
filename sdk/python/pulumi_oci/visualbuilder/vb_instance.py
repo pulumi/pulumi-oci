@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -43,23 +43,50 @@ class VbInstanceArgs:
         :param pulumi.Input[str] idcs_open_id: (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
         :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "node_count", node_count)
+        VbInstanceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            node_count=node_count,
+            alternate_custom_endpoints=alternate_custom_endpoints,
+            consumption_model=consumption_model,
+            custom_endpoint=custom_endpoint,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            idcs_open_id=idcs_open_id,
+            is_visual_builder_enabled=is_visual_builder_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             node_count: pulumi.Input[int],
+             alternate_custom_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceAlternateCustomEndpointArgs']]]] = None,
+             consumption_model: Optional[pulumi.Input[str]] = None,
+             custom_endpoint: Optional[pulumi.Input['VbInstanceCustomEndpointArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             idcs_open_id: Optional[pulumi.Input[str]] = None,
+             is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("node_count", node_count)
         if alternate_custom_endpoints is not None:
-            pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
+            _setter("alternate_custom_endpoints", alternate_custom_endpoints)
         if consumption_model is not None:
-            pulumi.set(__self__, "consumption_model", consumption_model)
+            _setter("consumption_model", consumption_model)
         if custom_endpoint is not None:
-            pulumi.set(__self__, "custom_endpoint", custom_endpoint)
+            _setter("custom_endpoint", custom_endpoint)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if idcs_open_id is not None:
-            pulumi.set(__self__, "idcs_open_id", idcs_open_id)
+            _setter("idcs_open_id", idcs_open_id)
         if is_visual_builder_enabled is not None:
-            pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
+            _setter("is_visual_builder_enabled", is_visual_builder_enabled)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -240,50 +267,101 @@ class _VbInstanceState:
         :param pulumi.Input[str] time_created: The time the the VbInstance was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the VbInstance was updated. An RFC3339 formatted datetime string.
         """
+        _VbInstanceState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alternate_custom_endpoints=alternate_custom_endpoints,
+            attachments=attachments,
+            compartment_id=compartment_id,
+            consumption_model=consumption_model,
+            custom_endpoint=custom_endpoint,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            idcs_infos=idcs_infos,
+            idcs_open_id=idcs_open_id,
+            instance_url=instance_url,
+            is_visual_builder_enabled=is_visual_builder_enabled,
+            management_nat_gateway_ip=management_nat_gateway_ip,
+            management_vcn_id=management_vcn_id,
+            node_count=node_count,
+            service_nat_gateway_ip=service_nat_gateway_ip,
+            service_vcn_id=service_vcn_id,
+            state=state,
+            state_message=state_message,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alternate_custom_endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceAlternateCustomEndpointArgs']]]] = None,
+             attachments: Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceAttachmentArgs']]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             consumption_model: Optional[pulumi.Input[str]] = None,
+             custom_endpoint: Optional[pulumi.Input['VbInstanceCustomEndpointArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             idcs_infos: Optional[pulumi.Input[Sequence[pulumi.Input['VbInstanceIdcsInfoArgs']]]] = None,
+             idcs_open_id: Optional[pulumi.Input[str]] = None,
+             instance_url: Optional[pulumi.Input[str]] = None,
+             is_visual_builder_enabled: Optional[pulumi.Input[bool]] = None,
+             management_nat_gateway_ip: Optional[pulumi.Input[str]] = None,
+             management_vcn_id: Optional[pulumi.Input[str]] = None,
+             node_count: Optional[pulumi.Input[int]] = None,
+             service_nat_gateway_ip: Optional[pulumi.Input[str]] = None,
+             service_vcn_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             state_message: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if alternate_custom_endpoints is not None:
-            pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
+            _setter("alternate_custom_endpoints", alternate_custom_endpoints)
         if attachments is not None:
-            pulumi.set(__self__, "attachments", attachments)
+            _setter("attachments", attachments)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if consumption_model is not None:
-            pulumi.set(__self__, "consumption_model", consumption_model)
+            _setter("consumption_model", consumption_model)
         if custom_endpoint is not None:
-            pulumi.set(__self__, "custom_endpoint", custom_endpoint)
+            _setter("custom_endpoint", custom_endpoint)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if idcs_infos is not None:
-            pulumi.set(__self__, "idcs_infos", idcs_infos)
+            _setter("idcs_infos", idcs_infos)
         if idcs_open_id is not None:
-            pulumi.set(__self__, "idcs_open_id", idcs_open_id)
+            _setter("idcs_open_id", idcs_open_id)
         if instance_url is not None:
-            pulumi.set(__self__, "instance_url", instance_url)
+            _setter("instance_url", instance_url)
         if is_visual_builder_enabled is not None:
-            pulumi.set(__self__, "is_visual_builder_enabled", is_visual_builder_enabled)
+            _setter("is_visual_builder_enabled", is_visual_builder_enabled)
         if management_nat_gateway_ip is not None:
-            pulumi.set(__self__, "management_nat_gateway_ip", management_nat_gateway_ip)
+            _setter("management_nat_gateway_ip", management_nat_gateway_ip)
         if management_vcn_id is not None:
-            pulumi.set(__self__, "management_vcn_id", management_vcn_id)
+            _setter("management_vcn_id", management_vcn_id)
         if node_count is not None:
-            pulumi.set(__self__, "node_count", node_count)
+            _setter("node_count", node_count)
         if service_nat_gateway_ip is not None:
-            pulumi.set(__self__, "service_nat_gateway_ip", service_nat_gateway_ip)
+            _setter("service_nat_gateway_ip", service_nat_gateway_ip)
         if service_vcn_id is not None:
-            pulumi.set(__self__, "service_vcn_id", service_vcn_id)
+            _setter("service_vcn_id", service_vcn_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if state_message is not None:
-            pulumi.set(__self__, "state_message", state_message)
+            _setter("state_message", state_message)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="alternateCustomEndpoints")
@@ -687,6 +765,10 @@ class VbInstance(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            VbInstanceArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -716,6 +798,11 @@ class VbInstance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["consumption_model"] = consumption_model
+            if custom_endpoint is not None and not isinstance(custom_endpoint, VbInstanceCustomEndpointArgs):
+                custom_endpoint = custom_endpoint or {}
+                def _setter(key, value):
+                    custom_endpoint[key] = value
+                VbInstanceCustomEndpointArgs._configure(_setter, **custom_endpoint)
             __props__.__dict__["custom_endpoint"] = custom_endpoint
             __props__.__dict__["defined_tags"] = defined_tags
             if display_name is None and not opts.urn:

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,20 +39,43 @@ class RepositoryArgs:
         :param pulumi.Input['RepositoryMirrorRepositoryConfigArgs'] mirror_repository_config: (Updatable) Configuration information for mirroring the repository.
         :param pulumi.Input[str] name: (Updatable) Unique name of a repository.
         """
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "repository_type", repository_type)
+        RepositoryArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            project_id=project_id,
+            repository_type=repository_type,
+            default_branch=default_branch,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            mirror_repository_config=mirror_repository_config,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             project_id: pulumi.Input[str],
+             repository_type: pulumi.Input[str],
+             default_branch: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             mirror_repository_config: Optional[pulumi.Input['RepositoryMirrorRepositoryConfigArgs']] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("project_id", project_id)
+        _setter("repository_type", repository_type)
         if default_branch is not None:
-            pulumi.set(__self__, "default_branch", default_branch)
+            _setter("default_branch", default_branch)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if mirror_repository_config is not None:
-            pulumi.set(__self__, "mirror_repository_config", mirror_repository_config)
+            _setter("mirror_repository_config", mirror_repository_config)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="projectId")
@@ -209,50 +232,101 @@ class _RepositoryState:
         :param pulumi.Input[str] time_updated: The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] trigger_build_events: Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
         """
+        _RepositoryState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            branch_count=branch_count,
+            commit_count=commit_count,
+            compartment_id=compartment_id,
+            default_branch=default_branch,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            http_url=http_url,
+            lifecyle_details=lifecyle_details,
+            mirror_repository_config=mirror_repository_config,
+            name=name,
+            namespace=namespace,
+            project_id=project_id,
+            project_name=project_name,
+            repository_type=repository_type,
+            size_in_bytes=size_in_bytes,
+            ssh_url=ssh_url,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            trigger_build_events=trigger_build_events,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             branch_count: Optional[pulumi.Input[int]] = None,
+             commit_count: Optional[pulumi.Input[int]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             default_branch: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             http_url: Optional[pulumi.Input[str]] = None,
+             lifecyle_details: Optional[pulumi.Input[str]] = None,
+             mirror_repository_config: Optional[pulumi.Input['RepositoryMirrorRepositoryConfigArgs']] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
+             project_name: Optional[pulumi.Input[str]] = None,
+             repository_type: Optional[pulumi.Input[str]] = None,
+             size_in_bytes: Optional[pulumi.Input[str]] = None,
+             ssh_url: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             trigger_build_events: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if branch_count is not None:
-            pulumi.set(__self__, "branch_count", branch_count)
+            _setter("branch_count", branch_count)
         if commit_count is not None:
-            pulumi.set(__self__, "commit_count", commit_count)
+            _setter("commit_count", commit_count)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if default_branch is not None:
-            pulumi.set(__self__, "default_branch", default_branch)
+            _setter("default_branch", default_branch)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if http_url is not None:
-            pulumi.set(__self__, "http_url", http_url)
+            _setter("http_url", http_url)
         if lifecyle_details is not None:
-            pulumi.set(__self__, "lifecyle_details", lifecyle_details)
+            _setter("lifecyle_details", lifecyle_details)
         if mirror_repository_config is not None:
-            pulumi.set(__self__, "mirror_repository_config", mirror_repository_config)
+            _setter("mirror_repository_config", mirror_repository_config)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if project_id is not None:
-            pulumi.set(__self__, "project_id", project_id)
+            _setter("project_id", project_id)
         if project_name is not None:
-            pulumi.set(__self__, "project_name", project_name)
+            _setter("project_name", project_name)
         if repository_type is not None:
-            pulumi.set(__self__, "repository_type", repository_type)
+            _setter("repository_type", repository_type)
         if size_in_bytes is not None:
-            pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+            _setter("size_in_bytes", size_in_bytes)
         if ssh_url is not None:
-            pulumi.set(__self__, "ssh_url", ssh_url)
+            _setter("ssh_url", ssh_url)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if trigger_build_events is not None:
-            pulumi.set(__self__, "trigger_build_events", trigger_build_events)
+            _setter("trigger_build_events", trigger_build_events)
 
     @property
     @pulumi.getter(name="branchCount")
@@ -648,6 +722,10 @@ class Repository(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            RepositoryArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -674,6 +752,11 @@ class Repository(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
             __props__.__dict__["freeform_tags"] = freeform_tags
+            if mirror_repository_config is not None and not isinstance(mirror_repository_config, RepositoryMirrorRepositoryConfigArgs):
+                mirror_repository_config = mirror_repository_config or {}
+                def _setter(key, value):
+                    mirror_repository_config[key] = value
+                RepositoryMirrorRepositoryConfigArgs._configure(_setter, **mirror_repository_config)
             __props__.__dict__["mirror_repository_config"] = mirror_repository_config
             __props__.__dict__["name"] = name
             if project_id is None and not opts.urn:

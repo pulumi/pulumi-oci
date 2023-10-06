@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ComputeImageCapabilitySchemaArgs', 'ComputeImageCapabilitySchema']
@@ -31,16 +31,37 @@ class ComputeImageCapabilitySchemaArgs:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compute_global_image_capability_schema_version_name", compute_global_image_capability_schema_version_name)
-        pulumi.set(__self__, "image_id", image_id)
-        pulumi.set(__self__, "schema_data", schema_data)
+        ComputeImageCapabilitySchemaArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            compute_global_image_capability_schema_version_name=compute_global_image_capability_schema_version_name,
+            image_id=image_id,
+            schema_data=schema_data,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             compute_global_image_capability_schema_version_name: pulumi.Input[str],
+             image_id: pulumi.Input[str],
+             schema_data: pulumi.Input[Mapping[str, Any]],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("compute_global_image_capability_schema_version_name", compute_global_image_capability_schema_version_name)
+        _setter("image_id", image_id)
+        _setter("schema_data", schema_data)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -151,24 +172,49 @@ class _ComputeImageCapabilitySchemaState:
         :param pulumi.Input[Mapping[str, Any]] schema_data: (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
         :param pulumi.Input[str] time_created: The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
+        _ComputeImageCapabilitySchemaState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            compute_global_image_capability_schema_id=compute_global_image_capability_schema_id,
+            compute_global_image_capability_schema_version_name=compute_global_image_capability_schema_version_name,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            image_id=image_id,
+            schema_data=schema_data,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             compute_global_image_capability_schema_id: Optional[pulumi.Input[str]] = None,
+             compute_global_image_capability_schema_version_name: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             image_id: Optional[pulumi.Input[str]] = None,
+             schema_data: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if compute_global_image_capability_schema_id is not None:
-            pulumi.set(__self__, "compute_global_image_capability_schema_id", compute_global_image_capability_schema_id)
+            _setter("compute_global_image_capability_schema_id", compute_global_image_capability_schema_id)
         if compute_global_image_capability_schema_version_name is not None:
-            pulumi.set(__self__, "compute_global_image_capability_schema_version_name", compute_global_image_capability_schema_version_name)
+            _setter("compute_global_image_capability_schema_version_name", compute_global_image_capability_schema_version_name)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if image_id is not None:
-            pulumi.set(__self__, "image_id", image_id)
+            _setter("image_id", image_id)
         if schema_data is not None:
-            pulumi.set(__self__, "schema_data", schema_data)
+            _setter("schema_data", schema_data)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -394,6 +440,10 @@ class ComputeImageCapabilitySchema(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ComputeImageCapabilitySchemaArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

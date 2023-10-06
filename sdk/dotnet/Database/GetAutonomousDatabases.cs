@@ -40,6 +40,8 @@ namespace Pulumi.Oci.Database
         ///         IsDataGuardEnabled = @var.Autonomous_database_is_data_guard_enabled,
         ///         IsFreeTier = @var.Autonomous_database_is_free_tier,
         ///         IsRefreshableClone = @var.Autonomous_database_is_refreshable_clone,
+        ///         IsResourcePoolLeader = @var.Autonomous_database_is_resource_pool_leader,
+        ///         ResourcePoolLeaderId = oci_database_resource_pool_leader.Test_resource_pool_leader.Id,
         ///         State = @var.Autonomous_database_state,
         ///     });
         /// 
@@ -80,6 +82,8 @@ namespace Pulumi.Oci.Database
         ///         IsDataGuardEnabled = @var.Autonomous_database_is_data_guard_enabled,
         ///         IsFreeTier = @var.Autonomous_database_is_free_tier,
         ///         IsRefreshableClone = @var.Autonomous_database_is_refreshable_clone,
+        ///         IsResourcePoolLeader = @var.Autonomous_database_is_resource_pool_leader,
+        ///         ResourcePoolLeaderId = oci_database_resource_pool_leader.Test_resource_pool_leader.Id,
         ///         State = @var.Autonomous_database_state,
         ///     });
         /// 
@@ -158,6 +162,18 @@ namespace Pulumi.Oci.Database
         public bool? IsRefreshableClone { get; set; }
 
         /// <summary>
+        /// Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
+        /// </summary>
+        [Input("isResourcePoolLeader")]
+        public bool? IsResourcePoolLeader { get; set; }
+
+        /// <summary>
+        /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+        /// </summary>
+        [Input("resourcePoolLeaderId")]
+        public string? ResourcePoolLeaderId { get; set; }
+
+        /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
         /// </summary>
         [Input("state")]
@@ -234,6 +250,18 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsRefreshableClone { get; set; }
 
         /// <summary>
+        /// Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
+        /// </summary>
+        [Input("isResourcePoolLeader")]
+        public Input<bool>? IsResourcePoolLeader { get; set; }
+
+        /// <summary>
+        /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+        /// </summary>
+        [Input("resourcePoolLeaderId")]
+        public Input<string>? ResourcePoolLeaderId { get; set; }
+
+        /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
         /// </summary>
         [Input("state")]
@@ -298,6 +326,11 @@ namespace Pulumi.Oci.Database
         /// Indicates if the Autonomous Database is a refreshable clone.
         /// </summary>
         public readonly bool? IsRefreshableClone;
+        public readonly bool? IsResourcePoolLeader;
+        /// <summary>
+        /// The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        public readonly string? ResourcePoolLeaderId;
         /// <summary>
         /// The current state of the Autonomous Database.
         /// </summary>
@@ -329,6 +362,10 @@ namespace Pulumi.Oci.Database
 
             bool? isRefreshableClone,
 
+            bool? isResourcePoolLeader,
+
+            string? resourcePoolLeaderId,
+
             string? state)
         {
             AutonomousContainerDatabaseId = autonomousContainerDatabaseId;
@@ -343,6 +380,8 @@ namespace Pulumi.Oci.Database
             IsDataGuardEnabled = isDataGuardEnabled;
             IsFreeTier = isFreeTier;
             IsRefreshableClone = isRefreshableClone;
+            IsResourcePoolLeader = isResourcePoolLeader;
+            ResourcePoolLeaderId = resourcePoolLeaderId;
             State = state;
         }
     }

@@ -6,13 +6,14 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
     'GetProxyDetailResult',
     'AwaitableGetProxyDetailResult',
     'get_proxy_detail',
+    'get_proxy_detail_output',
 ]
 
 @pulumi.output_type
@@ -77,3 +78,22 @@ def get_proxy_detail(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGe
     return AwaitableGetProxyDetailResult(
         id=pulumi.get(__ret__, 'id'),
         proxy_image=pulumi.get(__ret__, 'proxy_image'))
+
+
+@_utilities.lift_output_func(get_proxy_detail)
+def get_proxy_detail_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProxyDetailResult]:
+    """
+    This data source provides details about a specific Proxy Detail resource in Oracle Cloud Infrastructure Service Mesh service.
+
+    Returns the attributes of the Proxy such as proxy image version.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_proxy_detail = oci.ServiceMesh.get_proxy_detail()
+    ```
+    """
+    ...

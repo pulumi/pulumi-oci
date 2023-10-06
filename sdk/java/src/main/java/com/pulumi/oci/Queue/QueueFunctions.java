@@ -20,7 +20,7 @@ public final class QueueFunctions {
     /**
      * This data source provides details about a specific Queue resource in Oracle Cloud Infrastructure Queue service.
      * 
-     * Gets a Queue by identifier
+     * Gets a queue by identifier.
      * 
      * ## Example Usage
      * ```java
@@ -59,7 +59,7 @@ public final class QueueFunctions {
     /**
      * This data source provides details about a specific Queue resource in Oracle Cloud Infrastructure Queue service.
      * 
-     * Gets a Queue by identifier
+     * Gets a queue by identifier.
      * 
      * ## Example Usage
      * ```java
@@ -98,7 +98,7 @@ public final class QueueFunctions {
     /**
      * This data source provides details about a specific Queue resource in Oracle Cloud Infrastructure Queue service.
      * 
-     * Gets a Queue by identifier
+     * Gets a queue by identifier.
      * 
      * ## Example Usage
      * ```java
@@ -137,7 +137,7 @@ public final class QueueFunctions {
     /**
      * This data source provides details about a specific Queue resource in Oracle Cloud Infrastructure Queue service.
      * 
-     * Gets a Queue by identifier
+     * Gets a queue by identifier.
      * 
      * ## Example Usage
      * ```java
@@ -176,7 +176,7 @@ public final class QueueFunctions {
     /**
      * This data source provides the list of Queues in Oracle Cloud Infrastructure Queue service.
      * 
-     * Returns a list of Queues.
+     * Returns a list of queues.
      * 
      * ## Example Usage
      * ```java
@@ -218,7 +218,7 @@ public final class QueueFunctions {
     /**
      * This data source provides the list of Queues in Oracle Cloud Infrastructure Queue service.
      * 
-     * Returns a list of Queues.
+     * Returns a list of queues.
      * 
      * ## Example Usage
      * ```java
@@ -260,7 +260,7 @@ public final class QueueFunctions {
     /**
      * This data source provides the list of Queues in Oracle Cloud Infrastructure Queue service.
      * 
-     * Returns a list of Queues.
+     * Returns a list of queues.
      * 
      * ## Example Usage
      * ```java
@@ -302,7 +302,7 @@ public final class QueueFunctions {
     /**
      * This data source provides the list of Queues in Oracle Cloud Infrastructure Queue service.
      * 
-     * Returns a list of Queues.
+     * Returns a list of queues.
      * 
      * ## Example Usage
      * ```java
@@ -344,7 +344,7 @@ public final class QueueFunctions {
     /**
      * This data source provides the list of Queues in Oracle Cloud Infrastructure Queue service.
      * 
-     * Returns a list of Queues.
+     * Returns a list of queues.
      * 
      * ## Example Usage
      * ```java
@@ -386,7 +386,7 @@ public final class QueueFunctions {
     /**
      * This data source provides the list of Queues in Oracle Cloud Infrastructure Queue service.
      * 
-     * Returns a list of Queues.
+     * Returns a list of queues.
      * 
      * ## Example Usage
      * ```java

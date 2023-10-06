@@ -136,9 +136,6 @@ namespace Pulumi.Oci.Core
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
-        /// <summary>
-        /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-        /// </summary>
         [Output("extendedMetadata")]
         public Output<ImmutableDictionary<string, object>> ExtendedMetadata { get; private set; } = null!;
 
@@ -492,10 +489,6 @@ namespace Pulumi.Oci.Core
 
         [Input("extendedMetadata")]
         private InputMap<object>? _extendedMetadata;
-
-        /// <summary>
-        /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-        /// </summary>
         public InputMap<object> ExtendedMetadata
         {
             get => _extendedMetadata ?? (_extendedMetadata = new InputMap<object>());
@@ -780,10 +773,6 @@ namespace Pulumi.Oci.Core
 
         [Input("extendedMetadata")]
         private InputMap<object>? _extendedMetadata;
-
-        /// <summary>
-        /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-        /// </summary>
         public InputMap<object> ExtendedMetadata
         {
             get => _extendedMetadata ?? (_extendedMetadata = new InputMap<object>());

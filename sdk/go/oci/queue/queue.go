@@ -15,7 +15,7 @@ import (
 
 // This resource provides the Queue resource in Oracle Cloud Infrastructure Queue service.
 //
-// Creates a new Queue.
+// Creates a new queue.
 //
 // ## Example Usage
 //
@@ -34,6 +34,7 @@ import (
 //			_, err := Queue.NewQueue(ctx, "testQueue", &Queue.QueueArgs{
 //				CompartmentId:                pulumi.Any(_var.Compartment_id),
 //				DisplayName:                  pulumi.Any(_var.Queue_display_name),
+//				ChannelConsumptionLimit:      pulumi.Any(_var.Queue_channel_consumption_limit),
 //				CustomEncryptionKeyId:        pulumi.Any(oci_kms_key.Test_key.Id),
 //				DeadLetterQueueDeliveryCount: pulumi.Any(_var.Queue_dead_letter_queue_delivery_count),
 //				DefinedTags: pulumi.AnyMap{
@@ -67,37 +68,39 @@ import (
 type Queue struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Compartment Identifier
+	// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+	ChannelConsumptionLimit pulumi.IntOutput `pulumi:"channelConsumptionLimit"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
 	CustomEncryptionKeyId pulumi.StringOutput `pulumi:"customEncryptionKeyId"`
 	// (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
 	DeadLetterQueueDeliveryCount pulumi.IntOutput `pulumi:"deadLetterQueueDeliveryCount"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) Queue Identifier
+	// (Updatable) The user-friendly name of the queue.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// Any additional details about the current state of the queue.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The endpoint to use to consume or publish messages in the queue.
 	MessagesEndpoint pulumi.StringOutput    `pulumi:"messagesEndpoint"`
 	PurgeQueue       pulumi.BoolPtrOutput   `pulumi:"purgeQueue"`
 	PurgeType        pulumi.StringPtrOutput `pulumi:"purgeType"`
-	// The retention period of the messages in the queue, in seconds.
+	// The retention period of messages in the queue, in seconds.
 	RetentionInSeconds pulumi.IntOutput `pulumi:"retentionInSeconds"`
-	// The current state of the Queue.
+	// The current state of the queue.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// The time the the Queue was created. An RFC3339 formatted datetime string
+	// The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The time the Queue was updated. An RFC3339 formatted datetime string
+	// The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// (Updatable) The default polling timeout of the messages in the queue, in seconds.
 	TimeoutInSeconds pulumi.IntOutput `pulumi:"timeoutInSeconds"`
-	// (Updatable) The default visibility of the messages consumed from the queue.
+	// (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
 	VisibilityInSeconds pulumi.IntOutput `pulumi:"visibilityInSeconds"`
 }
 
@@ -137,72 +140,76 @@ func GetQueue(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Queue resources.
 type queueState struct {
-	// (Updatable) Compartment Identifier
+	// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+	ChannelConsumptionLimit *int `pulumi:"channelConsumptionLimit"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
 	CustomEncryptionKeyId *string `pulumi:"customEncryptionKeyId"`
 	// (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
 	DeadLetterQueueDeliveryCount *int `pulumi:"deadLetterQueueDeliveryCount"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) Queue Identifier
+	// (Updatable) The user-friendly name of the queue.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// Any additional details about the current state of the queue.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The endpoint to use to consume or publish messages in the queue.
 	MessagesEndpoint *string `pulumi:"messagesEndpoint"`
 	PurgeQueue       *bool   `pulumi:"purgeQueue"`
 	PurgeType        *string `pulumi:"purgeType"`
-	// The retention period of the messages in the queue, in seconds.
+	// The retention period of messages in the queue, in seconds.
 	RetentionInSeconds *int `pulumi:"retentionInSeconds"`
-	// The current state of the Queue.
+	// The current state of the queue.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the the Queue was created. An RFC3339 formatted datetime string
+	// The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The time the Queue was updated. An RFC3339 formatted datetime string
+	// The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// (Updatable) The default polling timeout of the messages in the queue, in seconds.
 	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
-	// (Updatable) The default visibility of the messages consumed from the queue.
+	// (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
 	VisibilityInSeconds *int `pulumi:"visibilityInSeconds"`
 }
 
 type QueueState struct {
-	// (Updatable) Compartment Identifier
+	// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+	ChannelConsumptionLimit pulumi.IntPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
 	CustomEncryptionKeyId pulumi.StringPtrInput
 	// (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
 	DeadLetterQueueDeliveryCount pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) Queue Identifier
+	// (Updatable) The user-friendly name of the queue.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// Any additional details about the current state of the queue.
 	LifecycleDetails pulumi.StringPtrInput
 	// The endpoint to use to consume or publish messages in the queue.
 	MessagesEndpoint pulumi.StringPtrInput
 	PurgeQueue       pulumi.BoolPtrInput
 	PurgeType        pulumi.StringPtrInput
-	// The retention period of the messages in the queue, in seconds.
+	// The retention period of messages in the queue, in seconds.
 	RetentionInSeconds pulumi.IntPtrInput
-	// The current state of the Queue.
+	// The current state of the queue.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// The time the the Queue was created. An RFC3339 formatted datetime string
+	// The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
 	TimeCreated pulumi.StringPtrInput
-	// The time the Queue was updated. An RFC3339 formatted datetime string
+	// The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
 	TimeUpdated pulumi.StringPtrInput
 	// (Updatable) The default polling timeout of the messages in the queue, in seconds.
 	TimeoutInSeconds pulumi.IntPtrInput
-	// (Updatable) The default visibility of the messages consumed from the queue.
+	// (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
 	VisibilityInSeconds pulumi.IntPtrInput
 }
 
@@ -211,49 +218,53 @@ func (QueueState) ElementType() reflect.Type {
 }
 
 type queueArgs struct {
-	// (Updatable) Compartment Identifier
+	// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+	ChannelConsumptionLimit *int `pulumi:"channelConsumptionLimit"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
 	CustomEncryptionKeyId *string `pulumi:"customEncryptionKeyId"`
 	// (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
 	DeadLetterQueueDeliveryCount *int `pulumi:"deadLetterQueueDeliveryCount"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) Queue Identifier
+	// (Updatable) The user-friendly name of the queue.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	PurgeQueue   *bool                  `pulumi:"purgeQueue"`
 	PurgeType    *string                `pulumi:"purgeType"`
-	// The retention period of the messages in the queue, in seconds.
+	// The retention period of messages in the queue, in seconds.
 	RetentionInSeconds *int `pulumi:"retentionInSeconds"`
 	// (Updatable) The default polling timeout of the messages in the queue, in seconds.
 	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
-	// (Updatable) The default visibility of the messages consumed from the queue.
+	// (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
 	VisibilityInSeconds *int `pulumi:"visibilityInSeconds"`
 }
 
 // The set of arguments for constructing a Queue resource.
 type QueueArgs struct {
-	// (Updatable) Compartment Identifier
+	// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+	ChannelConsumptionLimit pulumi.IntPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
 	CompartmentId pulumi.StringInput
-	// (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
 	CustomEncryptionKeyId pulumi.StringPtrInput
 	// (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
 	DeadLetterQueueDeliveryCount pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) Queue Identifier
+	// (Updatable) The user-friendly name of the queue.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	PurgeQueue   pulumi.BoolPtrInput
 	PurgeType    pulumi.StringPtrInput
-	// The retention period of the messages in the queue, in seconds.
+	// The retention period of messages in the queue, in seconds.
 	RetentionInSeconds pulumi.IntPtrInput
 	// (Updatable) The default polling timeout of the messages in the queue, in seconds.
 	TimeoutInSeconds pulumi.IntPtrInput
-	// (Updatable) The default visibility of the messages consumed from the queue.
+	// (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
 	VisibilityInSeconds pulumi.IntPtrInput
 }
 
@@ -368,12 +379,17 @@ func (o QueueOutput) ToOutput(ctx context.Context) pulumix.Output[*Queue] {
 	}
 }
 
-// (Updatable) Compartment Identifier
+// (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+func (o QueueOutput) ChannelConsumptionLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v *Queue) pulumi.IntOutput { return v.ChannelConsumptionLimit }).(pulumi.IntOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
 func (o QueueOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Queue) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
 func (o QueueOutput) CustomEncryptionKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Queue) pulumi.StringOutput { return v.CustomEncryptionKeyId }).(pulumi.StringOutput)
 }
@@ -388,7 +404,7 @@ func (o QueueOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Queue) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) Queue Identifier
+// (Updatable) The user-friendly name of the queue.
 func (o QueueOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Queue) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -398,7 +414,7 @@ func (o QueueOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Queue) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+// Any additional details about the current state of the queue.
 func (o QueueOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Queue) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
@@ -416,12 +432,12 @@ func (o QueueOutput) PurgeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Queue) pulumi.StringPtrOutput { return v.PurgeType }).(pulumi.StringPtrOutput)
 }
 
-// The retention period of the messages in the queue, in seconds.
+// The retention period of messages in the queue, in seconds.
 func (o QueueOutput) RetentionInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v *Queue) pulumi.IntOutput { return v.RetentionInSeconds }).(pulumi.IntOutput)
 }
 
-// The current state of the Queue.
+// The current state of the queue.
 func (o QueueOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Queue) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
@@ -431,12 +447,12 @@ func (o QueueOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Queue) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time the the Queue was created. An RFC3339 formatted datetime string
+// The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
 func (o QueueOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Queue) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the Queue was updated. An RFC3339 formatted datetime string
+// The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
 func (o QueueOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Queue) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -446,7 +462,7 @@ func (o QueueOutput) TimeoutInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v *Queue) pulumi.IntOutput { return v.TimeoutInSeconds }).(pulumi.IntOutput)
 }
 
-// (Updatable) The default visibility of the messages consumed from the queue.
+// (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
 func (o QueueOutput) VisibilityInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v *Queue) pulumi.IntOutput { return v.VisibilityInSeconds }).(pulumi.IntOutput)
 }

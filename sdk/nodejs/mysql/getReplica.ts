@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -51,6 +53,10 @@ export interface GetReplicaResult {
      */
     readonly compartmentId: string;
     /**
+     * The OCID of the Configuration to be used by the read replica.
+     */
+    readonly configurationId: string;
+    /**
      * The OCID of the DB System the read replica is associated with.
      */
     readonly dbSystemId: string;
@@ -91,7 +97,7 @@ export interface GetReplicaResult {
      */
     readonly lifecycleDetails: string;
     /**
-     * The MySQL version used by the read replica.
+     * The MySQL version to be used by the read replica.
      */
     readonly mysqlVersion: string;
     /**
@@ -103,6 +109,14 @@ export interface GetReplicaResult {
      */
     readonly portX: number;
     readonly replicaId: string;
+    /**
+     * By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+     */
+    readonly replicaOverrides: outputs.Mysql.GetReplicaReplicaOverride[];
+    /**
+     * The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+     */
+    readonly shapeName: string;
     /**
      * The state of the read replica.
      */

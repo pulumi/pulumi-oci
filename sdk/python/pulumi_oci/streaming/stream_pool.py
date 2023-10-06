@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -33,19 +33,40 @@ class StreamPoolArgs:
         :param pulumi.Input[str] name: (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
         :param pulumi.Input['StreamPoolPrivateEndpointSettingsArgs'] private_endpoint_settings: Optional parameters if a private stream pool is requested.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
+        StreamPoolArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            custom_encryption_key=custom_encryption_key,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            kafka_settings=kafka_settings,
+            name=name,
+            private_endpoint_settings=private_endpoint_settings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             custom_encryption_key: Optional[pulumi.Input['StreamPoolCustomEncryptionKeyArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             kafka_settings: Optional[pulumi.Input['StreamPoolKafkaSettingsArgs']] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             private_endpoint_settings: Optional[pulumi.Input['StreamPoolPrivateEndpointSettingsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
         if custom_encryption_key is not None:
-            pulumi.set(__self__, "custom_encryption_key", custom_encryption_key)
+            _setter("custom_encryption_key", custom_encryption_key)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if kafka_settings is not None:
-            pulumi.set(__self__, "kafka_settings", kafka_settings)
+            _setter("kafka_settings", kafka_settings)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if private_endpoint_settings is not None:
-            pulumi.set(__self__, "private_endpoint_settings", private_endpoint_settings)
+            _setter("private_endpoint_settings", private_endpoint_settings)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -162,30 +183,61 @@ class _StreamPoolState:
         :param pulumi.Input[str] state: The current state of the stream pool.
         :param pulumi.Input[str] time_created: The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
+        _StreamPoolState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            custom_encryption_key=custom_encryption_key,
+            defined_tags=defined_tags,
+            endpoint_fqdn=endpoint_fqdn,
+            freeform_tags=freeform_tags,
+            is_private=is_private,
+            kafka_settings=kafka_settings,
+            lifecycle_state_details=lifecycle_state_details,
+            name=name,
+            private_endpoint_settings=private_endpoint_settings,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             custom_encryption_key: Optional[pulumi.Input['StreamPoolCustomEncryptionKeyArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             endpoint_fqdn: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_private: Optional[pulumi.Input[bool]] = None,
+             kafka_settings: Optional[pulumi.Input['StreamPoolKafkaSettingsArgs']] = None,
+             lifecycle_state_details: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             private_endpoint_settings: Optional[pulumi.Input['StreamPoolPrivateEndpointSettingsArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if custom_encryption_key is not None:
-            pulumi.set(__self__, "custom_encryption_key", custom_encryption_key)
+            _setter("custom_encryption_key", custom_encryption_key)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if endpoint_fqdn is not None:
-            pulumi.set(__self__, "endpoint_fqdn", endpoint_fqdn)
+            _setter("endpoint_fqdn", endpoint_fqdn)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_private is not None:
-            pulumi.set(__self__, "is_private", is_private)
+            _setter("is_private", is_private)
         if kafka_settings is not None:
-            pulumi.set(__self__, "kafka_settings", kafka_settings)
+            _setter("kafka_settings", kafka_settings)
         if lifecycle_state_details is not None:
-            pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+            _setter("lifecycle_state_details", lifecycle_state_details)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if private_endpoint_settings is not None:
-            pulumi.set(__self__, "private_endpoint_settings", private_endpoint_settings)
+            _setter("private_endpoint_settings", private_endpoint_settings)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -457,6 +509,10 @@ class StreamPool(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            StreamPoolArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -481,11 +537,26 @@ class StreamPool(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            if custom_encryption_key is not None and not isinstance(custom_encryption_key, StreamPoolCustomEncryptionKeyArgs):
+                custom_encryption_key = custom_encryption_key or {}
+                def _setter(key, value):
+                    custom_encryption_key[key] = value
+                StreamPoolCustomEncryptionKeyArgs._configure(_setter, **custom_encryption_key)
             __props__.__dict__["custom_encryption_key"] = custom_encryption_key
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["freeform_tags"] = freeform_tags
+            if kafka_settings is not None and not isinstance(kafka_settings, StreamPoolKafkaSettingsArgs):
+                kafka_settings = kafka_settings or {}
+                def _setter(key, value):
+                    kafka_settings[key] = value
+                StreamPoolKafkaSettingsArgs._configure(_setter, **kafka_settings)
             __props__.__dict__["kafka_settings"] = kafka_settings
             __props__.__dict__["name"] = name
+            if private_endpoint_settings is not None and not isinstance(private_endpoint_settings, StreamPoolPrivateEndpointSettingsArgs):
+                private_endpoint_settings = private_endpoint_settings or {}
+                def _setter(key, value):
+                    private_endpoint_settings[key] = value
+                StreamPoolPrivateEndpointSettingsArgs._configure(_setter, **private_endpoint_settings)
             __props__.__dict__["private_endpoint_settings"] = private_endpoint_settings
             __props__.__dict__["endpoint_fqdn"] = None
             __props__.__dict__["is_private"] = None

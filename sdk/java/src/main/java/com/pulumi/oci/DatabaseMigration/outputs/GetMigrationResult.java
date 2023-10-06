@@ -6,6 +6,7 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationAdvisorSetting;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDataTransferMediumDetail;
+import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDataTransferMediumDetailsV2;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDatapumpSetting;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDumpTransferDetail;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationExcludeObject;
@@ -47,6 +48,7 @@ public final class GetMigrationResult {
      * 
      */
     private List<GetMigrationDataTransferMediumDetail> dataTransferMediumDetails;
+    private List<GetMigrationDataTransferMediumDetailsV2> dataTransferMediumDetailsV2s;
     /**
      * @return Optional settings for Data Pump Export and Import jobs
      * 
@@ -202,6 +204,9 @@ public final class GetMigrationResult {
      */
     public List<GetMigrationDataTransferMediumDetail> dataTransferMediumDetails() {
         return this.dataTransferMediumDetails;
+    }
+    public List<GetMigrationDataTransferMediumDetailsV2> dataTransferMediumDetailsV2s() {
+        return this.dataTransferMediumDetailsV2s;
     }
     /**
      * @return Optional settings for Data Pump Export and Import jobs
@@ -383,6 +388,7 @@ public final class GetMigrationResult {
         private String credentialsSecretId;
         private String csvText;
         private List<GetMigrationDataTransferMediumDetail> dataTransferMediumDetails;
+        private List<GetMigrationDataTransferMediumDetailsV2> dataTransferMediumDetailsV2s;
         private List<GetMigrationDatapumpSetting> datapumpSettings;
         private Map<String,Object> definedTags;
         private String displayName;
@@ -416,6 +422,7 @@ public final class GetMigrationResult {
     	      this.credentialsSecretId = defaults.credentialsSecretId;
     	      this.csvText = defaults.csvText;
     	      this.dataTransferMediumDetails = defaults.dataTransferMediumDetails;
+    	      this.dataTransferMediumDetailsV2s = defaults.dataTransferMediumDetailsV2s;
     	      this.datapumpSettings = defaults.datapumpSettings;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
@@ -477,6 +484,14 @@ public final class GetMigrationResult {
         }
         public Builder dataTransferMediumDetails(GetMigrationDataTransferMediumDetail... dataTransferMediumDetails) {
             return dataTransferMediumDetails(List.of(dataTransferMediumDetails));
+        }
+        @CustomType.Setter
+        public Builder dataTransferMediumDetailsV2s(List<GetMigrationDataTransferMediumDetailsV2> dataTransferMediumDetailsV2s) {
+            this.dataTransferMediumDetailsV2s = Objects.requireNonNull(dataTransferMediumDetailsV2s);
+            return this;
+        }
+        public Builder dataTransferMediumDetailsV2s(GetMigrationDataTransferMediumDetailsV2... dataTransferMediumDetailsV2s) {
+            return dataTransferMediumDetailsV2s(List.of(dataTransferMediumDetailsV2s));
         }
         @CustomType.Setter
         public Builder datapumpSettings(List<GetMigrationDatapumpSetting> datapumpSettings) {
@@ -627,6 +642,7 @@ public final class GetMigrationResult {
             o.credentialsSecretId = credentialsSecretId;
             o.csvText = csvText;
             o.dataTransferMediumDetails = dataTransferMediumDetails;
+            o.dataTransferMediumDetailsV2s = dataTransferMediumDetailsV2s;
             o.datapumpSettings = datapumpSettings;
             o.definedTags = definedTags;
             o.displayName = displayName;

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['DatabaseSoftwareImageArgs', 'DatabaseSoftwareImage']
@@ -43,26 +43,55 @@ class DatabaseSoftwareImageArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
+        DatabaseSoftwareImageArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            database_software_image_one_off_patches=database_software_image_one_off_patches,
+            database_version=database_version,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            image_shape_family=image_shape_family,
+            image_type=image_type,
+            ls_inventory=ls_inventory,
+            patch_set=patch_set,
+            source_db_home_id=source_db_home_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             database_software_image_one_off_patches: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             database_version: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             image_shape_family: Optional[pulumi.Input[str]] = None,
+             image_type: Optional[pulumi.Input[str]] = None,
+             ls_inventory: Optional[pulumi.Input[str]] = None,
+             patch_set: Optional[pulumi.Input[str]] = None,
+             source_db_home_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
         if database_software_image_one_off_patches is not None:
-            pulumi.set(__self__, "database_software_image_one_off_patches", database_software_image_one_off_patches)
+            _setter("database_software_image_one_off_patches", database_software_image_one_off_patches)
         if database_version is not None:
-            pulumi.set(__self__, "database_version", database_version)
+            _setter("database_version", database_version)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if image_shape_family is not None:
-            pulumi.set(__self__, "image_shape_family", image_shape_family)
+            _setter("image_shape_family", image_shape_family)
         if image_type is not None:
-            pulumi.set(__self__, "image_type", image_type)
+            _setter("image_type", image_type)
         if ls_inventory is not None:
-            pulumi.set(__self__, "ls_inventory", ls_inventory)
+            _setter("ls_inventory", ls_inventory)
         if patch_set is not None:
-            pulumi.set(__self__, "patch_set", patch_set)
+            _setter("patch_set", patch_set)
         if source_db_home_id is not None:
-            pulumi.set(__self__, "source_db_home_id", source_db_home_id)
+            _setter("source_db_home_id", source_db_home_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -245,40 +274,81 @@ class _DatabaseSoftwareImageState:
         :param pulumi.Input[str] state: The current state of the database software image.
         :param pulumi.Input[str] time_created: The date and time the database software image was created.
         """
+        _DatabaseSoftwareImageState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            database_software_image_included_patches=database_software_image_included_patches,
+            database_software_image_one_off_patches=database_software_image_one_off_patches,
+            database_version=database_version,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            image_shape_family=image_shape_family,
+            image_type=image_type,
+            included_patches_summary=included_patches_summary,
+            is_upgrade_supported=is_upgrade_supported,
+            lifecycle_details=lifecycle_details,
+            ls_inventory=ls_inventory,
+            patch_set=patch_set,
+            source_db_home_id=source_db_home_id,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             database_software_image_included_patches: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             database_software_image_one_off_patches: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             database_version: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             image_shape_family: Optional[pulumi.Input[str]] = None,
+             image_type: Optional[pulumi.Input[str]] = None,
+             included_patches_summary: Optional[pulumi.Input[str]] = None,
+             is_upgrade_supported: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             ls_inventory: Optional[pulumi.Input[str]] = None,
+             patch_set: Optional[pulumi.Input[str]] = None,
+             source_db_home_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if database_software_image_included_patches is not None:
-            pulumi.set(__self__, "database_software_image_included_patches", database_software_image_included_patches)
+            _setter("database_software_image_included_patches", database_software_image_included_patches)
         if database_software_image_one_off_patches is not None:
-            pulumi.set(__self__, "database_software_image_one_off_patches", database_software_image_one_off_patches)
+            _setter("database_software_image_one_off_patches", database_software_image_one_off_patches)
         if database_version is not None:
-            pulumi.set(__self__, "database_version", database_version)
+            _setter("database_version", database_version)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if image_shape_family is not None:
-            pulumi.set(__self__, "image_shape_family", image_shape_family)
+            _setter("image_shape_family", image_shape_family)
         if image_type is not None:
-            pulumi.set(__self__, "image_type", image_type)
+            _setter("image_type", image_type)
         if included_patches_summary is not None:
-            pulumi.set(__self__, "included_patches_summary", included_patches_summary)
+            _setter("included_patches_summary", included_patches_summary)
         if is_upgrade_supported is not None:
-            pulumi.set(__self__, "is_upgrade_supported", is_upgrade_supported)
+            _setter("is_upgrade_supported", is_upgrade_supported)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if ls_inventory is not None:
-            pulumi.set(__self__, "ls_inventory", ls_inventory)
+            _setter("ls_inventory", ls_inventory)
         if patch_set is not None:
-            pulumi.set(__self__, "patch_set", patch_set)
+            _setter("patch_set", patch_set)
         if source_db_home_id is not None:
-            pulumi.set(__self__, "source_db_home_id", source_db_home_id)
+            _setter("source_db_home_id", source_db_home_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -610,6 +680,10 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DatabaseSoftwareImageArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -15,17 +15,9 @@ public final class LoadBalancerReservedIpArgs extends com.pulumi.resources.Resou
 
     public static final LoadBalancerReservedIpArgs Empty = new LoadBalancerReservedIpArgs();
 
-    /**
-     * Ocid of the pre-created public IP. That should be attahed to this load balancer.
-     * 
-     */
     @Import(name="id")
     private @Nullable Output<String> id;
 
-    /**
-     * @return Ocid of the pre-created public IP. That should be attahed to this load balancer.
-     * 
-     */
     public Optional<Output<String>> id() {
         return Optional.ofNullable(this.id);
     }
@@ -54,23 +46,11 @@ public final class LoadBalancerReservedIpArgs extends com.pulumi.resources.Resou
             $ = new LoadBalancerReservedIpArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param id Ocid of the pre-created public IP. That should be attahed to this load balancer.
-         * 
-         * @return builder
-         * 
-         */
         public Builder id(@Nullable Output<String> id) {
             $.id = id;
             return this;
         }
 
-        /**
-         * @param id Ocid of the pre-created public IP. That should be attahed to this load balancer.
-         * 
-         * @return builder
-         * 
-         */
         public Builder id(String id) {
             return id(Output.of(id));
         }

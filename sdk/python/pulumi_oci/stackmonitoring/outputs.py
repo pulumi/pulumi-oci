@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -100,14 +100,33 @@ class DiscoveryJobDiscoveryDetails(dict):
         :param 'DiscoveryJobDiscoveryDetailsCredentialsArgs' credentials: List of DiscoveryJob Credential Details.
         :param 'DiscoveryJobDiscoveryDetailsTagsArgs' tags: Property Details
         """
-        pulumi.set(__self__, "agent_id", agent_id)
-        pulumi.set(__self__, "properties", properties)
-        pulumi.set(__self__, "resource_name", resource_name)
-        pulumi.set(__self__, "resource_type", resource_type)
+        DiscoveryJobDiscoveryDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agent_id=agent_id,
+            properties=properties,
+            resource_name=resource_name,
+            resource_type=resource_type,
+            credentials=credentials,
+            tags=tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agent_id: str,
+             properties: 'outputs.DiscoveryJobDiscoveryDetailsProperties',
+             resource_name: str,
+             resource_type: str,
+             credentials: Optional['outputs.DiscoveryJobDiscoveryDetailsCredentials'] = None,
+             tags: Optional['outputs.DiscoveryJobDiscoveryDetailsTags'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("agent_id", agent_id)
+        _setter("properties", properties)
+        _setter("resource_name", resource_name)
+        _setter("resource_type", resource_type)
         if credentials is not None:
-            pulumi.set(__self__, "credentials", credentials)
+            _setter("credentials", credentials)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
 
     @property
     @pulumi.getter(name="agentId")
@@ -165,7 +184,16 @@ class DiscoveryJobDiscoveryDetailsCredentials(dict):
         """
         :param Sequence['DiscoveryJobDiscoveryDetailsCredentialsItemArgs'] items: List of DiscoveryJob credentials.
         """
-        pulumi.set(__self__, "items", items)
+        DiscoveryJobDiscoveryDetailsCredentials._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.DiscoveryJobDiscoveryDetailsCredentialsItem'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -206,9 +234,22 @@ class DiscoveryJobDiscoveryDetailsCredentialsItem(dict):
         :param str credential_type: Name of Credential Type
         :param 'DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs' properties: Property Details
         """
-        pulumi.set(__self__, "credential_name", credential_name)
-        pulumi.set(__self__, "credential_type", credential_type)
-        pulumi.set(__self__, "properties", properties)
+        DiscoveryJobDiscoveryDetailsCredentialsItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_name=credential_name,
+            credential_type=credential_type,
+            properties=properties,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_name: str,
+             credential_type: str,
+             properties: 'outputs.DiscoveryJobDiscoveryDetailsCredentialsItemProperties',
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credential_name", credential_name)
+        _setter("credential_type", credential_type)
+        _setter("properties", properties)
 
     @property
     @pulumi.getter(name="credentialName")
@@ -259,8 +300,17 @@ class DiscoveryJobDiscoveryDetailsCredentialsItemProperties(dict):
         """
         :param Mapping[str, Any] properties_map: Key/Value pair of Property
         """
+        DiscoveryJobDiscoveryDetailsCredentialsItemProperties._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            properties_map=properties_map,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             properties_map: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if properties_map is not None:
-            pulumi.set(__self__, "properties_map", properties_map)
+            _setter("properties_map", properties_map)
 
     @property
     @pulumi.getter(name="propertiesMap")
@@ -295,8 +345,17 @@ class DiscoveryJobDiscoveryDetailsProperties(dict):
         """
         :param Mapping[str, Any] properties_map: Key/Value pair of Property
         """
+        DiscoveryJobDiscoveryDetailsProperties._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            properties_map=properties_map,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             properties_map: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if properties_map is not None:
-            pulumi.set(__self__, "properties_map", properties_map)
+            _setter("properties_map", properties_map)
 
     @property
     @pulumi.getter(name="propertiesMap")
@@ -331,8 +390,17 @@ class DiscoveryJobDiscoveryDetailsTags(dict):
         """
         :param Mapping[str, Any] properties_map: Key/Value pair of Property
         """
+        DiscoveryJobDiscoveryDetailsTags._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            properties_map=properties_map,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             properties_map: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if properties_map is not None:
-            pulumi.set(__self__, "properties_map", properties_map)
+            _setter("properties_map", properties_map)
 
     @property
     @pulumi.getter(name="propertiesMap")
@@ -354,9 +422,22 @@ class MonitoredResourceAdditionalAlias(dict):
         :param str name: (Updatable) Property Name.
         :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
-        pulumi.set(__self__, "credential", credential)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "source", source)
+        MonitoredResourceAdditionalAlias._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential=credential,
+            name=name,
+            source=source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential: 'outputs.MonitoredResourceAdditionalAliasCredential',
+             name: str,
+             source: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credential", credential)
+        _setter("name", name)
+        _setter("source", source)
 
     @property
     @pulumi.getter
@@ -394,9 +475,22 @@ class MonitoredResourceAdditionalAliasCredential(dict):
         :param str service: (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
         :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "service", service)
-        pulumi.set(__self__, "source", source)
+        MonitoredResourceAdditionalAliasCredential._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            service=service,
+            source=source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             service: str,
+             source: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("service", service)
+        _setter("source", source)
 
     @property
     @pulumi.getter
@@ -468,20 +562,41 @@ class MonitoredResourceAdditionalCredential(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        MonitoredResourceAdditionalCredential._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_type=credential_type,
+            description=description,
+            key_id=key_id,
+            name=name,
+            properties=properties,
+            source=source,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_type: Optional[str] = None,
+             description: Optional[str] = None,
+             key_id: Optional[str] = None,
+             name: Optional[str] = None,
+             properties: Optional[Sequence['outputs.MonitoredResourceAdditionalCredentialProperty']] = None,
+             source: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if credential_type is not None:
-            pulumi.set(__self__, "credential_type", credential_type)
+            _setter("credential_type", credential_type)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if key_id is not None:
-            pulumi.set(__self__, "key_id", key_id)
+            _setter("key_id", key_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if properties is not None:
-            pulumi.set(__self__, "properties", properties)
+            _setter("properties", properties)
         if source is not None:
-            pulumi.set(__self__, "source", source)
+            _setter("source", source)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="credentialType")
@@ -556,10 +671,21 @@ class MonitoredResourceAdditionalCredentialProperty(dict):
         :param str name: (Updatable) Property Name.
         :param str value: (Updatable) Property Value.
         """
+        MonitoredResourceAdditionalCredentialProperty._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -589,9 +715,22 @@ class MonitoredResourceAliases(dict):
         :param str name: (Updatable) Property Name.
         :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
-        pulumi.set(__self__, "credential", credential)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "source", source)
+        MonitoredResourceAliases._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential=credential,
+            name=name,
+            source=source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential: 'outputs.MonitoredResourceAliasesCredential',
+             name: str,
+             source: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credential", credential)
+        _setter("name", name)
+        _setter("source", source)
 
     @property
     @pulumi.getter
@@ -629,9 +768,22 @@ class MonitoredResourceAliasesCredential(dict):
         :param str service: (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
         :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "service", service)
-        pulumi.set(__self__, "source", source)
+        MonitoredResourceAliasesCredential._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            service=service,
+            source=source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             service: str,
+             source: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("service", service)
+        _setter("source", source)
 
     @property
     @pulumi.getter
@@ -703,20 +855,41 @@ class MonitoredResourceCredentials(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        MonitoredResourceCredentials._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_type=credential_type,
+            description=description,
+            key_id=key_id,
+            name=name,
+            properties=properties,
+            source=source,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_type: Optional[str] = None,
+             description: Optional[str] = None,
+             key_id: Optional[str] = None,
+             name: Optional[str] = None,
+             properties: Optional[Sequence['outputs.MonitoredResourceCredentialsProperty']] = None,
+             source: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if credential_type is not None:
-            pulumi.set(__self__, "credential_type", credential_type)
+            _setter("credential_type", credential_type)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if key_id is not None:
-            pulumi.set(__self__, "key_id", key_id)
+            _setter("key_id", key_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if properties is not None:
-            pulumi.set(__self__, "properties", properties)
+            _setter("properties", properties)
         if source is not None:
-            pulumi.set(__self__, "source", source)
+            _setter("source", source)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="credentialType")
@@ -791,10 +964,21 @@ class MonitoredResourceCredentialsProperty(dict):
         :param str name: (Updatable) Property Name.
         :param str value: (Updatable) Property Value.
         """
+        MonitoredResourceCredentialsProperty._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -857,17 +1041,38 @@ class MonitoredResourceDatabaseConnectionDetails(dict):
         :param str db_unique_name: (Updatable) UniqueName used for database connection requests.
         :param str ssl_secret_id: (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "service_name", service_name)
+        MonitoredResourceDatabaseConnectionDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            port=port,
+            protocol=protocol,
+            service_name=service_name,
+            connector_id=connector_id,
+            db_id=db_id,
+            db_unique_name=db_unique_name,
+            ssl_secret_id=ssl_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             port: int,
+             protocol: str,
+             service_name: str,
+             connector_id: Optional[str] = None,
+             db_id: Optional[str] = None,
+             db_unique_name: Optional[str] = None,
+             ssl_secret_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("port", port)
+        _setter("protocol", protocol)
+        _setter("service_name", service_name)
         if connector_id is not None:
-            pulumi.set(__self__, "connector_id", connector_id)
+            _setter("connector_id", connector_id)
         if db_id is not None:
-            pulumi.set(__self__, "db_id", db_id)
+            _setter("db_id", db_id)
         if db_unique_name is not None:
-            pulumi.set(__self__, "db_unique_name", db_unique_name)
+            _setter("db_unique_name", db_unique_name)
         if ssl_secret_id is not None:
-            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+            _setter("ssl_secret_id", ssl_secret_id)
 
     @property
     @pulumi.getter
@@ -935,10 +1140,21 @@ class MonitoredResourceProperty(dict):
         :param str name: (Updatable) Property Name.
         :param str value: (Updatable) Property Value.
         """
+        MonitoredResourceProperty._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -985,12 +1201,25 @@ class MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail(dict
         :param str name: Monitored Resource Name.
         :param str type: Monitored Resource Type.
         """
+        MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             name: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1045,12 +1274,25 @@ class MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail(dict):
         :param str name: Monitored Resource Name.
         :param str type: Monitored Resource Type.
         """
+        MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             name: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1143,30 +1385,61 @@ class MonitoredResourcesListMemberItem(dict):
         :param str state: The current state of the Resource.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
+        MonitoredResourcesListMemberItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            external_id=external_id,
+            freeform_tags=freeform_tags,
+            host_name=host_name,
+            parent_id=parent_id,
+            resource_display_name=resource_display_name,
+            resource_id=resource_id,
+            resource_name=resource_name,
+            resource_type=resource_type,
+            state=state,
+            system_tags=system_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             external_id: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             host_name: Optional[str] = None,
+             parent_id: Optional[str] = None,
+             resource_display_name: Optional[str] = None,
+             resource_id: Optional[str] = None,
+             resource_name: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if external_id is not None:
-            pulumi.set(__self__, "external_id", external_id)
+            _setter("external_id", external_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if host_name is not None:
-            pulumi.set(__self__, "host_name", host_name)
+            _setter("host_name", host_name)
         if parent_id is not None:
-            pulumi.set(__self__, "parent_id", parent_id)
+            _setter("parent_id", parent_id)
         if resource_display_name is not None:
-            pulumi.set(__self__, "resource_display_name", resource_display_name)
+            _setter("resource_display_name", resource_display_name)
         if resource_id is not None:
-            pulumi.set(__self__, "resource_id", resource_id)
+            _setter("resource_id", resource_id)
         if resource_name is not None:
-            pulumi.set(__self__, "resource_name", resource_name)
+            _setter("resource_name", resource_name)
         if resource_type is not None:
-            pulumi.set(__self__, "resource_type", resource_type)
+            _setter("resource_type", resource_type)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1309,18 +1582,37 @@ class MonitoredResourcesSearchAssociationItem(dict):
         :param str source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str time_created: The association creation time. An RFC3339 formatted datetime string.
         """
+        MonitoredResourcesSearchAssociationItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            association_type=association_type,
+            destination_resource_details=destination_resource_details,
+            destination_resource_id=destination_resource_id,
+            source_resource_details=source_resource_details,
+            source_resource_id=source_resource_id,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             association_type: Optional[str] = None,
+             destination_resource_details: Optional[Sequence['outputs.MonitoredResourcesSearchAssociationItemDestinationResourceDetail']] = None,
+             destination_resource_id: Optional[str] = None,
+             source_resource_details: Optional[Sequence['outputs.MonitoredResourcesSearchAssociationItemSourceResourceDetail']] = None,
+             source_resource_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if association_type is not None:
-            pulumi.set(__self__, "association_type", association_type)
+            _setter("association_type", association_type)
         if destination_resource_details is not None:
-            pulumi.set(__self__, "destination_resource_details", destination_resource_details)
+            _setter("destination_resource_details", destination_resource_details)
         if destination_resource_id is not None:
-            pulumi.set(__self__, "destination_resource_id", destination_resource_id)
+            _setter("destination_resource_id", destination_resource_id)
         if source_resource_details is not None:
-            pulumi.set(__self__, "source_resource_details", source_resource_details)
+            _setter("source_resource_details", source_resource_details)
         if source_resource_id is not None:
-            pulumi.set(__self__, "source_resource_id", source_resource_id)
+            _setter("source_resource_id", source_resource_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="associationType")
@@ -1399,12 +1691,25 @@ class MonitoredResourcesSearchAssociationItemDestinationResourceDetail(dict):
         :param str name: Monitored Resource Name.
         :param str type: Monitored Resource Type.
         """
+        MonitoredResourcesSearchAssociationItemDestinationResourceDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             name: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1459,12 +1764,25 @@ class MonitoredResourcesSearchAssociationItemSourceResourceDetail(dict):
         :param str name: Monitored Resource Name.
         :param str type: Monitored Resource Type.
         """
+        MonitoredResourcesSearchAssociationItemSourceResourceDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             name: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1561,34 +1879,69 @@ class MonitoredResourcesSearchItem(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        MonitoredResourcesSearchItem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            display_name=display_name,
+            external_id=external_id,
+            freeform_tags=freeform_tags,
+            host_name=host_name,
+            id=id,
+            management_agent_id=management_agent_id,
+            name=name,
+            properties=properties,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             external_id: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             host_name: Optional[str] = None,
+             id: Optional[str] = None,
+             management_agent_id: Optional[str] = None,
+             name: Optional[str] = None,
+             properties: Optional[Sequence['outputs.MonitoredResourcesSearchItemProperty']] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if external_id is not None:
-            pulumi.set(__self__, "external_id", external_id)
+            _setter("external_id", external_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if host_name is not None:
-            pulumi.set(__self__, "host_name", host_name)
+            _setter("host_name", host_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if management_agent_id is not None:
-            pulumi.set(__self__, "management_agent_id", management_agent_id)
+            _setter("management_agent_id", management_agent_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if properties is not None:
-            pulumi.set(__self__, "properties", properties)
+            _setter("properties", properties)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -1716,10 +2069,21 @@ class MonitoredResourcesSearchItemProperty(dict):
         :param str name: A filter to return resources that match exact resource name.
         :param str value: Property Value.
         """
+        MonitoredResourcesSearchItemProperty._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -1742,7 +2106,16 @@ class MonitoredResourcesSearchItemProperty(dict):
 class GetConfigsConfigCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetConfigsConfigCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetConfigsConfigCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetConfigsConfigCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1779,18 +2152,49 @@ class GetConfigsConfigCollectionItemResult(dict):
         :param str time_created: The time the configuration was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the Config was updated.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "config_type", config_type)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetConfigsConfigCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            config_type=config_type,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_enabled=is_enabled,
+            resource_type=resource_type,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             config_type: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_enabled: bool,
+             resource_type: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("config_type", config_type)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_enabled", is_enabled)
+        _setter("resource_type", resource_type)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1895,10 +2299,23 @@ class GetConfigsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetConfigsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1933,12 +2350,31 @@ class GetDiscoveryJobDiscoveryDetailResult(dict):
         :param str resource_type: Resource Type.
         :param Sequence['GetDiscoveryJobDiscoveryDetailTagArgs'] tags: Property Details
         """
-        pulumi.set(__self__, "agent_id", agent_id)
-        pulumi.set(__self__, "credentials", credentials)
-        pulumi.set(__self__, "properties", properties)
-        pulumi.set(__self__, "resource_name", resource_name)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "tags", tags)
+        GetDiscoveryJobDiscoveryDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agent_id=agent_id,
+            credentials=credentials,
+            properties=properties,
+            resource_name=resource_name,
+            resource_type=resource_type,
+            tags=tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agent_id: str,
+             credentials: Sequence['outputs.GetDiscoveryJobDiscoveryDetailCredentialResult'],
+             properties: Sequence['outputs.GetDiscoveryJobDiscoveryDetailPropertyResult'],
+             resource_name: str,
+             resource_type: str,
+             tags: Sequence['outputs.GetDiscoveryJobDiscoveryDetailTagResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("agent_id", agent_id)
+        _setter("credentials", credentials)
+        _setter("properties", properties)
+        _setter("resource_name", resource_name)
+        _setter("resource_type", resource_type)
+        _setter("tags", tags)
 
     @property
     @pulumi.getter(name="agentId")
@@ -1996,7 +2432,16 @@ class GetDiscoveryJobDiscoveryDetailCredentialResult(dict):
         """
         :param Sequence['GetDiscoveryJobDiscoveryDetailCredentialItemArgs'] items: List of DiscoveryJob credentials.
         """
-        pulumi.set(__self__, "items", items)
+        GetDiscoveryJobDiscoveryDetailCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDiscoveryJobDiscoveryDetailCredentialItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2018,9 +2463,22 @@ class GetDiscoveryJobDiscoveryDetailCredentialItemResult(dict):
         :param str credential_type: Name of Credential Type
         :param Sequence['GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArgs'] properties: Property Details
         """
-        pulumi.set(__self__, "credential_name", credential_name)
-        pulumi.set(__self__, "credential_type", credential_type)
-        pulumi.set(__self__, "properties", properties)
+        GetDiscoveryJobDiscoveryDetailCredentialItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_name=credential_name,
+            credential_type=credential_type,
+            properties=properties,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_name: str,
+             credential_type: str,
+             properties: Sequence['outputs.GetDiscoveryJobDiscoveryDetailCredentialItemPropertyResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credential_name", credential_name)
+        _setter("credential_type", credential_type)
+        _setter("properties", properties)
 
     @property
     @pulumi.getter(name="credentialName")
@@ -2054,7 +2512,16 @@ class GetDiscoveryJobDiscoveryDetailCredentialItemPropertyResult(dict):
         """
         :param Mapping[str, Any] properties_map: Key/Value pair of Property
         """
-        pulumi.set(__self__, "properties_map", properties_map)
+        GetDiscoveryJobDiscoveryDetailCredentialItemPropertyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            properties_map=properties_map,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             properties_map: Mapping[str, Any],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("properties_map", properties_map)
 
     @property
     @pulumi.getter(name="propertiesMap")
@@ -2072,7 +2539,16 @@ class GetDiscoveryJobDiscoveryDetailPropertyResult(dict):
         """
         :param Mapping[str, Any] properties_map: Key/Value pair of Property
         """
-        pulumi.set(__self__, "properties_map", properties_map)
+        GetDiscoveryJobDiscoveryDetailPropertyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            properties_map=properties_map,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             properties_map: Mapping[str, Any],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("properties_map", properties_map)
 
     @property
     @pulumi.getter(name="propertiesMap")
@@ -2090,7 +2566,16 @@ class GetDiscoveryJobDiscoveryDetailTagResult(dict):
         """
         :param Mapping[str, Any] properties_map: Key/Value pair of Property
         """
-        pulumi.set(__self__, "properties_map", properties_map)
+        GetDiscoveryJobDiscoveryDetailTagResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            properties_map=properties_map,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             properties_map: Mapping[str, Any],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("properties_map", properties_map)
 
     @property
     @pulumi.getter(name="propertiesMap")
@@ -2108,7 +2593,16 @@ class GetDiscoveryJobLogsDiscoveryJobLogCollectionResult(dict):
         """
         :param Sequence['GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArgs'] items: List of logs
         """
-        pulumi.set(__self__, "items", items)
+        GetDiscoveryJobLogsDiscoveryJobLogCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDiscoveryJobLogsDiscoveryJobLogCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2132,10 +2626,25 @@ class GetDiscoveryJobLogsDiscoveryJobLogCollectionItemResult(dict):
         :param str log_type: The log type like INFO, WARNING, ERROR, SUCCESS
         :param str time_created: Time the Job log was created
         """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "log_message", log_message)
-        pulumi.set(__self__, "log_type", log_type)
-        pulumi.set(__self__, "time_created", time_created)
+        GetDiscoveryJobLogsDiscoveryJobLogCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            log_message=log_message,
+            log_type=log_type,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             log_message: str,
+             log_type: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
+        _setter("log_message", log_message)
+        _setter("log_type", log_type)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter
@@ -2176,10 +2685,23 @@ class GetDiscoveryJobLogsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDiscoveryJobLogsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2204,7 +2726,16 @@ class GetDiscoveryJobsDiscoveryJobCollectionResult(dict):
         """
         :param Sequence['GetDiscoveryJobsDiscoveryJobCollectionItemArgs'] items: List of DiscoveryJob credentials.
         """
-        pulumi.set(__self__, "items", items)
+        GetDiscoveryJobsDiscoveryJobCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDiscoveryJobsDiscoveryJobCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2248,20 +2779,55 @@ class GetDiscoveryJobsDiscoveryJobCollectionItemResult(dict):
         :param str time_updated: The time the discovery Job was updated.
         :param str user_id: The OCID of user in which the job is submitted
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "discovery_type", discovery_type)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "resource_name", resource_name)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_message", status_message)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "tenant_id", tenant_id)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "user_id", user_id)
+        GetDiscoveryJobsDiscoveryJobCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            discovery_type=discovery_type,
+            freeform_tags=freeform_tags,
+            id=id,
+            resource_name=resource_name,
+            resource_type=resource_type,
+            state=state,
+            status=status,
+            status_message=status_message,
+            system_tags=system_tags,
+            tenant_id=tenant_id,
+            time_updated=time_updated,
+            user_id=user_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             discovery_type: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             resource_name: str,
+             resource_type: str,
+             state: str,
+             status: str,
+             status_message: str,
+             system_tags: Mapping[str, Any],
+             tenant_id: str,
+             time_updated: str,
+             user_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("discovery_type", discovery_type)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("resource_name", resource_name)
+        _setter("resource_type", resource_type)
+        _setter("state", state)
+        _setter("status", status)
+        _setter("status_message", status_message)
+        _setter("system_tags", system_tags)
+        _setter("tenant_id", tenant_id)
+        _setter("time_updated", time_updated)
+        _setter("user_id", user_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2385,10 +2951,23 @@ class GetDiscoveryJobsFilterResult(dict):
         """
         :param str name: A filter to return only discovery jobs that match the entire resource name given.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDiscoveryJobsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2420,9 +2999,22 @@ class GetMonitoredResourceAdditionalAliasResult(dict):
         :param str name: Property Name.
         :param str source: The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
-        pulumi.set(__self__, "credentials", credentials)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "source", source)
+        GetMonitoredResourceAdditionalAliasResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credentials=credentials,
+            name=name,
+            source=source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credentials: Sequence['outputs.GetMonitoredResourceAdditionalAliasCredentialResult'],
+             name: str,
+             source: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credentials", credentials)
+        _setter("name", name)
+        _setter("source", source)
 
     @property
     @pulumi.getter
@@ -2460,9 +3052,22 @@ class GetMonitoredResourceAdditionalAliasCredentialResult(dict):
         :param str service: The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
         :param str source: The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "service", service)
-        pulumi.set(__self__, "source", source)
+        GetMonitoredResourceAdditionalAliasCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            service=service,
+            source=source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             service: str,
+             source: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("service", service)
+        _setter("source", source)
 
     @property
     @pulumi.getter
@@ -2511,13 +3116,34 @@ class GetMonitoredResourceAdditionalCredentialResult(dict):
         :param str source: The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         :param str type: Monitored Resource Type.
         """
-        pulumi.set(__self__, "credential_type", credential_type)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "key_id", key_id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "properties", properties)
-        pulumi.set(__self__, "source", source)
-        pulumi.set(__self__, "type", type)
+        GetMonitoredResourceAdditionalCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_type=credential_type,
+            description=description,
+            key_id=key_id,
+            name=name,
+            properties=properties,
+            source=source,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_type: str,
+             description: str,
+             key_id: str,
+             name: str,
+             properties: Sequence['outputs.GetMonitoredResourceAdditionalCredentialPropertyResult'],
+             source: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credential_type", credential_type)
+        _setter("description", description)
+        _setter("key_id", key_id)
+        _setter("name", name)
+        _setter("properties", properties)
+        _setter("source", source)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="credentialType")
@@ -2588,8 +3214,19 @@ class GetMonitoredResourceAdditionalCredentialPropertyResult(dict):
         :param str name: Property Name.
         :param str value: Property Value.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetMonitoredResourceAdditionalCredentialPropertyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -2619,9 +3256,22 @@ class GetMonitoredResourceAliasResult(dict):
         :param str name: Property Name.
         :param str source: The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
-        pulumi.set(__self__, "credentials", credentials)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "source", source)
+        GetMonitoredResourceAliasResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credentials=credentials,
+            name=name,
+            source=source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credentials: Sequence['outputs.GetMonitoredResourceAliasCredentialResult'],
+             name: str,
+             source: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credentials", credentials)
+        _setter("name", name)
+        _setter("source", source)
 
     @property
     @pulumi.getter
@@ -2659,9 +3309,22 @@ class GetMonitoredResourceAliasCredentialResult(dict):
         :param str service: The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
         :param str source: The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "service", service)
-        pulumi.set(__self__, "source", source)
+        GetMonitoredResourceAliasCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            service=service,
+            source=source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             service: str,
+             source: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("service", service)
+        _setter("source", source)
 
     @property
     @pulumi.getter
@@ -2710,13 +3373,34 @@ class GetMonitoredResourceCredentialResult(dict):
         :param str source: The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         :param str type: Monitored Resource Type.
         """
-        pulumi.set(__self__, "credential_type", credential_type)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "key_id", key_id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "properties", properties)
-        pulumi.set(__self__, "source", source)
-        pulumi.set(__self__, "type", type)
+        GetMonitoredResourceCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_type=credential_type,
+            description=description,
+            key_id=key_id,
+            name=name,
+            properties=properties,
+            source=source,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_type: str,
+             description: str,
+             key_id: str,
+             name: str,
+             properties: Sequence['outputs.GetMonitoredResourceCredentialPropertyResult'],
+             source: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credential_type", credential_type)
+        _setter("description", description)
+        _setter("key_id", key_id)
+        _setter("name", name)
+        _setter("properties", properties)
+        _setter("source", source)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="credentialType")
@@ -2787,8 +3471,19 @@ class GetMonitoredResourceCredentialPropertyResult(dict):
         :param str name: Property Name.
         :param str value: Property Value.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetMonitoredResourceCredentialPropertyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -2826,13 +3521,34 @@ class GetMonitoredResourceDatabaseConnectionDetailResult(dict):
         :param str service_name: Service name used for connection requests.
         :param str ssl_secret_id: SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
-        pulumi.set(__self__, "connector_id", connector_id)
-        pulumi.set(__self__, "db_id", db_id)
-        pulumi.set(__self__, "db_unique_name", db_unique_name)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "service_name", service_name)
-        pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        GetMonitoredResourceDatabaseConnectionDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            connector_id=connector_id,
+            db_id=db_id,
+            db_unique_name=db_unique_name,
+            port=port,
+            protocol=protocol,
+            service_name=service_name,
+            ssl_secret_id=ssl_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             connector_id: str,
+             db_id: str,
+             db_unique_name: str,
+             port: int,
+             protocol: str,
+             service_name: str,
+             ssl_secret_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("connector_id", connector_id)
+        _setter("db_id", db_id)
+        _setter("db_unique_name", db_unique_name)
+        _setter("port", port)
+        _setter("protocol", protocol)
+        _setter("service_name", service_name)
+        _setter("ssl_secret_id", ssl_secret_id)
 
     @property
     @pulumi.getter(name="connectorId")
@@ -2900,8 +3616,19 @@ class GetMonitoredResourcePropertyResult(dict):
         :param str name: Property Name.
         :param str value: Property Value.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetMonitoredResourcePropertyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter

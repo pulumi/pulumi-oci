@@ -163,7 +163,7 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="filesystemSnapshotPolicyId", refs={String.class}, tree="[0]")
-    private Output<String> filesystemSnapshotPolicyId;
+    private Output</* @Nullable */ String> filesystemSnapshotPolicyId;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
@@ -171,8 +171,8 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      * May be unset as a blank value.
      * 
      */
-    public Output<String> filesystemSnapshotPolicyId() {
-        return this.filesystemSnapshotPolicyId;
+    public Output<Optional<String>> filesystemSnapshotPolicyId() {
+        return Codegen.optional(this.filesystemSnapshotPolicyId);
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`

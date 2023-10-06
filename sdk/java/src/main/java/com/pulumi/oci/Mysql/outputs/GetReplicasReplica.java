@@ -4,10 +4,12 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Mysql.outputs.GetReplicasReplicaReplicaOverride;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -23,6 +25,11 @@ public final class GetReplicasReplica {
      * 
      */
     private String compartmentId;
+    /**
+     * @return The requested Configuration instance.
+     * 
+     */
+    private String configurationId;
     /**
      * @return The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -74,7 +81,7 @@ public final class GetReplicasReplica {
      */
     private String lifecycleDetails;
     /**
-     * @return The MySQL version used by the read replica.
+     * @return The MySQL version to be used by the read replica.
      * 
      */
     private String mysqlVersion;
@@ -88,6 +95,16 @@ public final class GetReplicasReplica {
      * 
      */
     private Integer portX;
+    /**
+     * @return By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to &#34;&#34;, then the value is inherited from its  source DB system.
+     * 
+     */
+    private List<GetReplicasReplicaReplicaOverride> replicaOverrides;
+    /**
+     * @return The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+     * 
+     */
+    private String shapeName;
     /**
      * @return The LifecycleState of the read replica.
      * 
@@ -118,6 +135,13 @@ public final class GetReplicasReplica {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The requested Configuration instance.
+     * 
+     */
+    public String configurationId() {
+        return this.configurationId;
     }
     /**
      * @return The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -190,7 +214,7 @@ public final class GetReplicasReplica {
         return this.lifecycleDetails;
     }
     /**
-     * @return The MySQL version used by the read replica.
+     * @return The MySQL version to be used by the read replica.
      * 
      */
     public String mysqlVersion() {
@@ -209,6 +233,20 @@ public final class GetReplicasReplica {
      */
     public Integer portX() {
         return this.portX;
+    }
+    /**
+     * @return By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to &#34;&#34;, then the value is inherited from its  source DB system.
+     * 
+     */
+    public List<GetReplicasReplicaReplicaOverride> replicaOverrides() {
+        return this.replicaOverrides;
+    }
+    /**
+     * @return The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+     * 
+     */
+    public String shapeName() {
+        return this.shapeName;
     }
     /**
      * @return The LifecycleState of the read replica.
@@ -243,6 +281,7 @@ public final class GetReplicasReplica {
     public static final class Builder {
         private String availabilityDomain;
         private String compartmentId;
+        private String configurationId;
         private String dbSystemId;
         private Map<String,Object> definedTags;
         private String description;
@@ -256,6 +295,8 @@ public final class GetReplicasReplica {
         private String mysqlVersion;
         private Integer port;
         private Integer portX;
+        private List<GetReplicasReplicaReplicaOverride> replicaOverrides;
+        private String shapeName;
         private String state;
         private String timeCreated;
         private String timeUpdated;
@@ -264,6 +305,7 @@ public final class GetReplicasReplica {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.configurationId = defaults.configurationId;
     	      this.dbSystemId = defaults.dbSystemId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
@@ -277,6 +319,8 @@ public final class GetReplicasReplica {
     	      this.mysqlVersion = defaults.mysqlVersion;
     	      this.port = defaults.port;
     	      this.portX = defaults.portX;
+    	      this.replicaOverrides = defaults.replicaOverrides;
+    	      this.shapeName = defaults.shapeName;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -290,6 +334,11 @@ public final class GetReplicasReplica {
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder configurationId(String configurationId) {
+            this.configurationId = Objects.requireNonNull(configurationId);
             return this;
         }
         @CustomType.Setter
@@ -358,6 +407,19 @@ public final class GetReplicasReplica {
             return this;
         }
         @CustomType.Setter
+        public Builder replicaOverrides(List<GetReplicasReplicaReplicaOverride> replicaOverrides) {
+            this.replicaOverrides = Objects.requireNonNull(replicaOverrides);
+            return this;
+        }
+        public Builder replicaOverrides(GetReplicasReplicaReplicaOverride... replicaOverrides) {
+            return replicaOverrides(List.of(replicaOverrides));
+        }
+        @CustomType.Setter
+        public Builder shapeName(String shapeName) {
+            this.shapeName = Objects.requireNonNull(shapeName);
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -376,6 +438,7 @@ public final class GetReplicasReplica {
             final var o = new GetReplicasReplica();
             o.availabilityDomain = availabilityDomain;
             o.compartmentId = compartmentId;
+            o.configurationId = configurationId;
             o.dbSystemId = dbSystemId;
             o.definedTags = definedTags;
             o.description = description;
@@ -389,6 +452,8 @@ public final class GetReplicasReplica {
             o.mysqlVersion = mysqlVersion;
             o.port = port;
             o.portX = portX;
+            o.replicaOverrides = replicaOverrides;
+            o.shapeName = shapeName;
             o.state = state;
             o.timeCreated = timeCreated;
             o.timeUpdated = timeUpdated;

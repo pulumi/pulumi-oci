@@ -25,7 +25,7 @@ public final class GetVaultReplicasVaultReplica {
      */
     private String region;
     /**
-     * @return The vault replica&#39;s status
+     * @return Status of the Vault
      * 
      */
     private String status;
@@ -53,7 +53,7 @@ public final class GetVaultReplicasVaultReplica {
         return this.region;
     }
     /**
-     * @return The vault replica&#39;s status
+     * @return Status of the Vault
      * 
      */
     public String status() {

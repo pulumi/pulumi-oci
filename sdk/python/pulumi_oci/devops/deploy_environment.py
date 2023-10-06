@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -43,24 +43,51 @@ class DeployEnvironmentArgs:
         :param pulumi.Input[str] function_id: (Updatable) The OCID of the Function.
         :param pulumi.Input['DeployEnvironmentNetworkChannelArgs'] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         """
-        pulumi.set(__self__, "deploy_environment_type", deploy_environment_type)
-        pulumi.set(__self__, "project_id", project_id)
+        DeployEnvironmentArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            deploy_environment_type=deploy_environment_type,
+            project_id=project_id,
+            cluster_id=cluster_id,
+            compute_instance_group_selectors=compute_instance_group_selectors,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            function_id=function_id,
+            network_channel=network_channel,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             deploy_environment_type: pulumi.Input[str],
+             project_id: pulumi.Input[str],
+             cluster_id: Optional[pulumi.Input[str]] = None,
+             compute_instance_group_selectors: Optional[pulumi.Input['DeployEnvironmentComputeInstanceGroupSelectorsArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             function_id: Optional[pulumi.Input[str]] = None,
+             network_channel: Optional[pulumi.Input['DeployEnvironmentNetworkChannelArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("deploy_environment_type", deploy_environment_type)
+        _setter("project_id", project_id)
         if cluster_id is not None:
-            pulumi.set(__self__, "cluster_id", cluster_id)
+            _setter("cluster_id", cluster_id)
         if compute_instance_group_selectors is not None:
-            pulumi.set(__self__, "compute_instance_group_selectors", compute_instance_group_selectors)
+            _setter("compute_instance_group_selectors", compute_instance_group_selectors)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if function_id is not None:
-            pulumi.set(__self__, "function_id", function_id)
+            _setter("function_id", function_id)
         if network_channel is not None:
-            pulumi.set(__self__, "network_channel", network_channel)
+            _setter("network_channel", network_channel)
 
     @property
     @pulumi.getter(name="deployEnvironmentType")
@@ -229,38 +256,77 @@ class _DeployEnvironmentState:
         :param pulumi.Input[str] time_created: Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: Time the deployment environment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
+        _DeployEnvironmentState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cluster_id=cluster_id,
+            compartment_id=compartment_id,
+            compute_instance_group_selectors=compute_instance_group_selectors,
+            defined_tags=defined_tags,
+            deploy_environment_type=deploy_environment_type,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            function_id=function_id,
+            lifecycle_details=lifecycle_details,
+            network_channel=network_channel,
+            project_id=project_id,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cluster_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             compute_instance_group_selectors: Optional[pulumi.Input['DeployEnvironmentComputeInstanceGroupSelectorsArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             deploy_environment_type: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             function_id: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             network_channel: Optional[pulumi.Input['DeployEnvironmentNetworkChannelArgs']] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if cluster_id is not None:
-            pulumi.set(__self__, "cluster_id", cluster_id)
+            _setter("cluster_id", cluster_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if compute_instance_group_selectors is not None:
-            pulumi.set(__self__, "compute_instance_group_selectors", compute_instance_group_selectors)
+            _setter("compute_instance_group_selectors", compute_instance_group_selectors)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if deploy_environment_type is not None:
-            pulumi.set(__self__, "deploy_environment_type", deploy_environment_type)
+            _setter("deploy_environment_type", deploy_environment_type)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if function_id is not None:
-            pulumi.set(__self__, "function_id", function_id)
+            _setter("function_id", function_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if network_channel is not None:
-            pulumi.set(__self__, "network_channel", network_channel)
+            _setter("network_channel", network_channel)
         if project_id is not None:
-            pulumi.set(__self__, "project_id", project_id)
+            _setter("project_id", project_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="clusterId")
@@ -602,6 +668,10 @@ class DeployEnvironment(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DeployEnvironmentArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -627,6 +697,11 @@ class DeployEnvironment(pulumi.CustomResource):
             __props__ = DeployEnvironmentArgs.__new__(DeployEnvironmentArgs)
 
             __props__.__dict__["cluster_id"] = cluster_id
+            if compute_instance_group_selectors is not None and not isinstance(compute_instance_group_selectors, DeployEnvironmentComputeInstanceGroupSelectorsArgs):
+                compute_instance_group_selectors = compute_instance_group_selectors or {}
+                def _setter(key, value):
+                    compute_instance_group_selectors[key] = value
+                DeployEnvironmentComputeInstanceGroupSelectorsArgs._configure(_setter, **compute_instance_group_selectors)
             __props__.__dict__["compute_instance_group_selectors"] = compute_instance_group_selectors
             __props__.__dict__["defined_tags"] = defined_tags
             if deploy_environment_type is None and not opts.urn:
@@ -636,6 +711,11 @@ class DeployEnvironment(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["function_id"] = function_id
+            if network_channel is not None and not isinstance(network_channel, DeployEnvironmentNetworkChannelArgs):
+                network_channel = network_channel or {}
+                def _setter(key, value):
+                    network_channel[key] = value
+                DeployEnvironmentNetworkChannelArgs._configure(_setter, **network_channel)
             __props__.__dict__["network_channel"] = network_channel
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")

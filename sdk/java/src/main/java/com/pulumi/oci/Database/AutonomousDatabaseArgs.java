@@ -6,6 +6,7 @@ package com.pulumi.oci.Database;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseCustomerContactArgs;
+import com.pulumi.oci.Database.inputs.AutonomousDatabaseResourcePoolSummaryArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseScheduledOperationArgs;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -862,6 +863,20 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         return Optional.ofNullable(this.remoteDisasterRecoveryType);
     }
 
+    @Import(name="resourcePoolLeaderId")
+    private @Nullable Output<String> resourcePoolLeaderId;
+
+    public Optional<Output<String>> resourcePoolLeaderId() {
+        return Optional.ofNullable(this.resourcePoolLeaderId);
+    }
+
+    @Import(name="resourcePoolSummary")
+    private @Nullable Output<AutonomousDatabaseResourcePoolSummaryArgs> resourcePoolSummary;
+
+    public Optional<Output<AutonomousDatabaseResourcePoolSummaryArgs>> resourcePoolSummary() {
+        return Optional.ofNullable(this.resourcePoolSummary);
+    }
+
     /**
      * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `is_dedicated` is true.
      * 
@@ -1195,6 +1210,8 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         this.privateEndpointLabel = $.privateEndpointLabel;
         this.refreshableMode = $.refreshableMode;
         this.remoteDisasterRecoveryType = $.remoteDisasterRecoveryType;
+        this.resourcePoolLeaderId = $.resourcePoolLeaderId;
+        this.resourcePoolSummary = $.resourcePoolSummary;
         this.rotateKeyTrigger = $.rotateKeyTrigger;
         this.scheduledOperations = $.scheduledOperations;
         this.secretId = $.secretId;
@@ -2394,6 +2411,24 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          */
         public Builder remoteDisasterRecoveryType(String remoteDisasterRecoveryType) {
             return remoteDisasterRecoveryType(Output.of(remoteDisasterRecoveryType));
+        }
+
+        public Builder resourcePoolLeaderId(@Nullable Output<String> resourcePoolLeaderId) {
+            $.resourcePoolLeaderId = resourcePoolLeaderId;
+            return this;
+        }
+
+        public Builder resourcePoolLeaderId(String resourcePoolLeaderId) {
+            return resourcePoolLeaderId(Output.of(resourcePoolLeaderId));
+        }
+
+        public Builder resourcePoolSummary(@Nullable Output<AutonomousDatabaseResourcePoolSummaryArgs> resourcePoolSummary) {
+            $.resourcePoolSummary = resourcePoolSummary;
+            return this;
+        }
+
+        public Builder resourcePoolSummary(AutonomousDatabaseResourcePoolSummaryArgs resourcePoolSummary) {
+            return resourcePoolSummary(Output.of(resourcePoolSummary));
         }
 
         /**

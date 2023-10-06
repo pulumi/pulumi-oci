@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Kms.Outputs
     public sealed class GetKeyKeyShapeResult
     {
         /// <summary>
-        /// The algorithm used by a key's key versions to encrypt or decrypt.
+        /// The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
         /// </summary>
         public readonly string Algorithm;
         /// <summary>

@@ -19,41 +19,6 @@ namespace Pulumi.Oci.Kms
     /// to reject an otherwise valid request when the total rate of management write operations exceeds 10
     /// requests per second for a given tenancy.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testKey = new Oci.Kms.Key("testKey", new()
-    ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Key_display_name,
-    ///         KeyShape = new Oci.Kms.Inputs.KeyKeyShapeArgs
-    ///         {
-    ///             Algorithm = @var.Key_key_shape_algorithm,
-    ///             Length = @var.Key_key_shape_length,
-    ///             CurveId = oci_kms_curve.Test_curve.Id,
-    ///         },
-    ///         ManagementEndpoint = @var.Key_management_endpoint,
-    ///         DefinedTags = 
-    ///         {
-    ///             { "Operations.CostCenter", "42" },
-    ///         },
-    ///         FreeformTags = 
-    ///         {
-    ///             { "Department", "Finance" },
-    ///         },
-    ///         ProtectionMode = @var.Key_protection_mode,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// Keys can be imported using the `id`, e.g.
@@ -96,13 +61,25 @@ namespace Pulumi.Oci.Kms
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// A reference to the key on external key manager.
+        /// </summary>
+        [Output("externalKeyReference")]
+        public Output<Outputs.KeyExternalKeyReference> ExternalKeyReference { get; private set; } = null!;
+
+        /// <summary>
+        /// Key reference data to be returned to the customer as a response.
+        /// </summary>
+        [Output("externalKeyReferenceDetails")]
+        public Output<ImmutableArray<Outputs.KeyExternalKeyReferenceDetail>> ExternalKeyReferenceDetails { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+        /// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
         /// </summary>
         [Output("isPrimary")]
         public Output<bool> IsPrimary { get; private set; } = null!;
@@ -120,7 +97,7 @@ namespace Pulumi.Oci.Kms
         public Output<string> ManagementEndpoint { get; private set; } = null!;
 
         /// <summary>
-        /// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+        /// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
         /// </summary>
         [Output("protectionMode")]
         public Output<string> ProtectionMode { get; private set; } = null!;
@@ -258,6 +235,12 @@ namespace Pulumi.Oci.Kms
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
 
+        /// <summary>
+        /// A reference to the key on external key manager.
+        /// </summary>
+        [Input("externalKeyReference")]
+        public Input<Inputs.KeyExternalKeyReferenceArgs>? ExternalKeyReference { get; set; }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -283,7 +266,7 @@ namespace Pulumi.Oci.Kms
         public Input<string> ManagementEndpoint { get; set; } = null!;
 
         /// <summary>
-        /// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+        /// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
         /// </summary>
         [Input("protectionMode")]
         public Input<string>? ProtectionMode { get; set; }
@@ -359,6 +342,24 @@ namespace Pulumi.Oci.Kms
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        /// <summary>
+        /// A reference to the key on external key manager.
+        /// </summary>
+        [Input("externalKeyReference")]
+        public Input<Inputs.KeyExternalKeyReferenceGetArgs>? ExternalKeyReference { get; set; }
+
+        [Input("externalKeyReferenceDetails")]
+        private InputList<Inputs.KeyExternalKeyReferenceDetailGetArgs>? _externalKeyReferenceDetails;
+
+        /// <summary>
+        /// Key reference data to be returned to the customer as a response.
+        /// </summary>
+        public InputList<Inputs.KeyExternalKeyReferenceDetailGetArgs> ExternalKeyReferenceDetails
+        {
+            get => _externalKeyReferenceDetails ?? (_externalKeyReferenceDetails = new InputList<Inputs.KeyExternalKeyReferenceDetailGetArgs>());
+            set => _externalKeyReferenceDetails = value;
+        }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -372,7 +373,7 @@ namespace Pulumi.Oci.Kms
         }
 
         /// <summary>
-        /// A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+        /// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
         /// </summary>
         [Input("isPrimary")]
         public Input<bool>? IsPrimary { get; set; }
@@ -390,7 +391,7 @@ namespace Pulumi.Oci.Kms
         public Input<string>? ManagementEndpoint { get; set; }
 
         /// <summary>
-        /// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+        /// The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
         /// </summary>
         [Input("protectionMode")]
         public Input<string>? ProtectionMode { get; set; }

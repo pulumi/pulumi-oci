@@ -424,6 +424,14 @@ namespace Pulumi.Oci.Database
         public readonly ImmutableArray<Outputs.GetAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult> RemoteDisasterRecoveryConfigurations;
         public readonly string RemoteDisasterRecoveryType;
         /// <summary>
+        /// The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        public readonly string ResourcePoolLeaderId;
+        /// <summary>
+        /// The configuration details for resource pool
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousDatabaseResourcePoolSummaryResult> ResourcePoolSummaries;
+        /// <summary>
         /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         /// </summary>
         public readonly string Role;
@@ -497,6 +505,10 @@ namespace Pulumi.Oci.Database
         /// The date and time when maintenance will end.
         /// </summary>
         public readonly string TimeMaintenanceEnd;
+        /// <summary>
+        /// The time the member joined the resource pool.
+        /// </summary>
+        public readonly string TimeOfJoiningResourcePool;
         /// <summary>
         /// The timestamp of the last failover operation.
         /// </summary>
@@ -716,6 +728,10 @@ namespace Pulumi.Oci.Database
 
             string remoteDisasterRecoveryType,
 
+            string resourcePoolLeaderId,
+
+            ImmutableArray<Outputs.GetAutonomousDatabaseResourcePoolSummaryResult> resourcePoolSummaries,
+
             string role,
 
             bool rotateKeyTrigger,
@@ -761,6 +777,8 @@ namespace Pulumi.Oci.Database
             string timeMaintenanceBegin,
 
             string timeMaintenanceEnd,
+
+            string timeOfJoiningResourcePool,
 
             string timeOfLastFailover,
 
@@ -873,6 +891,8 @@ namespace Pulumi.Oci.Database
             RefreshableStatus = refreshableStatus;
             RemoteDisasterRecoveryConfigurations = remoteDisasterRecoveryConfigurations;
             RemoteDisasterRecoveryType = remoteDisasterRecoveryType;
+            ResourcePoolLeaderId = resourcePoolLeaderId;
+            ResourcePoolSummaries = resourcePoolSummaries;
             Role = role;
             RotateKeyTrigger = rotateKeyTrigger;
             ScheduledOperations = scheduledOperations;
@@ -896,6 +916,7 @@ namespace Pulumi.Oci.Database
             TimeLocalDataGuardEnabled = timeLocalDataGuardEnabled;
             TimeMaintenanceBegin = timeMaintenanceBegin;
             TimeMaintenanceEnd = timeMaintenanceEnd;
+            TimeOfJoiningResourcePool = timeOfJoiningResourcePool;
             TimeOfLastFailover = timeOfLastFailover;
             TimeOfLastRefresh = timeOfLastRefresh;
             TimeOfLastRefreshPoint = timeOfLastRefreshPoint;

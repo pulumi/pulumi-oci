@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -35,10 +35,23 @@ class GetHttpMonitorsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetHttpMonitorsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -97,24 +110,67 @@ class GetHttpMonitorsHttpMonitorResult(dict):
         :param int timeout_in_seconds: The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param Sequence[str] vantage_point_names: A list of names of vantage points from which to execute the probe.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "headers", headers)
-        pulumi.set(__self__, "home_region", home_region)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "interval_in_seconds", interval_in_seconds)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "method", method)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "results_url", results_url)
-        pulumi.set(__self__, "targets", targets)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
-        pulumi.set(__self__, "vantage_point_names", vantage_point_names)
+        GetHttpMonitorsHttpMonitorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            headers=headers,
+            home_region=home_region,
+            id=id,
+            interval_in_seconds=interval_in_seconds,
+            is_enabled=is_enabled,
+            method=method,
+            path=path,
+            port=port,
+            protocol=protocol,
+            results_url=results_url,
+            targets=targets,
+            time_created=time_created,
+            timeout_in_seconds=timeout_in_seconds,
+            vantage_point_names=vantage_point_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             headers: Mapping[str, Any],
+             home_region: str,
+             id: str,
+             interval_in_seconds: int,
+             is_enabled: bool,
+             method: str,
+             path: str,
+             port: int,
+             protocol: str,
+             results_url: str,
+             targets: Sequence[str],
+             time_created: str,
+             timeout_in_seconds: int,
+             vantage_point_names: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("headers", headers)
+        _setter("home_region", home_region)
+        _setter("id", id)
+        _setter("interval_in_seconds", interval_in_seconds)
+        _setter("is_enabled", is_enabled)
+        _setter("method", method)
+        _setter("path", path)
+        _setter("port", port)
+        _setter("protocol", protocol)
+        _setter("results_url", results_url)
+        _setter("targets", targets)
+        _setter("time_created", time_created)
+        _setter("timeout_in_seconds", timeout_in_seconds)
+        _setter("vantage_point_names", vantage_point_names)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -267,10 +323,23 @@ class GetHttpProbeResultsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetHttpProbeResultsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -346,30 +415,85 @@ class GetHttpProbeResultsHttpProbeResultResult(dict):
         :param str target: Filters results that match the `target`.
         :param str vantage_point_name: The name of the vantage point that executed the probe.
         """
-        pulumi.set(__self__, "connect_end", connect_end)
-        pulumi.set(__self__, "connect_start", connect_start)
-        pulumi.set(__self__, "connections", connections)
-        pulumi.set(__self__, "dns", dns)
-        pulumi.set(__self__, "domain_lookup_end", domain_lookup_end)
-        pulumi.set(__self__, "domain_lookup_start", domain_lookup_start)
-        pulumi.set(__self__, "duration", duration)
-        pulumi.set(__self__, "encoded_body_size", encoded_body_size)
-        pulumi.set(__self__, "error_category", error_category)
-        pulumi.set(__self__, "error_message", error_message)
-        pulumi.set(__self__, "fetch_start", fetch_start)
-        pulumi.set(__self__, "is_healthy", is_healthy)
-        pulumi.set(__self__, "is_timed_out", is_timed_out)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "probe_configuration_id", probe_configuration_id)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "request_start", request_start)
-        pulumi.set(__self__, "response_end", response_end)
-        pulumi.set(__self__, "response_start", response_start)
-        pulumi.set(__self__, "secure_connection_start", secure_connection_start)
-        pulumi.set(__self__, "start_time", start_time)
-        pulumi.set(__self__, "status_code", status_code)
-        pulumi.set(__self__, "target", target)
-        pulumi.set(__self__, "vantage_point_name", vantage_point_name)
+        GetHttpProbeResultsHttpProbeResultResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            connect_end=connect_end,
+            connect_start=connect_start,
+            connections=connections,
+            dns=dns,
+            domain_lookup_end=domain_lookup_end,
+            domain_lookup_start=domain_lookup_start,
+            duration=duration,
+            encoded_body_size=encoded_body_size,
+            error_category=error_category,
+            error_message=error_message,
+            fetch_start=fetch_start,
+            is_healthy=is_healthy,
+            is_timed_out=is_timed_out,
+            key=key,
+            probe_configuration_id=probe_configuration_id,
+            protocol=protocol,
+            request_start=request_start,
+            response_end=response_end,
+            response_start=response_start,
+            secure_connection_start=secure_connection_start,
+            start_time=start_time,
+            status_code=status_code,
+            target=target,
+            vantage_point_name=vantage_point_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             connect_end: float,
+             connect_start: float,
+             connections: Sequence['outputs.GetHttpProbeResultsHttpProbeResultConnectionResult'],
+             dns: Sequence['outputs.GetHttpProbeResultsHttpProbeResultDnResult'],
+             domain_lookup_end: float,
+             domain_lookup_start: float,
+             duration: float,
+             encoded_body_size: int,
+             error_category: str,
+             error_message: str,
+             fetch_start: float,
+             is_healthy: bool,
+             is_timed_out: bool,
+             key: str,
+             probe_configuration_id: str,
+             protocol: str,
+             request_start: float,
+             response_end: float,
+             response_start: float,
+             secure_connection_start: float,
+             start_time: float,
+             status_code: int,
+             target: str,
+             vantage_point_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("connect_end", connect_end)
+        _setter("connect_start", connect_start)
+        _setter("connections", connections)
+        _setter("dns", dns)
+        _setter("domain_lookup_end", domain_lookup_end)
+        _setter("domain_lookup_start", domain_lookup_start)
+        _setter("duration", duration)
+        _setter("encoded_body_size", encoded_body_size)
+        _setter("error_category", error_category)
+        _setter("error_message", error_message)
+        _setter("fetch_start", fetch_start)
+        _setter("is_healthy", is_healthy)
+        _setter("is_timed_out", is_timed_out)
+        _setter("key", key)
+        _setter("probe_configuration_id", probe_configuration_id)
+        _setter("protocol", protocol)
+        _setter("request_start", request_start)
+        _setter("response_end", response_end)
+        _setter("response_start", response_start)
+        _setter("secure_connection_start", secure_connection_start)
+        _setter("start_time", start_time)
+        _setter("status_code", status_code)
+        _setter("target", target)
+        _setter("vantage_point_name", vantage_point_name)
 
     @property
     @pulumi.getter(name="connectEnd")
@@ -582,10 +706,25 @@ class GetHttpProbeResultsHttpProbeResultConnectionResult(dict):
         :param int port: The port.
         :param float secure_connect_duration: The duration to secure the connection.  This value will be zero for insecure connections.  Calculated using `connectEnd` minus `secureConnectionStart`.
         """
-        pulumi.set(__self__, "address", address)
-        pulumi.set(__self__, "connect_duration", connect_duration)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "secure_connect_duration", secure_connect_duration)
+        GetHttpProbeResultsHttpProbeResultConnectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address=address,
+            connect_duration=connect_duration,
+            port=port,
+            secure_connect_duration=secure_connect_duration,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address: str,
+             connect_duration: float,
+             port: int,
+             secure_connect_duration: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("address", address)
+        _setter("connect_duration", connect_duration)
+        _setter("port", port)
+        _setter("secure_connect_duration", secure_connect_duration)
 
     @property
     @pulumi.getter
@@ -629,8 +768,19 @@ class GetHttpProbeResultsHttpProbeResultDnResult(dict):
         :param Sequence[str] addresses: The addresses returned by DNS resolution.
         :param float domain_lookup_duration: Total DNS resolution duration, in milliseconds. Calculated using `domainLookupEnd` minus `domainLookupStart`.
         """
-        pulumi.set(__self__, "addresses", addresses)
-        pulumi.set(__self__, "domain_lookup_duration", domain_lookup_duration)
+        GetHttpProbeResultsHttpProbeResultDnResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            addresses=addresses,
+            domain_lookup_duration=domain_lookup_duration,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             addresses: Sequence[str],
+             domain_lookup_duration: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("addresses", addresses)
+        _setter("domain_lookup_duration", domain_lookup_duration)
 
     @property
     @pulumi.getter
@@ -655,10 +805,23 @@ class GetPingMonitorsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPingMonitorsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -711,21 +874,58 @@ class GetPingMonitorsPingMonitorResult(dict):
         :param int timeout_in_seconds: The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
         :param Sequence[str] vantage_point_names: A list of names of vantage points from which to execute the probe.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "home_region", home_region)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "interval_in_seconds", interval_in_seconds)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "results_url", results_url)
-        pulumi.set(__self__, "targets", targets)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
-        pulumi.set(__self__, "vantage_point_names", vantage_point_names)
+        GetPingMonitorsPingMonitorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            home_region=home_region,
+            id=id,
+            interval_in_seconds=interval_in_seconds,
+            is_enabled=is_enabled,
+            port=port,
+            protocol=protocol,
+            results_url=results_url,
+            targets=targets,
+            time_created=time_created,
+            timeout_in_seconds=timeout_in_seconds,
+            vantage_point_names=vantage_point_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             home_region: str,
+             id: str,
+             interval_in_seconds: int,
+             is_enabled: bool,
+             port: int,
+             protocol: str,
+             results_url: str,
+             targets: Sequence[str],
+             time_created: str,
+             timeout_in_seconds: int,
+             vantage_point_names: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("home_region", home_region)
+        _setter("id", id)
+        _setter("interval_in_seconds", interval_in_seconds)
+        _setter("is_enabled", is_enabled)
+        _setter("port", port)
+        _setter("protocol", protocol)
+        _setter("results_url", results_url)
+        _setter("targets", targets)
+        _setter("time_created", time_created)
+        _setter("timeout_in_seconds", timeout_in_seconds)
+        _setter("vantage_point_names", vantage_point_names)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -854,10 +1054,23 @@ class GetPingProbeResultsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPingProbeResultsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -917,22 +1130,61 @@ class GetPingProbeResultsPingProbeResultResult(dict):
         :param str target: Filters results that match the `target`.
         :param str vantage_point_name: The name of the vantage point that executed the probe.
         """
-        pulumi.set(__self__, "connections", connections)
-        pulumi.set(__self__, "dns", dns)
-        pulumi.set(__self__, "domain_lookup_end", domain_lookup_end)
-        pulumi.set(__self__, "domain_lookup_start", domain_lookup_start)
-        pulumi.set(__self__, "error_category", error_category)
-        pulumi.set(__self__, "error_message", error_message)
-        pulumi.set(__self__, "icmp_code", icmp_code)
-        pulumi.set(__self__, "is_healthy", is_healthy)
-        pulumi.set(__self__, "is_timed_out", is_timed_out)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "latency_in_ms", latency_in_ms)
-        pulumi.set(__self__, "probe_configuration_id", probe_configuration_id)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "start_time", start_time)
-        pulumi.set(__self__, "target", target)
-        pulumi.set(__self__, "vantage_point_name", vantage_point_name)
+        GetPingProbeResultsPingProbeResultResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            connections=connections,
+            dns=dns,
+            domain_lookup_end=domain_lookup_end,
+            domain_lookup_start=domain_lookup_start,
+            error_category=error_category,
+            error_message=error_message,
+            icmp_code=icmp_code,
+            is_healthy=is_healthy,
+            is_timed_out=is_timed_out,
+            key=key,
+            latency_in_ms=latency_in_ms,
+            probe_configuration_id=probe_configuration_id,
+            protocol=protocol,
+            start_time=start_time,
+            target=target,
+            vantage_point_name=vantage_point_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             connections: Sequence['outputs.GetPingProbeResultsPingProbeResultConnectionResult'],
+             dns: Sequence['outputs.GetPingProbeResultsPingProbeResultDnResult'],
+             domain_lookup_end: float,
+             domain_lookup_start: float,
+             error_category: str,
+             error_message: str,
+             icmp_code: int,
+             is_healthy: bool,
+             is_timed_out: bool,
+             key: str,
+             latency_in_ms: float,
+             probe_configuration_id: str,
+             protocol: str,
+             start_time: float,
+             target: str,
+             vantage_point_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("connections", connections)
+        _setter("dns", dns)
+        _setter("domain_lookup_end", domain_lookup_end)
+        _setter("domain_lookup_start", domain_lookup_start)
+        _setter("error_category", error_category)
+        _setter("error_message", error_message)
+        _setter("icmp_code", icmp_code)
+        _setter("is_healthy", is_healthy)
+        _setter("is_timed_out", is_timed_out)
+        _setter("key", key)
+        _setter("latency_in_ms", latency_in_ms)
+        _setter("probe_configuration_id", probe_configuration_id)
+        _setter("protocol", protocol)
+        _setter("start_time", start_time)
+        _setter("target", target)
+        _setter("vantage_point_name", vantage_point_name)
 
     @property
     @pulumi.getter
@@ -1077,8 +1329,19 @@ class GetPingProbeResultsPingProbeResultConnectionResult(dict):
         :param str address: The connection IP address.
         :param int port: The port.
         """
-        pulumi.set(__self__, "address", address)
-        pulumi.set(__self__, "port", port)
+        GetPingProbeResultsPingProbeResultConnectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address=address,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address: str,
+             port: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("address", address)
+        _setter("port", port)
 
     @property
     @pulumi.getter
@@ -1106,8 +1369,19 @@ class GetPingProbeResultsPingProbeResultDnResult(dict):
         :param Sequence[str] addresses: The addresses returned by DNS resolution.
         :param float domain_lookup_duration: Total DNS resolution duration, in milliseconds. Calculated using `domainLookupEnd` minus `domainLookupStart`.
         """
-        pulumi.set(__self__, "addresses", addresses)
-        pulumi.set(__self__, "domain_lookup_duration", domain_lookup_duration)
+        GetPingProbeResultsPingProbeResultDnResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            addresses=addresses,
+            domain_lookup_duration=domain_lookup_duration,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             addresses: Sequence[str],
+             domain_lookup_duration: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("addresses", addresses)
+        _setter("domain_lookup_duration", domain_lookup_duration)
 
     @property
     @pulumi.getter
@@ -1135,10 +1409,23 @@ class GetVantagePointsFilterResult(dict):
         """
         :param str name: Filters results that exactly match the `name` field.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetVantagePointsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1174,11 +1461,28 @@ class GetVantagePointsHealthChecksVantagePointResult(dict):
         :param str provider_name: The organization on whose infrastructure this vantage point resides. Provider names are not unique, as Oracle Cloud Infrastructure maintains many vantage points in each major provider.
         :param Sequence['GetVantagePointsHealthChecksVantagePointRoutingArgs'] routings: An array of objects that describe how traffic to this vantage point is routed, including which prefixes and ASNs connect it to the internet.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "geos", geos)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "provider_name", provider_name)
-        pulumi.set(__self__, "routings", routings)
+        GetVantagePointsHealthChecksVantagePointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            geos=geos,
+            name=name,
+            provider_name=provider_name,
+            routings=routings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             geos: Sequence['outputs.GetVantagePointsHealthChecksVantagePointGeoResult'],
+             name: str,
+             provider_name: str,
+             routings: Sequence['outputs.GetVantagePointsHealthChecksVantagePointRoutingResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("geos", geos)
+        _setter("name", name)
+        _setter("provider_name", provider_name)
+        _setter("routings", routings)
 
     @property
     @pulumi.getter(name="displayName")
@@ -1240,13 +1544,34 @@ class GetVantagePointsHealthChecksVantagePointGeoResult(dict):
         :param float latitude: Degrees north of the Equator.
         :param float longitude: Degrees east of the prime meridian.
         """
-        pulumi.set(__self__, "admin_div_code", admin_div_code)
-        pulumi.set(__self__, "city_name", city_name)
-        pulumi.set(__self__, "country_code", country_code)
-        pulumi.set(__self__, "country_name", country_name)
-        pulumi.set(__self__, "geo_key", geo_key)
-        pulumi.set(__self__, "latitude", latitude)
-        pulumi.set(__self__, "longitude", longitude)
+        GetVantagePointsHealthChecksVantagePointGeoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_div_code=admin_div_code,
+            city_name=city_name,
+            country_code=country_code,
+            country_name=country_name,
+            geo_key=geo_key,
+            latitude=latitude,
+            longitude=longitude,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_div_code: str,
+             city_name: str,
+             country_code: str,
+             country_name: str,
+             geo_key: str,
+             latitude: float,
+             longitude: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("admin_div_code", admin_div_code)
+        _setter("city_name", city_name)
+        _setter("country_code", country_code)
+        _setter("country_name", country_name)
+        _setter("geo_key", geo_key)
+        _setter("latitude", latitude)
+        _setter("longitude", longitude)
 
     @property
     @pulumi.getter(name="adminDivCode")
@@ -1318,10 +1643,25 @@ class GetVantagePointsHealthChecksVantagePointRoutingResult(dict):
         :param str prefix: An IP prefix (CIDR syntax) that is less specific than `address`, through which `address` is routed.
         :param int weight: An integer between 0 and 100 used to select between multiple origin ASNs when routing to `prefix`. Most prefixes have exactly one origin ASN, in which case `weight` will be 100.
         """
-        pulumi.set(__self__, "as_label", as_label)
-        pulumi.set(__self__, "asn", asn)
-        pulumi.set(__self__, "prefix", prefix)
-        pulumi.set(__self__, "weight", weight)
+        GetVantagePointsHealthChecksVantagePointRoutingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            as_label=as_label,
+            asn=asn,
+            prefix=prefix,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             as_label: str,
+             asn: int,
+             prefix: str,
+             weight: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("as_label", as_label)
+        _setter("asn", asn)
+        _setter("prefix", prefix)
+        _setter("weight", weight)
 
     @property
     @pulumi.getter(name="asLabel")

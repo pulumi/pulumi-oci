@@ -13,6 +13,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseLocalStandbyDb;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseLongTermBackupSchedule;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseResourcePoolSummary;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseScheduledOperation;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseStandbyDb;
 import java.lang.Boolean;
@@ -419,6 +420,16 @@ public final class GetAutonomousDatabaseResult {
     private List<GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration> remoteDisasterRecoveryConfigurations;
     private String remoteDisasterRecoveryType;
     /**
+     * @return The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    private String resourcePoolLeaderId;
+    /**
+     * @return The configuration details for resource pool
+     * 
+     */
+    private List<GetAutonomousDatabaseResourcePoolSummary> resourcePoolSummaries;
+    /**
      * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
@@ -509,6 +520,11 @@ public final class GetAutonomousDatabaseResult {
      * 
      */
     private String timeMaintenanceEnd;
+    /**
+     * @return The time the member joined the resource pool.
+     * 
+     */
+    private String timeOfJoiningResourcePool;
     /**
      * @return The timestamp of the last failover operation.
      * 
@@ -1132,6 +1148,20 @@ public final class GetAutonomousDatabaseResult {
         return this.remoteDisasterRecoveryType;
     }
     /**
+     * @return The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public String resourcePoolLeaderId() {
+        return this.resourcePoolLeaderId;
+    }
+    /**
+     * @return The configuration details for resource pool
+     * 
+     */
+    public List<GetAutonomousDatabaseResourcePoolSummary> resourcePoolSummaries() {
+        return this.resourcePoolSummaries;
+    }
+    /**
      * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
@@ -1267,6 +1297,13 @@ public final class GetAutonomousDatabaseResult {
      */
     public String timeMaintenanceEnd() {
         return this.timeMaintenanceEnd;
+    }
+    /**
+     * @return The time the member joined the resource pool.
+     * 
+     */
+    public String timeOfJoiningResourcePool() {
+        return this.timeOfJoiningResourcePool;
     }
     /**
      * @return The timestamp of the last failover operation.
@@ -1451,6 +1488,8 @@ public final class GetAutonomousDatabaseResult {
         private String refreshableStatus;
         private List<GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration> remoteDisasterRecoveryConfigurations;
         private String remoteDisasterRecoveryType;
+        private String resourcePoolLeaderId;
+        private List<GetAutonomousDatabaseResourcePoolSummary> resourcePoolSummaries;
         private String role;
         private Boolean rotateKeyTrigger;
         private List<GetAutonomousDatabaseScheduledOperation> scheduledOperations;
@@ -1474,6 +1513,7 @@ public final class GetAutonomousDatabaseResult {
         private String timeLocalDataGuardEnabled;
         private String timeMaintenanceBegin;
         private String timeMaintenanceEnd;
+        private String timeOfJoiningResourcePool;
         private String timeOfLastFailover;
         private String timeOfLastRefresh;
         private String timeOfLastRefreshPoint;
@@ -1574,6 +1614,8 @@ public final class GetAutonomousDatabaseResult {
     	      this.refreshableStatus = defaults.refreshableStatus;
     	      this.remoteDisasterRecoveryConfigurations = defaults.remoteDisasterRecoveryConfigurations;
     	      this.remoteDisasterRecoveryType = defaults.remoteDisasterRecoveryType;
+    	      this.resourcePoolLeaderId = defaults.resourcePoolLeaderId;
+    	      this.resourcePoolSummaries = defaults.resourcePoolSummaries;
     	      this.role = defaults.role;
     	      this.rotateKeyTrigger = defaults.rotateKeyTrigger;
     	      this.scheduledOperations = defaults.scheduledOperations;
@@ -1597,6 +1639,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.timeLocalDataGuardEnabled = defaults.timeLocalDataGuardEnabled;
     	      this.timeMaintenanceBegin = defaults.timeMaintenanceBegin;
     	      this.timeMaintenanceEnd = defaults.timeMaintenanceEnd;
+    	      this.timeOfJoiningResourcePool = defaults.timeOfJoiningResourcePool;
     	      this.timeOfLastFailover = defaults.timeOfLastFailover;
     	      this.timeOfLastRefresh = defaults.timeOfLastRefresh;
     	      this.timeOfLastRefreshPoint = defaults.timeOfLastRefreshPoint;
@@ -2068,6 +2111,19 @@ public final class GetAutonomousDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder resourcePoolLeaderId(String resourcePoolLeaderId) {
+            this.resourcePoolLeaderId = Objects.requireNonNull(resourcePoolLeaderId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder resourcePoolSummaries(List<GetAutonomousDatabaseResourcePoolSummary> resourcePoolSummaries) {
+            this.resourcePoolSummaries = Objects.requireNonNull(resourcePoolSummaries);
+            return this;
+        }
+        public Builder resourcePoolSummaries(GetAutonomousDatabaseResourcePoolSummary... resourcePoolSummaries) {
+            return resourcePoolSummaries(List.of(resourcePoolSummaries));
+        }
+        @CustomType.Setter
         public Builder role(String role) {
             this.role = Objects.requireNonNull(role);
             return this;
@@ -2192,6 +2248,11 @@ public final class GetAutonomousDatabaseResult {
         @CustomType.Setter
         public Builder timeMaintenanceEnd(String timeMaintenanceEnd) {
             this.timeMaintenanceEnd = Objects.requireNonNull(timeMaintenanceEnd);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeOfJoiningResourcePool(String timeOfJoiningResourcePool) {
+            this.timeOfJoiningResourcePool = Objects.requireNonNull(timeOfJoiningResourcePool);
             return this;
         }
         @CustomType.Setter
@@ -2352,6 +2413,8 @@ public final class GetAutonomousDatabaseResult {
             o.refreshableStatus = refreshableStatus;
             o.remoteDisasterRecoveryConfigurations = remoteDisasterRecoveryConfigurations;
             o.remoteDisasterRecoveryType = remoteDisasterRecoveryType;
+            o.resourcePoolLeaderId = resourcePoolLeaderId;
+            o.resourcePoolSummaries = resourcePoolSummaries;
             o.role = role;
             o.rotateKeyTrigger = rotateKeyTrigger;
             o.scheduledOperations = scheduledOperations;
@@ -2375,6 +2438,7 @@ public final class GetAutonomousDatabaseResult {
             o.timeLocalDataGuardEnabled = timeLocalDataGuardEnabled;
             o.timeMaintenanceBegin = timeMaintenanceBegin;
             o.timeMaintenanceEnd = timeMaintenanceEnd;
+            o.timeOfJoiningResourcePool = timeOfJoiningResourcePool;
             o.timeOfLastFailover = timeOfLastFailover;
             o.timeOfLastRefresh = timeOfLastRefresh;
             o.timeOfLastRefreshPoint = timeOfLastRefreshPoint;

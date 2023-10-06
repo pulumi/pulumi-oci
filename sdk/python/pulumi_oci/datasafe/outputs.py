@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -318,14 +318,29 @@ class AuditPolicyAuditCondition(dict):
         :param bool is_data_safe_service_account_audited: Indicates whether the Data Safe user activity on the target database will be audited by the policy.
         :param bool is_priv_users_managed_by_data_safe: Indicates whether the privileged user list is managed by Data Safe.
         """
+        AuditPolicyAuditCondition._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audit_policy_name=audit_policy_name,
+            enable_conditions=enable_conditions,
+            is_data_safe_service_account_audited=is_data_safe_service_account_audited,
+            is_priv_users_managed_by_data_safe=is_priv_users_managed_by_data_safe,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audit_policy_name: Optional[str] = None,
+             enable_conditions: Optional[Sequence['outputs.AuditPolicyAuditConditionEnableCondition']] = None,
+             is_data_safe_service_account_audited: Optional[bool] = None,
+             is_priv_users_managed_by_data_safe: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if audit_policy_name is not None:
-            pulumi.set(__self__, "audit_policy_name", audit_policy_name)
+            _setter("audit_policy_name", audit_policy_name)
         if enable_conditions is not None:
-            pulumi.set(__self__, "enable_conditions", enable_conditions)
+            _setter("enable_conditions", enable_conditions)
         if is_data_safe_service_account_audited is not None:
-            pulumi.set(__self__, "is_data_safe_service_account_audited", is_data_safe_service_account_audited)
+            _setter("is_data_safe_service_account_audited", is_data_safe_service_account_audited)
         if is_priv_users_managed_by_data_safe is not None:
-            pulumi.set(__self__, "is_priv_users_managed_by_data_safe", is_priv_users_managed_by_data_safe)
+            _setter("is_priv_users_managed_by_data_safe", is_priv_users_managed_by_data_safe)
 
     @property
     @pulumi.getter(name="auditPolicyName")
@@ -396,14 +411,29 @@ class AuditPolicyAuditConditionEnableCondition(dict):
         :param str entity_type: The entity type that the policy must be enabled for.
         :param str operation_status: The operation status that the policy must be enabled for.
         """
+        AuditPolicyAuditConditionEnableCondition._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            entity_names=entity_names,
+            entity_selection=entity_selection,
+            entity_type=entity_type,
+            operation_status=operation_status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             entity_names: Optional[Sequence[str]] = None,
+             entity_selection: Optional[str] = None,
+             entity_type: Optional[str] = None,
+             operation_status: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if entity_names is not None:
-            pulumi.set(__self__, "entity_names", entity_names)
+            _setter("entity_names", entity_names)
         if entity_selection is not None:
-            pulumi.set(__self__, "entity_selection", entity_selection)
+            _setter("entity_selection", entity_selection)
         if entity_type is not None:
-            pulumi.set(__self__, "entity_type", entity_type)
+            _setter("entity_type", entity_type)
         if operation_status is not None:
-            pulumi.set(__self__, "operation_status", operation_status)
+            _setter("operation_status", operation_status)
 
     @property
     @pulumi.getter(name="entityNames")
@@ -502,28 +532,57 @@ class AuditPolicyAuditSpecification(dict):
         :param bool is_view_only: Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
         :param str partially_enabled_msg: Provides information about the policy that has been only partially enabled.
         """
+        AuditPolicyAuditSpecification._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audit_policy_category=audit_policy_category,
+            audit_policy_name=audit_policy_name,
+            database_policy_names=database_policy_names,
+            enable_status=enable_status,
+            enabled_entities=enabled_entities,
+            is_created=is_created,
+            is_enabled_for_all_users=is_enabled_for_all_users,
+            is_seeded_in_data_safe=is_seeded_in_data_safe,
+            is_seeded_in_target=is_seeded_in_target,
+            is_view_only=is_view_only,
+            partially_enabled_msg=partially_enabled_msg,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audit_policy_category: Optional[str] = None,
+             audit_policy_name: Optional[str] = None,
+             database_policy_names: Optional[Sequence[str]] = None,
+             enable_status: Optional[str] = None,
+             enabled_entities: Optional[str] = None,
+             is_created: Optional[bool] = None,
+             is_enabled_for_all_users: Optional[bool] = None,
+             is_seeded_in_data_safe: Optional[bool] = None,
+             is_seeded_in_target: Optional[bool] = None,
+             is_view_only: Optional[bool] = None,
+             partially_enabled_msg: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if audit_policy_category is not None:
-            pulumi.set(__self__, "audit_policy_category", audit_policy_category)
+            _setter("audit_policy_category", audit_policy_category)
         if audit_policy_name is not None:
-            pulumi.set(__self__, "audit_policy_name", audit_policy_name)
+            _setter("audit_policy_name", audit_policy_name)
         if database_policy_names is not None:
-            pulumi.set(__self__, "database_policy_names", database_policy_names)
+            _setter("database_policy_names", database_policy_names)
         if enable_status is not None:
-            pulumi.set(__self__, "enable_status", enable_status)
+            _setter("enable_status", enable_status)
         if enabled_entities is not None:
-            pulumi.set(__self__, "enabled_entities", enabled_entities)
+            _setter("enabled_entities", enabled_entities)
         if is_created is not None:
-            pulumi.set(__self__, "is_created", is_created)
+            _setter("is_created", is_created)
         if is_enabled_for_all_users is not None:
-            pulumi.set(__self__, "is_enabled_for_all_users", is_enabled_for_all_users)
+            _setter("is_enabled_for_all_users", is_enabled_for_all_users)
         if is_seeded_in_data_safe is not None:
-            pulumi.set(__self__, "is_seeded_in_data_safe", is_seeded_in_data_safe)
+            _setter("is_seeded_in_data_safe", is_seeded_in_data_safe)
         if is_seeded_in_target is not None:
-            pulumi.set(__self__, "is_seeded_in_target", is_seeded_in_target)
+            _setter("is_seeded_in_target", is_seeded_in_target)
         if is_view_only is not None:
-            pulumi.set(__self__, "is_view_only", is_view_only)
+            _setter("is_view_only", is_view_only)
         if partially_enabled_msg is not None:
-            pulumi.set(__self__, "partially_enabled_msg", partially_enabled_msg)
+            _setter("partially_enabled_msg", partially_enabled_msg)
 
     @property
     @pulumi.getter(name="auditPolicyCategory")
@@ -702,44 +761,89 @@ class AuditProfileAuditTrail(dict):
         :param str trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         :param str work_request_id: The OCID of the workrequest for audit trail which collects audit records.
         """
+        AuditProfileAuditTrail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audit_collection_start_time=audit_collection_start_time,
+            audit_profile_id=audit_profile_id,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_auto_purge_enabled=is_auto_purge_enabled,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            status=status,
+            system_tags=system_tags,
+            target_id=target_id,
+            time_created=time_created,
+            time_last_collected=time_last_collected,
+            time_updated=time_updated,
+            trail_location=trail_location,
+            work_request_id=work_request_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audit_collection_start_time: Optional[str] = None,
+             audit_profile_id: Optional[str] = None,
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_auto_purge_enabled: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             state: Optional[str] = None,
+             status: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             target_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_last_collected: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             trail_location: Optional[str] = None,
+             work_request_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if audit_collection_start_time is not None:
-            pulumi.set(__self__, "audit_collection_start_time", audit_collection_start_time)
+            _setter("audit_collection_start_time", audit_collection_start_time)
         if audit_profile_id is not None:
-            pulumi.set(__self__, "audit_profile_id", audit_profile_id)
+            _setter("audit_profile_id", audit_profile_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if is_auto_purge_enabled is not None:
-            pulumi.set(__self__, "is_auto_purge_enabled", is_auto_purge_enabled)
+            _setter("is_auto_purge_enabled", is_auto_purge_enabled)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if target_id is not None:
-            pulumi.set(__self__, "target_id", target_id)
+            _setter("target_id", target_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_last_collected is not None:
-            pulumi.set(__self__, "time_last_collected", time_last_collected)
+            _setter("time_last_collected", time_last_collected)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if trail_location is not None:
-            pulumi.set(__self__, "trail_location", trail_location)
+            _setter("trail_location", trail_location)
         if work_request_id is not None:
-            pulumi.set(__self__, "work_request_id", work_request_id)
+            _setter("work_request_id", work_request_id)
 
     @property
     @pulumi.getter(name="auditCollectionStartTime")
@@ -926,12 +1030,25 @@ class DataSafeConfigurationGlobalSetting(dict):
         :param int offline_retention_period: The offline retention period in months.
         :param int online_retention_period: The online retention period in months.
         """
+        DataSafeConfigurationGlobalSetting._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_paid_usage=is_paid_usage,
+            offline_retention_period=offline_retention_period,
+            online_retention_period=online_retention_period,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_paid_usage: Optional[bool] = None,
+             offline_retention_period: Optional[int] = None,
+             online_retention_period: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if is_paid_usage is not None:
-            pulumi.set(__self__, "is_paid_usage", is_paid_usage)
+            _setter("is_paid_usage", is_paid_usage)
         if offline_retention_period is not None:
-            pulumi.set(__self__, "offline_retention_period", offline_retention_period)
+            _setter("offline_retention_period", offline_retention_period)
         if online_retention_period is not None:
-            pulumi.set(__self__, "online_retention_period", online_retention_period)
+            _setter("online_retention_period", online_retention_period)
 
     @property
     @pulumi.getter(name="isPaidUsage")
@@ -986,10 +1103,21 @@ class DiscoveryJobsResultModifiedAttribute(dict):
         :param Sequence[str] app_defined_child_column_keys: Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
         :param Sequence[str] db_defined_child_column_keys: Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
         """
+        DiscoveryJobsResultModifiedAttribute._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app_defined_child_column_keys=app_defined_child_column_keys,
+            db_defined_child_column_keys=db_defined_child_column_keys,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app_defined_child_column_keys: Optional[Sequence[str]] = None,
+             db_defined_child_column_keys: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if app_defined_child_column_keys is not None:
-            pulumi.set(__self__, "app_defined_child_column_keys", app_defined_child_column_keys)
+            _setter("app_defined_child_column_keys", app_defined_child_column_keys)
         if db_defined_child_column_keys is not None:
-            pulumi.set(__self__, "db_defined_child_column_keys", db_defined_child_column_keys)
+            _setter("db_defined_child_column_keys", db_defined_child_column_keys)
 
     @property
     @pulumi.getter(name="appDefinedChildColumnKeys")
@@ -1118,51 +1246,104 @@ class LibraryMasingFormatFormatEntry(dict):
         :param str table_name: (Updatable) The name of the table that contains the substitution column.
         :param str user_defined_function: (Updatable) The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         """
-        pulumi.set(__self__, "type", type)
+        LibraryMasingFormatFormatEntry._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            column_name=column_name,
+            description=description,
+            end_date=end_date,
+            end_length=end_length,
+            end_value=end_value,
+            fixed_number=fixed_number,
+            fixed_string=fixed_string,
+            grouping_columns=grouping_columns,
+            length=length,
+            library_masking_format_id=library_masking_format_id,
+            post_processing_function=post_processing_function,
+            random_lists=random_lists,
+            regular_expression=regular_expression,
+            replace_with=replace_with,
+            schema_name=schema_name,
+            sql_expression=sql_expression,
+            start_date=start_date,
+            start_length=start_length,
+            start_position=start_position,
+            start_value=start_value,
+            table_name=table_name,
+            user_defined_function=user_defined_function,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             column_name: Optional[str] = None,
+             description: Optional[str] = None,
+             end_date: Optional[str] = None,
+             end_length: Optional[int] = None,
+             end_value: Optional[float] = None,
+             fixed_number: Optional[float] = None,
+             fixed_string: Optional[str] = None,
+             grouping_columns: Optional[Sequence[str]] = None,
+             length: Optional[int] = None,
+             library_masking_format_id: Optional[str] = None,
+             post_processing_function: Optional[str] = None,
+             random_lists: Optional[Sequence[str]] = None,
+             regular_expression: Optional[str] = None,
+             replace_with: Optional[str] = None,
+             schema_name: Optional[str] = None,
+             sql_expression: Optional[str] = None,
+             start_date: Optional[str] = None,
+             start_length: Optional[int] = None,
+             start_position: Optional[int] = None,
+             start_value: Optional[float] = None,
+             table_name: Optional[str] = None,
+             user_defined_function: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if column_name is not None:
-            pulumi.set(__self__, "column_name", column_name)
+            _setter("column_name", column_name)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if end_date is not None:
-            pulumi.set(__self__, "end_date", end_date)
+            _setter("end_date", end_date)
         if end_length is not None:
-            pulumi.set(__self__, "end_length", end_length)
+            _setter("end_length", end_length)
         if end_value is not None:
-            pulumi.set(__self__, "end_value", end_value)
+            _setter("end_value", end_value)
         if fixed_number is not None:
-            pulumi.set(__self__, "fixed_number", fixed_number)
+            _setter("fixed_number", fixed_number)
         if fixed_string is not None:
-            pulumi.set(__self__, "fixed_string", fixed_string)
+            _setter("fixed_string", fixed_string)
         if grouping_columns is not None:
-            pulumi.set(__self__, "grouping_columns", grouping_columns)
+            _setter("grouping_columns", grouping_columns)
         if length is not None:
-            pulumi.set(__self__, "length", length)
+            _setter("length", length)
         if library_masking_format_id is not None:
-            pulumi.set(__self__, "library_masking_format_id", library_masking_format_id)
+            _setter("library_masking_format_id", library_masking_format_id)
         if post_processing_function is not None:
-            pulumi.set(__self__, "post_processing_function", post_processing_function)
+            _setter("post_processing_function", post_processing_function)
         if random_lists is not None:
-            pulumi.set(__self__, "random_lists", random_lists)
+            _setter("random_lists", random_lists)
         if regular_expression is not None:
-            pulumi.set(__self__, "regular_expression", regular_expression)
+            _setter("regular_expression", regular_expression)
         if replace_with is not None:
-            pulumi.set(__self__, "replace_with", replace_with)
+            _setter("replace_with", replace_with)
         if schema_name is not None:
-            pulumi.set(__self__, "schema_name", schema_name)
+            _setter("schema_name", schema_name)
         if sql_expression is not None:
-            pulumi.set(__self__, "sql_expression", sql_expression)
+            _setter("sql_expression", sql_expression)
         if start_date is not None:
-            pulumi.set(__self__, "start_date", start_date)
+            _setter("start_date", start_date)
         if start_length is not None:
-            pulumi.set(__self__, "start_length", start_length)
+            _setter("start_length", start_length)
         if start_position is not None:
-            pulumi.set(__self__, "start_position", start_position)
+            _setter("start_position", start_position)
         if start_value is not None:
-            pulumi.set(__self__, "start_value", start_value)
+            _setter("start_value", start_value)
         if table_name is not None:
-            pulumi.set(__self__, "table_name", table_name)
+            _setter("table_name", table_name)
         if user_defined_function is not None:
-            pulumi.set(__self__, "user_defined_function", user_defined_function)
+            _setter("user_defined_function", user_defined_function)
 
     @property
     @pulumi.getter
@@ -1381,11 +1562,24 @@ class MaskingPoliciesMaskingColumnMaskingFormat(dict):
         :param str condition: (Updatable) A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions.
         :param str description: (Updatable) The description of the format entry.
         """
-        pulumi.set(__self__, "format_entries", format_entries)
+        MaskingPoliciesMaskingColumnMaskingFormat._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            format_entries=format_entries,
+            condition=condition,
+            description=description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             format_entries: Sequence['outputs.MaskingPoliciesMaskingColumnMaskingFormatFormatEntry'],
+             condition: Optional[str] = None,
+             description: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("format_entries", format_entries)
         if condition is not None:
-            pulumi.set(__self__, "condition", condition)
+            _setter("condition", condition)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
 
     @property
     @pulumi.getter(name="formatEntries")
@@ -1522,51 +1716,104 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry(dict):
         :param str table_name: (Updatable) The name of the table that contains the substitution column.
         :param str user_defined_function: (Updatable) The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         """
-        pulumi.set(__self__, "type", type)
+        MaskingPoliciesMaskingColumnMaskingFormatFormatEntry._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            column_name=column_name,
+            description=description,
+            end_date=end_date,
+            end_length=end_length,
+            end_value=end_value,
+            fixed_number=fixed_number,
+            fixed_string=fixed_string,
+            grouping_columns=grouping_columns,
+            length=length,
+            library_masking_format_id=library_masking_format_id,
+            post_processing_function=post_processing_function,
+            random_lists=random_lists,
+            regular_expression=regular_expression,
+            replace_with=replace_with,
+            schema_name=schema_name,
+            sql_expression=sql_expression,
+            start_date=start_date,
+            start_length=start_length,
+            start_position=start_position,
+            start_value=start_value,
+            table_name=table_name,
+            user_defined_function=user_defined_function,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             column_name: Optional[str] = None,
+             description: Optional[str] = None,
+             end_date: Optional[str] = None,
+             end_length: Optional[int] = None,
+             end_value: Optional[float] = None,
+             fixed_number: Optional[float] = None,
+             fixed_string: Optional[str] = None,
+             grouping_columns: Optional[Sequence[str]] = None,
+             length: Optional[int] = None,
+             library_masking_format_id: Optional[str] = None,
+             post_processing_function: Optional[str] = None,
+             random_lists: Optional[Sequence[str]] = None,
+             regular_expression: Optional[str] = None,
+             replace_with: Optional[str] = None,
+             schema_name: Optional[str] = None,
+             sql_expression: Optional[str] = None,
+             start_date: Optional[str] = None,
+             start_length: Optional[int] = None,
+             start_position: Optional[int] = None,
+             start_value: Optional[float] = None,
+             table_name: Optional[str] = None,
+             user_defined_function: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if column_name is not None:
-            pulumi.set(__self__, "column_name", column_name)
+            _setter("column_name", column_name)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if end_date is not None:
-            pulumi.set(__self__, "end_date", end_date)
+            _setter("end_date", end_date)
         if end_length is not None:
-            pulumi.set(__self__, "end_length", end_length)
+            _setter("end_length", end_length)
         if end_value is not None:
-            pulumi.set(__self__, "end_value", end_value)
+            _setter("end_value", end_value)
         if fixed_number is not None:
-            pulumi.set(__self__, "fixed_number", fixed_number)
+            _setter("fixed_number", fixed_number)
         if fixed_string is not None:
-            pulumi.set(__self__, "fixed_string", fixed_string)
+            _setter("fixed_string", fixed_string)
         if grouping_columns is not None:
-            pulumi.set(__self__, "grouping_columns", grouping_columns)
+            _setter("grouping_columns", grouping_columns)
         if length is not None:
-            pulumi.set(__self__, "length", length)
+            _setter("length", length)
         if library_masking_format_id is not None:
-            pulumi.set(__self__, "library_masking_format_id", library_masking_format_id)
+            _setter("library_masking_format_id", library_masking_format_id)
         if post_processing_function is not None:
-            pulumi.set(__self__, "post_processing_function", post_processing_function)
+            _setter("post_processing_function", post_processing_function)
         if random_lists is not None:
-            pulumi.set(__self__, "random_lists", random_lists)
+            _setter("random_lists", random_lists)
         if regular_expression is not None:
-            pulumi.set(__self__, "regular_expression", regular_expression)
+            _setter("regular_expression", regular_expression)
         if replace_with is not None:
-            pulumi.set(__self__, "replace_with", replace_with)
+            _setter("replace_with", replace_with)
         if schema_name is not None:
-            pulumi.set(__self__, "schema_name", schema_name)
+            _setter("schema_name", schema_name)
         if sql_expression is not None:
-            pulumi.set(__self__, "sql_expression", sql_expression)
+            _setter("sql_expression", sql_expression)
         if start_date is not None:
-            pulumi.set(__self__, "start_date", start_date)
+            _setter("start_date", start_date)
         if start_length is not None:
-            pulumi.set(__self__, "start_length", start_length)
+            _setter("start_length", start_length)
         if start_position is not None:
-            pulumi.set(__self__, "start_position", start_position)
+            _setter("start_position", start_position)
         if start_value is not None:
-            pulumi.set(__self__, "start_value", start_value)
+            _setter("start_value", start_value)
         if table_name is not None:
-            pulumi.set(__self__, "table_name", table_name)
+            _setter("table_name", table_name)
         if user_defined_function is not None:
-            pulumi.set(__self__, "user_defined_function", user_defined_function)
+            _setter("user_defined_function", user_defined_function)
 
     @property
     @pulumi.getter
@@ -1789,11 +2036,24 @@ class MaskingPolicyColumnSource(dict):
         :param str sensitive_data_model_id: (Updatable) The OCID of the sensitive data model to be associated as the column source with the masking policy.
         :param str target_id: (Updatable) The OCID of the target database to be associated as the column source with the masking policy.
         """
-        pulumi.set(__self__, "column_source", column_source)
+        MaskingPolicyColumnSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_source=column_source,
+            sensitive_data_model_id=sensitive_data_model_id,
+            target_id=target_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_source: str,
+             sensitive_data_model_id: Optional[str] = None,
+             target_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("column_source", column_source)
         if sensitive_data_model_id is not None:
-            pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
+            _setter("sensitive_data_model_id", sensitive_data_model_id)
         if target_id is not None:
-            pulumi.set(__self__, "target_id", target_id)
+            _setter("target_id", target_id)
 
     @property
     @pulumi.getter(name="columnSource")
@@ -1856,11 +2116,28 @@ class ReportDefinitionColumnFilter(dict):
         :param bool is_hidden: (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         :param str operator: (Updatable) Specifies the type of operator that must be applied for example in, eq etc.
         """
-        pulumi.set(__self__, "expressions", expressions)
-        pulumi.set(__self__, "field_name", field_name)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "is_hidden", is_hidden)
-        pulumi.set(__self__, "operator", operator)
+        ReportDefinitionColumnFilter._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            expressions=expressions,
+            field_name=field_name,
+            is_enabled=is_enabled,
+            is_hidden=is_hidden,
+            operator=operator,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             expressions: Sequence[str],
+             field_name: str,
+             is_enabled: bool,
+             is_hidden: bool,
+             operator: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("expressions", expressions)
+        _setter("field_name", field_name)
+        _setter("is_enabled", is_enabled)
+        _setter("is_hidden", is_hidden)
+        _setter("operator", operator)
 
     @property
     @pulumi.getter
@@ -1943,12 +2220,29 @@ class ReportDefinitionColumnInfo(dict):
         :param bool is_hidden: (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         :param str data_type: (Updatable) Specifies the data type of the column.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "display_order", display_order)
-        pulumi.set(__self__, "field_name", field_name)
-        pulumi.set(__self__, "is_hidden", is_hidden)
+        ReportDefinitionColumnInfo._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            display_order=display_order,
+            field_name=field_name,
+            is_hidden=is_hidden,
+            data_type=data_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             display_order: int,
+             field_name: str,
+             is_hidden: bool,
+             data_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("display_order", display_order)
+        _setter("field_name", field_name)
+        _setter("is_hidden", is_hidden)
         if data_type is not None:
-            pulumi.set(__self__, "data_type", data_type)
+            _setter("data_type", data_type)
 
     @property
     @pulumi.getter(name="displayName")
@@ -2023,9 +2317,22 @@ class ReportDefinitionColumnSorting(dict):
         :param bool is_ascending: (Updatable) Indicates if the column must be sorted in ascending order. Values can either be 'true' or 'false'.
         :param int sorting_order: (Updatable) Indicates the order at which column must be sorted.
         """
-        pulumi.set(__self__, "field_name", field_name)
-        pulumi.set(__self__, "is_ascending", is_ascending)
-        pulumi.set(__self__, "sorting_order", sorting_order)
+        ReportDefinitionColumnSorting._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            field_name=field_name,
+            is_ascending=is_ascending,
+            sorting_order=sorting_order,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             field_name: str,
+             is_ascending: bool,
+             sorting_order: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("field_name", field_name)
+        _setter("is_ascending", is_ascending)
+        _setter("sorting_order", sorting_order)
 
     @property
     @pulumi.getter(name="fieldName")
@@ -2098,16 +2405,35 @@ class ReportDefinitionSummary(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "display_order", display_order)
-        pulumi.set(__self__, "name", name)
+        ReportDefinitionSummary._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_order=display_order,
+            name=name,
+            count_of=count_of,
+            group_by_field_name=group_by_field_name,
+            is_hidden=is_hidden,
+            scim_filter=scim_filter,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_order: int,
+             name: str,
+             count_of: Optional[str] = None,
+             group_by_field_name: Optional[str] = None,
+             is_hidden: Optional[bool] = None,
+             scim_filter: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_order", display_order)
+        _setter("name", name)
         if count_of is not None:
-            pulumi.set(__self__, "count_of", count_of)
+            _setter("count_of", count_of)
         if group_by_field_name is not None:
-            pulumi.set(__self__, "group_by_field_name", group_by_field_name)
+            _setter("group_by_field_name", group_by_field_name)
         if is_hidden is not None:
-            pulumi.set(__self__, "is_hidden", is_hidden)
+            _setter("is_hidden", is_hidden)
         if scim_filter is not None:
-            pulumi.set(__self__, "scim_filter", scim_filter)
+            _setter("scim_filter", scim_filter)
 
     @property
     @pulumi.getter(name="displayOrder")
@@ -2204,20 +2530,41 @@ class SecurityAssessmentStatistic(dict):
         :param Sequence['SecurityAssessmentStatisticPassArgs'] passes: Statistics showing the number of findings with a particular risk level for each category.
         :param int targets_count: The total number of targets in this security assessment.
         """
+        SecurityAssessmentStatistic._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            advisories=advisories,
+            evaluates=evaluates,
+            high_risks=high_risks,
+            low_risks=low_risks,
+            medium_risks=medium_risks,
+            passes=passes,
+            targets_count=targets_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             advisories: Optional[Sequence['outputs.SecurityAssessmentStatisticAdvisory']] = None,
+             evaluates: Optional[Sequence['outputs.SecurityAssessmentStatisticEvaluate']] = None,
+             high_risks: Optional[Sequence['outputs.SecurityAssessmentStatisticHighRisk']] = None,
+             low_risks: Optional[Sequence['outputs.SecurityAssessmentStatisticLowRisk']] = None,
+             medium_risks: Optional[Sequence['outputs.SecurityAssessmentStatisticMediumRisk']] = None,
+             passes: Optional[Sequence['outputs.SecurityAssessmentStatisticPass']] = None,
+             targets_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if advisories is not None:
-            pulumi.set(__self__, "advisories", advisories)
+            _setter("advisories", advisories)
         if evaluates is not None:
-            pulumi.set(__self__, "evaluates", evaluates)
+            _setter("evaluates", evaluates)
         if high_risks is not None:
-            pulumi.set(__self__, "high_risks", high_risks)
+            _setter("high_risks", high_risks)
         if low_risks is not None:
-            pulumi.set(__self__, "low_risks", low_risks)
+            _setter("low_risks", low_risks)
         if medium_risks is not None:
-            pulumi.set(__self__, "medium_risks", medium_risks)
+            _setter("medium_risks", medium_risks)
         if passes is not None:
-            pulumi.set(__self__, "passes", passes)
+            _setter("passes", passes)
         if targets_count is not None:
-            pulumi.set(__self__, "targets_count", targets_count)
+            _setter("targets_count", targets_count)
 
     @property
     @pulumi.getter
@@ -2328,22 +2675,45 @@ class SecurityAssessmentStatisticAdvisory(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
+        SecurityAssessmentStatisticAdvisory._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auditing_findings_count=auditing_findings_count,
+            authorization_control_findings_count=authorization_control_findings_count,
+            data_encryption_findings_count=data_encryption_findings_count,
+            db_configuration_findings_count=db_configuration_findings_count,
+            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
+            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
+            targets_count=targets_count,
+            user_accounts_findings_count=user_accounts_findings_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auditing_findings_count: Optional[int] = None,
+             authorization_control_findings_count: Optional[int] = None,
+             data_encryption_findings_count: Optional[int] = None,
+             db_configuration_findings_count: Optional[int] = None,
+             fine_grained_access_control_findings_count: Optional[int] = None,
+             privileges_and_roles_findings_count: Optional[int] = None,
+             targets_count: Optional[int] = None,
+             user_accounts_findings_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if auditing_findings_count is not None:
-            pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+            _setter("auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
-            pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+            _setter("authorization_control_findings_count", authorization_control_findings_count)
         if data_encryption_findings_count is not None:
-            pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+            _setter("data_encryption_findings_count", data_encryption_findings_count)
         if db_configuration_findings_count is not None:
-            pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+            _setter("db_configuration_findings_count", db_configuration_findings_count)
         if fine_grained_access_control_findings_count is not None:
-            pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+            _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
         if privileges_and_roles_findings_count is not None:
-            pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+            _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
         if targets_count is not None:
-            pulumi.set(__self__, "targets_count", targets_count)
+            _setter("targets_count", targets_count)
         if user_accounts_findings_count is not None:
-            pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+            _setter("user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -2462,22 +2832,45 @@ class SecurityAssessmentStatisticEvaluate(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
+        SecurityAssessmentStatisticEvaluate._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auditing_findings_count=auditing_findings_count,
+            authorization_control_findings_count=authorization_control_findings_count,
+            data_encryption_findings_count=data_encryption_findings_count,
+            db_configuration_findings_count=db_configuration_findings_count,
+            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
+            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
+            targets_count=targets_count,
+            user_accounts_findings_count=user_accounts_findings_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auditing_findings_count: Optional[int] = None,
+             authorization_control_findings_count: Optional[int] = None,
+             data_encryption_findings_count: Optional[int] = None,
+             db_configuration_findings_count: Optional[int] = None,
+             fine_grained_access_control_findings_count: Optional[int] = None,
+             privileges_and_roles_findings_count: Optional[int] = None,
+             targets_count: Optional[int] = None,
+             user_accounts_findings_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if auditing_findings_count is not None:
-            pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+            _setter("auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
-            pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+            _setter("authorization_control_findings_count", authorization_control_findings_count)
         if data_encryption_findings_count is not None:
-            pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+            _setter("data_encryption_findings_count", data_encryption_findings_count)
         if db_configuration_findings_count is not None:
-            pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+            _setter("db_configuration_findings_count", db_configuration_findings_count)
         if fine_grained_access_control_findings_count is not None:
-            pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+            _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
         if privileges_and_roles_findings_count is not None:
-            pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+            _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
         if targets_count is not None:
-            pulumi.set(__self__, "targets_count", targets_count)
+            _setter("targets_count", targets_count)
         if user_accounts_findings_count is not None:
-            pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+            _setter("user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -2596,22 +2989,45 @@ class SecurityAssessmentStatisticHighRisk(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
+        SecurityAssessmentStatisticHighRisk._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auditing_findings_count=auditing_findings_count,
+            authorization_control_findings_count=authorization_control_findings_count,
+            data_encryption_findings_count=data_encryption_findings_count,
+            db_configuration_findings_count=db_configuration_findings_count,
+            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
+            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
+            targets_count=targets_count,
+            user_accounts_findings_count=user_accounts_findings_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auditing_findings_count: Optional[int] = None,
+             authorization_control_findings_count: Optional[int] = None,
+             data_encryption_findings_count: Optional[int] = None,
+             db_configuration_findings_count: Optional[int] = None,
+             fine_grained_access_control_findings_count: Optional[int] = None,
+             privileges_and_roles_findings_count: Optional[int] = None,
+             targets_count: Optional[int] = None,
+             user_accounts_findings_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if auditing_findings_count is not None:
-            pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+            _setter("auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
-            pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+            _setter("authorization_control_findings_count", authorization_control_findings_count)
         if data_encryption_findings_count is not None:
-            pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+            _setter("data_encryption_findings_count", data_encryption_findings_count)
         if db_configuration_findings_count is not None:
-            pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+            _setter("db_configuration_findings_count", db_configuration_findings_count)
         if fine_grained_access_control_findings_count is not None:
-            pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+            _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
         if privileges_and_roles_findings_count is not None:
-            pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+            _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
         if targets_count is not None:
-            pulumi.set(__self__, "targets_count", targets_count)
+            _setter("targets_count", targets_count)
         if user_accounts_findings_count is not None:
-            pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+            _setter("user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -2730,22 +3146,45 @@ class SecurityAssessmentStatisticLowRisk(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
+        SecurityAssessmentStatisticLowRisk._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auditing_findings_count=auditing_findings_count,
+            authorization_control_findings_count=authorization_control_findings_count,
+            data_encryption_findings_count=data_encryption_findings_count,
+            db_configuration_findings_count=db_configuration_findings_count,
+            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
+            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
+            targets_count=targets_count,
+            user_accounts_findings_count=user_accounts_findings_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auditing_findings_count: Optional[int] = None,
+             authorization_control_findings_count: Optional[int] = None,
+             data_encryption_findings_count: Optional[int] = None,
+             db_configuration_findings_count: Optional[int] = None,
+             fine_grained_access_control_findings_count: Optional[int] = None,
+             privileges_and_roles_findings_count: Optional[int] = None,
+             targets_count: Optional[int] = None,
+             user_accounts_findings_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if auditing_findings_count is not None:
-            pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+            _setter("auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
-            pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+            _setter("authorization_control_findings_count", authorization_control_findings_count)
         if data_encryption_findings_count is not None:
-            pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+            _setter("data_encryption_findings_count", data_encryption_findings_count)
         if db_configuration_findings_count is not None:
-            pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+            _setter("db_configuration_findings_count", db_configuration_findings_count)
         if fine_grained_access_control_findings_count is not None:
-            pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+            _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
         if privileges_and_roles_findings_count is not None:
-            pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+            _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
         if targets_count is not None:
-            pulumi.set(__self__, "targets_count", targets_count)
+            _setter("targets_count", targets_count)
         if user_accounts_findings_count is not None:
-            pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+            _setter("user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -2864,22 +3303,45 @@ class SecurityAssessmentStatisticMediumRisk(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
+        SecurityAssessmentStatisticMediumRisk._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auditing_findings_count=auditing_findings_count,
+            authorization_control_findings_count=authorization_control_findings_count,
+            data_encryption_findings_count=data_encryption_findings_count,
+            db_configuration_findings_count=db_configuration_findings_count,
+            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
+            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
+            targets_count=targets_count,
+            user_accounts_findings_count=user_accounts_findings_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auditing_findings_count: Optional[int] = None,
+             authorization_control_findings_count: Optional[int] = None,
+             data_encryption_findings_count: Optional[int] = None,
+             db_configuration_findings_count: Optional[int] = None,
+             fine_grained_access_control_findings_count: Optional[int] = None,
+             privileges_and_roles_findings_count: Optional[int] = None,
+             targets_count: Optional[int] = None,
+             user_accounts_findings_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if auditing_findings_count is not None:
-            pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+            _setter("auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
-            pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+            _setter("authorization_control_findings_count", authorization_control_findings_count)
         if data_encryption_findings_count is not None:
-            pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+            _setter("data_encryption_findings_count", data_encryption_findings_count)
         if db_configuration_findings_count is not None:
-            pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+            _setter("db_configuration_findings_count", db_configuration_findings_count)
         if fine_grained_access_control_findings_count is not None:
-            pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+            _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
         if privileges_and_roles_findings_count is not None:
-            pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+            _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
         if targets_count is not None:
-            pulumi.set(__self__, "targets_count", targets_count)
+            _setter("targets_count", targets_count)
         if user_accounts_findings_count is not None:
-            pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+            _setter("user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -2998,22 +3460,45 @@ class SecurityAssessmentStatisticPass(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
+        SecurityAssessmentStatisticPass._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auditing_findings_count=auditing_findings_count,
+            authorization_control_findings_count=authorization_control_findings_count,
+            data_encryption_findings_count=data_encryption_findings_count,
+            db_configuration_findings_count=db_configuration_findings_count,
+            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
+            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
+            targets_count=targets_count,
+            user_accounts_findings_count=user_accounts_findings_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auditing_findings_count: Optional[int] = None,
+             authorization_control_findings_count: Optional[int] = None,
+             data_encryption_findings_count: Optional[int] = None,
+             db_configuration_findings_count: Optional[int] = None,
+             fine_grained_access_control_findings_count: Optional[int] = None,
+             privileges_and_roles_findings_count: Optional[int] = None,
+             targets_count: Optional[int] = None,
+             user_accounts_findings_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if auditing_findings_count is not None:
-            pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
+            _setter("auditing_findings_count", auditing_findings_count)
         if authorization_control_findings_count is not None:
-            pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
+            _setter("authorization_control_findings_count", authorization_control_findings_count)
         if data_encryption_findings_count is not None:
-            pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
+            _setter("data_encryption_findings_count", data_encryption_findings_count)
         if db_configuration_findings_count is not None:
-            pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
+            _setter("db_configuration_findings_count", db_configuration_findings_count)
         if fine_grained_access_control_findings_count is not None:
-            pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+            _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
         if privileges_and_roles_findings_count is not None:
-            pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+            _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
         if targets_count is not None:
-            pulumi.set(__self__, "targets_count", targets_count)
+            _setter("targets_count", targets_count)
         if user_accounts_findings_count is not None:
-            pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+            _setter("user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -3114,11 +3599,24 @@ class TargetDatabaseConnectionOption(dict):
         :param str datasafe_private_endpoint_id: (Updatable) The OCID of the Data Safe private endpoint.
         :param str on_prem_connector_id: (Updatable) The OCID of the on-premises connector.
         """
-        pulumi.set(__self__, "connection_type", connection_type)
+        TargetDatabaseConnectionOption._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            connection_type=connection_type,
+            datasafe_private_endpoint_id=datasafe_private_endpoint_id,
+            on_prem_connector_id=on_prem_connector_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             connection_type: str,
+             datasafe_private_endpoint_id: Optional[str] = None,
+             on_prem_connector_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("connection_type", connection_type)
         if datasafe_private_endpoint_id is not None:
-            pulumi.set(__self__, "datasafe_private_endpoint_id", datasafe_private_endpoint_id)
+            _setter("datasafe_private_endpoint_id", datasafe_private_endpoint_id)
         if on_prem_connector_id is not None:
-            pulumi.set(__self__, "on_prem_connector_id", on_prem_connector_id)
+            _setter("on_prem_connector_id", on_prem_connector_id)
 
     @property
     @pulumi.getter(name="connectionType")
@@ -3173,8 +3671,19 @@ class TargetDatabaseCredentials(dict):
         :param str password: (Updatable) The password of the database user.
         :param str user_name: (Updatable) The database user name.
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "user_name", user_name)
+        TargetDatabaseCredentials._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            user_name=user_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             user_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("user_name", user_name)
 
     @property
     @pulumi.getter
@@ -3249,22 +3758,47 @@ class TargetDatabaseDatabaseDetails(dict):
         :param str service_name: (Updatable) The service name of the database registered as target database.
         :param str vm_cluster_id: (Updatable) The OCID of the VM cluster in which the database is running.
         """
-        pulumi.set(__self__, "database_type", database_type)
-        pulumi.set(__self__, "infrastructure_type", infrastructure_type)
+        TargetDatabaseDatabaseDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            database_type=database_type,
+            infrastructure_type=infrastructure_type,
+            autonomous_database_id=autonomous_database_id,
+            db_system_id=db_system_id,
+            instance_id=instance_id,
+            ip_addresses=ip_addresses,
+            listener_port=listener_port,
+            service_name=service_name,
+            vm_cluster_id=vm_cluster_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             database_type: str,
+             infrastructure_type: str,
+             autonomous_database_id: Optional[str] = None,
+             db_system_id: Optional[str] = None,
+             instance_id: Optional[str] = None,
+             ip_addresses: Optional[Sequence[str]] = None,
+             listener_port: Optional[int] = None,
+             service_name: Optional[str] = None,
+             vm_cluster_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("database_type", database_type)
+        _setter("infrastructure_type", infrastructure_type)
         if autonomous_database_id is not None:
-            pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+            _setter("autonomous_database_id", autonomous_database_id)
         if db_system_id is not None:
-            pulumi.set(__self__, "db_system_id", db_system_id)
+            _setter("db_system_id", db_system_id)
         if instance_id is not None:
-            pulumi.set(__self__, "instance_id", instance_id)
+            _setter("instance_id", instance_id)
         if ip_addresses is not None:
-            pulumi.set(__self__, "ip_addresses", ip_addresses)
+            _setter("ip_addresses", ip_addresses)
         if listener_port is not None:
-            pulumi.set(__self__, "listener_port", listener_port)
+            _setter("listener_port", listener_port)
         if service_name is not None:
-            pulumi.set(__self__, "service_name", service_name)
+            _setter("service_name", service_name)
         if vm_cluster_id is not None:
-            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+            _setter("vm_cluster_id", vm_cluster_id)
 
     @property
     @pulumi.getter(name="databaseType")
@@ -3381,15 +3915,32 @@ class TargetDatabaseTlsConfig(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "status", status)
+        TargetDatabaseTlsConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            status=status,
+            certificate_store_type=certificate_store_type,
+            key_store_content=key_store_content,
+            store_password=store_password,
+            trust_store_content=trust_store_content,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             status: str,
+             certificate_store_type: Optional[str] = None,
+             key_store_content: Optional[str] = None,
+             store_password: Optional[str] = None,
+             trust_store_content: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("status", status)
         if certificate_store_type is not None:
-            pulumi.set(__self__, "certificate_store_type", certificate_store_type)
+            _setter("certificate_store_type", certificate_store_type)
         if key_store_content is not None:
-            pulumi.set(__self__, "key_store_content", key_store_content)
+            _setter("key_store_content", key_store_content)
         if store_password is not None:
-            pulumi.set(__self__, "store_password", store_password)
+            _setter("store_password", store_password)
         if trust_store_content is not None:
-            pulumi.set(__self__, "trust_store_content", trust_store_content)
+            _setter("trust_store_content", trust_store_content)
 
     @property
     @pulumi.getter
@@ -3470,12 +4021,25 @@ class UserAssessmentIgnoredTarget(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        UserAssessmentIgnoredTarget._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            lifecycle_state=lifecycle_state,
+            target_id=target_id,
+            user_assessment_id=user_assessment_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             lifecycle_state: Optional[str] = None,
+             target_id: Optional[str] = None,
+             user_assessment_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if lifecycle_state is not None:
-            pulumi.set(__self__, "lifecycle_state", lifecycle_state)
+            _setter("lifecycle_state", lifecycle_state)
         if target_id is not None:
-            pulumi.set(__self__, "target_id", target_id)
+            _setter("target_id", target_id)
         if user_assessment_id is not None:
-            pulumi.set(__self__, "user_assessment_id", user_assessment_id)
+            _setter("user_assessment_id", user_assessment_id)
 
     @property
     @pulumi.getter(name="lifecycleState")
@@ -3515,11 +4079,28 @@ class GetAlertAnalyticItemResult(dict):
         :param str time_ended: An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_started: An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "dimensions", dimensions)
-        pulumi.set(__self__, "metric_name", metric_name)
-        pulumi.set(__self__, "time_ended", time_ended)
-        pulumi.set(__self__, "time_started", time_started)
+        GetAlertAnalyticItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            count=count,
+            dimensions=dimensions,
+            metric_name=metric_name,
+            time_ended=time_ended,
+            time_started=time_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             count: str,
+             dimensions: Sequence['outputs.GetAlertAnalyticItemDimensionResult'],
+             metric_name: str,
+             time_ended: str,
+             time_started: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("count", count)
+        _setter("dimensions", dimensions)
+        _setter("metric_name", metric_name)
+        _setter("time_ended", time_ended)
+        _setter("time_started", time_started)
 
     @property
     @pulumi.getter
@@ -3569,7 +4150,16 @@ class GetAlertAnalyticItemDimensionResult(dict):
         """
         :param Mapping[str, Any] group_by: A groupBy can only be used in combination with summaryField parameter. A groupBy value has to be a subset of the values mentioned in summaryField parameter.
         """
-        pulumi.set(__self__, "group_by", group_by)
+        GetAlertAnalyticItemDimensionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            group_by=group_by,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             group_by: Mapping[str, Any],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("group_by", group_by)
 
     @property
     @pulumi.getter(name="groupBy")
@@ -3584,7 +4174,16 @@ class GetAlertAnalyticItemDimensionResult(dict):
 class GetAlertPoliciesAlertPolicyCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAlertPoliciesAlertPolicyCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetAlertPoliciesAlertPolicyCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAlertPoliciesAlertPolicyCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3623,19 +4222,52 @@ class GetAlertPoliciesAlertPolicyCollectionItemResult(dict):
         :param str time_created: Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        pulumi.set(__self__, "alert_policy_type", alert_policy_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_user_defined", is_user_defined)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetAlertPoliciesAlertPolicyCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alert_policy_type=alert_policy_type,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_user_defined=is_user_defined,
+            severity=severity,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alert_policy_type: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_user_defined: bool,
+             severity: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("alert_policy_type", alert_policy_type)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_user_defined", is_user_defined)
+        _setter("severity", severity)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="alertPolicyType")
@@ -3748,10 +4380,23 @@ class GetAlertPoliciesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAlertPoliciesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3780,9 +4425,22 @@ class GetAlertPolicyRuleItemResult(dict):
         :param str expression: The conditional expression of the alert policy rule which evaluates to boolean value.
         :param str key: The unique key of the alert policy rule.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "expression", expression)
-        pulumi.set(__self__, "key", key)
+        GetAlertPolicyRuleItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            expression=expression,
+            key=key,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             expression: str,
+             key: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("expression", expression)
+        _setter("key", key)
 
     @property
     @pulumi.getter
@@ -3816,7 +4474,16 @@ class GetAlertPolicyRulesAlertPolicyRuleCollectionResult(dict):
         """
         :param Sequence['GetAlertPolicyRulesAlertPolicyRuleCollectionItemArgs'] items: Array of alert policy rules summary
         """
-        pulumi.set(__self__, "items", items)
+        GetAlertPolicyRulesAlertPolicyRuleCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAlertPolicyRulesAlertPolicyRuleCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3838,9 +4505,22 @@ class GetAlertPolicyRulesAlertPolicyRuleCollectionItemResult(dict):
         :param str expression: The conditional expression of the alert policy rule which evaluates to boolean value.
         :param str key: The unique key of the alert policy rule.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "expression", expression)
-        pulumi.set(__self__, "key", key)
+        GetAlertPolicyRulesAlertPolicyRuleCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            expression=expression,
+            key=key,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             expression: str,
+             key: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("expression", expression)
+        _setter("key", key)
 
     @property
     @pulumi.getter
@@ -3873,10 +4553,23 @@ class GetAlertPolicyRulesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAlertPolicyRulesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3898,7 +4591,16 @@ class GetAlertPolicyRulesFilterResult(dict):
 class GetAlertsAlertCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAlertsAlertCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetAlertsAlertCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAlertsAlertCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3956,29 +4658,82 @@ class GetAlertsAlertCollectionItemResult(dict):
         :param str time_created: Creation date and time of the alert, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: Last date and time the alert was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        pulumi.set(__self__, "alert_id", alert_id)
-        pulumi.set(__self__, "alert_type", alert_type)
-        pulumi.set(__self__, "comment", comment)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "feature_details", feature_details)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "operation", operation)
-        pulumi.set(__self__, "operation_status", operation_status)
-        pulumi.set(__self__, "operation_time", operation_time)
-        pulumi.set(__self__, "policy_id", policy_id)
-        pulumi.set(__self__, "resource_name", resource_name)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "target_ids", target_ids)
-        pulumi.set(__self__, "target_names", target_names)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetAlertsAlertCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alert_id=alert_id,
+            alert_type=alert_type,
+            comment=comment,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            feature_details=feature_details,
+            freeform_tags=freeform_tags,
+            id=id,
+            operation=operation,
+            operation_status=operation_status,
+            operation_time=operation_time,
+            policy_id=policy_id,
+            resource_name=resource_name,
+            severity=severity,
+            state=state,
+            status=status,
+            system_tags=system_tags,
+            target_ids=target_ids,
+            target_names=target_names,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alert_id: str,
+             alert_type: str,
+             comment: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             feature_details: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             operation: str,
+             operation_status: str,
+             operation_time: str,
+             policy_id: str,
+             resource_name: str,
+             severity: str,
+             state: str,
+             status: str,
+             system_tags: Mapping[str, Any],
+             target_ids: Sequence[str],
+             target_names: Sequence[str],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("alert_id", alert_id)
+        _setter("alert_type", alert_type)
+        _setter("comment", comment)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("feature_details", feature_details)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("operation", operation)
+        _setter("operation_status", operation_status)
+        _setter("operation_time", operation_time)
+        _setter("policy_id", policy_id)
+        _setter("resource_name", resource_name)
+        _setter("severity", severity)
+        _setter("state", state)
+        _setter("status", status)
+        _setter("system_tags", system_tags)
+        _setter("target_ids", target_ids)
+        _setter("target_names", target_names)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="alertId")
@@ -4168,10 +4923,23 @@ class GetAlertsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAlertsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4193,7 +4961,16 @@ class GetAlertsFilterResult(dict):
 class GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -4240,23 +5017,64 @@ class GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemResult(dict):
         :param str time_of_expiry: The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
         :param str time_requested: The date time when archive retrieval was requested, in the format defined by RFC3339.
         """
-        pulumi.set(__self__, "audit_event_count", audit_event_count)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "end_date", end_date)
-        pulumi.set(__self__, "error_info", error_info)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "start_date", start_date)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "time_completed", time_completed)
-        pulumi.set(__self__, "time_of_expiry", time_of_expiry)
-        pulumi.set(__self__, "time_requested", time_requested)
+        GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audit_event_count=audit_event_count,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            end_date=end_date,
+            error_info=error_info,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            start_date=start_date,
+            state=state,
+            system_tags=system_tags,
+            target_id=target_id,
+            time_completed=time_completed,
+            time_of_expiry=time_of_expiry,
+            time_requested=time_requested,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audit_event_count: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             end_date: str,
+             error_info: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             start_date: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             target_id: str,
+             time_completed: str,
+             time_of_expiry: str,
+             time_requested: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("audit_event_count", audit_event_count)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("end_date", end_date)
+        _setter("error_info", error_info)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("start_date", start_date)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("target_id", target_id)
+        _setter("time_completed", time_completed)
+        _setter("time_of_expiry", time_of_expiry)
+        _setter("time_requested", time_requested)
 
     @property
     @pulumi.getter(name="auditEventCount")
@@ -4401,10 +5219,23 @@ class GetAuditArchiveRetrievalsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAuditArchiveRetrievalsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4439,12 +5270,31 @@ class GetAuditEventAnalyticItemResult(dict):
         :param str time_ended: An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_started: An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "dimensions", dimensions)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "metric_name", metric_name)
-        pulumi.set(__self__, "time_ended", time_ended)
-        pulumi.set(__self__, "time_started", time_started)
+        GetAuditEventAnalyticItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            count=count,
+            dimensions=dimensions,
+            display_name=display_name,
+            metric_name=metric_name,
+            time_ended=time_ended,
+            time_started=time_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             count: str,
+             dimensions: Sequence['outputs.GetAuditEventAnalyticItemDimensionResult'],
+             display_name: str,
+             metric_name: str,
+             time_ended: str,
+             time_started: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("count", count)
+        _setter("dimensions", dimensions)
+        _setter("display_name", display_name)
+        _setter("metric_name", metric_name)
+        _setter("time_ended", time_ended)
+        _setter("time_started", time_started)
 
     @property
     @pulumi.getter
@@ -4522,17 +5372,46 @@ class GetAuditEventAnalyticItemDimensionResult(dict):
         :param Sequence[str] target_ids: The OCID of the target database that was audited.
         :param Sequence[str] target_names: The name of the target database that was audited.
         """
-        pulumi.set(__self__, "audit_event_times", audit_event_times)
-        pulumi.set(__self__, "audit_types", audit_types)
-        pulumi.set(__self__, "client_hostnames", client_hostnames)
-        pulumi.set(__self__, "client_ids", client_ids)
-        pulumi.set(__self__, "client_programs", client_programs)
-        pulumi.set(__self__, "db_user_names", db_user_names)
-        pulumi.set(__self__, "event_names", event_names)
-        pulumi.set(__self__, "object_types", object_types)
-        pulumi.set(__self__, "target_classes", target_classes)
-        pulumi.set(__self__, "target_ids", target_ids)
-        pulumi.set(__self__, "target_names", target_names)
+        GetAuditEventAnalyticItemDimensionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audit_event_times=audit_event_times,
+            audit_types=audit_types,
+            client_hostnames=client_hostnames,
+            client_ids=client_ids,
+            client_programs=client_programs,
+            db_user_names=db_user_names,
+            event_names=event_names,
+            object_types=object_types,
+            target_classes=target_classes,
+            target_ids=target_ids,
+            target_names=target_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audit_event_times: Sequence[str],
+             audit_types: Sequence[str],
+             client_hostnames: Sequence[str],
+             client_ids: Sequence[str],
+             client_programs: Sequence[str],
+             db_user_names: Sequence[str],
+             event_names: Sequence[str],
+             object_types: Sequence[str],
+             target_classes: Sequence[str],
+             target_ids: Sequence[str],
+             target_names: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("audit_event_times", audit_event_times)
+        _setter("audit_types", audit_types)
+        _setter("client_hostnames", client_hostnames)
+        _setter("client_ids", client_ids)
+        _setter("client_programs", client_programs)
+        _setter("db_user_names", db_user_names)
+        _setter("event_names", event_names)
+        _setter("object_types", object_types)
+        _setter("target_classes", target_classes)
+        _setter("target_ids", target_ids)
+        _setter("target_names", target_names)
 
     @property
     @pulumi.getter(name="auditEventTimes")
@@ -4699,40 +5578,115 @@ class GetAuditEventItemResult(dict):
         :param str target_name: The name of the target database that was audited.
         :param str time_collected: Timestamp when this audit event was collected from the target database by Data Safe.
         """
-        pulumi.set(__self__, "action_taken", action_taken)
-        pulumi.set(__self__, "audit_event_time", audit_event_time)
-        pulumi.set(__self__, "audit_location", audit_location)
-        pulumi.set(__self__, "audit_policies", audit_policies)
-        pulumi.set(__self__, "audit_trail_id", audit_trail_id)
-        pulumi.set(__self__, "audit_type", audit_type)
-        pulumi.set(__self__, "client_hostname", client_hostname)
-        pulumi.set(__self__, "client_id", client_id)
-        pulumi.set(__self__, "client_ip", client_ip)
-        pulumi.set(__self__, "client_program", client_program)
-        pulumi.set(__self__, "command_param", command_param)
-        pulumi.set(__self__, "command_text", command_text)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "database_type", database_type)
-        pulumi.set(__self__, "db_user_name", db_user_name)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "error_code", error_code)
-        pulumi.set(__self__, "error_message", error_message)
-        pulumi.set(__self__, "event_name", event_name)
-        pulumi.set(__self__, "extended_event_attributes", extended_event_attributes)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_alerted", is_alerted)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "object_owner", object_owner)
-        pulumi.set(__self__, "object_type", object_type)
-        pulumi.set(__self__, "operation", operation)
-        pulumi.set(__self__, "operation_status", operation_status)
-        pulumi.set(__self__, "os_terminal", os_terminal)
-        pulumi.set(__self__, "os_user_name", os_user_name)
-        pulumi.set(__self__, "target_class", target_class)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "target_name", target_name)
-        pulumi.set(__self__, "time_collected", time_collected)
+        GetAuditEventItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_taken=action_taken,
+            audit_event_time=audit_event_time,
+            audit_location=audit_location,
+            audit_policies=audit_policies,
+            audit_trail_id=audit_trail_id,
+            audit_type=audit_type,
+            client_hostname=client_hostname,
+            client_id=client_id,
+            client_ip=client_ip,
+            client_program=client_program,
+            command_param=command_param,
+            command_text=command_text,
+            compartment_id=compartment_id,
+            database_type=database_type,
+            db_user_name=db_user_name,
+            defined_tags=defined_tags,
+            error_code=error_code,
+            error_message=error_message,
+            event_name=event_name,
+            extended_event_attributes=extended_event_attributes,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_alerted=is_alerted,
+            object=object,
+            object_owner=object_owner,
+            object_type=object_type,
+            operation=operation,
+            operation_status=operation_status,
+            os_terminal=os_terminal,
+            os_user_name=os_user_name,
+            target_class=target_class,
+            target_id=target_id,
+            target_name=target_name,
+            time_collected=time_collected,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_taken: str,
+             audit_event_time: str,
+             audit_location: str,
+             audit_policies: str,
+             audit_trail_id: str,
+             audit_type: str,
+             client_hostname: str,
+             client_id: str,
+             client_ip: str,
+             client_program: str,
+             command_param: str,
+             command_text: str,
+             compartment_id: str,
+             database_type: str,
+             db_user_name: str,
+             defined_tags: Mapping[str, Any],
+             error_code: str,
+             error_message: str,
+             event_name: str,
+             extended_event_attributes: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_alerted: bool,
+             object: str,
+             object_owner: str,
+             object_type: str,
+             operation: str,
+             operation_status: str,
+             os_terminal: str,
+             os_user_name: str,
+             target_class: str,
+             target_id: str,
+             target_name: str,
+             time_collected: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_taken", action_taken)
+        _setter("audit_event_time", audit_event_time)
+        _setter("audit_location", audit_location)
+        _setter("audit_policies", audit_policies)
+        _setter("audit_trail_id", audit_trail_id)
+        _setter("audit_type", audit_type)
+        _setter("client_hostname", client_hostname)
+        _setter("client_id", client_id)
+        _setter("client_ip", client_ip)
+        _setter("client_program", client_program)
+        _setter("command_param", command_param)
+        _setter("command_text", command_text)
+        _setter("compartment_id", compartment_id)
+        _setter("database_type", database_type)
+        _setter("db_user_name", db_user_name)
+        _setter("defined_tags", defined_tags)
+        _setter("error_code", error_code)
+        _setter("error_message", error_message)
+        _setter("event_name", event_name)
+        _setter("extended_event_attributes", extended_event_attributes)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_alerted", is_alerted)
+        _setter("object", object)
+        _setter("object_owner", object_owner)
+        _setter("object_type", object_type)
+        _setter("operation", operation)
+        _setter("operation_status", operation_status)
+        _setter("os_terminal", os_terminal)
+        _setter("os_user_name", os_user_name)
+        _setter("target_class", target_class)
+        _setter("target_id", target_id)
+        _setter("target_name", target_name)
+        _setter("time_collected", time_collected)
 
     @property
     @pulumi.getter(name="actionTaken")
@@ -5017,7 +5971,16 @@ class GetAuditEventsAuditEventCollectionResult(dict):
         """
         :param Sequence['GetAuditEventsAuditEventCollectionItemArgs'] items: Array of audit event summary.
         """
-        pulumi.set(__self__, "items", items)
+        GetAuditEventsAuditEventCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAuditEventsAuditEventCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -5104,40 +6067,115 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
         :param str target_name: The name of the target database that was audited.
         :param str time_collected: The timestamp when this audit event was collected from the target database by Data Safe.
         """
-        pulumi.set(__self__, "action_taken", action_taken)
-        pulumi.set(__self__, "audit_event_time", audit_event_time)
-        pulumi.set(__self__, "audit_location", audit_location)
-        pulumi.set(__self__, "audit_policies", audit_policies)
-        pulumi.set(__self__, "audit_trail_id", audit_trail_id)
-        pulumi.set(__self__, "audit_type", audit_type)
-        pulumi.set(__self__, "client_hostname", client_hostname)
-        pulumi.set(__self__, "client_id", client_id)
-        pulumi.set(__self__, "client_ip", client_ip)
-        pulumi.set(__self__, "client_program", client_program)
-        pulumi.set(__self__, "command_param", command_param)
-        pulumi.set(__self__, "command_text", command_text)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "database_type", database_type)
-        pulumi.set(__self__, "db_user_name", db_user_name)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "error_code", error_code)
-        pulumi.set(__self__, "error_message", error_message)
-        pulumi.set(__self__, "event_name", event_name)
-        pulumi.set(__self__, "extended_event_attributes", extended_event_attributes)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_alerted", is_alerted)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "object_owner", object_owner)
-        pulumi.set(__self__, "object_type", object_type)
-        pulumi.set(__self__, "operation", operation)
-        pulumi.set(__self__, "operation_status", operation_status)
-        pulumi.set(__self__, "os_terminal", os_terminal)
-        pulumi.set(__self__, "os_user_name", os_user_name)
-        pulumi.set(__self__, "target_class", target_class)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "target_name", target_name)
-        pulumi.set(__self__, "time_collected", time_collected)
+        GetAuditEventsAuditEventCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_taken=action_taken,
+            audit_event_time=audit_event_time,
+            audit_location=audit_location,
+            audit_policies=audit_policies,
+            audit_trail_id=audit_trail_id,
+            audit_type=audit_type,
+            client_hostname=client_hostname,
+            client_id=client_id,
+            client_ip=client_ip,
+            client_program=client_program,
+            command_param=command_param,
+            command_text=command_text,
+            compartment_id=compartment_id,
+            database_type=database_type,
+            db_user_name=db_user_name,
+            defined_tags=defined_tags,
+            error_code=error_code,
+            error_message=error_message,
+            event_name=event_name,
+            extended_event_attributes=extended_event_attributes,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_alerted=is_alerted,
+            object=object,
+            object_owner=object_owner,
+            object_type=object_type,
+            operation=operation,
+            operation_status=operation_status,
+            os_terminal=os_terminal,
+            os_user_name=os_user_name,
+            target_class=target_class,
+            target_id=target_id,
+            target_name=target_name,
+            time_collected=time_collected,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_taken: str,
+             audit_event_time: str,
+             audit_location: str,
+             audit_policies: str,
+             audit_trail_id: str,
+             audit_type: str,
+             client_hostname: str,
+             client_id: str,
+             client_ip: str,
+             client_program: str,
+             command_param: str,
+             command_text: str,
+             compartment_id: str,
+             database_type: str,
+             db_user_name: str,
+             defined_tags: Mapping[str, Any],
+             error_code: str,
+             error_message: str,
+             event_name: str,
+             extended_event_attributes: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_alerted: bool,
+             object: str,
+             object_owner: str,
+             object_type: str,
+             operation: str,
+             operation_status: str,
+             os_terminal: str,
+             os_user_name: str,
+             target_class: str,
+             target_id: str,
+             target_name: str,
+             time_collected: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_taken", action_taken)
+        _setter("audit_event_time", audit_event_time)
+        _setter("audit_location", audit_location)
+        _setter("audit_policies", audit_policies)
+        _setter("audit_trail_id", audit_trail_id)
+        _setter("audit_type", audit_type)
+        _setter("client_hostname", client_hostname)
+        _setter("client_id", client_id)
+        _setter("client_ip", client_ip)
+        _setter("client_program", client_program)
+        _setter("command_param", command_param)
+        _setter("command_text", command_text)
+        _setter("compartment_id", compartment_id)
+        _setter("database_type", database_type)
+        _setter("db_user_name", db_user_name)
+        _setter("defined_tags", defined_tags)
+        _setter("error_code", error_code)
+        _setter("error_message", error_message)
+        _setter("event_name", event_name)
+        _setter("extended_event_attributes", extended_event_attributes)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_alerted", is_alerted)
+        _setter("object", object)
+        _setter("object_owner", object_owner)
+        _setter("object_type", object_type)
+        _setter("operation", operation)
+        _setter("operation_status", operation_status)
+        _setter("os_terminal", os_terminal)
+        _setter("os_user_name", os_user_name)
+        _setter("target_class", target_class)
+        _setter("target_id", target_id)
+        _setter("target_name", target_name)
+        _setter("time_collected", time_collected)
 
     @property
     @pulumi.getter(name="actionTaken")
@@ -5421,10 +6459,23 @@ class GetAuditEventsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAuditEventsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5446,7 +6497,16 @@ class GetAuditEventsFilterResult(dict):
 class GetAuditPoliciesAuditPolicyCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAuditPoliciesAuditPolicyCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetAuditPoliciesAuditPolicyCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAuditPoliciesAuditPolicyCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -5497,26 +6557,73 @@ class GetAuditPoliciesAuditPolicyCollectionItemResult(dict):
         :param str time_last_retrieved: The time when the audit policies was last retrieved from this target, in the format defined by RFC3339.
         :param str time_updated: The last date and time the audit policy was updated, in the format defined by RFC3339.
         """
-        pulumi.set(__self__, "audit_conditions", audit_conditions)
-        pulumi.set(__self__, "audit_policy_id", audit_policy_id)
-        pulumi.set(__self__, "audit_specifications", audit_specifications)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_data_safe_service_account_excluded", is_data_safe_service_account_excluded)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "provision_trigger", provision_trigger)
-        pulumi.set(__self__, "retrieve_from_target_trigger", retrieve_from_target_trigger)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_provisioned", time_last_provisioned)
-        pulumi.set(__self__, "time_last_retrieved", time_last_retrieved)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetAuditPoliciesAuditPolicyCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audit_conditions=audit_conditions,
+            audit_policy_id=audit_policy_id,
+            audit_specifications=audit_specifications,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_data_safe_service_account_excluded=is_data_safe_service_account_excluded,
+            lifecycle_details=lifecycle_details,
+            provision_trigger=provision_trigger,
+            retrieve_from_target_trigger=retrieve_from_target_trigger,
+            state=state,
+            system_tags=system_tags,
+            target_id=target_id,
+            time_created=time_created,
+            time_last_provisioned=time_last_provisioned,
+            time_last_retrieved=time_last_retrieved,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audit_conditions: Sequence['outputs.GetAuditPoliciesAuditPolicyCollectionItemAuditConditionResult'],
+             audit_policy_id: str,
+             audit_specifications: Sequence['outputs.GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationResult'],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_data_safe_service_account_excluded: bool,
+             lifecycle_details: str,
+             provision_trigger: int,
+             retrieve_from_target_trigger: int,
+             state: str,
+             system_tags: Mapping[str, Any],
+             target_id: str,
+             time_created: str,
+             time_last_provisioned: str,
+             time_last_retrieved: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("audit_conditions", audit_conditions)
+        _setter("audit_policy_id", audit_policy_id)
+        _setter("audit_specifications", audit_specifications)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_data_safe_service_account_excluded", is_data_safe_service_account_excluded)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("provision_trigger", provision_trigger)
+        _setter("retrieve_from_target_trigger", retrieve_from_target_trigger)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("target_id", target_id)
+        _setter("time_created", time_created)
+        _setter("time_last_provisioned", time_last_provisioned)
+        _setter("time_last_retrieved", time_last_retrieved)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="auditConditions")
@@ -5686,10 +6793,25 @@ class GetAuditPoliciesAuditPolicyCollectionItemAuditConditionResult(dict):
         :param bool is_data_safe_service_account_audited: Indicates whether the Data Safe user activity on the target database will be audited by the policy.
         :param bool is_priv_users_managed_by_data_safe: Indicates whether the privileged user list is managed by Data Safe.
         """
-        pulumi.set(__self__, "audit_policy_name", audit_policy_name)
-        pulumi.set(__self__, "enable_conditions", enable_conditions)
-        pulumi.set(__self__, "is_data_safe_service_account_audited", is_data_safe_service_account_audited)
-        pulumi.set(__self__, "is_priv_users_managed_by_data_safe", is_priv_users_managed_by_data_safe)
+        GetAuditPoliciesAuditPolicyCollectionItemAuditConditionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audit_policy_name=audit_policy_name,
+            enable_conditions=enable_conditions,
+            is_data_safe_service_account_audited=is_data_safe_service_account_audited,
+            is_priv_users_managed_by_data_safe=is_priv_users_managed_by_data_safe,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audit_policy_name: str,
+             enable_conditions: Sequence['outputs.GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionResult'],
+             is_data_safe_service_account_audited: bool,
+             is_priv_users_managed_by_data_safe: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("audit_policy_name", audit_policy_name)
+        _setter("enable_conditions", enable_conditions)
+        _setter("is_data_safe_service_account_audited", is_data_safe_service_account_audited)
+        _setter("is_priv_users_managed_by_data_safe", is_priv_users_managed_by_data_safe)
 
     @property
     @pulumi.getter(name="auditPolicyName")
@@ -5737,10 +6859,25 @@ class GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionResu
         :param str entity_type: The entity type that the policy must be enabled for.
         :param str operation_status: The operation status that the policy must be enabled for.
         """
-        pulumi.set(__self__, "entity_names", entity_names)
-        pulumi.set(__self__, "entity_selection", entity_selection)
-        pulumi.set(__self__, "entity_type", entity_type)
-        pulumi.set(__self__, "operation_status", operation_status)
+        GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            entity_names=entity_names,
+            entity_selection=entity_selection,
+            entity_type=entity_type,
+            operation_status=operation_status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             entity_names: Sequence[str],
+             entity_selection: str,
+             entity_type: str,
+             operation_status: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("entity_names", entity_names)
+        _setter("entity_selection", entity_selection)
+        _setter("entity_type", entity_type)
+        _setter("operation_status", operation_status)
 
     @property
     @pulumi.getter(name="entityNames")
@@ -5802,17 +6939,46 @@ class GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationResult(dict):
         :param bool is_view_only: Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
         :param str partially_enabled_msg: Provides information about the policy that has been only partially enabled.
         """
-        pulumi.set(__self__, "audit_policy_category", audit_policy_category)
-        pulumi.set(__self__, "audit_policy_name", audit_policy_name)
-        pulumi.set(__self__, "database_policy_names", database_policy_names)
-        pulumi.set(__self__, "enable_status", enable_status)
-        pulumi.set(__self__, "enabled_entities", enabled_entities)
-        pulumi.set(__self__, "is_created", is_created)
-        pulumi.set(__self__, "is_enabled_for_all_users", is_enabled_for_all_users)
-        pulumi.set(__self__, "is_seeded_in_data_safe", is_seeded_in_data_safe)
-        pulumi.set(__self__, "is_seeded_in_target", is_seeded_in_target)
-        pulumi.set(__self__, "is_view_only", is_view_only)
-        pulumi.set(__self__, "partially_enabled_msg", partially_enabled_msg)
+        GetAuditPoliciesAuditPolicyCollectionItemAuditSpecificationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audit_policy_category=audit_policy_category,
+            audit_policy_name=audit_policy_name,
+            database_policy_names=database_policy_names,
+            enable_status=enable_status,
+            enabled_entities=enabled_entities,
+            is_created=is_created,
+            is_enabled_for_all_users=is_enabled_for_all_users,
+            is_seeded_in_data_safe=is_seeded_in_data_safe,
+            is_seeded_in_target=is_seeded_in_target,
+            is_view_only=is_view_only,
+            partially_enabled_msg=partially_enabled_msg,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audit_policy_category: str,
+             audit_policy_name: str,
+             database_policy_names: Sequence[str],
+             enable_status: str,
+             enabled_entities: str,
+             is_created: bool,
+             is_enabled_for_all_users: bool,
+             is_seeded_in_data_safe: bool,
+             is_seeded_in_target: bool,
+             is_view_only: bool,
+             partially_enabled_msg: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("audit_policy_category", audit_policy_category)
+        _setter("audit_policy_name", audit_policy_name)
+        _setter("database_policy_names", database_policy_names)
+        _setter("enable_status", enable_status)
+        _setter("enabled_entities", enabled_entities)
+        _setter("is_created", is_created)
+        _setter("is_enabled_for_all_users", is_enabled_for_all_users)
+        _setter("is_seeded_in_data_safe", is_seeded_in_data_safe)
+        _setter("is_seeded_in_target", is_seeded_in_target)
+        _setter("is_view_only", is_view_only)
+        _setter("partially_enabled_msg", partially_enabled_msg)
 
     @property
     @pulumi.getter(name="auditPolicyCategory")
@@ -5909,10 +7075,23 @@ class GetAuditPoliciesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAuditPoliciesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5943,10 +7122,25 @@ class GetAuditPolicyAuditConditionResult(dict):
         :param bool is_data_safe_service_account_audited: Indicates whether the Data Safe user activity on the target database will be audited by the policy.
         :param bool is_priv_users_managed_by_data_safe: Indicates whether the privileged user list is managed by Data Safe.
         """
-        pulumi.set(__self__, "audit_policy_name", audit_policy_name)
-        pulumi.set(__self__, "enable_conditions", enable_conditions)
-        pulumi.set(__self__, "is_data_safe_service_account_audited", is_data_safe_service_account_audited)
-        pulumi.set(__self__, "is_priv_users_managed_by_data_safe", is_priv_users_managed_by_data_safe)
+        GetAuditPolicyAuditConditionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audit_policy_name=audit_policy_name,
+            enable_conditions=enable_conditions,
+            is_data_safe_service_account_audited=is_data_safe_service_account_audited,
+            is_priv_users_managed_by_data_safe=is_priv_users_managed_by_data_safe,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audit_policy_name: str,
+             enable_conditions: Sequence['outputs.GetAuditPolicyAuditConditionEnableConditionResult'],
+             is_data_safe_service_account_audited: bool,
+             is_priv_users_managed_by_data_safe: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("audit_policy_name", audit_policy_name)
+        _setter("enable_conditions", enable_conditions)
+        _setter("is_data_safe_service_account_audited", is_data_safe_service_account_audited)
+        _setter("is_priv_users_managed_by_data_safe", is_priv_users_managed_by_data_safe)
 
     @property
     @pulumi.getter(name="auditPolicyName")
@@ -5994,10 +7188,25 @@ class GetAuditPolicyAuditConditionEnableConditionResult(dict):
         :param str entity_type: The entity type that the policy must be enabled for.
         :param str operation_status: The operation status that the policy must be enabled for.
         """
-        pulumi.set(__self__, "entity_names", entity_names)
-        pulumi.set(__self__, "entity_selection", entity_selection)
-        pulumi.set(__self__, "entity_type", entity_type)
-        pulumi.set(__self__, "operation_status", operation_status)
+        GetAuditPolicyAuditConditionEnableConditionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            entity_names=entity_names,
+            entity_selection=entity_selection,
+            entity_type=entity_type,
+            operation_status=operation_status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             entity_names: Sequence[str],
+             entity_selection: str,
+             entity_type: str,
+             operation_status: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("entity_names", entity_names)
+        _setter("entity_selection", entity_selection)
+        _setter("entity_type", entity_type)
+        _setter("operation_status", operation_status)
 
     @property
     @pulumi.getter(name="entityNames")
@@ -6059,17 +7268,46 @@ class GetAuditPolicyAuditSpecificationResult(dict):
         :param bool is_view_only: Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
         :param str partially_enabled_msg: Provides information about the policy that has been only partially enabled.
         """
-        pulumi.set(__self__, "audit_policy_category", audit_policy_category)
-        pulumi.set(__self__, "audit_policy_name", audit_policy_name)
-        pulumi.set(__self__, "database_policy_names", database_policy_names)
-        pulumi.set(__self__, "enable_status", enable_status)
-        pulumi.set(__self__, "enabled_entities", enabled_entities)
-        pulumi.set(__self__, "is_created", is_created)
-        pulumi.set(__self__, "is_enabled_for_all_users", is_enabled_for_all_users)
-        pulumi.set(__self__, "is_seeded_in_data_safe", is_seeded_in_data_safe)
-        pulumi.set(__self__, "is_seeded_in_target", is_seeded_in_target)
-        pulumi.set(__self__, "is_view_only", is_view_only)
-        pulumi.set(__self__, "partially_enabled_msg", partially_enabled_msg)
+        GetAuditPolicyAuditSpecificationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audit_policy_category=audit_policy_category,
+            audit_policy_name=audit_policy_name,
+            database_policy_names=database_policy_names,
+            enable_status=enable_status,
+            enabled_entities=enabled_entities,
+            is_created=is_created,
+            is_enabled_for_all_users=is_enabled_for_all_users,
+            is_seeded_in_data_safe=is_seeded_in_data_safe,
+            is_seeded_in_target=is_seeded_in_target,
+            is_view_only=is_view_only,
+            partially_enabled_msg=partially_enabled_msg,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audit_policy_category: str,
+             audit_policy_name: str,
+             database_policy_names: Sequence[str],
+             enable_status: str,
+             enabled_entities: str,
+             is_created: bool,
+             is_enabled_for_all_users: bool,
+             is_seeded_in_data_safe: bool,
+             is_seeded_in_target: bool,
+             is_view_only: bool,
+             partially_enabled_msg: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("audit_policy_category", audit_policy_category)
+        _setter("audit_policy_name", audit_policy_name)
+        _setter("database_policy_names", database_policy_names)
+        _setter("enable_status", enable_status)
+        _setter("enabled_entities", enabled_entities)
+        _setter("is_created", is_created)
+        _setter("is_enabled_for_all_users", is_enabled_for_all_users)
+        _setter("is_seeded_in_data_safe", is_seeded_in_data_safe)
+        _setter("is_seeded_in_target", is_seeded_in_target)
+        _setter("is_view_only", is_view_only)
+        _setter("partially_enabled_msg", partially_enabled_msg)
 
     @property
     @pulumi.getter(name="auditPolicyCategory")
@@ -6169,8 +7407,19 @@ class GetAuditProfileAnalyticItemResult(dict):
         :param str count: Total count of aggregated metric.
         :param Sequence['GetAuditProfileAnalyticItemDimensionArgs'] dimensions: Details of aggregation dimensions used for summarizing audit profiles.
         """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "dimensions", dimensions)
+        GetAuditProfileAnalyticItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            count=count,
+            dimensions=dimensions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             count: str,
+             dimensions: Sequence['outputs.GetAuditProfileAnalyticItemDimensionResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("count", count)
+        _setter("dimensions", dimensions)
 
     @property
     @pulumi.getter
@@ -6196,7 +7445,16 @@ class GetAuditProfileAnalyticItemDimensionResult(dict):
         """
         :param bool is_paid_usage_enabled: Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
         """
-        pulumi.set(__self__, "is_paid_usage_enabled", is_paid_usage_enabled)
+        GetAuditProfileAnalyticItemDimensionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_paid_usage_enabled=is_paid_usage_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_paid_usage_enabled: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_paid_usage_enabled", is_paid_usage_enabled)
 
     @property
     @pulumi.getter(name="isPaidUsageEnabled")
@@ -6250,25 +7508,70 @@ class GetAuditProfileAuditTrailResult(dict):
         :param str trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         :param str work_request_id: The OCID of the workrequest for audit trail which collects audit records.
         """
-        pulumi.set(__self__, "audit_collection_start_time", audit_collection_start_time)
-        pulumi.set(__self__, "audit_profile_id", audit_profile_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_auto_purge_enabled", is_auto_purge_enabled)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_collected", time_last_collected)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "trail_location", trail_location)
-        pulumi.set(__self__, "work_request_id", work_request_id)
+        GetAuditProfileAuditTrailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audit_collection_start_time=audit_collection_start_time,
+            audit_profile_id=audit_profile_id,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_auto_purge_enabled=is_auto_purge_enabled,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            status=status,
+            system_tags=system_tags,
+            target_id=target_id,
+            time_created=time_created,
+            time_last_collected=time_last_collected,
+            time_updated=time_updated,
+            trail_location=trail_location,
+            work_request_id=work_request_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audit_collection_start_time: str,
+             audit_profile_id: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_auto_purge_enabled: bool,
+             lifecycle_details: str,
+             state: str,
+             status: str,
+             system_tags: Mapping[str, Any],
+             target_id: str,
+             time_created: str,
+             time_last_collected: str,
+             time_updated: str,
+             trail_location: str,
+             work_request_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("audit_collection_start_time", audit_collection_start_time)
+        _setter("audit_profile_id", audit_profile_id)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_auto_purge_enabled", is_auto_purge_enabled)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("status", status)
+        _setter("system_tags", system_tags)
+        _setter("target_id", target_id)
+        _setter("time_created", time_created)
+        _setter("time_last_collected", time_last_collected)
+        _setter("time_updated", time_updated)
+        _setter("trail_location", trail_location)
+        _setter("work_request_id", work_request_id)
 
     @property
     @pulumi.getter(name="auditCollectionStartTime")
@@ -6436,10 +7739,25 @@ class GetAuditProfileAvailableAuditVolumeItemResult(dict):
         :param str trail_location: The audit trail location.
         :param str volume: Represents the aggregated audit data volume available in the audit trails on the target database which is yet to be collected by Data Safe for the specified month.
         """
-        pulumi.set(__self__, "audit_profile_id", audit_profile_id)
-        pulumi.set(__self__, "month_in_consideration", month_in_consideration)
-        pulumi.set(__self__, "trail_location", trail_location)
-        pulumi.set(__self__, "volume", volume)
+        GetAuditProfileAvailableAuditVolumeItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audit_profile_id=audit_profile_id,
+            month_in_consideration=month_in_consideration,
+            trail_location=trail_location,
+            volume=volume,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audit_profile_id: str,
+             month_in_consideration: str,
+             trail_location: str,
+             volume: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("audit_profile_id", audit_profile_id)
+        _setter("month_in_consideration", month_in_consideration)
+        _setter("trail_location", trail_location)
+        _setter("volume", volume)
 
     @property
     @pulumi.getter(name="auditProfileId")
@@ -6481,7 +7799,16 @@ class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionResult(d
         """
         :param Sequence['GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemArgs'] items: Array of available audit volume summary.
         """
-        pulumi.set(__self__, "items", items)
+        GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -6499,7 +7826,16 @@ class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemResu
         """
         :param Sequence['GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemArgs'] items: Array of available audit volume summary.
         """
-        pulumi.set(__self__, "items", items)
+        GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -6523,10 +7859,25 @@ class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItem
         :param str trail_location: The audit trail location.
         :param str volume: Represents the aggregated audit data volume available in the audit trails on the target database which is yet to be collected by Data Safe for the specified month.
         """
-        pulumi.set(__self__, "audit_profile_id", audit_profile_id)
-        pulumi.set(__self__, "month_in_consideration", month_in_consideration)
-        pulumi.set(__self__, "trail_location", trail_location)
-        pulumi.set(__self__, "volume", volume)
+        GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audit_profile_id=audit_profile_id,
+            month_in_consideration=month_in_consideration,
+            trail_location=trail_location,
+            volume=volume,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audit_profile_id: str,
+             month_in_consideration: str,
+             trail_location: str,
+             volume: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("audit_profile_id", audit_profile_id)
+        _setter("month_in_consideration", month_in_consideration)
+        _setter("trail_location", trail_location)
+        _setter("volume", volume)
 
     @property
     @pulumi.getter(name="auditProfileId")
@@ -6567,10 +7918,23 @@ class GetAuditProfileAvailableAuditVolumesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAuditProfileAvailableAuditVolumesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6601,10 +7965,25 @@ class GetAuditProfileCollectedAuditVolumeItemResult(dict):
         :param str month_in_consideration: Represents the month under consideration in which the aggregated audit data volume collected by Data Safe is displayed. This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
         :param str online_volume: The audit data volume collected by Data Safe and is available online in repository.
         """
-        pulumi.set(__self__, "archived_volume", archived_volume)
-        pulumi.set(__self__, "audit_profile_id", audit_profile_id)
-        pulumi.set(__self__, "month_in_consideration", month_in_consideration)
-        pulumi.set(__self__, "online_volume", online_volume)
+        GetAuditProfileCollectedAuditVolumeItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            archived_volume=archived_volume,
+            audit_profile_id=audit_profile_id,
+            month_in_consideration=month_in_consideration,
+            online_volume=online_volume,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             archived_volume: str,
+             audit_profile_id: str,
+             month_in_consideration: str,
+             online_volume: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("archived_volume", archived_volume)
+        _setter("audit_profile_id", audit_profile_id)
+        _setter("month_in_consideration", month_in_consideration)
+        _setter("online_volume", online_volume)
 
     @property
     @pulumi.getter(name="archivedVolume")
@@ -6646,7 +8025,16 @@ class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionResult(d
         """
         :param Sequence['GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemArgs'] items: Array of collected audit volume summary.
         """
-        pulumi.set(__self__, "items", items)
+        GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -6664,7 +8052,16 @@ class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemResu
         """
         :param Sequence['GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemArgs'] items: Array of collected audit volume summary.
         """
-        pulumi.set(__self__, "items", items)
+        GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -6688,10 +8085,25 @@ class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem
         :param str month_in_consideration: Represents the month under consideration in which the aggregated audit data volume collected by Data Safe is displayed. This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
         :param str online_volume: The audit data volume collected by Data Safe and is available online in repository.
         """
-        pulumi.set(__self__, "archived_volume", archived_volume)
-        pulumi.set(__self__, "audit_profile_id", audit_profile_id)
-        pulumi.set(__self__, "month_in_consideration", month_in_consideration)
-        pulumi.set(__self__, "online_volume", online_volume)
+        GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            archived_volume=archived_volume,
+            audit_profile_id=audit_profile_id,
+            month_in_consideration=month_in_consideration,
+            online_volume=online_volume,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             archived_volume: str,
+             audit_profile_id: str,
+             month_in_consideration: str,
+             online_volume: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("archived_volume", archived_volume)
+        _setter("audit_profile_id", audit_profile_id)
+        _setter("month_in_consideration", month_in_consideration)
+        _setter("online_volume", online_volume)
 
     @property
     @pulumi.getter(name="archivedVolume")
@@ -6732,10 +8144,23 @@ class GetAuditProfileCollectedAuditVolumesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAuditProfileCollectedAuditVolumesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6757,7 +8182,16 @@ class GetAuditProfileCollectedAuditVolumesFilterResult(dict):
 class GetAuditProfilesAuditProfileCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAuditProfilesAuditProfileCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetAuditProfilesAuditProfileCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAuditProfilesAuditProfileCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -6809,26 +8243,73 @@ class GetAuditProfilesAuditProfileCollectionItemResult(dict):
         :param str time_created: The date and time the audit profile was created, in the format defined by RFC3339.
         :param str time_updated: The date and time the audit profile was updated, in the format defined by RFC3339.
         """
-        pulumi.set(__self__, "audit_collected_volume", audit_collected_volume)
-        pulumi.set(__self__, "audit_profile_id", audit_profile_id)
-        pulumi.set(__self__, "audit_trails", audit_trails)
-        pulumi.set(__self__, "change_retention_trigger", change_retention_trigger)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_override_global_retention_setting", is_override_global_retention_setting)
-        pulumi.set(__self__, "is_paid_usage_enabled", is_paid_usage_enabled)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "offline_months", offline_months)
-        pulumi.set(__self__, "online_months", online_months)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetAuditProfilesAuditProfileCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audit_collected_volume=audit_collected_volume,
+            audit_profile_id=audit_profile_id,
+            audit_trails=audit_trails,
+            change_retention_trigger=change_retention_trigger,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_override_global_retention_setting=is_override_global_retention_setting,
+            is_paid_usage_enabled=is_paid_usage_enabled,
+            lifecycle_details=lifecycle_details,
+            offline_months=offline_months,
+            online_months=online_months,
+            state=state,
+            system_tags=system_tags,
+            target_id=target_id,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audit_collected_volume: str,
+             audit_profile_id: str,
+             audit_trails: Sequence['outputs.GetAuditProfilesAuditProfileCollectionItemAuditTrailResult'],
+             change_retention_trigger: int,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_override_global_retention_setting: bool,
+             is_paid_usage_enabled: bool,
+             lifecycle_details: str,
+             offline_months: int,
+             online_months: int,
+             state: str,
+             system_tags: Mapping[str, Any],
+             target_id: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("audit_collected_volume", audit_collected_volume)
+        _setter("audit_profile_id", audit_profile_id)
+        _setter("audit_trails", audit_trails)
+        _setter("change_retention_trigger", change_retention_trigger)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_override_global_retention_setting", is_override_global_retention_setting)
+        _setter("is_paid_usage_enabled", is_paid_usage_enabled)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("offline_months", offline_months)
+        _setter("online_months", online_months)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("target_id", target_id)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="auditCollectedVolume")
@@ -7031,25 +8512,70 @@ class GetAuditProfilesAuditProfileCollectionItemAuditTrailResult(dict):
         :param str trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         :param str work_request_id: The OCID of the workrequest for audit trail which collects audit records.
         """
-        pulumi.set(__self__, "audit_collection_start_time", audit_collection_start_time)
-        pulumi.set(__self__, "audit_profile_id", audit_profile_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_auto_purge_enabled", is_auto_purge_enabled)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_collected", time_last_collected)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "trail_location", trail_location)
-        pulumi.set(__self__, "work_request_id", work_request_id)
+        GetAuditProfilesAuditProfileCollectionItemAuditTrailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audit_collection_start_time=audit_collection_start_time,
+            audit_profile_id=audit_profile_id,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_auto_purge_enabled=is_auto_purge_enabled,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            status=status,
+            system_tags=system_tags,
+            target_id=target_id,
+            time_created=time_created,
+            time_last_collected=time_last_collected,
+            time_updated=time_updated,
+            trail_location=trail_location,
+            work_request_id=work_request_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audit_collection_start_time: str,
+             audit_profile_id: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_auto_purge_enabled: bool,
+             lifecycle_details: str,
+             state: str,
+             status: str,
+             system_tags: Mapping[str, Any],
+             target_id: str,
+             time_created: str,
+             time_last_collected: str,
+             time_updated: str,
+             trail_location: str,
+             work_request_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("audit_collection_start_time", audit_collection_start_time)
+        _setter("audit_profile_id", audit_profile_id)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_auto_purge_enabled", is_auto_purge_enabled)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("status", status)
+        _setter("system_tags", system_tags)
+        _setter("target_id", target_id)
+        _setter("time_created", time_created)
+        _setter("time_last_collected", time_last_collected)
+        _setter("time_updated", time_updated)
+        _setter("trail_location", trail_location)
+        _setter("work_request_id", work_request_id)
 
     @property
     @pulumi.getter(name="auditCollectionStartTime")
@@ -7210,10 +8736,23 @@ class GetAuditProfilesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAuditProfilesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -7240,8 +8779,19 @@ class GetAuditTrailAnalyticItemResult(dict):
         :param str count: Total count of aggregated metric.
         :param Sequence['GetAuditTrailAnalyticItemDimensionArgs'] dimensions: Details of aggregation dimensions used for summarizing audit trails.
         """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "dimensions", dimensions)
+        GetAuditTrailAnalyticItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            count=count,
+            dimensions=dimensions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             count: str,
+             dimensions: Sequence['outputs.GetAuditTrailAnalyticItemDimensionResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("count", count)
+        _setter("dimensions", dimensions)
 
     @property
     @pulumi.getter
@@ -7273,10 +8823,25 @@ class GetAuditTrailAnalyticItemDimensionResult(dict):
         :param str status: The current sub-state of the audit trail..
         :param str target_id: A filter to return only items related to a specific target OCID.
         """
-        pulumi.set(__self__, "location", location)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "target_id", target_id)
+        GetAuditTrailAnalyticItemDimensionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            location=location,
+            state=state,
+            status=status,
+            target_id=target_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             location: str,
+             state: str,
+             status: str,
+             target_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("location", location)
+        _setter("state", state)
+        _setter("status", status)
+        _setter("target_id", target_id)
 
     @property
     @pulumi.getter
@@ -7315,7 +8880,16 @@ class GetAuditTrailAnalyticItemDimensionResult(dict):
 class GetAuditTrailsAuditTrailCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAuditTrailsAuditTrailCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetAuditTrailsAuditTrailCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAuditTrailsAuditTrailCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -7369,27 +8943,76 @@ class GetAuditTrailsAuditTrailCollectionItemResult(dict):
         :param str trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         :param str work_request_id: The OCID of the workrequest for audit trail which collects audit records.
         """
-        pulumi.set(__self__, "audit_collection_start_time", audit_collection_start_time)
-        pulumi.set(__self__, "audit_profile_id", audit_profile_id)
-        pulumi.set(__self__, "audit_trail_id", audit_trail_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_auto_purge_enabled", is_auto_purge_enabled)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "resume_trigger", resume_trigger)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_collected", time_last_collected)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "trail_location", trail_location)
-        pulumi.set(__self__, "work_request_id", work_request_id)
+        GetAuditTrailsAuditTrailCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            audit_collection_start_time=audit_collection_start_time,
+            audit_profile_id=audit_profile_id,
+            audit_trail_id=audit_trail_id,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_auto_purge_enabled=is_auto_purge_enabled,
+            lifecycle_details=lifecycle_details,
+            resume_trigger=resume_trigger,
+            state=state,
+            status=status,
+            system_tags=system_tags,
+            target_id=target_id,
+            time_created=time_created,
+            time_last_collected=time_last_collected,
+            time_updated=time_updated,
+            trail_location=trail_location,
+            work_request_id=work_request_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             audit_collection_start_time: str,
+             audit_profile_id: str,
+             audit_trail_id: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_auto_purge_enabled: bool,
+             lifecycle_details: str,
+             resume_trigger: int,
+             state: str,
+             status: str,
+             system_tags: Mapping[str, Any],
+             target_id: str,
+             time_created: str,
+             time_last_collected: str,
+             time_updated: str,
+             trail_location: str,
+             work_request_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("audit_collection_start_time", audit_collection_start_time)
+        _setter("audit_profile_id", audit_profile_id)
+        _setter("audit_trail_id", audit_trail_id)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_auto_purge_enabled", is_auto_purge_enabled)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("resume_trigger", resume_trigger)
+        _setter("state", state)
+        _setter("status", status)
+        _setter("system_tags", system_tags)
+        _setter("target_id", target_id)
+        _setter("time_created", time_created)
+        _setter("time_last_collected", time_last_collected)
+        _setter("time_updated", time_updated)
+        _setter("trail_location", trail_location)
+        _setter("work_request_id", work_request_id)
 
     @property
     @pulumi.getter(name="auditCollectionStartTime")
@@ -7563,10 +9186,23 @@ class GetAuditTrailsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAuditTrailsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -7593,8 +9229,19 @@ class GetCompatibleFormatsForDataTypeFormatsForDataTypeResult(dict):
         :param str data_type: The data type category, which can be one of the following - Character - Includes CHAR, NCHAR, VARCHAR2, and NVARCHAR2 Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE Date - Includes DATE and TIMESTAMP LOB - Includes BLOB, CLOB, and NCLOB All - Includes all the supported data types
         :param Sequence['GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatArgs'] masking_formats: An array of the basic masking formats compatible with the data type category.
         """
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "masking_formats", masking_formats)
+        GetCompatibleFormatsForDataTypeFormatsForDataTypeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_type=data_type,
+            masking_formats=masking_formats,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_type: str,
+             masking_formats: Sequence['outputs.GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("data_type", data_type)
+        _setter("masking_formats", masking_formats)
 
     @property
     @pulumi.getter(name="dataType")
@@ -7624,9 +9271,22 @@ class GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatResult(dict)
         :param str id: The OCID of the masking format.
         :param str name: The name of the masking format.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
+        GetCompatibleFormatsForDataTypeFormatsForDataTypeMaskingFormatResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            id=id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             id: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("id", id)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -7662,8 +9322,19 @@ class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeResult(dict):
         :param Sequence['GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatArgs'] masking_formats: An array of the library masking formats compatible with the sensitive type.
         :param str sensitive_type_id: The OCID of the sensitive type.
         """
-        pulumi.set(__self__, "masking_formats", masking_formats)
-        pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
+        GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            masking_formats=masking_formats,
+            sensitive_type_id=sensitive_type_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             masking_formats: Sequence['outputs.GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatResult'],
+             sensitive_type_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("masking_formats", masking_formats)
+        _setter("sensitive_type_id", sensitive_type_id)
 
     @property
     @pulumi.getter(name="maskingFormats")
@@ -7693,9 +9364,22 @@ class GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatRe
         :param str id: The OCID of the masking format.
         :param str name: The name of the masking format.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
+        GetCompatibleFormatsForSensitiveTypeFormatsForSensitiveTypeMaskingFormatResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            id=id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             id: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("id", id)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -7733,9 +9417,22 @@ class GetDataSafeConfigurationGlobalSettingResult(dict):
         :param int offline_retention_period: The offline retention period in months.
         :param int online_retention_period: The online retention period in months.
         """
-        pulumi.set(__self__, "is_paid_usage", is_paid_usage)
-        pulumi.set(__self__, "offline_retention_period", offline_retention_period)
-        pulumi.set(__self__, "online_retention_period", online_retention_period)
+        GetDataSafeConfigurationGlobalSettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_paid_usage=is_paid_usage,
+            offline_retention_period=offline_retention_period,
+            online_retention_period=online_retention_period,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_paid_usage: bool,
+             offline_retention_period: int,
+             online_retention_period: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_paid_usage", is_paid_usage)
+        _setter("offline_retention_period", offline_retention_period)
+        _setter("online_retention_period", online_retention_period)
 
     @property
     @pulumi.getter(name="isPaidUsage")
@@ -7797,21 +9494,58 @@ class GetDataSafePrivateEndpointsDataSafePrivateEndpointResult(dict):
         :param str time_created: The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str vcn_id: A filter to return only resources that match the specified VCN OCID.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "endpoint_fqdn", endpoint_fqdn)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
-        pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        GetDataSafePrivateEndpointsDataSafePrivateEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            endpoint_fqdn=endpoint_fqdn,
+            freeform_tags=freeform_tags,
+            id=id,
+            nsg_ids=nsg_ids,
+            private_endpoint_id=private_endpoint_id,
+            private_endpoint_ip=private_endpoint_ip,
+            state=state,
+            subnet_id=subnet_id,
+            system_tags=system_tags,
+            time_created=time_created,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             endpoint_fqdn: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             nsg_ids: Sequence[str],
+             private_endpoint_id: str,
+             private_endpoint_ip: str,
+             state: str,
+             subnet_id: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             vcn_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("endpoint_fqdn", endpoint_fqdn)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("nsg_ids", nsg_ids)
+        _setter("private_endpoint_id", private_endpoint_id)
+        _setter("private_endpoint_ip", private_endpoint_ip)
+        _setter("state", state)
+        _setter("subnet_id", subnet_id)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -7940,10 +9674,23 @@ class GetDataSafePrivateEndpointsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDataSafePrivateEndpointsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -7972,9 +9719,22 @@ class GetDiscoveryAnalyticItemResult(dict):
         :param Sequence['GetDiscoveryAnalyticItemDimensionArgs'] dimensions: The scope of analytics data.
         :param str metric_name: The name of the aggregation metric.
         """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "dimensions", dimensions)
-        pulumi.set(__self__, "metric_name", metric_name)
+        GetDiscoveryAnalyticItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            count=count,
+            dimensions=dimensions,
+            metric_name=metric_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             count: str,
+             dimensions: Sequence['outputs.GetDiscoveryAnalyticItemDimensionResult'],
+             metric_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("count", count)
+        _setter("dimensions", dimensions)
+        _setter("metric_name", metric_name)
 
     @property
     @pulumi.getter
@@ -8010,8 +9770,19 @@ class GetDiscoveryAnalyticItemDimensionResult(dict):
         :param str sensitive_data_model_id: A filter to return only the resources that match the specified sensitive data model OCID.
         :param str target_id: A filter to return only items related to a specific target OCID.
         """
-        pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
-        pulumi.set(__self__, "target_id", target_id)
+        GetDiscoveryAnalyticItemDimensionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            sensitive_data_model_id=sensitive_data_model_id,
+            target_id=target_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             sensitive_data_model_id: str,
+             target_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("sensitive_data_model_id", sensitive_data_model_id)
+        _setter("target_id", target_id)
 
     @property
     @pulumi.getter(name="sensitiveDataModelId")
@@ -8037,7 +9808,16 @@ class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionResult(dict):
         """
         :param Sequence['GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArgs'] items: An array of discovery analytics summary objects.
         """
-        pulumi.set(__self__, "items", items)
+        GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -8059,9 +9839,22 @@ class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemResult(dict):
         :param Sequence['GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArgs'] dimensions: The scope of analytics data.
         :param str metric_name: The name of the aggregation metric.
         """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "dimensions", dimensions)
-        pulumi.set(__self__, "metric_name", metric_name)
+        GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            count=count,
+            dimensions=dimensions,
+            metric_name=metric_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             count: str,
+             dimensions: Sequence['outputs.GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionResult'],
+             metric_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("count", count)
+        _setter("dimensions", dimensions)
+        _setter("metric_name", metric_name)
 
     @property
     @pulumi.getter
@@ -8097,8 +9890,19 @@ class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionResult(dict)
         :param str sensitive_data_model_id: A filter to return only the resources that match the specified sensitive data model OCID.
         :param str target_id: A filter to return only items related to a specific target OCID.
         """
-        pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
-        pulumi.set(__self__, "target_id", target_id)
+        GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            sensitive_data_model_id=sensitive_data_model_id,
+            target_id=target_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             sensitive_data_model_id: str,
+             target_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("sensitive_data_model_id", sensitive_data_model_id)
+        _setter("target_id", target_id)
 
     @property
     @pulumi.getter(name="sensitiveDataModelId")
@@ -8123,10 +9927,23 @@ class GetDiscoveryAnalyticsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDiscoveryAnalyticsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -8153,8 +9970,19 @@ class GetDiscoveryJobsResultModifiedAttributeResult(dict):
         :param Sequence[str] app_defined_child_column_keys: Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
         :param Sequence[str] db_defined_child_column_keys: Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
         """
-        pulumi.set(__self__, "app_defined_child_column_keys", app_defined_child_column_keys)
-        pulumi.set(__self__, "db_defined_child_column_keys", db_defined_child_column_keys)
+        GetDiscoveryJobsResultModifiedAttributeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app_defined_child_column_keys=app_defined_child_column_keys,
+            db_defined_child_column_keys=db_defined_child_column_keys,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app_defined_child_column_keys: Sequence[str],
+             db_defined_child_column_keys: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("app_defined_child_column_keys", app_defined_child_column_keys)
+        _setter("db_defined_child_column_keys", db_defined_child_column_keys)
 
     @property
     @pulumi.getter(name="appDefinedChildColumnKeys")
@@ -8177,7 +10005,16 @@ class GetDiscoveryJobsResultModifiedAttributeResult(dict):
 class GetDiscoveryJobsResultsDiscoveryJobResultCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetDiscoveryJobsResultsDiscoveryJobResultCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -8230,26 +10067,73 @@ class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult(dict):
         :param str sensitive_columnkey: The unique key that identifies the sensitive column represented by the discovery result.
         :param str sensitive_type_id: The OCID of the sensitive type associated with the sensitive column.
         """
-        pulumi.set(__self__, "app_defined_child_column_keys", app_defined_child_column_keys)
-        pulumi.set(__self__, "app_name", app_name)
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "db_defined_child_column_keys", db_defined_child_column_keys)
-        pulumi.set(__self__, "discovery_job_id", discovery_job_id)
-        pulumi.set(__self__, "discovery_type", discovery_type)
-        pulumi.set(__self__, "estimated_data_value_count", estimated_data_value_count)
-        pulumi.set(__self__, "is_result_applied", is_result_applied)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "modified_attributes", modified_attributes)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "object_type", object_type)
-        pulumi.set(__self__, "parent_column_keys", parent_column_keys)
-        pulumi.set(__self__, "planned_action", planned_action)
-        pulumi.set(__self__, "relation_type", relation_type)
-        pulumi.set(__self__, "sample_data_values", sample_data_values)
-        pulumi.set(__self__, "schema_name", schema_name)
-        pulumi.set(__self__, "sensitive_columnkey", sensitive_columnkey)
-        pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
+        GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app_defined_child_column_keys=app_defined_child_column_keys,
+            app_name=app_name,
+            column_name=column_name,
+            data_type=data_type,
+            db_defined_child_column_keys=db_defined_child_column_keys,
+            discovery_job_id=discovery_job_id,
+            discovery_type=discovery_type,
+            estimated_data_value_count=estimated_data_value_count,
+            is_result_applied=is_result_applied,
+            key=key,
+            modified_attributes=modified_attributes,
+            object=object,
+            object_type=object_type,
+            parent_column_keys=parent_column_keys,
+            planned_action=planned_action,
+            relation_type=relation_type,
+            sample_data_values=sample_data_values,
+            schema_name=schema_name,
+            sensitive_columnkey=sensitive_columnkey,
+            sensitive_type_id=sensitive_type_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app_defined_child_column_keys: Sequence[str],
+             app_name: str,
+             column_name: str,
+             data_type: str,
+             db_defined_child_column_keys: Sequence[str],
+             discovery_job_id: str,
+             discovery_type: str,
+             estimated_data_value_count: str,
+             is_result_applied: bool,
+             key: str,
+             modified_attributes: Sequence['outputs.GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeResult'],
+             object: str,
+             object_type: str,
+             parent_column_keys: Sequence[str],
+             planned_action: str,
+             relation_type: str,
+             sample_data_values: Sequence[str],
+             schema_name: str,
+             sensitive_columnkey: str,
+             sensitive_type_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("app_defined_child_column_keys", app_defined_child_column_keys)
+        _setter("app_name", app_name)
+        _setter("column_name", column_name)
+        _setter("data_type", data_type)
+        _setter("db_defined_child_column_keys", db_defined_child_column_keys)
+        _setter("discovery_job_id", discovery_job_id)
+        _setter("discovery_type", discovery_type)
+        _setter("estimated_data_value_count", estimated_data_value_count)
+        _setter("is_result_applied", is_result_applied)
+        _setter("key", key)
+        _setter("modified_attributes", modified_attributes)
+        _setter("object", object)
+        _setter("object_type", object_type)
+        _setter("parent_column_keys", parent_column_keys)
+        _setter("planned_action", planned_action)
+        _setter("relation_type", relation_type)
+        _setter("sample_data_values", sample_data_values)
+        _setter("schema_name", schema_name)
+        _setter("sensitive_columnkey", sensitive_columnkey)
+        _setter("sensitive_type_id", sensitive_type_id)
 
     @property
     @pulumi.getter(name="appDefinedChildColumnKeys")
@@ -8430,8 +10314,19 @@ class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeRe
         :param Sequence[str] app_defined_child_column_keys: Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
         :param Sequence[str] db_defined_child_column_keys: Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
         """
-        pulumi.set(__self__, "app_defined_child_column_keys", app_defined_child_column_keys)
-        pulumi.set(__self__, "db_defined_child_column_keys", db_defined_child_column_keys)
+        GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app_defined_child_column_keys=app_defined_child_column_keys,
+            db_defined_child_column_keys=db_defined_child_column_keys,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app_defined_child_column_keys: Sequence[str],
+             db_defined_child_column_keys: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("app_defined_child_column_keys", app_defined_child_column_keys)
+        _setter("db_defined_child_column_keys", db_defined_child_column_keys)
 
     @property
     @pulumi.getter(name="appDefinedChildColumnKeys")
@@ -8456,10 +10351,23 @@ class GetDiscoveryJobsResultsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDiscoveryJobsResultsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -8528,29 +10436,82 @@ class GetLibraryMaskingFormatFormatEntryResult(dict):
         :param str type: The type of the format entry.
         :param str user_defined_function: The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         """
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "end_date", end_date)
-        pulumi.set(__self__, "end_length", end_length)
-        pulumi.set(__self__, "end_value", end_value)
-        pulumi.set(__self__, "fixed_number", fixed_number)
-        pulumi.set(__self__, "fixed_string", fixed_string)
-        pulumi.set(__self__, "grouping_columns", grouping_columns)
-        pulumi.set(__self__, "length", length)
-        pulumi.set(__self__, "library_masking_format_id", library_masking_format_id)
-        pulumi.set(__self__, "post_processing_function", post_processing_function)
-        pulumi.set(__self__, "random_lists", random_lists)
-        pulumi.set(__self__, "regular_expression", regular_expression)
-        pulumi.set(__self__, "replace_with", replace_with)
-        pulumi.set(__self__, "schema_name", schema_name)
-        pulumi.set(__self__, "sql_expression", sql_expression)
-        pulumi.set(__self__, "start_date", start_date)
-        pulumi.set(__self__, "start_length", start_length)
-        pulumi.set(__self__, "start_position", start_position)
-        pulumi.set(__self__, "start_value", start_value)
-        pulumi.set(__self__, "table_name", table_name)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "user_defined_function", user_defined_function)
+        GetLibraryMaskingFormatFormatEntryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            description=description,
+            end_date=end_date,
+            end_length=end_length,
+            end_value=end_value,
+            fixed_number=fixed_number,
+            fixed_string=fixed_string,
+            grouping_columns=grouping_columns,
+            length=length,
+            library_masking_format_id=library_masking_format_id,
+            post_processing_function=post_processing_function,
+            random_lists=random_lists,
+            regular_expression=regular_expression,
+            replace_with=replace_with,
+            schema_name=schema_name,
+            sql_expression=sql_expression,
+            start_date=start_date,
+            start_length=start_length,
+            start_position=start_position,
+            start_value=start_value,
+            table_name=table_name,
+            type=type,
+            user_defined_function=user_defined_function,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: str,
+             description: str,
+             end_date: str,
+             end_length: int,
+             end_value: float,
+             fixed_number: float,
+             fixed_string: str,
+             grouping_columns: Sequence[str],
+             length: int,
+             library_masking_format_id: str,
+             post_processing_function: str,
+             random_lists: Sequence[str],
+             regular_expression: str,
+             replace_with: str,
+             schema_name: str,
+             sql_expression: str,
+             start_date: str,
+             start_length: int,
+             start_position: int,
+             start_value: float,
+             table_name: str,
+             type: str,
+             user_defined_function: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("column_name", column_name)
+        _setter("description", description)
+        _setter("end_date", end_date)
+        _setter("end_length", end_length)
+        _setter("end_value", end_value)
+        _setter("fixed_number", fixed_number)
+        _setter("fixed_string", fixed_string)
+        _setter("grouping_columns", grouping_columns)
+        _setter("length", length)
+        _setter("library_masking_format_id", library_masking_format_id)
+        _setter("post_processing_function", post_processing_function)
+        _setter("random_lists", random_lists)
+        _setter("regular_expression", regular_expression)
+        _setter("replace_with", replace_with)
+        _setter("schema_name", schema_name)
+        _setter("sql_expression", sql_expression)
+        _setter("start_date", start_date)
+        _setter("start_length", start_length)
+        _setter("start_position", start_position)
+        _setter("start_value", start_value)
+        _setter("table_name", table_name)
+        _setter("type", type)
+        _setter("user_defined_function", user_defined_function)
 
     @property
     @pulumi.getter(name="columnName")
@@ -8743,10 +10704,23 @@ class GetLibraryMaskingFormatsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetLibraryMaskingFormatsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -8768,7 +10742,16 @@ class GetLibraryMaskingFormatsFilterResult(dict):
 class GetLibraryMaskingFormatsLibraryMaskingFormatCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetLibraryMaskingFormatsLibraryMaskingFormatCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -8805,18 +10788,49 @@ class GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemResult(dict):
         :param str time_created: The date and time the library masking format was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         :param str time_updated: The date and time the library masking format was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "format_entries", format_entries)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "sensitive_type_ids", sensitive_type_ids)
-        pulumi.set(__self__, "source", source)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            format_entries=format_entries,
+            freeform_tags=freeform_tags,
+            id=id,
+            sensitive_type_ids=sensitive_type_ids,
+            source=source,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             format_entries: Sequence['outputs.GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryResult'],
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             sensitive_type_ids: Sequence[str],
+             source: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("format_entries", format_entries)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("sensitive_type_ids", sensitive_type_ids)
+        _setter("source", source)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -8966,29 +10980,82 @@ class GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryResul
         :param str type: The type of the format entry.
         :param str user_defined_function: The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         """
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "end_date", end_date)
-        pulumi.set(__self__, "end_length", end_length)
-        pulumi.set(__self__, "end_value", end_value)
-        pulumi.set(__self__, "fixed_number", fixed_number)
-        pulumi.set(__self__, "fixed_string", fixed_string)
-        pulumi.set(__self__, "grouping_columns", grouping_columns)
-        pulumi.set(__self__, "length", length)
-        pulumi.set(__self__, "library_masking_format_id", library_masking_format_id)
-        pulumi.set(__self__, "post_processing_function", post_processing_function)
-        pulumi.set(__self__, "random_lists", random_lists)
-        pulumi.set(__self__, "regular_expression", regular_expression)
-        pulumi.set(__self__, "replace_with", replace_with)
-        pulumi.set(__self__, "schema_name", schema_name)
-        pulumi.set(__self__, "sql_expression", sql_expression)
-        pulumi.set(__self__, "start_date", start_date)
-        pulumi.set(__self__, "start_length", start_length)
-        pulumi.set(__self__, "start_position", start_position)
-        pulumi.set(__self__, "start_value", start_value)
-        pulumi.set(__self__, "table_name", table_name)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "user_defined_function", user_defined_function)
+        GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            description=description,
+            end_date=end_date,
+            end_length=end_length,
+            end_value=end_value,
+            fixed_number=fixed_number,
+            fixed_string=fixed_string,
+            grouping_columns=grouping_columns,
+            length=length,
+            library_masking_format_id=library_masking_format_id,
+            post_processing_function=post_processing_function,
+            random_lists=random_lists,
+            regular_expression=regular_expression,
+            replace_with=replace_with,
+            schema_name=schema_name,
+            sql_expression=sql_expression,
+            start_date=start_date,
+            start_length=start_length,
+            start_position=start_position,
+            start_value=start_value,
+            table_name=table_name,
+            type=type,
+            user_defined_function=user_defined_function,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: str,
+             description: str,
+             end_date: str,
+             end_length: int,
+             end_value: float,
+             fixed_number: float,
+             fixed_string: str,
+             grouping_columns: Sequence[str],
+             length: int,
+             library_masking_format_id: str,
+             post_processing_function: str,
+             random_lists: Sequence[str],
+             regular_expression: str,
+             replace_with: str,
+             schema_name: str,
+             sql_expression: str,
+             start_date: str,
+             start_length: int,
+             start_position: int,
+             start_value: float,
+             table_name: str,
+             type: str,
+             user_defined_function: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("column_name", column_name)
+        _setter("description", description)
+        _setter("end_date", end_date)
+        _setter("end_length", end_length)
+        _setter("end_value", end_value)
+        _setter("fixed_number", fixed_number)
+        _setter("fixed_string", fixed_string)
+        _setter("grouping_columns", grouping_columns)
+        _setter("length", length)
+        _setter("library_masking_format_id", library_masking_format_id)
+        _setter("post_processing_function", post_processing_function)
+        _setter("random_lists", random_lists)
+        _setter("regular_expression", regular_expression)
+        _setter("replace_with", replace_with)
+        _setter("schema_name", schema_name)
+        _setter("sql_expression", sql_expression)
+        _setter("start_date", start_date)
+        _setter("start_length", start_length)
+        _setter("start_position", start_position)
+        _setter("start_value", start_value)
+        _setter("table_name", table_name)
+        _setter("type", type)
+        _setter("user_defined_function", user_defined_function)
 
     @property
     @pulumi.getter(name="columnName")
@@ -9181,10 +11248,23 @@ class GetListUserGrantsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetListUserGrantsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -9217,11 +11297,28 @@ class GetListUserGrantsGrantResult(dict):
         :param str privilege_category: A filter to return only items that match the specified user privilege category.
         :param str privilege_type: A filter to return only items that match the specified privilege grant type.
         """
-        pulumi.set(__self__, "depth_level", depth_level)
-        pulumi.set(__self__, "grant_name", grant_name)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "privilege_category", privilege_category)
-        pulumi.set(__self__, "privilege_type", privilege_type)
+        GetListUserGrantsGrantResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            depth_level=depth_level,
+            grant_name=grant_name,
+            key=key,
+            privilege_category=privilege_category,
+            privilege_type=privilege_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             depth_level: int,
+             grant_name: str,
+             key: str,
+             privilege_category: str,
+             privilege_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("depth_level", depth_level)
+        _setter("grant_name", grant_name)
+        _setter("key", key)
+        _setter("privilege_category", privilege_category)
+        _setter("privilege_type", privilege_type)
 
     @property
     @pulumi.getter(name="depthLevel")
@@ -9275,9 +11372,22 @@ class GetMaskingAnalyticItemResult(dict):
         :param Sequence['GetMaskingAnalyticItemDimensionArgs'] dimensions: The scope of analytics data.
         :param str metric_name: The name of the aggregation metric.
         """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "dimensions", dimensions)
-        pulumi.set(__self__, "metric_name", metric_name)
+        GetMaskingAnalyticItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            count=count,
+            dimensions=dimensions,
+            metric_name=metric_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             count: str,
+             dimensions: Sequence['outputs.GetMaskingAnalyticItemDimensionResult'],
+             metric_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("count", count)
+        _setter("dimensions", dimensions)
+        _setter("metric_name", metric_name)
 
     @property
     @pulumi.getter
@@ -9313,8 +11423,19 @@ class GetMaskingAnalyticItemDimensionResult(dict):
         :param str policy_id: The OCID of the masking policy..
         :param str target_id: A filter to return only items related to a specific target OCID.
         """
-        pulumi.set(__self__, "policy_id", policy_id)
-        pulumi.set(__self__, "target_id", target_id)
+        GetMaskingAnalyticItemDimensionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            policy_id=policy_id,
+            target_id=target_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             policy_id: str,
+             target_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("policy_id", policy_id)
+        _setter("target_id", target_id)
 
     @property
     @pulumi.getter(name="policyId")
@@ -9339,10 +11460,23 @@ class GetMaskingAnalyticsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMaskingAnalyticsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -9367,7 +11501,16 @@ class GetMaskingAnalyticsMaskingAnalyticsCollectionResult(dict):
         """
         :param Sequence['GetMaskingAnalyticsMaskingAnalyticsCollectionItemArgs'] items: An array of masking analytics summary objects.
         """
-        pulumi.set(__self__, "items", items)
+        GetMaskingAnalyticsMaskingAnalyticsCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetMaskingAnalyticsMaskingAnalyticsCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -9389,9 +11532,22 @@ class GetMaskingAnalyticsMaskingAnalyticsCollectionItemResult(dict):
         :param Sequence['GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionArgs'] dimensions: The scope of analytics data.
         :param str metric_name: The name of the aggregation metric.
         """
-        pulumi.set(__self__, "count", count)
-        pulumi.set(__self__, "dimensions", dimensions)
-        pulumi.set(__self__, "metric_name", metric_name)
+        GetMaskingAnalyticsMaskingAnalyticsCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            count=count,
+            dimensions=dimensions,
+            metric_name=metric_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             count: str,
+             dimensions: Sequence['outputs.GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionResult'],
+             metric_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("count", count)
+        _setter("dimensions", dimensions)
+        _setter("metric_name", metric_name)
 
     @property
     @pulumi.getter
@@ -9427,8 +11583,19 @@ class GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionResult(dict):
         :param str policy_id: The OCID of the masking policy..
         :param str target_id: A filter to return only items related to a specific target OCID.
         """
-        pulumi.set(__self__, "policy_id", policy_id)
-        pulumi.set(__self__, "target_id", target_id)
+        GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            policy_id=policy_id,
+            target_id=target_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             policy_id: str,
+             target_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("policy_id", policy_id)
+        _setter("target_id", target_id)
 
     @property
     @pulumi.getter(name="policyId")
@@ -9453,10 +11620,23 @@ class GetMaskingPoliciesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMaskingPoliciesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -9485,9 +11665,22 @@ class GetMaskingPoliciesMaskingColumnMaskingFormatResult(dict):
         :param str description: The description of the format entry.
         :param Sequence['GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs'] format_entries: An array of format entries. The combined output of all the format entries is  used for masking the column data values.
         """
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "format_entries", format_entries)
+        GetMaskingPoliciesMaskingColumnMaskingFormatResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition=condition,
+            description=description,
+            format_entries=format_entries,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition: str,
+             description: str,
+             format_entries: Sequence['outputs.GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition", condition)
+        _setter("description", description)
+        _setter("format_entries", format_entries)
 
     @property
     @pulumi.getter
@@ -9565,29 +11758,82 @@ class GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryResult(dict):
         :param str type: The type of the format entry.
         :param str user_defined_function: The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         """
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "end_date", end_date)
-        pulumi.set(__self__, "end_length", end_length)
-        pulumi.set(__self__, "end_value", end_value)
-        pulumi.set(__self__, "fixed_number", fixed_number)
-        pulumi.set(__self__, "fixed_string", fixed_string)
-        pulumi.set(__self__, "grouping_columns", grouping_columns)
-        pulumi.set(__self__, "length", length)
-        pulumi.set(__self__, "library_masking_format_id", library_masking_format_id)
-        pulumi.set(__self__, "post_processing_function", post_processing_function)
-        pulumi.set(__self__, "random_lists", random_lists)
-        pulumi.set(__self__, "regular_expression", regular_expression)
-        pulumi.set(__self__, "replace_with", replace_with)
-        pulumi.set(__self__, "schema_name", schema_name)
-        pulumi.set(__self__, "sql_expression", sql_expression)
-        pulumi.set(__self__, "start_date", start_date)
-        pulumi.set(__self__, "start_length", start_length)
-        pulumi.set(__self__, "start_position", start_position)
-        pulumi.set(__self__, "start_value", start_value)
-        pulumi.set(__self__, "table_name", table_name)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "user_defined_function", user_defined_function)
+        GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            description=description,
+            end_date=end_date,
+            end_length=end_length,
+            end_value=end_value,
+            fixed_number=fixed_number,
+            fixed_string=fixed_string,
+            grouping_columns=grouping_columns,
+            length=length,
+            library_masking_format_id=library_masking_format_id,
+            post_processing_function=post_processing_function,
+            random_lists=random_lists,
+            regular_expression=regular_expression,
+            replace_with=replace_with,
+            schema_name=schema_name,
+            sql_expression=sql_expression,
+            start_date=start_date,
+            start_length=start_length,
+            start_position=start_position,
+            start_value=start_value,
+            table_name=table_name,
+            type=type,
+            user_defined_function=user_defined_function,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: str,
+             description: str,
+             end_date: str,
+             end_length: int,
+             end_value: float,
+             fixed_number: float,
+             fixed_string: str,
+             grouping_columns: Sequence[str],
+             length: int,
+             library_masking_format_id: str,
+             post_processing_function: str,
+             random_lists: Sequence[str],
+             regular_expression: str,
+             replace_with: str,
+             schema_name: str,
+             sql_expression: str,
+             start_date: str,
+             start_length: int,
+             start_position: int,
+             start_value: float,
+             table_name: str,
+             type: str,
+             user_defined_function: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("column_name", column_name)
+        _setter("description", description)
+        _setter("end_date", end_date)
+        _setter("end_length", end_length)
+        _setter("end_value", end_value)
+        _setter("fixed_number", fixed_number)
+        _setter("fixed_string", fixed_string)
+        _setter("grouping_columns", grouping_columns)
+        _setter("length", length)
+        _setter("library_masking_format_id", library_masking_format_id)
+        _setter("post_processing_function", post_processing_function)
+        _setter("random_lists", random_lists)
+        _setter("regular_expression", regular_expression)
+        _setter("replace_with", replace_with)
+        _setter("schema_name", schema_name)
+        _setter("sql_expression", sql_expression)
+        _setter("start_date", start_date)
+        _setter("start_length", start_length)
+        _setter("start_position", start_position)
+        _setter("start_value", start_value)
+        _setter("table_name", table_name)
+        _setter("type", type)
+        _setter("user_defined_function", user_defined_function)
 
     @property
     @pulumi.getter(name="columnName")
@@ -9780,10 +12026,23 @@ class GetMaskingPoliciesMaskingColumnsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMaskingPoliciesMaskingColumnsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -9805,7 +12064,16 @@ class GetMaskingPoliciesMaskingColumnsFilterResult(dict):
 class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -9850,22 +12118,61 @@ class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemResult(dict):
         :param str time_created: The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        pulumi.set(__self__, "child_columns", child_columns)
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "is_masking_enabled", is_masking_enabled)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "masking_column_group", masking_column_group)
-        pulumi.set(__self__, "masking_formats", masking_formats)
-        pulumi.set(__self__, "masking_policy_id", masking_policy_id)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "object_type", object_type)
-        pulumi.set(__self__, "schema_name", schema_name)
-        pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            child_columns=child_columns,
+            column_name=column_name,
+            data_type=data_type,
+            is_masking_enabled=is_masking_enabled,
+            key=key,
+            lifecycle_details=lifecycle_details,
+            masking_column_group=masking_column_group,
+            masking_formats=masking_formats,
+            masking_policy_id=masking_policy_id,
+            object=object,
+            object_type=object_type,
+            schema_name=schema_name,
+            sensitive_type_id=sensitive_type_id,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             child_columns: Sequence[str],
+             column_name: str,
+             data_type: str,
+             is_masking_enabled: bool,
+             key: str,
+             lifecycle_details: str,
+             masking_column_group: str,
+             masking_formats: Sequence['outputs.GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatResult'],
+             masking_policy_id: str,
+             object: str,
+             object_type: str,
+             schema_name: str,
+             sensitive_type_id: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("child_columns", child_columns)
+        _setter("column_name", column_name)
+        _setter("data_type", data_type)
+        _setter("is_masking_enabled", is_masking_enabled)
+        _setter("key", key)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("masking_column_group", masking_column_group)
+        _setter("masking_formats", masking_formats)
+        _setter("masking_policy_id", masking_policy_id)
+        _setter("object", object)
+        _setter("object_type", object_type)
+        _setter("schema_name", schema_name)
+        _setter("sensitive_type_id", sensitive_type_id)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="childColumns")
@@ -10007,9 +12314,22 @@ class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatRe
         :param str description: The description of the format entry.
         :param Sequence['GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryArgs'] format_entries: An array of format entries. The combined output of all the format entries is  used for masking the column data values.
         """
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "format_entries", format_entries)
+        GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition=condition,
+            description=description,
+            format_entries=format_entries,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition: str,
+             description: str,
+             format_entries: Sequence['outputs.GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition", condition)
+        _setter("description", description)
+        _setter("format_entries", format_entries)
 
     @property
     @pulumi.getter
@@ -10087,29 +12407,82 @@ class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFo
         :param str type: The type of the format entry.
         :param str user_defined_function: The user-defined function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format.  It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         """
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "end_date", end_date)
-        pulumi.set(__self__, "end_length", end_length)
-        pulumi.set(__self__, "end_value", end_value)
-        pulumi.set(__self__, "fixed_number", fixed_number)
-        pulumi.set(__self__, "fixed_string", fixed_string)
-        pulumi.set(__self__, "grouping_columns", grouping_columns)
-        pulumi.set(__self__, "length", length)
-        pulumi.set(__self__, "library_masking_format_id", library_masking_format_id)
-        pulumi.set(__self__, "post_processing_function", post_processing_function)
-        pulumi.set(__self__, "random_lists", random_lists)
-        pulumi.set(__self__, "regular_expression", regular_expression)
-        pulumi.set(__self__, "replace_with", replace_with)
-        pulumi.set(__self__, "schema_name", schema_name)
-        pulumi.set(__self__, "sql_expression", sql_expression)
-        pulumi.set(__self__, "start_date", start_date)
-        pulumi.set(__self__, "start_length", start_length)
-        pulumi.set(__self__, "start_position", start_position)
-        pulumi.set(__self__, "start_value", start_value)
-        pulumi.set(__self__, "table_name", table_name)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "user_defined_function", user_defined_function)
+        GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            description=description,
+            end_date=end_date,
+            end_length=end_length,
+            end_value=end_value,
+            fixed_number=fixed_number,
+            fixed_string=fixed_string,
+            grouping_columns=grouping_columns,
+            length=length,
+            library_masking_format_id=library_masking_format_id,
+            post_processing_function=post_processing_function,
+            random_lists=random_lists,
+            regular_expression=regular_expression,
+            replace_with=replace_with,
+            schema_name=schema_name,
+            sql_expression=sql_expression,
+            start_date=start_date,
+            start_length=start_length,
+            start_position=start_position,
+            start_value=start_value,
+            table_name=table_name,
+            type=type,
+            user_defined_function=user_defined_function,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: str,
+             description: str,
+             end_date: str,
+             end_length: int,
+             end_value: float,
+             fixed_number: float,
+             fixed_string: str,
+             grouping_columns: Sequence[str],
+             length: int,
+             library_masking_format_id: str,
+             post_processing_function: str,
+             random_lists: Sequence[str],
+             regular_expression: str,
+             replace_with: str,
+             schema_name: str,
+             sql_expression: str,
+             start_date: str,
+             start_length: int,
+             start_position: int,
+             start_value: float,
+             table_name: str,
+             type: str,
+             user_defined_function: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("column_name", column_name)
+        _setter("description", description)
+        _setter("end_date", end_date)
+        _setter("end_length", end_length)
+        _setter("end_value", end_value)
+        _setter("fixed_number", fixed_number)
+        _setter("fixed_string", fixed_string)
+        _setter("grouping_columns", grouping_columns)
+        _setter("length", length)
+        _setter("library_masking_format_id", library_masking_format_id)
+        _setter("post_processing_function", post_processing_function)
+        _setter("random_lists", random_lists)
+        _setter("regular_expression", regular_expression)
+        _setter("replace_with", replace_with)
+        _setter("schema_name", schema_name)
+        _setter("sql_expression", sql_expression)
+        _setter("start_date", start_date)
+        _setter("start_length", start_length)
+        _setter("start_position", start_position)
+        _setter("start_value", start_value)
+        _setter("table_name", table_name)
+        _setter("type", type)
+        _setter("user_defined_function", user_defined_function)
 
     @property
     @pulumi.getter(name="columnName")
@@ -10300,7 +12673,16 @@ class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFo
 class GetMaskingPoliciesMaskingPolicyCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetMaskingPoliciesMaskingPolicyCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetMaskingPoliciesMaskingPolicyCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetMaskingPoliciesMaskingPolicyCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -10348,24 +12730,67 @@ class GetMaskingPoliciesMaskingPolicyCollectionItemResult(dict):
         :param str time_created: The date and time the masking policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         """
-        pulumi.set(__self__, "add_masking_columns_from_sdm_trigger", add_masking_columns_from_sdm_trigger)
-        pulumi.set(__self__, "column_sources", column_sources)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_drop_temp_tables_enabled", is_drop_temp_tables_enabled)
-        pulumi.set(__self__, "is_redo_logging_enabled", is_redo_logging_enabled)
-        pulumi.set(__self__, "is_refresh_stats_enabled", is_refresh_stats_enabled)
-        pulumi.set(__self__, "parallel_degree", parallel_degree)
-        pulumi.set(__self__, "post_masking_script", post_masking_script)
-        pulumi.set(__self__, "pre_masking_script", pre_masking_script)
-        pulumi.set(__self__, "recompile", recompile)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetMaskingPoliciesMaskingPolicyCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            add_masking_columns_from_sdm_trigger=add_masking_columns_from_sdm_trigger,
+            column_sources=column_sources,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_drop_temp_tables_enabled=is_drop_temp_tables_enabled,
+            is_redo_logging_enabled=is_redo_logging_enabled,
+            is_refresh_stats_enabled=is_refresh_stats_enabled,
+            parallel_degree=parallel_degree,
+            post_masking_script=post_masking_script,
+            pre_masking_script=pre_masking_script,
+            recompile=recompile,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             add_masking_columns_from_sdm_trigger: int,
+             column_sources: Sequence['outputs.GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceResult'],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_drop_temp_tables_enabled: bool,
+             is_redo_logging_enabled: bool,
+             is_refresh_stats_enabled: bool,
+             parallel_degree: str,
+             post_masking_script: str,
+             pre_masking_script: str,
+             recompile: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("add_masking_columns_from_sdm_trigger", add_masking_columns_from_sdm_trigger)
+        _setter("column_sources", column_sources)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_drop_temp_tables_enabled", is_drop_temp_tables_enabled)
+        _setter("is_redo_logging_enabled", is_redo_logging_enabled)
+        _setter("is_refresh_stats_enabled", is_refresh_stats_enabled)
+        _setter("parallel_degree", parallel_degree)
+        _setter("post_masking_script", post_masking_script)
+        _setter("pre_masking_script", pre_masking_script)
+        _setter("recompile", recompile)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="addMaskingColumnsFromSdmTrigger")
@@ -10520,9 +12945,22 @@ class GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceResult(dict):
         :param str sensitive_data_model_id: A filter to return only the resources that match the specified sensitive data model OCID.
         :param str target_id: A filter to return only items related to a specific target OCID.
         """
-        pulumi.set(__self__, "column_source", column_source)
-        pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
-        pulumi.set(__self__, "target_id", target_id)
+        GetMaskingPoliciesMaskingPolicyCollectionItemColumnSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_source=column_source,
+            sensitive_data_model_id=sensitive_data_model_id,
+            target_id=target_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_source: str,
+             sensitive_data_model_id: str,
+             target_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("column_source", column_source)
+        _setter("sensitive_data_model_id", sensitive_data_model_id)
+        _setter("target_id", target_id)
 
     @property
     @pulumi.getter(name="columnSource")
@@ -10560,9 +12998,22 @@ class GetMaskingPolicyColumnSourceResult(dict):
         :param str sensitive_data_model_id: The OCID of the sensitive data model that's used as the source of masking columns.
         :param str target_id: The OCID of the target database that's used as the source of masking columns.
         """
-        pulumi.set(__self__, "column_source", column_source)
-        pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
-        pulumi.set(__self__, "target_id", target_id)
+        GetMaskingPolicyColumnSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_source=column_source,
+            sensitive_data_model_id=sensitive_data_model_id,
+            target_id=target_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_source: str,
+             sensitive_data_model_id: str,
+             target_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("column_source", column_source)
+        _setter("sensitive_data_model_id", sensitive_data_model_id)
+        _setter("target_id", target_id)
 
     @property
     @pulumi.getter(name="columnSource")
@@ -10595,10 +13046,23 @@ class GetMaskingPolicyMaskingObjectsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMaskingPolicyMaskingObjectsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10623,7 +13087,16 @@ class GetMaskingPolicyMaskingObjectsMaskingObjectCollectionResult(dict):
         """
         :param Sequence['GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemArgs'] items: An array of masking object summary objects.
         """
-        pulumi.set(__self__, "items", items)
+        GetMaskingPolicyMaskingObjectsMaskingObjectCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -10645,9 +13118,22 @@ class GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemResult(dict):
         :param str object_type: A filter to return only items related to a specific object type.
         :param str schema_name: A filter to return only items related to specific schema name.
         """
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "object_type", object_type)
-        pulumi.set(__self__, "schema_name", schema_name)
+        GetMaskingPolicyMaskingObjectsMaskingObjectCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object=object,
+            object_type=object_type,
+            schema_name=schema_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object: str,
+             object_type: str,
+             schema_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object", object)
+        _setter("object_type", object_type)
+        _setter("schema_name", schema_name)
 
     @property
     @pulumi.getter
@@ -10680,10 +13166,23 @@ class GetMaskingPolicyMaskingSchemasFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMaskingPolicyMaskingSchemasFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10708,7 +13207,16 @@ class GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionResult(dict):
         """
         :param Sequence['GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemArgs'] items: An array of masking schema summary objects.
         """
-        pulumi.set(__self__, "items", items)
+        GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -10726,7 +13234,16 @@ class GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemResult(dict):
         """
         :param str schema_name: A filter to return only items related to specific schema name.
         """
-        pulumi.set(__self__, "schema_name", schema_name)
+        GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            schema_name=schema_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             schema_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("schema_name", schema_name)
 
     @property
     @pulumi.getter(name="schemaName")
@@ -10743,10 +13260,23 @@ class GetMaskingReportMaskedColumnsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMaskingReportMaskedColumnsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10771,7 +13301,16 @@ class GetMaskingReportMaskedColumnsMaskedColumnCollectionResult(dict):
         """
         :param Sequence['GetMaskingReportMaskedColumnsMaskedColumnCollectionItemArgs'] items: An array of masking column summary objects.
         """
-        pulumi.set(__self__, "items", items)
+        GetMaskingReportMaskedColumnsMaskedColumnCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetMaskingReportMaskedColumnsMaskedColumnCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -10807,16 +13346,43 @@ class GetMaskingReportMaskedColumnsMaskedColumnCollectionItemResult(dict):
         :param str sensitive_type_id: A filter to return only items related to a specific sensitive type OCID.
         :param str total_masked_values: The total number of values masked in the column.
         """
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "masking_column_group", masking_column_group)
-        pulumi.set(__self__, "masking_format_used", masking_format_used)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "object_type", object_type)
-        pulumi.set(__self__, "parent_column_key", parent_column_key)
-        pulumi.set(__self__, "schema_name", schema_name)
-        pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
-        pulumi.set(__self__, "total_masked_values", total_masked_values)
+        GetMaskingReportMaskedColumnsMaskedColumnCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            key=key,
+            masking_column_group=masking_column_group,
+            masking_format_used=masking_format_used,
+            object=object,
+            object_type=object_type,
+            parent_column_key=parent_column_key,
+            schema_name=schema_name,
+            sensitive_type_id=sensitive_type_id,
+            total_masked_values=total_masked_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: str,
+             key: str,
+             masking_column_group: str,
+             masking_format_used: str,
+             object: str,
+             object_type: str,
+             parent_column_key: str,
+             schema_name: str,
+             sensitive_type_id: str,
+             total_masked_values: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("column_name", column_name)
+        _setter("key", key)
+        _setter("masking_column_group", masking_column_group)
+        _setter("masking_format_used", masking_format_used)
+        _setter("object", object)
+        _setter("object_type", object_type)
+        _setter("parent_column_key", parent_column_key)
+        _setter("schema_name", schema_name)
+        _setter("sensitive_type_id", sensitive_type_id)
+        _setter("total_masked_values", total_masked_values)
 
     @property
     @pulumi.getter(name="columnName")
@@ -10905,10 +13471,23 @@ class GetMaskingReportsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMaskingReportsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10951,16 +13530,43 @@ class GetMaskingReportsMaskedColumnItemResult(dict):
         :param str sensitive_type_id: A filter to return only items related to a specific sensitive type OCID.
         :param str total_masked_values: The total number of values masked in the column.
         """
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "masking_column_group", masking_column_group)
-        pulumi.set(__self__, "masking_format_used", masking_format_used)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "object_type", object_type)
-        pulumi.set(__self__, "parent_column_key", parent_column_key)
-        pulumi.set(__self__, "schema_name", schema_name)
-        pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
-        pulumi.set(__self__, "total_masked_values", total_masked_values)
+        GetMaskingReportsMaskedColumnItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            key=key,
+            masking_column_group=masking_column_group,
+            masking_format_used=masking_format_used,
+            object=object,
+            object_type=object_type,
+            parent_column_key=parent_column_key,
+            schema_name=schema_name,
+            sensitive_type_id=sensitive_type_id,
+            total_masked_values=total_masked_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: str,
+             key: str,
+             masking_column_group: str,
+             masking_format_used: str,
+             object: str,
+             object_type: str,
+             parent_column_key: str,
+             schema_name: str,
+             sensitive_type_id: str,
+             total_masked_values: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("column_name", column_name)
+        _setter("key", key)
+        _setter("masking_column_group", masking_column_group)
+        _setter("masking_format_used", masking_format_used)
+        _setter("object", object)
+        _setter("object_type", object_type)
+        _setter("parent_column_key", parent_column_key)
+        _setter("schema_name", schema_name)
+        _setter("sensitive_type_id", sensitive_type_id)
+        _setter("total_masked_values", total_masked_values)
 
     @property
     @pulumi.getter(name="columnName")
@@ -11047,7 +13653,16 @@ class GetMaskingReportsMaskedColumnItemResult(dict):
 class GetMaskingReportsMaskingReportCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetMaskingReportsMaskingReportCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetMaskingReportsMaskingReportCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetMaskingReportsMaskingReportCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -11098,25 +13713,70 @@ class GetMaskingReportsMaskingReportCollectionItemResult(dict):
         :param str total_masked_sensitive_types: The total number of unique sensitive types associated with the masked columns.
         :param str total_masked_values: The total number of masked values.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_drop_temp_tables_enabled", is_drop_temp_tables_enabled)
-        pulumi.set(__self__, "is_redo_logging_enabled", is_redo_logging_enabled)
-        pulumi.set(__self__, "is_refresh_stats_enabled", is_refresh_stats_enabled)
-        pulumi.set(__self__, "masking_policy_id", masking_policy_id)
-        pulumi.set(__self__, "masking_work_request_id", masking_work_request_id)
-        pulumi.set(__self__, "parallel_degree", parallel_degree)
-        pulumi.set(__self__, "recompile", recompile)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_masking_finished", time_masking_finished)
-        pulumi.set(__self__, "time_masking_started", time_masking_started)
-        pulumi.set(__self__, "total_masked_columns", total_masked_columns)
-        pulumi.set(__self__, "total_masked_objects", total_masked_objects)
-        pulumi.set(__self__, "total_masked_schemas", total_masked_schemas)
-        pulumi.set(__self__, "total_masked_sensitive_types", total_masked_sensitive_types)
-        pulumi.set(__self__, "total_masked_values", total_masked_values)
+        GetMaskingReportsMaskingReportCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            id=id,
+            is_drop_temp_tables_enabled=is_drop_temp_tables_enabled,
+            is_redo_logging_enabled=is_redo_logging_enabled,
+            is_refresh_stats_enabled=is_refresh_stats_enabled,
+            masking_policy_id=masking_policy_id,
+            masking_work_request_id=masking_work_request_id,
+            parallel_degree=parallel_degree,
+            recompile=recompile,
+            state=state,
+            target_id=target_id,
+            time_created=time_created,
+            time_masking_finished=time_masking_finished,
+            time_masking_started=time_masking_started,
+            total_masked_columns=total_masked_columns,
+            total_masked_objects=total_masked_objects,
+            total_masked_schemas=total_masked_schemas,
+            total_masked_sensitive_types=total_masked_sensitive_types,
+            total_masked_values=total_masked_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             id: str,
+             is_drop_temp_tables_enabled: bool,
+             is_redo_logging_enabled: bool,
+             is_refresh_stats_enabled: bool,
+             masking_policy_id: str,
+             masking_work_request_id: str,
+             parallel_degree: str,
+             recompile: str,
+             state: str,
+             target_id: str,
+             time_created: str,
+             time_masking_finished: str,
+             time_masking_started: str,
+             total_masked_columns: str,
+             total_masked_objects: str,
+             total_masked_schemas: str,
+             total_masked_sensitive_types: str,
+             total_masked_values: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("id", id)
+        _setter("is_drop_temp_tables_enabled", is_drop_temp_tables_enabled)
+        _setter("is_redo_logging_enabled", is_redo_logging_enabled)
+        _setter("is_refresh_stats_enabled", is_refresh_stats_enabled)
+        _setter("masking_policy_id", masking_policy_id)
+        _setter("masking_work_request_id", masking_work_request_id)
+        _setter("parallel_degree", parallel_degree)
+        _setter("recompile", recompile)
+        _setter("state", state)
+        _setter("target_id", target_id)
+        _setter("time_created", time_created)
+        _setter("time_masking_finished", time_masking_finished)
+        _setter("time_masking_started", time_masking_started)
+        _setter("total_masked_columns", total_masked_columns)
+        _setter("total_masked_objects", total_masked_objects)
+        _setter("total_masked_schemas", total_masked_schemas)
+        _setter("total_masked_sensitive_types", total_masked_sensitive_types)
+        _setter("total_masked_values", total_masked_values)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -11277,10 +13937,23 @@ class GetOnpremConnectorsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOnpremConnectorsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11327,18 +14000,49 @@ class GetOnpremConnectorsOnPremConnectorResult(dict):
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the on-premises connector was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        pulumi.set(__self__, "available_version", available_version)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_version", created_version)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
+        GetOnpremConnectorsOnPremConnectorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            available_version=available_version,
+            compartment_id=compartment_id,
+            created_version=created_version,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             available_version: str,
+             compartment_id: str,
+             created_version: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("available_version", available_version)
+        _setter("compartment_id", compartment_id)
+        _setter("created_version", created_version)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="availableVersion")
@@ -11452,11 +14156,28 @@ class GetReportDefinitionColumnFilterResult(dict):
         :param bool is_hidden: Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         :param str operator: Specifies the type of operator that must be applied for example in, eq etc.
         """
-        pulumi.set(__self__, "expressions", expressions)
-        pulumi.set(__self__, "field_name", field_name)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "is_hidden", is_hidden)
-        pulumi.set(__self__, "operator", operator)
+        GetReportDefinitionColumnFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            expressions=expressions,
+            field_name=field_name,
+            is_enabled=is_enabled,
+            is_hidden=is_hidden,
+            operator=operator,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             expressions: Sequence[str],
+             field_name: str,
+             is_enabled: bool,
+             is_hidden: bool,
+             operator: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("expressions", expressions)
+        _setter("field_name", field_name)
+        _setter("is_enabled", is_enabled)
+        _setter("is_hidden", is_hidden)
+        _setter("operator", operator)
 
     @property
     @pulumi.getter
@@ -11514,11 +14235,28 @@ class GetReportDefinitionColumnInfoResult(dict):
         :param str field_name: Name of the column that must be sorted.
         :param bool is_hidden: Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         """
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "display_order", display_order)
-        pulumi.set(__self__, "field_name", field_name)
-        pulumi.set(__self__, "is_hidden", is_hidden)
+        GetReportDefinitionColumnInfoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_type=data_type,
+            display_name=display_name,
+            display_order=display_order,
+            field_name=field_name,
+            is_hidden=is_hidden,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_type: str,
+             display_name: str,
+             display_order: int,
+             field_name: str,
+             is_hidden: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("data_type", data_type)
+        _setter("display_name", display_name)
+        _setter("display_order", display_order)
+        _setter("field_name", field_name)
+        _setter("is_hidden", is_hidden)
 
     @property
     @pulumi.getter(name="dataType")
@@ -11572,9 +14310,22 @@ class GetReportDefinitionColumnSortingResult(dict):
         :param bool is_ascending: Indicates if the column must be sorted in ascending order. Values can either be 'true' or 'false'.
         :param int sorting_order: Indicates the order at which column must be sorted.
         """
-        pulumi.set(__self__, "field_name", field_name)
-        pulumi.set(__self__, "is_ascending", is_ascending)
-        pulumi.set(__self__, "sorting_order", sorting_order)
+        GetReportDefinitionColumnSortingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            field_name=field_name,
+            is_ascending=is_ascending,
+            sorting_order=sorting_order,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             field_name: str,
+             is_ascending: bool,
+             sorting_order: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("field_name", field_name)
+        _setter("is_ascending", is_ascending)
+        _setter("sorting_order", sorting_order)
 
     @property
     @pulumi.getter(name="fieldName")
@@ -11618,12 +14369,31 @@ class GetReportDefinitionSummaryResult(dict):
         :param str name: Name of the report summary.
         :param str scim_filter: Additional scim filters used to get the specific summary.
         """
-        pulumi.set(__self__, "count_of", count_of)
-        pulumi.set(__self__, "display_order", display_order)
-        pulumi.set(__self__, "group_by_field_name", group_by_field_name)
-        pulumi.set(__self__, "is_hidden", is_hidden)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "scim_filter", scim_filter)
+        GetReportDefinitionSummaryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            count_of=count_of,
+            display_order=display_order,
+            group_by_field_name=group_by_field_name,
+            is_hidden=is_hidden,
+            name=name,
+            scim_filter=scim_filter,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             count_of: str,
+             display_order: int,
+             group_by_field_name: str,
+             is_hidden: bool,
+             name: str,
+             scim_filter: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("count_of", count_of)
+        _setter("display_order", display_order)
+        _setter("group_by_field_name", group_by_field_name)
+        _setter("is_hidden", is_hidden)
+        _setter("name", name)
+        _setter("scim_filter", scim_filter)
 
     @property
     @pulumi.getter(name="countOf")
@@ -11683,10 +14453,23 @@ class GetReportDefinitionsFilterResult(dict):
         """
         :param str name: Name of the report summary.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetReportDefinitionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -11711,7 +14494,16 @@ class GetReportDefinitionsFilterResult(dict):
 class GetReportDefinitionsReportDefinitionCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetReportDefinitionsReportDefinitionCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetReportDefinitionsReportDefinitionCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetReportDefinitionsReportDefinitionCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -11778,33 +14570,94 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
         :param str time_created: Specifies the data and time the report definition was created.
         :param str time_updated: The date and time the report definition was update.
         """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "column_filters", column_filters)
-        pulumi.set(__self__, "column_infos", column_infos)
-        pulumi.set(__self__, "column_sortings", column_sortings)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "compliance_standards", compliance_standards)
-        pulumi.set(__self__, "data_source", data_source)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "display_order", display_order)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_seeded", is_seeded)
-        pulumi.set(__self__, "parent_id", parent_id)
-        pulumi.set(__self__, "record_time_span", record_time_span)
-        pulumi.set(__self__, "schedule", schedule)
-        pulumi.set(__self__, "scheduled_report_compartment_id", scheduled_report_compartment_id)
-        pulumi.set(__self__, "scheduled_report_mime_type", scheduled_report_mime_type)
-        pulumi.set(__self__, "scheduled_report_name", scheduled_report_name)
-        pulumi.set(__self__, "scheduled_report_row_limit", scheduled_report_row_limit)
-        pulumi.set(__self__, "scim_filter", scim_filter)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "summaries", summaries)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetReportDefinitionsReportDefinitionCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            column_filters=column_filters,
+            column_infos=column_infos,
+            column_sortings=column_sortings,
+            compartment_id=compartment_id,
+            compliance_standards=compliance_standards,
+            data_source=data_source,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            display_order=display_order,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_seeded=is_seeded,
+            parent_id=parent_id,
+            record_time_span=record_time_span,
+            schedule=schedule,
+            scheduled_report_compartment_id=scheduled_report_compartment_id,
+            scheduled_report_mime_type=scheduled_report_mime_type,
+            scheduled_report_name=scheduled_report_name,
+            scheduled_report_row_limit=scheduled_report_row_limit,
+            scim_filter=scim_filter,
+            state=state,
+            summaries=summaries,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: str,
+             column_filters: Sequence['outputs.GetReportDefinitionsReportDefinitionCollectionItemColumnFilterResult'],
+             column_infos: Sequence['outputs.GetReportDefinitionsReportDefinitionCollectionItemColumnInfoResult'],
+             column_sortings: Sequence['outputs.GetReportDefinitionsReportDefinitionCollectionItemColumnSortingResult'],
+             compartment_id: str,
+             compliance_standards: Sequence[str],
+             data_source: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             display_order: int,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_seeded: bool,
+             parent_id: str,
+             record_time_span: str,
+             schedule: str,
+             scheduled_report_compartment_id: str,
+             scheduled_report_mime_type: str,
+             scheduled_report_name: str,
+             scheduled_report_row_limit: int,
+             scim_filter: str,
+             state: str,
+             summaries: Sequence['outputs.GetReportDefinitionsReportDefinitionCollectionItemSummaryResult'],
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("category", category)
+        _setter("column_filters", column_filters)
+        _setter("column_infos", column_infos)
+        _setter("column_sortings", column_sortings)
+        _setter("compartment_id", compartment_id)
+        _setter("compliance_standards", compliance_standards)
+        _setter("data_source", data_source)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("display_order", display_order)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_seeded", is_seeded)
+        _setter("parent_id", parent_id)
+        _setter("record_time_span", record_time_span)
+        _setter("schedule", schedule)
+        _setter("scheduled_report_compartment_id", scheduled_report_compartment_id)
+        _setter("scheduled_report_mime_type", scheduled_report_mime_type)
+        _setter("scheduled_report_name", scheduled_report_name)
+        _setter("scheduled_report_row_limit", scheduled_report_row_limit)
+        _setter("scim_filter", scim_filter)
+        _setter("state", state)
+        _setter("summaries", summaries)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -12038,11 +14891,28 @@ class GetReportDefinitionsReportDefinitionCollectionItemColumnFilterResult(dict)
         :param bool is_hidden: Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         :param str operator: Specifies the type of operator that must be applied for example in, eq etc.
         """
-        pulumi.set(__self__, "expressions", expressions)
-        pulumi.set(__self__, "field_name", field_name)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "is_hidden", is_hidden)
-        pulumi.set(__self__, "operator", operator)
+        GetReportDefinitionsReportDefinitionCollectionItemColumnFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            expressions=expressions,
+            field_name=field_name,
+            is_enabled=is_enabled,
+            is_hidden=is_hidden,
+            operator=operator,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             expressions: Sequence[str],
+             field_name: str,
+             is_enabled: bool,
+             is_hidden: bool,
+             operator: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("expressions", expressions)
+        _setter("field_name", field_name)
+        _setter("is_enabled", is_enabled)
+        _setter("is_hidden", is_hidden)
+        _setter("operator", operator)
 
     @property
     @pulumi.getter
@@ -12100,11 +14970,28 @@ class GetReportDefinitionsReportDefinitionCollectionItemColumnInfoResult(dict):
         :param str field_name: Name of the column that must be sorted.
         :param bool is_hidden: Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         """
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "display_order", display_order)
-        pulumi.set(__self__, "field_name", field_name)
-        pulumi.set(__self__, "is_hidden", is_hidden)
+        GetReportDefinitionsReportDefinitionCollectionItemColumnInfoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_type=data_type,
+            display_name=display_name,
+            display_order=display_order,
+            field_name=field_name,
+            is_hidden=is_hidden,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_type: str,
+             display_name: str,
+             display_order: int,
+             field_name: str,
+             is_hidden: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("data_type", data_type)
+        _setter("display_name", display_name)
+        _setter("display_order", display_order)
+        _setter("field_name", field_name)
+        _setter("is_hidden", is_hidden)
 
     @property
     @pulumi.getter(name="dataType")
@@ -12158,9 +15045,22 @@ class GetReportDefinitionsReportDefinitionCollectionItemColumnSortingResult(dict
         :param bool is_ascending: Indicates if the column must be sorted in ascending order. Values can either be 'true' or 'false'.
         :param int sorting_order: Indicates the order at which column must be sorted.
         """
-        pulumi.set(__self__, "field_name", field_name)
-        pulumi.set(__self__, "is_ascending", is_ascending)
-        pulumi.set(__self__, "sorting_order", sorting_order)
+        GetReportDefinitionsReportDefinitionCollectionItemColumnSortingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            field_name=field_name,
+            is_ascending=is_ascending,
+            sorting_order=sorting_order,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             field_name: str,
+             is_ascending: bool,
+             sorting_order: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("field_name", field_name)
+        _setter("is_ascending", is_ascending)
+        _setter("sorting_order", sorting_order)
 
     @property
     @pulumi.getter(name="fieldName")
@@ -12204,12 +15104,31 @@ class GetReportDefinitionsReportDefinitionCollectionItemSummaryResult(dict):
         :param str name: Name of the report summary.
         :param str scim_filter: Additional scim filters used to get the specific summary.
         """
-        pulumi.set(__self__, "count_of", count_of)
-        pulumi.set(__self__, "display_order", display_order)
-        pulumi.set(__self__, "group_by_field_name", group_by_field_name)
-        pulumi.set(__self__, "is_hidden", is_hidden)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "scim_filter", scim_filter)
+        GetReportDefinitionsReportDefinitionCollectionItemSummaryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            count_of=count_of,
+            display_order=display_order,
+            group_by_field_name=group_by_field_name,
+            is_hidden=is_hidden,
+            name=name,
+            scim_filter=scim_filter,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             count_of: str,
+             display_order: int,
+             group_by_field_name: str,
+             is_hidden: bool,
+             name: str,
+             scim_filter: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("count_of", count_of)
+        _setter("display_order", display_order)
+        _setter("group_by_field_name", group_by_field_name)
+        _setter("is_hidden", is_hidden)
+        _setter("name", name)
+        _setter("scim_filter", scim_filter)
 
     @property
     @pulumi.getter(name="countOf")
@@ -12266,10 +15185,23 @@ class GetReportsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetReportsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12291,7 +15223,16 @@ class GetReportsFilterResult(dict):
 class GetReportsReportCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetReportsReportCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetReportsReportCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetReportsReportCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -12328,18 +15269,49 @@ class GetReportsReportCollectionItemResult(dict):
         :param str time_generated: Specifies the date and time the report was generated.
         :param str type: An optional filter to return only resources that match the specified type.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "mime_type", mime_type)
-        pulumi.set(__self__, "report_definition_id", report_definition_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_generated", time_generated)
-        pulumi.set(__self__, "type", type)
+        GetReportsReportCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            mime_type=mime_type,
+            report_definition_id=report_definition_id,
+            state=state,
+            system_tags=system_tags,
+            time_generated=time_generated,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             mime_type: str,
+             report_definition_id: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_generated: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("mime_type", mime_type)
+        _setter("report_definition_id", report_definition_id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_generated", time_generated)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -12444,10 +15416,23 @@ class GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12469,7 +15454,16 @@ class GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterResult(dict):
 class GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -12504,17 +15498,46 @@ class GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceCo
         :param str sync_status: A filter to return the SDM masking policy difference columns based on the value of their syncStatus attribute.
         :param str time_last_synced: The date and time the SDM masking policy difference column was last synced, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "difference_type", difference_type)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "masking_columnkey", masking_columnkey)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "planned_action", planned_action)
-        pulumi.set(__self__, "schema_name", schema_name)
-        pulumi.set(__self__, "sensitive_columnkey", sensitive_columnkey)
-        pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
-        pulumi.set(__self__, "sync_status", sync_status)
-        pulumi.set(__self__, "time_last_synced", time_last_synced)
+        GetSdmMaskingPolicyDifferenceDifferenceColumnsSdmMaskingPolicyDifferenceColumnCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            column_name=column_name,
+            difference_type=difference_type,
+            key=key,
+            masking_columnkey=masking_columnkey,
+            object=object,
+            planned_action=planned_action,
+            schema_name=schema_name,
+            sensitive_columnkey=sensitive_columnkey,
+            sensitive_type_id=sensitive_type_id,
+            sync_status=sync_status,
+            time_last_synced=time_last_synced,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             column_name: str,
+             difference_type: str,
+             key: str,
+             masking_columnkey: str,
+             object: str,
+             planned_action: str,
+             schema_name: str,
+             sensitive_columnkey: str,
+             sensitive_type_id: str,
+             sync_status: str,
+             time_last_synced: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("column_name", column_name)
+        _setter("difference_type", difference_type)
+        _setter("key", key)
+        _setter("masking_columnkey", masking_columnkey)
+        _setter("object", object)
+        _setter("planned_action", planned_action)
+        _setter("schema_name", schema_name)
+        _setter("sensitive_columnkey", sensitive_columnkey)
+        _setter("sensitive_type_id", sensitive_type_id)
+        _setter("sync_status", sync_status)
+        _setter("time_last_synced", time_last_synced)
 
     @property
     @pulumi.getter(name="columnName")
@@ -12611,10 +15634,23 @@ class GetSdmMaskingPolicyDifferencesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSdmMaskingPolicyDifferencesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12636,7 +15672,16 @@ class GetSdmMaskingPolicyDifferencesFilterResult(dict):
 class GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -12673,18 +15718,49 @@ class GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemResu
         :param str time_created: The date and time the SDM masking policy difference was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_creation_started: The date and time the SDM masking policy difference creation started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "difference_type", difference_type)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "masking_policy_id", masking_policy_id)
-        pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_creation_started", time_creation_started)
+        GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            difference_type=difference_type,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            masking_policy_id=masking_policy_id,
+            sensitive_data_model_id=sensitive_data_model_id,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_creation_started=time_creation_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             difference_type: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             masking_policy_id: str,
+             sensitive_data_model_id: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_creation_started: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("difference_type", difference_type)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("masking_policy_id", masking_policy_id)
+        _setter("sensitive_data_model_id", sensitive_data_model_id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_creation_started", time_creation_started)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -12806,15 +15882,40 @@ class GetSecurityAssessmentComparisonTargetResult(dict):
         :param Sequence['GetSecurityAssessmentComparisonTargetPrivilegesAndRoleArgs'] privileges_and_roles: Comparison between findings belonging to Privileges and Roles category.
         :param Sequence['GetSecurityAssessmentComparisonTargetUserAccountArgs'] user_accounts: Comparison between findings belonging to User Accounts category.
         """
-        pulumi.set(__self__, "auditings", auditings)
-        pulumi.set(__self__, "authorization_controls", authorization_controls)
-        pulumi.set(__self__, "baseline_target_id", baseline_target_id)
-        pulumi.set(__self__, "current_target_id", current_target_id)
-        pulumi.set(__self__, "data_encryptions", data_encryptions)
-        pulumi.set(__self__, "db_configurations", db_configurations)
-        pulumi.set(__self__, "fine_grained_access_controls", fine_grained_access_controls)
-        pulumi.set(__self__, "privileges_and_roles", privileges_and_roles)
-        pulumi.set(__self__, "user_accounts", user_accounts)
+        GetSecurityAssessmentComparisonTargetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auditings=auditings,
+            authorization_controls=authorization_controls,
+            baseline_target_id=baseline_target_id,
+            current_target_id=current_target_id,
+            data_encryptions=data_encryptions,
+            db_configurations=db_configurations,
+            fine_grained_access_controls=fine_grained_access_controls,
+            privileges_and_roles=privileges_and_roles,
+            user_accounts=user_accounts,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auditings: Sequence['outputs.GetSecurityAssessmentComparisonTargetAuditingResult'],
+             authorization_controls: Sequence['outputs.GetSecurityAssessmentComparisonTargetAuthorizationControlResult'],
+             baseline_target_id: str,
+             current_target_id: str,
+             data_encryptions: Sequence['outputs.GetSecurityAssessmentComparisonTargetDataEncryptionResult'],
+             db_configurations: Sequence['outputs.GetSecurityAssessmentComparisonTargetDbConfigurationResult'],
+             fine_grained_access_controls: Sequence['outputs.GetSecurityAssessmentComparisonTargetFineGrainedAccessControlResult'],
+             privileges_and_roles: Sequence['outputs.GetSecurityAssessmentComparisonTargetPrivilegesAndRoleResult'],
+             user_accounts: Sequence['outputs.GetSecurityAssessmentComparisonTargetUserAccountResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("auditings", auditings)
+        _setter("authorization_controls", authorization_controls)
+        _setter("baseline_target_id", baseline_target_id)
+        _setter("current_target_id", current_target_id)
+        _setter("data_encryptions", data_encryptions)
+        _setter("db_configurations", db_configurations)
+        _setter("fine_grained_access_controls", fine_grained_access_controls)
+        _setter("privileges_and_roles", privileges_and_roles)
+        _setter("user_accounts", user_accounts)
 
     @property
     @pulumi.getter
@@ -12906,12 +16007,31 @@ class GetSecurityAssessmentComparisonTargetAuditingResult(dict):
         :param Sequence[str] removed_items: This array identifies the items that are present in the baseline, but are missing from the current assessment.
         :param str severity: The severity of this diff.
         """
-        pulumi.set(__self__, "added_items", added_items)
-        pulumi.set(__self__, "baselines", baselines)
-        pulumi.set(__self__, "currents", currents)
-        pulumi.set(__self__, "modified_items", modified_items)
-        pulumi.set(__self__, "removed_items", removed_items)
-        pulumi.set(__self__, "severity", severity)
+        GetSecurityAssessmentComparisonTargetAuditingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            added_items=added_items,
+            baselines=baselines,
+            currents=currents,
+            modified_items=modified_items,
+            removed_items=removed_items,
+            severity=severity,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             added_items: Sequence[str],
+             baselines: Sequence['outputs.GetSecurityAssessmentComparisonTargetAuditingBaselineResult'],
+             currents: Sequence['outputs.GetSecurityAssessmentComparisonTargetAuditingCurrentResult'],
+             modified_items: Sequence[str],
+             removed_items: Sequence[str],
+             severity: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("added_items", added_items)
+        _setter("baselines", baselines)
+        _setter("currents", currents)
+        _setter("modified_items", modified_items)
+        _setter("removed_items", removed_items)
+        _setter("severity", severity)
 
     @property
     @pulumi.getter(name="addedItems")
@@ -12981,13 +16101,34 @@ class GetSecurityAssessmentComparisonTargetAuditingBaselineResult(dict):
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "references", references)
-        pulumi.set(__self__, "remarks", remarks)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "summary", summary)
-        pulumi.set(__self__, "title", title)
+        GetSecurityAssessmentComparisonTargetAuditingBaselineResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            key=key,
+            references=references,
+            remarks=remarks,
+            severity=severity,
+            summary=summary,
+            title=title,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: Sequence[str],
+             key: str,
+             references: Sequence['outputs.GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceResult'],
+             remarks: str,
+             severity: str,
+             summary: str,
+             title: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("details", details)
+        _setter("key", key)
+        _setter("references", references)
+        _setter("remarks", remarks)
+        _setter("severity", severity)
+        _setter("summary", summary)
+        _setter("title", title)
 
     @property
     @pulumi.getter
@@ -13057,9 +16198,22 @@ class GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceResult(dict)
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        pulumi.set(__self__, "cis", cis)
-        pulumi.set(__self__, "gdpr", gdpr)
-        pulumi.set(__self__, "stig", stig)
+        GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cis=cis,
+            gdpr=gdpr,
+            stig=stig,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cis: str,
+             gdpr: str,
+             stig: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cis", cis)
+        _setter("gdpr", gdpr)
+        _setter("stig", stig)
 
     @property
     @pulumi.getter
@@ -13105,13 +16259,34 @@ class GetSecurityAssessmentComparisonTargetAuditingCurrentResult(dict):
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "references", references)
-        pulumi.set(__self__, "remarks", remarks)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "summary", summary)
-        pulumi.set(__self__, "title", title)
+        GetSecurityAssessmentComparisonTargetAuditingCurrentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            key=key,
+            references=references,
+            remarks=remarks,
+            severity=severity,
+            summary=summary,
+            title=title,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: Sequence[str],
+             key: str,
+             references: Sequence['outputs.GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceResult'],
+             remarks: str,
+             severity: str,
+             summary: str,
+             title: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("details", details)
+        _setter("key", key)
+        _setter("references", references)
+        _setter("remarks", remarks)
+        _setter("severity", severity)
+        _setter("summary", summary)
+        _setter("title", title)
 
     @property
     @pulumi.getter
@@ -13181,9 +16356,22 @@ class GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceResult(dict):
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        pulumi.set(__self__, "cis", cis)
-        pulumi.set(__self__, "gdpr", gdpr)
-        pulumi.set(__self__, "stig", stig)
+        GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cis=cis,
+            gdpr=gdpr,
+            stig=stig,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cis: str,
+             gdpr: str,
+             stig: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cis", cis)
+        _setter("gdpr", gdpr)
+        _setter("stig", stig)
 
     @property
     @pulumi.getter
@@ -13227,12 +16415,31 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlResult(dict):
         :param Sequence[str] removed_items: This array identifies the items that are present in the baseline, but are missing from the current assessment.
         :param str severity: The severity of this diff.
         """
-        pulumi.set(__self__, "added_items", added_items)
-        pulumi.set(__self__, "baselines", baselines)
-        pulumi.set(__self__, "currents", currents)
-        pulumi.set(__self__, "modified_items", modified_items)
-        pulumi.set(__self__, "removed_items", removed_items)
-        pulumi.set(__self__, "severity", severity)
+        GetSecurityAssessmentComparisonTargetAuthorizationControlResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            added_items=added_items,
+            baselines=baselines,
+            currents=currents,
+            modified_items=modified_items,
+            removed_items=removed_items,
+            severity=severity,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             added_items: Sequence[str],
+             baselines: Sequence['outputs.GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineResult'],
+             currents: Sequence['outputs.GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentResult'],
+             modified_items: Sequence[str],
+             removed_items: Sequence[str],
+             severity: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("added_items", added_items)
+        _setter("baselines", baselines)
+        _setter("currents", currents)
+        _setter("modified_items", modified_items)
+        _setter("removed_items", removed_items)
+        _setter("severity", severity)
 
     @property
     @pulumi.getter(name="addedItems")
@@ -13302,13 +16509,34 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineResult(di
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "references", references)
-        pulumi.set(__self__, "remarks", remarks)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "summary", summary)
-        pulumi.set(__self__, "title", title)
+        GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            key=key,
+            references=references,
+            remarks=remarks,
+            severity=severity,
+            summary=summary,
+            title=title,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: Sequence[str],
+             key: str,
+             references: Sequence['outputs.GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceResult'],
+             remarks: str,
+             severity: str,
+             summary: str,
+             title: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("details", details)
+        _setter("key", key)
+        _setter("references", references)
+        _setter("remarks", remarks)
+        _setter("severity", severity)
+        _setter("summary", summary)
+        _setter("title", title)
 
     @property
     @pulumi.getter
@@ -13378,9 +16606,22 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        pulumi.set(__self__, "cis", cis)
-        pulumi.set(__self__, "gdpr", gdpr)
-        pulumi.set(__self__, "stig", stig)
+        GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cis=cis,
+            gdpr=gdpr,
+            stig=stig,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cis: str,
+             gdpr: str,
+             stig: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cis", cis)
+        _setter("gdpr", gdpr)
+        _setter("stig", stig)
 
     @property
     @pulumi.getter
@@ -13426,13 +16667,34 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentResult(dic
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "references", references)
-        pulumi.set(__self__, "remarks", remarks)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "summary", summary)
-        pulumi.set(__self__, "title", title)
+        GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            key=key,
+            references=references,
+            remarks=remarks,
+            severity=severity,
+            summary=summary,
+            title=title,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: Sequence[str],
+             key: str,
+             references: Sequence['outputs.GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceResult'],
+             remarks: str,
+             severity: str,
+             summary: str,
+             title: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("details", details)
+        _setter("key", key)
+        _setter("references", references)
+        _setter("remarks", remarks)
+        _setter("severity", severity)
+        _setter("summary", summary)
+        _setter("title", title)
 
     @property
     @pulumi.getter
@@ -13502,9 +16764,22 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceR
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        pulumi.set(__self__, "cis", cis)
-        pulumi.set(__self__, "gdpr", gdpr)
-        pulumi.set(__self__, "stig", stig)
+        GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cis=cis,
+            gdpr=gdpr,
+            stig=stig,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cis: str,
+             gdpr: str,
+             stig: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cis", cis)
+        _setter("gdpr", gdpr)
+        _setter("stig", stig)
 
     @property
     @pulumi.getter
@@ -13548,12 +16823,31 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionResult(dict):
         :param Sequence[str] removed_items: This array identifies the items that are present in the baseline, but are missing from the current assessment.
         :param str severity: The severity of this diff.
         """
-        pulumi.set(__self__, "added_items", added_items)
-        pulumi.set(__self__, "baselines", baselines)
-        pulumi.set(__self__, "currents", currents)
-        pulumi.set(__self__, "modified_items", modified_items)
-        pulumi.set(__self__, "removed_items", removed_items)
-        pulumi.set(__self__, "severity", severity)
+        GetSecurityAssessmentComparisonTargetDataEncryptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            added_items=added_items,
+            baselines=baselines,
+            currents=currents,
+            modified_items=modified_items,
+            removed_items=removed_items,
+            severity=severity,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             added_items: Sequence[str],
+             baselines: Sequence['outputs.GetSecurityAssessmentComparisonTargetDataEncryptionBaselineResult'],
+             currents: Sequence['outputs.GetSecurityAssessmentComparisonTargetDataEncryptionCurrentResult'],
+             modified_items: Sequence[str],
+             removed_items: Sequence[str],
+             severity: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("added_items", added_items)
+        _setter("baselines", baselines)
+        _setter("currents", currents)
+        _setter("modified_items", modified_items)
+        _setter("removed_items", removed_items)
+        _setter("severity", severity)
 
     @property
     @pulumi.getter(name="addedItems")
@@ -13623,13 +16917,34 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionBaselineResult(dict):
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "references", references)
-        pulumi.set(__self__, "remarks", remarks)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "summary", summary)
-        pulumi.set(__self__, "title", title)
+        GetSecurityAssessmentComparisonTargetDataEncryptionBaselineResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            key=key,
+            references=references,
+            remarks=remarks,
+            severity=severity,
+            summary=summary,
+            title=title,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: Sequence[str],
+             key: str,
+             references: Sequence['outputs.GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceResult'],
+             remarks: str,
+             severity: str,
+             summary: str,
+             title: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("details", details)
+        _setter("key", key)
+        _setter("references", references)
+        _setter("remarks", remarks)
+        _setter("severity", severity)
+        _setter("summary", summary)
+        _setter("title", title)
 
     @property
     @pulumi.getter
@@ -13699,9 +17014,22 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceResult
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        pulumi.set(__self__, "cis", cis)
-        pulumi.set(__self__, "gdpr", gdpr)
-        pulumi.set(__self__, "stig", stig)
+        GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cis=cis,
+            gdpr=gdpr,
+            stig=stig,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cis: str,
+             gdpr: str,
+             stig: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cis", cis)
+        _setter("gdpr", gdpr)
+        _setter("stig", stig)
 
     @property
     @pulumi.getter
@@ -13747,13 +17075,34 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionCurrentResult(dict):
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "references", references)
-        pulumi.set(__self__, "remarks", remarks)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "summary", summary)
-        pulumi.set(__self__, "title", title)
+        GetSecurityAssessmentComparisonTargetDataEncryptionCurrentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            key=key,
+            references=references,
+            remarks=remarks,
+            severity=severity,
+            summary=summary,
+            title=title,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: Sequence[str],
+             key: str,
+             references: Sequence['outputs.GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceResult'],
+             remarks: str,
+             severity: str,
+             summary: str,
+             title: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("details", details)
+        _setter("key", key)
+        _setter("references", references)
+        _setter("remarks", remarks)
+        _setter("severity", severity)
+        _setter("summary", summary)
+        _setter("title", title)
 
     @property
     @pulumi.getter
@@ -13823,9 +17172,22 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceResult(
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        pulumi.set(__self__, "cis", cis)
-        pulumi.set(__self__, "gdpr", gdpr)
-        pulumi.set(__self__, "stig", stig)
+        GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cis=cis,
+            gdpr=gdpr,
+            stig=stig,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cis: str,
+             gdpr: str,
+             stig: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cis", cis)
+        _setter("gdpr", gdpr)
+        _setter("stig", stig)
 
     @property
     @pulumi.getter
@@ -13869,12 +17231,31 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationResult(dict):
         :param Sequence[str] removed_items: This array identifies the items that are present in the baseline, but are missing from the current assessment.
         :param str severity: The severity of this diff.
         """
-        pulumi.set(__self__, "added_items", added_items)
-        pulumi.set(__self__, "baselines", baselines)
-        pulumi.set(__self__, "currents", currents)
-        pulumi.set(__self__, "modified_items", modified_items)
-        pulumi.set(__self__, "removed_items", removed_items)
-        pulumi.set(__self__, "severity", severity)
+        GetSecurityAssessmentComparisonTargetDbConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            added_items=added_items,
+            baselines=baselines,
+            currents=currents,
+            modified_items=modified_items,
+            removed_items=removed_items,
+            severity=severity,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             added_items: Sequence[str],
+             baselines: Sequence['outputs.GetSecurityAssessmentComparisonTargetDbConfigurationBaselineResult'],
+             currents: Sequence['outputs.GetSecurityAssessmentComparisonTargetDbConfigurationCurrentResult'],
+             modified_items: Sequence[str],
+             removed_items: Sequence[str],
+             severity: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("added_items", added_items)
+        _setter("baselines", baselines)
+        _setter("currents", currents)
+        _setter("modified_items", modified_items)
+        _setter("removed_items", removed_items)
+        _setter("severity", severity)
 
     @property
     @pulumi.getter(name="addedItems")
@@ -13944,13 +17325,34 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineResult(dict):
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "references", references)
-        pulumi.set(__self__, "remarks", remarks)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "summary", summary)
-        pulumi.set(__self__, "title", title)
+        GetSecurityAssessmentComparisonTargetDbConfigurationBaselineResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            key=key,
+            references=references,
+            remarks=remarks,
+            severity=severity,
+            summary=summary,
+            title=title,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: Sequence[str],
+             key: str,
+             references: Sequence['outputs.GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceResult'],
+             remarks: str,
+             severity: str,
+             summary: str,
+             title: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("details", details)
+        _setter("key", key)
+        _setter("references", references)
+        _setter("remarks", remarks)
+        _setter("severity", severity)
+        _setter("summary", summary)
+        _setter("title", title)
 
     @property
     @pulumi.getter
@@ -14020,9 +17422,22 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceResul
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        pulumi.set(__self__, "cis", cis)
-        pulumi.set(__self__, "gdpr", gdpr)
-        pulumi.set(__self__, "stig", stig)
+        GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cis=cis,
+            gdpr=gdpr,
+            stig=stig,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cis: str,
+             gdpr: str,
+             stig: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cis", cis)
+        _setter("gdpr", gdpr)
+        _setter("stig", stig)
 
     @property
     @pulumi.getter
@@ -14068,13 +17483,34 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationCurrentResult(dict):
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "references", references)
-        pulumi.set(__self__, "remarks", remarks)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "summary", summary)
-        pulumi.set(__self__, "title", title)
+        GetSecurityAssessmentComparisonTargetDbConfigurationCurrentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            key=key,
+            references=references,
+            remarks=remarks,
+            severity=severity,
+            summary=summary,
+            title=title,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: Sequence[str],
+             key: str,
+             references: Sequence['outputs.GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceResult'],
+             remarks: str,
+             severity: str,
+             summary: str,
+             title: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("details", details)
+        _setter("key", key)
+        _setter("references", references)
+        _setter("remarks", remarks)
+        _setter("severity", severity)
+        _setter("summary", summary)
+        _setter("title", title)
 
     @property
     @pulumi.getter
@@ -14144,9 +17580,22 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceResult
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        pulumi.set(__self__, "cis", cis)
-        pulumi.set(__self__, "gdpr", gdpr)
-        pulumi.set(__self__, "stig", stig)
+        GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cis=cis,
+            gdpr=gdpr,
+            stig=stig,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cis: str,
+             gdpr: str,
+             stig: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cis", cis)
+        _setter("gdpr", gdpr)
+        _setter("stig", stig)
 
     @property
     @pulumi.getter
@@ -14190,12 +17639,31 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlResult(dict):
         :param Sequence[str] removed_items: This array identifies the items that are present in the baseline, but are missing from the current assessment.
         :param str severity: The severity of this diff.
         """
-        pulumi.set(__self__, "added_items", added_items)
-        pulumi.set(__self__, "baselines", baselines)
-        pulumi.set(__self__, "currents", currents)
-        pulumi.set(__self__, "modified_items", modified_items)
-        pulumi.set(__self__, "removed_items", removed_items)
-        pulumi.set(__self__, "severity", severity)
+        GetSecurityAssessmentComparisonTargetFineGrainedAccessControlResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            added_items=added_items,
+            baselines=baselines,
+            currents=currents,
+            modified_items=modified_items,
+            removed_items=removed_items,
+            severity=severity,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             added_items: Sequence[str],
+             baselines: Sequence['outputs.GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineResult'],
+             currents: Sequence['outputs.GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentResult'],
+             modified_items: Sequence[str],
+             removed_items: Sequence[str],
+             severity: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("added_items", added_items)
+        _setter("baselines", baselines)
+        _setter("currents", currents)
+        _setter("modified_items", modified_items)
+        _setter("removed_items", removed_items)
+        _setter("severity", severity)
 
     @property
     @pulumi.getter(name="addedItems")
@@ -14265,13 +17733,34 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineResul
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "references", references)
-        pulumi.set(__self__, "remarks", remarks)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "summary", summary)
-        pulumi.set(__self__, "title", title)
+        GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            key=key,
+            references=references,
+            remarks=remarks,
+            severity=severity,
+            summary=summary,
+            title=title,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: Sequence[str],
+             key: str,
+             references: Sequence['outputs.GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceResult'],
+             remarks: str,
+             severity: str,
+             summary: str,
+             title: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("details", details)
+        _setter("key", key)
+        _setter("references", references)
+        _setter("remarks", remarks)
+        _setter("severity", severity)
+        _setter("summary", summary)
+        _setter("title", title)
 
     @property
     @pulumi.getter
@@ -14341,9 +17830,22 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineRefer
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        pulumi.set(__self__, "cis", cis)
-        pulumi.set(__self__, "gdpr", gdpr)
-        pulumi.set(__self__, "stig", stig)
+        GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cis=cis,
+            gdpr=gdpr,
+            stig=stig,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cis: str,
+             gdpr: str,
+             stig: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cis", cis)
+        _setter("gdpr", gdpr)
+        _setter("stig", stig)
 
     @property
     @pulumi.getter
@@ -14389,13 +17891,34 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentResult
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "references", references)
-        pulumi.set(__self__, "remarks", remarks)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "summary", summary)
-        pulumi.set(__self__, "title", title)
+        GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            key=key,
+            references=references,
+            remarks=remarks,
+            severity=severity,
+            summary=summary,
+            title=title,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: Sequence[str],
+             key: str,
+             references: Sequence['outputs.GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceResult'],
+             remarks: str,
+             severity: str,
+             summary: str,
+             title: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("details", details)
+        _setter("key", key)
+        _setter("references", references)
+        _setter("remarks", remarks)
+        _setter("severity", severity)
+        _setter("summary", summary)
+        _setter("title", title)
 
     @property
     @pulumi.getter
@@ -14465,9 +17988,22 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentRefere
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        pulumi.set(__self__, "cis", cis)
-        pulumi.set(__self__, "gdpr", gdpr)
-        pulumi.set(__self__, "stig", stig)
+        GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cis=cis,
+            gdpr=gdpr,
+            stig=stig,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cis: str,
+             gdpr: str,
+             stig: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cis", cis)
+        _setter("gdpr", gdpr)
+        _setter("stig", stig)
 
     @property
     @pulumi.getter
@@ -14511,12 +18047,31 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleResult(dict):
         :param Sequence[str] removed_items: This array identifies the items that are present in the baseline, but are missing from the current assessment.
         :param str severity: The severity of this diff.
         """
-        pulumi.set(__self__, "added_items", added_items)
-        pulumi.set(__self__, "baselines", baselines)
-        pulumi.set(__self__, "currents", currents)
-        pulumi.set(__self__, "modified_items", modified_items)
-        pulumi.set(__self__, "removed_items", removed_items)
-        pulumi.set(__self__, "severity", severity)
+        GetSecurityAssessmentComparisonTargetPrivilegesAndRoleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            added_items=added_items,
+            baselines=baselines,
+            currents=currents,
+            modified_items=modified_items,
+            removed_items=removed_items,
+            severity=severity,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             added_items: Sequence[str],
+             baselines: Sequence['outputs.GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineResult'],
+             currents: Sequence['outputs.GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentResult'],
+             modified_items: Sequence[str],
+             removed_items: Sequence[str],
+             severity: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("added_items", added_items)
+        _setter("baselines", baselines)
+        _setter("currents", currents)
+        _setter("modified_items", modified_items)
+        _setter("removed_items", removed_items)
+        _setter("severity", severity)
 
     @property
     @pulumi.getter(name="addedItems")
@@ -14586,13 +18141,34 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineResult(dict)
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "references", references)
-        pulumi.set(__self__, "remarks", remarks)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "summary", summary)
-        pulumi.set(__self__, "title", title)
+        GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            key=key,
+            references=references,
+            remarks=remarks,
+            severity=severity,
+            summary=summary,
+            title=title,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: Sequence[str],
+             key: str,
+             references: Sequence['outputs.GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceResult'],
+             remarks: str,
+             severity: str,
+             summary: str,
+             title: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("details", details)
+        _setter("key", key)
+        _setter("references", references)
+        _setter("remarks", remarks)
+        _setter("severity", severity)
+        _setter("summary", summary)
+        _setter("title", title)
 
     @property
     @pulumi.getter
@@ -14662,9 +18238,22 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceRes
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        pulumi.set(__self__, "cis", cis)
-        pulumi.set(__self__, "gdpr", gdpr)
-        pulumi.set(__self__, "stig", stig)
+        GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cis=cis,
+            gdpr=gdpr,
+            stig=stig,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cis: str,
+             gdpr: str,
+             stig: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cis", cis)
+        _setter("gdpr", gdpr)
+        _setter("stig", stig)
 
     @property
     @pulumi.getter
@@ -14710,13 +18299,34 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentResult(dict):
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "references", references)
-        pulumi.set(__self__, "remarks", remarks)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "summary", summary)
-        pulumi.set(__self__, "title", title)
+        GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            key=key,
+            references=references,
+            remarks=remarks,
+            severity=severity,
+            summary=summary,
+            title=title,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: Sequence[str],
+             key: str,
+             references: Sequence['outputs.GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceResult'],
+             remarks: str,
+             severity: str,
+             summary: str,
+             title: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("details", details)
+        _setter("key", key)
+        _setter("references", references)
+        _setter("remarks", remarks)
+        _setter("severity", severity)
+        _setter("summary", summary)
+        _setter("title", title)
 
     @property
     @pulumi.getter
@@ -14786,9 +18396,22 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceResu
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        pulumi.set(__self__, "cis", cis)
-        pulumi.set(__self__, "gdpr", gdpr)
-        pulumi.set(__self__, "stig", stig)
+        GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cis=cis,
+            gdpr=gdpr,
+            stig=stig,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cis: str,
+             gdpr: str,
+             stig: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cis", cis)
+        _setter("gdpr", gdpr)
+        _setter("stig", stig)
 
     @property
     @pulumi.getter
@@ -14832,12 +18455,31 @@ class GetSecurityAssessmentComparisonTargetUserAccountResult(dict):
         :param Sequence[str] removed_items: This array identifies the items that are present in the baseline, but are missing from the current assessment.
         :param str severity: The severity of this diff.
         """
-        pulumi.set(__self__, "added_items", added_items)
-        pulumi.set(__self__, "baselines", baselines)
-        pulumi.set(__self__, "currents", currents)
-        pulumi.set(__self__, "modified_items", modified_items)
-        pulumi.set(__self__, "removed_items", removed_items)
-        pulumi.set(__self__, "severity", severity)
+        GetSecurityAssessmentComparisonTargetUserAccountResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            added_items=added_items,
+            baselines=baselines,
+            currents=currents,
+            modified_items=modified_items,
+            removed_items=removed_items,
+            severity=severity,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             added_items: Sequence[str],
+             baselines: Sequence['outputs.GetSecurityAssessmentComparisonTargetUserAccountBaselineResult'],
+             currents: Sequence['outputs.GetSecurityAssessmentComparisonTargetUserAccountCurrentResult'],
+             modified_items: Sequence[str],
+             removed_items: Sequence[str],
+             severity: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("added_items", added_items)
+        _setter("baselines", baselines)
+        _setter("currents", currents)
+        _setter("modified_items", modified_items)
+        _setter("removed_items", removed_items)
+        _setter("severity", severity)
 
     @property
     @pulumi.getter(name="addedItems")
@@ -14907,13 +18549,34 @@ class GetSecurityAssessmentComparisonTargetUserAccountBaselineResult(dict):
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "references", references)
-        pulumi.set(__self__, "remarks", remarks)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "summary", summary)
-        pulumi.set(__self__, "title", title)
+        GetSecurityAssessmentComparisonTargetUserAccountBaselineResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            key=key,
+            references=references,
+            remarks=remarks,
+            severity=severity,
+            summary=summary,
+            title=title,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: Sequence[str],
+             key: str,
+             references: Sequence['outputs.GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceResult'],
+             remarks: str,
+             severity: str,
+             summary: str,
+             title: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("details", details)
+        _setter("key", key)
+        _setter("references", references)
+        _setter("remarks", remarks)
+        _setter("severity", severity)
+        _setter("summary", summary)
+        _setter("title", title)
 
     @property
     @pulumi.getter
@@ -14983,9 +18646,22 @@ class GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceResult(di
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        pulumi.set(__self__, "cis", cis)
-        pulumi.set(__self__, "gdpr", gdpr)
-        pulumi.set(__self__, "stig", stig)
+        GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cis=cis,
+            gdpr=gdpr,
+            stig=stig,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cis: str,
+             gdpr: str,
+             stig: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cis", cis)
+        _setter("gdpr", gdpr)
+        _setter("stig", stig)
 
     @property
     @pulumi.getter
@@ -15031,13 +18707,34 @@ class GetSecurityAssessmentComparisonTargetUserAccountCurrentResult(dict):
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         :param str title: The short title for the finding.
         """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "references", references)
-        pulumi.set(__self__, "remarks", remarks)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "summary", summary)
-        pulumi.set(__self__, "title", title)
+        GetSecurityAssessmentComparisonTargetUserAccountCurrentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            key=key,
+            references=references,
+            remarks=remarks,
+            severity=severity,
+            summary=summary,
+            title=title,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: Sequence[str],
+             key: str,
+             references: Sequence['outputs.GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceResult'],
+             remarks: str,
+             severity: str,
+             summary: str,
+             title: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("details", details)
+        _setter("key", key)
+        _setter("references", references)
+        _setter("remarks", remarks)
+        _setter("severity", severity)
+        _setter("summary", summary)
+        _setter("title", title)
 
     @property
     @pulumi.getter
@@ -15107,9 +18804,22 @@ class GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceResult(dic
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        pulumi.set(__self__, "cis", cis)
-        pulumi.set(__self__, "gdpr", gdpr)
-        pulumi.set(__self__, "stig", stig)
+        GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cis=cis,
+            gdpr=gdpr,
+            stig=stig,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cis: str,
+             gdpr: str,
+             stig: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cis", cis)
+        _setter("gdpr", gdpr)
+        _setter("stig", stig)
 
     @property
     @pulumi.getter
@@ -15142,10 +18852,23 @@ class GetSecurityAssessmentFindingFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSecurityAssessmentFindingFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -15175,15 +18898,40 @@ class GetSecurityAssessmentFindingFindingResult(dict):
                  summary: str,
                  target_id: str,
                  title: str):
-        pulumi.set(__self__, "assessment_id", assessment_id)
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "references", references)
-        pulumi.set(__self__, "remarks", remarks)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "summary", summary)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "title", title)
+        GetSecurityAssessmentFindingFindingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            assessment_id=assessment_id,
+            details=details,
+            key=key,
+            references=references,
+            remarks=remarks,
+            severity=severity,
+            summary=summary,
+            target_id=target_id,
+            title=title,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             assessment_id: str,
+             details: Sequence[str],
+             key: str,
+             references: Sequence['outputs.GetSecurityAssessmentFindingFindingReferenceResult'],
+             remarks: str,
+             severity: str,
+             summary: str,
+             target_id: str,
+             title: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("assessment_id", assessment_id)
+        _setter("details", details)
+        _setter("key", key)
+        _setter("references", references)
+        _setter("remarks", remarks)
+        _setter("severity", severity)
+        _setter("summary", summary)
+        _setter("target_id", target_id)
+        _setter("title", title)
 
     @property
     @pulumi.getter(name="assessmentId")
@@ -15237,9 +18985,22 @@ class GetSecurityAssessmentFindingFindingReferenceResult(dict):
                  cis: str,
                  gdpr: str,
                  stig: str):
-        pulumi.set(__self__, "cis", cis)
-        pulumi.set(__self__, "gdpr", gdpr)
-        pulumi.set(__self__, "stig", stig)
+        GetSecurityAssessmentFindingFindingReferenceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cis=cis,
+            gdpr=gdpr,
+            stig=stig,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cis: str,
+             gdpr: str,
+             stig: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cis", cis)
+        _setter("gdpr", gdpr)
+        _setter("stig", stig)
 
     @property
     @pulumi.getter
@@ -15263,10 +19024,23 @@ class GetSecurityAssessmentFindingsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSecurityAssessmentFindingsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -15307,15 +19081,40 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
         :param str target_id: The OCID of the target database.
         :param str title: The short title for the finding.
         """
-        pulumi.set(__self__, "assessment_id", assessment_id)
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "references", references)
-        pulumi.set(__self__, "remarks", remarks)
-        pulumi.set(__self__, "severity", severity)
-        pulumi.set(__self__, "summary", summary)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "title", title)
+        GetSecurityAssessmentFindingsFindingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            assessment_id=assessment_id,
+            details=details,
+            key=key,
+            references=references,
+            remarks=remarks,
+            severity=severity,
+            summary=summary,
+            target_id=target_id,
+            title=title,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             assessment_id: str,
+             details: Sequence[str],
+             key: str,
+             references: Sequence['outputs.GetSecurityAssessmentFindingsFindingReferenceResult'],
+             remarks: str,
+             severity: str,
+             summary: str,
+             target_id: str,
+             title: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("assessment_id", assessment_id)
+        _setter("details", details)
+        _setter("key", key)
+        _setter("references", references)
+        _setter("remarks", remarks)
+        _setter("severity", severity)
+        _setter("summary", summary)
+        _setter("target_id", target_id)
+        _setter("title", title)
 
     @property
     @pulumi.getter(name="assessmentId")
@@ -15401,9 +19200,22 @@ class GetSecurityAssessmentFindingsFindingReferenceResult(dict):
         :param str gdpr: Relevant section from GDPR.
         :param str stig: Relevant section from STIG.
         """
-        pulumi.set(__self__, "cis", cis)
-        pulumi.set(__self__, "gdpr", gdpr)
-        pulumi.set(__self__, "stig", stig)
+        GetSecurityAssessmentFindingsFindingReferenceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cis=cis,
+            gdpr=gdpr,
+            stig=stig,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cis: str,
+             gdpr: str,
+             stig: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cis", cis)
+        _setter("gdpr", gdpr)
+        _setter("stig", stig)
 
     @property
     @pulumi.getter
@@ -15449,13 +19261,34 @@ class GetSecurityAssessmentStatisticResult(dict):
         :param Sequence['GetSecurityAssessmentStatisticPassArgs'] passes: Statistics showing the number of findings with a particular risk level for each category.
         :param int targets_count: The total number of targets in this security assessment.
         """
-        pulumi.set(__self__, "advisories", advisories)
-        pulumi.set(__self__, "evaluates", evaluates)
-        pulumi.set(__self__, "high_risks", high_risks)
-        pulumi.set(__self__, "low_risks", low_risks)
-        pulumi.set(__self__, "medium_risks", medium_risks)
-        pulumi.set(__self__, "passes", passes)
-        pulumi.set(__self__, "targets_count", targets_count)
+        GetSecurityAssessmentStatisticResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            advisories=advisories,
+            evaluates=evaluates,
+            high_risks=high_risks,
+            low_risks=low_risks,
+            medium_risks=medium_risks,
+            passes=passes,
+            targets_count=targets_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             advisories: Sequence['outputs.GetSecurityAssessmentStatisticAdvisoryResult'],
+             evaluates: Sequence['outputs.GetSecurityAssessmentStatisticEvaluateResult'],
+             high_risks: Sequence['outputs.GetSecurityAssessmentStatisticHighRiskResult'],
+             low_risks: Sequence['outputs.GetSecurityAssessmentStatisticLowRiskResult'],
+             medium_risks: Sequence['outputs.GetSecurityAssessmentStatisticMediumRiskResult'],
+             passes: Sequence['outputs.GetSecurityAssessmentStatisticPassResult'],
+             targets_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("advisories", advisories)
+        _setter("evaluates", evaluates)
+        _setter("high_risks", high_risks)
+        _setter("low_risks", low_risks)
+        _setter("medium_risks", medium_risks)
+        _setter("passes", passes)
+        _setter("targets_count", targets_count)
 
     @property
     @pulumi.getter
@@ -15535,14 +19368,37 @@ class GetSecurityAssessmentStatisticAdvisoryResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
-        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
-        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
-        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
-        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        pulumi.set(__self__, "targets_count", targets_count)
-        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+        GetSecurityAssessmentStatisticAdvisoryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auditing_findings_count=auditing_findings_count,
+            authorization_control_findings_count=authorization_control_findings_count,
+            data_encryption_findings_count=data_encryption_findings_count,
+            db_configuration_findings_count=db_configuration_findings_count,
+            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
+            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
+            targets_count=targets_count,
+            user_accounts_findings_count=user_accounts_findings_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auditing_findings_count: int,
+             authorization_control_findings_count: int,
+             data_encryption_findings_count: int,
+             db_configuration_findings_count: int,
+             fine_grained_access_control_findings_count: int,
+             privileges_and_roles_findings_count: int,
+             targets_count: int,
+             user_accounts_findings_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("auditing_findings_count", auditing_findings_count)
+        _setter("authorization_control_findings_count", authorization_control_findings_count)
+        _setter("data_encryption_findings_count", data_encryption_findings_count)
+        _setter("db_configuration_findings_count", db_configuration_findings_count)
+        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        _setter("targets_count", targets_count)
+        _setter("user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -15630,14 +19486,37 @@ class GetSecurityAssessmentStatisticEvaluateResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
-        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
-        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
-        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
-        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        pulumi.set(__self__, "targets_count", targets_count)
-        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+        GetSecurityAssessmentStatisticEvaluateResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auditing_findings_count=auditing_findings_count,
+            authorization_control_findings_count=authorization_control_findings_count,
+            data_encryption_findings_count=data_encryption_findings_count,
+            db_configuration_findings_count=db_configuration_findings_count,
+            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
+            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
+            targets_count=targets_count,
+            user_accounts_findings_count=user_accounts_findings_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auditing_findings_count: int,
+             authorization_control_findings_count: int,
+             data_encryption_findings_count: int,
+             db_configuration_findings_count: int,
+             fine_grained_access_control_findings_count: int,
+             privileges_and_roles_findings_count: int,
+             targets_count: int,
+             user_accounts_findings_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("auditing_findings_count", auditing_findings_count)
+        _setter("authorization_control_findings_count", authorization_control_findings_count)
+        _setter("data_encryption_findings_count", data_encryption_findings_count)
+        _setter("db_configuration_findings_count", db_configuration_findings_count)
+        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        _setter("targets_count", targets_count)
+        _setter("user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -15725,14 +19604,37 @@ class GetSecurityAssessmentStatisticHighRiskResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
-        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
-        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
-        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
-        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        pulumi.set(__self__, "targets_count", targets_count)
-        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+        GetSecurityAssessmentStatisticHighRiskResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auditing_findings_count=auditing_findings_count,
+            authorization_control_findings_count=authorization_control_findings_count,
+            data_encryption_findings_count=data_encryption_findings_count,
+            db_configuration_findings_count=db_configuration_findings_count,
+            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
+            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
+            targets_count=targets_count,
+            user_accounts_findings_count=user_accounts_findings_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auditing_findings_count: int,
+             authorization_control_findings_count: int,
+             data_encryption_findings_count: int,
+             db_configuration_findings_count: int,
+             fine_grained_access_control_findings_count: int,
+             privileges_and_roles_findings_count: int,
+             targets_count: int,
+             user_accounts_findings_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("auditing_findings_count", auditing_findings_count)
+        _setter("authorization_control_findings_count", authorization_control_findings_count)
+        _setter("data_encryption_findings_count", data_encryption_findings_count)
+        _setter("db_configuration_findings_count", db_configuration_findings_count)
+        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        _setter("targets_count", targets_count)
+        _setter("user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -15820,14 +19722,37 @@ class GetSecurityAssessmentStatisticLowRiskResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
-        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
-        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
-        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
-        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        pulumi.set(__self__, "targets_count", targets_count)
-        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+        GetSecurityAssessmentStatisticLowRiskResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auditing_findings_count=auditing_findings_count,
+            authorization_control_findings_count=authorization_control_findings_count,
+            data_encryption_findings_count=data_encryption_findings_count,
+            db_configuration_findings_count=db_configuration_findings_count,
+            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
+            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
+            targets_count=targets_count,
+            user_accounts_findings_count=user_accounts_findings_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auditing_findings_count: int,
+             authorization_control_findings_count: int,
+             data_encryption_findings_count: int,
+             db_configuration_findings_count: int,
+             fine_grained_access_control_findings_count: int,
+             privileges_and_roles_findings_count: int,
+             targets_count: int,
+             user_accounts_findings_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("auditing_findings_count", auditing_findings_count)
+        _setter("authorization_control_findings_count", authorization_control_findings_count)
+        _setter("data_encryption_findings_count", data_encryption_findings_count)
+        _setter("db_configuration_findings_count", db_configuration_findings_count)
+        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        _setter("targets_count", targets_count)
+        _setter("user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -15915,14 +19840,37 @@ class GetSecurityAssessmentStatisticMediumRiskResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
-        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
-        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
-        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
-        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        pulumi.set(__self__, "targets_count", targets_count)
-        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+        GetSecurityAssessmentStatisticMediumRiskResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auditing_findings_count=auditing_findings_count,
+            authorization_control_findings_count=authorization_control_findings_count,
+            data_encryption_findings_count=data_encryption_findings_count,
+            db_configuration_findings_count=db_configuration_findings_count,
+            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
+            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
+            targets_count=targets_count,
+            user_accounts_findings_count=user_accounts_findings_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auditing_findings_count: int,
+             authorization_control_findings_count: int,
+             data_encryption_findings_count: int,
+             db_configuration_findings_count: int,
+             fine_grained_access_control_findings_count: int,
+             privileges_and_roles_findings_count: int,
+             targets_count: int,
+             user_accounts_findings_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("auditing_findings_count", auditing_findings_count)
+        _setter("authorization_control_findings_count", authorization_control_findings_count)
+        _setter("data_encryption_findings_count", data_encryption_findings_count)
+        _setter("db_configuration_findings_count", db_configuration_findings_count)
+        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        _setter("targets_count", targets_count)
+        _setter("user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -16010,14 +19958,37 @@ class GetSecurityAssessmentStatisticPassResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
-        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
-        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
-        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
-        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        pulumi.set(__self__, "targets_count", targets_count)
-        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+        GetSecurityAssessmentStatisticPassResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auditing_findings_count=auditing_findings_count,
+            authorization_control_findings_count=authorization_control_findings_count,
+            data_encryption_findings_count=data_encryption_findings_count,
+            db_configuration_findings_count=db_configuration_findings_count,
+            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
+            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
+            targets_count=targets_count,
+            user_accounts_findings_count=user_accounts_findings_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auditing_findings_count: int,
+             authorization_control_findings_count: int,
+             data_encryption_findings_count: int,
+             db_configuration_findings_count: int,
+             fine_grained_access_control_findings_count: int,
+             privileges_and_roles_findings_count: int,
+             targets_count: int,
+             user_accounts_findings_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("auditing_findings_count", auditing_findings_count)
+        _setter("authorization_control_findings_count", authorization_control_findings_count)
+        _setter("data_encryption_findings_count", data_encryption_findings_count)
+        _setter("db_configuration_findings_count", db_configuration_findings_count)
+        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        _setter("targets_count", targets_count)
+        _setter("user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -16090,10 +20061,23 @@ class GetSecurityAssessmentsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSecurityAssessmentsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -16168,32 +20152,91 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
         :param str triggered_by: A filter to return only security asessments that were created by either user or system.
         :param str type: A filter to return only items that match the specified security assessment type.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ignored_assessment_ids", ignored_assessment_ids)
-        pulumi.set(__self__, "ignored_targets", ignored_targets)
-        pulumi.set(__self__, "is_baseline", is_baseline)
-        pulumi.set(__self__, "is_deviated_from_baseline", is_deviated_from_baseline)
-        pulumi.set(__self__, "last_compared_baseline_id", last_compared_baseline_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "link", link)
-        pulumi.set(__self__, "schedule", schedule)
-        pulumi.set(__self__, "schedule_security_assessment_id", schedule_security_assessment_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "statistics", statistics)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "target_ids", target_ids)
-        pulumi.set(__self__, "target_version", target_version)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_assessed", time_last_assessed)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "triggered_by", triggered_by)
-        pulumi.set(__self__, "type", type)
+        GetSecurityAssessmentsSecurityAssessmentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            ignored_assessment_ids=ignored_assessment_ids,
+            ignored_targets=ignored_targets,
+            is_baseline=is_baseline,
+            is_deviated_from_baseline=is_deviated_from_baseline,
+            last_compared_baseline_id=last_compared_baseline_id,
+            lifecycle_details=lifecycle_details,
+            link=link,
+            schedule=schedule,
+            schedule_security_assessment_id=schedule_security_assessment_id,
+            state=state,
+            statistics=statistics,
+            system_tags=system_tags,
+            target_id=target_id,
+            target_ids=target_ids,
+            target_version=target_version,
+            time_created=time_created,
+            time_last_assessed=time_last_assessed,
+            time_updated=time_updated,
+            triggered_by=triggered_by,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             ignored_assessment_ids: Sequence[str],
+             ignored_targets: Sequence[str],
+             is_baseline: bool,
+             is_deviated_from_baseline: bool,
+             last_compared_baseline_id: str,
+             lifecycle_details: str,
+             link: str,
+             schedule: str,
+             schedule_security_assessment_id: str,
+             state: str,
+             statistics: Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticResult'],
+             system_tags: Mapping[str, Any],
+             target_id: str,
+             target_ids: Sequence[str],
+             target_version: str,
+             time_created: str,
+             time_last_assessed: str,
+             time_updated: str,
+             triggered_by: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("ignored_assessment_ids", ignored_assessment_ids)
+        _setter("ignored_targets", ignored_targets)
+        _setter("is_baseline", is_baseline)
+        _setter("is_deviated_from_baseline", is_deviated_from_baseline)
+        _setter("last_compared_baseline_id", last_compared_baseline_id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("link", link)
+        _setter("schedule", schedule)
+        _setter("schedule_security_assessment_id", schedule_security_assessment_id)
+        _setter("state", state)
+        _setter("statistics", statistics)
+        _setter("system_tags", system_tags)
+        _setter("target_id", target_id)
+        _setter("target_ids", target_ids)
+        _setter("target_version", target_version)
+        _setter("time_created", time_created)
+        _setter("time_last_assessed", time_last_assessed)
+        _setter("time_updated", time_updated)
+        _setter("triggered_by", triggered_by)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -16423,13 +20466,34 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticResult(dict):
         :param Sequence['GetSecurityAssessmentsSecurityAssessmentStatisticPassArgs'] passes: Statistics showing the number of findings with a particular risk level for each category.
         :param int targets_count: The total number of targets in this security assessment.
         """
-        pulumi.set(__self__, "advisories", advisories)
-        pulumi.set(__self__, "evaluates", evaluates)
-        pulumi.set(__self__, "high_risks", high_risks)
-        pulumi.set(__self__, "low_risks", low_risks)
-        pulumi.set(__self__, "medium_risks", medium_risks)
-        pulumi.set(__self__, "passes", passes)
-        pulumi.set(__self__, "targets_count", targets_count)
+        GetSecurityAssessmentsSecurityAssessmentStatisticResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            advisories=advisories,
+            evaluates=evaluates,
+            high_risks=high_risks,
+            low_risks=low_risks,
+            medium_risks=medium_risks,
+            passes=passes,
+            targets_count=targets_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             advisories: Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryResult'],
+             evaluates: Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateResult'],
+             high_risks: Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskResult'],
+             low_risks: Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskResult'],
+             medium_risks: Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskResult'],
+             passes: Sequence['outputs.GetSecurityAssessmentsSecurityAssessmentStatisticPassResult'],
+             targets_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("advisories", advisories)
+        _setter("evaluates", evaluates)
+        _setter("high_risks", high_risks)
+        _setter("low_risks", low_risks)
+        _setter("medium_risks", medium_risks)
+        _setter("passes", passes)
+        _setter("targets_count", targets_count)
 
     @property
     @pulumi.getter
@@ -16509,14 +20573,37 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
-        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
-        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
-        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
-        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        pulumi.set(__self__, "targets_count", targets_count)
-        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+        GetSecurityAssessmentsSecurityAssessmentStatisticAdvisoryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auditing_findings_count=auditing_findings_count,
+            authorization_control_findings_count=authorization_control_findings_count,
+            data_encryption_findings_count=data_encryption_findings_count,
+            db_configuration_findings_count=db_configuration_findings_count,
+            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
+            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
+            targets_count=targets_count,
+            user_accounts_findings_count=user_accounts_findings_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auditing_findings_count: int,
+             authorization_control_findings_count: int,
+             data_encryption_findings_count: int,
+             db_configuration_findings_count: int,
+             fine_grained_access_control_findings_count: int,
+             privileges_and_roles_findings_count: int,
+             targets_count: int,
+             user_accounts_findings_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("auditing_findings_count", auditing_findings_count)
+        _setter("authorization_control_findings_count", authorization_control_findings_count)
+        _setter("data_encryption_findings_count", data_encryption_findings_count)
+        _setter("db_configuration_findings_count", db_configuration_findings_count)
+        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        _setter("targets_count", targets_count)
+        _setter("user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -16604,14 +20691,37 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
-        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
-        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
-        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
-        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        pulumi.set(__self__, "targets_count", targets_count)
-        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+        GetSecurityAssessmentsSecurityAssessmentStatisticEvaluateResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auditing_findings_count=auditing_findings_count,
+            authorization_control_findings_count=authorization_control_findings_count,
+            data_encryption_findings_count=data_encryption_findings_count,
+            db_configuration_findings_count=db_configuration_findings_count,
+            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
+            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
+            targets_count=targets_count,
+            user_accounts_findings_count=user_accounts_findings_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auditing_findings_count: int,
+             authorization_control_findings_count: int,
+             data_encryption_findings_count: int,
+             db_configuration_findings_count: int,
+             fine_grained_access_control_findings_count: int,
+             privileges_and_roles_findings_count: int,
+             targets_count: int,
+             user_accounts_findings_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("auditing_findings_count", auditing_findings_count)
+        _setter("authorization_control_findings_count", authorization_control_findings_count)
+        _setter("data_encryption_findings_count", data_encryption_findings_count)
+        _setter("db_configuration_findings_count", db_configuration_findings_count)
+        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        _setter("targets_count", targets_count)
+        _setter("user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -16699,14 +20809,37 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
-        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
-        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
-        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
-        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        pulumi.set(__self__, "targets_count", targets_count)
-        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+        GetSecurityAssessmentsSecurityAssessmentStatisticHighRiskResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auditing_findings_count=auditing_findings_count,
+            authorization_control_findings_count=authorization_control_findings_count,
+            data_encryption_findings_count=data_encryption_findings_count,
+            db_configuration_findings_count=db_configuration_findings_count,
+            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
+            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
+            targets_count=targets_count,
+            user_accounts_findings_count=user_accounts_findings_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auditing_findings_count: int,
+             authorization_control_findings_count: int,
+             data_encryption_findings_count: int,
+             db_configuration_findings_count: int,
+             fine_grained_access_control_findings_count: int,
+             privileges_and_roles_findings_count: int,
+             targets_count: int,
+             user_accounts_findings_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("auditing_findings_count", auditing_findings_count)
+        _setter("authorization_control_findings_count", authorization_control_findings_count)
+        _setter("data_encryption_findings_count", data_encryption_findings_count)
+        _setter("db_configuration_findings_count", db_configuration_findings_count)
+        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        _setter("targets_count", targets_count)
+        _setter("user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -16794,14 +20927,37 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
-        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
-        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
-        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
-        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        pulumi.set(__self__, "targets_count", targets_count)
-        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+        GetSecurityAssessmentsSecurityAssessmentStatisticLowRiskResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auditing_findings_count=auditing_findings_count,
+            authorization_control_findings_count=authorization_control_findings_count,
+            data_encryption_findings_count=data_encryption_findings_count,
+            db_configuration_findings_count=db_configuration_findings_count,
+            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
+            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
+            targets_count=targets_count,
+            user_accounts_findings_count=user_accounts_findings_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auditing_findings_count: int,
+             authorization_control_findings_count: int,
+             data_encryption_findings_count: int,
+             db_configuration_findings_count: int,
+             fine_grained_access_control_findings_count: int,
+             privileges_and_roles_findings_count: int,
+             targets_count: int,
+             user_accounts_findings_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("auditing_findings_count", auditing_findings_count)
+        _setter("authorization_control_findings_count", authorization_control_findings_count)
+        _setter("data_encryption_findings_count", data_encryption_findings_count)
+        _setter("db_configuration_findings_count", db_configuration_findings_count)
+        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        _setter("targets_count", targets_count)
+        _setter("user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -16889,14 +21045,37 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
-        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
-        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
-        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
-        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        pulumi.set(__self__, "targets_count", targets_count)
-        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+        GetSecurityAssessmentsSecurityAssessmentStatisticMediumRiskResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auditing_findings_count=auditing_findings_count,
+            authorization_control_findings_count=authorization_control_findings_count,
+            data_encryption_findings_count=data_encryption_findings_count,
+            db_configuration_findings_count=db_configuration_findings_count,
+            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
+            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
+            targets_count=targets_count,
+            user_accounts_findings_count=user_accounts_findings_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auditing_findings_count: int,
+             authorization_control_findings_count: int,
+             data_encryption_findings_count: int,
+             db_configuration_findings_count: int,
+             fine_grained_access_control_findings_count: int,
+             privileges_and_roles_findings_count: int,
+             targets_count: int,
+             user_accounts_findings_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("auditing_findings_count", auditing_findings_count)
+        _setter("authorization_control_findings_count", authorization_control_findings_count)
+        _setter("data_encryption_findings_count", data_encryption_findings_count)
+        _setter("db_configuration_findings_count", db_configuration_findings_count)
+        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        _setter("targets_count", targets_count)
+        _setter("user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -16984,14 +21163,37 @@ class GetSecurityAssessmentsSecurityAssessmentStatisticPassResult(dict):
         :param int targets_count: The total number of targets in this security assessment.
         :param int user_accounts_findings_count: The number of findings in the User Accounts category.
         """
-        pulumi.set(__self__, "auditing_findings_count", auditing_findings_count)
-        pulumi.set(__self__, "authorization_control_findings_count", authorization_control_findings_count)
-        pulumi.set(__self__, "data_encryption_findings_count", data_encryption_findings_count)
-        pulumi.set(__self__, "db_configuration_findings_count", db_configuration_findings_count)
-        pulumi.set(__self__, "fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
-        pulumi.set(__self__, "privileges_and_roles_findings_count", privileges_and_roles_findings_count)
-        pulumi.set(__self__, "targets_count", targets_count)
-        pulumi.set(__self__, "user_accounts_findings_count", user_accounts_findings_count)
+        GetSecurityAssessmentsSecurityAssessmentStatisticPassResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auditing_findings_count=auditing_findings_count,
+            authorization_control_findings_count=authorization_control_findings_count,
+            data_encryption_findings_count=data_encryption_findings_count,
+            db_configuration_findings_count=db_configuration_findings_count,
+            fine_grained_access_control_findings_count=fine_grained_access_control_findings_count,
+            privileges_and_roles_findings_count=privileges_and_roles_findings_count,
+            targets_count=targets_count,
+            user_accounts_findings_count=user_accounts_findings_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auditing_findings_count: int,
+             authorization_control_findings_count: int,
+             data_encryption_findings_count: int,
+             db_configuration_findings_count: int,
+             fine_grained_access_control_findings_count: int,
+             privileges_and_roles_findings_count: int,
+             targets_count: int,
+             user_accounts_findings_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("auditing_findings_count", auditing_findings_count)
+        _setter("authorization_control_findings_count", authorization_control_findings_count)
+        _setter("data_encryption_findings_count", data_encryption_findings_count)
+        _setter("db_configuration_findings_count", db_configuration_findings_count)
+        _setter("fine_grained_access_control_findings_count", fine_grained_access_control_findings_count)
+        _setter("privileges_and_roles_findings_count", privileges_and_roles_findings_count)
+        _setter("targets_count", targets_count)
+        _setter("user_accounts_findings_count", user_accounts_findings_count)
 
     @property
     @pulumi.getter(name="auditingFindingsCount")
@@ -17064,10 +21266,23 @@ class GetSensitiveDataModelSensitiveObjectsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSensitiveDataModelSensitiveObjectsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -17092,7 +21307,16 @@ class GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionResult(dict)
         """
         :param Sequence['GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemArgs'] items: An array of sensitive object summary objects.
         """
-        pulumi.set(__self__, "items", items)
+        GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -17114,9 +21338,22 @@ class GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemResult(d
         :param str object_type: A filter to return only items related to a specific object type.
         :param str schema_name: A filter to return only items related to specific schema name.
         """
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "object_type", object_type)
-        pulumi.set(__self__, "schema_name", schema_name)
+        GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object=object,
+            object_type=object_type,
+            schema_name=schema_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object: str,
+             object_type: str,
+             schema_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object", object)
+        _setter("object_type", object_type)
+        _setter("schema_name", schema_name)
 
     @property
     @pulumi.getter
@@ -17149,10 +21386,23 @@ class GetSensitiveDataModelSensitiveSchemasFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSensitiveDataModelSensitiveSchemasFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -17177,7 +21427,16 @@ class GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionResult(dict)
         """
         :param Sequence['GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemArgs'] items: An array of sensitive schema summary objects.
         """
-        pulumi.set(__self__, "items", items)
+        GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -17195,7 +21454,16 @@ class GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemResult(d
         """
         :param str schema_name: A filter to return only items related to specific schema name.
         """
-        pulumi.set(__self__, "schema_name", schema_name)
+        GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            schema_name=schema_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             schema_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("schema_name", schema_name)
 
     @property
     @pulumi.getter(name="schemaName")
@@ -17212,10 +21480,23 @@ class GetSensitiveDataModelsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSensitiveDataModelsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -17239,10 +21520,23 @@ class GetSensitiveDataModelsSensitiveColumnsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSensitiveDataModelsSensitiveColumnsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -17264,7 +21558,16 @@ class GetSensitiveDataModelsSensitiveColumnsFilterResult(dict):
 class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -17321,28 +21624,79 @@ class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemResult(
         :param str time_created: The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was created in the sensitive data model.
         :param str time_updated: The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in the sensitive data model.
         """
-        pulumi.set(__self__, "app_defined_child_column_keys", app_defined_child_column_keys)
-        pulumi.set(__self__, "app_name", app_name)
-        pulumi.set(__self__, "column_groups", column_groups)
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "db_defined_child_column_keys", db_defined_child_column_keys)
-        pulumi.set(__self__, "estimated_data_value_count", estimated_data_value_count)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "object_type", object_type)
-        pulumi.set(__self__, "parent_column_keys", parent_column_keys)
-        pulumi.set(__self__, "relation_type", relation_type)
-        pulumi.set(__self__, "sample_data_values", sample_data_values)
-        pulumi.set(__self__, "schema_name", schema_name)
-        pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
-        pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
-        pulumi.set(__self__, "source", source)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app_defined_child_column_keys=app_defined_child_column_keys,
+            app_name=app_name,
+            column_groups=column_groups,
+            column_name=column_name,
+            data_type=data_type,
+            db_defined_child_column_keys=db_defined_child_column_keys,
+            estimated_data_value_count=estimated_data_value_count,
+            key=key,
+            lifecycle_details=lifecycle_details,
+            object=object,
+            object_type=object_type,
+            parent_column_keys=parent_column_keys,
+            relation_type=relation_type,
+            sample_data_values=sample_data_values,
+            schema_name=schema_name,
+            sensitive_data_model_id=sensitive_data_model_id,
+            sensitive_type_id=sensitive_type_id,
+            source=source,
+            state=state,
+            status=status,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app_defined_child_column_keys: Sequence[str],
+             app_name: str,
+             column_groups: Sequence[str],
+             column_name: str,
+             data_type: str,
+             db_defined_child_column_keys: Sequence[str],
+             estimated_data_value_count: str,
+             key: str,
+             lifecycle_details: str,
+             object: str,
+             object_type: str,
+             parent_column_keys: Sequence[str],
+             relation_type: str,
+             sample_data_values: Sequence[str],
+             schema_name: str,
+             sensitive_data_model_id: str,
+             sensitive_type_id: str,
+             source: str,
+             state: str,
+             status: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("app_defined_child_column_keys", app_defined_child_column_keys)
+        _setter("app_name", app_name)
+        _setter("column_groups", column_groups)
+        _setter("column_name", column_name)
+        _setter("data_type", data_type)
+        _setter("db_defined_child_column_keys", db_defined_child_column_keys)
+        _setter("estimated_data_value_count", estimated_data_value_count)
+        _setter("key", key)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("object", object)
+        _setter("object_type", object_type)
+        _setter("parent_column_keys", parent_column_keys)
+        _setter("relation_type", relation_type)
+        _setter("sample_data_values", sample_data_values)
+        _setter("schema_name", schema_name)
+        _setter("sensitive_data_model_id", sensitive_data_model_id)
+        _setter("sensitive_type_id", sensitive_type_id)
+        _setter("source", source)
+        _setter("state", state)
+        _setter("status", status)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="appDefinedChildColumnKeys")
@@ -17525,7 +21879,16 @@ class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemResult(
 class GetSensitiveDataModelsSensitiveDataModelCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSensitiveDataModelsSensitiveDataModelCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetSensitiveDataModelsSensitiveDataModelCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetSensitiveDataModelsSensitiveDataModelCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -17574,24 +21937,67 @@ class GetSensitiveDataModelsSensitiveDataModelCollectionItemResult(dict):
         :param str time_created: The date and time the sensitive data model was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: The date and time the sensitive data model was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        pulumi.set(__self__, "app_suite_name", app_suite_name)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_app_defined_relation_discovery_enabled", is_app_defined_relation_discovery_enabled)
-        pulumi.set(__self__, "is_include_all_schemas", is_include_all_schemas)
-        pulumi.set(__self__, "is_include_all_sensitive_types", is_include_all_sensitive_types)
-        pulumi.set(__self__, "is_sample_data_collection_enabled", is_sample_data_collection_enabled)
-        pulumi.set(__self__, "schemas_for_discoveries", schemas_for_discoveries)
-        pulumi.set(__self__, "sensitive_type_ids_for_discoveries", sensitive_type_ids_for_discoveries)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetSensitiveDataModelsSensitiveDataModelCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app_suite_name=app_suite_name,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_app_defined_relation_discovery_enabled=is_app_defined_relation_discovery_enabled,
+            is_include_all_schemas=is_include_all_schemas,
+            is_include_all_sensitive_types=is_include_all_sensitive_types,
+            is_sample_data_collection_enabled=is_sample_data_collection_enabled,
+            schemas_for_discoveries=schemas_for_discoveries,
+            sensitive_type_ids_for_discoveries=sensitive_type_ids_for_discoveries,
+            state=state,
+            system_tags=system_tags,
+            target_id=target_id,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app_suite_name: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_app_defined_relation_discovery_enabled: bool,
+             is_include_all_schemas: bool,
+             is_include_all_sensitive_types: bool,
+             is_sample_data_collection_enabled: bool,
+             schemas_for_discoveries: Sequence[str],
+             sensitive_type_ids_for_discoveries: Sequence[str],
+             state: str,
+             system_tags: Mapping[str, Any],
+             target_id: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("app_suite_name", app_suite_name)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_app_defined_relation_discovery_enabled", is_app_defined_relation_discovery_enabled)
+        _setter("is_include_all_schemas", is_include_all_schemas)
+        _setter("is_include_all_sensitive_types", is_include_all_sensitive_types)
+        _setter("is_sample_data_collection_enabled", is_sample_data_collection_enabled)
+        _setter("schemas_for_discoveries", schemas_for_discoveries)
+        _setter("sensitive_type_ids_for_discoveries", sensitive_type_ids_for_discoveries)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("target_id", target_id)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="appSuiteName")
@@ -17744,10 +22150,23 @@ class GetSensitiveTypesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSensitiveTypesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -17769,7 +22188,16 @@ class GetSensitiveTypesFilterResult(dict):
 class GetSensitiveTypesSensitiveTypeCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSensitiveTypesSensitiveTypeCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetSensitiveTypesSensitiveTypeCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetSensitiveTypesSensitiveTypeCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -17820,25 +22248,70 @@ class GetSensitiveTypesSensitiveTypeCollectionItemResult(dict):
         :param str time_created: The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        pulumi.set(__self__, "comment_pattern", comment_pattern)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "data_pattern", data_pattern)
-        pulumi.set(__self__, "default_masking_format_id", default_masking_format_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "entity_type", entity_type)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name_pattern", name_pattern)
-        pulumi.set(__self__, "parent_category_id", parent_category_id)
-        pulumi.set(__self__, "search_type", search_type)
-        pulumi.set(__self__, "short_name", short_name)
-        pulumi.set(__self__, "source", source)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetSensitiveTypesSensitiveTypeCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            comment_pattern=comment_pattern,
+            compartment_id=compartment_id,
+            data_pattern=data_pattern,
+            default_masking_format_id=default_masking_format_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            entity_type=entity_type,
+            freeform_tags=freeform_tags,
+            id=id,
+            name_pattern=name_pattern,
+            parent_category_id=parent_category_id,
+            search_type=search_type,
+            short_name=short_name,
+            source=source,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             comment_pattern: str,
+             compartment_id: str,
+             data_pattern: str,
+             default_masking_format_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             entity_type: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             name_pattern: str,
+             parent_category_id: str,
+             search_type: str,
+             short_name: str,
+             source: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("comment_pattern", comment_pattern)
+        _setter("compartment_id", compartment_id)
+        _setter("data_pattern", data_pattern)
+        _setter("default_masking_format_id", default_masking_format_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("entity_type", entity_type)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("name_pattern", name_pattern)
+        _setter("parent_category_id", parent_category_id)
+        _setter("search_type", search_type)
+        _setter("short_name", short_name)
+        _setter("source", source)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="commentPattern")
@@ -17999,10 +22472,23 @@ class GetTargetAlertPolicyAssociationsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetTargetAlertPolicyAssociationsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -18024,7 +22510,16 @@ class GetTargetAlertPolicyAssociationsFilterResult(dict):
 class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -18063,19 +22558,52 @@ class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem
         :param str time_created: Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "policy_id", policy_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_enabled=is_enabled,
+            policy_id=policy_id,
+            state=state,
+            system_tags=system_tags,
+            target_id=target_id,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_enabled: bool,
+             policy_id: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             target_id: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_enabled", is_enabled)
+        _setter("policy_id", policy_id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("target_id", target_id)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -18195,9 +22723,22 @@ class GetTargetDatabaseConnectionOptionResult(dict):
         :param str datasafe_private_endpoint_id: The OCID of the Data Safe private endpoint.
         :param str on_prem_connector_id: The OCID of the on-premises connector.
         """
-        pulumi.set(__self__, "connection_type", connection_type)
-        pulumi.set(__self__, "datasafe_private_endpoint_id", datasafe_private_endpoint_id)
-        pulumi.set(__self__, "on_prem_connector_id", on_prem_connector_id)
+        GetTargetDatabaseConnectionOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            connection_type=connection_type,
+            datasafe_private_endpoint_id=datasafe_private_endpoint_id,
+            on_prem_connector_id=on_prem_connector_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             connection_type: str,
+             datasafe_private_endpoint_id: str,
+             on_prem_connector_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("connection_type", connection_type)
+        _setter("datasafe_private_endpoint_id", datasafe_private_endpoint_id)
+        _setter("on_prem_connector_id", on_prem_connector_id)
 
     @property
     @pulumi.getter(name="connectionType")
@@ -18235,8 +22776,19 @@ class GetTargetDatabaseCredentialResult(dict):
         :param str password: The password of the database user.
         :param str user_name: The database user name.
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "user_name", user_name)
+        GetTargetDatabaseCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            user_name=user_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             user_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("user_name", user_name)
 
     @property
     @pulumi.getter
@@ -18278,15 +22830,40 @@ class GetTargetDatabaseDatabaseDetailResult(dict):
         :param str service_name: The service name of the database registered as target database.
         :param str vm_cluster_id: The OCID of the VM cluster in which the database is running.
         """
-        pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
-        pulumi.set(__self__, "database_type", database_type)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "infrastructure_type", infrastructure_type)
-        pulumi.set(__self__, "instance_id", instance_id)
-        pulumi.set(__self__, "ip_addresses", ip_addresses)
-        pulumi.set(__self__, "listener_port", listener_port)
-        pulumi.set(__self__, "service_name", service_name)
-        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+        GetTargetDatabaseDatabaseDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            autonomous_database_id=autonomous_database_id,
+            database_type=database_type,
+            db_system_id=db_system_id,
+            infrastructure_type=infrastructure_type,
+            instance_id=instance_id,
+            ip_addresses=ip_addresses,
+            listener_port=listener_port,
+            service_name=service_name,
+            vm_cluster_id=vm_cluster_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             autonomous_database_id: str,
+             database_type: str,
+             db_system_id: str,
+             infrastructure_type: str,
+             instance_id: str,
+             ip_addresses: Sequence[str],
+             listener_port: int,
+             service_name: str,
+             vm_cluster_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("autonomous_database_id", autonomous_database_id)
+        _setter("database_type", database_type)
+        _setter("db_system_id", db_system_id)
+        _setter("infrastructure_type", infrastructure_type)
+        _setter("instance_id", instance_id)
+        _setter("ip_addresses", ip_addresses)
+        _setter("listener_port", listener_port)
+        _setter("service_name", service_name)
+        _setter("vm_cluster_id", vm_cluster_id)
 
     @property
     @pulumi.getter(name="autonomousDatabaseId")
@@ -18367,10 +22944,23 @@ class GetTargetDatabaseRoleFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetTargetDatabaseRoleFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -18398,13 +22988,34 @@ class GetTargetDatabaseRoleRoleResult(dict):
                  is_oracle_maintained: bool,
                  is_password_required: bool,
                  role_name: str):
-        pulumi.set(__self__, "authentication_type", authentication_type)
-        pulumi.set(__self__, "is_common", is_common)
-        pulumi.set(__self__, "is_implicit", is_implicit)
-        pulumi.set(__self__, "is_inherited", is_inherited)
-        pulumi.set(__self__, "is_oracle_maintained", is_oracle_maintained)
-        pulumi.set(__self__, "is_password_required", is_password_required)
-        pulumi.set(__self__, "role_name", role_name)
+        GetTargetDatabaseRoleRoleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authentication_type=authentication_type,
+            is_common=is_common,
+            is_implicit=is_implicit,
+            is_inherited=is_inherited,
+            is_oracle_maintained=is_oracle_maintained,
+            is_password_required=is_password_required,
+            role_name=role_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authentication_type: str,
+             is_common: bool,
+             is_implicit: bool,
+             is_inherited: bool,
+             is_oracle_maintained: bool,
+             is_password_required: bool,
+             role_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("authentication_type", authentication_type)
+        _setter("is_common", is_common)
+        _setter("is_implicit", is_implicit)
+        _setter("is_inherited", is_inherited)
+        _setter("is_oracle_maintained", is_oracle_maintained)
+        _setter("is_password_required", is_password_required)
+        _setter("role_name", role_name)
 
     @property
     @pulumi.getter(name="authenticationType")
@@ -18448,10 +23059,23 @@ class GetTargetDatabaseRolesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetTargetDatabaseRolesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -18488,13 +23112,34 @@ class GetTargetDatabaseRolesRoleResult(dict):
         :param bool is_password_required: Is password required.
         :param str role_name: A filter to return only a specific role based on role name.
         """
-        pulumi.set(__self__, "authentication_type", authentication_type)
-        pulumi.set(__self__, "is_common", is_common)
-        pulumi.set(__self__, "is_implicit", is_implicit)
-        pulumi.set(__self__, "is_inherited", is_inherited)
-        pulumi.set(__self__, "is_oracle_maintained", is_oracle_maintained)
-        pulumi.set(__self__, "is_password_required", is_password_required)
-        pulumi.set(__self__, "role_name", role_name)
+        GetTargetDatabaseRolesRoleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authentication_type=authentication_type,
+            is_common=is_common,
+            is_implicit=is_implicit,
+            is_inherited=is_inherited,
+            is_oracle_maintained=is_oracle_maintained,
+            is_password_required=is_password_required,
+            role_name=role_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authentication_type: str,
+             is_common: bool,
+             is_implicit: bool,
+             is_inherited: bool,
+             is_oracle_maintained: bool,
+             is_password_required: bool,
+             role_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("authentication_type", authentication_type)
+        _setter("is_common", is_common)
+        _setter("is_implicit", is_implicit)
+        _setter("is_inherited", is_inherited)
+        _setter("is_oracle_maintained", is_oracle_maintained)
+        _setter("is_password_required", is_password_required)
+        _setter("role_name", role_name)
 
     @property
     @pulumi.getter(name="authenticationType")
@@ -18568,11 +23213,28 @@ class GetTargetDatabaseTlsConfigResult(dict):
         :param str store_password: The password to read the trust store and key store files, if they are password protected.
         :param str trust_store_content: Base64 encoded string of trust store file content.
         """
-        pulumi.set(__self__, "certificate_store_type", certificate_store_type)
-        pulumi.set(__self__, "key_store_content", key_store_content)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "store_password", store_password)
-        pulumi.set(__self__, "trust_store_content", trust_store_content)
+        GetTargetDatabaseTlsConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_store_type=certificate_store_type,
+            key_store_content=key_store_content,
+            status=status,
+            store_password=store_password,
+            trust_store_content=trust_store_content,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_store_type: str,
+             key_store_content: str,
+             status: str,
+             store_password: str,
+             trust_store_content: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_store_type", certificate_store_type)
+        _setter("key_store_content", key_store_content)
+        _setter("status", status)
+        _setter("store_password", store_password)
+        _setter("trust_store_content", trust_store_content)
 
     @property
     @pulumi.getter(name="certificateStoreType")
@@ -18636,14 +23298,37 @@ class GetTargetDatabasesColumnsColumnResult(dict):
         :param str schema_name: A filter to return only items related to specific schema name.
         :param str table_name: A filter to return only items related to specific table name.
         """
-        pulumi.set(__self__, "character_length", character_length)
-        pulumi.set(__self__, "column_name", column_name)
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "length", length)
-        pulumi.set(__self__, "precision", precision)
-        pulumi.set(__self__, "scale", scale)
-        pulumi.set(__self__, "schema_name", schema_name)
-        pulumi.set(__self__, "table_name", table_name)
+        GetTargetDatabasesColumnsColumnResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            character_length=character_length,
+            column_name=column_name,
+            data_type=data_type,
+            length=length,
+            precision=precision,
+            scale=scale,
+            schema_name=schema_name,
+            table_name=table_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             character_length: int,
+             column_name: str,
+             data_type: str,
+             length: str,
+             precision: int,
+             scale: int,
+             schema_name: str,
+             table_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("character_length", character_length)
+        _setter("column_name", column_name)
+        _setter("data_type", data_type)
+        _setter("length", length)
+        _setter("precision", precision)
+        _setter("scale", scale)
+        _setter("schema_name", schema_name)
+        _setter("table_name", table_name)
 
     @property
     @pulumi.getter(name="characterLength")
@@ -18716,10 +23401,23 @@ class GetTargetDatabasesColumnsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetTargetDatabasesColumnsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -18743,10 +23441,23 @@ class GetTargetDatabasesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetTargetDatabasesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -18770,10 +23481,23 @@ class GetTargetDatabasesSchemasFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetTargetDatabasesSchemasFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -18800,8 +23524,19 @@ class GetTargetDatabasesSchemasSchemaResult(dict):
         :param bool is_oracle_maintained: A filter to return only items related to specific type of schema.
         :param str schema_name: A filter to return only items related to specific schema name.
         """
-        pulumi.set(__self__, "is_oracle_maintained", is_oracle_maintained)
-        pulumi.set(__self__, "schema_name", schema_name)
+        GetTargetDatabasesSchemasSchemaResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_oracle_maintained=is_oracle_maintained,
+            schema_name=schema_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_oracle_maintained: bool,
+             schema_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_oracle_maintained", is_oracle_maintained)
+        _setter("schema_name", schema_name)
 
     @property
     @pulumi.getter(name="isOracleMaintained")
@@ -18826,10 +23561,23 @@ class GetTargetDatabasesTablesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetTargetDatabasesTablesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -18856,8 +23604,19 @@ class GetTargetDatabasesTablesTableResult(dict):
         :param str schema_name: A filter to return only items related to specific schema name.
         :param str table_name: A filter to return only items related to specific table name.
         """
-        pulumi.set(__self__, "schema_name", schema_name)
-        pulumi.set(__self__, "table_name", table_name)
+        GetTargetDatabasesTablesTableResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            schema_name=schema_name,
+            table_name=table_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             schema_name: str,
+             table_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("schema_name", schema_name)
+        _setter("table_name", table_name)
 
     @property
     @pulumi.getter(name="schemaName")
@@ -18913,22 +23672,61 @@ class GetTargetDatabasesTargetDatabaseResult(dict):
         :param str time_updated: The date and time of the target database update in Data Safe.
         :param Sequence['GetTargetDatabasesTargetDatabaseTlsConfigArgs'] tls_configs: The details required to establish a TLS enabled connection.
         """
-        pulumi.set(__self__, "associated_resource_ids", associated_resource_ids)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connection_options", connection_options)
-        pulumi.set(__self__, "credentials", credentials)
-        pulumi.set(__self__, "database_details", database_details)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "tls_configs", tls_configs)
+        GetTargetDatabasesTargetDatabaseResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            associated_resource_ids=associated_resource_ids,
+            compartment_id=compartment_id,
+            connection_options=connection_options,
+            credentials=credentials,
+            database_details=database_details,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            tls_configs=tls_configs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             associated_resource_ids: Sequence[str],
+             compartment_id: str,
+             connection_options: Sequence['outputs.GetTargetDatabasesTargetDatabaseConnectionOptionResult'],
+             credentials: Sequence['outputs.GetTargetDatabasesTargetDatabaseCredentialResult'],
+             database_details: Sequence['outputs.GetTargetDatabasesTargetDatabaseDatabaseDetailResult'],
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             tls_configs: Sequence['outputs.GetTargetDatabasesTargetDatabaseTlsConfigResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("associated_resource_ids", associated_resource_ids)
+        _setter("compartment_id", compartment_id)
+        _setter("connection_options", connection_options)
+        _setter("credentials", credentials)
+        _setter("database_details", database_details)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("tls_configs", tls_configs)
 
     @property
     @pulumi.getter(name="associatedResourceIds")
@@ -19072,9 +23870,22 @@ class GetTargetDatabasesTargetDatabaseConnectionOptionResult(dict):
         :param str datasafe_private_endpoint_id: The OCID of the Data Safe private endpoint.
         :param str on_prem_connector_id: The OCID of the on-premises connector.
         """
-        pulumi.set(__self__, "connection_type", connection_type)
-        pulumi.set(__self__, "datasafe_private_endpoint_id", datasafe_private_endpoint_id)
-        pulumi.set(__self__, "on_prem_connector_id", on_prem_connector_id)
+        GetTargetDatabasesTargetDatabaseConnectionOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            connection_type=connection_type,
+            datasafe_private_endpoint_id=datasafe_private_endpoint_id,
+            on_prem_connector_id=on_prem_connector_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             connection_type: str,
+             datasafe_private_endpoint_id: str,
+             on_prem_connector_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("connection_type", connection_type)
+        _setter("datasafe_private_endpoint_id", datasafe_private_endpoint_id)
+        _setter("on_prem_connector_id", on_prem_connector_id)
 
     @property
     @pulumi.getter(name="connectionType")
@@ -19112,8 +23923,19 @@ class GetTargetDatabasesTargetDatabaseCredentialResult(dict):
         :param str password: The password of the database user.
         :param str user_name: The database user name.
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "user_name", user_name)
+        GetTargetDatabasesTargetDatabaseCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            user_name=user_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: str,
+             user_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("user_name", user_name)
 
     @property
     @pulumi.getter
@@ -19155,15 +23977,40 @@ class GetTargetDatabasesTargetDatabaseDatabaseDetailResult(dict):
         :param str service_name: The service name of the database registered as target database.
         :param str vm_cluster_id: The OCID of the VM cluster in which the database is running.
         """
-        pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
-        pulumi.set(__self__, "database_type", database_type)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "infrastructure_type", infrastructure_type)
-        pulumi.set(__self__, "instance_id", instance_id)
-        pulumi.set(__self__, "ip_addresses", ip_addresses)
-        pulumi.set(__self__, "listener_port", listener_port)
-        pulumi.set(__self__, "service_name", service_name)
-        pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+        GetTargetDatabasesTargetDatabaseDatabaseDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            autonomous_database_id=autonomous_database_id,
+            database_type=database_type,
+            db_system_id=db_system_id,
+            infrastructure_type=infrastructure_type,
+            instance_id=instance_id,
+            ip_addresses=ip_addresses,
+            listener_port=listener_port,
+            service_name=service_name,
+            vm_cluster_id=vm_cluster_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             autonomous_database_id: str,
+             database_type: str,
+             db_system_id: str,
+             infrastructure_type: str,
+             instance_id: str,
+             ip_addresses: Sequence[str],
+             listener_port: int,
+             service_name: str,
+             vm_cluster_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("autonomous_database_id", autonomous_database_id)
+        _setter("database_type", database_type)
+        _setter("db_system_id", db_system_id)
+        _setter("infrastructure_type", infrastructure_type)
+        _setter("instance_id", instance_id)
+        _setter("ip_addresses", ip_addresses)
+        _setter("listener_port", listener_port)
+        _setter("service_name", service_name)
+        _setter("vm_cluster_id", vm_cluster_id)
 
     @property
     @pulumi.getter(name="autonomousDatabaseId")
@@ -19253,11 +24100,28 @@ class GetTargetDatabasesTargetDatabaseTlsConfigResult(dict):
         :param str store_password: The password to read the trust store and key store files, if they are password protected.
         :param str trust_store_content: Base64 encoded string of trust store file content.
         """
-        pulumi.set(__self__, "certificate_store_type", certificate_store_type)
-        pulumi.set(__self__, "key_store_content", key_store_content)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "store_password", store_password)
-        pulumi.set(__self__, "trust_store_content", trust_store_content)
+        GetTargetDatabasesTargetDatabaseTlsConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_store_type=certificate_store_type,
+            key_store_content=key_store_content,
+            status=status,
+            store_password=store_password,
+            trust_store_content=trust_store_content,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_store_type: str,
+             key_store_content: str,
+             status: str,
+             store_password: str,
+             trust_store_content: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_store_type", certificate_store_type)
+        _setter("key_store_content", key_store_content)
+        _setter("status", status)
+        _setter("store_password", store_password)
+        _setter("trust_store_content", trust_store_content)
 
     @property
     @pulumi.getter(name="certificateStoreType")
@@ -19306,9 +24170,22 @@ class GetUserAssessmentComparisonSummaryResult(dict):
                  baselines: Sequence['outputs.GetUserAssessmentComparisonSummaryBaselineResult'],
                  currents: Sequence['outputs.GetUserAssessmentComparisonSummaryCurrentResult'],
                  status: str):
-        pulumi.set(__self__, "baselines", baselines)
-        pulumi.set(__self__, "currents", currents)
-        pulumi.set(__self__, "status", status)
+        GetUserAssessmentComparisonSummaryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            baselines=baselines,
+            currents=currents,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             baselines: Sequence['outputs.GetUserAssessmentComparisonSummaryBaselineResult'],
+             currents: Sequence['outputs.GetUserAssessmentComparisonSummaryCurrentResult'],
+             status: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("baselines", baselines)
+        _setter("currents", currents)
+        _setter("status", status)
 
     @property
     @pulumi.getter
@@ -19334,8 +24211,19 @@ class GetUserAssessmentComparisonSummaryBaselineResult(dict):
         """
         :param str user_assessment_id: The OCID of the user assessment.
         """
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "user_assessment_id", user_assessment_id)
+        GetUserAssessmentComparisonSummaryBaselineResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            target_id=target_id,
+            user_assessment_id=user_assessment_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             target_id: str,
+             user_assessment_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("target_id", target_id)
+        _setter("user_assessment_id", user_assessment_id)
 
     @property
     @pulumi.getter(name="targetId")
@@ -19359,8 +24247,19 @@ class GetUserAssessmentComparisonSummaryCurrentResult(dict):
         """
         :param str user_assessment_id: The OCID of the user assessment.
         """
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "user_assessment_id", user_assessment_id)
+        GetUserAssessmentComparisonSummaryCurrentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            target_id=target_id,
+            user_assessment_id=user_assessment_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             target_id: str,
+             user_assessment_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("target_id", target_id)
+        _setter("user_assessment_id", user_assessment_id)
 
     @property
     @pulumi.getter(name="targetId")
@@ -19385,9 +24284,22 @@ class GetUserAssessmentIgnoredTargetResult(dict):
         """
         :param str user_assessment_id: The OCID of the user assessment.
         """
-        pulumi.set(__self__, "lifecycle_state", lifecycle_state)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "user_assessment_id", user_assessment_id)
+        GetUserAssessmentIgnoredTargetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            lifecycle_state=lifecycle_state,
+            target_id=target_id,
+            user_assessment_id=user_assessment_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             lifecycle_state: str,
+             target_id: str,
+             user_assessment_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("lifecycle_state", lifecycle_state)
+        _setter("target_id", target_id)
+        _setter("user_assessment_id", user_assessment_id)
 
     @property
     @pulumi.getter(name="lifecycleState")
@@ -19414,10 +24326,23 @@ class GetUserAssessmentProfileAnalyticsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetUserAssessmentProfileAnalyticsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -19446,9 +24371,22 @@ class GetUserAssessmentProfileAnalyticsProfileAggregationResult(dict):
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param Sequence[Any] items: The array of profile aggregation data.
         """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "items", items)
+        GetUserAssessmentProfileAnalyticsProfileAggregationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             items: Sequence[Any],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("items", items)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -19481,10 +24419,23 @@ class GetUserAssessmentProfilesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetUserAssessmentProfilesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -19561,33 +24512,94 @@ class GetUserAssessmentProfilesProfileResult(dict):
         :param str user_assessment_id: The OCID of the user assessment.
         :param int user_count: The number of users having a given profile.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "composite_limit", composite_limit)
-        pulumi.set(__self__, "connect_time", connect_time)
-        pulumi.set(__self__, "cpu_per_call", cpu_per_call)
-        pulumi.set(__self__, "cpu_per_session", cpu_per_session)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "failed_login_attempts", failed_login_attempts)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "idle_time", idle_time)
-        pulumi.set(__self__, "inactive_account_time", inactive_account_time)
-        pulumi.set(__self__, "is_user_created", is_user_created)
-        pulumi.set(__self__, "logical_reads_per_call", logical_reads_per_call)
-        pulumi.set(__self__, "logical_reads_per_session", logical_reads_per_session)
-        pulumi.set(__self__, "password_grace_time", password_grace_time)
-        pulumi.set(__self__, "password_life_time", password_life_time)
-        pulumi.set(__self__, "password_lock_time", password_lock_time)
-        pulumi.set(__self__, "password_reuse_max", password_reuse_max)
-        pulumi.set(__self__, "password_reuse_time", password_reuse_time)
-        pulumi.set(__self__, "password_rollover_time", password_rollover_time)
-        pulumi.set(__self__, "password_verification_function", password_verification_function)
-        pulumi.set(__self__, "password_verification_function_details", password_verification_function_details)
-        pulumi.set(__self__, "private_sga", private_sga)
-        pulumi.set(__self__, "profile_name", profile_name)
-        pulumi.set(__self__, "sessions_per_user", sessions_per_user)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "user_assessment_id", user_assessment_id)
-        pulumi.set(__self__, "user_count", user_count)
+        GetUserAssessmentProfilesProfileResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            composite_limit=composite_limit,
+            connect_time=connect_time,
+            cpu_per_call=cpu_per_call,
+            cpu_per_session=cpu_per_session,
+            defined_tags=defined_tags,
+            failed_login_attempts=failed_login_attempts,
+            freeform_tags=freeform_tags,
+            idle_time=idle_time,
+            inactive_account_time=inactive_account_time,
+            is_user_created=is_user_created,
+            logical_reads_per_call=logical_reads_per_call,
+            logical_reads_per_session=logical_reads_per_session,
+            password_grace_time=password_grace_time,
+            password_life_time=password_life_time,
+            password_lock_time=password_lock_time,
+            password_reuse_max=password_reuse_max,
+            password_reuse_time=password_reuse_time,
+            password_rollover_time=password_rollover_time,
+            password_verification_function=password_verification_function,
+            password_verification_function_details=password_verification_function_details,
+            private_sga=private_sga,
+            profile_name=profile_name,
+            sessions_per_user=sessions_per_user,
+            target_id=target_id,
+            user_assessment_id=user_assessment_id,
+            user_count=user_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             composite_limit: str,
+             connect_time: str,
+             cpu_per_call: str,
+             cpu_per_session: str,
+             defined_tags: Mapping[str, Any],
+             failed_login_attempts: str,
+             freeform_tags: Mapping[str, Any],
+             idle_time: str,
+             inactive_account_time: str,
+             is_user_created: bool,
+             logical_reads_per_call: str,
+             logical_reads_per_session: str,
+             password_grace_time: str,
+             password_life_time: str,
+             password_lock_time: str,
+             password_reuse_max: str,
+             password_reuse_time: str,
+             password_rollover_time: str,
+             password_verification_function: str,
+             password_verification_function_details: str,
+             private_sga: str,
+             profile_name: str,
+             sessions_per_user: str,
+             target_id: str,
+             user_assessment_id: str,
+             user_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("composite_limit", composite_limit)
+        _setter("connect_time", connect_time)
+        _setter("cpu_per_call", cpu_per_call)
+        _setter("cpu_per_session", cpu_per_session)
+        _setter("defined_tags", defined_tags)
+        _setter("failed_login_attempts", failed_login_attempts)
+        _setter("freeform_tags", freeform_tags)
+        _setter("idle_time", idle_time)
+        _setter("inactive_account_time", inactive_account_time)
+        _setter("is_user_created", is_user_created)
+        _setter("logical_reads_per_call", logical_reads_per_call)
+        _setter("logical_reads_per_session", logical_reads_per_session)
+        _setter("password_grace_time", password_grace_time)
+        _setter("password_life_time", password_life_time)
+        _setter("password_lock_time", password_lock_time)
+        _setter("password_reuse_max", password_reuse_max)
+        _setter("password_reuse_time", password_reuse_time)
+        _setter("password_rollover_time", password_rollover_time)
+        _setter("password_verification_function", password_verification_function)
+        _setter("password_verification_function_details", password_verification_function_details)
+        _setter("private_sga", private_sga)
+        _setter("profile_name", profile_name)
+        _setter("sessions_per_user", sessions_per_user)
+        _setter("target_id", target_id)
+        _setter("user_assessment_id", user_assessment_id)
+        _setter("user_count", user_count)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -19812,10 +24824,23 @@ class GetUserAssessmentUserAnalyticsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetUserAssessmentUserAnalyticsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -19840,7 +24865,16 @@ class GetUserAssessmentUserAnalyticsUserAggregationResult(dict):
         """
         :param Sequence['GetUserAssessmentUserAnalyticsUserAggregationItemArgs'] items: The array of user aggregation data.
         """
-        pulumi.set(__self__, "items", items)
+        GetUserAssessmentUserAnalyticsUserAggregationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetUserAssessmentUserAnalyticsUserAggregationItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -19855,6 +24889,11 @@ class GetUserAssessmentUserAnalyticsUserAggregationResult(dict):
 class GetUserAssessmentUserAnalyticsUserAggregationItemResult(dict):
     def __init__(__self__):
         pass
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        pass
 
 
 @pulumi.output_type
@@ -19863,10 +24902,23 @@ class GetUserAssessmentUsersFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetUserAssessmentUsersFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -19913,18 +24965,49 @@ class GetUserAssessmentUsersUserResult(dict):
         :param str user_profile: A filter to return only items that match the specified user profile.
         :param Sequence[str] user_types: The user type, which can be a combination of the following:
         """
-        pulumi.set(__self__, "account_status", account_status)
-        pulumi.set(__self__, "admin_roles", admin_roles)
-        pulumi.set(__self__, "authentication_type", authentication_type)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "time_last_login", time_last_login)
-        pulumi.set(__self__, "time_password_changed", time_password_changed)
-        pulumi.set(__self__, "time_user_created", time_user_created)
-        pulumi.set(__self__, "user_category", user_category)
-        pulumi.set(__self__, "user_name", user_name)
-        pulumi.set(__self__, "user_profile", user_profile)
-        pulumi.set(__self__, "user_types", user_types)
+        GetUserAssessmentUsersUserResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            account_status=account_status,
+            admin_roles=admin_roles,
+            authentication_type=authentication_type,
+            key=key,
+            target_id=target_id,
+            time_last_login=time_last_login,
+            time_password_changed=time_password_changed,
+            time_user_created=time_user_created,
+            user_category=user_category,
+            user_name=user_name,
+            user_profile=user_profile,
+            user_types=user_types,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             account_status: str,
+             admin_roles: Sequence[str],
+             authentication_type: str,
+             key: str,
+             target_id: str,
+             time_last_login: str,
+             time_password_changed: str,
+             time_user_created: str,
+             user_category: str,
+             user_name: str,
+             user_profile: str,
+             user_types: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("account_status", account_status)
+        _setter("admin_roles", admin_roles)
+        _setter("authentication_type", authentication_type)
+        _setter("key", key)
+        _setter("target_id", target_id)
+        _setter("time_last_login", time_last_login)
+        _setter("time_password_changed", time_password_changed)
+        _setter("time_user_created", time_user_created)
+        _setter("user_category", user_category)
+        _setter("user_name", user_name)
+        _setter("user_profile", user_profile)
+        _setter("user_types", user_types)
 
     @property
     @pulumi.getter(name="accountStatus")
@@ -20029,10 +25112,23 @@ class GetUserAssessmentsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetUserAssessmentsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -20059,9 +25155,22 @@ class GetUserAssessmentsIgnoredTargetResult(dict):
         """
         :param str target_id: A filter to return only items related to a specific target OCID.
         """
-        pulumi.set(__self__, "lifecycle_state", lifecycle_state)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "user_assessment_id", user_assessment_id)
+        GetUserAssessmentsIgnoredTargetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            lifecycle_state=lifecycle_state,
+            target_id=target_id,
+            user_assessment_id=user_assessment_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             lifecycle_state: str,
+             target_id: str,
+             user_assessment_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("lifecycle_state", lifecycle_state)
+        _setter("target_id", target_id)
+        _setter("user_assessment_id", user_assessment_id)
 
     @property
     @pulumi.getter(name="lifecycleState")
@@ -20135,30 +25244,85 @@ class GetUserAssessmentsUserAssessmentResult(dict):
         :param str triggered_by: A filter to return user assessments that were created by either the system or by a user only.
         :param str type: A filter to return only items that match the specified assessment type.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ignored_assessment_ids", ignored_assessment_ids)
-        pulumi.set(__self__, "ignored_targets", ignored_targets)
-        pulumi.set(__self__, "is_baseline", is_baseline)
-        pulumi.set(__self__, "is_deviated_from_baseline", is_deviated_from_baseline)
-        pulumi.set(__self__, "last_compared_baseline_id", last_compared_baseline_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "schedule", schedule)
-        pulumi.set(__self__, "schedule_assessment_id", schedule_assessment_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "statistics", statistics)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "target_ids", target_ids)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_assessed", time_last_assessed)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "triggered_by", triggered_by)
-        pulumi.set(__self__, "type", type)
+        GetUserAssessmentsUserAssessmentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            ignored_assessment_ids=ignored_assessment_ids,
+            ignored_targets=ignored_targets,
+            is_baseline=is_baseline,
+            is_deviated_from_baseline=is_deviated_from_baseline,
+            last_compared_baseline_id=last_compared_baseline_id,
+            lifecycle_details=lifecycle_details,
+            schedule=schedule,
+            schedule_assessment_id=schedule_assessment_id,
+            state=state,
+            statistics=statistics,
+            system_tags=system_tags,
+            target_id=target_id,
+            target_ids=target_ids,
+            time_created=time_created,
+            time_last_assessed=time_last_assessed,
+            time_updated=time_updated,
+            triggered_by=triggered_by,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             ignored_assessment_ids: Sequence[str],
+             ignored_targets: Sequence['outputs.GetUserAssessmentsUserAssessmentIgnoredTargetResult'],
+             is_baseline: bool,
+             is_deviated_from_baseline: bool,
+             last_compared_baseline_id: str,
+             lifecycle_details: str,
+             schedule: str,
+             schedule_assessment_id: str,
+             state: str,
+             statistics: str,
+             system_tags: Mapping[str, Any],
+             target_id: str,
+             target_ids: Sequence[str],
+             time_created: str,
+             time_last_assessed: str,
+             time_updated: str,
+             triggered_by: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("ignored_assessment_ids", ignored_assessment_ids)
+        _setter("ignored_targets", ignored_targets)
+        _setter("is_baseline", is_baseline)
+        _setter("is_deviated_from_baseline", is_deviated_from_baseline)
+        _setter("last_compared_baseline_id", last_compared_baseline_id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("schedule", schedule)
+        _setter("schedule_assessment_id", schedule_assessment_id)
+        _setter("state", state)
+        _setter("statistics", statistics)
+        _setter("system_tags", system_tags)
+        _setter("target_id", target_id)
+        _setter("target_ids", target_ids)
+        _setter("time_created", time_created)
+        _setter("time_last_assessed", time_last_assessed)
+        _setter("time_updated", time_updated)
+        _setter("triggered_by", triggered_by)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -20362,9 +25526,22 @@ class GetUserAssessmentsUserAssessmentIgnoredTargetResult(dict):
         """
         :param str target_id: A filter to return only items related to a specific target OCID.
         """
-        pulumi.set(__self__, "lifecycle_state", lifecycle_state)
-        pulumi.set(__self__, "target_id", target_id)
-        pulumi.set(__self__, "user_assessment_id", user_assessment_id)
+        GetUserAssessmentsUserAssessmentIgnoredTargetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            lifecycle_state=lifecycle_state,
+            target_id=target_id,
+            user_assessment_id=user_assessment_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             lifecycle_state: str,
+             target_id: str,
+             user_assessment_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("lifecycle_state", lifecycle_state)
+        _setter("target_id", target_id)
+        _setter("user_assessment_id", user_assessment_id)
 
     @property
     @pulumi.getter(name="lifecycleState")

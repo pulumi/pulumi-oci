@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -25,10 +25,23 @@ class GetOrganizationSubscriptionsFilterResult(dict):
         """
         :param str name: Currency name
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOrganizationSubscriptionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -70,14 +83,37 @@ class GetOrganizationSubscriptionsSubscriptionResult(dict):
         :param str total_value: Total aggregate TCLV of all lines for the subscription including expired, active, and signed
         :param str type: Subscription Type i.e. IAAS,SAAS,PAAS
         """
-        pulumi.set(__self__, "currencies", currencies)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "service_name", service_name)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
-        pulumi.set(__self__, "total_value", total_value)
-        pulumi.set(__self__, "type", type)
+        GetOrganizationSubscriptionsSubscriptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            currencies=currencies,
+            id=id,
+            service_name=service_name,
+            status=status,
+            time_end=time_end,
+            time_start=time_start,
+            total_value=total_value,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             currencies: Sequence['outputs.GetOrganizationSubscriptionsSubscriptionCurrencyResult'],
+             id: str,
+             service_name: str,
+             status: str,
+             time_end: str,
+             time_start: str,
+             total_value: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("currencies", currencies)
+        _setter("id", id)
+        _setter("service_name", service_name)
+        _setter("status", status)
+        _setter("time_end", time_end)
+        _setter("time_start", time_start)
+        _setter("total_value", total_value)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -155,9 +191,22 @@ class GetOrganizationSubscriptionsSubscriptionCurrencyResult(dict):
         :param str name: Currency name
         :param str std_precision: Standard Precision of the Currency
         """
-        pulumi.set(__self__, "iso_code", iso_code)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "std_precision", std_precision)
+        GetOrganizationSubscriptionsSubscriptionCurrencyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            iso_code=iso_code,
+            name=name,
+            std_precision=std_precision,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             iso_code: str,
+             name: str,
+             std_precision: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("iso_code", iso_code)
+        _setter("name", name)
+        _setter("std_precision", std_precision)
 
     @property
     @pulumi.getter(name="isoCode")

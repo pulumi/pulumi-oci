@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Kms.Outputs
         /// </summary>
         public readonly string Region;
         /// <summary>
-        /// The vault replica's status
+        /// Status of the Vault
         /// </summary>
         public readonly string Status;
 

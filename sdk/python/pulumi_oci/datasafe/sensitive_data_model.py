@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['SensitiveDataModelArgs', 'SensitiveDataModel']
@@ -47,30 +47,63 @@ class SensitiveDataModelArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas_for_discoveries: (Updatable) The schemas to be scanned by data discovery jobs.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids_for_discoveries: (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "target_id", target_id)
+        SensitiveDataModelArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            target_id=target_id,
+            app_suite_name=app_suite_name,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            is_app_defined_relation_discovery_enabled=is_app_defined_relation_discovery_enabled,
+            is_include_all_schemas=is_include_all_schemas,
+            is_include_all_sensitive_types=is_include_all_sensitive_types,
+            is_sample_data_collection_enabled=is_sample_data_collection_enabled,
+            schemas_for_discoveries=schemas_for_discoveries,
+            sensitive_type_ids_for_discoveries=sensitive_type_ids_for_discoveries,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             target_id: pulumi.Input[str],
+             app_suite_name: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_app_defined_relation_discovery_enabled: Optional[pulumi.Input[bool]] = None,
+             is_include_all_schemas: Optional[pulumi.Input[bool]] = None,
+             is_include_all_sensitive_types: Optional[pulumi.Input[bool]] = None,
+             is_sample_data_collection_enabled: Optional[pulumi.Input[bool]] = None,
+             schemas_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("target_id", target_id)
         if app_suite_name is not None:
-            pulumi.set(__self__, "app_suite_name", app_suite_name)
+            _setter("app_suite_name", app_suite_name)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_app_defined_relation_discovery_enabled is not None:
-            pulumi.set(__self__, "is_app_defined_relation_discovery_enabled", is_app_defined_relation_discovery_enabled)
+            _setter("is_app_defined_relation_discovery_enabled", is_app_defined_relation_discovery_enabled)
         if is_include_all_schemas is not None:
-            pulumi.set(__self__, "is_include_all_schemas", is_include_all_schemas)
+            _setter("is_include_all_schemas", is_include_all_schemas)
         if is_include_all_sensitive_types is not None:
-            pulumi.set(__self__, "is_include_all_sensitive_types", is_include_all_sensitive_types)
+            _setter("is_include_all_sensitive_types", is_include_all_sensitive_types)
         if is_sample_data_collection_enabled is not None:
-            pulumi.set(__self__, "is_sample_data_collection_enabled", is_sample_data_collection_enabled)
+            _setter("is_sample_data_collection_enabled", is_sample_data_collection_enabled)
         if schemas_for_discoveries is not None:
-            pulumi.set(__self__, "schemas_for_discoveries", schemas_for_discoveries)
+            _setter("schemas_for_discoveries", schemas_for_discoveries)
         if sensitive_type_ids_for_discoveries is not None:
-            pulumi.set(__self__, "sensitive_type_ids_for_discoveries", sensitive_type_ids_for_discoveries)
+            _setter("sensitive_type_ids_for_discoveries", sensitive_type_ids_for_discoveries)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -277,40 +310,81 @@ class _SensitiveDataModelState:
         :param pulumi.Input[str] time_created: The date and time the sensitive data model was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated: The date and time the sensitive data model was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
+        _SensitiveDataModelState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            app_suite_name=app_suite_name,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            is_app_defined_relation_discovery_enabled=is_app_defined_relation_discovery_enabled,
+            is_include_all_schemas=is_include_all_schemas,
+            is_include_all_sensitive_types=is_include_all_sensitive_types,
+            is_sample_data_collection_enabled=is_sample_data_collection_enabled,
+            schemas_for_discoveries=schemas_for_discoveries,
+            sensitive_type_ids_for_discoveries=sensitive_type_ids_for_discoveries,
+            state=state,
+            system_tags=system_tags,
+            target_id=target_id,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             app_suite_name: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_app_defined_relation_discovery_enabled: Optional[pulumi.Input[bool]] = None,
+             is_include_all_schemas: Optional[pulumi.Input[bool]] = None,
+             is_include_all_sensitive_types: Optional[pulumi.Input[bool]] = None,
+             is_sample_data_collection_enabled: Optional[pulumi.Input[bool]] = None,
+             schemas_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             target_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if app_suite_name is not None:
-            pulumi.set(__self__, "app_suite_name", app_suite_name)
+            _setter("app_suite_name", app_suite_name)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_app_defined_relation_discovery_enabled is not None:
-            pulumi.set(__self__, "is_app_defined_relation_discovery_enabled", is_app_defined_relation_discovery_enabled)
+            _setter("is_app_defined_relation_discovery_enabled", is_app_defined_relation_discovery_enabled)
         if is_include_all_schemas is not None:
-            pulumi.set(__self__, "is_include_all_schemas", is_include_all_schemas)
+            _setter("is_include_all_schemas", is_include_all_schemas)
         if is_include_all_sensitive_types is not None:
-            pulumi.set(__self__, "is_include_all_sensitive_types", is_include_all_sensitive_types)
+            _setter("is_include_all_sensitive_types", is_include_all_sensitive_types)
         if is_sample_data_collection_enabled is not None:
-            pulumi.set(__self__, "is_sample_data_collection_enabled", is_sample_data_collection_enabled)
+            _setter("is_sample_data_collection_enabled", is_sample_data_collection_enabled)
         if schemas_for_discoveries is not None:
-            pulumi.set(__self__, "schemas_for_discoveries", schemas_for_discoveries)
+            _setter("schemas_for_discoveries", schemas_for_discoveries)
         if sensitive_type_ids_for_discoveries is not None:
-            pulumi.set(__self__, "sensitive_type_ids_for_discoveries", sensitive_type_ids_for_discoveries)
+            _setter("sensitive_type_ids_for_discoveries", sensitive_type_ids_for_discoveries)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if target_id is not None:
-            pulumi.set(__self__, "target_id", target_id)
+            _setter("target_id", target_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="appSuiteName")
@@ -658,6 +732,10 @@ class SensitiveDataModel(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            SensitiveDataModelArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

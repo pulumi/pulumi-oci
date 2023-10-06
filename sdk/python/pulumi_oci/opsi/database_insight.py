@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -60,42 +60,87 @@ class DatabaseInsightArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "entity_source", entity_source)
+        DatabaseInsightArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            entity_source=entity_source,
+            connection_credential_details=connection_credential_details,
+            connection_details=connection_details,
+            credential_details=credential_details,
+            database_connection_status_details=database_connection_status_details,
+            database_id=database_id,
+            database_resource_type=database_resource_type,
+            dbm_private_endpoint_id=dbm_private_endpoint_id,
+            defined_tags=defined_tags,
+            deployment_type=deployment_type,
+            enterprise_manager_bridge_id=enterprise_manager_bridge_id,
+            enterprise_manager_entity_identifier=enterprise_manager_entity_identifier,
+            enterprise_manager_identifier=enterprise_manager_identifier,
+            exadata_insight_id=exadata_insight_id,
+            freeform_tags=freeform_tags,
+            opsi_private_endpoint_id=opsi_private_endpoint_id,
+            service_name=service_name,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             entity_source: pulumi.Input[str],
+             connection_credential_details: Optional[pulumi.Input['DatabaseInsightConnectionCredentialDetailsArgs']] = None,
+             connection_details: Optional[pulumi.Input['DatabaseInsightConnectionDetailsArgs']] = None,
+             credential_details: Optional[pulumi.Input['DatabaseInsightCredentialDetailsArgs']] = None,
+             database_connection_status_details: Optional[pulumi.Input[str]] = None,
+             database_id: Optional[pulumi.Input[str]] = None,
+             database_resource_type: Optional[pulumi.Input[str]] = None,
+             dbm_private_endpoint_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             deployment_type: Optional[pulumi.Input[str]] = None,
+             enterprise_manager_bridge_id: Optional[pulumi.Input[str]] = None,
+             enterprise_manager_entity_identifier: Optional[pulumi.Input[str]] = None,
+             enterprise_manager_identifier: Optional[pulumi.Input[str]] = None,
+             exadata_insight_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opsi_private_endpoint_id: Optional[pulumi.Input[str]] = None,
+             service_name: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("entity_source", entity_source)
         if connection_credential_details is not None:
-            pulumi.set(__self__, "connection_credential_details", connection_credential_details)
+            _setter("connection_credential_details", connection_credential_details)
         if connection_details is not None:
-            pulumi.set(__self__, "connection_details", connection_details)
+            _setter("connection_details", connection_details)
         if credential_details is not None:
-            pulumi.set(__self__, "credential_details", credential_details)
+            _setter("credential_details", credential_details)
         if database_connection_status_details is not None:
-            pulumi.set(__self__, "database_connection_status_details", database_connection_status_details)
+            _setter("database_connection_status_details", database_connection_status_details)
         if database_id is not None:
-            pulumi.set(__self__, "database_id", database_id)
+            _setter("database_id", database_id)
         if database_resource_type is not None:
-            pulumi.set(__self__, "database_resource_type", database_resource_type)
+            _setter("database_resource_type", database_resource_type)
         if dbm_private_endpoint_id is not None:
-            pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
+            _setter("dbm_private_endpoint_id", dbm_private_endpoint_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if deployment_type is not None:
-            pulumi.set(__self__, "deployment_type", deployment_type)
+            _setter("deployment_type", deployment_type)
         if enterprise_manager_bridge_id is not None:
-            pulumi.set(__self__, "enterprise_manager_bridge_id", enterprise_manager_bridge_id)
+            _setter("enterprise_manager_bridge_id", enterprise_manager_bridge_id)
         if enterprise_manager_entity_identifier is not None:
-            pulumi.set(__self__, "enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
+            _setter("enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
         if enterprise_manager_identifier is not None:
-            pulumi.set(__self__, "enterprise_manager_identifier", enterprise_manager_identifier)
+            _setter("enterprise_manager_identifier", enterprise_manager_identifier)
         if exadata_insight_id is not None:
-            pulumi.set(__self__, "exadata_insight_id", exadata_insight_id)
+            _setter("exadata_insight_id", exadata_insight_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if opsi_private_endpoint_id is not None:
-            pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
+            _setter("opsi_private_endpoint_id", opsi_private_endpoint_id)
         if service_name is not None:
-            pulumi.set(__self__, "service_name", service_name)
+            _setter("service_name", service_name)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -406,74 +451,149 @@ class _DatabaseInsightState:
         :param pulumi.Input[str] time_created: The time the the database insight was first enabled. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the database insight was updated. An RFC3339 formatted datetime string
         """
+        _DatabaseInsightState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            connection_credential_details=connection_credential_details,
+            connection_details=connection_details,
+            credential_details=credential_details,
+            database_connection_status_details=database_connection_status_details,
+            database_display_name=database_display_name,
+            database_id=database_id,
+            database_name=database_name,
+            database_resource_type=database_resource_type,
+            database_type=database_type,
+            database_version=database_version,
+            dbm_private_endpoint_id=dbm_private_endpoint_id,
+            defined_tags=defined_tags,
+            deployment_type=deployment_type,
+            enterprise_manager_bridge_id=enterprise_manager_bridge_id,
+            enterprise_manager_entity_display_name=enterprise_manager_entity_display_name,
+            enterprise_manager_entity_identifier=enterprise_manager_entity_identifier,
+            enterprise_manager_entity_name=enterprise_manager_entity_name,
+            enterprise_manager_entity_type=enterprise_manager_entity_type,
+            enterprise_manager_identifier=enterprise_manager_identifier,
+            entity_source=entity_source,
+            exadata_insight_id=exadata_insight_id,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            opsi_private_endpoint_id=opsi_private_endpoint_id,
+            parent_id=parent_id,
+            processor_count=processor_count,
+            root_id=root_id,
+            service_name=service_name,
+            state=state,
+            status=status,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             connection_credential_details: Optional[pulumi.Input['DatabaseInsightConnectionCredentialDetailsArgs']] = None,
+             connection_details: Optional[pulumi.Input['DatabaseInsightConnectionDetailsArgs']] = None,
+             credential_details: Optional[pulumi.Input['DatabaseInsightCredentialDetailsArgs']] = None,
+             database_connection_status_details: Optional[pulumi.Input[str]] = None,
+             database_display_name: Optional[pulumi.Input[str]] = None,
+             database_id: Optional[pulumi.Input[str]] = None,
+             database_name: Optional[pulumi.Input[str]] = None,
+             database_resource_type: Optional[pulumi.Input[str]] = None,
+             database_type: Optional[pulumi.Input[str]] = None,
+             database_version: Optional[pulumi.Input[str]] = None,
+             dbm_private_endpoint_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             deployment_type: Optional[pulumi.Input[str]] = None,
+             enterprise_manager_bridge_id: Optional[pulumi.Input[str]] = None,
+             enterprise_manager_entity_display_name: Optional[pulumi.Input[str]] = None,
+             enterprise_manager_entity_identifier: Optional[pulumi.Input[str]] = None,
+             enterprise_manager_entity_name: Optional[pulumi.Input[str]] = None,
+             enterprise_manager_entity_type: Optional[pulumi.Input[str]] = None,
+             enterprise_manager_identifier: Optional[pulumi.Input[str]] = None,
+             entity_source: Optional[pulumi.Input[str]] = None,
+             exadata_insight_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             opsi_private_endpoint_id: Optional[pulumi.Input[str]] = None,
+             parent_id: Optional[pulumi.Input[str]] = None,
+             processor_count: Optional[pulumi.Input[int]] = None,
+             root_id: Optional[pulumi.Input[str]] = None,
+             service_name: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if connection_credential_details is not None:
-            pulumi.set(__self__, "connection_credential_details", connection_credential_details)
+            _setter("connection_credential_details", connection_credential_details)
         if connection_details is not None:
-            pulumi.set(__self__, "connection_details", connection_details)
+            _setter("connection_details", connection_details)
         if credential_details is not None:
-            pulumi.set(__self__, "credential_details", credential_details)
+            _setter("credential_details", credential_details)
         if database_connection_status_details is not None:
-            pulumi.set(__self__, "database_connection_status_details", database_connection_status_details)
+            _setter("database_connection_status_details", database_connection_status_details)
         if database_display_name is not None:
-            pulumi.set(__self__, "database_display_name", database_display_name)
+            _setter("database_display_name", database_display_name)
         if database_id is not None:
-            pulumi.set(__self__, "database_id", database_id)
+            _setter("database_id", database_id)
         if database_name is not None:
-            pulumi.set(__self__, "database_name", database_name)
+            _setter("database_name", database_name)
         if database_resource_type is not None:
-            pulumi.set(__self__, "database_resource_type", database_resource_type)
+            _setter("database_resource_type", database_resource_type)
         if database_type is not None:
-            pulumi.set(__self__, "database_type", database_type)
+            _setter("database_type", database_type)
         if database_version is not None:
-            pulumi.set(__self__, "database_version", database_version)
+            _setter("database_version", database_version)
         if dbm_private_endpoint_id is not None:
-            pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
+            _setter("dbm_private_endpoint_id", dbm_private_endpoint_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if deployment_type is not None:
-            pulumi.set(__self__, "deployment_type", deployment_type)
+            _setter("deployment_type", deployment_type)
         if enterprise_manager_bridge_id is not None:
-            pulumi.set(__self__, "enterprise_manager_bridge_id", enterprise_manager_bridge_id)
+            _setter("enterprise_manager_bridge_id", enterprise_manager_bridge_id)
         if enterprise_manager_entity_display_name is not None:
-            pulumi.set(__self__, "enterprise_manager_entity_display_name", enterprise_manager_entity_display_name)
+            _setter("enterprise_manager_entity_display_name", enterprise_manager_entity_display_name)
         if enterprise_manager_entity_identifier is not None:
-            pulumi.set(__self__, "enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
+            _setter("enterprise_manager_entity_identifier", enterprise_manager_entity_identifier)
         if enterprise_manager_entity_name is not None:
-            pulumi.set(__self__, "enterprise_manager_entity_name", enterprise_manager_entity_name)
+            _setter("enterprise_manager_entity_name", enterprise_manager_entity_name)
         if enterprise_manager_entity_type is not None:
-            pulumi.set(__self__, "enterprise_manager_entity_type", enterprise_manager_entity_type)
+            _setter("enterprise_manager_entity_type", enterprise_manager_entity_type)
         if enterprise_manager_identifier is not None:
-            pulumi.set(__self__, "enterprise_manager_identifier", enterprise_manager_identifier)
+            _setter("enterprise_manager_identifier", enterprise_manager_identifier)
         if entity_source is not None:
-            pulumi.set(__self__, "entity_source", entity_source)
+            _setter("entity_source", entity_source)
         if exadata_insight_id is not None:
-            pulumi.set(__self__, "exadata_insight_id", exadata_insight_id)
+            _setter("exadata_insight_id", exadata_insight_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if opsi_private_endpoint_id is not None:
-            pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
+            _setter("opsi_private_endpoint_id", opsi_private_endpoint_id)
         if parent_id is not None:
-            pulumi.set(__self__, "parent_id", parent_id)
+            _setter("parent_id", parent_id)
         if processor_count is not None:
-            pulumi.set(__self__, "processor_count", processor_count)
+            _setter("processor_count", processor_count)
         if root_id is not None:
-            pulumi.set(__self__, "root_id", root_id)
+            _setter("root_id", root_id)
         if service_name is not None:
-            pulumi.set(__self__, "service_name", service_name)
+            _setter("service_name", service_name)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -971,6 +1091,10 @@ class DatabaseInsight(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DatabaseInsightArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1007,8 +1131,23 @@ class DatabaseInsight(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            if connection_credential_details is not None and not isinstance(connection_credential_details, DatabaseInsightConnectionCredentialDetailsArgs):
+                connection_credential_details = connection_credential_details or {}
+                def _setter(key, value):
+                    connection_credential_details[key] = value
+                DatabaseInsightConnectionCredentialDetailsArgs._configure(_setter, **connection_credential_details)
             __props__.__dict__["connection_credential_details"] = connection_credential_details
+            if connection_details is not None and not isinstance(connection_details, DatabaseInsightConnectionDetailsArgs):
+                connection_details = connection_details or {}
+                def _setter(key, value):
+                    connection_details[key] = value
+                DatabaseInsightConnectionDetailsArgs._configure(_setter, **connection_details)
             __props__.__dict__["connection_details"] = connection_details
+            if credential_details is not None and not isinstance(credential_details, DatabaseInsightCredentialDetailsArgs):
+                credential_details = credential_details or {}
+                def _setter(key, value):
+                    credential_details[key] = value
+                DatabaseInsightCredentialDetailsArgs._configure(_setter, **credential_details)
             __props__.__dict__["credential_details"] = credential_details
             __props__.__dict__["database_connection_status_details"] = database_connection_status_details
             __props__.__dict__["database_id"] = database_id

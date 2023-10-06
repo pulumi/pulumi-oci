@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -39,14 +39,29 @@ class FusionEnvironmentAdminUserItemArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        FusionEnvironmentAdminUserItemArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            email_address=email_address,
+            first_name=first_name,
+            last_name=last_name,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             email_address: Optional[pulumi.Input[str]] = None,
+             first_name: Optional[pulumi.Input[str]] = None,
+             last_name: Optional[pulumi.Input[str]] = None,
+             username: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if email_address is not None:
-            pulumi.set(__self__, "email_address", email_address)
+            _setter("email_address", email_address)
         if first_name is not None:
-            pulumi.set(__self__, "first_name", first_name)
+            _setter("first_name", first_name)
         if last_name is not None:
-            pulumi.set(__self__, "last_name", last_name)
+            _setter("last_name", last_name)
         if username is not None:
-            pulumi.set(__self__, "username", username)
+            _setter("username", username)
 
     @property
     @pulumi.getter(name="emailAddress")
@@ -116,11 +131,28 @@ class FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs:
         :param pulumi.Input[str] password: The password for the administrator.
         :param pulumi.Input[str] username: The username for the administrator.
         """
-        pulumi.set(__self__, "email_address", email_address)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            email_address=email_address,
+            first_name=first_name,
+            last_name=last_name,
+            password=password,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             email_address: pulumi.Input[str],
+             first_name: pulumi.Input[str],
+             last_name: pulumi.Input[str],
+             password: pulumi.Input[str],
+             username: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("email_address", email_address)
+        _setter("first_name", first_name)
+        _setter("last_name", last_name)
+        _setter("password", password)
+        _setter("username", username)
 
     @property
     @pulumi.getter(name="emailAddress")
@@ -194,12 +226,25 @@ class FusionEnvironmentFamilyFamilyMaintenancePolicyArgs:
         :param pulumi.Input[bool] is_monthly_patching_enabled: (Updatable) When True, monthly patching is enabled for the environment family.
         :param pulumi.Input[str] quarterly_upgrade_begin_times: The quarterly maintenance month group schedule of the Fusion environment family.
         """
+        FusionEnvironmentFamilyFamilyMaintenancePolicyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            concurrent_maintenance=concurrent_maintenance,
+            is_monthly_patching_enabled=is_monthly_patching_enabled,
+            quarterly_upgrade_begin_times=quarterly_upgrade_begin_times,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             concurrent_maintenance: Optional[pulumi.Input[str]] = None,
+             is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
+             quarterly_upgrade_begin_times: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if concurrent_maintenance is not None:
-            pulumi.set(__self__, "concurrent_maintenance", concurrent_maintenance)
+            _setter("concurrent_maintenance", concurrent_maintenance)
         if is_monthly_patching_enabled is not None:
-            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+            _setter("is_monthly_patching_enabled", is_monthly_patching_enabled)
         if quarterly_upgrade_begin_times is not None:
-            pulumi.set(__self__, "quarterly_upgrade_begin_times", quarterly_upgrade_begin_times)
+            _setter("quarterly_upgrade_begin_times", quarterly_upgrade_begin_times)
 
     @property
     @pulumi.getter(name="concurrentMaintenance")
@@ -248,20 +293,41 @@ class FusionEnvironmentKmsKeyInfoArgs:
                  scheduled_key_status: Optional[pulumi.Input[str]] = None,
                  scheduled_key_version: Optional[pulumi.Input[str]] = None,
                  scheduled_lifecycle_state: Optional[pulumi.Input[str]] = None):
+        FusionEnvironmentKmsKeyInfoArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            active_key_id=active_key_id,
+            active_key_version=active_key_version,
+            current_key_lifecycle_state=current_key_lifecycle_state,
+            scheduled_key_id=scheduled_key_id,
+            scheduled_key_status=scheduled_key_status,
+            scheduled_key_version=scheduled_key_version,
+            scheduled_lifecycle_state=scheduled_lifecycle_state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             active_key_id: Optional[pulumi.Input[str]] = None,
+             active_key_version: Optional[pulumi.Input[str]] = None,
+             current_key_lifecycle_state: Optional[pulumi.Input[str]] = None,
+             scheduled_key_id: Optional[pulumi.Input[str]] = None,
+             scheduled_key_status: Optional[pulumi.Input[str]] = None,
+             scheduled_key_version: Optional[pulumi.Input[str]] = None,
+             scheduled_lifecycle_state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if active_key_id is not None:
-            pulumi.set(__self__, "active_key_id", active_key_id)
+            _setter("active_key_id", active_key_id)
         if active_key_version is not None:
-            pulumi.set(__self__, "active_key_version", active_key_version)
+            _setter("active_key_version", active_key_version)
         if current_key_lifecycle_state is not None:
-            pulumi.set(__self__, "current_key_lifecycle_state", current_key_lifecycle_state)
+            _setter("current_key_lifecycle_state", current_key_lifecycle_state)
         if scheduled_key_id is not None:
-            pulumi.set(__self__, "scheduled_key_id", scheduled_key_id)
+            _setter("scheduled_key_id", scheduled_key_id)
         if scheduled_key_status is not None:
-            pulumi.set(__self__, "scheduled_key_status", scheduled_key_status)
+            _setter("scheduled_key_status", scheduled_key_status)
         if scheduled_key_version is not None:
-            pulumi.set(__self__, "scheduled_key_version", scheduled_key_version)
+            _setter("scheduled_key_version", scheduled_key_version)
         if scheduled_lifecycle_state is not None:
-            pulumi.set(__self__, "scheduled_lifecycle_state", scheduled_lifecycle_state)
+            _setter("scheduled_lifecycle_state", scheduled_lifecycle_state)
 
     @property
     @pulumi.getter(name="activeKeyId")
@@ -338,12 +404,25 @@ class FusionEnvironmentMaintenancePolicyArgs:
         :param pulumi.Input[str] monthly_patching_override: (Updatable) When "ENABLED", the Fusion environment is patched monthly. When "DISABLED", the Fusion environment is not patched monthly. This setting overrides the environment family setting. When not set, the environment follows the environment family policy.
         :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs']]] quarterly_upgrade_begin_times: Determines the quarterly upgrade begin times (monthly maintenance group schedule ) of the Fusion environment.
         """
+        FusionEnvironmentMaintenancePolicyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            environment_maintenance_override=environment_maintenance_override,
+            monthly_patching_override=monthly_patching_override,
+            quarterly_upgrade_begin_times=quarterly_upgrade_begin_times,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             environment_maintenance_override: Optional[pulumi.Input[str]] = None,
+             monthly_patching_override: Optional[pulumi.Input[str]] = None,
+             quarterly_upgrade_begin_times: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if environment_maintenance_override is not None:
-            pulumi.set(__self__, "environment_maintenance_override", environment_maintenance_override)
+            _setter("environment_maintenance_override", environment_maintenance_override)
         if monthly_patching_override is not None:
-            pulumi.set(__self__, "monthly_patching_override", monthly_patching_override)
+            _setter("monthly_patching_override", monthly_patching_override)
         if quarterly_upgrade_begin_times is not None:
-            pulumi.set(__self__, "quarterly_upgrade_begin_times", quarterly_upgrade_begin_times)
+            _setter("quarterly_upgrade_begin_times", quarterly_upgrade_begin_times)
 
     @property
     @pulumi.getter(name="environmentMaintenanceOverride")
@@ -391,10 +470,21 @@ class FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs:
         :param pulumi.Input[str] begin_times_value: The frequency and month when maintenance occurs for the Fusion environment.
         :param pulumi.Input[str] override_type: Determines if the maintenance schedule of the Fusion environment is inherited from the Fusion environment family.
         """
+        FusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            begin_times_value=begin_times_value,
+            override_type=override_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             begin_times_value: Optional[pulumi.Input[str]] = None,
+             override_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if begin_times_value is not None:
-            pulumi.set(__self__, "begin_times_value", begin_times_value)
+            _setter("begin_times_value", begin_times_value)
         if override_type is not None:
-            pulumi.set(__self__, "override_type", override_type)
+            _setter("override_type", override_type)
 
     @property
     @pulumi.getter(name="beginTimesValue")
@@ -432,12 +522,25 @@ class FusionEnvironmentRefreshArgs:
         :param pulumi.Input[str] time_finished: The time of when the last refresh finish
         :param pulumi.Input[str] time_of_restoration_point: The point of time of the latest DB backup for the last refresh
         """
+        FusionEnvironmentRefreshArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            source_fusion_environment_id=source_fusion_environment_id,
+            time_finished=time_finished,
+            time_of_restoration_point=time_of_restoration_point,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             source_fusion_environment_id: Optional[pulumi.Input[str]] = None,
+             time_finished: Optional[pulumi.Input[str]] = None,
+             time_of_restoration_point: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if source_fusion_environment_id is not None:
-            pulumi.set(__self__, "source_fusion_environment_id", source_fusion_environment_id)
+            _setter("source_fusion_environment_id", source_fusion_environment_id)
         if time_finished is not None:
-            pulumi.set(__self__, "time_finished", time_finished)
+            _setter("time_finished", time_finished)
         if time_of_restoration_point is not None:
-            pulumi.set(__self__, "time_of_restoration_point", time_of_restoration_point)
+            _setter("time_of_restoration_point", time_of_restoration_point)
 
     @property
     @pulumi.getter(name="sourceFusionEnvironmentId")
@@ -483,8 +586,17 @@ class FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs:
         """
         :param pulumi.Input[str] refresh_issues: Detail reasons of refresh failure or validation failure that needs to be shown to customer.
         """
+        FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            refresh_issues=refresh_issues,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             refresh_issues: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if refresh_issues is not None:
-            pulumi.set(__self__, "refresh_issues", refresh_issues)
+            _setter("refresh_issues", refresh_issues)
 
     @property
     @pulumi.getter(name="refreshIssues")
@@ -514,10 +626,23 @@ class FusionEnvironmentRuleArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "conditions", conditions)
+        FusionEnvironmentRuleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            conditions=conditions,
+            description=description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: pulumi.Input[str],
+             conditions: pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleConditionArgs']]],
+             description: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("conditions", conditions)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
 
     @property
     @pulumi.getter
@@ -569,8 +694,19 @@ class FusionEnvironmentRuleConditionArgs:
         :param pulumi.Input[str] attribute_name: (Updatable) RuleCondition type
         :param pulumi.Input[str] attribute_value: (Updatable) The OCID of the originating VCN that an incoming packet must match. You can use this condition in conjunction with `SourceVcnIpAddressCondition`. **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition matches all incoming traffic in the specified VCN.
         """
-        pulumi.set(__self__, "attribute_name", attribute_name)
-        pulumi.set(__self__, "attribute_value", attribute_value)
+        FusionEnvironmentRuleConditionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            attribute_name=attribute_name,
+            attribute_value=attribute_value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             attribute_name: pulumi.Input[str],
+             attribute_value: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("attribute_name", attribute_name)
+        _setter("attribute_value", attribute_value)
 
     @property
     @pulumi.getter(name="attributeName")

@@ -491,9 +491,6 @@ export namespace AiDocument {
     }
 
     export interface ModelComponentModel {
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-         */
         modelId?: pulumi.Input<string>;
     }
 
@@ -4187,9 +4184,6 @@ export namespace Autoscaling {
          * The capacity requirements of the autoscaling policy.
          */
         capacity?: pulumi.Input<inputs.Autoscaling.AutoScalingConfigurationPolicyCapacity>;
-        /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-         */
         displayName?: pulumi.Input<string>;
         /**
          * An execution schedule for an autoscaling policy.
@@ -4278,9 +4272,6 @@ export namespace Autoscaling {
          * The action to take when autoscaling is triggered.
          */
         action?: pulumi.Input<inputs.Autoscaling.AutoScalingConfigurationPolicyRuleAction>;
-        /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-         */
         displayName: pulumi.Input<string>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
@@ -9571,6 +9562,214 @@ export namespace CloudMigrations {
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         sourceType: pulumi.Input<string>;
+    }
+}
+
+export namespace ComputeCloud {
+    export interface AtCustomerCccInfrastructureInfrastructureInventory {
+        /**
+         * The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for capacity storage.
+         */
+        capacityStorageTrayCount?: pulumi.Input<number>;
+        /**
+         * The number of compute nodes that are available and usable on the Compute Cloud@Customer infrastructure rack. There is no distinction of compute node type in this information.
+         */
+        computeNodeCount?: pulumi.Input<number>;
+        /**
+         * The number of management nodes that are available and in active use on the Compute Cloud@Customer infrastructure rack.
+         */
+        managementNodeCount?: pulumi.Input<number>;
+        /**
+         * The number of storage trays in the Compute Cloud@Customer infrastructure rack that are designated for performance storage.
+         */
+        performanceStorageTrayCount?: pulumi.Input<number>;
+        /**
+         * The serial number of the Compute Cloud@Customer infrastructure rack.
+         */
+        serialNumber?: pulumi.Input<string>;
+    }
+
+    export interface AtCustomerCccInfrastructureInfrastructureNetworkConfiguration {
+        /**
+         * The domain name system (DNS) addresses that the Compute Cloud@Customer infrastructure uses for the data center network.
+         */
+        dnsIps?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Dynamic routing information for the Compute Cloud@Customer infrastructure.
+         */
+        infrastructureRoutingDynamics?: pulumi.Input<pulumi.Input<inputs.ComputeCloud.AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic>[]>;
+        /**
+         * Static routing information for a rack.
+         */
+        infrastructureRoutingStatics?: pulumi.Input<pulumi.Input<inputs.ComputeCloud.AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic>[]>;
+        /**
+         * Information about the management nodes that are provisioned in the Compute Cloud@Customer infrastructure.
+         */
+        managementNodes?: pulumi.Input<pulumi.Input<inputs.ComputeCloud.AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode>[]>;
+        /**
+         * The hostname corresponding to the virtual IP (VIP) address of the management nodes.
+         */
+        mgmtVipHostname?: pulumi.Input<string>;
+        /**
+         * The IP address used as the virtual IP (VIP) address of the management nodes.
+         */
+        mgmtVipIp?: pulumi.Input<string>;
+        /**
+         * Addresses of the network spine switches.
+         */
+        spineIps?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * The spine switch public virtual IP (VIP). Traffic routed to the Compute Cloud@Customer infrastructure and  and virtual cloud networks (VCNs) should have this address as next hop.
+         */
+        spineVip?: pulumi.Input<string>;
+        /**
+         * Domain name to be used as the base domain for the internal network and by  public facing services.
+         */
+        uplinkDomain?: pulumi.Input<string>;
+        /**
+         * Uplink gateway in the datacenter network that the Compute Cloud@Customer connects to.
+         */
+        uplinkGatewayIp?: pulumi.Input<string>;
+        /**
+         * Netmask of the subnet that the Compute Cloud@Customer infrastructure is connected to.
+         */
+        uplinkNetmask?: pulumi.Input<string>;
+        /**
+         * Number of uplink ports per spine switch. Connectivity is identical on both spine switches. For example, if input is two 100 gigabyte ports; then port-1 and port-2 on both spines will be configured.
+         */
+        uplinkPortCount?: pulumi.Input<number>;
+        /**
+         * The port forward error correction (FEC) setting for the uplink port on the Compute Cloud@Customer infrastructure.
+         */
+        uplinkPortForwardErrorCorrection?: pulumi.Input<string>;
+        /**
+         * Uplink port speed defined in gigabytes per second. All uplink ports must have identical speed.
+         */
+        uplinkPortSpeedInGbps?: pulumi.Input<number>;
+        /**
+         * The virtual local area network (VLAN) maximum transmission unit (MTU) size for the uplink ports.
+         */
+        uplinkVlanMtu?: pulumi.Input<number>;
+    }
+
+    export interface AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic {
+        /**
+         * The topology in use for the Border Gateway Protocol (BGP) configuration.
+         */
+        bgpTopology?: pulumi.Input<string>;
+        /**
+         * The Oracle Autonomous System Number (ASN) to control routing and exchange information within the dynamic routing configuration.
+         */
+        oracleAsn?: pulumi.Input<number>;
+        /**
+         * The list of peer devices in the dynamic routing configuration.
+         */
+        peerInformations?: pulumi.Input<pulumi.Input<inputs.ComputeCloud.AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation>[]>;
+    }
+
+    export interface AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation {
+        /**
+         * The Autonomous System Number (ASN) of the peer network.
+         */
+        asn?: pulumi.Input<number>;
+        /**
+         * Address of the management node.
+         */
+        ip?: pulumi.Input<string>;
+    }
+
+    export interface AtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic {
+        /**
+         * The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute Cloud@Customer infrastructure.
+         */
+        uplinkHsrpGroup?: pulumi.Input<number>;
+        /**
+         * The virtual local area network (VLAN) identifier used to connect to the uplink (only access mode is supported).
+         */
+        uplinkVlan?: pulumi.Input<number>;
+    }
+
+    export interface AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode {
+        /**
+         * Hostname for interface to the management node.
+         */
+        hostname?: pulumi.Input<string>;
+        /**
+         * Address of the management node.
+         */
+        ip?: pulumi.Input<string>;
+    }
+
+    export interface AtCustomerCccInfrastructureUpgradeInformation {
+        /**
+         * The current version of software installed on the Compute Cloud@Customer infrastructure.
+         */
+        currentVersion?: pulumi.Input<string>;
+        /**
+         * Indication that the Compute Cloud@Customer infrastructure is in the process of an upgrade or an upgrade activity (such as preloading upgrade images).
+         */
+        isActive?: pulumi.Input<boolean>;
+        /**
+         * Expected duration of Compute Cloud@Customer infrastructure scheduled upgrade. The actual upgrade time might be longer or shorter than this duration depending on rack activity, this is only an estimate.
+         */
+        scheduledUpgradeDuration?: pulumi.Input<string>;
+        /**
+         * Compute Cloud@Customer infrastructure next upgrade time. The rack might have performance impacts during this time.
+         */
+        timeOfScheduledUpgrade?: pulumi.Input<string>;
+    }
+
+    export interface AtCustomerCccUpgradeScheduleEvent {
+        /**
+         * (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+         */
+        description: pulumi.Input<string>;
+        /**
+         * Generated name associated with the event.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) The duration of this block of time. The duration must be specified and be of the ISO-8601 format for durations.
+         */
+        scheduleEventDuration: pulumi.Input<string>;
+        /**
+         * (Updatable) Frequency of recurrence of schedule block. When this field is not included, the event is assumed to be a one time occurrence. The frequency field is strictly parsed and must conform to RFC-5545 formatting for recurrences.
+         */
+        scheduleEventRecurrences?: pulumi.Input<string>;
+        /**
+         * (Updatable) The date and time when the Compute Cloud@Customer upgrade schedule event starts, inclusive. An RFC3339 formatted UTC datetime string. For an event with recurrences, this is the date that a recurrence can start being applied.
+         */
+        timeStart: pulumi.Input<string>;
+    }
+
+    export interface GetAtCustomerCccInfrastructuresFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAtCustomerCccInfrastructuresFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAtCustomerCccUpgradeSchedulesFilter {
+        /**
+         * Generated name associated with the event.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAtCustomerCccUpgradeSchedulesFilterArgs {
+        /**
+         * Generated name associated with the event.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 }
 
@@ -18211,6 +18410,18 @@ export namespace DataScience {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetPrivateEndpointsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPrivateEndpointsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetProjectsFilter {
         name: string;
         regex?: boolean;
@@ -18517,7 +18728,7 @@ export namespace DataScience {
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails {
         /**
-         * (Updatable) The network bandwidth for the model.
+         * (Updatable) The minimum network bandwidth for the model deployment.
          */
         bandwidthMbps?: pulumi.Input<number>;
         /**
@@ -18577,6 +18788,10 @@ export namespace DataScience {
          */
         notebookSessionShapeConfigDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails>;
         /**
+         * (Updatable) The OCID of a Data Science private endpoint.
+         */
+        privateEndpointId?: pulumi.Input<string>;
+        /**
          * (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
          */
         shape: pulumi.Input<string>;
@@ -18606,6 +18821,10 @@ export namespace DataScience {
          * (Updatable) Details for the notebook session shape configuration.
          */
         notebookSessionShapeConfigDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails>;
+        /**
+         * (Updatable) The OCID of a Data Science private endpoint.
+         */
+        privateEndpointId?: pulumi.Input<string>;
         /**
          * (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
          */
@@ -19341,6 +19560,14 @@ export namespace Database {
          * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
          */
         disasterRecoveryType?: pulumi.Input<string>;
+    }
+
+    export interface AutonomousDatabaseResourcePoolSummary {
+        /**
+         * Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+         */
+        isDisabled?: pulumi.Input<boolean>;
+        poolSize?: pulumi.Input<number>;
     }
 
     export interface AutonomousDatabaseScheduledOperation {
@@ -24635,6 +24862,32 @@ export namespace DatabaseMigration {
         namespace: pulumi.Input<string>;
     }
 
+    export interface MigrationDataTransferMediumDetailsV2 {
+        accessKeyId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of directory object in database
+         */
+        name?: pulumi.Input<string>;
+        objectStorageBucket?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetailsV2ObjectStorageBucket>;
+        region?: pulumi.Input<string>;
+        secretAccessKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Migration type.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface MigrationDataTransferMediumDetailsV2ObjectStorageBucket {
+        /**
+         * (Updatable) Bucket name.
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * (Updatable) Namespace name of the object store bucket.
+         */
+        namespace?: pulumi.Input<string>;
+    }
+
     export interface MigrationDatapumpSettings {
         /**
          * (Updatable) Optional parameters for Data Pump Export and Import. Refer to [Configuring Optional Initial Load Advanced Settings](https://docs.us.oracle.com/en/cloud/paas/database-migration/dmsus/working-migration-resources.html#GUID-24BD3054-FDF8-48FF-8492-636C1D4B71ED)
@@ -24723,6 +24976,7 @@ export namespace DatabaseMigration {
     }
 
     export interface MigrationDumpTransferDetails {
+        sharedStorageMountTargetId?: pulumi.Input<string>;
         /**
          * (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
          */
@@ -50181,7 +50435,7 @@ export namespace Jms {
 export namespace Kms {
     export interface GeneratedKeyKeyShape {
         /**
-         * The algorithm used by a key's key versions to encrypt or decrypt.
+         * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
          */
         algorithm: pulumi.Input<string>;
         /**
@@ -50195,6 +50449,18 @@ export namespace Kms {
          * * ECDSA: 32, 48, or 66
          */
         length: pulumi.Input<number>;
+    }
+
+    export interface GetEkmsPrivateEndpointsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetEkmsPrivateEndpointsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetKeyVersionsFilter {
@@ -50245,9 +50511,27 @@ export namespace Kms {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface KeyExternalKeyReference {
+        /**
+         * ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+         */
+        externalKeyId: pulumi.Input<string>;
+    }
+
+    export interface KeyExternalKeyReferenceDetail {
+        /**
+         * ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+         */
+        externalKeyId?: pulumi.Input<string>;
+        /**
+         * Key version ID associated with the external key.
+         */
+        externalKeyVersionId?: pulumi.Input<string>;
+    }
+
     export interface KeyKeyShape {
         /**
-         * The algorithm used by a key's key versions to encrypt or decrypt.
+         * The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
          */
         algorithm: pulumi.Input<string>;
         /**
@@ -50308,11 +50592,82 @@ export namespace Kms {
         uri?: pulumi.Input<string>;
     }
 
+    export interface KeyVersionExternalKeyReferenceDetail {
+        /**
+         * ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
+         */
+        externalKeyId?: pulumi.Input<string>;
+        /**
+         * Key version ID associated with the external key.
+         */
+        externalKeyVersionId?: pulumi.Input<string>;
+    }
+
     export interface KeyVersionReplicaDetail {
         /**
          * ReplicationId associated with a key version operation
          */
         replicationId?: pulumi.Input<string>;
+    }
+
+    export interface VaultExternalKeyManagerMetadata {
+        /**
+         * URI of the vault on external key manager.
+         */
+        externalVaultEndpointUrl: pulumi.Input<string>;
+        /**
+         * Authorization details required to get access token from IDP for accessing protected resources.
+         */
+        oauthMetadata: pulumi.Input<inputs.Kms.VaultExternalKeyManagerMetadataOauthMetadata>;
+        /**
+         * OCID of private endpoint created by customer.
+         */
+        privateEndpointId: pulumi.Input<string>;
+    }
+
+    export interface VaultExternalKeyManagerMetadataOauthMetadata {
+        /**
+         * ID of the client app created in IDP.
+         */
+        clientAppId: pulumi.Input<string>;
+        /**
+         * Secret of the client app created in IDP.
+         */
+        clientAppSecret: pulumi.Input<string>;
+        /**
+         * Base URL of the IDCS account where confidential client app is created.
+         */
+        idcsAccountNameUrl: pulumi.Input<string>;
+    }
+
+    export interface VaultExternalKeyManagerMetadataSummary {
+        /**
+         * URI of the vault on external key manager.
+         */
+        externalVaultEndpointUrl?: pulumi.Input<string>;
+        /**
+         * Summary about authorization to be returned to the customer as a response.
+         */
+        oauthMetadataSummaries?: pulumi.Input<pulumi.Input<inputs.Kms.VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary>[]>;
+        /**
+         * OCID of private endpoint created by customer.
+         */
+        privateEndpointId?: pulumi.Input<string>;
+        /**
+         * Vendor of the external key manager.
+         */
+        vendor?: pulumi.Input<string>;
+    }
+
+    export interface VaultExternalKeyManagerMetadataSummaryOauthMetadataSummary {
+        /**
+         * ID of the client app created in IDP.
+         */
+        clientAppId?: pulumi.Input<string>;
+        /**
+         * Base URL of the IDCS account where confidential client app is created.
+         */
+        idcsAccountNameUrl?: pulumi.Input<string>;
     }
 
     export interface VaultReplicaDetail {
@@ -51052,16 +51407,10 @@ export namespace LoadBalancer {
     }
 
     export interface LoadBalancerIpAddressDetailReservedIp {
-        /**
-         * Ocid of the pre-created public IP. That should be attahed to this load balancer.
-         */
         id?: pulumi.Input<string>;
     }
 
     export interface LoadBalancerReservedIp {
-        /**
-         * Ocid of the pre-created public IP. That should be attahed to this load balancer.
-         */
         id?: pulumi.Input<string>;
     }
 
@@ -54424,6 +54773,25 @@ export namespace Mysql {
          * The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR. Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
          */
         sourceUrl?: pulumi.Input<string>;
+    }
+
+    export interface ReplicaReplicaOverrides {
+        /**
+         * (Updatable) The OCID of the Configuration to be used by the read replica.
+         */
+        configurationId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The MySQL version to be used by the read replica.
+         */
+        mysqlVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        shapeName?: pulumi.Input<string>;
     }
 }
 

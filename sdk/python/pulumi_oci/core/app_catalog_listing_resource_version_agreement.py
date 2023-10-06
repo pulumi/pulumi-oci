@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['AppCatalogListingResourceVersionAgreementArgs', 'AppCatalogListingResourceVersionAgreement']
@@ -21,8 +21,19 @@ class AppCatalogListingResourceVersionAgreementArgs:
         :param pulumi.Input[str] listing_id: The OCID of the listing.
         :param pulumi.Input[str] listing_resource_version: Listing Resource Version.
         """
-        pulumi.set(__self__, "listing_id", listing_id)
-        pulumi.set(__self__, "listing_resource_version", listing_resource_version)
+        AppCatalogListingResourceVersionAgreementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            listing_id=listing_id,
+            listing_resource_version=listing_resource_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             listing_id: pulumi.Input[str],
+             listing_resource_version: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("listing_id", listing_id)
+        _setter("listing_resource_version", listing_resource_version)
 
     @property
     @pulumi.getter(name="listingId")
@@ -67,18 +78,37 @@ class _AppCatalogListingResourceVersionAgreementState:
         :param pulumi.Input[str] signature: A generated signature for this agreement retrieval operation which should be used in the create subscription call.
         :param pulumi.Input[str] time_retrieved: Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
         """
+        _AppCatalogListingResourceVersionAgreementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            eula_link=eula_link,
+            listing_id=listing_id,
+            listing_resource_version=listing_resource_version,
+            oracle_terms_of_use_link=oracle_terms_of_use_link,
+            signature=signature,
+            time_retrieved=time_retrieved,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             eula_link: Optional[pulumi.Input[str]] = None,
+             listing_id: Optional[pulumi.Input[str]] = None,
+             listing_resource_version: Optional[pulumi.Input[str]] = None,
+             oracle_terms_of_use_link: Optional[pulumi.Input[str]] = None,
+             signature: Optional[pulumi.Input[str]] = None,
+             time_retrieved: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if eula_link is not None:
-            pulumi.set(__self__, "eula_link", eula_link)
+            _setter("eula_link", eula_link)
         if listing_id is not None:
-            pulumi.set(__self__, "listing_id", listing_id)
+            _setter("listing_id", listing_id)
         if listing_resource_version is not None:
-            pulumi.set(__self__, "listing_resource_version", listing_resource_version)
+            _setter("listing_resource_version", listing_resource_version)
         if oracle_terms_of_use_link is not None:
-            pulumi.set(__self__, "oracle_terms_of_use_link", oracle_terms_of_use_link)
+            _setter("oracle_terms_of_use_link", oracle_terms_of_use_link)
         if signature is not None:
-            pulumi.set(__self__, "signature", signature)
+            _setter("signature", signature)
         if time_retrieved is not None:
-            pulumi.set(__self__, "time_retrieved", time_retrieved)
+            _setter("time_retrieved", time_retrieved)
 
     @property
     @pulumi.getter(name="eulaLink")
@@ -210,6 +240,10 @@ class AppCatalogListingResourceVersionAgreement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppCatalogListingResourceVersionAgreementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

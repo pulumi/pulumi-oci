@@ -17,9 +17,6 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         /// The capacity requirements of the autoscaling policy.
         /// </summary>
         public readonly Outputs.AutoScalingConfigurationPolicyCapacity? Capacity;
-        /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        /// </summary>
         public readonly string? DisplayName;
         /// <summary>
         /// An execution schedule for an autoscaling policy.

@@ -17,9 +17,6 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         /// The action to take when autoscaling is triggered.
         /// </summary>
         public readonly Outputs.AutoScalingConfigurationPolicyRuleAction? Action;
-        /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        /// </summary>
         public readonly string DisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.

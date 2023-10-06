@@ -75,6 +75,12 @@ public final class GetAutonomousDatabasesResult {
      * 
      */
     private @Nullable Boolean isRefreshableClone;
+    private @Nullable Boolean isResourcePoolLeader;
+    /**
+     * @return The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    private @Nullable String resourcePoolLeaderId;
     /**
      * @return The current state of the Autonomous Database.
      * 
@@ -166,6 +172,16 @@ public final class GetAutonomousDatabasesResult {
     public Optional<Boolean> isRefreshableClone() {
         return Optional.ofNullable(this.isRefreshableClone);
     }
+    public Optional<Boolean> isResourcePoolLeader() {
+        return Optional.ofNullable(this.isResourcePoolLeader);
+    }
+    /**
+     * @return The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Optional<String> resourcePoolLeaderId() {
+        return Optional.ofNullable(this.resourcePoolLeaderId);
+    }
     /**
      * @return The current state of the Autonomous Database.
      * 
@@ -195,6 +211,8 @@ public final class GetAutonomousDatabasesResult {
         private @Nullable Boolean isDataGuardEnabled;
         private @Nullable Boolean isFreeTier;
         private @Nullable Boolean isRefreshableClone;
+        private @Nullable Boolean isResourcePoolLeader;
+        private @Nullable String resourcePoolLeaderId;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetAutonomousDatabasesResult defaults) {
@@ -211,6 +229,8 @@ public final class GetAutonomousDatabasesResult {
     	      this.isDataGuardEnabled = defaults.isDataGuardEnabled;
     	      this.isFreeTier = defaults.isFreeTier;
     	      this.isRefreshableClone = defaults.isRefreshableClone;
+    	      this.isResourcePoolLeader = defaults.isResourcePoolLeader;
+    	      this.resourcePoolLeaderId = defaults.resourcePoolLeaderId;
     	      this.state = defaults.state;
         }
 
@@ -281,6 +301,16 @@ public final class GetAutonomousDatabasesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isResourcePoolLeader(@Nullable Boolean isResourcePoolLeader) {
+            this.isResourcePoolLeader = isResourcePoolLeader;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder resourcePoolLeaderId(@Nullable String resourcePoolLeaderId) {
+            this.resourcePoolLeaderId = resourcePoolLeaderId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
@@ -299,6 +329,8 @@ public final class GetAutonomousDatabasesResult {
             o.isDataGuardEnabled = isDataGuardEnabled;
             o.isFreeTier = isFreeTier;
             o.isRefreshableClone = isRefreshableClone;
+            o.isResourcePoolLeader = isResourcePoolLeader;
+            o.resourcePoolLeaderId = resourcePoolLeaderId;
             o.state = state;
             return o;
         }

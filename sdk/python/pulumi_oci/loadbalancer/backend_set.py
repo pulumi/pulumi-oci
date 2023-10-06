@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -65,17 +65,38 @@ class BackendSetArgs:
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         """
-        pulumi.set(__self__, "health_checker", health_checker)
-        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
-        pulumi.set(__self__, "policy", policy)
+        BackendSetArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            health_checker=health_checker,
+            load_balancer_id=load_balancer_id,
+            policy=policy,
+            lb_cookie_session_persistence_configuration=lb_cookie_session_persistence_configuration,
+            name=name,
+            session_persistence_configuration=session_persistence_configuration,
+            ssl_configuration=ssl_configuration,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             health_checker: pulumi.Input['BackendSetHealthCheckerArgs'],
+             load_balancer_id: pulumi.Input[str],
+             policy: pulumi.Input[str],
+             lb_cookie_session_persistence_configuration: Optional[pulumi.Input['BackendSetLbCookieSessionPersistenceConfigurationArgs']] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             session_persistence_configuration: Optional[pulumi.Input['BackendSetSessionPersistenceConfigurationArgs']] = None,
+             ssl_configuration: Optional[pulumi.Input['BackendSetSslConfigurationArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("health_checker", health_checker)
+        _setter("load_balancer_id", load_balancer_id)
+        _setter("policy", policy)
         if lb_cookie_session_persistence_configuration is not None:
-            pulumi.set(__self__, "lb_cookie_session_persistence_configuration", lb_cookie_session_persistence_configuration)
+            _setter("lb_cookie_session_persistence_configuration", lb_cookie_session_persistence_configuration)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if session_persistence_configuration is not None:
-            pulumi.set(__self__, "session_persistence_configuration", session_persistence_configuration)
+            _setter("session_persistence_configuration", session_persistence_configuration)
         if ssl_configuration is not None:
-            pulumi.set(__self__, "ssl_configuration", ssl_configuration)
+            _setter("ssl_configuration", ssl_configuration)
 
     @property
     @pulumi.getter(name="healthChecker")
@@ -248,24 +269,49 @@ class _BackendSetState:
                
                **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         """
+        _BackendSetState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backends=backends,
+            health_checker=health_checker,
+            lb_cookie_session_persistence_configuration=lb_cookie_session_persistence_configuration,
+            load_balancer_id=load_balancer_id,
+            name=name,
+            policy=policy,
+            session_persistence_configuration=session_persistence_configuration,
+            ssl_configuration=ssl_configuration,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backends: Optional[pulumi.Input[Sequence[pulumi.Input['BackendSetBackendArgs']]]] = None,
+             health_checker: Optional[pulumi.Input['BackendSetHealthCheckerArgs']] = None,
+             lb_cookie_session_persistence_configuration: Optional[pulumi.Input['BackendSetLbCookieSessionPersistenceConfigurationArgs']] = None,
+             load_balancer_id: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             policy: Optional[pulumi.Input[str]] = None,
+             session_persistence_configuration: Optional[pulumi.Input['BackendSetSessionPersistenceConfigurationArgs']] = None,
+             ssl_configuration: Optional[pulumi.Input['BackendSetSslConfigurationArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if backends is not None:
-            pulumi.set(__self__, "backends", backends)
+            _setter("backends", backends)
         if health_checker is not None:
-            pulumi.set(__self__, "health_checker", health_checker)
+            _setter("health_checker", health_checker)
         if lb_cookie_session_persistence_configuration is not None:
-            pulumi.set(__self__, "lb_cookie_session_persistence_configuration", lb_cookie_session_persistence_configuration)
+            _setter("lb_cookie_session_persistence_configuration", lb_cookie_session_persistence_configuration)
         if load_balancer_id is not None:
-            pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+            _setter("load_balancer_id", load_balancer_id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if policy is not None:
-            pulumi.set(__self__, "policy", policy)
+            _setter("policy", policy)
         if session_persistence_configuration is not None:
-            pulumi.set(__self__, "session_persistence_configuration", session_persistence_configuration)
+            _setter("session_persistence_configuration", session_persistence_configuration)
         if ssl_configuration is not None:
-            pulumi.set(__self__, "ssl_configuration", ssl_configuration)
+            _setter("ssl_configuration", ssl_configuration)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
 
     @property
     @pulumi.getter
@@ -605,6 +651,10 @@ class BackendSet(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            BackendSetArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -626,9 +676,19 @@ class BackendSet(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = BackendSetArgs.__new__(BackendSetArgs)
 
+            if health_checker is not None and not isinstance(health_checker, BackendSetHealthCheckerArgs):
+                health_checker = health_checker or {}
+                def _setter(key, value):
+                    health_checker[key] = value
+                BackendSetHealthCheckerArgs._configure(_setter, **health_checker)
             if health_checker is None and not opts.urn:
                 raise TypeError("Missing required property 'health_checker'")
             __props__.__dict__["health_checker"] = health_checker
+            if lb_cookie_session_persistence_configuration is not None and not isinstance(lb_cookie_session_persistence_configuration, BackendSetLbCookieSessionPersistenceConfigurationArgs):
+                lb_cookie_session_persistence_configuration = lb_cookie_session_persistence_configuration or {}
+                def _setter(key, value):
+                    lb_cookie_session_persistence_configuration[key] = value
+                BackendSetLbCookieSessionPersistenceConfigurationArgs._configure(_setter, **lb_cookie_session_persistence_configuration)
             __props__.__dict__["lb_cookie_session_persistence_configuration"] = lb_cookie_session_persistence_configuration
             if load_balancer_id is None and not opts.urn:
                 raise TypeError("Missing required property 'load_balancer_id'")
@@ -637,7 +697,17 @@ class BackendSet(pulumi.CustomResource):
             if policy is None and not opts.urn:
                 raise TypeError("Missing required property 'policy'")
             __props__.__dict__["policy"] = policy
+            if session_persistence_configuration is not None and not isinstance(session_persistence_configuration, BackendSetSessionPersistenceConfigurationArgs):
+                session_persistence_configuration = session_persistence_configuration or {}
+                def _setter(key, value):
+                    session_persistence_configuration[key] = value
+                BackendSetSessionPersistenceConfigurationArgs._configure(_setter, **session_persistence_configuration)
             __props__.__dict__["session_persistence_configuration"] = session_persistence_configuration
+            if ssl_configuration is not None and not isinstance(ssl_configuration, BackendSetSslConfigurationArgs):
+                ssl_configuration = ssl_configuration or {}
+                def _setter(key, value):
+                    ssl_configuration[key] = value
+                BackendSetSslConfigurationArgs._configure(_setter, **ssl_configuration)
             __props__.__dict__["ssl_configuration"] = ssl_configuration
             __props__.__dict__["backends"] = None
             __props__.__dict__["state"] = None

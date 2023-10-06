@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -118,14 +118,29 @@ class PublicationIcon(dict):
         :param str mime_type: The MIME type of the upload data.
         :param str name: (Updatable) The name of the contact.
         """
+        PublicationIcon._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            content_url=content_url,
+            file_extension=file_extension,
+            mime_type=mime_type,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             content_url: Optional[str] = None,
+             file_extension: Optional[str] = None,
+             mime_type: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if content_url is not None:
-            pulumi.set(__self__, "content_url", content_url)
+            _setter("content_url", content_url)
         if file_extension is not None:
-            pulumi.set(__self__, "file_extension", file_extension)
+            _setter("file_extension", file_extension)
         if mime_type is not None:
-            pulumi.set(__self__, "mime_type", mime_type)
+            _setter("mime_type", mime_type)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="contentUrl")
@@ -198,12 +213,29 @@ class PublicationPackageDetails(dict):
         :param str package_version: The package version.
         :param str image_id: The unique identifier for the base image of the publication.
         """
-        pulumi.set(__self__, "eulas", eulas)
-        pulumi.set(__self__, "operating_system", operating_system)
-        pulumi.set(__self__, "package_type", package_type)
-        pulumi.set(__self__, "package_version", package_version)
+        PublicationPackageDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            eulas=eulas,
+            operating_system=operating_system,
+            package_type=package_type,
+            package_version=package_version,
+            image_id=image_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             eulas: Sequence['outputs.PublicationPackageDetailsEula'],
+             operating_system: 'outputs.PublicationPackageDetailsOperatingSystem',
+             package_type: str,
+             package_version: str,
+             image_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("eulas", eulas)
+        _setter("operating_system", operating_system)
+        _setter("package_type", package_type)
+        _setter("package_version", package_version)
         if image_id is not None:
-            pulumi.set(__self__, "image_id", image_id)
+            _setter("image_id", image_id)
 
     @property
     @pulumi.getter
@@ -274,9 +306,20 @@ class PublicationPackageDetailsEula(dict):
         :param str eula_type: The end user license agreement's type.
         :param str license_text: The text of the end user license agreement.
         """
-        pulumi.set(__self__, "eula_type", eula_type)
+        PublicationPackageDetailsEula._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            eula_type=eula_type,
+            license_text=license_text,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             eula_type: str,
+             license_text: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("eula_type", eula_type)
         if license_text is not None:
-            pulumi.set(__self__, "license_text", license_text)
+            _setter("license_text", license_text)
 
     @property
     @pulumi.getter(name="eulaType")
@@ -302,8 +345,17 @@ class PublicationPackageDetailsOperatingSystem(dict):
         """
         :param str name: (Updatable) The name of the contact.
         """
+        PublicationPackageDetailsOperatingSystem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -331,14 +383,29 @@ class PublicationSupportContact(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        PublicationSupportContact._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            email=email,
+            name=name,
+            phone=phone,
+            subject=subject,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             email: Optional[str] = None,
+             name: Optional[str] = None,
+             phone: Optional[str] = None,
+             subject: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if email is not None:
-            pulumi.set(__self__, "email", email)
+            _setter("email", email)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if phone is not None:
-            pulumi.set(__self__, "phone", phone)
+            _setter("phone", phone)
         if subject is not None:
-            pulumi.set(__self__, "subject", subject)
+            _setter("subject", subject)
 
     @property
     @pulumi.getter
@@ -384,8 +451,17 @@ class PublicationSupportedOperatingSystem(dict):
         """
         :param str name: (Updatable) The name of the contact.
         """
+        PublicationSupportedOperatingSystem._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -420,16 +496,43 @@ class GetAcceptedAgreementsAcceptedAgreementResult(dict):
         :param str package_version: The version of the package. Package versions are unique within a listing.
         :param str time_accepted: The time the agreement was accepted.
         """
-        pulumi.set(__self__, "agreement_id", agreement_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "listing_id", listing_id)
-        pulumi.set(__self__, "package_version", package_version)
-        pulumi.set(__self__, "signature", signature)
-        pulumi.set(__self__, "time_accepted", time_accepted)
+        GetAcceptedAgreementsAcceptedAgreementResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agreement_id=agreement_id,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            listing_id=listing_id,
+            package_version=package_version,
+            signature=signature,
+            time_accepted=time_accepted,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agreement_id: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             listing_id: str,
+             package_version: str,
+             signature: str,
+             time_accepted: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("agreement_id", agreement_id)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("listing_id", listing_id)
+        _setter("package_version", package_version)
+        _setter("signature", signature)
+        _setter("time_accepted", time_accepted)
 
     @property
     @pulumi.getter(name="agreementId")
@@ -515,10 +618,23 @@ class GetAcceptedAgreementsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAcceptedAgreementsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -543,7 +659,16 @@ class GetCategoriesCategoryResult(dict):
         """
         :param str name: Name of the product category.
         """
-        pulumi.set(__self__, "name", name)
+        GetCategoriesCategoryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -563,10 +688,23 @@ class GetCategoriesFilterResult(dict):
         """
         :param str name: Name of the product category.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetCategoriesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -600,10 +738,25 @@ class GetListingBannerResult(dict):
         :param str mime_type: The MIME type of the screenshot.
         :param str name: Text that describes the resource.
         """
-        pulumi.set(__self__, "content_url", content_url)
-        pulumi.set(__self__, "file_extension", file_extension)
-        pulumi.set(__self__, "mime_type", mime_type)
-        pulumi.set(__self__, "name", name)
+        GetListingBannerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            content_url=content_url,
+            file_extension=file_extension,
+            mime_type=mime_type,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             content_url: str,
+             file_extension: str,
+             mime_type: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("content_url", content_url)
+        _setter("file_extension", file_extension)
+        _setter("mime_type", mime_type)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="contentUrl")
@@ -649,9 +802,22 @@ class GetListingDocumentationLinkResult(dict):
         :param str name: Text that describes the resource.
         :param str url: The URL of the resource.
         """
-        pulumi.set(__self__, "document_category", document_category)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "url", url)
+        GetListingDocumentationLinkResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            document_category=document_category,
+            name=name,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             document_category: str,
+             name: str,
+             url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("document_category", document_category)
+        _setter("name", name)
+        _setter("url", url)
 
     @property
     @pulumi.getter(name="documentCategory")
@@ -691,10 +857,25 @@ class GetListingIconResult(dict):
         :param str mime_type: The MIME type of the screenshot.
         :param str name: Text that describes the resource.
         """
-        pulumi.set(__self__, "content_url", content_url)
-        pulumi.set(__self__, "file_extension", file_extension)
-        pulumi.set(__self__, "mime_type", mime_type)
-        pulumi.set(__self__, "name", name)
+        GetListingIconResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            content_url=content_url,
+            file_extension=file_extension,
+            mime_type=mime_type,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             content_url: str,
+             file_extension: str,
+             mime_type: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("content_url", content_url)
+        _setter("file_extension", file_extension)
+        _setter("mime_type", mime_type)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="contentUrl")
@@ -738,8 +919,19 @@ class GetListingLanguageResult(dict):
         :param str code: A code assigned to the item.
         :param str name: Text that describes the resource.
         """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "name", name)
+        GetListingLanguageResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            code=code,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             code: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("code", code)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -767,8 +959,19 @@ class GetListingLinkResult(dict):
         :param str href: The anchor tag.
         :param str rel: Reference links to the previous page, next page, and other pages.
         """
-        pulumi.set(__self__, "href", href)
-        pulumi.set(__self__, "rel", rel)
+        GetListingLinkResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            href=href,
+            rel=rel,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             href: str,
+             rel: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("href", href)
+        _setter("rel", rel)
 
     @property
     @pulumi.getter
@@ -800,10 +1003,25 @@ class GetListingPackageAgreementsAgreementResult(dict):
         :param str id: The unique identifier for the agreement.
         :param str prompt: Textual prompt to read and accept the agreement.
         """
-        pulumi.set(__self__, "author", author)
-        pulumi.set(__self__, "content_url", content_url)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "prompt", prompt)
+        GetListingPackageAgreementsAgreementResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            author=author,
+            content_url=content_url,
+            id=id,
+            prompt=prompt,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             author: str,
+             content_url: str,
+             id: str,
+             prompt: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("author", author)
+        _setter("content_url", content_url)
+        _setter("id", id)
+        _setter("prompt", prompt)
 
     @property
     @pulumi.getter
@@ -844,10 +1062,23 @@ class GetListingPackageAgreementsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetListingPackageAgreementsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -872,7 +1103,16 @@ class GetListingPackageOperatingSystemResult(dict):
         """
         :param str name: The name of the variable.
         """
-        pulumi.set(__self__, "name", name)
+        GetListingPackageOperatingSystemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -898,11 +1138,28 @@ class GetListingPackagePricingResult(dict):
         :param float rate: The pricing rate.
         :param str type: The type of the pricing model.
         """
-        pulumi.set(__self__, "currency", currency)
-        pulumi.set(__self__, "international_market_prices", international_market_prices)
-        pulumi.set(__self__, "pay_go_strategy", pay_go_strategy)
-        pulumi.set(__self__, "rate", rate)
-        pulumi.set(__self__, "type", type)
+        GetListingPackagePricingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            currency=currency,
+            international_market_prices=international_market_prices,
+            pay_go_strategy=pay_go_strategy,
+            rate=rate,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             currency: str,
+             international_market_prices: Sequence['outputs.GetListingPackagePricingInternationalMarketPriceResult'],
+             pay_go_strategy: str,
+             rate: float,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("currency", currency)
+        _setter("international_market_prices", international_market_prices)
+        _setter("pay_go_strategy", pay_go_strategy)
+        _setter("rate", rate)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -956,9 +1213,22 @@ class GetListingPackagePricingInternationalMarketPriceResult(dict):
         :param str currency_symbol: The symbol of the currency
         :param float rate: The pricing rate.
         """
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "currency_symbol", currency_symbol)
-        pulumi.set(__self__, "rate", rate)
+        GetListingPackagePricingInternationalMarketPriceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            currency_code=currency_code,
+            currency_symbol=currency_symbol,
+            rate=rate,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             currency_code: str,
+             currency_symbol: str,
+             rate: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("currency_code", currency_code)
+        _setter("currency_symbol", currency_symbol)
+        _setter("rate", rate)
 
     @property
     @pulumi.getter(name="currencyCode")
@@ -996,9 +1266,22 @@ class GetListingPackageRegionResult(dict):
         :param Sequence['GetListingPackageRegionCountryArgs'] countries: Countries in the region.
         :param str name: The name of the variable.
         """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "countries", countries)
-        pulumi.set(__self__, "name", name)
+        GetListingPackageRegionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            code=code,
+            countries=countries,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             code: str,
+             countries: Sequence['outputs.GetListingPackageRegionCountryResult'],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("code", code)
+        _setter("countries", countries)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1034,8 +1317,19 @@ class GetListingPackageRegionCountryResult(dict):
         :param str code: A code assigned to the item.
         :param str name: The name of the variable.
         """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "name", name)
+        GetListingPackageRegionCountryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            code=code,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             code: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("code", code)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1071,12 +1365,31 @@ class GetListingPackageVariableResult(dict):
         :param bool is_mandatory: Whether the variable is mandatory.
         :param str name: The name of the variable.
         """
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "default_value", default_value)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "hint_message", hint_message)
-        pulumi.set(__self__, "is_mandatory", is_mandatory)
-        pulumi.set(__self__, "name", name)
+        GetListingPackageVariableResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_type=data_type,
+            default_value=default_value,
+            description=description,
+            hint_message=hint_message,
+            is_mandatory=is_mandatory,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_type: str,
+             default_value: str,
+             description: str,
+             hint_message: str,
+             is_mandatory: bool,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("data_type", data_type)
+        _setter("default_value", default_value)
+        _setter("description", description)
+        _setter("hint_message", hint_message)
+        _setter("is_mandatory", is_mandatory)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="dataType")
@@ -1136,10 +1449,23 @@ class GetListingPackagesFilterResult(dict):
         """
         :param str name: The name of the variable.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetListingPackagesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1181,14 +1507,37 @@ class GetListingPackagesListingPackageResult(dict):
         :param str resource_id: The unique identifier for the package resource.
         :param str time_created: The date and time this listing package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
-        pulumi.set(__self__, "listing_id", listing_id)
-        pulumi.set(__self__, "operating_systems", operating_systems)
-        pulumi.set(__self__, "package_type", package_type)
-        pulumi.set(__self__, "package_version", package_version)
-        pulumi.set(__self__, "pricings", pricings)
-        pulumi.set(__self__, "regions", regions)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "time_created", time_created)
+        GetListingPackagesListingPackageResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            listing_id=listing_id,
+            operating_systems=operating_systems,
+            package_type=package_type,
+            package_version=package_version,
+            pricings=pricings,
+            regions=regions,
+            resource_id=resource_id,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             listing_id: str,
+             operating_systems: Sequence['outputs.GetListingPackagesListingPackageOperatingSystemResult'],
+             package_type: str,
+             package_version: str,
+             pricings: Sequence['outputs.GetListingPackagesListingPackagePricingResult'],
+             regions: Sequence['outputs.GetListingPackagesListingPackageRegionResult'],
+             resource_id: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("listing_id", listing_id)
+        _setter("operating_systems", operating_systems)
+        _setter("package_type", package_type)
+        _setter("package_version", package_version)
+        _setter("pricings", pricings)
+        _setter("regions", regions)
+        _setter("resource_id", resource_id)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="listingId")
@@ -1262,7 +1611,16 @@ class GetListingPackagesListingPackageOperatingSystemResult(dict):
         """
         :param str name: The name of the variable.
         """
-        pulumi.set(__self__, "name", name)
+        GetListingPackagesListingPackageOperatingSystemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1288,11 +1646,28 @@ class GetListingPackagesListingPackagePricingResult(dict):
         :param float rate: The pricing rate.
         :param str type: The type of the pricing model.
         """
-        pulumi.set(__self__, "currency", currency)
-        pulumi.set(__self__, "international_market_prices", international_market_prices)
-        pulumi.set(__self__, "pay_go_strategy", pay_go_strategy)
-        pulumi.set(__self__, "rate", rate)
-        pulumi.set(__self__, "type", type)
+        GetListingPackagesListingPackagePricingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            currency=currency,
+            international_market_prices=international_market_prices,
+            pay_go_strategy=pay_go_strategy,
+            rate=rate,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             currency: str,
+             international_market_prices: Sequence['outputs.GetListingPackagesListingPackagePricingInternationalMarketPriceResult'],
+             pay_go_strategy: str,
+             rate: float,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("currency", currency)
+        _setter("international_market_prices", international_market_prices)
+        _setter("pay_go_strategy", pay_go_strategy)
+        _setter("rate", rate)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -1346,9 +1721,22 @@ class GetListingPackagesListingPackagePricingInternationalMarketPriceResult(dict
         :param str currency_symbol: The symbol of the currency
         :param float rate: The pricing rate.
         """
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "currency_symbol", currency_symbol)
-        pulumi.set(__self__, "rate", rate)
+        GetListingPackagesListingPackagePricingInternationalMarketPriceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            currency_code=currency_code,
+            currency_symbol=currency_symbol,
+            rate=rate,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             currency_code: str,
+             currency_symbol: str,
+             rate: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("currency_code", currency_code)
+        _setter("currency_symbol", currency_symbol)
+        _setter("rate", rate)
 
     @property
     @pulumi.getter(name="currencyCode")
@@ -1386,9 +1774,22 @@ class GetListingPackagesListingPackageRegionResult(dict):
         :param Sequence['GetListingPackagesListingPackageRegionCountryArgs'] countries: Countries in the region.
         :param str name: The name of the variable.
         """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "countries", countries)
-        pulumi.set(__self__, "name", name)
+        GetListingPackagesListingPackageRegionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            code=code,
+            countries=countries,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             code: str,
+             countries: Sequence['outputs.GetListingPackagesListingPackageRegionCountryResult'],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("code", code)
+        _setter("countries", countries)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1424,8 +1825,19 @@ class GetListingPackagesListingPackageRegionCountryResult(dict):
         :param str code: A code assigned to the item.
         :param str name: The name of the variable.
         """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "name", name)
+        GetListingPackagesListingPackageRegionCountryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            code=code,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             code: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("code", code)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1469,16 +1881,43 @@ class GetListingPublisherResult(dict):
         :param str website_url: The publisher's website.
         :param str year_founded: The year the publisher's company or organization was founded.
         """
-        pulumi.set(__self__, "contact_email", contact_email)
-        pulumi.set(__self__, "contact_phone", contact_phone)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "hq_address", hq_address)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "links", links)
-        pulumi.set(__self__, "logos", logos)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "website_url", website_url)
-        pulumi.set(__self__, "year_founded", year_founded)
+        GetListingPublisherResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            contact_email=contact_email,
+            contact_phone=contact_phone,
+            description=description,
+            hq_address=hq_address,
+            id=id,
+            links=links,
+            logos=logos,
+            name=name,
+            website_url=website_url,
+            year_founded=year_founded,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             contact_email: str,
+             contact_phone: str,
+             description: str,
+             hq_address: str,
+             id: str,
+             links: Sequence['outputs.GetListingPublisherLinkResult'],
+             logos: Sequence['outputs.GetListingPublisherLogoResult'],
+             name: str,
+             website_url: str,
+             year_founded: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("contact_email", contact_email)
+        _setter("contact_phone", contact_phone)
+        _setter("description", description)
+        _setter("hq_address", hq_address)
+        _setter("id", id)
+        _setter("links", links)
+        _setter("logos", logos)
+        _setter("name", name)
+        _setter("website_url", website_url)
+        _setter("year_founded", year_founded)
 
     @property
     @pulumi.getter(name="contactEmail")
@@ -1570,8 +2009,19 @@ class GetListingPublisherLinkResult(dict):
         :param str href: The anchor tag.
         :param str rel: Reference links to the previous page, next page, and other pages.
         """
-        pulumi.set(__self__, "href", href)
-        pulumi.set(__self__, "rel", rel)
+        GetListingPublisherLinkResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            href=href,
+            rel=rel,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             href: str,
+             rel: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("href", href)
+        _setter("rel", rel)
 
     @property
     @pulumi.getter
@@ -1603,10 +2053,25 @@ class GetListingPublisherLogoResult(dict):
         :param str mime_type: The MIME type of the screenshot.
         :param str name: Text that describes the resource.
         """
-        pulumi.set(__self__, "content_url", content_url)
-        pulumi.set(__self__, "file_extension", file_extension)
-        pulumi.set(__self__, "mime_type", mime_type)
-        pulumi.set(__self__, "name", name)
+        GetListingPublisherLogoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            content_url=content_url,
+            file_extension=file_extension,
+            mime_type=mime_type,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             content_url: str,
+             file_extension: str,
+             mime_type: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("content_url", content_url)
+        _setter("file_extension", file_extension)
+        _setter("mime_type", mime_type)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="contentUrl")
@@ -1652,9 +2117,22 @@ class GetListingRegionResult(dict):
         :param Sequence['GetListingRegionCountryArgs'] countries: Countries in the region.
         :param str name: Text that describes the resource.
         """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "countries", countries)
-        pulumi.set(__self__, "name", name)
+        GetListingRegionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            code=code,
+            countries=countries,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             code: str,
+             countries: Sequence['outputs.GetListingRegionCountryResult'],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("code", code)
+        _setter("countries", countries)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1690,8 +2168,19 @@ class GetListingRegionCountryResult(dict):
         :param str code: A code assigned to the item.
         :param str name: Text that describes the resource.
         """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "name", name)
+        GetListingRegionCountryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            code=code,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             code: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("code", code)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1725,11 +2214,28 @@ class GetListingScreenshotResult(dict):
         :param str mime_type: The MIME type of the screenshot.
         :param str name: Text that describes the resource.
         """
-        pulumi.set(__self__, "content_url", content_url)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "file_extension", file_extension)
-        pulumi.set(__self__, "mime_type", mime_type)
-        pulumi.set(__self__, "name", name)
+        GetListingScreenshotResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            content_url=content_url,
+            description=description,
+            file_extension=file_extension,
+            mime_type=mime_type,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             content_url: str,
+             description: str,
+             file_extension: str,
+             mime_type: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("content_url", content_url)
+        _setter("description", description)
+        _setter("file_extension", file_extension)
+        _setter("mime_type", mime_type)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="contentUrl")
@@ -1785,10 +2291,25 @@ class GetListingSupportContactResult(dict):
         :param str phone: The phone number of the contact.
         :param str subject: The email subject line to use when contacting support.
         """
-        pulumi.set(__self__, "email", email)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "phone", phone)
-        pulumi.set(__self__, "subject", subject)
+        GetListingSupportContactResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            email=email,
+            name=name,
+            phone=phone,
+            subject=subject,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             email: str,
+             name: str,
+             phone: str,
+             subject: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("email", email)
+        _setter("name", name)
+        _setter("phone", phone)
+        _setter("subject", subject)
 
     @property
     @pulumi.getter
@@ -1832,8 +2353,19 @@ class GetListingSupportLinkResult(dict):
         :param str name: Text that describes the resource.
         :param str url: The URL of the resource.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "url", url)
+        GetListingSupportLinkResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("url", url)
 
     @property
     @pulumi.getter
@@ -1859,7 +2391,16 @@ class GetListingSupportedOperatingSystemResult(dict):
         """
         :param str name: Text that describes the resource.
         """
-        pulumi.set(__self__, "name", name)
+        GetListingSupportedOperatingSystemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1879,10 +2420,23 @@ class GetListingTaxesFilterResult(dict):
         """
         :param str name: Name of the tax code.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetListingTaxesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1916,10 +2470,25 @@ class GetListingTaxesTaxResult(dict):
         :param str name: Name of the tax code.
         :param str url: The URL with more details about this tax.
         """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "country", country)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "url", url)
+        GetListingTaxesTaxResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            code=code,
+            country=country,
+            name=name,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             code: str,
+             country: str,
+             name: str,
+             url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("code", code)
+        _setter("country", country)
+        _setter("name", name)
+        _setter("url", url)
 
     @property
     @pulumi.getter
@@ -1963,8 +2532,19 @@ class GetListingVideoResult(dict):
         :param str name: Text that describes the resource.
         :param str url: The URL of the resource.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "url", url)
+        GetListingVideoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("url", url)
 
     @property
     @pulumi.getter
@@ -1992,10 +2572,23 @@ class GetListingsFilterResult(dict):
         """
         :param str name: The name of the listing.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetListingsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2052,22 +2645,61 @@ class GetListingsListingResult(dict):
         :param str short_description: A short description of the listing.
         :param Sequence['GetListingsListingSupportedOperatingSystemArgs'] supported_operating_systems: The list of operating systems supported by the listing.
         """
-        pulumi.set(__self__, "banners", banners)
-        pulumi.set(__self__, "categories", categories)
-        pulumi.set(__self__, "compatible_architectures", compatible_architectures)
-        pulumi.set(__self__, "default_package_version", default_package_version)
-        pulumi.set(__self__, "documentation_links", documentation_links)
-        pulumi.set(__self__, "icons", icons)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_featured", is_featured)
-        pulumi.set(__self__, "listing_type", listing_type)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "package_type", package_type)
-        pulumi.set(__self__, "pricing_types", pricing_types)
-        pulumi.set(__self__, "publishers", publishers)
-        pulumi.set(__self__, "regions", regions)
-        pulumi.set(__self__, "short_description", short_description)
-        pulumi.set(__self__, "supported_operating_systems", supported_operating_systems)
+        GetListingsListingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            banners=banners,
+            categories=categories,
+            compatible_architectures=compatible_architectures,
+            default_package_version=default_package_version,
+            documentation_links=documentation_links,
+            icons=icons,
+            id=id,
+            is_featured=is_featured,
+            listing_type=listing_type,
+            name=name,
+            package_type=package_type,
+            pricing_types=pricing_types,
+            publishers=publishers,
+            regions=regions,
+            short_description=short_description,
+            supported_operating_systems=supported_operating_systems,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             banners: Sequence['outputs.GetListingsListingBannerResult'],
+             categories: Sequence[str],
+             compatible_architectures: Sequence[str],
+             default_package_version: str,
+             documentation_links: Sequence['outputs.GetListingsListingDocumentationLinkResult'],
+             icons: Sequence['outputs.GetListingsListingIconResult'],
+             id: str,
+             is_featured: bool,
+             listing_type: str,
+             name: str,
+             package_type: str,
+             pricing_types: Sequence[str],
+             publishers: Sequence['outputs.GetListingsListingPublisherResult'],
+             regions: Sequence['outputs.GetListingsListingRegionResult'],
+             short_description: str,
+             supported_operating_systems: Sequence['outputs.GetListingsListingSupportedOperatingSystemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("banners", banners)
+        _setter("categories", categories)
+        _setter("compatible_architectures", compatible_architectures)
+        _setter("default_package_version", default_package_version)
+        _setter("documentation_links", documentation_links)
+        _setter("icons", icons)
+        _setter("id", id)
+        _setter("is_featured", is_featured)
+        _setter("listing_type", listing_type)
+        _setter("name", name)
+        _setter("package_type", package_type)
+        _setter("pricing_types", pricing_types)
+        _setter("publishers", publishers)
+        _setter("regions", regions)
+        _setter("short_description", short_description)
+        _setter("supported_operating_systems", supported_operating_systems)
 
     @property
     @pulumi.getter
@@ -2208,10 +2840,25 @@ class GetListingsListingBannerResult(dict):
         :param str mime_type: The MIME type of the screenshot.
         :param str name: The name of the listing.
         """
-        pulumi.set(__self__, "content_url", content_url)
-        pulumi.set(__self__, "file_extension", file_extension)
-        pulumi.set(__self__, "mime_type", mime_type)
-        pulumi.set(__self__, "name", name)
+        GetListingsListingBannerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            content_url=content_url,
+            file_extension=file_extension,
+            mime_type=mime_type,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             content_url: str,
+             file_extension: str,
+             mime_type: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("content_url", content_url)
+        _setter("file_extension", file_extension)
+        _setter("mime_type", mime_type)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="contentUrl")
@@ -2257,9 +2904,22 @@ class GetListingsListingDocumentationLinkResult(dict):
         :param str name: The name of the listing.
         :param str url: The URL of the resource.
         """
-        pulumi.set(__self__, "document_category", document_category)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "url", url)
+        GetListingsListingDocumentationLinkResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            document_category=document_category,
+            name=name,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             document_category: str,
+             name: str,
+             url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("document_category", document_category)
+        _setter("name", name)
+        _setter("url", url)
 
     @property
     @pulumi.getter(name="documentCategory")
@@ -2299,10 +2959,25 @@ class GetListingsListingIconResult(dict):
         :param str mime_type: The MIME type of the screenshot.
         :param str name: The name of the listing.
         """
-        pulumi.set(__self__, "content_url", content_url)
-        pulumi.set(__self__, "file_extension", file_extension)
-        pulumi.set(__self__, "mime_type", mime_type)
-        pulumi.set(__self__, "name", name)
+        GetListingsListingIconResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            content_url=content_url,
+            file_extension=file_extension,
+            mime_type=mime_type,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             content_url: str,
+             file_extension: str,
+             mime_type: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("content_url", content_url)
+        _setter("file_extension", file_extension)
+        _setter("mime_type", mime_type)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="contentUrl")
@@ -2348,9 +3023,22 @@ class GetListingsListingPublisherResult(dict):
         :param str id: The unique identifier for the publisher.
         :param str name: The name of the listing.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
+        GetListingsListingPublisherResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            id=id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             id: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("id", id)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2388,9 +3076,22 @@ class GetListingsListingRegionResult(dict):
         :param Sequence['GetListingsListingRegionCountryArgs'] countries: Countries in the region.
         :param str name: The name of the listing.
         """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "countries", countries)
-        pulumi.set(__self__, "name", name)
+        GetListingsListingRegionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            code=code,
+            countries=countries,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             code: str,
+             countries: Sequence['outputs.GetListingsListingRegionCountryResult'],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("code", code)
+        _setter("countries", countries)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2426,8 +3127,19 @@ class GetListingsListingRegionCountryResult(dict):
         :param str code: A code assigned to the item.
         :param str name: The name of the listing.
         """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "name", name)
+        GetListingsListingRegionCountryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            code=code,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             code: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("code", code)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2453,7 +3165,16 @@ class GetListingsListingSupportedOperatingSystemResult(dict):
         """
         :param str name: The name of the listing.
         """
-        pulumi.set(__self__, "name", name)
+        GetListingsListingSupportedOperatingSystemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2477,10 +3198,25 @@ class GetPublicationIconResult(dict):
         :param str mime_type: The MIME type of the upload data.
         :param str name: The name of the operating system.
         """
-        pulumi.set(__self__, "content_url", content_url)
-        pulumi.set(__self__, "file_extension", file_extension)
-        pulumi.set(__self__, "mime_type", mime_type)
-        pulumi.set(__self__, "name", name)
+        GetPublicationIconResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            content_url=content_url,
+            file_extension=file_extension,
+            mime_type=mime_type,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             content_url: str,
+             file_extension: str,
+             mime_type: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("content_url", content_url)
+        _setter("file_extension", file_extension)
+        _setter("mime_type", mime_type)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="contentUrl")
@@ -2526,11 +3262,28 @@ class GetPublicationPackageDetailResult(dict):
         """
         :param str package_type: The listing's package type.
         """
-        pulumi.set(__self__, "eulas", eulas)
-        pulumi.set(__self__, "image_id", image_id)
-        pulumi.set(__self__, "operating_systems", operating_systems)
-        pulumi.set(__self__, "package_type", package_type)
-        pulumi.set(__self__, "package_version", package_version)
+        GetPublicationPackageDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            eulas=eulas,
+            image_id=image_id,
+            operating_systems=operating_systems,
+            package_type=package_type,
+            package_version=package_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             eulas: Sequence['outputs.GetPublicationPackageDetailEulaResult'],
+             image_id: str,
+             operating_systems: Sequence['outputs.GetPublicationPackageDetailOperatingSystemResult'],
+             package_type: str,
+             package_version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("eulas", eulas)
+        _setter("image_id", image_id)
+        _setter("operating_systems", operating_systems)
+        _setter("package_type", package_type)
+        _setter("package_version", package_version)
 
     @property
     @pulumi.getter
@@ -2566,8 +3319,19 @@ class GetPublicationPackageDetailEulaResult(dict):
     def __init__(__self__, *,
                  eula_type: str,
                  license_text: str):
-        pulumi.set(__self__, "eula_type", eula_type)
-        pulumi.set(__self__, "license_text", license_text)
+        GetPublicationPackageDetailEulaResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            eula_type=eula_type,
+            license_text=license_text,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             eula_type: str,
+             license_text: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("eula_type", eula_type)
+        _setter("license_text", license_text)
 
     @property
     @pulumi.getter(name="eulaType")
@@ -2587,7 +3351,16 @@ class GetPublicationPackageDetailOperatingSystemResult(dict):
         """
         :param str name: The name of the operating system.
         """
-        pulumi.set(__self__, "name", name)
+        GetPublicationPackageDetailOperatingSystemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2605,7 +3378,16 @@ class GetPublicationPackageOperatingSystemResult(dict):
         """
         :param str name: The name of the variable.
         """
-        pulumi.set(__self__, "name", name)
+        GetPublicationPackageOperatingSystemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2633,12 +3415,31 @@ class GetPublicationPackageVariableResult(dict):
         :param bool is_mandatory: Whether the variable is mandatory.
         :param str name: The name of the variable.
         """
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "default_value", default_value)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "hint_message", hint_message)
-        pulumi.set(__self__, "is_mandatory", is_mandatory)
-        pulumi.set(__self__, "name", name)
+        GetPublicationPackageVariableResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_type=data_type,
+            default_value=default_value,
+            description=description,
+            hint_message=hint_message,
+            is_mandatory=is_mandatory,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_type: str,
+             default_value: str,
+             description: str,
+             hint_message: str,
+             is_mandatory: bool,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("data_type", data_type)
+        _setter("default_value", default_value)
+        _setter("description", description)
+        _setter("hint_message", hint_message)
+        _setter("is_mandatory", is_mandatory)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="dataType")
@@ -2698,10 +3499,23 @@ class GetPublicationPackagesFilterResult(dict):
         """
         :param str name: The name of the variable.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPublicationPackagesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2737,11 +3551,28 @@ class GetPublicationPackagesPublicationPackageResult(dict):
         :param str resource_id: The unique identifier for the package resource.
         :param str time_created: The date and time the publication package was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
-        pulumi.set(__self__, "listing_id", listing_id)
-        pulumi.set(__self__, "package_type", package_type)
-        pulumi.set(__self__, "package_version", package_version)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "time_created", time_created)
+        GetPublicationPackagesPublicationPackageResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            listing_id=listing_id,
+            package_type=package_type,
+            package_version=package_version,
+            resource_id=resource_id,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             listing_id: str,
+             package_type: str,
+             package_version: str,
+             resource_id: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("listing_id", listing_id)
+        _setter("package_type", package_type)
+        _setter("package_version", package_version)
+        _setter("resource_id", resource_id)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="listingId")
@@ -2797,10 +3628,25 @@ class GetPublicationSupportContactResult(dict):
         :param str phone: The phone number of the contact.
         :param str subject: The email subject line to use when contacting support.
         """
-        pulumi.set(__self__, "email", email)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "phone", phone)
-        pulumi.set(__self__, "subject", subject)
+        GetPublicationSupportContactResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            email=email,
+            name=name,
+            phone=phone,
+            subject=subject,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             email: str,
+             name: str,
+             phone: str,
+             subject: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("email", email)
+        _setter("name", name)
+        _setter("phone", phone)
+        _setter("subject", subject)
 
     @property
     @pulumi.getter
@@ -2842,7 +3688,16 @@ class GetPublicationSupportedOperatingSystemResult(dict):
         """
         :param str name: The name of the operating system.
         """
-        pulumi.set(__self__, "name", name)
+        GetPublicationSupportedOperatingSystemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2862,10 +3717,23 @@ class GetPublicationsFilterResult(dict):
         """
         :param str name: The name of the publication.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPublicationsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2921,22 +3789,61 @@ class GetPublicationsPublicationResult(dict):
         :param Sequence['GetPublicationsPublicationSupportedOperatingSystemArgs'] supported_operating_systems: The list of operating systems supported by the listing.
         :param str time_created: The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "icons", icons)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_agreement_acknowledged", is_agreement_acknowledged)
-        pulumi.set(__self__, "listing_type", listing_type)
-        pulumi.set(__self__, "long_description", long_description)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "package_details", package_details)
-        pulumi.set(__self__, "package_type", package_type)
-        pulumi.set(__self__, "short_description", short_description)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "support_contacts", support_contacts)
-        pulumi.set(__self__, "supported_operating_systems", supported_operating_systems)
-        pulumi.set(__self__, "time_created", time_created)
+        GetPublicationsPublicationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            icons=icons,
+            id=id,
+            is_agreement_acknowledged=is_agreement_acknowledged,
+            listing_type=listing_type,
+            long_description=long_description,
+            name=name,
+            package_details=package_details,
+            package_type=package_type,
+            short_description=short_description,
+            state=state,
+            support_contacts=support_contacts,
+            supported_operating_systems=supported_operating_systems,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             icons: Sequence['outputs.GetPublicationsPublicationIconResult'],
+             id: str,
+             is_agreement_acknowledged: bool,
+             listing_type: str,
+             long_description: str,
+             name: str,
+             package_details: Sequence['outputs.GetPublicationsPublicationPackageDetailResult'],
+             package_type: str,
+             short_description: str,
+             state: str,
+             support_contacts: Sequence['outputs.GetPublicationsPublicationSupportContactResult'],
+             supported_operating_systems: Sequence['outputs.GetPublicationsPublicationSupportedOperatingSystemResult'],
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("icons", icons)
+        _setter("id", id)
+        _setter("is_agreement_acknowledged", is_agreement_acknowledged)
+        _setter("listing_type", listing_type)
+        _setter("long_description", long_description)
+        _setter("name", name)
+        _setter("package_details", package_details)
+        _setter("package_type", package_type)
+        _setter("short_description", short_description)
+        _setter("state", state)
+        _setter("support_contacts", support_contacts)
+        _setter("supported_operating_systems", supported_operating_systems)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3074,10 +3981,25 @@ class GetPublicationsPublicationIconResult(dict):
         :param str mime_type: The MIME type of the upload data.
         :param str name: The name of the publication.
         """
-        pulumi.set(__self__, "content_url", content_url)
-        pulumi.set(__self__, "file_extension", file_extension)
-        pulumi.set(__self__, "mime_type", mime_type)
-        pulumi.set(__self__, "name", name)
+        GetPublicationsPublicationIconResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            content_url=content_url,
+            file_extension=file_extension,
+            mime_type=mime_type,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             content_url: str,
+             file_extension: str,
+             mime_type: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("content_url", content_url)
+        _setter("file_extension", file_extension)
+        _setter("mime_type", mime_type)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="contentUrl")
@@ -3123,11 +4045,28 @@ class GetPublicationsPublicationPackageDetailResult(dict):
         """
         :param str package_type: The listing's package type.
         """
-        pulumi.set(__self__, "eulas", eulas)
-        pulumi.set(__self__, "image_id", image_id)
-        pulumi.set(__self__, "operating_systems", operating_systems)
-        pulumi.set(__self__, "package_type", package_type)
-        pulumi.set(__self__, "package_version", package_version)
+        GetPublicationsPublicationPackageDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            eulas=eulas,
+            image_id=image_id,
+            operating_systems=operating_systems,
+            package_type=package_type,
+            package_version=package_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             eulas: Sequence['outputs.GetPublicationsPublicationPackageDetailEulaResult'],
+             image_id: str,
+             operating_systems: Sequence['outputs.GetPublicationsPublicationPackageDetailOperatingSystemResult'],
+             package_type: str,
+             package_version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("eulas", eulas)
+        _setter("image_id", image_id)
+        _setter("operating_systems", operating_systems)
+        _setter("package_type", package_type)
+        _setter("package_version", package_version)
 
     @property
     @pulumi.getter
@@ -3163,8 +4102,19 @@ class GetPublicationsPublicationPackageDetailEulaResult(dict):
     def __init__(__self__, *,
                  eula_type: str,
                  license_text: str):
-        pulumi.set(__self__, "eula_type", eula_type)
-        pulumi.set(__self__, "license_text", license_text)
+        GetPublicationsPublicationPackageDetailEulaResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            eula_type=eula_type,
+            license_text=license_text,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             eula_type: str,
+             license_text: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("eula_type", eula_type)
+        _setter("license_text", license_text)
 
     @property
     @pulumi.getter(name="eulaType")
@@ -3184,7 +4134,16 @@ class GetPublicationsPublicationPackageDetailOperatingSystemResult(dict):
         """
         :param str name: The name of the publication.
         """
-        pulumi.set(__self__, "name", name)
+        GetPublicationsPublicationPackageDetailOperatingSystemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -3208,10 +4167,25 @@ class GetPublicationsPublicationSupportContactResult(dict):
         :param str phone: The phone number of the contact.
         :param str subject: The email subject line to use when contacting support.
         """
-        pulumi.set(__self__, "email", email)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "phone", phone)
-        pulumi.set(__self__, "subject", subject)
+        GetPublicationsPublicationSupportContactResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            email=email,
+            name=name,
+            phone=phone,
+            subject=subject,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             email: str,
+             name: str,
+             phone: str,
+             subject: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("email", email)
+        _setter("name", name)
+        _setter("phone", phone)
+        _setter("subject", subject)
 
     @property
     @pulumi.getter
@@ -3253,7 +4227,16 @@ class GetPublicationsPublicationSupportedOperatingSystemResult(dict):
         """
         :param str name: The name of the publication.
         """
-        pulumi.set(__self__, "name", name)
+        GetPublicationsPublicationSupportedOperatingSystemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -3273,10 +4256,23 @@ class GetPublishersFilterResult(dict):
         """
         :param str name: The name of the publisher.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPublishersFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3308,9 +4304,22 @@ class GetPublishersPublisherResult(dict):
         :param str id: The unique identifier for the publisher.
         :param str name: The name of the publisher.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
+        GetPublishersPublisherResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            id=id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             id: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("id", id)
+        _setter("name", name)
 
     @property
     @pulumi.getter

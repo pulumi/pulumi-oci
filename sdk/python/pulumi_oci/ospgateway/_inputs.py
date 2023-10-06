@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -88,58 +88,117 @@ class AddressActionVerificationAddressArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        AddressActionVerificationAddressArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address_key=address_key,
+            city=city,
+            company_name=company_name,
+            contributor_class=contributor_class,
+            country=country,
+            county=county,
+            department_name=department_name,
+            email_address=email_address,
+            first_name=first_name,
+            internal_number=internal_number,
+            job_title=job_title,
+            last_name=last_name,
+            line1=line1,
+            line2=line2,
+            line3=line3,
+            line4=line4,
+            middle_name=middle_name,
+            municipal_inscription=municipal_inscription,
+            phone_country_code=phone_country_code,
+            phone_number=phone_number,
+            postal_code=postal_code,
+            province=province,
+            state=state,
+            state_inscription=state_inscription,
+            street_name=street_name,
+            street_number=street_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address_key: Optional[pulumi.Input[str]] = None,
+             city: Optional[pulumi.Input[str]] = None,
+             company_name: Optional[pulumi.Input[str]] = None,
+             contributor_class: Optional[pulumi.Input[str]] = None,
+             country: Optional[pulumi.Input[str]] = None,
+             county: Optional[pulumi.Input[str]] = None,
+             department_name: Optional[pulumi.Input[str]] = None,
+             email_address: Optional[pulumi.Input[str]] = None,
+             first_name: Optional[pulumi.Input[str]] = None,
+             internal_number: Optional[pulumi.Input[str]] = None,
+             job_title: Optional[pulumi.Input[str]] = None,
+             last_name: Optional[pulumi.Input[str]] = None,
+             line1: Optional[pulumi.Input[str]] = None,
+             line2: Optional[pulumi.Input[str]] = None,
+             line3: Optional[pulumi.Input[str]] = None,
+             line4: Optional[pulumi.Input[str]] = None,
+             middle_name: Optional[pulumi.Input[str]] = None,
+             municipal_inscription: Optional[pulumi.Input[str]] = None,
+             phone_country_code: Optional[pulumi.Input[str]] = None,
+             phone_number: Optional[pulumi.Input[str]] = None,
+             postal_code: Optional[pulumi.Input[str]] = None,
+             province: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             state_inscription: Optional[pulumi.Input[str]] = None,
+             street_name: Optional[pulumi.Input[str]] = None,
+             street_number: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if address_key is not None:
-            pulumi.set(__self__, "address_key", address_key)
+            _setter("address_key", address_key)
         if city is not None:
-            pulumi.set(__self__, "city", city)
+            _setter("city", city)
         if company_name is not None:
-            pulumi.set(__self__, "company_name", company_name)
+            _setter("company_name", company_name)
         if contributor_class is not None:
-            pulumi.set(__self__, "contributor_class", contributor_class)
+            _setter("contributor_class", contributor_class)
         if country is not None:
-            pulumi.set(__self__, "country", country)
+            _setter("country", country)
         if county is not None:
-            pulumi.set(__self__, "county", county)
+            _setter("county", county)
         if department_name is not None:
-            pulumi.set(__self__, "department_name", department_name)
+            _setter("department_name", department_name)
         if email_address is not None:
-            pulumi.set(__self__, "email_address", email_address)
+            _setter("email_address", email_address)
         if first_name is not None:
-            pulumi.set(__self__, "first_name", first_name)
+            _setter("first_name", first_name)
         if internal_number is not None:
-            pulumi.set(__self__, "internal_number", internal_number)
+            _setter("internal_number", internal_number)
         if job_title is not None:
-            pulumi.set(__self__, "job_title", job_title)
+            _setter("job_title", job_title)
         if last_name is not None:
-            pulumi.set(__self__, "last_name", last_name)
+            _setter("last_name", last_name)
         if line1 is not None:
-            pulumi.set(__self__, "line1", line1)
+            _setter("line1", line1)
         if line2 is not None:
-            pulumi.set(__self__, "line2", line2)
+            _setter("line2", line2)
         if line3 is not None:
-            pulumi.set(__self__, "line3", line3)
+            _setter("line3", line3)
         if line4 is not None:
-            pulumi.set(__self__, "line4", line4)
+            _setter("line4", line4)
         if middle_name is not None:
-            pulumi.set(__self__, "middle_name", middle_name)
+            _setter("middle_name", middle_name)
         if municipal_inscription is not None:
-            pulumi.set(__self__, "municipal_inscription", municipal_inscription)
+            _setter("municipal_inscription", municipal_inscription)
         if phone_country_code is not None:
-            pulumi.set(__self__, "phone_country_code", phone_country_code)
+            _setter("phone_country_code", phone_country_code)
         if phone_number is not None:
-            pulumi.set(__self__, "phone_number", phone_number)
+            _setter("phone_number", phone_number)
         if postal_code is not None:
-            pulumi.set(__self__, "postal_code", postal_code)
+            _setter("postal_code", postal_code)
         if province is not None:
-            pulumi.set(__self__, "province", province)
+            _setter("province", province)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if state_inscription is not None:
-            pulumi.set(__self__, "state_inscription", state_inscription)
+            _setter("state_inscription", state_inscription)
         if street_name is not None:
-            pulumi.set(__self__, "street_name", street_name)
+            _setter("street_name", street_name)
         if street_number is not None:
-            pulumi.set(__self__, "street_number", street_number)
+            _setter("street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
@@ -515,58 +574,117 @@ class SubscriptionBillingAddressArgs:
         :param pulumi.Input[str] street_name: (Updatable) Street name of the address.
         :param pulumi.Input[str] street_number: (Updatable) Street number of the address.
         """
+        SubscriptionBillingAddressArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address_key=address_key,
+            city=city,
+            company_name=company_name,
+            contributor_class=contributor_class,
+            country=country,
+            county=county,
+            department_name=department_name,
+            email_address=email_address,
+            first_name=first_name,
+            internal_number=internal_number,
+            job_title=job_title,
+            last_name=last_name,
+            line1=line1,
+            line2=line2,
+            line3=line3,
+            line4=line4,
+            middle_name=middle_name,
+            municipal_inscription=municipal_inscription,
+            phone_country_code=phone_country_code,
+            phone_number=phone_number,
+            postal_code=postal_code,
+            province=province,
+            state=state,
+            state_inscription=state_inscription,
+            street_name=street_name,
+            street_number=street_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address_key: Optional[pulumi.Input[str]] = None,
+             city: Optional[pulumi.Input[str]] = None,
+             company_name: Optional[pulumi.Input[str]] = None,
+             contributor_class: Optional[pulumi.Input[str]] = None,
+             country: Optional[pulumi.Input[str]] = None,
+             county: Optional[pulumi.Input[str]] = None,
+             department_name: Optional[pulumi.Input[str]] = None,
+             email_address: Optional[pulumi.Input[str]] = None,
+             first_name: Optional[pulumi.Input[str]] = None,
+             internal_number: Optional[pulumi.Input[str]] = None,
+             job_title: Optional[pulumi.Input[str]] = None,
+             last_name: Optional[pulumi.Input[str]] = None,
+             line1: Optional[pulumi.Input[str]] = None,
+             line2: Optional[pulumi.Input[str]] = None,
+             line3: Optional[pulumi.Input[str]] = None,
+             line4: Optional[pulumi.Input[str]] = None,
+             middle_name: Optional[pulumi.Input[str]] = None,
+             municipal_inscription: Optional[pulumi.Input[str]] = None,
+             phone_country_code: Optional[pulumi.Input[str]] = None,
+             phone_number: Optional[pulumi.Input[str]] = None,
+             postal_code: Optional[pulumi.Input[str]] = None,
+             province: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             state_inscription: Optional[pulumi.Input[str]] = None,
+             street_name: Optional[pulumi.Input[str]] = None,
+             street_number: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if address_key is not None:
-            pulumi.set(__self__, "address_key", address_key)
+            _setter("address_key", address_key)
         if city is not None:
-            pulumi.set(__self__, "city", city)
+            _setter("city", city)
         if company_name is not None:
-            pulumi.set(__self__, "company_name", company_name)
+            _setter("company_name", company_name)
         if contributor_class is not None:
-            pulumi.set(__self__, "contributor_class", contributor_class)
+            _setter("contributor_class", contributor_class)
         if country is not None:
-            pulumi.set(__self__, "country", country)
+            _setter("country", country)
         if county is not None:
-            pulumi.set(__self__, "county", county)
+            _setter("county", county)
         if department_name is not None:
-            pulumi.set(__self__, "department_name", department_name)
+            _setter("department_name", department_name)
         if email_address is not None:
-            pulumi.set(__self__, "email_address", email_address)
+            _setter("email_address", email_address)
         if first_name is not None:
-            pulumi.set(__self__, "first_name", first_name)
+            _setter("first_name", first_name)
         if internal_number is not None:
-            pulumi.set(__self__, "internal_number", internal_number)
+            _setter("internal_number", internal_number)
         if job_title is not None:
-            pulumi.set(__self__, "job_title", job_title)
+            _setter("job_title", job_title)
         if last_name is not None:
-            pulumi.set(__self__, "last_name", last_name)
+            _setter("last_name", last_name)
         if line1 is not None:
-            pulumi.set(__self__, "line1", line1)
+            _setter("line1", line1)
         if line2 is not None:
-            pulumi.set(__self__, "line2", line2)
+            _setter("line2", line2)
         if line3 is not None:
-            pulumi.set(__self__, "line3", line3)
+            _setter("line3", line3)
         if line4 is not None:
-            pulumi.set(__self__, "line4", line4)
+            _setter("line4", line4)
         if middle_name is not None:
-            pulumi.set(__self__, "middle_name", middle_name)
+            _setter("middle_name", middle_name)
         if municipal_inscription is not None:
-            pulumi.set(__self__, "municipal_inscription", municipal_inscription)
+            _setter("municipal_inscription", municipal_inscription)
         if phone_country_code is not None:
-            pulumi.set(__self__, "phone_country_code", phone_country_code)
+            _setter("phone_country_code", phone_country_code)
         if phone_number is not None:
-            pulumi.set(__self__, "phone_number", phone_number)
+            _setter("phone_number", phone_number)
         if postal_code is not None:
-            pulumi.set(__self__, "postal_code", postal_code)
+            _setter("postal_code", postal_code)
         if province is not None:
-            pulumi.set(__self__, "province", province)
+            _setter("province", province)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if state_inscription is not None:
-            pulumi.set(__self__, "state_inscription", state_inscription)
+            _setter("state_inscription", state_inscription)
         if street_name is not None:
-            pulumi.set(__self__, "street_name", street_name)
+            _setter("street_name", street_name)
         if street_number is not None:
-            pulumi.set(__self__, "street_number", street_number)
+            _setter("street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
@@ -888,8 +1006,17 @@ class SubscriptionPaymentGatewayArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentGatewayMerchantDefinedDataArgs']]] merchant_defined_datas: (Updatable) Merchant details.
         """
+        SubscriptionPaymentGatewayArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            merchant_defined_datas=merchant_defined_datas,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             merchant_defined_datas: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionPaymentGatewayMerchantDefinedDataArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if merchant_defined_datas is not None:
-            pulumi.set(__self__, "merchant_defined_datas", merchant_defined_datas)
+            _setter("merchant_defined_datas", merchant_defined_datas)
 
     @property
     @pulumi.getter(name="merchantDefinedDatas")
@@ -913,10 +1040,21 @@ class SubscriptionPaymentGatewayMerchantDefinedDataArgs:
         :param pulumi.Input[str] cloud_account_name: (Updatable) Cloud account name.
         :param pulumi.Input[str] promo_type: (Updatable) Promotion type code.
         """
+        SubscriptionPaymentGatewayMerchantDefinedDataArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cloud_account_name=cloud_account_name,
+            promo_type=promo_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cloud_account_name: Optional[pulumi.Input[str]] = None,
+             promo_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if cloud_account_name is not None:
-            pulumi.set(__self__, "cloud_account_name", cloud_account_name)
+            _setter("cloud_account_name", cloud_account_name)
         if promo_type is not None:
-            pulumi.set(__self__, "promo_type", promo_type)
+            _setter("promo_type", promo_type)
 
     @property
     @pulumi.getter(name="cloudAccountName")
@@ -970,28 +1108,57 @@ class SubscriptionPaymentOptionArgs:
         :param pulumi.Input[str] wallet_instrument_id: (Updatable) Wallet instrument internal id.
         :param pulumi.Input[str] wallet_transaction_id: (Updatable) Wallet transaction id.
         """
+        SubscriptionPaymentOptionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credit_card_type=credit_card_type,
+            email_address=email_address,
+            ext_billing_agreement_id=ext_billing_agreement_id,
+            first_name=first_name,
+            last_digits=last_digits,
+            last_name=last_name,
+            name_on_card=name_on_card,
+            payment_method=payment_method,
+            time_expiration=time_expiration,
+            wallet_instrument_id=wallet_instrument_id,
+            wallet_transaction_id=wallet_transaction_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credit_card_type: Optional[pulumi.Input[str]] = None,
+             email_address: Optional[pulumi.Input[str]] = None,
+             ext_billing_agreement_id: Optional[pulumi.Input[str]] = None,
+             first_name: Optional[pulumi.Input[str]] = None,
+             last_digits: Optional[pulumi.Input[str]] = None,
+             last_name: Optional[pulumi.Input[str]] = None,
+             name_on_card: Optional[pulumi.Input[str]] = None,
+             payment_method: Optional[pulumi.Input[str]] = None,
+             time_expiration: Optional[pulumi.Input[str]] = None,
+             wallet_instrument_id: Optional[pulumi.Input[str]] = None,
+             wallet_transaction_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if credit_card_type is not None:
-            pulumi.set(__self__, "credit_card_type", credit_card_type)
+            _setter("credit_card_type", credit_card_type)
         if email_address is not None:
-            pulumi.set(__self__, "email_address", email_address)
+            _setter("email_address", email_address)
         if ext_billing_agreement_id is not None:
-            pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
+            _setter("ext_billing_agreement_id", ext_billing_agreement_id)
         if first_name is not None:
-            pulumi.set(__self__, "first_name", first_name)
+            _setter("first_name", first_name)
         if last_digits is not None:
-            pulumi.set(__self__, "last_digits", last_digits)
+            _setter("last_digits", last_digits)
         if last_name is not None:
-            pulumi.set(__self__, "last_name", last_name)
+            _setter("last_name", last_name)
         if name_on_card is not None:
-            pulumi.set(__self__, "name_on_card", name_on_card)
+            _setter("name_on_card", name_on_card)
         if payment_method is not None:
-            pulumi.set(__self__, "payment_method", payment_method)
+            _setter("payment_method", payment_method)
         if time_expiration is not None:
-            pulumi.set(__self__, "time_expiration", time_expiration)
+            _setter("time_expiration", time_expiration)
         if wallet_instrument_id is not None:
-            pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
+            _setter("wallet_instrument_id", wallet_instrument_id)
         if wallet_transaction_id is not None:
-            pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
+            _setter("wallet_transaction_id", wallet_transaction_id)
 
     @property
     @pulumi.getter(name="creditCardType")
@@ -1173,47 +1340,96 @@ class SubscriptionSubscriptionArgs:
         :param pulumi.Input[str] upgrade_state: (Updatable) Status of the upgrade.
         :param pulumi.Input[str] upgrade_state_details: (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
         """
-        pulumi.set(__self__, "subscription_plan_number", subscription_plan_number)
+        SubscriptionSubscriptionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            subscription_plan_number=subscription_plan_number,
+            account_type=account_type,
+            bill_to_cust_account_id=bill_to_cust_account_id,
+            billing_addresses=billing_addresses,
+            currency_code=currency_code,
+            gsi_org_code=gsi_org_code,
+            id=id,
+            is_intent_to_pay=is_intent_to_pay,
+            language_code=language_code,
+            organization_id=organization_id,
+            payment_gateway=payment_gateway,
+            payment_options=payment_options,
+            plan_type=plan_type,
+            ship_to_cust_acct_role_id=ship_to_cust_acct_role_id,
+            ship_to_cust_acct_site_id=ship_to_cust_acct_site_id,
+            tax_info=tax_info,
+            time_personal_to_corporate_conv=time_personal_to_corporate_conv,
+            time_plan_upgrade=time_plan_upgrade,
+            time_start=time_start,
+            upgrade_state=upgrade_state,
+            upgrade_state_details=upgrade_state_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             subscription_plan_number: pulumi.Input[str],
+             account_type: Optional[pulumi.Input[str]] = None,
+             bill_to_cust_account_id: Optional[pulumi.Input[str]] = None,
+             billing_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionSubscriptionBillingAddressArgs']]]] = None,
+             currency_code: Optional[pulumi.Input[str]] = None,
+             gsi_org_code: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             is_intent_to_pay: Optional[pulumi.Input[bool]] = None,
+             language_code: Optional[pulumi.Input[str]] = None,
+             organization_id: Optional[pulumi.Input[str]] = None,
+             payment_gateway: Optional[pulumi.Input['SubscriptionSubscriptionPaymentGatewayArgs']] = None,
+             payment_options: Optional[pulumi.Input[Sequence[pulumi.Input['SubscriptionSubscriptionPaymentOptionArgs']]]] = None,
+             plan_type: Optional[pulumi.Input[str]] = None,
+             ship_to_cust_acct_role_id: Optional[pulumi.Input[str]] = None,
+             ship_to_cust_acct_site_id: Optional[pulumi.Input[str]] = None,
+             tax_info: Optional[pulumi.Input['SubscriptionSubscriptionTaxInfoArgs']] = None,
+             time_personal_to_corporate_conv: Optional[pulumi.Input[str]] = None,
+             time_plan_upgrade: Optional[pulumi.Input[str]] = None,
+             time_start: Optional[pulumi.Input[str]] = None,
+             upgrade_state: Optional[pulumi.Input[str]] = None,
+             upgrade_state_details: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("subscription_plan_number", subscription_plan_number)
         if account_type is not None:
-            pulumi.set(__self__, "account_type", account_type)
+            _setter("account_type", account_type)
         if bill_to_cust_account_id is not None:
-            pulumi.set(__self__, "bill_to_cust_account_id", bill_to_cust_account_id)
+            _setter("bill_to_cust_account_id", bill_to_cust_account_id)
         if billing_addresses is not None:
-            pulumi.set(__self__, "billing_addresses", billing_addresses)
+            _setter("billing_addresses", billing_addresses)
         if currency_code is not None:
-            pulumi.set(__self__, "currency_code", currency_code)
+            _setter("currency_code", currency_code)
         if gsi_org_code is not None:
-            pulumi.set(__self__, "gsi_org_code", gsi_org_code)
+            _setter("gsi_org_code", gsi_org_code)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if is_intent_to_pay is not None:
-            pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
+            _setter("is_intent_to_pay", is_intent_to_pay)
         if language_code is not None:
-            pulumi.set(__self__, "language_code", language_code)
+            _setter("language_code", language_code)
         if organization_id is not None:
-            pulumi.set(__self__, "organization_id", organization_id)
+            _setter("organization_id", organization_id)
         if payment_gateway is not None:
-            pulumi.set(__self__, "payment_gateway", payment_gateway)
+            _setter("payment_gateway", payment_gateway)
         if payment_options is not None:
-            pulumi.set(__self__, "payment_options", payment_options)
+            _setter("payment_options", payment_options)
         if plan_type is not None:
-            pulumi.set(__self__, "plan_type", plan_type)
+            _setter("plan_type", plan_type)
         if ship_to_cust_acct_role_id is not None:
-            pulumi.set(__self__, "ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
+            _setter("ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
         if ship_to_cust_acct_site_id is not None:
-            pulumi.set(__self__, "ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
+            _setter("ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
         if tax_info is not None:
-            pulumi.set(__self__, "tax_info", tax_info)
+            _setter("tax_info", tax_info)
         if time_personal_to_corporate_conv is not None:
-            pulumi.set(__self__, "time_personal_to_corporate_conv", time_personal_to_corporate_conv)
+            _setter("time_personal_to_corporate_conv", time_personal_to_corporate_conv)
         if time_plan_upgrade is not None:
-            pulumi.set(__self__, "time_plan_upgrade", time_plan_upgrade)
+            _setter("time_plan_upgrade", time_plan_upgrade)
         if time_start is not None:
-            pulumi.set(__self__, "time_start", time_start)
+            _setter("time_start", time_start)
         if upgrade_state is not None:
-            pulumi.set(__self__, "upgrade_state", upgrade_state)
+            _setter("upgrade_state", upgrade_state)
         if upgrade_state_details is not None:
-            pulumi.set(__self__, "upgrade_state_details", upgrade_state_details)
+            _setter("upgrade_state_details", upgrade_state_details)
 
     @property
     @pulumi.getter(name="subscriptionPlanNumber")
@@ -1525,58 +1741,117 @@ class SubscriptionSubscriptionBillingAddressArgs:
         :param pulumi.Input[str] street_name: (Updatable) Street name of the address.
         :param pulumi.Input[str] street_number: (Updatable) Street number of the address.
         """
+        SubscriptionSubscriptionBillingAddressArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address_key=address_key,
+            city=city,
+            company_name=company_name,
+            contributor_class=contributor_class,
+            country=country,
+            county=county,
+            department_name=department_name,
+            email_address=email_address,
+            first_name=first_name,
+            internal_number=internal_number,
+            job_title=job_title,
+            last_name=last_name,
+            line1=line1,
+            line2=line2,
+            line3=line3,
+            line4=line4,
+            middle_name=middle_name,
+            municipal_inscription=municipal_inscription,
+            phone_country_code=phone_country_code,
+            phone_number=phone_number,
+            postal_code=postal_code,
+            province=province,
+            state=state,
+            state_inscription=state_inscription,
+            street_name=street_name,
+            street_number=street_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address_key: Optional[pulumi.Input[str]] = None,
+             city: Optional[pulumi.Input[str]] = None,
+             company_name: Optional[pulumi.Input[str]] = None,
+             contributor_class: Optional[pulumi.Input[str]] = None,
+             country: Optional[pulumi.Input[str]] = None,
+             county: Optional[pulumi.Input[str]] = None,
+             department_name: Optional[pulumi.Input[str]] = None,
+             email_address: Optional[pulumi.Input[str]] = None,
+             first_name: Optional[pulumi.Input[str]] = None,
+             internal_number: Optional[pulumi.Input[str]] = None,
+             job_title: Optional[pulumi.Input[str]] = None,
+             last_name: Optional[pulumi.Input[str]] = None,
+             line1: Optional[pulumi.Input[str]] = None,
+             line2: Optional[pulumi.Input[str]] = None,
+             line3: Optional[pulumi.Input[str]] = None,
+             line4: Optional[pulumi.Input[str]] = None,
+             middle_name: Optional[pulumi.Input[str]] = None,
+             municipal_inscription: Optional[pulumi.Input[str]] = None,
+             phone_country_code: Optional[pulumi.Input[str]] = None,
+             phone_number: Optional[pulumi.Input[str]] = None,
+             postal_code: Optional[pulumi.Input[str]] = None,
+             province: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             state_inscription: Optional[pulumi.Input[str]] = None,
+             street_name: Optional[pulumi.Input[str]] = None,
+             street_number: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if address_key is not None:
-            pulumi.set(__self__, "address_key", address_key)
+            _setter("address_key", address_key)
         if city is not None:
-            pulumi.set(__self__, "city", city)
+            _setter("city", city)
         if company_name is not None:
-            pulumi.set(__self__, "company_name", company_name)
+            _setter("company_name", company_name)
         if contributor_class is not None:
-            pulumi.set(__self__, "contributor_class", contributor_class)
+            _setter("contributor_class", contributor_class)
         if country is not None:
-            pulumi.set(__self__, "country", country)
+            _setter("country", country)
         if county is not None:
-            pulumi.set(__self__, "county", county)
+            _setter("county", county)
         if department_name is not None:
-            pulumi.set(__self__, "department_name", department_name)
+            _setter("department_name", department_name)
         if email_address is not None:
-            pulumi.set(__self__, "email_address", email_address)
+            _setter("email_address", email_address)
         if first_name is not None:
-            pulumi.set(__self__, "first_name", first_name)
+            _setter("first_name", first_name)
         if internal_number is not None:
-            pulumi.set(__self__, "internal_number", internal_number)
+            _setter("internal_number", internal_number)
         if job_title is not None:
-            pulumi.set(__self__, "job_title", job_title)
+            _setter("job_title", job_title)
         if last_name is not None:
-            pulumi.set(__self__, "last_name", last_name)
+            _setter("last_name", last_name)
         if line1 is not None:
-            pulumi.set(__self__, "line1", line1)
+            _setter("line1", line1)
         if line2 is not None:
-            pulumi.set(__self__, "line2", line2)
+            _setter("line2", line2)
         if line3 is not None:
-            pulumi.set(__self__, "line3", line3)
+            _setter("line3", line3)
         if line4 is not None:
-            pulumi.set(__self__, "line4", line4)
+            _setter("line4", line4)
         if middle_name is not None:
-            pulumi.set(__self__, "middle_name", middle_name)
+            _setter("middle_name", middle_name)
         if municipal_inscription is not None:
-            pulumi.set(__self__, "municipal_inscription", municipal_inscription)
+            _setter("municipal_inscription", municipal_inscription)
         if phone_country_code is not None:
-            pulumi.set(__self__, "phone_country_code", phone_country_code)
+            _setter("phone_country_code", phone_country_code)
         if phone_number is not None:
-            pulumi.set(__self__, "phone_number", phone_number)
+            _setter("phone_number", phone_number)
         if postal_code is not None:
-            pulumi.set(__self__, "postal_code", postal_code)
+            _setter("postal_code", postal_code)
         if province is not None:
-            pulumi.set(__self__, "province", province)
+            _setter("province", province)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if state_inscription is not None:
-            pulumi.set(__self__, "state_inscription", state_inscription)
+            _setter("state_inscription", state_inscription)
         if street_name is not None:
-            pulumi.set(__self__, "street_name", street_name)
+            _setter("street_name", street_name)
         if street_number is not None:
-            pulumi.set(__self__, "street_number", street_number)
+            _setter("street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
@@ -1898,8 +2173,17 @@ class SubscriptionSubscriptionPaymentGatewayArgs:
         """
         :param pulumi.Input['SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs'] merchant_defined_data: (Updatable) Merchant details.
         """
+        SubscriptionSubscriptionPaymentGatewayArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            merchant_defined_data=merchant_defined_data,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             merchant_defined_data: Optional[pulumi.Input['SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if merchant_defined_data is not None:
-            pulumi.set(__self__, "merchant_defined_data", merchant_defined_data)
+            _setter("merchant_defined_data", merchant_defined_data)
 
     @property
     @pulumi.getter(name="merchantDefinedData")
@@ -1923,10 +2207,21 @@ class SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs:
         :param pulumi.Input[str] cloud_account_name: (Updatable) Cloud account name.
         :param pulumi.Input[str] promo_type: (Updatable) Promotion type code.
         """
+        SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cloud_account_name=cloud_account_name,
+            promo_type=promo_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cloud_account_name: Optional[pulumi.Input[str]] = None,
+             promo_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if cloud_account_name is not None:
-            pulumi.set(__self__, "cloud_account_name", cloud_account_name)
+            _setter("cloud_account_name", cloud_account_name)
         if promo_type is not None:
-            pulumi.set(__self__, "promo_type", promo_type)
+            _setter("promo_type", promo_type)
 
     @property
     @pulumi.getter(name="cloudAccountName")
@@ -1980,27 +2275,56 @@ class SubscriptionSubscriptionPaymentOptionArgs:
         :param pulumi.Input[str] wallet_instrument_id: (Updatable) Wallet instrument internal id.
         :param pulumi.Input[str] wallet_transaction_id: (Updatable) Wallet transaction id.
         """
-        pulumi.set(__self__, "payment_method", payment_method)
+        SubscriptionSubscriptionPaymentOptionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            payment_method=payment_method,
+            credit_card_type=credit_card_type,
+            email_address=email_address,
+            ext_billing_agreement_id=ext_billing_agreement_id,
+            first_name=first_name,
+            last_digits=last_digits,
+            last_name=last_name,
+            name_on_card=name_on_card,
+            time_expiration=time_expiration,
+            wallet_instrument_id=wallet_instrument_id,
+            wallet_transaction_id=wallet_transaction_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             payment_method: pulumi.Input[str],
+             credit_card_type: Optional[pulumi.Input[str]] = None,
+             email_address: Optional[pulumi.Input[str]] = None,
+             ext_billing_agreement_id: Optional[pulumi.Input[str]] = None,
+             first_name: Optional[pulumi.Input[str]] = None,
+             last_digits: Optional[pulumi.Input[str]] = None,
+             last_name: Optional[pulumi.Input[str]] = None,
+             name_on_card: Optional[pulumi.Input[str]] = None,
+             time_expiration: Optional[pulumi.Input[str]] = None,
+             wallet_instrument_id: Optional[pulumi.Input[str]] = None,
+             wallet_transaction_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("payment_method", payment_method)
         if credit_card_type is not None:
-            pulumi.set(__self__, "credit_card_type", credit_card_type)
+            _setter("credit_card_type", credit_card_type)
         if email_address is not None:
-            pulumi.set(__self__, "email_address", email_address)
+            _setter("email_address", email_address)
         if ext_billing_agreement_id is not None:
-            pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
+            _setter("ext_billing_agreement_id", ext_billing_agreement_id)
         if first_name is not None:
-            pulumi.set(__self__, "first_name", first_name)
+            _setter("first_name", first_name)
         if last_digits is not None:
-            pulumi.set(__self__, "last_digits", last_digits)
+            _setter("last_digits", last_digits)
         if last_name is not None:
-            pulumi.set(__self__, "last_name", last_name)
+            _setter("last_name", last_name)
         if name_on_card is not None:
-            pulumi.set(__self__, "name_on_card", name_on_card)
+            _setter("name_on_card", name_on_card)
         if time_expiration is not None:
-            pulumi.set(__self__, "time_expiration", time_expiration)
+            _setter("time_expiration", time_expiration)
         if wallet_instrument_id is not None:
-            pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
+            _setter("wallet_instrument_id", wallet_instrument_id)
         if wallet_transaction_id is not None:
-            pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
+            _setter("wallet_transaction_id", wallet_transaction_id)
 
     @property
     @pulumi.getter(name="paymentMethod")
@@ -2150,16 +2474,33 @@ class SubscriptionSubscriptionTaxInfoArgs:
         :param pulumi.Input[str] tax_payer_id: (Updatable) Tay payer identifier.
         :param pulumi.Input[str] tax_reg_number: (Updatable) Tax registration number.
         """
+        SubscriptionSubscriptionTaxInfoArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            no_tax_reason_code=no_tax_reason_code,
+            no_tax_reason_code_details=no_tax_reason_code_details,
+            tax_cnpj=tax_cnpj,
+            tax_payer_id=tax_payer_id,
+            tax_reg_number=tax_reg_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             no_tax_reason_code: Optional[pulumi.Input[str]] = None,
+             no_tax_reason_code_details: Optional[pulumi.Input[str]] = None,
+             tax_cnpj: Optional[pulumi.Input[str]] = None,
+             tax_payer_id: Optional[pulumi.Input[str]] = None,
+             tax_reg_number: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if no_tax_reason_code is not None:
-            pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
+            _setter("no_tax_reason_code", no_tax_reason_code)
         if no_tax_reason_code_details is not None:
-            pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
+            _setter("no_tax_reason_code_details", no_tax_reason_code_details)
         if tax_cnpj is not None:
-            pulumi.set(__self__, "tax_cnpj", tax_cnpj)
+            _setter("tax_cnpj", tax_cnpj)
         if tax_payer_id is not None:
-            pulumi.set(__self__, "tax_payer_id", tax_payer_id)
+            _setter("tax_payer_id", tax_payer_id)
         if tax_reg_number is not None:
-            pulumi.set(__self__, "tax_reg_number", tax_reg_number)
+            _setter("tax_reg_number", tax_reg_number)
 
     @property
     @pulumi.getter(name="noTaxReasonCode")
@@ -2237,16 +2578,33 @@ class SubscriptionTaxInfoArgs:
         :param pulumi.Input[str] tax_payer_id: (Updatable) Tay payer identifier.
         :param pulumi.Input[str] tax_reg_number: (Updatable) Tax registration number.
         """
+        SubscriptionTaxInfoArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            no_tax_reason_code=no_tax_reason_code,
+            no_tax_reason_code_details=no_tax_reason_code_details,
+            tax_cnpj=tax_cnpj,
+            tax_payer_id=tax_payer_id,
+            tax_reg_number=tax_reg_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             no_tax_reason_code: Optional[pulumi.Input[str]] = None,
+             no_tax_reason_code_details: Optional[pulumi.Input[str]] = None,
+             tax_cnpj: Optional[pulumi.Input[str]] = None,
+             tax_payer_id: Optional[pulumi.Input[str]] = None,
+             tax_reg_number: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if no_tax_reason_code is not None:
-            pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
+            _setter("no_tax_reason_code", no_tax_reason_code)
         if no_tax_reason_code_details is not None:
-            pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
+            _setter("no_tax_reason_code_details", no_tax_reason_code_details)
         if tax_cnpj is not None:
-            pulumi.set(__self__, "tax_cnpj", tax_cnpj)
+            _setter("tax_cnpj", tax_cnpj)
         if tax_payer_id is not None:
-            pulumi.set(__self__, "tax_payer_id", tax_payer_id)
+            _setter("tax_payer_id", tax_payer_id)
         if tax_reg_number is not None:
-            pulumi.set(__self__, "tax_reg_number", tax_reg_number)
+            _setter("tax_reg_number", tax_reg_number)
 
     @property
     @pulumi.getter(name="noTaxReasonCode")
@@ -2318,10 +2676,23 @@ class GetInvoicesFilterArgs:
         """
         :param str name: Name of the currency
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetInvoicesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2363,10 +2734,23 @@ class GetInvoicesInvoiceLinesFilterArgs:
         """
         :param str name: Name of the currency
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetInvoicesInvoiceLinesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2405,10 +2789,23 @@ class GetSubscriptionsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSubscriptionsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

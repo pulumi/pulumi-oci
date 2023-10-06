@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -47,23 +47,50 @@ class DatabaseArgs:
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
-        pulumi.set(__self__, "database", database)
-        pulumi.set(__self__, "db_home_id", db_home_id)
-        pulumi.set(__self__, "source", source)
+        DatabaseArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            database=database,
+            db_home_id=db_home_id,
+            source=source,
+            db_version=db_version,
+            key_store_id=key_store_id,
+            kms_key_id=kms_key_id,
+            kms_key_migration=kms_key_migration,
+            kms_key_rotation=kms_key_rotation,
+            kms_key_version_id=kms_key_version_id,
+            vault_id=vault_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             database: pulumi.Input['DatabaseDatabaseArgs'],
+             db_home_id: pulumi.Input[str],
+             source: pulumi.Input[str],
+             db_version: Optional[pulumi.Input[str]] = None,
+             key_store_id: Optional[pulumi.Input[str]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             kms_key_migration: Optional[pulumi.Input[bool]] = None,
+             kms_key_rotation: Optional[pulumi.Input[int]] = None,
+             kms_key_version_id: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("database", database)
+        _setter("db_home_id", db_home_id)
+        _setter("source", source)
         if db_version is not None:
-            pulumi.set(__self__, "db_version", db_version)
+            _setter("db_version", db_version)
         if key_store_id is not None:
-            pulumi.set(__self__, "key_store_id", key_store_id)
+            _setter("key_store_id", key_store_id)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if kms_key_migration is not None:
-            pulumi.set(__self__, "kms_key_migration", kms_key_migration)
+            _setter("kms_key_migration", kms_key_migration)
         if kms_key_rotation is not None:
-            pulumi.set(__self__, "kms_key_rotation", kms_key_rotation)
+            _setter("kms_key_rotation", kms_key_rotation)
         if kms_key_version_id is not None:
-            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+            _setter("kms_key_version_id", kms_key_version_id)
         if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
+            _setter("vault_id", vault_id)
 
     @property
     @pulumi.getter
@@ -282,76 +309,153 @@ class _DatabaseState:
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         """
+        _DatabaseState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            character_set=character_set,
+            compartment_id=compartment_id,
+            connection_strings=connection_strings,
+            database=database,
+            database_management_configs=database_management_configs,
+            database_software_image_id=database_software_image_id,
+            db_backup_configs=db_backup_configs,
+            db_home_id=db_home_id,
+            db_name=db_name,
+            db_system_id=db_system_id,
+            db_unique_name=db_unique_name,
+            db_version=db_version,
+            db_workload=db_workload,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_cdb=is_cdb,
+            key_store_id=key_store_id,
+            key_store_wallet_name=key_store_wallet_name,
+            kms_key_id=kms_key_id,
+            kms_key_migration=kms_key_migration,
+            kms_key_rotation=kms_key_rotation,
+            kms_key_version_id=kms_key_version_id,
+            last_backup_duration_in_seconds=last_backup_duration_in_seconds,
+            last_backup_timestamp=last_backup_timestamp,
+            last_failed_backup_timestamp=last_failed_backup_timestamp,
+            lifecycle_details=lifecycle_details,
+            ncharacter_set=ncharacter_set,
+            pdb_name=pdb_name,
+            sid_prefix=sid_prefix,
+            source=source,
+            source_database_point_in_time_recovery_timestamp=source_database_point_in_time_recovery_timestamp,
+            state=state,
+            time_created=time_created,
+            vault_id=vault_id,
+            vm_cluster_id=vm_cluster_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             character_set: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseConnectionStringArgs']]]] = None,
+             database: Optional[pulumi.Input['DatabaseDatabaseArgs']] = None,
+             database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseDatabaseManagementConfigArgs']]]] = None,
+             database_software_image_id: Optional[pulumi.Input[str]] = None,
+             db_backup_configs: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseDbBackupConfigArgs']]]] = None,
+             db_home_id: Optional[pulumi.Input[str]] = None,
+             db_name: Optional[pulumi.Input[str]] = None,
+             db_system_id: Optional[pulumi.Input[str]] = None,
+             db_unique_name: Optional[pulumi.Input[str]] = None,
+             db_version: Optional[pulumi.Input[str]] = None,
+             db_workload: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_cdb: Optional[pulumi.Input[bool]] = None,
+             key_store_id: Optional[pulumi.Input[str]] = None,
+             key_store_wallet_name: Optional[pulumi.Input[str]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             kms_key_migration: Optional[pulumi.Input[bool]] = None,
+             kms_key_rotation: Optional[pulumi.Input[int]] = None,
+             kms_key_version_id: Optional[pulumi.Input[str]] = None,
+             last_backup_duration_in_seconds: Optional[pulumi.Input[int]] = None,
+             last_backup_timestamp: Optional[pulumi.Input[str]] = None,
+             last_failed_backup_timestamp: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             ncharacter_set: Optional[pulumi.Input[str]] = None,
+             pdb_name: Optional[pulumi.Input[str]] = None,
+             sid_prefix: Optional[pulumi.Input[str]] = None,
+             source: Optional[pulumi.Input[str]] = None,
+             source_database_point_in_time_recovery_timestamp: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             vm_cluster_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if character_set is not None:
-            pulumi.set(__self__, "character_set", character_set)
+            _setter("character_set", character_set)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if connection_strings is not None:
-            pulumi.set(__self__, "connection_strings", connection_strings)
+            _setter("connection_strings", connection_strings)
         if database is not None:
-            pulumi.set(__self__, "database", database)
+            _setter("database", database)
         if database_management_configs is not None:
-            pulumi.set(__self__, "database_management_configs", database_management_configs)
+            _setter("database_management_configs", database_management_configs)
         if database_software_image_id is not None:
-            pulumi.set(__self__, "database_software_image_id", database_software_image_id)
+            _setter("database_software_image_id", database_software_image_id)
         if db_backup_configs is not None:
-            pulumi.set(__self__, "db_backup_configs", db_backup_configs)
+            _setter("db_backup_configs", db_backup_configs)
         if db_home_id is not None:
-            pulumi.set(__self__, "db_home_id", db_home_id)
+            _setter("db_home_id", db_home_id)
         if db_name is not None:
-            pulumi.set(__self__, "db_name", db_name)
+            _setter("db_name", db_name)
         if db_system_id is not None:
-            pulumi.set(__self__, "db_system_id", db_system_id)
+            _setter("db_system_id", db_system_id)
         if db_unique_name is not None:
-            pulumi.set(__self__, "db_unique_name", db_unique_name)
+            _setter("db_unique_name", db_unique_name)
         if db_version is not None:
-            pulumi.set(__self__, "db_version", db_version)
+            _setter("db_version", db_version)
         if db_workload is not None:
-            pulumi.set(__self__, "db_workload", db_workload)
+            _setter("db_workload", db_workload)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_cdb is not None:
-            pulumi.set(__self__, "is_cdb", is_cdb)
+            _setter("is_cdb", is_cdb)
         if key_store_id is not None:
-            pulumi.set(__self__, "key_store_id", key_store_id)
+            _setter("key_store_id", key_store_id)
         if key_store_wallet_name is not None:
-            pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
+            _setter("key_store_wallet_name", key_store_wallet_name)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if kms_key_migration is not None:
-            pulumi.set(__self__, "kms_key_migration", kms_key_migration)
+            _setter("kms_key_migration", kms_key_migration)
         if kms_key_rotation is not None:
-            pulumi.set(__self__, "kms_key_rotation", kms_key_rotation)
+            _setter("kms_key_rotation", kms_key_rotation)
         if kms_key_version_id is not None:
-            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+            _setter("kms_key_version_id", kms_key_version_id)
         if last_backup_duration_in_seconds is not None:
-            pulumi.set(__self__, "last_backup_duration_in_seconds", last_backup_duration_in_seconds)
+            _setter("last_backup_duration_in_seconds", last_backup_duration_in_seconds)
         if last_backup_timestamp is not None:
-            pulumi.set(__self__, "last_backup_timestamp", last_backup_timestamp)
+            _setter("last_backup_timestamp", last_backup_timestamp)
         if last_failed_backup_timestamp is not None:
-            pulumi.set(__self__, "last_failed_backup_timestamp", last_failed_backup_timestamp)
+            _setter("last_failed_backup_timestamp", last_failed_backup_timestamp)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if ncharacter_set is not None:
-            pulumi.set(__self__, "ncharacter_set", ncharacter_set)
+            _setter("ncharacter_set", ncharacter_set)
         if pdb_name is not None:
-            pulumi.set(__self__, "pdb_name", pdb_name)
+            _setter("pdb_name", pdb_name)
         if sid_prefix is not None:
-            pulumi.set(__self__, "sid_prefix", sid_prefix)
+            _setter("sid_prefix", sid_prefix)
         if source is not None:
-            pulumi.set(__self__, "source", source)
+            _setter("source", source)
         if source_database_point_in_time_recovery_timestamp is not None:
-            pulumi.set(__self__, "source_database_point_in_time_recovery_timestamp", source_database_point_in_time_recovery_timestamp)
+            _setter("source_database_point_in_time_recovery_timestamp", source_database_point_in_time_recovery_timestamp)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
+            _setter("vault_id", vault_id)
         if vm_cluster_id is not None:
-            pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
+            _setter("vm_cluster_id", vm_cluster_id)
 
     @property
     @pulumi.getter(name="characterSet")
@@ -963,6 +1067,10 @@ class Database(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DatabaseArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -987,6 +1095,11 @@ class Database(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DatabaseArgs.__new__(DatabaseArgs)
 
+            if database is not None and not isinstance(database, DatabaseDatabaseArgs):
+                database = database or {}
+                def _setter(key, value):
+                    database[key] = value
+                DatabaseDatabaseArgs._configure(_setter, **database)
             if database is None and not opts.urn:
                 raise TypeError("Missing required property 'database'")
             __props__.__dict__["database"] = database

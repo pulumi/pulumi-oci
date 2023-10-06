@@ -46,6 +46,7 @@ namespace Pulumi.Oci.DataScience
     ///                 MemoryInGbs = @var.Notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs,
     ///                 Ocpus = @var.Notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus,
     ///             },
+    ///             PrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
     ///             SubnetId = oci_core_subnet.Test_subnet.Id,
     ///         },
     ///         NotebookSessionConfigurationDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionConfigurationDetailsArgs
@@ -58,6 +59,7 @@ namespace Pulumi.Oci.DataScience
     ///                 MemoryInGbs = @var.Notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs,
     ///                 Ocpus = @var.Notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus,
     ///             },
+    ///             PrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
     ///         },
     ///         NotebookSessionRuntimeConfigDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs
     ///         {

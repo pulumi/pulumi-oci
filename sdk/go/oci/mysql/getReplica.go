@@ -63,6 +63,8 @@ type LookupReplicaResult struct {
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The OCID of the compartment that contains the read replica.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The OCID of the Configuration to be used by the read replica.
+	ConfigurationId string `pulumi:"configurationId"`
 	// The OCID of the DB System the read replica is associated with.
 	DbSystemId string `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -83,13 +85,17 @@ type LookupReplicaResult struct {
 	IsDeleteProtected bool `pulumi:"isDeleteProtected"`
 	// A message describing the state of the read replica.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The MySQL version used by the read replica.
+	// The MySQL version to be used by the read replica.
 	MysqlVersion string `pulumi:"mysqlVersion"`
 	// The port the read replica is configured to listen on.
 	Port int `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX     int    `pulumi:"portX"`
 	ReplicaId string `pulumi:"replicaId"`
+	// By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+	ReplicaOverrides []GetReplicaReplicaOverride `pulumi:"replicaOverrides"`
+	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+	ShapeName string `pulumi:"shapeName"`
 	// The state of the read replica.
 	State string `pulumi:"state"`
 	// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -152,6 +158,11 @@ func (o LookupReplicaResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReplicaResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The OCID of the Configuration to be used by the read replica.
+func (o LookupReplicaResultOutput) ConfigurationId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReplicaResult) string { return v.ConfigurationId }).(pulumi.StringOutput)
+}
+
 // The OCID of the DB System the read replica is associated with.
 func (o LookupReplicaResultOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReplicaResult) string { return v.DbSystemId }).(pulumi.StringOutput)
@@ -202,7 +213,7 @@ func (o LookupReplicaResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReplicaResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The MySQL version used by the read replica.
+// The MySQL version to be used by the read replica.
 func (o LookupReplicaResultOutput) MysqlVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReplicaResult) string { return v.MysqlVersion }).(pulumi.StringOutput)
 }
@@ -219,6 +230,16 @@ func (o LookupReplicaResultOutput) PortX() pulumi.IntOutput {
 
 func (o LookupReplicaResultOutput) ReplicaId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReplicaResult) string { return v.ReplicaId }).(pulumi.StringOutput)
+}
+
+// By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+func (o LookupReplicaResultOutput) ReplicaOverrides() GetReplicaReplicaOverrideArrayOutput {
+	return o.ApplyT(func(v LookupReplicaResult) []GetReplicaReplicaOverride { return v.ReplicaOverrides }).(GetReplicaReplicaOverrideArrayOutput)
+}
+
+// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+func (o LookupReplicaResultOutput) ShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReplicaResult) string { return v.ShapeName }).(pulumi.StringOutput)
 }
 
 // The state of the read replica.

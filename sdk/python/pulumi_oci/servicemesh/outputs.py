@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -114,9 +114,22 @@ class AccessPolicyRule(dict):
         :param 'AccessPolicyRuleDestinationArgs' destination: (Updatable) Target of the access policy. This can either be the source or the destination of the traffic.
         :param 'AccessPolicyRuleSourceArgs' source: (Updatable) Target of the access policy. This can either be the source or the destination of the traffic.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "destination", destination)
-        pulumi.set(__self__, "source", source)
+        AccessPolicyRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            destination=destination,
+            source=source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: str,
+             destination: 'outputs.AccessPolicyRuleDestination',
+             source: 'outputs.AccessPolicyRuleSource',
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("destination", destination)
+        _setter("source", source)
 
     @property
     @pulumi.getter
@@ -187,19 +200,40 @@ class AccessPolicyRuleDestination(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "type", type)
+        AccessPolicyRuleDestination._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            hostnames=hostnames,
+            ingress_gateway_id=ingress_gateway_id,
+            ip_addresses=ip_addresses,
+            ports=ports,
+            protocol=protocol,
+            virtual_service_id=virtual_service_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             hostnames: Optional[Sequence[str]] = None,
+             ingress_gateway_id: Optional[str] = None,
+             ip_addresses: Optional[Sequence[str]] = None,
+             ports: Optional[Sequence[int]] = None,
+             protocol: Optional[str] = None,
+             virtual_service_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if hostnames is not None:
-            pulumi.set(__self__, "hostnames", hostnames)
+            _setter("hostnames", hostnames)
         if ingress_gateway_id is not None:
-            pulumi.set(__self__, "ingress_gateway_id", ingress_gateway_id)
+            _setter("ingress_gateway_id", ingress_gateway_id)
         if ip_addresses is not None:
-            pulumi.set(__self__, "ip_addresses", ip_addresses)
+            _setter("ip_addresses", ip_addresses)
         if ports is not None:
-            pulumi.set(__self__, "ports", ports)
+            _setter("ports", ports)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if virtual_service_id is not None:
-            pulumi.set(__self__, "virtual_service_id", virtual_service_id)
+            _setter("virtual_service_id", virtual_service_id)
 
     @property
     @pulumi.getter
@@ -306,19 +340,40 @@ class AccessPolicyRuleSource(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "type", type)
+        AccessPolicyRuleSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            hostnames=hostnames,
+            ingress_gateway_id=ingress_gateway_id,
+            ip_addresses=ip_addresses,
+            ports=ports,
+            protocol=protocol,
+            virtual_service_id=virtual_service_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             hostnames: Optional[Sequence[str]] = None,
+             ingress_gateway_id: Optional[str] = None,
+             ip_addresses: Optional[Sequence[str]] = None,
+             ports: Optional[Sequence[int]] = None,
+             protocol: Optional[str] = None,
+             virtual_service_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if hostnames is not None:
-            pulumi.set(__self__, "hostnames", hostnames)
+            _setter("hostnames", hostnames)
         if ingress_gateway_id is not None:
-            pulumi.set(__self__, "ingress_gateway_id", ingress_gateway_id)
+            _setter("ingress_gateway_id", ingress_gateway_id)
         if ip_addresses is not None:
-            pulumi.set(__self__, "ip_addresses", ip_addresses)
+            _setter("ip_addresses", ip_addresses)
         if ports is not None:
-            pulumi.set(__self__, "ports", ports)
+            _setter("ports", ports)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if virtual_service_id is not None:
-            pulumi.set(__self__, "virtual_service_id", virtual_service_id)
+            _setter("virtual_service_id", virtual_service_id)
 
     @property
     @pulumi.getter
@@ -405,8 +460,17 @@ class IngressGatewayAccessLogging(dict):
         """
         :param bool is_enabled: (Updatable) Determines if the logging configuration is enabled.
         """
+        IngressGatewayAccessLogging._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -432,10 +496,23 @@ class IngressGatewayHost(dict):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param Sequence[str] hostnames: (Updatable) Hostnames of the host. Applicable only for HTTP and TLS_PASSTHROUGH listeners. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com".
         """
-        pulumi.set(__self__, "listeners", listeners)
-        pulumi.set(__self__, "name", name)
+        IngressGatewayHost._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            listeners=listeners,
+            name=name,
+            hostnames=hostnames,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             listeners: Sequence['outputs.IngressGatewayHostListener'],
+             name: str,
+             hostnames: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("listeners", listeners)
+        _setter("name", name)
         if hostnames is not None:
-            pulumi.set(__self__, "hostnames", hostnames)
+            _setter("hostnames", hostnames)
 
     @property
     @pulumi.getter
@@ -477,10 +554,23 @@ class IngressGatewayHostListener(dict):
         :param str protocol: (Updatable) Type of protocol used.
         :param 'IngressGatewayHostListenerTlsArgs' tls: (Updatable) TLS enforcement config for the ingress listener.
         """
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
+        IngressGatewayHostListener._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            port=port,
+            protocol=protocol,
+            tls=tls,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             port: int,
+             protocol: str,
+             tls: Optional['outputs.IngressGatewayHostListenerTls'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("port", port)
+        _setter("protocol", protocol)
         if tls is not None:
-            pulumi.set(__self__, "tls", tls)
+            _setter("tls", tls)
 
     @property
     @pulumi.getter
@@ -537,11 +627,24 @@ class IngressGatewayHostListenerTls(dict):
         :param 'IngressGatewayHostListenerTlsClientValidationArgs' client_validation: (Updatable) Resource representing the TLS configuration used for validating client certificates.
         :param 'IngressGatewayHostListenerTlsServerCertificateArgs' server_certificate: (Updatable) Resource representing the location of the TLS certificate.
         """
-        pulumi.set(__self__, "mode", mode)
+        IngressGatewayHostListenerTls._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            mode=mode,
+            client_validation=client_validation,
+            server_certificate=server_certificate,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             mode: str,
+             client_validation: Optional['outputs.IngressGatewayHostListenerTlsClientValidation'] = None,
+             server_certificate: Optional['outputs.IngressGatewayHostListenerTlsServerCertificate'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("mode", mode)
         if client_validation is not None:
-            pulumi.set(__self__, "client_validation", client_validation)
+            _setter("client_validation", client_validation)
         if server_certificate is not None:
-            pulumi.set(__self__, "server_certificate", server_certificate)
+            _setter("server_certificate", server_certificate)
 
     @property
     @pulumi.getter
@@ -596,10 +699,21 @@ class IngressGatewayHostListenerTlsClientValidation(dict):
         :param Sequence[str] subject_alternate_names: (Updatable) A list of alternate names to verify the subject identity in the certificate presented by the client.
         :param 'IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs' trusted_ca_bundle: (Updatable) Resource representing the CA bundle.
         """
+        IngressGatewayHostListenerTlsClientValidation._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            subject_alternate_names=subject_alternate_names,
+            trusted_ca_bundle=trusted_ca_bundle,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             subject_alternate_names: Optional[Sequence[str]] = None,
+             trusted_ca_bundle: Optional['outputs.IngressGatewayHostListenerTlsClientValidationTrustedCaBundle'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if subject_alternate_names is not None:
-            pulumi.set(__self__, "subject_alternate_names", subject_alternate_names)
+            _setter("subject_alternate_names", subject_alternate_names)
         if trusted_ca_bundle is not None:
-            pulumi.set(__self__, "trusted_ca_bundle", trusted_ca_bundle)
+            _setter("trusted_ca_bundle", trusted_ca_bundle)
 
     @property
     @pulumi.getter(name="subjectAlternateNames")
@@ -648,11 +762,24 @@ class IngressGatewayHostListenerTlsClientValidationTrustedCaBundle(dict):
         :param str ca_bundle_id: (Updatable) The OCID of the CA Bundle resource.
         :param str secret_name: (Updatable) Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
         """
-        pulumi.set(__self__, "type", type)
+        IngressGatewayHostListenerTlsClientValidationTrustedCaBundle._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            ca_bundle_id=ca_bundle_id,
+            secret_name=secret_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             ca_bundle_id: Optional[str] = None,
+             secret_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if ca_bundle_id is not None:
-            pulumi.set(__self__, "ca_bundle_id", ca_bundle_id)
+            _setter("ca_bundle_id", ca_bundle_id)
         if secret_name is not None:
-            pulumi.set(__self__, "secret_name", secret_name)
+            _setter("secret_name", secret_name)
 
     @property
     @pulumi.getter
@@ -709,11 +836,24 @@ class IngressGatewayHostListenerTlsServerCertificate(dict):
         :param str certificate_id: (Updatable) The OCID of the leaf certificate resource.
         :param str secret_name: (Updatable) Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
         """
-        pulumi.set(__self__, "type", type)
+        IngressGatewayHostListenerTlsServerCertificate._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            certificate_id=certificate_id,
+            secret_name=secret_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             certificate_id: Optional[str] = None,
+             secret_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if certificate_id is not None:
-            pulumi.set(__self__, "certificate_id", certificate_id)
+            _setter("certificate_id", certificate_id)
         if secret_name is not None:
-            pulumi.set(__self__, "secret_name", secret_name)
+            _setter("secret_name", secret_name)
 
     @property
     @pulumi.getter
@@ -768,10 +908,21 @@ class IngressGatewayMtls(dict):
         :param str certificate_id: (Updatable) The OCID of the leaf certificate resource.
         :param int maximum_validity: (Updatable) The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
         """
+        IngressGatewayMtls._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_id=certificate_id,
+            maximum_validity=maximum_validity,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_id: Optional[str] = None,
+             maximum_validity: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if certificate_id is not None:
-            pulumi.set(__self__, "certificate_id", certificate_id)
+            _setter("certificate_id", certificate_id)
         if maximum_validity is not None:
-            pulumi.set(__self__, "maximum_validity", maximum_validity)
+            _setter("maximum_validity", maximum_validity)
 
     @property
     @pulumi.getter(name="certificateId")
@@ -844,22 +995,47 @@ class IngressGatewayRouteTableRouteRule(dict):
         :param str path_type: (Updatable) Match type for the route
         :param str request_timeout_in_ms: (Updatable) The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
         """
-        pulumi.set(__self__, "destinations", destinations)
-        pulumi.set(__self__, "type", type)
+        IngressGatewayRouteTableRouteRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destinations=destinations,
+            type=type,
+            ingress_gateway_host=ingress_gateway_host,
+            is_grpc=is_grpc,
+            is_host_rewrite_enabled=is_host_rewrite_enabled,
+            is_path_rewrite_enabled=is_path_rewrite_enabled,
+            path=path,
+            path_type=path_type,
+            request_timeout_in_ms=request_timeout_in_ms,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destinations: Sequence['outputs.IngressGatewayRouteTableRouteRuleDestination'],
+             type: str,
+             ingress_gateway_host: Optional['outputs.IngressGatewayRouteTableRouteRuleIngressGatewayHost'] = None,
+             is_grpc: Optional[bool] = None,
+             is_host_rewrite_enabled: Optional[bool] = None,
+             is_path_rewrite_enabled: Optional[bool] = None,
+             path: Optional[str] = None,
+             path_type: Optional[str] = None,
+             request_timeout_in_ms: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("destinations", destinations)
+        _setter("type", type)
         if ingress_gateway_host is not None:
-            pulumi.set(__self__, "ingress_gateway_host", ingress_gateway_host)
+            _setter("ingress_gateway_host", ingress_gateway_host)
         if is_grpc is not None:
-            pulumi.set(__self__, "is_grpc", is_grpc)
+            _setter("is_grpc", is_grpc)
         if is_host_rewrite_enabled is not None:
-            pulumi.set(__self__, "is_host_rewrite_enabled", is_host_rewrite_enabled)
+            _setter("is_host_rewrite_enabled", is_host_rewrite_enabled)
         if is_path_rewrite_enabled is not None:
-            pulumi.set(__self__, "is_path_rewrite_enabled", is_path_rewrite_enabled)
+            _setter("is_path_rewrite_enabled", is_path_rewrite_enabled)
         if path is not None:
-            pulumi.set(__self__, "path", path)
+            _setter("path", path)
         if path_type is not None:
-            pulumi.set(__self__, "path_type", path_type)
+            _setter("path_type", path_type)
         if request_timeout_in_ms is not None:
-            pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
+            _setter("request_timeout_in_ms", request_timeout_in_ms)
 
     @property
     @pulumi.getter
@@ -966,11 +1142,24 @@ class IngressGatewayRouteTableRouteRuleDestination(dict):
         :param int port: (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
         :param int weight: (Updatable) Weight of traffic target.
         """
-        pulumi.set(__self__, "virtual_service_id", virtual_service_id)
+        IngressGatewayRouteTableRouteRuleDestination._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            virtual_service_id=virtual_service_id,
+            port=port,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             virtual_service_id: str,
+             port: Optional[int] = None,
+             weight: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("virtual_service_id", virtual_service_id)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if weight is not None:
-            pulumi.set(__self__, "weight", weight)
+            _setter("weight", weight)
 
     @property
     @pulumi.getter(name="virtualServiceId")
@@ -1006,9 +1195,20 @@ class IngressGatewayRouteTableRouteRuleIngressGatewayHost(dict):
         :param str name: (Updatable) Name of the ingress gateway host that this route should apply to.
         :param int port: (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
         """
-        pulumi.set(__self__, "name", name)
+        IngressGatewayRouteTableRouteRuleIngressGatewayHost._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             port: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
 
     @property
     @pulumi.getter
@@ -1034,7 +1234,16 @@ class MeshCertificateAuthority(dict):
         """
         :param str id: The OCID of the certificate authority resource.
         """
-        pulumi.set(__self__, "id", id)
+        MeshCertificateAuthority._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
 
     @property
     @pulumi.getter
@@ -1056,7 +1265,16 @@ class MeshMtls(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "minimum", minimum)
+        MeshMtls._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            minimum=minimum,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             minimum: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("minimum", minimum)
 
     @property
     @pulumi.getter
@@ -1095,8 +1313,17 @@ class VirtualDeploymentAccessLogging(dict):
         """
         :param bool is_enabled: (Updatable) Determines if the logging configuration is enabled.
         """
+        VirtualDeploymentAccessLogging._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -1139,12 +1366,27 @@ class VirtualDeploymentListener(dict):
         :param str idle_timeout_in_ms: (Updatable) The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
         :param str request_timeout_in_ms: (Updatable) The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
         """
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
+        VirtualDeploymentListener._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            port=port,
+            protocol=protocol,
+            idle_timeout_in_ms=idle_timeout_in_ms,
+            request_timeout_in_ms=request_timeout_in_ms,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             port: int,
+             protocol: str,
+             idle_timeout_in_ms: Optional[str] = None,
+             request_timeout_in_ms: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("port", port)
+        _setter("protocol", protocol)
         if idle_timeout_in_ms is not None:
-            pulumi.set(__self__, "idle_timeout_in_ms", idle_timeout_in_ms)
+            _setter("idle_timeout_in_ms", idle_timeout_in_ms)
         if request_timeout_in_ms is not None:
-            pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
+            _setter("request_timeout_in_ms", request_timeout_in_ms)
 
     @property
     @pulumi.getter
@@ -1188,9 +1430,20 @@ class VirtualDeploymentServiceDiscovery(dict):
         :param str type: (Updatable) Type of service discovery.
         :param str hostname: (Updatable) The hostname of the virtual deployments.
         """
-        pulumi.set(__self__, "type", type)
+        VirtualDeploymentServiceDiscovery._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            hostname=hostname,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             hostname: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if hostname is not None:
-            pulumi.set(__self__, "hostname", hostname)
+            _setter("hostname", hostname)
 
     @property
     @pulumi.getter
@@ -1216,7 +1469,16 @@ class VirtualServiceDefaultRoutingPolicy(dict):
         """
         :param str type: (Updatable) Type of the virtual service routing policy.
         """
-        pulumi.set(__self__, "type", type)
+        VirtualServiceDefaultRoutingPolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -1257,11 +1519,24 @@ class VirtualServiceMtls(dict):
         :param str certificate_id: The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
         :param int maximum_validity: (Updatable) The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
         """
-        pulumi.set(__self__, "mode", mode)
+        VirtualServiceMtls._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            mode=mode,
+            certificate_id=certificate_id,
+            maximum_validity=maximum_validity,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             mode: str,
+             certificate_id: Optional[str] = None,
+             maximum_validity: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("mode", mode)
         if certificate_id is not None:
-            pulumi.set(__self__, "certificate_id", certificate_id)
+            _setter("certificate_id", certificate_id)
         if maximum_validity is not None:
-            pulumi.set(__self__, "maximum_validity", maximum_validity)
+            _setter("maximum_validity", maximum_validity)
 
     @property
     @pulumi.getter
@@ -1326,16 +1601,35 @@ class VirtualServiceRouteTableRouteRule(dict):
         :param str path_type: (Updatable) Match type for the route
         :param str request_timeout_in_ms: (Updatable) The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
         """
-        pulumi.set(__self__, "destinations", destinations)
-        pulumi.set(__self__, "type", type)
+        VirtualServiceRouteTableRouteRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destinations=destinations,
+            type=type,
+            is_grpc=is_grpc,
+            path=path,
+            path_type=path_type,
+            request_timeout_in_ms=request_timeout_in_ms,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destinations: Sequence['outputs.VirtualServiceRouteTableRouteRuleDestination'],
+             type: str,
+             is_grpc: Optional[bool] = None,
+             path: Optional[str] = None,
+             path_type: Optional[str] = None,
+             request_timeout_in_ms: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("destinations", destinations)
+        _setter("type", type)
         if is_grpc is not None:
-            pulumi.set(__self__, "is_grpc", is_grpc)
+            _setter("is_grpc", is_grpc)
         if path is not None:
-            pulumi.set(__self__, "path", path)
+            _setter("path", path)
         if path_type is not None:
-            pulumi.set(__self__, "path_type", path_type)
+            _setter("path_type", path_type)
         if request_timeout_in_ms is not None:
-            pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
+            _setter("request_timeout_in_ms", request_timeout_in_ms)
 
     @property
     @pulumi.getter
@@ -1414,10 +1708,23 @@ class VirtualServiceRouteTableRouteRuleDestination(dict):
         :param int weight: (Updatable) Weight of traffic target.
         :param int port: (Updatable) Port on virtual deployment to target. If port is missing, the rule will target all ports on the virtual deployment.
         """
-        pulumi.set(__self__, "virtual_deployment_id", virtual_deployment_id)
-        pulumi.set(__self__, "weight", weight)
+        VirtualServiceRouteTableRouteRuleDestination._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            virtual_deployment_id=virtual_deployment_id,
+            weight=weight,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             virtual_deployment_id: str,
+             weight: int,
+             port: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("virtual_deployment_id", virtual_deployment_id)
+        _setter("weight", weight)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
 
     @property
     @pulumi.getter(name="virtualDeploymentId")
@@ -1448,7 +1755,16 @@ class VirtualServiceRouteTableRouteRuleDestination(dict):
 class GetAccessPoliciesAccessPolicyCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAccessPoliciesAccessPolicyCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetAccessPoliciesAccessPolicyCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAccessPoliciesAccessPolicyCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1487,19 +1803,52 @@ class GetAccessPoliciesAccessPolicyCollectionItemResult(dict):
         :param str time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param str time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "mesh_id", mesh_id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "rules", rules)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetAccessPoliciesAccessPolicyCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            mesh_id=mesh_id,
+            name=name,
+            rules=rules,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             mesh_id: str,
+             name: str,
+             rules: Sequence['outputs.GetAccessPoliciesAccessPolicyCollectionItemRuleResult'],
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("mesh_id", mesh_id)
+        _setter("name", name)
+        _setter("rules", rules)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1617,9 +1966,22 @@ class GetAccessPoliciesAccessPolicyCollectionItemRuleResult(dict):
         :param Sequence['GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationArgs'] destinations: Target of the access policy. This can either be the source or the destination of the traffic.
         :param Sequence['GetAccessPoliciesAccessPolicyCollectionItemRuleSourceArgs'] sources: Target of the access policy. This can either be the source or the destination of the traffic.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "destinations", destinations)
-        pulumi.set(__self__, "sources", sources)
+        GetAccessPoliciesAccessPolicyCollectionItemRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            destinations=destinations,
+            sources=sources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: str,
+             destinations: Sequence['outputs.GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationResult'],
+             sources: Sequence['outputs.GetAccessPoliciesAccessPolicyCollectionItemRuleSourceResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("destinations", destinations)
+        _setter("sources", sources)
 
     @property
     @pulumi.getter
@@ -1665,13 +2027,34 @@ class GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationResult(dict):
         :param str type: Traffic type of the target.
         :param str virtual_service_id: The OCID of the virtual service resource.
         """
-        pulumi.set(__self__, "hostnames", hostnames)
-        pulumi.set(__self__, "ingress_gateway_id", ingress_gateway_id)
-        pulumi.set(__self__, "ip_addresses", ip_addresses)
-        pulumi.set(__self__, "ports", ports)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "virtual_service_id", virtual_service_id)
+        GetAccessPoliciesAccessPolicyCollectionItemRuleDestinationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostnames=hostnames,
+            ingress_gateway_id=ingress_gateway_id,
+            ip_addresses=ip_addresses,
+            ports=ports,
+            protocol=protocol,
+            type=type,
+            virtual_service_id=virtual_service_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostnames: Sequence[str],
+             ingress_gateway_id: str,
+             ip_addresses: Sequence[str],
+             ports: Sequence[int],
+             protocol: str,
+             type: str,
+             virtual_service_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hostnames", hostnames)
+        _setter("ingress_gateway_id", ingress_gateway_id)
+        _setter("ip_addresses", ip_addresses)
+        _setter("ports", ports)
+        _setter("protocol", protocol)
+        _setter("type", type)
+        _setter("virtual_service_id", virtual_service_id)
 
     @property
     @pulumi.getter
@@ -1749,13 +2132,34 @@ class GetAccessPoliciesAccessPolicyCollectionItemRuleSourceResult(dict):
         :param str type: Traffic type of the target.
         :param str virtual_service_id: The OCID of the virtual service resource.
         """
-        pulumi.set(__self__, "hostnames", hostnames)
-        pulumi.set(__self__, "ingress_gateway_id", ingress_gateway_id)
-        pulumi.set(__self__, "ip_addresses", ip_addresses)
-        pulumi.set(__self__, "ports", ports)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "virtual_service_id", virtual_service_id)
+        GetAccessPoliciesAccessPolicyCollectionItemRuleSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostnames=hostnames,
+            ingress_gateway_id=ingress_gateway_id,
+            ip_addresses=ip_addresses,
+            ports=ports,
+            protocol=protocol,
+            type=type,
+            virtual_service_id=virtual_service_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostnames: Sequence[str],
+             ingress_gateway_id: str,
+             ip_addresses: Sequence[str],
+             ports: Sequence[int],
+             protocol: str,
+             type: str,
+             virtual_service_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hostnames", hostnames)
+        _setter("ingress_gateway_id", ingress_gateway_id)
+        _setter("ip_addresses", ip_addresses)
+        _setter("ports", ports)
+        _setter("protocol", protocol)
+        _setter("type", type)
+        _setter("virtual_service_id", virtual_service_id)
 
     @property
     @pulumi.getter
@@ -1823,10 +2227,23 @@ class GetAccessPoliciesFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAccessPoliciesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1858,9 +2275,22 @@ class GetAccessPolicyRuleResult(dict):
         :param Sequence['GetAccessPolicyRuleDestinationArgs'] destinations: Target of the access policy. This can either be the source or the destination of the traffic.
         :param Sequence['GetAccessPolicyRuleSourceArgs'] sources: Target of the access policy. This can either be the source or the destination of the traffic.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "destinations", destinations)
-        pulumi.set(__self__, "sources", sources)
+        GetAccessPolicyRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            destinations=destinations,
+            sources=sources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: str,
+             destinations: Sequence['outputs.GetAccessPolicyRuleDestinationResult'],
+             sources: Sequence['outputs.GetAccessPolicyRuleSourceResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("destinations", destinations)
+        _setter("sources", sources)
 
     @property
     @pulumi.getter
@@ -1906,13 +2336,34 @@ class GetAccessPolicyRuleDestinationResult(dict):
         :param str type: Traffic type of the target.
         :param str virtual_service_id: The OCID of the virtual service resource.
         """
-        pulumi.set(__self__, "hostnames", hostnames)
-        pulumi.set(__self__, "ingress_gateway_id", ingress_gateway_id)
-        pulumi.set(__self__, "ip_addresses", ip_addresses)
-        pulumi.set(__self__, "ports", ports)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "virtual_service_id", virtual_service_id)
+        GetAccessPolicyRuleDestinationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostnames=hostnames,
+            ingress_gateway_id=ingress_gateway_id,
+            ip_addresses=ip_addresses,
+            ports=ports,
+            protocol=protocol,
+            type=type,
+            virtual_service_id=virtual_service_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostnames: Sequence[str],
+             ingress_gateway_id: str,
+             ip_addresses: Sequence[str],
+             ports: Sequence[int],
+             protocol: str,
+             type: str,
+             virtual_service_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hostnames", hostnames)
+        _setter("ingress_gateway_id", ingress_gateway_id)
+        _setter("ip_addresses", ip_addresses)
+        _setter("ports", ports)
+        _setter("protocol", protocol)
+        _setter("type", type)
+        _setter("virtual_service_id", virtual_service_id)
 
     @property
     @pulumi.getter
@@ -1990,13 +2441,34 @@ class GetAccessPolicyRuleSourceResult(dict):
         :param str type: Traffic type of the target.
         :param str virtual_service_id: The OCID of the virtual service resource.
         """
-        pulumi.set(__self__, "hostnames", hostnames)
-        pulumi.set(__self__, "ingress_gateway_id", ingress_gateway_id)
-        pulumi.set(__self__, "ip_addresses", ip_addresses)
-        pulumi.set(__self__, "ports", ports)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "virtual_service_id", virtual_service_id)
+        GetAccessPolicyRuleSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostnames=hostnames,
+            ingress_gateway_id=ingress_gateway_id,
+            ip_addresses=ip_addresses,
+            ports=ports,
+            protocol=protocol,
+            type=type,
+            virtual_service_id=virtual_service_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostnames: Sequence[str],
+             ingress_gateway_id: str,
+             ip_addresses: Sequence[str],
+             ports: Sequence[int],
+             protocol: str,
+             type: str,
+             virtual_service_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hostnames", hostnames)
+        _setter("ingress_gateway_id", ingress_gateway_id)
+        _setter("ip_addresses", ip_addresses)
+        _setter("ports", ports)
+        _setter("protocol", protocol)
+        _setter("type", type)
+        _setter("virtual_service_id", virtual_service_id)
 
     @property
     @pulumi.getter
@@ -2062,7 +2534,16 @@ class GetIngressGatewayAccessLoggingResult(dict):
         """
         :param bool is_enabled: Determines if the logging configuration is enabled.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetIngressGatewayAccessLoggingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -2084,9 +2565,22 @@ class GetIngressGatewayHostResult(dict):
         :param Sequence['GetIngressGatewayHostListenerArgs'] listeners: The listeners for the ingress gateway.
         :param str name: A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         """
-        pulumi.set(__self__, "hostnames", hostnames)
-        pulumi.set(__self__, "listeners", listeners)
-        pulumi.set(__self__, "name", name)
+        GetIngressGatewayHostResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostnames=hostnames,
+            listeners=listeners,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostnames: Sequence[str],
+             listeners: Sequence['outputs.GetIngressGatewayHostListenerResult'],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hostnames", hostnames)
+        _setter("listeners", listeners)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2124,9 +2618,22 @@ class GetIngressGatewayHostListenerResult(dict):
         :param str protocol: Type of protocol used.
         :param Sequence['GetIngressGatewayHostListenerTlArgs'] tls: TLS enforcement config for the ingress listener.
         """
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "tls", tls)
+        GetIngressGatewayHostListenerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            port=port,
+            protocol=protocol,
+            tls=tls,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             port: int,
+             protocol: str,
+             tls: Sequence['outputs.GetIngressGatewayHostListenerTlResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("port", port)
+        _setter("protocol", protocol)
+        _setter("tls", tls)
 
     @property
     @pulumi.getter
@@ -2164,9 +2671,22 @@ class GetIngressGatewayHostListenerTlResult(dict):
         :param str mode: DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway. TLS: Connection can only be TLS.  MUTUAL_TLS: Connection can only be MTLS.
         :param Sequence['GetIngressGatewayHostListenerTlServerCertificateArgs'] server_certificates: Resource representing the location of the TLS certificate.
         """
-        pulumi.set(__self__, "client_validations", client_validations)
-        pulumi.set(__self__, "mode", mode)
-        pulumi.set(__self__, "server_certificates", server_certificates)
+        GetIngressGatewayHostListenerTlResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_validations=client_validations,
+            mode=mode,
+            server_certificates=server_certificates,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_validations: Sequence['outputs.GetIngressGatewayHostListenerTlClientValidationResult'],
+             mode: str,
+             server_certificates: Sequence['outputs.GetIngressGatewayHostListenerTlServerCertificateResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("client_validations", client_validations)
+        _setter("mode", mode)
+        _setter("server_certificates", server_certificates)
 
     @property
     @pulumi.getter(name="clientValidations")
@@ -2202,8 +2722,19 @@ class GetIngressGatewayHostListenerTlClientValidationResult(dict):
         :param Sequence[str] subject_alternate_names: A list of alternate names to verify the subject identity in the certificate presented by the client.
         :param Sequence['GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleArgs'] trusted_ca_bundles: Resource representing the CA bundle.
         """
-        pulumi.set(__self__, "subject_alternate_names", subject_alternate_names)
-        pulumi.set(__self__, "trusted_ca_bundles", trusted_ca_bundles)
+        GetIngressGatewayHostListenerTlClientValidationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            subject_alternate_names=subject_alternate_names,
+            trusted_ca_bundles=trusted_ca_bundles,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             subject_alternate_names: Sequence[str],
+             trusted_ca_bundles: Sequence['outputs.GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("subject_alternate_names", subject_alternate_names)
+        _setter("trusted_ca_bundles", trusted_ca_bundles)
 
     @property
     @pulumi.getter(name="subjectAlternateNames")
@@ -2233,9 +2764,22 @@ class GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleResult(dict)
         :param str secret_name: Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
         :param str type: Type of certificate.
         """
-        pulumi.set(__self__, "ca_bundle_id", ca_bundle_id)
-        pulumi.set(__self__, "secret_name", secret_name)
-        pulumi.set(__self__, "type", type)
+        GetIngressGatewayHostListenerTlClientValidationTrustedCaBundleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ca_bundle_id=ca_bundle_id,
+            secret_name=secret_name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ca_bundle_id: str,
+             secret_name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ca_bundle_id", ca_bundle_id)
+        _setter("secret_name", secret_name)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="caBundleId")
@@ -2273,9 +2817,22 @@ class GetIngressGatewayHostListenerTlServerCertificateResult(dict):
         :param str secret_name: Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
         :param str type: Type of certificate.
         """
-        pulumi.set(__self__, "certificate_id", certificate_id)
-        pulumi.set(__self__, "secret_name", secret_name)
-        pulumi.set(__self__, "type", type)
+        GetIngressGatewayHostListenerTlServerCertificateResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_id=certificate_id,
+            secret_name=secret_name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_id: str,
+             secret_name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_id", certificate_id)
+        _setter("secret_name", secret_name)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="certificateId")
@@ -2311,8 +2868,19 @@ class GetIngressGatewayMtlResult(dict):
         :param str certificate_id: The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
         :param int maximum_validity: The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
         """
-        pulumi.set(__self__, "certificate_id", certificate_id)
-        pulumi.set(__self__, "maximum_validity", maximum_validity)
+        GetIngressGatewayMtlResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_id=certificate_id,
+            maximum_validity=maximum_validity,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_id: str,
+             maximum_validity: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_id", certificate_id)
+        _setter("maximum_validity", maximum_validity)
 
     @property
     @pulumi.getter(name="certificateId")
@@ -2354,15 +2922,40 @@ class GetIngressGatewayRouteTableRouteRuleResult(dict):
         :param str request_timeout_in_ms: The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
         :param str type: Type of protocol.
         """
-        pulumi.set(__self__, "destinations", destinations)
-        pulumi.set(__self__, "ingress_gateway_hosts", ingress_gateway_hosts)
-        pulumi.set(__self__, "is_grpc", is_grpc)
-        pulumi.set(__self__, "is_host_rewrite_enabled", is_host_rewrite_enabled)
-        pulumi.set(__self__, "is_path_rewrite_enabled", is_path_rewrite_enabled)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "path_type", path_type)
-        pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
-        pulumi.set(__self__, "type", type)
+        GetIngressGatewayRouteTableRouteRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destinations=destinations,
+            ingress_gateway_hosts=ingress_gateway_hosts,
+            is_grpc=is_grpc,
+            is_host_rewrite_enabled=is_host_rewrite_enabled,
+            is_path_rewrite_enabled=is_path_rewrite_enabled,
+            path=path,
+            path_type=path_type,
+            request_timeout_in_ms=request_timeout_in_ms,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destinations: Sequence['outputs.GetIngressGatewayRouteTableRouteRuleDestinationResult'],
+             ingress_gateway_hosts: Sequence['outputs.GetIngressGatewayRouteTableRouteRuleIngressGatewayHostResult'],
+             is_grpc: bool,
+             is_host_rewrite_enabled: bool,
+             is_path_rewrite_enabled: bool,
+             path: str,
+             path_type: str,
+             request_timeout_in_ms: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("destinations", destinations)
+        _setter("ingress_gateway_hosts", ingress_gateway_hosts)
+        _setter("is_grpc", is_grpc)
+        _setter("is_host_rewrite_enabled", is_host_rewrite_enabled)
+        _setter("is_path_rewrite_enabled", is_path_rewrite_enabled)
+        _setter("path", path)
+        _setter("path_type", path_type)
+        _setter("request_timeout_in_ms", request_timeout_in_ms)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -2448,9 +3041,22 @@ class GetIngressGatewayRouteTableRouteRuleDestinationResult(dict):
         :param str virtual_service_id: The OCID of the virtual service where the request will be routed.
         :param int weight: Weight of traffic target.
         """
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "virtual_service_id", virtual_service_id)
-        pulumi.set(__self__, "weight", weight)
+        GetIngressGatewayRouteTableRouteRuleDestinationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            port=port,
+            virtual_service_id=virtual_service_id,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             port: int,
+             virtual_service_id: str,
+             weight: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("port", port)
+        _setter("virtual_service_id", virtual_service_id)
+        _setter("weight", weight)
 
     @property
     @pulumi.getter
@@ -2486,8 +3092,19 @@ class GetIngressGatewayRouteTableRouteRuleIngressGatewayHostResult(dict):
         :param str name: Name of the ingress gateway host that this route should apply to.
         :param int port: The port of the ingress gateway host listener. Leave empty to match all ports for the host.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "port", port)
+        GetIngressGatewayRouteTableRouteRuleIngressGatewayHostResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             port: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("port", port)
 
     @property
     @pulumi.getter
@@ -2515,10 +3132,23 @@ class GetIngressGatewayRouteTablesFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetIngressGatewayRouteTablesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2543,7 +3173,16 @@ class GetIngressGatewayRouteTablesFilterResult(dict):
 class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2584,20 +3223,55 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemResult(d
         :param str time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param str time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ingress_gateway_id", ingress_gateway_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "priority", priority)
-        pulumi.set(__self__, "route_rules", route_rules)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            id=id,
+            ingress_gateway_id=ingress_gateway_id,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            priority=priority,
+            route_rules=route_rules,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             ingress_gateway_id: str,
+             lifecycle_details: str,
+             name: str,
+             priority: int,
+             route_rules: Sequence['outputs.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleResult'],
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("ingress_gateway_id", ingress_gateway_id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("name", name)
+        _setter("priority", priority)
+        _setter("route_rules", route_rules)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2735,15 +3409,40 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRul
         :param str request_timeout_in_ms: The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
         :param str type: Type of protocol.
         """
-        pulumi.set(__self__, "destinations", destinations)
-        pulumi.set(__self__, "ingress_gateway_hosts", ingress_gateway_hosts)
-        pulumi.set(__self__, "is_grpc", is_grpc)
-        pulumi.set(__self__, "is_host_rewrite_enabled", is_host_rewrite_enabled)
-        pulumi.set(__self__, "is_path_rewrite_enabled", is_path_rewrite_enabled)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "path_type", path_type)
-        pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
-        pulumi.set(__self__, "type", type)
+        GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destinations=destinations,
+            ingress_gateway_hosts=ingress_gateway_hosts,
+            is_grpc=is_grpc,
+            is_host_rewrite_enabled=is_host_rewrite_enabled,
+            is_path_rewrite_enabled=is_path_rewrite_enabled,
+            path=path,
+            path_type=path_type,
+            request_timeout_in_ms=request_timeout_in_ms,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destinations: Sequence['outputs.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationResult'],
+             ingress_gateway_hosts: Sequence['outputs.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostResult'],
+             is_grpc: bool,
+             is_host_rewrite_enabled: bool,
+             is_path_rewrite_enabled: bool,
+             path: str,
+             path_type: str,
+             request_timeout_in_ms: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("destinations", destinations)
+        _setter("ingress_gateway_hosts", ingress_gateway_hosts)
+        _setter("is_grpc", is_grpc)
+        _setter("is_host_rewrite_enabled", is_host_rewrite_enabled)
+        _setter("is_path_rewrite_enabled", is_path_rewrite_enabled)
+        _setter("path", path)
+        _setter("path_type", path_type)
+        _setter("request_timeout_in_ms", request_timeout_in_ms)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -2829,9 +3528,22 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRul
         :param str virtual_service_id: The OCID of the virtual service where the request will be routed.
         :param int weight: Weight of traffic target.
         """
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "virtual_service_id", virtual_service_id)
-        pulumi.set(__self__, "weight", weight)
+        GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            port=port,
+            virtual_service_id=virtual_service_id,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             port: int,
+             virtual_service_id: str,
+             weight: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("port", port)
+        _setter("virtual_service_id", virtual_service_id)
+        _setter("weight", weight)
 
     @property
     @pulumi.getter
@@ -2867,8 +3579,19 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRul
         :param str name: A filter to return only resources that match the entire name given.
         :param int port: The port of the ingress gateway host listener. Leave empty to match all ports for the host.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "port", port)
+        GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleIngressGatewayHostResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            port=port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             port: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("port", port)
 
     @property
     @pulumi.getter
@@ -2896,10 +3619,23 @@ class GetIngressGatewaysFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetIngressGatewaysFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2924,7 +3660,16 @@ class GetIngressGatewaysFilterResult(dict):
 class GetIngressGatewaysIngressGatewayCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetIngressGatewaysIngressGatewayCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2967,21 +3712,58 @@ class GetIngressGatewaysIngressGatewayCollectionItemResult(dict):
         :param str time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param str time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "access_loggings", access_loggings)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "hosts", hosts)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "mesh_id", mesh_id)
-        pulumi.set(__self__, "mtls", mtls)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetIngressGatewaysIngressGatewayCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_loggings=access_loggings,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            hosts=hosts,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            mesh_id=mesh_id,
+            mtls=mtls,
+            name=name,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_loggings: Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingResult'],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             freeform_tags: Mapping[str, Any],
+             hosts: Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemHostResult'],
+             id: str,
+             lifecycle_details: str,
+             mesh_id: str,
+             mtls: Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemMtlResult'],
+             name: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("access_loggings", access_loggings)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("freeform_tags", freeform_tags)
+        _setter("hosts", hosts)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("mesh_id", mesh_id)
+        _setter("mtls", mtls)
+        _setter("name", name)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="accessLoggings")
@@ -3111,7 +3893,16 @@ class GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingResult(dict):
         """
         :param bool is_enabled: Determines if the logging configuration is enabled.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -3133,9 +3924,22 @@ class GetIngressGatewaysIngressGatewayCollectionItemHostResult(dict):
         :param Sequence['GetIngressGatewaysIngressGatewayCollectionItemHostListenerArgs'] listeners: The listeners for the ingress gateway.
         :param str name: A filter to return only resources that match the entire name given.
         """
-        pulumi.set(__self__, "hostnames", hostnames)
-        pulumi.set(__self__, "listeners", listeners)
-        pulumi.set(__self__, "name", name)
+        GetIngressGatewaysIngressGatewayCollectionItemHostResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostnames=hostnames,
+            listeners=listeners,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostnames: Sequence[str],
+             listeners: Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListenerResult'],
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hostnames", hostnames)
+        _setter("listeners", listeners)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -3173,9 +3977,22 @@ class GetIngressGatewaysIngressGatewayCollectionItemHostListenerResult(dict):
         :param str protocol: Type of protocol used.
         :param Sequence['GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlArgs'] tls: TLS enforcement config for the ingress listener.
         """
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "tls", tls)
+        GetIngressGatewaysIngressGatewayCollectionItemHostListenerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            port=port,
+            protocol=protocol,
+            tls=tls,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             port: int,
+             protocol: str,
+             tls: Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("port", port)
+        _setter("protocol", protocol)
+        _setter("tls", tls)
 
     @property
     @pulumi.getter
@@ -3213,9 +4030,22 @@ class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlResult(dict):
         :param str mode: DISABLED: Connection can only be plaintext. PERMISSIVE: Connection can be either plaintext or TLS/mTLS. If the clientValidation.trustedCaBundle property is configured for the listener, mTLS is performed and the client's certificates are validated by the gateway. TLS: Connection can only be TLS.  MUTUAL_TLS: Connection can only be MTLS.
         :param Sequence['GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateArgs'] server_certificates: Resource representing the location of the TLS certificate.
         """
-        pulumi.set(__self__, "client_validations", client_validations)
-        pulumi.set(__self__, "mode", mode)
-        pulumi.set(__self__, "server_certificates", server_certificates)
+        GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            client_validations=client_validations,
+            mode=mode,
+            server_certificates=server_certificates,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             client_validations: Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationResult'],
+             mode: str,
+             server_certificates: Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("client_validations", client_validations)
+        _setter("mode", mode)
+        _setter("server_certificates", server_certificates)
 
     @property
     @pulumi.getter(name="clientValidations")
@@ -3251,8 +4081,19 @@ class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidati
         :param Sequence[str] subject_alternate_names: A list of alternate names to verify the subject identity in the certificate presented by the client.
         :param Sequence['GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleArgs'] trusted_ca_bundles: Resource representing the CA bundle.
         """
-        pulumi.set(__self__, "subject_alternate_names", subject_alternate_names)
-        pulumi.set(__self__, "trusted_ca_bundles", trusted_ca_bundles)
+        GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            subject_alternate_names=subject_alternate_names,
+            trusted_ca_bundles=trusted_ca_bundles,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             subject_alternate_names: Sequence[str],
+             trusted_ca_bundles: Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("subject_alternate_names", subject_alternate_names)
+        _setter("trusted_ca_bundles", trusted_ca_bundles)
 
     @property
     @pulumi.getter(name="subjectAlternateNames")
@@ -3282,9 +4123,22 @@ class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidati
         :param str secret_name: Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
         :param str type: Type of certificate.
         """
-        pulumi.set(__self__, "ca_bundle_id", ca_bundle_id)
-        pulumi.set(__self__, "secret_name", secret_name)
-        pulumi.set(__self__, "type", type)
+        GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidationTrustedCaBundleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ca_bundle_id=ca_bundle_id,
+            secret_name=secret_name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ca_bundle_id: str,
+             secret_name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ca_bundle_id", ca_bundle_id)
+        _setter("secret_name", secret_name)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="caBundleId")
@@ -3322,9 +4176,22 @@ class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertific
         :param str secret_name: Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
         :param str type: Type of certificate.
         """
-        pulumi.set(__self__, "certificate_id", certificate_id)
-        pulumi.set(__self__, "secret_name", secret_name)
-        pulumi.set(__self__, "type", type)
+        GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlServerCertificateResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_id=certificate_id,
+            secret_name=secret_name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_id: str,
+             secret_name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_id", certificate_id)
+        _setter("secret_name", secret_name)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="certificateId")
@@ -3360,8 +4227,19 @@ class GetIngressGatewaysIngressGatewayCollectionItemMtlResult(dict):
         :param str certificate_id: The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
         :param int maximum_validity: The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
         """
-        pulumi.set(__self__, "certificate_id", certificate_id)
-        pulumi.set(__self__, "maximum_validity", maximum_validity)
+        GetIngressGatewaysIngressGatewayCollectionItemMtlResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_id=certificate_id,
+            maximum_validity=maximum_validity,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_id: str,
+             maximum_validity: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_id", certificate_id)
+        _setter("maximum_validity", maximum_validity)
 
     @property
     @pulumi.getter(name="certificateId")
@@ -3387,7 +4265,16 @@ class GetMeshCertificateAuthorityResult(dict):
         """
         :param str id: Unique identifier that is immutable on creation.
         """
-        pulumi.set(__self__, "id", id)
+        GetMeshCertificateAuthorityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
 
     @property
     @pulumi.getter
@@ -3405,7 +4292,16 @@ class GetMeshMtlResult(dict):
         """
         :param str minimum: DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
         """
-        pulumi.set(__self__, "minimum", minimum)
+        GetMeshMtlResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            minimum=minimum,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             minimum: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("minimum", minimum)
 
     @property
     @pulumi.getter
@@ -3422,10 +4318,23 @@ class GetMeshesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMeshesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3447,7 +4356,16 @@ class GetMeshesFilterResult(dict):
 class GetMeshesMeshCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetMeshesMeshCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetMeshesMeshCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetMeshesMeshCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3486,19 +4404,52 @@ class GetMeshesMeshCollectionItemResult(dict):
         :param str time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param str time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "certificate_authorities", certificate_authorities)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "mtls", mtls)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetMeshesMeshCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_authorities=certificate_authorities,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            mtls=mtls,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_authorities: Sequence['outputs.GetMeshesMeshCollectionItemCertificateAuthorityResult'],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             mtls: Sequence['outputs.GetMeshesMeshCollectionItemMtlResult'],
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_authorities", certificate_authorities)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("mtls", mtls)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="certificateAuthorities")
@@ -3612,7 +4563,16 @@ class GetMeshesMeshCollectionItemCertificateAuthorityResult(dict):
         """
         :param str id: Unique Mesh identifier.
         """
-        pulumi.set(__self__, "id", id)
+        GetMeshesMeshCollectionItemCertificateAuthorityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
 
     @property
     @pulumi.getter
@@ -3630,7 +4590,16 @@ class GetMeshesMeshCollectionItemMtlResult(dict):
         """
         :param str minimum: DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes. STRICT: All virtual services within this mesh must use STRICT mode.
         """
-        pulumi.set(__self__, "minimum", minimum)
+        GetMeshesMeshCollectionItemMtlResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            minimum=minimum,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             minimum: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("minimum", minimum)
 
     @property
     @pulumi.getter
@@ -3648,7 +4617,16 @@ class GetVirtualDeploymentAccessLoggingResult(dict):
         """
         :param bool is_enabled: Determines if the logging configuration is enabled.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetVirtualDeploymentAccessLoggingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -3672,10 +4650,25 @@ class GetVirtualDeploymentListenerResult(dict):
         :param str protocol: Type of protocol used in virtual deployment.
         :param str request_timeout_in_ms: The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
         """
-        pulumi.set(__self__, "idle_timeout_in_ms", idle_timeout_in_ms)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
+        GetVirtualDeploymentListenerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            idle_timeout_in_ms=idle_timeout_in_ms,
+            port=port,
+            protocol=protocol,
+            request_timeout_in_ms=request_timeout_in_ms,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             idle_timeout_in_ms: str,
+             port: int,
+             protocol: str,
+             request_timeout_in_ms: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("idle_timeout_in_ms", idle_timeout_in_ms)
+        _setter("port", port)
+        _setter("protocol", protocol)
+        _setter("request_timeout_in_ms", request_timeout_in_ms)
 
     @property
     @pulumi.getter(name="idleTimeoutInMs")
@@ -3719,8 +4712,19 @@ class GetVirtualDeploymentServiceDiscoveryResult(dict):
         :param str hostname: The hostname of the virtual deployments.
         :param str type: Type of service discovery.
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "type", type)
+        GetVirtualDeploymentServiceDiscoveryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hostname", hostname)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -3748,10 +4752,23 @@ class GetVirtualDeploymentsFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetVirtualDeploymentsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3776,7 +4793,16 @@ class GetVirtualDeploymentsFilterResult(dict):
 class GetVirtualDeploymentsVirtualDeploymentCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetVirtualDeploymentsVirtualDeploymentCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetVirtualDeploymentsVirtualDeploymentCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetVirtualDeploymentsVirtualDeploymentCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3819,21 +4845,58 @@ class GetVirtualDeploymentsVirtualDeploymentCollectionItemResult(dict):
         :param str time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         :param str virtual_service_id: Unique VirtualService identifier.
         """
-        pulumi.set(__self__, "access_loggings", access_loggings)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "listeners", listeners)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "service_discoveries", service_discoveries)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "virtual_service_id", virtual_service_id)
+        GetVirtualDeploymentsVirtualDeploymentCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_loggings=access_loggings,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            listeners=listeners,
+            name=name,
+            service_discoveries=service_discoveries,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            virtual_service_id=virtual_service_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_loggings: Sequence['outputs.GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingResult'],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             listeners: Sequence['outputs.GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerResult'],
+             name: str,
+             service_discoveries: Sequence['outputs.GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryResult'],
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             virtual_service_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("access_loggings", access_loggings)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("listeners", listeners)
+        _setter("name", name)
+        _setter("service_discoveries", service_discoveries)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("virtual_service_id", virtual_service_id)
 
     @property
     @pulumi.getter(name="accessLoggings")
@@ -3963,7 +5026,16 @@ class GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingResult(di
         """
         :param bool is_enabled: Determines if the logging configuration is enabled.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -3987,10 +5059,25 @@ class GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerResult(dict):
         :param str protocol: Type of protocol used in virtual deployment.
         :param str request_timeout_in_ms: The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
         """
-        pulumi.set(__self__, "idle_timeout_in_ms", idle_timeout_in_ms)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
+        GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            idle_timeout_in_ms=idle_timeout_in_ms,
+            port=port,
+            protocol=protocol,
+            request_timeout_in_ms=request_timeout_in_ms,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             idle_timeout_in_ms: str,
+             port: int,
+             protocol: str,
+             request_timeout_in_ms: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("idle_timeout_in_ms", idle_timeout_in_ms)
+        _setter("port", port)
+        _setter("protocol", protocol)
+        _setter("request_timeout_in_ms", request_timeout_in_ms)
 
     @property
     @pulumi.getter(name="idleTimeoutInMs")
@@ -4034,8 +5121,19 @@ class GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryResult
         :param str hostname: The hostname of the virtual deployments.
         :param str type: Type of service discovery.
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "type", type)
+        GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hostname", hostname)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -4061,7 +5159,16 @@ class GetVirtualServiceDefaultRoutingPolicyResult(dict):
         """
         :param str type: Type of the virtual service routing policy.
         """
-        pulumi.set(__self__, "type", type)
+        GetVirtualServiceDefaultRoutingPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -4083,9 +5190,22 @@ class GetVirtualServiceMtlResult(dict):
         :param int maximum_validity: The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
         :param str mode: DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an mTLS tunnel. STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
         """
-        pulumi.set(__self__, "certificate_id", certificate_id)
-        pulumi.set(__self__, "maximum_validity", maximum_validity)
-        pulumi.set(__self__, "mode", mode)
+        GetVirtualServiceMtlResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_id=certificate_id,
+            maximum_validity=maximum_validity,
+            mode=mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_id: str,
+             maximum_validity: int,
+             mode: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_id", certificate_id)
+        _setter("maximum_validity", maximum_validity)
+        _setter("mode", mode)
 
     @property
     @pulumi.getter(name="certificateId")
@@ -4129,12 +5249,31 @@ class GetVirtualServiceRouteTableRouteRuleResult(dict):
         :param str request_timeout_in_ms: The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
         :param str type: Type of protocol.
         """
-        pulumi.set(__self__, "destinations", destinations)
-        pulumi.set(__self__, "is_grpc", is_grpc)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "path_type", path_type)
-        pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
-        pulumi.set(__self__, "type", type)
+        GetVirtualServiceRouteTableRouteRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destinations=destinations,
+            is_grpc=is_grpc,
+            path=path,
+            path_type=path_type,
+            request_timeout_in_ms=request_timeout_in_ms,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destinations: Sequence['outputs.GetVirtualServiceRouteTableRouteRuleDestinationResult'],
+             is_grpc: bool,
+             path: str,
+             path_type: str,
+             request_timeout_in_ms: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("destinations", destinations)
+        _setter("is_grpc", is_grpc)
+        _setter("path", path)
+        _setter("path_type", path_type)
+        _setter("request_timeout_in_ms", request_timeout_in_ms)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -4196,9 +5335,22 @@ class GetVirtualServiceRouteTableRouteRuleDestinationResult(dict):
         :param str virtual_deployment_id: The OCID of the virtual deployment where the request will be routed.
         :param int weight: Weight of traffic target.
         """
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "virtual_deployment_id", virtual_deployment_id)
-        pulumi.set(__self__, "weight", weight)
+        GetVirtualServiceRouteTableRouteRuleDestinationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            port=port,
+            virtual_deployment_id=virtual_deployment_id,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             port: int,
+             virtual_deployment_id: str,
+             weight: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("port", port)
+        _setter("virtual_deployment_id", virtual_deployment_id)
+        _setter("weight", weight)
 
     @property
     @pulumi.getter
@@ -4234,10 +5386,23 @@ class GetVirtualServiceRouteTablesFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetVirtualServiceRouteTablesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4262,7 +5427,16 @@ class GetVirtualServiceRouteTablesFilterResult(dict):
 class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -4303,20 +5477,55 @@ class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemResult(d
         :param str time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         :param str virtual_service_id: Unique VirtualService identifier.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "priority", priority)
-        pulumi.set(__self__, "route_rules", route_rules)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "virtual_service_id", virtual_service_id)
+        GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            priority=priority,
+            route_rules=route_rules,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            virtual_service_id=virtual_service_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             name: str,
+             priority: int,
+             route_rules: Sequence['outputs.GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleResult'],
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             virtual_service_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("name", name)
+        _setter("priority", priority)
+        _setter("route_rules", route_rules)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("virtual_service_id", virtual_service_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -4448,12 +5657,31 @@ class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRul
         :param str request_timeout_in_ms: The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
         :param str type: Type of protocol.
         """
-        pulumi.set(__self__, "destinations", destinations)
-        pulumi.set(__self__, "is_grpc", is_grpc)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "path_type", path_type)
-        pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
-        pulumi.set(__self__, "type", type)
+        GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            destinations=destinations,
+            is_grpc=is_grpc,
+            path=path,
+            path_type=path_type,
+            request_timeout_in_ms=request_timeout_in_ms,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             destinations: Sequence['outputs.GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationResult'],
+             is_grpc: bool,
+             path: str,
+             path_type: str,
+             request_timeout_in_ms: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("destinations", destinations)
+        _setter("is_grpc", is_grpc)
+        _setter("path", path)
+        _setter("path_type", path_type)
+        _setter("request_timeout_in_ms", request_timeout_in_ms)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -4515,9 +5743,22 @@ class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRul
         :param str virtual_deployment_id: The OCID of the virtual deployment where the request will be routed.
         :param int weight: Weight of traffic target.
         """
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "virtual_deployment_id", virtual_deployment_id)
-        pulumi.set(__self__, "weight", weight)
+        GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            port=port,
+            virtual_deployment_id=virtual_deployment_id,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             port: int,
+             virtual_deployment_id: str,
+             weight: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("port", port)
+        _setter("virtual_deployment_id", virtual_deployment_id)
+        _setter("weight", weight)
 
     @property
     @pulumi.getter
@@ -4553,10 +5794,23 @@ class GetVirtualServicesFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the entire name given.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetVirtualServicesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4581,7 +5835,16 @@ class GetVirtualServicesFilterResult(dict):
 class GetVirtualServicesVirtualServiceCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetVirtualServicesVirtualServiceCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetVirtualServicesVirtualServiceCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetVirtualServicesVirtualServiceCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -4624,21 +5887,58 @@ class GetVirtualServicesVirtualServiceCollectionItemResult(dict):
         :param str time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param str time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "default_routing_policies", default_routing_policies)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "hosts", hosts)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "mesh_id", mesh_id)
-        pulumi.set(__self__, "mtls", mtls)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetVirtualServicesVirtualServiceCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            default_routing_policies=default_routing_policies,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            hosts=hosts,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            mesh_id=mesh_id,
+            mtls=mtls,
+            name=name,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             default_routing_policies: Sequence['outputs.GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyResult'],
+             defined_tags: Mapping[str, Any],
+             description: str,
+             freeform_tags: Mapping[str, Any],
+             hosts: Sequence[str],
+             id: str,
+             lifecycle_details: str,
+             mesh_id: str,
+             mtls: Sequence['outputs.GetVirtualServicesVirtualServiceCollectionItemMtlResult'],
+             name: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("default_routing_policies", default_routing_policies)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("freeform_tags", freeform_tags)
+        _setter("hosts", hosts)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("mesh_id", mesh_id)
+        _setter("mtls", mtls)
+        _setter("name", name)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -4768,7 +6068,16 @@ class GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyResult(d
         """
         :param str type: Type of the virtual service routing policy.
         """
-        pulumi.set(__self__, "type", type)
+        GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -4790,9 +6099,22 @@ class GetVirtualServicesVirtualServiceCollectionItemMtlResult(dict):
         :param int maximum_validity: The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
         :param str mode: DISABLED: Connection is not tunneled. PERMISSIVE: Connection can be either plaintext or an mTLS tunnel. STRICT: Connection is an mTLS tunnel.  Clients without a valid certificate will be rejected.
         """
-        pulumi.set(__self__, "certificate_id", certificate_id)
-        pulumi.set(__self__, "maximum_validity", maximum_validity)
-        pulumi.set(__self__, "mode", mode)
+        GetVirtualServicesVirtualServiceCollectionItemMtlResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_id=certificate_id,
+            maximum_validity=maximum_validity,
+            mode=mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_id: str,
+             maximum_validity: int,
+             mode: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_id", certificate_id)
+        _setter("maximum_validity", maximum_validity)
+        _setter("mode", mode)
 
     @property
     @pulumi.getter(name="certificateId")

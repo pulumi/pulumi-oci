@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['MaskingPoliciesApplyDifferenceToMaskingColumnsArgs', 'MaskingPoliciesApplyDifferenceToMaskingColumns']
@@ -19,8 +19,19 @@ class MaskingPoliciesApplyDifferenceToMaskingColumnsArgs:
         """
         The set of arguments for constructing a MaskingPoliciesApplyDifferenceToMaskingColumns resource.
         """
-        pulumi.set(__self__, "masking_policy_id", masking_policy_id)
-        pulumi.set(__self__, "sdm_masking_policy_difference_id", sdm_masking_policy_difference_id)
+        MaskingPoliciesApplyDifferenceToMaskingColumnsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            masking_policy_id=masking_policy_id,
+            sdm_masking_policy_difference_id=sdm_masking_policy_difference_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             masking_policy_id: pulumi.Input[str],
+             sdm_masking_policy_difference_id: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("masking_policy_id", masking_policy_id)
+        _setter("sdm_masking_policy_difference_id", sdm_masking_policy_difference_id)
 
     @property
     @pulumi.getter(name="maskingPolicyId")
@@ -49,10 +60,21 @@ class _MaskingPoliciesApplyDifferenceToMaskingColumnsState:
         """
         Input properties used for looking up and filtering MaskingPoliciesApplyDifferenceToMaskingColumns resources.
         """
+        _MaskingPoliciesApplyDifferenceToMaskingColumnsState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            masking_policy_id=masking_policy_id,
+            sdm_masking_policy_difference_id=sdm_masking_policy_difference_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             masking_policy_id: Optional[pulumi.Input[str]] = None,
+             sdm_masking_policy_difference_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if masking_policy_id is not None:
-            pulumi.set(__self__, "masking_policy_id", masking_policy_id)
+            _setter("masking_policy_id", masking_policy_id)
         if sdm_masking_policy_difference_id is not None:
-            pulumi.set(__self__, "sdm_masking_policy_difference_id", sdm_masking_policy_difference_id)
+            _setter("sdm_masking_policy_difference_id", sdm_masking_policy_difference_id)
 
     @property
     @pulumi.getter(name="maskingPolicyId")
@@ -104,6 +126,10 @@ class MaskingPoliciesApplyDifferenceToMaskingColumns(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            MaskingPoliciesApplyDifferenceToMaskingColumnsArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

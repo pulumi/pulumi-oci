@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -71,8 +71,17 @@ class ManagedInstanceAutonomouse(dict):
         """
         :param bool is_auto_update_enabled: True if daily updates are enabled
         """
+        ManagedInstanceAutonomouse._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_auto_update_enabled=is_auto_update_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_auto_update_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if is_auto_update_enabled is not None:
-            pulumi.set(__self__, "is_auto_update_enabled", is_auto_update_enabled)
+            _setter("is_auto_update_enabled", is_auto_update_enabled)
 
     @property
     @pulumi.getter(name="isAutoUpdateEnabled")
@@ -92,10 +101,21 @@ class ManagedInstanceChildSoftwareSource(dict):
         :param str id: software source identifier
         :param str name: software source name
         """
+        ManagedInstanceChildSoftwareSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -140,10 +160,21 @@ class ManagedInstanceGroupManagedInstance(dict):
         :param str display_name: (Updatable) Managed Instance Group identifier
         :param str id: unique identifier that is immutable on creation
         """
+        ManagedInstanceGroupManagedInstance._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -188,10 +219,21 @@ class ManagedInstanceManagedInstanceGroup(dict):
         :param str display_name: User friendly name
         :param str id: software source identifier
         """
+        ManagedInstanceManagedInstanceGroup._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -223,10 +265,21 @@ class ManagedInstanceManagementChildSoftwareSource(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        ManagedInstanceManagementChildSoftwareSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -275,10 +328,21 @@ class ManagedInstanceManagementManagedInstanceGroup(dict):
         :param str display_name: User friendly name
         :param str id: software source identifier
         """
+        ManagedInstanceManagementManagedInstanceGroup._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -310,10 +374,21 @@ class ManagedInstanceManagementParentSoftwareSource(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        ManagedInstanceManagementParentSoftwareSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -345,10 +420,21 @@ class ManagedInstanceParentSoftwareSource(dict):
         :param str id: software source identifier
         :param str name: software source name
         """
+        ManagedInstanceParentSoftwareSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -393,10 +479,21 @@ class SoftwareSourceAssociatedManagedInstance(dict):
         :param str display_name: (Updatable) User friendly name for the software source
         :param str id: OCID for the Software Source
         """
+        SoftwareSourceAssociatedManagedInstance._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -422,7 +519,16 @@ class GetManagedInstanceAutonomouseResult(dict):
         """
         :param bool is_auto_update_enabled: True if daily updates are enabled
         """
-        pulumi.set(__self__, "is_auto_update_enabled", is_auto_update_enabled)
+        GetManagedInstanceAutonomouseResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_auto_update_enabled=is_auto_update_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_auto_update_enabled: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_auto_update_enabled", is_auto_update_enabled)
 
     @property
     @pulumi.getter(name="isAutoUpdateEnabled")
@@ -442,8 +548,19 @@ class GetManagedInstanceChildSoftwareSourceResult(dict):
         :param str id: software source identifier
         :param str name: software source name
         """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
+        GetManagedInstanceChildSoftwareSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -471,8 +588,19 @@ class GetManagedInstanceGroupManagedInstanceResult(dict):
         :param str display_name: User friendly name
         :param str id: unique identifier that is immutable on creation
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetManagedInstanceGroupManagedInstanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -497,10 +625,23 @@ class GetManagedInstanceGroupsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedInstanceGroupsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -542,16 +683,43 @@ class GetManagedInstanceGroupsManagedInstanceGroupResult(dict):
         :param str os_family: The OS family for which to list resources.
         :param str state: The current lifecycle state for the object.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "managed_instance_count", managed_instance_count)
-        pulumi.set(__self__, "managed_instances", managed_instances)
-        pulumi.set(__self__, "os_family", os_family)
-        pulumi.set(__self__, "state", state)
+        GetManagedInstanceGroupsManagedInstanceGroupResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            managed_instance_count=managed_instance_count,
+            managed_instances=managed_instances,
+            os_family=os_family,
+            state=state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             managed_instance_count: int,
+             managed_instances: Sequence['outputs.GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceResult'],
+             os_family: str,
+             state: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("managed_instance_count", managed_instance_count)
+        _setter("managed_instances", managed_instances)
+        _setter("os_family", os_family)
+        _setter("state", state)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -640,8 +808,19 @@ class GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceResult(dict):
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         :param str id: unique identifier that is immutable on creation
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -669,8 +848,19 @@ class GetManagedInstanceManagedInstanceGroupResult(dict):
         :param str display_name: User friendly name
         :param str id: software source identifier
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetManagedInstanceManagedInstanceGroupResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -695,10 +885,23 @@ class GetManagedInstanceModuleStreamsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedInstanceModuleStreamsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -733,12 +936,31 @@ class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceResult(dict):
         :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
         :param str time_modified: The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
-        pulumi.set(__self__, "module_name", module_name)
-        pulumi.set(__self__, "profiles", profiles)
-        pulumi.set(__self__, "software_source_id", software_source_id)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "stream_name", stream_name)
-        pulumi.set(__self__, "time_modified", time_modified)
+        GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            module_name=module_name,
+            profiles=profiles,
+            software_source_id=software_source_id,
+            status=status,
+            stream_name=stream_name,
+            time_modified=time_modified,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             module_name: str,
+             profiles: Sequence['outputs.GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileResult'],
+             software_source_id: str,
+             status: str,
+             stream_name: str,
+             time_modified: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("module_name", module_name)
+        _setter("profiles", profiles)
+        _setter("software_source_id", software_source_id)
+        _setter("status", status)
+        _setter("stream_name", stream_name)
+        _setter("time_modified", time_modified)
 
     @property
     @pulumi.getter(name="moduleName")
@@ -804,11 +1026,28 @@ class GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileResult(
         :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
         :param str time_modified: The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
-        pulumi.set(__self__, "module_name", module_name)
-        pulumi.set(__self__, "profile_name", profile_name)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "stream_name", stream_name)
-        pulumi.set(__self__, "time_modified", time_modified)
+        GetManagedInstanceModuleStreamsModuleStreamOnManagedInstanceProfileResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            module_name=module_name,
+            profile_name=profile_name,
+            status=status,
+            stream_name=stream_name,
+            time_modified=time_modified,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             module_name: str,
+             profile_name: str,
+             status: str,
+             stream_name: str,
+             time_modified: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("module_name", module_name)
+        _setter("profile_name", profile_name)
+        _setter("status", status)
+        _setter("stream_name", stream_name)
+        _setter("time_modified", time_modified)
 
     @property
     @pulumi.getter(name="moduleName")
@@ -860,8 +1099,19 @@ class GetManagedInstanceParentSoftwareSourceResult(dict):
         :param str id: software source identifier
         :param str name: software source name
         """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
+        GetManagedInstanceParentSoftwareSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -886,10 +1136,23 @@ class GetManagedInstanceStreamProfileFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedInstanceStreamProfileFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -922,11 +1185,28 @@ class GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceResult(
         :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
         :param str time_modified: The date and time of the last status change for this profile, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
-        pulumi.set(__self__, "module_name", module_name)
-        pulumi.set(__self__, "profile_name", profile_name)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "stream_name", stream_name)
-        pulumi.set(__self__, "time_modified", time_modified)
+        GetManagedInstanceStreamProfileModuleStreamProfileOnManagedInstanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            module_name=module_name,
+            profile_name=profile_name,
+            status=status,
+            stream_name=stream_name,
+            time_modified=time_modified,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             module_name: str,
+             profile_name: str,
+             status: str,
+             stream_name: str,
+             time_modified: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("module_name", module_name)
+        _setter("profile_name", profile_name)
+        _setter("status", status)
+        _setter("stream_name", stream_name)
+        _setter("time_modified", time_modified)
 
     @property
     @pulumi.getter(name="moduleName")
@@ -978,10 +1258,23 @@ class GetManagedInstancesFilterResult(dict):
         """
         :param str name: software source name
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedInstancesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1060,33 +1353,94 @@ class GetManagedInstancesManagedInstanceResult(dict):
         :param int updates_available: Number of updates available to be installed
         :param int work_request_count: Number of work requests associated with this instance
         """
-        pulumi.set(__self__, "autonomouses", autonomouses)
-        pulumi.set(__self__, "bug_updates_available", bug_updates_available)
-        pulumi.set(__self__, "child_software_sources", child_software_sources)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "enhancement_updates_available", enhancement_updates_available)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_data_collection_authorized", is_data_collection_authorized)
-        pulumi.set(__self__, "is_reboot_required", is_reboot_required)
-        pulumi.set(__self__, "ksplice_effective_kernel_version", ksplice_effective_kernel_version)
-        pulumi.set(__self__, "last_boot", last_boot)
-        pulumi.set(__self__, "last_checkin", last_checkin)
-        pulumi.set(__self__, "managed_instance_groups", managed_instance_groups)
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
-        pulumi.set(__self__, "notification_topic_id", notification_topic_id)
-        pulumi.set(__self__, "os_family", os_family)
-        pulumi.set(__self__, "os_kernel_version", os_kernel_version)
-        pulumi.set(__self__, "os_name", os_name)
-        pulumi.set(__self__, "os_version", os_version)
-        pulumi.set(__self__, "other_updates_available", other_updates_available)
-        pulumi.set(__self__, "parent_software_sources", parent_software_sources)
-        pulumi.set(__self__, "scheduled_job_count", scheduled_job_count)
-        pulumi.set(__self__, "security_updates_available", security_updates_available)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "updates_available", updates_available)
-        pulumi.set(__self__, "work_request_count", work_request_count)
+        GetManagedInstancesManagedInstanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            autonomouses=autonomouses,
+            bug_updates_available=bug_updates_available,
+            child_software_sources=child_software_sources,
+            compartment_id=compartment_id,
+            description=description,
+            display_name=display_name,
+            enhancement_updates_available=enhancement_updates_available,
+            id=id,
+            is_data_collection_authorized=is_data_collection_authorized,
+            is_reboot_required=is_reboot_required,
+            ksplice_effective_kernel_version=ksplice_effective_kernel_version,
+            last_boot=last_boot,
+            last_checkin=last_checkin,
+            managed_instance_groups=managed_instance_groups,
+            managed_instance_id=managed_instance_id,
+            notification_topic_id=notification_topic_id,
+            os_family=os_family,
+            os_kernel_version=os_kernel_version,
+            os_name=os_name,
+            os_version=os_version,
+            other_updates_available=other_updates_available,
+            parent_software_sources=parent_software_sources,
+            scheduled_job_count=scheduled_job_count,
+            security_updates_available=security_updates_available,
+            status=status,
+            updates_available=updates_available,
+            work_request_count=work_request_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             autonomouses: Sequence['outputs.GetManagedInstancesManagedInstanceAutonomouseResult'],
+             bug_updates_available: int,
+             child_software_sources: Sequence['outputs.GetManagedInstancesManagedInstanceChildSoftwareSourceResult'],
+             compartment_id: str,
+             description: str,
+             display_name: str,
+             enhancement_updates_available: int,
+             id: str,
+             is_data_collection_authorized: bool,
+             is_reboot_required: bool,
+             ksplice_effective_kernel_version: str,
+             last_boot: str,
+             last_checkin: str,
+             managed_instance_groups: Sequence['outputs.GetManagedInstancesManagedInstanceManagedInstanceGroupResult'],
+             managed_instance_id: str,
+             notification_topic_id: str,
+             os_family: str,
+             os_kernel_version: str,
+             os_name: str,
+             os_version: str,
+             other_updates_available: int,
+             parent_software_sources: Sequence['outputs.GetManagedInstancesManagedInstanceParentSoftwareSourceResult'],
+             scheduled_job_count: int,
+             security_updates_available: int,
+             status: str,
+             updates_available: int,
+             work_request_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("autonomouses", autonomouses)
+        _setter("bug_updates_available", bug_updates_available)
+        _setter("child_software_sources", child_software_sources)
+        _setter("compartment_id", compartment_id)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("enhancement_updates_available", enhancement_updates_available)
+        _setter("id", id)
+        _setter("is_data_collection_authorized", is_data_collection_authorized)
+        _setter("is_reboot_required", is_reboot_required)
+        _setter("ksplice_effective_kernel_version", ksplice_effective_kernel_version)
+        _setter("last_boot", last_boot)
+        _setter("last_checkin", last_checkin)
+        _setter("managed_instance_groups", managed_instance_groups)
+        _setter("managed_instance_id", managed_instance_id)
+        _setter("notification_topic_id", notification_topic_id)
+        _setter("os_family", os_family)
+        _setter("os_kernel_version", os_kernel_version)
+        _setter("os_name", os_name)
+        _setter("os_version", os_version)
+        _setter("other_updates_available", other_updates_available)
+        _setter("parent_software_sources", parent_software_sources)
+        _setter("scheduled_job_count", scheduled_job_count)
+        _setter("security_updates_available", security_updates_available)
+        _setter("status", status)
+        _setter("updates_available", updates_available)
+        _setter("work_request_count", work_request_count)
 
     @property
     @pulumi.getter
@@ -1309,7 +1663,16 @@ class GetManagedInstancesManagedInstanceAutonomouseResult(dict):
         """
         :param bool is_auto_update_enabled: True if daily updates are enabled
         """
-        pulumi.set(__self__, "is_auto_update_enabled", is_auto_update_enabled)
+        GetManagedInstancesManagedInstanceAutonomouseResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_auto_update_enabled=is_auto_update_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_auto_update_enabled: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_auto_update_enabled", is_auto_update_enabled)
 
     @property
     @pulumi.getter(name="isAutoUpdateEnabled")
@@ -1329,8 +1692,19 @@ class GetManagedInstancesManagedInstanceChildSoftwareSourceResult(dict):
         :param str id: software source identifier
         :param str name: software source name
         """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
+        GetManagedInstancesManagedInstanceChildSoftwareSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1358,8 +1732,19 @@ class GetManagedInstancesManagedInstanceManagedInstanceGroupResult(dict):
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         :param str id: software source identifier
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetManagedInstancesManagedInstanceManagedInstanceGroupResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -1387,8 +1772,19 @@ class GetManagedInstancesManagedInstanceParentSoftwareSourceResult(dict):
         :param str id: software source identifier
         :param str name: software source name
         """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
+        GetManagedInstancesManagedInstanceParentSoftwareSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1416,8 +1812,19 @@ class GetSoftwareSourceAssociatedManagedInstanceResult(dict):
         :param str display_name: User friendly name for the software source
         :param str id: OCID for the Software Source
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetSoftwareSourceAssociatedManagedInstanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")
@@ -1442,10 +1849,23 @@ class GetSoftwareSourceStreamProfileFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSoftwareSourceStreamProfileFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1474,9 +1894,22 @@ class GetSoftwareSourceStreamProfileModuleStreamProfileResult(dict):
         :param str profile_name: The name of the profile of the containing module stream
         :param str stream_name: The name of the stream of the containing module.  This parameter is required if a profileName is specified.
         """
-        pulumi.set(__self__, "module_name", module_name)
-        pulumi.set(__self__, "profile_name", profile_name)
-        pulumi.set(__self__, "stream_name", stream_name)
+        GetSoftwareSourceStreamProfileModuleStreamProfileResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            module_name=module_name,
+            profile_name=profile_name,
+            stream_name=stream_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             module_name: str,
+             profile_name: str,
+             stream_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("module_name", module_name)
+        _setter("profile_name", profile_name)
+        _setter("stream_name", stream_name)
 
     @property
     @pulumi.getter(name="moduleName")
@@ -1509,10 +1942,23 @@ class GetSoftwareSourcesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSoftwareSourcesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1579,28 +2025,79 @@ class GetSoftwareSourcesSoftwareSourceResult(dict):
         :param str status: status of the software source.
         :param str url: URL for the repostiory
         """
-        pulumi.set(__self__, "arch_type", arch_type)
-        pulumi.set(__self__, "associated_managed_instances", associated_managed_instances)
-        pulumi.set(__self__, "checksum_type", checksum_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "gpg_key_fingerprint", gpg_key_fingerprint)
-        pulumi.set(__self__, "gpg_key_id", gpg_key_id)
-        pulumi.set(__self__, "gpg_key_url", gpg_key_url)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "maintainer_email", maintainer_email)
-        pulumi.set(__self__, "maintainer_name", maintainer_name)
-        pulumi.set(__self__, "maintainer_phone", maintainer_phone)
-        pulumi.set(__self__, "packages", packages)
-        pulumi.set(__self__, "parent_id", parent_id)
-        pulumi.set(__self__, "parent_name", parent_name)
-        pulumi.set(__self__, "repo_type", repo_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "url", url)
+        GetSoftwareSourcesSoftwareSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            arch_type=arch_type,
+            associated_managed_instances=associated_managed_instances,
+            checksum_type=checksum_type,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            gpg_key_fingerprint=gpg_key_fingerprint,
+            gpg_key_id=gpg_key_id,
+            gpg_key_url=gpg_key_url,
+            id=id,
+            maintainer_email=maintainer_email,
+            maintainer_name=maintainer_name,
+            maintainer_phone=maintainer_phone,
+            packages=packages,
+            parent_id=parent_id,
+            parent_name=parent_name,
+            repo_type=repo_type,
+            state=state,
+            status=status,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             arch_type: str,
+             associated_managed_instances: Sequence['outputs.GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceResult'],
+             checksum_type: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             gpg_key_fingerprint: str,
+             gpg_key_id: str,
+             gpg_key_url: str,
+             id: str,
+             maintainer_email: str,
+             maintainer_name: str,
+             maintainer_phone: str,
+             packages: int,
+             parent_id: str,
+             parent_name: str,
+             repo_type: str,
+             state: str,
+             status: str,
+             url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("arch_type", arch_type)
+        _setter("associated_managed_instances", associated_managed_instances)
+        _setter("checksum_type", checksum_type)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("gpg_key_fingerprint", gpg_key_fingerprint)
+        _setter("gpg_key_id", gpg_key_id)
+        _setter("gpg_key_url", gpg_key_url)
+        _setter("id", id)
+        _setter("maintainer_email", maintainer_email)
+        _setter("maintainer_name", maintainer_name)
+        _setter("maintainer_phone", maintainer_phone)
+        _setter("packages", packages)
+        _setter("parent_id", parent_id)
+        _setter("parent_name", parent_name)
+        _setter("repo_type", repo_type)
+        _setter("state", state)
+        _setter("status", status)
+        _setter("url", url)
 
     @property
     @pulumi.getter(name="archType")
@@ -1788,8 +2285,19 @@ class GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceResult(dict):
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         :param str id: OCID for the Software Source
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
+        GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="displayName")

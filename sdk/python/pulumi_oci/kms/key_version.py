@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -18,20 +18,39 @@ class KeyVersionArgs:
     def __init__(__self__, *,
                  key_id: pulumi.Input[str],
                  management_endpoint: pulumi.Input[str],
+                 external_key_version_id: Optional[pulumi.Input[str]] = None,
                  time_of_deletion: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a KeyVersion resource.
         :param pulumi.Input[str] key_id: The OCID of the key.
         :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
+        :param pulumi.Input[str] external_key_version_id: Key version ID associated with the external key.
         :param pulumi.Input[str] time_of_deletion: (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "key_id", key_id)
-        pulumi.set(__self__, "management_endpoint", management_endpoint)
+        KeyVersionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key_id=key_id,
+            management_endpoint=management_endpoint,
+            external_key_version_id=external_key_version_id,
+            time_of_deletion=time_of_deletion,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key_id: pulumi.Input[str],
+             management_endpoint: pulumi.Input[str],
+             external_key_version_id: Optional[pulumi.Input[str]] = None,
+             time_of_deletion: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key_id", key_id)
+        _setter("management_endpoint", management_endpoint)
+        if external_key_version_id is not None:
+            _setter("external_key_version_id", external_key_version_id)
         if time_of_deletion is not None:
-            pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+            _setter("time_of_deletion", time_of_deletion)
 
     @property
     @pulumi.getter(name="keyId")
@@ -58,6 +77,18 @@ class KeyVersionArgs:
         pulumi.set(self, "management_endpoint", value)
 
     @property
+    @pulumi.getter(name="externalKeyVersionId")
+    def external_key_version_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Key version ID associated with the external key.
+        """
+        return pulumi.get(self, "external_key_version_id")
+
+    @external_key_version_id.setter
+    def external_key_version_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "external_key_version_id", value)
+
+    @property
     @pulumi.getter(name="timeOfDeletion")
     def time_of_deletion(self) -> Optional[pulumi.Input[str]]:
         """
@@ -77,6 +108,8 @@ class KeyVersionArgs:
 class _KeyVersionState:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 external_key_reference_details: Optional[pulumi.Input[Sequence[pulumi.Input['KeyVersionExternalKeyReferenceDetailArgs']]]] = None,
+                 external_key_version_id: Optional[pulumi.Input[str]] = None,
                  is_primary: Optional[pulumi.Input[bool]] = None,
                  key_id: Optional[pulumi.Input[str]] = None,
                  key_version_id: Optional[pulumi.Input[str]] = None,
@@ -92,7 +125,9 @@ class _KeyVersionState:
         """
         Input properties used for looking up and filtering KeyVersion resources.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains this key version.
-        :param pulumi.Input[bool] is_primary: A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+        :param pulumi.Input[Sequence[pulumi.Input['KeyVersionExternalKeyReferenceDetailArgs']]] external_key_reference_details: Key reference data to be returned to the customer as a response.
+        :param pulumi.Input[str] external_key_version_id: Key version ID associated with the external key.
+        :param pulumi.Input[bool] is_primary: A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
         :param pulumi.Input[str] key_id: The OCID of the key.
         :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
         :param pulumi.Input[str] public_key: The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
@@ -106,32 +141,73 @@ class _KeyVersionState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] vault_id: The OCID of the vault that contains this key version.
         """
+        _KeyVersionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            external_key_reference_details=external_key_reference_details,
+            external_key_version_id=external_key_version_id,
+            is_primary=is_primary,
+            key_id=key_id,
+            key_version_id=key_version_id,
+            management_endpoint=management_endpoint,
+            public_key=public_key,
+            replica_details=replica_details,
+            restored_from_key_id=restored_from_key_id,
+            restored_from_key_version_id=restored_from_key_version_id,
+            state=state,
+            time_created=time_created,
+            time_of_deletion=time_of_deletion,
+            vault_id=vault_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             external_key_reference_details: Optional[pulumi.Input[Sequence[pulumi.Input['KeyVersionExternalKeyReferenceDetailArgs']]]] = None,
+             external_key_version_id: Optional[pulumi.Input[str]] = None,
+             is_primary: Optional[pulumi.Input[bool]] = None,
+             key_id: Optional[pulumi.Input[str]] = None,
+             key_version_id: Optional[pulumi.Input[str]] = None,
+             management_endpoint: Optional[pulumi.Input[str]] = None,
+             public_key: Optional[pulumi.Input[str]] = None,
+             replica_details: Optional[pulumi.Input[Sequence[pulumi.Input['KeyVersionReplicaDetailArgs']]]] = None,
+             restored_from_key_id: Optional[pulumi.Input[str]] = None,
+             restored_from_key_version_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_of_deletion: Optional[pulumi.Input[str]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
+        if external_key_reference_details is not None:
+            _setter("external_key_reference_details", external_key_reference_details)
+        if external_key_version_id is not None:
+            _setter("external_key_version_id", external_key_version_id)
         if is_primary is not None:
-            pulumi.set(__self__, "is_primary", is_primary)
+            _setter("is_primary", is_primary)
         if key_id is not None:
-            pulumi.set(__self__, "key_id", key_id)
+            _setter("key_id", key_id)
         if key_version_id is not None:
-            pulumi.set(__self__, "key_version_id", key_version_id)
+            _setter("key_version_id", key_version_id)
         if management_endpoint is not None:
-            pulumi.set(__self__, "management_endpoint", management_endpoint)
+            _setter("management_endpoint", management_endpoint)
         if public_key is not None:
-            pulumi.set(__self__, "public_key", public_key)
+            _setter("public_key", public_key)
         if replica_details is not None:
-            pulumi.set(__self__, "replica_details", replica_details)
+            _setter("replica_details", replica_details)
         if restored_from_key_id is not None:
-            pulumi.set(__self__, "restored_from_key_id", restored_from_key_id)
+            _setter("restored_from_key_id", restored_from_key_id)
         if restored_from_key_version_id is not None:
-            pulumi.set(__self__, "restored_from_key_version_id", restored_from_key_version_id)
+            _setter("restored_from_key_version_id", restored_from_key_version_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_of_deletion is not None:
-            pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+            _setter("time_of_deletion", time_of_deletion)
         if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
+            _setter("vault_id", vault_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -146,10 +222,34 @@ class _KeyVersionState:
         pulumi.set(self, "compartment_id", value)
 
     @property
+    @pulumi.getter(name="externalKeyReferenceDetails")
+    def external_key_reference_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['KeyVersionExternalKeyReferenceDetailArgs']]]]:
+        """
+        Key reference data to be returned to the customer as a response.
+        """
+        return pulumi.get(self, "external_key_reference_details")
+
+    @external_key_reference_details.setter
+    def external_key_reference_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['KeyVersionExternalKeyReferenceDetailArgs']]]]):
+        pulumi.set(self, "external_key_reference_details", value)
+
+    @property
+    @pulumi.getter(name="externalKeyVersionId")
+    def external_key_version_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Key version ID associated with the external key.
+        """
+        return pulumi.get(self, "external_key_version_id")
+
+    @external_key_version_id.setter
+    def external_key_version_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "external_key_version_id", value)
+
+    @property
     @pulumi.getter(name="isPrimary")
     def is_primary(self) -> Optional[pulumi.Input[bool]]:
         """
-        A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+        A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
         """
         return pulumi.get(self, "is_primary")
 
@@ -292,6 +392,7 @@ class KeyVersion(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 external_key_version_id: Optional[pulumi.Input[str]] = None,
                  key_id: Optional[pulumi.Input[str]] = None,
                  management_endpoint: Optional[pulumi.Input[str]] = None,
                  time_of_deletion: Optional[pulumi.Input[str]] = None,
@@ -307,17 +408,6 @@ class KeyVersion(pulumi.CustomResource):
         otherwise valid request when the total rate of management write operations exceeds 10 requests per second
         for a given tenancy.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_key_version = oci.kms.KeyVersion("testKeyVersion",
-            key_id=oci_kms_key["test_key"]["id"],
-            management_endpoint=var["key_version_management_endpoint"])
-        ```
-
         ## Import
 
         KeyVersions can be imported using the `id`, e.g.
@@ -328,6 +418,7 @@ class KeyVersion(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] external_key_version_id: Key version ID associated with the external key.
         :param pulumi.Input[str] key_id: The OCID of the key.
         :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
         :param pulumi.Input[str] time_of_deletion: (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -352,17 +443,6 @@ class KeyVersion(pulumi.CustomResource):
         otherwise valid request when the total rate of management write operations exceeds 10 requests per second
         for a given tenancy.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_key_version = oci.kms.KeyVersion("testKeyVersion",
-            key_id=oci_kms_key["test_key"]["id"],
-            management_endpoint=var["key_version_management_endpoint"])
-        ```
-
         ## Import
 
         KeyVersions can be imported using the `id`, e.g.
@@ -381,11 +461,16 @@ class KeyVersion(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            KeyVersionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 external_key_version_id: Optional[pulumi.Input[str]] = None,
                  key_id: Optional[pulumi.Input[str]] = None,
                  management_endpoint: Optional[pulumi.Input[str]] = None,
                  time_of_deletion: Optional[pulumi.Input[str]] = None,
@@ -398,6 +483,7 @@ class KeyVersion(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = KeyVersionArgs.__new__(KeyVersionArgs)
 
+            __props__.__dict__["external_key_version_id"] = external_key_version_id
             if key_id is None and not opts.urn:
                 raise TypeError("Missing required property 'key_id'")
             __props__.__dict__["key_id"] = key_id
@@ -406,6 +492,7 @@ class KeyVersion(pulumi.CustomResource):
             __props__.__dict__["management_endpoint"] = management_endpoint
             __props__.__dict__["time_of_deletion"] = time_of_deletion
             __props__.__dict__["compartment_id"] = None
+            __props__.__dict__["external_key_reference_details"] = None
             __props__.__dict__["is_primary"] = None
             __props__.__dict__["key_version_id"] = None
             __props__.__dict__["public_key"] = None
@@ -426,6 +513,8 @@ class KeyVersion(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            external_key_reference_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KeyVersionExternalKeyReferenceDetailArgs']]]]] = None,
+            external_key_version_id: Optional[pulumi.Input[str]] = None,
             is_primary: Optional[pulumi.Input[bool]] = None,
             key_id: Optional[pulumi.Input[str]] = None,
             key_version_id: Optional[pulumi.Input[str]] = None,
@@ -446,7 +535,9 @@ class KeyVersion(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains this key version.
-        :param pulumi.Input[bool] is_primary: A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KeyVersionExternalKeyReferenceDetailArgs']]]] external_key_reference_details: Key reference data to be returned to the customer as a response.
+        :param pulumi.Input[str] external_key_version_id: Key version ID associated with the external key.
+        :param pulumi.Input[bool] is_primary: A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
         :param pulumi.Input[str] key_id: The OCID of the key.
         :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
         :param pulumi.Input[str] public_key: The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
@@ -465,6 +556,8 @@ class KeyVersion(pulumi.CustomResource):
         __props__ = _KeyVersionState.__new__(_KeyVersionState)
 
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["external_key_reference_details"] = external_key_reference_details
+        __props__.__dict__["external_key_version_id"] = external_key_version_id
         __props__.__dict__["is_primary"] = is_primary
         __props__.__dict__["key_id"] = key_id
         __props__.__dict__["key_version_id"] = key_version_id
@@ -488,10 +581,26 @@ class KeyVersion(pulumi.CustomResource):
         return pulumi.get(self, "compartment_id")
 
     @property
+    @pulumi.getter(name="externalKeyReferenceDetails")
+    def external_key_reference_details(self) -> pulumi.Output[Sequence['outputs.KeyVersionExternalKeyReferenceDetail']]:
+        """
+        Key reference data to be returned to the customer as a response.
+        """
+        return pulumi.get(self, "external_key_reference_details")
+
+    @property
+    @pulumi.getter(name="externalKeyVersionId")
+    def external_key_version_id(self) -> pulumi.Output[str]:
+        """
+        Key version ID associated with the external key.
+        """
+        return pulumi.get(self, "external_key_version_id")
+
+    @property
     @pulumi.getter(name="isPrimary")
     def is_primary(self) -> pulumi.Output[bool]:
         """
-        A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+        A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
         """
         return pulumi.get(self, "is_primary")
 

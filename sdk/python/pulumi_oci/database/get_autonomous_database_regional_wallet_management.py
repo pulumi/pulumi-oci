@@ -6,13 +6,14 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
     'GetAutonomousDatabaseRegionalWalletManagementResult',
     'AwaitableGetAutonomousDatabaseRegionalWalletManagementResult',
     'get_autonomous_database_regional_wallet_management',
+    'get_autonomous_database_regional_wallet_management_output',
 ]
 
 @pulumi.output_type
@@ -107,3 +108,22 @@ def get_autonomous_database_regional_wallet_management(opts: Optional[pulumi.Inv
         should_rotate=pulumi.get(__ret__, 'should_rotate'),
         state=pulumi.get(__ret__, 'state'),
         time_rotated=pulumi.get(__ret__, 'time_rotated'))
+
+
+@_utilities.lift_output_func(get_autonomous_database_regional_wallet_management)
+def get_autonomous_database_regional_wallet_management_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAutonomousDatabaseRegionalWalletManagementResult]:
+    """
+    This data source provides details about a specific Autonomous Database Regional Wallet Management resource in Oracle Cloud Infrastructure Database service.
+
+    Gets the Autonomous Database regional wallet details.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_autonomous_database_regional_wallet_management = oci.Database.get_autonomous_database_regional_wallet_management()
+    ```
+    """
+    ...

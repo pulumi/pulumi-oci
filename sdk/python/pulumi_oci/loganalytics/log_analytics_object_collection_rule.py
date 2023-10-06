@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -67,44 +67,95 @@ class LogAnalyticsObjectCollectionRuleArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_source_name", log_source_name)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "os_bucket_name", os_bucket_name)
-        pulumi.set(__self__, "os_namespace", os_namespace)
+        LogAnalyticsObjectCollectionRuleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            log_group_id=log_group_id,
+            log_source_name=log_source_name,
+            namespace=namespace,
+            os_bucket_name=os_bucket_name,
+            os_namespace=os_namespace,
+            char_encoding=char_encoding,
+            collection_type=collection_type,
+            defined_tags=defined_tags,
+            description=description,
+            entity_id=entity_id,
+            freeform_tags=freeform_tags,
+            is_enabled=is_enabled,
+            log_set=log_set,
+            log_set_ext_regex=log_set_ext_regex,
+            log_set_key=log_set_key,
+            name=name,
+            object_name_filters=object_name_filters,
+            overrides=overrides,
+            poll_since=poll_since,
+            poll_till=poll_till,
+            timezone=timezone,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             log_group_id: pulumi.Input[str],
+             log_source_name: pulumi.Input[str],
+             namespace: pulumi.Input[str],
+             os_bucket_name: pulumi.Input[str],
+             os_namespace: pulumi.Input[str],
+             char_encoding: Optional[pulumi.Input[str]] = None,
+             collection_type: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             entity_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             log_set: Optional[pulumi.Input[str]] = None,
+             log_set_ext_regex: Optional[pulumi.Input[str]] = None,
+             log_set_key: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             object_name_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             overrides: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]]] = None,
+             poll_since: Optional[pulumi.Input[str]] = None,
+             poll_till: Optional[pulumi.Input[str]] = None,
+             timezone: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("log_group_id", log_group_id)
+        _setter("log_source_name", log_source_name)
+        _setter("namespace", namespace)
+        _setter("os_bucket_name", os_bucket_name)
+        _setter("os_namespace", os_namespace)
         if char_encoding is not None:
-            pulumi.set(__self__, "char_encoding", char_encoding)
+            _setter("char_encoding", char_encoding)
         if collection_type is not None:
-            pulumi.set(__self__, "collection_type", collection_type)
+            _setter("collection_type", collection_type)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if entity_id is not None:
-            pulumi.set(__self__, "entity_id", entity_id)
+            _setter("entity_id", entity_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if log_set is not None:
-            pulumi.set(__self__, "log_set", log_set)
+            _setter("log_set", log_set)
         if log_set_ext_regex is not None:
-            pulumi.set(__self__, "log_set_ext_regex", log_set_ext_regex)
+            _setter("log_set_ext_regex", log_set_ext_regex)
         if log_set_key is not None:
-            pulumi.set(__self__, "log_set_key", log_set_key)
+            _setter("log_set_key", log_set_key)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if object_name_filters is not None:
-            pulumi.set(__self__, "object_name_filters", object_name_filters)
+            _setter("object_name_filters", object_name_filters)
         if overrides is not None:
-            pulumi.set(__self__, "overrides", overrides)
+            _setter("overrides", overrides)
         if poll_since is not None:
-            pulumi.set(__self__, "poll_since", poll_since)
+            _setter("poll_since", poll_since)
         if poll_till is not None:
-            pulumi.set(__self__, "poll_till", poll_till)
+            _setter("poll_till", poll_till)
         if timezone is not None:
-            pulumi.set(__self__, "timezone", timezone)
+            _setter("timezone", timezone)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -437,58 +488,117 @@ class _LogAnalyticsObjectCollectionRuleState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _LogAnalyticsObjectCollectionRuleState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            char_encoding=char_encoding,
+            collection_type=collection_type,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            entity_id=entity_id,
+            freeform_tags=freeform_tags,
+            is_enabled=is_enabled,
+            lifecycle_details=lifecycle_details,
+            log_group_id=log_group_id,
+            log_set=log_set,
+            log_set_ext_regex=log_set_ext_regex,
+            log_set_key=log_set_key,
+            log_source_name=log_source_name,
+            name=name,
+            namespace=namespace,
+            object_name_filters=object_name_filters,
+            os_bucket_name=os_bucket_name,
+            os_namespace=os_namespace,
+            overrides=overrides,
+            poll_since=poll_since,
+            poll_till=poll_till,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+            timezone=timezone,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             char_encoding: Optional[pulumi.Input[str]] = None,
+             collection_type: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             entity_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             log_group_id: Optional[pulumi.Input[str]] = None,
+             log_set: Optional[pulumi.Input[str]] = None,
+             log_set_ext_regex: Optional[pulumi.Input[str]] = None,
+             log_set_key: Optional[pulumi.Input[str]] = None,
+             log_source_name: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object_name_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             os_bucket_name: Optional[pulumi.Input[str]] = None,
+             os_namespace: Optional[pulumi.Input[str]] = None,
+             overrides: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]]] = None,
+             poll_since: Optional[pulumi.Input[str]] = None,
+             poll_till: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             timezone: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if char_encoding is not None:
-            pulumi.set(__self__, "char_encoding", char_encoding)
+            _setter("char_encoding", char_encoding)
         if collection_type is not None:
-            pulumi.set(__self__, "collection_type", collection_type)
+            _setter("collection_type", collection_type)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if entity_id is not None:
-            pulumi.set(__self__, "entity_id", entity_id)
+            _setter("entity_id", entity_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if log_group_id is not None:
-            pulumi.set(__self__, "log_group_id", log_group_id)
+            _setter("log_group_id", log_group_id)
         if log_set is not None:
-            pulumi.set(__self__, "log_set", log_set)
+            _setter("log_set", log_set)
         if log_set_ext_regex is not None:
-            pulumi.set(__self__, "log_set_ext_regex", log_set_ext_regex)
+            _setter("log_set_ext_regex", log_set_ext_regex)
         if log_set_key is not None:
-            pulumi.set(__self__, "log_set_key", log_set_key)
+            _setter("log_set_key", log_set_key)
         if log_source_name is not None:
-            pulumi.set(__self__, "log_source_name", log_source_name)
+            _setter("log_source_name", log_source_name)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object_name_filters is not None:
-            pulumi.set(__self__, "object_name_filters", object_name_filters)
+            _setter("object_name_filters", object_name_filters)
         if os_bucket_name is not None:
-            pulumi.set(__self__, "os_bucket_name", os_bucket_name)
+            _setter("os_bucket_name", os_bucket_name)
         if os_namespace is not None:
-            pulumi.set(__self__, "os_namespace", os_namespace)
+            _setter("os_namespace", os_namespace)
         if overrides is not None:
-            pulumi.set(__self__, "overrides", overrides)
+            _setter("overrides", overrides)
         if poll_since is not None:
-            pulumi.set(__self__, "poll_since", poll_since)
+            _setter("poll_since", poll_since)
         if poll_till is not None:
-            pulumi.set(__self__, "poll_till", poll_till)
+            _setter("poll_till", poll_till)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if timezone is not None:
-            pulumi.set(__self__, "timezone", timezone)
+            _setter("timezone", timezone)
 
     @property
     @pulumi.getter(name="charEncoding")
@@ -974,6 +1084,10 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            LogAnalyticsObjectCollectionRuleArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

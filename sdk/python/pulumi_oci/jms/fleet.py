@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -35,19 +35,42 @@ class FleetArgs:
         :param pulumi.Input[bool] is_advanced_features_enabled: (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
         :param pulumi.Input['FleetOperationLogArgs'] operation_log: (Updatable) Custom Log for inventory or operation log.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "inventory_log", inventory_log)
+        FleetArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            inventory_log=inventory_log,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            is_advanced_features_enabled=is_advanced_features_enabled,
+            operation_log=operation_log,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             inventory_log: pulumi.Input['FleetInventoryLogArgs'],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_advanced_features_enabled: Optional[pulumi.Input[bool]] = None,
+             operation_log: Optional[pulumi.Input['FleetOperationLogArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("inventory_log", inventory_log)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_advanced_features_enabled is not None:
-            pulumi.set(__self__, "is_advanced_features_enabled", is_advanced_features_enabled)
+            _setter("is_advanced_features_enabled", is_advanced_features_enabled)
         if operation_log is not None:
-            pulumi.set(__self__, "operation_log", operation_log)
+            _setter("operation_log", operation_log)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -184,38 +207,77 @@ class _FleetState:
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
+        _FleetState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            approximate_application_count=approximate_application_count,
+            approximate_installation_count=approximate_installation_count,
+            approximate_java_server_count=approximate_java_server_count,
+            approximate_jre_count=approximate_jre_count,
+            approximate_managed_instance_count=approximate_managed_instance_count,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            inventory_log=inventory_log,
+            is_advanced_features_enabled=is_advanced_features_enabled,
+            operation_log=operation_log,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             approximate_application_count: Optional[pulumi.Input[int]] = None,
+             approximate_installation_count: Optional[pulumi.Input[int]] = None,
+             approximate_java_server_count: Optional[pulumi.Input[int]] = None,
+             approximate_jre_count: Optional[pulumi.Input[int]] = None,
+             approximate_managed_instance_count: Optional[pulumi.Input[int]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             inventory_log: Optional[pulumi.Input['FleetInventoryLogArgs']] = None,
+             is_advanced_features_enabled: Optional[pulumi.Input[bool]] = None,
+             operation_log: Optional[pulumi.Input['FleetOperationLogArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if approximate_application_count is not None:
-            pulumi.set(__self__, "approximate_application_count", approximate_application_count)
+            _setter("approximate_application_count", approximate_application_count)
         if approximate_installation_count is not None:
-            pulumi.set(__self__, "approximate_installation_count", approximate_installation_count)
+            _setter("approximate_installation_count", approximate_installation_count)
         if approximate_java_server_count is not None:
-            pulumi.set(__self__, "approximate_java_server_count", approximate_java_server_count)
+            _setter("approximate_java_server_count", approximate_java_server_count)
         if approximate_jre_count is not None:
-            pulumi.set(__self__, "approximate_jre_count", approximate_jre_count)
+            _setter("approximate_jre_count", approximate_jre_count)
         if approximate_managed_instance_count is not None:
-            pulumi.set(__self__, "approximate_managed_instance_count", approximate_managed_instance_count)
+            _setter("approximate_managed_instance_count", approximate_managed_instance_count)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if inventory_log is not None:
-            pulumi.set(__self__, "inventory_log", inventory_log)
+            _setter("inventory_log", inventory_log)
         if is_advanced_features_enabled is not None:
-            pulumi.set(__self__, "is_advanced_features_enabled", is_advanced_features_enabled)
+            _setter("is_advanced_features_enabled", is_advanced_features_enabled)
         if operation_log is not None:
-            pulumi.set(__self__, "operation_log", operation_log)
+            _setter("operation_log", operation_log)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="approximateApplicationCount")
@@ -543,6 +605,10 @@ class Fleet(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            FleetArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -574,10 +640,20 @@ class Fleet(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            if inventory_log is not None and not isinstance(inventory_log, FleetInventoryLogArgs):
+                inventory_log = inventory_log or {}
+                def _setter(key, value):
+                    inventory_log[key] = value
+                FleetInventoryLogArgs._configure(_setter, **inventory_log)
             if inventory_log is None and not opts.urn:
                 raise TypeError("Missing required property 'inventory_log'")
             __props__.__dict__["inventory_log"] = inventory_log
             __props__.__dict__["is_advanced_features_enabled"] = is_advanced_features_enabled
+            if operation_log is not None and not isinstance(operation_log, FleetOperationLogArgs):
+                operation_log = operation_log or {}
+                def _setter(key, value):
+                    operation_log[key] = value
+                FleetOperationLogArgs._configure(_setter, **operation_log)
             __props__.__dict__["operation_log"] = operation_log
             __props__.__dict__["approximate_application_count"] = None
             __props__.__dict__["approximate_installation_count"] = None

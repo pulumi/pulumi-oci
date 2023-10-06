@@ -66,11 +66,19 @@ export interface GetKeyVersionResult {
      */
     readonly compartmentId: string;
     /**
+     * Key reference data to be returned to the customer as a response.
+     */
+    readonly externalKeyReferenceDetails: outputs.Kms.GetKeyVersionExternalKeyReferenceDetail[];
+    /**
+     * Key version ID associated with the external key.
+     */
+    readonly externalKeyVersionId: string;
+    /**
      * The OCID of the key version.
      */
     readonly id: string;
     /**
-     * A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+     * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      */
     readonly isPrimary: boolean;
     /**

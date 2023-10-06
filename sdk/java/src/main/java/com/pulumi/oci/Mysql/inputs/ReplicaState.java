@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Mysql.inputs.ReplicaReplicaOverridesArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -47,6 +48,21 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
+     * (Updatable) The OCID of the Configuration to be used by the read replica.
+     * 
+     */
+    @Import(name="configurationId")
+    private @Nullable Output<String> configurationId;
+
+    /**
+     * @return (Updatable) The OCID of the Configuration to be used by the read replica.
+     * 
+     */
+    public Optional<Output<String>> configurationId() {
+        return Optional.ofNullable(this.configurationId);
     }
 
     /**
@@ -157,18 +173,12 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="isDeleteProtected")
     private @Nullable Output<Boolean> isDeleteProtected;
 
     /**
      * @return (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Boolean>> isDeleteProtected() {
@@ -191,14 +201,14 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The MySQL version used by the read replica.
+     * (Updatable) The MySQL version to be used by the read replica.
      * 
      */
     @Import(name="mysqlVersion")
     private @Nullable Output<String> mysqlVersion;
 
     /**
-     * @return The MySQL version used by the read replica.
+     * @return (Updatable) The MySQL version to be used by the read replica.
      * 
      */
     public Optional<Output<String>> mysqlVersion() {
@@ -233,6 +243,42 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Integer>> portX() {
         return Optional.ofNullable(this.portX);
+    }
+
+    /**
+     * (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to &#34;&#34;, then the value is inherited from its  source DB system.
+     * 
+     */
+    @Import(name="replicaOverrides")
+    private @Nullable Output<ReplicaReplicaOverridesArgs> replicaOverrides;
+
+    /**
+     * @return (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to &#34;&#34;, then the value is inherited from its  source DB system.
+     * 
+     */
+    public Optional<Output<ReplicaReplicaOverridesArgs>> replicaOverrides() {
+        return Optional.ofNullable(this.replicaOverrides);
+    }
+
+    /**
+     * (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="shapeName")
+    private @Nullable Output<String> shapeName;
+
+    /**
+     * @return (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> shapeName() {
+        return Optional.ofNullable(this.shapeName);
     }
 
     /**
@@ -285,6 +331,7 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
     private ReplicaState(ReplicaState $) {
         this.availabilityDomain = $.availabilityDomain;
         this.compartmentId = $.compartmentId;
+        this.configurationId = $.configurationId;
         this.dbSystemId = $.dbSystemId;
         this.definedTags = $.definedTags;
         this.description = $.description;
@@ -297,6 +344,8 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
         this.mysqlVersion = $.mysqlVersion;
         this.port = $.port;
         this.portX = $.portX;
+        this.replicaOverrides = $.replicaOverrides;
+        this.shapeName = $.shapeName;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
@@ -360,6 +409,27 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param configurationId (Updatable) The OCID of the Configuration to be used by the read replica.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configurationId(@Nullable Output<String> configurationId) {
+            $.configurationId = configurationId;
+            return this;
+        }
+
+        /**
+         * @param configurationId (Updatable) The OCID of the Configuration to be used by the read replica.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configurationId(String configurationId) {
+            return configurationId(Output.of(configurationId));
         }
 
         /**
@@ -512,9 +582,6 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param isDeleteProtected (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -525,9 +592,6 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isDeleteProtected (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -558,7 +622,7 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mysqlVersion The MySQL version used by the read replica.
+         * @param mysqlVersion (Updatable) The MySQL version to be used by the read replica.
          * 
          * @return builder
          * 
@@ -569,7 +633,7 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mysqlVersion The MySQL version used by the read replica.
+         * @param mysqlVersion (Updatable) The MySQL version to be used by the read replica.
          * 
          * @return builder
          * 
@@ -618,6 +682,54 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder portX(Integer portX) {
             return portX(Output.of(portX));
+        }
+
+        /**
+         * @param replicaOverrides (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to &#34;&#34;, then the value is inherited from its  source DB system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicaOverrides(@Nullable Output<ReplicaReplicaOverridesArgs> replicaOverrides) {
+            $.replicaOverrides = replicaOverrides;
+            return this;
+        }
+
+        /**
+         * @param replicaOverrides (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to &#34;&#34;, then the value is inherited from its  source DB system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicaOverrides(ReplicaReplicaOverridesArgs replicaOverrides) {
+            return replicaOverrides(Output.of(replicaOverrides));
+        }
+
+        /**
+         * @param shapeName (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shapeName(@Nullable Output<String> shapeName) {
+            $.shapeName = shapeName;
+            return this;
+        }
+
+        /**
+         * @param shapeName (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shapeName(String shapeName) {
+            return shapeName(Output.of(shapeName));
         }
 
         /**

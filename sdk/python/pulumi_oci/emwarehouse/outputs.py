@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -26,7 +26,16 @@ __all__ = [
 class GetEmWarehousesEmWarehouseCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetEmWarehousesEmWarehouseCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetEmWarehousesEmWarehouseCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetEmWarehousesEmWarehouseCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -71,22 +80,61 @@ class GetEmWarehousesEmWarehouseCollectionItemResult(dict):
         :param str time_created: The time the the EmWarehouse was created. An RFC3339 formatted datetime string
         :param str time_updated: The time the EmWarehouse was updated. An RFC3339 formatted datetime string
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "em_bridge_id", em_bridge_id)
-        pulumi.set(__self__, "em_warehouse_type", em_warehouse_type)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "latest_etl_run_message", latest_etl_run_message)
-        pulumi.set(__self__, "latest_etl_run_status", latest_etl_run_status)
-        pulumi.set(__self__, "latest_etl_run_time", latest_etl_run_time)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetEmWarehousesEmWarehouseCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            em_bridge_id=em_bridge_id,
+            em_warehouse_type=em_warehouse_type,
+            freeform_tags=freeform_tags,
+            id=id,
+            latest_etl_run_message=latest_etl_run_message,
+            latest_etl_run_status=latest_etl_run_status,
+            latest_etl_run_time=latest_etl_run_time,
+            lifecycle_details=lifecycle_details,
+            operations_insights_warehouse_id=operations_insights_warehouse_id,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             em_bridge_id: str,
+             em_warehouse_type: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             latest_etl_run_message: str,
+             latest_etl_run_status: str,
+             latest_etl_run_time: str,
+             lifecycle_details: str,
+             operations_insights_warehouse_id: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("em_bridge_id", em_bridge_id)
+        _setter("em_warehouse_type", em_warehouse_type)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("latest_etl_run_message", latest_etl_run_message)
+        _setter("latest_etl_run_status", latest_etl_run_status)
+        _setter("latest_etl_run_time", latest_etl_run_time)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("operations_insights_warehouse_id", operations_insights_warehouse_id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -223,10 +271,23 @@ class GetEmWarehousesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetEmWarehousesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -271,17 +332,46 @@ class GetEtlRunItemResult(dict):
         :param str time_created: Time when the dataflow run was created
         :param str time_updated: Time when the dataflow run was updated
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "data_read_in_bytes", data_read_in_bytes)
-        pulumi.set(__self__, "data_written", data_written)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "run_duration_in_milliseconds", run_duration_in_milliseconds)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetEtlRunItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            data_read_in_bytes=data_read_in_bytes,
+            data_written=data_written,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            run_duration_in_milliseconds=run_duration_in_milliseconds,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             data_read_in_bytes: str,
+             data_written: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             lifecycle_details: str,
+             run_duration_in_milliseconds: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("data_read_in_bytes", data_read_in_bytes)
+        _setter("data_written", data_written)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("run_duration_in_milliseconds", run_duration_in_milliseconds)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -379,7 +469,16 @@ class GetEtlRunsEtlRunCollectionResult(dict):
         """
         :param Sequence['GetEtlRunsEtlRunCollectionItemArgs'] items: List of runs
         """
-        pulumi.set(__self__, "items", items)
+        GetEtlRunsEtlRunCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetEtlRunsEtlRunCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -397,7 +496,16 @@ class GetEtlRunsEtlRunCollectionItemResult(dict):
         """
         :param Sequence['GetEtlRunsEtlRunCollectionItemItemArgs'] items: List of runs
         """
-        pulumi.set(__self__, "items", items)
+        GetEtlRunsEtlRunCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetEtlRunsEtlRunCollectionItemItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -435,17 +543,46 @@ class GetEtlRunsEtlRunCollectionItemItemResult(dict):
         :param str time_created: Time when the dataflow run was created
         :param str time_updated: Time when the dataflow run was updated
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "data_read_in_bytes", data_read_in_bytes)
-        pulumi.set(__self__, "data_written", data_written)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "run_duration_in_milliseconds", run_duration_in_milliseconds)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetEtlRunsEtlRunCollectionItemItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            data_read_in_bytes=data_read_in_bytes,
+            data_written=data_written,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            run_duration_in_milliseconds=run_duration_in_milliseconds,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             data_read_in_bytes: str,
+             data_written: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             lifecycle_details: str,
+             run_duration_in_milliseconds: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("data_read_in_bytes", data_read_in_bytes)
+        _setter("data_written", data_written)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("run_duration_in_milliseconds", run_duration_in_milliseconds)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -542,10 +679,23 @@ class GetEtlRunsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetEtlRunsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -576,10 +726,25 @@ class GetResourceUsageEmInstanceResult(dict):
         :param str em_id: operations Insights Warehouse Identifier
         :param int targets_count: EmInstance Target count
         """
-        pulumi.set(__self__, "em_discoverer_url", em_discoverer_url)
-        pulumi.set(__self__, "em_host", em_host)
-        pulumi.set(__self__, "em_id", em_id)
-        pulumi.set(__self__, "targets_count", targets_count)
+        GetResourceUsageEmInstanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            em_discoverer_url=em_discoverer_url,
+            em_host=em_host,
+            em_id=em_id,
+            targets_count=targets_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             em_discoverer_url: str,
+             em_host: str,
+             em_id: str,
+             targets_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("em_discoverer_url", em_discoverer_url)
+        _setter("em_host", em_host)
+        _setter("em_id", em_id)
+        _setter("targets_count", targets_count)
 
     @property
     @pulumi.getter(name="emDiscovererUrl")

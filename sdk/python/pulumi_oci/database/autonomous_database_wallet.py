@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['AutonomousDatabaseWalletArgs', 'AutonomousDatabaseWallet']
@@ -30,12 +30,27 @@ class AutonomousDatabaseWalletArgs:
                
                **Serverless instance usage:**
         """
-        pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
-        pulumi.set(__self__, "password", password)
+        AutonomousDatabaseWalletArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            autonomous_database_id=autonomous_database_id,
+            password=password,
+            base64_encode_content=base64_encode_content,
+            generate_type=generate_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             autonomous_database_id: pulumi.Input[str],
+             password: pulumi.Input[str],
+             base64_encode_content: Optional[pulumi.Input[bool]] = None,
+             generate_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("autonomous_database_id", autonomous_database_id)
+        _setter("password", password)
         if base64_encode_content is not None:
-            pulumi.set(__self__, "base64_encode_content", base64_encode_content)
+            _setter("base64_encode_content", base64_encode_content)
         if generate_type is not None:
-            pulumi.set(__self__, "generate_type", generate_type)
+            _setter("generate_type", generate_type)
 
     @property
     @pulumi.getter(name="autonomousDatabaseId")
@@ -110,16 +125,33 @@ class _AutonomousDatabaseWalletState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _AutonomousDatabaseWalletState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            autonomous_database_id=autonomous_database_id,
+            base64_encode_content=base64_encode_content,
+            content=content,
+            generate_type=generate_type,
+            password=password,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             autonomous_database_id: Optional[pulumi.Input[str]] = None,
+             base64_encode_content: Optional[pulumi.Input[bool]] = None,
+             content: Optional[pulumi.Input[str]] = None,
+             generate_type: Optional[pulumi.Input[str]] = None,
+             password: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if autonomous_database_id is not None:
-            pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
+            _setter("autonomous_database_id", autonomous_database_id)
         if base64_encode_content is not None:
-            pulumi.set(__self__, "base64_encode_content", base64_encode_content)
+            _setter("base64_encode_content", base64_encode_content)
         if content is not None:
-            pulumi.set(__self__, "content", content)
+            _setter("content", content)
         if generate_type is not None:
-            pulumi.set(__self__, "generate_type", generate_type)
+            _setter("generate_type", generate_type)
         if password is not None:
-            pulumi.set(__self__, "password", password)
+            _setter("password", password)
 
     @property
     @pulumi.getter(name="autonomousDatabaseId")
@@ -259,6 +291,10 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AutonomousDatabaseWalletArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

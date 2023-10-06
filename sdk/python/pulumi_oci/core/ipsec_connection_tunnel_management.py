@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -38,21 +38,46 @@ class IpsecConnectionTunnelManagementArgs:
         :param pulumi.Input[str] ike_version: Internet Key Exchange protocol version.
         :param pulumi.Input[str] shared_secret: The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
         """
-        pulumi.set(__self__, "ipsec_id", ipsec_id)
-        pulumi.set(__self__, "routing", routing)
-        pulumi.set(__self__, "tunnel_id", tunnel_id)
+        IpsecConnectionTunnelManagementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ipsec_id=ipsec_id,
+            routing=routing,
+            tunnel_id=tunnel_id,
+            bgp_session_infos=bgp_session_infos,
+            display_name=display_name,
+            dpd_configs=dpd_configs,
+            encryption_domain_config=encryption_domain_config,
+            ike_version=ike_version,
+            shared_secret=shared_secret,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ipsec_id: pulumi.Input[str],
+             routing: pulumi.Input[str],
+             tunnel_id: pulumi.Input[str],
+             bgp_session_infos: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             dpd_configs: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]] = None,
+             encryption_domain_config: Optional[pulumi.Input['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']] = None,
+             ike_version: Optional[pulumi.Input[str]] = None,
+             shared_secret: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ipsec_id", ipsec_id)
+        _setter("routing", routing)
+        _setter("tunnel_id", tunnel_id)
         if bgp_session_infos is not None:
-            pulumi.set(__self__, "bgp_session_infos", bgp_session_infos)
+            _setter("bgp_session_infos", bgp_session_infos)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if dpd_configs is not None:
-            pulumi.set(__self__, "dpd_configs", dpd_configs)
+            _setter("dpd_configs", dpd_configs)
         if encryption_domain_config is not None:
-            pulumi.set(__self__, "encryption_domain_config", encryption_domain_config)
+            _setter("encryption_domain_config", encryption_domain_config)
         if ike_version is not None:
-            pulumi.set(__self__, "ike_version", ike_version)
+            _setter("ike_version", ike_version)
         if shared_secret is not None:
-            pulumi.set(__self__, "shared_secret", shared_secret)
+            _setter("shared_secret", shared_secret)
 
     @property
     @pulumi.getter(name="ipsecId")
@@ -209,52 +234,105 @@ class _IpsecConnectionTunnelManagementState:
         :param pulumi.Input[str] tunnel_id: The OCID of the IPSec connection's tunnel.
         :param pulumi.Input[str] vpn_ip: The IP address of Oracle's VPN headend.  Example: `129.146.17.50`
         """
+        _IpsecConnectionTunnelManagementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            associated_virtual_circuits=associated_virtual_circuits,
+            bgp_session_infos=bgp_session_infos,
+            compartment_id=compartment_id,
+            cpe_ip=cpe_ip,
+            display_name=display_name,
+            dpd_configs=dpd_configs,
+            dpd_mode=dpd_mode,
+            dpd_timeout_in_sec=dpd_timeout_in_sec,
+            encryption_domain_config=encryption_domain_config,
+            ike_version=ike_version,
+            ipsec_id=ipsec_id,
+            nat_translation_enabled=nat_translation_enabled,
+            oracle_can_initiate=oracle_can_initiate,
+            phase_one_details=phase_one_details,
+            phase_two_details=phase_two_details,
+            routing=routing,
+            shared_secret=shared_secret,
+            state=state,
+            status=status,
+            time_created=time_created,
+            time_status_updated=time_status_updated,
+            tunnel_id=tunnel_id,
+            vpn_ip=vpn_ip,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             associated_virtual_circuits: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             bgp_session_infos: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             cpe_ip: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             dpd_configs: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]] = None,
+             dpd_mode: Optional[pulumi.Input[str]] = None,
+             dpd_timeout_in_sec: Optional[pulumi.Input[int]] = None,
+             encryption_domain_config: Optional[pulumi.Input['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']] = None,
+             ike_version: Optional[pulumi.Input[str]] = None,
+             ipsec_id: Optional[pulumi.Input[str]] = None,
+             nat_translation_enabled: Optional[pulumi.Input[str]] = None,
+             oracle_can_initiate: Optional[pulumi.Input[str]] = None,
+             phase_one_details: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementPhaseOneDetailArgs']]]] = None,
+             phase_two_details: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementPhaseTwoDetailArgs']]]] = None,
+             routing: Optional[pulumi.Input[str]] = None,
+             shared_secret: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_status_updated: Optional[pulumi.Input[str]] = None,
+             tunnel_id: Optional[pulumi.Input[str]] = None,
+             vpn_ip: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if associated_virtual_circuits is not None:
-            pulumi.set(__self__, "associated_virtual_circuits", associated_virtual_circuits)
+            _setter("associated_virtual_circuits", associated_virtual_circuits)
         if bgp_session_infos is not None:
-            pulumi.set(__self__, "bgp_session_infos", bgp_session_infos)
+            _setter("bgp_session_infos", bgp_session_infos)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if cpe_ip is not None:
-            pulumi.set(__self__, "cpe_ip", cpe_ip)
+            _setter("cpe_ip", cpe_ip)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if dpd_configs is not None:
-            pulumi.set(__self__, "dpd_configs", dpd_configs)
+            _setter("dpd_configs", dpd_configs)
         if dpd_mode is not None:
-            pulumi.set(__self__, "dpd_mode", dpd_mode)
+            _setter("dpd_mode", dpd_mode)
         if dpd_timeout_in_sec is not None:
-            pulumi.set(__self__, "dpd_timeout_in_sec", dpd_timeout_in_sec)
+            _setter("dpd_timeout_in_sec", dpd_timeout_in_sec)
         if encryption_domain_config is not None:
-            pulumi.set(__self__, "encryption_domain_config", encryption_domain_config)
+            _setter("encryption_domain_config", encryption_domain_config)
         if ike_version is not None:
-            pulumi.set(__self__, "ike_version", ike_version)
+            _setter("ike_version", ike_version)
         if ipsec_id is not None:
-            pulumi.set(__self__, "ipsec_id", ipsec_id)
+            _setter("ipsec_id", ipsec_id)
         if nat_translation_enabled is not None:
-            pulumi.set(__self__, "nat_translation_enabled", nat_translation_enabled)
+            _setter("nat_translation_enabled", nat_translation_enabled)
         if oracle_can_initiate is not None:
-            pulumi.set(__self__, "oracle_can_initiate", oracle_can_initiate)
+            _setter("oracle_can_initiate", oracle_can_initiate)
         if phase_one_details is not None:
-            pulumi.set(__self__, "phase_one_details", phase_one_details)
+            _setter("phase_one_details", phase_one_details)
         if phase_two_details is not None:
-            pulumi.set(__self__, "phase_two_details", phase_two_details)
+            _setter("phase_two_details", phase_two_details)
         if routing is not None:
-            pulumi.set(__self__, "routing", routing)
+            _setter("routing", routing)
         if shared_secret is not None:
-            pulumi.set(__self__, "shared_secret", shared_secret)
+            _setter("shared_secret", shared_secret)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_status_updated is not None:
-            pulumi.set(__self__, "time_status_updated", time_status_updated)
+            _setter("time_status_updated", time_status_updated)
         if tunnel_id is not None:
-            pulumi.set(__self__, "tunnel_id", tunnel_id)
+            _setter("tunnel_id", tunnel_id)
         if vpn_ip is not None:
-            pulumi.set(__self__, "vpn_ip", vpn_ip)
+            _setter("vpn_ip", vpn_ip)
 
     @property
     @pulumi.getter(name="associatedVirtualCircuits")
@@ -644,6 +722,10 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            IpsecConnectionTunnelManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -670,6 +752,11 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
             __props__.__dict__["bgp_session_infos"] = bgp_session_infos
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["dpd_configs"] = dpd_configs
+            if encryption_domain_config is not None and not isinstance(encryption_domain_config, IpsecConnectionTunnelManagementEncryptionDomainConfigArgs):
+                encryption_domain_config = encryption_domain_config or {}
+                def _setter(key, value):
+                    encryption_domain_config[key] = value
+                IpsecConnectionTunnelManagementEncryptionDomainConfigArgs._configure(_setter, **encryption_domain_config)
             __props__.__dict__["encryption_domain_config"] = encryption_domain_config
             __props__.__dict__["ike_version"] = ike_version
             if ipsec_id is None and not opts.urn:

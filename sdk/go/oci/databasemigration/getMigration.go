@@ -69,7 +69,8 @@ type LookupMigrationResult struct {
 	CredentialsSecretId string `pulumi:"credentialsSecretId"`
 	CsvText             string `pulumi:"csvText"`
 	// Data Transfer Medium details for the Migration.
-	DataTransferMediumDetails []GetMigrationDataTransferMediumDetail `pulumi:"dataTransferMediumDetails"`
+	DataTransferMediumDetails    []GetMigrationDataTransferMediumDetail    `pulumi:"dataTransferMediumDetails"`
+	DataTransferMediumDetailsV2s []GetMigrationDataTransferMediumDetailsV2 `pulumi:"dataTransferMediumDetailsV2s"`
 	// Optional settings for Data Pump Export and Import jobs
 	DatapumpSettings []GetMigrationDatapumpSetting `pulumi:"datapumpSettings"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -192,6 +193,12 @@ func (o LookupMigrationResultOutput) DataTransferMediumDetails() GetMigrationDat
 	return o.ApplyT(func(v LookupMigrationResult) []GetMigrationDataTransferMediumDetail {
 		return v.DataTransferMediumDetails
 	}).(GetMigrationDataTransferMediumDetailArrayOutput)
+}
+
+func (o LookupMigrationResultOutput) DataTransferMediumDetailsV2s() GetMigrationDataTransferMediumDetailsV2ArrayOutput {
+	return o.ApplyT(func(v LookupMigrationResult) []GetMigrationDataTransferMediumDetailsV2 {
+		return v.DataTransferMediumDetailsV2s
+	}).(GetMigrationDataTransferMediumDetailsV2ArrayOutput)
 }
 
 // Optional settings for Data Pump Export and Import jobs

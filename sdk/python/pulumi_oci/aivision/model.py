@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -45,28 +45,61 @@ class ModelArgs:
         :param pulumi.Input['ModelTestingDatasetArgs'] testing_dataset: The base entity for a Dataset, which is the input for Model creation.
         :param pulumi.Input['ModelValidationDatasetArgs'] validation_dataset: The base entity for a Dataset, which is the input for Model creation.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "model_type", model_type)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "training_dataset", training_dataset)
+        ModelArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            model_type=model_type,
+            project_id=project_id,
+            training_dataset=training_dataset,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            is_quick_mode=is_quick_mode,
+            max_training_duration_in_hours=max_training_duration_in_hours,
+            model_version=model_version,
+            testing_dataset=testing_dataset,
+            validation_dataset=validation_dataset,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             model_type: pulumi.Input[str],
+             project_id: pulumi.Input[str],
+             training_dataset: pulumi.Input['ModelTrainingDatasetArgs'],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_quick_mode: Optional[pulumi.Input[bool]] = None,
+             max_training_duration_in_hours: Optional[pulumi.Input[float]] = None,
+             model_version: Optional[pulumi.Input[str]] = None,
+             testing_dataset: Optional[pulumi.Input['ModelTestingDatasetArgs']] = None,
+             validation_dataset: Optional[pulumi.Input['ModelValidationDatasetArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("model_type", model_type)
+        _setter("project_id", project_id)
+        _setter("training_dataset", training_dataset)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_quick_mode is not None:
-            pulumi.set(__self__, "is_quick_mode", is_quick_mode)
+            _setter("is_quick_mode", is_quick_mode)
         if max_training_duration_in_hours is not None:
-            pulumi.set(__self__, "max_training_duration_in_hours", max_training_duration_in_hours)
+            _setter("max_training_duration_in_hours", max_training_duration_in_hours)
         if model_version is not None:
-            pulumi.set(__self__, "model_version", model_version)
+            _setter("model_version", model_version)
         if testing_dataset is not None:
-            pulumi.set(__self__, "testing_dataset", testing_dataset)
+            _setter("testing_dataset", testing_dataset)
         if validation_dataset is not None:
-            pulumi.set(__self__, "validation_dataset", validation_dataset)
+            _setter("validation_dataset", validation_dataset)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -283,58 +316,117 @@ class _ModelState:
         :param pulumi.Input['ModelTrainingDatasetArgs'] training_dataset: The base entity for a Dataset, which is the input for Model creation.
         :param pulumi.Input['ModelValidationDatasetArgs'] validation_dataset: The base entity for a Dataset, which is the input for Model creation.
         """
+        _ModelState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            average_precision=average_precision,
+            compartment_id=compartment_id,
+            confidence_threshold=confidence_threshold,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            is_quick_mode=is_quick_mode,
+            lifecycle_details=lifecycle_details,
+            max_training_duration_in_hours=max_training_duration_in_hours,
+            metrics=metrics,
+            model_type=model_type,
+            model_version=model_version,
+            precision=precision,
+            project_id=project_id,
+            recall=recall,
+            state=state,
+            system_tags=system_tags,
+            test_image_count=test_image_count,
+            testing_dataset=testing_dataset,
+            time_created=time_created,
+            time_updated=time_updated,
+            total_image_count=total_image_count,
+            trained_duration_in_hours=trained_duration_in_hours,
+            training_dataset=training_dataset,
+            validation_dataset=validation_dataset,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             average_precision: Optional[pulumi.Input[float]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             confidence_threshold: Optional[pulumi.Input[float]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_quick_mode: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             max_training_duration_in_hours: Optional[pulumi.Input[float]] = None,
+             metrics: Optional[pulumi.Input[str]] = None,
+             model_type: Optional[pulumi.Input[str]] = None,
+             model_version: Optional[pulumi.Input[str]] = None,
+             precision: Optional[pulumi.Input[float]] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
+             recall: Optional[pulumi.Input[float]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             test_image_count: Optional[pulumi.Input[int]] = None,
+             testing_dataset: Optional[pulumi.Input['ModelTestingDatasetArgs']] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             total_image_count: Optional[pulumi.Input[int]] = None,
+             trained_duration_in_hours: Optional[pulumi.Input[float]] = None,
+             training_dataset: Optional[pulumi.Input['ModelTrainingDatasetArgs']] = None,
+             validation_dataset: Optional[pulumi.Input['ModelValidationDatasetArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if average_precision is not None:
-            pulumi.set(__self__, "average_precision", average_precision)
+            _setter("average_precision", average_precision)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if confidence_threshold is not None:
-            pulumi.set(__self__, "confidence_threshold", confidence_threshold)
+            _setter("confidence_threshold", confidence_threshold)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_quick_mode is not None:
-            pulumi.set(__self__, "is_quick_mode", is_quick_mode)
+            _setter("is_quick_mode", is_quick_mode)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if max_training_duration_in_hours is not None:
-            pulumi.set(__self__, "max_training_duration_in_hours", max_training_duration_in_hours)
+            _setter("max_training_duration_in_hours", max_training_duration_in_hours)
         if metrics is not None:
-            pulumi.set(__self__, "metrics", metrics)
+            _setter("metrics", metrics)
         if model_type is not None:
-            pulumi.set(__self__, "model_type", model_type)
+            _setter("model_type", model_type)
         if model_version is not None:
-            pulumi.set(__self__, "model_version", model_version)
+            _setter("model_version", model_version)
         if precision is not None:
-            pulumi.set(__self__, "precision", precision)
+            _setter("precision", precision)
         if project_id is not None:
-            pulumi.set(__self__, "project_id", project_id)
+            _setter("project_id", project_id)
         if recall is not None:
-            pulumi.set(__self__, "recall", recall)
+            _setter("recall", recall)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if test_image_count is not None:
-            pulumi.set(__self__, "test_image_count", test_image_count)
+            _setter("test_image_count", test_image_count)
         if testing_dataset is not None:
-            pulumi.set(__self__, "testing_dataset", testing_dataset)
+            _setter("testing_dataset", testing_dataset)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if total_image_count is not None:
-            pulumi.set(__self__, "total_image_count", total_image_count)
+            _setter("total_image_count", total_image_count)
         if trained_duration_in_hours is not None:
-            pulumi.set(__self__, "trained_duration_in_hours", trained_duration_in_hours)
+            _setter("trained_duration_in_hours", trained_duration_in_hours)
         if training_dataset is not None:
-            pulumi.set(__self__, "training_dataset", training_dataset)
+            _setter("training_dataset", training_dataset)
         if validation_dataset is not None:
-            pulumi.set(__self__, "validation_dataset", validation_dataset)
+            _setter("validation_dataset", validation_dataset)
 
     @property
     @pulumi.getter(name="averagePrecision")
@@ -814,6 +906,10 @@ class Model(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ModelArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -857,10 +953,25 @@ class Model(pulumi.CustomResource):
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
             __props__.__dict__["project_id"] = project_id
+            if testing_dataset is not None and not isinstance(testing_dataset, ModelTestingDatasetArgs):
+                testing_dataset = testing_dataset or {}
+                def _setter(key, value):
+                    testing_dataset[key] = value
+                ModelTestingDatasetArgs._configure(_setter, **testing_dataset)
             __props__.__dict__["testing_dataset"] = testing_dataset
+            if training_dataset is not None and not isinstance(training_dataset, ModelTrainingDatasetArgs):
+                training_dataset = training_dataset or {}
+                def _setter(key, value):
+                    training_dataset[key] = value
+                ModelTrainingDatasetArgs._configure(_setter, **training_dataset)
             if training_dataset is None and not opts.urn:
                 raise TypeError("Missing required property 'training_dataset'")
             __props__.__dict__["training_dataset"] = training_dataset
+            if validation_dataset is not None and not isinstance(validation_dataset, ModelValidationDatasetArgs):
+                validation_dataset = validation_dataset or {}
+                def _setter(key, value):
+                    validation_dataset[key] = value
+                ModelValidationDatasetArgs._configure(_setter, **validation_dataset)
             __props__.__dict__["validation_dataset"] = validation_dataset
             __props__.__dict__["average_precision"] = None
             __props__.__dict__["confidence_threshold"] = None

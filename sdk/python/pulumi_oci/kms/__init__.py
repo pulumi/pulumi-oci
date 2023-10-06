@@ -5,9 +5,12 @@
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .ekms_private_endpoint import *
 from .encrypted_data import *
 from .generated_key import *
 from .get_decrypted_data import *
+from .get_ekms_private_endpoint import *
+from .get_ekms_private_endpoints import *
 from .get_encrypted_data import *
 from .get_key import *
 from .get_key_version import *

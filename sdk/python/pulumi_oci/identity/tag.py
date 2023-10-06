@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -43,20 +43,43 @@ class TagArgs:
                
                To clear the validator call UpdateTag with [DefaultTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator).
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "tag_namespace_id", tag_namespace_id)
+        TagArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            tag_namespace_id=tag_namespace_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_cost_tracking=is_cost_tracking,
+            is_retired=is_retired,
+            name=name,
+            validator=validator,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: pulumi.Input[str],
+             tag_namespace_id: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_cost_tracking: Optional[pulumi.Input[bool]] = None,
+             is_retired: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             validator: Optional[pulumi.Input['TagValidatorArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("tag_namespace_id", tag_namespace_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_cost_tracking is not None:
-            pulumi.set(__self__, "is_cost_tracking", is_cost_tracking)
+            _setter("is_cost_tracking", is_cost_tracking)
         if is_retired is not None:
-            pulumi.set(__self__, "is_retired", is_retired)
+            _setter("is_retired", is_retired)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if validator is not None:
-            pulumi.set(__self__, "validator", validator)
+            _setter("validator", validator)
 
     @property
     @pulumi.getter
@@ -197,26 +220,53 @@ class _TagState:
                
                To clear the validator call UpdateTag with [DefaultTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator).
         """
+        _TagState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            is_cost_tracking=is_cost_tracking,
+            is_retired=is_retired,
+            name=name,
+            state=state,
+            tag_namespace_id=tag_namespace_id,
+            time_created=time_created,
+            validator=validator,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_cost_tracking: Optional[pulumi.Input[bool]] = None,
+             is_retired: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             tag_namespace_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             validator: Optional[pulumi.Input['TagValidatorArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_cost_tracking is not None:
-            pulumi.set(__self__, "is_cost_tracking", is_cost_tracking)
+            _setter("is_cost_tracking", is_cost_tracking)
         if is_retired is not None:
-            pulumi.set(__self__, "is_retired", is_retired)
+            _setter("is_retired", is_retired)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if tag_namespace_id is not None:
-            pulumi.set(__self__, "tag_namespace_id", tag_namespace_id)
+            _setter("tag_namespace_id", tag_namespace_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if validator is not None:
-            pulumi.set(__self__, "validator", validator)
+            _setter("validator", validator)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -510,6 +560,10 @@ class Tag(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            TagArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -543,6 +597,11 @@ class Tag(pulumi.CustomResource):
             if tag_namespace_id is None and not opts.urn:
                 raise TypeError("Missing required property 'tag_namespace_id'")
             __props__.__dict__["tag_namespace_id"] = tag_namespace_id
+            if validator is not None and not isinstance(validator, TagValidatorArgs):
+                validator = validator or {}
+                def _setter(key, value):
+                    validator[key] = value
+                TagValidatorArgs._configure(_setter, **validator)
             __props__.__dict__["validator"] = validator
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -32,15 +32,32 @@ class ManagementAgentArgs:
         :param pulumi.Input[str] display_name: (Updatable) New displayName of Agent.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
-        pulumi.set(__self__, "managed_agent_id", managed_agent_id)
+        ManagementAgentArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            managed_agent_id=managed_agent_id,
+            defined_tags=defined_tags,
+            deploy_plugins_ids=deploy_plugins_ids,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             managed_agent_id: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             deploy_plugins_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("managed_agent_id", managed_agent_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if deploy_plugins_ids is not None:
-            pulumi.set(__self__, "deploy_plugins_ids", deploy_plugins_ids)
+            _setter("deploy_plugins_ids", deploy_plugins_ids)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="managedAgentId")
@@ -167,58 +184,117 @@ class _ManagementAgentState:
         :param pulumi.Input[str] time_updated: The time the Management Agent was last updated. An RFC3339 formatted datetime string
         :param pulumi.Input[str] version: Management Agent Version
         """
+        _ManagementAgentState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_status=availability_status,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            deploy_plugins_ids=deploy_plugins_ids,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            host=host,
+            host_id=host_id,
+            install_key_id=install_key_id,
+            install_path=install_path,
+            install_type=install_type,
+            is_agent_auto_upgradable=is_agent_auto_upgradable,
+            is_customer_deployed=is_customer_deployed,
+            lifecycle_details=lifecycle_details,
+            managed_agent_id=managed_agent_id,
+            management_agent_properties=management_agent_properties,
+            platform_name=platform_name,
+            platform_type=platform_type,
+            platform_version=platform_version,
+            plugin_lists=plugin_lists,
+            resource_artifact_version=resource_artifact_version,
+            state=state,
+            time_created=time_created,
+            time_last_heartbeat=time_last_heartbeat,
+            time_updated=time_updated,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_status: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             deploy_plugins_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             host: Optional[pulumi.Input[str]] = None,
+             host_id: Optional[pulumi.Input[str]] = None,
+             install_key_id: Optional[pulumi.Input[str]] = None,
+             install_path: Optional[pulumi.Input[str]] = None,
+             install_type: Optional[pulumi.Input[str]] = None,
+             is_agent_auto_upgradable: Optional[pulumi.Input[bool]] = None,
+             is_customer_deployed: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             managed_agent_id: Optional[pulumi.Input[str]] = None,
+             management_agent_properties: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentManagementAgentPropertyArgs']]]] = None,
+             platform_name: Optional[pulumi.Input[str]] = None,
+             platform_type: Optional[pulumi.Input[str]] = None,
+             platform_version: Optional[pulumi.Input[str]] = None,
+             plugin_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentPluginListArgs']]]] = None,
+             resource_artifact_version: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_last_heartbeat: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if availability_status is not None:
-            pulumi.set(__self__, "availability_status", availability_status)
+            _setter("availability_status", availability_status)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if deploy_plugins_ids is not None:
-            pulumi.set(__self__, "deploy_plugins_ids", deploy_plugins_ids)
+            _setter("deploy_plugins_ids", deploy_plugins_ids)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if host is not None:
-            pulumi.set(__self__, "host", host)
+            _setter("host", host)
         if host_id is not None:
-            pulumi.set(__self__, "host_id", host_id)
+            _setter("host_id", host_id)
         if install_key_id is not None:
-            pulumi.set(__self__, "install_key_id", install_key_id)
+            _setter("install_key_id", install_key_id)
         if install_path is not None:
-            pulumi.set(__self__, "install_path", install_path)
+            _setter("install_path", install_path)
         if install_type is not None:
-            pulumi.set(__self__, "install_type", install_type)
+            _setter("install_type", install_type)
         if is_agent_auto_upgradable is not None:
-            pulumi.set(__self__, "is_agent_auto_upgradable", is_agent_auto_upgradable)
+            _setter("is_agent_auto_upgradable", is_agent_auto_upgradable)
         if is_customer_deployed is not None:
-            pulumi.set(__self__, "is_customer_deployed", is_customer_deployed)
+            _setter("is_customer_deployed", is_customer_deployed)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if managed_agent_id is not None:
-            pulumi.set(__self__, "managed_agent_id", managed_agent_id)
+            _setter("managed_agent_id", managed_agent_id)
         if management_agent_properties is not None:
-            pulumi.set(__self__, "management_agent_properties", management_agent_properties)
+            _setter("management_agent_properties", management_agent_properties)
         if platform_name is not None:
-            pulumi.set(__self__, "platform_name", platform_name)
+            _setter("platform_name", platform_name)
         if platform_type is not None:
-            pulumi.set(__self__, "platform_type", platform_type)
+            _setter("platform_type", platform_type)
         if platform_version is not None:
-            pulumi.set(__self__, "platform_version", platform_version)
+            _setter("platform_version", platform_version)
         if plugin_lists is not None:
-            pulumi.set(__self__, "plugin_lists", plugin_lists)
+            _setter("plugin_lists", plugin_lists)
         if resource_artifact_version is not None:
-            pulumi.set(__self__, "resource_artifact_version", resource_artifact_version)
+            _setter("resource_artifact_version", resource_artifact_version)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_last_heartbeat is not None:
-            pulumi.set(__self__, "time_last_heartbeat", time_last_heartbeat)
+            _setter("time_last_heartbeat", time_last_heartbeat)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter(name="availabilityStatus")
@@ -614,6 +690,10 @@ class ManagementAgent(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ManagementAgentArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

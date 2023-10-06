@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -69,9 +69,20 @@ class LogConfiguration(dict):
         :param 'LogConfigurationSourceArgs' source: The source the log object comes from.
         :param str compartment_id: The OCID of the compartment that the resource belongs to.
         """
-        pulumi.set(__self__, "source", source)
+        LogConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            source=source,
+            compartment_id=compartment_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             source: 'outputs.LogConfigurationSource',
+             compartment_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("source", source)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
 
     @property
     @pulumi.getter
@@ -121,10 +132,25 @@ class LogConfigurationSource(dict):
         :param str source_type: The log source.
                * **OCISERVICE:** Oracle Service.
         """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "resource", resource)
-        pulumi.set(__self__, "service", service)
-        pulumi.set(__self__, "source_type", source_type)
+        LogConfigurationSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            resource=resource,
+            service=service,
+            source_type=source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: str,
+             resource: str,
+             service: str,
+             source_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("category", category)
+        _setter("resource", resource)
+        _setter("service", service)
+        _setter("source_type", source_type)
 
     @property
     @pulumi.getter
@@ -184,8 +210,17 @@ class UnifiedAgentConfigurationGroupAssociation(dict):
         """
         :param Sequence[str] group_lists: (Updatable) list of group/dynamic group ids associated with this configuration.
         """
+        UnifiedAgentConfigurationGroupAssociation._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            group_lists=group_lists,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             group_lists: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if group_lists is not None:
-            pulumi.set(__self__, "group_lists", group_lists)
+            _setter("group_lists", group_lists)
 
     @property
     @pulumi.getter(name="groupLists")
@@ -224,9 +259,22 @@ class UnifiedAgentConfigurationServiceConfiguration(dict):
         :param 'UnifiedAgentConfigurationServiceConfigurationDestinationArgs' destination: (Updatable) Logging destination object.
         :param Sequence['UnifiedAgentConfigurationServiceConfigurationSourceArgs'] sources: (Updatable) Logging source object.
         """
-        pulumi.set(__self__, "configuration_type", configuration_type)
-        pulumi.set(__self__, "destination", destination)
-        pulumi.set(__self__, "sources", sources)
+        UnifiedAgentConfigurationServiceConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            configuration_type=configuration_type,
+            destination=destination,
+            sources=sources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             configuration_type: str,
+             destination: 'outputs.UnifiedAgentConfigurationServiceConfigurationDestination',
+             sources: Sequence['outputs.UnifiedAgentConfigurationServiceConfigurationSource'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("configuration_type", configuration_type)
+        _setter("destination", destination)
+        _setter("sources", sources)
 
     @property
     @pulumi.getter(name="configurationType")
@@ -277,7 +325,16 @@ class UnifiedAgentConfigurationServiceConfigurationDestination(dict):
         """
         :param str log_object_id: (Updatable) The OCID of the resource.
         """
-        pulumi.set(__self__, "log_object_id", log_object_id)
+        UnifiedAgentConfigurationServiceConfigurationDestination._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_object_id=log_object_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_object_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_object_id", log_object_id)
 
     @property
     @pulumi.getter(name="logObjectId")
@@ -324,15 +381,32 @@ class UnifiedAgentConfigurationServiceConfigurationSource(dict):
         :param 'UnifiedAgentConfigurationServiceConfigurationSourceParserArgs' parser: (Updatable) source parser object.
         :param Sequence[str] paths: (Updatable) Absolute paths for log source files. Wildcard can be used.
         """
-        pulumi.set(__self__, "source_type", source_type)
+        UnifiedAgentConfigurationServiceConfigurationSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            source_type=source_type,
+            channels=channels,
+            name=name,
+            parser=parser,
+            paths=paths,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             source_type: str,
+             channels: Optional[Sequence[str]] = None,
+             name: Optional[str] = None,
+             parser: Optional['outputs.UnifiedAgentConfigurationServiceConfigurationSourceParser'] = None,
+             paths: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("source_type", source_type)
         if channels is not None:
-            pulumi.set(__self__, "channels", channels)
+            _setter("channels", channels)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if parser is not None:
-            pulumi.set(__self__, "parser", parser)
+            _setter("parser", parser)
         if paths is not None:
-            pulumi.set(__self__, "paths", paths)
+            _setter("paths", paths)
 
     @property
     @pulumi.getter(name="sourceType")
@@ -501,59 +575,120 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
                
                record: { "host"   : "192.168.0.1", "req_id" : "111", "user"   : "-" }
         """
-        pulumi.set(__self__, "parser_type", parser_type)
+        UnifiedAgentConfigurationServiceConfigurationSourceParser._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            parser_type=parser_type,
+            delimiter=delimiter,
+            expression=expression,
+            field_time_key=field_time_key,
+            format_firstline=format_firstline,
+            formats=formats,
+            grok_failure_key=grok_failure_key,
+            grok_name_key=grok_name_key,
+            is_estimate_current_event=is_estimate_current_event,
+            is_keep_time_key=is_keep_time_key,
+            is_merge_cri_fields=is_merge_cri_fields,
+            is_null_empty_string=is_null_empty_string,
+            is_support_colonless_ident=is_support_colonless_ident,
+            is_with_priority=is_with_priority,
+            keys=keys,
+            message_format=message_format,
+            message_key=message_key,
+            multi_line_start_regexp=multi_line_start_regexp,
+            nested_parser=nested_parser,
+            null_value_pattern=null_value_pattern,
+            patterns=patterns,
+            rfc5424time_format=rfc5424time_format,
+            syslog_parser_type=syslog_parser_type,
+            time_format=time_format,
+            time_type=time_type,
+            timeout_in_milliseconds=timeout_in_milliseconds,
+            types=types,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             parser_type: str,
+             delimiter: Optional[str] = None,
+             expression: Optional[str] = None,
+             field_time_key: Optional[str] = None,
+             format_firstline: Optional[str] = None,
+             formats: Optional[Sequence[str]] = None,
+             grok_failure_key: Optional[str] = None,
+             grok_name_key: Optional[str] = None,
+             is_estimate_current_event: Optional[bool] = None,
+             is_keep_time_key: Optional[bool] = None,
+             is_merge_cri_fields: Optional[bool] = None,
+             is_null_empty_string: Optional[bool] = None,
+             is_support_colonless_ident: Optional[bool] = None,
+             is_with_priority: Optional[bool] = None,
+             keys: Optional[Sequence[str]] = None,
+             message_format: Optional[str] = None,
+             message_key: Optional[str] = None,
+             multi_line_start_regexp: Optional[str] = None,
+             nested_parser: Optional['outputs.UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser'] = None,
+             null_value_pattern: Optional[str] = None,
+             patterns: Optional[Sequence['outputs.UnifiedAgentConfigurationServiceConfigurationSourceParserPattern']] = None,
+             rfc5424time_format: Optional[str] = None,
+             syslog_parser_type: Optional[str] = None,
+             time_format: Optional[str] = None,
+             time_type: Optional[str] = None,
+             timeout_in_milliseconds: Optional[int] = None,
+             types: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("parser_type", parser_type)
         if delimiter is not None:
-            pulumi.set(__self__, "delimiter", delimiter)
+            _setter("delimiter", delimiter)
         if expression is not None:
-            pulumi.set(__self__, "expression", expression)
+            _setter("expression", expression)
         if field_time_key is not None:
-            pulumi.set(__self__, "field_time_key", field_time_key)
+            _setter("field_time_key", field_time_key)
         if format_firstline is not None:
-            pulumi.set(__self__, "format_firstline", format_firstline)
+            _setter("format_firstline", format_firstline)
         if formats is not None:
-            pulumi.set(__self__, "formats", formats)
+            _setter("formats", formats)
         if grok_failure_key is not None:
-            pulumi.set(__self__, "grok_failure_key", grok_failure_key)
+            _setter("grok_failure_key", grok_failure_key)
         if grok_name_key is not None:
-            pulumi.set(__self__, "grok_name_key", grok_name_key)
+            _setter("grok_name_key", grok_name_key)
         if is_estimate_current_event is not None:
-            pulumi.set(__self__, "is_estimate_current_event", is_estimate_current_event)
+            _setter("is_estimate_current_event", is_estimate_current_event)
         if is_keep_time_key is not None:
-            pulumi.set(__self__, "is_keep_time_key", is_keep_time_key)
+            _setter("is_keep_time_key", is_keep_time_key)
         if is_merge_cri_fields is not None:
-            pulumi.set(__self__, "is_merge_cri_fields", is_merge_cri_fields)
+            _setter("is_merge_cri_fields", is_merge_cri_fields)
         if is_null_empty_string is not None:
-            pulumi.set(__self__, "is_null_empty_string", is_null_empty_string)
+            _setter("is_null_empty_string", is_null_empty_string)
         if is_support_colonless_ident is not None:
-            pulumi.set(__self__, "is_support_colonless_ident", is_support_colonless_ident)
+            _setter("is_support_colonless_ident", is_support_colonless_ident)
         if is_with_priority is not None:
-            pulumi.set(__self__, "is_with_priority", is_with_priority)
+            _setter("is_with_priority", is_with_priority)
         if keys is not None:
-            pulumi.set(__self__, "keys", keys)
+            _setter("keys", keys)
         if message_format is not None:
-            pulumi.set(__self__, "message_format", message_format)
+            _setter("message_format", message_format)
         if message_key is not None:
-            pulumi.set(__self__, "message_key", message_key)
+            _setter("message_key", message_key)
         if multi_line_start_regexp is not None:
-            pulumi.set(__self__, "multi_line_start_regexp", multi_line_start_regexp)
+            _setter("multi_line_start_regexp", multi_line_start_regexp)
         if nested_parser is not None:
-            pulumi.set(__self__, "nested_parser", nested_parser)
+            _setter("nested_parser", nested_parser)
         if null_value_pattern is not None:
-            pulumi.set(__self__, "null_value_pattern", null_value_pattern)
+            _setter("null_value_pattern", null_value_pattern)
         if patterns is not None:
-            pulumi.set(__self__, "patterns", patterns)
+            _setter("patterns", patterns)
         if rfc5424time_format is not None:
-            pulumi.set(__self__, "rfc5424time_format", rfc5424time_format)
+            _setter("rfc5424time_format", rfc5424time_format)
         if syslog_parser_type is not None:
-            pulumi.set(__self__, "syslog_parser_type", syslog_parser_type)
+            _setter("syslog_parser_type", syslog_parser_type)
         if time_format is not None:
-            pulumi.set(__self__, "time_format", time_format)
+            _setter("time_format", time_format)
         if time_type is not None:
-            pulumi.set(__self__, "time_type", time_type)
+            _setter("time_type", time_type)
         if timeout_in_milliseconds is not None:
-            pulumi.set(__self__, "timeout_in_milliseconds", timeout_in_milliseconds)
+            _setter("timeout_in_milliseconds", timeout_in_milliseconds)
         if types is not None:
-            pulumi.set(__self__, "types", types)
+            _setter("types", types)
 
     @property
     @pulumi.getter(name="parserType")
@@ -814,14 +949,29 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser(dict
         :param str time_format: (Updatable) Process time value using the specified format.
         :param str time_type: (Updatable) Time type of JSON parser.
         """
+        UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            field_time_key=field_time_key,
+            is_keep_time_key=is_keep_time_key,
+            time_format=time_format,
+            time_type=time_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             field_time_key: Optional[str] = None,
+             is_keep_time_key: Optional[bool] = None,
+             time_format: Optional[str] = None,
+             time_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if field_time_key is not None:
-            pulumi.set(__self__, "field_time_key", field_time_key)
+            _setter("field_time_key", field_time_key)
         if is_keep_time_key is not None:
-            pulumi.set(__self__, "is_keep_time_key", is_keep_time_key)
+            _setter("is_keep_time_key", is_keep_time_key)
         if time_format is not None:
-            pulumi.set(__self__, "time_format", time_format)
+            _setter("time_format", time_format)
         if time_type is not None:
-            pulumi.set(__self__, "time_type", time_type)
+            _setter("time_type", time_type)
 
     @property
     @pulumi.getter(name="fieldTimeKey")
@@ -892,16 +1042,33 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserPattern(dict):
         :param str name: (Updatable) The name key to tag this grok pattern.
         :param str pattern: (Updatable) The grok pattern.
         """
+        UnifiedAgentConfigurationServiceConfigurationSourceParserPattern._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            field_time_format=field_time_format,
+            field_time_key=field_time_key,
+            field_time_zone=field_time_zone,
+            name=name,
+            pattern=pattern,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             field_time_format: Optional[str] = None,
+             field_time_key: Optional[str] = None,
+             field_time_zone: Optional[str] = None,
+             name: Optional[str] = None,
+             pattern: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if field_time_format is not None:
-            pulumi.set(__self__, "field_time_format", field_time_format)
+            _setter("field_time_format", field_time_format)
         if field_time_key is not None:
-            pulumi.set(__self__, "field_time_key", field_time_key)
+            _setter("field_time_key", field_time_key)
         if field_time_zone is not None:
-            pulumi.set(__self__, "field_time_zone", field_time_zone)
+            _setter("field_time_zone", field_time_zone)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if pattern is not None:
-            pulumi.set(__self__, "pattern", pattern)
+            _setter("pattern", pattern)
 
     @property
     @pulumi.getter(name="fieldTimeFormat")
@@ -953,8 +1120,19 @@ class GetLogConfigurationResult(dict):
         :param str compartment_id: The OCID of the compartment that the resource belongs to.
         :param Sequence['GetLogConfigurationSourceArgs'] sources: The source the log object comes from.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "sources", sources)
+        GetLogConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            sources=sources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             sources: Sequence['outputs.GetLogConfigurationSourceResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("sources", sources)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -987,10 +1165,25 @@ class GetLogConfigurationSourceResult(dict):
         :param str source_type: The log source.
                * **OCISERVICE:** Oracle Service.
         """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "resource", resource)
-        pulumi.set(__self__, "service", service)
-        pulumi.set(__self__, "source_type", source_type)
+        GetLogConfigurationSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            resource=resource,
+            service=service,
+            source_type=source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: str,
+             resource: str,
+             service: str,
+             source_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("category", category)
+        _setter("resource", resource)
+        _setter("service", service)
+        _setter("source_type", source_type)
 
     @property
     @pulumi.getter
@@ -1032,10 +1225,23 @@ class GetLogGroupsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetLogGroupsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1076,15 +1282,40 @@ class GetLogGroupsLogGroupResult(dict):
         :param str time_created: Time the resource was created.
         :param str time_last_modified: Time the resource was last modified.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_modified", time_last_modified)
+        GetLogGroupsLogGroupResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            state=state,
+            time_created=time_created,
+            time_last_modified=time_last_modified,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             state: str,
+             time_created: str,
+             time_last_modified: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_last_modified", time_last_modified)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1168,10 +1399,23 @@ class GetLogSavedSearchesFilterResult(dict):
         """
         :param str name: Resource name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetLogSavedSearchesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1196,7 +1440,16 @@ class GetLogSavedSearchesFilterResult(dict):
 class GetLogSavedSearchesLogSavedSearchSummaryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetLogSavedSearchesLogSavedSearchSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetLogSavedSearchesLogSavedSearchSummaryCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetLogSavedSearchesLogSavedSearchSummaryCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1229,16 +1482,43 @@ class GetLogSavedSearchesLogSavedSearchSummaryCollectionItemResult(dict):
         :param str time_created: Time the resource was created.
         :param str time_last_modified: Time the resource was last modified.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "query", query)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_modified", time_last_modified)
+        GetLogSavedSearchesLogSavedSearchSummaryCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            id=id,
+            name=name,
+            query=query,
+            state=state,
+            time_created=time_created,
+            time_last_modified=time_last_modified,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             name: str,
+             query: str,
+             state: str,
+             time_created: str,
+             time_last_modified: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("name", name)
+        _setter("query", query)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_last_modified", time_last_modified)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1327,10 +1607,23 @@ class GetLogsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetLogsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1381,20 +1674,55 @@ class GetLogsLogResult(dict):
         :param str time_created: Time the resource was created.
         :param str time_last_modified: Time the resource was last modified.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_type", log_type)
-        pulumi.set(__self__, "retention_duration", retention_duration)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "tenancy_id", tenancy_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_modified", time_last_modified)
+        GetLogsLogResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            configurations=configurations,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_enabled=is_enabled,
+            log_group_id=log_group_id,
+            log_type=log_type,
+            retention_duration=retention_duration,
+            state=state,
+            tenancy_id=tenancy_id,
+            time_created=time_created,
+            time_last_modified=time_last_modified,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             configurations: Sequence['outputs.GetLogsLogConfigurationResult'],
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_enabled: bool,
+             log_group_id: str,
+             log_type: str,
+             retention_duration: int,
+             state: str,
+             tenancy_id: str,
+             time_created: str,
+             time_last_modified: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("configurations", configurations)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_enabled", is_enabled)
+        _setter("log_group_id", log_group_id)
+        _setter("log_type", log_type)
+        _setter("retention_duration", retention_duration)
+        _setter("state", state)
+        _setter("tenancy_id", tenancy_id)
+        _setter("time_created", time_created)
+        _setter("time_last_modified", time_last_modified)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1518,8 +1846,19 @@ class GetLogsLogConfigurationResult(dict):
         :param str compartment_id: The OCID of the compartment that the resource belongs to.
         :param Sequence['GetLogsLogConfigurationSourceArgs'] sources: The source the log object comes from.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "sources", sources)
+        GetLogsLogConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            sources=sources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             sources: Sequence['outputs.GetLogsLogConfigurationSourceResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("sources", sources)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1552,10 +1891,25 @@ class GetLogsLogConfigurationSourceResult(dict):
         :param str source_type: The log source.
                * **OCISERVICE:** Oracle Service.
         """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "resource", resource)
-        pulumi.set(__self__, "service", service)
-        pulumi.set(__self__, "source_type", source_type)
+        GetLogsLogConfigurationSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            resource=resource,
+            service=service,
+            source_type=source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: str,
+             resource: str,
+             service: str,
+             source_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("category", category)
+        _setter("resource", resource)
+        _setter("service", service)
+        _setter("source_type", source_type)
 
     @property
     @pulumi.getter
@@ -1598,7 +1952,16 @@ class GetUnifiedAgentConfigurationGroupAssociationResult(dict):
         """
         :param Sequence[str] group_lists: list of group/dynamic group ids associated with this configuration.
         """
-        pulumi.set(__self__, "group_lists", group_lists)
+        GetUnifiedAgentConfigurationGroupAssociationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            group_lists=group_lists,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             group_lists: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("group_lists", group_lists)
 
     @property
     @pulumi.getter(name="groupLists")
@@ -1620,9 +1983,22 @@ class GetUnifiedAgentConfigurationServiceConfigurationResult(dict):
         :param Sequence['GetUnifiedAgentConfigurationServiceConfigurationDestinationArgs'] destinations: Logging destination object.
         :param Sequence['GetUnifiedAgentConfigurationServiceConfigurationSourceArgs'] sources: Logging source object.
         """
-        pulumi.set(__self__, "configuration_type", configuration_type)
-        pulumi.set(__self__, "destinations", destinations)
-        pulumi.set(__self__, "sources", sources)
+        GetUnifiedAgentConfigurationServiceConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            configuration_type=configuration_type,
+            destinations=destinations,
+            sources=sources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             configuration_type: str,
+             destinations: Sequence['outputs.GetUnifiedAgentConfigurationServiceConfigurationDestinationResult'],
+             sources: Sequence['outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("configuration_type", configuration_type)
+        _setter("destinations", destinations)
+        _setter("sources", sources)
 
     @property
     @pulumi.getter(name="configurationType")
@@ -1656,7 +2032,16 @@ class GetUnifiedAgentConfigurationServiceConfigurationDestinationResult(dict):
         """
         :param str log_object_id: The OCID of the resource.
         """
-        pulumi.set(__self__, "log_object_id", log_object_id)
+        GetUnifiedAgentConfigurationServiceConfigurationDestinationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_object_id=log_object_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_object_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_object_id", log_object_id)
 
     @property
     @pulumi.getter(name="logObjectId")
@@ -1682,11 +2067,28 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceResult(dict):
         :param Sequence[str] paths: Absolute paths for log source files. Wildcard can be used.
         :param str source_type: Unified schema logging source type.
         """
-        pulumi.set(__self__, "channels", channels)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "parsers", parsers)
-        pulumi.set(__self__, "paths", paths)
-        pulumi.set(__self__, "source_type", source_type)
+        GetUnifiedAgentConfigurationServiceConfigurationSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            channels=channels,
+            name=name,
+            parsers=parsers,
+            paths=paths,
+            source_type=source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             channels: Sequence[str],
+             name: str,
+             parsers: Sequence['outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult'],
+             paths: Sequence[str],
+             source_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("channels", channels)
+        _setter("name", name)
+        _setter("parsers", parsers)
+        _setter("paths", paths)
+        _setter("source_type", source_type)
 
     @property
     @pulumi.getter
@@ -1788,33 +2190,94 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult(dict):
         :param int timeout_in_milliseconds: Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
         :param Mapping[str, Any] types: Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
         """
-        pulumi.set(__self__, "delimiter", delimiter)
-        pulumi.set(__self__, "expression", expression)
-        pulumi.set(__self__, "field_time_key", field_time_key)
-        pulumi.set(__self__, "format_firstline", format_firstline)
-        pulumi.set(__self__, "formats", formats)
-        pulumi.set(__self__, "grok_failure_key", grok_failure_key)
-        pulumi.set(__self__, "grok_name_key", grok_name_key)
-        pulumi.set(__self__, "is_estimate_current_event", is_estimate_current_event)
-        pulumi.set(__self__, "is_keep_time_key", is_keep_time_key)
-        pulumi.set(__self__, "is_merge_cri_fields", is_merge_cri_fields)
-        pulumi.set(__self__, "is_null_empty_string", is_null_empty_string)
-        pulumi.set(__self__, "is_support_colonless_ident", is_support_colonless_ident)
-        pulumi.set(__self__, "is_with_priority", is_with_priority)
-        pulumi.set(__self__, "keys", keys)
-        pulumi.set(__self__, "message_format", message_format)
-        pulumi.set(__self__, "message_key", message_key)
-        pulumi.set(__self__, "multi_line_start_regexp", multi_line_start_regexp)
-        pulumi.set(__self__, "nested_parsers", nested_parsers)
-        pulumi.set(__self__, "null_value_pattern", null_value_pattern)
-        pulumi.set(__self__, "parser_type", parser_type)
-        pulumi.set(__self__, "patterns", patterns)
-        pulumi.set(__self__, "rfc5424time_format", rfc5424time_format)
-        pulumi.set(__self__, "syslog_parser_type", syslog_parser_type)
-        pulumi.set(__self__, "time_format", time_format)
-        pulumi.set(__self__, "time_type", time_type)
-        pulumi.set(__self__, "timeout_in_milliseconds", timeout_in_milliseconds)
-        pulumi.set(__self__, "types", types)
+        GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            delimiter=delimiter,
+            expression=expression,
+            field_time_key=field_time_key,
+            format_firstline=format_firstline,
+            formats=formats,
+            grok_failure_key=grok_failure_key,
+            grok_name_key=grok_name_key,
+            is_estimate_current_event=is_estimate_current_event,
+            is_keep_time_key=is_keep_time_key,
+            is_merge_cri_fields=is_merge_cri_fields,
+            is_null_empty_string=is_null_empty_string,
+            is_support_colonless_ident=is_support_colonless_ident,
+            is_with_priority=is_with_priority,
+            keys=keys,
+            message_format=message_format,
+            message_key=message_key,
+            multi_line_start_regexp=multi_line_start_regexp,
+            nested_parsers=nested_parsers,
+            null_value_pattern=null_value_pattern,
+            parser_type=parser_type,
+            patterns=patterns,
+            rfc5424time_format=rfc5424time_format,
+            syslog_parser_type=syslog_parser_type,
+            time_format=time_format,
+            time_type=time_type,
+            timeout_in_milliseconds=timeout_in_milliseconds,
+            types=types,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             delimiter: str,
+             expression: str,
+             field_time_key: str,
+             format_firstline: str,
+             formats: Sequence[str],
+             grok_failure_key: str,
+             grok_name_key: str,
+             is_estimate_current_event: bool,
+             is_keep_time_key: bool,
+             is_merge_cri_fields: bool,
+             is_null_empty_string: bool,
+             is_support_colonless_ident: bool,
+             is_with_priority: bool,
+             keys: Sequence[str],
+             message_format: str,
+             message_key: str,
+             multi_line_start_regexp: str,
+             nested_parsers: Sequence['outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserResult'],
+             null_value_pattern: str,
+             parser_type: str,
+             patterns: Sequence['outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternResult'],
+             rfc5424time_format: str,
+             syslog_parser_type: str,
+             time_format: str,
+             time_type: str,
+             timeout_in_milliseconds: int,
+             types: Mapping[str, Any],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("delimiter", delimiter)
+        _setter("expression", expression)
+        _setter("field_time_key", field_time_key)
+        _setter("format_firstline", format_firstline)
+        _setter("formats", formats)
+        _setter("grok_failure_key", grok_failure_key)
+        _setter("grok_name_key", grok_name_key)
+        _setter("is_estimate_current_event", is_estimate_current_event)
+        _setter("is_keep_time_key", is_keep_time_key)
+        _setter("is_merge_cri_fields", is_merge_cri_fields)
+        _setter("is_null_empty_string", is_null_empty_string)
+        _setter("is_support_colonless_ident", is_support_colonless_ident)
+        _setter("is_with_priority", is_with_priority)
+        _setter("keys", keys)
+        _setter("message_format", message_format)
+        _setter("message_key", message_key)
+        _setter("multi_line_start_regexp", multi_line_start_regexp)
+        _setter("nested_parsers", nested_parsers)
+        _setter("null_value_pattern", null_value_pattern)
+        _setter("parser_type", parser_type)
+        _setter("patterns", patterns)
+        _setter("rfc5424time_format", rfc5424time_format)
+        _setter("syslog_parser_type", syslog_parser_type)
+        _setter("time_format", time_format)
+        _setter("time_type", time_type)
+        _setter("timeout_in_milliseconds", timeout_in_milliseconds)
+        _setter("types", types)
 
     @property
     @pulumi.getter
@@ -2046,10 +2509,25 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserRe
         :param str time_format: Process time value using the specified format.
         :param str time_type: Time type of JSON parser.
         """
-        pulumi.set(__self__, "field_time_key", field_time_key)
-        pulumi.set(__self__, "is_keep_time_key", is_keep_time_key)
-        pulumi.set(__self__, "time_format", time_format)
-        pulumi.set(__self__, "time_type", time_type)
+        GetUnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            field_time_key=field_time_key,
+            is_keep_time_key=is_keep_time_key,
+            time_format=time_format,
+            time_type=time_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             field_time_key: str,
+             is_keep_time_key: bool,
+             time_format: str,
+             time_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("field_time_key", field_time_key)
+        _setter("is_keep_time_key", is_keep_time_key)
+        _setter("time_format", time_format)
+        _setter("time_type", time_type)
 
     @property
     @pulumi.getter(name="fieldTimeKey")
@@ -2099,11 +2577,28 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternResult(
         :param str name: The name key to tag this grok pattern.
         :param str pattern: The grok pattern.
         """
-        pulumi.set(__self__, "field_time_format", field_time_format)
-        pulumi.set(__self__, "field_time_key", field_time_key)
-        pulumi.set(__self__, "field_time_zone", field_time_zone)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "pattern", pattern)
+        GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            field_time_format=field_time_format,
+            field_time_key=field_time_key,
+            field_time_zone=field_time_zone,
+            name=name,
+            pattern=pattern,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             field_time_format: str,
+             field_time_key: str,
+             field_time_zone: str,
+             name: str,
+             pattern: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("field_time_format", field_time_format)
+        _setter("field_time_key", field_time_key)
+        _setter("field_time_zone", field_time_zone)
+        _setter("name", name)
+        _setter("pattern", pattern)
 
     @property
     @pulumi.getter(name="fieldTimeFormat")
@@ -2155,10 +2650,23 @@ class GetUnifiedAgentConfigurationsFilterResult(dict):
         """
         :param str name: The name key to tag this grok pattern.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetUnifiedAgentConfigurationsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2183,7 +2691,16 @@ class GetUnifiedAgentConfigurationsFilterResult(dict):
 class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2220,18 +2737,49 @@ class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemResult
         :param str time_created: Time the resource was created.
         :param str time_last_modified: Time the resource was last modified.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configuration_state", configuration_state)
-        pulumi.set(__self__, "configuration_type", configuration_type)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_last_modified", time_last_modified)
+        GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            configuration_state=configuration_state,
+            configuration_type=configuration_type,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_enabled=is_enabled,
+            state=state,
+            time_created=time_created,
+            time_last_modified=time_last_modified,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             configuration_state: str,
+             configuration_type: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_enabled: bool,
+             state: str,
+             time_created: str,
+             time_last_modified: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("configuration_state", configuration_state)
+        _setter("configuration_type", configuration_type)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_enabled", is_enabled)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_last_modified", time_last_modified)
 
     @property
     @pulumi.getter(name="compartmentId")

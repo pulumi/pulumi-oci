@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Kms.Inputs
     public sealed class KeyKeyShapeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The algorithm used by a key's key versions to encrypt or decrypt.
+        /// The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
         /// </summary>
         [Input("algorithm", required: true)]
         public Input<string> Algorithm { get; set; } = null!;

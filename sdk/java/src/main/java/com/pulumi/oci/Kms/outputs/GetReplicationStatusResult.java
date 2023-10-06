@@ -17,6 +17,10 @@ public final class GetReplicationStatusResult {
      */
     private String id;
     private String managementEndpoint;
+    /**
+     * @return Replica Details.
+     * 
+     */
     private List<GetReplicationStatusReplicaDetail> replicaDetails;
     private String replicationId;
 
@@ -31,6 +35,10 @@ public final class GetReplicationStatusResult {
     public String managementEndpoint() {
         return this.managementEndpoint;
     }
+    /**
+     * @return Replica Details.
+     * 
+     */
     public List<GetReplicationStatusReplicaDetail> replicaDetails() {
         return this.replicaDetails;
     }

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -29,12 +29,29 @@ class ProcessorJobArgs:
         :param pulumi.Input['ProcessorJobProcessorConfigArgs'] processor_config: The configuration of a processor.
         :param pulumi.Input[str] display_name: The display name of the processor job.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "input_location", input_location)
-        pulumi.set(__self__, "output_location", output_location)
-        pulumi.set(__self__, "processor_config", processor_config)
+        ProcessorJobArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            input_location=input_location,
+            output_location=output_location,
+            processor_config=processor_config,
+            display_name=display_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             input_location: pulumi.Input['ProcessorJobInputLocationArgs'],
+             output_location: pulumi.Input['ProcessorJobOutputLocationArgs'],
+             processor_config: pulumi.Input['ProcessorJobProcessorConfigArgs'],
+             display_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("input_location", input_location)
+        _setter("output_location", output_location)
+        _setter("processor_config", processor_config)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -125,28 +142,57 @@ class _ProcessorJobState:
         :param pulumi.Input[str] time_finished: The job finish time.
         :param pulumi.Input[str] time_started: The job start time.
         """
+        _ProcessorJobState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            input_location=input_location,
+            lifecycle_details=lifecycle_details,
+            output_location=output_location,
+            percent_complete=percent_complete,
+            processor_config=processor_config,
+            state=state,
+            time_accepted=time_accepted,
+            time_finished=time_finished,
+            time_started=time_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             input_location: Optional[pulumi.Input['ProcessorJobInputLocationArgs']] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             output_location: Optional[pulumi.Input['ProcessorJobOutputLocationArgs']] = None,
+             percent_complete: Optional[pulumi.Input[float]] = None,
+             processor_config: Optional[pulumi.Input['ProcessorJobProcessorConfigArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_accepted: Optional[pulumi.Input[str]] = None,
+             time_finished: Optional[pulumi.Input[str]] = None,
+             time_started: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if input_location is not None:
-            pulumi.set(__self__, "input_location", input_location)
+            _setter("input_location", input_location)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if output_location is not None:
-            pulumi.set(__self__, "output_location", output_location)
+            _setter("output_location", output_location)
         if percent_complete is not None:
-            pulumi.set(__self__, "percent_complete", percent_complete)
+            _setter("percent_complete", percent_complete)
         if processor_config is not None:
-            pulumi.set(__self__, "processor_config", processor_config)
+            _setter("processor_config", processor_config)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_accepted is not None:
-            pulumi.set(__self__, "time_accepted", time_accepted)
+            _setter("time_accepted", time_accepted)
         if time_finished is not None:
-            pulumi.set(__self__, "time_finished", time_finished)
+            _setter("time_finished", time_finished)
         if time_started is not None:
-            pulumi.set(__self__, "time_started", time_started)
+            _setter("time_started", time_started)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -418,6 +464,10 @@ class ProcessorJob(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ProcessorJobArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -441,12 +491,27 @@ class ProcessorJob(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["display_name"] = display_name
+            if input_location is not None and not isinstance(input_location, ProcessorJobInputLocationArgs):
+                input_location = input_location or {}
+                def _setter(key, value):
+                    input_location[key] = value
+                ProcessorJobInputLocationArgs._configure(_setter, **input_location)
             if input_location is None and not opts.urn:
                 raise TypeError("Missing required property 'input_location'")
             __props__.__dict__["input_location"] = input_location
+            if output_location is not None and not isinstance(output_location, ProcessorJobOutputLocationArgs):
+                output_location = output_location or {}
+                def _setter(key, value):
+                    output_location[key] = value
+                ProcessorJobOutputLocationArgs._configure(_setter, **output_location)
             if output_location is None and not opts.urn:
                 raise TypeError("Missing required property 'output_location'")
             __props__.__dict__["output_location"] = output_location
+            if processor_config is not None and not isinstance(processor_config, ProcessorJobProcessorConfigArgs):
+                processor_config = processor_config or {}
+                def _setter(key, value):
+                    processor_config[key] = value
+                ProcessorJobProcessorConfigArgs._configure(_setter, **processor_config)
             if processor_config is None and not opts.urn:
                 raise TypeError("Missing required property 'processor_config'")
             __props__.__dict__["processor_config"] = processor_config

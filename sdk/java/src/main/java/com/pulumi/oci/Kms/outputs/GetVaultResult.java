@@ -4,6 +4,8 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Kms.outputs.GetVaultExternalKeyManagerMetadata;
+import com.pulumi.oci.Kms.outputs.GetVaultExternalKeyManagerMetadataSummary;
 import com.pulumi.oci.Kms.outputs.GetVaultReplicaDetail;
 import com.pulumi.oci.Kms.outputs.GetVaultRestoreFromFile;
 import com.pulumi.oci.Kms.outputs.GetVaultRestoreFromObjectStore;
@@ -37,6 +39,12 @@ public final class GetVaultResult {
      */
     private String displayName;
     /**
+     * @return Summary about metadata of external key manager to be returned to the customer as a response.
+     * 
+     */
+    private List<GetVaultExternalKeyManagerMetadataSummary> externalKeyManagerMetadataSummaries;
+    private List<GetVaultExternalKeyManagerMetadata> externalKeyManagerMetadatas;
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -47,7 +55,7 @@ public final class GetVaultResult {
      */
     private String id;
     /**
-     * @return A boolean that will be true when vault is primary, and will be false when vault is a replica from a primary vault.
+     * @return A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
      * 
      */
     private Boolean isPrimary;
@@ -77,7 +85,7 @@ public final class GetVaultResult {
      */
     private Boolean restoreTrigger;
     /**
-     * @return The OCID of the vault from which this vault was restored, if it was restored from a backup file.  If you restore a vault to the same region, the vault retains the same OCID that it had when you  backed up the vault.
+     * @return The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
      * 
      */
     private String restoredFromVaultId;
@@ -133,6 +141,16 @@ public final class GetVaultResult {
         return this.displayName;
     }
     /**
+     * @return Summary about metadata of external key manager to be returned to the customer as a response.
+     * 
+     */
+    public List<GetVaultExternalKeyManagerMetadataSummary> externalKeyManagerMetadataSummaries() {
+        return this.externalKeyManagerMetadataSummaries;
+    }
+    public List<GetVaultExternalKeyManagerMetadata> externalKeyManagerMetadatas() {
+        return this.externalKeyManagerMetadatas;
+    }
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -147,7 +165,7 @@ public final class GetVaultResult {
         return this.id;
     }
     /**
-     * @return A boolean that will be true when vault is primary, and will be false when vault is a replica from a primary vault.
+     * @return A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
      * 
      */
     public Boolean isPrimary() {
@@ -189,7 +207,7 @@ public final class GetVaultResult {
         return this.restoreTrigger;
     }
     /**
-     * @return The OCID of the vault from which this vault was restored, if it was restored from a backup file.  If you restore a vault to the same region, the vault retains the same OCID that it had when you  backed up the vault.
+     * @return The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
      * 
      */
     public String restoredFromVaultId() {
@@ -240,6 +258,8 @@ public final class GetVaultResult {
         private String cryptoEndpoint;
         private Map<String,Object> definedTags;
         private String displayName;
+        private List<GetVaultExternalKeyManagerMetadataSummary> externalKeyManagerMetadataSummaries;
+        private List<GetVaultExternalKeyManagerMetadata> externalKeyManagerMetadatas;
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isPrimary;
@@ -261,6 +281,8 @@ public final class GetVaultResult {
     	      this.cryptoEndpoint = defaults.cryptoEndpoint;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.externalKeyManagerMetadataSummaries = defaults.externalKeyManagerMetadataSummaries;
+    	      this.externalKeyManagerMetadatas = defaults.externalKeyManagerMetadatas;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isPrimary = defaults.isPrimary;
@@ -296,6 +318,22 @@ public final class GetVaultResult {
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
+        }
+        @CustomType.Setter
+        public Builder externalKeyManagerMetadataSummaries(List<GetVaultExternalKeyManagerMetadataSummary> externalKeyManagerMetadataSummaries) {
+            this.externalKeyManagerMetadataSummaries = Objects.requireNonNull(externalKeyManagerMetadataSummaries);
+            return this;
+        }
+        public Builder externalKeyManagerMetadataSummaries(GetVaultExternalKeyManagerMetadataSummary... externalKeyManagerMetadataSummaries) {
+            return externalKeyManagerMetadataSummaries(List.of(externalKeyManagerMetadataSummaries));
+        }
+        @CustomType.Setter
+        public Builder externalKeyManagerMetadatas(List<GetVaultExternalKeyManagerMetadata> externalKeyManagerMetadatas) {
+            this.externalKeyManagerMetadatas = Objects.requireNonNull(externalKeyManagerMetadatas);
+            return this;
+        }
+        public Builder externalKeyManagerMetadatas(GetVaultExternalKeyManagerMetadata... externalKeyManagerMetadatas) {
+            return externalKeyManagerMetadatas(List.of(externalKeyManagerMetadatas));
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
@@ -382,6 +420,8 @@ public final class GetVaultResult {
             o.cryptoEndpoint = cryptoEndpoint;
             o.definedTags = definedTags;
             o.displayName = displayName;
+            o.externalKeyManagerMetadataSummaries = externalKeyManagerMetadataSummaries;
+            o.externalKeyManagerMetadatas = externalKeyManagerMetadatas;
             o.freeformTags = freeformTags;
             o.id = id;
             o.isPrimary = isPrimary;

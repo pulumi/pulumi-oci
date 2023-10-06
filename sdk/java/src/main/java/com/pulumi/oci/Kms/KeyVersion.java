@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Kms.KeyVersionArgs;
 import com.pulumi.oci.Kms.inputs.KeyVersionState;
+import com.pulumi.oci.Kms.outputs.KeyVersionExternalKeyReferenceDetail;
 import com.pulumi.oci.Kms.outputs.KeyVersionReplicaDetail;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -26,37 +27,6 @@ import javax.annotation.Nullable;
  * of requests across all  management write operations. Key Management might throttle this call to reject an
  * otherwise valid request when the total rate of management write operations exceeds 10 requests per second
  * for a given tenancy.
- * 
- * ## Example Usage
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Kms.KeyVersion;
- * import com.pulumi.oci.Kms.KeyVersionArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testKeyVersion = new KeyVersion(&#34;testKeyVersion&#34;, KeyVersionArgs.builder()        
- *             .keyId(oci_kms_key.test_key().id())
- *             .managementEndpoint(var_.key_version_management_endpoint())
- *             .build());
- * 
- *     }
- * }
- * ```
  * 
  * ## Import
  * 
@@ -84,14 +54,42 @@ public class KeyVersion extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+     * Key reference data to be returned to the customer as a response.
+     * 
+     */
+    @Export(name="externalKeyReferenceDetails", refs={List.class,KeyVersionExternalKeyReferenceDetail.class}, tree="[0,1]")
+    private Output<List<KeyVersionExternalKeyReferenceDetail>> externalKeyReferenceDetails;
+
+    /**
+     * @return Key reference data to be returned to the customer as a response.
+     * 
+     */
+    public Output<List<KeyVersionExternalKeyReferenceDetail>> externalKeyReferenceDetails() {
+        return this.externalKeyReferenceDetails;
+    }
+    /**
+     * Key version ID associated with the external key.
+     * 
+     */
+    @Export(name="externalKeyVersionId", refs={String.class}, tree="[0]")
+    private Output<String> externalKeyVersionId;
+
+    /**
+     * @return Key version ID associated with the external key.
+     * 
+     */
+    public Output<String> externalKeyVersionId() {
+        return this.externalKeyVersionId;
+    }
+    /**
+     * A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      * 
      */
     @Export(name="isPrimary", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPrimary;
 
     /**
-     * @return A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+     * @return A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      * 
      */
     public Output<Boolean> isPrimary() {

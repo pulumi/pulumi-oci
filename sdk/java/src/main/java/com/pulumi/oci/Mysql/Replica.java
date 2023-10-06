@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Mysql.ReplicaArgs;
 import com.pulumi.oci.Mysql.inputs.ReplicaState;
+import com.pulumi.oci.Mysql.outputs.ReplicaReplicaOverrides;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -31,6 +32,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Mysql.Replica;
  * import com.pulumi.oci.Mysql.ReplicaArgs;
+ * import com.pulumi.oci.Mysql.inputs.ReplicaReplicaOverridesArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -51,6 +53,11 @@ import javax.annotation.Nullable;
  *             .displayName(var_.replica_display_name())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .isDeleteProtected(var_.replica_is_delete_protected())
+ *             .replicaOverrides(ReplicaReplicaOverridesArgs.builder()
+ *                 .configurationId(oci_mysql_mysql_configuration.test_mysql_configuration().id())
+ *                 .mysqlVersion(var_.replica_replica_overrides_mysql_version())
+ *                 .shapeName(oci_mysql_shape.test_shape().name())
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -95,6 +102,20 @@ public class Replica extends com.pulumi.resources.CustomResource {
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * (Updatable) The OCID of the Configuration to be used by the read replica.
+     * 
+     */
+    @Export(name="configurationId", refs={String.class}, tree="[0]")
+    private Output<String> configurationId;
+
+    /**
+     * @return (Updatable) The OCID of the Configuration to be used by the read replica.
+     * 
+     */
+    public Output<String> configurationId() {
+        return this.configurationId;
     }
     /**
      * The OCID of the DB System the read replica is associated with.
@@ -197,18 +218,12 @@ public class Replica extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="isDeleteProtected", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDeleteProtected;
 
     /**
      * @return (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Boolean> isDeleteProtected() {
@@ -229,14 +244,14 @@ public class Replica extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * The MySQL version used by the read replica.
+     * (Updatable) The MySQL version to be used by the read replica.
      * 
      */
     @Export(name="mysqlVersion", refs={String.class}, tree="[0]")
     private Output<String> mysqlVersion;
 
     /**
-     * @return The MySQL version used by the read replica.
+     * @return (Updatable) The MySQL version to be used by the read replica.
      * 
      */
     public Output<String> mysqlVersion() {
@@ -269,6 +284,40 @@ public class Replica extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> portX() {
         return this.portX;
+    }
+    /**
+     * (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to &#34;&#34;, then the value is inherited from its  source DB system.
+     * 
+     */
+    @Export(name="replicaOverrides", refs={ReplicaReplicaOverrides.class}, tree="[0]")
+    private Output<ReplicaReplicaOverrides> replicaOverrides;
+
+    /**
+     * @return (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to &#34;&#34;, then the value is inherited from its  source DB system.
+     * 
+     */
+    public Output<ReplicaReplicaOverrides> replicaOverrides() {
+        return this.replicaOverrides;
+    }
+    /**
+     * (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="shapeName", refs={String.class}, tree="[0]")
+    private Output<String> shapeName;
+
+    /**
+     * @return (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> shapeName() {
+        return this.shapeName;
     }
     /**
      * The state of the read replica.

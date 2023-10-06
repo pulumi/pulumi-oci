@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['SetUserAssessmentBaselineArgs', 'SetUserAssessmentBaseline']
@@ -25,9 +25,20 @@ class SetUserAssessmentBaselineArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of user assessment OCIDs that need to be updated while setting the baseline.
         """
-        pulumi.set(__self__, "user_assessment_id", user_assessment_id)
+        SetUserAssessmentBaselineArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            user_assessment_id=user_assessment_id,
+            assessment_ids=assessment_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             user_assessment_id: pulumi.Input[str],
+             assessment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("user_assessment_id", user_assessment_id)
         if assessment_ids is not None:
-            pulumi.set(__self__, "assessment_ids", assessment_ids)
+            _setter("assessment_ids", assessment_ids)
 
     @property
     @pulumi.getter(name="userAssessmentId")
@@ -72,10 +83,21 @@ class _SetUserAssessmentBaselineState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _SetUserAssessmentBaselineState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            assessment_ids=assessment_ids,
+            user_assessment_id=user_assessment_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             assessment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             user_assessment_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if assessment_ids is not None:
-            pulumi.set(__self__, "assessment_ids", assessment_ids)
+            _setter("assessment_ids", assessment_ids)
         if user_assessment_id is not None:
-            pulumi.set(__self__, "user_assessment_id", user_assessment_id)
+            _setter("user_assessment_id", user_assessment_id)
 
     @property
     @pulumi.getter(name="assessmentIds")
@@ -187,6 +209,10 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            SetUserAssessmentBaselineArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ManagementAgentInstallKeyArgs', 'ManagementAgentInstallKey']
@@ -31,14 +31,31 @@ class ManagementAgentInstallKeyArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
+        ManagementAgentInstallKeyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            allowed_key_install_count=allowed_key_install_count,
+            is_unlimited=is_unlimited,
+            time_expires=time_expires,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             allowed_key_install_count: Optional[pulumi.Input[int]] = None,
+             is_unlimited: Optional[pulumi.Input[bool]] = None,
+             time_expires: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
         if allowed_key_install_count is not None:
-            pulumi.set(__self__, "allowed_key_install_count", allowed_key_install_count)
+            _setter("allowed_key_install_count", allowed_key_install_count)
         if is_unlimited is not None:
-            pulumi.set(__self__, "is_unlimited", is_unlimited)
+            _setter("is_unlimited", is_unlimited)
         if time_expires is not None:
-            pulumi.set(__self__, "time_expires", time_expires)
+            _setter("time_expires", time_expires)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -139,30 +156,61 @@ class _ManagementAgentInstallKeyState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_updated: The time when Management Agent install Key was updated. An RFC3339 formatted date time string
         """
+        _ManagementAgentInstallKeyState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            allowed_key_install_count=allowed_key_install_count,
+            compartment_id=compartment_id,
+            created_by_principal_id=created_by_principal_id,
+            current_key_install_count=current_key_install_count,
+            display_name=display_name,
+            is_unlimited=is_unlimited,
+            key=key,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            time_created=time_created,
+            time_expires=time_expires,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             allowed_key_install_count: Optional[pulumi.Input[int]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             created_by_principal_id: Optional[pulumi.Input[str]] = None,
+             current_key_install_count: Optional[pulumi.Input[int]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             is_unlimited: Optional[pulumi.Input[bool]] = None,
+             key: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_expires: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if allowed_key_install_count is not None:
-            pulumi.set(__self__, "allowed_key_install_count", allowed_key_install_count)
+            _setter("allowed_key_install_count", allowed_key_install_count)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if created_by_principal_id is not None:
-            pulumi.set(__self__, "created_by_principal_id", created_by_principal_id)
+            _setter("created_by_principal_id", created_by_principal_id)
         if current_key_install_count is not None:
-            pulumi.set(__self__, "current_key_install_count", current_key_install_count)
+            _setter("current_key_install_count", current_key_install_count)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if is_unlimited is not None:
-            pulumi.set(__self__, "is_unlimited", is_unlimited)
+            _setter("is_unlimited", is_unlimited)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_expires is not None:
-            pulumi.set(__self__, "time_expires", time_expires)
+            _setter("time_expires", time_expires)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="allowedKeyInstallCount")
@@ -406,6 +454,10 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ManagementAgentInstallKeyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

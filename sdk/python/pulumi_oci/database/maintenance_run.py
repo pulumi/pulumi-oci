@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -49,29 +49,60 @@ class MaintenanceRunArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "maintenance_run_id", maintenance_run_id)
+        MaintenanceRunArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            maintenance_run_id=maintenance_run_id,
+            current_custom_action_timeout_in_mins=current_custom_action_timeout_in_mins,
+            custom_action_timeout_in_mins=custom_action_timeout_in_mins,
+            is_custom_action_timeout_enabled=is_custom_action_timeout_enabled,
+            is_enabled=is_enabled,
+            is_patch_now_enabled=is_patch_now_enabled,
+            is_resume_patching=is_resume_patching,
+            patch_id=patch_id,
+            patching_mode=patching_mode,
+            target_db_server_version=target_db_server_version,
+            target_storage_server_version=target_storage_server_version,
+            time_scheduled=time_scheduled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             maintenance_run_id: pulumi.Input[str],
+             current_custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+             custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+             is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             is_patch_now_enabled: Optional[pulumi.Input[bool]] = None,
+             is_resume_patching: Optional[pulumi.Input[bool]] = None,
+             patch_id: Optional[pulumi.Input[str]] = None,
+             patching_mode: Optional[pulumi.Input[str]] = None,
+             target_db_server_version: Optional[pulumi.Input[str]] = None,
+             target_storage_server_version: Optional[pulumi.Input[str]] = None,
+             time_scheduled: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("maintenance_run_id", maintenance_run_id)
         if current_custom_action_timeout_in_mins is not None:
-            pulumi.set(__self__, "current_custom_action_timeout_in_mins", current_custom_action_timeout_in_mins)
+            _setter("current_custom_action_timeout_in_mins", current_custom_action_timeout_in_mins)
         if custom_action_timeout_in_mins is not None:
-            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+            _setter("custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if is_custom_action_timeout_enabled is not None:
-            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+            _setter("is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if is_patch_now_enabled is not None:
-            pulumi.set(__self__, "is_patch_now_enabled", is_patch_now_enabled)
+            _setter("is_patch_now_enabled", is_patch_now_enabled)
         if is_resume_patching is not None:
-            pulumi.set(__self__, "is_resume_patching", is_resume_patching)
+            _setter("is_resume_patching", is_resume_patching)
         if patch_id is not None:
-            pulumi.set(__self__, "patch_id", patch_id)
+            _setter("patch_id", patch_id)
         if patching_mode is not None:
-            pulumi.set(__self__, "patching_mode", patching_mode)
+            _setter("patching_mode", patching_mode)
         if target_db_server_version is not None:
-            pulumi.set(__self__, "target_db_server_version", target_db_server_version)
+            _setter("target_db_server_version", target_db_server_version)
         if target_storage_server_version is not None:
-            pulumi.set(__self__, "target_storage_server_version", target_storage_server_version)
+            _setter("target_storage_server_version", target_storage_server_version)
         if time_scheduled is not None:
-            pulumi.set(__self__, "time_scheduled", time_scheduled)
+            _setter("time_scheduled", time_scheduled)
 
     @property
     @pulumi.getter(name="maintenanceRunId")
@@ -298,68 +329,137 @@ class _MaintenanceRunState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_started: The date and time the maintenance run starts.
         """
+        _MaintenanceRunState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            current_custom_action_timeout_in_mins=current_custom_action_timeout_in_mins,
+            current_patching_component=current_patching_component,
+            custom_action_timeout_in_mins=custom_action_timeout_in_mins,
+            description=description,
+            display_name=display_name,
+            estimated_component_patching_start_time=estimated_component_patching_start_time,
+            estimated_patching_times=estimated_patching_times,
+            is_custom_action_timeout_enabled=is_custom_action_timeout_enabled,
+            is_enabled=is_enabled,
+            is_patch_now_enabled=is_patch_now_enabled,
+            is_resume_patching=is_resume_patching,
+            lifecycle_details=lifecycle_details,
+            maintenance_run_id=maintenance_run_id,
+            maintenance_subtype=maintenance_subtype,
+            maintenance_type=maintenance_type,
+            patch_failure_count=patch_failure_count,
+            patch_id=patch_id,
+            patching_end_time=patching_end_time,
+            patching_mode=patching_mode,
+            patching_start_time=patching_start_time,
+            patching_status=patching_status,
+            peer_maintenance_run_id=peer_maintenance_run_id,
+            state=state,
+            target_db_server_version=target_db_server_version,
+            target_resource_id=target_resource_id,
+            target_resource_type=target_resource_type,
+            target_storage_server_version=target_storage_server_version,
+            time_ended=time_ended,
+            time_scheduled=time_scheduled,
+            time_started=time_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             current_custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+             current_patching_component: Optional[pulumi.Input[str]] = None,
+             custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             estimated_component_patching_start_time: Optional[pulumi.Input[str]] = None,
+             estimated_patching_times: Optional[pulumi.Input[Sequence[pulumi.Input['MaintenanceRunEstimatedPatchingTimeArgs']]]] = None,
+             is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             is_patch_now_enabled: Optional[pulumi.Input[bool]] = None,
+             is_resume_patching: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             maintenance_run_id: Optional[pulumi.Input[str]] = None,
+             maintenance_subtype: Optional[pulumi.Input[str]] = None,
+             maintenance_type: Optional[pulumi.Input[str]] = None,
+             patch_failure_count: Optional[pulumi.Input[int]] = None,
+             patch_id: Optional[pulumi.Input[str]] = None,
+             patching_end_time: Optional[pulumi.Input[str]] = None,
+             patching_mode: Optional[pulumi.Input[str]] = None,
+             patching_start_time: Optional[pulumi.Input[str]] = None,
+             patching_status: Optional[pulumi.Input[str]] = None,
+             peer_maintenance_run_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             target_db_server_version: Optional[pulumi.Input[str]] = None,
+             target_resource_id: Optional[pulumi.Input[str]] = None,
+             target_resource_type: Optional[pulumi.Input[str]] = None,
+             target_storage_server_version: Optional[pulumi.Input[str]] = None,
+             time_ended: Optional[pulumi.Input[str]] = None,
+             time_scheduled: Optional[pulumi.Input[str]] = None,
+             time_started: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if current_custom_action_timeout_in_mins is not None:
-            pulumi.set(__self__, "current_custom_action_timeout_in_mins", current_custom_action_timeout_in_mins)
+            _setter("current_custom_action_timeout_in_mins", current_custom_action_timeout_in_mins)
         if current_patching_component is not None:
-            pulumi.set(__self__, "current_patching_component", current_patching_component)
+            _setter("current_patching_component", current_patching_component)
         if custom_action_timeout_in_mins is not None:
-            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+            _setter("custom_action_timeout_in_mins", custom_action_timeout_in_mins)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if estimated_component_patching_start_time is not None:
-            pulumi.set(__self__, "estimated_component_patching_start_time", estimated_component_patching_start_time)
+            _setter("estimated_component_patching_start_time", estimated_component_patching_start_time)
         if estimated_patching_times is not None:
-            pulumi.set(__self__, "estimated_patching_times", estimated_patching_times)
+            _setter("estimated_patching_times", estimated_patching_times)
         if is_custom_action_timeout_enabled is not None:
-            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+            _setter("is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if is_patch_now_enabled is not None:
-            pulumi.set(__self__, "is_patch_now_enabled", is_patch_now_enabled)
+            _setter("is_patch_now_enabled", is_patch_now_enabled)
         if is_resume_patching is not None:
-            pulumi.set(__self__, "is_resume_patching", is_resume_patching)
+            _setter("is_resume_patching", is_resume_patching)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if maintenance_run_id is not None:
-            pulumi.set(__self__, "maintenance_run_id", maintenance_run_id)
+            _setter("maintenance_run_id", maintenance_run_id)
         if maintenance_subtype is not None:
-            pulumi.set(__self__, "maintenance_subtype", maintenance_subtype)
+            _setter("maintenance_subtype", maintenance_subtype)
         if maintenance_type is not None:
-            pulumi.set(__self__, "maintenance_type", maintenance_type)
+            _setter("maintenance_type", maintenance_type)
         if patch_failure_count is not None:
-            pulumi.set(__self__, "patch_failure_count", patch_failure_count)
+            _setter("patch_failure_count", patch_failure_count)
         if patch_id is not None:
-            pulumi.set(__self__, "patch_id", patch_id)
+            _setter("patch_id", patch_id)
         if patching_end_time is not None:
-            pulumi.set(__self__, "patching_end_time", patching_end_time)
+            _setter("patching_end_time", patching_end_time)
         if patching_mode is not None:
-            pulumi.set(__self__, "patching_mode", patching_mode)
+            _setter("patching_mode", patching_mode)
         if patching_start_time is not None:
-            pulumi.set(__self__, "patching_start_time", patching_start_time)
+            _setter("patching_start_time", patching_start_time)
         if patching_status is not None:
-            pulumi.set(__self__, "patching_status", patching_status)
+            _setter("patching_status", patching_status)
         if peer_maintenance_run_id is not None:
-            pulumi.set(__self__, "peer_maintenance_run_id", peer_maintenance_run_id)
+            _setter("peer_maintenance_run_id", peer_maintenance_run_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if target_db_server_version is not None:
-            pulumi.set(__self__, "target_db_server_version", target_db_server_version)
+            _setter("target_db_server_version", target_db_server_version)
         if target_resource_id is not None:
-            pulumi.set(__self__, "target_resource_id", target_resource_id)
+            _setter("target_resource_id", target_resource_id)
         if target_resource_type is not None:
-            pulumi.set(__self__, "target_resource_type", target_resource_type)
+            _setter("target_resource_type", target_resource_type)
         if target_storage_server_version is not None:
-            pulumi.set(__self__, "target_storage_server_version", target_storage_server_version)
+            _setter("target_storage_server_version", target_storage_server_version)
         if time_ended is not None:
-            pulumi.set(__self__, "time_ended", time_ended)
+            _setter("time_ended", time_ended)
         if time_scheduled is not None:
-            pulumi.set(__self__, "time_scheduled", time_scheduled)
+            _setter("time_scheduled", time_scheduled)
         if time_started is not None:
-            pulumi.set(__self__, "time_started", time_started)
+            _setter("time_started", time_started)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -821,6 +921,10 @@ class MaintenanceRun(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            MaintenanceRunArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -49,16 +49,43 @@ class GetCommitmentAggregatedsComputedUsageAggregatedResult(dict):
         :param str time_end: Subscribed services contract line end date, expressed in RFC 3339 timestamp format.
         :param str time_start: Subscribed services contract line start date, expressed in RFC 3339 timestamp format.
         """
-        pulumi.set(__self__, "aggregated_computed_usages", aggregated_computed_usages)
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "parent_products", parent_products)
-        pulumi.set(__self__, "parent_subscribed_service_id", parent_subscribed_service_id)
-        pulumi.set(__self__, "plan_number", plan_number)
-        pulumi.set(__self__, "pricing_model", pricing_model)
-        pulumi.set(__self__, "rate_card_id", rate_card_id)
-        pulumi.set(__self__, "subscription_id", subscription_id)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
+        GetCommitmentAggregatedsComputedUsageAggregatedResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregated_computed_usages=aggregated_computed_usages,
+            currency_code=currency_code,
+            parent_products=parent_products,
+            parent_subscribed_service_id=parent_subscribed_service_id,
+            plan_number=plan_number,
+            pricing_model=pricing_model,
+            rate_card_id=rate_card_id,
+            subscription_id=subscription_id,
+            time_end=time_end,
+            time_start=time_start,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregated_computed_usages: Sequence['outputs.GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageResult'],
+             currency_code: str,
+             parent_products: Sequence['outputs.GetCommitmentAggregatedsComputedUsageAggregatedParentProductResult'],
+             parent_subscribed_service_id: str,
+             plan_number: str,
+             pricing_model: str,
+             rate_card_id: str,
+             subscription_id: str,
+             time_end: str,
+             time_start: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("aggregated_computed_usages", aggregated_computed_usages)
+        _setter("currency_code", currency_code)
+        _setter("parent_products", parent_products)
+        _setter("parent_subscribed_service_id", parent_subscribed_service_id)
+        _setter("plan_number", plan_number)
+        _setter("pricing_model", pricing_model)
+        _setter("rate_card_id", rate_card_id)
+        _setter("subscription_id", subscription_id)
+        _setter("time_end", time_end)
+        _setter("time_start", time_start)
 
     @property
     @pulumi.getter(name="aggregatedComputedUsages")
@@ -162,14 +189,37 @@ class GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageResu
         :param str time_metered_on: Metered Service date , expressed in RFC 3339 timestamp format.
         :param str type: Usage compute type in SPM.
         """
-        pulumi.set(__self__, "cost", cost)
-        pulumi.set(__self__, "cost_unrounded", cost_unrounded)
-        pulumi.set(__self__, "data_center", data_center)
-        pulumi.set(__self__, "net_unit_price", net_unit_price)
-        pulumi.set(__self__, "products", products)
-        pulumi.set(__self__, "quantity", quantity)
-        pulumi.set(__self__, "time_metered_on", time_metered_on)
-        pulumi.set(__self__, "type", type)
+        GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cost=cost,
+            cost_unrounded=cost_unrounded,
+            data_center=data_center,
+            net_unit_price=net_unit_price,
+            products=products,
+            quantity=quantity,
+            time_metered_on=time_metered_on,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cost: str,
+             cost_unrounded: str,
+             data_center: str,
+             net_unit_price: str,
+             products: Sequence['outputs.GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductResult'],
+             quantity: str,
+             time_metered_on: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cost", cost)
+        _setter("cost_unrounded", cost_unrounded)
+        _setter("data_center", data_center)
+        _setter("net_unit_price", net_unit_price)
+        _setter("products", products)
+        _setter("quantity", quantity)
+        _setter("time_metered_on", time_metered_on)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -255,13 +305,34 @@ class GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProd
         :param str ucm_rate_card_part_type: Rate card part type of Product
         :param str unit_of_measure: Unit of Measure
         """
-        pulumi.set(__self__, "billing_category", billing_category)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "product_category", product_category)
-        pulumi.set(__self__, "provisioning_group", provisioning_group)
-        pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
-        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
+        GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProductResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            billing_category=billing_category,
+            name=name,
+            part_number=part_number,
+            product_category=product_category,
+            provisioning_group=provisioning_group,
+            ucm_rate_card_part_type=ucm_rate_card_part_type,
+            unit_of_measure=unit_of_measure,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             billing_category: str,
+             name: str,
+             part_number: str,
+             product_category: str,
+             provisioning_group: str,
+             ucm_rate_card_part_type: str,
+             unit_of_measure: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("billing_category", billing_category)
+        _setter("name", name)
+        _setter("part_number", part_number)
+        _setter("product_category", product_category)
+        _setter("provisioning_group", provisioning_group)
+        _setter("ucm_rate_card_part_type", ucm_rate_card_part_type)
+        _setter("unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter(name="billingCategory")
@@ -339,13 +410,34 @@ class GetCommitmentAggregatedsComputedUsageAggregatedParentProductResult(dict):
         :param str ucm_rate_card_part_type: Rate card part type of Product
         :param str unit_of_measure: Unit of Measure
         """
-        pulumi.set(__self__, "billing_category", billing_category)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "product_category", product_category)
-        pulumi.set(__self__, "provisioning_group", provisioning_group)
-        pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
-        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
+        GetCommitmentAggregatedsComputedUsageAggregatedParentProductResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            billing_category=billing_category,
+            name=name,
+            part_number=part_number,
+            product_category=product_category,
+            provisioning_group=provisioning_group,
+            ucm_rate_card_part_type=ucm_rate_card_part_type,
+            unit_of_measure=unit_of_measure,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             billing_category: str,
+             name: str,
+             part_number: str,
+             product_category: str,
+             provisioning_group: str,
+             ucm_rate_card_part_type: str,
+             unit_of_measure: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("billing_category", billing_category)
+        _setter("name", name)
+        _setter("part_number", part_number)
+        _setter("product_category", product_category)
+        _setter("provisioning_group", provisioning_group)
+        _setter("ucm_rate_card_part_type", ucm_rate_card_part_type)
+        _setter("unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter(name="billingCategory")
@@ -413,10 +505,23 @@ class GetCommitmentAggregatedsFilterResult(dict):
         """
         :param str name: Product name
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetCommitmentAggregatedsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -456,13 +561,34 @@ class GetComputedUsageParentProductResult(dict):
         :param str ucm_rate_card_part_type: Rate card part type of Product
         :param str unit_of_measure: Unit of Messure
         """
-        pulumi.set(__self__, "billing_category", billing_category)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "product_category", product_category)
-        pulumi.set(__self__, "provisioning_group", provisioning_group)
-        pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
-        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
+        GetComputedUsageParentProductResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            billing_category=billing_category,
+            name=name,
+            part_number=part_number,
+            product_category=product_category,
+            provisioning_group=provisioning_group,
+            ucm_rate_card_part_type=ucm_rate_card_part_type,
+            unit_of_measure=unit_of_measure,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             billing_category: str,
+             name: str,
+             part_number: str,
+             product_category: str,
+             provisioning_group: str,
+             ucm_rate_card_part_type: str,
+             unit_of_measure: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("billing_category", billing_category)
+        _setter("name", name)
+        _setter("part_number", part_number)
+        _setter("product_category", product_category)
+        _setter("provisioning_group", provisioning_group)
+        _setter("ucm_rate_card_part_type", ucm_rate_card_part_type)
+        _setter("unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter(name="billingCategory")
@@ -540,13 +666,34 @@ class GetComputedUsageProductResult(dict):
         :param str ucm_rate_card_part_type: Rate card part type of Product
         :param str unit_of_measure: Unit of Messure
         """
-        pulumi.set(__self__, "billing_category", billing_category)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "product_category", product_category)
-        pulumi.set(__self__, "provisioning_group", provisioning_group)
-        pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
-        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
+        GetComputedUsageProductResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            billing_category=billing_category,
+            name=name,
+            part_number=part_number,
+            product_category=product_category,
+            provisioning_group=provisioning_group,
+            ucm_rate_card_part_type=ucm_rate_card_part_type,
+            unit_of_measure=unit_of_measure,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             billing_category: str,
+             name: str,
+             part_number: str,
+             product_category: str,
+             provisioning_group: str,
+             ucm_rate_card_part_type: str,
+             unit_of_measure: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("billing_category", billing_category)
+        _setter("name", name)
+        _setter("part_number", part_number)
+        _setter("product_category", product_category)
+        _setter("provisioning_group", provisioning_group)
+        _setter("ucm_rate_card_part_type", ucm_rate_card_part_type)
+        _setter("unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter(name="billingCategory")
@@ -661,32 +808,91 @@ class GetComputedUsagesComputedUsageResult(dict):
         :param str unit_of_measure: Unit of Messure
         :param str usage_number: SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
         """
-        pulumi.set(__self__, "commitment_service_id", commitment_service_id)
-        pulumi.set(__self__, "compute_source", compute_source)
-        pulumi.set(__self__, "computed_usage_id", computed_usage_id)
-        pulumi.set(__self__, "cost", cost)
-        pulumi.set(__self__, "cost_rounded", cost_rounded)
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "data_center", data_center)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_invoiced", is_invoiced)
-        pulumi.set(__self__, "mqs_message_id", mqs_message_id)
-        pulumi.set(__self__, "net_unit_price", net_unit_price)
-        pulumi.set(__self__, "original_usage_number", original_usage_number)
-        pulumi.set(__self__, "parent_products", parent_products)
-        pulumi.set(__self__, "parent_subscribed_service_id", parent_subscribed_service_id)
-        pulumi.set(__self__, "plan_number", plan_number)
-        pulumi.set(__self__, "products", products)
-        pulumi.set(__self__, "quantity", quantity)
-        pulumi.set(__self__, "rate_card_id", rate_card_id)
-        pulumi.set(__self__, "rate_card_tierd_id", rate_card_tierd_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_metered_on", time_metered_on)
-        pulumi.set(__self__, "time_of_arrival", time_of_arrival)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
-        pulumi.set(__self__, "usage_number", usage_number)
+        GetComputedUsagesComputedUsageResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            commitment_service_id=commitment_service_id,
+            compute_source=compute_source,
+            computed_usage_id=computed_usage_id,
+            cost=cost,
+            cost_rounded=cost_rounded,
+            currency_code=currency_code,
+            data_center=data_center,
+            id=id,
+            is_invoiced=is_invoiced,
+            mqs_message_id=mqs_message_id,
+            net_unit_price=net_unit_price,
+            original_usage_number=original_usage_number,
+            parent_products=parent_products,
+            parent_subscribed_service_id=parent_subscribed_service_id,
+            plan_number=plan_number,
+            products=products,
+            quantity=quantity,
+            rate_card_id=rate_card_id,
+            rate_card_tierd_id=rate_card_tierd_id,
+            time_created=time_created,
+            time_metered_on=time_metered_on,
+            time_of_arrival=time_of_arrival,
+            time_updated=time_updated,
+            type=type,
+            unit_of_measure=unit_of_measure,
+            usage_number=usage_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             commitment_service_id: str,
+             compute_source: str,
+             computed_usage_id: str,
+             cost: str,
+             cost_rounded: str,
+             currency_code: str,
+             data_center: str,
+             id: str,
+             is_invoiced: bool,
+             mqs_message_id: str,
+             net_unit_price: str,
+             original_usage_number: str,
+             parent_products: Sequence['outputs.GetComputedUsagesComputedUsageParentProductResult'],
+             parent_subscribed_service_id: str,
+             plan_number: str,
+             products: Sequence['outputs.GetComputedUsagesComputedUsageProductResult'],
+             quantity: str,
+             rate_card_id: str,
+             rate_card_tierd_id: str,
+             time_created: str,
+             time_metered_on: str,
+             time_of_arrival: str,
+             time_updated: str,
+             type: str,
+             unit_of_measure: str,
+             usage_number: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("commitment_service_id", commitment_service_id)
+        _setter("compute_source", compute_source)
+        _setter("computed_usage_id", computed_usage_id)
+        _setter("cost", cost)
+        _setter("cost_rounded", cost_rounded)
+        _setter("currency_code", currency_code)
+        _setter("data_center", data_center)
+        _setter("id", id)
+        _setter("is_invoiced", is_invoiced)
+        _setter("mqs_message_id", mqs_message_id)
+        _setter("net_unit_price", net_unit_price)
+        _setter("original_usage_number", original_usage_number)
+        _setter("parent_products", parent_products)
+        _setter("parent_subscribed_service_id", parent_subscribed_service_id)
+        _setter("plan_number", plan_number)
+        _setter("products", products)
+        _setter("quantity", quantity)
+        _setter("rate_card_id", rate_card_id)
+        _setter("rate_card_tierd_id", rate_card_tierd_id)
+        _setter("time_created", time_created)
+        _setter("time_metered_on", time_metered_on)
+        _setter("time_of_arrival", time_of_arrival)
+        _setter("time_updated", time_updated)
+        _setter("type", type)
+        _setter("unit_of_measure", unit_of_measure)
+        _setter("usage_number", usage_number)
 
     @property
     @pulumi.getter(name="commitmentServiceId")
@@ -913,13 +1119,34 @@ class GetComputedUsagesComputedUsageParentProductResult(dict):
         :param str ucm_rate_card_part_type: Rate card part type of Product
         :param str unit_of_measure: Unit of Messure
         """
-        pulumi.set(__self__, "billing_category", billing_category)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "product_category", product_category)
-        pulumi.set(__self__, "provisioning_group", provisioning_group)
-        pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
-        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
+        GetComputedUsagesComputedUsageParentProductResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            billing_category=billing_category,
+            name=name,
+            part_number=part_number,
+            product_category=product_category,
+            provisioning_group=provisioning_group,
+            ucm_rate_card_part_type=ucm_rate_card_part_type,
+            unit_of_measure=unit_of_measure,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             billing_category: str,
+             name: str,
+             part_number: str,
+             product_category: str,
+             provisioning_group: str,
+             ucm_rate_card_part_type: str,
+             unit_of_measure: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("billing_category", billing_category)
+        _setter("name", name)
+        _setter("part_number", part_number)
+        _setter("product_category", product_category)
+        _setter("provisioning_group", provisioning_group)
+        _setter("ucm_rate_card_part_type", ucm_rate_card_part_type)
+        _setter("unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter(name="billingCategory")
@@ -997,13 +1224,34 @@ class GetComputedUsagesComputedUsageProductResult(dict):
         :param str ucm_rate_card_part_type: Rate card part type of Product
         :param str unit_of_measure: Unit of Messure
         """
-        pulumi.set(__self__, "billing_category", billing_category)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "product_category", product_category)
-        pulumi.set(__self__, "provisioning_group", provisioning_group)
-        pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
-        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
+        GetComputedUsagesComputedUsageProductResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            billing_category=billing_category,
+            name=name,
+            part_number=part_number,
+            product_category=product_category,
+            provisioning_group=provisioning_group,
+            ucm_rate_card_part_type=ucm_rate_card_part_type,
+            unit_of_measure=unit_of_measure,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             billing_category: str,
+             name: str,
+             part_number: str,
+             product_category: str,
+             provisioning_group: str,
+             ucm_rate_card_part_type: str,
+             unit_of_measure: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("billing_category", billing_category)
+        _setter("name", name)
+        _setter("part_number", part_number)
+        _setter("product_category", product_category)
+        _setter("provisioning_group", provisioning_group)
+        _setter("ucm_rate_card_part_type", ucm_rate_card_part_type)
+        _setter("unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter(name="billingCategory")
@@ -1071,10 +1319,23 @@ class GetComputedUsagesFilterResult(dict):
         """
         :param str name: Product name
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetComputedUsagesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

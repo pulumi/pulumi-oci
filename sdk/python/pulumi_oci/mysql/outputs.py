@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -40,6 +40,7 @@ __all__ = [
     'MysqlDbSystemMaintenance',
     'MysqlDbSystemPointInTimeRecoveryDetail',
     'MysqlDbSystemSource',
+    'ReplicaReplicaOverrides',
     'GetChannelSourceResult',
     'GetChannelSourceAnonymousTransactionsHandlingResult',
     'GetChannelSourceSslCaCertificateResult',
@@ -108,8 +109,10 @@ __all__ = [
     'GetMysqlVersionFilterResult',
     'GetMysqlVersionVersionResult',
     'GetMysqlVersionVersionVersionResult',
+    'GetReplicaReplicaOverrideResult',
     'GetReplicasFilterResult',
     'GetReplicasReplicaResult',
+    'GetReplicasReplicaReplicaOverrideResult',
     'GetShapesFilterResult',
     'GetShapesShapeResult',
 ]
@@ -158,17 +161,40 @@ class ChannelSource(dict):
         :param int port: (Updatable) The port the source MySQL instance listens on.
         :param 'ChannelSourceSslCaCertificateArgs' ssl_ca_certificate: (Updatable) The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "source_type", source_type)
-        pulumi.set(__self__, "ssl_mode", ssl_mode)
-        pulumi.set(__self__, "username", username)
+        ChannelSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            password=password,
+            source_type=source_type,
+            ssl_mode=ssl_mode,
+            username=username,
+            anonymous_transactions_handling=anonymous_transactions_handling,
+            port=port,
+            ssl_ca_certificate=ssl_ca_certificate,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: str,
+             password: str,
+             source_type: str,
+             ssl_mode: str,
+             username: str,
+             anonymous_transactions_handling: Optional['outputs.ChannelSourceAnonymousTransactionsHandling'] = None,
+             port: Optional[int] = None,
+             ssl_ca_certificate: Optional['outputs.ChannelSourceSslCaCertificate'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hostname", hostname)
+        _setter("password", password)
+        _setter("source_type", source_type)
+        _setter("ssl_mode", ssl_mode)
+        _setter("username", username)
         if anonymous_transactions_handling is not None:
-            pulumi.set(__self__, "anonymous_transactions_handling", anonymous_transactions_handling)
+            _setter("anonymous_transactions_handling", anonymous_transactions_handling)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if ssl_ca_certificate is not None:
-            pulumi.set(__self__, "ssl_ca_certificate", ssl_ca_certificate)
+            _setter("ssl_ca_certificate", ssl_ca_certificate)
 
     @property
     @pulumi.getter
@@ -267,13 +293,28 @@ class ChannelSourceAnonymousTransactionsHandling(dict):
         :param str last_configured_log_offset: (Updatable) Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
         :param str uuid: (Updatable) The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
         """
-        pulumi.set(__self__, "policy", policy)
+        ChannelSourceAnonymousTransactionsHandling._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            policy=policy,
+            last_configured_log_filename=last_configured_log_filename,
+            last_configured_log_offset=last_configured_log_offset,
+            uuid=uuid,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             policy: str,
+             last_configured_log_filename: Optional[str] = None,
+             last_configured_log_offset: Optional[str] = None,
+             uuid: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("policy", policy)
         if last_configured_log_filename is not None:
-            pulumi.set(__self__, "last_configured_log_filename", last_configured_log_filename)
+            _setter("last_configured_log_filename", last_configured_log_filename)
         if last_configured_log_offset is not None:
-            pulumi.set(__self__, "last_configured_log_offset", last_configured_log_offset)
+            _setter("last_configured_log_offset", last_configured_log_offset)
         if uuid is not None:
-            pulumi.set(__self__, "uuid", uuid)
+            _setter("uuid", uuid)
 
     @property
     @pulumi.getter
@@ -334,8 +375,19 @@ class ChannelSourceSslCaCertificate(dict):
         :param str certificate_type: (Updatable) The type of CA certificate.
         :param str contents: (Updatable) The string containing the CA certificate in PEM format.
         """
-        pulumi.set(__self__, "certificate_type", certificate_type)
-        pulumi.set(__self__, "contents", contents)
+        ChannelSourceSslCaCertificate._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_type=certificate_type,
+            contents=contents,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_type: str,
+             contents: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_type", certificate_type)
+        _setter("contents", contents)
 
     @property
     @pulumi.getter(name="certificateType")
@@ -404,18 +456,39 @@ class ChannelTarget(dict):
         :param Sequence['ChannelTargetFilterArgs'] filters: (Updatable) Replication filter rules to be applied at the DB System Channel target.
         :param str tables_without_primary_key_handling: (Updatable) Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key. The default value is set to ALLOW.
         """
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "target_type", target_type)
+        ChannelTarget._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            db_system_id=db_system_id,
+            target_type=target_type,
+            applier_username=applier_username,
+            channel_name=channel_name,
+            delay_in_seconds=delay_in_seconds,
+            filters=filters,
+            tables_without_primary_key_handling=tables_without_primary_key_handling,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             db_system_id: str,
+             target_type: str,
+             applier_username: Optional[str] = None,
+             channel_name: Optional[str] = None,
+             delay_in_seconds: Optional[int] = None,
+             filters: Optional[Sequence['outputs.ChannelTargetFilter']] = None,
+             tables_without_primary_key_handling: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("db_system_id", db_system_id)
+        _setter("target_type", target_type)
         if applier_username is not None:
-            pulumi.set(__self__, "applier_username", applier_username)
+            _setter("applier_username", applier_username)
         if channel_name is not None:
-            pulumi.set(__self__, "channel_name", channel_name)
+            _setter("channel_name", channel_name)
         if delay_in_seconds is not None:
-            pulumi.set(__self__, "delay_in_seconds", delay_in_seconds)
+            _setter("delay_in_seconds", delay_in_seconds)
         if filters is not None:
-            pulumi.set(__self__, "filters", filters)
+            _setter("filters", filters)
         if tables_without_primary_key_handling is not None:
-            pulumi.set(__self__, "tables_without_primary_key_handling", tables_without_primary_key_handling)
+            _setter("tables_without_primary_key_handling", tables_without_primary_key_handling)
 
     @property
     @pulumi.getter(name="dbSystemId")
@@ -489,8 +562,19 @@ class ChannelTargetFilter(dict):
                For details on each type, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
         :param str value: (Updatable) The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        ChannelTargetFilter._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -548,14 +632,29 @@ class HeatWaveClusterClusterNode(dict):
         :param str time_created: The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_updated: The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
+        HeatWaveClusterClusterNode._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            node_id=node_id,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             node_id: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if node_id is not None:
-            pulumi.set(__self__, "node_id", node_id)
+            _setter("node_id", node_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="nodeId")
@@ -699,54 +798,109 @@ class MysqlBackupDbSystemSnapshot(dict):
         :param str shape_name: The shape of the DB System instance used for backup.
         :param str subnet_id: The OCID of the subnet the DB System is associated with.
         """
+        MysqlBackupDbSystemSnapshot._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_username=admin_username,
+            availability_domain=availability_domain,
+            backup_policies=backup_policies,
+            compartment_id=compartment_id,
+            configuration_id=configuration_id,
+            crash_recovery=crash_recovery,
+            data_storage_size_in_gb=data_storage_size_in_gb,
+            defined_tags=defined_tags,
+            deletion_policies=deletion_policies,
+            description=description,
+            display_name=display_name,
+            endpoints=endpoints,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            id=id,
+            ip_address=ip_address,
+            is_highly_available=is_highly_available,
+            maintenances=maintenances,
+            mysql_version=mysql_version,
+            port=port,
+            port_x=port_x,
+            shape_name=shape_name,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_username: Optional[str] = None,
+             availability_domain: Optional[str] = None,
+             backup_policies: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotBackupPolicy']] = None,
+             compartment_id: Optional[str] = None,
+             configuration_id: Optional[str] = None,
+             crash_recovery: Optional[str] = None,
+             data_storage_size_in_gb: Optional[int] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             deletion_policies: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotDeletionPolicy']] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             endpoints: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotEndpoint']] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             id: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             is_highly_available: Optional[bool] = None,
+             maintenances: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotMaintenance']] = None,
+             mysql_version: Optional[str] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             shape_name: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if admin_username is not None:
-            pulumi.set(__self__, "admin_username", admin_username)
+            _setter("admin_username", admin_username)
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if backup_policies is not None:
-            pulumi.set(__self__, "backup_policies", backup_policies)
+            _setter("backup_policies", backup_policies)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if configuration_id is not None:
-            pulumi.set(__self__, "configuration_id", configuration_id)
+            _setter("configuration_id", configuration_id)
         if crash_recovery is not None:
-            pulumi.set(__self__, "crash_recovery", crash_recovery)
+            _setter("crash_recovery", crash_recovery)
         if data_storage_size_in_gb is not None:
-            pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+            _setter("data_storage_size_in_gb", data_storage_size_in_gb)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if deletion_policies is not None:
-            pulumi.set(__self__, "deletion_policies", deletion_policies)
+            _setter("deletion_policies", deletion_policies)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if endpoints is not None:
-            pulumi.set(__self__, "endpoints", endpoints)
+            _setter("endpoints", endpoints)
         if fault_domain is not None:
-            pulumi.set(__self__, "fault_domain", fault_domain)
+            _setter("fault_domain", fault_domain)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hostname_label is not None:
-            pulumi.set(__self__, "hostname_label", hostname_label)
+            _setter("hostname_label", hostname_label)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if ip_address is not None:
-            pulumi.set(__self__, "ip_address", ip_address)
+            _setter("ip_address", ip_address)
         if is_highly_available is not None:
-            pulumi.set(__self__, "is_highly_available", is_highly_available)
+            _setter("is_highly_available", is_highly_available)
         if maintenances is not None:
-            pulumi.set(__self__, "maintenances", maintenances)
+            _setter("maintenances", maintenances)
         if mysql_version is not None:
-            pulumi.set(__self__, "mysql_version", mysql_version)
+            _setter("mysql_version", mysql_version)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if port_x is not None:
-            pulumi.set(__self__, "port_x", port_x)
+            _setter("port_x", port_x)
         if shape_name is not None:
-            pulumi.set(__self__, "shape_name", shape_name)
+            _setter("shape_name", shape_name)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="adminUsername")
@@ -989,18 +1143,37 @@ class MysqlBackupDbSystemSnapshotBackupPolicy(dict):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str window_start_time: The start time of the maintenance window.
         """
+        MysqlBackupDbSystemSnapshotBackupPolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_enabled=is_enabled,
+            pitr_policies=pitr_policies,
+            retention_in_days=retention_in_days,
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             is_enabled: Optional[bool] = None,
+             pitr_policies: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy']] = None,
+             retention_in_days: Optional[int] = None,
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if pitr_policies is not None:
-            pulumi.set(__self__, "pitr_policies", pitr_policies)
+            _setter("pitr_policies", pitr_policies)
         if retention_in_days is not None:
-            pulumi.set(__self__, "retention_in_days", retention_in_days)
+            _setter("retention_in_days", retention_in_days)
         if window_start_time is not None:
-            pulumi.set(__self__, "window_start_time", window_start_time)
+            _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -1079,8 +1252,17 @@ class MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy(dict):
         """
         :param bool is_enabled: Specifies if PITR is enabled or disabled.
         """
+        MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -1123,12 +1305,25 @@ class MysqlBackupDbSystemSnapshotDeletionPolicy(dict):
         :param str final_backup: Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
         :param bool is_delete_protected: Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
         """
+        MysqlBackupDbSystemSnapshotDeletionPolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            automatic_backup_retention=automatic_backup_retention,
+            final_backup=final_backup,
+            is_delete_protected=is_delete_protected,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             automatic_backup_retention: Optional[str] = None,
+             final_backup: Optional[str] = None,
+             is_delete_protected: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if automatic_backup_retention is not None:
-            pulumi.set(__self__, "automatic_backup_retention", automatic_backup_retention)
+            _setter("automatic_backup_retention", automatic_backup_retention)
         if final_backup is not None:
-            pulumi.set(__self__, "final_backup", final_backup)
+            _setter("final_backup", final_backup)
         if is_delete_protected is not None:
-            pulumi.set(__self__, "is_delete_protected", is_delete_protected)
+            _setter("is_delete_protected", is_delete_protected)
 
     @property
     @pulumi.getter(name="automaticBackupRetention")
@@ -1203,24 +1398,49 @@ class MysqlBackupDbSystemSnapshotEndpoint(dict):
         :param str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
         :param str status_details: Additional information about the current endpoint status.
         """
+        MysqlBackupDbSystemSnapshotEndpoint._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            ip_address=ip_address,
+            modes=modes,
+            port=port,
+            port_x=port_x,
+            resource_id=resource_id,
+            resource_type=resource_type,
+            status=status,
+            status_details=status_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             modes: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             resource_id: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             status: Optional[str] = None,
+             status_details: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if hostname is not None:
-            pulumi.set(__self__, "hostname", hostname)
+            _setter("hostname", hostname)
         if ip_address is not None:
-            pulumi.set(__self__, "ip_address", ip_address)
+            _setter("ip_address", ip_address)
         if modes is not None:
-            pulumi.set(__self__, "modes", modes)
+            _setter("modes", modes)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if port_x is not None:
-            pulumi.set(__self__, "port_x", port_x)
+            _setter("port_x", port_x)
         if resource_id is not None:
-            pulumi.set(__self__, "resource_id", resource_id)
+            _setter("resource_id", resource_id)
         if resource_type is not None:
-            pulumi.set(__self__, "resource_type", resource_type)
+            _setter("resource_type", resource_type)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if status_details is not None:
-            pulumi.set(__self__, "status_details", status_details)
+            _setter("status_details", status_details)
 
     @property
     @pulumi.getter
@@ -1319,8 +1539,17 @@ class MysqlBackupDbSystemSnapshotMaintenance(dict):
         """
         :param str window_start_time: The start time of the maintenance window.
         """
+        MysqlBackupDbSystemSnapshotMaintenance._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if window_start_time is not None:
-            pulumi.set(__self__, "window_start_time", window_start_time)
+            _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="windowStartTime")
@@ -1361,8 +1590,17 @@ class MysqlConfigurationInitVariables(dict):
                * CASE_SENSITIVE - (default) Table and schema name comparisons are case-sensitive and stored as specified. (lower_case_table_names=0)
                * CASE_INSENSITIVE_LOWERCASE - Table and schema name comparisons are not case-sensitive and stored in lowercase. (lower_case_table_names=1)
         """
+        MysqlConfigurationInitVariables._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            lower_case_table_names=lower_case_table_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             lower_case_table_names: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if lower_case_table_names is not None:
-            pulumi.set(__self__, "lower_case_table_names", lower_case_table_names)
+            _setter("lower_case_table_names", lower_case_table_names)
 
     @property
     @pulumi.getter(name="lowerCaseTableNames")
@@ -1805,164 +2043,329 @@ class MysqlConfigurationVariables(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        MysqlConfigurationVariables._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            autocommit=autocommit,
+            big_tables=big_tables,
+            binlog_expire_logs_seconds=binlog_expire_logs_seconds,
+            binlog_row_metadata=binlog_row_metadata,
+            binlog_row_value_options=binlog_row_value_options,
+            binlog_transaction_compression=binlog_transaction_compression,
+            completion_type=completion_type,
+            connect_timeout=connect_timeout,
+            connection_memory_chunk_size=connection_memory_chunk_size,
+            connection_memory_limit=connection_memory_limit,
+            cte_max_recursion_depth=cte_max_recursion_depth,
+            default_authentication_plugin=default_authentication_plugin,
+            foreign_key_checks=foreign_key_checks,
+            generated_random_password_length=generated_random_password_length,
+            global_connection_memory_limit=global_connection_memory_limit,
+            global_connection_memory_tracking=global_connection_memory_tracking,
+            group_replication_consistency=group_replication_consistency,
+            information_schema_stats_expiry=information_schema_stats_expiry,
+            innodb_buffer_pool_dump_pct=innodb_buffer_pool_dump_pct,
+            innodb_buffer_pool_instances=innodb_buffer_pool_instances,
+            innodb_buffer_pool_size=innodb_buffer_pool_size,
+            innodb_ddl_buffer_size=innodb_ddl_buffer_size,
+            innodb_ddl_threads=innodb_ddl_threads,
+            innodb_ft_enable_stopword=innodb_ft_enable_stopword,
+            innodb_ft_max_token_size=innodb_ft_max_token_size,
+            innodb_ft_min_token_size=innodb_ft_min_token_size,
+            innodb_ft_num_word_optimize=innodb_ft_num_word_optimize,
+            innodb_ft_result_cache_limit=innodb_ft_result_cache_limit,
+            innodb_ft_server_stopword_table=innodb_ft_server_stopword_table,
+            innodb_lock_wait_timeout=innodb_lock_wait_timeout,
+            innodb_log_writer_threads=innodb_log_writer_threads,
+            innodb_max_purge_lag=innodb_max_purge_lag,
+            innodb_max_purge_lag_delay=innodb_max_purge_lag_delay,
+            innodb_stats_persistent_sample_pages=innodb_stats_persistent_sample_pages,
+            innodb_stats_transient_sample_pages=innodb_stats_transient_sample_pages,
+            interactive_timeout=interactive_timeout,
+            local_infile=local_infile,
+            mandatory_roles=mandatory_roles,
+            max_allowed_packet=max_allowed_packet,
+            max_binlog_cache_size=max_binlog_cache_size,
+            max_connect_errors=max_connect_errors,
+            max_connections=max_connections,
+            max_execution_time=max_execution_time,
+            max_heap_table_size=max_heap_table_size,
+            max_prepared_stmt_count=max_prepared_stmt_count,
+            mysql_firewall_mode=mysql_firewall_mode,
+            mysql_zstd_default_compression_level=mysql_zstd_default_compression_level,
+            mysqlx_connect_timeout=mysqlx_connect_timeout,
+            mysqlx_deflate_default_compression_level=mysqlx_deflate_default_compression_level,
+            mysqlx_deflate_max_client_compression_level=mysqlx_deflate_max_client_compression_level,
+            mysqlx_document_id_unique_prefix=mysqlx_document_id_unique_prefix,
+            mysqlx_enable_hello_notice=mysqlx_enable_hello_notice,
+            mysqlx_idle_worker_thread_timeout=mysqlx_idle_worker_thread_timeout,
+            mysqlx_interactive_timeout=mysqlx_interactive_timeout,
+            mysqlx_lz4default_compression_level=mysqlx_lz4default_compression_level,
+            mysqlx_lz4max_client_compression_level=mysqlx_lz4max_client_compression_level,
+            mysqlx_max_allowed_packet=mysqlx_max_allowed_packet,
+            mysqlx_min_worker_threads=mysqlx_min_worker_threads,
+            mysqlx_read_timeout=mysqlx_read_timeout,
+            mysqlx_wait_timeout=mysqlx_wait_timeout,
+            mysqlx_write_timeout=mysqlx_write_timeout,
+            mysqlx_zstd_default_compression_level=mysqlx_zstd_default_compression_level,
+            mysqlx_zstd_max_client_compression_level=mysqlx_zstd_max_client_compression_level,
+            net_read_timeout=net_read_timeout,
+            net_write_timeout=net_write_timeout,
+            parser_max_mem_size=parser_max_mem_size,
+            query_alloc_block_size=query_alloc_block_size,
+            query_prealloc_size=query_prealloc_size,
+            regexp_time_limit=regexp_time_limit,
+            sort_buffer_size=sort_buffer_size,
+            sql_mode=sql_mode,
+            sql_require_primary_key=sql_require_primary_key,
+            sql_warnings=sql_warnings,
+            thread_pool_dedicated_listeners=thread_pool_dedicated_listeners,
+            thread_pool_max_transactions_limit=thread_pool_max_transactions_limit,
+            time_zone=time_zone,
+            tmp_table_size=tmp_table_size,
+            transaction_isolation=transaction_isolation,
+            wait_timeout=wait_timeout,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             autocommit: Optional[bool] = None,
+             big_tables: Optional[bool] = None,
+             binlog_expire_logs_seconds: Optional[int] = None,
+             binlog_row_metadata: Optional[str] = None,
+             binlog_row_value_options: Optional[str] = None,
+             binlog_transaction_compression: Optional[bool] = None,
+             completion_type: Optional[str] = None,
+             connect_timeout: Optional[int] = None,
+             connection_memory_chunk_size: Optional[int] = None,
+             connection_memory_limit: Optional[str] = None,
+             cte_max_recursion_depth: Optional[str] = None,
+             default_authentication_plugin: Optional[str] = None,
+             foreign_key_checks: Optional[bool] = None,
+             generated_random_password_length: Optional[int] = None,
+             global_connection_memory_limit: Optional[str] = None,
+             global_connection_memory_tracking: Optional[bool] = None,
+             group_replication_consistency: Optional[str] = None,
+             information_schema_stats_expiry: Optional[int] = None,
+             innodb_buffer_pool_dump_pct: Optional[int] = None,
+             innodb_buffer_pool_instances: Optional[int] = None,
+             innodb_buffer_pool_size: Optional[str] = None,
+             innodb_ddl_buffer_size: Optional[str] = None,
+             innodb_ddl_threads: Optional[int] = None,
+             innodb_ft_enable_stopword: Optional[bool] = None,
+             innodb_ft_max_token_size: Optional[int] = None,
+             innodb_ft_min_token_size: Optional[int] = None,
+             innodb_ft_num_word_optimize: Optional[int] = None,
+             innodb_ft_result_cache_limit: Optional[str] = None,
+             innodb_ft_server_stopword_table: Optional[str] = None,
+             innodb_lock_wait_timeout: Optional[int] = None,
+             innodb_log_writer_threads: Optional[bool] = None,
+             innodb_max_purge_lag: Optional[str] = None,
+             innodb_max_purge_lag_delay: Optional[int] = None,
+             innodb_stats_persistent_sample_pages: Optional[str] = None,
+             innodb_stats_transient_sample_pages: Optional[str] = None,
+             interactive_timeout: Optional[int] = None,
+             local_infile: Optional[bool] = None,
+             mandatory_roles: Optional[str] = None,
+             max_allowed_packet: Optional[int] = None,
+             max_binlog_cache_size: Optional[str] = None,
+             max_connect_errors: Optional[str] = None,
+             max_connections: Optional[int] = None,
+             max_execution_time: Optional[str] = None,
+             max_heap_table_size: Optional[str] = None,
+             max_prepared_stmt_count: Optional[int] = None,
+             mysql_firewall_mode: Optional[bool] = None,
+             mysql_zstd_default_compression_level: Optional[int] = None,
+             mysqlx_connect_timeout: Optional[int] = None,
+             mysqlx_deflate_default_compression_level: Optional[int] = None,
+             mysqlx_deflate_max_client_compression_level: Optional[int] = None,
+             mysqlx_document_id_unique_prefix: Optional[int] = None,
+             mysqlx_enable_hello_notice: Optional[bool] = None,
+             mysqlx_idle_worker_thread_timeout: Optional[int] = None,
+             mysqlx_interactive_timeout: Optional[int] = None,
+             mysqlx_lz4default_compression_level: Optional[int] = None,
+             mysqlx_lz4max_client_compression_level: Optional[int] = None,
+             mysqlx_max_allowed_packet: Optional[int] = None,
+             mysqlx_min_worker_threads: Optional[int] = None,
+             mysqlx_read_timeout: Optional[int] = None,
+             mysqlx_wait_timeout: Optional[int] = None,
+             mysqlx_write_timeout: Optional[int] = None,
+             mysqlx_zstd_default_compression_level: Optional[int] = None,
+             mysqlx_zstd_max_client_compression_level: Optional[int] = None,
+             net_read_timeout: Optional[int] = None,
+             net_write_timeout: Optional[int] = None,
+             parser_max_mem_size: Optional[str] = None,
+             query_alloc_block_size: Optional[str] = None,
+             query_prealloc_size: Optional[str] = None,
+             regexp_time_limit: Optional[int] = None,
+             sort_buffer_size: Optional[str] = None,
+             sql_mode: Optional[str] = None,
+             sql_require_primary_key: Optional[bool] = None,
+             sql_warnings: Optional[bool] = None,
+             thread_pool_dedicated_listeners: Optional[bool] = None,
+             thread_pool_max_transactions_limit: Optional[int] = None,
+             time_zone: Optional[str] = None,
+             tmp_table_size: Optional[str] = None,
+             transaction_isolation: Optional[str] = None,
+             wait_timeout: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if autocommit is not None:
-            pulumi.set(__self__, "autocommit", autocommit)
+            _setter("autocommit", autocommit)
         if big_tables is not None:
-            pulumi.set(__self__, "big_tables", big_tables)
+            _setter("big_tables", big_tables)
         if binlog_expire_logs_seconds is not None:
-            pulumi.set(__self__, "binlog_expire_logs_seconds", binlog_expire_logs_seconds)
+            _setter("binlog_expire_logs_seconds", binlog_expire_logs_seconds)
         if binlog_row_metadata is not None:
-            pulumi.set(__self__, "binlog_row_metadata", binlog_row_metadata)
+            _setter("binlog_row_metadata", binlog_row_metadata)
         if binlog_row_value_options is not None:
-            pulumi.set(__self__, "binlog_row_value_options", binlog_row_value_options)
+            _setter("binlog_row_value_options", binlog_row_value_options)
         if binlog_transaction_compression is not None:
-            pulumi.set(__self__, "binlog_transaction_compression", binlog_transaction_compression)
+            _setter("binlog_transaction_compression", binlog_transaction_compression)
         if completion_type is not None:
-            pulumi.set(__self__, "completion_type", completion_type)
+            _setter("completion_type", completion_type)
         if connect_timeout is not None:
-            pulumi.set(__self__, "connect_timeout", connect_timeout)
+            _setter("connect_timeout", connect_timeout)
         if connection_memory_chunk_size is not None:
-            pulumi.set(__self__, "connection_memory_chunk_size", connection_memory_chunk_size)
+            _setter("connection_memory_chunk_size", connection_memory_chunk_size)
         if connection_memory_limit is not None:
-            pulumi.set(__self__, "connection_memory_limit", connection_memory_limit)
+            _setter("connection_memory_limit", connection_memory_limit)
         if cte_max_recursion_depth is not None:
-            pulumi.set(__self__, "cte_max_recursion_depth", cte_max_recursion_depth)
+            _setter("cte_max_recursion_depth", cte_max_recursion_depth)
         if default_authentication_plugin is not None:
-            pulumi.set(__self__, "default_authentication_plugin", default_authentication_plugin)
+            _setter("default_authentication_plugin", default_authentication_plugin)
         if foreign_key_checks is not None:
-            pulumi.set(__self__, "foreign_key_checks", foreign_key_checks)
+            _setter("foreign_key_checks", foreign_key_checks)
         if generated_random_password_length is not None:
-            pulumi.set(__self__, "generated_random_password_length", generated_random_password_length)
+            _setter("generated_random_password_length", generated_random_password_length)
         if global_connection_memory_limit is not None:
-            pulumi.set(__self__, "global_connection_memory_limit", global_connection_memory_limit)
+            _setter("global_connection_memory_limit", global_connection_memory_limit)
         if global_connection_memory_tracking is not None:
-            pulumi.set(__self__, "global_connection_memory_tracking", global_connection_memory_tracking)
+            _setter("global_connection_memory_tracking", global_connection_memory_tracking)
         if group_replication_consistency is not None:
-            pulumi.set(__self__, "group_replication_consistency", group_replication_consistency)
+            _setter("group_replication_consistency", group_replication_consistency)
         if information_schema_stats_expiry is not None:
-            pulumi.set(__self__, "information_schema_stats_expiry", information_schema_stats_expiry)
+            _setter("information_schema_stats_expiry", information_schema_stats_expiry)
         if innodb_buffer_pool_dump_pct is not None:
-            pulumi.set(__self__, "innodb_buffer_pool_dump_pct", innodb_buffer_pool_dump_pct)
+            _setter("innodb_buffer_pool_dump_pct", innodb_buffer_pool_dump_pct)
         if innodb_buffer_pool_instances is not None:
-            pulumi.set(__self__, "innodb_buffer_pool_instances", innodb_buffer_pool_instances)
+            _setter("innodb_buffer_pool_instances", innodb_buffer_pool_instances)
         if innodb_buffer_pool_size is not None:
-            pulumi.set(__self__, "innodb_buffer_pool_size", innodb_buffer_pool_size)
+            _setter("innodb_buffer_pool_size", innodb_buffer_pool_size)
         if innodb_ddl_buffer_size is not None:
-            pulumi.set(__self__, "innodb_ddl_buffer_size", innodb_ddl_buffer_size)
+            _setter("innodb_ddl_buffer_size", innodb_ddl_buffer_size)
         if innodb_ddl_threads is not None:
-            pulumi.set(__self__, "innodb_ddl_threads", innodb_ddl_threads)
+            _setter("innodb_ddl_threads", innodb_ddl_threads)
         if innodb_ft_enable_stopword is not None:
-            pulumi.set(__self__, "innodb_ft_enable_stopword", innodb_ft_enable_stopword)
+            _setter("innodb_ft_enable_stopword", innodb_ft_enable_stopword)
         if innodb_ft_max_token_size is not None:
-            pulumi.set(__self__, "innodb_ft_max_token_size", innodb_ft_max_token_size)
+            _setter("innodb_ft_max_token_size", innodb_ft_max_token_size)
         if innodb_ft_min_token_size is not None:
-            pulumi.set(__self__, "innodb_ft_min_token_size", innodb_ft_min_token_size)
+            _setter("innodb_ft_min_token_size", innodb_ft_min_token_size)
         if innodb_ft_num_word_optimize is not None:
-            pulumi.set(__self__, "innodb_ft_num_word_optimize", innodb_ft_num_word_optimize)
+            _setter("innodb_ft_num_word_optimize", innodb_ft_num_word_optimize)
         if innodb_ft_result_cache_limit is not None:
-            pulumi.set(__self__, "innodb_ft_result_cache_limit", innodb_ft_result_cache_limit)
+            _setter("innodb_ft_result_cache_limit", innodb_ft_result_cache_limit)
         if innodb_ft_server_stopword_table is not None:
-            pulumi.set(__self__, "innodb_ft_server_stopword_table", innodb_ft_server_stopword_table)
+            _setter("innodb_ft_server_stopword_table", innodb_ft_server_stopword_table)
         if innodb_lock_wait_timeout is not None:
-            pulumi.set(__self__, "innodb_lock_wait_timeout", innodb_lock_wait_timeout)
+            _setter("innodb_lock_wait_timeout", innodb_lock_wait_timeout)
         if innodb_log_writer_threads is not None:
-            pulumi.set(__self__, "innodb_log_writer_threads", innodb_log_writer_threads)
+            _setter("innodb_log_writer_threads", innodb_log_writer_threads)
         if innodb_max_purge_lag is not None:
-            pulumi.set(__self__, "innodb_max_purge_lag", innodb_max_purge_lag)
+            _setter("innodb_max_purge_lag", innodb_max_purge_lag)
         if innodb_max_purge_lag_delay is not None:
-            pulumi.set(__self__, "innodb_max_purge_lag_delay", innodb_max_purge_lag_delay)
+            _setter("innodb_max_purge_lag_delay", innodb_max_purge_lag_delay)
         if innodb_stats_persistent_sample_pages is not None:
-            pulumi.set(__self__, "innodb_stats_persistent_sample_pages", innodb_stats_persistent_sample_pages)
+            _setter("innodb_stats_persistent_sample_pages", innodb_stats_persistent_sample_pages)
         if innodb_stats_transient_sample_pages is not None:
-            pulumi.set(__self__, "innodb_stats_transient_sample_pages", innodb_stats_transient_sample_pages)
+            _setter("innodb_stats_transient_sample_pages", innodb_stats_transient_sample_pages)
         if interactive_timeout is not None:
-            pulumi.set(__self__, "interactive_timeout", interactive_timeout)
+            _setter("interactive_timeout", interactive_timeout)
         if local_infile is not None:
-            pulumi.set(__self__, "local_infile", local_infile)
+            _setter("local_infile", local_infile)
         if mandatory_roles is not None:
-            pulumi.set(__self__, "mandatory_roles", mandatory_roles)
+            _setter("mandatory_roles", mandatory_roles)
         if max_allowed_packet is not None:
-            pulumi.set(__self__, "max_allowed_packet", max_allowed_packet)
+            _setter("max_allowed_packet", max_allowed_packet)
         if max_binlog_cache_size is not None:
-            pulumi.set(__self__, "max_binlog_cache_size", max_binlog_cache_size)
+            _setter("max_binlog_cache_size", max_binlog_cache_size)
         if max_connect_errors is not None:
-            pulumi.set(__self__, "max_connect_errors", max_connect_errors)
+            _setter("max_connect_errors", max_connect_errors)
         if max_connections is not None:
-            pulumi.set(__self__, "max_connections", max_connections)
+            _setter("max_connections", max_connections)
         if max_execution_time is not None:
-            pulumi.set(__self__, "max_execution_time", max_execution_time)
+            _setter("max_execution_time", max_execution_time)
         if max_heap_table_size is not None:
-            pulumi.set(__self__, "max_heap_table_size", max_heap_table_size)
+            _setter("max_heap_table_size", max_heap_table_size)
         if max_prepared_stmt_count is not None:
-            pulumi.set(__self__, "max_prepared_stmt_count", max_prepared_stmt_count)
+            _setter("max_prepared_stmt_count", max_prepared_stmt_count)
         if mysql_firewall_mode is not None:
-            pulumi.set(__self__, "mysql_firewall_mode", mysql_firewall_mode)
+            _setter("mysql_firewall_mode", mysql_firewall_mode)
         if mysql_zstd_default_compression_level is not None:
-            pulumi.set(__self__, "mysql_zstd_default_compression_level", mysql_zstd_default_compression_level)
+            _setter("mysql_zstd_default_compression_level", mysql_zstd_default_compression_level)
         if mysqlx_connect_timeout is not None:
-            pulumi.set(__self__, "mysqlx_connect_timeout", mysqlx_connect_timeout)
+            _setter("mysqlx_connect_timeout", mysqlx_connect_timeout)
         if mysqlx_deflate_default_compression_level is not None:
-            pulumi.set(__self__, "mysqlx_deflate_default_compression_level", mysqlx_deflate_default_compression_level)
+            _setter("mysqlx_deflate_default_compression_level", mysqlx_deflate_default_compression_level)
         if mysqlx_deflate_max_client_compression_level is not None:
-            pulumi.set(__self__, "mysqlx_deflate_max_client_compression_level", mysqlx_deflate_max_client_compression_level)
+            _setter("mysqlx_deflate_max_client_compression_level", mysqlx_deflate_max_client_compression_level)
         if mysqlx_document_id_unique_prefix is not None:
-            pulumi.set(__self__, "mysqlx_document_id_unique_prefix", mysqlx_document_id_unique_prefix)
+            _setter("mysqlx_document_id_unique_prefix", mysqlx_document_id_unique_prefix)
         if mysqlx_enable_hello_notice is not None:
-            pulumi.set(__self__, "mysqlx_enable_hello_notice", mysqlx_enable_hello_notice)
+            _setter("mysqlx_enable_hello_notice", mysqlx_enable_hello_notice)
         if mysqlx_idle_worker_thread_timeout is not None:
-            pulumi.set(__self__, "mysqlx_idle_worker_thread_timeout", mysqlx_idle_worker_thread_timeout)
+            _setter("mysqlx_idle_worker_thread_timeout", mysqlx_idle_worker_thread_timeout)
         if mysqlx_interactive_timeout is not None:
-            pulumi.set(__self__, "mysqlx_interactive_timeout", mysqlx_interactive_timeout)
+            _setter("mysqlx_interactive_timeout", mysqlx_interactive_timeout)
         if mysqlx_lz4default_compression_level is not None:
-            pulumi.set(__self__, "mysqlx_lz4default_compression_level", mysqlx_lz4default_compression_level)
+            _setter("mysqlx_lz4default_compression_level", mysqlx_lz4default_compression_level)
         if mysqlx_lz4max_client_compression_level is not None:
-            pulumi.set(__self__, "mysqlx_lz4max_client_compression_level", mysqlx_lz4max_client_compression_level)
+            _setter("mysqlx_lz4max_client_compression_level", mysqlx_lz4max_client_compression_level)
         if mysqlx_max_allowed_packet is not None:
-            pulumi.set(__self__, "mysqlx_max_allowed_packet", mysqlx_max_allowed_packet)
+            _setter("mysqlx_max_allowed_packet", mysqlx_max_allowed_packet)
         if mysqlx_min_worker_threads is not None:
-            pulumi.set(__self__, "mysqlx_min_worker_threads", mysqlx_min_worker_threads)
+            _setter("mysqlx_min_worker_threads", mysqlx_min_worker_threads)
         if mysqlx_read_timeout is not None:
-            pulumi.set(__self__, "mysqlx_read_timeout", mysqlx_read_timeout)
+            _setter("mysqlx_read_timeout", mysqlx_read_timeout)
         if mysqlx_wait_timeout is not None:
-            pulumi.set(__self__, "mysqlx_wait_timeout", mysqlx_wait_timeout)
+            _setter("mysqlx_wait_timeout", mysqlx_wait_timeout)
         if mysqlx_write_timeout is not None:
-            pulumi.set(__self__, "mysqlx_write_timeout", mysqlx_write_timeout)
+            _setter("mysqlx_write_timeout", mysqlx_write_timeout)
         if mysqlx_zstd_default_compression_level is not None:
-            pulumi.set(__self__, "mysqlx_zstd_default_compression_level", mysqlx_zstd_default_compression_level)
+            _setter("mysqlx_zstd_default_compression_level", mysqlx_zstd_default_compression_level)
         if mysqlx_zstd_max_client_compression_level is not None:
-            pulumi.set(__self__, "mysqlx_zstd_max_client_compression_level", mysqlx_zstd_max_client_compression_level)
+            _setter("mysqlx_zstd_max_client_compression_level", mysqlx_zstd_max_client_compression_level)
         if net_read_timeout is not None:
-            pulumi.set(__self__, "net_read_timeout", net_read_timeout)
+            _setter("net_read_timeout", net_read_timeout)
         if net_write_timeout is not None:
-            pulumi.set(__self__, "net_write_timeout", net_write_timeout)
+            _setter("net_write_timeout", net_write_timeout)
         if parser_max_mem_size is not None:
-            pulumi.set(__self__, "parser_max_mem_size", parser_max_mem_size)
+            _setter("parser_max_mem_size", parser_max_mem_size)
         if query_alloc_block_size is not None:
-            pulumi.set(__self__, "query_alloc_block_size", query_alloc_block_size)
+            _setter("query_alloc_block_size", query_alloc_block_size)
         if query_prealloc_size is not None:
-            pulumi.set(__self__, "query_prealloc_size", query_prealloc_size)
+            _setter("query_prealloc_size", query_prealloc_size)
         if regexp_time_limit is not None:
-            pulumi.set(__self__, "regexp_time_limit", regexp_time_limit)
+            _setter("regexp_time_limit", regexp_time_limit)
         if sort_buffer_size is not None:
-            pulumi.set(__self__, "sort_buffer_size", sort_buffer_size)
+            _setter("sort_buffer_size", sort_buffer_size)
         if sql_mode is not None:
-            pulumi.set(__self__, "sql_mode", sql_mode)
+            _setter("sql_mode", sql_mode)
         if sql_require_primary_key is not None:
-            pulumi.set(__self__, "sql_require_primary_key", sql_require_primary_key)
+            _setter("sql_require_primary_key", sql_require_primary_key)
         if sql_warnings is not None:
-            pulumi.set(__self__, "sql_warnings", sql_warnings)
+            _setter("sql_warnings", sql_warnings)
         if thread_pool_dedicated_listeners is not None:
-            pulumi.set(__self__, "thread_pool_dedicated_listeners", thread_pool_dedicated_listeners)
+            _setter("thread_pool_dedicated_listeners", thread_pool_dedicated_listeners)
         if thread_pool_max_transactions_limit is not None:
-            pulumi.set(__self__, "thread_pool_max_transactions_limit", thread_pool_max_transactions_limit)
+            _setter("thread_pool_max_transactions_limit", thread_pool_max_transactions_limit)
         if time_zone is not None:
-            pulumi.set(__self__, "time_zone", time_zone)
+            _setter("time_zone", time_zone)
         if tmp_table_size is not None:
-            pulumi.set(__self__, "tmp_table_size", tmp_table_size)
+            _setter("tmp_table_size", tmp_table_size)
         if transaction_isolation is not None:
-            pulumi.set(__self__, "transaction_isolation", transaction_isolation)
+            _setter("transaction_isolation", transaction_isolation)
         if wait_timeout is not None:
-            pulumi.set(__self__, "wait_timeout", wait_timeout)
+            _setter("wait_timeout", wait_timeout)
 
     @property
     @pulumi.getter
@@ -2762,18 +3165,37 @@ class MysqlDbSystemBackupPolicy(dict):
                
                If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
         """
+        MysqlDbSystemBackupPolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_enabled=is_enabled,
+            pitr_policy=pitr_policy,
+            retention_in_days=retention_in_days,
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             is_enabled: Optional[bool] = None,
+             pitr_policy: Optional['outputs.MysqlDbSystemBackupPolicyPitrPolicy'] = None,
+             retention_in_days: Optional[int] = None,
+             window_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if pitr_policy is not None:
-            pulumi.set(__self__, "pitr_policy", pitr_policy)
+            _setter("pitr_policy", pitr_policy)
         if retention_in_days is not None:
-            pulumi.set(__self__, "retention_in_days", retention_in_days)
+            _setter("retention_in_days", retention_in_days)
         if window_start_time is not None:
-            pulumi.set(__self__, "window_start_time", window_start_time)
+            _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -2856,8 +3278,17 @@ class MysqlDbSystemBackupPolicyPitrPolicy(dict):
         """
         :param bool is_enabled: (Updatable) Specifies if PITR is enabled or disabled.
         """
+        MysqlDbSystemBackupPolicyPitrPolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -2928,30 +3359,61 @@ class MysqlDbSystemChannel(dict):
         :param str time_created: The date and time the DB System was created.
         :param str time_updated: The time the DB System was last updated.
         """
+        MysqlDbSystemChannel._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_enabled=is_enabled,
+            lifecycle_details=lifecycle_details,
+            sources=sources,
+            state=state,
+            targets=targets,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             is_enabled: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             sources: Optional[Sequence['outputs.MysqlDbSystemChannelSource']] = None,
+             state: Optional[str] = None,
+             targets: Optional[Sequence['outputs.MysqlDbSystemChannelTarget']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if sources is not None:
-            pulumi.set(__self__, "sources", sources)
+            _setter("sources", sources)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if targets is not None:
-            pulumi.set(__self__, "targets", targets)
+            _setter("targets", targets)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3092,20 +3554,41 @@ class MysqlDbSystemChannelSource(dict):
         :param str ssl_mode: The SSL mode of the Channel.
         :param str username: The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
         """
+        MysqlDbSystemChannelSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            anonymous_transactions_handlings=anonymous_transactions_handlings,
+            hostname=hostname,
+            port=port,
+            source_type=source_type,
+            ssl_ca_certificates=ssl_ca_certificates,
+            ssl_mode=ssl_mode,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             anonymous_transactions_handlings: Optional[Sequence['outputs.MysqlDbSystemChannelSourceAnonymousTransactionsHandling']] = None,
+             hostname: Optional[str] = None,
+             port: Optional[int] = None,
+             source_type: Optional[str] = None,
+             ssl_ca_certificates: Optional[Sequence['outputs.MysqlDbSystemChannelSourceSslCaCertificate']] = None,
+             ssl_mode: Optional[str] = None,
+             username: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if anonymous_transactions_handlings is not None:
-            pulumi.set(__self__, "anonymous_transactions_handlings", anonymous_transactions_handlings)
+            _setter("anonymous_transactions_handlings", anonymous_transactions_handlings)
         if hostname is not None:
-            pulumi.set(__self__, "hostname", hostname)
+            _setter("hostname", hostname)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if source_type is not None:
-            pulumi.set(__self__, "source_type", source_type)
+            _setter("source_type", source_type)
         if ssl_ca_certificates is not None:
-            pulumi.set(__self__, "ssl_ca_certificates", ssl_ca_certificates)
+            _setter("ssl_ca_certificates", ssl_ca_certificates)
         if ssl_mode is not None:
-            pulumi.set(__self__, "ssl_mode", ssl_mode)
+            _setter("ssl_mode", ssl_mode)
         if username is not None:
-            pulumi.set(__self__, "username", username)
+            _setter("username", username)
 
     @property
     @pulumi.getter(name="anonymousTransactionsHandlings")
@@ -3196,14 +3679,29 @@ class MysqlDbSystemChannelSourceAnonymousTransactionsHandling(dict):
         :param str policy: Specifies how the replication channel handles anonymous transactions.
         :param str uuid: The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
         """
+        MysqlDbSystemChannelSourceAnonymousTransactionsHandling._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            last_configured_log_filename=last_configured_log_filename,
+            last_configured_log_offset=last_configured_log_offset,
+            policy=policy,
+            uuid=uuid,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             last_configured_log_filename: Optional[str] = None,
+             last_configured_log_offset: Optional[str] = None,
+             policy: Optional[str] = None,
+             uuid: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if last_configured_log_filename is not None:
-            pulumi.set(__self__, "last_configured_log_filename", last_configured_log_filename)
+            _setter("last_configured_log_filename", last_configured_log_filename)
         if last_configured_log_offset is not None:
-            pulumi.set(__self__, "last_configured_log_offset", last_configured_log_offset)
+            _setter("last_configured_log_offset", last_configured_log_offset)
         if policy is not None:
-            pulumi.set(__self__, "policy", policy)
+            _setter("policy", policy)
         if uuid is not None:
-            pulumi.set(__self__, "uuid", uuid)
+            _setter("uuid", uuid)
 
     @property
     @pulumi.getter(name="lastConfiguredLogFilename")
@@ -3264,10 +3762,21 @@ class MysqlDbSystemChannelSourceSslCaCertificate(dict):
         :param str certificate_type: The type of CA certificate.
         :param str contents: The string containing the CA certificate in PEM format.
         """
+        MysqlDbSystemChannelSourceSslCaCertificate._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_type=certificate_type,
+            contents=contents,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_type: Optional[str] = None,
+             contents: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if certificate_type is not None:
-            pulumi.set(__self__, "certificate_type", certificate_type)
+            _setter("certificate_type", certificate_type)
         if contents is not None:
-            pulumi.set(__self__, "contents", contents)
+            _setter("contents", contents)
 
     @property
     @pulumi.getter(name="certificateType")
@@ -3332,20 +3841,41 @@ class MysqlDbSystemChannelTarget(dict):
         :param str tables_without_primary_key_handling: Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
         :param str target_type: The specific target identifier.
         """
+        MysqlDbSystemChannelTarget._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            applier_username=applier_username,
+            channel_name=channel_name,
+            db_system_id=db_system_id,
+            delay_in_seconds=delay_in_seconds,
+            filters=filters,
+            tables_without_primary_key_handling=tables_without_primary_key_handling,
+            target_type=target_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             applier_username: Optional[str] = None,
+             channel_name: Optional[str] = None,
+             db_system_id: Optional[str] = None,
+             delay_in_seconds: Optional[int] = None,
+             filters: Optional[Sequence['outputs.MysqlDbSystemChannelTargetFilter']] = None,
+             tables_without_primary_key_handling: Optional[str] = None,
+             target_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if applier_username is not None:
-            pulumi.set(__self__, "applier_username", applier_username)
+            _setter("applier_username", applier_username)
         if channel_name is not None:
-            pulumi.set(__self__, "channel_name", channel_name)
+            _setter("channel_name", channel_name)
         if db_system_id is not None:
-            pulumi.set(__self__, "db_system_id", db_system_id)
+            _setter("db_system_id", db_system_id)
         if delay_in_seconds is not None:
-            pulumi.set(__self__, "delay_in_seconds", delay_in_seconds)
+            _setter("delay_in_seconds", delay_in_seconds)
         if filters is not None:
-            pulumi.set(__self__, "filters", filters)
+            _setter("filters", filters)
         if tables_without_primary_key_handling is not None:
-            pulumi.set(__self__, "tables_without_primary_key_handling", tables_without_primary_key_handling)
+            _setter("tables_without_primary_key_handling", tables_without_primary_key_handling)
         if target_type is not None:
-            pulumi.set(__self__, "target_type", target_type)
+            _setter("target_type", target_type)
 
     @property
     @pulumi.getter(name="applierUsername")
@@ -3413,10 +3943,21 @@ class MysqlDbSystemChannelTargetFilter(dict):
         :param str type: The type of the filter rule.
         :param str value: The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
         """
+        MysqlDbSystemChannelTargetFilter._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -3471,10 +4012,21 @@ class MysqlDbSystemCurrentPlacement(dict):
                
                For a standalone DB System, this defines the fault domain in which the DB System is placed.
         """
+        MysqlDbSystemCurrentPlacement._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            fault_domain=fault_domain,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[str] = None,
+             fault_domain: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if fault_domain is not None:
-            pulumi.set(__self__, "fault_domain", fault_domain)
+            _setter("fault_domain", fault_domain)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -3533,12 +4085,25 @@ class MysqlDbSystemDeletionPolicy(dict):
         :param str final_backup: (Updatable) Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
         :param bool is_delete_protected: (Updatable) Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
         """
+        MysqlDbSystemDeletionPolicy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            automatic_backup_retention=automatic_backup_retention,
+            final_backup=final_backup,
+            is_delete_protected=is_delete_protected,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             automatic_backup_retention: Optional[str] = None,
+             final_backup: Optional[str] = None,
+             is_delete_protected: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if automatic_backup_retention is not None:
-            pulumi.set(__self__, "automatic_backup_retention", automatic_backup_retention)
+            _setter("automatic_backup_retention", automatic_backup_retention)
         if final_backup is not None:
-            pulumi.set(__self__, "final_backup", final_backup)
+            _setter("final_backup", final_backup)
         if is_delete_protected is not None:
-            pulumi.set(__self__, "is_delete_protected", is_delete_protected)
+            _setter("is_delete_protected", is_delete_protected)
 
     @property
     @pulumi.getter(name="automaticBackupRetention")
@@ -3613,24 +4178,49 @@ class MysqlDbSystemEndpoint(dict):
         :param str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
         :param str status_details: Additional information about the current endpoint status.
         """
+        MysqlDbSystemEndpoint._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            ip_address=ip_address,
+            modes=modes,
+            port=port,
+            port_x=port_x,
+            resource_id=resource_id,
+            resource_type=resource_type,
+            status=status,
+            status_details=status_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: Optional[str] = None,
+             ip_address: Optional[str] = None,
+             modes: Optional[Sequence[str]] = None,
+             port: Optional[int] = None,
+             port_x: Optional[int] = None,
+             resource_id: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             status: Optional[str] = None,
+             status_details: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if hostname is not None:
-            pulumi.set(__self__, "hostname", hostname)
+            _setter("hostname", hostname)
         if ip_address is not None:
-            pulumi.set(__self__, "ip_address", ip_address)
+            _setter("ip_address", ip_address)
         if modes is not None:
-            pulumi.set(__self__, "modes", modes)
+            _setter("modes", modes)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if port_x is not None:
-            pulumi.set(__self__, "port_x", port_x)
+            _setter("port_x", port_x)
         if resource_id is not None:
-            pulumi.set(__self__, "resource_id", resource_id)
+            _setter("resource_id", resource_id)
         if resource_type is not None:
-            pulumi.set(__self__, "resource_type", resource_type)
+            _setter("resource_type", resource_type)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if status_details is not None:
-            pulumi.set(__self__, "status_details", status_details)
+            _setter("status_details", status_details)
 
     @property
     @pulumi.getter
@@ -3748,18 +4338,37 @@ class MysqlDbSystemHeatWaveCluster(dict):
         :param str time_created: The date and time the DB System was created.
         :param str time_updated: The time the DB System was last updated.
         """
+        MysqlDbSystemHeatWaveCluster._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cluster_size=cluster_size,
+            is_lakehouse_enabled=is_lakehouse_enabled,
+            shape_name=shape_name,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cluster_size: Optional[int] = None,
+             is_lakehouse_enabled: Optional[bool] = None,
+             shape_name: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if cluster_size is not None:
-            pulumi.set(__self__, "cluster_size", cluster_size)
+            _setter("cluster_size", cluster_size)
         if is_lakehouse_enabled is not None:
-            pulumi.set(__self__, "is_lakehouse_enabled", is_lakehouse_enabled)
+            _setter("is_lakehouse_enabled", is_lakehouse_enabled)
         if shape_name is not None:
-            pulumi.set(__self__, "shape_name", shape_name)
+            _setter("shape_name", shape_name)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="clusterSize")
@@ -3843,7 +4452,16 @@ class MysqlDbSystemMaintenance(dict):
                
                If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
         """
-        pulumi.set(__self__, "window_start_time", window_start_time)
+        MysqlDbSystemMaintenance._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             window_start_time: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="windowStartTime")
@@ -3890,10 +4508,21 @@ class MysqlDbSystemPointInTimeRecoveryDetail(dict):
         :param str time_earliest_recovery_point: Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_latest_recovery_point: Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
+        MysqlDbSystemPointInTimeRecoveryDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_earliest_recovery_point=time_earliest_recovery_point,
+            time_latest_recovery_point=time_latest_recovery_point,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_earliest_recovery_point: Optional[str] = None,
+             time_latest_recovery_point: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if time_earliest_recovery_point is not None:
-            pulumi.set(__self__, "time_earliest_recovery_point", time_earliest_recovery_point)
+            _setter("time_earliest_recovery_point", time_earliest_recovery_point)
         if time_latest_recovery_point is not None:
-            pulumi.set(__self__, "time_latest_recovery_point", time_latest_recovery_point)
+            _setter("time_latest_recovery_point", time_latest_recovery_point)
 
     @property
     @pulumi.getter(name="timeEarliestRecoveryPoint")
@@ -3952,15 +4581,32 @@ class MysqlDbSystemSource(dict):
         :param str recovery_point: The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
         :param str source_url: The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR. Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
         """
-        pulumi.set(__self__, "source_type", source_type)
+        MysqlDbSystemSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            source_type=source_type,
+            backup_id=backup_id,
+            db_system_id=db_system_id,
+            recovery_point=recovery_point,
+            source_url=source_url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             source_type: str,
+             backup_id: Optional[str] = None,
+             db_system_id: Optional[str] = None,
+             recovery_point: Optional[str] = None,
+             source_url: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("source_type", source_type)
         if backup_id is not None:
-            pulumi.set(__self__, "backup_id", backup_id)
+            _setter("backup_id", backup_id)
         if db_system_id is not None:
-            pulumi.set(__self__, "db_system_id", db_system_id)
+            _setter("db_system_id", db_system_id)
         if recovery_point is not None:
-            pulumi.set(__self__, "recovery_point", recovery_point)
+            _setter("recovery_point", recovery_point)
         if source_url is not None:
-            pulumi.set(__self__, "source_url", source_url)
+            _setter("source_url", source_url)
 
     @property
     @pulumi.getter(name="sourceType")
@@ -4004,6 +4650,91 @@ class MysqlDbSystemSource(dict):
 
 
 @pulumi.output_type
+class ReplicaReplicaOverrides(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configurationId":
+            suggest = "configuration_id"
+        elif key == "mysqlVersion":
+            suggest = "mysql_version"
+        elif key == "shapeName":
+            suggest = "shape_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ReplicaReplicaOverrides. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ReplicaReplicaOverrides.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ReplicaReplicaOverrides.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 configuration_id: Optional[str] = None,
+                 mysql_version: Optional[str] = None,
+                 shape_name: Optional[str] = None):
+        """
+        :param str configuration_id: (Updatable) The OCID of the Configuration to be used by the read replica.
+        :param str mysql_version: (Updatable) The MySQL version to be used by the read replica.
+        :param str shape_name: (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        ReplicaReplicaOverrides._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            configuration_id=configuration_id,
+            mysql_version=mysql_version,
+            shape_name=shape_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             configuration_id: Optional[str] = None,
+             mysql_version: Optional[str] = None,
+             shape_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        if configuration_id is not None:
+            _setter("configuration_id", configuration_id)
+        if mysql_version is not None:
+            _setter("mysql_version", mysql_version)
+        if shape_name is not None:
+            _setter("shape_name", shape_name)
+
+    @property
+    @pulumi.getter(name="configurationId")
+    def configuration_id(self) -> Optional[str]:
+        """
+        (Updatable) The OCID of the Configuration to be used by the read replica.
+        """
+        return pulumi.get(self, "configuration_id")
+
+    @property
+    @pulumi.getter(name="mysqlVersion")
+    def mysql_version(self) -> Optional[str]:
+        """
+        (Updatable) The MySQL version to be used by the read replica.
+        """
+        return pulumi.get(self, "mysql_version")
+
+    @property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> Optional[str]:
+        """
+        (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "shape_name")
+
+
+@pulumi.output_type
 class GetChannelSourceResult(dict):
     def __init__(__self__, *,
                  anonymous_transactions_handlings: Sequence['outputs.GetChannelSourceAnonymousTransactionsHandlingResult'],
@@ -4023,14 +4754,37 @@ class GetChannelSourceResult(dict):
         :param str ssl_mode: The SSL mode of the Channel.
         :param str username: The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
         """
-        pulumi.set(__self__, "anonymous_transactions_handlings", anonymous_transactions_handlings)
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "source_type", source_type)
-        pulumi.set(__self__, "ssl_ca_certificates", ssl_ca_certificates)
-        pulumi.set(__self__, "ssl_mode", ssl_mode)
-        pulumi.set(__self__, "username", username)
+        GetChannelSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            anonymous_transactions_handlings=anonymous_transactions_handlings,
+            hostname=hostname,
+            password=password,
+            port=port,
+            source_type=source_type,
+            ssl_ca_certificates=ssl_ca_certificates,
+            ssl_mode=ssl_mode,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             anonymous_transactions_handlings: Sequence['outputs.GetChannelSourceAnonymousTransactionsHandlingResult'],
+             hostname: str,
+             password: str,
+             port: int,
+             source_type: str,
+             ssl_ca_certificates: Sequence['outputs.GetChannelSourceSslCaCertificateResult'],
+             ssl_mode: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("anonymous_transactions_handlings", anonymous_transactions_handlings)
+        _setter("hostname", hostname)
+        _setter("password", password)
+        _setter("port", port)
+        _setter("source_type", source_type)
+        _setter("ssl_ca_certificates", ssl_ca_certificates)
+        _setter("ssl_mode", ssl_mode)
+        _setter("username", username)
 
     @property
     @pulumi.getter(name="anonymousTransactionsHandlings")
@@ -4107,10 +4861,25 @@ class GetChannelSourceAnonymousTransactionsHandlingResult(dict):
         :param str policy: Specifies how the replication channel handles anonymous transactions.
         :param str uuid: The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
         """
-        pulumi.set(__self__, "last_configured_log_filename", last_configured_log_filename)
-        pulumi.set(__self__, "last_configured_log_offset", last_configured_log_offset)
-        pulumi.set(__self__, "policy", policy)
-        pulumi.set(__self__, "uuid", uuid)
+        GetChannelSourceAnonymousTransactionsHandlingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            last_configured_log_filename=last_configured_log_filename,
+            last_configured_log_offset=last_configured_log_offset,
+            policy=policy,
+            uuid=uuid,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             last_configured_log_filename: str,
+             last_configured_log_offset: str,
+             policy: str,
+             uuid: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("last_configured_log_filename", last_configured_log_filename)
+        _setter("last_configured_log_offset", last_configured_log_offset)
+        _setter("policy", policy)
+        _setter("uuid", uuid)
 
     @property
     @pulumi.getter(name="lastConfiguredLogFilename")
@@ -4154,8 +4923,19 @@ class GetChannelSourceSslCaCertificateResult(dict):
         :param str certificate_type: The type of CA certificate.
         :param str contents: The string containing the CA certificate in PEM format.
         """
-        pulumi.set(__self__, "certificate_type", certificate_type)
-        pulumi.set(__self__, "contents", contents)
+        GetChannelSourceSslCaCertificateResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_type=certificate_type,
+            contents=contents,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_type: str,
+             contents: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_type", certificate_type)
+        _setter("contents", contents)
 
     @property
     @pulumi.getter(name="certificateType")
@@ -4193,13 +4973,34 @@ class GetChannelTargetResult(dict):
         :param str tables_without_primary_key_handling: Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
         :param str target_type: The specific target identifier.
         """
-        pulumi.set(__self__, "applier_username", applier_username)
-        pulumi.set(__self__, "channel_name", channel_name)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "delay_in_seconds", delay_in_seconds)
-        pulumi.set(__self__, "filters", filters)
-        pulumi.set(__self__, "tables_without_primary_key_handling", tables_without_primary_key_handling)
-        pulumi.set(__self__, "target_type", target_type)
+        GetChannelTargetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            applier_username=applier_username,
+            channel_name=channel_name,
+            db_system_id=db_system_id,
+            delay_in_seconds=delay_in_seconds,
+            filters=filters,
+            tables_without_primary_key_handling=tables_without_primary_key_handling,
+            target_type=target_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             applier_username: str,
+             channel_name: str,
+             db_system_id: str,
+             delay_in_seconds: int,
+             filters: Sequence['outputs.GetChannelTargetFilterResult'],
+             tables_without_primary_key_handling: str,
+             target_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("applier_username", applier_username)
+        _setter("channel_name", channel_name)
+        _setter("db_system_id", db_system_id)
+        _setter("delay_in_seconds", delay_in_seconds)
+        _setter("filters", filters)
+        _setter("tables_without_primary_key_handling", tables_without_primary_key_handling)
+        _setter("target_type", target_type)
 
     @property
     @pulumi.getter(name="applierUsername")
@@ -4267,8 +5068,19 @@ class GetChannelTargetFilterResult(dict):
         :param str type: The type of the filter rule.
         :param str value: The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        GetChannelTargetFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -4318,19 +5130,52 @@ class GetChannelsChannelResult(dict):
         :param str time_created: The date and time the Channel was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_updated: The time the Channel was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "sources", sources)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "targets", targets)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetChannelsChannelResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_enabled=is_enabled,
+            lifecycle_details=lifecycle_details,
+            sources=sources,
+            state=state,
+            targets=targets,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_enabled: bool,
+             lifecycle_details: str,
+             sources: Sequence['outputs.GetChannelsChannelSourceResult'],
+             state: str,
+             targets: Sequence['outputs.GetChannelsChannelTargetResult'],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_enabled", is_enabled)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("sources", sources)
+        _setter("state", state)
+        _setter("targets", targets)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -4457,14 +5302,37 @@ class GetChannelsChannelSourceResult(dict):
         :param str ssl_mode: The SSL mode of the Channel.
         :param str username: The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
         """
-        pulumi.set(__self__, "anonymous_transactions_handlings", anonymous_transactions_handlings)
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "source_type", source_type)
-        pulumi.set(__self__, "ssl_ca_certificates", ssl_ca_certificates)
-        pulumi.set(__self__, "ssl_mode", ssl_mode)
-        pulumi.set(__self__, "username", username)
+        GetChannelsChannelSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            anonymous_transactions_handlings=anonymous_transactions_handlings,
+            hostname=hostname,
+            password=password,
+            port=port,
+            source_type=source_type,
+            ssl_ca_certificates=ssl_ca_certificates,
+            ssl_mode=ssl_mode,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             anonymous_transactions_handlings: Sequence['outputs.GetChannelsChannelSourceAnonymousTransactionsHandlingResult'],
+             hostname: str,
+             password: str,
+             port: int,
+             source_type: str,
+             ssl_ca_certificates: Sequence['outputs.GetChannelsChannelSourceSslCaCertificateResult'],
+             ssl_mode: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("anonymous_transactions_handlings", anonymous_transactions_handlings)
+        _setter("hostname", hostname)
+        _setter("password", password)
+        _setter("port", port)
+        _setter("source_type", source_type)
+        _setter("ssl_ca_certificates", ssl_ca_certificates)
+        _setter("ssl_mode", ssl_mode)
+        _setter("username", username)
 
     @property
     @pulumi.getter(name="anonymousTransactionsHandlings")
@@ -4541,10 +5409,25 @@ class GetChannelsChannelSourceAnonymousTransactionsHandlingResult(dict):
         :param str policy: Specifies how the replication channel handles anonymous transactions.
         :param str uuid: The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
         """
-        pulumi.set(__self__, "last_configured_log_filename", last_configured_log_filename)
-        pulumi.set(__self__, "last_configured_log_offset", last_configured_log_offset)
-        pulumi.set(__self__, "policy", policy)
-        pulumi.set(__self__, "uuid", uuid)
+        GetChannelsChannelSourceAnonymousTransactionsHandlingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            last_configured_log_filename=last_configured_log_filename,
+            last_configured_log_offset=last_configured_log_offset,
+            policy=policy,
+            uuid=uuid,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             last_configured_log_filename: str,
+             last_configured_log_offset: str,
+             policy: str,
+             uuid: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("last_configured_log_filename", last_configured_log_filename)
+        _setter("last_configured_log_offset", last_configured_log_offset)
+        _setter("policy", policy)
+        _setter("uuid", uuid)
 
     @property
     @pulumi.getter(name="lastConfiguredLogFilename")
@@ -4588,8 +5471,19 @@ class GetChannelsChannelSourceSslCaCertificateResult(dict):
         :param str certificate_type: The type of CA certificate.
         :param str contents: The string containing the CA certificate in PEM format.
         """
-        pulumi.set(__self__, "certificate_type", certificate_type)
-        pulumi.set(__self__, "contents", contents)
+        GetChannelsChannelSourceSslCaCertificateResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_type=certificate_type,
+            contents=contents,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_type: str,
+             contents: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_type", certificate_type)
+        _setter("contents", contents)
 
     @property
     @pulumi.getter(name="certificateType")
@@ -4627,13 +5521,34 @@ class GetChannelsChannelTargetResult(dict):
         :param str tables_without_primary_key_handling: Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
         :param str target_type: The specific target identifier.
         """
-        pulumi.set(__self__, "applier_username", applier_username)
-        pulumi.set(__self__, "channel_name", channel_name)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "delay_in_seconds", delay_in_seconds)
-        pulumi.set(__self__, "filters", filters)
-        pulumi.set(__self__, "tables_without_primary_key_handling", tables_without_primary_key_handling)
-        pulumi.set(__self__, "target_type", target_type)
+        GetChannelsChannelTargetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            applier_username=applier_username,
+            channel_name=channel_name,
+            db_system_id=db_system_id,
+            delay_in_seconds=delay_in_seconds,
+            filters=filters,
+            tables_without_primary_key_handling=tables_without_primary_key_handling,
+            target_type=target_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             applier_username: str,
+             channel_name: str,
+             db_system_id: str,
+             delay_in_seconds: int,
+             filters: Sequence['outputs.GetChannelsChannelTargetFilterResult'],
+             tables_without_primary_key_handling: str,
+             target_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("applier_username", applier_username)
+        _setter("channel_name", channel_name)
+        _setter("db_system_id", db_system_id)
+        _setter("delay_in_seconds", delay_in_seconds)
+        _setter("filters", filters)
+        _setter("tables_without_primary_key_handling", tables_without_primary_key_handling)
+        _setter("target_type", target_type)
 
     @property
     @pulumi.getter(name="applierUsername")
@@ -4701,8 +5616,19 @@ class GetChannelsChannelTargetFilterResult(dict):
         :param str type: The type of the filter rule.
         :param str value: The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        GetChannelsChannelTargetFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -4727,10 +5653,23 @@ class GetChannelsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetChannelsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4761,10 +5700,25 @@ class GetHeatWaveClusterClusterNodeResult(dict):
         :param str time_created: The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_updated: The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
-        pulumi.set(__self__, "node_id", node_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetHeatWaveClusterClusterNodeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            node_id=node_id,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             node_id: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("node_id", node_id)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="nodeId")
@@ -4852,30 +5806,85 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         :param str shape_name: The shape of the DB System instance used for backup.
         :param str subnet_id: The OCID of the subnet the DB System is associated with.
         """
-        pulumi.set(__self__, "admin_username", admin_username)
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "backup_policies", backup_policies)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configuration_id", configuration_id)
-        pulumi.set(__self__, "crash_recovery", crash_recovery)
-        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deletion_policies", deletion_policies)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "endpoints", endpoints)
-        pulumi.set(__self__, "fault_domain", fault_domain)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "hostname_label", hostname_label)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "is_highly_available", is_highly_available)
-        pulumi.set(__self__, "maintenances", maintenances)
-        pulumi.set(__self__, "mysql_version", mysql_version)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "port_x", port_x)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetMysqlBackupDbSystemSnapshotResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_username=admin_username,
+            availability_domain=availability_domain,
+            backup_policies=backup_policies,
+            compartment_id=compartment_id,
+            configuration_id=configuration_id,
+            crash_recovery=crash_recovery,
+            data_storage_size_in_gb=data_storage_size_in_gb,
+            defined_tags=defined_tags,
+            deletion_policies=deletion_policies,
+            description=description,
+            display_name=display_name,
+            endpoints=endpoints,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            id=id,
+            ip_address=ip_address,
+            is_highly_available=is_highly_available,
+            maintenances=maintenances,
+            mysql_version=mysql_version,
+            port=port,
+            port_x=port_x,
+            shape_name=shape_name,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_username: str,
+             availability_domain: str,
+             backup_policies: Sequence['outputs.GetMysqlBackupDbSystemSnapshotBackupPolicyResult'],
+             compartment_id: str,
+             configuration_id: str,
+             crash_recovery: str,
+             data_storage_size_in_gb: int,
+             defined_tags: Mapping[str, Any],
+             deletion_policies: Sequence['outputs.GetMysqlBackupDbSystemSnapshotDeletionPolicyResult'],
+             description: str,
+             display_name: str,
+             endpoints: Sequence['outputs.GetMysqlBackupDbSystemSnapshotEndpointResult'],
+             fault_domain: str,
+             freeform_tags: Mapping[str, Any],
+             hostname_label: str,
+             id: str,
+             ip_address: str,
+             is_highly_available: bool,
+             maintenances: Sequence['outputs.GetMysqlBackupDbSystemSnapshotMaintenanceResult'],
+             mysql_version: str,
+             port: int,
+             port_x: int,
+             shape_name: str,
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("admin_username", admin_username)
+        _setter("availability_domain", availability_domain)
+        _setter("backup_policies", backup_policies)
+        _setter("compartment_id", compartment_id)
+        _setter("configuration_id", configuration_id)
+        _setter("crash_recovery", crash_recovery)
+        _setter("data_storage_size_in_gb", data_storage_size_in_gb)
+        _setter("defined_tags", defined_tags)
+        _setter("deletion_policies", deletion_policies)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("endpoints", endpoints)
+        _setter("fault_domain", fault_domain)
+        _setter("freeform_tags", freeform_tags)
+        _setter("hostname_label", hostname_label)
+        _setter("id", id)
+        _setter("ip_address", ip_address)
+        _setter("is_highly_available", is_highly_available)
+        _setter("maintenances", maintenances)
+        _setter("mysql_version", mysql_version)
+        _setter("port", port)
+        _setter("port_x", port_x)
+        _setter("shape_name", shape_name)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="adminUsername")
@@ -5087,12 +6096,31 @@ class GetMysqlBackupDbSystemSnapshotBackupPolicyResult(dict):
         :param int retention_in_days: Number of days to retain this backup.
         :param str window_start_time: The start time of the maintenance window.
         """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "pitr_policies", pitr_policies)
-        pulumi.set(__self__, "retention_in_days", retention_in_days)
-        pulumi.set(__self__, "window_start_time", window_start_time)
+        GetMysqlBackupDbSystemSnapshotBackupPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_enabled=is_enabled,
+            pitr_policies=pitr_policies,
+            retention_in_days=retention_in_days,
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             is_enabled: bool,
+             pitr_policies: Sequence['outputs.GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyResult'],
+             retention_in_days: int,
+             window_start_time: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("is_enabled", is_enabled)
+        _setter("pitr_policies", pitr_policies)
+        _setter("retention_in_days", retention_in_days)
+        _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -5150,7 +6178,16 @@ class GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyResult(dict):
         """
         :param bool is_enabled: Specifies if PITR is enabled or disabled.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -5172,9 +6209,22 @@ class GetMysqlBackupDbSystemSnapshotDeletionPolicyResult(dict):
         :param str final_backup: Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
         :param bool is_delete_protected: Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
         """
-        pulumi.set(__self__, "automatic_backup_retention", automatic_backup_retention)
-        pulumi.set(__self__, "final_backup", final_backup)
-        pulumi.set(__self__, "is_delete_protected", is_delete_protected)
+        GetMysqlBackupDbSystemSnapshotDeletionPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            automatic_backup_retention=automatic_backup_retention,
+            final_backup=final_backup,
+            is_delete_protected=is_delete_protected,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             automatic_backup_retention: str,
+             final_backup: str,
+             is_delete_protected: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("automatic_backup_retention", automatic_backup_retention)
+        _setter("final_backup", final_backup)
+        _setter("is_delete_protected", is_delete_protected)
 
     @property
     @pulumi.getter(name="automaticBackupRetention")
@@ -5224,15 +6274,40 @@ class GetMysqlBackupDbSystemSnapshotEndpointResult(dict):
         :param str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
         :param str status_details: Additional information about the current endpoint status.
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "modes", modes)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "port_x", port_x)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_details", status_details)
+        GetMysqlBackupDbSystemSnapshotEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            ip_address=ip_address,
+            modes=modes,
+            port=port,
+            port_x=port_x,
+            resource_id=resource_id,
+            resource_type=resource_type,
+            status=status,
+            status_details=status_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: str,
+             ip_address: str,
+             modes: Sequence[str],
+             port: int,
+             port_x: int,
+             resource_id: str,
+             resource_type: str,
+             status: str,
+             status_details: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hostname", hostname)
+        _setter("ip_address", ip_address)
+        _setter("modes", modes)
+        _setter("port", port)
+        _setter("port_x", port_x)
+        _setter("resource_id", resource_id)
+        _setter("resource_type", resource_type)
+        _setter("status", status)
+        _setter("status_details", status_details)
 
     @property
     @pulumi.getter
@@ -5314,7 +6389,16 @@ class GetMysqlBackupDbSystemSnapshotMaintenanceResult(dict):
         """
         :param str window_start_time: The start time of the maintenance window.
         """
-        pulumi.set(__self__, "window_start_time", window_start_time)
+        GetMysqlBackupDbSystemSnapshotMaintenanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             window_start_time: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="windowStartTime")
@@ -5368,25 +6452,70 @@ class GetMysqlBackupsBackupResult(dict):
         :param str time_created: The time the backup record was created.
         :param str time_updated: The time at which the backup was updated.
         """
-        pulumi.set(__self__, "backup_size_in_gbs", backup_size_in_gbs)
-        pulumi.set(__self__, "backup_type", backup_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "creation_type", creation_type)
-        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "db_system_snapshots", db_system_snapshots)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "mysql_version", mysql_version)
-        pulumi.set(__self__, "retention_in_days", retention_in_days)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetMysqlBackupsBackupResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup_size_in_gbs=backup_size_in_gbs,
+            backup_type=backup_type,
+            compartment_id=compartment_id,
+            creation_type=creation_type,
+            data_storage_size_in_gb=data_storage_size_in_gb,
+            db_system_id=db_system_id,
+            db_system_snapshots=db_system_snapshots,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            mysql_version=mysql_version,
+            retention_in_days=retention_in_days,
+            shape_name=shape_name,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup_size_in_gbs: int,
+             backup_type: str,
+             compartment_id: str,
+             creation_type: str,
+             data_storage_size_in_gb: int,
+             db_system_id: str,
+             db_system_snapshots: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotResult'],
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             mysql_version: str,
+             retention_in_days: int,
+             shape_name: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("backup_size_in_gbs", backup_size_in_gbs)
+        _setter("backup_type", backup_type)
+        _setter("compartment_id", compartment_id)
+        _setter("creation_type", creation_type)
+        _setter("data_storage_size_in_gb", data_storage_size_in_gb)
+        _setter("db_system_id", db_system_id)
+        _setter("db_system_snapshots", db_system_snapshots)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("mysql_version", mysql_version)
+        _setter("retention_in_days", retention_in_days)
+        _setter("shape_name", shape_name)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="backupSizeInGbs")
@@ -5594,30 +6723,85 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
         :param str shape_name: The shape of the DB System instance used for backup.
         :param str subnet_id: The OCID of the subnet the DB System is associated with.
         """
-        pulumi.set(__self__, "admin_username", admin_username)
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "backup_policies", backup_policies)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configuration_id", configuration_id)
-        pulumi.set(__self__, "crash_recovery", crash_recovery)
-        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deletion_policies", deletion_policies)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "endpoints", endpoints)
-        pulumi.set(__self__, "fault_domain", fault_domain)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "hostname_label", hostname_label)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "is_highly_available", is_highly_available)
-        pulumi.set(__self__, "maintenances", maintenances)
-        pulumi.set(__self__, "mysql_version", mysql_version)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "port_x", port_x)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetMysqlBackupsBackupDbSystemSnapshotResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_username=admin_username,
+            availability_domain=availability_domain,
+            backup_policies=backup_policies,
+            compartment_id=compartment_id,
+            configuration_id=configuration_id,
+            crash_recovery=crash_recovery,
+            data_storage_size_in_gb=data_storage_size_in_gb,
+            defined_tags=defined_tags,
+            deletion_policies=deletion_policies,
+            description=description,
+            display_name=display_name,
+            endpoints=endpoints,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            id=id,
+            ip_address=ip_address,
+            is_highly_available=is_highly_available,
+            maintenances=maintenances,
+            mysql_version=mysql_version,
+            port=port,
+            port_x=port_x,
+            shape_name=shape_name,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_username: str,
+             availability_domain: str,
+             backup_policies: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyResult'],
+             compartment_id: str,
+             configuration_id: str,
+             crash_recovery: str,
+             data_storage_size_in_gb: int,
+             defined_tags: Mapping[str, Any],
+             deletion_policies: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyResult'],
+             description: str,
+             display_name: str,
+             endpoints: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotEndpointResult'],
+             fault_domain: str,
+             freeform_tags: Mapping[str, Any],
+             hostname_label: str,
+             id: str,
+             ip_address: str,
+             is_highly_available: bool,
+             maintenances: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotMaintenanceResult'],
+             mysql_version: str,
+             port: int,
+             port_x: int,
+             shape_name: str,
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("admin_username", admin_username)
+        _setter("availability_domain", availability_domain)
+        _setter("backup_policies", backup_policies)
+        _setter("compartment_id", compartment_id)
+        _setter("configuration_id", configuration_id)
+        _setter("crash_recovery", crash_recovery)
+        _setter("data_storage_size_in_gb", data_storage_size_in_gb)
+        _setter("defined_tags", defined_tags)
+        _setter("deletion_policies", deletion_policies)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("endpoints", endpoints)
+        _setter("fault_domain", fault_domain)
+        _setter("freeform_tags", freeform_tags)
+        _setter("hostname_label", hostname_label)
+        _setter("id", id)
+        _setter("ip_address", ip_address)
+        _setter("is_highly_available", is_highly_available)
+        _setter("maintenances", maintenances)
+        _setter("mysql_version", mysql_version)
+        _setter("port", port)
+        _setter("port_x", port_x)
+        _setter("shape_name", shape_name)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="adminUsername")
@@ -5829,12 +7013,31 @@ class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyResult(dict):
         :param int retention_in_days: Number of days to retain this backup.
         :param str window_start_time: The start time of the maintenance window.
         """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "pitr_policies", pitr_policies)
-        pulumi.set(__self__, "retention_in_days", retention_in_days)
-        pulumi.set(__self__, "window_start_time", window_start_time)
+        GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_enabled=is_enabled,
+            pitr_policies=pitr_policies,
+            retention_in_days=retention_in_days,
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             is_enabled: bool,
+             pitr_policies: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyResult'],
+             retention_in_days: int,
+             window_start_time: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("is_enabled", is_enabled)
+        _setter("pitr_policies", pitr_policies)
+        _setter("retention_in_days", retention_in_days)
+        _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -5892,7 +7095,16 @@ class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyResult(dict):
         """
         :param bool is_enabled: Specifies if PITR is enabled or disabled.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -5914,9 +7126,22 @@ class GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyResult(dict):
         :param str final_backup: Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
         :param bool is_delete_protected: Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
         """
-        pulumi.set(__self__, "automatic_backup_retention", automatic_backup_retention)
-        pulumi.set(__self__, "final_backup", final_backup)
-        pulumi.set(__self__, "is_delete_protected", is_delete_protected)
+        GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            automatic_backup_retention=automatic_backup_retention,
+            final_backup=final_backup,
+            is_delete_protected=is_delete_protected,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             automatic_backup_retention: str,
+             final_backup: str,
+             is_delete_protected: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("automatic_backup_retention", automatic_backup_retention)
+        _setter("final_backup", final_backup)
+        _setter("is_delete_protected", is_delete_protected)
 
     @property
     @pulumi.getter(name="automaticBackupRetention")
@@ -5966,15 +7191,40 @@ class GetMysqlBackupsBackupDbSystemSnapshotEndpointResult(dict):
         :param str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
         :param str status_details: Additional information about the current endpoint status.
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "modes", modes)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "port_x", port_x)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_details", status_details)
+        GetMysqlBackupsBackupDbSystemSnapshotEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            ip_address=ip_address,
+            modes=modes,
+            port=port,
+            port_x=port_x,
+            resource_id=resource_id,
+            resource_type=resource_type,
+            status=status,
+            status_details=status_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: str,
+             ip_address: str,
+             modes: Sequence[str],
+             port: int,
+             port_x: int,
+             resource_id: str,
+             resource_type: str,
+             status: str,
+             status_details: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hostname", hostname)
+        _setter("ip_address", ip_address)
+        _setter("modes", modes)
+        _setter("port", port)
+        _setter("port_x", port_x)
+        _setter("resource_id", resource_id)
+        _setter("resource_type", resource_type)
+        _setter("status", status)
+        _setter("status_details", status_details)
 
     @property
     @pulumi.getter
@@ -6056,7 +7306,16 @@ class GetMysqlBackupsBackupDbSystemSnapshotMaintenanceResult(dict):
         """
         :param str window_start_time: The start time of the maintenance window.
         """
-        pulumi.set(__self__, "window_start_time", window_start_time)
+        GetMysqlBackupsBackupDbSystemSnapshotMaintenanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             window_start_time: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="windowStartTime")
@@ -6073,10 +7332,23 @@ class GetMysqlBackupsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMysqlBackupsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6101,7 +7373,16 @@ class GetMysqlConfigurationInitVariableResult(dict):
         """
         :param str lower_case_table_names: Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
         """
-        pulumi.set(__self__, "lower_case_table_names", lower_case_table_names)
+        GetMysqlConfigurationInitVariableResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            lower_case_table_names=lower_case_table_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             lower_case_table_names: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("lower_case_table_names", lower_case_table_names)
 
     @property
     @pulumi.getter(name="lowerCaseTableNames")
@@ -6279,85 +7560,250 @@ class GetMysqlConfigurationVariableResult(dict):
         :param str transaction_isolation: ("transaction_isolation")
         :param int wait_timeout: The number of seconds the server waits for activity on a noninteractive connection before closing it.
         """
-        pulumi.set(__self__, "autocommit", autocommit)
-        pulumi.set(__self__, "big_tables", big_tables)
-        pulumi.set(__self__, "binlog_expire_logs_seconds", binlog_expire_logs_seconds)
-        pulumi.set(__self__, "binlog_row_metadata", binlog_row_metadata)
-        pulumi.set(__self__, "binlog_row_value_options", binlog_row_value_options)
-        pulumi.set(__self__, "binlog_transaction_compression", binlog_transaction_compression)
-        pulumi.set(__self__, "completion_type", completion_type)
-        pulumi.set(__self__, "connect_timeout", connect_timeout)
-        pulumi.set(__self__, "connection_memory_chunk_size", connection_memory_chunk_size)
-        pulumi.set(__self__, "connection_memory_limit", connection_memory_limit)
-        pulumi.set(__self__, "cte_max_recursion_depth", cte_max_recursion_depth)
-        pulumi.set(__self__, "default_authentication_plugin", default_authentication_plugin)
-        pulumi.set(__self__, "foreign_key_checks", foreign_key_checks)
-        pulumi.set(__self__, "generated_random_password_length", generated_random_password_length)
-        pulumi.set(__self__, "global_connection_memory_limit", global_connection_memory_limit)
-        pulumi.set(__self__, "global_connection_memory_tracking", global_connection_memory_tracking)
-        pulumi.set(__self__, "group_replication_consistency", group_replication_consistency)
-        pulumi.set(__self__, "information_schema_stats_expiry", information_schema_stats_expiry)
-        pulumi.set(__self__, "innodb_buffer_pool_dump_pct", innodb_buffer_pool_dump_pct)
-        pulumi.set(__self__, "innodb_buffer_pool_instances", innodb_buffer_pool_instances)
-        pulumi.set(__self__, "innodb_buffer_pool_size", innodb_buffer_pool_size)
-        pulumi.set(__self__, "innodb_ddl_buffer_size", innodb_ddl_buffer_size)
-        pulumi.set(__self__, "innodb_ddl_threads", innodb_ddl_threads)
-        pulumi.set(__self__, "innodb_ft_enable_stopword", innodb_ft_enable_stopword)
-        pulumi.set(__self__, "innodb_ft_max_token_size", innodb_ft_max_token_size)
-        pulumi.set(__self__, "innodb_ft_min_token_size", innodb_ft_min_token_size)
-        pulumi.set(__self__, "innodb_ft_num_word_optimize", innodb_ft_num_word_optimize)
-        pulumi.set(__self__, "innodb_ft_result_cache_limit", innodb_ft_result_cache_limit)
-        pulumi.set(__self__, "innodb_ft_server_stopword_table", innodb_ft_server_stopword_table)
-        pulumi.set(__self__, "innodb_lock_wait_timeout", innodb_lock_wait_timeout)
-        pulumi.set(__self__, "innodb_log_writer_threads", innodb_log_writer_threads)
-        pulumi.set(__self__, "innodb_max_purge_lag", innodb_max_purge_lag)
-        pulumi.set(__self__, "innodb_max_purge_lag_delay", innodb_max_purge_lag_delay)
-        pulumi.set(__self__, "innodb_stats_persistent_sample_pages", innodb_stats_persistent_sample_pages)
-        pulumi.set(__self__, "innodb_stats_transient_sample_pages", innodb_stats_transient_sample_pages)
-        pulumi.set(__self__, "interactive_timeout", interactive_timeout)
-        pulumi.set(__self__, "local_infile", local_infile)
-        pulumi.set(__self__, "mandatory_roles", mandatory_roles)
-        pulumi.set(__self__, "max_allowed_packet", max_allowed_packet)
-        pulumi.set(__self__, "max_binlog_cache_size", max_binlog_cache_size)
-        pulumi.set(__self__, "max_connect_errors", max_connect_errors)
-        pulumi.set(__self__, "max_connections", max_connections)
-        pulumi.set(__self__, "max_execution_time", max_execution_time)
-        pulumi.set(__self__, "max_heap_table_size", max_heap_table_size)
-        pulumi.set(__self__, "max_prepared_stmt_count", max_prepared_stmt_count)
-        pulumi.set(__self__, "mysql_firewall_mode", mysql_firewall_mode)
-        pulumi.set(__self__, "mysql_zstd_default_compression_level", mysql_zstd_default_compression_level)
-        pulumi.set(__self__, "mysqlx_connect_timeout", mysqlx_connect_timeout)
-        pulumi.set(__self__, "mysqlx_deflate_default_compression_level", mysqlx_deflate_default_compression_level)
-        pulumi.set(__self__, "mysqlx_deflate_max_client_compression_level", mysqlx_deflate_max_client_compression_level)
-        pulumi.set(__self__, "mysqlx_document_id_unique_prefix", mysqlx_document_id_unique_prefix)
-        pulumi.set(__self__, "mysqlx_enable_hello_notice", mysqlx_enable_hello_notice)
-        pulumi.set(__self__, "mysqlx_idle_worker_thread_timeout", mysqlx_idle_worker_thread_timeout)
-        pulumi.set(__self__, "mysqlx_interactive_timeout", mysqlx_interactive_timeout)
-        pulumi.set(__self__, "mysqlx_lz4default_compression_level", mysqlx_lz4default_compression_level)
-        pulumi.set(__self__, "mysqlx_lz4max_client_compression_level", mysqlx_lz4max_client_compression_level)
-        pulumi.set(__self__, "mysqlx_max_allowed_packet", mysqlx_max_allowed_packet)
-        pulumi.set(__self__, "mysqlx_min_worker_threads", mysqlx_min_worker_threads)
-        pulumi.set(__self__, "mysqlx_read_timeout", mysqlx_read_timeout)
-        pulumi.set(__self__, "mysqlx_wait_timeout", mysqlx_wait_timeout)
-        pulumi.set(__self__, "mysqlx_write_timeout", mysqlx_write_timeout)
-        pulumi.set(__self__, "mysqlx_zstd_default_compression_level", mysqlx_zstd_default_compression_level)
-        pulumi.set(__self__, "mysqlx_zstd_max_client_compression_level", mysqlx_zstd_max_client_compression_level)
-        pulumi.set(__self__, "net_read_timeout", net_read_timeout)
-        pulumi.set(__self__, "net_write_timeout", net_write_timeout)
-        pulumi.set(__self__, "parser_max_mem_size", parser_max_mem_size)
-        pulumi.set(__self__, "query_alloc_block_size", query_alloc_block_size)
-        pulumi.set(__self__, "query_prealloc_size", query_prealloc_size)
-        pulumi.set(__self__, "regexp_time_limit", regexp_time_limit)
-        pulumi.set(__self__, "sort_buffer_size", sort_buffer_size)
-        pulumi.set(__self__, "sql_mode", sql_mode)
-        pulumi.set(__self__, "sql_require_primary_key", sql_require_primary_key)
-        pulumi.set(__self__, "sql_warnings", sql_warnings)
-        pulumi.set(__self__, "thread_pool_dedicated_listeners", thread_pool_dedicated_listeners)
-        pulumi.set(__self__, "thread_pool_max_transactions_limit", thread_pool_max_transactions_limit)
-        pulumi.set(__self__, "time_zone", time_zone)
-        pulumi.set(__self__, "tmp_table_size", tmp_table_size)
-        pulumi.set(__self__, "transaction_isolation", transaction_isolation)
-        pulumi.set(__self__, "wait_timeout", wait_timeout)
+        GetMysqlConfigurationVariableResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            autocommit=autocommit,
+            big_tables=big_tables,
+            binlog_expire_logs_seconds=binlog_expire_logs_seconds,
+            binlog_row_metadata=binlog_row_metadata,
+            binlog_row_value_options=binlog_row_value_options,
+            binlog_transaction_compression=binlog_transaction_compression,
+            completion_type=completion_type,
+            connect_timeout=connect_timeout,
+            connection_memory_chunk_size=connection_memory_chunk_size,
+            connection_memory_limit=connection_memory_limit,
+            cte_max_recursion_depth=cte_max_recursion_depth,
+            default_authentication_plugin=default_authentication_plugin,
+            foreign_key_checks=foreign_key_checks,
+            generated_random_password_length=generated_random_password_length,
+            global_connection_memory_limit=global_connection_memory_limit,
+            global_connection_memory_tracking=global_connection_memory_tracking,
+            group_replication_consistency=group_replication_consistency,
+            information_schema_stats_expiry=information_schema_stats_expiry,
+            innodb_buffer_pool_dump_pct=innodb_buffer_pool_dump_pct,
+            innodb_buffer_pool_instances=innodb_buffer_pool_instances,
+            innodb_buffer_pool_size=innodb_buffer_pool_size,
+            innodb_ddl_buffer_size=innodb_ddl_buffer_size,
+            innodb_ddl_threads=innodb_ddl_threads,
+            innodb_ft_enable_stopword=innodb_ft_enable_stopword,
+            innodb_ft_max_token_size=innodb_ft_max_token_size,
+            innodb_ft_min_token_size=innodb_ft_min_token_size,
+            innodb_ft_num_word_optimize=innodb_ft_num_word_optimize,
+            innodb_ft_result_cache_limit=innodb_ft_result_cache_limit,
+            innodb_ft_server_stopword_table=innodb_ft_server_stopword_table,
+            innodb_lock_wait_timeout=innodb_lock_wait_timeout,
+            innodb_log_writer_threads=innodb_log_writer_threads,
+            innodb_max_purge_lag=innodb_max_purge_lag,
+            innodb_max_purge_lag_delay=innodb_max_purge_lag_delay,
+            innodb_stats_persistent_sample_pages=innodb_stats_persistent_sample_pages,
+            innodb_stats_transient_sample_pages=innodb_stats_transient_sample_pages,
+            interactive_timeout=interactive_timeout,
+            local_infile=local_infile,
+            mandatory_roles=mandatory_roles,
+            max_allowed_packet=max_allowed_packet,
+            max_binlog_cache_size=max_binlog_cache_size,
+            max_connect_errors=max_connect_errors,
+            max_connections=max_connections,
+            max_execution_time=max_execution_time,
+            max_heap_table_size=max_heap_table_size,
+            max_prepared_stmt_count=max_prepared_stmt_count,
+            mysql_firewall_mode=mysql_firewall_mode,
+            mysql_zstd_default_compression_level=mysql_zstd_default_compression_level,
+            mysqlx_connect_timeout=mysqlx_connect_timeout,
+            mysqlx_deflate_default_compression_level=mysqlx_deflate_default_compression_level,
+            mysqlx_deflate_max_client_compression_level=mysqlx_deflate_max_client_compression_level,
+            mysqlx_document_id_unique_prefix=mysqlx_document_id_unique_prefix,
+            mysqlx_enable_hello_notice=mysqlx_enable_hello_notice,
+            mysqlx_idle_worker_thread_timeout=mysqlx_idle_worker_thread_timeout,
+            mysqlx_interactive_timeout=mysqlx_interactive_timeout,
+            mysqlx_lz4default_compression_level=mysqlx_lz4default_compression_level,
+            mysqlx_lz4max_client_compression_level=mysqlx_lz4max_client_compression_level,
+            mysqlx_max_allowed_packet=mysqlx_max_allowed_packet,
+            mysqlx_min_worker_threads=mysqlx_min_worker_threads,
+            mysqlx_read_timeout=mysqlx_read_timeout,
+            mysqlx_wait_timeout=mysqlx_wait_timeout,
+            mysqlx_write_timeout=mysqlx_write_timeout,
+            mysqlx_zstd_default_compression_level=mysqlx_zstd_default_compression_level,
+            mysqlx_zstd_max_client_compression_level=mysqlx_zstd_max_client_compression_level,
+            net_read_timeout=net_read_timeout,
+            net_write_timeout=net_write_timeout,
+            parser_max_mem_size=parser_max_mem_size,
+            query_alloc_block_size=query_alloc_block_size,
+            query_prealloc_size=query_prealloc_size,
+            regexp_time_limit=regexp_time_limit,
+            sort_buffer_size=sort_buffer_size,
+            sql_mode=sql_mode,
+            sql_require_primary_key=sql_require_primary_key,
+            sql_warnings=sql_warnings,
+            thread_pool_dedicated_listeners=thread_pool_dedicated_listeners,
+            thread_pool_max_transactions_limit=thread_pool_max_transactions_limit,
+            time_zone=time_zone,
+            tmp_table_size=tmp_table_size,
+            transaction_isolation=transaction_isolation,
+            wait_timeout=wait_timeout,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             autocommit: bool,
+             big_tables: bool,
+             binlog_expire_logs_seconds: int,
+             binlog_row_metadata: str,
+             binlog_row_value_options: str,
+             binlog_transaction_compression: bool,
+             completion_type: str,
+             connect_timeout: int,
+             connection_memory_chunk_size: int,
+             connection_memory_limit: str,
+             cte_max_recursion_depth: str,
+             default_authentication_plugin: str,
+             foreign_key_checks: bool,
+             generated_random_password_length: int,
+             global_connection_memory_limit: str,
+             global_connection_memory_tracking: bool,
+             group_replication_consistency: str,
+             information_schema_stats_expiry: int,
+             innodb_buffer_pool_dump_pct: int,
+             innodb_buffer_pool_instances: int,
+             innodb_buffer_pool_size: str,
+             innodb_ddl_buffer_size: str,
+             innodb_ddl_threads: int,
+             innodb_ft_enable_stopword: bool,
+             innodb_ft_max_token_size: int,
+             innodb_ft_min_token_size: int,
+             innodb_ft_num_word_optimize: int,
+             innodb_ft_result_cache_limit: str,
+             innodb_ft_server_stopword_table: str,
+             innodb_lock_wait_timeout: int,
+             innodb_log_writer_threads: bool,
+             innodb_max_purge_lag: str,
+             innodb_max_purge_lag_delay: int,
+             innodb_stats_persistent_sample_pages: str,
+             innodb_stats_transient_sample_pages: str,
+             interactive_timeout: int,
+             local_infile: bool,
+             mandatory_roles: str,
+             max_allowed_packet: int,
+             max_binlog_cache_size: str,
+             max_connect_errors: str,
+             max_connections: int,
+             max_execution_time: str,
+             max_heap_table_size: str,
+             max_prepared_stmt_count: int,
+             mysql_firewall_mode: bool,
+             mysql_zstd_default_compression_level: int,
+             mysqlx_connect_timeout: int,
+             mysqlx_deflate_default_compression_level: int,
+             mysqlx_deflate_max_client_compression_level: int,
+             mysqlx_document_id_unique_prefix: int,
+             mysqlx_enable_hello_notice: bool,
+             mysqlx_idle_worker_thread_timeout: int,
+             mysqlx_interactive_timeout: int,
+             mysqlx_lz4default_compression_level: int,
+             mysqlx_lz4max_client_compression_level: int,
+             mysqlx_max_allowed_packet: int,
+             mysqlx_min_worker_threads: int,
+             mysqlx_read_timeout: int,
+             mysqlx_wait_timeout: int,
+             mysqlx_write_timeout: int,
+             mysqlx_zstd_default_compression_level: int,
+             mysqlx_zstd_max_client_compression_level: int,
+             net_read_timeout: int,
+             net_write_timeout: int,
+             parser_max_mem_size: str,
+             query_alloc_block_size: str,
+             query_prealloc_size: str,
+             regexp_time_limit: int,
+             sort_buffer_size: str,
+             sql_mode: str,
+             sql_require_primary_key: bool,
+             sql_warnings: bool,
+             thread_pool_dedicated_listeners: bool,
+             thread_pool_max_transactions_limit: int,
+             time_zone: str,
+             tmp_table_size: str,
+             transaction_isolation: str,
+             wait_timeout: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("autocommit", autocommit)
+        _setter("big_tables", big_tables)
+        _setter("binlog_expire_logs_seconds", binlog_expire_logs_seconds)
+        _setter("binlog_row_metadata", binlog_row_metadata)
+        _setter("binlog_row_value_options", binlog_row_value_options)
+        _setter("binlog_transaction_compression", binlog_transaction_compression)
+        _setter("completion_type", completion_type)
+        _setter("connect_timeout", connect_timeout)
+        _setter("connection_memory_chunk_size", connection_memory_chunk_size)
+        _setter("connection_memory_limit", connection_memory_limit)
+        _setter("cte_max_recursion_depth", cte_max_recursion_depth)
+        _setter("default_authentication_plugin", default_authentication_plugin)
+        _setter("foreign_key_checks", foreign_key_checks)
+        _setter("generated_random_password_length", generated_random_password_length)
+        _setter("global_connection_memory_limit", global_connection_memory_limit)
+        _setter("global_connection_memory_tracking", global_connection_memory_tracking)
+        _setter("group_replication_consistency", group_replication_consistency)
+        _setter("information_schema_stats_expiry", information_schema_stats_expiry)
+        _setter("innodb_buffer_pool_dump_pct", innodb_buffer_pool_dump_pct)
+        _setter("innodb_buffer_pool_instances", innodb_buffer_pool_instances)
+        _setter("innodb_buffer_pool_size", innodb_buffer_pool_size)
+        _setter("innodb_ddl_buffer_size", innodb_ddl_buffer_size)
+        _setter("innodb_ddl_threads", innodb_ddl_threads)
+        _setter("innodb_ft_enable_stopword", innodb_ft_enable_stopword)
+        _setter("innodb_ft_max_token_size", innodb_ft_max_token_size)
+        _setter("innodb_ft_min_token_size", innodb_ft_min_token_size)
+        _setter("innodb_ft_num_word_optimize", innodb_ft_num_word_optimize)
+        _setter("innodb_ft_result_cache_limit", innodb_ft_result_cache_limit)
+        _setter("innodb_ft_server_stopword_table", innodb_ft_server_stopword_table)
+        _setter("innodb_lock_wait_timeout", innodb_lock_wait_timeout)
+        _setter("innodb_log_writer_threads", innodb_log_writer_threads)
+        _setter("innodb_max_purge_lag", innodb_max_purge_lag)
+        _setter("innodb_max_purge_lag_delay", innodb_max_purge_lag_delay)
+        _setter("innodb_stats_persistent_sample_pages", innodb_stats_persistent_sample_pages)
+        _setter("innodb_stats_transient_sample_pages", innodb_stats_transient_sample_pages)
+        _setter("interactive_timeout", interactive_timeout)
+        _setter("local_infile", local_infile)
+        _setter("mandatory_roles", mandatory_roles)
+        _setter("max_allowed_packet", max_allowed_packet)
+        _setter("max_binlog_cache_size", max_binlog_cache_size)
+        _setter("max_connect_errors", max_connect_errors)
+        _setter("max_connections", max_connections)
+        _setter("max_execution_time", max_execution_time)
+        _setter("max_heap_table_size", max_heap_table_size)
+        _setter("max_prepared_stmt_count", max_prepared_stmt_count)
+        _setter("mysql_firewall_mode", mysql_firewall_mode)
+        _setter("mysql_zstd_default_compression_level", mysql_zstd_default_compression_level)
+        _setter("mysqlx_connect_timeout", mysqlx_connect_timeout)
+        _setter("mysqlx_deflate_default_compression_level", mysqlx_deflate_default_compression_level)
+        _setter("mysqlx_deflate_max_client_compression_level", mysqlx_deflate_max_client_compression_level)
+        _setter("mysqlx_document_id_unique_prefix", mysqlx_document_id_unique_prefix)
+        _setter("mysqlx_enable_hello_notice", mysqlx_enable_hello_notice)
+        _setter("mysqlx_idle_worker_thread_timeout", mysqlx_idle_worker_thread_timeout)
+        _setter("mysqlx_interactive_timeout", mysqlx_interactive_timeout)
+        _setter("mysqlx_lz4default_compression_level", mysqlx_lz4default_compression_level)
+        _setter("mysqlx_lz4max_client_compression_level", mysqlx_lz4max_client_compression_level)
+        _setter("mysqlx_max_allowed_packet", mysqlx_max_allowed_packet)
+        _setter("mysqlx_min_worker_threads", mysqlx_min_worker_threads)
+        _setter("mysqlx_read_timeout", mysqlx_read_timeout)
+        _setter("mysqlx_wait_timeout", mysqlx_wait_timeout)
+        _setter("mysqlx_write_timeout", mysqlx_write_timeout)
+        _setter("mysqlx_zstd_default_compression_level", mysqlx_zstd_default_compression_level)
+        _setter("mysqlx_zstd_max_client_compression_level", mysqlx_zstd_max_client_compression_level)
+        _setter("net_read_timeout", net_read_timeout)
+        _setter("net_write_timeout", net_write_timeout)
+        _setter("parser_max_mem_size", parser_max_mem_size)
+        _setter("query_alloc_block_size", query_alloc_block_size)
+        _setter("query_prealloc_size", query_prealloc_size)
+        _setter("regexp_time_limit", regexp_time_limit)
+        _setter("sort_buffer_size", sort_buffer_size)
+        _setter("sql_mode", sql_mode)
+        _setter("sql_require_primary_key", sql_require_primary_key)
+        _setter("sql_warnings", sql_warnings)
+        _setter("thread_pool_dedicated_listeners", thread_pool_dedicated_listeners)
+        _setter("thread_pool_max_transactions_limit", thread_pool_max_transactions_limit)
+        _setter("time_zone", time_zone)
+        _setter("tmp_table_size", tmp_table_size)
+        _setter("transaction_isolation", transaction_isolation)
+        _setter("wait_timeout", wait_timeout)
 
     @property
     @pulumi.getter
@@ -7050,20 +8496,55 @@ class GetMysqlConfigurationsConfigurationResult(dict):
         :param str type: The requested Configuration types.
         :param Sequence['GetMysqlConfigurationsConfigurationVariableArgs'] variables: User-defined service variables.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "init_variables", init_variables)
-        pulumi.set(__self__, "parent_configuration_id", parent_configuration_id)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "variables", variables)
+        GetMysqlConfigurationsConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            init_variables=init_variables,
+            parent_configuration_id=parent_configuration_id,
+            shape_name=shape_name,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+            variables=variables,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             init_variables: Sequence['outputs.GetMysqlConfigurationsConfigurationInitVariableResult'],
+             parent_configuration_id: str,
+             shape_name: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             type: str,
+             variables: Sequence['outputs.GetMysqlConfigurationsConfigurationVariableResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("init_variables", init_variables)
+        _setter("parent_configuration_id", parent_configuration_id)
+        _setter("shape_name", shape_name)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("type", type)
+        _setter("variables", variables)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -7185,7 +8666,16 @@ class GetMysqlConfigurationsConfigurationInitVariableResult(dict):
         """
         :param str lower_case_table_names: Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
         """
-        pulumi.set(__self__, "lower_case_table_names", lower_case_table_names)
+        GetMysqlConfigurationsConfigurationInitVariableResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            lower_case_table_names=lower_case_table_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             lower_case_table_names: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("lower_case_table_names", lower_case_table_names)
 
     @property
     @pulumi.getter(name="lowerCaseTableNames")
@@ -7363,85 +8853,250 @@ class GetMysqlConfigurationsConfigurationVariableResult(dict):
         :param str transaction_isolation: ("transaction_isolation")
         :param int wait_timeout: The number of seconds the server waits for activity on a noninteractive connection before closing it.
         """
-        pulumi.set(__self__, "autocommit", autocommit)
-        pulumi.set(__self__, "big_tables", big_tables)
-        pulumi.set(__self__, "binlog_expire_logs_seconds", binlog_expire_logs_seconds)
-        pulumi.set(__self__, "binlog_row_metadata", binlog_row_metadata)
-        pulumi.set(__self__, "binlog_row_value_options", binlog_row_value_options)
-        pulumi.set(__self__, "binlog_transaction_compression", binlog_transaction_compression)
-        pulumi.set(__self__, "completion_type", completion_type)
-        pulumi.set(__self__, "connect_timeout", connect_timeout)
-        pulumi.set(__self__, "connection_memory_chunk_size", connection_memory_chunk_size)
-        pulumi.set(__self__, "connection_memory_limit", connection_memory_limit)
-        pulumi.set(__self__, "cte_max_recursion_depth", cte_max_recursion_depth)
-        pulumi.set(__self__, "default_authentication_plugin", default_authentication_plugin)
-        pulumi.set(__self__, "foreign_key_checks", foreign_key_checks)
-        pulumi.set(__self__, "generated_random_password_length", generated_random_password_length)
-        pulumi.set(__self__, "global_connection_memory_limit", global_connection_memory_limit)
-        pulumi.set(__self__, "global_connection_memory_tracking", global_connection_memory_tracking)
-        pulumi.set(__self__, "group_replication_consistency", group_replication_consistency)
-        pulumi.set(__self__, "information_schema_stats_expiry", information_schema_stats_expiry)
-        pulumi.set(__self__, "innodb_buffer_pool_dump_pct", innodb_buffer_pool_dump_pct)
-        pulumi.set(__self__, "innodb_buffer_pool_instances", innodb_buffer_pool_instances)
-        pulumi.set(__self__, "innodb_buffer_pool_size", innodb_buffer_pool_size)
-        pulumi.set(__self__, "innodb_ddl_buffer_size", innodb_ddl_buffer_size)
-        pulumi.set(__self__, "innodb_ddl_threads", innodb_ddl_threads)
-        pulumi.set(__self__, "innodb_ft_enable_stopword", innodb_ft_enable_stopword)
-        pulumi.set(__self__, "innodb_ft_max_token_size", innodb_ft_max_token_size)
-        pulumi.set(__self__, "innodb_ft_min_token_size", innodb_ft_min_token_size)
-        pulumi.set(__self__, "innodb_ft_num_word_optimize", innodb_ft_num_word_optimize)
-        pulumi.set(__self__, "innodb_ft_result_cache_limit", innodb_ft_result_cache_limit)
-        pulumi.set(__self__, "innodb_ft_server_stopword_table", innodb_ft_server_stopword_table)
-        pulumi.set(__self__, "innodb_lock_wait_timeout", innodb_lock_wait_timeout)
-        pulumi.set(__self__, "innodb_log_writer_threads", innodb_log_writer_threads)
-        pulumi.set(__self__, "innodb_max_purge_lag", innodb_max_purge_lag)
-        pulumi.set(__self__, "innodb_max_purge_lag_delay", innodb_max_purge_lag_delay)
-        pulumi.set(__self__, "innodb_stats_persistent_sample_pages", innodb_stats_persistent_sample_pages)
-        pulumi.set(__self__, "innodb_stats_transient_sample_pages", innodb_stats_transient_sample_pages)
-        pulumi.set(__self__, "interactive_timeout", interactive_timeout)
-        pulumi.set(__self__, "local_infile", local_infile)
-        pulumi.set(__self__, "mandatory_roles", mandatory_roles)
-        pulumi.set(__self__, "max_allowed_packet", max_allowed_packet)
-        pulumi.set(__self__, "max_binlog_cache_size", max_binlog_cache_size)
-        pulumi.set(__self__, "max_connect_errors", max_connect_errors)
-        pulumi.set(__self__, "max_connections", max_connections)
-        pulumi.set(__self__, "max_execution_time", max_execution_time)
-        pulumi.set(__self__, "max_heap_table_size", max_heap_table_size)
-        pulumi.set(__self__, "max_prepared_stmt_count", max_prepared_stmt_count)
-        pulumi.set(__self__, "mysql_firewall_mode", mysql_firewall_mode)
-        pulumi.set(__self__, "mysql_zstd_default_compression_level", mysql_zstd_default_compression_level)
-        pulumi.set(__self__, "mysqlx_connect_timeout", mysqlx_connect_timeout)
-        pulumi.set(__self__, "mysqlx_deflate_default_compression_level", mysqlx_deflate_default_compression_level)
-        pulumi.set(__self__, "mysqlx_deflate_max_client_compression_level", mysqlx_deflate_max_client_compression_level)
-        pulumi.set(__self__, "mysqlx_document_id_unique_prefix", mysqlx_document_id_unique_prefix)
-        pulumi.set(__self__, "mysqlx_enable_hello_notice", mysqlx_enable_hello_notice)
-        pulumi.set(__self__, "mysqlx_idle_worker_thread_timeout", mysqlx_idle_worker_thread_timeout)
-        pulumi.set(__self__, "mysqlx_interactive_timeout", mysqlx_interactive_timeout)
-        pulumi.set(__self__, "mysqlx_lz4default_compression_level", mysqlx_lz4default_compression_level)
-        pulumi.set(__self__, "mysqlx_lz4max_client_compression_level", mysqlx_lz4max_client_compression_level)
-        pulumi.set(__self__, "mysqlx_max_allowed_packet", mysqlx_max_allowed_packet)
-        pulumi.set(__self__, "mysqlx_min_worker_threads", mysqlx_min_worker_threads)
-        pulumi.set(__self__, "mysqlx_read_timeout", mysqlx_read_timeout)
-        pulumi.set(__self__, "mysqlx_wait_timeout", mysqlx_wait_timeout)
-        pulumi.set(__self__, "mysqlx_write_timeout", mysqlx_write_timeout)
-        pulumi.set(__self__, "mysqlx_zstd_default_compression_level", mysqlx_zstd_default_compression_level)
-        pulumi.set(__self__, "mysqlx_zstd_max_client_compression_level", mysqlx_zstd_max_client_compression_level)
-        pulumi.set(__self__, "net_read_timeout", net_read_timeout)
-        pulumi.set(__self__, "net_write_timeout", net_write_timeout)
-        pulumi.set(__self__, "parser_max_mem_size", parser_max_mem_size)
-        pulumi.set(__self__, "query_alloc_block_size", query_alloc_block_size)
-        pulumi.set(__self__, "query_prealloc_size", query_prealloc_size)
-        pulumi.set(__self__, "regexp_time_limit", regexp_time_limit)
-        pulumi.set(__self__, "sort_buffer_size", sort_buffer_size)
-        pulumi.set(__self__, "sql_mode", sql_mode)
-        pulumi.set(__self__, "sql_require_primary_key", sql_require_primary_key)
-        pulumi.set(__self__, "sql_warnings", sql_warnings)
-        pulumi.set(__self__, "thread_pool_dedicated_listeners", thread_pool_dedicated_listeners)
-        pulumi.set(__self__, "thread_pool_max_transactions_limit", thread_pool_max_transactions_limit)
-        pulumi.set(__self__, "time_zone", time_zone)
-        pulumi.set(__self__, "tmp_table_size", tmp_table_size)
-        pulumi.set(__self__, "transaction_isolation", transaction_isolation)
-        pulumi.set(__self__, "wait_timeout", wait_timeout)
+        GetMysqlConfigurationsConfigurationVariableResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            autocommit=autocommit,
+            big_tables=big_tables,
+            binlog_expire_logs_seconds=binlog_expire_logs_seconds,
+            binlog_row_metadata=binlog_row_metadata,
+            binlog_row_value_options=binlog_row_value_options,
+            binlog_transaction_compression=binlog_transaction_compression,
+            completion_type=completion_type,
+            connect_timeout=connect_timeout,
+            connection_memory_chunk_size=connection_memory_chunk_size,
+            connection_memory_limit=connection_memory_limit,
+            cte_max_recursion_depth=cte_max_recursion_depth,
+            default_authentication_plugin=default_authentication_plugin,
+            foreign_key_checks=foreign_key_checks,
+            generated_random_password_length=generated_random_password_length,
+            global_connection_memory_limit=global_connection_memory_limit,
+            global_connection_memory_tracking=global_connection_memory_tracking,
+            group_replication_consistency=group_replication_consistency,
+            information_schema_stats_expiry=information_schema_stats_expiry,
+            innodb_buffer_pool_dump_pct=innodb_buffer_pool_dump_pct,
+            innodb_buffer_pool_instances=innodb_buffer_pool_instances,
+            innodb_buffer_pool_size=innodb_buffer_pool_size,
+            innodb_ddl_buffer_size=innodb_ddl_buffer_size,
+            innodb_ddl_threads=innodb_ddl_threads,
+            innodb_ft_enable_stopword=innodb_ft_enable_stopword,
+            innodb_ft_max_token_size=innodb_ft_max_token_size,
+            innodb_ft_min_token_size=innodb_ft_min_token_size,
+            innodb_ft_num_word_optimize=innodb_ft_num_word_optimize,
+            innodb_ft_result_cache_limit=innodb_ft_result_cache_limit,
+            innodb_ft_server_stopword_table=innodb_ft_server_stopword_table,
+            innodb_lock_wait_timeout=innodb_lock_wait_timeout,
+            innodb_log_writer_threads=innodb_log_writer_threads,
+            innodb_max_purge_lag=innodb_max_purge_lag,
+            innodb_max_purge_lag_delay=innodb_max_purge_lag_delay,
+            innodb_stats_persistent_sample_pages=innodb_stats_persistent_sample_pages,
+            innodb_stats_transient_sample_pages=innodb_stats_transient_sample_pages,
+            interactive_timeout=interactive_timeout,
+            local_infile=local_infile,
+            mandatory_roles=mandatory_roles,
+            max_allowed_packet=max_allowed_packet,
+            max_binlog_cache_size=max_binlog_cache_size,
+            max_connect_errors=max_connect_errors,
+            max_connections=max_connections,
+            max_execution_time=max_execution_time,
+            max_heap_table_size=max_heap_table_size,
+            max_prepared_stmt_count=max_prepared_stmt_count,
+            mysql_firewall_mode=mysql_firewall_mode,
+            mysql_zstd_default_compression_level=mysql_zstd_default_compression_level,
+            mysqlx_connect_timeout=mysqlx_connect_timeout,
+            mysqlx_deflate_default_compression_level=mysqlx_deflate_default_compression_level,
+            mysqlx_deflate_max_client_compression_level=mysqlx_deflate_max_client_compression_level,
+            mysqlx_document_id_unique_prefix=mysqlx_document_id_unique_prefix,
+            mysqlx_enable_hello_notice=mysqlx_enable_hello_notice,
+            mysqlx_idle_worker_thread_timeout=mysqlx_idle_worker_thread_timeout,
+            mysqlx_interactive_timeout=mysqlx_interactive_timeout,
+            mysqlx_lz4default_compression_level=mysqlx_lz4default_compression_level,
+            mysqlx_lz4max_client_compression_level=mysqlx_lz4max_client_compression_level,
+            mysqlx_max_allowed_packet=mysqlx_max_allowed_packet,
+            mysqlx_min_worker_threads=mysqlx_min_worker_threads,
+            mysqlx_read_timeout=mysqlx_read_timeout,
+            mysqlx_wait_timeout=mysqlx_wait_timeout,
+            mysqlx_write_timeout=mysqlx_write_timeout,
+            mysqlx_zstd_default_compression_level=mysqlx_zstd_default_compression_level,
+            mysqlx_zstd_max_client_compression_level=mysqlx_zstd_max_client_compression_level,
+            net_read_timeout=net_read_timeout,
+            net_write_timeout=net_write_timeout,
+            parser_max_mem_size=parser_max_mem_size,
+            query_alloc_block_size=query_alloc_block_size,
+            query_prealloc_size=query_prealloc_size,
+            regexp_time_limit=regexp_time_limit,
+            sort_buffer_size=sort_buffer_size,
+            sql_mode=sql_mode,
+            sql_require_primary_key=sql_require_primary_key,
+            sql_warnings=sql_warnings,
+            thread_pool_dedicated_listeners=thread_pool_dedicated_listeners,
+            thread_pool_max_transactions_limit=thread_pool_max_transactions_limit,
+            time_zone=time_zone,
+            tmp_table_size=tmp_table_size,
+            transaction_isolation=transaction_isolation,
+            wait_timeout=wait_timeout,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             autocommit: bool,
+             big_tables: bool,
+             binlog_expire_logs_seconds: int,
+             binlog_row_metadata: str,
+             binlog_row_value_options: str,
+             binlog_transaction_compression: bool,
+             completion_type: str,
+             connect_timeout: int,
+             connection_memory_chunk_size: int,
+             connection_memory_limit: str,
+             cte_max_recursion_depth: str,
+             default_authentication_plugin: str,
+             foreign_key_checks: bool,
+             generated_random_password_length: int,
+             global_connection_memory_limit: str,
+             global_connection_memory_tracking: bool,
+             group_replication_consistency: str,
+             information_schema_stats_expiry: int,
+             innodb_buffer_pool_dump_pct: int,
+             innodb_buffer_pool_instances: int,
+             innodb_buffer_pool_size: str,
+             innodb_ddl_buffer_size: str,
+             innodb_ddl_threads: int,
+             innodb_ft_enable_stopword: bool,
+             innodb_ft_max_token_size: int,
+             innodb_ft_min_token_size: int,
+             innodb_ft_num_word_optimize: int,
+             innodb_ft_result_cache_limit: str,
+             innodb_ft_server_stopword_table: str,
+             innodb_lock_wait_timeout: int,
+             innodb_log_writer_threads: bool,
+             innodb_max_purge_lag: str,
+             innodb_max_purge_lag_delay: int,
+             innodb_stats_persistent_sample_pages: str,
+             innodb_stats_transient_sample_pages: str,
+             interactive_timeout: int,
+             local_infile: bool,
+             mandatory_roles: str,
+             max_allowed_packet: int,
+             max_binlog_cache_size: str,
+             max_connect_errors: str,
+             max_connections: int,
+             max_execution_time: str,
+             max_heap_table_size: str,
+             max_prepared_stmt_count: int,
+             mysql_firewall_mode: bool,
+             mysql_zstd_default_compression_level: int,
+             mysqlx_connect_timeout: int,
+             mysqlx_deflate_default_compression_level: int,
+             mysqlx_deflate_max_client_compression_level: int,
+             mysqlx_document_id_unique_prefix: int,
+             mysqlx_enable_hello_notice: bool,
+             mysqlx_idle_worker_thread_timeout: int,
+             mysqlx_interactive_timeout: int,
+             mysqlx_lz4default_compression_level: int,
+             mysqlx_lz4max_client_compression_level: int,
+             mysqlx_max_allowed_packet: int,
+             mysqlx_min_worker_threads: int,
+             mysqlx_read_timeout: int,
+             mysqlx_wait_timeout: int,
+             mysqlx_write_timeout: int,
+             mysqlx_zstd_default_compression_level: int,
+             mysqlx_zstd_max_client_compression_level: int,
+             net_read_timeout: int,
+             net_write_timeout: int,
+             parser_max_mem_size: str,
+             query_alloc_block_size: str,
+             query_prealloc_size: str,
+             regexp_time_limit: int,
+             sort_buffer_size: str,
+             sql_mode: str,
+             sql_require_primary_key: bool,
+             sql_warnings: bool,
+             thread_pool_dedicated_listeners: bool,
+             thread_pool_max_transactions_limit: int,
+             time_zone: str,
+             tmp_table_size: str,
+             transaction_isolation: str,
+             wait_timeout: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("autocommit", autocommit)
+        _setter("big_tables", big_tables)
+        _setter("binlog_expire_logs_seconds", binlog_expire_logs_seconds)
+        _setter("binlog_row_metadata", binlog_row_metadata)
+        _setter("binlog_row_value_options", binlog_row_value_options)
+        _setter("binlog_transaction_compression", binlog_transaction_compression)
+        _setter("completion_type", completion_type)
+        _setter("connect_timeout", connect_timeout)
+        _setter("connection_memory_chunk_size", connection_memory_chunk_size)
+        _setter("connection_memory_limit", connection_memory_limit)
+        _setter("cte_max_recursion_depth", cte_max_recursion_depth)
+        _setter("default_authentication_plugin", default_authentication_plugin)
+        _setter("foreign_key_checks", foreign_key_checks)
+        _setter("generated_random_password_length", generated_random_password_length)
+        _setter("global_connection_memory_limit", global_connection_memory_limit)
+        _setter("global_connection_memory_tracking", global_connection_memory_tracking)
+        _setter("group_replication_consistency", group_replication_consistency)
+        _setter("information_schema_stats_expiry", information_schema_stats_expiry)
+        _setter("innodb_buffer_pool_dump_pct", innodb_buffer_pool_dump_pct)
+        _setter("innodb_buffer_pool_instances", innodb_buffer_pool_instances)
+        _setter("innodb_buffer_pool_size", innodb_buffer_pool_size)
+        _setter("innodb_ddl_buffer_size", innodb_ddl_buffer_size)
+        _setter("innodb_ddl_threads", innodb_ddl_threads)
+        _setter("innodb_ft_enable_stopword", innodb_ft_enable_stopword)
+        _setter("innodb_ft_max_token_size", innodb_ft_max_token_size)
+        _setter("innodb_ft_min_token_size", innodb_ft_min_token_size)
+        _setter("innodb_ft_num_word_optimize", innodb_ft_num_word_optimize)
+        _setter("innodb_ft_result_cache_limit", innodb_ft_result_cache_limit)
+        _setter("innodb_ft_server_stopword_table", innodb_ft_server_stopword_table)
+        _setter("innodb_lock_wait_timeout", innodb_lock_wait_timeout)
+        _setter("innodb_log_writer_threads", innodb_log_writer_threads)
+        _setter("innodb_max_purge_lag", innodb_max_purge_lag)
+        _setter("innodb_max_purge_lag_delay", innodb_max_purge_lag_delay)
+        _setter("innodb_stats_persistent_sample_pages", innodb_stats_persistent_sample_pages)
+        _setter("innodb_stats_transient_sample_pages", innodb_stats_transient_sample_pages)
+        _setter("interactive_timeout", interactive_timeout)
+        _setter("local_infile", local_infile)
+        _setter("mandatory_roles", mandatory_roles)
+        _setter("max_allowed_packet", max_allowed_packet)
+        _setter("max_binlog_cache_size", max_binlog_cache_size)
+        _setter("max_connect_errors", max_connect_errors)
+        _setter("max_connections", max_connections)
+        _setter("max_execution_time", max_execution_time)
+        _setter("max_heap_table_size", max_heap_table_size)
+        _setter("max_prepared_stmt_count", max_prepared_stmt_count)
+        _setter("mysql_firewall_mode", mysql_firewall_mode)
+        _setter("mysql_zstd_default_compression_level", mysql_zstd_default_compression_level)
+        _setter("mysqlx_connect_timeout", mysqlx_connect_timeout)
+        _setter("mysqlx_deflate_default_compression_level", mysqlx_deflate_default_compression_level)
+        _setter("mysqlx_deflate_max_client_compression_level", mysqlx_deflate_max_client_compression_level)
+        _setter("mysqlx_document_id_unique_prefix", mysqlx_document_id_unique_prefix)
+        _setter("mysqlx_enable_hello_notice", mysqlx_enable_hello_notice)
+        _setter("mysqlx_idle_worker_thread_timeout", mysqlx_idle_worker_thread_timeout)
+        _setter("mysqlx_interactive_timeout", mysqlx_interactive_timeout)
+        _setter("mysqlx_lz4default_compression_level", mysqlx_lz4default_compression_level)
+        _setter("mysqlx_lz4max_client_compression_level", mysqlx_lz4max_client_compression_level)
+        _setter("mysqlx_max_allowed_packet", mysqlx_max_allowed_packet)
+        _setter("mysqlx_min_worker_threads", mysqlx_min_worker_threads)
+        _setter("mysqlx_read_timeout", mysqlx_read_timeout)
+        _setter("mysqlx_wait_timeout", mysqlx_wait_timeout)
+        _setter("mysqlx_write_timeout", mysqlx_write_timeout)
+        _setter("mysqlx_zstd_default_compression_level", mysqlx_zstd_default_compression_level)
+        _setter("mysqlx_zstd_max_client_compression_level", mysqlx_zstd_max_client_compression_level)
+        _setter("net_read_timeout", net_read_timeout)
+        _setter("net_write_timeout", net_write_timeout)
+        _setter("parser_max_mem_size", parser_max_mem_size)
+        _setter("query_alloc_block_size", query_alloc_block_size)
+        _setter("query_prealloc_size", query_prealloc_size)
+        _setter("regexp_time_limit", regexp_time_limit)
+        _setter("sort_buffer_size", sort_buffer_size)
+        _setter("sql_mode", sql_mode)
+        _setter("sql_require_primary_key", sql_require_primary_key)
+        _setter("sql_warnings", sql_warnings)
+        _setter("thread_pool_dedicated_listeners", thread_pool_dedicated_listeners)
+        _setter("thread_pool_max_transactions_limit", thread_pool_max_transactions_limit)
+        _setter("time_zone", time_zone)
+        _setter("tmp_table_size", tmp_table_size)
+        _setter("transaction_isolation", transaction_isolation)
+        _setter("wait_timeout", wait_timeout)
 
     @property
     @pulumi.getter
@@ -8107,10 +9762,23 @@ class GetMysqlConfigurationsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMysqlConfigurationsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -8145,12 +9813,31 @@ class GetMysqlDbSystemBackupPolicyResult(dict):
         :param int retention_in_days: The number of days automated backups are retained.
         :param str window_start_time: The start time of the maintenance window.
         """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "pitr_policies", pitr_policies)
-        pulumi.set(__self__, "retention_in_days", retention_in_days)
-        pulumi.set(__self__, "window_start_time", window_start_time)
+        GetMysqlDbSystemBackupPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_enabled=is_enabled,
+            pitr_policies=pitr_policies,
+            retention_in_days=retention_in_days,
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             is_enabled: bool,
+             pitr_policies: Sequence['outputs.GetMysqlDbSystemBackupPolicyPitrPolicyResult'],
+             retention_in_days: int,
+             window_start_time: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("is_enabled", is_enabled)
+        _setter("pitr_policies", pitr_policies)
+        _setter("retention_in_days", retention_in_days)
+        _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -8208,7 +9895,16 @@ class GetMysqlDbSystemBackupPolicyPitrPolicyResult(dict):
         """
         :param bool is_enabled: Whether the Channel has been enabled by the user.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetMysqlDbSystemBackupPolicyPitrPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -8248,18 +9944,49 @@ class GetMysqlDbSystemChannelResult(dict):
         :param str time_created: The date and time the DB System was created.
         :param str time_updated: The time the DB System was last updated.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "sources", sources)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "targets", targets)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetMysqlDbSystemChannelResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_enabled=is_enabled,
+            lifecycle_details=lifecycle_details,
+            sources=sources,
+            state=state,
+            targets=targets,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_enabled: bool,
+             lifecycle_details: str,
+             sources: Sequence['outputs.GetMysqlDbSystemChannelSourceResult'],
+             state: str,
+             targets: Sequence['outputs.GetMysqlDbSystemChannelTargetResult'],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_enabled", is_enabled)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("sources", sources)
+        _setter("state", state)
+        _setter("targets", targets)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -8377,13 +10104,34 @@ class GetMysqlDbSystemChannelSourceResult(dict):
         :param str ssl_mode: The SSL mode of the Channel.
         :param str username: The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
         """
-        pulumi.set(__self__, "anonymous_transactions_handlings", anonymous_transactions_handlings)
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "source_type", source_type)
-        pulumi.set(__self__, "ssl_ca_certificates", ssl_ca_certificates)
-        pulumi.set(__self__, "ssl_mode", ssl_mode)
-        pulumi.set(__self__, "username", username)
+        GetMysqlDbSystemChannelSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            anonymous_transactions_handlings=anonymous_transactions_handlings,
+            hostname=hostname,
+            port=port,
+            source_type=source_type,
+            ssl_ca_certificates=ssl_ca_certificates,
+            ssl_mode=ssl_mode,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             anonymous_transactions_handlings: Sequence['outputs.GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingResult'],
+             hostname: str,
+             port: int,
+             source_type: str,
+             ssl_ca_certificates: Sequence['outputs.GetMysqlDbSystemChannelSourceSslCaCertificateResult'],
+             ssl_mode: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("anonymous_transactions_handlings", anonymous_transactions_handlings)
+        _setter("hostname", hostname)
+        _setter("port", port)
+        _setter("source_type", source_type)
+        _setter("ssl_ca_certificates", ssl_ca_certificates)
+        _setter("ssl_mode", ssl_mode)
+        _setter("username", username)
 
     @property
     @pulumi.getter(name="anonymousTransactionsHandlings")
@@ -8455,10 +10203,25 @@ class GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingResult(dict):
         :param str policy: Specifies how the replication channel handles anonymous transactions.
         :param str uuid: The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
         """
-        pulumi.set(__self__, "last_configured_log_filename", last_configured_log_filename)
-        pulumi.set(__self__, "last_configured_log_offset", last_configured_log_offset)
-        pulumi.set(__self__, "policy", policy)
-        pulumi.set(__self__, "uuid", uuid)
+        GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            last_configured_log_filename=last_configured_log_filename,
+            last_configured_log_offset=last_configured_log_offset,
+            policy=policy,
+            uuid=uuid,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             last_configured_log_filename: str,
+             last_configured_log_offset: str,
+             policy: str,
+             uuid: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("last_configured_log_filename", last_configured_log_filename)
+        _setter("last_configured_log_offset", last_configured_log_offset)
+        _setter("policy", policy)
+        _setter("uuid", uuid)
 
     @property
     @pulumi.getter(name="lastConfiguredLogFilename")
@@ -8502,8 +10265,19 @@ class GetMysqlDbSystemChannelSourceSslCaCertificateResult(dict):
         :param str certificate_type: The type of CA certificate.
         :param str contents: The string containing the CA certificate in PEM format.
         """
-        pulumi.set(__self__, "certificate_type", certificate_type)
-        pulumi.set(__self__, "contents", contents)
+        GetMysqlDbSystemChannelSourceSslCaCertificateResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_type=certificate_type,
+            contents=contents,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_type: str,
+             contents: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_type", certificate_type)
+        _setter("contents", contents)
 
     @property
     @pulumi.getter(name="certificateType")
@@ -8541,13 +10315,34 @@ class GetMysqlDbSystemChannelTargetResult(dict):
         :param str tables_without_primary_key_handling: Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
         :param str target_type: The specific target identifier.
         """
-        pulumi.set(__self__, "applier_username", applier_username)
-        pulumi.set(__self__, "channel_name", channel_name)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "delay_in_seconds", delay_in_seconds)
-        pulumi.set(__self__, "filters", filters)
-        pulumi.set(__self__, "tables_without_primary_key_handling", tables_without_primary_key_handling)
-        pulumi.set(__self__, "target_type", target_type)
+        GetMysqlDbSystemChannelTargetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            applier_username=applier_username,
+            channel_name=channel_name,
+            db_system_id=db_system_id,
+            delay_in_seconds=delay_in_seconds,
+            filters=filters,
+            tables_without_primary_key_handling=tables_without_primary_key_handling,
+            target_type=target_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             applier_username: str,
+             channel_name: str,
+             db_system_id: str,
+             delay_in_seconds: int,
+             filters: Sequence['outputs.GetMysqlDbSystemChannelTargetFilterResult'],
+             tables_without_primary_key_handling: str,
+             target_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("applier_username", applier_username)
+        _setter("channel_name", channel_name)
+        _setter("db_system_id", db_system_id)
+        _setter("delay_in_seconds", delay_in_seconds)
+        _setter("filters", filters)
+        _setter("tables_without_primary_key_handling", tables_without_primary_key_handling)
+        _setter("target_type", target_type)
 
     @property
     @pulumi.getter(name="applierUsername")
@@ -8615,8 +10410,19 @@ class GetMysqlDbSystemChannelTargetFilterResult(dict):
         :param str type: The type of the filter rule.
         :param str value: The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        GetMysqlDbSystemChannelTargetFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -8644,8 +10450,19 @@ class GetMysqlDbSystemCurrentPlacementResult(dict):
         :param str availability_domain: The availability domain in which the DB System is placed.
         :param str fault_domain: The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "fault_domain", fault_domain)
+        GetMysqlDbSystemCurrentPlacementResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            fault_domain=fault_domain,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: str,
+             fault_domain: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("fault_domain", fault_domain)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -8675,9 +10492,22 @@ class GetMysqlDbSystemDeletionPolicyResult(dict):
         :param str final_backup: Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
         :param bool is_delete_protected: Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
         """
-        pulumi.set(__self__, "automatic_backup_retention", automatic_backup_retention)
-        pulumi.set(__self__, "final_backup", final_backup)
-        pulumi.set(__self__, "is_delete_protected", is_delete_protected)
+        GetMysqlDbSystemDeletionPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            automatic_backup_retention=automatic_backup_retention,
+            final_backup=final_backup,
+            is_delete_protected=is_delete_protected,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             automatic_backup_retention: str,
+             final_backup: str,
+             is_delete_protected: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("automatic_backup_retention", automatic_backup_retention)
+        _setter("final_backup", final_backup)
+        _setter("is_delete_protected", is_delete_protected)
 
     @property
     @pulumi.getter(name="automaticBackupRetention")
@@ -8727,15 +10557,40 @@ class GetMysqlDbSystemEndpointResult(dict):
         :param str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
         :param str status_details: Additional information about the current endpoint status.
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "modes", modes)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "port_x", port_x)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_details", status_details)
+        GetMysqlDbSystemEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            ip_address=ip_address,
+            modes=modes,
+            port=port,
+            port_x=port_x,
+            resource_id=resource_id,
+            resource_type=resource_type,
+            status=status,
+            status_details=status_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: str,
+             ip_address: str,
+             modes: Sequence[str],
+             port: int,
+             port_x: int,
+             resource_id: str,
+             resource_type: str,
+             status: str,
+             status_details: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hostname", hostname)
+        _setter("ip_address", ip_address)
+        _setter("modes", modes)
+        _setter("port", port)
+        _setter("port_x", port_x)
+        _setter("resource_id", resource_id)
+        _setter("resource_type", resource_type)
+        _setter("status", status)
+        _setter("status_details", status_details)
 
     @property
     @pulumi.getter
@@ -8827,12 +10682,31 @@ class GetMysqlDbSystemHeatWaveClusterResult(dict):
         :param str time_created: The date and time the DB System was created.
         :param str time_updated: The time the DB System was last updated.
         """
-        pulumi.set(__self__, "cluster_size", cluster_size)
-        pulumi.set(__self__, "is_lakehouse_enabled", is_lakehouse_enabled)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetMysqlDbSystemHeatWaveClusterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cluster_size=cluster_size,
+            is_lakehouse_enabled=is_lakehouse_enabled,
+            shape_name=shape_name,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cluster_size: int,
+             is_lakehouse_enabled: bool,
+             shape_name: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cluster_size", cluster_size)
+        _setter("is_lakehouse_enabled", is_lakehouse_enabled)
+        _setter("shape_name", shape_name)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="clusterSize")
@@ -8890,7 +10764,16 @@ class GetMysqlDbSystemMaintenanceResult(dict):
         """
         :param str window_start_time: The start time of the maintenance window.
         """
-        pulumi.set(__self__, "window_start_time", window_start_time)
+        GetMysqlDbSystemMaintenanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             window_start_time: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="windowStartTime")
@@ -8910,8 +10793,19 @@ class GetMysqlDbSystemPointInTimeRecoveryDetailResult(dict):
         :param str time_earliest_recovery_point: Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_latest_recovery_point: Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
-        pulumi.set(__self__, "time_earliest_recovery_point", time_earliest_recovery_point)
-        pulumi.set(__self__, "time_latest_recovery_point", time_latest_recovery_point)
+        GetMysqlDbSystemPointInTimeRecoveryDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_earliest_recovery_point=time_earliest_recovery_point,
+            time_latest_recovery_point=time_latest_recovery_point,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_earliest_recovery_point: str,
+             time_latest_recovery_point: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_earliest_recovery_point", time_earliest_recovery_point)
+        _setter("time_latest_recovery_point", time_latest_recovery_point)
 
     @property
     @pulumi.getter(name="timeEarliestRecoveryPoint")
@@ -8944,11 +10838,28 @@ class GetMysqlDbSystemSourceResult(dict):
         :param str recovery_point: The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
         :param str source_type: The specific source identifier.
         """
-        pulumi.set(__self__, "backup_id", backup_id)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "recovery_point", recovery_point)
-        pulumi.set(__self__, "source_type", source_type)
-        pulumi.set(__self__, "source_url", source_url)
+        GetMysqlDbSystemSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup_id=backup_id,
+            db_system_id=db_system_id,
+            recovery_point=recovery_point,
+            source_type=source_type,
+            source_url=source_url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup_id: str,
+             db_system_id: str,
+             recovery_point: str,
+             source_type: str,
+             source_url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("backup_id", backup_id)
+        _setter("db_system_id", db_system_id)
+        _setter("recovery_point", recovery_point)
+        _setter("source_type", source_type)
+        _setter("source_url", source_url)
 
     @property
     @pulumi.getter(name="backupId")
@@ -9062,42 +10973,121 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         :param str time_created: The date and time the DB System was created.
         :param str time_updated: The time the DB System was last updated.
         """
-        pulumi.set(__self__, "admin_password", admin_password)
-        pulumi.set(__self__, "admin_username", admin_username)
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "backup_policies", backup_policies)
-        pulumi.set(__self__, "channels", channels)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configuration_id", configuration_id)
-        pulumi.set(__self__, "crash_recovery", crash_recovery)
-        pulumi.set(__self__, "current_placements", current_placements)
-        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deletion_policies", deletion_policies)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "endpoints", endpoints)
-        pulumi.set(__self__, "fault_domain", fault_domain)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "heat_wave_clusters", heat_wave_clusters)
-        pulumi.set(__self__, "hostname_label", hostname_label)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "is_heat_wave_cluster_attached", is_heat_wave_cluster_attached)
-        pulumi.set(__self__, "is_highly_available", is_highly_available)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "maintenances", maintenances)
-        pulumi.set(__self__, "mysql_version", mysql_version)
-        pulumi.set(__self__, "point_in_time_recovery_details", point_in_time_recovery_details)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "port_x", port_x)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "shutdown_type", shutdown_type)
-        pulumi.set(__self__, "sources", sources)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetMysqlDbSystemsDbSystemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_password=admin_password,
+            admin_username=admin_username,
+            availability_domain=availability_domain,
+            backup_policies=backup_policies,
+            channels=channels,
+            compartment_id=compartment_id,
+            configuration_id=configuration_id,
+            crash_recovery=crash_recovery,
+            current_placements=current_placements,
+            data_storage_size_in_gb=data_storage_size_in_gb,
+            defined_tags=defined_tags,
+            deletion_policies=deletion_policies,
+            description=description,
+            display_name=display_name,
+            endpoints=endpoints,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            heat_wave_clusters=heat_wave_clusters,
+            hostname_label=hostname_label,
+            id=id,
+            ip_address=ip_address,
+            is_heat_wave_cluster_attached=is_heat_wave_cluster_attached,
+            is_highly_available=is_highly_available,
+            lifecycle_details=lifecycle_details,
+            maintenances=maintenances,
+            mysql_version=mysql_version,
+            point_in_time_recovery_details=point_in_time_recovery_details,
+            port=port,
+            port_x=port_x,
+            shape_name=shape_name,
+            shutdown_type=shutdown_type,
+            sources=sources,
+            state=state,
+            subnet_id=subnet_id,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_password: str,
+             admin_username: str,
+             availability_domain: str,
+             backup_policies: Sequence['outputs.GetMysqlDbSystemsDbSystemBackupPolicyResult'],
+             channels: Sequence['outputs.GetMysqlDbSystemsDbSystemChannelResult'],
+             compartment_id: str,
+             configuration_id: str,
+             crash_recovery: str,
+             current_placements: Sequence['outputs.GetMysqlDbSystemsDbSystemCurrentPlacementResult'],
+             data_storage_size_in_gb: int,
+             defined_tags: Mapping[str, Any],
+             deletion_policies: Sequence['outputs.GetMysqlDbSystemsDbSystemDeletionPolicyResult'],
+             description: str,
+             display_name: str,
+             endpoints: Sequence['outputs.GetMysqlDbSystemsDbSystemEndpointResult'],
+             fault_domain: str,
+             freeform_tags: Mapping[str, Any],
+             heat_wave_clusters: Sequence['outputs.GetMysqlDbSystemsDbSystemHeatWaveClusterResult'],
+             hostname_label: str,
+             id: str,
+             ip_address: str,
+             is_heat_wave_cluster_attached: bool,
+             is_highly_available: bool,
+             lifecycle_details: str,
+             maintenances: Sequence['outputs.GetMysqlDbSystemsDbSystemMaintenanceResult'],
+             mysql_version: str,
+             point_in_time_recovery_details: Sequence['outputs.GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailResult'],
+             port: int,
+             port_x: int,
+             shape_name: str,
+             shutdown_type: str,
+             sources: Sequence['outputs.GetMysqlDbSystemsDbSystemSourceResult'],
+             state: str,
+             subnet_id: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("admin_password", admin_password)
+        _setter("admin_username", admin_username)
+        _setter("availability_domain", availability_domain)
+        _setter("backup_policies", backup_policies)
+        _setter("channels", channels)
+        _setter("compartment_id", compartment_id)
+        _setter("configuration_id", configuration_id)
+        _setter("crash_recovery", crash_recovery)
+        _setter("current_placements", current_placements)
+        _setter("data_storage_size_in_gb", data_storage_size_in_gb)
+        _setter("defined_tags", defined_tags)
+        _setter("deletion_policies", deletion_policies)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("endpoints", endpoints)
+        _setter("fault_domain", fault_domain)
+        _setter("freeform_tags", freeform_tags)
+        _setter("heat_wave_clusters", heat_wave_clusters)
+        _setter("hostname_label", hostname_label)
+        _setter("id", id)
+        _setter("ip_address", ip_address)
+        _setter("is_heat_wave_cluster_attached", is_heat_wave_cluster_attached)
+        _setter("is_highly_available", is_highly_available)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("maintenances", maintenances)
+        _setter("mysql_version", mysql_version)
+        _setter("point_in_time_recovery_details", point_in_time_recovery_details)
+        _setter("port", port)
+        _setter("port_x", port_x)
+        _setter("shape_name", shape_name)
+        _setter("shutdown_type", shutdown_type)
+        _setter("sources", sources)
+        _setter("state", state)
+        _setter("subnet_id", subnet_id)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="adminPassword")
@@ -9396,12 +11386,31 @@ class GetMysqlDbSystemsDbSystemBackupPolicyResult(dict):
         :param int retention_in_days: The number of days automated backups are retained.
         :param str window_start_time: The start time of the maintenance window.
         """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "pitr_policies", pitr_policies)
-        pulumi.set(__self__, "retention_in_days", retention_in_days)
-        pulumi.set(__self__, "window_start_time", window_start_time)
+        GetMysqlDbSystemsDbSystemBackupPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_enabled=is_enabled,
+            pitr_policies=pitr_policies,
+            retention_in_days=retention_in_days,
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             is_enabled: bool,
+             pitr_policies: Sequence['outputs.GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyResult'],
+             retention_in_days: int,
+             window_start_time: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("is_enabled", is_enabled)
+        _setter("pitr_policies", pitr_policies)
+        _setter("retention_in_days", retention_in_days)
+        _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -9459,7 +11468,16 @@ class GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyResult(dict):
         """
         :param bool is_enabled: Whether the Channel has been enabled by the user.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -9499,18 +11517,49 @@ class GetMysqlDbSystemsDbSystemChannelResult(dict):
         :param str time_created: The date and time the DB System was created.
         :param str time_updated: The time the DB System was last updated.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "sources", sources)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "targets", targets)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetMysqlDbSystemsDbSystemChannelResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_enabled=is_enabled,
+            lifecycle_details=lifecycle_details,
+            sources=sources,
+            state=state,
+            targets=targets,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_enabled: bool,
+             lifecycle_details: str,
+             sources: Sequence['outputs.GetMysqlDbSystemsDbSystemChannelSourceResult'],
+             state: str,
+             targets: Sequence['outputs.GetMysqlDbSystemsDbSystemChannelTargetResult'],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_enabled", is_enabled)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("sources", sources)
+        _setter("state", state)
+        _setter("targets", targets)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -9628,13 +11677,34 @@ class GetMysqlDbSystemsDbSystemChannelSourceResult(dict):
         :param str ssl_mode: The SSL mode of the Channel.
         :param str username: The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
         """
-        pulumi.set(__self__, "anonymous_transactions_handlings", anonymous_transactions_handlings)
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "source_type", source_type)
-        pulumi.set(__self__, "ssl_ca_certificates", ssl_ca_certificates)
-        pulumi.set(__self__, "ssl_mode", ssl_mode)
-        pulumi.set(__self__, "username", username)
+        GetMysqlDbSystemsDbSystemChannelSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            anonymous_transactions_handlings=anonymous_transactions_handlings,
+            hostname=hostname,
+            port=port,
+            source_type=source_type,
+            ssl_ca_certificates=ssl_ca_certificates,
+            ssl_mode=ssl_mode,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             anonymous_transactions_handlings: Sequence['outputs.GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingResult'],
+             hostname: str,
+             port: int,
+             source_type: str,
+             ssl_ca_certificates: Sequence['outputs.GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateResult'],
+             ssl_mode: str,
+             username: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("anonymous_transactions_handlings", anonymous_transactions_handlings)
+        _setter("hostname", hostname)
+        _setter("port", port)
+        _setter("source_type", source_type)
+        _setter("ssl_ca_certificates", ssl_ca_certificates)
+        _setter("ssl_mode", ssl_mode)
+        _setter("username", username)
 
     @property
     @pulumi.getter(name="anonymousTransactionsHandlings")
@@ -9706,10 +11776,25 @@ class GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingResult(
         :param str policy: Specifies how the replication channel handles anonymous transactions.
         :param str uuid: The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
         """
-        pulumi.set(__self__, "last_configured_log_filename", last_configured_log_filename)
-        pulumi.set(__self__, "last_configured_log_offset", last_configured_log_offset)
-        pulumi.set(__self__, "policy", policy)
-        pulumi.set(__self__, "uuid", uuid)
+        GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            last_configured_log_filename=last_configured_log_filename,
+            last_configured_log_offset=last_configured_log_offset,
+            policy=policy,
+            uuid=uuid,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             last_configured_log_filename: str,
+             last_configured_log_offset: str,
+             policy: str,
+             uuid: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("last_configured_log_filename", last_configured_log_filename)
+        _setter("last_configured_log_offset", last_configured_log_offset)
+        _setter("policy", policy)
+        _setter("uuid", uuid)
 
     @property
     @pulumi.getter(name="lastConfiguredLogFilename")
@@ -9753,8 +11838,19 @@ class GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateResult(dict):
         :param str certificate_type: The type of CA certificate.
         :param str contents: The string containing the CA certificate in PEM format.
         """
-        pulumi.set(__self__, "certificate_type", certificate_type)
-        pulumi.set(__self__, "contents", contents)
+        GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_type=certificate_type,
+            contents=contents,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_type: str,
+             contents: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_type", certificate_type)
+        _setter("contents", contents)
 
     @property
     @pulumi.getter(name="certificateType")
@@ -9792,13 +11888,34 @@ class GetMysqlDbSystemsDbSystemChannelTargetResult(dict):
         :param str tables_without_primary_key_handling: Specifies how a replication channel handles the creation and alteration of tables  that do not have a primary key.
         :param str target_type: The specific target identifier.
         """
-        pulumi.set(__self__, "applier_username", applier_username)
-        pulumi.set(__self__, "channel_name", channel_name)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "delay_in_seconds", delay_in_seconds)
-        pulumi.set(__self__, "filters", filters)
-        pulumi.set(__self__, "tables_without_primary_key_handling", tables_without_primary_key_handling)
-        pulumi.set(__self__, "target_type", target_type)
+        GetMysqlDbSystemsDbSystemChannelTargetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            applier_username=applier_username,
+            channel_name=channel_name,
+            db_system_id=db_system_id,
+            delay_in_seconds=delay_in_seconds,
+            filters=filters,
+            tables_without_primary_key_handling=tables_without_primary_key_handling,
+            target_type=target_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             applier_username: str,
+             channel_name: str,
+             db_system_id: str,
+             delay_in_seconds: int,
+             filters: Sequence['outputs.GetMysqlDbSystemsDbSystemChannelTargetFilterResult'],
+             tables_without_primary_key_handling: str,
+             target_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("applier_username", applier_username)
+        _setter("channel_name", channel_name)
+        _setter("db_system_id", db_system_id)
+        _setter("delay_in_seconds", delay_in_seconds)
+        _setter("filters", filters)
+        _setter("tables_without_primary_key_handling", tables_without_primary_key_handling)
+        _setter("target_type", target_type)
 
     @property
     @pulumi.getter(name="applierUsername")
@@ -9866,8 +11983,19 @@ class GetMysqlDbSystemsDbSystemChannelTargetFilterResult(dict):
         :param str type: The type of the filter rule.
         :param str value: The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        GetMysqlDbSystemsDbSystemChannelTargetFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -9895,8 +12023,19 @@ class GetMysqlDbSystemsDbSystemCurrentPlacementResult(dict):
         :param str availability_domain: The availability domain in which the DB System is placed.
         :param str fault_domain: The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "fault_domain", fault_domain)
+        GetMysqlDbSystemsDbSystemCurrentPlacementResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            fault_domain=fault_domain,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: str,
+             fault_domain: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("fault_domain", fault_domain)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -9926,9 +12065,22 @@ class GetMysqlDbSystemsDbSystemDeletionPolicyResult(dict):
         :param str final_backup: Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
         :param bool is_delete_protected: Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
         """
-        pulumi.set(__self__, "automatic_backup_retention", automatic_backup_retention)
-        pulumi.set(__self__, "final_backup", final_backup)
-        pulumi.set(__self__, "is_delete_protected", is_delete_protected)
+        GetMysqlDbSystemsDbSystemDeletionPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            automatic_backup_retention=automatic_backup_retention,
+            final_backup=final_backup,
+            is_delete_protected=is_delete_protected,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             automatic_backup_retention: str,
+             final_backup: str,
+             is_delete_protected: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("automatic_backup_retention", automatic_backup_retention)
+        _setter("final_backup", final_backup)
+        _setter("is_delete_protected", is_delete_protected)
 
     @property
     @pulumi.getter(name="automaticBackupRetention")
@@ -9978,15 +12130,40 @@ class GetMysqlDbSystemsDbSystemEndpointResult(dict):
         :param str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
         :param str status_details: Additional information about the current endpoint status.
         """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "modes", modes)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "port_x", port_x)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_details", status_details)
+        GetMysqlDbSystemsDbSystemEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hostname=hostname,
+            ip_address=ip_address,
+            modes=modes,
+            port=port,
+            port_x=port_x,
+            resource_id=resource_id,
+            resource_type=resource_type,
+            status=status,
+            status_details=status_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hostname: str,
+             ip_address: str,
+             modes: Sequence[str],
+             port: int,
+             port_x: int,
+             resource_id: str,
+             resource_type: str,
+             status: str,
+             status_details: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hostname", hostname)
+        _setter("ip_address", ip_address)
+        _setter("modes", modes)
+        _setter("port", port)
+        _setter("port_x", port_x)
+        _setter("resource_id", resource_id)
+        _setter("resource_type", resource_type)
+        _setter("status", status)
+        _setter("status_details", status_details)
 
     @property
     @pulumi.getter
@@ -10078,12 +12255,31 @@ class GetMysqlDbSystemsDbSystemHeatWaveClusterResult(dict):
         :param str time_created: The date and time the DB System was created.
         :param str time_updated: The time the DB System was last updated.
         """
-        pulumi.set(__self__, "cluster_size", cluster_size)
-        pulumi.set(__self__, "is_lakehouse_enabled", is_lakehouse_enabled)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetMysqlDbSystemsDbSystemHeatWaveClusterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cluster_size=cluster_size,
+            is_lakehouse_enabled=is_lakehouse_enabled,
+            shape_name=shape_name,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cluster_size: int,
+             is_lakehouse_enabled: bool,
+             shape_name: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cluster_size", cluster_size)
+        _setter("is_lakehouse_enabled", is_lakehouse_enabled)
+        _setter("shape_name", shape_name)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="clusterSize")
@@ -10141,7 +12337,16 @@ class GetMysqlDbSystemsDbSystemMaintenanceResult(dict):
         """
         :param str window_start_time: The start time of the maintenance window.
         """
-        pulumi.set(__self__, "window_start_time", window_start_time)
+        GetMysqlDbSystemsDbSystemMaintenanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            window_start_time=window_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             window_start_time: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("window_start_time", window_start_time)
 
     @property
     @pulumi.getter(name="windowStartTime")
@@ -10161,8 +12366,19 @@ class GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailResult(dict):
         :param str time_earliest_recovery_point: Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_latest_recovery_point: Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
-        pulumi.set(__self__, "time_earliest_recovery_point", time_earliest_recovery_point)
-        pulumi.set(__self__, "time_latest_recovery_point", time_latest_recovery_point)
+        GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_earliest_recovery_point=time_earliest_recovery_point,
+            time_latest_recovery_point=time_latest_recovery_point,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_earliest_recovery_point: str,
+             time_latest_recovery_point: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_earliest_recovery_point", time_earliest_recovery_point)
+        _setter("time_latest_recovery_point", time_latest_recovery_point)
 
     @property
     @pulumi.getter(name="timeEarliestRecoveryPoint")
@@ -10195,11 +12411,28 @@ class GetMysqlDbSystemsDbSystemSourceResult(dict):
         :param str recovery_point: The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
         :param str source_type: The specific source identifier.
         """
-        pulumi.set(__self__, "backup_id", backup_id)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "recovery_point", recovery_point)
-        pulumi.set(__self__, "source_type", source_type)
-        pulumi.set(__self__, "source_url", source_url)
+        GetMysqlDbSystemsDbSystemSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup_id=backup_id,
+            db_system_id=db_system_id,
+            recovery_point=recovery_point,
+            source_type=source_type,
+            source_url=source_url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup_id: str,
+             db_system_id: str,
+             recovery_point: str,
+             source_type: str,
+             source_url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("backup_id", backup_id)
+        _setter("db_system_id", db_system_id)
+        _setter("recovery_point", recovery_point)
+        _setter("source_type", source_type)
+        _setter("source_url", source_url)
 
     @property
     @pulumi.getter(name="backupId")
@@ -10245,10 +12478,23 @@ class GetMysqlDbSystemsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMysqlDbSystemsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10272,10 +12518,23 @@ class GetMysqlVersionFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMysqlVersionFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10302,8 +12561,19 @@ class GetMysqlVersionVersionResult(dict):
         :param str version_family: A descriptive summary of a group of versions.
         :param Sequence['GetMysqlVersionVersionVersionArgs'] versions: The list of supported MySQL Versions.
         """
-        pulumi.set(__self__, "version_family", version_family)
-        pulumi.set(__self__, "versions", versions)
+        GetMysqlVersionVersionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            version_family=version_family,
+            versions=versions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             version_family: str,
+             versions: Sequence['outputs.GetMysqlVersionVersionVersionResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("version_family", version_family)
+        _setter("versions", versions)
 
     @property
     @pulumi.getter(name="versionFamily")
@@ -10331,8 +12601,19 @@ class GetMysqlVersionVersionVersionResult(dict):
         :param str description: A link to a page describing the version.
         :param str version: The specific version identifier
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "version", version)
+        GetMysqlVersionVersionVersionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("version", version)
 
     @property
     @pulumi.getter
@@ -10352,15 +12633,81 @@ class GetMysqlVersionVersionVersionResult(dict):
 
 
 @pulumi.output_type
+class GetReplicaReplicaOverrideResult(dict):
+    def __init__(__self__, *,
+                 configuration_id: str,
+                 mysql_version: str,
+                 shape_name: str):
+        """
+        :param str configuration_id: The OCID of the Configuration to be used by the read replica.
+        :param str mysql_version: The MySQL version to be used by the read replica.
+        :param str shape_name: The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+        """
+        GetReplicaReplicaOverrideResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            configuration_id=configuration_id,
+            mysql_version=mysql_version,
+            shape_name=shape_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             configuration_id: str,
+             mysql_version: str,
+             shape_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("configuration_id", configuration_id)
+        _setter("mysql_version", mysql_version)
+        _setter("shape_name", shape_name)
+
+    @property
+    @pulumi.getter(name="configurationId")
+    def configuration_id(self) -> str:
+        """
+        The OCID of the Configuration to be used by the read replica.
+        """
+        return pulumi.get(self, "configuration_id")
+
+    @property
+    @pulumi.getter(name="mysqlVersion")
+    def mysql_version(self) -> str:
+        """
+        The MySQL version to be used by the read replica.
+        """
+        return pulumi.get(self, "mysql_version")
+
+    @property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> str:
+        """
+        The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+        """
+        return pulumi.get(self, "shape_name")
+
+
+@pulumi.output_type
 class GetReplicasFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetReplicasFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10383,6 +12730,7 @@ class GetReplicasReplicaResult(dict):
     def __init__(__self__, *,
                  availability_domain: str,
                  compartment_id: str,
+                 configuration_id: str,
                  db_system_id: str,
                  defined_tags: Mapping[str, Any],
                  description: str,
@@ -10396,12 +12744,15 @@ class GetReplicasReplicaResult(dict):
                  mysql_version: str,
                  port: int,
                  port_x: int,
+                 replica_overrides: Sequence['outputs.GetReplicasReplicaReplicaOverrideResult'],
+                 shape_name: str,
                  state: str,
                  time_created: str,
                  time_updated: str):
         """
         :param str availability_domain: The name of the Availability Domain the read replica is located in.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str configuration_id: The requested Configuration instance.
         :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: User provided description of the read replica.
@@ -10412,31 +12763,85 @@ class GetReplicasReplicaResult(dict):
         :param str ip_address: The IP address the read replica is configured to listen on.
         :param bool is_delete_protected: Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
         :param str lifecycle_details: A message describing the state of the read replica.
-        :param str mysql_version: The MySQL version used by the read replica.
+        :param str mysql_version: The MySQL version to be used by the read replica.
         :param int port: The port the read replica is configured to listen on.
         :param int port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
+        :param Sequence['GetReplicasReplicaReplicaOverrideArgs'] replica_overrides: By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+        :param str shape_name: The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param str state: The LifecycleState of the read replica.
         :param str time_created: The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_updated: The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "fault_domain", fault_domain)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "is_delete_protected", is_delete_protected)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "mysql_version", mysql_version)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "port_x", port_x)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetReplicasReplicaResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            configuration_id=configuration_id,
+            db_system_id=db_system_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            id=id,
+            ip_address=ip_address,
+            is_delete_protected=is_delete_protected,
+            lifecycle_details=lifecycle_details,
+            mysql_version=mysql_version,
+            port=port,
+            port_x=port_x,
+            replica_overrides=replica_overrides,
+            shape_name=shape_name,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: str,
+             compartment_id: str,
+             configuration_id: str,
+             db_system_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             fault_domain: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             ip_address: str,
+             is_delete_protected: bool,
+             lifecycle_details: str,
+             mysql_version: str,
+             port: int,
+             port_x: int,
+             replica_overrides: Sequence['outputs.GetReplicasReplicaReplicaOverrideResult'],
+             shape_name: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("compartment_id", compartment_id)
+        _setter("configuration_id", configuration_id)
+        _setter("db_system_id", db_system_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("fault_domain", fault_domain)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("ip_address", ip_address)
+        _setter("is_delete_protected", is_delete_protected)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("mysql_version", mysql_version)
+        _setter("port", port)
+        _setter("port_x", port_x)
+        _setter("replica_overrides", replica_overrides)
+        _setter("shape_name", shape_name)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -10453,6 +12858,14 @@ class GetReplicasReplicaResult(dict):
         The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="configurationId")
+    def configuration_id(self) -> str:
+        """
+        The requested Configuration instance.
+        """
+        return pulumi.get(self, "configuration_id")
 
     @property
     @pulumi.getter(name="dbSystemId")
@@ -10538,7 +12951,7 @@ class GetReplicasReplicaResult(dict):
     @pulumi.getter(name="mysqlVersion")
     def mysql_version(self) -> str:
         """
-        The MySQL version used by the read replica.
+        The MySQL version to be used by the read replica.
         """
         return pulumi.get(self, "mysql_version")
 
@@ -10557,6 +12970,22 @@ class GetReplicasReplicaResult(dict):
         The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         """
         return pulumi.get(self, "port_x")
+
+    @property
+    @pulumi.getter(name="replicaOverrides")
+    def replica_overrides(self) -> Sequence['outputs.GetReplicasReplicaReplicaOverrideResult']:
+        """
+        By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+        """
+        return pulumi.get(self, "replica_overrides")
+
+    @property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> str:
+        """
+        The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+        """
+        return pulumi.get(self, "shape_name")
 
     @property
     @pulumi.getter
@@ -10584,6 +13013,59 @@ class GetReplicasReplicaResult(dict):
 
 
 @pulumi.output_type
+class GetReplicasReplicaReplicaOverrideResult(dict):
+    def __init__(__self__, *,
+                 configuration_id: str,
+                 mysql_version: str,
+                 shape_name: str):
+        """
+        :param str configuration_id: The requested Configuration instance.
+        :param str mysql_version: The MySQL version to be used by the read replica.
+        :param str shape_name: The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+        """
+        GetReplicasReplicaReplicaOverrideResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            configuration_id=configuration_id,
+            mysql_version=mysql_version,
+            shape_name=shape_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             configuration_id: str,
+             mysql_version: str,
+             shape_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("configuration_id", configuration_id)
+        _setter("mysql_version", mysql_version)
+        _setter("shape_name", shape_name)
+
+    @property
+    @pulumi.getter(name="configurationId")
+    def configuration_id(self) -> str:
+        """
+        The requested Configuration instance.
+        """
+        return pulumi.get(self, "configuration_id")
+
+    @property
+    @pulumi.getter(name="mysqlVersion")
+    def mysql_version(self) -> str:
+        """
+        The MySQL version to be used by the read replica.
+        """
+        return pulumi.get(self, "mysql_version")
+
+    @property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> str:
+        """
+        The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+        """
+        return pulumi.get(self, "shape_name")
+
+
+@pulumi.output_type
 class GetShapesFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -10592,10 +13074,23 @@ class GetShapesFilterResult(dict):
         """
         :param str name: Name
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetShapesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10629,10 +13124,25 @@ class GetShapesShapeResult(dict):
         :param int memory_size_in_gbs: The amount of RAM the Instance provides. This is an IEC base-2 number.
         :param str name: Name
         """
-        pulumi.set(__self__, "cpu_core_count", cpu_core_count)
-        pulumi.set(__self__, "is_supported_fors", is_supported_fors)
-        pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
-        pulumi.set(__self__, "name", name)
+        GetShapesShapeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cpu_core_count=cpu_core_count,
+            is_supported_fors=is_supported_fors,
+            memory_size_in_gbs=memory_size_in_gbs,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cpu_core_count: int,
+             is_supported_fors: Sequence[str],
+             memory_size_in_gbs: int,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cpu_core_count", cpu_core_count)
+        _setter("is_supported_fors", is_supported_fors)
+        _setter("memory_size_in_gbs", memory_size_in_gbs)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="cpuCoreCount")

@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GeneratedKeyKeyShape {
     /**
-     * @return The algorithm used by a key&#39;s key versions to encrypt or decrypt.
+     * @return The algorithm used by a key&#39;s key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
      * 
      */
     private String algorithm;
@@ -33,7 +33,7 @@ public final class GeneratedKeyKeyShape {
 
     private GeneratedKeyKeyShape() {}
     /**
-     * @return The algorithm used by a key&#39;s key versions to encrypt or decrypt.
+     * @return The algorithm used by a key&#39;s key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
      * 
      */
     public String algorithm() {

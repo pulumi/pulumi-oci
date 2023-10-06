@@ -34,6 +34,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// Data Transfer Medium details for the Migration.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailResult> DataTransferMediumDetails;
+        public readonly ImmutableArray<Outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Result> DataTransferMediumDetailsV2s;
         /// <summary>
         /// Optional settings for Data Pump Export and Import jobs
         /// </summary>
@@ -141,6 +142,8 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
 
             ImmutableArray<Outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailResult> dataTransferMediumDetails,
 
+            ImmutableArray<Outputs.GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Result> dataTransferMediumDetailsV2s,
+
             ImmutableArray<Outputs.GetMigrationsMigrationCollectionItemDatapumpSettingResult> datapumpSettings,
 
             ImmutableDictionary<string, object> definedTags,
@@ -193,6 +196,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
             CredentialsSecretId = credentialsSecretId;
             CsvText = csvText;
             DataTransferMediumDetails = dataTransferMediumDetails;
+            DataTransferMediumDetailsV2s = dataTransferMediumDetailsV2s;
             DatapumpSettings = datapumpSettings;
             DefinedTags = definedTags;
             DisplayName = displayName;

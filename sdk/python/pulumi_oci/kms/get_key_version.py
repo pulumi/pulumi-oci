@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -22,10 +22,16 @@ class GetKeyVersionResult:
     """
     A collection of values returned by getKeyVersion.
     """
-    def __init__(__self__, compartment_id=None, id=None, is_primary=None, key_id=None, key_version_id=None, management_endpoint=None, public_key=None, replica_details=None, restored_from_key_id=None, restored_from_key_version_id=None, state=None, time_created=None, time_of_deletion=None, vault_id=None):
+    def __init__(__self__, compartment_id=None, external_key_reference_details=None, external_key_version_id=None, id=None, is_primary=None, key_id=None, key_version_id=None, management_endpoint=None, public_key=None, replica_details=None, restored_from_key_id=None, restored_from_key_version_id=None, state=None, time_created=None, time_of_deletion=None, vault_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if external_key_reference_details and not isinstance(external_key_reference_details, list):
+            raise TypeError("Expected argument 'external_key_reference_details' to be a list")
+        pulumi.set(__self__, "external_key_reference_details", external_key_reference_details)
+        if external_key_version_id and not isinstance(external_key_version_id, str):
+            raise TypeError("Expected argument 'external_key_version_id' to be a str")
+        pulumi.set(__self__, "external_key_version_id", external_key_version_id)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -75,6 +81,22 @@ class GetKeyVersionResult:
         return pulumi.get(self, "compartment_id")
 
     @property
+    @pulumi.getter(name="externalKeyReferenceDetails")
+    def external_key_reference_details(self) -> Sequence['outputs.GetKeyVersionExternalKeyReferenceDetailResult']:
+        """
+        Key reference data to be returned to the customer as a response.
+        """
+        return pulumi.get(self, "external_key_reference_details")
+
+    @property
+    @pulumi.getter(name="externalKeyVersionId")
+    def external_key_version_id(self) -> str:
+        """
+        Key version ID associated with the external key.
+        """
+        return pulumi.get(self, "external_key_version_id")
+
+    @property
     @pulumi.getter
     def id(self) -> str:
         """
@@ -86,7 +108,7 @@ class GetKeyVersionResult:
     @pulumi.getter(name="isPrimary")
     def is_primary(self) -> bool:
         """
-        A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+        A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
         """
         return pulumi.get(self, "is_primary")
 
@@ -180,6 +202,8 @@ class AwaitableGetKeyVersionResult(GetKeyVersionResult):
             yield self
         return GetKeyVersionResult(
             compartment_id=self.compartment_id,
+            external_key_reference_details=self.external_key_reference_details,
+            external_key_version_id=self.external_key_version_id,
             id=self.id,
             is_primary=self.is_primary,
             key_id=self.key_id,
@@ -234,6 +258,8 @@ def get_key_version(key_id: Optional[str] = None,
 
     return AwaitableGetKeyVersionResult(
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        external_key_reference_details=pulumi.get(__ret__, 'external_key_reference_details'),
+        external_key_version_id=pulumi.get(__ret__, 'external_key_version_id'),
         id=pulumi.get(__ret__, 'id'),
         is_primary=pulumi.get(__ret__, 'is_primary'),
         key_id=pulumi.get(__ret__, 'key_id'),

@@ -15,7 +15,6 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type ModelComponentModel struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
 	ModelId *string `pulumi:"modelId"`
 }
 
@@ -31,7 +30,6 @@ type ModelComponentModelInput interface {
 }
 
 type ModelComponentModelArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
 	ModelId pulumi.StringPtrInput `pulumi:"modelId"`
 }
 
@@ -104,7 +102,6 @@ func (o ModelComponentModelOutput) ToOutput(ctx context.Context) pulumix.Output[
 	}
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
 func (o ModelComponentModelOutput) ModelId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelComponentModel) *string { return v.ModelId }).(pulumi.StringPtrOutput)
 }

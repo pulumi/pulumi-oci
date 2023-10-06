@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,20 +39,47 @@ class PublicationArgs:
         :param pulumi.Input[str] long_description: (Updatable) A long description of the publication to use in the listing.
         :param pulumi.Input[str] name: (Updatable) The name of the contact.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "is_agreement_acknowledged", is_agreement_acknowledged)
-        pulumi.set(__self__, "listing_type", listing_type)
-        pulumi.set(__self__, "package_details", package_details)
-        pulumi.set(__self__, "short_description", short_description)
-        pulumi.set(__self__, "support_contacts", support_contacts)
+        PublicationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            is_agreement_acknowledged=is_agreement_acknowledged,
+            listing_type=listing_type,
+            package_details=package_details,
+            short_description=short_description,
+            support_contacts=support_contacts,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            long_description=long_description,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             is_agreement_acknowledged: pulumi.Input[bool],
+             listing_type: pulumi.Input[str],
+             package_details: pulumi.Input['PublicationPackageDetailsArgs'],
+             short_description: pulumi.Input[str],
+             support_contacts: pulumi.Input[Sequence[pulumi.Input['PublicationSupportContactArgs']]],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             long_description: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("is_agreement_acknowledged", is_agreement_acknowledged)
+        _setter("listing_type", listing_type)
+        _setter("package_details", package_details)
+        _setter("short_description", short_description)
+        _setter("support_contacts", support_contacts)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if long_description is not None:
-            pulumi.set(__self__, "long_description", long_description)
+            _setter("long_description", long_description)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -211,36 +238,73 @@ class _PublicationState:
         :param pulumi.Input[Sequence[pulumi.Input['PublicationSupportedOperatingSystemArgs']]] supported_operating_systems: The list of operating systems supported by the listing.
         :param pulumi.Input[str] time_created: The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
+        _PublicationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            icons=icons,
+            is_agreement_acknowledged=is_agreement_acknowledged,
+            listing_type=listing_type,
+            long_description=long_description,
+            name=name,
+            package_details=package_details,
+            package_type=package_type,
+            short_description=short_description,
+            state=state,
+            support_contacts=support_contacts,
+            supported_operating_systems=supported_operating_systems,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             icons: Optional[pulumi.Input[Sequence[pulumi.Input['PublicationIconArgs']]]] = None,
+             is_agreement_acknowledged: Optional[pulumi.Input[bool]] = None,
+             listing_type: Optional[pulumi.Input[str]] = None,
+             long_description: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             package_details: Optional[pulumi.Input['PublicationPackageDetailsArgs']] = None,
+             package_type: Optional[pulumi.Input[str]] = None,
+             short_description: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             support_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['PublicationSupportContactArgs']]]] = None,
+             supported_operating_systems: Optional[pulumi.Input[Sequence[pulumi.Input['PublicationSupportedOperatingSystemArgs']]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if icons is not None:
-            pulumi.set(__self__, "icons", icons)
+            _setter("icons", icons)
         if is_agreement_acknowledged is not None:
-            pulumi.set(__self__, "is_agreement_acknowledged", is_agreement_acknowledged)
+            _setter("is_agreement_acknowledged", is_agreement_acknowledged)
         if listing_type is not None:
-            pulumi.set(__self__, "listing_type", listing_type)
+            _setter("listing_type", listing_type)
         if long_description is not None:
-            pulumi.set(__self__, "long_description", long_description)
+            _setter("long_description", long_description)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if package_details is not None:
-            pulumi.set(__self__, "package_details", package_details)
+            _setter("package_details", package_details)
         if package_type is not None:
-            pulumi.set(__self__, "package_type", package_type)
+            _setter("package_type", package_type)
         if short_description is not None:
-            pulumi.set(__self__, "short_description", short_description)
+            _setter("short_description", short_description)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if support_contacts is not None:
-            pulumi.set(__self__, "support_contacts", support_contacts)
+            _setter("support_contacts", support_contacts)
         if supported_operating_systems is not None:
-            pulumi.set(__self__, "supported_operating_systems", supported_operating_systems)
+            _setter("supported_operating_systems", supported_operating_systems)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -570,6 +634,10 @@ class Publication(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            PublicationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -607,6 +675,11 @@ class Publication(pulumi.CustomResource):
             __props__.__dict__["listing_type"] = listing_type
             __props__.__dict__["long_description"] = long_description
             __props__.__dict__["name"] = name
+            if package_details is not None and not isinstance(package_details, PublicationPackageDetailsArgs):
+                package_details = package_details or {}
+                def _setter(key, value):
+                    package_details[key] = value
+                PublicationPackageDetailsArgs._configure(_setter, **package_details)
             if package_details is None and not opts.urn:
                 raise TypeError("Missing required property 'package_details'")
             __props__.__dict__["package_details"] = package_details

@@ -118,7 +118,7 @@ export class FileSystem extends pulumi.CustomResource {
      *
      * May be unset as a blank value.
      */
-    public readonly filesystemSnapshotPolicyId!: pulumi.Output<string>;
+    public readonly filesystemSnapshotPolicyId!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */

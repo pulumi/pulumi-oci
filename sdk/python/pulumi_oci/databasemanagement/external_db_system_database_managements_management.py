@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ExternalDbSystemDatabaseManagementsManagementArgs', 'ExternalDbSystemDatabaseManagementsManagement']
@@ -27,10 +27,23 @@ class ExternalDbSystemDatabaseManagementsManagementArgs:
         :param pulumi.Input[str] external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
         :param pulumi.Input[str] license_model: The Oracle license model that applies to the external database.
         """
-        pulumi.set(__self__, "enable_database_management", enable_database_management)
-        pulumi.set(__self__, "external_db_system_id", external_db_system_id)
+        ExternalDbSystemDatabaseManagementsManagementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_database_management=enable_database_management,
+            external_db_system_id=external_db_system_id,
+            license_model=license_model,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_database_management: pulumi.Input[bool],
+             external_db_system_id: pulumi.Input[str],
+             license_model: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("enable_database_management", enable_database_management)
+        _setter("external_db_system_id", external_db_system_id)
         if license_model is not None:
-            pulumi.set(__self__, "license_model", license_model)
+            _setter("license_model", license_model)
 
     @property
     @pulumi.getter(name="enableDatabaseManagement")
@@ -89,12 +102,25 @@ class _ExternalDbSystemDatabaseManagementsManagementState:
         :param pulumi.Input[str] external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
         :param pulumi.Input[str] license_model: The Oracle license model that applies to the external database.
         """
+        _ExternalDbSystemDatabaseManagementsManagementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            enable_database_management=enable_database_management,
+            external_db_system_id=external_db_system_id,
+            license_model=license_model,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             enable_database_management: Optional[pulumi.Input[bool]] = None,
+             external_db_system_id: Optional[pulumi.Input[str]] = None,
+             license_model: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if enable_database_management is not None:
-            pulumi.set(__self__, "enable_database_management", enable_database_management)
+            _setter("enable_database_management", enable_database_management)
         if external_db_system_id is not None:
-            pulumi.set(__self__, "external_db_system_id", external_db_system_id)
+            _setter("external_db_system_id", external_db_system_id)
         if license_model is not None:
-            pulumi.set(__self__, "license_model", license_model)
+            _setter("license_model", license_model)
 
     @property
     @pulumi.getter(name="enableDatabaseManagement")
@@ -208,6 +234,10 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ExternalDbSystemDatabaseManagementsManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

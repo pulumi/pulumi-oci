@@ -18,6 +18,7 @@ import com.pulumi.oci.Database.outputs.AutonomousDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseLocalStandbyDb;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseLongTermBackupSchedule;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseRemoteDisasterRecoveryConfiguration;
+import com.pulumi.oci.Database.outputs.AutonomousDatabaseResourcePoolSummary;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseScheduledOperation;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseStandbyDb;
 import com.pulumi.oci.Utilities;
@@ -1269,6 +1270,18 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     public Output<String> remoteDisasterRecoveryType() {
         return this.remoteDisasterRecoveryType;
     }
+    @Export(name="resourcePoolLeaderId", refs={String.class}, tree="[0]")
+    private Output<String> resourcePoolLeaderId;
+
+    public Output<String> resourcePoolLeaderId() {
+        return this.resourcePoolLeaderId;
+    }
+    @Export(name="resourcePoolSummary", refs={AutonomousDatabaseResourcePoolSummary.class}, tree="[0]")
+    private Output<AutonomousDatabaseResourcePoolSummary> resourcePoolSummary;
+
+    public Output<AutonomousDatabaseResourcePoolSummary> resourcePoolSummary() {
+        return this.resourcePoolSummary;
+    }
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
@@ -1628,6 +1641,12 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeMaintenanceEnd() {
         return this.timeMaintenanceEnd;
+    }
+    @Export(name="timeOfJoiningResourcePool", refs={String.class}, tree="[0]")
+    private Output<String> timeOfJoiningResourcePool;
+
+    public Output<String> timeOfJoiningResourcePool() {
+        return this.timeOfJoiningResourcePool;
     }
     /**
      * The timestamp of the last failover operation.

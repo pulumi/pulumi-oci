@@ -4,6 +4,8 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Kms.outputs.GetKeysKeyExternalKeyReference;
+import com.pulumi.oci.Kms.outputs.GetKeysKeyExternalKeyReferenceDetail;
 import com.pulumi.oci.Kms.outputs.GetKeysKeyKeyShape;
 import com.pulumi.oci.Kms.outputs.GetKeysKeyReplicaDetail;
 import com.pulumi.oci.Kms.outputs.GetKeysKeyRestoreFromFile;
@@ -39,6 +41,12 @@ public final class GetKeysKey {
      */
     private String displayName;
     /**
+     * @return Key reference data to be returned to the customer as a response.
+     * 
+     */
+    private List<GetKeysKeyExternalKeyReferenceDetail> externalKeyReferenceDetails;
+    private List<GetKeysKeyExternalKeyReference> externalKeyReferences;
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -49,7 +57,7 @@ public final class GetKeysKey {
      */
     private String id;
     /**
-     * @return A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+     * @return A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
      * 
      */
     private Boolean isPrimary;
@@ -64,7 +72,7 @@ public final class GetKeysKey {
      */
     private String managementEndpoint;
     /**
-     * @return A key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A  protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are  performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s  RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of  `SOFTWARE` are performed on the server.
+     * @return A key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. A protection mode of `EXTERNAL` mean that the key persists on the customer&#39;s external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
      * 
      */
     private String protectionMode;
@@ -131,6 +139,16 @@ public final class GetKeysKey {
         return this.displayName;
     }
     /**
+     * @return Key reference data to be returned to the customer as a response.
+     * 
+     */
+    public List<GetKeysKeyExternalKeyReferenceDetail> externalKeyReferenceDetails() {
+        return this.externalKeyReferenceDetails;
+    }
+    public List<GetKeysKeyExternalKeyReference> externalKeyReferences() {
+        return this.externalKeyReferences;
+    }
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -145,7 +163,7 @@ public final class GetKeysKey {
         return this.id;
     }
     /**
-     * @return A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+     * @return A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
      * 
      */
     public Boolean isPrimary() {
@@ -166,7 +184,7 @@ public final class GetKeysKey {
         return this.managementEndpoint;
     }
     /**
-     * @return A key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A  protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are  performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s  RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of  `SOFTWARE` are performed on the server.
+     * @return A key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. A protection mode of `EXTERNAL` mean that the key persists on the customer&#39;s external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
      * 
      */
     public String protectionMode() {
@@ -234,6 +252,8 @@ public final class GetKeysKey {
         private Map<String,Object> definedTags;
         private String desiredState;
         private String displayName;
+        private List<GetKeysKeyExternalKeyReferenceDetail> externalKeyReferenceDetails;
+        private List<GetKeysKeyExternalKeyReference> externalKeyReferences;
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isPrimary;
@@ -257,6 +277,8 @@ public final class GetKeysKey {
     	      this.definedTags = defaults.definedTags;
     	      this.desiredState = defaults.desiredState;
     	      this.displayName = defaults.displayName;
+    	      this.externalKeyReferenceDetails = defaults.externalKeyReferenceDetails;
+    	      this.externalKeyReferences = defaults.externalKeyReferences;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isPrimary = defaults.isPrimary;
@@ -298,6 +320,22 @@ public final class GetKeysKey {
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
             return this;
+        }
+        @CustomType.Setter
+        public Builder externalKeyReferenceDetails(List<GetKeysKeyExternalKeyReferenceDetail> externalKeyReferenceDetails) {
+            this.externalKeyReferenceDetails = Objects.requireNonNull(externalKeyReferenceDetails);
+            return this;
+        }
+        public Builder externalKeyReferenceDetails(GetKeysKeyExternalKeyReferenceDetail... externalKeyReferenceDetails) {
+            return externalKeyReferenceDetails(List.of(externalKeyReferenceDetails));
+        }
+        @CustomType.Setter
+        public Builder externalKeyReferences(List<GetKeysKeyExternalKeyReference> externalKeyReferences) {
+            this.externalKeyReferences = Objects.requireNonNull(externalKeyReferences);
+            return this;
+        }
+        public Builder externalKeyReferences(GetKeysKeyExternalKeyReference... externalKeyReferences) {
+            return externalKeyReferences(List.of(externalKeyReferences));
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
@@ -393,6 +431,8 @@ public final class GetKeysKey {
             o.definedTags = definedTags;
             o.desiredState = desiredState;
             o.displayName = displayName;
+            o.externalKeyReferenceDetails = externalKeyReferenceDetails;
+            o.externalKeyReferences = externalKeyReferences;
             o.freeformTags = freeformTags;
             o.id = id;
             o.isPrimary = isPrimary;

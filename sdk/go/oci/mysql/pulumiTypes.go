@@ -7267,6 +7267,217 @@ func (o MysqlDbSystemSourcePtrOutput) SourceUrl() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type ReplicaReplicaOverrides struct {
+	// (Updatable) The OCID of the Configuration to be used by the read replica.
+	ConfigurationId *string `pulumi:"configurationId"`
+	// (Updatable) The MySQL version to be used by the read replica.
+	MysqlVersion *string `pulumi:"mysqlVersion"`
+	// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ShapeName *string `pulumi:"shapeName"`
+}
+
+// ReplicaReplicaOverridesInput is an input type that accepts ReplicaReplicaOverridesArgs and ReplicaReplicaOverridesOutput values.
+// You can construct a concrete instance of `ReplicaReplicaOverridesInput` via:
+//
+//	ReplicaReplicaOverridesArgs{...}
+type ReplicaReplicaOverridesInput interface {
+	pulumi.Input
+
+	ToReplicaReplicaOverridesOutput() ReplicaReplicaOverridesOutput
+	ToReplicaReplicaOverridesOutputWithContext(context.Context) ReplicaReplicaOverridesOutput
+}
+
+type ReplicaReplicaOverridesArgs struct {
+	// (Updatable) The OCID of the Configuration to be used by the read replica.
+	ConfigurationId pulumi.StringPtrInput `pulumi:"configurationId"`
+	// (Updatable) The MySQL version to be used by the read replica.
+	MysqlVersion pulumi.StringPtrInput `pulumi:"mysqlVersion"`
+	// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ShapeName pulumi.StringPtrInput `pulumi:"shapeName"`
+}
+
+func (ReplicaReplicaOverridesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ReplicaReplicaOverrides)(nil)).Elem()
+}
+
+func (i ReplicaReplicaOverridesArgs) ToReplicaReplicaOverridesOutput() ReplicaReplicaOverridesOutput {
+	return i.ToReplicaReplicaOverridesOutputWithContext(context.Background())
+}
+
+func (i ReplicaReplicaOverridesArgs) ToReplicaReplicaOverridesOutputWithContext(ctx context.Context) ReplicaReplicaOverridesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicaReplicaOverridesOutput)
+}
+
+func (i ReplicaReplicaOverridesArgs) ToOutput(ctx context.Context) pulumix.Output[ReplicaReplicaOverrides] {
+	return pulumix.Output[ReplicaReplicaOverrides]{
+		OutputState: i.ToReplicaReplicaOverridesOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i ReplicaReplicaOverridesArgs) ToReplicaReplicaOverridesPtrOutput() ReplicaReplicaOverridesPtrOutput {
+	return i.ToReplicaReplicaOverridesPtrOutputWithContext(context.Background())
+}
+
+func (i ReplicaReplicaOverridesArgs) ToReplicaReplicaOverridesPtrOutputWithContext(ctx context.Context) ReplicaReplicaOverridesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicaReplicaOverridesOutput).ToReplicaReplicaOverridesPtrOutputWithContext(ctx)
+}
+
+// ReplicaReplicaOverridesPtrInput is an input type that accepts ReplicaReplicaOverridesArgs, ReplicaReplicaOverridesPtr and ReplicaReplicaOverridesPtrOutput values.
+// You can construct a concrete instance of `ReplicaReplicaOverridesPtrInput` via:
+//
+//	        ReplicaReplicaOverridesArgs{...}
+//
+//	or:
+//
+//	        nil
+type ReplicaReplicaOverridesPtrInput interface {
+	pulumi.Input
+
+	ToReplicaReplicaOverridesPtrOutput() ReplicaReplicaOverridesPtrOutput
+	ToReplicaReplicaOverridesPtrOutputWithContext(context.Context) ReplicaReplicaOverridesPtrOutput
+}
+
+type replicaReplicaOverridesPtrType ReplicaReplicaOverridesArgs
+
+func ReplicaReplicaOverridesPtr(v *ReplicaReplicaOverridesArgs) ReplicaReplicaOverridesPtrInput {
+	return (*replicaReplicaOverridesPtrType)(v)
+}
+
+func (*replicaReplicaOverridesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ReplicaReplicaOverrides)(nil)).Elem()
+}
+
+func (i *replicaReplicaOverridesPtrType) ToReplicaReplicaOverridesPtrOutput() ReplicaReplicaOverridesPtrOutput {
+	return i.ToReplicaReplicaOverridesPtrOutputWithContext(context.Background())
+}
+
+func (i *replicaReplicaOverridesPtrType) ToReplicaReplicaOverridesPtrOutputWithContext(ctx context.Context) ReplicaReplicaOverridesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicaReplicaOverridesPtrOutput)
+}
+
+func (i *replicaReplicaOverridesPtrType) ToOutput(ctx context.Context) pulumix.Output[*ReplicaReplicaOverrides] {
+	return pulumix.Output[*ReplicaReplicaOverrides]{
+		OutputState: i.ToReplicaReplicaOverridesPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type ReplicaReplicaOverridesOutput struct{ *pulumi.OutputState }
+
+func (ReplicaReplicaOverridesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ReplicaReplicaOverrides)(nil)).Elem()
+}
+
+func (o ReplicaReplicaOverridesOutput) ToReplicaReplicaOverridesOutput() ReplicaReplicaOverridesOutput {
+	return o
+}
+
+func (o ReplicaReplicaOverridesOutput) ToReplicaReplicaOverridesOutputWithContext(ctx context.Context) ReplicaReplicaOverridesOutput {
+	return o
+}
+
+func (o ReplicaReplicaOverridesOutput) ToReplicaReplicaOverridesPtrOutput() ReplicaReplicaOverridesPtrOutput {
+	return o.ToReplicaReplicaOverridesPtrOutputWithContext(context.Background())
+}
+
+func (o ReplicaReplicaOverridesOutput) ToReplicaReplicaOverridesPtrOutputWithContext(ctx context.Context) ReplicaReplicaOverridesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ReplicaReplicaOverrides) *ReplicaReplicaOverrides {
+		return &v
+	}).(ReplicaReplicaOverridesPtrOutput)
+}
+
+func (o ReplicaReplicaOverridesOutput) ToOutput(ctx context.Context) pulumix.Output[ReplicaReplicaOverrides] {
+	return pulumix.Output[ReplicaReplicaOverrides]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) The OCID of the Configuration to be used by the read replica.
+func (o ReplicaReplicaOverridesOutput) ConfigurationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ReplicaReplicaOverrides) *string { return v.ConfigurationId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The MySQL version to be used by the read replica.
+func (o ReplicaReplicaOverridesOutput) MysqlVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ReplicaReplicaOverrides) *string { return v.MysqlVersion }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ReplicaReplicaOverridesOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ReplicaReplicaOverrides) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
+}
+
+type ReplicaReplicaOverridesPtrOutput struct{ *pulumi.OutputState }
+
+func (ReplicaReplicaOverridesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ReplicaReplicaOverrides)(nil)).Elem()
+}
+
+func (o ReplicaReplicaOverridesPtrOutput) ToReplicaReplicaOverridesPtrOutput() ReplicaReplicaOverridesPtrOutput {
+	return o
+}
+
+func (o ReplicaReplicaOverridesPtrOutput) ToReplicaReplicaOverridesPtrOutputWithContext(ctx context.Context) ReplicaReplicaOverridesPtrOutput {
+	return o
+}
+
+func (o ReplicaReplicaOverridesPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ReplicaReplicaOverrides] {
+	return pulumix.Output[*ReplicaReplicaOverrides]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o ReplicaReplicaOverridesPtrOutput) Elem() ReplicaReplicaOverridesOutput {
+	return o.ApplyT(func(v *ReplicaReplicaOverrides) ReplicaReplicaOverrides {
+		if v != nil {
+			return *v
+		}
+		var ret ReplicaReplicaOverrides
+		return ret
+	}).(ReplicaReplicaOverridesOutput)
+}
+
+// (Updatable) The OCID of the Configuration to be used by the read replica.
+func (o ReplicaReplicaOverridesPtrOutput) ConfigurationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ReplicaReplicaOverrides) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ConfigurationId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The MySQL version to be used by the read replica.
+func (o ReplicaReplicaOverridesPtrOutput) MysqlVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ReplicaReplicaOverrides) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MysqlVersion
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ReplicaReplicaOverridesPtrOutput) ShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ReplicaReplicaOverrides) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ShapeName
+	}).(pulumi.StringPtrOutput)
+}
+
 type GetChannelSource struct {
 	// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
 	AnonymousTransactionsHandlings []GetChannelSourceAnonymousTransactionsHandling `pulumi:"anonymousTransactionsHandlings"`
@@ -19818,6 +20029,145 @@ func (o GetMysqlVersionVersionVersionArrayOutput) Index(i pulumi.IntInput) GetMy
 	}).(GetMysqlVersionVersionVersionOutput)
 }
 
+type GetReplicaReplicaOverride struct {
+	// The OCID of the Configuration to be used by the read replica.
+	ConfigurationId string `pulumi:"configurationId"`
+	// The MySQL version to be used by the read replica.
+	MysqlVersion string `pulumi:"mysqlVersion"`
+	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+	ShapeName string `pulumi:"shapeName"`
+}
+
+// GetReplicaReplicaOverrideInput is an input type that accepts GetReplicaReplicaOverrideArgs and GetReplicaReplicaOverrideOutput values.
+// You can construct a concrete instance of `GetReplicaReplicaOverrideInput` via:
+//
+//	GetReplicaReplicaOverrideArgs{...}
+type GetReplicaReplicaOverrideInput interface {
+	pulumi.Input
+
+	ToGetReplicaReplicaOverrideOutput() GetReplicaReplicaOverrideOutput
+	ToGetReplicaReplicaOverrideOutputWithContext(context.Context) GetReplicaReplicaOverrideOutput
+}
+
+type GetReplicaReplicaOverrideArgs struct {
+	// The OCID of the Configuration to be used by the read replica.
+	ConfigurationId pulumi.StringInput `pulumi:"configurationId"`
+	// The MySQL version to be used by the read replica.
+	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
+	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+}
+
+func (GetReplicaReplicaOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicaReplicaOverride)(nil)).Elem()
+}
+
+func (i GetReplicaReplicaOverrideArgs) ToGetReplicaReplicaOverrideOutput() GetReplicaReplicaOverrideOutput {
+	return i.ToGetReplicaReplicaOverrideOutputWithContext(context.Background())
+}
+
+func (i GetReplicaReplicaOverrideArgs) ToGetReplicaReplicaOverrideOutputWithContext(ctx context.Context) GetReplicaReplicaOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicaReplicaOverrideOutput)
+}
+
+func (i GetReplicaReplicaOverrideArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicaReplicaOverride] {
+	return pulumix.Output[GetReplicaReplicaOverride]{
+		OutputState: i.ToGetReplicaReplicaOverrideOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetReplicaReplicaOverrideArrayInput is an input type that accepts GetReplicaReplicaOverrideArray and GetReplicaReplicaOverrideArrayOutput values.
+// You can construct a concrete instance of `GetReplicaReplicaOverrideArrayInput` via:
+//
+//	GetReplicaReplicaOverrideArray{ GetReplicaReplicaOverrideArgs{...} }
+type GetReplicaReplicaOverrideArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicaReplicaOverrideArrayOutput() GetReplicaReplicaOverrideArrayOutput
+	ToGetReplicaReplicaOverrideArrayOutputWithContext(context.Context) GetReplicaReplicaOverrideArrayOutput
+}
+
+type GetReplicaReplicaOverrideArray []GetReplicaReplicaOverrideInput
+
+func (GetReplicaReplicaOverrideArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicaReplicaOverride)(nil)).Elem()
+}
+
+func (i GetReplicaReplicaOverrideArray) ToGetReplicaReplicaOverrideArrayOutput() GetReplicaReplicaOverrideArrayOutput {
+	return i.ToGetReplicaReplicaOverrideArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicaReplicaOverrideArray) ToGetReplicaReplicaOverrideArrayOutputWithContext(ctx context.Context) GetReplicaReplicaOverrideArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicaReplicaOverrideArrayOutput)
+}
+
+func (i GetReplicaReplicaOverrideArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicaReplicaOverride] {
+	return pulumix.Output[[]GetReplicaReplicaOverride]{
+		OutputState: i.ToGetReplicaReplicaOverrideArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetReplicaReplicaOverrideOutput struct{ *pulumi.OutputState }
+
+func (GetReplicaReplicaOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicaReplicaOverride)(nil)).Elem()
+}
+
+func (o GetReplicaReplicaOverrideOutput) ToGetReplicaReplicaOverrideOutput() GetReplicaReplicaOverrideOutput {
+	return o
+}
+
+func (o GetReplicaReplicaOverrideOutput) ToGetReplicaReplicaOverrideOutputWithContext(ctx context.Context) GetReplicaReplicaOverrideOutput {
+	return o
+}
+
+func (o GetReplicaReplicaOverrideOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicaReplicaOverride] {
+	return pulumix.Output[GetReplicaReplicaOverride]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The OCID of the Configuration to be used by the read replica.
+func (o GetReplicaReplicaOverrideOutput) ConfigurationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicaReplicaOverride) string { return v.ConfigurationId }).(pulumi.StringOutput)
+}
+
+// The MySQL version to be used by the read replica.
+func (o GetReplicaReplicaOverrideOutput) MysqlVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicaReplicaOverride) string { return v.MysqlVersion }).(pulumi.StringOutput)
+}
+
+// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+func (o GetReplicaReplicaOverrideOutput) ShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicaReplicaOverride) string { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+type GetReplicaReplicaOverrideArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicaReplicaOverrideArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicaReplicaOverride)(nil)).Elem()
+}
+
+func (o GetReplicaReplicaOverrideArrayOutput) ToGetReplicaReplicaOverrideArrayOutput() GetReplicaReplicaOverrideArrayOutput {
+	return o
+}
+
+func (o GetReplicaReplicaOverrideArrayOutput) ToGetReplicaReplicaOverrideArrayOutputWithContext(ctx context.Context) GetReplicaReplicaOverrideArrayOutput {
+	return o
+}
+
+func (o GetReplicaReplicaOverrideArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicaReplicaOverride] {
+	return pulumix.Output[[]GetReplicaReplicaOverride]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetReplicaReplicaOverrideArrayOutput) Index(i pulumi.IntInput) GetReplicaReplicaOverrideOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicaReplicaOverride {
+		return vs[0].([]GetReplicaReplicaOverride)[vs[1].(int)]
+	}).(GetReplicaReplicaOverrideOutput)
+}
+
 type GetReplicasFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -19953,6 +20303,8 @@ type GetReplicasReplica struct {
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
+	// The requested Configuration instance.
+	ConfigurationId string `pulumi:"configurationId"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId string `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -19973,12 +20325,16 @@ type GetReplicasReplica struct {
 	IsDeleteProtected bool `pulumi:"isDeleteProtected"`
 	// A message describing the state of the read replica.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The MySQL version used by the read replica.
+	// The MySQL version to be used by the read replica.
 	MysqlVersion string `pulumi:"mysqlVersion"`
 	// The port the read replica is configured to listen on.
 	Port int `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX int `pulumi:"portX"`
+	// By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+	ReplicaOverrides []GetReplicasReplicaReplicaOverride `pulumi:"replicaOverrides"`
+	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+	ShapeName string `pulumi:"shapeName"`
 	// The LifecycleState of the read replica.
 	State string `pulumi:"state"`
 	// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -20003,6 +20359,8 @@ type GetReplicasReplicaArgs struct {
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The requested Configuration instance.
+	ConfigurationId pulumi.StringInput `pulumi:"configurationId"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -20023,12 +20381,16 @@ type GetReplicasReplicaArgs struct {
 	IsDeleteProtected pulumi.BoolInput `pulumi:"isDeleteProtected"`
 	// A message describing the state of the read replica.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// The MySQL version used by the read replica.
+	// The MySQL version to be used by the read replica.
 	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
 	// The port the read replica is configured to listen on.
 	Port pulumi.IntInput `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntInput `pulumi:"portX"`
+	// By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+	ReplicaOverrides GetReplicasReplicaReplicaOverrideArrayInput `pulumi:"replicaOverrides"`
+	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+	ShapeName pulumi.StringInput `pulumi:"shapeName"`
 	// The LifecycleState of the read replica.
 	State pulumi.StringInput `pulumi:"state"`
 	// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -20116,6 +20478,11 @@ func (o GetReplicasReplicaOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicasReplica) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The requested Configuration instance.
+func (o GetReplicasReplicaOutput) ConfigurationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplica) string { return v.ConfigurationId }).(pulumi.StringOutput)
+}
+
 // The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o GetReplicasReplicaOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicasReplica) string { return v.DbSystemId }).(pulumi.StringOutput)
@@ -20166,7 +20533,7 @@ func (o GetReplicasReplicaOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicasReplica) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The MySQL version used by the read replica.
+// The MySQL version to be used by the read replica.
 func (o GetReplicasReplicaOutput) MysqlVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicasReplica) string { return v.MysqlVersion }).(pulumi.StringOutput)
 }
@@ -20179,6 +20546,16 @@ func (o GetReplicasReplicaOutput) Port() pulumi.IntOutput {
 // The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 func (o GetReplicasReplicaOutput) PortX() pulumi.IntOutput {
 	return o.ApplyT(func(v GetReplicasReplica) int { return v.PortX }).(pulumi.IntOutput)
+}
+
+// By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+func (o GetReplicasReplicaOutput) ReplicaOverrides() GetReplicasReplicaReplicaOverrideArrayOutput {
+	return o.ApplyT(func(v GetReplicasReplica) []GetReplicasReplicaReplicaOverride { return v.ReplicaOverrides }).(GetReplicasReplicaReplicaOverrideArrayOutput)
+}
+
+// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+func (o GetReplicasReplicaOutput) ShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplica) string { return v.ShapeName }).(pulumi.StringOutput)
 }
 
 // The LifecycleState of the read replica.
@@ -20220,6 +20597,145 @@ func (o GetReplicasReplicaArrayOutput) Index(i pulumi.IntInput) GetReplicasRepli
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicasReplica {
 		return vs[0].([]GetReplicasReplica)[vs[1].(int)]
 	}).(GetReplicasReplicaOutput)
+}
+
+type GetReplicasReplicaReplicaOverride struct {
+	// The requested Configuration instance.
+	ConfigurationId string `pulumi:"configurationId"`
+	// The MySQL version to be used by the read replica.
+	MysqlVersion string `pulumi:"mysqlVersion"`
+	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+	ShapeName string `pulumi:"shapeName"`
+}
+
+// GetReplicasReplicaReplicaOverrideInput is an input type that accepts GetReplicasReplicaReplicaOverrideArgs and GetReplicasReplicaReplicaOverrideOutput values.
+// You can construct a concrete instance of `GetReplicasReplicaReplicaOverrideInput` via:
+//
+//	GetReplicasReplicaReplicaOverrideArgs{...}
+type GetReplicasReplicaReplicaOverrideInput interface {
+	pulumi.Input
+
+	ToGetReplicasReplicaReplicaOverrideOutput() GetReplicasReplicaReplicaOverrideOutput
+	ToGetReplicasReplicaReplicaOverrideOutputWithContext(context.Context) GetReplicasReplicaReplicaOverrideOutput
+}
+
+type GetReplicasReplicaReplicaOverrideArgs struct {
+	// The requested Configuration instance.
+	ConfigurationId pulumi.StringInput `pulumi:"configurationId"`
+	// The MySQL version to be used by the read replica.
+	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
+	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+}
+
+func (GetReplicasReplicaReplicaOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasReplicaReplicaOverride)(nil)).Elem()
+}
+
+func (i GetReplicasReplicaReplicaOverrideArgs) ToGetReplicasReplicaReplicaOverrideOutput() GetReplicasReplicaReplicaOverrideOutput {
+	return i.ToGetReplicasReplicaReplicaOverrideOutputWithContext(context.Background())
+}
+
+func (i GetReplicasReplicaReplicaOverrideArgs) ToGetReplicasReplicaReplicaOverrideOutputWithContext(ctx context.Context) GetReplicasReplicaReplicaOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaReplicaOverrideOutput)
+}
+
+func (i GetReplicasReplicaReplicaOverrideArgs) ToOutput(ctx context.Context) pulumix.Output[GetReplicasReplicaReplicaOverride] {
+	return pulumix.Output[GetReplicasReplicaReplicaOverride]{
+		OutputState: i.ToGetReplicasReplicaReplicaOverrideOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetReplicasReplicaReplicaOverrideArrayInput is an input type that accepts GetReplicasReplicaReplicaOverrideArray and GetReplicasReplicaReplicaOverrideArrayOutput values.
+// You can construct a concrete instance of `GetReplicasReplicaReplicaOverrideArrayInput` via:
+//
+//	GetReplicasReplicaReplicaOverrideArray{ GetReplicasReplicaReplicaOverrideArgs{...} }
+type GetReplicasReplicaReplicaOverrideArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicasReplicaReplicaOverrideArrayOutput() GetReplicasReplicaReplicaOverrideArrayOutput
+	ToGetReplicasReplicaReplicaOverrideArrayOutputWithContext(context.Context) GetReplicasReplicaReplicaOverrideArrayOutput
+}
+
+type GetReplicasReplicaReplicaOverrideArray []GetReplicasReplicaReplicaOverrideInput
+
+func (GetReplicasReplicaReplicaOverrideArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasReplicaReplicaOverride)(nil)).Elem()
+}
+
+func (i GetReplicasReplicaReplicaOverrideArray) ToGetReplicasReplicaReplicaOverrideArrayOutput() GetReplicasReplicaReplicaOverrideArrayOutput {
+	return i.ToGetReplicasReplicaReplicaOverrideArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicasReplicaReplicaOverrideArray) ToGetReplicasReplicaReplicaOverrideArrayOutputWithContext(ctx context.Context) GetReplicasReplicaReplicaOverrideArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaReplicaOverrideArrayOutput)
+}
+
+func (i GetReplicasReplicaReplicaOverrideArray) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicasReplicaReplicaOverride] {
+	return pulumix.Output[[]GetReplicasReplicaReplicaOverride]{
+		OutputState: i.ToGetReplicasReplicaReplicaOverrideArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetReplicasReplicaReplicaOverrideOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasReplicaReplicaOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasReplicaReplicaOverride)(nil)).Elem()
+}
+
+func (o GetReplicasReplicaReplicaOverrideOutput) ToGetReplicasReplicaReplicaOverrideOutput() GetReplicasReplicaReplicaOverrideOutput {
+	return o
+}
+
+func (o GetReplicasReplicaReplicaOverrideOutput) ToGetReplicasReplicaReplicaOverrideOutputWithContext(ctx context.Context) GetReplicasReplicaReplicaOverrideOutput {
+	return o
+}
+
+func (o GetReplicasReplicaReplicaOverrideOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicasReplicaReplicaOverride] {
+	return pulumix.Output[GetReplicasReplicaReplicaOverride]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The requested Configuration instance.
+func (o GetReplicasReplicaReplicaOverrideOutput) ConfigurationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplicaReplicaOverride) string { return v.ConfigurationId }).(pulumi.StringOutput)
+}
+
+// The MySQL version to be used by the read replica.
+func (o GetReplicasReplicaReplicaOverrideOutput) MysqlVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplicaReplicaOverride) string { return v.MysqlVersion }).(pulumi.StringOutput)
+}
+
+// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+func (o GetReplicasReplicaReplicaOverrideOutput) ShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplicaReplicaOverride) string { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+type GetReplicasReplicaReplicaOverrideArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasReplicaReplicaOverrideArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasReplicaReplicaOverride)(nil)).Elem()
+}
+
+func (o GetReplicasReplicaReplicaOverrideArrayOutput) ToGetReplicasReplicaReplicaOverrideArrayOutput() GetReplicasReplicaReplicaOverrideArrayOutput {
+	return o
+}
+
+func (o GetReplicasReplicaReplicaOverrideArrayOutput) ToGetReplicasReplicaReplicaOverrideArrayOutputWithContext(ctx context.Context) GetReplicasReplicaReplicaOverrideArrayOutput {
+	return o
+}
+
+func (o GetReplicasReplicaReplicaOverrideArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetReplicasReplicaReplicaOverride] {
+	return pulumix.Output[[]GetReplicasReplicaReplicaOverride]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetReplicasReplicaReplicaOverrideArrayOutput) Index(i pulumi.IntInput) GetReplicasReplicaReplicaOverrideOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicasReplicaReplicaOverride {
+		return vs[0].([]GetReplicasReplicaReplicaOverride)[vs[1].(int)]
+	}).(GetReplicasReplicaReplicaOverrideOutput)
 }
 
 type GetShapesFilter struct {
@@ -20562,6 +21078,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemPointInTimeRecoveryDetailArrayInput)(nil)).Elem(), MysqlDbSystemPointInTimeRecoveryDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSourceInput)(nil)).Elem(), MysqlDbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSourcePtrInput)(nil)).Elem(), MysqlDbSystemSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaReplicaOverridesInput)(nil)).Elem(), ReplicaReplicaOverridesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaReplicaOverridesPtrInput)(nil)).Elem(), ReplicaReplicaOverridesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelSourceInput)(nil)).Elem(), GetChannelSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelSourceArrayInput)(nil)).Elem(), GetChannelSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelSourceAnonymousTransactionsHandlingInput)(nil)).Elem(), GetChannelSourceAnonymousTransactionsHandlingArgs{})
@@ -20698,10 +21216,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlVersionVersionArrayInput)(nil)).Elem(), GetMysqlVersionVersionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlVersionVersionVersionInput)(nil)).Elem(), GetMysqlVersionVersionVersionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlVersionVersionVersionArrayInput)(nil)).Elem(), GetMysqlVersionVersionVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaReplicaOverrideInput)(nil)).Elem(), GetReplicaReplicaOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaReplicaOverrideArrayInput)(nil)).Elem(), GetReplicaReplicaOverrideArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasFilterInput)(nil)).Elem(), GetReplicasFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasFilterArrayInput)(nil)).Elem(), GetReplicasFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaInput)(nil)).Elem(), GetReplicasReplicaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaArrayInput)(nil)).Elem(), GetReplicasReplicaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaReplicaOverrideInput)(nil)).Elem(), GetReplicasReplicaReplicaOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaReplicaOverrideArrayInput)(nil)).Elem(), GetReplicasReplicaReplicaOverrideArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesFilterInput)(nil)).Elem(), GetShapesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesFilterArrayInput)(nil)).Elem(), GetShapesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeInput)(nil)).Elem(), GetShapesShapeArgs{})
@@ -20764,6 +21286,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlDbSystemPointInTimeRecoveryDetailArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemSourceOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemSourcePtrOutput{})
+	pulumi.RegisterOutputType(ReplicaReplicaOverridesOutput{})
+	pulumi.RegisterOutputType(ReplicaReplicaOverridesPtrOutput{})
 	pulumi.RegisterOutputType(GetChannelSourceOutput{})
 	pulumi.RegisterOutputType(GetChannelSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetChannelSourceAnonymousTransactionsHandlingOutput{})
@@ -20900,10 +21424,14 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlVersionVersionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlVersionVersionVersionOutput{})
 	pulumi.RegisterOutputType(GetMysqlVersionVersionVersionArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicaReplicaOverrideOutput{})
+	pulumi.RegisterOutputType(GetReplicaReplicaOverrideArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicasFilterOutput{})
 	pulumi.RegisterOutputType(GetReplicasFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicasReplicaOutput{})
 	pulumi.RegisterOutputType(GetReplicasReplicaArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicasReplicaReplicaOverrideOutput{})
+	pulumi.RegisterOutputType(GetReplicasReplicaReplicaOverrideArrayOutput{})
 	pulumi.RegisterOutputType(GetShapesFilterOutput{})
 	pulumi.RegisterOutputType(GetShapesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetShapesShapeOutput{})

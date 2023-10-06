@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['OdaPrivateEndpointAttachmentArgs', 'OdaPrivateEndpointAttachment']
@@ -25,8 +25,19 @@ class OdaPrivateEndpointAttachmentArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "oda_instance_id", oda_instance_id)
-        pulumi.set(__self__, "oda_private_endpoint_id", oda_private_endpoint_id)
+        OdaPrivateEndpointAttachmentArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            oda_instance_id=oda_instance_id,
+            oda_private_endpoint_id=oda_private_endpoint_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             oda_instance_id: pulumi.Input[str],
+             oda_private_endpoint_id: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("oda_instance_id", oda_instance_id)
+        _setter("oda_private_endpoint_id", oda_private_endpoint_id)
 
     @property
     @pulumi.getter(name="odaInstanceId")
@@ -79,18 +90,37 @@ class _OdaPrivateEndpointAttachmentState:
         :param pulumi.Input[str] time_created: When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         :param pulumi.Input[str] time_updated: When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
+        _OdaPrivateEndpointAttachmentState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            oda_instance_id=oda_instance_id,
+            oda_private_endpoint_id=oda_private_endpoint_id,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             oda_instance_id: Optional[pulumi.Input[str]] = None,
+             oda_private_endpoint_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if oda_instance_id is not None:
-            pulumi.set(__self__, "oda_instance_id", oda_instance_id)
+            _setter("oda_instance_id", oda_instance_id)
         if oda_private_endpoint_id is not None:
-            pulumi.set(__self__, "oda_private_endpoint_id", oda_private_endpoint_id)
+            _setter("oda_private_endpoint_id", oda_private_endpoint_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -256,6 +286,10 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            OdaPrivateEndpointAttachmentArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

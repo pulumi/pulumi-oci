@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -48,17 +48,36 @@ class CustomTableSavedCustomTableArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] row_group_bies: (Updatable) The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
         :param pulumi.Input[float] version: (Updatable) The version of the custom table.
         """
-        pulumi.set(__self__, "display_name", display_name)
+        CustomTableSavedCustomTableArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            column_group_bies=column_group_bies,
+            compartment_depth=compartment_depth,
+            group_by_tags=group_by_tags,
+            row_group_bies=row_group_bies,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: pulumi.Input[str],
+             column_group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             compartment_depth: Optional[pulumi.Input[float]] = None,
+             group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input['CustomTableSavedCustomTableGroupByTagArgs']]]] = None,
+             row_group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             version: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
         if column_group_bies is not None:
-            pulumi.set(__self__, "column_group_bies", column_group_bies)
+            _setter("column_group_bies", column_group_bies)
         if compartment_depth is not None:
-            pulumi.set(__self__, "compartment_depth", compartment_depth)
+            _setter("compartment_depth", compartment_depth)
         if group_by_tags is not None:
-            pulumi.set(__self__, "group_by_tags", group_by_tags)
+            _setter("group_by_tags", group_by_tags)
         if row_group_bies is not None:
-            pulumi.set(__self__, "row_group_bies", row_group_bies)
+            _setter("row_group_bies", row_group_bies)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter(name="displayName")
@@ -144,12 +163,25 @@ class CustomTableSavedCustomTableGroupByTagArgs:
         :param pulumi.Input[str] namespace: (Updatable) The tag namespace.
         :param pulumi.Input[str] value: (Updatable) The tag value.
         """
+        CustomTableSavedCustomTableGroupByTagArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            namespace=namespace,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -205,10 +237,25 @@ class QueryQueryDefinitionArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "cost_analysis_ui", cost_analysis_ui)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "report_query", report_query)
-        pulumi.set(__self__, "version", version)
+        QueryQueryDefinitionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cost_analysis_ui=cost_analysis_ui,
+            display_name=display_name,
+            report_query=report_query,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cost_analysis_ui: pulumi.Input['QueryQueryDefinitionCostAnalysisUiArgs'],
+             display_name: pulumi.Input[str],
+             report_query: pulumi.Input['QueryQueryDefinitionReportQueryArgs'],
+             version: pulumi.Input[float],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cost_analysis_ui", cost_analysis_ui)
+        _setter("display_name", display_name)
+        _setter("report_query", report_query)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="costAnalysisUi")
@@ -272,10 +319,21 @@ class QueryQueryDefinitionCostAnalysisUiArgs:
         :param pulumi.Input[str] graph: (Updatable) The graph type.
         :param pulumi.Input[bool] is_cumulative_graph: (Updatable) A cumulative graph.
         """
+        QueryQueryDefinitionCostAnalysisUiArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            graph=graph,
+            is_cumulative_graph=is_cumulative_graph,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             graph: Optional[pulumi.Input[str]] = None,
+             is_cumulative_graph: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if graph is not None:
-            pulumi.set(__self__, "graph", graph)
+            _setter("graph", graph)
         if is_cumulative_graph is not None:
-            pulumi.set(__self__, "is_cumulative_graph", is_cumulative_graph)
+            _setter("is_cumulative_graph", is_cumulative_graph)
 
     @property
     @pulumi.getter
@@ -331,28 +389,59 @@ class QueryQueryDefinitionReportQueryArgs:
         :param pulumi.Input[str] time_usage_ended: (Updatable) The usage end time.
         :param pulumi.Input[str] time_usage_started: (Updatable) The usage start time.
         """
-        pulumi.set(__self__, "granularity", granularity)
-        pulumi.set(__self__, "tenant_id", tenant_id)
+        QueryQueryDefinitionReportQueryArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            granularity=granularity,
+            tenant_id=tenant_id,
+            compartment_depth=compartment_depth,
+            date_range_name=date_range_name,
+            filter=filter,
+            forecast=forecast,
+            group_bies=group_bies,
+            group_by_tags=group_by_tags,
+            is_aggregate_by_time=is_aggregate_by_time,
+            query_type=query_type,
+            time_usage_ended=time_usage_ended,
+            time_usage_started=time_usage_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             granularity: pulumi.Input[str],
+             tenant_id: pulumi.Input[str],
+             compartment_depth: Optional[pulumi.Input[float]] = None,
+             date_range_name: Optional[pulumi.Input[str]] = None,
+             filter: Optional[pulumi.Input[str]] = None,
+             forecast: Optional[pulumi.Input['QueryQueryDefinitionReportQueryForecastArgs']] = None,
+             group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input['QueryQueryDefinitionReportQueryGroupByTagArgs']]]] = None,
+             is_aggregate_by_time: Optional[pulumi.Input[bool]] = None,
+             query_type: Optional[pulumi.Input[str]] = None,
+             time_usage_ended: Optional[pulumi.Input[str]] = None,
+             time_usage_started: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("granularity", granularity)
+        _setter("tenant_id", tenant_id)
         if compartment_depth is not None:
-            pulumi.set(__self__, "compartment_depth", compartment_depth)
+            _setter("compartment_depth", compartment_depth)
         if date_range_name is not None:
-            pulumi.set(__self__, "date_range_name", date_range_name)
+            _setter("date_range_name", date_range_name)
         if filter is not None:
-            pulumi.set(__self__, "filter", filter)
+            _setter("filter", filter)
         if forecast is not None:
-            pulumi.set(__self__, "forecast", forecast)
+            _setter("forecast", forecast)
         if group_bies is not None:
-            pulumi.set(__self__, "group_bies", group_bies)
+            _setter("group_bies", group_bies)
         if group_by_tags is not None:
-            pulumi.set(__self__, "group_by_tags", group_by_tags)
+            _setter("group_by_tags", group_by_tags)
         if is_aggregate_by_time is not None:
-            pulumi.set(__self__, "is_aggregate_by_time", is_aggregate_by_time)
+            _setter("is_aggregate_by_time", is_aggregate_by_time)
         if query_type is not None:
-            pulumi.set(__self__, "query_type", query_type)
+            _setter("query_type", query_type)
         if time_usage_ended is not None:
-            pulumi.set(__self__, "time_usage_ended", time_usage_ended)
+            _setter("time_usage_ended", time_usage_ended)
         if time_usage_started is not None:
-            pulumi.set(__self__, "time_usage_started", time_usage_started)
+            _setter("time_usage_started", time_usage_started)
 
     @property
     @pulumi.getter
@@ -510,11 +599,24 @@ class QueryQueryDefinitionReportQueryForecastArgs:
         :param pulumi.Input[str] forecast_type: (Updatable) BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
         :param pulumi.Input[str] time_forecast_started: (Updatable) The forecast start time. Defaults to UTC-1 if not specified.
         """
-        pulumi.set(__self__, "time_forecast_ended", time_forecast_ended)
+        QueryQueryDefinitionReportQueryForecastArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_forecast_ended=time_forecast_ended,
+            forecast_type=forecast_type,
+            time_forecast_started=time_forecast_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_forecast_ended: pulumi.Input[str],
+             forecast_type: Optional[pulumi.Input[str]] = None,
+             time_forecast_started: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_forecast_ended", time_forecast_ended)
         if forecast_type is not None:
-            pulumi.set(__self__, "forecast_type", forecast_type)
+            _setter("forecast_type", forecast_type)
         if time_forecast_started is not None:
-            pulumi.set(__self__, "time_forecast_started", time_forecast_started)
+            _setter("time_forecast_started", time_forecast_started)
 
     @property
     @pulumi.getter(name="timeForecastEnded")
@@ -564,12 +666,25 @@ class QueryQueryDefinitionReportQueryGroupByTagArgs:
         :param pulumi.Input[str] namespace: (Updatable) The tag namespace.
         :param pulumi.Input[str] value: (Updatable) The tag value.
         """
+        QueryQueryDefinitionReportQueryGroupByTagArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            namespace=namespace,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -629,20 +744,43 @@ class ScheduleQueryPropertiesArgs:
         :param pulumi.Input[bool] is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
         :param pulumi.Input[str] query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
         """
-        pulumi.set(__self__, "date_range", date_range)
-        pulumi.set(__self__, "granularity", granularity)
+        ScheduleQueryPropertiesArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            date_range=date_range,
+            granularity=granularity,
+            compartment_depth=compartment_depth,
+            filter=filter,
+            group_bies=group_bies,
+            group_by_tags=group_by_tags,
+            is_aggregate_by_time=is_aggregate_by_time,
+            query_type=query_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             date_range: pulumi.Input['ScheduleQueryPropertiesDateRangeArgs'],
+             granularity: pulumi.Input[str],
+             compartment_depth: Optional[pulumi.Input[float]] = None,
+             filter: Optional[pulumi.Input[str]] = None,
+             group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input['ScheduleQueryPropertiesGroupByTagArgs']]]] = None,
+             is_aggregate_by_time: Optional[pulumi.Input[bool]] = None,
+             query_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("date_range", date_range)
+        _setter("granularity", granularity)
         if compartment_depth is not None:
-            pulumi.set(__self__, "compartment_depth", compartment_depth)
+            _setter("compartment_depth", compartment_depth)
         if filter is not None:
-            pulumi.set(__self__, "filter", filter)
+            _setter("filter", filter)
         if group_bies is not None:
-            pulumi.set(__self__, "group_bies", group_bies)
+            _setter("group_bies", group_bies)
         if group_by_tags is not None:
-            pulumi.set(__self__, "group_by_tags", group_by_tags)
+            _setter("group_by_tags", group_by_tags)
         if is_aggregate_by_time is not None:
-            pulumi.set(__self__, "is_aggregate_by_time", is_aggregate_by_time)
+            _setter("is_aggregate_by_time", is_aggregate_by_time)
         if query_type is not None:
-            pulumi.set(__self__, "query_type", query_type)
+            _setter("query_type", query_type)
 
     @property
     @pulumi.getter(name="dateRange")
@@ -753,13 +891,28 @@ class ScheduleQueryPropertiesDateRangeArgs:
         :param pulumi.Input[str] time_usage_ended: The usage end time.
         :param pulumi.Input[str] time_usage_started: The usage start time.
         """
-        pulumi.set(__self__, "date_range_type", date_range_type)
+        ScheduleQueryPropertiesDateRangeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            date_range_type=date_range_type,
+            dynamic_date_range_type=dynamic_date_range_type,
+            time_usage_ended=time_usage_ended,
+            time_usage_started=time_usage_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             date_range_type: pulumi.Input[str],
+             dynamic_date_range_type: Optional[pulumi.Input[str]] = None,
+             time_usage_ended: Optional[pulumi.Input[str]] = None,
+             time_usage_started: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("date_range_type", date_range_type)
         if dynamic_date_range_type is not None:
-            pulumi.set(__self__, "dynamic_date_range_type", dynamic_date_range_type)
+            _setter("dynamic_date_range_type", dynamic_date_range_type)
         if time_usage_ended is not None:
-            pulumi.set(__self__, "time_usage_ended", time_usage_ended)
+            _setter("time_usage_ended", time_usage_ended)
         if time_usage_started is not None:
-            pulumi.set(__self__, "time_usage_started", time_usage_started)
+            _setter("time_usage_started", time_usage_started)
 
     @property
     @pulumi.getter(name="dateRangeType")
@@ -818,12 +971,25 @@ class ScheduleQueryPropertiesGroupByTagArgs:
         :param pulumi.Input[str] namespace: (Updatable) The namespace needed to determine the object storage bucket.
         :param pulumi.Input[str] value: The tag value.
         """
+        ScheduleQueryPropertiesGroupByTagArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            namespace=namespace,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -875,10 +1041,25 @@ class ScheduleResultLocationArgs:
         :param pulumi.Input[str] namespace: (Updatable) The namespace needed to determine the object storage bucket.
         :param pulumi.Input[str] region: (Updatable) The destination Object Store Region specified by the customer.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "location_type", location_type)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "region", region)
+        ScheduleResultLocationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            location_type=location_type,
+            namespace=namespace,
+            region=region,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: pulumi.Input[str],
+             location_type: pulumi.Input[str],
+             namespace: pulumi.Input[str],
+             region: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("location_type", location_type)
+        _setter("namespace", namespace)
+        _setter("region", region)
 
     @property
     @pulumi.getter
@@ -940,11 +1121,24 @@ class UsageForecastArgs:
         :param pulumi.Input[str] forecast_type: BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
         :param pulumi.Input[str] time_forecast_started: The forecast start time. Defaults to UTC-1 if not specified.
         """
-        pulumi.set(__self__, "time_forecast_ended", time_forecast_ended)
+        UsageForecastArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_forecast_ended=time_forecast_ended,
+            forecast_type=forecast_type,
+            time_forecast_started=time_forecast_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_forecast_ended: pulumi.Input[str],
+             forecast_type: Optional[pulumi.Input[str]] = None,
+             time_forecast_started: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_forecast_ended", time_forecast_ended)
         if forecast_type is not None:
-            pulumi.set(__self__, "forecast_type", forecast_type)
+            _setter("forecast_type", forecast_type)
         if time_forecast_started is not None:
-            pulumi.set(__self__, "time_forecast_started", time_forecast_started)
+            _setter("time_forecast_started", time_forecast_started)
 
     @property
     @pulumi.getter(name="timeForecastEnded")
@@ -994,12 +1188,25 @@ class UsageGroupByTagArgs:
         :param pulumi.Input[str] namespace: The tag namespace.
         :param pulumi.Input[str] value: The tag value.
         """
+        UsageGroupByTagArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            namespace=namespace,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -1105,64 +1312,129 @@ class UsageItemArgs:
         :param pulumi.Input[float] unit_price: The price per unit.
         :param pulumi.Input[float] weight: The resource size being metered.
         """
+        UsageItemArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ad=ad,
+            compartment_id=compartment_id,
+            compartment_name=compartment_name,
+            compartment_path=compartment_path,
+            computed_amount=computed_amount,
+            computed_quantity=computed_quantity,
+            currency=currency,
+            discount=discount,
+            is_forecast=is_forecast,
+            list_rate=list_rate,
+            overage=overage,
+            overages_flag=overages_flag,
+            platform=platform,
+            region=region,
+            resource_id=resource_id,
+            resource_name=resource_name,
+            service=service,
+            shape=shape,
+            sku_name=sku_name,
+            sku_part_number=sku_part_number,
+            subscription_id=subscription_id,
+            tags=tags,
+            tenant_id=tenant_id,
+            tenant_name=tenant_name,
+            time_usage_ended=time_usage_ended,
+            time_usage_started=time_usage_started,
+            unit=unit,
+            unit_price=unit_price,
+            weight=weight,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ad: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             compartment_name: Optional[pulumi.Input[str]] = None,
+             compartment_path: Optional[pulumi.Input[str]] = None,
+             computed_amount: Optional[pulumi.Input[float]] = None,
+             computed_quantity: Optional[pulumi.Input[float]] = None,
+             currency: Optional[pulumi.Input[str]] = None,
+             discount: Optional[pulumi.Input[float]] = None,
+             is_forecast: Optional[pulumi.Input[bool]] = None,
+             list_rate: Optional[pulumi.Input[float]] = None,
+             overage: Optional[pulumi.Input[str]] = None,
+             overages_flag: Optional[pulumi.Input[str]] = None,
+             platform: Optional[pulumi.Input[str]] = None,
+             region: Optional[pulumi.Input[str]] = None,
+             resource_id: Optional[pulumi.Input[str]] = None,
+             resource_name: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             sku_name: Optional[pulumi.Input[str]] = None,
+             sku_part_number: Optional[pulumi.Input[str]] = None,
+             subscription_id: Optional[pulumi.Input[str]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['UsageItemTagArgs']]]] = None,
+             tenant_id: Optional[pulumi.Input[str]] = None,
+             tenant_name: Optional[pulumi.Input[str]] = None,
+             time_usage_ended: Optional[pulumi.Input[str]] = None,
+             time_usage_started: Optional[pulumi.Input[str]] = None,
+             unit: Optional[pulumi.Input[str]] = None,
+             unit_price: Optional[pulumi.Input[float]] = None,
+             weight: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if ad is not None:
-            pulumi.set(__self__, "ad", ad)
+            _setter("ad", ad)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if compartment_name is not None:
-            pulumi.set(__self__, "compartment_name", compartment_name)
+            _setter("compartment_name", compartment_name)
         if compartment_path is not None:
-            pulumi.set(__self__, "compartment_path", compartment_path)
+            _setter("compartment_path", compartment_path)
         if computed_amount is not None:
-            pulumi.set(__self__, "computed_amount", computed_amount)
+            _setter("computed_amount", computed_amount)
         if computed_quantity is not None:
-            pulumi.set(__self__, "computed_quantity", computed_quantity)
+            _setter("computed_quantity", computed_quantity)
         if currency is not None:
-            pulumi.set(__self__, "currency", currency)
+            _setter("currency", currency)
         if discount is not None:
-            pulumi.set(__self__, "discount", discount)
+            _setter("discount", discount)
         if is_forecast is not None:
-            pulumi.set(__self__, "is_forecast", is_forecast)
+            _setter("is_forecast", is_forecast)
         if list_rate is not None:
-            pulumi.set(__self__, "list_rate", list_rate)
+            _setter("list_rate", list_rate)
         if overage is not None:
-            pulumi.set(__self__, "overage", overage)
+            _setter("overage", overage)
         if overages_flag is not None:
-            pulumi.set(__self__, "overages_flag", overages_flag)
+            _setter("overages_flag", overages_flag)
         if platform is not None:
-            pulumi.set(__self__, "platform", platform)
+            _setter("platform", platform)
         if region is not None:
-            pulumi.set(__self__, "region", region)
+            _setter("region", region)
         if resource_id is not None:
-            pulumi.set(__self__, "resource_id", resource_id)
+            _setter("resource_id", resource_id)
         if resource_name is not None:
-            pulumi.set(__self__, "resource_name", resource_name)
+            _setter("resource_name", resource_name)
         if service is not None:
-            pulumi.set(__self__, "service", service)
+            _setter("service", service)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if sku_name is not None:
-            pulumi.set(__self__, "sku_name", sku_name)
+            _setter("sku_name", sku_name)
         if sku_part_number is not None:
-            pulumi.set(__self__, "sku_part_number", sku_part_number)
+            _setter("sku_part_number", sku_part_number)
         if subscription_id is not None:
-            pulumi.set(__self__, "subscription_id", subscription_id)
+            _setter("subscription_id", subscription_id)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if tenant_id is not None:
-            pulumi.set(__self__, "tenant_id", tenant_id)
+            _setter("tenant_id", tenant_id)
         if tenant_name is not None:
-            pulumi.set(__self__, "tenant_name", tenant_name)
+            _setter("tenant_name", tenant_name)
         if time_usage_ended is not None:
-            pulumi.set(__self__, "time_usage_ended", time_usage_ended)
+            _setter("time_usage_ended", time_usage_ended)
         if time_usage_started is not None:
-            pulumi.set(__self__, "time_usage_started", time_usage_started)
+            _setter("time_usage_started", time_usage_started)
         if unit is not None:
-            pulumi.set(__self__, "unit", unit)
+            _setter("unit", unit)
         if unit_price is not None:
-            pulumi.set(__self__, "unit_price", unit_price)
+            _setter("unit_price", unit_price)
         if weight is not None:
-            pulumi.set(__self__, "weight", weight)
+            _setter("weight", weight)
 
     @property
     @pulumi.getter
@@ -1528,12 +1800,25 @@ class UsageItemTagArgs:
         :param pulumi.Input[str] namespace: The tag namespace.
         :param pulumi.Input[str] value: The tag value.
         """
+        UsageItemTagArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            namespace=namespace,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             value: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -1578,10 +1863,23 @@ class GetCustomTablesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetCustomTablesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1617,10 +1915,23 @@ class GetQueriesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetQueriesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1656,10 +1967,23 @@ class GetScheduledRunsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetScheduledRunsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1698,10 +2022,23 @@ class GetSchedulesFilterArgs:
         """
         :param str name: Query parameter for filtering by name
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSchedulesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

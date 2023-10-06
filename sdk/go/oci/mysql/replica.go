@@ -42,6 +42,11 @@ import (
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				IsDeleteProtected: pulumi.Any(_var.Replica_is_delete_protected),
+//				ReplicaOverrides: &mysql.ReplicaReplicaOverridesArgs{
+//					ConfigurationId: pulumi.Any(oci_mysql_mysql_configuration.Test_mysql_configuration.Id),
+//					MysqlVersion:    pulumi.Any(_var.Replica_replica_overrides_mysql_version),
+//					ShapeName:       pulumi.Any(oci_mysql_shape.Test_shape.Name),
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -68,6 +73,8 @@ type Replica struct {
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// The OCID of the compartment that contains the read replica.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// (Updatable) The OCID of the Configuration to be used by the read replica.
+	ConfigurationId pulumi.StringOutput `pulumi:"configurationId"`
 	// The OCID of the DB System the read replica is associated with.
 	DbSystemId pulumi.StringOutput `pulumi:"dbSystemId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -83,18 +90,22 @@ type Replica struct {
 	// The IP address the read replica is configured to listen on.
 	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
 	// (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsDeleteProtected pulumi.BoolOutput `pulumi:"isDeleteProtected"`
 	// A message describing the state of the read replica.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// The MySQL version used by the read replica.
+	// (Updatable) The MySQL version to be used by the read replica.
 	MysqlVersion pulumi.StringOutput `pulumi:"mysqlVersion"`
 	// The port the read replica is configured to listen on.
 	Port pulumi.IntOutput `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntOutput `pulumi:"portX"`
+	// (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+	ReplicaOverrides ReplicaReplicaOverridesOutput `pulumi:"replicaOverrides"`
+	// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
 	// The state of the read replica.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -140,6 +151,8 @@ type replicaState struct {
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The OCID of the compartment that contains the read replica.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) The OCID of the Configuration to be used by the read replica.
+	ConfigurationId *string `pulumi:"configurationId"`
 	// The OCID of the DB System the read replica is associated with.
 	DbSystemId *string `pulumi:"dbSystemId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -155,18 +168,22 @@ type replicaState struct {
 	// The IP address the read replica is configured to listen on.
 	IpAddress *string `pulumi:"ipAddress"`
 	// (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsDeleteProtected *bool `pulumi:"isDeleteProtected"`
 	// A message describing the state of the read replica.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// The MySQL version used by the read replica.
+	// (Updatable) The MySQL version to be used by the read replica.
 	MysqlVersion *string `pulumi:"mysqlVersion"`
 	// The port the read replica is configured to listen on.
 	Port *int `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX *int `pulumi:"portX"`
+	// (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+	ReplicaOverrides *ReplicaReplicaOverrides `pulumi:"replicaOverrides"`
+	// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ShapeName *string `pulumi:"shapeName"`
 	// The state of the read replica.
 	State *string `pulumi:"state"`
 	// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -180,6 +197,8 @@ type ReplicaState struct {
 	AvailabilityDomain pulumi.StringPtrInput
 	// The OCID of the compartment that contains the read replica.
 	CompartmentId pulumi.StringPtrInput
+	// (Updatable) The OCID of the Configuration to be used by the read replica.
+	ConfigurationId pulumi.StringPtrInput
 	// The OCID of the DB System the read replica is associated with.
 	DbSystemId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -195,18 +214,22 @@ type ReplicaState struct {
 	// The IP address the read replica is configured to listen on.
 	IpAddress pulumi.StringPtrInput
 	// (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsDeleteProtected pulumi.BoolPtrInput
 	// A message describing the state of the read replica.
 	LifecycleDetails pulumi.StringPtrInput
-	// The MySQL version used by the read replica.
+	// (Updatable) The MySQL version to be used by the read replica.
 	MysqlVersion pulumi.StringPtrInput
 	// The port the read replica is configured to listen on.
 	Port pulumi.IntPtrInput
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntPtrInput
+	// (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+	ReplicaOverrides ReplicaReplicaOverridesPtrInput
+	// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ShapeName pulumi.StringPtrInput
 	// The state of the read replica.
 	State pulumi.StringPtrInput
 	// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -231,10 +254,9 @@ type replicaArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsDeleteProtected *bool `pulumi:"isDeleteProtected"`
+	// (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+	ReplicaOverrides *ReplicaReplicaOverrides `pulumi:"replicaOverrides"`
 }
 
 // The set of arguments for constructing a Replica resource.
@@ -250,10 +272,9 @@ type ReplicaArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	IsDeleteProtected pulumi.BoolPtrInput
+	// (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+	ReplicaOverrides ReplicaReplicaOverridesPtrInput
 }
 
 func (ReplicaArgs) ElementType() reflect.Type {
@@ -377,6 +398,11 @@ func (o ReplicaOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Replica) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// (Updatable) The OCID of the Configuration to be used by the read replica.
+func (o ReplicaOutput) ConfigurationId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Replica) pulumi.StringOutput { return v.ConfigurationId }).(pulumi.StringOutput)
+}
+
 // The OCID of the DB System the read replica is associated with.
 func (o ReplicaOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Replica) pulumi.StringOutput { return v.DbSystemId }).(pulumi.StringOutput)
@@ -413,9 +439,6 @@ func (o ReplicaOutput) IpAddress() pulumi.StringOutput {
 }
 
 // (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ReplicaOutput) IsDeleteProtected() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Replica) pulumi.BoolOutput { return v.IsDeleteProtected }).(pulumi.BoolOutput)
 }
@@ -425,7 +448,7 @@ func (o ReplicaOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Replica) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The MySQL version used by the read replica.
+// (Updatable) The MySQL version to be used by the read replica.
 func (o ReplicaOutput) MysqlVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Replica) pulumi.StringOutput { return v.MysqlVersion }).(pulumi.StringOutput)
 }
@@ -438,6 +461,19 @@ func (o ReplicaOutput) Port() pulumi.IntOutput {
 // The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 func (o ReplicaOutput) PortX() pulumi.IntOutput {
 	return o.ApplyT(func(v *Replica) pulumi.IntOutput { return v.PortX }).(pulumi.IntOutput)
+}
+
+// (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
+func (o ReplicaOutput) ReplicaOverrides() ReplicaReplicaOverridesOutput {
+	return o.ApplyT(func(v *Replica) ReplicaReplicaOverridesOutput { return v.ReplicaOverrides }).(ReplicaReplicaOverridesOutput)
+}
+
+// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ReplicaOutput) ShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v *Replica) pulumi.StringOutput { return v.ShapeName }).(pulumi.StringOutput)
 }
 
 // The state of the read replica.

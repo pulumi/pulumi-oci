@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -33,18 +33,21 @@ __all__ = [
 class ModelComponentModelArgs:
     def __init__(__self__, *,
                  model_id: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-        """
+        ModelComponentModelArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            model_id=model_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             model_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if model_id is not None:
-            pulumi.set(__self__, "model_id", model_id)
+            _setter("model_id", model_id)
 
     @property
     @pulumi.getter(name="modelId")
     def model_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-        """
         return pulumi.get(self, "model_id")
 
     @model_id.setter
@@ -65,14 +68,29 @@ class ModelMetricArgs:
         :param pulumi.Input[str] model_type: The type of the Document model.
         :param pulumi.Input[Sequence[pulumi.Input['ModelMetricOverallMetricsReportArgs']]] overall_metrics_reports: Overall Metrics report for Document Classification Model.
         """
+        ModelMetricArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dataset_summaries=dataset_summaries,
+            label_metrics_reports=label_metrics_reports,
+            model_type=model_type,
+            overall_metrics_reports=overall_metrics_reports,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dataset_summaries: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricDatasetSummaryArgs']]]] = None,
+             label_metrics_reports: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricLabelMetricsReportArgs']]]] = None,
+             model_type: Optional[pulumi.Input[str]] = None,
+             overall_metrics_reports: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricOverallMetricsReportArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if dataset_summaries is not None:
-            pulumi.set(__self__, "dataset_summaries", dataset_summaries)
+            _setter("dataset_summaries", dataset_summaries)
         if label_metrics_reports is not None:
-            pulumi.set(__self__, "label_metrics_reports", label_metrics_reports)
+            _setter("label_metrics_reports", label_metrics_reports)
         if model_type is not None:
-            pulumi.set(__self__, "model_type", model_type)
+            _setter("model_type", model_type)
         if overall_metrics_reports is not None:
-            pulumi.set(__self__, "overall_metrics_reports", overall_metrics_reports)
+            _setter("overall_metrics_reports", overall_metrics_reports)
 
     @property
     @pulumi.getter(name="datasetSummaries")
@@ -134,12 +152,25 @@ class ModelMetricDatasetSummaryArgs:
         :param pulumi.Input[int] training_sample_count: Number of samples used for training the model.
         :param pulumi.Input[int] validation_sample_count: Number of samples used for validating the model.
         """
+        ModelMetricDatasetSummaryArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            test_sample_count=test_sample_count,
+            training_sample_count=training_sample_count,
+            validation_sample_count=validation_sample_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             test_sample_count: Optional[pulumi.Input[int]] = None,
+             training_sample_count: Optional[pulumi.Input[int]] = None,
+             validation_sample_count: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if test_sample_count is not None:
-            pulumi.set(__self__, "test_sample_count", test_sample_count)
+            _setter("test_sample_count", test_sample_count)
         if training_sample_count is not None:
-            pulumi.set(__self__, "training_sample_count", training_sample_count)
+            _setter("training_sample_count", training_sample_count)
         if validation_sample_count is not None:
-            pulumi.set(__self__, "validation_sample_count", validation_sample_count)
+            _setter("validation_sample_count", validation_sample_count)
 
     @property
     @pulumi.getter(name="testSampleCount")
@@ -191,14 +222,29 @@ class ModelMetricLabelMetricsReportArgs:
         :param pulumi.Input[str] label: Label name
         :param pulumi.Input[float] mean_average_precision: Mean average precision under different thresholds
         """
+        ModelMetricLabelMetricsReportArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            confidence_entries=confidence_entries,
+            document_count=document_count,
+            label=label,
+            mean_average_precision=mean_average_precision,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             confidence_entries: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricLabelMetricsReportConfidenceEntryArgs']]]] = None,
+             document_count: Optional[pulumi.Input[int]] = None,
+             label: Optional[pulumi.Input[str]] = None,
+             mean_average_precision: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if confidence_entries is not None:
-            pulumi.set(__self__, "confidence_entries", confidence_entries)
+            _setter("confidence_entries", confidence_entries)
         if document_count is not None:
-            pulumi.set(__self__, "document_count", document_count)
+            _setter("document_count", document_count)
         if label is not None:
-            pulumi.set(__self__, "label", label)
+            _setter("label", label)
         if mean_average_precision is not None:
-            pulumi.set(__self__, "mean_average_precision", mean_average_precision)
+            _setter("mean_average_precision", mean_average_precision)
 
     @property
     @pulumi.getter(name="confidenceEntries")
@@ -264,16 +310,33 @@ class ModelMetricLabelMetricsReportConfidenceEntryArgs:
         :param pulumi.Input[float] recall: Recall under the threshold
         :param pulumi.Input[float] threshold: Threshold used to calculate precision and recall.
         """
+        ModelMetricLabelMetricsReportConfidenceEntryArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            accuracy=accuracy,
+            f1score=f1score,
+            precision=precision,
+            recall=recall,
+            threshold=threshold,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             accuracy: Optional[pulumi.Input[float]] = None,
+             f1score: Optional[pulumi.Input[float]] = None,
+             precision: Optional[pulumi.Input[float]] = None,
+             recall: Optional[pulumi.Input[float]] = None,
+             threshold: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if accuracy is not None:
-            pulumi.set(__self__, "accuracy", accuracy)
+            _setter("accuracy", accuracy)
         if f1score is not None:
-            pulumi.set(__self__, "f1score", f1score)
+            _setter("f1score", f1score)
         if precision is not None:
-            pulumi.set(__self__, "precision", precision)
+            _setter("precision", precision)
         if recall is not None:
-            pulumi.set(__self__, "recall", recall)
+            _setter("recall", recall)
         if threshold is not None:
-            pulumi.set(__self__, "threshold", threshold)
+            _setter("threshold", threshold)
 
     @property
     @pulumi.getter
@@ -347,12 +410,25 @@ class ModelMetricOverallMetricsReportArgs:
         :param pulumi.Input[int] document_count: Total test documents in the label.
         :param pulumi.Input[float] mean_average_precision: Mean average precision under different thresholds
         """
+        ModelMetricOverallMetricsReportArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            confidence_entries=confidence_entries,
+            document_count=document_count,
+            mean_average_precision=mean_average_precision,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             confidence_entries: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricOverallMetricsReportConfidenceEntryArgs']]]] = None,
+             document_count: Optional[pulumi.Input[int]] = None,
+             mean_average_precision: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if confidence_entries is not None:
-            pulumi.set(__self__, "confidence_entries", confidence_entries)
+            _setter("confidence_entries", confidence_entries)
         if document_count is not None:
-            pulumi.set(__self__, "document_count", document_count)
+            _setter("document_count", document_count)
         if mean_average_precision is not None:
-            pulumi.set(__self__, "mean_average_precision", mean_average_precision)
+            _setter("mean_average_precision", mean_average_precision)
 
     @property
     @pulumi.getter(name="confidenceEntries")
@@ -406,16 +482,33 @@ class ModelMetricOverallMetricsReportConfidenceEntryArgs:
         :param pulumi.Input[float] recall: Recall under the threshold
         :param pulumi.Input[float] threshold: Threshold used to calculate precision and recall.
         """
+        ModelMetricOverallMetricsReportConfidenceEntryArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            accuracy=accuracy,
+            f1score=f1score,
+            precision=precision,
+            recall=recall,
+            threshold=threshold,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             accuracy: Optional[pulumi.Input[float]] = None,
+             f1score: Optional[pulumi.Input[float]] = None,
+             precision: Optional[pulumi.Input[float]] = None,
+             recall: Optional[pulumi.Input[float]] = None,
+             threshold: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if accuracy is not None:
-            pulumi.set(__self__, "accuracy", accuracy)
+            _setter("accuracy", accuracy)
         if f1score is not None:
-            pulumi.set(__self__, "f1score", f1score)
+            _setter("f1score", f1score)
         if precision is not None:
-            pulumi.set(__self__, "precision", precision)
+            _setter("precision", precision)
         if recall is not None:
-            pulumi.set(__self__, "recall", recall)
+            _setter("recall", recall)
         if threshold is not None:
-            pulumi.set(__self__, "threshold", threshold)
+            _setter("threshold", threshold)
 
     @property
     @pulumi.getter
@@ -497,15 +590,32 @@ class ModelTestingDatasetArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "dataset_type", dataset_type)
+        ModelTestingDatasetArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dataset_type=dataset_type,
+            bucket=bucket,
+            dataset_id=dataset_id,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dataset_type: pulumi.Input[str],
+             bucket: Optional[pulumi.Input[str]] = None,
+             dataset_id: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("dataset_type", dataset_type)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if dataset_id is not None:
-            pulumi.set(__self__, "dataset_id", dataset_id)
+            _setter("dataset_id", dataset_id)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter(name="datasetType")
@@ -591,15 +701,32 @@ class ModelTrainingDatasetArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "dataset_type", dataset_type)
+        ModelTrainingDatasetArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dataset_type=dataset_type,
+            bucket=bucket,
+            dataset_id=dataset_id,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dataset_type: pulumi.Input[str],
+             bucket: Optional[pulumi.Input[str]] = None,
+             dataset_id: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("dataset_type", dataset_type)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if dataset_id is not None:
-            pulumi.set(__self__, "dataset_id", dataset_id)
+            _setter("dataset_id", dataset_id)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter(name="datasetType")
@@ -685,15 +812,32 @@ class ModelValidationDatasetArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "dataset_type", dataset_type)
+        ModelValidationDatasetArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dataset_type=dataset_type,
+            bucket=bucket,
+            dataset_id=dataset_id,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dataset_type: pulumi.Input[str],
+             bucket: Optional[pulumi.Input[str]] = None,
+             dataset_id: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("dataset_type", dataset_type)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if dataset_id is not None:
-            pulumi.set(__self__, "dataset_id", dataset_id)
+            _setter("dataset_id", dataset_id)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter(name="datasetType")
@@ -771,11 +915,24 @@ class ProcessorJobInputLocationArgs:
         :param pulumi.Input[str] data: Raw document data with Base64 encoding.
         :param pulumi.Input[Sequence[pulumi.Input['ProcessorJobInputLocationObjectLocationArgs']]] object_locations: The list of ObjectLocations.
         """
-        pulumi.set(__self__, "source_type", source_type)
+        ProcessorJobInputLocationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            source_type=source_type,
+            data=data,
+            object_locations=object_locations,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             source_type: pulumi.Input[str],
+             data: Optional[pulumi.Input[str]] = None,
+             object_locations: Optional[pulumi.Input[Sequence[pulumi.Input['ProcessorJobInputLocationObjectLocationArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("source_type", source_type)
         if data is not None:
-            pulumi.set(__self__, "data", data)
+            _setter("data", data)
         if object_locations is not None:
-            pulumi.set(__self__, "object_locations", object_locations)
+            _setter("object_locations", object_locations)
 
     @property
     @pulumi.getter(name="sourceType")
@@ -825,12 +982,25 @@ class ProcessorJobInputLocationObjectLocationArgs:
         :param pulumi.Input[str] namespace: The Object Storage namespace.
         :param pulumi.Input[str] object: The Object Storage object name.
         """
+        ProcessorJobInputLocationObjectLocationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[pulumi.Input[str]] = None,
+             namespace: Optional[pulumi.Input[str]] = None,
+             object: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter
@@ -880,9 +1050,22 @@ class ProcessorJobOutputLocationArgs:
         :param pulumi.Input[str] namespace: The Object Storage namespace.
         :param pulumi.Input[str] prefix: The Object Storage folder name.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "prefix", prefix)
+        ProcessorJobOutputLocationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            namespace=namespace,
+            prefix=prefix,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: pulumi.Input[str],
+             namespace: pulumi.Input[str],
+             prefix: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("namespace", namespace)
+        _setter("prefix", prefix)
 
     @property
     @pulumi.getter
@@ -940,14 +1123,31 @@ class ProcessorJobProcessorConfigArgs:
         :param pulumi.Input[bool] is_zip_output_enabled: Whether or not to generate a ZIP file containing the results.
         :param pulumi.Input[str] language: The document language, abbreviated according to the BCP 47 Language-Tag syntax.
         """
-        pulumi.set(__self__, "features", features)
-        pulumi.set(__self__, "processor_type", processor_type)
+        ProcessorJobProcessorConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            features=features,
+            processor_type=processor_type,
+            document_type=document_type,
+            is_zip_output_enabled=is_zip_output_enabled,
+            language=language,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             features: pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigFeatureArgs']]],
+             processor_type: pulumi.Input[str],
+             document_type: Optional[pulumi.Input[str]] = None,
+             is_zip_output_enabled: Optional[pulumi.Input[bool]] = None,
+             language: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("features", features)
+        _setter("processor_type", processor_type)
         if document_type is not None:
-            pulumi.set(__self__, "document_type", document_type)
+            _setter("document_type", document_type)
         if is_zip_output_enabled is not None:
-            pulumi.set(__self__, "is_zip_output_enabled", is_zip_output_enabled)
+            _setter("is_zip_output_enabled", is_zip_output_enabled)
         if language is not None:
-            pulumi.set(__self__, "language", language)
+            _setter("language", language)
 
     @property
     @pulumi.getter
@@ -1029,15 +1229,32 @@ class ProcessorJobProcessorConfigFeatureArgs:
         :param pulumi.Input[str] model_id: The custom model ID.
         :param pulumi.Input[str] tenancy_id: The custom model tenancy ID when modelId represents aliasName.
         """
-        pulumi.set(__self__, "feature_type", feature_type)
+        ProcessorJobProcessorConfigFeatureArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            feature_type=feature_type,
+            generate_searchable_pdf=generate_searchable_pdf,
+            max_results=max_results,
+            model_id=model_id,
+            tenancy_id=tenancy_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             feature_type: pulumi.Input[str],
+             generate_searchable_pdf: Optional[pulumi.Input[bool]] = None,
+             max_results: Optional[pulumi.Input[int]] = None,
+             model_id: Optional[pulumi.Input[str]] = None,
+             tenancy_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("feature_type", feature_type)
         if generate_searchable_pdf is not None:
-            pulumi.set(__self__, "generate_searchable_pdf", generate_searchable_pdf)
+            _setter("generate_searchable_pdf", generate_searchable_pdf)
         if max_results is not None:
-            pulumi.set(__self__, "max_results", max_results)
+            _setter("max_results", max_results)
         if model_id is not None:
-            pulumi.set(__self__, "model_id", model_id)
+            _setter("model_id", model_id)
         if tenancy_id is not None:
-            pulumi.set(__self__, "tenancy_id", tenancy_id)
+            _setter("tenancy_id", tenancy_id)
 
     @property
     @pulumi.getter(name="featureType")
@@ -1106,10 +1323,23 @@ class GetModelsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetModelsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1145,10 +1375,23 @@ class GetProjectsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProjectsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Queue resource in Oracle Cloud Infrastructure Queue service.
  * 
- * Creates a new Queue.
+ * Creates a new queue.
  * 
  * ## Example Usage
  * ```java
@@ -48,6 +48,7 @@ import javax.annotation.Nullable;
  *         var testQueue = new Queue(&#34;testQueue&#34;, QueueArgs.builder()        
  *             .compartmentId(var_.compartment_id())
  *             .displayName(var_.queue_display_name())
+ *             .channelConsumptionLimit(var_.queue_channel_consumption_limit())
  *             .customEncryptionKeyId(oci_kms_key.test_key().id())
  *             .deadLetterQueueDeliveryCount(var_.queue_dead_letter_queue_delivery_count())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
@@ -73,28 +74,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Queue/queue:Queue")
 public class Queue extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue&#39;s resources.
+     * 
+     */
+    @Export(name="channelConsumptionLimit", refs={Integer.class}, tree="[0]")
+    private Output<Integer> channelConsumptionLimit;
+
+    /**
+     * @return (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue&#39;s resources.
+     * 
+     */
+    public Output<Integer> channelConsumptionLimit() {
+        return this.channelConsumptionLimit;
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
      * 
      */
     @Export(name="customEncryptionKeyId", refs={String.class}, tree="[0]")
     private Output<String> customEncryptionKeyId;
 
     /**
-     * @return (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
      * 
      */
     public Output<String> customEncryptionKeyId() {
@@ -129,14 +144,14 @@ public class Queue extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) Queue Identifier
+     * (Updatable) The user-friendly name of the queue.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Queue Identifier
+     * @return (Updatable) The user-friendly name of the queue.
      * 
      */
     public Output<String> displayName() {
@@ -157,14 +172,14 @@ public class Queue extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * Any additional details about the current state of the queue.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return Any additional details about the current state of the queue.
      * 
      */
     public Output<String> lifecycleDetails() {
@@ -197,28 +212,28 @@ public class Queue extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.purgeType);
     }
     /**
-     * The retention period of the messages in the queue, in seconds.
+     * The retention period of messages in the queue, in seconds.
      * 
      */
     @Export(name="retentionInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> retentionInSeconds;
 
     /**
-     * @return The retention period of the messages in the queue, in seconds.
+     * @return The retention period of messages in the queue, in seconds.
      * 
      */
     public Output<Integer> retentionInSeconds() {
         return this.retentionInSeconds;
     }
     /**
-     * The current state of the Queue.
+     * The current state of the queue.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the Queue.
+     * @return The current state of the queue.
      * 
      */
     public Output<String> state() {
@@ -239,28 +254,28 @@ public class Queue extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The time the the Queue was created. An RFC3339 formatted datetime string
+     * The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The time the the Queue was created. An RFC3339 formatted datetime string
+     * @return The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The time the Queue was updated. An RFC3339 formatted datetime string
+     * The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The time the Queue was updated. An RFC3339 formatted datetime string
+     * @return The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
     public Output<String> timeUpdated() {
@@ -281,14 +296,14 @@ public class Queue extends com.pulumi.resources.CustomResource {
         return this.timeoutInSeconds;
     }
     /**
-     * (Updatable) The default visibility of the messages consumed from the queue.
+     * (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
      * 
      */
     @Export(name="visibilityInSeconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> visibilityInSeconds;
 
     /**
-     * @return (Updatable) The default visibility of the messages consumed from the queue.
+     * @return (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
      * 
      */
     public Output<Integer> visibilityInSeconds() {

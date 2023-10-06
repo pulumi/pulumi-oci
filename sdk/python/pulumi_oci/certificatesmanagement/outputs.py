@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -148,16 +148,35 @@ class CertificateAuthorityCertificateAuthorityConfig(dict):
         :param 'CertificateAuthorityCertificateAuthorityConfigValidityArgs' validity: (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
         :param str version_name: (Updatable) The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
         """
-        pulumi.set(__self__, "config_type", config_type)
-        pulumi.set(__self__, "subject", subject)
+        CertificateAuthorityCertificateAuthorityConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_type=config_type,
+            subject=subject,
+            issuer_certificate_authority_id=issuer_certificate_authority_id,
+            signing_algorithm=signing_algorithm,
+            validity=validity,
+            version_name=version_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_type: str,
+             subject: 'outputs.CertificateAuthorityCertificateAuthorityConfigSubject',
+             issuer_certificate_authority_id: Optional[str] = None,
+             signing_algorithm: Optional[str] = None,
+             validity: Optional['outputs.CertificateAuthorityCertificateAuthorityConfigValidity'] = None,
+             version_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_type", config_type)
+        _setter("subject", subject)
         if issuer_certificate_authority_id is not None:
-            pulumi.set(__self__, "issuer_certificate_authority_id", issuer_certificate_authority_id)
+            _setter("issuer_certificate_authority_id", issuer_certificate_authority_id)
         if signing_algorithm is not None:
-            pulumi.set(__self__, "signing_algorithm", signing_algorithm)
+            _setter("signing_algorithm", signing_algorithm)
         if validity is not None:
-            pulumi.set(__self__, "validity", validity)
+            _setter("validity", validity)
         if version_name is not None:
-            pulumi.set(__self__, "version_name", version_name)
+            _setter("version_name", version_name)
 
     @property
     @pulumi.getter(name="configType")
@@ -282,39 +301,80 @@ class CertificateAuthorityCertificateAuthorityConfigSubject(dict):
         :param str title: Title (RDN T or TITLE).
         :param str user_id: User ID (RDN UID).
         """
-        pulumi.set(__self__, "common_name", common_name)
+        CertificateAuthorityCertificateAuthorityConfigSubject._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            common_name=common_name,
+            country=country,
+            distinguished_name_qualifier=distinguished_name_qualifier,
+            domain_component=domain_component,
+            generation_qualifier=generation_qualifier,
+            given_name=given_name,
+            initials=initials,
+            locality_name=locality_name,
+            organization=organization,
+            organizational_unit=organizational_unit,
+            pseudonym=pseudonym,
+            serial_number=serial_number,
+            state_or_province_name=state_or_province_name,
+            street=street,
+            surname=surname,
+            title=title,
+            user_id=user_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             common_name: str,
+             country: Optional[str] = None,
+             distinguished_name_qualifier: Optional[str] = None,
+             domain_component: Optional[str] = None,
+             generation_qualifier: Optional[str] = None,
+             given_name: Optional[str] = None,
+             initials: Optional[str] = None,
+             locality_name: Optional[str] = None,
+             organization: Optional[str] = None,
+             organizational_unit: Optional[str] = None,
+             pseudonym: Optional[str] = None,
+             serial_number: Optional[str] = None,
+             state_or_province_name: Optional[str] = None,
+             street: Optional[str] = None,
+             surname: Optional[str] = None,
+             title: Optional[str] = None,
+             user_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("common_name", common_name)
         if country is not None:
-            pulumi.set(__self__, "country", country)
+            _setter("country", country)
         if distinguished_name_qualifier is not None:
-            pulumi.set(__self__, "distinguished_name_qualifier", distinguished_name_qualifier)
+            _setter("distinguished_name_qualifier", distinguished_name_qualifier)
         if domain_component is not None:
-            pulumi.set(__self__, "domain_component", domain_component)
+            _setter("domain_component", domain_component)
         if generation_qualifier is not None:
-            pulumi.set(__self__, "generation_qualifier", generation_qualifier)
+            _setter("generation_qualifier", generation_qualifier)
         if given_name is not None:
-            pulumi.set(__self__, "given_name", given_name)
+            _setter("given_name", given_name)
         if initials is not None:
-            pulumi.set(__self__, "initials", initials)
+            _setter("initials", initials)
         if locality_name is not None:
-            pulumi.set(__self__, "locality_name", locality_name)
+            _setter("locality_name", locality_name)
         if organization is not None:
-            pulumi.set(__self__, "organization", organization)
+            _setter("organization", organization)
         if organizational_unit is not None:
-            pulumi.set(__self__, "organizational_unit", organizational_unit)
+            _setter("organizational_unit", organizational_unit)
         if pseudonym is not None:
-            pulumi.set(__self__, "pseudonym", pseudonym)
+            _setter("pseudonym", pseudonym)
         if serial_number is not None:
-            pulumi.set(__self__, "serial_number", serial_number)
+            _setter("serial_number", serial_number)
         if state_or_province_name is not None:
-            pulumi.set(__self__, "state_or_province_name", state_or_province_name)
+            _setter("state_or_province_name", state_or_province_name)
         if street is not None:
-            pulumi.set(__self__, "street", street)
+            _setter("street", street)
         if surname is not None:
-            pulumi.set(__self__, "surname", surname)
+            _setter("surname", surname)
         if title is not None:
-            pulumi.set(__self__, "title", title)
+            _setter("title", title)
         if user_id is not None:
-            pulumi.set(__self__, "user_id", user_id)
+            _setter("user_id", user_id)
 
     @property
     @pulumi.getter(name="commonName")
@@ -481,9 +541,20 @@ class CertificateAuthorityCertificateAuthorityConfigValidity(dict):
         :param str time_of_validity_not_after: (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str time_of_validity_not_before: (Updatable) The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "time_of_validity_not_after", time_of_validity_not_after)
+        CertificateAuthorityCertificateAuthorityConfigValidity._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_of_validity_not_after=time_of_validity_not_after,
+            time_of_validity_not_before=time_of_validity_not_before,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_of_validity_not_after: str,
+             time_of_validity_not_before: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_of_validity_not_after", time_of_validity_not_after)
         if time_of_validity_not_before is not None:
-            pulumi.set(__self__, "time_of_validity_not_before", time_of_validity_not_before)
+            _setter("time_of_validity_not_before", time_of_validity_not_before)
 
     @property
     @pulumi.getter(name="timeOfValidityNotAfter")
@@ -534,11 +605,24 @@ class CertificateAuthorityCertificateAuthorityRule(dict):
         :param str certificate_authority_max_validity_duration: (Updatable) A property indicating the maximum validity duration, in days, of subordinate CA's issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
         :param str leaf_certificate_max_validity_duration: (Updatable) A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
         """
-        pulumi.set(__self__, "rule_type", rule_type)
+        CertificateAuthorityCertificateAuthorityRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            rule_type=rule_type,
+            certificate_authority_max_validity_duration=certificate_authority_max_validity_duration,
+            leaf_certificate_max_validity_duration=leaf_certificate_max_validity_duration,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             rule_type: str,
+             certificate_authority_max_validity_duration: Optional[str] = None,
+             leaf_certificate_max_validity_duration: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("rule_type", rule_type)
         if certificate_authority_max_validity_duration is not None:
-            pulumi.set(__self__, "certificate_authority_max_validity_duration", certificate_authority_max_validity_duration)
+            _setter("certificate_authority_max_validity_duration", certificate_authority_max_validity_duration)
         if leaf_certificate_max_validity_duration is not None:
-            pulumi.set(__self__, "leaf_certificate_max_validity_duration", leaf_certificate_max_validity_duration)
+            _setter("leaf_certificate_max_validity_duration", leaf_certificate_max_validity_duration)
 
     @property
     @pulumi.getter(name="ruleType")
@@ -593,9 +677,20 @@ class CertificateAuthorityCertificateRevocationListDetails(dict):
         :param 'CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfigArgs' object_storage_config: (Updatable) The details of the Object Storage bucket configured to store the certificate revocation list (CRL).
         :param Sequence[str] custom_formatted_urls: (Updatable) Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
         """
-        pulumi.set(__self__, "object_storage_config", object_storage_config)
+        CertificateAuthorityCertificateRevocationListDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_storage_config=object_storage_config,
+            custom_formatted_urls=custom_formatted_urls,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_storage_config: 'outputs.CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig',
+             custom_formatted_urls: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object_storage_config", object_storage_config)
         if custom_formatted_urls is not None:
-            pulumi.set(__self__, "custom_formatted_urls", custom_formatted_urls)
+            _setter("custom_formatted_urls", custom_formatted_urls)
 
     @property
     @pulumi.getter(name="objectStorageConfig")
@@ -646,10 +741,23 @@ class CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig(di
         :param str object_storage_object_name_format: (Updatable) The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
         :param str object_storage_namespace: (Updatable) The tenancy of the bucket where the CRL is stored.
         """
-        pulumi.set(__self__, "object_storage_bucket_name", object_storage_bucket_name)
-        pulumi.set(__self__, "object_storage_object_name_format", object_storage_object_name_format)
+        CertificateAuthorityCertificateRevocationListDetailsObjectStorageConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_storage_bucket_name=object_storage_bucket_name,
+            object_storage_object_name_format=object_storage_object_name_format,
+            object_storage_namespace=object_storage_namespace,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_storage_bucket_name: str,
+             object_storage_object_name_format: str,
+             object_storage_namespace: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object_storage_bucket_name", object_storage_bucket_name)
+        _setter("object_storage_object_name_format", object_storage_object_name_format)
         if object_storage_namespace is not None:
-            pulumi.set(__self__, "object_storage_namespace", object_storage_namespace)
+            _setter("object_storage_namespace", object_storage_namespace)
 
     @property
     @pulumi.getter(name="objectStorageBucketName")
@@ -732,26 +840,53 @@ class CertificateAuthorityCurrentVersion(dict):
         :param str version_name: (Updatable) The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
         :param str version_number: The version number of the CA.
         """
+        CertificateAuthorityCurrentVersion._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_authority_id=certificate_authority_id,
+            issuer_ca_version_number=issuer_ca_version_number,
+            revocation_statuses=revocation_statuses,
+            serial_number=serial_number,
+            stages=stages,
+            time_created=time_created,
+            time_of_deletion=time_of_deletion,
+            validities=validities,
+            version_name=version_name,
+            version_number=version_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_authority_id: Optional[str] = None,
+             issuer_ca_version_number: Optional[str] = None,
+             revocation_statuses: Optional[Sequence['outputs.CertificateAuthorityCurrentVersionRevocationStatus']] = None,
+             serial_number: Optional[str] = None,
+             stages: Optional[Sequence[str]] = None,
+             time_created: Optional[str] = None,
+             time_of_deletion: Optional[str] = None,
+             validities: Optional[Sequence['outputs.CertificateAuthorityCurrentVersionValidity']] = None,
+             version_name: Optional[str] = None,
+             version_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if certificate_authority_id is not None:
-            pulumi.set(__self__, "certificate_authority_id", certificate_authority_id)
+            _setter("certificate_authority_id", certificate_authority_id)
         if issuer_ca_version_number is not None:
-            pulumi.set(__self__, "issuer_ca_version_number", issuer_ca_version_number)
+            _setter("issuer_ca_version_number", issuer_ca_version_number)
         if revocation_statuses is not None:
-            pulumi.set(__self__, "revocation_statuses", revocation_statuses)
+            _setter("revocation_statuses", revocation_statuses)
         if serial_number is not None:
-            pulumi.set(__self__, "serial_number", serial_number)
+            _setter("serial_number", serial_number)
         if stages is not None:
-            pulumi.set(__self__, "stages", stages)
+            _setter("stages", stages)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_of_deletion is not None:
-            pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+            _setter("time_of_deletion", time_of_deletion)
         if validities is not None:
-            pulumi.set(__self__, "validities", validities)
+            _setter("validities", validities)
         if version_name is not None:
-            pulumi.set(__self__, "version_name", version_name)
+            _setter("version_name", version_name)
         if version_number is not None:
-            pulumi.set(__self__, "version_number", version_number)
+            _setter("version_number", version_number)
 
     @property
     @pulumi.getter(name="certificateAuthorityId")
@@ -862,10 +997,21 @@ class CertificateAuthorityCurrentVersionRevocationStatus(dict):
         :param str revocation_reason: The reason the certificate or certificate authority (CA) was revoked.
         :param str time_of_revocation: The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
+        CertificateAuthorityCurrentVersionRevocationStatus._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            revocation_reason=revocation_reason,
+            time_of_revocation=time_of_revocation,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             revocation_reason: Optional[str] = None,
+             time_of_revocation: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if revocation_reason is not None:
-            pulumi.set(__self__, "revocation_reason", revocation_reason)
+            _setter("revocation_reason", revocation_reason)
         if time_of_revocation is not None:
-            pulumi.set(__self__, "time_of_revocation", time_of_revocation)
+            _setter("time_of_revocation", time_of_revocation)
 
     @property
     @pulumi.getter(name="revocationReason")
@@ -912,10 +1058,21 @@ class CertificateAuthorityCurrentVersionValidity(dict):
         :param str time_of_validity_not_after: (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str time_of_validity_not_before: (Updatable) The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
+        CertificateAuthorityCurrentVersionValidity._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_of_validity_not_after=time_of_validity_not_after,
+            time_of_validity_not_before=time_of_validity_not_before,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_of_validity_not_after: Optional[str] = None,
+             time_of_validity_not_before: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if time_of_validity_not_after is not None:
-            pulumi.set(__self__, "time_of_validity_not_after", time_of_validity_not_after)
+            _setter("time_of_validity_not_after", time_of_validity_not_after)
         if time_of_validity_not_before is not None:
-            pulumi.set(__self__, "time_of_validity_not_before", time_of_validity_not_before)
+            _setter("time_of_validity_not_before", time_of_validity_not_before)
 
     @property
     @pulumi.getter(name="timeOfValidityNotAfter")
@@ -1008,40 +1165,81 @@ class CertificateAuthoritySubject(dict):
         :param str title: Title (RDN T or TITLE).
         :param str user_id: User ID (RDN UID).
         """
+        CertificateAuthoritySubject._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            common_name=common_name,
+            country=country,
+            distinguished_name_qualifier=distinguished_name_qualifier,
+            domain_component=domain_component,
+            generation_qualifier=generation_qualifier,
+            given_name=given_name,
+            initials=initials,
+            locality_name=locality_name,
+            organization=organization,
+            organizational_unit=organizational_unit,
+            pseudonym=pseudonym,
+            serial_number=serial_number,
+            state_or_province_name=state_or_province_name,
+            street=street,
+            surname=surname,
+            title=title,
+            user_id=user_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             common_name: Optional[str] = None,
+             country: Optional[str] = None,
+             distinguished_name_qualifier: Optional[str] = None,
+             domain_component: Optional[str] = None,
+             generation_qualifier: Optional[str] = None,
+             given_name: Optional[str] = None,
+             initials: Optional[str] = None,
+             locality_name: Optional[str] = None,
+             organization: Optional[str] = None,
+             organizational_unit: Optional[str] = None,
+             pseudonym: Optional[str] = None,
+             serial_number: Optional[str] = None,
+             state_or_province_name: Optional[str] = None,
+             street: Optional[str] = None,
+             surname: Optional[str] = None,
+             title: Optional[str] = None,
+             user_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if common_name is not None:
-            pulumi.set(__self__, "common_name", common_name)
+            _setter("common_name", common_name)
         if country is not None:
-            pulumi.set(__self__, "country", country)
+            _setter("country", country)
         if distinguished_name_qualifier is not None:
-            pulumi.set(__self__, "distinguished_name_qualifier", distinguished_name_qualifier)
+            _setter("distinguished_name_qualifier", distinguished_name_qualifier)
         if domain_component is not None:
-            pulumi.set(__self__, "domain_component", domain_component)
+            _setter("domain_component", domain_component)
         if generation_qualifier is not None:
-            pulumi.set(__self__, "generation_qualifier", generation_qualifier)
+            _setter("generation_qualifier", generation_qualifier)
         if given_name is not None:
-            pulumi.set(__self__, "given_name", given_name)
+            _setter("given_name", given_name)
         if initials is not None:
-            pulumi.set(__self__, "initials", initials)
+            _setter("initials", initials)
         if locality_name is not None:
-            pulumi.set(__self__, "locality_name", locality_name)
+            _setter("locality_name", locality_name)
         if organization is not None:
-            pulumi.set(__self__, "organization", organization)
+            _setter("organization", organization)
         if organizational_unit is not None:
-            pulumi.set(__self__, "organizational_unit", organizational_unit)
+            _setter("organizational_unit", organizational_unit)
         if pseudonym is not None:
-            pulumi.set(__self__, "pseudonym", pseudonym)
+            _setter("pseudonym", pseudonym)
         if serial_number is not None:
-            pulumi.set(__self__, "serial_number", serial_number)
+            _setter("serial_number", serial_number)
         if state_or_province_name is not None:
-            pulumi.set(__self__, "state_or_province_name", state_or_province_name)
+            _setter("state_or_province_name", state_or_province_name)
         if street is not None:
-            pulumi.set(__self__, "street", street)
+            _setter("street", street)
         if surname is not None:
-            pulumi.set(__self__, "surname", surname)
+            _setter("surname", surname)
         if title is not None:
-            pulumi.set(__self__, "title", title)
+            _setter("title", title)
         if user_id is not None:
-            pulumi.set(__self__, "user_id", user_id)
+            _setter("user_id", user_id)
 
     @property
     @pulumi.getter(name="commonName")
@@ -1236,25 +1434,52 @@ class CertificateCertificateConfig(dict):
         :param 'CertificateCertificateConfigValidityArgs' validity: (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
         :param str version_name: (Updatable) A name for the certificate. When the value is not null, a name is unique across versions of a given certificate.
         """
-        pulumi.set(__self__, "config_type", config_type)
+        CertificateCertificateConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_type=config_type,
+            certificate_profile_type=certificate_profile_type,
+            csr_pem=csr_pem,
+            issuer_certificate_authority_id=issuer_certificate_authority_id,
+            key_algorithm=key_algorithm,
+            signature_algorithm=signature_algorithm,
+            subject=subject,
+            subject_alternative_names=subject_alternative_names,
+            validity=validity,
+            version_name=version_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_type: str,
+             certificate_profile_type: Optional[str] = None,
+             csr_pem: Optional[str] = None,
+             issuer_certificate_authority_id: Optional[str] = None,
+             key_algorithm: Optional[str] = None,
+             signature_algorithm: Optional[str] = None,
+             subject: Optional['outputs.CertificateCertificateConfigSubject'] = None,
+             subject_alternative_names: Optional[Sequence['outputs.CertificateCertificateConfigSubjectAlternativeName']] = None,
+             validity: Optional['outputs.CertificateCertificateConfigValidity'] = None,
+             version_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_type", config_type)
         if certificate_profile_type is not None:
-            pulumi.set(__self__, "certificate_profile_type", certificate_profile_type)
+            _setter("certificate_profile_type", certificate_profile_type)
         if csr_pem is not None:
-            pulumi.set(__self__, "csr_pem", csr_pem)
+            _setter("csr_pem", csr_pem)
         if issuer_certificate_authority_id is not None:
-            pulumi.set(__self__, "issuer_certificate_authority_id", issuer_certificate_authority_id)
+            _setter("issuer_certificate_authority_id", issuer_certificate_authority_id)
         if key_algorithm is not None:
-            pulumi.set(__self__, "key_algorithm", key_algorithm)
+            _setter("key_algorithm", key_algorithm)
         if signature_algorithm is not None:
-            pulumi.set(__self__, "signature_algorithm", signature_algorithm)
+            _setter("signature_algorithm", signature_algorithm)
         if subject is not None:
-            pulumi.set(__self__, "subject", subject)
+            _setter("subject", subject)
         if subject_alternative_names is not None:
-            pulumi.set(__self__, "subject_alternative_names", subject_alternative_names)
+            _setter("subject_alternative_names", subject_alternative_names)
         if validity is not None:
-            pulumi.set(__self__, "validity", validity)
+            _setter("validity", validity)
         if version_name is not None:
-            pulumi.set(__self__, "version_name", version_name)
+            _setter("version_name", version_name)
 
     @property
     @pulumi.getter(name="configType")
@@ -1411,39 +1636,80 @@ class CertificateCertificateConfigSubject(dict):
         :param str title: Title (RDN T or TITLE).
         :param str user_id: User ID (RDN UID).
         """
-        pulumi.set(__self__, "common_name", common_name)
+        CertificateCertificateConfigSubject._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            common_name=common_name,
+            country=country,
+            distinguished_name_qualifier=distinguished_name_qualifier,
+            domain_component=domain_component,
+            generation_qualifier=generation_qualifier,
+            given_name=given_name,
+            initials=initials,
+            locality_name=locality_name,
+            organization=organization,
+            organizational_unit=organizational_unit,
+            pseudonym=pseudonym,
+            serial_number=serial_number,
+            state_or_province_name=state_or_province_name,
+            street=street,
+            surname=surname,
+            title=title,
+            user_id=user_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             common_name: str,
+             country: Optional[str] = None,
+             distinguished_name_qualifier: Optional[str] = None,
+             domain_component: Optional[str] = None,
+             generation_qualifier: Optional[str] = None,
+             given_name: Optional[str] = None,
+             initials: Optional[str] = None,
+             locality_name: Optional[str] = None,
+             organization: Optional[str] = None,
+             organizational_unit: Optional[str] = None,
+             pseudonym: Optional[str] = None,
+             serial_number: Optional[str] = None,
+             state_or_province_name: Optional[str] = None,
+             street: Optional[str] = None,
+             surname: Optional[str] = None,
+             title: Optional[str] = None,
+             user_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("common_name", common_name)
         if country is not None:
-            pulumi.set(__self__, "country", country)
+            _setter("country", country)
         if distinguished_name_qualifier is not None:
-            pulumi.set(__self__, "distinguished_name_qualifier", distinguished_name_qualifier)
+            _setter("distinguished_name_qualifier", distinguished_name_qualifier)
         if domain_component is not None:
-            pulumi.set(__self__, "domain_component", domain_component)
+            _setter("domain_component", domain_component)
         if generation_qualifier is not None:
-            pulumi.set(__self__, "generation_qualifier", generation_qualifier)
+            _setter("generation_qualifier", generation_qualifier)
         if given_name is not None:
-            pulumi.set(__self__, "given_name", given_name)
+            _setter("given_name", given_name)
         if initials is not None:
-            pulumi.set(__self__, "initials", initials)
+            _setter("initials", initials)
         if locality_name is not None:
-            pulumi.set(__self__, "locality_name", locality_name)
+            _setter("locality_name", locality_name)
         if organization is not None:
-            pulumi.set(__self__, "organization", organization)
+            _setter("organization", organization)
         if organizational_unit is not None:
-            pulumi.set(__self__, "organizational_unit", organizational_unit)
+            _setter("organizational_unit", organizational_unit)
         if pseudonym is not None:
-            pulumi.set(__self__, "pseudonym", pseudonym)
+            _setter("pseudonym", pseudonym)
         if serial_number is not None:
-            pulumi.set(__self__, "serial_number", serial_number)
+            _setter("serial_number", serial_number)
         if state_or_province_name is not None:
-            pulumi.set(__self__, "state_or_province_name", state_or_province_name)
+            _setter("state_or_province_name", state_or_province_name)
         if street is not None:
-            pulumi.set(__self__, "street", street)
+            _setter("street", street)
         if surname is not None:
-            pulumi.set(__self__, "surname", surname)
+            _setter("surname", surname)
         if title is not None:
-            pulumi.set(__self__, "title", title)
+            _setter("title", title)
         if user_id is not None:
-            pulumi.set(__self__, "user_id", user_id)
+            _setter("user_id", user_id)
 
     @property
     @pulumi.getter(name="commonName")
@@ -1591,8 +1857,19 @@ class CertificateCertificateConfigSubjectAlternativeName(dict):
         :param str type: The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
         :param str value: The subject alternative name.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        CertificateCertificateConfigSubjectAlternativeName._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -1639,9 +1916,20 @@ class CertificateCertificateConfigValidity(dict):
         :param str time_of_validity_not_after: (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str time_of_validity_not_before: (Updatable) The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "time_of_validity_not_after", time_of_validity_not_after)
+        CertificateCertificateConfigValidity._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_of_validity_not_after=time_of_validity_not_after,
+            time_of_validity_not_before=time_of_validity_not_before,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_of_validity_not_after: str,
+             time_of_validity_not_before: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_of_validity_not_after", time_of_validity_not_after)
         if time_of_validity_not_before is not None:
-            pulumi.set(__self__, "time_of_validity_not_before", time_of_validity_not_before)
+            _setter("time_of_validity_not_before", time_of_validity_not_before)
 
     @property
     @pulumi.getter(name="timeOfValidityNotAfter")
@@ -1688,10 +1976,21 @@ class CertificateCertificateRevocationListDetail(dict):
         :param Sequence[str] custom_formatted_urls: Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
         :param Sequence['CertificateCertificateRevocationListDetailObjectStorageConfigArgs'] object_storage_configs: The details of the Object Storage bucket configured to store the certificate revocation list (CRL).
         """
+        CertificateCertificateRevocationListDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_formatted_urls=custom_formatted_urls,
+            object_storage_configs=object_storage_configs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_formatted_urls: Optional[Sequence[str]] = None,
+             object_storage_configs: Optional[Sequence['outputs.CertificateCertificateRevocationListDetailObjectStorageConfig']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if custom_formatted_urls is not None:
-            pulumi.set(__self__, "custom_formatted_urls", custom_formatted_urls)
+            _setter("custom_formatted_urls", custom_formatted_urls)
         if object_storage_configs is not None:
-            pulumi.set(__self__, "object_storage_configs", object_storage_configs)
+            _setter("object_storage_configs", object_storage_configs)
 
     @property
     @pulumi.getter(name="customFormattedUrls")
@@ -1742,12 +2041,25 @@ class CertificateCertificateRevocationListDetailObjectStorageConfig(dict):
         :param str object_storage_namespace: The tenancy of the bucket where the CRL is stored.
         :param str object_storage_object_name_format: The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
         """
+        CertificateCertificateRevocationListDetailObjectStorageConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_storage_bucket_name=object_storage_bucket_name,
+            object_storage_namespace=object_storage_namespace,
+            object_storage_object_name_format=object_storage_object_name_format,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_storage_bucket_name: Optional[str] = None,
+             object_storage_namespace: Optional[str] = None,
+             object_storage_object_name_format: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if object_storage_bucket_name is not None:
-            pulumi.set(__self__, "object_storage_bucket_name", object_storage_bucket_name)
+            _setter("object_storage_bucket_name", object_storage_bucket_name)
         if object_storage_namespace is not None:
-            pulumi.set(__self__, "object_storage_namespace", object_storage_namespace)
+            _setter("object_storage_namespace", object_storage_namespace)
         if object_storage_object_name_format is not None:
-            pulumi.set(__self__, "object_storage_object_name_format", object_storage_object_name_format)
+            _setter("object_storage_object_name_format", object_storage_object_name_format)
 
     @property
     @pulumi.getter(name="objectStorageBucketName")
@@ -1806,9 +2118,22 @@ class CertificateCertificateRule(dict):
         :param str renewal_interval: (Updatable) A property specifying how often, in days, a certificate should be renewed. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
         :param str rule_type: (Updatable) The type of rule.
         """
-        pulumi.set(__self__, "advance_renewal_period", advance_renewal_period)
-        pulumi.set(__self__, "renewal_interval", renewal_interval)
-        pulumi.set(__self__, "rule_type", rule_type)
+        CertificateCertificateRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            advance_renewal_period=advance_renewal_period,
+            renewal_interval=renewal_interval,
+            rule_type=rule_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             advance_renewal_period: str,
+             renewal_interval: str,
+             rule_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("advance_renewal_period", advance_renewal_period)
+        _setter("renewal_interval", renewal_interval)
+        _setter("rule_type", rule_type)
 
     @property
     @pulumi.getter(name="advanceRenewalPeriod")
@@ -1895,28 +2220,57 @@ class CertificateCurrentVersion(dict):
         :param str version_name: (Updatable) A name for the certificate. When the value is not null, a name is unique across versions of a given certificate.
         :param str version_number: The version number of the certificate.
         """
+        CertificateCurrentVersion._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_id=certificate_id,
+            issuer_ca_version_number=issuer_ca_version_number,
+            revocation_statuses=revocation_statuses,
+            serial_number=serial_number,
+            stages=stages,
+            subject_alternative_names=subject_alternative_names,
+            time_created=time_created,
+            time_of_deletion=time_of_deletion,
+            validities=validities,
+            version_name=version_name,
+            version_number=version_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_id: Optional[str] = None,
+             issuer_ca_version_number: Optional[str] = None,
+             revocation_statuses: Optional[Sequence['outputs.CertificateCurrentVersionRevocationStatus']] = None,
+             serial_number: Optional[str] = None,
+             stages: Optional[Sequence[str]] = None,
+             subject_alternative_names: Optional[Sequence['outputs.CertificateCurrentVersionSubjectAlternativeName']] = None,
+             time_created: Optional[str] = None,
+             time_of_deletion: Optional[str] = None,
+             validities: Optional[Sequence['outputs.CertificateCurrentVersionValidity']] = None,
+             version_name: Optional[str] = None,
+             version_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if certificate_id is not None:
-            pulumi.set(__self__, "certificate_id", certificate_id)
+            _setter("certificate_id", certificate_id)
         if issuer_ca_version_number is not None:
-            pulumi.set(__self__, "issuer_ca_version_number", issuer_ca_version_number)
+            _setter("issuer_ca_version_number", issuer_ca_version_number)
         if revocation_statuses is not None:
-            pulumi.set(__self__, "revocation_statuses", revocation_statuses)
+            _setter("revocation_statuses", revocation_statuses)
         if serial_number is not None:
-            pulumi.set(__self__, "serial_number", serial_number)
+            _setter("serial_number", serial_number)
         if stages is not None:
-            pulumi.set(__self__, "stages", stages)
+            _setter("stages", stages)
         if subject_alternative_names is not None:
-            pulumi.set(__self__, "subject_alternative_names", subject_alternative_names)
+            _setter("subject_alternative_names", subject_alternative_names)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_of_deletion is not None:
-            pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+            _setter("time_of_deletion", time_of_deletion)
         if validities is not None:
-            pulumi.set(__self__, "validities", validities)
+            _setter("validities", validities)
         if version_name is not None:
-            pulumi.set(__self__, "version_name", version_name)
+            _setter("version_name", version_name)
         if version_number is not None:
-            pulumi.set(__self__, "version_number", version_number)
+            _setter("version_number", version_number)
 
     @property
     @pulumi.getter(name="certificateId")
@@ -2035,10 +2389,21 @@ class CertificateCurrentVersionRevocationStatus(dict):
         :param str revocation_reason: The reason the certificate or certificate authority (CA) was revoked.
         :param str time_of_revocation: The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
+        CertificateCurrentVersionRevocationStatus._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            revocation_reason=revocation_reason,
+            time_of_revocation=time_of_revocation,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             revocation_reason: Optional[str] = None,
+             time_of_revocation: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if revocation_reason is not None:
-            pulumi.set(__self__, "revocation_reason", revocation_reason)
+            _setter("revocation_reason", revocation_reason)
         if time_of_revocation is not None:
-            pulumi.set(__self__, "time_of_revocation", time_of_revocation)
+            _setter("time_of_revocation", time_of_revocation)
 
     @property
     @pulumi.getter(name="revocationReason")
@@ -2066,10 +2431,21 @@ class CertificateCurrentVersionSubjectAlternativeName(dict):
         :param str type: The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
         :param str value: The subject alternative name.
         """
+        CertificateCurrentVersionSubjectAlternativeName._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -2116,10 +2492,21 @@ class CertificateCurrentVersionValidity(dict):
         :param str time_of_validity_not_after: (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str time_of_validity_not_before: (Updatable) The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
+        CertificateCurrentVersionValidity._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_of_validity_not_after=time_of_validity_not_after,
+            time_of_validity_not_before=time_of_validity_not_before,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_of_validity_not_after: Optional[str] = None,
+             time_of_validity_not_before: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if time_of_validity_not_after is not None:
-            pulumi.set(__self__, "time_of_validity_not_after", time_of_validity_not_after)
+            _setter("time_of_validity_not_after", time_of_validity_not_after)
         if time_of_validity_not_before is not None:
-            pulumi.set(__self__, "time_of_validity_not_before", time_of_validity_not_before)
+            _setter("time_of_validity_not_before", time_of_validity_not_before)
 
     @property
     @pulumi.getter(name="timeOfValidityNotAfter")
@@ -2212,40 +2599,81 @@ class CertificateSubject(dict):
         :param str title: Title (RDN T or TITLE).
         :param str user_id: User ID (RDN UID).
         """
+        CertificateSubject._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            common_name=common_name,
+            country=country,
+            distinguished_name_qualifier=distinguished_name_qualifier,
+            domain_component=domain_component,
+            generation_qualifier=generation_qualifier,
+            given_name=given_name,
+            initials=initials,
+            locality_name=locality_name,
+            organization=organization,
+            organizational_unit=organizational_unit,
+            pseudonym=pseudonym,
+            serial_number=serial_number,
+            state_or_province_name=state_or_province_name,
+            street=street,
+            surname=surname,
+            title=title,
+            user_id=user_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             common_name: Optional[str] = None,
+             country: Optional[str] = None,
+             distinguished_name_qualifier: Optional[str] = None,
+             domain_component: Optional[str] = None,
+             generation_qualifier: Optional[str] = None,
+             given_name: Optional[str] = None,
+             initials: Optional[str] = None,
+             locality_name: Optional[str] = None,
+             organization: Optional[str] = None,
+             organizational_unit: Optional[str] = None,
+             pseudonym: Optional[str] = None,
+             serial_number: Optional[str] = None,
+             state_or_province_name: Optional[str] = None,
+             street: Optional[str] = None,
+             surname: Optional[str] = None,
+             title: Optional[str] = None,
+             user_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if common_name is not None:
-            pulumi.set(__self__, "common_name", common_name)
+            _setter("common_name", common_name)
         if country is not None:
-            pulumi.set(__self__, "country", country)
+            _setter("country", country)
         if distinguished_name_qualifier is not None:
-            pulumi.set(__self__, "distinguished_name_qualifier", distinguished_name_qualifier)
+            _setter("distinguished_name_qualifier", distinguished_name_qualifier)
         if domain_component is not None:
-            pulumi.set(__self__, "domain_component", domain_component)
+            _setter("domain_component", domain_component)
         if generation_qualifier is not None:
-            pulumi.set(__self__, "generation_qualifier", generation_qualifier)
+            _setter("generation_qualifier", generation_qualifier)
         if given_name is not None:
-            pulumi.set(__self__, "given_name", given_name)
+            _setter("given_name", given_name)
         if initials is not None:
-            pulumi.set(__self__, "initials", initials)
+            _setter("initials", initials)
         if locality_name is not None:
-            pulumi.set(__self__, "locality_name", locality_name)
+            _setter("locality_name", locality_name)
         if organization is not None:
-            pulumi.set(__self__, "organization", organization)
+            _setter("organization", organization)
         if organizational_unit is not None:
-            pulumi.set(__self__, "organizational_unit", organizational_unit)
+            _setter("organizational_unit", organizational_unit)
         if pseudonym is not None:
-            pulumi.set(__self__, "pseudonym", pseudonym)
+            _setter("pseudonym", pseudonym)
         if serial_number is not None:
-            pulumi.set(__self__, "serial_number", serial_number)
+            _setter("serial_number", serial_number)
         if state_or_province_name is not None:
-            pulumi.set(__self__, "state_or_province_name", state_or_province_name)
+            _setter("state_or_province_name", state_or_province_name)
         if street is not None:
-            pulumi.set(__self__, "street", street)
+            _setter("street", street)
         if surname is not None:
-            pulumi.set(__self__, "surname", surname)
+            _setter("surname", surname)
         if title is not None:
-            pulumi.set(__self__, "title", title)
+            _setter("title", title)
         if user_id is not None:
-            pulumi.set(__self__, "user_id", user_id)
+            _setter("user_id", user_id)
 
     @property
     @pulumi.getter(name="commonName")
@@ -2388,7 +2816,16 @@ class CertificateSubject(dict):
 class GetAssociationsAssociationCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAssociationsAssociationCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetAssociationsAssociationCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAssociationsAssociationCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2417,14 +2854,37 @@ class GetAssociationsAssociationCollectionItemResult(dict):
         :param str state: The current lifecycle state of the association.
         :param str time_created: A property indicating when the association was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "associated_resource_id", associated_resource_id)
-        pulumi.set(__self__, "association_type", association_type)
-        pulumi.set(__self__, "certificates_resource_id", certificates_resource_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetAssociationsAssociationCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            associated_resource_id=associated_resource_id,
+            association_type=association_type,
+            certificates_resource_id=certificates_resource_id,
+            compartment_id=compartment_id,
+            id=id,
+            name=name,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             associated_resource_id: str,
+             association_type: str,
+             certificates_resource_id: str,
+             compartment_id: str,
+             id: str,
+             name: str,
+             state: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("associated_resource_id", associated_resource_id)
+        _setter("association_type", association_type)
+        _setter("certificates_resource_id", certificates_resource_id)
+        _setter("compartment_id", compartment_id)
+        _setter("id", id)
+        _setter("name", name)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="associatedResourceId")
@@ -2500,10 +2960,23 @@ class GetAssociationsFilterResult(dict):
         """
         :param str name: A filter that returns only resources that match the specified name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAssociationsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2528,7 +3001,16 @@ class GetAssociationsFilterResult(dict):
 class GetCaBundlesCaBundleCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetCaBundlesCaBundleCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetCaBundlesCaBundleCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetCaBundlesCaBundleCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2560,16 +3042,43 @@ class GetCaBundlesCaBundleCollectionItemResult(dict):
         :param str state: A filter that returns only resources that match the given lifecycle state. The state value is case-insensitive.
         :param str time_created: A property indicating when the CA bundle was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "ca_bundle_pem", ca_bundle_pem)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetCaBundlesCaBundleCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ca_bundle_pem=ca_bundle_pem,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ca_bundle_pem: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             name: str,
+             state: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ca_bundle_pem", ca_bundle_pem)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("name", name)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="caBundlePem")
@@ -2658,10 +3167,23 @@ class GetCaBundlesFilterResult(dict):
         """
         :param str name: A filter that returns only resources that match the specified name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetCaBundlesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2686,7 +3208,16 @@ class GetCaBundlesFilterResult(dict):
 class GetCertificateAuthoritiesCertificateAuthorityCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetCertificateAuthoritiesCertificateAuthorityCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2736,25 +3267,70 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemResult(dict):
         :param str time_created: A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str time_of_deletion: An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "certificate_authority_configs", certificate_authority_configs)
-        pulumi.set(__self__, "certificate_authority_rules", certificate_authority_rules)
-        pulumi.set(__self__, "certificate_revocation_list_details", certificate_revocation_list_details)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "config_type", config_type)
-        pulumi.set(__self__, "current_versions", current_versions)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "issuer_certificate_authority_id", issuer_certificate_authority_id)
-        pulumi.set(__self__, "kms_key_id", kms_key_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "signing_algorithm", signing_algorithm)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subjects", subjects)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+        GetCertificateAuthoritiesCertificateAuthorityCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_authority_configs=certificate_authority_configs,
+            certificate_authority_rules=certificate_authority_rules,
+            certificate_revocation_list_details=certificate_revocation_list_details,
+            compartment_id=compartment_id,
+            config_type=config_type,
+            current_versions=current_versions,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            id=id,
+            issuer_certificate_authority_id=issuer_certificate_authority_id,
+            kms_key_id=kms_key_id,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            signing_algorithm=signing_algorithm,
+            state=state,
+            subjects=subjects,
+            time_created=time_created,
+            time_of_deletion=time_of_deletion,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_authority_configs: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigResult'],
+             certificate_authority_rules: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleResult'],
+             certificate_revocation_list_details: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailResult'],
+             compartment_id: str,
+             config_type: str,
+             current_versions: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionResult'],
+             defined_tags: Mapping[str, Any],
+             description: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             issuer_certificate_authority_id: str,
+             kms_key_id: str,
+             lifecycle_details: str,
+             name: str,
+             signing_algorithm: str,
+             state: str,
+             subjects: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectResult'],
+             time_created: str,
+             time_of_deletion: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_authority_configs", certificate_authority_configs)
+        _setter("certificate_authority_rules", certificate_authority_rules)
+        _setter("certificate_revocation_list_details", certificate_revocation_list_details)
+        _setter("compartment_id", compartment_id)
+        _setter("config_type", config_type)
+        _setter("current_versions", current_versions)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("issuer_certificate_authority_id", issuer_certificate_authority_id)
+        _setter("kms_key_id", kms_key_id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("name", name)
+        _setter("signing_algorithm", signing_algorithm)
+        _setter("state", state)
+        _setter("subjects", subjects)
+        _setter("time_created", time_created)
+        _setter("time_of_deletion", time_of_deletion)
 
     @property
     @pulumi.getter(name="certificateAuthorityConfigs")
@@ -2923,12 +3499,31 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuth
         :param Sequence['GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityArgs'] validities: An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
         :param str version_name: The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
         """
-        pulumi.set(__self__, "config_type", config_type)
-        pulumi.set(__self__, "issuer_certificate_authority_id", issuer_certificate_authority_id)
-        pulumi.set(__self__, "signing_algorithm", signing_algorithm)
-        pulumi.set(__self__, "subjects", subjects)
-        pulumi.set(__self__, "validities", validities)
-        pulumi.set(__self__, "version_name", version_name)
+        GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_type=config_type,
+            issuer_certificate_authority_id=issuer_certificate_authority_id,
+            signing_algorithm=signing_algorithm,
+            subjects=subjects,
+            validities=validities,
+            version_name=version_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_type: str,
+             issuer_certificate_authority_id: str,
+             signing_algorithm: str,
+             subjects: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectResult'],
+             validities: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityResult'],
+             version_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_type", config_type)
+        _setter("issuer_certificate_authority_id", issuer_certificate_authority_id)
+        _setter("signing_algorithm", signing_algorithm)
+        _setter("subjects", subjects)
+        _setter("validities", validities)
+        _setter("version_name", version_name)
 
     @property
     @pulumi.getter(name="configType")
@@ -3018,23 +3613,64 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuth
         :param str title: Title (RDN T or TITLE).
         :param str user_id: User ID (RDN UID).
         """
-        pulumi.set(__self__, "common_name", common_name)
-        pulumi.set(__self__, "country", country)
-        pulumi.set(__self__, "distinguished_name_qualifier", distinguished_name_qualifier)
-        pulumi.set(__self__, "domain_component", domain_component)
-        pulumi.set(__self__, "generation_qualifier", generation_qualifier)
-        pulumi.set(__self__, "given_name", given_name)
-        pulumi.set(__self__, "initials", initials)
-        pulumi.set(__self__, "locality_name", locality_name)
-        pulumi.set(__self__, "organization", organization)
-        pulumi.set(__self__, "organizational_unit", organizational_unit)
-        pulumi.set(__self__, "pseudonym", pseudonym)
-        pulumi.set(__self__, "serial_number", serial_number)
-        pulumi.set(__self__, "state_or_province_name", state_or_province_name)
-        pulumi.set(__self__, "street", street)
-        pulumi.set(__self__, "surname", surname)
-        pulumi.set(__self__, "title", title)
-        pulumi.set(__self__, "user_id", user_id)
+        GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigSubjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            common_name=common_name,
+            country=country,
+            distinguished_name_qualifier=distinguished_name_qualifier,
+            domain_component=domain_component,
+            generation_qualifier=generation_qualifier,
+            given_name=given_name,
+            initials=initials,
+            locality_name=locality_name,
+            organization=organization,
+            organizational_unit=organizational_unit,
+            pseudonym=pseudonym,
+            serial_number=serial_number,
+            state_or_province_name=state_or_province_name,
+            street=street,
+            surname=surname,
+            title=title,
+            user_id=user_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             common_name: str,
+             country: str,
+             distinguished_name_qualifier: str,
+             domain_component: str,
+             generation_qualifier: str,
+             given_name: str,
+             initials: str,
+             locality_name: str,
+             organization: str,
+             organizational_unit: str,
+             pseudonym: str,
+             serial_number: str,
+             state_or_province_name: str,
+             street: str,
+             surname: str,
+             title: str,
+             user_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("common_name", common_name)
+        _setter("country", country)
+        _setter("distinguished_name_qualifier", distinguished_name_qualifier)
+        _setter("domain_component", domain_component)
+        _setter("generation_qualifier", generation_qualifier)
+        _setter("given_name", given_name)
+        _setter("initials", initials)
+        _setter("locality_name", locality_name)
+        _setter("organization", organization)
+        _setter("organizational_unit", organizational_unit)
+        _setter("pseudonym", pseudonym)
+        _setter("serial_number", serial_number)
+        _setter("state_or_province_name", state_or_province_name)
+        _setter("street", street)
+        _setter("surname", surname)
+        _setter("title", title)
+        _setter("user_id", user_id)
 
     @property
     @pulumi.getter(name="commonName")
@@ -3182,8 +3818,19 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuth
         :param str time_of_validity_not_after: The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str time_of_validity_not_before: The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "time_of_validity_not_after", time_of_validity_not_after)
-        pulumi.set(__self__, "time_of_validity_not_before", time_of_validity_not_before)
+        GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityConfigValidityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_of_validity_not_after=time_of_validity_not_after,
+            time_of_validity_not_before=time_of_validity_not_before,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_of_validity_not_after: str,
+             time_of_validity_not_before: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_of_validity_not_after", time_of_validity_not_after)
+        _setter("time_of_validity_not_before", time_of_validity_not_before)
 
     @property
     @pulumi.getter(name="timeOfValidityNotAfter")
@@ -3213,9 +3860,22 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuth
         :param str leaf_certificate_max_validity_duration: A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
         :param str rule_type: The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
         """
-        pulumi.set(__self__, "certificate_authority_max_validity_duration", certificate_authority_max_validity_duration)
-        pulumi.set(__self__, "leaf_certificate_max_validity_duration", leaf_certificate_max_validity_duration)
-        pulumi.set(__self__, "rule_type", rule_type)
+        GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateAuthorityRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_authority_max_validity_duration=certificate_authority_max_validity_duration,
+            leaf_certificate_max_validity_duration=leaf_certificate_max_validity_duration,
+            rule_type=rule_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_authority_max_validity_duration: str,
+             leaf_certificate_max_validity_duration: str,
+             rule_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_authority_max_validity_duration", certificate_authority_max_validity_duration)
+        _setter("leaf_certificate_max_validity_duration", leaf_certificate_max_validity_duration)
+        _setter("rule_type", rule_type)
 
     @property
     @pulumi.getter(name="certificateAuthorityMaxValidityDuration")
@@ -3251,8 +3911,19 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevo
         :param Sequence[str] custom_formatted_urls: Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
         :param Sequence['GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs'] object_storage_configs: The details of the Object Storage bucket configured to store the certificate revocation list (CRL).
         """
-        pulumi.set(__self__, "custom_formatted_urls", custom_formatted_urls)
-        pulumi.set(__self__, "object_storage_configs", object_storage_configs)
+        GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_formatted_urls=custom_formatted_urls,
+            object_storage_configs=object_storage_configs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_formatted_urls: Sequence[str],
+             object_storage_configs: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("custom_formatted_urls", custom_formatted_urls)
+        _setter("object_storage_configs", object_storage_configs)
 
     @property
     @pulumi.getter(name="customFormattedUrls")
@@ -3282,9 +3953,22 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevo
         :param str object_storage_namespace: The tenancy of the bucket where the CRL is stored.
         :param str object_storage_object_name_format: The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
         """
-        pulumi.set(__self__, "object_storage_bucket_name", object_storage_bucket_name)
-        pulumi.set(__self__, "object_storage_namespace", object_storage_namespace)
-        pulumi.set(__self__, "object_storage_object_name_format", object_storage_object_name_format)
+        GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetailObjectStorageConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_storage_bucket_name=object_storage_bucket_name,
+            object_storage_namespace=object_storage_namespace,
+            object_storage_object_name_format=object_storage_object_name_format,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_storage_bucket_name: str,
+             object_storage_namespace: str,
+             object_storage_object_name_format: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object_storage_bucket_name", object_storage_bucket_name)
+        _setter("object_storage_namespace", object_storage_namespace)
+        _setter("object_storage_object_name_format", object_storage_object_name_format)
 
     @property
     @pulumi.getter(name="objectStorageBucketName")
@@ -3336,16 +4020,43 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionR
         :param str version_name: The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
         :param str version_number: The version number of the CA.
         """
-        pulumi.set(__self__, "certificate_authority_id", certificate_authority_id)
-        pulumi.set(__self__, "issuer_ca_version_number", issuer_ca_version_number)
-        pulumi.set(__self__, "revocation_statuses", revocation_statuses)
-        pulumi.set(__self__, "serial_number", serial_number)
-        pulumi.set(__self__, "stages", stages)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_of_deletion", time_of_deletion)
-        pulumi.set(__self__, "validities", validities)
-        pulumi.set(__self__, "version_name", version_name)
-        pulumi.set(__self__, "version_number", version_number)
+        GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_authority_id=certificate_authority_id,
+            issuer_ca_version_number=issuer_ca_version_number,
+            revocation_statuses=revocation_statuses,
+            serial_number=serial_number,
+            stages=stages,
+            time_created=time_created,
+            time_of_deletion=time_of_deletion,
+            validities=validities,
+            version_name=version_name,
+            version_number=version_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_authority_id: str,
+             issuer_ca_version_number: str,
+             revocation_statuses: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusResult'],
+             serial_number: str,
+             stages: Sequence[str],
+             time_created: str,
+             time_of_deletion: str,
+             validities: Sequence['outputs.GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityResult'],
+             version_name: str,
+             version_number: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_authority_id", certificate_authority_id)
+        _setter("issuer_ca_version_number", issuer_ca_version_number)
+        _setter("revocation_statuses", revocation_statuses)
+        _setter("serial_number", serial_number)
+        _setter("stages", stages)
+        _setter("time_created", time_created)
+        _setter("time_of_deletion", time_of_deletion)
+        _setter("validities", validities)
+        _setter("version_name", version_name)
+        _setter("version_number", version_number)
 
     @property
     @pulumi.getter(name="certificateAuthorityId")
@@ -3437,8 +4148,19 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionR
         :param str revocation_reason: The reason the certificate or certificate authority (CA) was revoked.
         :param str time_of_revocation: The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "revocation_reason", revocation_reason)
-        pulumi.set(__self__, "time_of_revocation", time_of_revocation)
+        GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionRevocationStatusResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            revocation_reason=revocation_reason,
+            time_of_revocation=time_of_revocation,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             revocation_reason: str,
+             time_of_revocation: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("revocation_reason", revocation_reason)
+        _setter("time_of_revocation", time_of_revocation)
 
     @property
     @pulumi.getter(name="revocationReason")
@@ -3466,8 +4188,19 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionV
         :param str time_of_validity_not_after: The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str time_of_validity_not_before: The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "time_of_validity_not_after", time_of_validity_not_after)
-        pulumi.set(__self__, "time_of_validity_not_before", time_of_validity_not_before)
+        GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionValidityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_of_validity_not_after=time_of_validity_not_after,
+            time_of_validity_not_before=time_of_validity_not_before,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_of_validity_not_after: str,
+             time_of_validity_not_before: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_of_validity_not_after", time_of_validity_not_after)
+        _setter("time_of_validity_not_before", time_of_validity_not_before)
 
     @property
     @pulumi.getter(name="timeOfValidityNotAfter")
@@ -3525,23 +4258,64 @@ class GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectResult(d
         :param str title: Title (RDN T or TITLE).
         :param str user_id: User ID (RDN UID).
         """
-        pulumi.set(__self__, "common_name", common_name)
-        pulumi.set(__self__, "country", country)
-        pulumi.set(__self__, "distinguished_name_qualifier", distinguished_name_qualifier)
-        pulumi.set(__self__, "domain_component", domain_component)
-        pulumi.set(__self__, "generation_qualifier", generation_qualifier)
-        pulumi.set(__self__, "given_name", given_name)
-        pulumi.set(__self__, "initials", initials)
-        pulumi.set(__self__, "locality_name", locality_name)
-        pulumi.set(__self__, "organization", organization)
-        pulumi.set(__self__, "organizational_unit", organizational_unit)
-        pulumi.set(__self__, "pseudonym", pseudonym)
-        pulumi.set(__self__, "serial_number", serial_number)
-        pulumi.set(__self__, "state_or_province_name", state_or_province_name)
-        pulumi.set(__self__, "street", street)
-        pulumi.set(__self__, "surname", surname)
-        pulumi.set(__self__, "title", title)
-        pulumi.set(__self__, "user_id", user_id)
+        GetCertificateAuthoritiesCertificateAuthorityCollectionItemSubjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            common_name=common_name,
+            country=country,
+            distinguished_name_qualifier=distinguished_name_qualifier,
+            domain_component=domain_component,
+            generation_qualifier=generation_qualifier,
+            given_name=given_name,
+            initials=initials,
+            locality_name=locality_name,
+            organization=organization,
+            organizational_unit=organizational_unit,
+            pseudonym=pseudonym,
+            serial_number=serial_number,
+            state_or_province_name=state_or_province_name,
+            street=street,
+            surname=surname,
+            title=title,
+            user_id=user_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             common_name: str,
+             country: str,
+             distinguished_name_qualifier: str,
+             domain_component: str,
+             generation_qualifier: str,
+             given_name: str,
+             initials: str,
+             locality_name: str,
+             organization: str,
+             organizational_unit: str,
+             pseudonym: str,
+             serial_number: str,
+             state_or_province_name: str,
+             street: str,
+             surname: str,
+             title: str,
+             user_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("common_name", common_name)
+        _setter("country", country)
+        _setter("distinguished_name_qualifier", distinguished_name_qualifier)
+        _setter("domain_component", domain_component)
+        _setter("generation_qualifier", generation_qualifier)
+        _setter("given_name", given_name)
+        _setter("initials", initials)
+        _setter("locality_name", locality_name)
+        _setter("organization", organization)
+        _setter("organizational_unit", organizational_unit)
+        _setter("pseudonym", pseudonym)
+        _setter("serial_number", serial_number)
+        _setter("state_or_province_name", state_or_province_name)
+        _setter("street", street)
+        _setter("surname", surname)
+        _setter("title", title)
+        _setter("user_id", user_id)
 
     @property
     @pulumi.getter(name="commonName")
@@ -3689,10 +4463,23 @@ class GetCertificateAuthoritiesFilterResult(dict):
         """
         :param str name: A filter that returns only resources that match the specified name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetCertificateAuthoritiesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3730,12 +4517,31 @@ class GetCertificateAuthorityCertificateAuthorityConfigResult(dict):
         :param Sequence['GetCertificateAuthorityCertificateAuthorityConfigValidityArgs'] validities: An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
         :param str version_name: The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
         """
-        pulumi.set(__self__, "config_type", config_type)
-        pulumi.set(__self__, "issuer_certificate_authority_id", issuer_certificate_authority_id)
-        pulumi.set(__self__, "signing_algorithm", signing_algorithm)
-        pulumi.set(__self__, "subjects", subjects)
-        pulumi.set(__self__, "validities", validities)
-        pulumi.set(__self__, "version_name", version_name)
+        GetCertificateAuthorityCertificateAuthorityConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_type=config_type,
+            issuer_certificate_authority_id=issuer_certificate_authority_id,
+            signing_algorithm=signing_algorithm,
+            subjects=subjects,
+            validities=validities,
+            version_name=version_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_type: str,
+             issuer_certificate_authority_id: str,
+             signing_algorithm: str,
+             subjects: Sequence['outputs.GetCertificateAuthorityCertificateAuthorityConfigSubjectResult'],
+             validities: Sequence['outputs.GetCertificateAuthorityCertificateAuthorityConfigValidityResult'],
+             version_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_type", config_type)
+        _setter("issuer_certificate_authority_id", issuer_certificate_authority_id)
+        _setter("signing_algorithm", signing_algorithm)
+        _setter("subjects", subjects)
+        _setter("validities", validities)
+        _setter("version_name", version_name)
 
     @property
     @pulumi.getter(name="configType")
@@ -3825,23 +4631,64 @@ class GetCertificateAuthorityCertificateAuthorityConfigSubjectResult(dict):
         :param str title: Title (RDN T or TITLE).
         :param str user_id: User ID (RDN UID).
         """
-        pulumi.set(__self__, "common_name", common_name)
-        pulumi.set(__self__, "country", country)
-        pulumi.set(__self__, "distinguished_name_qualifier", distinguished_name_qualifier)
-        pulumi.set(__self__, "domain_component", domain_component)
-        pulumi.set(__self__, "generation_qualifier", generation_qualifier)
-        pulumi.set(__self__, "given_name", given_name)
-        pulumi.set(__self__, "initials", initials)
-        pulumi.set(__self__, "locality_name", locality_name)
-        pulumi.set(__self__, "organization", organization)
-        pulumi.set(__self__, "organizational_unit", organizational_unit)
-        pulumi.set(__self__, "pseudonym", pseudonym)
-        pulumi.set(__self__, "serial_number", serial_number)
-        pulumi.set(__self__, "state_or_province_name", state_or_province_name)
-        pulumi.set(__self__, "street", street)
-        pulumi.set(__self__, "surname", surname)
-        pulumi.set(__self__, "title", title)
-        pulumi.set(__self__, "user_id", user_id)
+        GetCertificateAuthorityCertificateAuthorityConfigSubjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            common_name=common_name,
+            country=country,
+            distinguished_name_qualifier=distinguished_name_qualifier,
+            domain_component=domain_component,
+            generation_qualifier=generation_qualifier,
+            given_name=given_name,
+            initials=initials,
+            locality_name=locality_name,
+            organization=organization,
+            organizational_unit=organizational_unit,
+            pseudonym=pseudonym,
+            serial_number=serial_number,
+            state_or_province_name=state_or_province_name,
+            street=street,
+            surname=surname,
+            title=title,
+            user_id=user_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             common_name: str,
+             country: str,
+             distinguished_name_qualifier: str,
+             domain_component: str,
+             generation_qualifier: str,
+             given_name: str,
+             initials: str,
+             locality_name: str,
+             organization: str,
+             organizational_unit: str,
+             pseudonym: str,
+             serial_number: str,
+             state_or_province_name: str,
+             street: str,
+             surname: str,
+             title: str,
+             user_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("common_name", common_name)
+        _setter("country", country)
+        _setter("distinguished_name_qualifier", distinguished_name_qualifier)
+        _setter("domain_component", domain_component)
+        _setter("generation_qualifier", generation_qualifier)
+        _setter("given_name", given_name)
+        _setter("initials", initials)
+        _setter("locality_name", locality_name)
+        _setter("organization", organization)
+        _setter("organizational_unit", organizational_unit)
+        _setter("pseudonym", pseudonym)
+        _setter("serial_number", serial_number)
+        _setter("state_or_province_name", state_or_province_name)
+        _setter("street", street)
+        _setter("surname", surname)
+        _setter("title", title)
+        _setter("user_id", user_id)
 
     @property
     @pulumi.getter(name="commonName")
@@ -3989,8 +4836,19 @@ class GetCertificateAuthorityCertificateAuthorityConfigValidityResult(dict):
         :param str time_of_validity_not_after: The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str time_of_validity_not_before: The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "time_of_validity_not_after", time_of_validity_not_after)
-        pulumi.set(__self__, "time_of_validity_not_before", time_of_validity_not_before)
+        GetCertificateAuthorityCertificateAuthorityConfigValidityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_of_validity_not_after=time_of_validity_not_after,
+            time_of_validity_not_before=time_of_validity_not_before,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_of_validity_not_after: str,
+             time_of_validity_not_before: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_of_validity_not_after", time_of_validity_not_after)
+        _setter("time_of_validity_not_before", time_of_validity_not_before)
 
     @property
     @pulumi.getter(name="timeOfValidityNotAfter")
@@ -4020,9 +4878,22 @@ class GetCertificateAuthorityCertificateAuthorityRuleResult(dict):
         :param str leaf_certificate_max_validity_duration: A property indicating the maximum validity duration, in days, of leaf certificates issued by this CA. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
         :param str rule_type: The type of rule, whether a renewal rule regarding when to renew the CA or an issuance expiry rule that governs how long the certificates and CAs issued by the CA are valid. (For internal use only) An internal issuance rule defines the number and type of certificates that the CA can issue.
         """
-        pulumi.set(__self__, "certificate_authority_max_validity_duration", certificate_authority_max_validity_duration)
-        pulumi.set(__self__, "leaf_certificate_max_validity_duration", leaf_certificate_max_validity_duration)
-        pulumi.set(__self__, "rule_type", rule_type)
+        GetCertificateAuthorityCertificateAuthorityRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_authority_max_validity_duration=certificate_authority_max_validity_duration,
+            leaf_certificate_max_validity_duration=leaf_certificate_max_validity_duration,
+            rule_type=rule_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_authority_max_validity_duration: str,
+             leaf_certificate_max_validity_duration: str,
+             rule_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_authority_max_validity_duration", certificate_authority_max_validity_duration)
+        _setter("leaf_certificate_max_validity_duration", leaf_certificate_max_validity_duration)
+        _setter("rule_type", rule_type)
 
     @property
     @pulumi.getter(name="certificateAuthorityMaxValidityDuration")
@@ -4058,8 +4929,19 @@ class GetCertificateAuthorityCertificateRevocationListDetailResult(dict):
         :param Sequence[str] custom_formatted_urls: Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
         :param Sequence['GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigArgs'] object_storage_configs: The details of the Object Storage bucket configured to store the certificate revocation list (CRL).
         """
-        pulumi.set(__self__, "custom_formatted_urls", custom_formatted_urls)
-        pulumi.set(__self__, "object_storage_configs", object_storage_configs)
+        GetCertificateAuthorityCertificateRevocationListDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_formatted_urls=custom_formatted_urls,
+            object_storage_configs=object_storage_configs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_formatted_urls: Sequence[str],
+             object_storage_configs: Sequence['outputs.GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("custom_formatted_urls", custom_formatted_urls)
+        _setter("object_storage_configs", object_storage_configs)
 
     @property
     @pulumi.getter(name="customFormattedUrls")
@@ -4089,9 +4971,22 @@ class GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigR
         :param str object_storage_namespace: The tenancy of the bucket where the CRL is stored.
         :param str object_storage_object_name_format: The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
         """
-        pulumi.set(__self__, "object_storage_bucket_name", object_storage_bucket_name)
-        pulumi.set(__self__, "object_storage_namespace", object_storage_namespace)
-        pulumi.set(__self__, "object_storage_object_name_format", object_storage_object_name_format)
+        GetCertificateAuthorityCertificateRevocationListDetailObjectStorageConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_storage_bucket_name=object_storage_bucket_name,
+            object_storage_namespace=object_storage_namespace,
+            object_storage_object_name_format=object_storage_object_name_format,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_storage_bucket_name: str,
+             object_storage_namespace: str,
+             object_storage_object_name_format: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object_storage_bucket_name", object_storage_bucket_name)
+        _setter("object_storage_namespace", object_storage_namespace)
+        _setter("object_storage_object_name_format", object_storage_object_name_format)
 
     @property
     @pulumi.getter(name="objectStorageBucketName")
@@ -4143,16 +5038,43 @@ class GetCertificateAuthorityCurrentVersionResult(dict):
         :param str version_name: The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
         :param str version_number: The version number of the CA.
         """
-        pulumi.set(__self__, "certificate_authority_id", certificate_authority_id)
-        pulumi.set(__self__, "issuer_ca_version_number", issuer_ca_version_number)
-        pulumi.set(__self__, "revocation_statuses", revocation_statuses)
-        pulumi.set(__self__, "serial_number", serial_number)
-        pulumi.set(__self__, "stages", stages)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_of_deletion", time_of_deletion)
-        pulumi.set(__self__, "validities", validities)
-        pulumi.set(__self__, "version_name", version_name)
-        pulumi.set(__self__, "version_number", version_number)
+        GetCertificateAuthorityCurrentVersionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_authority_id=certificate_authority_id,
+            issuer_ca_version_number=issuer_ca_version_number,
+            revocation_statuses=revocation_statuses,
+            serial_number=serial_number,
+            stages=stages,
+            time_created=time_created,
+            time_of_deletion=time_of_deletion,
+            validities=validities,
+            version_name=version_name,
+            version_number=version_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_authority_id: str,
+             issuer_ca_version_number: str,
+             revocation_statuses: Sequence['outputs.GetCertificateAuthorityCurrentVersionRevocationStatusResult'],
+             serial_number: str,
+             stages: Sequence[str],
+             time_created: str,
+             time_of_deletion: str,
+             validities: Sequence['outputs.GetCertificateAuthorityCurrentVersionValidityResult'],
+             version_name: str,
+             version_number: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_authority_id", certificate_authority_id)
+        _setter("issuer_ca_version_number", issuer_ca_version_number)
+        _setter("revocation_statuses", revocation_statuses)
+        _setter("serial_number", serial_number)
+        _setter("stages", stages)
+        _setter("time_created", time_created)
+        _setter("time_of_deletion", time_of_deletion)
+        _setter("validities", validities)
+        _setter("version_name", version_name)
+        _setter("version_number", version_number)
 
     @property
     @pulumi.getter(name="certificateAuthorityId")
@@ -4244,8 +5166,19 @@ class GetCertificateAuthorityCurrentVersionRevocationStatusResult(dict):
         :param str revocation_reason: The reason the certificate or certificate authority (CA) was revoked.
         :param str time_of_revocation: The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "revocation_reason", revocation_reason)
-        pulumi.set(__self__, "time_of_revocation", time_of_revocation)
+        GetCertificateAuthorityCurrentVersionRevocationStatusResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            revocation_reason=revocation_reason,
+            time_of_revocation=time_of_revocation,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             revocation_reason: str,
+             time_of_revocation: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("revocation_reason", revocation_reason)
+        _setter("time_of_revocation", time_of_revocation)
 
     @property
     @pulumi.getter(name="revocationReason")
@@ -4273,8 +5206,19 @@ class GetCertificateAuthorityCurrentVersionValidityResult(dict):
         :param str time_of_validity_not_after: The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str time_of_validity_not_before: The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "time_of_validity_not_after", time_of_validity_not_after)
-        pulumi.set(__self__, "time_of_validity_not_before", time_of_validity_not_before)
+        GetCertificateAuthorityCurrentVersionValidityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_of_validity_not_after=time_of_validity_not_after,
+            time_of_validity_not_before=time_of_validity_not_before,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_of_validity_not_after: str,
+             time_of_validity_not_before: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_of_validity_not_after", time_of_validity_not_after)
+        _setter("time_of_validity_not_before", time_of_validity_not_before)
 
     @property
     @pulumi.getter(name="timeOfValidityNotAfter")
@@ -4332,23 +5276,64 @@ class GetCertificateAuthoritySubjectResult(dict):
         :param str title: Title (RDN T or TITLE).
         :param str user_id: User ID (RDN UID).
         """
-        pulumi.set(__self__, "common_name", common_name)
-        pulumi.set(__self__, "country", country)
-        pulumi.set(__self__, "distinguished_name_qualifier", distinguished_name_qualifier)
-        pulumi.set(__self__, "domain_component", domain_component)
-        pulumi.set(__self__, "generation_qualifier", generation_qualifier)
-        pulumi.set(__self__, "given_name", given_name)
-        pulumi.set(__self__, "initials", initials)
-        pulumi.set(__self__, "locality_name", locality_name)
-        pulumi.set(__self__, "organization", organization)
-        pulumi.set(__self__, "organizational_unit", organizational_unit)
-        pulumi.set(__self__, "pseudonym", pseudonym)
-        pulumi.set(__self__, "serial_number", serial_number)
-        pulumi.set(__self__, "state_or_province_name", state_or_province_name)
-        pulumi.set(__self__, "street", street)
-        pulumi.set(__self__, "surname", surname)
-        pulumi.set(__self__, "title", title)
-        pulumi.set(__self__, "user_id", user_id)
+        GetCertificateAuthoritySubjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            common_name=common_name,
+            country=country,
+            distinguished_name_qualifier=distinguished_name_qualifier,
+            domain_component=domain_component,
+            generation_qualifier=generation_qualifier,
+            given_name=given_name,
+            initials=initials,
+            locality_name=locality_name,
+            organization=organization,
+            organizational_unit=organizational_unit,
+            pseudonym=pseudonym,
+            serial_number=serial_number,
+            state_or_province_name=state_or_province_name,
+            street=street,
+            surname=surname,
+            title=title,
+            user_id=user_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             common_name: str,
+             country: str,
+             distinguished_name_qualifier: str,
+             domain_component: str,
+             generation_qualifier: str,
+             given_name: str,
+             initials: str,
+             locality_name: str,
+             organization: str,
+             organizational_unit: str,
+             pseudonym: str,
+             serial_number: str,
+             state_or_province_name: str,
+             street: str,
+             surname: str,
+             title: str,
+             user_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("common_name", common_name)
+        _setter("country", country)
+        _setter("distinguished_name_qualifier", distinguished_name_qualifier)
+        _setter("domain_component", domain_component)
+        _setter("generation_qualifier", generation_qualifier)
+        _setter("given_name", given_name)
+        _setter("initials", initials)
+        _setter("locality_name", locality_name)
+        _setter("organization", organization)
+        _setter("organizational_unit", organizational_unit)
+        _setter("pseudonym", pseudonym)
+        _setter("serial_number", serial_number)
+        _setter("state_or_province_name", state_or_province_name)
+        _setter("street", street)
+        _setter("surname", surname)
+        _setter("title", title)
+        _setter("user_id", user_id)
 
     @property
     @pulumi.getter(name="commonName")
@@ -4496,8 +5481,19 @@ class GetCertificateAuthorityVersionRevocationStatusResult(dict):
         :param str revocation_reason: The reason the certificate or certificate authority (CA) was revoked.
         :param str time_of_revocation: The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "revocation_reason", revocation_reason)
-        pulumi.set(__self__, "time_of_revocation", time_of_revocation)
+        GetCertificateAuthorityVersionRevocationStatusResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            revocation_reason=revocation_reason,
+            time_of_revocation=time_of_revocation,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             revocation_reason: str,
+             time_of_revocation: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("revocation_reason", revocation_reason)
+        _setter("time_of_revocation", time_of_revocation)
 
     @property
     @pulumi.getter(name="revocationReason")
@@ -4521,8 +5517,19 @@ class GetCertificateAuthorityVersionSubjectAlternativeNameResult(dict):
     def __init__(__self__, *,
                  type: str,
                  value: str):
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        GetCertificateAuthorityVersionSubjectAlternativeNameResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -4544,8 +5551,19 @@ class GetCertificateAuthorityVersionValidityResult(dict):
         :param str time_of_validity_not_after: The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str time_of_validity_not_before: The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "time_of_validity_not_after", time_of_validity_not_after)
-        pulumi.set(__self__, "time_of_validity_not_before", time_of_validity_not_before)
+        GetCertificateAuthorityVersionValidityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_of_validity_not_after=time_of_validity_not_after,
+            time_of_validity_not_before=time_of_validity_not_before,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_of_validity_not_after: str,
+             time_of_validity_not_before: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_of_validity_not_after", time_of_validity_not_after)
+        _setter("time_of_validity_not_before", time_of_validity_not_before)
 
     @property
     @pulumi.getter(name="timeOfValidityNotAfter")
@@ -4571,7 +5589,16 @@ class GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionResult
         """
         :param Sequence['GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemArgs'] items: A list of certificate authority version summary objects.
         """
-        pulumi.set(__self__, "items", items)
+        GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -4607,16 +5634,43 @@ class GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRe
         :param str version_name: The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
         :param str version_number: A filter that returns only resources that match the specified version number. The default value is 0, which means that this filter is not applied.
         """
-        pulumi.set(__self__, "certificate_authority_id", certificate_authority_id)
-        pulumi.set(__self__, "issuer_ca_version_number", issuer_ca_version_number)
-        pulumi.set(__self__, "revocation_statuses", revocation_statuses)
-        pulumi.set(__self__, "serial_number", serial_number)
-        pulumi.set(__self__, "stages", stages)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_of_deletion", time_of_deletion)
-        pulumi.set(__self__, "validities", validities)
-        pulumi.set(__self__, "version_name", version_name)
-        pulumi.set(__self__, "version_number", version_number)
+        GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_authority_id=certificate_authority_id,
+            issuer_ca_version_number=issuer_ca_version_number,
+            revocation_statuses=revocation_statuses,
+            serial_number=serial_number,
+            stages=stages,
+            time_created=time_created,
+            time_of_deletion=time_of_deletion,
+            validities=validities,
+            version_name=version_name,
+            version_number=version_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_authority_id: str,
+             issuer_ca_version_number: str,
+             revocation_statuses: Sequence['outputs.GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusResult'],
+             serial_number: str,
+             stages: Sequence[str],
+             time_created: str,
+             time_of_deletion: str,
+             validities: Sequence['outputs.GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityResult'],
+             version_name: str,
+             version_number: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_authority_id", certificate_authority_id)
+        _setter("issuer_ca_version_number", issuer_ca_version_number)
+        _setter("revocation_statuses", revocation_statuses)
+        _setter("serial_number", serial_number)
+        _setter("stages", stages)
+        _setter("time_created", time_created)
+        _setter("time_of_deletion", time_of_deletion)
+        _setter("validities", validities)
+        _setter("version_name", version_name)
+        _setter("version_number", version_number)
 
     @property
     @pulumi.getter(name="certificateAuthorityId")
@@ -4708,8 +5762,19 @@ class GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRe
         :param str revocation_reason: The reason the certificate or certificate authority (CA) was revoked.
         :param str time_of_revocation: The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "revocation_reason", revocation_reason)
-        pulumi.set(__self__, "time_of_revocation", time_of_revocation)
+        GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemRevocationStatusResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            revocation_reason=revocation_reason,
+            time_of_revocation=time_of_revocation,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             revocation_reason: str,
+             time_of_revocation: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("revocation_reason", revocation_reason)
+        _setter("time_of_revocation", time_of_revocation)
 
     @property
     @pulumi.getter(name="revocationReason")
@@ -4737,8 +5802,19 @@ class GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemVa
         :param str time_of_validity_not_after: The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str time_of_validity_not_before: The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "time_of_validity_not_after", time_of_validity_not_after)
-        pulumi.set(__self__, "time_of_validity_not_before", time_of_validity_not_before)
+        GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_of_validity_not_after=time_of_validity_not_after,
+            time_of_validity_not_before=time_of_validity_not_before,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_of_validity_not_after: str,
+             time_of_validity_not_before: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_of_validity_not_after", time_of_validity_not_after)
+        _setter("time_of_validity_not_before", time_of_validity_not_before)
 
     @property
     @pulumi.getter(name="timeOfValidityNotAfter")
@@ -4763,10 +5839,23 @@ class GetCertificateAuthorityVersionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetCertificateAuthorityVersionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4808,16 +5897,43 @@ class GetCertificateCertificateConfigResult(dict):
         :param Sequence['GetCertificateCertificateConfigValidityArgs'] validities: An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
         :param str version_name: The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
         """
-        pulumi.set(__self__, "certificate_profile_type", certificate_profile_type)
-        pulumi.set(__self__, "config_type", config_type)
-        pulumi.set(__self__, "csr_pem", csr_pem)
-        pulumi.set(__self__, "issuer_certificate_authority_id", issuer_certificate_authority_id)
-        pulumi.set(__self__, "key_algorithm", key_algorithm)
-        pulumi.set(__self__, "signature_algorithm", signature_algorithm)
-        pulumi.set(__self__, "subject_alternative_names", subject_alternative_names)
-        pulumi.set(__self__, "subjects", subjects)
-        pulumi.set(__self__, "validities", validities)
-        pulumi.set(__self__, "version_name", version_name)
+        GetCertificateCertificateConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_profile_type=certificate_profile_type,
+            config_type=config_type,
+            csr_pem=csr_pem,
+            issuer_certificate_authority_id=issuer_certificate_authority_id,
+            key_algorithm=key_algorithm,
+            signature_algorithm=signature_algorithm,
+            subject_alternative_names=subject_alternative_names,
+            subjects=subjects,
+            validities=validities,
+            version_name=version_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_profile_type: str,
+             config_type: str,
+             csr_pem: str,
+             issuer_certificate_authority_id: str,
+             key_algorithm: str,
+             signature_algorithm: str,
+             subject_alternative_names: Sequence['outputs.GetCertificateCertificateConfigSubjectAlternativeNameResult'],
+             subjects: Sequence['outputs.GetCertificateCertificateConfigSubjectResult'],
+             validities: Sequence['outputs.GetCertificateCertificateConfigValidityResult'],
+             version_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_profile_type", certificate_profile_type)
+        _setter("config_type", config_type)
+        _setter("csr_pem", csr_pem)
+        _setter("issuer_certificate_authority_id", issuer_certificate_authority_id)
+        _setter("key_algorithm", key_algorithm)
+        _setter("signature_algorithm", signature_algorithm)
+        _setter("subject_alternative_names", subject_alternative_names)
+        _setter("subjects", subjects)
+        _setter("validities", validities)
+        _setter("version_name", version_name)
 
     @property
     @pulumi.getter(name="certificateProfileType")
@@ -4936,23 +6052,64 @@ class GetCertificateCertificateConfigSubjectResult(dict):
         :param str title: Title (RDN T or TITLE).
         :param str user_id: User ID (RDN UID).
         """
-        pulumi.set(__self__, "common_name", common_name)
-        pulumi.set(__self__, "country", country)
-        pulumi.set(__self__, "distinguished_name_qualifier", distinguished_name_qualifier)
-        pulumi.set(__self__, "domain_component", domain_component)
-        pulumi.set(__self__, "generation_qualifier", generation_qualifier)
-        pulumi.set(__self__, "given_name", given_name)
-        pulumi.set(__self__, "initials", initials)
-        pulumi.set(__self__, "locality_name", locality_name)
-        pulumi.set(__self__, "organization", organization)
-        pulumi.set(__self__, "organizational_unit", organizational_unit)
-        pulumi.set(__self__, "pseudonym", pseudonym)
-        pulumi.set(__self__, "serial_number", serial_number)
-        pulumi.set(__self__, "state_or_province_name", state_or_province_name)
-        pulumi.set(__self__, "street", street)
-        pulumi.set(__self__, "surname", surname)
-        pulumi.set(__self__, "title", title)
-        pulumi.set(__self__, "user_id", user_id)
+        GetCertificateCertificateConfigSubjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            common_name=common_name,
+            country=country,
+            distinguished_name_qualifier=distinguished_name_qualifier,
+            domain_component=domain_component,
+            generation_qualifier=generation_qualifier,
+            given_name=given_name,
+            initials=initials,
+            locality_name=locality_name,
+            organization=organization,
+            organizational_unit=organizational_unit,
+            pseudonym=pseudonym,
+            serial_number=serial_number,
+            state_or_province_name=state_or_province_name,
+            street=street,
+            surname=surname,
+            title=title,
+            user_id=user_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             common_name: str,
+             country: str,
+             distinguished_name_qualifier: str,
+             domain_component: str,
+             generation_qualifier: str,
+             given_name: str,
+             initials: str,
+             locality_name: str,
+             organization: str,
+             organizational_unit: str,
+             pseudonym: str,
+             serial_number: str,
+             state_or_province_name: str,
+             street: str,
+             surname: str,
+             title: str,
+             user_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("common_name", common_name)
+        _setter("country", country)
+        _setter("distinguished_name_qualifier", distinguished_name_qualifier)
+        _setter("domain_component", domain_component)
+        _setter("generation_qualifier", generation_qualifier)
+        _setter("given_name", given_name)
+        _setter("initials", initials)
+        _setter("locality_name", locality_name)
+        _setter("organization", organization)
+        _setter("organizational_unit", organizational_unit)
+        _setter("pseudonym", pseudonym)
+        _setter("serial_number", serial_number)
+        _setter("state_or_province_name", state_or_province_name)
+        _setter("street", street)
+        _setter("surname", surname)
+        _setter("title", title)
+        _setter("user_id", user_id)
 
     @property
     @pulumi.getter(name="commonName")
@@ -5100,8 +6257,19 @@ class GetCertificateCertificateConfigSubjectAlternativeNameResult(dict):
         :param str type: The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
         :param str value: The subject alternative name.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        GetCertificateCertificateConfigSubjectAlternativeNameResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -5129,8 +6297,19 @@ class GetCertificateCertificateConfigValidityResult(dict):
         :param str time_of_validity_not_after: The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str time_of_validity_not_before: The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "time_of_validity_not_after", time_of_validity_not_after)
-        pulumi.set(__self__, "time_of_validity_not_before", time_of_validity_not_before)
+        GetCertificateCertificateConfigValidityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_of_validity_not_after=time_of_validity_not_after,
+            time_of_validity_not_before=time_of_validity_not_before,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_of_validity_not_after: str,
+             time_of_validity_not_before: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_of_validity_not_after", time_of_validity_not_after)
+        _setter("time_of_validity_not_before", time_of_validity_not_before)
 
     @property
     @pulumi.getter(name="timeOfValidityNotAfter")
@@ -5158,8 +6337,19 @@ class GetCertificateCertificateRevocationListDetailResult(dict):
         :param Sequence[str] custom_formatted_urls: Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
         :param Sequence['GetCertificateCertificateRevocationListDetailObjectStorageConfigArgs'] object_storage_configs: The details of the Object Storage bucket configured to store the certificate revocation list (CRL).
         """
-        pulumi.set(__self__, "custom_formatted_urls", custom_formatted_urls)
-        pulumi.set(__self__, "object_storage_configs", object_storage_configs)
+        GetCertificateCertificateRevocationListDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_formatted_urls=custom_formatted_urls,
+            object_storage_configs=object_storage_configs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_formatted_urls: Sequence[str],
+             object_storage_configs: Sequence['outputs.GetCertificateCertificateRevocationListDetailObjectStorageConfigResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("custom_formatted_urls", custom_formatted_urls)
+        _setter("object_storage_configs", object_storage_configs)
 
     @property
     @pulumi.getter(name="customFormattedUrls")
@@ -5189,9 +6379,22 @@ class GetCertificateCertificateRevocationListDetailObjectStorageConfigResult(dic
         :param str object_storage_namespace: The tenancy of the bucket where the CRL is stored.
         :param str object_storage_object_name_format: The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
         """
-        pulumi.set(__self__, "object_storage_bucket_name", object_storage_bucket_name)
-        pulumi.set(__self__, "object_storage_namespace", object_storage_namespace)
-        pulumi.set(__self__, "object_storage_object_name_format", object_storage_object_name_format)
+        GetCertificateCertificateRevocationListDetailObjectStorageConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_storage_bucket_name=object_storage_bucket_name,
+            object_storage_namespace=object_storage_namespace,
+            object_storage_object_name_format=object_storage_object_name_format,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_storage_bucket_name: str,
+             object_storage_namespace: str,
+             object_storage_object_name_format: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object_storage_bucket_name", object_storage_bucket_name)
+        _setter("object_storage_namespace", object_storage_namespace)
+        _setter("object_storage_object_name_format", object_storage_object_name_format)
 
     @property
     @pulumi.getter(name="objectStorageBucketName")
@@ -5229,9 +6432,22 @@ class GetCertificateCertificateRuleResult(dict):
         :param str renewal_interval: A property specifying how often, in days, a certificate should be renewed. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
         :param str rule_type: The type of rule.
         """
-        pulumi.set(__self__, "advance_renewal_period", advance_renewal_period)
-        pulumi.set(__self__, "renewal_interval", renewal_interval)
-        pulumi.set(__self__, "rule_type", rule_type)
+        GetCertificateCertificateRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            advance_renewal_period=advance_renewal_period,
+            renewal_interval=renewal_interval,
+            rule_type=rule_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             advance_renewal_period: str,
+             renewal_interval: str,
+             rule_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("advance_renewal_period", advance_renewal_period)
+        _setter("renewal_interval", renewal_interval)
+        _setter("rule_type", rule_type)
 
     @property
     @pulumi.getter(name="advanceRenewalPeriod")
@@ -5285,17 +6501,46 @@ class GetCertificateCurrentVersionResult(dict):
         :param str version_name: The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
         :param str version_number: The version number of the certificate.
         """
-        pulumi.set(__self__, "certificate_id", certificate_id)
-        pulumi.set(__self__, "issuer_ca_version_number", issuer_ca_version_number)
-        pulumi.set(__self__, "revocation_statuses", revocation_statuses)
-        pulumi.set(__self__, "serial_number", serial_number)
-        pulumi.set(__self__, "stages", stages)
-        pulumi.set(__self__, "subject_alternative_names", subject_alternative_names)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_of_deletion", time_of_deletion)
-        pulumi.set(__self__, "validities", validities)
-        pulumi.set(__self__, "version_name", version_name)
-        pulumi.set(__self__, "version_number", version_number)
+        GetCertificateCurrentVersionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_id=certificate_id,
+            issuer_ca_version_number=issuer_ca_version_number,
+            revocation_statuses=revocation_statuses,
+            serial_number=serial_number,
+            stages=stages,
+            subject_alternative_names=subject_alternative_names,
+            time_created=time_created,
+            time_of_deletion=time_of_deletion,
+            validities=validities,
+            version_name=version_name,
+            version_number=version_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_id: str,
+             issuer_ca_version_number: str,
+             revocation_statuses: Sequence['outputs.GetCertificateCurrentVersionRevocationStatusResult'],
+             serial_number: str,
+             stages: Sequence[str],
+             subject_alternative_names: Sequence['outputs.GetCertificateCurrentVersionSubjectAlternativeNameResult'],
+             time_created: str,
+             time_of_deletion: str,
+             validities: Sequence['outputs.GetCertificateCurrentVersionValidityResult'],
+             version_name: str,
+             version_number: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_id", certificate_id)
+        _setter("issuer_ca_version_number", issuer_ca_version_number)
+        _setter("revocation_statuses", revocation_statuses)
+        _setter("serial_number", serial_number)
+        _setter("stages", stages)
+        _setter("subject_alternative_names", subject_alternative_names)
+        _setter("time_created", time_created)
+        _setter("time_of_deletion", time_of_deletion)
+        _setter("validities", validities)
+        _setter("version_name", version_name)
+        _setter("version_number", version_number)
 
     @property
     @pulumi.getter(name="certificateId")
@@ -5395,8 +6640,19 @@ class GetCertificateCurrentVersionRevocationStatusResult(dict):
         :param str revocation_reason: The reason the certificate or certificate authority (CA) was revoked.
         :param str time_of_revocation: The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "revocation_reason", revocation_reason)
-        pulumi.set(__self__, "time_of_revocation", time_of_revocation)
+        GetCertificateCurrentVersionRevocationStatusResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            revocation_reason=revocation_reason,
+            time_of_revocation=time_of_revocation,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             revocation_reason: str,
+             time_of_revocation: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("revocation_reason", revocation_reason)
+        _setter("time_of_revocation", time_of_revocation)
 
     @property
     @pulumi.getter(name="revocationReason")
@@ -5424,8 +6680,19 @@ class GetCertificateCurrentVersionSubjectAlternativeNameResult(dict):
         :param str type: The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
         :param str value: The subject alternative name.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        GetCertificateCurrentVersionSubjectAlternativeNameResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -5453,8 +6720,19 @@ class GetCertificateCurrentVersionValidityResult(dict):
         :param str time_of_validity_not_after: The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str time_of_validity_not_before: The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "time_of_validity_not_after", time_of_validity_not_after)
-        pulumi.set(__self__, "time_of_validity_not_before", time_of_validity_not_before)
+        GetCertificateCurrentVersionValidityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_of_validity_not_after=time_of_validity_not_after,
+            time_of_validity_not_before=time_of_validity_not_before,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_of_validity_not_after: str,
+             time_of_validity_not_before: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_of_validity_not_after", time_of_validity_not_after)
+        _setter("time_of_validity_not_before", time_of_validity_not_before)
 
     @property
     @pulumi.getter(name="timeOfValidityNotAfter")
@@ -5512,23 +6790,64 @@ class GetCertificateSubjectResult(dict):
         :param str title: Title (RDN T or TITLE).
         :param str user_id: User ID (RDN UID).
         """
-        pulumi.set(__self__, "common_name", common_name)
-        pulumi.set(__self__, "country", country)
-        pulumi.set(__self__, "distinguished_name_qualifier", distinguished_name_qualifier)
-        pulumi.set(__self__, "domain_component", domain_component)
-        pulumi.set(__self__, "generation_qualifier", generation_qualifier)
-        pulumi.set(__self__, "given_name", given_name)
-        pulumi.set(__self__, "initials", initials)
-        pulumi.set(__self__, "locality_name", locality_name)
-        pulumi.set(__self__, "organization", organization)
-        pulumi.set(__self__, "organizational_unit", organizational_unit)
-        pulumi.set(__self__, "pseudonym", pseudonym)
-        pulumi.set(__self__, "serial_number", serial_number)
-        pulumi.set(__self__, "state_or_province_name", state_or_province_name)
-        pulumi.set(__self__, "street", street)
-        pulumi.set(__self__, "surname", surname)
-        pulumi.set(__self__, "title", title)
-        pulumi.set(__self__, "user_id", user_id)
+        GetCertificateSubjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            common_name=common_name,
+            country=country,
+            distinguished_name_qualifier=distinguished_name_qualifier,
+            domain_component=domain_component,
+            generation_qualifier=generation_qualifier,
+            given_name=given_name,
+            initials=initials,
+            locality_name=locality_name,
+            organization=organization,
+            organizational_unit=organizational_unit,
+            pseudonym=pseudonym,
+            serial_number=serial_number,
+            state_or_province_name=state_or_province_name,
+            street=street,
+            surname=surname,
+            title=title,
+            user_id=user_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             common_name: str,
+             country: str,
+             distinguished_name_qualifier: str,
+             domain_component: str,
+             generation_qualifier: str,
+             given_name: str,
+             initials: str,
+             locality_name: str,
+             organization: str,
+             organizational_unit: str,
+             pseudonym: str,
+             serial_number: str,
+             state_or_province_name: str,
+             street: str,
+             surname: str,
+             title: str,
+             user_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("common_name", common_name)
+        _setter("country", country)
+        _setter("distinguished_name_qualifier", distinguished_name_qualifier)
+        _setter("domain_component", domain_component)
+        _setter("generation_qualifier", generation_qualifier)
+        _setter("given_name", given_name)
+        _setter("initials", initials)
+        _setter("locality_name", locality_name)
+        _setter("organization", organization)
+        _setter("organizational_unit", organizational_unit)
+        _setter("pseudonym", pseudonym)
+        _setter("serial_number", serial_number)
+        _setter("state_or_province_name", state_or_province_name)
+        _setter("street", street)
+        _setter("surname", surname)
+        _setter("title", title)
+        _setter("user_id", user_id)
 
     @property
     @pulumi.getter(name="commonName")
@@ -5676,8 +6995,19 @@ class GetCertificateVersionRevocationStatusResult(dict):
         :param str revocation_reason: The reason the certificate or certificate authority (CA) was revoked.
         :param str time_of_revocation: The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "revocation_reason", revocation_reason)
-        pulumi.set(__self__, "time_of_revocation", time_of_revocation)
+        GetCertificateVersionRevocationStatusResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            revocation_reason=revocation_reason,
+            time_of_revocation=time_of_revocation,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             revocation_reason: str,
+             time_of_revocation: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("revocation_reason", revocation_reason)
+        _setter("time_of_revocation", time_of_revocation)
 
     @property
     @pulumi.getter(name="revocationReason")
@@ -5705,8 +7035,19 @@ class GetCertificateVersionSubjectAlternativeNameResult(dict):
         :param str type: The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
         :param str value: The subject alternative name.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        GetCertificateVersionSubjectAlternativeNameResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -5734,8 +7075,19 @@ class GetCertificateVersionValidityResult(dict):
         :param str time_of_validity_not_after: The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str time_of_validity_not_before: The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "time_of_validity_not_after", time_of_validity_not_after)
-        pulumi.set(__self__, "time_of_validity_not_before", time_of_validity_not_before)
+        GetCertificateVersionValidityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_of_validity_not_after=time_of_validity_not_after,
+            time_of_validity_not_before=time_of_validity_not_before,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_of_validity_not_after: str,
+             time_of_validity_not_before: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_of_validity_not_after", time_of_validity_not_after)
+        _setter("time_of_validity_not_before", time_of_validity_not_before)
 
     @property
     @pulumi.getter(name="timeOfValidityNotAfter")
@@ -5761,7 +7113,16 @@ class GetCertificateVersionsCertificateVersionCollectionResult(dict):
         """
         :param Sequence['GetCertificateVersionsCertificateVersionCollectionItemArgs'] items: A list of certificate version summary objects.
         """
-        pulumi.set(__self__, "items", items)
+        GetCertificateVersionsCertificateVersionCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetCertificateVersionsCertificateVersionCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -5799,17 +7160,46 @@ class GetCertificateVersionsCertificateVersionCollectionItemResult(dict):
         :param str version_name: The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
         :param str version_number: A filter that returns only resources that match the specified version number. The default value is 0, which means that this filter is not applied.
         """
-        pulumi.set(__self__, "certificate_id", certificate_id)
-        pulumi.set(__self__, "issuer_ca_version_number", issuer_ca_version_number)
-        pulumi.set(__self__, "revocation_statuses", revocation_statuses)
-        pulumi.set(__self__, "serial_number", serial_number)
-        pulumi.set(__self__, "stages", stages)
-        pulumi.set(__self__, "subject_alternative_names", subject_alternative_names)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_of_deletion", time_of_deletion)
-        pulumi.set(__self__, "validities", validities)
-        pulumi.set(__self__, "version_name", version_name)
-        pulumi.set(__self__, "version_number", version_number)
+        GetCertificateVersionsCertificateVersionCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_id=certificate_id,
+            issuer_ca_version_number=issuer_ca_version_number,
+            revocation_statuses=revocation_statuses,
+            serial_number=serial_number,
+            stages=stages,
+            subject_alternative_names=subject_alternative_names,
+            time_created=time_created,
+            time_of_deletion=time_of_deletion,
+            validities=validities,
+            version_name=version_name,
+            version_number=version_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_id: str,
+             issuer_ca_version_number: str,
+             revocation_statuses: Sequence['outputs.GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusResult'],
+             serial_number: str,
+             stages: Sequence[str],
+             subject_alternative_names: Sequence['outputs.GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameResult'],
+             time_created: str,
+             time_of_deletion: str,
+             validities: Sequence['outputs.GetCertificateVersionsCertificateVersionCollectionItemValidityResult'],
+             version_name: str,
+             version_number: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_id", certificate_id)
+        _setter("issuer_ca_version_number", issuer_ca_version_number)
+        _setter("revocation_statuses", revocation_statuses)
+        _setter("serial_number", serial_number)
+        _setter("stages", stages)
+        _setter("subject_alternative_names", subject_alternative_names)
+        _setter("time_created", time_created)
+        _setter("time_of_deletion", time_of_deletion)
+        _setter("validities", validities)
+        _setter("version_name", version_name)
+        _setter("version_number", version_number)
 
     @property
     @pulumi.getter(name="certificateId")
@@ -5909,8 +7299,19 @@ class GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusResu
         :param str revocation_reason: The reason the certificate or certificate authority (CA) was revoked.
         :param str time_of_revocation: The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "revocation_reason", revocation_reason)
-        pulumi.set(__self__, "time_of_revocation", time_of_revocation)
+        GetCertificateVersionsCertificateVersionCollectionItemRevocationStatusResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            revocation_reason=revocation_reason,
+            time_of_revocation=time_of_revocation,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             revocation_reason: str,
+             time_of_revocation: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("revocation_reason", revocation_reason)
+        _setter("time_of_revocation", time_of_revocation)
 
     @property
     @pulumi.getter(name="revocationReason")
@@ -5938,8 +7339,19 @@ class GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNa
         :param str type: The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
         :param str value: The subject alternative name.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        GetCertificateVersionsCertificateVersionCollectionItemSubjectAlternativeNameResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -5967,8 +7379,19 @@ class GetCertificateVersionsCertificateVersionCollectionItemValidityResult(dict)
         :param str time_of_validity_not_after: The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str time_of_validity_not_before: The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "time_of_validity_not_after", time_of_validity_not_after)
-        pulumi.set(__self__, "time_of_validity_not_before", time_of_validity_not_before)
+        GetCertificateVersionsCertificateVersionCollectionItemValidityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_of_validity_not_after=time_of_validity_not_after,
+            time_of_validity_not_before=time_of_validity_not_before,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_of_validity_not_after: str,
+             time_of_validity_not_before: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_of_validity_not_after", time_of_validity_not_after)
+        _setter("time_of_validity_not_before", time_of_validity_not_before)
 
     @property
     @pulumi.getter(name="timeOfValidityNotAfter")
@@ -5993,10 +7416,23 @@ class GetCertificateVersionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetCertificateVersionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6018,7 +7454,16 @@ class GetCertificateVersionsFilterResult(dict):
 class GetCertificatesCertificateCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetCertificatesCertificateCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetCertificatesCertificateCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetCertificatesCertificateCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -6070,26 +7515,73 @@ class GetCertificatesCertificateCollectionItemResult(dict):
         :param str time_created: A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str time_of_deletion: An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "certificate_configs", certificate_configs)
-        pulumi.set(__self__, "certificate_profile_type", certificate_profile_type)
-        pulumi.set(__self__, "certificate_revocation_list_details", certificate_revocation_list_details)
-        pulumi.set(__self__, "certificate_rules", certificate_rules)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "config_type", config_type)
-        pulumi.set(__self__, "current_versions", current_versions)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "issuer_certificate_authority_id", issuer_certificate_authority_id)
-        pulumi.set(__self__, "key_algorithm", key_algorithm)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "signature_algorithm", signature_algorithm)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subjects", subjects)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+        GetCertificatesCertificateCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_configs=certificate_configs,
+            certificate_profile_type=certificate_profile_type,
+            certificate_revocation_list_details=certificate_revocation_list_details,
+            certificate_rules=certificate_rules,
+            compartment_id=compartment_id,
+            config_type=config_type,
+            current_versions=current_versions,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            id=id,
+            issuer_certificate_authority_id=issuer_certificate_authority_id,
+            key_algorithm=key_algorithm,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            signature_algorithm=signature_algorithm,
+            state=state,
+            subjects=subjects,
+            time_created=time_created,
+            time_of_deletion=time_of_deletion,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_configs: Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateConfigResult'],
+             certificate_profile_type: str,
+             certificate_revocation_list_details: Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateRevocationListDetailResult'],
+             certificate_rules: Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateRuleResult'],
+             compartment_id: str,
+             config_type: str,
+             current_versions: Sequence['outputs.GetCertificatesCertificateCollectionItemCurrentVersionResult'],
+             defined_tags: Mapping[str, Any],
+             description: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             issuer_certificate_authority_id: str,
+             key_algorithm: str,
+             lifecycle_details: str,
+             name: str,
+             signature_algorithm: str,
+             state: str,
+             subjects: Sequence['outputs.GetCertificatesCertificateCollectionItemSubjectResult'],
+             time_created: str,
+             time_of_deletion: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_configs", certificate_configs)
+        _setter("certificate_profile_type", certificate_profile_type)
+        _setter("certificate_revocation_list_details", certificate_revocation_list_details)
+        _setter("certificate_rules", certificate_rules)
+        _setter("compartment_id", compartment_id)
+        _setter("config_type", config_type)
+        _setter("current_versions", current_versions)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("issuer_certificate_authority_id", issuer_certificate_authority_id)
+        _setter("key_algorithm", key_algorithm)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("name", name)
+        _setter("signature_algorithm", signature_algorithm)
+        _setter("state", state)
+        _setter("subjects", subjects)
+        _setter("time_created", time_created)
+        _setter("time_of_deletion", time_of_deletion)
 
     @property
     @pulumi.getter(name="certificateConfigs")
@@ -6273,16 +7765,43 @@ class GetCertificatesCertificateCollectionItemCertificateConfigResult(dict):
         :param Sequence['GetCertificatesCertificateCollectionItemCertificateConfigValidityArgs'] validities: An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
         :param str version_name: The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
         """
-        pulumi.set(__self__, "certificate_profile_type", certificate_profile_type)
-        pulumi.set(__self__, "config_type", config_type)
-        pulumi.set(__self__, "csr_pem", csr_pem)
-        pulumi.set(__self__, "issuer_certificate_authority_id", issuer_certificate_authority_id)
-        pulumi.set(__self__, "key_algorithm", key_algorithm)
-        pulumi.set(__self__, "signature_algorithm", signature_algorithm)
-        pulumi.set(__self__, "subject_alternative_names", subject_alternative_names)
-        pulumi.set(__self__, "subjects", subjects)
-        pulumi.set(__self__, "validities", validities)
-        pulumi.set(__self__, "version_name", version_name)
+        GetCertificatesCertificateCollectionItemCertificateConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_profile_type=certificate_profile_type,
+            config_type=config_type,
+            csr_pem=csr_pem,
+            issuer_certificate_authority_id=issuer_certificate_authority_id,
+            key_algorithm=key_algorithm,
+            signature_algorithm=signature_algorithm,
+            subject_alternative_names=subject_alternative_names,
+            subjects=subjects,
+            validities=validities,
+            version_name=version_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_profile_type: str,
+             config_type: str,
+             csr_pem: str,
+             issuer_certificate_authority_id: str,
+             key_algorithm: str,
+             signature_algorithm: str,
+             subject_alternative_names: Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameResult'],
+             subjects: Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateConfigSubjectResult'],
+             validities: Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateConfigValidityResult'],
+             version_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_profile_type", certificate_profile_type)
+        _setter("config_type", config_type)
+        _setter("csr_pem", csr_pem)
+        _setter("issuer_certificate_authority_id", issuer_certificate_authority_id)
+        _setter("key_algorithm", key_algorithm)
+        _setter("signature_algorithm", signature_algorithm)
+        _setter("subject_alternative_names", subject_alternative_names)
+        _setter("subjects", subjects)
+        _setter("validities", validities)
+        _setter("version_name", version_name)
 
     @property
     @pulumi.getter(name="certificateProfileType")
@@ -6401,23 +7920,64 @@ class GetCertificatesCertificateCollectionItemCertificateConfigSubjectResult(dic
         :param str title: Title (RDN T or TITLE).
         :param str user_id: User ID (RDN UID).
         """
-        pulumi.set(__self__, "common_name", common_name)
-        pulumi.set(__self__, "country", country)
-        pulumi.set(__self__, "distinguished_name_qualifier", distinguished_name_qualifier)
-        pulumi.set(__self__, "domain_component", domain_component)
-        pulumi.set(__self__, "generation_qualifier", generation_qualifier)
-        pulumi.set(__self__, "given_name", given_name)
-        pulumi.set(__self__, "initials", initials)
-        pulumi.set(__self__, "locality_name", locality_name)
-        pulumi.set(__self__, "organization", organization)
-        pulumi.set(__self__, "organizational_unit", organizational_unit)
-        pulumi.set(__self__, "pseudonym", pseudonym)
-        pulumi.set(__self__, "serial_number", serial_number)
-        pulumi.set(__self__, "state_or_province_name", state_or_province_name)
-        pulumi.set(__self__, "street", street)
-        pulumi.set(__self__, "surname", surname)
-        pulumi.set(__self__, "title", title)
-        pulumi.set(__self__, "user_id", user_id)
+        GetCertificatesCertificateCollectionItemCertificateConfigSubjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            common_name=common_name,
+            country=country,
+            distinguished_name_qualifier=distinguished_name_qualifier,
+            domain_component=domain_component,
+            generation_qualifier=generation_qualifier,
+            given_name=given_name,
+            initials=initials,
+            locality_name=locality_name,
+            organization=organization,
+            organizational_unit=organizational_unit,
+            pseudonym=pseudonym,
+            serial_number=serial_number,
+            state_or_province_name=state_or_province_name,
+            street=street,
+            surname=surname,
+            title=title,
+            user_id=user_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             common_name: str,
+             country: str,
+             distinguished_name_qualifier: str,
+             domain_component: str,
+             generation_qualifier: str,
+             given_name: str,
+             initials: str,
+             locality_name: str,
+             organization: str,
+             organizational_unit: str,
+             pseudonym: str,
+             serial_number: str,
+             state_or_province_name: str,
+             street: str,
+             surname: str,
+             title: str,
+             user_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("common_name", common_name)
+        _setter("country", country)
+        _setter("distinguished_name_qualifier", distinguished_name_qualifier)
+        _setter("domain_component", domain_component)
+        _setter("generation_qualifier", generation_qualifier)
+        _setter("given_name", given_name)
+        _setter("initials", initials)
+        _setter("locality_name", locality_name)
+        _setter("organization", organization)
+        _setter("organizational_unit", organizational_unit)
+        _setter("pseudonym", pseudonym)
+        _setter("serial_number", serial_number)
+        _setter("state_or_province_name", state_or_province_name)
+        _setter("street", street)
+        _setter("surname", surname)
+        _setter("title", title)
+        _setter("user_id", user_id)
 
     @property
     @pulumi.getter(name="commonName")
@@ -6565,8 +8125,19 @@ class GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativ
         :param str type: The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
         :param str value: The subject alternative name.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        GetCertificatesCertificateCollectionItemCertificateConfigSubjectAlternativeNameResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -6594,8 +8165,19 @@ class GetCertificatesCertificateCollectionItemCertificateConfigValidityResult(di
         :param str time_of_validity_not_after: The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str time_of_validity_not_before: The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "time_of_validity_not_after", time_of_validity_not_after)
-        pulumi.set(__self__, "time_of_validity_not_before", time_of_validity_not_before)
+        GetCertificatesCertificateCollectionItemCertificateConfigValidityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_of_validity_not_after=time_of_validity_not_after,
+            time_of_validity_not_before=time_of_validity_not_before,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_of_validity_not_after: str,
+             time_of_validity_not_before: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_of_validity_not_after", time_of_validity_not_after)
+        _setter("time_of_validity_not_before", time_of_validity_not_before)
 
     @property
     @pulumi.getter(name="timeOfValidityNotAfter")
@@ -6623,8 +8205,19 @@ class GetCertificatesCertificateCollectionItemCertificateRevocationListDetailRes
         :param Sequence[str] custom_formatted_urls: Optional CRL access points, expressed using a format where the version number of the issuing CA is inserted wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
         :param Sequence['GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigArgs'] object_storage_configs: The details of the Object Storage bucket configured to store the certificate revocation list (CRL).
         """
-        pulumi.set(__self__, "custom_formatted_urls", custom_formatted_urls)
-        pulumi.set(__self__, "object_storage_configs", object_storage_configs)
+        GetCertificatesCertificateCollectionItemCertificateRevocationListDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            custom_formatted_urls=custom_formatted_urls,
+            object_storage_configs=object_storage_configs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             custom_formatted_urls: Sequence[str],
+             object_storage_configs: Sequence['outputs.GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("custom_formatted_urls", custom_formatted_urls)
+        _setter("object_storage_configs", object_storage_configs)
 
     @property
     @pulumi.getter(name="customFormattedUrls")
@@ -6654,9 +8247,22 @@ class GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObj
         :param str object_storage_namespace: The tenancy of the bucket where the CRL is stored.
         :param str object_storage_object_name_format: The object name in the bucket where the CRL is stored, expressed using a format where the version number of the issuing CA is inserted as part of the Object Storage object name wherever you include a pair of curly braces. This versioning scheme helps avoid collisions when new CA versions are created. For example, myCrlFileIssuedFromCAVersion{}.crl becomes myCrlFileIssuedFromCAVersion2.crl for CA version 2.
         """
-        pulumi.set(__self__, "object_storage_bucket_name", object_storage_bucket_name)
-        pulumi.set(__self__, "object_storage_namespace", object_storage_namespace)
-        pulumi.set(__self__, "object_storage_object_name_format", object_storage_object_name_format)
+        GetCertificatesCertificateCollectionItemCertificateRevocationListDetailObjectStorageConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_storage_bucket_name=object_storage_bucket_name,
+            object_storage_namespace=object_storage_namespace,
+            object_storage_object_name_format=object_storage_object_name_format,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_storage_bucket_name: str,
+             object_storage_namespace: str,
+             object_storage_object_name_format: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object_storage_bucket_name", object_storage_bucket_name)
+        _setter("object_storage_namespace", object_storage_namespace)
+        _setter("object_storage_object_name_format", object_storage_object_name_format)
 
     @property
     @pulumi.getter(name="objectStorageBucketName")
@@ -6694,9 +8300,22 @@ class GetCertificatesCertificateCollectionItemCertificateRuleResult(dict):
         :param str renewal_interval: A property specifying how often, in days, a certificate should be renewed. Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
         :param str rule_type: The type of rule.
         """
-        pulumi.set(__self__, "advance_renewal_period", advance_renewal_period)
-        pulumi.set(__self__, "renewal_interval", renewal_interval)
-        pulumi.set(__self__, "rule_type", rule_type)
+        GetCertificatesCertificateCollectionItemCertificateRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            advance_renewal_period=advance_renewal_period,
+            renewal_interval=renewal_interval,
+            rule_type=rule_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             advance_renewal_period: str,
+             renewal_interval: str,
+             rule_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("advance_renewal_period", advance_renewal_period)
+        _setter("renewal_interval", renewal_interval)
+        _setter("rule_type", rule_type)
 
     @property
     @pulumi.getter(name="advanceRenewalPeriod")
@@ -6750,17 +8369,46 @@ class GetCertificatesCertificateCollectionItemCurrentVersionResult(dict):
         :param str version_name: The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
         :param str version_number: The version number of the certificate.
         """
-        pulumi.set(__self__, "certificate_id", certificate_id)
-        pulumi.set(__self__, "issuer_ca_version_number", issuer_ca_version_number)
-        pulumi.set(__self__, "revocation_statuses", revocation_statuses)
-        pulumi.set(__self__, "serial_number", serial_number)
-        pulumi.set(__self__, "stages", stages)
-        pulumi.set(__self__, "subject_alternative_names", subject_alternative_names)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_of_deletion", time_of_deletion)
-        pulumi.set(__self__, "validities", validities)
-        pulumi.set(__self__, "version_name", version_name)
-        pulumi.set(__self__, "version_number", version_number)
+        GetCertificatesCertificateCollectionItemCurrentVersionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certificate_id=certificate_id,
+            issuer_ca_version_number=issuer_ca_version_number,
+            revocation_statuses=revocation_statuses,
+            serial_number=serial_number,
+            stages=stages,
+            subject_alternative_names=subject_alternative_names,
+            time_created=time_created,
+            time_of_deletion=time_of_deletion,
+            validities=validities,
+            version_name=version_name,
+            version_number=version_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certificate_id: str,
+             issuer_ca_version_number: str,
+             revocation_statuses: Sequence['outputs.GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusResult'],
+             serial_number: str,
+             stages: Sequence[str],
+             subject_alternative_names: Sequence['outputs.GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameResult'],
+             time_created: str,
+             time_of_deletion: str,
+             validities: Sequence['outputs.GetCertificatesCertificateCollectionItemCurrentVersionValidityResult'],
+             version_name: str,
+             version_number: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certificate_id", certificate_id)
+        _setter("issuer_ca_version_number", issuer_ca_version_number)
+        _setter("revocation_statuses", revocation_statuses)
+        _setter("serial_number", serial_number)
+        _setter("stages", stages)
+        _setter("subject_alternative_names", subject_alternative_names)
+        _setter("time_created", time_created)
+        _setter("time_of_deletion", time_of_deletion)
+        _setter("validities", validities)
+        _setter("version_name", version_name)
+        _setter("version_number", version_number)
 
     @property
     @pulumi.getter(name="certificateId")
@@ -6860,8 +8508,19 @@ class GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusResu
         :param str revocation_reason: The reason the certificate or certificate authority (CA) was revoked.
         :param str time_of_revocation: The time when the entity was revoked, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "revocation_reason", revocation_reason)
-        pulumi.set(__self__, "time_of_revocation", time_of_revocation)
+        GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatusResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            revocation_reason=revocation_reason,
+            time_of_revocation=time_of_revocation,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             revocation_reason: str,
+             time_of_revocation: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("revocation_reason", revocation_reason)
+        _setter("time_of_revocation", time_of_revocation)
 
     @property
     @pulumi.getter(name="revocationReason")
@@ -6889,8 +8548,19 @@ class GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNa
         :param str type: The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
         :param str value: The subject alternative name.
         """
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeNameResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -6918,8 +8588,19 @@ class GetCertificatesCertificateCollectionItemCurrentVersionValidityResult(dict)
         :param str time_of_validity_not_after: The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str time_of_validity_not_before: The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
-        pulumi.set(__self__, "time_of_validity_not_after", time_of_validity_not_after)
-        pulumi.set(__self__, "time_of_validity_not_before", time_of_validity_not_before)
+        GetCertificatesCertificateCollectionItemCurrentVersionValidityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_of_validity_not_after=time_of_validity_not_after,
+            time_of_validity_not_before=time_of_validity_not_before,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_of_validity_not_after: str,
+             time_of_validity_not_before: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("time_of_validity_not_after", time_of_validity_not_after)
+        _setter("time_of_validity_not_before", time_of_validity_not_before)
 
     @property
     @pulumi.getter(name="timeOfValidityNotAfter")
@@ -6977,23 +8658,64 @@ class GetCertificatesCertificateCollectionItemSubjectResult(dict):
         :param str title: Title (RDN T or TITLE).
         :param str user_id: User ID (RDN UID).
         """
-        pulumi.set(__self__, "common_name", common_name)
-        pulumi.set(__self__, "country", country)
-        pulumi.set(__self__, "distinguished_name_qualifier", distinguished_name_qualifier)
-        pulumi.set(__self__, "domain_component", domain_component)
-        pulumi.set(__self__, "generation_qualifier", generation_qualifier)
-        pulumi.set(__self__, "given_name", given_name)
-        pulumi.set(__self__, "initials", initials)
-        pulumi.set(__self__, "locality_name", locality_name)
-        pulumi.set(__self__, "organization", organization)
-        pulumi.set(__self__, "organizational_unit", organizational_unit)
-        pulumi.set(__self__, "pseudonym", pseudonym)
-        pulumi.set(__self__, "serial_number", serial_number)
-        pulumi.set(__self__, "state_or_province_name", state_or_province_name)
-        pulumi.set(__self__, "street", street)
-        pulumi.set(__self__, "surname", surname)
-        pulumi.set(__self__, "title", title)
-        pulumi.set(__self__, "user_id", user_id)
+        GetCertificatesCertificateCollectionItemSubjectResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            common_name=common_name,
+            country=country,
+            distinguished_name_qualifier=distinguished_name_qualifier,
+            domain_component=domain_component,
+            generation_qualifier=generation_qualifier,
+            given_name=given_name,
+            initials=initials,
+            locality_name=locality_name,
+            organization=organization,
+            organizational_unit=organizational_unit,
+            pseudonym=pseudonym,
+            serial_number=serial_number,
+            state_or_province_name=state_or_province_name,
+            street=street,
+            surname=surname,
+            title=title,
+            user_id=user_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             common_name: str,
+             country: str,
+             distinguished_name_qualifier: str,
+             domain_component: str,
+             generation_qualifier: str,
+             given_name: str,
+             initials: str,
+             locality_name: str,
+             organization: str,
+             organizational_unit: str,
+             pseudonym: str,
+             serial_number: str,
+             state_or_province_name: str,
+             street: str,
+             surname: str,
+             title: str,
+             user_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("common_name", common_name)
+        _setter("country", country)
+        _setter("distinguished_name_qualifier", distinguished_name_qualifier)
+        _setter("domain_component", domain_component)
+        _setter("generation_qualifier", generation_qualifier)
+        _setter("given_name", given_name)
+        _setter("initials", initials)
+        _setter("locality_name", locality_name)
+        _setter("organization", organization)
+        _setter("organizational_unit", organizational_unit)
+        _setter("pseudonym", pseudonym)
+        _setter("serial_number", serial_number)
+        _setter("state_or_province_name", state_or_province_name)
+        _setter("street", street)
+        _setter("surname", surname)
+        _setter("title", title)
+        _setter("user_id", user_id)
 
     @property
     @pulumi.getter(name="commonName")
@@ -7141,10 +8863,23 @@ class GetCertificatesFilterResult(dict):
         """
         :param str name: A filter that returns only resources that match the specified name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetCertificatesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

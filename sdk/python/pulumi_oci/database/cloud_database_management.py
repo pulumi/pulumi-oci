@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -42,20 +42,47 @@ class CloudDatabaseManagementArgs:
         :param pulumi.Input[str] role: The role of the user that will be connecting to the database.
         :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
-        pulumi.set(__self__, "credentialdetails", credentialdetails)
-        pulumi.set(__self__, "database_id", database_id)
-        pulumi.set(__self__, "enable_management", enable_management)
-        pulumi.set(__self__, "management_type", management_type)
-        pulumi.set(__self__, "private_end_point_id", private_end_point_id)
-        pulumi.set(__self__, "service_name", service_name)
+        CloudDatabaseManagementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credentialdetails=credentialdetails,
+            database_id=database_id,
+            enable_management=enable_management,
+            management_type=management_type,
+            private_end_point_id=private_end_point_id,
+            service_name=service_name,
+            port=port,
+            protocol=protocol,
+            role=role,
+            ssl_secret_id=ssl_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credentialdetails: pulumi.Input['CloudDatabaseManagementCredentialdetailsArgs'],
+             database_id: pulumi.Input[str],
+             enable_management: pulumi.Input[bool],
+             management_type: pulumi.Input[str],
+             private_end_point_id: pulumi.Input[str],
+             service_name: pulumi.Input[str],
+             port: Optional[pulumi.Input[int]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             role: Optional[pulumi.Input[str]] = None,
+             ssl_secret_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credentialdetails", credentialdetails)
+        _setter("database_id", database_id)
+        _setter("enable_management", enable_management)
+        _setter("management_type", management_type)
+        _setter("private_end_point_id", private_end_point_id)
+        _setter("service_name", service_name)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if ssl_secret_id is not None:
-            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+            _setter("ssl_secret_id", ssl_secret_id)
 
     @property
     @pulumi.getter
@@ -208,26 +235,53 @@ class _CloudDatabaseManagementState:
         :param pulumi.Input[str] service_name: The name of the Oracle Database service that will be used to connect to the database.
         :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
+        _CloudDatabaseManagementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credentialdetails=credentialdetails,
+            database_id=database_id,
+            enable_management=enable_management,
+            management_type=management_type,
+            port=port,
+            private_end_point_id=private_end_point_id,
+            protocol=protocol,
+            role=role,
+            service_name=service_name,
+            ssl_secret_id=ssl_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credentialdetails: Optional[pulumi.Input['CloudDatabaseManagementCredentialdetailsArgs']] = None,
+             database_id: Optional[pulumi.Input[str]] = None,
+             enable_management: Optional[pulumi.Input[bool]] = None,
+             management_type: Optional[pulumi.Input[str]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             private_end_point_id: Optional[pulumi.Input[str]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             role: Optional[pulumi.Input[str]] = None,
+             service_name: Optional[pulumi.Input[str]] = None,
+             ssl_secret_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if credentialdetails is not None:
-            pulumi.set(__self__, "credentialdetails", credentialdetails)
+            _setter("credentialdetails", credentialdetails)
         if database_id is not None:
-            pulumi.set(__self__, "database_id", database_id)
+            _setter("database_id", database_id)
         if enable_management is not None:
-            pulumi.set(__self__, "enable_management", enable_management)
+            _setter("enable_management", enable_management)
         if management_type is not None:
-            pulumi.set(__self__, "management_type", management_type)
+            _setter("management_type", management_type)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if private_end_point_id is not None:
-            pulumi.set(__self__, "private_end_point_id", private_end_point_id)
+            _setter("private_end_point_id", private_end_point_id)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if service_name is not None:
-            pulumi.set(__self__, "service_name", service_name)
+            _setter("service_name", service_name)
         if ssl_secret_id is not None:
-            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+            _setter("ssl_secret_id", ssl_secret_id)
 
     @property
     @pulumi.getter
@@ -467,6 +521,10 @@ class CloudDatabaseManagement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            CloudDatabaseManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -491,6 +549,11 @@ class CloudDatabaseManagement(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = CloudDatabaseManagementArgs.__new__(CloudDatabaseManagementArgs)
 
+            if credentialdetails is not None and not isinstance(credentialdetails, CloudDatabaseManagementCredentialdetailsArgs):
+                credentialdetails = credentialdetails or {}
+                def _setter(key, value):
+                    credentialdetails[key] = value
+                CloudDatabaseManagementCredentialdetailsArgs._configure(_setter, **credentialdetails)
             if credentialdetails is None and not opts.urn:
                 raise TypeError("Missing required property 'credentialdetails'")
             __props__.__dict__["credentialdetails"] = credentialdetails

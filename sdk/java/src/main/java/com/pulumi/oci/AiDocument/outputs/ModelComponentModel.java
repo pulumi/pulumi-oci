@@ -11,17 +11,9 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ModelComponentModel {
-    /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-     * 
-     */
     private @Nullable String modelId;
 
     private ModelComponentModel() {}
-    /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-     * 
-     */
     public Optional<String> modelId() {
         return Optional.ofNullable(this.modelId);
     }

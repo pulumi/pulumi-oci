@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['ListenerArgs', 'Listener']
@@ -33,14 +33,33 @@ class ListenerArgs:
         :param pulumi.Input[str] ip_version: (Updatable) IP version associated with the listener.
         :param pulumi.Input[str] name: A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
         """
-        pulumi.set(__self__, "default_backend_set_name", default_backend_set_name)
-        pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "protocol", protocol)
+        ListenerArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_backend_set_name=default_backend_set_name,
+            network_load_balancer_id=network_load_balancer_id,
+            port=port,
+            protocol=protocol,
+            ip_version=ip_version,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_backend_set_name: pulumi.Input[str],
+             network_load_balancer_id: pulumi.Input[str],
+             port: pulumi.Input[int],
+             protocol: pulumi.Input[str],
+             ip_version: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_backend_set_name", default_backend_set_name)
+        _setter("network_load_balancer_id", network_load_balancer_id)
+        _setter("port", port)
+        _setter("protocol", protocol)
         if ip_version is not None:
-            pulumi.set(__self__, "ip_version", ip_version)
+            _setter("ip_version", ip_version)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="defaultBackendSetName")
@@ -141,18 +160,37 @@ class _ListenerState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _ListenerState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_backend_set_name=default_backend_set_name,
+            ip_version=ip_version,
+            name=name,
+            network_load_balancer_id=network_load_balancer_id,
+            port=port,
+            protocol=protocol,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_backend_set_name: Optional[pulumi.Input[str]] = None,
+             ip_version: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             network_load_balancer_id: Optional[pulumi.Input[str]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if default_backend_set_name is not None:
-            pulumi.set(__self__, "default_backend_set_name", default_backend_set_name)
+            _setter("default_backend_set_name", default_backend_set_name)
         if ip_version is not None:
-            pulumi.set(__self__, "ip_version", ip_version)
+            _setter("ip_version", ip_version)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if network_load_balancer_id is not None:
-            pulumi.set(__self__, "network_load_balancer_id", network_load_balancer_id)
+            _setter("network_load_balancer_id", network_load_balancer_id)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
 
     @property
     @pulumi.getter(name="defaultBackendSetName")
@@ -326,6 +364,10 @@ class Listener(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ListenerArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

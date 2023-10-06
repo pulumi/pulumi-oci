@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -80,64 +80,131 @@ class AutonomousContainerDatabaseArgs:
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[str] version_preference: (Updatable) The next maintenance version preference.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "patch_model", patch_model)
+        AutonomousContainerDatabaseArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            patch_model=patch_model,
+            autonomous_exadata_infrastructure_id=autonomous_exadata_infrastructure_id,
+            autonomous_vm_cluster_id=autonomous_vm_cluster_id,
+            backup_config=backup_config,
+            cloud_autonomous_vm_cluster_id=cloud_autonomous_vm_cluster_id,
+            compartment_id=compartment_id,
+            db_name=db_name,
+            db_unique_name=db_unique_name,
+            db_version=db_version,
+            defined_tags=defined_tags,
+            fast_start_fail_over_lag_limit_in_seconds=fast_start_fail_over_lag_limit_in_seconds,
+            freeform_tags=freeform_tags,
+            is_automatic_failover_enabled=is_automatic_failover_enabled,
+            key_store_id=key_store_id,
+            kms_key_id=kms_key_id,
+            maintenance_window_details=maintenance_window_details,
+            peer_autonomous_container_database_backup_config=peer_autonomous_container_database_backup_config,
+            peer_autonomous_container_database_compartment_id=peer_autonomous_container_database_compartment_id,
+            peer_autonomous_container_database_display_name=peer_autonomous_container_database_display_name,
+            peer_autonomous_exadata_infrastructure_id=peer_autonomous_exadata_infrastructure_id,
+            peer_autonomous_vm_cluster_id=peer_autonomous_vm_cluster_id,
+            peer_cloud_autonomous_vm_cluster_id=peer_cloud_autonomous_vm_cluster_id,
+            peer_db_unique_name=peer_db_unique_name,
+            protection_mode=protection_mode,
+            rotate_key_trigger=rotate_key_trigger,
+            service_level_agreement_type=service_level_agreement_type,
+            standby_maintenance_buffer_in_days=standby_maintenance_buffer_in_days,
+            vault_id=vault_id,
+            version_preference=version_preference,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: pulumi.Input[str],
+             patch_model: pulumi.Input[str],
+             autonomous_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+             autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+             backup_config: Optional[pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs']] = None,
+             cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             db_name: Optional[pulumi.Input[str]] = None,
+             db_unique_name: Optional[pulumi.Input[str]] = None,
+             db_version: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
+             key_store_id: Optional[pulumi.Input[str]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             maintenance_window_details: Optional[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']] = None,
+             peer_autonomous_container_database_backup_config: Optional[pulumi.Input['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs']] = None,
+             peer_autonomous_container_database_compartment_id: Optional[pulumi.Input[str]] = None,
+             peer_autonomous_container_database_display_name: Optional[pulumi.Input[str]] = None,
+             peer_autonomous_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+             peer_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+             peer_cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+             peer_db_unique_name: Optional[pulumi.Input[str]] = None,
+             protection_mode: Optional[pulumi.Input[str]] = None,
+             rotate_key_trigger: Optional[pulumi.Input[bool]] = None,
+             service_level_agreement_type: Optional[pulumi.Input[str]] = None,
+             standby_maintenance_buffer_in_days: Optional[pulumi.Input[int]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             version_preference: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("patch_model", patch_model)
         if autonomous_exadata_infrastructure_id is not None:
-            pulumi.set(__self__, "autonomous_exadata_infrastructure_id", autonomous_exadata_infrastructure_id)
+            _setter("autonomous_exadata_infrastructure_id", autonomous_exadata_infrastructure_id)
         if autonomous_vm_cluster_id is not None:
-            pulumi.set(__self__, "autonomous_vm_cluster_id", autonomous_vm_cluster_id)
+            _setter("autonomous_vm_cluster_id", autonomous_vm_cluster_id)
         if backup_config is not None:
-            pulumi.set(__self__, "backup_config", backup_config)
+            _setter("backup_config", backup_config)
         if cloud_autonomous_vm_cluster_id is not None:
-            pulumi.set(__self__, "cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
+            _setter("cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if db_name is not None:
-            pulumi.set(__self__, "db_name", db_name)
+            _setter("db_name", db_name)
         if db_unique_name is not None:
-            pulumi.set(__self__, "db_unique_name", db_unique_name)
+            _setter("db_unique_name", db_unique_name)
         if db_version is not None:
-            pulumi.set(__self__, "db_version", db_version)
+            _setter("db_version", db_version)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if fast_start_fail_over_lag_limit_in_seconds is not None:
-            pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
+            _setter("fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_automatic_failover_enabled is not None:
-            pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
+            _setter("is_automatic_failover_enabled", is_automatic_failover_enabled)
         if key_store_id is not None:
-            pulumi.set(__self__, "key_store_id", key_store_id)
+            _setter("key_store_id", key_store_id)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if maintenance_window_details is not None:
-            pulumi.set(__self__, "maintenance_window_details", maintenance_window_details)
+            _setter("maintenance_window_details", maintenance_window_details)
         if peer_autonomous_container_database_backup_config is not None:
-            pulumi.set(__self__, "peer_autonomous_container_database_backup_config", peer_autonomous_container_database_backup_config)
+            _setter("peer_autonomous_container_database_backup_config", peer_autonomous_container_database_backup_config)
         if peer_autonomous_container_database_compartment_id is not None:
-            pulumi.set(__self__, "peer_autonomous_container_database_compartment_id", peer_autonomous_container_database_compartment_id)
+            _setter("peer_autonomous_container_database_compartment_id", peer_autonomous_container_database_compartment_id)
         if peer_autonomous_container_database_display_name is not None:
-            pulumi.set(__self__, "peer_autonomous_container_database_display_name", peer_autonomous_container_database_display_name)
+            _setter("peer_autonomous_container_database_display_name", peer_autonomous_container_database_display_name)
         if peer_autonomous_exadata_infrastructure_id is not None:
-            pulumi.set(__self__, "peer_autonomous_exadata_infrastructure_id", peer_autonomous_exadata_infrastructure_id)
+            _setter("peer_autonomous_exadata_infrastructure_id", peer_autonomous_exadata_infrastructure_id)
         if peer_autonomous_vm_cluster_id is not None:
-            pulumi.set(__self__, "peer_autonomous_vm_cluster_id", peer_autonomous_vm_cluster_id)
+            _setter("peer_autonomous_vm_cluster_id", peer_autonomous_vm_cluster_id)
         if peer_cloud_autonomous_vm_cluster_id is not None:
-            pulumi.set(__self__, "peer_cloud_autonomous_vm_cluster_id", peer_cloud_autonomous_vm_cluster_id)
+            _setter("peer_cloud_autonomous_vm_cluster_id", peer_cloud_autonomous_vm_cluster_id)
         if peer_db_unique_name is not None:
-            pulumi.set(__self__, "peer_db_unique_name", peer_db_unique_name)
+            _setter("peer_db_unique_name", peer_db_unique_name)
         if protection_mode is not None:
-            pulumi.set(__self__, "protection_mode", protection_mode)
+            _setter("protection_mode", protection_mode)
         if rotate_key_trigger is not None:
-            pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
+            _setter("rotate_key_trigger", rotate_key_trigger)
         if service_level_agreement_type is not None:
-            pulumi.set(__self__, "service_level_agreement_type", service_level_agreement_type)
+            _setter("service_level_agreement_type", service_level_agreement_type)
         if standby_maintenance_buffer_in_days is not None:
-            pulumi.set(__self__, "standby_maintenance_buffer_in_days", standby_maintenance_buffer_in_days)
+            _setter("standby_maintenance_buffer_in_days", standby_maintenance_buffer_in_days)
         if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
+            _setter("vault_id", vault_id)
         if version_preference is not None:
-            pulumi.set(__self__, "version_preference", version_preference)
+            _setter("version_preference", version_preference)
 
     @property
     @pulumi.getter(name="displayName")
@@ -607,110 +674,221 @@ class _AutonomousContainerDatabaseState:
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[str] version_preference: (Updatable) The next maintenance version preference.
         """
+        _AutonomousContainerDatabaseState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            autonomous_exadata_infrastructure_id=autonomous_exadata_infrastructure_id,
+            autonomous_vm_cluster_id=autonomous_vm_cluster_id,
+            availability_domain=availability_domain,
+            available_cpus=available_cpus,
+            backup_config=backup_config,
+            cloud_autonomous_vm_cluster_id=cloud_autonomous_vm_cluster_id,
+            compartment_id=compartment_id,
+            compute_model=compute_model,
+            db_name=db_name,
+            db_unique_name=db_unique_name,
+            db_version=db_version,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            fast_start_fail_over_lag_limit_in_seconds=fast_start_fail_over_lag_limit_in_seconds,
+            freeform_tags=freeform_tags,
+            infrastructure_type=infrastructure_type,
+            is_automatic_failover_enabled=is_automatic_failover_enabled,
+            key_history_entries=key_history_entries,
+            key_store_id=key_store_id,
+            key_store_wallet_name=key_store_wallet_name,
+            kms_key_id=kms_key_id,
+            largest_provisionable_autonomous_database_in_cpus=largest_provisionable_autonomous_database_in_cpus,
+            last_maintenance_run_id=last_maintenance_run_id,
+            lifecycle_details=lifecycle_details,
+            maintenance_window_details=maintenance_window_details,
+            maintenance_windows=maintenance_windows,
+            memory_per_oracle_compute_unit_in_gbs=memory_per_oracle_compute_unit_in_gbs,
+            next_maintenance_run_id=next_maintenance_run_id,
+            patch_id=patch_id,
+            patch_model=patch_model,
+            peer_autonomous_container_database_backup_config=peer_autonomous_container_database_backup_config,
+            peer_autonomous_container_database_compartment_id=peer_autonomous_container_database_compartment_id,
+            peer_autonomous_container_database_display_name=peer_autonomous_container_database_display_name,
+            peer_autonomous_exadata_infrastructure_id=peer_autonomous_exadata_infrastructure_id,
+            peer_autonomous_vm_cluster_id=peer_autonomous_vm_cluster_id,
+            peer_cloud_autonomous_vm_cluster_id=peer_cloud_autonomous_vm_cluster_id,
+            peer_db_unique_name=peer_db_unique_name,
+            protection_mode=protection_mode,
+            provisionable_cpuses=provisionable_cpuses,
+            provisioned_cpus=provisioned_cpus,
+            reclaimable_cpus=reclaimable_cpus,
+            reserved_cpus=reserved_cpus,
+            role=role,
+            rotate_key_trigger=rotate_key_trigger,
+            service_level_agreement_type=service_level_agreement_type,
+            standby_maintenance_buffer_in_days=standby_maintenance_buffer_in_days,
+            state=state,
+            time_created=time_created,
+            time_snapshot_standby_revert=time_snapshot_standby_revert,
+            total_cpus=total_cpus,
+            vault_id=vault_id,
+            version_preference=version_preference,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             autonomous_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+             autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             available_cpus: Optional[pulumi.Input[float]] = None,
+             backup_config: Optional[pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs']] = None,
+             cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             compute_model: Optional[pulumi.Input[str]] = None,
+             db_name: Optional[pulumi.Input[str]] = None,
+             db_unique_name: Optional[pulumi.Input[str]] = None,
+             db_version: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[int]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             infrastructure_type: Optional[pulumi.Input[str]] = None,
+             is_automatic_failover_enabled: Optional[pulumi.Input[bool]] = None,
+             key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseKeyHistoryEntryArgs']]]] = None,
+             key_store_id: Optional[pulumi.Input[str]] = None,
+             key_store_wallet_name: Optional[pulumi.Input[str]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             largest_provisionable_autonomous_database_in_cpus: Optional[pulumi.Input[float]] = None,
+             last_maintenance_run_id: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             maintenance_window_details: Optional[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']] = None,
+             maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowArgs']]]] = None,
+             memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[int]] = None,
+             next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
+             patch_id: Optional[pulumi.Input[str]] = None,
+             patch_model: Optional[pulumi.Input[str]] = None,
+             peer_autonomous_container_database_backup_config: Optional[pulumi.Input['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs']] = None,
+             peer_autonomous_container_database_compartment_id: Optional[pulumi.Input[str]] = None,
+             peer_autonomous_container_database_display_name: Optional[pulumi.Input[str]] = None,
+             peer_autonomous_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
+             peer_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+             peer_cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
+             peer_db_unique_name: Optional[pulumi.Input[str]] = None,
+             protection_mode: Optional[pulumi.Input[str]] = None,
+             provisionable_cpuses: Optional[pulumi.Input[Sequence[pulumi.Input[float]]]] = None,
+             provisioned_cpus: Optional[pulumi.Input[float]] = None,
+             reclaimable_cpus: Optional[pulumi.Input[float]] = None,
+             reserved_cpus: Optional[pulumi.Input[float]] = None,
+             role: Optional[pulumi.Input[str]] = None,
+             rotate_key_trigger: Optional[pulumi.Input[bool]] = None,
+             service_level_agreement_type: Optional[pulumi.Input[str]] = None,
+             standby_maintenance_buffer_in_days: Optional[pulumi.Input[int]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_snapshot_standby_revert: Optional[pulumi.Input[str]] = None,
+             total_cpus: Optional[pulumi.Input[int]] = None,
+             vault_id: Optional[pulumi.Input[str]] = None,
+             version_preference: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if autonomous_exadata_infrastructure_id is not None:
-            pulumi.set(__self__, "autonomous_exadata_infrastructure_id", autonomous_exadata_infrastructure_id)
+            _setter("autonomous_exadata_infrastructure_id", autonomous_exadata_infrastructure_id)
         if autonomous_vm_cluster_id is not None:
-            pulumi.set(__self__, "autonomous_vm_cluster_id", autonomous_vm_cluster_id)
+            _setter("autonomous_vm_cluster_id", autonomous_vm_cluster_id)
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if available_cpus is not None:
-            pulumi.set(__self__, "available_cpus", available_cpus)
+            _setter("available_cpus", available_cpus)
         if backup_config is not None:
-            pulumi.set(__self__, "backup_config", backup_config)
+            _setter("backup_config", backup_config)
         if cloud_autonomous_vm_cluster_id is not None:
-            pulumi.set(__self__, "cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
+            _setter("cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if compute_model is not None:
-            pulumi.set(__self__, "compute_model", compute_model)
+            _setter("compute_model", compute_model)
         if db_name is not None:
-            pulumi.set(__self__, "db_name", db_name)
+            _setter("db_name", db_name)
         if db_unique_name is not None:
-            pulumi.set(__self__, "db_unique_name", db_unique_name)
+            _setter("db_unique_name", db_unique_name)
         if db_version is not None:
-            pulumi.set(__self__, "db_version", db_version)
+            _setter("db_version", db_version)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if fast_start_fail_over_lag_limit_in_seconds is not None:
-            pulumi.set(__self__, "fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
+            _setter("fast_start_fail_over_lag_limit_in_seconds", fast_start_fail_over_lag_limit_in_seconds)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if infrastructure_type is not None:
-            pulumi.set(__self__, "infrastructure_type", infrastructure_type)
+            _setter("infrastructure_type", infrastructure_type)
         if is_automatic_failover_enabled is not None:
-            pulumi.set(__self__, "is_automatic_failover_enabled", is_automatic_failover_enabled)
+            _setter("is_automatic_failover_enabled", is_automatic_failover_enabled)
         if key_history_entries is not None:
-            pulumi.set(__self__, "key_history_entries", key_history_entries)
+            _setter("key_history_entries", key_history_entries)
         if key_store_id is not None:
-            pulumi.set(__self__, "key_store_id", key_store_id)
+            _setter("key_store_id", key_store_id)
         if key_store_wallet_name is not None:
-            pulumi.set(__self__, "key_store_wallet_name", key_store_wallet_name)
+            _setter("key_store_wallet_name", key_store_wallet_name)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if largest_provisionable_autonomous_database_in_cpus is not None:
-            pulumi.set(__self__, "largest_provisionable_autonomous_database_in_cpus", largest_provisionable_autonomous_database_in_cpus)
+            _setter("largest_provisionable_autonomous_database_in_cpus", largest_provisionable_autonomous_database_in_cpus)
         if last_maintenance_run_id is not None:
-            pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
+            _setter("last_maintenance_run_id", last_maintenance_run_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if maintenance_window_details is not None:
-            pulumi.set(__self__, "maintenance_window_details", maintenance_window_details)
+            _setter("maintenance_window_details", maintenance_window_details)
         if maintenance_windows is not None:
-            pulumi.set(__self__, "maintenance_windows", maintenance_windows)
+            _setter("maintenance_windows", maintenance_windows)
         if memory_per_oracle_compute_unit_in_gbs is not None:
-            pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
+            _setter("memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         if next_maintenance_run_id is not None:
-            pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
+            _setter("next_maintenance_run_id", next_maintenance_run_id)
         if patch_id is not None:
-            pulumi.set(__self__, "patch_id", patch_id)
+            _setter("patch_id", patch_id)
         if patch_model is not None:
-            pulumi.set(__self__, "patch_model", patch_model)
+            _setter("patch_model", patch_model)
         if peer_autonomous_container_database_backup_config is not None:
-            pulumi.set(__self__, "peer_autonomous_container_database_backup_config", peer_autonomous_container_database_backup_config)
+            _setter("peer_autonomous_container_database_backup_config", peer_autonomous_container_database_backup_config)
         if peer_autonomous_container_database_compartment_id is not None:
-            pulumi.set(__self__, "peer_autonomous_container_database_compartment_id", peer_autonomous_container_database_compartment_id)
+            _setter("peer_autonomous_container_database_compartment_id", peer_autonomous_container_database_compartment_id)
         if peer_autonomous_container_database_display_name is not None:
-            pulumi.set(__self__, "peer_autonomous_container_database_display_name", peer_autonomous_container_database_display_name)
+            _setter("peer_autonomous_container_database_display_name", peer_autonomous_container_database_display_name)
         if peer_autonomous_exadata_infrastructure_id is not None:
-            pulumi.set(__self__, "peer_autonomous_exadata_infrastructure_id", peer_autonomous_exadata_infrastructure_id)
+            _setter("peer_autonomous_exadata_infrastructure_id", peer_autonomous_exadata_infrastructure_id)
         if peer_autonomous_vm_cluster_id is not None:
-            pulumi.set(__self__, "peer_autonomous_vm_cluster_id", peer_autonomous_vm_cluster_id)
+            _setter("peer_autonomous_vm_cluster_id", peer_autonomous_vm_cluster_id)
         if peer_cloud_autonomous_vm_cluster_id is not None:
-            pulumi.set(__self__, "peer_cloud_autonomous_vm_cluster_id", peer_cloud_autonomous_vm_cluster_id)
+            _setter("peer_cloud_autonomous_vm_cluster_id", peer_cloud_autonomous_vm_cluster_id)
         if peer_db_unique_name is not None:
-            pulumi.set(__self__, "peer_db_unique_name", peer_db_unique_name)
+            _setter("peer_db_unique_name", peer_db_unique_name)
         if protection_mode is not None:
-            pulumi.set(__self__, "protection_mode", protection_mode)
+            _setter("protection_mode", protection_mode)
         if provisionable_cpuses is not None:
-            pulumi.set(__self__, "provisionable_cpuses", provisionable_cpuses)
+            _setter("provisionable_cpuses", provisionable_cpuses)
         if provisioned_cpus is not None:
-            pulumi.set(__self__, "provisioned_cpus", provisioned_cpus)
+            _setter("provisioned_cpus", provisioned_cpus)
         if reclaimable_cpus is not None:
-            pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
+            _setter("reclaimable_cpus", reclaimable_cpus)
         if reserved_cpus is not None:
-            pulumi.set(__self__, "reserved_cpus", reserved_cpus)
+            _setter("reserved_cpus", reserved_cpus)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if rotate_key_trigger is not None:
-            pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
+            _setter("rotate_key_trigger", rotate_key_trigger)
         if service_level_agreement_type is not None:
-            pulumi.set(__self__, "service_level_agreement_type", service_level_agreement_type)
+            _setter("service_level_agreement_type", service_level_agreement_type)
         if standby_maintenance_buffer_in_days is not None:
-            pulumi.set(__self__, "standby_maintenance_buffer_in_days", standby_maintenance_buffer_in_days)
+            _setter("standby_maintenance_buffer_in_days", standby_maintenance_buffer_in_days)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_snapshot_standby_revert is not None:
-            pulumi.set(__self__, "time_snapshot_standby_revert", time_snapshot_standby_revert)
+            _setter("time_snapshot_standby_revert", time_snapshot_standby_revert)
         if total_cpus is not None:
-            pulumi.set(__self__, "total_cpus", total_cpus)
+            _setter("total_cpus", total_cpus)
         if vault_id is not None:
-            pulumi.set(__self__, "vault_id", vault_id)
+            _setter("vault_id", vault_id)
         if version_preference is not None:
-            pulumi.set(__self__, "version_preference", version_preference)
+            _setter("version_preference", version_preference)
 
     @property
     @pulumi.getter(name="autonomousExadataInfrastructureId")
@@ -1443,6 +1621,10 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AutonomousContainerDatabaseArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1489,6 +1671,11 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
 
             __props__.__dict__["autonomous_exadata_infrastructure_id"] = autonomous_exadata_infrastructure_id
             __props__.__dict__["autonomous_vm_cluster_id"] = autonomous_vm_cluster_id
+            if backup_config is not None and not isinstance(backup_config, AutonomousContainerDatabaseBackupConfigArgs):
+                backup_config = backup_config or {}
+                def _setter(key, value):
+                    backup_config[key] = value
+                AutonomousContainerDatabaseBackupConfigArgs._configure(_setter, **backup_config)
             __props__.__dict__["backup_config"] = backup_config
             __props__.__dict__["cloud_autonomous_vm_cluster_id"] = cloud_autonomous_vm_cluster_id
             __props__.__dict__["compartment_id"] = compartment_id
@@ -1504,10 +1691,20 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             __props__.__dict__["is_automatic_failover_enabled"] = is_automatic_failover_enabled
             __props__.__dict__["key_store_id"] = key_store_id
             __props__.__dict__["kms_key_id"] = kms_key_id
+            if maintenance_window_details is not None and not isinstance(maintenance_window_details, AutonomousContainerDatabaseMaintenanceWindowDetailsArgs):
+                maintenance_window_details = maintenance_window_details or {}
+                def _setter(key, value):
+                    maintenance_window_details[key] = value
+                AutonomousContainerDatabaseMaintenanceWindowDetailsArgs._configure(_setter, **maintenance_window_details)
             __props__.__dict__["maintenance_window_details"] = maintenance_window_details
             if patch_model is None and not opts.urn:
                 raise TypeError("Missing required property 'patch_model'")
             __props__.__dict__["patch_model"] = patch_model
+            if peer_autonomous_container_database_backup_config is not None and not isinstance(peer_autonomous_container_database_backup_config, AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs):
+                peer_autonomous_container_database_backup_config = peer_autonomous_container_database_backup_config or {}
+                def _setter(key, value):
+                    peer_autonomous_container_database_backup_config[key] = value
+                AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs._configure(_setter, **peer_autonomous_container_database_backup_config)
             __props__.__dict__["peer_autonomous_container_database_backup_config"] = peer_autonomous_container_database_backup_config
             __props__.__dict__["peer_autonomous_container_database_compartment_id"] = peer_autonomous_container_database_compartment_id
             __props__.__dict__["peer_autonomous_container_database_display_name"] = peer_autonomous_container_database_display_name

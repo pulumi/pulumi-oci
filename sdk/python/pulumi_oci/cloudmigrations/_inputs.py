@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -71,12 +71,25 @@ class MigrationPlanMigrationPlanStatArgs:
         :param pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostArgs']]] total_estimated_costs: Cost estimation description
         :param pulumi.Input[int] vm_count: The total count of VMs in migration
         """
+        MigrationPlanMigrationPlanStatArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            time_updated=time_updated,
+            total_estimated_costs=total_estimated_costs,
+            vm_count=vm_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             time_updated: Optional[pulumi.Input[str]] = None,
+             total_estimated_costs: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostArgs']]]] = None,
+             vm_count: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if total_estimated_costs is not None:
-            pulumi.set(__self__, "total_estimated_costs", total_estimated_costs)
+            _setter("total_estimated_costs", total_estimated_costs)
         if vm_count is not None:
-            pulumi.set(__self__, "vm_count", vm_count)
+            _setter("vm_count", vm_count)
 
     @property
     @pulumi.getter(name="timeUpdated")
@@ -134,20 +147,41 @@ class MigrationPlanMigrationPlanStatTotalEstimatedCostArgs:
         :param pulumi.Input[float] total_estimation_per_month: Total estimation per month
         :param pulumi.Input[float] total_estimation_per_month_by_subscription: Total estimation per month by subscription.
         """
+        MigrationPlanMigrationPlanStatTotalEstimatedCostArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            computes=computes,
+            currency_code=currency_code,
+            os_images=os_images,
+            storages=storages,
+            subscription_id=subscription_id,
+            total_estimation_per_month=total_estimation_per_month,
+            total_estimation_per_month_by_subscription=total_estimation_per_month_by_subscription,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             computes: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArgs']]]] = None,
+             currency_code: Optional[pulumi.Input[str]] = None,
+             os_images: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArgs']]]] = None,
+             storages: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArgs']]]] = None,
+             subscription_id: Optional[pulumi.Input[str]] = None,
+             total_estimation_per_month: Optional[pulumi.Input[float]] = None,
+             total_estimation_per_month_by_subscription: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if computes is not None:
-            pulumi.set(__self__, "computes", computes)
+            _setter("computes", computes)
         if currency_code is not None:
-            pulumi.set(__self__, "currency_code", currency_code)
+            _setter("currency_code", currency_code)
         if os_images is not None:
-            pulumi.set(__self__, "os_images", os_images)
+            _setter("os_images", os_images)
         if storages is not None:
-            pulumi.set(__self__, "storages", storages)
+            _setter("storages", storages)
         if subscription_id is not None:
-            pulumi.set(__self__, "subscription_id", subscription_id)
+            _setter("subscription_id", subscription_id)
         if total_estimation_per_month is not None:
-            pulumi.set(__self__, "total_estimation_per_month", total_estimation_per_month)
+            _setter("total_estimation_per_month", total_estimation_per_month)
         if total_estimation_per_month_by_subscription is not None:
-            pulumi.set(__self__, "total_estimation_per_month_by_subscription", total_estimation_per_month_by_subscription)
+            _setter("total_estimation_per_month_by_subscription", total_estimation_per_month_by_subscription)
 
     @property
     @pulumi.getter
@@ -261,28 +295,57 @@ class MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArgs:
         :param pulumi.Input[float] total_per_hour: Total price per hour
         :param pulumi.Input[float] total_per_hour_by_subscription: Total price per hour by subscription
         """
+        MigrationPlanMigrationPlanStatTotalEstimatedCostComputeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            gpu_count=gpu_count,
+            gpu_per_hour=gpu_per_hour,
+            gpu_per_hour_by_subscription=gpu_per_hour_by_subscription,
+            memory_amount_gb=memory_amount_gb,
+            memory_gb_per_hour=memory_gb_per_hour,
+            memory_gb_per_hour_by_subscription=memory_gb_per_hour_by_subscription,
+            ocpu_count=ocpu_count,
+            ocpu_per_hour=ocpu_per_hour,
+            ocpu_per_hour_by_subscription=ocpu_per_hour_by_subscription,
+            total_per_hour=total_per_hour,
+            total_per_hour_by_subscription=total_per_hour_by_subscription,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             gpu_count: Optional[pulumi.Input[float]] = None,
+             gpu_per_hour: Optional[pulumi.Input[float]] = None,
+             gpu_per_hour_by_subscription: Optional[pulumi.Input[float]] = None,
+             memory_amount_gb: Optional[pulumi.Input[float]] = None,
+             memory_gb_per_hour: Optional[pulumi.Input[float]] = None,
+             memory_gb_per_hour_by_subscription: Optional[pulumi.Input[float]] = None,
+             ocpu_count: Optional[pulumi.Input[float]] = None,
+             ocpu_per_hour: Optional[pulumi.Input[float]] = None,
+             ocpu_per_hour_by_subscription: Optional[pulumi.Input[float]] = None,
+             total_per_hour: Optional[pulumi.Input[float]] = None,
+             total_per_hour_by_subscription: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if gpu_count is not None:
-            pulumi.set(__self__, "gpu_count", gpu_count)
+            _setter("gpu_count", gpu_count)
         if gpu_per_hour is not None:
-            pulumi.set(__self__, "gpu_per_hour", gpu_per_hour)
+            _setter("gpu_per_hour", gpu_per_hour)
         if gpu_per_hour_by_subscription is not None:
-            pulumi.set(__self__, "gpu_per_hour_by_subscription", gpu_per_hour_by_subscription)
+            _setter("gpu_per_hour_by_subscription", gpu_per_hour_by_subscription)
         if memory_amount_gb is not None:
-            pulumi.set(__self__, "memory_amount_gb", memory_amount_gb)
+            _setter("memory_amount_gb", memory_amount_gb)
         if memory_gb_per_hour is not None:
-            pulumi.set(__self__, "memory_gb_per_hour", memory_gb_per_hour)
+            _setter("memory_gb_per_hour", memory_gb_per_hour)
         if memory_gb_per_hour_by_subscription is not None:
-            pulumi.set(__self__, "memory_gb_per_hour_by_subscription", memory_gb_per_hour_by_subscription)
+            _setter("memory_gb_per_hour_by_subscription", memory_gb_per_hour_by_subscription)
         if ocpu_count is not None:
-            pulumi.set(__self__, "ocpu_count", ocpu_count)
+            _setter("ocpu_count", ocpu_count)
         if ocpu_per_hour is not None:
-            pulumi.set(__self__, "ocpu_per_hour", ocpu_per_hour)
+            _setter("ocpu_per_hour", ocpu_per_hour)
         if ocpu_per_hour_by_subscription is not None:
-            pulumi.set(__self__, "ocpu_per_hour_by_subscription", ocpu_per_hour_by_subscription)
+            _setter("ocpu_per_hour_by_subscription", ocpu_per_hour_by_subscription)
         if total_per_hour is not None:
-            pulumi.set(__self__, "total_per_hour", total_per_hour)
+            _setter("total_per_hour", total_per_hour)
         if total_per_hour_by_subscription is not None:
-            pulumi.set(__self__, "total_per_hour_by_subscription", total_per_hour_by_subscription)
+            _setter("total_per_hour_by_subscription", total_per_hour_by_subscription)
 
     @property
     @pulumi.getter(name="gpuCount")
@@ -426,10 +489,21 @@ class MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArgs:
         :param pulumi.Input[float] total_per_hour: Total price per hour
         :param pulumi.Input[float] total_per_hour_by_subscription: Total price per hour by subscription
         """
+        MigrationPlanMigrationPlanStatTotalEstimatedCostOsImageArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            total_per_hour=total_per_hour,
+            total_per_hour_by_subscription=total_per_hour_by_subscription,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             total_per_hour: Optional[pulumi.Input[float]] = None,
+             total_per_hour_by_subscription: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if total_per_hour is not None:
-            pulumi.set(__self__, "total_per_hour", total_per_hour)
+            _setter("total_per_hour", total_per_hour)
         if total_per_hour_by_subscription is not None:
-            pulumi.set(__self__, "total_per_hour_by_subscription", total_per_hour_by_subscription)
+            _setter("total_per_hour_by_subscription", total_per_hour_by_subscription)
 
     @property
     @pulumi.getter(name="totalPerHour")
@@ -467,12 +541,25 @@ class MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArgs:
         :param pulumi.Input[float] total_gb_per_month_by_subscription: Gigabyte storage capacity per month by subscription
         :param pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArgs']]] volumes: Volume estimation
         """
+        MigrationPlanMigrationPlanStatTotalEstimatedCostStorageArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            total_gb_per_month=total_gb_per_month,
+            total_gb_per_month_by_subscription=total_gb_per_month_by_subscription,
+            volumes=volumes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             total_gb_per_month: Optional[pulumi.Input[float]] = None,
+             total_gb_per_month_by_subscription: Optional[pulumi.Input[float]] = None,
+             volumes: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if total_gb_per_month is not None:
-            pulumi.set(__self__, "total_gb_per_month", total_gb_per_month)
+            _setter("total_gb_per_month", total_gb_per_month)
         if total_gb_per_month_by_subscription is not None:
-            pulumi.set(__self__, "total_gb_per_month_by_subscription", total_gb_per_month_by_subscription)
+            _setter("total_gb_per_month_by_subscription", total_gb_per_month_by_subscription)
         if volumes is not None:
-            pulumi.set(__self__, "volumes", volumes)
+            _setter("volumes", volumes)
 
     @property
     @pulumi.getter(name="totalGbPerMonth")
@@ -524,14 +611,29 @@ class MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArgs:
         :param pulumi.Input[float] total_gb_per_month: Gigabyte storage capacity per month.
         :param pulumi.Input[float] total_gb_per_month_by_subscription: Gigabyte storage capacity per month by subscription
         """
+        MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolumeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacity_gb=capacity_gb,
+            description=description,
+            total_gb_per_month=total_gb_per_month,
+            total_gb_per_month_by_subscription=total_gb_per_month_by_subscription,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacity_gb: Optional[pulumi.Input[float]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             total_gb_per_month: Optional[pulumi.Input[float]] = None,
+             total_gb_per_month_by_subscription: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if capacity_gb is not None:
-            pulumi.set(__self__, "capacity_gb", capacity_gb)
+            _setter("capacity_gb", capacity_gb)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if total_gb_per_month is not None:
-            pulumi.set(__self__, "total_gb_per_month", total_gb_per_month)
+            _setter("total_gb_per_month", total_gb_per_month)
         if total_gb_per_month_by_subscription is not None:
-            pulumi.set(__self__, "total_gb_per_month_by_subscription", total_gb_per_month_by_subscription)
+            _setter("total_gb_per_month_by_subscription", total_gb_per_month_by_subscription)
 
     @property
     @pulumi.getter(name="capacityGb")
@@ -599,16 +701,35 @@ class MigrationPlanStrategyArgs:
         :param pulumi.Input[str] metric_type: (Updatable) The current state of the migration plan.
         :param pulumi.Input[str] percentile: (Updatable) Percentile value
         """
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "strategy_type", strategy_type)
+        MigrationPlanStrategyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            resource_type=resource_type,
+            strategy_type=strategy_type,
+            adjustment_multiplier=adjustment_multiplier,
+            metric_time_window=metric_time_window,
+            metric_type=metric_type,
+            percentile=percentile,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             resource_type: pulumi.Input[str],
+             strategy_type: pulumi.Input[str],
+             adjustment_multiplier: Optional[pulumi.Input[float]] = None,
+             metric_time_window: Optional[pulumi.Input[str]] = None,
+             metric_type: Optional[pulumi.Input[str]] = None,
+             percentile: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("resource_type", resource_type)
+        _setter("strategy_type", strategy_type)
         if adjustment_multiplier is not None:
-            pulumi.set(__self__, "adjustment_multiplier", adjustment_multiplier)
+            _setter("adjustment_multiplier", adjustment_multiplier)
         if metric_time_window is not None:
-            pulumi.set(__self__, "metric_time_window", metric_time_window)
+            _setter("metric_time_window", metric_time_window)
         if metric_type is not None:
-            pulumi.set(__self__, "metric_type", metric_type)
+            _setter("metric_type", metric_type)
         if percentile is not None:
-            pulumi.set(__self__, "percentile", percentile)
+            _setter("percentile", percentile)
 
     @property
     @pulumi.getter(name="resourceType")
@@ -710,21 +831,46 @@ class MigrationPlanTargetEnvironmentArgs:
         :param pulumi.Input[str] preferred_shape_type: (Updatable) Preferred VM shape type provided by the customer.
         :param pulumi.Input[str] target_compartment_id: (Updatable) Target compartment identifier
         """
-        pulumi.set(__self__, "subnet", subnet)
-        pulumi.set(__self__, "target_environment_type", target_environment_type)
-        pulumi.set(__self__, "vcn", vcn)
+        MigrationPlanTargetEnvironmentArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            subnet=subnet,
+            target_environment_type=target_environment_type,
+            vcn=vcn,
+            availability_domain=availability_domain,
+            dedicated_vm_host=dedicated_vm_host,
+            fault_domain=fault_domain,
+            ms_license=ms_license,
+            preferred_shape_type=preferred_shape_type,
+            target_compartment_id=target_compartment_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             subnet: pulumi.Input[str],
+             target_environment_type: pulumi.Input[str],
+             vcn: pulumi.Input[str],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             dedicated_vm_host: Optional[pulumi.Input[str]] = None,
+             fault_domain: Optional[pulumi.Input[str]] = None,
+             ms_license: Optional[pulumi.Input[str]] = None,
+             preferred_shape_type: Optional[pulumi.Input[str]] = None,
+             target_compartment_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("subnet", subnet)
+        _setter("target_environment_type", target_environment_type)
+        _setter("vcn", vcn)
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if dedicated_vm_host is not None:
-            pulumi.set(__self__, "dedicated_vm_host", dedicated_vm_host)
+            _setter("dedicated_vm_host", dedicated_vm_host)
         if fault_domain is not None:
-            pulumi.set(__self__, "fault_domain", fault_domain)
+            _setter("fault_domain", fault_domain)
         if ms_license is not None:
-            pulumi.set(__self__, "ms_license", ms_license)
+            _setter("ms_license", ms_license)
         if preferred_shape_type is not None:
-            pulumi.set(__self__, "preferred_shape_type", preferred_shape_type)
+            _setter("preferred_shape_type", preferred_shape_type)
         if target_compartment_id is not None:
-            pulumi.set(__self__, "target_compartment_id", target_compartment_id)
+            _setter("target_compartment_id", target_compartment_id)
 
     @property
     @pulumi.getter
@@ -850,12 +996,25 @@ class TargetAssetCompatibilityMessageArgs:
         :param pulumi.Input[str] name: (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         :param pulumi.Input[str] severity: Severity level of the compatibility issue.
         """
+        TargetAssetCompatibilityMessageArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            message=message,
+            name=name,
+            severity=severity,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             message: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             severity: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if message is not None:
-            pulumi.set(__self__, "message", message)
+            _setter("message", message)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if severity is not None:
-            pulumi.set(__self__, "severity", severity)
+            _setter("severity", severity)
 
     @property
     @pulumi.getter
@@ -913,20 +1072,41 @@ class TargetAssetEstimatedCostArgs:
         :param pulumi.Input[float] total_estimation_per_month: Total estimation per month
         :param pulumi.Input[float] total_estimation_per_month_by_subscription: Total estimation per month by subscription.
         """
+        TargetAssetEstimatedCostArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            computes=computes,
+            currency_code=currency_code,
+            os_images=os_images,
+            storages=storages,
+            subscription_id=subscription_id,
+            total_estimation_per_month=total_estimation_per_month,
+            total_estimation_per_month_by_subscription=total_estimation_per_month_by_subscription,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             computes: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetEstimatedCostComputeArgs']]]] = None,
+             currency_code: Optional[pulumi.Input[str]] = None,
+             os_images: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetEstimatedCostOsImageArgs']]]] = None,
+             storages: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetEstimatedCostStorageArgs']]]] = None,
+             subscription_id: Optional[pulumi.Input[str]] = None,
+             total_estimation_per_month: Optional[pulumi.Input[float]] = None,
+             total_estimation_per_month_by_subscription: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if computes is not None:
-            pulumi.set(__self__, "computes", computes)
+            _setter("computes", computes)
         if currency_code is not None:
-            pulumi.set(__self__, "currency_code", currency_code)
+            _setter("currency_code", currency_code)
         if os_images is not None:
-            pulumi.set(__self__, "os_images", os_images)
+            _setter("os_images", os_images)
         if storages is not None:
-            pulumi.set(__self__, "storages", storages)
+            _setter("storages", storages)
         if subscription_id is not None:
-            pulumi.set(__self__, "subscription_id", subscription_id)
+            _setter("subscription_id", subscription_id)
         if total_estimation_per_month is not None:
-            pulumi.set(__self__, "total_estimation_per_month", total_estimation_per_month)
+            _setter("total_estimation_per_month", total_estimation_per_month)
         if total_estimation_per_month_by_subscription is not None:
-            pulumi.set(__self__, "total_estimation_per_month_by_subscription", total_estimation_per_month_by_subscription)
+            _setter("total_estimation_per_month_by_subscription", total_estimation_per_month_by_subscription)
 
     @property
     @pulumi.getter
@@ -1040,28 +1220,57 @@ class TargetAssetEstimatedCostComputeArgs:
         :param pulumi.Input[float] total_per_hour: Total price per hour
         :param pulumi.Input[float] total_per_hour_by_subscription: Total price per hour by subscription
         """
+        TargetAssetEstimatedCostComputeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            gpu_count=gpu_count,
+            gpu_per_hour=gpu_per_hour,
+            gpu_per_hour_by_subscription=gpu_per_hour_by_subscription,
+            memory_amount_gb=memory_amount_gb,
+            memory_gb_per_hour=memory_gb_per_hour,
+            memory_gb_per_hour_by_subscription=memory_gb_per_hour_by_subscription,
+            ocpu_count=ocpu_count,
+            ocpu_per_hour=ocpu_per_hour,
+            ocpu_per_hour_by_subscription=ocpu_per_hour_by_subscription,
+            total_per_hour=total_per_hour,
+            total_per_hour_by_subscription=total_per_hour_by_subscription,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             gpu_count: Optional[pulumi.Input[float]] = None,
+             gpu_per_hour: Optional[pulumi.Input[float]] = None,
+             gpu_per_hour_by_subscription: Optional[pulumi.Input[float]] = None,
+             memory_amount_gb: Optional[pulumi.Input[float]] = None,
+             memory_gb_per_hour: Optional[pulumi.Input[float]] = None,
+             memory_gb_per_hour_by_subscription: Optional[pulumi.Input[float]] = None,
+             ocpu_count: Optional[pulumi.Input[float]] = None,
+             ocpu_per_hour: Optional[pulumi.Input[float]] = None,
+             ocpu_per_hour_by_subscription: Optional[pulumi.Input[float]] = None,
+             total_per_hour: Optional[pulumi.Input[float]] = None,
+             total_per_hour_by_subscription: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if gpu_count is not None:
-            pulumi.set(__self__, "gpu_count", gpu_count)
+            _setter("gpu_count", gpu_count)
         if gpu_per_hour is not None:
-            pulumi.set(__self__, "gpu_per_hour", gpu_per_hour)
+            _setter("gpu_per_hour", gpu_per_hour)
         if gpu_per_hour_by_subscription is not None:
-            pulumi.set(__self__, "gpu_per_hour_by_subscription", gpu_per_hour_by_subscription)
+            _setter("gpu_per_hour_by_subscription", gpu_per_hour_by_subscription)
         if memory_amount_gb is not None:
-            pulumi.set(__self__, "memory_amount_gb", memory_amount_gb)
+            _setter("memory_amount_gb", memory_amount_gb)
         if memory_gb_per_hour is not None:
-            pulumi.set(__self__, "memory_gb_per_hour", memory_gb_per_hour)
+            _setter("memory_gb_per_hour", memory_gb_per_hour)
         if memory_gb_per_hour_by_subscription is not None:
-            pulumi.set(__self__, "memory_gb_per_hour_by_subscription", memory_gb_per_hour_by_subscription)
+            _setter("memory_gb_per_hour_by_subscription", memory_gb_per_hour_by_subscription)
         if ocpu_count is not None:
-            pulumi.set(__self__, "ocpu_count", ocpu_count)
+            _setter("ocpu_count", ocpu_count)
         if ocpu_per_hour is not None:
-            pulumi.set(__self__, "ocpu_per_hour", ocpu_per_hour)
+            _setter("ocpu_per_hour", ocpu_per_hour)
         if ocpu_per_hour_by_subscription is not None:
-            pulumi.set(__self__, "ocpu_per_hour_by_subscription", ocpu_per_hour_by_subscription)
+            _setter("ocpu_per_hour_by_subscription", ocpu_per_hour_by_subscription)
         if total_per_hour is not None:
-            pulumi.set(__self__, "total_per_hour", total_per_hour)
+            _setter("total_per_hour", total_per_hour)
         if total_per_hour_by_subscription is not None:
-            pulumi.set(__self__, "total_per_hour_by_subscription", total_per_hour_by_subscription)
+            _setter("total_per_hour_by_subscription", total_per_hour_by_subscription)
 
     @property
     @pulumi.getter(name="gpuCount")
@@ -1205,10 +1414,21 @@ class TargetAssetEstimatedCostOsImageArgs:
         :param pulumi.Input[float] total_per_hour: Total price per hour
         :param pulumi.Input[float] total_per_hour_by_subscription: Total price per hour by subscription
         """
+        TargetAssetEstimatedCostOsImageArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            total_per_hour=total_per_hour,
+            total_per_hour_by_subscription=total_per_hour_by_subscription,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             total_per_hour: Optional[pulumi.Input[float]] = None,
+             total_per_hour_by_subscription: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if total_per_hour is not None:
-            pulumi.set(__self__, "total_per_hour", total_per_hour)
+            _setter("total_per_hour", total_per_hour)
         if total_per_hour_by_subscription is not None:
-            pulumi.set(__self__, "total_per_hour_by_subscription", total_per_hour_by_subscription)
+            _setter("total_per_hour_by_subscription", total_per_hour_by_subscription)
 
     @property
     @pulumi.getter(name="totalPerHour")
@@ -1246,12 +1466,25 @@ class TargetAssetEstimatedCostStorageArgs:
         :param pulumi.Input[float] total_gb_per_month_by_subscription: Gigabyte storage capacity per month by subscription
         :param pulumi.Input[Sequence[pulumi.Input['TargetAssetEstimatedCostStorageVolumeArgs']]] volumes: Volume estimation
         """
+        TargetAssetEstimatedCostStorageArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            total_gb_per_month=total_gb_per_month,
+            total_gb_per_month_by_subscription=total_gb_per_month_by_subscription,
+            volumes=volumes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             total_gb_per_month: Optional[pulumi.Input[float]] = None,
+             total_gb_per_month_by_subscription: Optional[pulumi.Input[float]] = None,
+             volumes: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetEstimatedCostStorageVolumeArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if total_gb_per_month is not None:
-            pulumi.set(__self__, "total_gb_per_month", total_gb_per_month)
+            _setter("total_gb_per_month", total_gb_per_month)
         if total_gb_per_month_by_subscription is not None:
-            pulumi.set(__self__, "total_gb_per_month_by_subscription", total_gb_per_month_by_subscription)
+            _setter("total_gb_per_month_by_subscription", total_gb_per_month_by_subscription)
         if volumes is not None:
-            pulumi.set(__self__, "volumes", volumes)
+            _setter("volumes", volumes)
 
     @property
     @pulumi.getter(name="totalGbPerMonth")
@@ -1303,14 +1536,29 @@ class TargetAssetEstimatedCostStorageVolumeArgs:
         :param pulumi.Input[float] total_gb_per_month: Gigabyte storage capacity per month.
         :param pulumi.Input[float] total_gb_per_month_by_subscription: Gigabyte storage capacity per month by subscription
         """
+        TargetAssetEstimatedCostStorageVolumeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacity_gb=capacity_gb,
+            description=description,
+            total_gb_per_month=total_gb_per_month,
+            total_gb_per_month_by_subscription=total_gb_per_month_by_subscription,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacity_gb: Optional[pulumi.Input[float]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             total_gb_per_month: Optional[pulumi.Input[float]] = None,
+             total_gb_per_month_by_subscription: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if capacity_gb is not None:
-            pulumi.set(__self__, "capacity_gb", capacity_gb)
+            _setter("capacity_gb", capacity_gb)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if total_gb_per_month is not None:
-            pulumi.set(__self__, "total_gb_per_month", total_gb_per_month)
+            _setter("total_gb_per_month", total_gb_per_month)
         if total_gb_per_month_by_subscription is not None:
-            pulumi.set(__self__, "total_gb_per_month_by_subscription", total_gb_per_month_by_subscription)
+            _setter("total_gb_per_month_by_subscription", total_gb_per_month_by_subscription)
 
     @property
     @pulumi.getter(name="capacityGb")
@@ -1408,48 +1656,97 @@ class TargetAssetMigrationAssetArgs:
         :param pulumi.Input[str] time_updated: The time when the target asset was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] type: (Updatable) The type of action to run when the instance is interrupted for eviction.
         """
+        TargetAssetMigrationAssetArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            depended_on_bies=depended_on_bies,
+            depends_ons=depends_ons,
+            display_name=display_name,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            migration_id=migration_id,
+            notifications=notifications,
+            parent_snapshot=parent_snapshot,
+            replication_compartment_id=replication_compartment_id,
+            replication_schedule_id=replication_schedule_id,
+            snap_shot_bucket_name=snap_shot_bucket_name,
+            snapshots=snapshots,
+            source_asset_data=source_asset_data,
+            source_asset_id=source_asset_id,
+            state=state,
+            tenancy_id=tenancy_id,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             depended_on_bies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             depends_ons: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             migration_id: Optional[pulumi.Input[str]] = None,
+             notifications: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             parent_snapshot: Optional[pulumi.Input[str]] = None,
+             replication_compartment_id: Optional[pulumi.Input[str]] = None,
+             replication_schedule_id: Optional[pulumi.Input[str]] = None,
+             snap_shot_bucket_name: Optional[pulumi.Input[str]] = None,
+             snapshots: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             source_asset_data: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             source_asset_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             tenancy_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if depended_on_bies is not None:
-            pulumi.set(__self__, "depended_on_bies", depended_on_bies)
+            _setter("depended_on_bies", depended_on_bies)
         if depends_ons is not None:
-            pulumi.set(__self__, "depends_ons", depends_ons)
+            _setter("depends_ons", depends_ons)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if migration_id is not None:
-            pulumi.set(__self__, "migration_id", migration_id)
+            _setter("migration_id", migration_id)
         if notifications is not None:
-            pulumi.set(__self__, "notifications", notifications)
+            _setter("notifications", notifications)
         if parent_snapshot is not None:
-            pulumi.set(__self__, "parent_snapshot", parent_snapshot)
+            _setter("parent_snapshot", parent_snapshot)
         if replication_compartment_id is not None:
-            pulumi.set(__self__, "replication_compartment_id", replication_compartment_id)
+            _setter("replication_compartment_id", replication_compartment_id)
         if replication_schedule_id is not None:
-            pulumi.set(__self__, "replication_schedule_id", replication_schedule_id)
+            _setter("replication_schedule_id", replication_schedule_id)
         if snap_shot_bucket_name is not None:
-            pulumi.set(__self__, "snap_shot_bucket_name", snap_shot_bucket_name)
+            _setter("snap_shot_bucket_name", snap_shot_bucket_name)
         if snapshots is not None:
-            pulumi.set(__self__, "snapshots", snapshots)
+            _setter("snapshots", snapshots)
         if source_asset_data is not None:
-            pulumi.set(__self__, "source_asset_data", source_asset_data)
+            _setter("source_asset_data", source_asset_data)
         if source_asset_id is not None:
-            pulumi.set(__self__, "source_asset_id", source_asset_id)
+            _setter("source_asset_id", source_asset_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if tenancy_id is not None:
-            pulumi.set(__self__, "tenancy_id", tenancy_id)
+            _setter("tenancy_id", tenancy_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -1769,42 +2066,85 @@ class TargetAssetRecommendedSpecArgs:
                Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         :param pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecSourceDetailArgs']]] source_details: (Updatable)
         """
+        TargetAssetRecommendedSpecArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agent_configs=agent_configs,
+            availability_domain=availability_domain,
+            capacity_reservation_id=capacity_reservation_id,
+            compartment_id=compartment_id,
+            create_vnic_details=create_vnic_details,
+            dedicated_vm_host_id=dedicated_vm_host_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            instance_options=instance_options,
+            ipxe_script=ipxe_script,
+            is_pv_encryption_in_transit_enabled=is_pv_encryption_in_transit_enabled,
+            preemptible_instance_configs=preemptible_instance_configs,
+            shape=shape,
+            shape_configs=shape_configs,
+            source_details=source_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agent_configs: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecAgentConfigArgs']]]] = None,
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             capacity_reservation_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             create_vnic_details: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecCreateVnicDetailArgs']]]] = None,
+             dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             fault_domain: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hostname_label: Optional[pulumi.Input[str]] = None,
+             instance_options: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecInstanceOptionArgs']]]] = None,
+             ipxe_script: Optional[pulumi.Input[str]] = None,
+             is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
+             preemptible_instance_configs: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecPreemptibleInstanceConfigArgs']]]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             shape_configs: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecShapeConfigArgs']]]] = None,
+             source_details: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecSourceDetailArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if agent_configs is not None:
-            pulumi.set(__self__, "agent_configs", agent_configs)
+            _setter("agent_configs", agent_configs)
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if capacity_reservation_id is not None:
-            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+            _setter("capacity_reservation_id", capacity_reservation_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if create_vnic_details is not None:
-            pulumi.set(__self__, "create_vnic_details", create_vnic_details)
+            _setter("create_vnic_details", create_vnic_details)
         if dedicated_vm_host_id is not None:
-            pulumi.set(__self__, "dedicated_vm_host_id", dedicated_vm_host_id)
+            _setter("dedicated_vm_host_id", dedicated_vm_host_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if fault_domain is not None:
-            pulumi.set(__self__, "fault_domain", fault_domain)
+            _setter("fault_domain", fault_domain)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hostname_label is not None:
-            pulumi.set(__self__, "hostname_label", hostname_label)
+            _setter("hostname_label", hostname_label)
         if instance_options is not None:
-            pulumi.set(__self__, "instance_options", instance_options)
+            _setter("instance_options", instance_options)
         if ipxe_script is not None:
-            pulumi.set(__self__, "ipxe_script", ipxe_script)
+            _setter("ipxe_script", ipxe_script)
         if is_pv_encryption_in_transit_enabled is not None:
-            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+            _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if preemptible_instance_configs is not None:
-            pulumi.set(__self__, "preemptible_instance_configs", preemptible_instance_configs)
+            _setter("preemptible_instance_configs", preemptible_instance_configs)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if shape_configs is not None:
-            pulumi.set(__self__, "shape_configs", shape_configs)
+            _setter("shape_configs", shape_configs)
         if source_details is not None:
-            pulumi.set(__self__, "source_details", source_details)
+            _setter("source_details", source_details)
 
     @property
     @pulumi.getter(name="agentConfigs")
@@ -2074,14 +2414,29 @@ class TargetAssetRecommendedSpecAgentConfigArgs:
                * If `isMonitoringDisabled` is false, all the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         :param pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecAgentConfigPluginsConfigArgs']]] plugins_configs: (Updatable) The configuration of plugins associated with this instance.
         """
+        TargetAssetRecommendedSpecAgentConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            are_all_plugins_disabled=are_all_plugins_disabled,
+            is_management_disabled=is_management_disabled,
+            is_monitoring_disabled=is_monitoring_disabled,
+            plugins_configs=plugins_configs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             are_all_plugins_disabled: Optional[pulumi.Input[bool]] = None,
+             is_management_disabled: Optional[pulumi.Input[bool]] = None,
+             is_monitoring_disabled: Optional[pulumi.Input[bool]] = None,
+             plugins_configs: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecAgentConfigPluginsConfigArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if are_all_plugins_disabled is not None:
-            pulumi.set(__self__, "are_all_plugins_disabled", are_all_plugins_disabled)
+            _setter("are_all_plugins_disabled", are_all_plugins_disabled)
         if is_management_disabled is not None:
-            pulumi.set(__self__, "is_management_disabled", is_management_disabled)
+            _setter("is_management_disabled", is_management_disabled)
         if is_monitoring_disabled is not None:
-            pulumi.set(__self__, "is_monitoring_disabled", is_monitoring_disabled)
+            _setter("is_monitoring_disabled", is_monitoring_disabled)
         if plugins_configs is not None:
-            pulumi.set(__self__, "plugins_configs", plugins_configs)
+            _setter("plugins_configs", plugins_configs)
 
     @property
     @pulumi.getter(name="areAllPluginsDisabled")
@@ -2157,10 +2512,21 @@ class TargetAssetRecommendedSpecAgentConfigPluginsConfigArgs:
                To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         :param pulumi.Input[str] name: (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
+        TargetAssetRecommendedSpecAgentConfigPluginsConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            desired_state=desired_state,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             desired_state: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if desired_state is not None:
-            pulumi.set(__self__, "desired_state", desired_state)
+            _setter("desired_state", desired_state)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="desiredState")
@@ -2240,28 +2606,57 @@ class TargetAssetRecommendedSpecCreateVnicDetailArgs:
                
                Provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
         """
+        TargetAssetRecommendedSpecCreateVnicDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            assign_private_dns_record=assign_private_dns_record,
+            assign_public_ip=assign_public_ip,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            nsg_ids=nsg_ids,
+            private_ip=private_ip,
+            skip_source_dest_check=skip_source_dest_check,
+            subnet_id=subnet_id,
+            vlan_id=vlan_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             assign_private_dns_record: Optional[pulumi.Input[bool]] = None,
+             assign_public_ip: Optional[pulumi.Input[bool]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hostname_label: Optional[pulumi.Input[str]] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             private_ip: Optional[pulumi.Input[str]] = None,
+             skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             vlan_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if assign_private_dns_record is not None:
-            pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
+            _setter("assign_private_dns_record", assign_private_dns_record)
         if assign_public_ip is not None:
-            pulumi.set(__self__, "assign_public_ip", assign_public_ip)
+            _setter("assign_public_ip", assign_public_ip)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hostname_label is not None:
-            pulumi.set(__self__, "hostname_label", hostname_label)
+            _setter("hostname_label", hostname_label)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if private_ip is not None:
-            pulumi.set(__self__, "private_ip", private_ip)
+            _setter("private_ip", private_ip)
         if skip_source_dest_check is not None:
-            pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
+            _setter("skip_source_dest_check", skip_source_dest_check)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if vlan_id is not None:
-            pulumi.set(__self__, "vlan_id", vlan_id)
+            _setter("vlan_id", vlan_id)
 
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
@@ -2427,8 +2822,17 @@ class TargetAssetRecommendedSpecInstanceOptionArgs:
         """
         :param pulumi.Input[bool] are_legacy_imds_endpoints_disabled: (Updatable) Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
         """
+        TargetAssetRecommendedSpecInstanceOptionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            are_legacy_imds_endpoints_disabled=are_legacy_imds_endpoints_disabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             are_legacy_imds_endpoints_disabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if are_legacy_imds_endpoints_disabled is not None:
-            pulumi.set(__self__, "are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
+            _setter("are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
 
     @property
     @pulumi.getter(name="areLegacyImdsEndpointsDisabled")
@@ -2450,8 +2854,17 @@ class TargetAssetRecommendedSpecPreemptibleInstanceConfigArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArgs']]] preemption_actions: (Updatable) The action to run when the preemptible instance is interrupted for eviction.
         """
+        TargetAssetRecommendedSpecPreemptibleInstanceConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            preemption_actions=preemption_actions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             preemption_actions: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if preemption_actions is not None:
-            pulumi.set(__self__, "preemption_actions", preemption_actions)
+            _setter("preemption_actions", preemption_actions)
 
     @property
     @pulumi.getter(name="preemptionActions")
@@ -2475,10 +2888,21 @@ class TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArgs:
         :param pulumi.Input[bool] preserve_boot_volume: (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
         :param pulumi.Input[str] type: (Updatable) The type of action to run when the instance is interrupted for eviction.
         """
+        TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            preserve_boot_volume=preserve_boot_volume,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if preserve_boot_volume is not None:
-            pulumi.set(__self__, "preserve_boot_volume", preserve_boot_volume)
+            _setter("preserve_boot_volume", preserve_boot_volume)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="preserveBootVolume")
@@ -2518,12 +2942,25 @@ class TargetAssetRecommendedSpecShapeConfigArgs:
         :param pulumi.Input[float] memory_in_gbs: (Updatable) The total amount of memory in gigabytes that is available to the instance.
         :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs available to the instance.
         """
+        TargetAssetRecommendedSpecShapeConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            baseline_ocpu_utilization=baseline_ocpu_utilization,
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             baseline_ocpu_utilization: Optional[pulumi.Input[str]] = None,
+             memory_in_gbs: Optional[pulumi.Input[float]] = None,
+             ocpus: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if baseline_ocpu_utilization is not None:
-            pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+            _setter("baseline_ocpu_utilization", baseline_ocpu_utilization)
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="baselineOcpuUtilization")
@@ -2587,18 +3024,37 @@ class TargetAssetRecommendedSpecSourceDetailArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        TargetAssetRecommendedSpecSourceDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            boot_volume_id=boot_volume_id,
+            boot_volume_size_in_gbs=boot_volume_size_in_gbs,
+            boot_volume_vpus_per_gb=boot_volume_vpus_per_gb,
+            image_id=image_id,
+            kms_key_id=kms_key_id,
+            source_type=source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             boot_volume_id: Optional[pulumi.Input[str]] = None,
+             boot_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
+             boot_volume_vpus_per_gb: Optional[pulumi.Input[str]] = None,
+             image_id: Optional[pulumi.Input[str]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             source_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if boot_volume_id is not None:
-            pulumi.set(__self__, "boot_volume_id", boot_volume_id)
+            _setter("boot_volume_id", boot_volume_id)
         if boot_volume_size_in_gbs is not None:
-            pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
+            _setter("boot_volume_size_in_gbs", boot_volume_size_in_gbs)
         if boot_volume_vpus_per_gb is not None:
-            pulumi.set(__self__, "boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
+            _setter("boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
         if image_id is not None:
-            pulumi.set(__self__, "image_id", image_id)
+            _setter("image_id", image_id)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if source_type is not None:
-            pulumi.set(__self__, "source_type", source_type)
+            _setter("source_type", source_type)
 
     @property
     @pulumi.getter(name="bootVolumeId")
@@ -2744,42 +3200,85 @@ class TargetAssetTestSpecArgs:
                Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         :param pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecSourceDetailArgs']]] source_details: (Updatable)
         """
+        TargetAssetTestSpecArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agent_configs=agent_configs,
+            availability_domain=availability_domain,
+            capacity_reservation_id=capacity_reservation_id,
+            compartment_id=compartment_id,
+            create_vnic_details=create_vnic_details,
+            dedicated_vm_host_id=dedicated_vm_host_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            instance_options=instance_options,
+            ipxe_script=ipxe_script,
+            is_pv_encryption_in_transit_enabled=is_pv_encryption_in_transit_enabled,
+            preemptible_instance_configs=preemptible_instance_configs,
+            shape=shape,
+            shape_configs=shape_configs,
+            source_details=source_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agent_configs: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecAgentConfigArgs']]]] = None,
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             capacity_reservation_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             create_vnic_details: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecCreateVnicDetailArgs']]]] = None,
+             dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             fault_domain: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hostname_label: Optional[pulumi.Input[str]] = None,
+             instance_options: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecInstanceOptionArgs']]]] = None,
+             ipxe_script: Optional[pulumi.Input[str]] = None,
+             is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
+             preemptible_instance_configs: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecPreemptibleInstanceConfigArgs']]]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             shape_configs: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecShapeConfigArgs']]]] = None,
+             source_details: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecSourceDetailArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if agent_configs is not None:
-            pulumi.set(__self__, "agent_configs", agent_configs)
+            _setter("agent_configs", agent_configs)
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if capacity_reservation_id is not None:
-            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+            _setter("capacity_reservation_id", capacity_reservation_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if create_vnic_details is not None:
-            pulumi.set(__self__, "create_vnic_details", create_vnic_details)
+            _setter("create_vnic_details", create_vnic_details)
         if dedicated_vm_host_id is not None:
-            pulumi.set(__self__, "dedicated_vm_host_id", dedicated_vm_host_id)
+            _setter("dedicated_vm_host_id", dedicated_vm_host_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if fault_domain is not None:
-            pulumi.set(__self__, "fault_domain", fault_domain)
+            _setter("fault_domain", fault_domain)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hostname_label is not None:
-            pulumi.set(__self__, "hostname_label", hostname_label)
+            _setter("hostname_label", hostname_label)
         if instance_options is not None:
-            pulumi.set(__self__, "instance_options", instance_options)
+            _setter("instance_options", instance_options)
         if ipxe_script is not None:
-            pulumi.set(__self__, "ipxe_script", ipxe_script)
+            _setter("ipxe_script", ipxe_script)
         if is_pv_encryption_in_transit_enabled is not None:
-            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+            _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if preemptible_instance_configs is not None:
-            pulumi.set(__self__, "preemptible_instance_configs", preemptible_instance_configs)
+            _setter("preemptible_instance_configs", preemptible_instance_configs)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if shape_configs is not None:
-            pulumi.set(__self__, "shape_configs", shape_configs)
+            _setter("shape_configs", shape_configs)
         if source_details is not None:
-            pulumi.set(__self__, "source_details", source_details)
+            _setter("source_details", source_details)
 
     @property
     @pulumi.getter(name="agentConfigs")
@@ -3049,14 +3548,29 @@ class TargetAssetTestSpecAgentConfigArgs:
                * If `isMonitoringDisabled` is false, all the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         :param pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecAgentConfigPluginsConfigArgs']]] plugins_configs: (Updatable) The configuration of plugins associated with this instance.
         """
+        TargetAssetTestSpecAgentConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            are_all_plugins_disabled=are_all_plugins_disabled,
+            is_management_disabled=is_management_disabled,
+            is_monitoring_disabled=is_monitoring_disabled,
+            plugins_configs=plugins_configs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             are_all_plugins_disabled: Optional[pulumi.Input[bool]] = None,
+             is_management_disabled: Optional[pulumi.Input[bool]] = None,
+             is_monitoring_disabled: Optional[pulumi.Input[bool]] = None,
+             plugins_configs: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecAgentConfigPluginsConfigArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if are_all_plugins_disabled is not None:
-            pulumi.set(__self__, "are_all_plugins_disabled", are_all_plugins_disabled)
+            _setter("are_all_plugins_disabled", are_all_plugins_disabled)
         if is_management_disabled is not None:
-            pulumi.set(__self__, "is_management_disabled", is_management_disabled)
+            _setter("is_management_disabled", is_management_disabled)
         if is_monitoring_disabled is not None:
-            pulumi.set(__self__, "is_monitoring_disabled", is_monitoring_disabled)
+            _setter("is_monitoring_disabled", is_monitoring_disabled)
         if plugins_configs is not None:
-            pulumi.set(__self__, "plugins_configs", plugins_configs)
+            _setter("plugins_configs", plugins_configs)
 
     @property
     @pulumi.getter(name="areAllPluginsDisabled")
@@ -3132,10 +3646,21 @@ class TargetAssetTestSpecAgentConfigPluginsConfigArgs:
                To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         :param pulumi.Input[str] name: (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
+        TargetAssetTestSpecAgentConfigPluginsConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            desired_state=desired_state,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             desired_state: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if desired_state is not None:
-            pulumi.set(__self__, "desired_state", desired_state)
+            _setter("desired_state", desired_state)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="desiredState")
@@ -3215,28 +3740,57 @@ class TargetAssetTestSpecCreateVnicDetailArgs:
                
                Provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
         """
+        TargetAssetTestSpecCreateVnicDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            assign_private_dns_record=assign_private_dns_record,
+            assign_public_ip=assign_public_ip,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            nsg_ids=nsg_ids,
+            private_ip=private_ip,
+            skip_source_dest_check=skip_source_dest_check,
+            subnet_id=subnet_id,
+            vlan_id=vlan_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             assign_private_dns_record: Optional[pulumi.Input[bool]] = None,
+             assign_public_ip: Optional[pulumi.Input[bool]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hostname_label: Optional[pulumi.Input[str]] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             private_ip: Optional[pulumi.Input[str]] = None,
+             skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             vlan_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if assign_private_dns_record is not None:
-            pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
+            _setter("assign_private_dns_record", assign_private_dns_record)
         if assign_public_ip is not None:
-            pulumi.set(__self__, "assign_public_ip", assign_public_ip)
+            _setter("assign_public_ip", assign_public_ip)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hostname_label is not None:
-            pulumi.set(__self__, "hostname_label", hostname_label)
+            _setter("hostname_label", hostname_label)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if private_ip is not None:
-            pulumi.set(__self__, "private_ip", private_ip)
+            _setter("private_ip", private_ip)
         if skip_source_dest_check is not None:
-            pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
+            _setter("skip_source_dest_check", skip_source_dest_check)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if vlan_id is not None:
-            pulumi.set(__self__, "vlan_id", vlan_id)
+            _setter("vlan_id", vlan_id)
 
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
@@ -3402,8 +3956,17 @@ class TargetAssetTestSpecInstanceOptionArgs:
         """
         :param pulumi.Input[bool] are_legacy_imds_endpoints_disabled: (Updatable) Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
         """
+        TargetAssetTestSpecInstanceOptionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            are_legacy_imds_endpoints_disabled=are_legacy_imds_endpoints_disabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             are_legacy_imds_endpoints_disabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if are_legacy_imds_endpoints_disabled is not None:
-            pulumi.set(__self__, "are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
+            _setter("are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
 
     @property
     @pulumi.getter(name="areLegacyImdsEndpointsDisabled")
@@ -3425,8 +3988,17 @@ class TargetAssetTestSpecPreemptibleInstanceConfigArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArgs']]] preemption_actions: (Updatable) The action to run when the preemptible instance is interrupted for eviction.
         """
+        TargetAssetTestSpecPreemptibleInstanceConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            preemption_actions=preemption_actions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             preemption_actions: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if preemption_actions is not None:
-            pulumi.set(__self__, "preemption_actions", preemption_actions)
+            _setter("preemption_actions", preemption_actions)
 
     @property
     @pulumi.getter(name="preemptionActions")
@@ -3450,10 +4022,21 @@ class TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArgs:
         :param pulumi.Input[bool] preserve_boot_volume: (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
         :param pulumi.Input[str] type: (Updatable) The type of action to run when the instance is interrupted for eviction.
         """
+        TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            preserve_boot_volume=preserve_boot_volume,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if preserve_boot_volume is not None:
-            pulumi.set(__self__, "preserve_boot_volume", preserve_boot_volume)
+            _setter("preserve_boot_volume", preserve_boot_volume)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="preserveBootVolume")
@@ -3493,12 +4076,25 @@ class TargetAssetTestSpecShapeConfigArgs:
         :param pulumi.Input[float] memory_in_gbs: (Updatable) The total amount of memory in gigabytes that is available to the instance.
         :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs available to the instance.
         """
+        TargetAssetTestSpecShapeConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            baseline_ocpu_utilization=baseline_ocpu_utilization,
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             baseline_ocpu_utilization: Optional[pulumi.Input[str]] = None,
+             memory_in_gbs: Optional[pulumi.Input[float]] = None,
+             ocpus: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if baseline_ocpu_utilization is not None:
-            pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+            _setter("baseline_ocpu_utilization", baseline_ocpu_utilization)
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="baselineOcpuUtilization")
@@ -3562,18 +4158,37 @@ class TargetAssetTestSpecSourceDetailArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        TargetAssetTestSpecSourceDetailArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            boot_volume_id=boot_volume_id,
+            boot_volume_size_in_gbs=boot_volume_size_in_gbs,
+            boot_volume_vpus_per_gb=boot_volume_vpus_per_gb,
+            image_id=image_id,
+            kms_key_id=kms_key_id,
+            source_type=source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             boot_volume_id: Optional[pulumi.Input[str]] = None,
+             boot_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
+             boot_volume_vpus_per_gb: Optional[pulumi.Input[str]] = None,
+             image_id: Optional[pulumi.Input[str]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             source_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if boot_volume_id is not None:
-            pulumi.set(__self__, "boot_volume_id", boot_volume_id)
+            _setter("boot_volume_id", boot_volume_id)
         if boot_volume_size_in_gbs is not None:
-            pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
+            _setter("boot_volume_size_in_gbs", boot_volume_size_in_gbs)
         if boot_volume_vpus_per_gb is not None:
-            pulumi.set(__self__, "boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
+            _setter("boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
         if image_id is not None:
-            pulumi.set(__self__, "image_id", image_id)
+            _setter("image_id", image_id)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if source_type is not None:
-            pulumi.set(__self__, "source_type", source_type)
+            _setter("source_type", source_type)
 
     @property
     @pulumi.getter(name="bootVolumeId")
@@ -3719,42 +4334,85 @@ class TargetAssetUserSpecArgs:
                Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
         :param pulumi.Input['TargetAssetUserSpecSourceDetailsArgs'] source_details: (Updatable)
         """
+        TargetAssetUserSpecArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agent_config=agent_config,
+            availability_domain=availability_domain,
+            capacity_reservation_id=capacity_reservation_id,
+            compartment_id=compartment_id,
+            create_vnic_details=create_vnic_details,
+            dedicated_vm_host_id=dedicated_vm_host_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            instance_options=instance_options,
+            ipxe_script=ipxe_script,
+            is_pv_encryption_in_transit_enabled=is_pv_encryption_in_transit_enabled,
+            preemptible_instance_config=preemptible_instance_config,
+            shape=shape,
+            shape_config=shape_config,
+            source_details=source_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agent_config: Optional[pulumi.Input['TargetAssetUserSpecAgentConfigArgs']] = None,
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             capacity_reservation_id: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             create_vnic_details: Optional[pulumi.Input['TargetAssetUserSpecCreateVnicDetailsArgs']] = None,
+             dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             fault_domain: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hostname_label: Optional[pulumi.Input[str]] = None,
+             instance_options: Optional[pulumi.Input['TargetAssetUserSpecInstanceOptionsArgs']] = None,
+             ipxe_script: Optional[pulumi.Input[str]] = None,
+             is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
+             preemptible_instance_config: Optional[pulumi.Input['TargetAssetUserSpecPreemptibleInstanceConfigArgs']] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             shape_config: Optional[pulumi.Input['TargetAssetUserSpecShapeConfigArgs']] = None,
+             source_details: Optional[pulumi.Input['TargetAssetUserSpecSourceDetailsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if agent_config is not None:
-            pulumi.set(__self__, "agent_config", agent_config)
+            _setter("agent_config", agent_config)
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if capacity_reservation_id is not None:
-            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+            _setter("capacity_reservation_id", capacity_reservation_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if create_vnic_details is not None:
-            pulumi.set(__self__, "create_vnic_details", create_vnic_details)
+            _setter("create_vnic_details", create_vnic_details)
         if dedicated_vm_host_id is not None:
-            pulumi.set(__self__, "dedicated_vm_host_id", dedicated_vm_host_id)
+            _setter("dedicated_vm_host_id", dedicated_vm_host_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if fault_domain is not None:
-            pulumi.set(__self__, "fault_domain", fault_domain)
+            _setter("fault_domain", fault_domain)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hostname_label is not None:
-            pulumi.set(__self__, "hostname_label", hostname_label)
+            _setter("hostname_label", hostname_label)
         if instance_options is not None:
-            pulumi.set(__self__, "instance_options", instance_options)
+            _setter("instance_options", instance_options)
         if ipxe_script is not None:
-            pulumi.set(__self__, "ipxe_script", ipxe_script)
+            _setter("ipxe_script", ipxe_script)
         if is_pv_encryption_in_transit_enabled is not None:
-            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+            _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if preemptible_instance_config is not None:
-            pulumi.set(__self__, "preemptible_instance_config", preemptible_instance_config)
+            _setter("preemptible_instance_config", preemptible_instance_config)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if shape_config is not None:
-            pulumi.set(__self__, "shape_config", shape_config)
+            _setter("shape_config", shape_config)
         if source_details is not None:
-            pulumi.set(__self__, "source_details", source_details)
+            _setter("source_details", source_details)
 
     @property
     @pulumi.getter(name="agentConfig")
@@ -4024,14 +4682,29 @@ class TargetAssetUserSpecAgentConfigArgs:
                * If `isMonitoringDisabled` is false, all the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
         :param pulumi.Input[Sequence[pulumi.Input['TargetAssetUserSpecAgentConfigPluginsConfigArgs']]] plugins_configs: (Updatable) The configuration of plugins associated with this instance.
         """
+        TargetAssetUserSpecAgentConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            are_all_plugins_disabled=are_all_plugins_disabled,
+            is_management_disabled=is_management_disabled,
+            is_monitoring_disabled=is_monitoring_disabled,
+            plugins_configs=plugins_configs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             are_all_plugins_disabled: Optional[pulumi.Input[bool]] = None,
+             is_management_disabled: Optional[pulumi.Input[bool]] = None,
+             is_monitoring_disabled: Optional[pulumi.Input[bool]] = None,
+             plugins_configs: Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetUserSpecAgentConfigPluginsConfigArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if are_all_plugins_disabled is not None:
-            pulumi.set(__self__, "are_all_plugins_disabled", are_all_plugins_disabled)
+            _setter("are_all_plugins_disabled", are_all_plugins_disabled)
         if is_management_disabled is not None:
-            pulumi.set(__self__, "is_management_disabled", is_management_disabled)
+            _setter("is_management_disabled", is_management_disabled)
         if is_monitoring_disabled is not None:
-            pulumi.set(__self__, "is_monitoring_disabled", is_monitoring_disabled)
+            _setter("is_monitoring_disabled", is_monitoring_disabled)
         if plugins_configs is not None:
-            pulumi.set(__self__, "plugins_configs", plugins_configs)
+            _setter("plugins_configs", plugins_configs)
 
     @property
     @pulumi.getter(name="areAllPluginsDisabled")
@@ -4107,8 +4780,19 @@ class TargetAssetUserSpecAgentConfigPluginsConfigArgs:
                To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         :param pulumi.Input[str] name: (Updatable) The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
-        pulumi.set(__self__, "desired_state", desired_state)
-        pulumi.set(__self__, "name", name)
+        TargetAssetUserSpecAgentConfigPluginsConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            desired_state=desired_state,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             desired_state: pulumi.Input[str],
+             name: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("desired_state", desired_state)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="desiredState")
@@ -4188,28 +4872,57 @@ class TargetAssetUserSpecCreateVnicDetailsArgs:
                
                Provide a `vlanId` instead of a `subnetId`. If you provide both `vlanId` and `subnetId`, the request fails.
         """
+        TargetAssetUserSpecCreateVnicDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            assign_private_dns_record=assign_private_dns_record,
+            assign_public_ip=assign_public_ip,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            nsg_ids=nsg_ids,
+            private_ip=private_ip,
+            skip_source_dest_check=skip_source_dest_check,
+            subnet_id=subnet_id,
+            vlan_id=vlan_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             assign_private_dns_record: Optional[pulumi.Input[bool]] = None,
+             assign_public_ip: Optional[pulumi.Input[bool]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hostname_label: Optional[pulumi.Input[str]] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             private_ip: Optional[pulumi.Input[str]] = None,
+             skip_source_dest_check: Optional[pulumi.Input[bool]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             vlan_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if assign_private_dns_record is not None:
-            pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
+            _setter("assign_private_dns_record", assign_private_dns_record)
         if assign_public_ip is not None:
-            pulumi.set(__self__, "assign_public_ip", assign_public_ip)
+            _setter("assign_public_ip", assign_public_ip)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hostname_label is not None:
-            pulumi.set(__self__, "hostname_label", hostname_label)
+            _setter("hostname_label", hostname_label)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if private_ip is not None:
-            pulumi.set(__self__, "private_ip", private_ip)
+            _setter("private_ip", private_ip)
         if skip_source_dest_check is not None:
-            pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
+            _setter("skip_source_dest_check", skip_source_dest_check)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if vlan_id is not None:
-            pulumi.set(__self__, "vlan_id", vlan_id)
+            _setter("vlan_id", vlan_id)
 
     @property
     @pulumi.getter(name="assignPrivateDnsRecord")
@@ -4375,8 +5088,17 @@ class TargetAssetUserSpecInstanceOptionsArgs:
         """
         :param pulumi.Input[bool] are_legacy_imds_endpoints_disabled: (Updatable) Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
         """
+        TargetAssetUserSpecInstanceOptionsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            are_legacy_imds_endpoints_disabled=are_legacy_imds_endpoints_disabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             are_legacy_imds_endpoints_disabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if are_legacy_imds_endpoints_disabled is not None:
-            pulumi.set(__self__, "are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
+            _setter("are_legacy_imds_endpoints_disabled", are_legacy_imds_endpoints_disabled)
 
     @property
     @pulumi.getter(name="areLegacyImdsEndpointsDisabled")
@@ -4398,7 +5120,16 @@ class TargetAssetUserSpecPreemptibleInstanceConfigArgs:
         """
         :param pulumi.Input['TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs'] preemption_action: (Updatable) The action to run when the preemptible instance is interrupted for eviction.
         """
-        pulumi.set(__self__, "preemption_action", preemption_action)
+        TargetAssetUserSpecPreemptibleInstanceConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            preemption_action=preemption_action,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             preemption_action: pulumi.Input['TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("preemption_action", preemption_action)
 
     @property
     @pulumi.getter(name="preemptionAction")
@@ -4422,9 +5153,20 @@ class TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs:
         :param pulumi.Input[str] type: (Updatable) The type of action to run when the instance is interrupted for eviction.
         :param pulumi.Input[bool] preserve_boot_volume: (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
         """
-        pulumi.set(__self__, "type", type)
+        TargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            preserve_boot_volume=preserve_boot_volume,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: pulumi.Input[str],
+             preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if preserve_boot_volume is not None:
-            pulumi.set(__self__, "preserve_boot_volume", preserve_boot_volume)
+            _setter("preserve_boot_volume", preserve_boot_volume)
 
     @property
     @pulumi.getter
@@ -4464,12 +5206,25 @@ class TargetAssetUserSpecShapeConfigArgs:
         :param pulumi.Input[float] memory_in_gbs: (Updatable) The total amount of memory in gigabytes that is available to the instance.
         :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs available to the instance.
         """
+        TargetAssetUserSpecShapeConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            baseline_ocpu_utilization=baseline_ocpu_utilization,
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             baseline_ocpu_utilization: Optional[pulumi.Input[str]] = None,
+             memory_in_gbs: Optional[pulumi.Input[float]] = None,
+             ocpus: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if baseline_ocpu_utilization is not None:
-            pulumi.set(__self__, "baseline_ocpu_utilization", baseline_ocpu_utilization)
+            _setter("baseline_ocpu_utilization", baseline_ocpu_utilization)
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="baselineOcpuUtilization")
@@ -4533,17 +5288,36 @@ class TargetAssetUserSpecSourceDetailsArgs:
         :param pulumi.Input[str] image_id: (Updatable) The OCID of the image used to boot the instance.
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the key management key to assign as the master encryption key for the boot volume.
         """
-        pulumi.set(__self__, "source_type", source_type)
+        TargetAssetUserSpecSourceDetailsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            source_type=source_type,
+            boot_volume_id=boot_volume_id,
+            boot_volume_size_in_gbs=boot_volume_size_in_gbs,
+            boot_volume_vpus_per_gb=boot_volume_vpus_per_gb,
+            image_id=image_id,
+            kms_key_id=kms_key_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             source_type: pulumi.Input[str],
+             boot_volume_id: Optional[pulumi.Input[str]] = None,
+             boot_volume_size_in_gbs: Optional[pulumi.Input[str]] = None,
+             boot_volume_vpus_per_gb: Optional[pulumi.Input[str]] = None,
+             image_id: Optional[pulumi.Input[str]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("source_type", source_type)
         if boot_volume_id is not None:
-            pulumi.set(__self__, "boot_volume_id", boot_volume_id)
+            _setter("boot_volume_id", boot_volume_id)
         if boot_volume_size_in_gbs is not None:
-            pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
+            _setter("boot_volume_size_in_gbs", boot_volume_size_in_gbs)
         if boot_volume_vpus_per_gb is not None:
-            pulumi.set(__self__, "boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
+            _setter("boot_volume_vpus_per_gb", boot_volume_vpus_per_gb)
         if image_id is not None:
-            pulumi.set(__self__, "image_id", image_id)
+            _setter("image_id", image_id)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter(name="sourceType")
@@ -4630,10 +5404,23 @@ class GetMigrationAssetsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMigrationAssetsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4669,10 +5456,23 @@ class GetMigrationPlanAvailableShapesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMigrationPlanAvailableShapesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4708,10 +5508,23 @@ class GetMigrationPlansFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMigrationPlansFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4747,10 +5560,23 @@ class GetMigrationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMigrationsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4786,10 +5612,23 @@ class GetReplicationSchedulesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetReplicationSchedulesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4828,10 +5667,23 @@ class GetTargetAssetsFilterArgs:
         """
         :param str name: The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetTargetAssetsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

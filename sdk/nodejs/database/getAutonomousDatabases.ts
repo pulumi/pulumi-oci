@@ -27,6 +27,8 @@ import * as utilities from "../utilities";
  *     isDataGuardEnabled: _var.autonomous_database_is_data_guard_enabled,
  *     isFreeTier: _var.autonomous_database_is_free_tier,
  *     isRefreshableClone: _var.autonomous_database_is_refreshable_clone,
+ *     isResourcePoolLeader: _var.autonomous_database_is_resource_pool_leader,
+ *     resourcePoolLeaderId: oci_database_resource_pool_leader.test_resource_pool_leader.id,
  *     state: _var.autonomous_database_state,
  * });
  * ```
@@ -45,6 +47,8 @@ export function getAutonomousDatabases(args: GetAutonomousDatabasesArgs, opts?: 
         "isDataGuardEnabled": args.isDataGuardEnabled,
         "isFreeTier": args.isFreeTier,
         "isRefreshableClone": args.isRefreshableClone,
+        "isResourcePoolLeader": args.isResourcePoolLeader,
+        "resourcePoolLeaderId": args.resourcePoolLeaderId,
         "state": args.state,
     }, opts);
 }
@@ -90,6 +94,14 @@ export interface GetAutonomousDatabasesArgs {
      * Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
      */
     isRefreshableClone?: boolean;
+    /**
+     * Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
+     */
+    isResourcePoolLeader?: boolean;
+    /**
+     * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+     */
+    resourcePoolLeaderId?: string;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
@@ -149,6 +161,11 @@ export interface GetAutonomousDatabasesResult {
      * Indicates if the Autonomous Database is a refreshable clone.
      */
     readonly isRefreshableClone?: boolean;
+    readonly isResourcePoolLeader?: boolean;
+    /**
+     * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    readonly resourcePoolLeaderId?: string;
     /**
      * The current state of the Autonomous Database.
      */
@@ -175,6 +192,8 @@ export interface GetAutonomousDatabasesResult {
  *     isDataGuardEnabled: _var.autonomous_database_is_data_guard_enabled,
  *     isFreeTier: _var.autonomous_database_is_free_tier,
  *     isRefreshableClone: _var.autonomous_database_is_refreshable_clone,
+ *     isResourcePoolLeader: _var.autonomous_database_is_resource_pool_leader,
+ *     resourcePoolLeaderId: oci_database_resource_pool_leader.test_resource_pool_leader.id,
  *     state: _var.autonomous_database_state,
  * });
  * ```
@@ -224,6 +243,14 @@ export interface GetAutonomousDatabasesOutputArgs {
      * Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
      */
     isRefreshableClone?: pulumi.Input<boolean>;
+    /**
+     * Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
+     */
+    isResourcePoolLeader?: pulumi.Input<boolean>;
+    /**
+     * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
+     */
+    resourcePoolLeaderId?: pulumi.Input<string>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */

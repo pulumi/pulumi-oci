@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -342,57 +342,130 @@ class DomainsAuthenticationFactorSettingArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "authentication_factor_setting_id", authentication_factor_setting_id)
-        pulumi.set(__self__, "bypass_code_enabled", bypass_code_enabled)
-        pulumi.set(__self__, "bypass_code_settings", bypass_code_settings)
-        pulumi.set(__self__, "client_app_settings", client_app_settings)
-        pulumi.set(__self__, "compliance_policies", compliance_policies)
-        pulumi.set(__self__, "endpoint_restrictions", endpoint_restrictions)
-        pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
-        pulumi.set(__self__, "mfa_enrollment_type", mfa_enrollment_type)
-        pulumi.set(__self__, "notification_settings", notification_settings)
-        pulumi.set(__self__, "push_enabled", push_enabled)
-        pulumi.set(__self__, "schemas", schemas)
-        pulumi.set(__self__, "security_questions_enabled", security_questions_enabled)
-        pulumi.set(__self__, "sms_enabled", sms_enabled)
-        pulumi.set(__self__, "totp_enabled", totp_enabled)
-        pulumi.set(__self__, "totp_settings", totp_settings)
+        DomainsAuthenticationFactorSettingArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            authentication_factor_setting_id=authentication_factor_setting_id,
+            bypass_code_enabled=bypass_code_enabled,
+            bypass_code_settings=bypass_code_settings,
+            client_app_settings=client_app_settings,
+            compliance_policies=compliance_policies,
+            endpoint_restrictions=endpoint_restrictions,
+            idcs_endpoint=idcs_endpoint,
+            mfa_enrollment_type=mfa_enrollment_type,
+            notification_settings=notification_settings,
+            push_enabled=push_enabled,
+            schemas=schemas,
+            security_questions_enabled=security_questions_enabled,
+            sms_enabled=sms_enabled,
+            totp_enabled=totp_enabled,
+            totp_settings=totp_settings,
+            attribute_sets=attribute_sets,
+            attributes=attributes,
+            authorization=authorization,
+            auto_enroll_email_factor_disabled=auto_enroll_email_factor_disabled,
+            email_enabled=email_enabled,
+            email_settings=email_settings,
+            fido_authenticator_enabled=fido_authenticator_enabled,
+            hide_backup_factor_enabled=hide_backup_factor_enabled,
+            identity_store_settings=identity_store_settings,
+            ocid=ocid,
+            phone_call_enabled=phone_call_enabled,
+            resource_type_schema_version=resource_type_schema_version,
+            tags=tags,
+            third_party_factor=third_party_factor,
+            urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings=urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings,
+            urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings=urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings,
+            user_enrollment_disabled_factors=user_enrollment_disabled_factors,
+            yubico_otp_enabled=yubico_otp_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             authentication_factor_setting_id: pulumi.Input[str],
+             bypass_code_enabled: pulumi.Input[bool],
+             bypass_code_settings: pulumi.Input['DomainsAuthenticationFactorSettingBypassCodeSettingsArgs'],
+             client_app_settings: pulumi.Input['DomainsAuthenticationFactorSettingClientAppSettingsArgs'],
+             compliance_policies: pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingCompliancePolicyArgs']]],
+             endpoint_restrictions: pulumi.Input['DomainsAuthenticationFactorSettingEndpointRestrictionsArgs'],
+             idcs_endpoint: pulumi.Input[str],
+             mfa_enrollment_type: pulumi.Input[str],
+             notification_settings: pulumi.Input['DomainsAuthenticationFactorSettingNotificationSettingsArgs'],
+             push_enabled: pulumi.Input[bool],
+             schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
+             security_questions_enabled: pulumi.Input[bool],
+             sms_enabled: pulumi.Input[bool],
+             totp_enabled: pulumi.Input[bool],
+             totp_settings: pulumi.Input['DomainsAuthenticationFactorSettingTotpSettingsArgs'],
+             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             attributes: Optional[pulumi.Input[str]] = None,
+             authorization: Optional[pulumi.Input[str]] = None,
+             auto_enroll_email_factor_disabled: Optional[pulumi.Input[bool]] = None,
+             email_enabled: Optional[pulumi.Input[bool]] = None,
+             email_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingEmailSettingsArgs']] = None,
+             fido_authenticator_enabled: Optional[pulumi.Input[bool]] = None,
+             hide_backup_factor_enabled: Optional[pulumi.Input[bool]] = None,
+             identity_store_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs']] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             phone_call_enabled: Optional[pulumi.Input[bool]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingTagArgs']]]] = None,
+             third_party_factor: Optional[pulumi.Input['DomainsAuthenticationFactorSettingThirdPartyFactorArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs']] = None,
+             user_enrollment_disabled_factors: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             yubico_otp_enabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("authentication_factor_setting_id", authentication_factor_setting_id)
+        _setter("bypass_code_enabled", bypass_code_enabled)
+        _setter("bypass_code_settings", bypass_code_settings)
+        _setter("client_app_settings", client_app_settings)
+        _setter("compliance_policies", compliance_policies)
+        _setter("endpoint_restrictions", endpoint_restrictions)
+        _setter("idcs_endpoint", idcs_endpoint)
+        _setter("mfa_enrollment_type", mfa_enrollment_type)
+        _setter("notification_settings", notification_settings)
+        _setter("push_enabled", push_enabled)
+        _setter("schemas", schemas)
+        _setter("security_questions_enabled", security_questions_enabled)
+        _setter("sms_enabled", sms_enabled)
+        _setter("totp_enabled", totp_enabled)
+        _setter("totp_settings", totp_settings)
         if attribute_sets is not None:
-            pulumi.set(__self__, "attribute_sets", attribute_sets)
+            _setter("attribute_sets", attribute_sets)
         if attributes is not None:
-            pulumi.set(__self__, "attributes", attributes)
+            _setter("attributes", attributes)
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if auto_enroll_email_factor_disabled is not None:
-            pulumi.set(__self__, "auto_enroll_email_factor_disabled", auto_enroll_email_factor_disabled)
+            _setter("auto_enroll_email_factor_disabled", auto_enroll_email_factor_disabled)
         if email_enabled is not None:
-            pulumi.set(__self__, "email_enabled", email_enabled)
+            _setter("email_enabled", email_enabled)
         if email_settings is not None:
-            pulumi.set(__self__, "email_settings", email_settings)
+            _setter("email_settings", email_settings)
         if fido_authenticator_enabled is not None:
-            pulumi.set(__self__, "fido_authenticator_enabled", fido_authenticator_enabled)
+            _setter("fido_authenticator_enabled", fido_authenticator_enabled)
         if hide_backup_factor_enabled is not None:
-            pulumi.set(__self__, "hide_backup_factor_enabled", hide_backup_factor_enabled)
+            _setter("hide_backup_factor_enabled", hide_backup_factor_enabled)
         if identity_store_settings is not None:
-            pulumi.set(__self__, "identity_store_settings", identity_store_settings)
+            _setter("identity_store_settings", identity_store_settings)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if phone_call_enabled is not None:
-            pulumi.set(__self__, "phone_call_enabled", phone_call_enabled)
+            _setter("phone_call_enabled", phone_call_enabled)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if third_party_factor is not None:
-            pulumi.set(__self__, "third_party_factor", third_party_factor)
+            _setter("third_party_factor", third_party_factor)
         if urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings", urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings)
+            _setter("urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings", urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings)
         if urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings", urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings)
+            _setter("urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings", urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings)
         if user_enrollment_disabled_factors is not None:
-            pulumi.set(__self__, "user_enrollment_disabled_factors", user_enrollment_disabled_factors)
+            _setter("user_enrollment_disabled_factors", user_enrollment_disabled_factors)
         if yubico_otp_enabled is not None:
-            pulumi.set(__self__, "yubico_otp_enabled", yubico_otp_enabled)
+            _setter("yubico_otp_enabled", yubico_otp_enabled)
 
     @property
     @pulumi.getter(name="authenticationFactorSettingId")
@@ -1493,92 +1566,185 @@ class _DomainsAuthenticationFactorSettingState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _DomainsAuthenticationFactorSettingState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            attribute_sets=attribute_sets,
+            attributes=attributes,
+            authentication_factor_setting_id=authentication_factor_setting_id,
+            authorization=authorization,
+            auto_enroll_email_factor_disabled=auto_enroll_email_factor_disabled,
+            bypass_code_enabled=bypass_code_enabled,
+            bypass_code_settings=bypass_code_settings,
+            client_app_settings=client_app_settings,
+            compartment_ocid=compartment_ocid,
+            compliance_policies=compliance_policies,
+            delete_in_progress=delete_in_progress,
+            domain_ocid=domain_ocid,
+            email_enabled=email_enabled,
+            email_settings=email_settings,
+            endpoint_restrictions=endpoint_restrictions,
+            fido_authenticator_enabled=fido_authenticator_enabled,
+            hide_backup_factor_enabled=hide_backup_factor_enabled,
+            idcs_created_bies=idcs_created_bies,
+            idcs_endpoint=idcs_endpoint,
+            idcs_last_modified_bies=idcs_last_modified_bies,
+            idcs_last_upgraded_in_release=idcs_last_upgraded_in_release,
+            idcs_prevented_operations=idcs_prevented_operations,
+            identity_store_settings=identity_store_settings,
+            metas=metas,
+            mfa_enabled_category=mfa_enabled_category,
+            mfa_enrollment_type=mfa_enrollment_type,
+            notification_settings=notification_settings,
+            ocid=ocid,
+            phone_call_enabled=phone_call_enabled,
+            push_enabled=push_enabled,
+            resource_type_schema_version=resource_type_schema_version,
+            schemas=schemas,
+            security_questions_enabled=security_questions_enabled,
+            sms_enabled=sms_enabled,
+            tags=tags,
+            tenancy_ocid=tenancy_ocid,
+            third_party_factor=third_party_factor,
+            totp_enabled=totp_enabled,
+            totp_settings=totp_settings,
+            urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings=urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings,
+            urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings=urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings,
+            user_enrollment_disabled_factors=user_enrollment_disabled_factors,
+            yubico_otp_enabled=yubico_otp_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             attributes: Optional[pulumi.Input[str]] = None,
+             authentication_factor_setting_id: Optional[pulumi.Input[str]] = None,
+             authorization: Optional[pulumi.Input[str]] = None,
+             auto_enroll_email_factor_disabled: Optional[pulumi.Input[bool]] = None,
+             bypass_code_enabled: Optional[pulumi.Input[bool]] = None,
+             bypass_code_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingBypassCodeSettingsArgs']] = None,
+             client_app_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingClientAppSettingsArgs']] = None,
+             compartment_ocid: Optional[pulumi.Input[str]] = None,
+             compliance_policies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingCompliancePolicyArgs']]]] = None,
+             delete_in_progress: Optional[pulumi.Input[bool]] = None,
+             domain_ocid: Optional[pulumi.Input[str]] = None,
+             email_enabled: Optional[pulumi.Input[bool]] = None,
+             email_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingEmailSettingsArgs']] = None,
+             endpoint_restrictions: Optional[pulumi.Input['DomainsAuthenticationFactorSettingEndpointRestrictionsArgs']] = None,
+             fido_authenticator_enabled: Optional[pulumi.Input[bool]] = None,
+             hide_backup_factor_enabled: Optional[pulumi.Input[bool]] = None,
+             idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingIdcsCreatedByArgs']]]] = None,
+             idcs_endpoint: Optional[pulumi.Input[str]] = None,
+             idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingIdcsLastModifiedByArgs']]]] = None,
+             idcs_last_upgraded_in_release: Optional[pulumi.Input[str]] = None,
+             idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             identity_store_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs']] = None,
+             metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingMetaArgs']]]] = None,
+             mfa_enabled_category: Optional[pulumi.Input[str]] = None,
+             mfa_enrollment_type: Optional[pulumi.Input[str]] = None,
+             notification_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingNotificationSettingsArgs']] = None,
+             ocid: Optional[pulumi.Input[str]] = None,
+             phone_call_enabled: Optional[pulumi.Input[bool]] = None,
+             push_enabled: Optional[pulumi.Input[bool]] = None,
+             resource_type_schema_version: Optional[pulumi.Input[str]] = None,
+             schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             security_questions_enabled: Optional[pulumi.Input[bool]] = None,
+             sms_enabled: Optional[pulumi.Input[bool]] = None,
+             tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAuthenticationFactorSettingTagArgs']]]] = None,
+             tenancy_ocid: Optional[pulumi.Input[str]] = None,
+             third_party_factor: Optional[pulumi.Input['DomainsAuthenticationFactorSettingThirdPartyFactorArgs']] = None,
+             totp_enabled: Optional[pulumi.Input[bool]] = None,
+             totp_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingTotpSettingsArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs']] = None,
+             urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: Optional[pulumi.Input['DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs']] = None,
+             user_enrollment_disabled_factors: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             yubico_otp_enabled: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if attribute_sets is not None:
-            pulumi.set(__self__, "attribute_sets", attribute_sets)
+            _setter("attribute_sets", attribute_sets)
         if attributes is not None:
-            pulumi.set(__self__, "attributes", attributes)
+            _setter("attributes", attributes)
         if authentication_factor_setting_id is not None:
-            pulumi.set(__self__, "authentication_factor_setting_id", authentication_factor_setting_id)
+            _setter("authentication_factor_setting_id", authentication_factor_setting_id)
         if authorization is not None:
-            pulumi.set(__self__, "authorization", authorization)
+            _setter("authorization", authorization)
         if auto_enroll_email_factor_disabled is not None:
-            pulumi.set(__self__, "auto_enroll_email_factor_disabled", auto_enroll_email_factor_disabled)
+            _setter("auto_enroll_email_factor_disabled", auto_enroll_email_factor_disabled)
         if bypass_code_enabled is not None:
-            pulumi.set(__self__, "bypass_code_enabled", bypass_code_enabled)
+            _setter("bypass_code_enabled", bypass_code_enabled)
         if bypass_code_settings is not None:
-            pulumi.set(__self__, "bypass_code_settings", bypass_code_settings)
+            _setter("bypass_code_settings", bypass_code_settings)
         if client_app_settings is not None:
-            pulumi.set(__self__, "client_app_settings", client_app_settings)
+            _setter("client_app_settings", client_app_settings)
         if compartment_ocid is not None:
-            pulumi.set(__self__, "compartment_ocid", compartment_ocid)
+            _setter("compartment_ocid", compartment_ocid)
         if compliance_policies is not None:
-            pulumi.set(__self__, "compliance_policies", compliance_policies)
+            _setter("compliance_policies", compliance_policies)
         if delete_in_progress is not None:
-            pulumi.set(__self__, "delete_in_progress", delete_in_progress)
+            _setter("delete_in_progress", delete_in_progress)
         if domain_ocid is not None:
-            pulumi.set(__self__, "domain_ocid", domain_ocid)
+            _setter("domain_ocid", domain_ocid)
         if email_enabled is not None:
-            pulumi.set(__self__, "email_enabled", email_enabled)
+            _setter("email_enabled", email_enabled)
         if email_settings is not None:
-            pulumi.set(__self__, "email_settings", email_settings)
+            _setter("email_settings", email_settings)
         if endpoint_restrictions is not None:
-            pulumi.set(__self__, "endpoint_restrictions", endpoint_restrictions)
+            _setter("endpoint_restrictions", endpoint_restrictions)
         if fido_authenticator_enabled is not None:
-            pulumi.set(__self__, "fido_authenticator_enabled", fido_authenticator_enabled)
+            _setter("fido_authenticator_enabled", fido_authenticator_enabled)
         if hide_backup_factor_enabled is not None:
-            pulumi.set(__self__, "hide_backup_factor_enabled", hide_backup_factor_enabled)
+            _setter("hide_backup_factor_enabled", hide_backup_factor_enabled)
         if idcs_created_bies is not None:
-            pulumi.set(__self__, "idcs_created_bies", idcs_created_bies)
+            _setter("idcs_created_bies", idcs_created_bies)
         if idcs_endpoint is not None:
-            pulumi.set(__self__, "idcs_endpoint", idcs_endpoint)
+            _setter("idcs_endpoint", idcs_endpoint)
         if idcs_last_modified_bies is not None:
-            pulumi.set(__self__, "idcs_last_modified_bies", idcs_last_modified_bies)
+            _setter("idcs_last_modified_bies", idcs_last_modified_bies)
         if idcs_last_upgraded_in_release is not None:
-            pulumi.set(__self__, "idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
+            _setter("idcs_last_upgraded_in_release", idcs_last_upgraded_in_release)
         if idcs_prevented_operations is not None:
-            pulumi.set(__self__, "idcs_prevented_operations", idcs_prevented_operations)
+            _setter("idcs_prevented_operations", idcs_prevented_operations)
         if identity_store_settings is not None:
-            pulumi.set(__self__, "identity_store_settings", identity_store_settings)
+            _setter("identity_store_settings", identity_store_settings)
         if metas is not None:
-            pulumi.set(__self__, "metas", metas)
+            _setter("metas", metas)
         if mfa_enabled_category is not None:
-            pulumi.set(__self__, "mfa_enabled_category", mfa_enabled_category)
+            _setter("mfa_enabled_category", mfa_enabled_category)
         if mfa_enrollment_type is not None:
-            pulumi.set(__self__, "mfa_enrollment_type", mfa_enrollment_type)
+            _setter("mfa_enrollment_type", mfa_enrollment_type)
         if notification_settings is not None:
-            pulumi.set(__self__, "notification_settings", notification_settings)
+            _setter("notification_settings", notification_settings)
         if ocid is not None:
-            pulumi.set(__self__, "ocid", ocid)
+            _setter("ocid", ocid)
         if phone_call_enabled is not None:
-            pulumi.set(__self__, "phone_call_enabled", phone_call_enabled)
+            _setter("phone_call_enabled", phone_call_enabled)
         if push_enabled is not None:
-            pulumi.set(__self__, "push_enabled", push_enabled)
+            _setter("push_enabled", push_enabled)
         if resource_type_schema_version is not None:
-            pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
+            _setter("resource_type_schema_version", resource_type_schema_version)
         if schemas is not None:
-            pulumi.set(__self__, "schemas", schemas)
+            _setter("schemas", schemas)
         if security_questions_enabled is not None:
-            pulumi.set(__self__, "security_questions_enabled", security_questions_enabled)
+            _setter("security_questions_enabled", security_questions_enabled)
         if sms_enabled is not None:
-            pulumi.set(__self__, "sms_enabled", sms_enabled)
+            _setter("sms_enabled", sms_enabled)
         if tags is not None:
-            pulumi.set(__self__, "tags", tags)
+            _setter("tags", tags)
         if tenancy_ocid is not None:
-            pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
+            _setter("tenancy_ocid", tenancy_ocid)
         if third_party_factor is not None:
-            pulumi.set(__self__, "third_party_factor", third_party_factor)
+            _setter("third_party_factor", third_party_factor)
         if totp_enabled is not None:
-            pulumi.set(__self__, "totp_enabled", totp_enabled)
+            _setter("totp_enabled", totp_enabled)
         if totp_settings is not None:
-            pulumi.set(__self__, "totp_settings", totp_settings)
+            _setter("totp_settings", totp_settings)
         if urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings", urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings)
+            _setter("urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings", urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings)
         if urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings is not None:
-            pulumi.set(__self__, "urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings", urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings)
+            _setter("urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings", urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings)
         if user_enrollment_disabled_factors is not None:
-            pulumi.set(__self__, "user_enrollment_disabled_factors", user_enrollment_disabled_factors)
+            _setter("user_enrollment_disabled_factors", user_enrollment_disabled_factors)
         if yubico_otp_enabled is not None:
-            pulumi.set(__self__, "yubico_otp_enabled", yubico_otp_enabled)
+            _setter("yubico_otp_enabled", yubico_otp_enabled)
 
     @property
     @pulumi.getter(name="attributeSets")
@@ -2824,6 +2990,10 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DomainsAuthenticationFactorSettingArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -2881,9 +3051,19 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
             if bypass_code_enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'bypass_code_enabled'")
             __props__.__dict__["bypass_code_enabled"] = bypass_code_enabled
+            if bypass_code_settings is not None and not isinstance(bypass_code_settings, DomainsAuthenticationFactorSettingBypassCodeSettingsArgs):
+                bypass_code_settings = bypass_code_settings or {}
+                def _setter(key, value):
+                    bypass_code_settings[key] = value
+                DomainsAuthenticationFactorSettingBypassCodeSettingsArgs._configure(_setter, **bypass_code_settings)
             if bypass_code_settings is None and not opts.urn:
                 raise TypeError("Missing required property 'bypass_code_settings'")
             __props__.__dict__["bypass_code_settings"] = bypass_code_settings
+            if client_app_settings is not None and not isinstance(client_app_settings, DomainsAuthenticationFactorSettingClientAppSettingsArgs):
+                client_app_settings = client_app_settings or {}
+                def _setter(key, value):
+                    client_app_settings[key] = value
+                DomainsAuthenticationFactorSettingClientAppSettingsArgs._configure(_setter, **client_app_settings)
             if client_app_settings is None and not opts.urn:
                 raise TypeError("Missing required property 'client_app_settings'")
             __props__.__dict__["client_app_settings"] = client_app_settings
@@ -2891,7 +3071,17 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                 raise TypeError("Missing required property 'compliance_policies'")
             __props__.__dict__["compliance_policies"] = compliance_policies
             __props__.__dict__["email_enabled"] = email_enabled
+            if email_settings is not None and not isinstance(email_settings, DomainsAuthenticationFactorSettingEmailSettingsArgs):
+                email_settings = email_settings or {}
+                def _setter(key, value):
+                    email_settings[key] = value
+                DomainsAuthenticationFactorSettingEmailSettingsArgs._configure(_setter, **email_settings)
             __props__.__dict__["email_settings"] = email_settings
+            if endpoint_restrictions is not None and not isinstance(endpoint_restrictions, DomainsAuthenticationFactorSettingEndpointRestrictionsArgs):
+                endpoint_restrictions = endpoint_restrictions or {}
+                def _setter(key, value):
+                    endpoint_restrictions[key] = value
+                DomainsAuthenticationFactorSettingEndpointRestrictionsArgs._configure(_setter, **endpoint_restrictions)
             if endpoint_restrictions is None and not opts.urn:
                 raise TypeError("Missing required property 'endpoint_restrictions'")
             __props__.__dict__["endpoint_restrictions"] = endpoint_restrictions
@@ -2900,10 +3090,20 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
             if idcs_endpoint is None and not opts.urn:
                 raise TypeError("Missing required property 'idcs_endpoint'")
             __props__.__dict__["idcs_endpoint"] = idcs_endpoint
+            if identity_store_settings is not None and not isinstance(identity_store_settings, DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs):
+                identity_store_settings = identity_store_settings or {}
+                def _setter(key, value):
+                    identity_store_settings[key] = value
+                DomainsAuthenticationFactorSettingIdentityStoreSettingsArgs._configure(_setter, **identity_store_settings)
             __props__.__dict__["identity_store_settings"] = identity_store_settings
             if mfa_enrollment_type is None and not opts.urn:
                 raise TypeError("Missing required property 'mfa_enrollment_type'")
             __props__.__dict__["mfa_enrollment_type"] = mfa_enrollment_type
+            if notification_settings is not None and not isinstance(notification_settings, DomainsAuthenticationFactorSettingNotificationSettingsArgs):
+                notification_settings = notification_settings or {}
+                def _setter(key, value):
+                    notification_settings[key] = value
+                DomainsAuthenticationFactorSettingNotificationSettingsArgs._configure(_setter, **notification_settings)
             if notification_settings is None and not opts.urn:
                 raise TypeError("Missing required property 'notification_settings'")
             __props__.__dict__["notification_settings"] = notification_settings
@@ -2923,14 +3123,34 @@ class DomainsAuthenticationFactorSetting(pulumi.CustomResource):
                 raise TypeError("Missing required property 'sms_enabled'")
             __props__.__dict__["sms_enabled"] = sms_enabled
             __props__.__dict__["tags"] = tags
+            if third_party_factor is not None and not isinstance(third_party_factor, DomainsAuthenticationFactorSettingThirdPartyFactorArgs):
+                third_party_factor = third_party_factor or {}
+                def _setter(key, value):
+                    third_party_factor[key] = value
+                DomainsAuthenticationFactorSettingThirdPartyFactorArgs._configure(_setter, **third_party_factor)
             __props__.__dict__["third_party_factor"] = third_party_factor
             if totp_enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'totp_enabled'")
             __props__.__dict__["totp_enabled"] = totp_enabled
+            if totp_settings is not None and not isinstance(totp_settings, DomainsAuthenticationFactorSettingTotpSettingsArgs):
+                totp_settings = totp_settings or {}
+                def _setter(key, value):
+                    totp_settings[key] = value
+                DomainsAuthenticationFactorSettingTotpSettingsArgs._configure(_setter, **totp_settings)
             if totp_settings is None and not opts.urn:
                 raise TypeError("Missing required property 'totp_settings'")
             __props__.__dict__["totp_settings"] = totp_settings
+            if urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings, DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs):
+                urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings = urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings[key] = value
+                DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSettingsArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings"] = urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings
+            if urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings is not None and not isinstance(urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings, DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs):
+                urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings = urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings or {}
+                def _setter(key, value):
+                    urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings[key] = value
+                DomainsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionthirdPartyAuthenticationFactorSettingsArgs._configure(_setter, **urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings)
             __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings"] = urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings
             __props__.__dict__["user_enrollment_disabled_factors"] = user_enrollment_disabled_factors
             __props__.__dict__["yubico_otp_enabled"] = yubico_otp_enabled

@@ -10,6 +10,7 @@ import * as utilities from "../utilities";
  * Creates a digital signature for a message or message digest by using the private key of a public-private key pair,
  * also known as an asymmetric key. To verify the generated signature, you can use the [Verify](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/VerifiedData/Verify)
  * operation. Or, if you want to validate the signature outside of the service, you can do so by using the public key of the same asymmetric key.
+ * This operation is not supported for keys having protection mode `EXTERNAL`.
  *
  * ## Example Usage
  *
@@ -80,7 +81,7 @@ export class Sign extends pulumi.CustomResource {
      */
     public readonly message!: pulumi.Output<string>;
     /**
-     * Denotes whether the value of the message parameter is a raw message or a message digest.  The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
+     * Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
      */
     public readonly messageType!: pulumi.Output<string>;
     /**
@@ -88,7 +89,7 @@ export class Sign extends pulumi.CustomResource {
      */
     public /*out*/ readonly signature!: pulumi.Output<string>;
     /**
-     * The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with  different hashing algorithms.  For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm  as used when creating the message digest. 
+     * The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest. 
      *
      *
      * ** IMPORTANT **
@@ -164,7 +165,7 @@ export interface SignState {
      */
     message?: pulumi.Input<string>;
     /**
-     * Denotes whether the value of the message parameter is a raw message or a message digest.  The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
+     * Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
      */
     messageType?: pulumi.Input<string>;
     /**
@@ -172,7 +173,7 @@ export interface SignState {
      */
     signature?: pulumi.Input<string>;
     /**
-     * The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with  different hashing algorithms.  For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm  as used when creating the message digest. 
+     * The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest. 
      *
      *
      * ** IMPORTANT **
@@ -202,11 +203,11 @@ export interface SignArgs {
      */
     message: pulumi.Input<string>;
     /**
-     * Denotes whether the value of the message parameter is a raw message or a message digest.  The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
+     * Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
      */
     messageType?: pulumi.Input<string>;
     /**
-     * The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with  different hashing algorithms.  For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm  as used when creating the message digest. 
+     * The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest. 
      *
      *
      * ** IMPORTANT **

@@ -13,16 +13,32 @@ public final class ListingResourceVersionAgreementArgs extends com.pulumi.resour
 
     public static final ListingResourceVersionAgreementArgs Empty = new ListingResourceVersionAgreementArgs();
 
+    /**
+     * The OCID of the listing.
+     * 
+     */
     @Import(name="listingId", required=true)
     private Output<String> listingId;
 
+    /**
+     * @return The OCID of the listing.
+     * 
+     */
     public Output<String> listingId() {
         return this.listingId;
     }
 
+    /**
+     * Listing Resource Version.
+     * 
+     */
     @Import(name="listingResourceVersion", required=true)
     private Output<String> listingResourceVersion;
 
+    /**
+     * @return Listing Resource Version.
+     * 
+     */
     public Output<String> listingResourceVersion() {
         return this.listingResourceVersion;
     }
@@ -52,20 +68,44 @@ public final class ListingResourceVersionAgreementArgs extends com.pulumi.resour
             $ = new ListingResourceVersionAgreementArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param listingId The OCID of the listing.
+         * 
+         * @return builder
+         * 
+         */
         public Builder listingId(Output<String> listingId) {
             $.listingId = listingId;
             return this;
         }
 
+        /**
+         * @param listingId The OCID of the listing.
+         * 
+         * @return builder
+         * 
+         */
         public Builder listingId(String listingId) {
             return listingId(Output.of(listingId));
         }
 
+        /**
+         * @param listingResourceVersion Listing Resource Version.
+         * 
+         * @return builder
+         * 
+         */
         public Builder listingResourceVersion(Output<String> listingResourceVersion) {
             $.listingResourceVersion = listingResourceVersion;
             return this;
         }
 
+        /**
+         * @param listingResourceVersion Listing Resource Version.
+         * 
+         * @return builder
+         * 
+         */
         public Builder listingResourceVersion(String listingResourceVersion) {
             return listingResourceVersion(Output.of(listingResourceVersion));
         }

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationAdvisorSettingsArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationDataTransferMediumDetailsArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.MigrationDataTransferMediumDetailsV2Args;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationDatapumpSettingsArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationDumpTransferDetailsArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationExcludeObjectArgs;
@@ -115,6 +116,13 @@ public final class MigrationState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<MigrationDataTransferMediumDetailsArgs>> dataTransferMediumDetails() {
         return Optional.ofNullable(this.dataTransferMediumDetails);
+    }
+
+    @Import(name="dataTransferMediumDetailsV2")
+    private @Nullable Output<MigrationDataTransferMediumDetailsV2Args> dataTransferMediumDetailsV2;
+
+    public Optional<Output<MigrationDataTransferMediumDetailsV2Args>> dataTransferMediumDetailsV2() {
+        return Optional.ofNullable(this.dataTransferMediumDetailsV2);
     }
 
     /**
@@ -456,6 +464,7 @@ public final class MigrationState extends com.pulumi.resources.ResourceArgs {
         this.credentialsSecretId = $.credentialsSecretId;
         this.csvText = $.csvText;
         this.dataTransferMediumDetails = $.dataTransferMediumDetails;
+        this.dataTransferMediumDetailsV2 = $.dataTransferMediumDetailsV2;
         this.datapumpSettings = $.datapumpSettings;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
@@ -622,6 +631,15 @@ public final class MigrationState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder dataTransferMediumDetails(MigrationDataTransferMediumDetailsArgs dataTransferMediumDetails) {
             return dataTransferMediumDetails(Output.of(dataTransferMediumDetails));
+        }
+
+        public Builder dataTransferMediumDetailsV2(@Nullable Output<MigrationDataTransferMediumDetailsV2Args> dataTransferMediumDetailsV2) {
+            $.dataTransferMediumDetailsV2 = dataTransferMediumDetailsV2;
+            return this;
+        }
+
+        public Builder dataTransferMediumDetailsV2(MigrationDataTransferMediumDetailsV2Args dataTransferMediumDetailsV2) {
+            return dataTransferMediumDetailsV2(Output.of(dataTransferMediumDetailsV2));
         }
 
         /**

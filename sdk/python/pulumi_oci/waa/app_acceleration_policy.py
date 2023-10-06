@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,19 +41,40 @@ class AppAccelerationPolicyArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
+        AppAccelerationPolicyArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            response_caching_policy=response_caching_policy,
+            response_compression_policy=response_compression_policy,
+            system_tags=system_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             response_caching_policy: Optional[pulumi.Input['AppAccelerationPolicyResponseCachingPolicyArgs']] = None,
+             response_compression_policy: Optional[pulumi.Input['AppAccelerationPolicyResponseCompressionPolicyArgs']] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if response_caching_policy is not None:
-            pulumi.set(__self__, "response_caching_policy", response_caching_policy)
+            _setter("response_caching_policy", response_caching_policy)
         if response_compression_policy is not None:
-            pulumi.set(__self__, "response_compression_policy", response_compression_policy)
+            _setter("response_compression_policy", response_compression_policy)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -184,28 +205,57 @@ class _AppAccelerationPolicyState:
         :param pulumi.Input[str] time_created: The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the WebAppAccelerationPolicy was updated. An RFC3339 formatted datetime string.
         """
+        _AppAccelerationPolicyState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            response_caching_policy=response_caching_policy,
+            response_compression_policy=response_compression_policy,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             response_caching_policy: Optional[pulumi.Input['AppAccelerationPolicyResponseCachingPolicyArgs']] = None,
+             response_compression_policy: Optional[pulumi.Input['AppAccelerationPolicyResponseCompressionPolicyArgs']] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if response_caching_policy is not None:
-            pulumi.set(__self__, "response_caching_policy", response_caching_policy)
+            _setter("response_caching_policy", response_caching_policy)
         if response_compression_policy is not None:
-            pulumi.set(__self__, "response_compression_policy", response_compression_policy)
+            _setter("response_compression_policy", response_compression_policy)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -473,6 +523,10 @@ class AppAccelerationPolicy(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AppAccelerationPolicyArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -500,7 +554,17 @@ class AppAccelerationPolicy(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            if response_caching_policy is not None and not isinstance(response_caching_policy, AppAccelerationPolicyResponseCachingPolicyArgs):
+                response_caching_policy = response_caching_policy or {}
+                def _setter(key, value):
+                    response_caching_policy[key] = value
+                AppAccelerationPolicyResponseCachingPolicyArgs._configure(_setter, **response_caching_policy)
             __props__.__dict__["response_caching_policy"] = response_caching_policy
+            if response_compression_policy is not None and not isinstance(response_compression_policy, AppAccelerationPolicyResponseCompressionPolicyArgs):
+                response_compression_policy = response_compression_policy or {}
+                def _setter(key, value):
+                    response_compression_policy[key] = value
+                AppAccelerationPolicyResponseCompressionPolicyArgs._configure(_setter, **response_compression_policy)
             __props__.__dict__["response_compression_policy"] = response_compression_policy
             __props__.__dict__["system_tags"] = system_tags
             __props__.__dict__["lifecycle_details"] = None

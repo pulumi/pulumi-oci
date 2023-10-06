@@ -15,6 +15,7 @@ namespace Pulumi.Oci.Kms
     /// Creates a digital signature for a message or message digest by using the private key of a public-private key pair,
     /// also known as an asymmetric key. To verify the generated signature, you can use the [Verify](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/VerifiedData/Verify)
     /// operation. Or, if you want to validate the signature outside of the service, you can do so by using the public key of the same asymmetric key.
+    /// This operation is not supported for keys having protection mode `EXTERNAL`.
     /// 
     /// ## Example Usage
     /// 
@@ -75,7 +76,7 @@ namespace Pulumi.Oci.Kms
         public Output<string> Message { get; private set; } = null!;
 
         /// <summary>
-        /// Denotes whether the value of the message parameter is a raw message or a message digest.  The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
+        /// Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
         /// </summary>
         [Output("messageType")]
         public Output<string> MessageType { get; private set; } = null!;
@@ -87,7 +88,7 @@ namespace Pulumi.Oci.Kms
         public Output<string> Signature { get; private set; } = null!;
 
         /// <summary>
-        /// The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with  different hashing algorithms.  For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm  as used when creating the message digest. 
+        /// The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -167,13 +168,13 @@ namespace Pulumi.Oci.Kms
         public Input<string> Message { get; set; } = null!;
 
         /// <summary>
-        /// Denotes whether the value of the message parameter is a raw message or a message digest.  The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
+        /// Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
         /// </summary>
         [Input("messageType")]
         public Input<string>? MessageType { get; set; }
 
         /// <summary>
-        /// The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with  different hashing algorithms.  For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm  as used when creating the message digest. 
+        /// The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -215,7 +216,7 @@ namespace Pulumi.Oci.Kms
         public Input<string>? Message { get; set; }
 
         /// <summary>
-        /// Denotes whether the value of the message parameter is a raw message or a message digest.  The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
+        /// Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
         /// </summary>
         [Input("messageType")]
         public Input<string>? MessageType { get; set; }
@@ -227,7 +228,7 @@ namespace Pulumi.Oci.Kms
         public Input<string>? Signature { get; set; }
 
         /// <summary>
-        /// The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with  different hashing algorithms.  For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm  as used when creating the message digest. 
+        /// The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest. 
         /// 
         /// 
         /// ** IMPORTANT **

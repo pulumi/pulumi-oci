@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -23,8 +23,19 @@ class QueryArgs:
         :param pulumi.Input[str] compartment_id: The compartment OCID.
         :param pulumi.Input['QueryQueryDefinitionArgs'] query_definition: (Updatable) The common fields for queries.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "query_definition", query_definition)
+        QueryArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            query_definition=query_definition,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             query_definition: pulumi.Input['QueryQueryDefinitionArgs'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("query_definition", query_definition)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -61,10 +72,21 @@ class _QueryState:
         :param pulumi.Input[str] compartment_id: The compartment OCID.
         :param pulumi.Input['QueryQueryDefinitionArgs'] query_definition: (Updatable) The common fields for queries.
         """
+        _QueryState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            query_definition=query_definition,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             query_definition: Optional[pulumi.Input['QueryQueryDefinitionArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if query_definition is not None:
-            pulumi.set(__self__, "query_definition", query_definition)
+            _setter("query_definition", query_definition)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -226,6 +248,10 @@ class Query(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            QueryArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -245,6 +271,11 @@ class Query(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            if query_definition is not None and not isinstance(query_definition, QueryQueryDefinitionArgs):
+                query_definition = query_definition or {}
+                def _setter(key, value):
+                    query_definition[key] = value
+                QueryQueryDefinitionArgs._configure(_setter, **query_definition)
             if query_definition is None and not opts.urn:
                 raise TypeError("Missing required property 'query_definition'")
             __props__.__dict__["query_definition"] = query_definition

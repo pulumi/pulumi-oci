@@ -56,7 +56,6 @@ import (
 type SslCipherSuite struct {
 	pulumi.CustomResourceState
 
-	// A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
 	Ciphers pulumi.StringArrayOutput `pulumi:"ciphers"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
 	LoadBalancerId pulumi.StringOutput `pulumi:"loadBalancerId"`
@@ -113,7 +112,6 @@ func GetSslCipherSuite(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering SslCipherSuite resources.
 type sslCipherSuiteState struct {
-	// A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
 	Ciphers []string `pulumi:"ciphers"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
 	LoadBalancerId *string `pulumi:"loadBalancerId"`
@@ -135,7 +133,6 @@ type sslCipherSuiteState struct {
 }
 
 type SslCipherSuiteState struct {
-	// A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
 	Ciphers pulumi.StringArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
 	LoadBalancerId pulumi.StringPtrInput
@@ -161,7 +158,6 @@ func (SslCipherSuiteState) ElementType() reflect.Type {
 }
 
 type sslCipherSuiteArgs struct {
-	// A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
 	Ciphers []string `pulumi:"ciphers"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
@@ -183,7 +179,6 @@ type sslCipherSuiteArgs struct {
 
 // The set of arguments for constructing a SslCipherSuite resource.
 type SslCipherSuiteArgs struct {
-	// A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
 	Ciphers pulumi.StringArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
 	LoadBalancerId pulumi.StringInput
@@ -314,7 +309,6 @@ func (o SslCipherSuiteOutput) ToOutput(ctx context.Context) pulumix.Output[*SslC
 	}
 }
 
-// A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
 func (o SslCipherSuiteOutput) Ciphers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SslCipherSuite) pulumi.StringArrayOutput { return v.Ciphers }).(pulumi.StringArrayOutput)
 }

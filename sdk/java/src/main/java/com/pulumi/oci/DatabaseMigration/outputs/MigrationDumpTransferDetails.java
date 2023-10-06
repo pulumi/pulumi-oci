@@ -6,12 +6,14 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationDumpTransferDetailsSource;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationDumpTransferDetailsTarget;
+import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
 public final class MigrationDumpTransferDetails {
+    private @Nullable String sharedStorageMountTargetId;
     /**
      * @return (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
      * 
@@ -24,6 +26,9 @@ public final class MigrationDumpTransferDetails {
     private @Nullable MigrationDumpTransferDetailsTarget target;
 
     private MigrationDumpTransferDetails() {}
+    public Optional<String> sharedStorageMountTargetId() {
+        return Optional.ofNullable(this.sharedStorageMountTargetId);
+    }
     /**
      * @return (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
      * 
@@ -48,15 +53,22 @@ public final class MigrationDumpTransferDetails {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String sharedStorageMountTargetId;
         private @Nullable MigrationDumpTransferDetailsSource source;
         private @Nullable MigrationDumpTransferDetailsTarget target;
         public Builder() {}
         public Builder(MigrationDumpTransferDetails defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.sharedStorageMountTargetId = defaults.sharedStorageMountTargetId;
     	      this.source = defaults.source;
     	      this.target = defaults.target;
         }
 
+        @CustomType.Setter
+        public Builder sharedStorageMountTargetId(@Nullable String sharedStorageMountTargetId) {
+            this.sharedStorageMountTargetId = sharedStorageMountTargetId;
+            return this;
+        }
         @CustomType.Setter
         public Builder source(@Nullable MigrationDumpTransferDetailsSource source) {
             this.source = source;
@@ -69,6 +81,7 @@ public final class MigrationDumpTransferDetails {
         }
         public MigrationDumpTransferDetails build() {
             final var o = new MigrationDumpTransferDetails();
+            o.sharedStorageMountTargetId = sharedStorageMountTargetId;
             o.source = source;
             o.target = target;
             return o;

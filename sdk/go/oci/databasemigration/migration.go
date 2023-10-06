@@ -219,7 +219,8 @@ type Migration struct {
 	// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
 	CsvText pulumi.StringOutput `pulumi:"csvText"`
 	// (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
-	DataTransferMediumDetails MigrationDataTransferMediumDetailsOutput `pulumi:"dataTransferMediumDetails"`
+	DataTransferMediumDetails   MigrationDataTransferMediumDetailsOutput   `pulumi:"dataTransferMediumDetails"`
+	DataTransferMediumDetailsV2 MigrationDataTransferMediumDetailsV2Output `pulumi:"dataTransferMediumDetailsV2"`
 	// (Updatable) Optional settings for Data Pump Export and Import jobs
 	DatapumpSettings MigrationDatapumpSettingsOutput `pulumi:"datapumpSettings"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -319,7 +320,8 @@ type migrationState struct {
 	// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
 	CsvText *string `pulumi:"csvText"`
 	// (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
-	DataTransferMediumDetails *MigrationDataTransferMediumDetails `pulumi:"dataTransferMediumDetails"`
+	DataTransferMediumDetails   *MigrationDataTransferMediumDetails   `pulumi:"dataTransferMediumDetails"`
+	DataTransferMediumDetailsV2 *MigrationDataTransferMediumDetailsV2 `pulumi:"dataTransferMediumDetailsV2"`
 	// (Updatable) Optional settings for Data Pump Export and Import jobs
 	DatapumpSettings *MigrationDatapumpSettings `pulumi:"datapumpSettings"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -378,7 +380,8 @@ type MigrationState struct {
 	// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
 	CsvText pulumi.StringPtrInput
 	// (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
-	DataTransferMediumDetails MigrationDataTransferMediumDetailsPtrInput
+	DataTransferMediumDetails   MigrationDataTransferMediumDetailsPtrInput
+	DataTransferMediumDetailsV2 MigrationDataTransferMediumDetailsV2PtrInput
 	// (Updatable) Optional settings for Data Pump Export and Import jobs
 	DatapumpSettings MigrationDatapumpSettingsPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -439,7 +442,8 @@ type migrationArgs struct {
 	// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
 	CsvText *string `pulumi:"csvText"`
 	// (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
-	DataTransferMediumDetails *MigrationDataTransferMediumDetails `pulumi:"dataTransferMediumDetails"`
+	DataTransferMediumDetails   *MigrationDataTransferMediumDetails   `pulumi:"dataTransferMediumDetails"`
+	DataTransferMediumDetailsV2 *MigrationDataTransferMediumDetailsV2 `pulumi:"dataTransferMediumDetailsV2"`
 	// (Updatable) Optional settings for Data Pump Export and Import jobs
 	DatapumpSettings *MigrationDatapumpSettings `pulumi:"datapumpSettings"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -481,7 +485,8 @@ type MigrationArgs struct {
 	// Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
 	CsvText pulumi.StringPtrInput
 	// (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
-	DataTransferMediumDetails MigrationDataTransferMediumDetailsPtrInput
+	DataTransferMediumDetails   MigrationDataTransferMediumDetailsPtrInput
+	DataTransferMediumDetailsV2 MigrationDataTransferMediumDetailsV2PtrInput
 	// (Updatable) Optional settings for Data Pump Export and Import jobs
 	DatapumpSettings MigrationDatapumpSettingsPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -651,6 +656,10 @@ func (o MigrationOutput) CsvText() pulumi.StringOutput {
 // (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
 func (o MigrationOutput) DataTransferMediumDetails() MigrationDataTransferMediumDetailsOutput {
 	return o.ApplyT(func(v *Migration) MigrationDataTransferMediumDetailsOutput { return v.DataTransferMediumDetails }).(MigrationDataTransferMediumDetailsOutput)
+}
+
+func (o MigrationOutput) DataTransferMediumDetailsV2() MigrationDataTransferMediumDetailsV2Output {
+	return o.ApplyT(func(v *Migration) MigrationDataTransferMediumDetailsV2Output { return v.DataTransferMediumDetailsV2 }).(MigrationDataTransferMediumDetailsV2Output)
 }
 
 // (Updatable) Optional settings for Data Pump Export and Import jobs

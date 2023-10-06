@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetAutonomousDatabaseLongTermBackupSchedule {
     /**
-     * @return Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+     * @return Indicates if the resource pool should be deleted for the Autonomous Database.
      * 
      */
     private Boolean isDisabled;
@@ -34,7 +34,7 @@ public final class GetAutonomousDatabaseLongTermBackupSchedule {
 
     private GetAutonomousDatabaseLongTermBackupSchedule() {}
     /**
-     * @return Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+     * @return Indicates if the resource pool should be deleted for the Autonomous Database.
      * 
      */
     public Boolean isDisabled() {

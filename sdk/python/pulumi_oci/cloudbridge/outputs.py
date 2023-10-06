@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -132,24 +132,49 @@ class AgentPluginList(dict):
         :param str time_created: The time when the Agent was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time when the Agent was updated. An RFC3339 formatted datetime string.
         """
+        AgentPluginList._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agent_id=agent_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            plugin_version=plugin_version,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agent_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             lifecycle_details: Optional[str] = None,
+             name: Optional[str] = None,
+             plugin_version: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if agent_id is not None:
-            pulumi.set(__self__, "agent_id", agent_id)
+            _setter("agent_id", agent_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if plugin_version is not None:
-            pulumi.set(__self__, "plugin_version", plugin_version)
+            _setter("plugin_version", plugin_version)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="agentId")
@@ -350,64 +375,129 @@ class AssetCompute(dict):
         :param str storage_provisioned_in_mbs: (Updatable) Provision storage size in MBs.
         :param int threads_per_core_count: (Updatable) Number of threads per core.
         """
+        AssetCompute._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            connected_networks=connected_networks,
+            cores_count=cores_count,
+            cpu_model=cpu_model,
+            description=description,
+            disks=disks,
+            disks_count=disks_count,
+            dns_name=dns_name,
+            firmware=firmware,
+            gpu_devices=gpu_devices,
+            gpu_devices_count=gpu_devices_count,
+            guest_state=guest_state,
+            hardware_version=hardware_version,
+            host_name=host_name,
+            is_pmem_enabled=is_pmem_enabled,
+            is_tpm_enabled=is_tpm_enabled,
+            latency_sensitivity=latency_sensitivity,
+            memory_in_mbs=memory_in_mbs,
+            nics=nics,
+            nics_count=nics_count,
+            nvdimm_controller=nvdimm_controller,
+            nvdimms=nvdimms,
+            operating_system=operating_system,
+            operating_system_version=operating_system_version,
+            pmem_in_mbs=pmem_in_mbs,
+            power_state=power_state,
+            primary_ip=primary_ip,
+            scsi_controller=scsi_controller,
+            storage_provisioned_in_mbs=storage_provisioned_in_mbs,
+            threads_per_core_count=threads_per_core_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             connected_networks: Optional[int] = None,
+             cores_count: Optional[int] = None,
+             cpu_model: Optional[str] = None,
+             description: Optional[str] = None,
+             disks: Optional[Sequence['outputs.AssetComputeDisk']] = None,
+             disks_count: Optional[int] = None,
+             dns_name: Optional[str] = None,
+             firmware: Optional[str] = None,
+             gpu_devices: Optional[Sequence['outputs.AssetComputeGpuDevice']] = None,
+             gpu_devices_count: Optional[int] = None,
+             guest_state: Optional[str] = None,
+             hardware_version: Optional[str] = None,
+             host_name: Optional[str] = None,
+             is_pmem_enabled: Optional[bool] = None,
+             is_tpm_enabled: Optional[bool] = None,
+             latency_sensitivity: Optional[str] = None,
+             memory_in_mbs: Optional[str] = None,
+             nics: Optional[Sequence['outputs.AssetComputeNic']] = None,
+             nics_count: Optional[int] = None,
+             nvdimm_controller: Optional['outputs.AssetComputeNvdimmController'] = None,
+             nvdimms: Optional[Sequence['outputs.AssetComputeNvdimm']] = None,
+             operating_system: Optional[str] = None,
+             operating_system_version: Optional[str] = None,
+             pmem_in_mbs: Optional[str] = None,
+             power_state: Optional[str] = None,
+             primary_ip: Optional[str] = None,
+             scsi_controller: Optional['outputs.AssetComputeScsiController'] = None,
+             storage_provisioned_in_mbs: Optional[str] = None,
+             threads_per_core_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if connected_networks is not None:
-            pulumi.set(__self__, "connected_networks", connected_networks)
+            _setter("connected_networks", connected_networks)
         if cores_count is not None:
-            pulumi.set(__self__, "cores_count", cores_count)
+            _setter("cores_count", cores_count)
         if cpu_model is not None:
-            pulumi.set(__self__, "cpu_model", cpu_model)
+            _setter("cpu_model", cpu_model)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if disks is not None:
-            pulumi.set(__self__, "disks", disks)
+            _setter("disks", disks)
         if disks_count is not None:
-            pulumi.set(__self__, "disks_count", disks_count)
+            _setter("disks_count", disks_count)
         if dns_name is not None:
-            pulumi.set(__self__, "dns_name", dns_name)
+            _setter("dns_name", dns_name)
         if firmware is not None:
-            pulumi.set(__self__, "firmware", firmware)
+            _setter("firmware", firmware)
         if gpu_devices is not None:
-            pulumi.set(__self__, "gpu_devices", gpu_devices)
+            _setter("gpu_devices", gpu_devices)
         if gpu_devices_count is not None:
-            pulumi.set(__self__, "gpu_devices_count", gpu_devices_count)
+            _setter("gpu_devices_count", gpu_devices_count)
         if guest_state is not None:
-            pulumi.set(__self__, "guest_state", guest_state)
+            _setter("guest_state", guest_state)
         if hardware_version is not None:
-            pulumi.set(__self__, "hardware_version", hardware_version)
+            _setter("hardware_version", hardware_version)
         if host_name is not None:
-            pulumi.set(__self__, "host_name", host_name)
+            _setter("host_name", host_name)
         if is_pmem_enabled is not None:
-            pulumi.set(__self__, "is_pmem_enabled", is_pmem_enabled)
+            _setter("is_pmem_enabled", is_pmem_enabled)
         if is_tpm_enabled is not None:
-            pulumi.set(__self__, "is_tpm_enabled", is_tpm_enabled)
+            _setter("is_tpm_enabled", is_tpm_enabled)
         if latency_sensitivity is not None:
-            pulumi.set(__self__, "latency_sensitivity", latency_sensitivity)
+            _setter("latency_sensitivity", latency_sensitivity)
         if memory_in_mbs is not None:
-            pulumi.set(__self__, "memory_in_mbs", memory_in_mbs)
+            _setter("memory_in_mbs", memory_in_mbs)
         if nics is not None:
-            pulumi.set(__self__, "nics", nics)
+            _setter("nics", nics)
         if nics_count is not None:
-            pulumi.set(__self__, "nics_count", nics_count)
+            _setter("nics_count", nics_count)
         if nvdimm_controller is not None:
-            pulumi.set(__self__, "nvdimm_controller", nvdimm_controller)
+            _setter("nvdimm_controller", nvdimm_controller)
         if nvdimms is not None:
-            pulumi.set(__self__, "nvdimms", nvdimms)
+            _setter("nvdimms", nvdimms)
         if operating_system is not None:
-            pulumi.set(__self__, "operating_system", operating_system)
+            _setter("operating_system", operating_system)
         if operating_system_version is not None:
-            pulumi.set(__self__, "operating_system_version", operating_system_version)
+            _setter("operating_system_version", operating_system_version)
         if pmem_in_mbs is not None:
-            pulumi.set(__self__, "pmem_in_mbs", pmem_in_mbs)
+            _setter("pmem_in_mbs", pmem_in_mbs)
         if power_state is not None:
-            pulumi.set(__self__, "power_state", power_state)
+            _setter("power_state", power_state)
         if primary_ip is not None:
-            pulumi.set(__self__, "primary_ip", primary_ip)
+            _setter("primary_ip", primary_ip)
         if scsi_controller is not None:
-            pulumi.set(__self__, "scsi_controller", scsi_controller)
+            _setter("scsi_controller", scsi_controller)
         if storage_provisioned_in_mbs is not None:
-            pulumi.set(__self__, "storage_provisioned_in_mbs", storage_provisioned_in_mbs)
+            _setter("storage_provisioned_in_mbs", storage_provisioned_in_mbs)
         if threads_per_core_count is not None:
-            pulumi.set(__self__, "threads_per_core_count", threads_per_core_count)
+            _setter("threads_per_core_count", threads_per_core_count)
 
     @property
     @pulumi.getter(name="connectedNetworks")
@@ -684,20 +774,41 @@ class AssetComputeDisk(dict):
         :param str uuid: (Updatable) Disk UUID for the virtual disk, if available.
         :param str uuid_lun: (Updatable) Disk UUID LUN for the virtual disk, if available.
         """
+        AssetComputeDisk._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            boot_order=boot_order,
+            location=location,
+            name=name,
+            persistent_mode=persistent_mode,
+            size_in_mbs=size_in_mbs,
+            uuid=uuid,
+            uuid_lun=uuid_lun,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             boot_order: Optional[int] = None,
+             location: Optional[str] = None,
+             name: Optional[str] = None,
+             persistent_mode: Optional[str] = None,
+             size_in_mbs: Optional[str] = None,
+             uuid: Optional[str] = None,
+             uuid_lun: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if boot_order is not None:
-            pulumi.set(__self__, "boot_order", boot_order)
+            _setter("boot_order", boot_order)
         if location is not None:
-            pulumi.set(__self__, "location", location)
+            _setter("location", location)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if persistent_mode is not None:
-            pulumi.set(__self__, "persistent_mode", persistent_mode)
+            _setter("persistent_mode", persistent_mode)
         if size_in_mbs is not None:
-            pulumi.set(__self__, "size_in_mbs", size_in_mbs)
+            _setter("size_in_mbs", size_in_mbs)
         if uuid is not None:
-            pulumi.set(__self__, "uuid", uuid)
+            _setter("uuid", uuid)
         if uuid_lun is not None:
-            pulumi.set(__self__, "uuid_lun", uuid_lun)
+            _setter("uuid_lun", uuid_lun)
 
     @property
     @pulumi.getter(name="bootOrder")
@@ -790,16 +901,33 @@ class AssetComputeGpuDevice(dict):
         :param str memory_in_mbs: (Updatable) Memory size in MBs.
         :param str name: (Updatable) The tag name.
         """
+        AssetComputeGpuDevice._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cores_count=cores_count,
+            description=description,
+            manufacturer=manufacturer,
+            memory_in_mbs=memory_in_mbs,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cores_count: Optional[int] = None,
+             description: Optional[str] = None,
+             manufacturer: Optional[str] = None,
+             memory_in_mbs: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if cores_count is not None:
-            pulumi.set(__self__, "cores_count", cores_count)
+            _setter("cores_count", cores_count)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if manufacturer is not None:
-            pulumi.set(__self__, "manufacturer", manufacturer)
+            _setter("manufacturer", manufacturer)
         if memory_in_mbs is not None:
-            pulumi.set(__self__, "memory_in_mbs", memory_in_mbs)
+            _setter("memory_in_mbs", memory_in_mbs)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="coresCount")
@@ -884,18 +1012,37 @@ class AssetComputeNic(dict):
         :param str network_name: (Updatable) Network name.
         :param str switch_name: (Updatable) Switch name.
         """
+        AssetComputeNic._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_addresses=ip_addresses,
+            label=label,
+            mac_address=mac_address,
+            mac_address_type=mac_address_type,
+            network_name=network_name,
+            switch_name=switch_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_addresses: Optional[Sequence[str]] = None,
+             label: Optional[str] = None,
+             mac_address: Optional[str] = None,
+             mac_address_type: Optional[str] = None,
+             network_name: Optional[str] = None,
+             switch_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if ip_addresses is not None:
-            pulumi.set(__self__, "ip_addresses", ip_addresses)
+            _setter("ip_addresses", ip_addresses)
         if label is not None:
-            pulumi.set(__self__, "label", label)
+            _setter("label", label)
         if mac_address is not None:
-            pulumi.set(__self__, "mac_address", mac_address)
+            _setter("mac_address", mac_address)
         if mac_address_type is not None:
-            pulumi.set(__self__, "mac_address_type", mac_address_type)
+            _setter("mac_address_type", mac_address_type)
         if network_name is not None:
-            pulumi.set(__self__, "network_name", network_name)
+            _setter("network_name", network_name)
         if switch_name is not None:
-            pulumi.set(__self__, "switch_name", switch_name)
+            _setter("switch_name", switch_name)
 
     @property
     @pulumi.getter(name="ipAddresses")
@@ -976,12 +1123,25 @@ class AssetComputeNvdimm(dict):
         :param str label: (Updatable) Provides a label and summary information for the device.
         :param int unit_number: (Updatable) The unit number of the SCSI controller.
         """
+        AssetComputeNvdimm._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            controller_key=controller_key,
+            label=label,
+            unit_number=unit_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             controller_key: Optional[int] = None,
+             label: Optional[str] = None,
+             unit_number: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if controller_key is not None:
-            pulumi.set(__self__, "controller_key", controller_key)
+            _setter("controller_key", controller_key)
         if label is not None:
-            pulumi.set(__self__, "label", label)
+            _setter("label", label)
         if unit_number is not None:
-            pulumi.set(__self__, "unit_number", unit_number)
+            _setter("unit_number", unit_number)
 
     @property
     @pulumi.getter(name="controllerKey")
@@ -1034,10 +1194,21 @@ class AssetComputeNvdimmController(dict):
         :param int bus_number: (Updatable) Bus number.
         :param str label: (Updatable) Provides a label and summary information for the device.
         """
+        AssetComputeNvdimmController._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bus_number=bus_number,
+            label=label,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bus_number: Optional[int] = None,
+             label: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if bus_number is not None:
-            pulumi.set(__self__, "bus_number", bus_number)
+            _setter("bus_number", bus_number)
         if label is not None:
-            pulumi.set(__self__, "label", label)
+            _setter("label", label)
 
     @property
     @pulumi.getter(name="busNumber")
@@ -1086,12 +1257,25 @@ class AssetComputeScsiController(dict):
         :param str shared_bus: (Updatable) Shared bus.
         :param int unit_number: (Updatable) The unit number of the SCSI controller.
         """
+        AssetComputeScsiController._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            label=label,
+            shared_bus=shared_bus,
+            unit_number=unit_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             label: Optional[str] = None,
+             shared_bus: Optional[str] = None,
+             unit_number: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if label is not None:
-            pulumi.set(__self__, "label", label)
+            _setter("label", label)
         if shared_bus is not None:
-            pulumi.set(__self__, "shared_bus", shared_bus)
+            _setter("shared_bus", shared_bus)
         if unit_number is not None:
-            pulumi.set(__self__, "unit_number", unit_number)
+            _setter("unit_number", unit_number)
 
     @property
     @pulumi.getter
@@ -1144,8 +1328,19 @@ class AssetSourceDiscoveryCredentials(dict):
         :param str secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
         :param str type: (Updatable) Asset source type.
         """
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "type", type)
+        AssetSourceDiscoveryCredentials._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            secret_id=secret_id,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             secret_id: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("secret_id", secret_id)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="secretId")
@@ -1190,8 +1385,19 @@ class AssetSourceReplicationCredentials(dict):
         :param str secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
         :param str type: (Updatable) Asset source type.
         """
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "type", type)
+        AssetSourceReplicationCredentials._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            secret_id=secret_id,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             secret_id: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("secret_id", secret_id)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="secretId")
@@ -1242,12 +1448,25 @@ class AssetVm(dict):
         :param str hypervisor_vendor: (Updatable) Hypervisor vendor.
         :param str hypervisor_version: (Updatable) Hypervisor version.
         """
+        AssetVm._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hypervisor_host=hypervisor_host,
+            hypervisor_vendor=hypervisor_vendor,
+            hypervisor_version=hypervisor_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hypervisor_host: Optional[str] = None,
+             hypervisor_vendor: Optional[str] = None,
+             hypervisor_version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if hypervisor_host is not None:
-            pulumi.set(__self__, "hypervisor_host", hypervisor_host)
+            _setter("hypervisor_host", hypervisor_host)
         if hypervisor_vendor is not None:
-            pulumi.set(__self__, "hypervisor_vendor", hypervisor_vendor)
+            _setter("hypervisor_vendor", hypervisor_vendor)
         if hypervisor_version is not None:
-            pulumi.set(__self__, "hypervisor_version", hypervisor_version)
+            _setter("hypervisor_version", hypervisor_version)
 
     @property
     @pulumi.getter(name="hypervisorHost")
@@ -1306,12 +1525,25 @@ class AssetVmwareVcenter(dict):
         :param str vcenter_key: (Updatable) vCenter unique key.
         :param str vcenter_version: (Updatable) Dot-separated version string.
         """
+        AssetVmwareVcenter._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_center=data_center,
+            vcenter_key=vcenter_key,
+            vcenter_version=vcenter_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_center: Optional[str] = None,
+             vcenter_key: Optional[str] = None,
+             vcenter_version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if data_center is not None:
-            pulumi.set(__self__, "data_center", data_center)
+            _setter("data_center", data_center)
         if vcenter_key is not None:
-            pulumi.set(__self__, "vcenter_key", vcenter_key)
+            _setter("vcenter_key", vcenter_key)
         if vcenter_version is not None:
-            pulumi.set(__self__, "vcenter_version", vcenter_version)
+            _setter("vcenter_version", vcenter_version)
 
     @property
     @pulumi.getter(name="dataCenter")
@@ -1402,28 +1634,57 @@ class AssetVmwareVm(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        AssetVmwareVm._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cluster=cluster,
+            customer_fields=customer_fields,
+            customer_tags=customer_tags,
+            fault_tolerance_bandwidth=fault_tolerance_bandwidth,
+            fault_tolerance_secondary_latency=fault_tolerance_secondary_latency,
+            fault_tolerance_state=fault_tolerance_state,
+            instance_uuid=instance_uuid,
+            is_disks_cbt_enabled=is_disks_cbt_enabled,
+            is_disks_uuid_enabled=is_disks_uuid_enabled,
+            path=path,
+            vmware_tools_status=vmware_tools_status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cluster: Optional[str] = None,
+             customer_fields: Optional[Sequence[str]] = None,
+             customer_tags: Optional[Sequence['outputs.AssetVmwareVmCustomerTag']] = None,
+             fault_tolerance_bandwidth: Optional[int] = None,
+             fault_tolerance_secondary_latency: Optional[int] = None,
+             fault_tolerance_state: Optional[str] = None,
+             instance_uuid: Optional[str] = None,
+             is_disks_cbt_enabled: Optional[bool] = None,
+             is_disks_uuid_enabled: Optional[bool] = None,
+             path: Optional[str] = None,
+             vmware_tools_status: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if cluster is not None:
-            pulumi.set(__self__, "cluster", cluster)
+            _setter("cluster", cluster)
         if customer_fields is not None:
-            pulumi.set(__self__, "customer_fields", customer_fields)
+            _setter("customer_fields", customer_fields)
         if customer_tags is not None:
-            pulumi.set(__self__, "customer_tags", customer_tags)
+            _setter("customer_tags", customer_tags)
         if fault_tolerance_bandwidth is not None:
-            pulumi.set(__self__, "fault_tolerance_bandwidth", fault_tolerance_bandwidth)
+            _setter("fault_tolerance_bandwidth", fault_tolerance_bandwidth)
         if fault_tolerance_secondary_latency is not None:
-            pulumi.set(__self__, "fault_tolerance_secondary_latency", fault_tolerance_secondary_latency)
+            _setter("fault_tolerance_secondary_latency", fault_tolerance_secondary_latency)
         if fault_tolerance_state is not None:
-            pulumi.set(__self__, "fault_tolerance_state", fault_tolerance_state)
+            _setter("fault_tolerance_state", fault_tolerance_state)
         if instance_uuid is not None:
-            pulumi.set(__self__, "instance_uuid", instance_uuid)
+            _setter("instance_uuid", instance_uuid)
         if is_disks_cbt_enabled is not None:
-            pulumi.set(__self__, "is_disks_cbt_enabled", is_disks_cbt_enabled)
+            _setter("is_disks_cbt_enabled", is_disks_cbt_enabled)
         if is_disks_uuid_enabled is not None:
-            pulumi.set(__self__, "is_disks_uuid_enabled", is_disks_uuid_enabled)
+            _setter("is_disks_uuid_enabled", is_disks_uuid_enabled)
         if path is not None:
-            pulumi.set(__self__, "path", path)
+            _setter("path", path)
         if vmware_tools_status is not None:
-            pulumi.set(__self__, "vmware_tools_status", vmware_tools_status)
+            _setter("vmware_tools_status", vmware_tools_status)
 
     @property
     @pulumi.getter
@@ -1527,10 +1788,21 @@ class AssetVmwareVmCustomerTag(dict):
         :param str description: (Updatable) The tag description.
         :param str name: (Updatable) The tag name.
         """
+        AssetVmwareVmCustomerTag._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -1553,7 +1825,16 @@ class AssetVmwareVmCustomerTag(dict):
 class GetAgentDependenciesAgentDependencyCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAgentDependenciesAgentDependencyCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetAgentDependenciesAgentDependencyCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAgentDependenciesAgentDependencyCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1600,23 +1881,64 @@ class GetAgentDependenciesAgentDependencyCollectionItemResult(dict):
         :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The time when the AgentDependency was created. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "checksum", checksum)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "dependency_name", dependency_name)
-        pulumi.set(__self__, "dependency_version", dependency_version)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "e_tag", e_tag)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
+        GetAgentDependenciesAgentDependencyCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            checksum=checksum,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            dependency_name=dependency_name,
+            dependency_version=dependency_version,
+            description=description,
+            display_name=display_name,
+            e_tag=e_tag,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            namespace=namespace,
+            object=object,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             checksum: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             dependency_name: str,
+             dependency_version: str,
+             description: str,
+             display_name: str,
+             e_tag: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             namespace: str,
+             object: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("checksum", checksum)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("dependency_name", dependency_name)
+        _setter("dependency_version", dependency_version)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("e_tag", e_tag)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("namespace", namespace)
+        _setter("object", object)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter
@@ -1761,10 +2083,23 @@ class GetAgentDependenciesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAgentDependenciesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1805,15 +2140,40 @@ class GetAgentPluginListResult(dict):
         :param str time_created: The time when the Agent was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time when the Agent was updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "agent_id", agent_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "plugin_version", plugin_version)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetAgentPluginListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agent_id=agent_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            plugin_version=plugin_version,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agent_id: str,
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             lifecycle_details: str,
+             name: str,
+             plugin_version: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("agent_id", agent_id)
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("name", name)
+        _setter("plugin_version", plugin_version)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="agentId")
@@ -1892,7 +2252,16 @@ class GetAgentPluginListResult(dict):
 class GetAgentsAgentCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAgentsAgentCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetAgentsAgentCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAgentsAgentCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1943,25 +2312,70 @@ class GetAgentsAgentCollectionItemResult(dict):
         :param str time_last_sync_received: The time when the last heartbeat of the Agent was noted. An RFC3339 formatted datetime string.
         :param str time_updated: The time when the Agent was updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "agent_pub_key", agent_pub_key)
-        pulumi.set(__self__, "agent_type", agent_type)
-        pulumi.set(__self__, "agent_version", agent_version)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "environment_id", environment_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "heart_beat_status", heart_beat_status)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "os_version", os_version)
-        pulumi.set(__self__, "plugin_lists", plugin_lists)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_expire_agent_key_in_ms", time_expire_agent_key_in_ms)
-        pulumi.set(__self__, "time_last_sync_received", time_last_sync_received)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetAgentsAgentCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agent_pub_key=agent_pub_key,
+            agent_type=agent_type,
+            agent_version=agent_version,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            environment_id=environment_id,
+            freeform_tags=freeform_tags,
+            heart_beat_status=heart_beat_status,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            os_version=os_version,
+            plugin_lists=plugin_lists,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_expire_agent_key_in_ms=time_expire_agent_key_in_ms,
+            time_last_sync_received=time_last_sync_received,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agent_pub_key: str,
+             agent_type: str,
+             agent_version: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             environment_id: str,
+             freeform_tags: Mapping[str, Any],
+             heart_beat_status: str,
+             id: str,
+             lifecycle_details: str,
+             os_version: str,
+             plugin_lists: Sequence['outputs.GetAgentsAgentCollectionItemPluginListResult'],
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_expire_agent_key_in_ms: str,
+             time_last_sync_received: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("agent_pub_key", agent_pub_key)
+        _setter("agent_type", agent_type)
+        _setter("agent_version", agent_version)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("environment_id", environment_id)
+        _setter("freeform_tags", freeform_tags)
+        _setter("heart_beat_status", heart_beat_status)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("os_version", os_version)
+        _setter("plugin_lists", plugin_lists)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_expire_agent_key_in_ms", time_expire_agent_key_in_ms)
+        _setter("time_last_sync_received", time_last_sync_received)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="agentPubKey")
@@ -2139,15 +2553,40 @@ class GetAgentsAgentCollectionItemPluginListResult(dict):
         :param str time_created: The time when the Agent was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time when the Agent was updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "agent_id", agent_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "plugin_version", plugin_version)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetAgentsAgentCollectionItemPluginListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agent_id=agent_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            plugin_version=plugin_version,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agent_id: str,
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             lifecycle_details: str,
+             name: str,
+             plugin_version: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("agent_id", agent_id)
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("name", name)
+        _setter("plugin_version", plugin_version)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="agentId")
@@ -2231,10 +2670,23 @@ class GetAgentsFilterResult(dict):
         """
         :param str name: Plugin identifier, which can be renamed.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAgentsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2288,20 +2740,55 @@ class GetApplianceImageItemResult(dict):
         :param str time_updated: The time when the appliance image was last updated. An RFC3339 formatted datetime string.
         :param str version: The version of the image file.
         """
-        pulumi.set(__self__, "checksum", checksum)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "download_url", download_url)
-        pulumi.set(__self__, "file_name", file_name)
-        pulumi.set(__self__, "format", format)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "platform", platform)
-        pulumi.set(__self__, "size_in_mbs", size_in_mbs)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "version", version)
+        GetApplianceImageItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            checksum=checksum,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            download_url=download_url,
+            file_name=file_name,
+            format=format,
+            freeform_tags=freeform_tags,
+            id=id,
+            platform=platform,
+            size_in_mbs=size_in_mbs,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             checksum: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             download_url: str,
+             file_name: str,
+             format: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             platform: str,
+             size_in_mbs: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("checksum", checksum)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("download_url", download_url)
+        _setter("file_name", file_name)
+        _setter("format", format)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("platform", platform)
+        _setter("size_in_mbs", size_in_mbs)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("version", version)
 
     @property
     @pulumi.getter
@@ -2423,7 +2910,16 @@ class GetApplianceImagesApplianceImageCollectionResult(dict):
         """
         :param Sequence['GetApplianceImagesApplianceImageCollectionItemArgs'] items: List of appliance images.
         """
-        pulumi.set(__self__, "items", items)
+        GetApplianceImagesApplianceImageCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetApplianceImagesApplianceImageCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2467,20 +2963,55 @@ class GetApplianceImagesApplianceImageCollectionItemResult(dict):
         :param str time_updated: The time when the appliance image was last updated. An RFC3339 formatted datetime string.
         :param str version: The version of the image file.
         """
-        pulumi.set(__self__, "checksum", checksum)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "download_url", download_url)
-        pulumi.set(__self__, "file_name", file_name)
-        pulumi.set(__self__, "format", format)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "platform", platform)
-        pulumi.set(__self__, "size_in_mbs", size_in_mbs)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "version", version)
+        GetApplianceImagesApplianceImageCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            checksum=checksum,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            download_url=download_url,
+            file_name=file_name,
+            format=format,
+            freeform_tags=freeform_tags,
+            id=id,
+            platform=platform,
+            size_in_mbs=size_in_mbs,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             checksum: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             download_url: str,
+             file_name: str,
+             format: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             platform: str,
+             size_in_mbs: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("checksum", checksum)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("download_url", download_url)
+        _setter("file_name", file_name)
+        _setter("format", format)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("platform", platform)
+        _setter("size_in_mbs", size_in_mbs)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("version", version)
 
     @property
     @pulumi.getter
@@ -2601,10 +3132,23 @@ class GetApplianceImagesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetApplianceImagesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2685,35 +3229,100 @@ class GetAssetComputeResult(dict):
         :param str storage_provisioned_in_mbs: Provision storage size in MBs.
         :param int threads_per_core_count: Number of threads per core.
         """
-        pulumi.set(__self__, "connected_networks", connected_networks)
-        pulumi.set(__self__, "cores_count", cores_count)
-        pulumi.set(__self__, "cpu_model", cpu_model)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "disks", disks)
-        pulumi.set(__self__, "disks_count", disks_count)
-        pulumi.set(__self__, "dns_name", dns_name)
-        pulumi.set(__self__, "firmware", firmware)
-        pulumi.set(__self__, "gpu_devices", gpu_devices)
-        pulumi.set(__self__, "gpu_devices_count", gpu_devices_count)
-        pulumi.set(__self__, "guest_state", guest_state)
-        pulumi.set(__self__, "hardware_version", hardware_version)
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "is_pmem_enabled", is_pmem_enabled)
-        pulumi.set(__self__, "is_tpm_enabled", is_tpm_enabled)
-        pulumi.set(__self__, "latency_sensitivity", latency_sensitivity)
-        pulumi.set(__self__, "memory_in_mbs", memory_in_mbs)
-        pulumi.set(__self__, "nics", nics)
-        pulumi.set(__self__, "nics_count", nics_count)
-        pulumi.set(__self__, "nvdimm_controllers", nvdimm_controllers)
-        pulumi.set(__self__, "nvdimms", nvdimms)
-        pulumi.set(__self__, "operating_system", operating_system)
-        pulumi.set(__self__, "operating_system_version", operating_system_version)
-        pulumi.set(__self__, "pmem_in_mbs", pmem_in_mbs)
-        pulumi.set(__self__, "power_state", power_state)
-        pulumi.set(__self__, "primary_ip", primary_ip)
-        pulumi.set(__self__, "scsi_controllers", scsi_controllers)
-        pulumi.set(__self__, "storage_provisioned_in_mbs", storage_provisioned_in_mbs)
-        pulumi.set(__self__, "threads_per_core_count", threads_per_core_count)
+        GetAssetComputeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            connected_networks=connected_networks,
+            cores_count=cores_count,
+            cpu_model=cpu_model,
+            description=description,
+            disks=disks,
+            disks_count=disks_count,
+            dns_name=dns_name,
+            firmware=firmware,
+            gpu_devices=gpu_devices,
+            gpu_devices_count=gpu_devices_count,
+            guest_state=guest_state,
+            hardware_version=hardware_version,
+            host_name=host_name,
+            is_pmem_enabled=is_pmem_enabled,
+            is_tpm_enabled=is_tpm_enabled,
+            latency_sensitivity=latency_sensitivity,
+            memory_in_mbs=memory_in_mbs,
+            nics=nics,
+            nics_count=nics_count,
+            nvdimm_controllers=nvdimm_controllers,
+            nvdimms=nvdimms,
+            operating_system=operating_system,
+            operating_system_version=operating_system_version,
+            pmem_in_mbs=pmem_in_mbs,
+            power_state=power_state,
+            primary_ip=primary_ip,
+            scsi_controllers=scsi_controllers,
+            storage_provisioned_in_mbs=storage_provisioned_in_mbs,
+            threads_per_core_count=threads_per_core_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             connected_networks: int,
+             cores_count: int,
+             cpu_model: str,
+             description: str,
+             disks: Sequence['outputs.GetAssetComputeDiskResult'],
+             disks_count: int,
+             dns_name: str,
+             firmware: str,
+             gpu_devices: Sequence['outputs.GetAssetComputeGpuDeviceResult'],
+             gpu_devices_count: int,
+             guest_state: str,
+             hardware_version: str,
+             host_name: str,
+             is_pmem_enabled: bool,
+             is_tpm_enabled: bool,
+             latency_sensitivity: str,
+             memory_in_mbs: str,
+             nics: Sequence['outputs.GetAssetComputeNicResult'],
+             nics_count: int,
+             nvdimm_controllers: Sequence['outputs.GetAssetComputeNvdimmControllerResult'],
+             nvdimms: Sequence['outputs.GetAssetComputeNvdimmResult'],
+             operating_system: str,
+             operating_system_version: str,
+             pmem_in_mbs: str,
+             power_state: str,
+             primary_ip: str,
+             scsi_controllers: Sequence['outputs.GetAssetComputeScsiControllerResult'],
+             storage_provisioned_in_mbs: str,
+             threads_per_core_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("connected_networks", connected_networks)
+        _setter("cores_count", cores_count)
+        _setter("cpu_model", cpu_model)
+        _setter("description", description)
+        _setter("disks", disks)
+        _setter("disks_count", disks_count)
+        _setter("dns_name", dns_name)
+        _setter("firmware", firmware)
+        _setter("gpu_devices", gpu_devices)
+        _setter("gpu_devices_count", gpu_devices_count)
+        _setter("guest_state", guest_state)
+        _setter("hardware_version", hardware_version)
+        _setter("host_name", host_name)
+        _setter("is_pmem_enabled", is_pmem_enabled)
+        _setter("is_tpm_enabled", is_tpm_enabled)
+        _setter("latency_sensitivity", latency_sensitivity)
+        _setter("memory_in_mbs", memory_in_mbs)
+        _setter("nics", nics)
+        _setter("nics_count", nics_count)
+        _setter("nvdimm_controllers", nvdimm_controllers)
+        _setter("nvdimms", nvdimms)
+        _setter("operating_system", operating_system)
+        _setter("operating_system_version", operating_system_version)
+        _setter("pmem_in_mbs", pmem_in_mbs)
+        _setter("power_state", power_state)
+        _setter("primary_ip", primary_ip)
+        _setter("scsi_controllers", scsi_controllers)
+        _setter("storage_provisioned_in_mbs", storage_provisioned_in_mbs)
+        _setter("threads_per_core_count", threads_per_core_count)
 
     @property
     @pulumi.getter(name="connectedNetworks")
@@ -2967,13 +3576,34 @@ class GetAssetComputeDiskResult(dict):
         :param str uuid: Disk UUID for the virtual disk, if available.
         :param str uuid_lun: Disk UUID LUN for the virtual disk, if available.
         """
-        pulumi.set(__self__, "boot_order", boot_order)
-        pulumi.set(__self__, "location", location)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "persistent_mode", persistent_mode)
-        pulumi.set(__self__, "size_in_mbs", size_in_mbs)
-        pulumi.set(__self__, "uuid", uuid)
-        pulumi.set(__self__, "uuid_lun", uuid_lun)
+        GetAssetComputeDiskResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            boot_order=boot_order,
+            location=location,
+            name=name,
+            persistent_mode=persistent_mode,
+            size_in_mbs=size_in_mbs,
+            uuid=uuid,
+            uuid_lun=uuid_lun,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             boot_order: int,
+             location: str,
+             name: str,
+             persistent_mode: str,
+             size_in_mbs: str,
+             uuid: str,
+             uuid_lun: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("boot_order", boot_order)
+        _setter("location", location)
+        _setter("name", name)
+        _setter("persistent_mode", persistent_mode)
+        _setter("size_in_mbs", size_in_mbs)
+        _setter("uuid", uuid)
+        _setter("uuid_lun", uuid_lun)
 
     @property
     @pulumi.getter(name="bootOrder")
@@ -3047,11 +3677,28 @@ class GetAssetComputeGpuDeviceResult(dict):
         :param str memory_in_mbs: Memory size in MBs.
         :param str name: The tag name.
         """
-        pulumi.set(__self__, "cores_count", cores_count)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "manufacturer", manufacturer)
-        pulumi.set(__self__, "memory_in_mbs", memory_in_mbs)
-        pulumi.set(__self__, "name", name)
+        GetAssetComputeGpuDeviceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cores_count=cores_count,
+            description=description,
+            manufacturer=manufacturer,
+            memory_in_mbs=memory_in_mbs,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cores_count: int,
+             description: str,
+             manufacturer: str,
+             memory_in_mbs: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cores_count", cores_count)
+        _setter("description", description)
+        _setter("manufacturer", manufacturer)
+        _setter("memory_in_mbs", memory_in_mbs)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="coresCount")
@@ -3111,12 +3758,31 @@ class GetAssetComputeNicResult(dict):
         :param str network_name: Network name.
         :param str switch_name: Switch name.
         """
-        pulumi.set(__self__, "ip_addresses", ip_addresses)
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "mac_address", mac_address)
-        pulumi.set(__self__, "mac_address_type", mac_address_type)
-        pulumi.set(__self__, "network_name", network_name)
-        pulumi.set(__self__, "switch_name", switch_name)
+        GetAssetComputeNicResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_addresses=ip_addresses,
+            label=label,
+            mac_address=mac_address,
+            mac_address_type=mac_address_type,
+            network_name=network_name,
+            switch_name=switch_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_addresses: Sequence[str],
+             label: str,
+             mac_address: str,
+             mac_address_type: str,
+             network_name: str,
+             switch_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ip_addresses", ip_addresses)
+        _setter("label", label)
+        _setter("mac_address", mac_address)
+        _setter("mac_address_type", mac_address_type)
+        _setter("network_name", network_name)
+        _setter("switch_name", switch_name)
 
     @property
     @pulumi.getter(name="ipAddresses")
@@ -3178,9 +3844,22 @@ class GetAssetComputeNvdimmResult(dict):
         :param str label: Provides a label and summary information for the device.
         :param int unit_number: The unit number of the SCSI controller.
         """
-        pulumi.set(__self__, "controller_key", controller_key)
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "unit_number", unit_number)
+        GetAssetComputeNvdimmResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            controller_key=controller_key,
+            label=label,
+            unit_number=unit_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             controller_key: int,
+             label: str,
+             unit_number: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("controller_key", controller_key)
+        _setter("label", label)
+        _setter("unit_number", unit_number)
 
     @property
     @pulumi.getter(name="controllerKey")
@@ -3216,8 +3895,19 @@ class GetAssetComputeNvdimmControllerResult(dict):
         :param int bus_number: Bus number.
         :param str label: Provides a label and summary information for the device.
         """
-        pulumi.set(__self__, "bus_number", bus_number)
-        pulumi.set(__self__, "label", label)
+        GetAssetComputeNvdimmControllerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bus_number=bus_number,
+            label=label,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bus_number: int,
+             label: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bus_number", bus_number)
+        _setter("label", label)
 
     @property
     @pulumi.getter(name="busNumber")
@@ -3247,9 +3937,22 @@ class GetAssetComputeScsiControllerResult(dict):
         :param str shared_bus: Shared bus.
         :param int unit_number: The unit number of the SCSI controller.
         """
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "shared_bus", shared_bus)
-        pulumi.set(__self__, "unit_number", unit_number)
+        GetAssetComputeScsiControllerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            label=label,
+            shared_bus=shared_bus,
+            unit_number=unit_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             label: str,
+             shared_bus: str,
+             unit_number: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("label", label)
+        _setter("shared_bus", shared_bus)
+        _setter("unit_number", unit_number)
 
     @property
     @pulumi.getter
@@ -3285,8 +3988,19 @@ class GetAssetSourceDiscoveryCredentialResult(dict):
         :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
         :param str type: The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
         """
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "type", type)
+        GetAssetSourceDiscoveryCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            secret_id=secret_id,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             secret_id: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("secret_id", secret_id)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="secretId")
@@ -3314,8 +4028,19 @@ class GetAssetSourceReplicationCredentialResult(dict):
         :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
         :param str type: The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
         """
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "type", type)
+        GetAssetSourceReplicationCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            secret_id=secret_id,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             secret_id: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("secret_id", secret_id)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="secretId")
@@ -3338,7 +4063,16 @@ class GetAssetSourceReplicationCredentialResult(dict):
 class GetAssetSourcesAssetSourceCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAssetSourcesAssetSourceCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetAssetSourcesAssetSourceCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAssetSourcesAssetSourceCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3391,26 +4125,73 @@ class GetAssetSourcesAssetSourceCollectionItemResult(dict):
         :param str type: The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
         :param str vcenter_endpoint: Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
         """
-        pulumi.set(__self__, "are_historical_metrics_collected", are_historical_metrics_collected)
-        pulumi.set(__self__, "are_realtime_metrics_collected", are_realtime_metrics_collected)
-        pulumi.set(__self__, "assets_compartment_id", assets_compartment_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "discovery_credentials", discovery_credentials)
-        pulumi.set(__self__, "discovery_schedule_id", discovery_schedule_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "environment_id", environment_id)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "inventory_id", inventory_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "replication_credentials", replication_credentials)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "vcenter_endpoint", vcenter_endpoint)
+        GetAssetSourcesAssetSourceCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            are_historical_metrics_collected=are_historical_metrics_collected,
+            are_realtime_metrics_collected=are_realtime_metrics_collected,
+            assets_compartment_id=assets_compartment_id,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            discovery_credentials=discovery_credentials,
+            discovery_schedule_id=discovery_schedule_id,
+            display_name=display_name,
+            environment_id=environment_id,
+            freeform_tags=freeform_tags,
+            id=id,
+            inventory_id=inventory_id,
+            lifecycle_details=lifecycle_details,
+            replication_credentials=replication_credentials,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+            vcenter_endpoint=vcenter_endpoint,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             are_historical_metrics_collected: bool,
+             are_realtime_metrics_collected: bool,
+             assets_compartment_id: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             discovery_credentials: Sequence['outputs.GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialResult'],
+             discovery_schedule_id: str,
+             display_name: str,
+             environment_id: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             inventory_id: str,
+             lifecycle_details: str,
+             replication_credentials: Sequence['outputs.GetAssetSourcesAssetSourceCollectionItemReplicationCredentialResult'],
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             type: str,
+             vcenter_endpoint: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("are_historical_metrics_collected", are_historical_metrics_collected)
+        _setter("are_realtime_metrics_collected", are_realtime_metrics_collected)
+        _setter("assets_compartment_id", assets_compartment_id)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("discovery_credentials", discovery_credentials)
+        _setter("discovery_schedule_id", discovery_schedule_id)
+        _setter("display_name", display_name)
+        _setter("environment_id", environment_id)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("inventory_id", inventory_id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("replication_credentials", replication_credentials)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("type", type)
+        _setter("vcenter_endpoint", vcenter_endpoint)
 
     @property
     @pulumi.getter(name="areHistoricalMetricsCollected")
@@ -3582,8 +4363,19 @@ class GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialResult(dict):
         :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
         :param str type: The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
         """
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "type", type)
+        GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            secret_id=secret_id,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             secret_id: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("secret_id", secret_id)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="secretId")
@@ -3611,8 +4403,19 @@ class GetAssetSourcesAssetSourceCollectionItemReplicationCredentialResult(dict):
         :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
         :param str type: The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
         """
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "type", type)
+        GetAssetSourcesAssetSourceCollectionItemReplicationCredentialResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            secret_id=secret_id,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             secret_id: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("secret_id", secret_id)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="secretId")
@@ -3637,10 +4440,23 @@ class GetAssetSourcesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAssetSourcesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3669,9 +4485,22 @@ class GetAssetVmResult(dict):
         :param str hypervisor_vendor: Hypervisor vendor.
         :param str hypervisor_version: Hypervisor version.
         """
-        pulumi.set(__self__, "hypervisor_host", hypervisor_host)
-        pulumi.set(__self__, "hypervisor_vendor", hypervisor_vendor)
-        pulumi.set(__self__, "hypervisor_version", hypervisor_version)
+        GetAssetVmResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hypervisor_host=hypervisor_host,
+            hypervisor_vendor=hypervisor_vendor,
+            hypervisor_version=hypervisor_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hypervisor_host: str,
+             hypervisor_vendor: str,
+             hypervisor_version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hypervisor_host", hypervisor_host)
+        _setter("hypervisor_vendor", hypervisor_vendor)
+        _setter("hypervisor_version", hypervisor_version)
 
     @property
     @pulumi.getter(name="hypervisorHost")
@@ -3709,9 +4538,22 @@ class GetAssetVmwareVcenterResult(dict):
         :param str vcenter_key: vCenter unique key.
         :param str vcenter_version: Dot-separated version string.
         """
-        pulumi.set(__self__, "data_center", data_center)
-        pulumi.set(__self__, "vcenter_key", vcenter_key)
-        pulumi.set(__self__, "vcenter_version", vcenter_version)
+        GetAssetVmwareVcenterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_center=data_center,
+            vcenter_key=vcenter_key,
+            vcenter_version=vcenter_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_center: str,
+             vcenter_key: str,
+             vcenter_version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("data_center", data_center)
+        _setter("vcenter_key", vcenter_key)
+        _setter("vcenter_version", vcenter_version)
 
     @property
     @pulumi.getter(name="dataCenter")
@@ -3765,17 +4607,46 @@ class GetAssetVmwareVmResult(dict):
         :param str path: Path directory of the asset.
         :param str vmware_tools_status: VMware tools status.
         """
-        pulumi.set(__self__, "cluster", cluster)
-        pulumi.set(__self__, "customer_fields", customer_fields)
-        pulumi.set(__self__, "customer_tags", customer_tags)
-        pulumi.set(__self__, "fault_tolerance_bandwidth", fault_tolerance_bandwidth)
-        pulumi.set(__self__, "fault_tolerance_secondary_latency", fault_tolerance_secondary_latency)
-        pulumi.set(__self__, "fault_tolerance_state", fault_tolerance_state)
-        pulumi.set(__self__, "instance_uuid", instance_uuid)
-        pulumi.set(__self__, "is_disks_cbt_enabled", is_disks_cbt_enabled)
-        pulumi.set(__self__, "is_disks_uuid_enabled", is_disks_uuid_enabled)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "vmware_tools_status", vmware_tools_status)
+        GetAssetVmwareVmResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cluster=cluster,
+            customer_fields=customer_fields,
+            customer_tags=customer_tags,
+            fault_tolerance_bandwidth=fault_tolerance_bandwidth,
+            fault_tolerance_secondary_latency=fault_tolerance_secondary_latency,
+            fault_tolerance_state=fault_tolerance_state,
+            instance_uuid=instance_uuid,
+            is_disks_cbt_enabled=is_disks_cbt_enabled,
+            is_disks_uuid_enabled=is_disks_uuid_enabled,
+            path=path,
+            vmware_tools_status=vmware_tools_status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cluster: str,
+             customer_fields: Sequence[str],
+             customer_tags: Sequence['outputs.GetAssetVmwareVmCustomerTagResult'],
+             fault_tolerance_bandwidth: int,
+             fault_tolerance_secondary_latency: int,
+             fault_tolerance_state: str,
+             instance_uuid: str,
+             is_disks_cbt_enabled: bool,
+             is_disks_uuid_enabled: bool,
+             path: str,
+             vmware_tools_status: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cluster", cluster)
+        _setter("customer_fields", customer_fields)
+        _setter("customer_tags", customer_tags)
+        _setter("fault_tolerance_bandwidth", fault_tolerance_bandwidth)
+        _setter("fault_tolerance_secondary_latency", fault_tolerance_secondary_latency)
+        _setter("fault_tolerance_state", fault_tolerance_state)
+        _setter("instance_uuid", instance_uuid)
+        _setter("is_disks_cbt_enabled", is_disks_cbt_enabled)
+        _setter("is_disks_uuid_enabled", is_disks_uuid_enabled)
+        _setter("path", path)
+        _setter("vmware_tools_status", vmware_tools_status)
 
     @property
     @pulumi.getter
@@ -3875,8 +4746,19 @@ class GetAssetVmwareVmCustomerTagResult(dict):
         :param str description: The tag description.
         :param str name: The tag name.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "name", name)
+        GetAssetVmwareVmCustomerTagResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -3899,7 +4781,16 @@ class GetAssetVmwareVmCustomerTagResult(dict):
 class GetAssetsAssetCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAssetsAssetCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetAssetsAssetCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAssetsAssetCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3948,24 +4839,67 @@ class GetAssetsAssetCollectionItemResult(dict):
         :param Sequence['GetAssetsAssetCollectionItemVmwareVcenterArgs'] vmware_vcenters: VMware vCenter related properties.
         :param Sequence['GetAssetsAssetCollectionItemVmwareVmArgs'] vmware_vms: VMware virtual machine related properties.
         """
-        pulumi.set(__self__, "asset_source_ids", asset_source_ids)
-        pulumi.set(__self__, "asset_type", asset_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "computes", computes)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "external_asset_key", external_asset_key)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "inventory_id", inventory_id)
-        pulumi.set(__self__, "source_key", source_key)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "vms", vms)
-        pulumi.set(__self__, "vmware_vcenters", vmware_vcenters)
-        pulumi.set(__self__, "vmware_vms", vmware_vms)
+        GetAssetsAssetCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            asset_source_ids=asset_source_ids,
+            asset_type=asset_type,
+            compartment_id=compartment_id,
+            computes=computes,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            external_asset_key=external_asset_key,
+            freeform_tags=freeform_tags,
+            id=id,
+            inventory_id=inventory_id,
+            source_key=source_key,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            vms=vms,
+            vmware_vcenters=vmware_vcenters,
+            vmware_vms=vmware_vms,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             asset_source_ids: Sequence[str],
+             asset_type: str,
+             compartment_id: str,
+             computes: Sequence['outputs.GetAssetsAssetCollectionItemComputeResult'],
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             external_asset_key: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             inventory_id: str,
+             source_key: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             vms: Sequence['outputs.GetAssetsAssetCollectionItemVmResult'],
+             vmware_vcenters: Sequence['outputs.GetAssetsAssetCollectionItemVmwareVcenterResult'],
+             vmware_vms: Sequence['outputs.GetAssetsAssetCollectionItemVmwareVmResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("asset_source_ids", asset_source_ids)
+        _setter("asset_type", asset_type)
+        _setter("compartment_id", compartment_id)
+        _setter("computes", computes)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("external_asset_key", external_asset_key)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("inventory_id", inventory_id)
+        _setter("source_key", source_key)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("vms", vms)
+        _setter("vmware_vcenters", vmware_vcenters)
+        _setter("vmware_vms", vmware_vms)
 
     @property
     @pulumi.getter(name="assetSourceIds")
@@ -4175,35 +5109,100 @@ class GetAssetsAssetCollectionItemComputeResult(dict):
         :param str storage_provisioned_in_mbs: Provision storage size in MBs.
         :param int threads_per_core_count: Number of threads per core.
         """
-        pulumi.set(__self__, "connected_networks", connected_networks)
-        pulumi.set(__self__, "cores_count", cores_count)
-        pulumi.set(__self__, "cpu_model", cpu_model)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "disks", disks)
-        pulumi.set(__self__, "disks_count", disks_count)
-        pulumi.set(__self__, "dns_name", dns_name)
-        pulumi.set(__self__, "firmware", firmware)
-        pulumi.set(__self__, "gpu_devices", gpu_devices)
-        pulumi.set(__self__, "gpu_devices_count", gpu_devices_count)
-        pulumi.set(__self__, "guest_state", guest_state)
-        pulumi.set(__self__, "hardware_version", hardware_version)
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "is_pmem_enabled", is_pmem_enabled)
-        pulumi.set(__self__, "is_tpm_enabled", is_tpm_enabled)
-        pulumi.set(__self__, "latency_sensitivity", latency_sensitivity)
-        pulumi.set(__self__, "memory_in_mbs", memory_in_mbs)
-        pulumi.set(__self__, "nics", nics)
-        pulumi.set(__self__, "nics_count", nics_count)
-        pulumi.set(__self__, "nvdimm_controllers", nvdimm_controllers)
-        pulumi.set(__self__, "nvdimms", nvdimms)
-        pulumi.set(__self__, "operating_system", operating_system)
-        pulumi.set(__self__, "operating_system_version", operating_system_version)
-        pulumi.set(__self__, "pmem_in_mbs", pmem_in_mbs)
-        pulumi.set(__self__, "power_state", power_state)
-        pulumi.set(__self__, "primary_ip", primary_ip)
-        pulumi.set(__self__, "scsi_controllers", scsi_controllers)
-        pulumi.set(__self__, "storage_provisioned_in_mbs", storage_provisioned_in_mbs)
-        pulumi.set(__self__, "threads_per_core_count", threads_per_core_count)
+        GetAssetsAssetCollectionItemComputeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            connected_networks=connected_networks,
+            cores_count=cores_count,
+            cpu_model=cpu_model,
+            description=description,
+            disks=disks,
+            disks_count=disks_count,
+            dns_name=dns_name,
+            firmware=firmware,
+            gpu_devices=gpu_devices,
+            gpu_devices_count=gpu_devices_count,
+            guest_state=guest_state,
+            hardware_version=hardware_version,
+            host_name=host_name,
+            is_pmem_enabled=is_pmem_enabled,
+            is_tpm_enabled=is_tpm_enabled,
+            latency_sensitivity=latency_sensitivity,
+            memory_in_mbs=memory_in_mbs,
+            nics=nics,
+            nics_count=nics_count,
+            nvdimm_controllers=nvdimm_controllers,
+            nvdimms=nvdimms,
+            operating_system=operating_system,
+            operating_system_version=operating_system_version,
+            pmem_in_mbs=pmem_in_mbs,
+            power_state=power_state,
+            primary_ip=primary_ip,
+            scsi_controllers=scsi_controllers,
+            storage_provisioned_in_mbs=storage_provisioned_in_mbs,
+            threads_per_core_count=threads_per_core_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             connected_networks: int,
+             cores_count: int,
+             cpu_model: str,
+             description: str,
+             disks: Sequence['outputs.GetAssetsAssetCollectionItemComputeDiskResult'],
+             disks_count: int,
+             dns_name: str,
+             firmware: str,
+             gpu_devices: Sequence['outputs.GetAssetsAssetCollectionItemComputeGpuDeviceResult'],
+             gpu_devices_count: int,
+             guest_state: str,
+             hardware_version: str,
+             host_name: str,
+             is_pmem_enabled: bool,
+             is_tpm_enabled: bool,
+             latency_sensitivity: str,
+             memory_in_mbs: str,
+             nics: Sequence['outputs.GetAssetsAssetCollectionItemComputeNicResult'],
+             nics_count: int,
+             nvdimm_controllers: Sequence['outputs.GetAssetsAssetCollectionItemComputeNvdimmControllerResult'],
+             nvdimms: Sequence['outputs.GetAssetsAssetCollectionItemComputeNvdimmResult'],
+             operating_system: str,
+             operating_system_version: str,
+             pmem_in_mbs: str,
+             power_state: str,
+             primary_ip: str,
+             scsi_controllers: Sequence['outputs.GetAssetsAssetCollectionItemComputeScsiControllerResult'],
+             storage_provisioned_in_mbs: str,
+             threads_per_core_count: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("connected_networks", connected_networks)
+        _setter("cores_count", cores_count)
+        _setter("cpu_model", cpu_model)
+        _setter("description", description)
+        _setter("disks", disks)
+        _setter("disks_count", disks_count)
+        _setter("dns_name", dns_name)
+        _setter("firmware", firmware)
+        _setter("gpu_devices", gpu_devices)
+        _setter("gpu_devices_count", gpu_devices_count)
+        _setter("guest_state", guest_state)
+        _setter("hardware_version", hardware_version)
+        _setter("host_name", host_name)
+        _setter("is_pmem_enabled", is_pmem_enabled)
+        _setter("is_tpm_enabled", is_tpm_enabled)
+        _setter("latency_sensitivity", latency_sensitivity)
+        _setter("memory_in_mbs", memory_in_mbs)
+        _setter("nics", nics)
+        _setter("nics_count", nics_count)
+        _setter("nvdimm_controllers", nvdimm_controllers)
+        _setter("nvdimms", nvdimms)
+        _setter("operating_system", operating_system)
+        _setter("operating_system_version", operating_system_version)
+        _setter("pmem_in_mbs", pmem_in_mbs)
+        _setter("power_state", power_state)
+        _setter("primary_ip", primary_ip)
+        _setter("scsi_controllers", scsi_controllers)
+        _setter("storage_provisioned_in_mbs", storage_provisioned_in_mbs)
+        _setter("threads_per_core_count", threads_per_core_count)
 
     @property
     @pulumi.getter(name="connectedNetworks")
@@ -4457,13 +5456,34 @@ class GetAssetsAssetCollectionItemComputeDiskResult(dict):
         :param str uuid: Disk UUID for the virtual disk, if available.
         :param str uuid_lun: Disk UUID LUN for the virtual disk, if available.
         """
-        pulumi.set(__self__, "boot_order", boot_order)
-        pulumi.set(__self__, "location", location)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "persistent_mode", persistent_mode)
-        pulumi.set(__self__, "size_in_mbs", size_in_mbs)
-        pulumi.set(__self__, "uuid", uuid)
-        pulumi.set(__self__, "uuid_lun", uuid_lun)
+        GetAssetsAssetCollectionItemComputeDiskResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            boot_order=boot_order,
+            location=location,
+            name=name,
+            persistent_mode=persistent_mode,
+            size_in_mbs=size_in_mbs,
+            uuid=uuid,
+            uuid_lun=uuid_lun,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             boot_order: int,
+             location: str,
+             name: str,
+             persistent_mode: str,
+             size_in_mbs: str,
+             uuid: str,
+             uuid_lun: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("boot_order", boot_order)
+        _setter("location", location)
+        _setter("name", name)
+        _setter("persistent_mode", persistent_mode)
+        _setter("size_in_mbs", size_in_mbs)
+        _setter("uuid", uuid)
+        _setter("uuid_lun", uuid_lun)
 
     @property
     @pulumi.getter(name="bootOrder")
@@ -4537,11 +5557,28 @@ class GetAssetsAssetCollectionItemComputeGpuDeviceResult(dict):
         :param str memory_in_mbs: Memory size in MBs.
         :param str name: The tag name.
         """
-        pulumi.set(__self__, "cores_count", cores_count)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "manufacturer", manufacturer)
-        pulumi.set(__self__, "memory_in_mbs", memory_in_mbs)
-        pulumi.set(__self__, "name", name)
+        GetAssetsAssetCollectionItemComputeGpuDeviceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cores_count=cores_count,
+            description=description,
+            manufacturer=manufacturer,
+            memory_in_mbs=memory_in_mbs,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cores_count: int,
+             description: str,
+             manufacturer: str,
+             memory_in_mbs: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cores_count", cores_count)
+        _setter("description", description)
+        _setter("manufacturer", manufacturer)
+        _setter("memory_in_mbs", memory_in_mbs)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="coresCount")
@@ -4601,12 +5638,31 @@ class GetAssetsAssetCollectionItemComputeNicResult(dict):
         :param str network_name: Network name.
         :param str switch_name: Switch name.
         """
-        pulumi.set(__self__, "ip_addresses", ip_addresses)
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "mac_address", mac_address)
-        pulumi.set(__self__, "mac_address_type", mac_address_type)
-        pulumi.set(__self__, "network_name", network_name)
-        pulumi.set(__self__, "switch_name", switch_name)
+        GetAssetsAssetCollectionItemComputeNicResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ip_addresses=ip_addresses,
+            label=label,
+            mac_address=mac_address,
+            mac_address_type=mac_address_type,
+            network_name=network_name,
+            switch_name=switch_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ip_addresses: Sequence[str],
+             label: str,
+             mac_address: str,
+             mac_address_type: str,
+             network_name: str,
+             switch_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ip_addresses", ip_addresses)
+        _setter("label", label)
+        _setter("mac_address", mac_address)
+        _setter("mac_address_type", mac_address_type)
+        _setter("network_name", network_name)
+        _setter("switch_name", switch_name)
 
     @property
     @pulumi.getter(name="ipAddresses")
@@ -4668,9 +5724,22 @@ class GetAssetsAssetCollectionItemComputeNvdimmResult(dict):
         :param str label: Provides a label and summary information for the device.
         :param int unit_number: The unit number of the SCSI controller.
         """
-        pulumi.set(__self__, "controller_key", controller_key)
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "unit_number", unit_number)
+        GetAssetsAssetCollectionItemComputeNvdimmResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            controller_key=controller_key,
+            label=label,
+            unit_number=unit_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             controller_key: int,
+             label: str,
+             unit_number: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("controller_key", controller_key)
+        _setter("label", label)
+        _setter("unit_number", unit_number)
 
     @property
     @pulumi.getter(name="controllerKey")
@@ -4706,8 +5775,19 @@ class GetAssetsAssetCollectionItemComputeNvdimmControllerResult(dict):
         :param int bus_number: Bus number.
         :param str label: Provides a label and summary information for the device.
         """
-        pulumi.set(__self__, "bus_number", bus_number)
-        pulumi.set(__self__, "label", label)
+        GetAssetsAssetCollectionItemComputeNvdimmControllerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bus_number=bus_number,
+            label=label,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bus_number: int,
+             label: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bus_number", bus_number)
+        _setter("label", label)
 
     @property
     @pulumi.getter(name="busNumber")
@@ -4737,9 +5817,22 @@ class GetAssetsAssetCollectionItemComputeScsiControllerResult(dict):
         :param str shared_bus: Shared bus.
         :param int unit_number: The unit number of the SCSI controller.
         """
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "shared_bus", shared_bus)
-        pulumi.set(__self__, "unit_number", unit_number)
+        GetAssetsAssetCollectionItemComputeScsiControllerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            label=label,
+            shared_bus=shared_bus,
+            unit_number=unit_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             label: str,
+             shared_bus: str,
+             unit_number: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("label", label)
+        _setter("shared_bus", shared_bus)
+        _setter("unit_number", unit_number)
 
     @property
     @pulumi.getter
@@ -4777,9 +5870,22 @@ class GetAssetsAssetCollectionItemVmResult(dict):
         :param str hypervisor_vendor: Hypervisor vendor.
         :param str hypervisor_version: Hypervisor version.
         """
-        pulumi.set(__self__, "hypervisor_host", hypervisor_host)
-        pulumi.set(__self__, "hypervisor_vendor", hypervisor_vendor)
-        pulumi.set(__self__, "hypervisor_version", hypervisor_version)
+        GetAssetsAssetCollectionItemVmResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            hypervisor_host=hypervisor_host,
+            hypervisor_vendor=hypervisor_vendor,
+            hypervisor_version=hypervisor_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             hypervisor_host: str,
+             hypervisor_vendor: str,
+             hypervisor_version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("hypervisor_host", hypervisor_host)
+        _setter("hypervisor_vendor", hypervisor_vendor)
+        _setter("hypervisor_version", hypervisor_version)
 
     @property
     @pulumi.getter(name="hypervisorHost")
@@ -4817,9 +5923,22 @@ class GetAssetsAssetCollectionItemVmwareVcenterResult(dict):
         :param str vcenter_key: vCenter unique key.
         :param str vcenter_version: Dot-separated version string.
         """
-        pulumi.set(__self__, "data_center", data_center)
-        pulumi.set(__self__, "vcenter_key", vcenter_key)
-        pulumi.set(__self__, "vcenter_version", vcenter_version)
+        GetAssetsAssetCollectionItemVmwareVcenterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_center=data_center,
+            vcenter_key=vcenter_key,
+            vcenter_version=vcenter_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_center: str,
+             vcenter_key: str,
+             vcenter_version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("data_center", data_center)
+        _setter("vcenter_key", vcenter_key)
+        _setter("vcenter_version", vcenter_version)
 
     @property
     @pulumi.getter(name="dataCenter")
@@ -4873,17 +5992,46 @@ class GetAssetsAssetCollectionItemVmwareVmResult(dict):
         :param str path: Path directory of the asset.
         :param str vmware_tools_status: VMware tools status.
         """
-        pulumi.set(__self__, "cluster", cluster)
-        pulumi.set(__self__, "customer_fields", customer_fields)
-        pulumi.set(__self__, "customer_tags", customer_tags)
-        pulumi.set(__self__, "fault_tolerance_bandwidth", fault_tolerance_bandwidth)
-        pulumi.set(__self__, "fault_tolerance_secondary_latency", fault_tolerance_secondary_latency)
-        pulumi.set(__self__, "fault_tolerance_state", fault_tolerance_state)
-        pulumi.set(__self__, "instance_uuid", instance_uuid)
-        pulumi.set(__self__, "is_disks_cbt_enabled", is_disks_cbt_enabled)
-        pulumi.set(__self__, "is_disks_uuid_enabled", is_disks_uuid_enabled)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "vmware_tools_status", vmware_tools_status)
+        GetAssetsAssetCollectionItemVmwareVmResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cluster=cluster,
+            customer_fields=customer_fields,
+            customer_tags=customer_tags,
+            fault_tolerance_bandwidth=fault_tolerance_bandwidth,
+            fault_tolerance_secondary_latency=fault_tolerance_secondary_latency,
+            fault_tolerance_state=fault_tolerance_state,
+            instance_uuid=instance_uuid,
+            is_disks_cbt_enabled=is_disks_cbt_enabled,
+            is_disks_uuid_enabled=is_disks_uuid_enabled,
+            path=path,
+            vmware_tools_status=vmware_tools_status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cluster: str,
+             customer_fields: Sequence[str],
+             customer_tags: Sequence['outputs.GetAssetsAssetCollectionItemVmwareVmCustomerTagResult'],
+             fault_tolerance_bandwidth: int,
+             fault_tolerance_secondary_latency: int,
+             fault_tolerance_state: str,
+             instance_uuid: str,
+             is_disks_cbt_enabled: bool,
+             is_disks_uuid_enabled: bool,
+             path: str,
+             vmware_tools_status: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cluster", cluster)
+        _setter("customer_fields", customer_fields)
+        _setter("customer_tags", customer_tags)
+        _setter("fault_tolerance_bandwidth", fault_tolerance_bandwidth)
+        _setter("fault_tolerance_secondary_latency", fault_tolerance_secondary_latency)
+        _setter("fault_tolerance_state", fault_tolerance_state)
+        _setter("instance_uuid", instance_uuid)
+        _setter("is_disks_cbt_enabled", is_disks_cbt_enabled)
+        _setter("is_disks_uuid_enabled", is_disks_uuid_enabled)
+        _setter("path", path)
+        _setter("vmware_tools_status", vmware_tools_status)
 
     @property
     @pulumi.getter
@@ -4983,8 +6131,19 @@ class GetAssetsAssetCollectionItemVmwareVmCustomerTagResult(dict):
         :param str description: The tag description.
         :param str name: The tag name.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "name", name)
+        GetAssetsAssetCollectionItemVmwareVmCustomerTagResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -5012,10 +6171,23 @@ class GetAssetsFilterResult(dict):
         """
         :param str name: The tag name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAssetsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5040,7 +6212,16 @@ class GetAssetsFilterResult(dict):
 class GetDiscoverySchedulesDiscoveryScheduleCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDiscoverySchedulesDiscoveryScheduleCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetDiscoverySchedulesDiscoveryScheduleCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDiscoverySchedulesDiscoveryScheduleCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -5075,17 +6256,46 @@ class GetDiscoverySchedulesDiscoveryScheduleCollectionItemResult(dict):
         :param str time_created: The time when the discovery schedule was created in RFC3339 format.
         :param str time_updated: The time when the discovery schedule was last updated in RFC3339 format.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "execution_recurrences", execution_recurrences)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetDiscoverySchedulesDiscoveryScheduleCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            execution_recurrences=execution_recurrences,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             execution_recurrences: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("execution_recurrences", execution_recurrences)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -5182,10 +6392,23 @@ class GetDiscoverySchedulesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDiscoverySchedulesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5207,7 +6430,16 @@ class GetDiscoverySchedulesFilterResult(dict):
 class GetEnvironmentsEnvironmentCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetEnvironmentsEnvironmentCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetEnvironmentsEnvironmentCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetEnvironmentsEnvironmentCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -5240,16 +6472,43 @@ class GetEnvironmentsEnvironmentCollectionItemResult(dict):
         :param str time_created: The time when the source environment was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time when the source environment was updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetEnvironmentsEnvironmentCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -5338,10 +6597,23 @@ class GetEnvironmentsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetEnvironmentsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5365,10 +6637,23 @@ class GetInventoriesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetInventoriesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5390,7 +6675,16 @@ class GetInventoriesFilterResult(dict):
 class GetInventoriesInventoryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetInventoriesInventoryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetInventoriesInventoryCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetInventoriesInventoryCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -5423,16 +6717,43 @@ class GetInventoriesInventoryCollectionItemResult(dict):
         :param str time_created: The time when the inventory was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time when the inventory was updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetInventoriesInventoryCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")

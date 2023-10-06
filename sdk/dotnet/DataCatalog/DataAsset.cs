@@ -89,9 +89,6 @@ namespace Pulumi.Oci.DataCatalog
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
-        /// <summary>
-        /// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
-        /// </summary>
         [Output("properties")]
         public Output<ImmutableDictionary<string, object>> Properties { get; private set; } = null!;
 
@@ -207,10 +204,6 @@ namespace Pulumi.Oci.DataCatalog
 
         [Input("properties")]
         private InputMap<object>? _properties;
-
-        /// <summary>
-        /// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
-        /// </summary>
         public InputMap<object> Properties
         {
             get => _properties ?? (_properties = new InputMap<object>());
@@ -279,10 +272,6 @@ namespace Pulumi.Oci.DataCatalog
 
         [Input("properties")]
         private InputMap<object>? _properties;
-
-        /// <summary>
-        /// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
-        /// </summary>
         public InputMap<object> Properties
         {
             get => _properties ?? (_properties = new InputMap<object>());

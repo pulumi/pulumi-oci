@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['PrivateEndpointArgs', 'PrivateEndpoint']
@@ -41,22 +41,49 @@ class PrivateEndpointArgs:
         :param pulumi.Input[bool] is_used_with_configuration_source_provider: (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_id_lists: (Updatable) An array of network security group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the private endpoint. Order does not matter.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        PrivateEndpointArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            subnet_id=subnet_id,
+            vcn_id=vcn_id,
+            defined_tags=defined_tags,
+            description=description,
+            dns_zones=dns_zones,
+            freeform_tags=freeform_tags,
+            is_used_with_configuration_source_provider=is_used_with_configuration_source_provider,
+            nsg_id_lists=nsg_id_lists,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             subnet_id: pulumi.Input[str],
+             vcn_id: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             dns_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_used_with_configuration_source_provider: Optional[pulumi.Input[bool]] = None,
+             nsg_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("display_name", display_name)
+        _setter("subnet_id", subnet_id)
+        _setter("vcn_id", vcn_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if dns_zones is not None:
-            pulumi.set(__self__, "dns_zones", dns_zones)
+            _setter("dns_zones", dns_zones)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_used_with_configuration_source_provider is not None:
-            pulumi.set(__self__, "is_used_with_configuration_source_provider", is_used_with_configuration_source_provider)
+            _setter("is_used_with_configuration_source_provider", is_used_with_configuration_source_provider)
         if nsg_id_lists is not None:
-            pulumi.set(__self__, "nsg_id_lists", nsg_id_lists)
+            _setter("nsg_id_lists", nsg_id_lists)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -219,32 +246,65 @@ class _PrivateEndpointState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _PrivateEndpointState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            dns_zones=dns_zones,
+            freeform_tags=freeform_tags,
+            is_used_with_configuration_source_provider=is_used_with_configuration_source_provider,
+            nsg_id_lists=nsg_id_lists,
+            source_ips=source_ips,
+            state=state,
+            subnet_id=subnet_id,
+            time_created=time_created,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             dns_zones: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_used_with_configuration_source_provider: Optional[pulumi.Input[bool]] = None,
+             nsg_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             source_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             vcn_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if dns_zones is not None:
-            pulumi.set(__self__, "dns_zones", dns_zones)
+            _setter("dns_zones", dns_zones)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_used_with_configuration_source_provider is not None:
-            pulumi.set(__self__, "is_used_with_configuration_source_provider", is_used_with_configuration_source_provider)
+            _setter("is_used_with_configuration_source_provider", is_used_with_configuration_source_provider)
         if nsg_id_lists is not None:
-            pulumi.set(__self__, "nsg_id_lists", nsg_id_lists)
+            _setter("nsg_id_lists", nsg_id_lists)
         if source_ips is not None:
-            pulumi.set(__self__, "source_ips", source_ips)
+            _setter("source_ips", source_ips)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if vcn_id is not None:
-            pulumi.set(__self__, "vcn_id", vcn_id)
+            _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -528,6 +588,10 @@ class PrivateEndpoint(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            PrivateEndpointArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

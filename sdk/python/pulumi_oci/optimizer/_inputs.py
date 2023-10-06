@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -36,8 +36,17 @@ class ProfileLevelsConfigurationArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input['ProfileLevelsConfigurationItemArgs']]] items: (Updatable) The list of tags specified in the current profile override.
         """
+        ProfileLevelsConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[pulumi.Input[Sequence[pulumi.Input['ProfileLevelsConfigurationItemArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if items is not None:
-            pulumi.set(__self__, "items", items)
+            _setter("items", items)
 
     @property
     @pulumi.getter
@@ -61,10 +70,21 @@ class ProfileLevelsConfigurationItemArgs:
         :param pulumi.Input[str] level: (Updatable) The pre-defined profile level.
         :param pulumi.Input[str] recommendation_id: (Updatable) The unique OCID of the recommendation.
         """
+        ProfileLevelsConfigurationItemArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            level=level,
+            recommendation_id=recommendation_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             level: Optional[pulumi.Input[str]] = None,
+             recommendation_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if level is not None:
-            pulumi.set(__self__, "level", level)
+            _setter("level", level)
         if recommendation_id is not None:
-            pulumi.set(__self__, "recommendation_id", recommendation_id)
+            _setter("recommendation_id", recommendation_id)
 
     @property
     @pulumi.getter
@@ -98,7 +118,16 @@ class ProfileTargetCompartmentsArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input[str]]] items: (Updatable) The list of tags specified in the current profile override.
         """
-        pulumi.set(__self__, "items", items)
+        ProfileTargetCompartmentsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: pulumi.Input[Sequence[pulumi.Input[str]]],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -120,7 +149,16 @@ class ProfileTargetTagsArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input['ProfileTargetTagsItemArgs']]] items: (Updatable) The list of tags specified in the current profile override.
         """
-        pulumi.set(__self__, "items", items)
+        ProfileTargetTagsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: pulumi.Input[Sequence[pulumi.Input['ProfileTargetTagsItemArgs']]],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -156,11 +194,26 @@ class ProfileTargetTagsItemArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "tag_definition_name", tag_definition_name)
-        pulumi.set(__self__, "tag_namespace_name", tag_namespace_name)
-        pulumi.set(__self__, "tag_value_type", tag_value_type)
+        ProfileTargetTagsItemArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            tag_definition_name=tag_definition_name,
+            tag_namespace_name=tag_namespace_name,
+            tag_value_type=tag_value_type,
+            tag_values=tag_values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             tag_definition_name: pulumi.Input[str],
+             tag_namespace_name: pulumi.Input[str],
+             tag_value_type: pulumi.Input[str],
+             tag_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("tag_definition_name", tag_definition_name)
+        _setter("tag_namespace_name", tag_namespace_name)
+        _setter("tag_value_type", tag_value_type)
         if tag_values is not None:
-            pulumi.set(__self__, "tag_values", tag_values)
+            _setter("tag_values", tag_values)
 
     @property
     @pulumi.getter(name="tagDefinitionName")
@@ -228,10 +281,21 @@ class RecommendationResourceCountArgs:
         :param pulumi.Input[int] count: The count of resources.
         :param pulumi.Input[str] status: (Updatable) The status of the recommendation.
         """
+        RecommendationResourceCountArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            count=count,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             count: Optional[pulumi.Input[int]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if count is not None:
-            pulumi.set(__self__, "count", count)
+            _setter("count", count)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
 
     @property
     @pulumi.getter
@@ -265,8 +329,17 @@ class RecommendationSupportedLevelArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input['RecommendationSupportedLevelItemArgs']]] items: The list of supported levels.
         """
+        RecommendationSupportedLevelArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Optional[pulumi.Input[Sequence[pulumi.Input['RecommendationSupportedLevelItemArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if items is not None:
-            pulumi.set(__self__, "items", items)
+            _setter("items", items)
 
     @property
     @pulumi.getter
@@ -288,8 +361,17 @@ class RecommendationSupportedLevelItemArgs:
         """
         :param pulumi.Input[str] name: The name of the profile level.
         """
+        RecommendationSupportedLevelItemArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter
@@ -315,12 +397,25 @@ class ResourceActionActionArgs:
         :param pulumi.Input[str] type: The status of the resource action.
         :param pulumi.Input[str] url: The URL path to documentation that explains how to perform the action.
         """
+        ResourceActionActionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            type=type,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             url: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if url is not None:
-            pulumi.set(__self__, "url", url)
+            _setter("url", url)
 
     @property
     @pulumi.getter
@@ -368,10 +463,23 @@ class GetCategoriesFilterArgs:
         """
         :param str name: Optional. A filter that returns results that match the name specified.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetCategoriesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -410,10 +518,23 @@ class GetEnrollmentStatusesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetEnrollmentStatusesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -452,10 +573,23 @@ class GetHistoriesFilterArgs:
         """
         :param str name: Optional. A filter that returns results that match the name specified.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetHistoriesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -497,10 +631,23 @@ class GetProfileLevelsFilterArgs:
         """
         :param str name: Optional. A filter that returns results that match the name specified.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProfileLevelsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -542,10 +689,23 @@ class GetProfilesFilterArgs:
         """
         :param str name: Optional. A filter that returns results that match the name specified.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProfilesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -587,10 +747,23 @@ class GetRecommendationStrategiesFilterArgs:
         """
         :param str name: Optional. A filter that returns results that match the name specified.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetRecommendationStrategiesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -632,10 +805,23 @@ class GetRecommendationsFilterArgs:
         """
         :param str name: Optional. A filter that returns results that match the name specified.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetRecommendationsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -677,10 +863,23 @@ class GetResourceActionsFilterArgs:
         """
         :param str name: Optional. A filter that returns results that match the name specified.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetResourceActionsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

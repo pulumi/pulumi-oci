@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['OperatorControlAssignmentArgs', 'OperatorControlAssignment']
@@ -55,33 +55,74 @@ class OperatorControlAssignmentArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "is_enforced_always", is_enforced_always)
-        pulumi.set(__self__, "operator_control_id", operator_control_id)
-        pulumi.set(__self__, "resource_compartment_id", resource_compartment_id)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_name", resource_name)
-        pulumi.set(__self__, "resource_type", resource_type)
+        OperatorControlAssignmentArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            is_enforced_always=is_enforced_always,
+            operator_control_id=operator_control_id,
+            resource_compartment_id=resource_compartment_id,
+            resource_id=resource_id,
+            resource_name=resource_name,
+            resource_type=resource_type,
+            comment=comment,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_auto_approve_during_maintenance=is_auto_approve_during_maintenance,
+            is_log_forwarded=is_log_forwarded,
+            remote_syslog_server_address=remote_syslog_server_address,
+            remote_syslog_server_ca_cert=remote_syslog_server_ca_cert,
+            remote_syslog_server_port=remote_syslog_server_port,
+            time_assignment_from=time_assignment_from,
+            time_assignment_to=time_assignment_to,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             is_enforced_always: pulumi.Input[bool],
+             operator_control_id: pulumi.Input[str],
+             resource_compartment_id: pulumi.Input[str],
+             resource_id: pulumi.Input[str],
+             resource_name: pulumi.Input[str],
+             resource_type: pulumi.Input[str],
+             comment: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_auto_approve_during_maintenance: Optional[pulumi.Input[bool]] = None,
+             is_log_forwarded: Optional[pulumi.Input[bool]] = None,
+             remote_syslog_server_address: Optional[pulumi.Input[str]] = None,
+             remote_syslog_server_ca_cert: Optional[pulumi.Input[str]] = None,
+             remote_syslog_server_port: Optional[pulumi.Input[int]] = None,
+             time_assignment_from: Optional[pulumi.Input[str]] = None,
+             time_assignment_to: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("is_enforced_always", is_enforced_always)
+        _setter("operator_control_id", operator_control_id)
+        _setter("resource_compartment_id", resource_compartment_id)
+        _setter("resource_id", resource_id)
+        _setter("resource_name", resource_name)
+        _setter("resource_type", resource_type)
         if comment is not None:
-            pulumi.set(__self__, "comment", comment)
+            _setter("comment", comment)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_auto_approve_during_maintenance is not None:
-            pulumi.set(__self__, "is_auto_approve_during_maintenance", is_auto_approve_during_maintenance)
+            _setter("is_auto_approve_during_maintenance", is_auto_approve_during_maintenance)
         if is_log_forwarded is not None:
-            pulumi.set(__self__, "is_log_forwarded", is_log_forwarded)
+            _setter("is_log_forwarded", is_log_forwarded)
         if remote_syslog_server_address is not None:
-            pulumi.set(__self__, "remote_syslog_server_address", remote_syslog_server_address)
+            _setter("remote_syslog_server_address", remote_syslog_server_address)
         if remote_syslog_server_ca_cert is not None:
-            pulumi.set(__self__, "remote_syslog_server_ca_cert", remote_syslog_server_ca_cert)
+            _setter("remote_syslog_server_ca_cert", remote_syslog_server_ca_cert)
         if remote_syslog_server_port is not None:
-            pulumi.set(__self__, "remote_syslog_server_port", remote_syslog_server_port)
+            _setter("remote_syslog_server_port", remote_syslog_server_port)
         if time_assignment_from is not None:
-            pulumi.set(__self__, "time_assignment_from", time_assignment_from)
+            _setter("time_assignment_from", time_assignment_from)
         if time_assignment_to is not None:
-            pulumi.set(__self__, "time_assignment_to", time_assignment_to)
+            _setter("time_assignment_to", time_assignment_to)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -356,60 +397,121 @@ class _OperatorControlAssignmentState:
         :param pulumi.Input[str] time_of_deletion: Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[str] unassigner_id: User id who released the operatorControl.
         """
+        _OperatorControlAssignmentState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            assigner_id=assigner_id,
+            comment=comment,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            detachment_description=detachment_description,
+            error_code=error_code,
+            error_message=error_message,
+            freeform_tags=freeform_tags,
+            is_auto_approve_during_maintenance=is_auto_approve_during_maintenance,
+            is_default_assignment=is_default_assignment,
+            is_enforced_always=is_enforced_always,
+            is_log_forwarded=is_log_forwarded,
+            lifecycle_details=lifecycle_details,
+            operator_control_id=operator_control_id,
+            remote_syslog_server_address=remote_syslog_server_address,
+            remote_syslog_server_ca_cert=remote_syslog_server_ca_cert,
+            remote_syslog_server_port=remote_syslog_server_port,
+            resource_compartment_id=resource_compartment_id,
+            resource_id=resource_id,
+            resource_name=resource_name,
+            resource_type=resource_type,
+            state=state,
+            time_assignment_from=time_assignment_from,
+            time_assignment_to=time_assignment_to,
+            time_of_assignment=time_of_assignment,
+            time_of_deletion=time_of_deletion,
+            unassigner_id=unassigner_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             assigner_id: Optional[pulumi.Input[str]] = None,
+             comment: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             detachment_description: Optional[pulumi.Input[str]] = None,
+             error_code: Optional[pulumi.Input[int]] = None,
+             error_message: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_auto_approve_during_maintenance: Optional[pulumi.Input[bool]] = None,
+             is_default_assignment: Optional[pulumi.Input[bool]] = None,
+             is_enforced_always: Optional[pulumi.Input[bool]] = None,
+             is_log_forwarded: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             operator_control_id: Optional[pulumi.Input[str]] = None,
+             remote_syslog_server_address: Optional[pulumi.Input[str]] = None,
+             remote_syslog_server_ca_cert: Optional[pulumi.Input[str]] = None,
+             remote_syslog_server_port: Optional[pulumi.Input[int]] = None,
+             resource_compartment_id: Optional[pulumi.Input[str]] = None,
+             resource_id: Optional[pulumi.Input[str]] = None,
+             resource_name: Optional[pulumi.Input[str]] = None,
+             resource_type: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_assignment_from: Optional[pulumi.Input[str]] = None,
+             time_assignment_to: Optional[pulumi.Input[str]] = None,
+             time_of_assignment: Optional[pulumi.Input[str]] = None,
+             time_of_deletion: Optional[pulumi.Input[str]] = None,
+             unassigner_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if assigner_id is not None:
-            pulumi.set(__self__, "assigner_id", assigner_id)
+            _setter("assigner_id", assigner_id)
         if comment is not None:
-            pulumi.set(__self__, "comment", comment)
+            _setter("comment", comment)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if detachment_description is not None:
-            pulumi.set(__self__, "detachment_description", detachment_description)
+            _setter("detachment_description", detachment_description)
         if error_code is not None:
-            pulumi.set(__self__, "error_code", error_code)
+            _setter("error_code", error_code)
         if error_message is not None:
-            pulumi.set(__self__, "error_message", error_message)
+            _setter("error_message", error_message)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_auto_approve_during_maintenance is not None:
-            pulumi.set(__self__, "is_auto_approve_during_maintenance", is_auto_approve_during_maintenance)
+            _setter("is_auto_approve_during_maintenance", is_auto_approve_during_maintenance)
         if is_default_assignment is not None:
-            pulumi.set(__self__, "is_default_assignment", is_default_assignment)
+            _setter("is_default_assignment", is_default_assignment)
         if is_enforced_always is not None:
-            pulumi.set(__self__, "is_enforced_always", is_enforced_always)
+            _setter("is_enforced_always", is_enforced_always)
         if is_log_forwarded is not None:
-            pulumi.set(__self__, "is_log_forwarded", is_log_forwarded)
+            _setter("is_log_forwarded", is_log_forwarded)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if operator_control_id is not None:
-            pulumi.set(__self__, "operator_control_id", operator_control_id)
+            _setter("operator_control_id", operator_control_id)
         if remote_syslog_server_address is not None:
-            pulumi.set(__self__, "remote_syslog_server_address", remote_syslog_server_address)
+            _setter("remote_syslog_server_address", remote_syslog_server_address)
         if remote_syslog_server_ca_cert is not None:
-            pulumi.set(__self__, "remote_syslog_server_ca_cert", remote_syslog_server_ca_cert)
+            _setter("remote_syslog_server_ca_cert", remote_syslog_server_ca_cert)
         if remote_syslog_server_port is not None:
-            pulumi.set(__self__, "remote_syslog_server_port", remote_syslog_server_port)
+            _setter("remote_syslog_server_port", remote_syslog_server_port)
         if resource_compartment_id is not None:
-            pulumi.set(__self__, "resource_compartment_id", resource_compartment_id)
+            _setter("resource_compartment_id", resource_compartment_id)
         if resource_id is not None:
-            pulumi.set(__self__, "resource_id", resource_id)
+            _setter("resource_id", resource_id)
         if resource_name is not None:
-            pulumi.set(__self__, "resource_name", resource_name)
+            _setter("resource_name", resource_name)
         if resource_type is not None:
-            pulumi.set(__self__, "resource_type", resource_type)
+            _setter("resource_type", resource_type)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_assignment_from is not None:
-            pulumi.set(__self__, "time_assignment_from", time_assignment_from)
+            _setter("time_assignment_from", time_assignment_from)
         if time_assignment_to is not None:
-            pulumi.set(__self__, "time_assignment_to", time_assignment_to)
+            _setter("time_assignment_to", time_assignment_to)
         if time_of_assignment is not None:
-            pulumi.set(__self__, "time_of_assignment", time_of_assignment)
+            _setter("time_of_assignment", time_of_assignment)
         if time_of_deletion is not None:
-            pulumi.set(__self__, "time_of_deletion", time_of_deletion)
+            _setter("time_of_deletion", time_of_deletion)
         if unassigner_id is not None:
-            pulumi.set(__self__, "unassigner_id", unassigner_id)
+            _setter("unassigner_id", unassigner_id)
 
     @property
     @pulumi.getter(name="assignerId")
@@ -881,6 +983,10 @@ class OperatorControlAssignment(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            OperatorControlAssignmentArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

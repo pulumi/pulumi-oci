@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['BastionArgs', 'Bastion']
@@ -43,25 +43,54 @@ class BastionArgs:
         :param pulumi.Input[str] phone_book_entry: The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] static_jump_host_ip_addresses: (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
         """
-        pulumi.set(__self__, "bastion_type", bastion_type)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "target_subnet_id", target_subnet_id)
+        BastionArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bastion_type=bastion_type,
+            compartment_id=compartment_id,
+            target_subnet_id=target_subnet_id,
+            client_cidr_block_allow_lists=client_cidr_block_allow_lists,
+            defined_tags=defined_tags,
+            dns_proxy_status=dns_proxy_status,
+            freeform_tags=freeform_tags,
+            max_session_ttl_in_seconds=max_session_ttl_in_seconds,
+            name=name,
+            phone_book_entry=phone_book_entry,
+            static_jump_host_ip_addresses=static_jump_host_ip_addresses,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bastion_type: pulumi.Input[str],
+             compartment_id: pulumi.Input[str],
+             target_subnet_id: pulumi.Input[str],
+             client_cidr_block_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             dns_proxy_status: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             max_session_ttl_in_seconds: Optional[pulumi.Input[int]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             phone_book_entry: Optional[pulumi.Input[str]] = None,
+             static_jump_host_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bastion_type", bastion_type)
+        _setter("compartment_id", compartment_id)
+        _setter("target_subnet_id", target_subnet_id)
         if client_cidr_block_allow_lists is not None:
-            pulumi.set(__self__, "client_cidr_block_allow_lists", client_cidr_block_allow_lists)
+            _setter("client_cidr_block_allow_lists", client_cidr_block_allow_lists)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if dns_proxy_status is not None:
-            pulumi.set(__self__, "dns_proxy_status", dns_proxy_status)
+            _setter("dns_proxy_status", dns_proxy_status)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if max_session_ttl_in_seconds is not None:
-            pulumi.set(__self__, "max_session_ttl_in_seconds", max_session_ttl_in_seconds)
+            _setter("max_session_ttl_in_seconds", max_session_ttl_in_seconds)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if phone_book_entry is not None:
-            pulumi.set(__self__, "phone_book_entry", phone_book_entry)
+            _setter("phone_book_entry", phone_book_entry)
         if static_jump_host_ip_addresses is not None:
-            pulumi.set(__self__, "static_jump_host_ip_addresses", static_jump_host_ip_addresses)
+            _setter("static_jump_host_ip_addresses", static_jump_host_ip_addresses)
 
     @property
     @pulumi.getter(name="bastionType")
@@ -248,44 +277,89 @@ class _BastionState:
         :param pulumi.Input[str] time_created: The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         :param pulumi.Input[str] time_updated: The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
         """
+        _BastionState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bastion_type=bastion_type,
+            client_cidr_block_allow_lists=client_cidr_block_allow_lists,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            dns_proxy_status=dns_proxy_status,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            max_session_ttl_in_seconds=max_session_ttl_in_seconds,
+            max_sessions_allowed=max_sessions_allowed,
+            name=name,
+            phone_book_entry=phone_book_entry,
+            private_endpoint_ip_address=private_endpoint_ip_address,
+            state=state,
+            static_jump_host_ip_addresses=static_jump_host_ip_addresses,
+            system_tags=system_tags,
+            target_subnet_id=target_subnet_id,
+            target_vcn_id=target_vcn_id,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bastion_type: Optional[pulumi.Input[str]] = None,
+             client_cidr_block_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             dns_proxy_status: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             max_session_ttl_in_seconds: Optional[pulumi.Input[int]] = None,
+             max_sessions_allowed: Optional[pulumi.Input[int]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             phone_book_entry: Optional[pulumi.Input[str]] = None,
+             private_endpoint_ip_address: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             static_jump_host_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             target_subnet_id: Optional[pulumi.Input[str]] = None,
+             target_vcn_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if bastion_type is not None:
-            pulumi.set(__self__, "bastion_type", bastion_type)
+            _setter("bastion_type", bastion_type)
         if client_cidr_block_allow_lists is not None:
-            pulumi.set(__self__, "client_cidr_block_allow_lists", client_cidr_block_allow_lists)
+            _setter("client_cidr_block_allow_lists", client_cidr_block_allow_lists)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if dns_proxy_status is not None:
-            pulumi.set(__self__, "dns_proxy_status", dns_proxy_status)
+            _setter("dns_proxy_status", dns_proxy_status)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if max_session_ttl_in_seconds is not None:
-            pulumi.set(__self__, "max_session_ttl_in_seconds", max_session_ttl_in_seconds)
+            _setter("max_session_ttl_in_seconds", max_session_ttl_in_seconds)
         if max_sessions_allowed is not None:
-            pulumi.set(__self__, "max_sessions_allowed", max_sessions_allowed)
+            _setter("max_sessions_allowed", max_sessions_allowed)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if phone_book_entry is not None:
-            pulumi.set(__self__, "phone_book_entry", phone_book_entry)
+            _setter("phone_book_entry", phone_book_entry)
         if private_endpoint_ip_address is not None:
-            pulumi.set(__self__, "private_endpoint_ip_address", private_endpoint_ip_address)
+            _setter("private_endpoint_ip_address", private_endpoint_ip_address)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if static_jump_host_ip_addresses is not None:
-            pulumi.set(__self__, "static_jump_host_ip_addresses", static_jump_host_ip_addresses)
+            _setter("static_jump_host_ip_addresses", static_jump_host_ip_addresses)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if target_subnet_id is not None:
-            pulumi.set(__self__, "target_subnet_id", target_subnet_id)
+            _setter("target_subnet_id", target_subnet_id)
         if target_vcn_id is not None:
-            pulumi.set(__self__, "target_vcn_id", target_vcn_id)
+            _setter("target_vcn_id", target_vcn_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="bastionType")
@@ -643,6 +717,10 @@ class Bastion(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            BastionArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

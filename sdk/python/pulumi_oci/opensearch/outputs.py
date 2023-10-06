@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -26,10 +26,23 @@ class GetOpensearchClustersFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOpensearchClustersFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -51,7 +64,16 @@ class GetOpensearchClustersFilterResult(dict):
 class GetOpensearchClustersOpensearchClusterCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetOpensearchClustersOpensearchClusterCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -144,46 +166,133 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         :param str vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
         :param str vcn_id: The OCID of the cluster's VCN.
         """
-        pulumi.set(__self__, "availability_domains", availability_domains)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "data_node_count", data_node_count)
-        pulumi.set(__self__, "data_node_host_bare_metal_shape", data_node_host_bare_metal_shape)
-        pulumi.set(__self__, "data_node_host_memory_gb", data_node_host_memory_gb)
-        pulumi.set(__self__, "data_node_host_ocpu_count", data_node_host_ocpu_count)
-        pulumi.set(__self__, "data_node_host_type", data_node_host_type)
-        pulumi.set(__self__, "data_node_storage_gb", data_node_storage_gb)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "fqdn", fqdn)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "master_node_count", master_node_count)
-        pulumi.set(__self__, "master_node_host_bare_metal_shape", master_node_host_bare_metal_shape)
-        pulumi.set(__self__, "master_node_host_memory_gb", master_node_host_memory_gb)
-        pulumi.set(__self__, "master_node_host_ocpu_count", master_node_host_ocpu_count)
-        pulumi.set(__self__, "master_node_host_type", master_node_host_type)
-        pulumi.set(__self__, "opendashboard_fqdn", opendashboard_fqdn)
-        pulumi.set(__self__, "opendashboard_node_count", opendashboard_node_count)
-        pulumi.set(__self__, "opendashboard_node_host_memory_gb", opendashboard_node_host_memory_gb)
-        pulumi.set(__self__, "opendashboard_node_host_ocpu_count", opendashboard_node_host_ocpu_count)
-        pulumi.set(__self__, "opendashboard_private_ip", opendashboard_private_ip)
-        pulumi.set(__self__, "opensearch_fqdn", opensearch_fqdn)
-        pulumi.set(__self__, "opensearch_private_ip", opensearch_private_ip)
-        pulumi.set(__self__, "security_master_user_name", security_master_user_name)
-        pulumi.set(__self__, "security_master_user_password_hash", security_master_user_password_hash)
-        pulumi.set(__self__, "security_mode", security_mode)
-        pulumi.set(__self__, "software_version", software_version)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_compartment_id", subnet_compartment_id)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_deleted", time_deleted)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "total_storage_gb", total_storage_gb)
-        pulumi.set(__self__, "vcn_compartment_id", vcn_compartment_id)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        GetOpensearchClustersOpensearchClusterCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domains=availability_domains,
+            compartment_id=compartment_id,
+            data_node_count=data_node_count,
+            data_node_host_bare_metal_shape=data_node_host_bare_metal_shape,
+            data_node_host_memory_gb=data_node_host_memory_gb,
+            data_node_host_ocpu_count=data_node_host_ocpu_count,
+            data_node_host_type=data_node_host_type,
+            data_node_storage_gb=data_node_storage_gb,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            fqdn=fqdn,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            master_node_count=master_node_count,
+            master_node_host_bare_metal_shape=master_node_host_bare_metal_shape,
+            master_node_host_memory_gb=master_node_host_memory_gb,
+            master_node_host_ocpu_count=master_node_host_ocpu_count,
+            master_node_host_type=master_node_host_type,
+            opendashboard_fqdn=opendashboard_fqdn,
+            opendashboard_node_count=opendashboard_node_count,
+            opendashboard_node_host_memory_gb=opendashboard_node_host_memory_gb,
+            opendashboard_node_host_ocpu_count=opendashboard_node_host_ocpu_count,
+            opendashboard_private_ip=opendashboard_private_ip,
+            opensearch_fqdn=opensearch_fqdn,
+            opensearch_private_ip=opensearch_private_ip,
+            security_master_user_name=security_master_user_name,
+            security_master_user_password_hash=security_master_user_password_hash,
+            security_mode=security_mode,
+            software_version=software_version,
+            state=state,
+            subnet_compartment_id=subnet_compartment_id,
+            subnet_id=subnet_id,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_deleted=time_deleted,
+            time_updated=time_updated,
+            total_storage_gb=total_storage_gb,
+            vcn_compartment_id=vcn_compartment_id,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domains: Sequence[str],
+             compartment_id: str,
+             data_node_count: int,
+             data_node_host_bare_metal_shape: str,
+             data_node_host_memory_gb: int,
+             data_node_host_ocpu_count: int,
+             data_node_host_type: str,
+             data_node_storage_gb: int,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             fqdn: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             master_node_count: int,
+             master_node_host_bare_metal_shape: str,
+             master_node_host_memory_gb: int,
+             master_node_host_ocpu_count: int,
+             master_node_host_type: str,
+             opendashboard_fqdn: str,
+             opendashboard_node_count: int,
+             opendashboard_node_host_memory_gb: int,
+             opendashboard_node_host_ocpu_count: int,
+             opendashboard_private_ip: str,
+             opensearch_fqdn: str,
+             opensearch_private_ip: str,
+             security_master_user_name: str,
+             security_master_user_password_hash: str,
+             security_mode: str,
+             software_version: str,
+             state: str,
+             subnet_compartment_id: str,
+             subnet_id: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_deleted: str,
+             time_updated: str,
+             total_storage_gb: int,
+             vcn_compartment_id: str,
+             vcn_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domains", availability_domains)
+        _setter("compartment_id", compartment_id)
+        _setter("data_node_count", data_node_count)
+        _setter("data_node_host_bare_metal_shape", data_node_host_bare_metal_shape)
+        _setter("data_node_host_memory_gb", data_node_host_memory_gb)
+        _setter("data_node_host_ocpu_count", data_node_host_ocpu_count)
+        _setter("data_node_host_type", data_node_host_type)
+        _setter("data_node_storage_gb", data_node_storage_gb)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("fqdn", fqdn)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("master_node_count", master_node_count)
+        _setter("master_node_host_bare_metal_shape", master_node_host_bare_metal_shape)
+        _setter("master_node_host_memory_gb", master_node_host_memory_gb)
+        _setter("master_node_host_ocpu_count", master_node_host_ocpu_count)
+        _setter("master_node_host_type", master_node_host_type)
+        _setter("opendashboard_fqdn", opendashboard_fqdn)
+        _setter("opendashboard_node_count", opendashboard_node_count)
+        _setter("opendashboard_node_host_memory_gb", opendashboard_node_host_memory_gb)
+        _setter("opendashboard_node_host_ocpu_count", opendashboard_node_host_ocpu_count)
+        _setter("opendashboard_private_ip", opendashboard_private_ip)
+        _setter("opensearch_fqdn", opensearch_fqdn)
+        _setter("opensearch_private_ip", opensearch_private_ip)
+        _setter("security_master_user_name", security_master_user_name)
+        _setter("security_master_user_password_hash", security_master_user_password_hash)
+        _setter("security_mode", security_mode)
+        _setter("software_version", software_version)
+        _setter("state", state)
+        _setter("subnet_compartment_id", subnet_compartment_id)
+        _setter("subnet_id", subnet_id)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_deleted", time_deleted)
+        _setter("time_updated", time_updated)
+        _setter("total_storage_gb", total_storage_gb)
+        _setter("vcn_compartment_id", vcn_compartment_id)
+        _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="availabilityDomains")
@@ -513,7 +622,16 @@ class GetOpensearchVersionItemResult(dict):
         """
         :param str version: The version of OpenSearch.
         """
-        pulumi.set(__self__, "version", version)
+        GetOpensearchVersionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("version", version)
 
     @property
     @pulumi.getter
@@ -530,10 +648,23 @@ class GetOpensearchVersionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOpensearchVersionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -558,7 +689,16 @@ class GetOpensearchVersionsOpensearchVersionsCollectionResult(dict):
         """
         :param Sequence['GetOpensearchVersionsOpensearchVersionsCollectionItemArgs'] items: A list of OpenSearch versions.
         """
-        pulumi.set(__self__, "items", items)
+        GetOpensearchVersionsOpensearchVersionsCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetOpensearchVersionsOpensearchVersionsCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -576,7 +716,16 @@ class GetOpensearchVersionsOpensearchVersionsCollectionItemResult(dict):
         """
         :param str version: The version of OpenSearch.
         """
-        pulumi.set(__self__, "version", version)
+        GetOpensearchVersionsOpensearchVersionsCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("version", version)
 
     @property
     @pulumi.getter

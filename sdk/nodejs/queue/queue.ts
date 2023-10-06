@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Queue resource in Oracle Cloud Infrastructure Queue service.
  *
- * Creates a new Queue.
+ * Creates a new queue.
  *
  * ## Example Usage
  *
@@ -18,6 +18,7 @@ import * as utilities from "../utilities";
  * const testQueue = new oci.queue.Queue("testQueue", {
  *     compartmentId: _var.compartment_id,
  *     displayName: _var.queue_display_name,
+ *     channelConsumptionLimit: _var.queue_channel_consumption_limit,
  *     customEncryptionKeyId: oci_kms_key.test_key.id,
  *     deadLetterQueueDeliveryCount: _var.queue_dead_letter_queue_delivery_count,
  *     definedTags: {
@@ -69,11 +70,15 @@ export class Queue extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+     */
+    public readonly channelConsumptionLimit!: pulumi.Output<number>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
      */
     public readonly customEncryptionKeyId!: pulumi.Output<string>;
     /**
@@ -85,7 +90,7 @@ export class Queue extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) Queue Identifier
+     * (Updatable) The user-friendly name of the queue.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -93,7 +98,7 @@ export class Queue extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * Any additional details about the current state of the queue.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
@@ -103,11 +108,11 @@ export class Queue extends pulumi.CustomResource {
     public readonly purgeQueue!: pulumi.Output<boolean | undefined>;
     public readonly purgeType!: pulumi.Output<string | undefined>;
     /**
-     * The retention period of the messages in the queue, in seconds.
+     * The retention period of messages in the queue, in seconds.
      */
     public readonly retentionInSeconds!: pulumi.Output<number>;
     /**
-     * The current state of the Queue.
+     * The current state of the queue.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
@@ -115,11 +120,11 @@ export class Queue extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The time the the Queue was created. An RFC3339 formatted datetime string
+     * The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The time the Queue was updated. An RFC3339 formatted datetime string
+     * The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
@@ -127,7 +132,7 @@ export class Queue extends pulumi.CustomResource {
      */
     public readonly timeoutInSeconds!: pulumi.Output<number>;
     /**
-     * (Updatable) The default visibility of the messages consumed from the queue.
+     * (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
      */
     public readonly visibilityInSeconds!: pulumi.Output<number>;
 
@@ -144,6 +149,7 @@ export class Queue extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as QueueState | undefined;
+            resourceInputs["channelConsumptionLimit"] = state ? state.channelConsumptionLimit : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["customEncryptionKeyId"] = state ? state.customEncryptionKeyId : undefined;
             resourceInputs["deadLetterQueueDeliveryCount"] = state ? state.deadLetterQueueDeliveryCount : undefined;
@@ -169,6 +175,7 @@ export class Queue extends pulumi.CustomResource {
             if ((!args || args.displayName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
+            resourceInputs["channelConsumptionLimit"] = args ? args.channelConsumptionLimit : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["customEncryptionKeyId"] = args ? args.customEncryptionKeyId : undefined;
             resourceInputs["deadLetterQueueDeliveryCount"] = args ? args.deadLetterQueueDeliveryCount : undefined;
@@ -197,11 +204,15 @@ export class Queue extends pulumi.CustomResource {
  */
 export interface QueueState {
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+     */
+    channelConsumptionLimit?: pulumi.Input<number>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
      */
     customEncryptionKeyId?: pulumi.Input<string>;
     /**
@@ -213,7 +224,7 @@ export interface QueueState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Queue Identifier
+     * (Updatable) The user-friendly name of the queue.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -221,7 +232,7 @@ export interface QueueState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * Any additional details about the current state of the queue.
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
@@ -231,11 +242,11 @@ export interface QueueState {
     purgeQueue?: pulumi.Input<boolean>;
     purgeType?: pulumi.Input<string>;
     /**
-     * The retention period of the messages in the queue, in seconds.
+     * The retention period of messages in the queue, in seconds.
      */
     retentionInSeconds?: pulumi.Input<number>;
     /**
-     * The current state of the Queue.
+     * The current state of the queue.
      */
     state?: pulumi.Input<string>;
     /**
@@ -243,11 +254,11 @@ export interface QueueState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The time the the Queue was created. An RFC3339 formatted datetime string
+     * The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The time the Queue was updated. An RFC3339 formatted datetime string
+     * The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      */
     timeUpdated?: pulumi.Input<string>;
     /**
@@ -255,7 +266,7 @@ export interface QueueState {
      */
     timeoutInSeconds?: pulumi.Input<number>;
     /**
-     * (Updatable) The default visibility of the messages consumed from the queue.
+     * (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
      */
     visibilityInSeconds?: pulumi.Input<number>;
 }
@@ -265,11 +276,15 @@ export interface QueueState {
  */
 export interface QueueArgs {
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+     */
+    channelConsumptionLimit?: pulumi.Input<number>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
      */
     customEncryptionKeyId?: pulumi.Input<string>;
     /**
@@ -281,7 +296,7 @@ export interface QueueArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Queue Identifier
+     * (Updatable) The user-friendly name of the queue.
      */
     displayName: pulumi.Input<string>;
     /**
@@ -291,7 +306,7 @@ export interface QueueArgs {
     purgeQueue?: pulumi.Input<boolean>;
     purgeType?: pulumi.Input<string>;
     /**
-     * The retention period of the messages in the queue, in seconds.
+     * The retention period of messages in the queue, in seconds.
      */
     retentionInSeconds?: pulumi.Input<number>;
     /**
@@ -299,7 +314,7 @@ export interface QueueArgs {
      */
     timeoutInSeconds?: pulumi.Input<number>;
     /**
-     * (Updatable) The default visibility of the messages consumed from the queue.
+     * (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
      */
     visibilityInSeconds?: pulumi.Input<number>;
 }

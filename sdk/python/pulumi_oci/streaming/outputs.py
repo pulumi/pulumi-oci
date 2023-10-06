@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -56,9 +56,20 @@ class StreamPoolCustomEncryptionKey(dict):
         :param str kms_key_id: (Updatable) Custom Encryption Key (Master Key) ocid.
         :param str key_state: Life cycle State of the custom key
         """
-        pulumi.set(__self__, "kms_key_id", kms_key_id)
+        StreamPoolCustomEncryptionKey._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kms_key_id=kms_key_id,
+            key_state=key_state,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kms_key_id: str,
+             key_state: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("kms_key_id", kms_key_id)
         if key_state is not None:
-            pulumi.set(__self__, "key_state", key_state)
+            _setter("key_state", key_state)
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -113,14 +124,29 @@ class StreamPoolKafkaSettings(dict):
         :param int log_retention_hours: (Updatable) The number of hours to keep a log file before deleting it (in hours).
         :param int num_partitions: (Updatable) The default number of log partitions per topic.
         """
+        StreamPoolKafkaSettings._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auto_create_topics_enable=auto_create_topics_enable,
+            bootstrap_servers=bootstrap_servers,
+            log_retention_hours=log_retention_hours,
+            num_partitions=num_partitions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auto_create_topics_enable: Optional[bool] = None,
+             bootstrap_servers: Optional[str] = None,
+             log_retention_hours: Optional[int] = None,
+             num_partitions: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if auto_create_topics_enable is not None:
-            pulumi.set(__self__, "auto_create_topics_enable", auto_create_topics_enable)
+            _setter("auto_create_topics_enable", auto_create_topics_enable)
         if bootstrap_servers is not None:
-            pulumi.set(__self__, "bootstrap_servers", bootstrap_servers)
+            _setter("bootstrap_servers", bootstrap_servers)
         if log_retention_hours is not None:
-            pulumi.set(__self__, "log_retention_hours", log_retention_hours)
+            _setter("log_retention_hours", log_retention_hours)
         if num_partitions is not None:
-            pulumi.set(__self__, "num_partitions", num_partitions)
+            _setter("num_partitions", num_partitions)
 
     @property
     @pulumi.getter(name="autoCreateTopicsEnable")
@@ -191,12 +217,25 @@ class StreamPoolPrivateEndpointSettings(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        StreamPoolPrivateEndpointSettings._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            nsg_ids=nsg_ids,
+            private_endpoint_ip=private_endpoint_ip,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             nsg_ids: Optional[Sequence[str]] = None,
+             private_endpoint_ip: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if private_endpoint_ip is not None:
-            pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+            _setter("private_endpoint_ip", private_endpoint_ip)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -248,14 +287,37 @@ class GetConnectHarnessesConnectHarnessResult(dict):
         :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
         :param str time_created: The date and time the connect harness was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetConnectHarnessesConnectHarnessResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_state_details=lifecycle_state_details,
+            name=name,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_state_details: str,
+             name: str,
+             state: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_state_details", lifecycle_state_details)
+        _setter("name", name)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -331,10 +393,23 @@ class GetConnectHarnessesFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the given name exactly.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetConnectHarnessesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -364,8 +439,19 @@ class GetStreamPoolCustomEncryptionKeyResult(dict):
         :param str key_state: Life cycle State of the custom key
         :param str kms_key_id: Custom Encryption Key (Master Key) ocid.
         """
-        pulumi.set(__self__, "key_state", key_state)
-        pulumi.set(__self__, "kms_key_id", kms_key_id)
+        GetStreamPoolCustomEncryptionKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key_state=key_state,
+            kms_key_id=kms_key_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key_state: str,
+             kms_key_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key_state", key_state)
+        _setter("kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter(name="keyState")
@@ -397,10 +483,25 @@ class GetStreamPoolKafkaSettingResult(dict):
         :param int log_retention_hours: The number of hours to keep a log file before deleting it (in hours).
         :param int num_partitions: The default number of log partitions per topic.
         """
-        pulumi.set(__self__, "auto_create_topics_enable", auto_create_topics_enable)
-        pulumi.set(__self__, "bootstrap_servers", bootstrap_servers)
-        pulumi.set(__self__, "log_retention_hours", log_retention_hours)
-        pulumi.set(__self__, "num_partitions", num_partitions)
+        GetStreamPoolKafkaSettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auto_create_topics_enable=auto_create_topics_enable,
+            bootstrap_servers=bootstrap_servers,
+            log_retention_hours=log_retention_hours,
+            num_partitions=num_partitions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auto_create_topics_enable: bool,
+             bootstrap_servers: str,
+             log_retention_hours: int,
+             num_partitions: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("auto_create_topics_enable", auto_create_topics_enable)
+        _setter("bootstrap_servers", bootstrap_servers)
+        _setter("log_retention_hours", log_retention_hours)
+        _setter("num_partitions", num_partitions)
 
     @property
     @pulumi.getter(name="autoCreateTopicsEnable")
@@ -446,9 +547,22 @@ class GetStreamPoolPrivateEndpointSettingResult(dict):
         :param str private_endpoint_ip: The private IP associated with the stream pool in the associated subnetId. The stream pool's FQDN resolves to that IP and should be used - instead of the private IP - in order to not trigger any TLS issues.
         :param str subnet_id: The subnet id from which the private stream pool can be accessed. Trying to access the streams from another network location will result in an error.
         """
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetStreamPoolPrivateEndpointSettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            nsg_ids=nsg_ids,
+            private_endpoint_ip=private_endpoint_ip,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             nsg_ids: Sequence[str],
+             private_endpoint_ip: str,
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("nsg_ids", nsg_ids)
+        _setter("private_endpoint_ip", private_endpoint_ip)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -484,10 +598,23 @@ class GetStreamPoolsFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the given name exactly.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetStreamPoolsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -539,19 +666,52 @@ class GetStreamPoolsStreamPoolResult(dict):
         :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
         :param str time_created: The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "custom_encryption_keys", custom_encryption_keys)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "endpoint_fqdn", endpoint_fqdn)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_private", is_private)
-        pulumi.set(__self__, "kafka_settings", kafka_settings)
-        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "private_endpoint_settings", private_endpoint_settings)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetStreamPoolsStreamPoolResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            custom_encryption_keys=custom_encryption_keys,
+            defined_tags=defined_tags,
+            endpoint_fqdn=endpoint_fqdn,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_private=is_private,
+            kafka_settings=kafka_settings,
+            lifecycle_state_details=lifecycle_state_details,
+            name=name,
+            private_endpoint_settings=private_endpoint_settings,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             custom_encryption_keys: Sequence['outputs.GetStreamPoolsStreamPoolCustomEncryptionKeyResult'],
+             defined_tags: Mapping[str, Any],
+             endpoint_fqdn: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_private: bool,
+             kafka_settings: Sequence['outputs.GetStreamPoolsStreamPoolKafkaSettingResult'],
+             lifecycle_state_details: str,
+             name: str,
+             private_endpoint_settings: Sequence['outputs.GetStreamPoolsStreamPoolPrivateEndpointSettingResult'],
+             state: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("custom_encryption_keys", custom_encryption_keys)
+        _setter("defined_tags", defined_tags)
+        _setter("endpoint_fqdn", endpoint_fqdn)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_private", is_private)
+        _setter("kafka_settings", kafka_settings)
+        _setter("lifecycle_state_details", lifecycle_state_details)
+        _setter("name", name)
+        _setter("private_endpoint_settings", private_endpoint_settings)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -667,8 +827,19 @@ class GetStreamPoolsStreamPoolCustomEncryptionKeyResult(dict):
         :param str key_state: Life cycle State of the custom key
         :param str kms_key_id: Custom Encryption Key (Master Key) ocid.
         """
-        pulumi.set(__self__, "key_state", key_state)
-        pulumi.set(__self__, "kms_key_id", kms_key_id)
+        GetStreamPoolsStreamPoolCustomEncryptionKeyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key_state=key_state,
+            kms_key_id=kms_key_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key_state: str,
+             kms_key_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key_state", key_state)
+        _setter("kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter(name="keyState")
@@ -700,10 +871,25 @@ class GetStreamPoolsStreamPoolKafkaSettingResult(dict):
         :param int log_retention_hours: The number of hours to keep a log file before deleting it (in hours).
         :param int num_partitions: The default number of log partitions per topic.
         """
-        pulumi.set(__self__, "auto_create_topics_enable", auto_create_topics_enable)
-        pulumi.set(__self__, "bootstrap_servers", bootstrap_servers)
-        pulumi.set(__self__, "log_retention_hours", log_retention_hours)
-        pulumi.set(__self__, "num_partitions", num_partitions)
+        GetStreamPoolsStreamPoolKafkaSettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            auto_create_topics_enable=auto_create_topics_enable,
+            bootstrap_servers=bootstrap_servers,
+            log_retention_hours=log_retention_hours,
+            num_partitions=num_partitions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             auto_create_topics_enable: bool,
+             bootstrap_servers: str,
+             log_retention_hours: int,
+             num_partitions: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("auto_create_topics_enable", auto_create_topics_enable)
+        _setter("bootstrap_servers", bootstrap_servers)
+        _setter("log_retention_hours", log_retention_hours)
+        _setter("num_partitions", num_partitions)
 
     @property
     @pulumi.getter(name="autoCreateTopicsEnable")
@@ -749,9 +935,22 @@ class GetStreamPoolsStreamPoolPrivateEndpointSettingResult(dict):
         :param str private_endpoint_ip: The private IP associated with the stream pool in the associated subnetId. The stream pool's FQDN resolves to that IP and should be used - instead of the private IP - in order to not trigger any TLS issues.
         :param str subnet_id: The subnet id from which the private stream pool can be accessed. Trying to access the streams from another network location will result in an error.
         """
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetStreamPoolsStreamPoolPrivateEndpointSettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            nsg_ids=nsg_ids,
+            private_endpoint_ip=private_endpoint_ip,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             nsg_ids: Sequence[str],
+             private_endpoint_ip: str,
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("nsg_ids", nsg_ids)
+        _setter("private_endpoint_ip", private_endpoint_ip)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -787,10 +986,23 @@ class GetStreamsFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the given name exactly.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetStreamsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -840,18 +1052,49 @@ class GetStreamsStreamResult(dict):
         :param str stream_pool_id: The OCID of the stream pool. Is exclusive with the `compartmentId` parameter. One of them is required.
         :param str time_created: The date and time the stream was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
-        pulumi.set(__self__, "messages_endpoint", messages_endpoint)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "partitions", partitions)
-        pulumi.set(__self__, "retention_in_hours", retention_in_hours)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "stream_pool_id", stream_pool_id)
-        pulumi.set(__self__, "time_created", time_created)
+        GetStreamsStreamResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_state_details=lifecycle_state_details,
+            messages_endpoint=messages_endpoint,
+            name=name,
+            partitions=partitions,
+            retention_in_hours=retention_in_hours,
+            state=state,
+            stream_pool_id=stream_pool_id,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_state_details: str,
+             messages_endpoint: str,
+             name: str,
+             partitions: int,
+             retention_in_hours: int,
+             state: str,
+             stream_pool_id: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_state_details", lifecycle_state_details)
+        _setter("messages_endpoint", messages_endpoint)
+        _setter("name", name)
+        _setter("partitions", partitions)
+        _setter("retention_in_hours", retention_in_hours)
+        _setter("state", state)
+        _setter("stream_pool_id", stream_pool_id)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")

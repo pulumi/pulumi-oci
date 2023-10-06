@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -80,10 +80,21 @@ class ConnectionAdditionalAttribute(dict):
         :param str name: (Updatable) The name of the property entry.
         :param str value: (Updatable) The value of the property entry.
         """
+        ConnectionAdditionalAttribute._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -130,12 +141,25 @@ class ConnectionBootstrapServer(dict):
         :param int port: (Updatable) The port of an endpoint usually specified for a connection.
         :param str private_ip: (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
+        ConnectionBootstrapServer._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host=host,
+            port=port,
+            private_ip=private_ip,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host: Optional[str] = None,
+             port: Optional[int] = None,
+             private_ip: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if host is not None:
-            pulumi.set(__self__, "host", host)
+            _setter("host", host)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if private_ip is not None:
-            pulumi.set(__self__, "private_ip", private_ip)
+            _setter("private_ip", private_ip)
 
     @property
     @pulumi.getter
@@ -186,8 +210,17 @@ class ConnectionIngressIp(dict):
         """
         :param str ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
         """
+        ConnectionIngressIp._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ingress_ip=ingress_ip,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ingress_ip: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if ingress_ip is not None:
-            pulumi.set(__self__, "ingress_ip", ingress_ip)
+            _setter("ingress_ip", ingress_ip)
 
     @property
     @pulumi.getter(name="ingressIp")
@@ -236,18 +269,37 @@ class DeploymentDeploymentDiagnosticData(dict):
         :param str time_diagnostic_end: The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_diagnostic_start: The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
+        DeploymentDeploymentDiagnosticData._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            diagnostic_state=diagnostic_state,
+            namespace=namespace,
+            object=object,
+            time_diagnostic_end=time_diagnostic_end,
+            time_diagnostic_start=time_diagnostic_start,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: Optional[str] = None,
+             diagnostic_state: Optional[str] = None,
+             namespace: Optional[str] = None,
+             object: Optional[str] = None,
+             time_diagnostic_end: Optional[str] = None,
+             time_diagnostic_start: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if diagnostic_state is not None:
-            pulumi.set(__self__, "diagnostic_state", diagnostic_state)
+            _setter("diagnostic_state", diagnostic_state)
         if namespace is not None:
-            pulumi.set(__self__, "namespace", namespace)
+            _setter("namespace", namespace)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
         if time_diagnostic_end is not None:
-            pulumi.set(__self__, "time_diagnostic_end", time_diagnostic_end)
+            _setter("time_diagnostic_end", time_diagnostic_end)
         if time_diagnostic_start is not None:
-            pulumi.set(__self__, "time_diagnostic_start", time_diagnostic_start)
+            _setter("time_diagnostic_start", time_diagnostic_start)
 
     @property
     @pulumi.getter
@@ -338,16 +390,33 @@ class DeploymentMaintenanceConfiguration(dict):
         :param int major_release_upgrade_period_in_days: (Updatable) Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
         :param int security_patch_upgrade_period_in_days: (Updatable) Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
         """
+        DeploymentMaintenanceConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bundle_release_upgrade_period_in_days=bundle_release_upgrade_period_in_days,
+            interim_release_upgrade_period_in_days=interim_release_upgrade_period_in_days,
+            is_interim_release_auto_upgrade_enabled=is_interim_release_auto_upgrade_enabled,
+            major_release_upgrade_period_in_days=major_release_upgrade_period_in_days,
+            security_patch_upgrade_period_in_days=security_patch_upgrade_period_in_days,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bundle_release_upgrade_period_in_days: Optional[int] = None,
+             interim_release_upgrade_period_in_days: Optional[int] = None,
+             is_interim_release_auto_upgrade_enabled: Optional[bool] = None,
+             major_release_upgrade_period_in_days: Optional[int] = None,
+             security_patch_upgrade_period_in_days: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if bundle_release_upgrade_period_in_days is not None:
-            pulumi.set(__self__, "bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
+            _setter("bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
         if interim_release_upgrade_period_in_days is not None:
-            pulumi.set(__self__, "interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
+            _setter("interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
         if is_interim_release_auto_upgrade_enabled is not None:
-            pulumi.set(__self__, "is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
+            _setter("is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
         if major_release_upgrade_period_in_days is not None:
-            pulumi.set(__self__, "major_release_upgrade_period_in_days", major_release_upgrade_period_in_days)
+            _setter("major_release_upgrade_period_in_days", major_release_upgrade_period_in_days)
         if security_patch_upgrade_period_in_days is not None:
-            pulumi.set(__self__, "security_patch_upgrade_period_in_days", security_patch_upgrade_period_in_days)
+            _setter("security_patch_upgrade_period_in_days", security_patch_upgrade_period_in_days)
 
     @property
     @pulumi.getter(name="bundleReleaseUpgradePeriodInDays")
@@ -416,8 +485,19 @@ class DeploymentMaintenanceWindow(dict):
         :param str day: (Updatable) Days of the week.
         :param int start_hour: (Updatable) Start hour for maintenance period. Hour is in UTC.
         """
-        pulumi.set(__self__, "day", day)
-        pulumi.set(__self__, "start_hour", start_hour)
+        DeploymentMaintenanceWindow._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            day=day,
+            start_hour=start_hour,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             day: str,
+             start_hour: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("day", day)
+        _setter("start_hour", start_hour)
 
     @property
     @pulumi.getter
@@ -488,23 +568,48 @@ class DeploymentOggData(dict):
         :param str ogg_version: (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
         :param str password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
         """
-        pulumi.set(__self__, "deployment_name", deployment_name)
+        DeploymentOggData._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            deployment_name=deployment_name,
+            admin_password=admin_password,
+            admin_username=admin_username,
+            certificate=certificate,
+            credential_store=credential_store,
+            identity_domain_id=identity_domain_id,
+            key=key,
+            ogg_version=ogg_version,
+            password_secret_id=password_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             deployment_name: str,
+             admin_password: Optional[str] = None,
+             admin_username: Optional[str] = None,
+             certificate: Optional[str] = None,
+             credential_store: Optional[str] = None,
+             identity_domain_id: Optional[str] = None,
+             key: Optional[str] = None,
+             ogg_version: Optional[str] = None,
+             password_secret_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("deployment_name", deployment_name)
         if admin_password is not None:
-            pulumi.set(__self__, "admin_password", admin_password)
+            _setter("admin_password", admin_password)
         if admin_username is not None:
-            pulumi.set(__self__, "admin_username", admin_username)
+            _setter("admin_username", admin_username)
         if certificate is not None:
-            pulumi.set(__self__, "certificate", certificate)
+            _setter("certificate", certificate)
         if credential_store is not None:
-            pulumi.set(__self__, "credential_store", credential_store)
+            _setter("credential_store", credential_store)
         if identity_domain_id is not None:
-            pulumi.set(__self__, "identity_domain_id", identity_domain_id)
+            _setter("identity_domain_id", identity_domain_id)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if ogg_version is not None:
-            pulumi.set(__self__, "ogg_version", ogg_version)
+            _setter("ogg_version", ogg_version)
         if password_secret_id is not None:
-            pulumi.set(__self__, "password_secret_id", password_secret_id)
+            _setter("password_secret_id", password_secret_id)
 
     @property
     @pulumi.getter(name="deploymentName")
@@ -588,8 +693,19 @@ class GetConnectionAdditionalAttributeResult(dict):
         :param str name: The name of the property entry.
         :param str value: The value of the property entry.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetConnectionAdditionalAttributeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -612,7 +728,16 @@ class GetConnectionAdditionalAttributeResult(dict):
 class GetConnectionAssignmentsConnectionAssignmentCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetConnectionAssignmentsConnectionAssignmentCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetConnectionAssignmentsConnectionAssignmentCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetConnectionAssignmentsConnectionAssignmentCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -641,14 +766,37 @@ class GetConnectionAssignmentsConnectionAssignmentCollectionItemResult(dict):
         :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        pulumi.set(__self__, "alias_name", alias_name)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connection_id", connection_id)
-        pulumi.set(__self__, "deployment_id", deployment_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetConnectionAssignmentsConnectionAssignmentCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alias_name=alias_name,
+            compartment_id=compartment_id,
+            connection_id=connection_id,
+            deployment_id=deployment_id,
+            id=id,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alias_name: str,
+             compartment_id: str,
+             connection_id: str,
+             deployment_id: str,
+             id: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("alias_name", alias_name)
+        _setter("compartment_id", compartment_id)
+        _setter("connection_id", connection_id)
+        _setter("deployment_id", deployment_id)
+        _setter("id", id)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="aliasName")
@@ -724,10 +872,23 @@ class GetConnectionAssignmentsFilterResult(dict):
         """
         :param str name: The name of the connection in the assignment (aliasName).
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetConnectionAssignmentsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -759,9 +920,22 @@ class GetConnectionBootstrapServerResult(dict):
         :param int port: The port of an endpoint usually specified for a connection.
         :param str private_ip: The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "private_ip", private_ip)
+        GetConnectionBootstrapServerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host=host,
+            port=port,
+            private_ip=private_ip,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host: str,
+             port: int,
+             private_ip: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("host", host)
+        _setter("port", port)
+        _setter("private_ip", private_ip)
 
     @property
     @pulumi.getter
@@ -795,7 +969,16 @@ class GetConnectionIngressIpResult(dict):
         """
         :param str ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
         """
-        pulumi.set(__self__, "ingress_ip", ingress_ip)
+        GetConnectionIngressIpResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ingress_ip=ingress_ip,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ingress_ip: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ingress_ip", ingress_ip)
 
     @property
     @pulumi.getter(name="ingressIp")
@@ -810,7 +993,16 @@ class GetConnectionIngressIpResult(dict):
 class GetConnectionsConnectionCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetConnectionsConnectionCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetConnectionsConnectionCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetConnectionsConnectionCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -948,79 +1140,232 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str username: The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
         :param str vault_id: Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         """
-        pulumi.set(__self__, "access_key_id", access_key_id)
-        pulumi.set(__self__, "account_key", account_key)
-        pulumi.set(__self__, "account_name", account_name)
-        pulumi.set(__self__, "additional_attributes", additional_attributes)
-        pulumi.set(__self__, "authentication_type", authentication_type)
-        pulumi.set(__self__, "azure_tenant_id", azure_tenant_id)
-        pulumi.set(__self__, "bootstrap_servers", bootstrap_servers)
-        pulumi.set(__self__, "client_id", client_id)
-        pulumi.set(__self__, "client_secret", client_secret)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connection_factory", connection_factory)
-        pulumi.set(__self__, "connection_string", connection_string)
-        pulumi.set(__self__, "connection_type", connection_type)
-        pulumi.set(__self__, "connection_url", connection_url)
-        pulumi.set(__self__, "consumer_properties", consumer_properties)
-        pulumi.set(__self__, "core_site_xml", core_site_xml)
-        pulumi.set(__self__, "database_id", database_id)
-        pulumi.set(__self__, "database_name", database_name)
-        pulumi.set(__self__, "db_system_id", db_system_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deployment_id", deployment_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "endpoint", endpoint)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ingress_ips", ingress_ips)
-        pulumi.set(__self__, "jndi_connection_factory", jndi_connection_factory)
-        pulumi.set(__self__, "jndi_initial_context_factory", jndi_initial_context_factory)
-        pulumi.set(__self__, "jndi_provider_url", jndi_provider_url)
-        pulumi.set(__self__, "jndi_security_credentials", jndi_security_credentials)
-        pulumi.set(__self__, "jndi_security_principal", jndi_security_principal)
-        pulumi.set(__self__, "key_id", key_id)
-        pulumi.set(__self__, "key_store", key_store)
-        pulumi.set(__self__, "key_store_password", key_store_password)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "private_ip", private_ip)
-        pulumi.set(__self__, "private_key_file", private_key_file)
-        pulumi.set(__self__, "private_key_passphrase", private_key_passphrase)
-        pulumi.set(__self__, "producer_properties", producer_properties)
-        pulumi.set(__self__, "public_key_fingerprint", public_key_fingerprint)
-        pulumi.set(__self__, "region", region)
-        pulumi.set(__self__, "sas_token", sas_token)
-        pulumi.set(__self__, "secret_access_key", secret_access_key)
-        pulumi.set(__self__, "security_protocol", security_protocol)
-        pulumi.set(__self__, "session_mode", session_mode)
-        pulumi.set(__self__, "should_use_jndi", should_use_jndi)
-        pulumi.set(__self__, "should_validate_server_certificate", should_validate_server_certificate)
-        pulumi.set(__self__, "ssl_ca", ssl_ca)
-        pulumi.set(__self__, "ssl_cert", ssl_cert)
-        pulumi.set(__self__, "ssl_crl", ssl_crl)
-        pulumi.set(__self__, "ssl_key", ssl_key)
-        pulumi.set(__self__, "ssl_key_password", ssl_key_password)
-        pulumi.set(__self__, "ssl_mode", ssl_mode)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "stream_pool_id", stream_pool_id)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "technology_type", technology_type)
-        pulumi.set(__self__, "tenancy_id", tenancy_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "trust_store", trust_store)
-        pulumi.set(__self__, "trust_store_password", trust_store_password)
-        pulumi.set(__self__, "url", url)
-        pulumi.set(__self__, "user_id", user_id)
-        pulumi.set(__self__, "username", username)
-        pulumi.set(__self__, "vault_id", vault_id)
-        pulumi.set(__self__, "wallet", wallet)
+        GetConnectionsConnectionCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_key_id=access_key_id,
+            account_key=account_key,
+            account_name=account_name,
+            additional_attributes=additional_attributes,
+            authentication_type=authentication_type,
+            azure_tenant_id=azure_tenant_id,
+            bootstrap_servers=bootstrap_servers,
+            client_id=client_id,
+            client_secret=client_secret,
+            compartment_id=compartment_id,
+            connection_factory=connection_factory,
+            connection_string=connection_string,
+            connection_type=connection_type,
+            connection_url=connection_url,
+            consumer_properties=consumer_properties,
+            core_site_xml=core_site_xml,
+            database_id=database_id,
+            database_name=database_name,
+            db_system_id=db_system_id,
+            defined_tags=defined_tags,
+            deployment_id=deployment_id,
+            description=description,
+            display_name=display_name,
+            endpoint=endpoint,
+            freeform_tags=freeform_tags,
+            host=host,
+            id=id,
+            ingress_ips=ingress_ips,
+            jndi_connection_factory=jndi_connection_factory,
+            jndi_initial_context_factory=jndi_initial_context_factory,
+            jndi_provider_url=jndi_provider_url,
+            jndi_security_credentials=jndi_security_credentials,
+            jndi_security_principal=jndi_security_principal,
+            key_id=key_id,
+            key_store=key_store,
+            key_store_password=key_store_password,
+            lifecycle_details=lifecycle_details,
+            nsg_ids=nsg_ids,
+            password=password,
+            port=port,
+            private_ip=private_ip,
+            private_key_file=private_key_file,
+            private_key_passphrase=private_key_passphrase,
+            producer_properties=producer_properties,
+            public_key_fingerprint=public_key_fingerprint,
+            region=region,
+            sas_token=sas_token,
+            secret_access_key=secret_access_key,
+            security_protocol=security_protocol,
+            session_mode=session_mode,
+            should_use_jndi=should_use_jndi,
+            should_validate_server_certificate=should_validate_server_certificate,
+            ssl_ca=ssl_ca,
+            ssl_cert=ssl_cert,
+            ssl_crl=ssl_crl,
+            ssl_key=ssl_key,
+            ssl_key_password=ssl_key_password,
+            ssl_mode=ssl_mode,
+            state=state,
+            stream_pool_id=stream_pool_id,
+            subnet_id=subnet_id,
+            system_tags=system_tags,
+            technology_type=technology_type,
+            tenancy_id=tenancy_id,
+            time_created=time_created,
+            time_updated=time_updated,
+            trust_store=trust_store,
+            trust_store_password=trust_store_password,
+            url=url,
+            user_id=user_id,
+            username=username,
+            vault_id=vault_id,
+            wallet=wallet,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_key_id: str,
+             account_key: str,
+             account_name: str,
+             additional_attributes: Sequence['outputs.GetConnectionsConnectionCollectionItemAdditionalAttributeResult'],
+             authentication_type: str,
+             azure_tenant_id: str,
+             bootstrap_servers: Sequence['outputs.GetConnectionsConnectionCollectionItemBootstrapServerResult'],
+             client_id: str,
+             client_secret: str,
+             compartment_id: str,
+             connection_factory: str,
+             connection_string: str,
+             connection_type: str,
+             connection_url: str,
+             consumer_properties: str,
+             core_site_xml: str,
+             database_id: str,
+             database_name: str,
+             db_system_id: str,
+             defined_tags: Mapping[str, Any],
+             deployment_id: str,
+             description: str,
+             display_name: str,
+             endpoint: str,
+             freeform_tags: Mapping[str, Any],
+             host: str,
+             id: str,
+             ingress_ips: Sequence['outputs.GetConnectionsConnectionCollectionItemIngressIpResult'],
+             jndi_connection_factory: str,
+             jndi_initial_context_factory: str,
+             jndi_provider_url: str,
+             jndi_security_credentials: str,
+             jndi_security_principal: str,
+             key_id: str,
+             key_store: str,
+             key_store_password: str,
+             lifecycle_details: str,
+             nsg_ids: Sequence[str],
+             password: str,
+             port: int,
+             private_ip: str,
+             private_key_file: str,
+             private_key_passphrase: str,
+             producer_properties: str,
+             public_key_fingerprint: str,
+             region: str,
+             sas_token: str,
+             secret_access_key: str,
+             security_protocol: str,
+             session_mode: str,
+             should_use_jndi: bool,
+             should_validate_server_certificate: bool,
+             ssl_ca: str,
+             ssl_cert: str,
+             ssl_crl: str,
+             ssl_key: str,
+             ssl_key_password: str,
+             ssl_mode: str,
+             state: str,
+             stream_pool_id: str,
+             subnet_id: str,
+             system_tags: Mapping[str, Any],
+             technology_type: str,
+             tenancy_id: str,
+             time_created: str,
+             time_updated: str,
+             trust_store: str,
+             trust_store_password: str,
+             url: str,
+             user_id: str,
+             username: str,
+             vault_id: str,
+             wallet: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("access_key_id", access_key_id)
+        _setter("account_key", account_key)
+        _setter("account_name", account_name)
+        _setter("additional_attributes", additional_attributes)
+        _setter("authentication_type", authentication_type)
+        _setter("azure_tenant_id", azure_tenant_id)
+        _setter("bootstrap_servers", bootstrap_servers)
+        _setter("client_id", client_id)
+        _setter("client_secret", client_secret)
+        _setter("compartment_id", compartment_id)
+        _setter("connection_factory", connection_factory)
+        _setter("connection_string", connection_string)
+        _setter("connection_type", connection_type)
+        _setter("connection_url", connection_url)
+        _setter("consumer_properties", consumer_properties)
+        _setter("core_site_xml", core_site_xml)
+        _setter("database_id", database_id)
+        _setter("database_name", database_name)
+        _setter("db_system_id", db_system_id)
+        _setter("defined_tags", defined_tags)
+        _setter("deployment_id", deployment_id)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("endpoint", endpoint)
+        _setter("freeform_tags", freeform_tags)
+        _setter("host", host)
+        _setter("id", id)
+        _setter("ingress_ips", ingress_ips)
+        _setter("jndi_connection_factory", jndi_connection_factory)
+        _setter("jndi_initial_context_factory", jndi_initial_context_factory)
+        _setter("jndi_provider_url", jndi_provider_url)
+        _setter("jndi_security_credentials", jndi_security_credentials)
+        _setter("jndi_security_principal", jndi_security_principal)
+        _setter("key_id", key_id)
+        _setter("key_store", key_store)
+        _setter("key_store_password", key_store_password)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("nsg_ids", nsg_ids)
+        _setter("password", password)
+        _setter("port", port)
+        _setter("private_ip", private_ip)
+        _setter("private_key_file", private_key_file)
+        _setter("private_key_passphrase", private_key_passphrase)
+        _setter("producer_properties", producer_properties)
+        _setter("public_key_fingerprint", public_key_fingerprint)
+        _setter("region", region)
+        _setter("sas_token", sas_token)
+        _setter("secret_access_key", secret_access_key)
+        _setter("security_protocol", security_protocol)
+        _setter("session_mode", session_mode)
+        _setter("should_use_jndi", should_use_jndi)
+        _setter("should_validate_server_certificate", should_validate_server_certificate)
+        _setter("ssl_ca", ssl_ca)
+        _setter("ssl_cert", ssl_cert)
+        _setter("ssl_crl", ssl_crl)
+        _setter("ssl_key", ssl_key)
+        _setter("ssl_key_password", ssl_key_password)
+        _setter("ssl_mode", ssl_mode)
+        _setter("state", state)
+        _setter("stream_pool_id", stream_pool_id)
+        _setter("subnet_id", subnet_id)
+        _setter("system_tags", system_tags)
+        _setter("technology_type", technology_type)
+        _setter("tenancy_id", tenancy_id)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("trust_store", trust_store)
+        _setter("trust_store_password", trust_store_password)
+        _setter("url", url)
+        _setter("user_id", user_id)
+        _setter("username", username)
+        _setter("vault_id", vault_id)
+        _setter("wallet", wallet)
 
     @property
     @pulumi.getter(name="accessKeyId")
@@ -1553,8 +1898,19 @@ class GetConnectionsConnectionCollectionItemAdditionalAttributeResult(dict):
         :param str name: The name of the property entry.
         :param str value: The value of the property entry.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetConnectionsConnectionCollectionItemAdditionalAttributeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -1584,9 +1940,22 @@ class GetConnectionsConnectionCollectionItemBootstrapServerResult(dict):
         :param int port: The port of an endpoint usually specified for a connection.
         :param str private_ip: The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
-        pulumi.set(__self__, "host", host)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "private_ip", private_ip)
+        GetConnectionsConnectionCollectionItemBootstrapServerResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host=host,
+            port=port,
+            private_ip=private_ip,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host: str,
+             port: int,
+             private_ip: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("host", host)
+        _setter("port", port)
+        _setter("private_ip", private_ip)
 
     @property
     @pulumi.getter
@@ -1620,7 +1989,16 @@ class GetConnectionsConnectionCollectionItemIngressIpResult(dict):
         """
         :param str ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
         """
-        pulumi.set(__self__, "ingress_ip", ingress_ip)
+        GetConnectionsConnectionCollectionItemIngressIpResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ingress_ip=ingress_ip,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ingress_ip: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ingress_ip", ingress_ip)
 
     @property
     @pulumi.getter(name="ingressIp")
@@ -1640,10 +2018,23 @@ class GetConnectionsFilterResult(dict):
         """
         :param str name: The name of the property entry.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetConnectionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1668,7 +2059,16 @@ class GetConnectionsFilterResult(dict):
 class GetDatabaseRegistrationsDatabaseRegistrationCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetDatabaseRegistrationsDatabaseRegistrationCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1731,32 +2131,91 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
         :param str username: The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         :param str vault_id: Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
         """
-        pulumi.set(__self__, "alias_name", alias_name)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connection_string", connection_string)
-        pulumi.set(__self__, "database_id", database_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "fqdn", fqdn)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "key_id", key_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "rce_private_ip", rce_private_ip)
-        pulumi.set(__self__, "secret_compartment_id", secret_compartment_id)
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "session_mode", session_mode)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "username", username)
-        pulumi.set(__self__, "vault_id", vault_id)
-        pulumi.set(__self__, "wallet", wallet)
+        GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            alias_name=alias_name,
+            compartment_id=compartment_id,
+            connection_string=connection_string,
+            database_id=database_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            fqdn=fqdn,
+            freeform_tags=freeform_tags,
+            id=id,
+            ip_address=ip_address,
+            key_id=key_id,
+            lifecycle_details=lifecycle_details,
+            password=password,
+            rce_private_ip=rce_private_ip,
+            secret_compartment_id=secret_compartment_id,
+            secret_id=secret_id,
+            session_mode=session_mode,
+            state=state,
+            subnet_id=subnet_id,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+            username=username,
+            vault_id=vault_id,
+            wallet=wallet,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             alias_name: str,
+             compartment_id: str,
+             connection_string: str,
+             database_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             fqdn: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             ip_address: str,
+             key_id: str,
+             lifecycle_details: str,
+             password: str,
+             rce_private_ip: str,
+             secret_compartment_id: str,
+             secret_id: str,
+             session_mode: str,
+             state: str,
+             subnet_id: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             username: str,
+             vault_id: str,
+             wallet: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("alias_name", alias_name)
+        _setter("compartment_id", compartment_id)
+        _setter("connection_string", connection_string)
+        _setter("database_id", database_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("fqdn", fqdn)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("ip_address", ip_address)
+        _setter("key_id", key_id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("password", password)
+        _setter("rce_private_ip", rce_private_ip)
+        _setter("secret_compartment_id", secret_compartment_id)
+        _setter("secret_id", secret_id)
+        _setter("session_mode", session_mode)
+        _setter("state", state)
+        _setter("subnet_id", subnet_id)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("username", username)
+        _setter("vault_id", vault_id)
+        _setter("wallet", wallet)
 
     @property
     @pulumi.getter(name="aliasName")
@@ -1967,10 +2426,23 @@ class GetDatabaseRegistrationsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDatabaseRegistrationsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1992,7 +2464,16 @@ class GetDatabaseRegistrationsFilterResult(dict):
 class GetDeploymentBackupsDeploymentBackupCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDeploymentBackupsDeploymentBackupCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetDeploymentBackupsDeploymentBackupCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDeploymentBackupsDeploymentBackupCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2045,26 +2526,73 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
         :param str time_of_backup: The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        pulumi.set(__self__, "backup_type", backup_type)
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deployment_id", deployment_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_automatic", is_automatic)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "ogg_version", ogg_version)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_backup_finished", time_backup_finished)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_of_backup", time_of_backup)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetDeploymentBackupsDeploymentBackupCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backup_type=backup_type,
+            bucket=bucket,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            deployment_id=deployment_id,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_automatic=is_automatic,
+            lifecycle_details=lifecycle_details,
+            namespace=namespace,
+            object=object,
+            ogg_version=ogg_version,
+            size_in_bytes=size_in_bytes,
+            state=state,
+            system_tags=system_tags,
+            time_backup_finished=time_backup_finished,
+            time_created=time_created,
+            time_of_backup=time_of_backup,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backup_type: str,
+             bucket: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             deployment_id: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_automatic: bool,
+             lifecycle_details: str,
+             namespace: str,
+             object: str,
+             ogg_version: str,
+             size_in_bytes: float,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_backup_finished: str,
+             time_created: str,
+             time_of_backup: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("backup_type", backup_type)
+        _setter("bucket", bucket)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("deployment_id", deployment_id)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_automatic", is_automatic)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("namespace", namespace)
+        _setter("object", object)
+        _setter("ogg_version", ogg_version)
+        _setter("size_in_bytes", size_in_bytes)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_backup_finished", time_backup_finished)
+        _setter("time_created", time_created)
+        _setter("time_of_backup", time_of_backup)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="backupType")
@@ -2233,10 +2761,23 @@ class GetDeploymentBackupsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentBackupsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2271,12 +2812,31 @@ class GetDeploymentDeploymentDiagnosticDataResult(dict):
         :param str time_diagnostic_end: The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_diagnostic_start: The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "diagnostic_state", diagnostic_state)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "time_diagnostic_end", time_diagnostic_end)
-        pulumi.set(__self__, "time_diagnostic_start", time_diagnostic_start)
+        GetDeploymentDeploymentDiagnosticDataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            diagnostic_state=diagnostic_state,
+            namespace=namespace,
+            object=object,
+            time_diagnostic_end=time_diagnostic_end,
+            time_diagnostic_start=time_diagnostic_start,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             diagnostic_state: str,
+             namespace: str,
+             object: str,
+             time_diagnostic_end: str,
+             time_diagnostic_start: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("diagnostic_state", diagnostic_state)
+        _setter("namespace", namespace)
+        _setter("object", object)
+        _setter("time_diagnostic_end", time_diagnostic_end)
+        _setter("time_diagnostic_start", time_diagnostic_start)
 
     @property
     @pulumi.getter
@@ -2342,11 +2902,28 @@ class GetDeploymentMaintenanceConfigurationResult(dict):
         :param int major_release_upgrade_period_in_days: Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
         :param int security_patch_upgrade_period_in_days: Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
         """
-        pulumi.set(__self__, "bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
-        pulumi.set(__self__, "interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
-        pulumi.set(__self__, "is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
-        pulumi.set(__self__, "major_release_upgrade_period_in_days", major_release_upgrade_period_in_days)
-        pulumi.set(__self__, "security_patch_upgrade_period_in_days", security_patch_upgrade_period_in_days)
+        GetDeploymentMaintenanceConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bundle_release_upgrade_period_in_days=bundle_release_upgrade_period_in_days,
+            interim_release_upgrade_period_in_days=interim_release_upgrade_period_in_days,
+            is_interim_release_auto_upgrade_enabled=is_interim_release_auto_upgrade_enabled,
+            major_release_upgrade_period_in_days=major_release_upgrade_period_in_days,
+            security_patch_upgrade_period_in_days=security_patch_upgrade_period_in_days,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bundle_release_upgrade_period_in_days: int,
+             interim_release_upgrade_period_in_days: int,
+             is_interim_release_auto_upgrade_enabled: bool,
+             major_release_upgrade_period_in_days: int,
+             security_patch_upgrade_period_in_days: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
+        _setter("interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
+        _setter("is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
+        _setter("major_release_upgrade_period_in_days", major_release_upgrade_period_in_days)
+        _setter("security_patch_upgrade_period_in_days", security_patch_upgrade_period_in_days)
 
     @property
     @pulumi.getter(name="bundleReleaseUpgradePeriodInDays")
@@ -2398,8 +2975,19 @@ class GetDeploymentMaintenanceWindowResult(dict):
         :param str day: Days of the week.
         :param int start_hour: Start hour for maintenance period. Hour is in UTC.
         """
-        pulumi.set(__self__, "day", day)
-        pulumi.set(__self__, "start_hour", start_hour)
+        GetDeploymentMaintenanceWindowResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            day=day,
+            start_hour=start_hour,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             day: str,
+             start_hour: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("day", day)
+        _setter("start_hour", start_hour)
 
     @property
     @pulumi.getter
@@ -2439,15 +3027,40 @@ class GetDeploymentOggDataResult(dict):
         :param str ogg_version: Version of OGG
         :param str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
         """
-        pulumi.set(__self__, "admin_password", admin_password)
-        pulumi.set(__self__, "admin_username", admin_username)
-        pulumi.set(__self__, "certificate", certificate)
-        pulumi.set(__self__, "credential_store", credential_store)
-        pulumi.set(__self__, "deployment_name", deployment_name)
-        pulumi.set(__self__, "identity_domain_id", identity_domain_id)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "ogg_version", ogg_version)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
+        GetDeploymentOggDataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_password=admin_password,
+            admin_username=admin_username,
+            certificate=certificate,
+            credential_store=credential_store,
+            deployment_name=deployment_name,
+            identity_domain_id=identity_domain_id,
+            key=key,
+            ogg_version=ogg_version,
+            password_secret_id=password_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_password: str,
+             admin_username: str,
+             certificate: str,
+             credential_store: str,
+             deployment_name: str,
+             identity_domain_id: str,
+             key: str,
+             ogg_version: str,
+             password_secret_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("admin_password", admin_password)
+        _setter("admin_username", admin_username)
+        _setter("certificate", certificate)
+        _setter("credential_store", credential_store)
+        _setter("deployment_name", deployment_name)
+        _setter("identity_domain_id", identity_domain_id)
+        _setter("key", key)
+        _setter("ogg_version", ogg_version)
+        _setter("password_secret_id", password_secret_id)
 
     @property
     @pulumi.getter(name="adminPassword")
@@ -2533,12 +3146,31 @@ class GetDeploymentTypeItemResult(dict):
         :param Sequence[str] source_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
         :param Sequence[str] target_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
         """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "connection_types", connection_types)
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "source_technologies", source_technologies)
-        pulumi.set(__self__, "target_technologies", target_technologies)
+        GetDeploymentTypeItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            connection_types=connection_types,
+            deployment_type=deployment_type,
+            display_name=display_name,
+            source_technologies=source_technologies,
+            target_technologies=target_technologies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: str,
+             connection_types: Sequence[str],
+             deployment_type: str,
+             display_name: str,
+             source_technologies: Sequence[str],
+             target_technologies: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("category", category)
+        _setter("connection_types", connection_types)
+        _setter("deployment_type", deployment_type)
+        _setter("display_name", display_name)
+        _setter("source_technologies", source_technologies)
+        _setter("target_technologies", target_technologies)
 
     @property
     @pulumi.getter
@@ -2596,7 +3228,16 @@ class GetDeploymentTypesDeploymentTypeCollectionResult(dict):
         """
         :param Sequence['GetDeploymentTypesDeploymentTypeCollectionItemArgs'] items: Array of DeploymentTypeSummary
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentTypesDeploymentTypeCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDeploymentTypesDeploymentTypeCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2626,13 +3267,34 @@ class GetDeploymentTypesDeploymentTypeCollectionItemResult(dict):
         :param Sequence[str] source_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
         :param Sequence[str] target_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
         """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "connection_types", connection_types)
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "ogg_version", ogg_version)
-        pulumi.set(__self__, "source_technologies", source_technologies)
-        pulumi.set(__self__, "target_technologies", target_technologies)
+        GetDeploymentTypesDeploymentTypeCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            connection_types=connection_types,
+            deployment_type=deployment_type,
+            display_name=display_name,
+            ogg_version=ogg_version,
+            source_technologies=source_technologies,
+            target_technologies=target_technologies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: str,
+             connection_types: Sequence[str],
+             deployment_type: str,
+             display_name: str,
+             ogg_version: str,
+             source_technologies: Sequence[str],
+             target_technologies: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("category", category)
+        _setter("connection_types", connection_types)
+        _setter("deployment_type", deployment_type)
+        _setter("display_name", display_name)
+        _setter("ogg_version", ogg_version)
+        _setter("source_technologies", source_technologies)
+        _setter("target_technologies", target_technologies)
 
     @property
     @pulumi.getter
@@ -2697,10 +3359,23 @@ class GetDeploymentTypesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentTypesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2722,7 +3397,16 @@ class GetDeploymentTypesFilterResult(dict):
 class GetDeploymentUpgradesDeploymentUpgradeCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetDeploymentUpgradesDeploymentUpgradeCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2795,35 +3479,100 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
         :param str time_started: The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deployment_id", deployment_id)
-        pulumi.set(__self__, "deployment_upgrade_type", deployment_upgrade_type)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_cancel_allowed", is_cancel_allowed)
-        pulumi.set(__self__, "is_reschedule_allowed", is_reschedule_allowed)
-        pulumi.set(__self__, "is_rollback_allowed", is_rollback_allowed)
-        pulumi.set(__self__, "is_security_fix", is_security_fix)
-        pulumi.set(__self__, "is_snoozed", is_snoozed)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
-        pulumi.set(__self__, "ogg_version", ogg_version)
-        pulumi.set(__self__, "previous_ogg_version", previous_ogg_version)
-        pulumi.set(__self__, "release_type", release_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_finished", time_finished)
-        pulumi.set(__self__, "time_ogg_version_supported_until", time_ogg_version_supported_until)
-        pulumi.set(__self__, "time_released", time_released)
-        pulumi.set(__self__, "time_schedule", time_schedule)
-        pulumi.set(__self__, "time_schedule_max", time_schedule_max)
-        pulumi.set(__self__, "time_snoozed_until", time_snoozed_until)
-        pulumi.set(__self__, "time_started", time_started)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            deployment_id=deployment_id,
+            deployment_upgrade_type=deployment_upgrade_type,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_cancel_allowed=is_cancel_allowed,
+            is_reschedule_allowed=is_reschedule_allowed,
+            is_rollback_allowed=is_rollback_allowed,
+            is_security_fix=is_security_fix,
+            is_snoozed=is_snoozed,
+            lifecycle_details=lifecycle_details,
+            lifecycle_sub_state=lifecycle_sub_state,
+            ogg_version=ogg_version,
+            previous_ogg_version=previous_ogg_version,
+            release_type=release_type,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_finished=time_finished,
+            time_ogg_version_supported_until=time_ogg_version_supported_until,
+            time_released=time_released,
+            time_schedule=time_schedule,
+            time_schedule_max=time_schedule_max,
+            time_snoozed_until=time_snoozed_until,
+            time_started=time_started,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             deployment_id: str,
+             deployment_upgrade_type: str,
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_cancel_allowed: bool,
+             is_reschedule_allowed: bool,
+             is_rollback_allowed: bool,
+             is_security_fix: bool,
+             is_snoozed: bool,
+             lifecycle_details: str,
+             lifecycle_sub_state: str,
+             ogg_version: str,
+             previous_ogg_version: str,
+             release_type: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_finished: str,
+             time_ogg_version_supported_until: str,
+             time_released: str,
+             time_schedule: str,
+             time_schedule_max: str,
+             time_snoozed_until: str,
+             time_started: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("deployment_id", deployment_id)
+        _setter("deployment_upgrade_type", deployment_upgrade_type)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_cancel_allowed", is_cancel_allowed)
+        _setter("is_reschedule_allowed", is_reschedule_allowed)
+        _setter("is_rollback_allowed", is_rollback_allowed)
+        _setter("is_security_fix", is_security_fix)
+        _setter("is_snoozed", is_snoozed)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("lifecycle_sub_state", lifecycle_sub_state)
+        _setter("ogg_version", ogg_version)
+        _setter("previous_ogg_version", previous_ogg_version)
+        _setter("release_type", release_type)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_finished", time_finished)
+        _setter("time_ogg_version_supported_until", time_ogg_version_supported_until)
+        _setter("time_released", time_released)
+        _setter("time_schedule", time_schedule)
+        _setter("time_schedule_max", time_schedule_max)
+        _setter("time_snoozed_until", time_snoozed_until)
+        _setter("time_started", time_started)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3066,10 +3815,23 @@ class GetDeploymentUpgradesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentUpgradesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3094,7 +3856,16 @@ class GetDeploymentVersionsDeploymentVersionCollectionResult(dict):
         """
         :param Sequence['GetDeploymentVersionsDeploymentVersionCollectionItemArgs'] items: Array of DeploymentVersionSummary.
         """
-        pulumi.set(__self__, "items", items)
+        GetDeploymentVersionsDeploymentVersionCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDeploymentVersionsDeploymentVersionCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3122,12 +3893,31 @@ class GetDeploymentVersionsDeploymentVersionCollectionItemResult(dict):
         :param str time_released: The time the resource was released. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_supported_until: The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "is_security_fix", is_security_fix)
-        pulumi.set(__self__, "ogg_version", ogg_version)
-        pulumi.set(__self__, "release_type", release_type)
-        pulumi.set(__self__, "time_released", time_released)
-        pulumi.set(__self__, "time_supported_until", time_supported_until)
+        GetDeploymentVersionsDeploymentVersionCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            deployment_type=deployment_type,
+            is_security_fix=is_security_fix,
+            ogg_version=ogg_version,
+            release_type=release_type,
+            time_released=time_released,
+            time_supported_until=time_supported_until,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             deployment_type: str,
+             is_security_fix: bool,
+             ogg_version: str,
+             release_type: str,
+             time_released: str,
+             time_supported_until: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("deployment_type", deployment_type)
+        _setter("is_security_fix", is_security_fix)
+        _setter("ogg_version", ogg_version)
+        _setter("release_type", release_type)
+        _setter("time_released", time_released)
+        _setter("time_supported_until", time_supported_until)
 
     @property
     @pulumi.getter(name="deploymentType")
@@ -3184,10 +3974,23 @@ class GetDeploymentVersionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentVersionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3209,7 +4012,16 @@ class GetDeploymentVersionsFilterResult(dict):
 class GetDeploymentsDeploymentCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetDeploymentsDeploymentCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDeploymentsDeploymentCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3296,43 +4108,124 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_upgrade_required: Note: Deprecated: Use timeOfNextMaintenance instead, or related upgrade records  to check, when deployment will be forced to upgrade to a newer version. Old description: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "cpu_core_count", cpu_core_count)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deployment_backup_id", deployment_backup_id)
-        pulumi.set(__self__, "deployment_diagnostic_datas", deployment_diagnostic_datas)
-        pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "deployment_url", deployment_url)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "fqdn", fqdn)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
-        pulumi.set(__self__, "is_healthy", is_healthy)
-        pulumi.set(__self__, "is_latest_version", is_latest_version)
-        pulumi.set(__self__, "is_public", is_public)
-        pulumi.set(__self__, "is_storage_utilization_limit_exceeded", is_storage_utilization_limit_exceeded)
-        pulumi.set(__self__, "license_model", license_model)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
-        pulumi.set(__self__, "maintenance_configurations", maintenance_configurations)
-        pulumi.set(__self__, "maintenance_windows", maintenance_windows)
-        pulumi.set(__self__, "next_maintenance_action_type", next_maintenance_action_type)
-        pulumi.set(__self__, "next_maintenance_description", next_maintenance_description)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "ogg_datas", ogg_datas)
-        pulumi.set(__self__, "private_ip_address", private_ip_address)
-        pulumi.set(__self__, "public_ip_address", public_ip_address)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "storage_utilization_in_bytes", storage_utilization_in_bytes)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_of_next_maintenance", time_of_next_maintenance)
-        pulumi.set(__self__, "time_ogg_version_supported_until", time_ogg_version_supported_until)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "time_upgrade_required", time_upgrade_required)
+        GetDeploymentsDeploymentCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            cpu_core_count=cpu_core_count,
+            defined_tags=defined_tags,
+            deployment_backup_id=deployment_backup_id,
+            deployment_diagnostic_datas=deployment_diagnostic_datas,
+            deployment_type=deployment_type,
+            deployment_url=deployment_url,
+            description=description,
+            display_name=display_name,
+            fqdn=fqdn,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_auto_scaling_enabled=is_auto_scaling_enabled,
+            is_healthy=is_healthy,
+            is_latest_version=is_latest_version,
+            is_public=is_public,
+            is_storage_utilization_limit_exceeded=is_storage_utilization_limit_exceeded,
+            license_model=license_model,
+            lifecycle_details=lifecycle_details,
+            lifecycle_sub_state=lifecycle_sub_state,
+            maintenance_configurations=maintenance_configurations,
+            maintenance_windows=maintenance_windows,
+            next_maintenance_action_type=next_maintenance_action_type,
+            next_maintenance_description=next_maintenance_description,
+            nsg_ids=nsg_ids,
+            ogg_datas=ogg_datas,
+            private_ip_address=private_ip_address,
+            public_ip_address=public_ip_address,
+            state=state,
+            storage_utilization_in_bytes=storage_utilization_in_bytes,
+            subnet_id=subnet_id,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_of_next_maintenance=time_of_next_maintenance,
+            time_ogg_version_supported_until=time_ogg_version_supported_until,
+            time_updated=time_updated,
+            time_upgrade_required=time_upgrade_required,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             cpu_core_count: int,
+             defined_tags: Mapping[str, Any],
+             deployment_backup_id: str,
+             deployment_diagnostic_datas: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult'],
+             deployment_type: str,
+             deployment_url: str,
+             description: str,
+             display_name: str,
+             fqdn: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_auto_scaling_enabled: bool,
+             is_healthy: bool,
+             is_latest_version: bool,
+             is_public: bool,
+             is_storage_utilization_limit_exceeded: bool,
+             license_model: str,
+             lifecycle_details: str,
+             lifecycle_sub_state: str,
+             maintenance_configurations: Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult'],
+             maintenance_windows: Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult'],
+             next_maintenance_action_type: str,
+             next_maintenance_description: str,
+             nsg_ids: Sequence[str],
+             ogg_datas: Sequence['outputs.GetDeploymentsDeploymentCollectionItemOggDataResult'],
+             private_ip_address: str,
+             public_ip_address: str,
+             state: str,
+             storage_utilization_in_bytes: str,
+             subnet_id: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_of_next_maintenance: str,
+             time_ogg_version_supported_until: str,
+             time_updated: str,
+             time_upgrade_required: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("cpu_core_count", cpu_core_count)
+        _setter("defined_tags", defined_tags)
+        _setter("deployment_backup_id", deployment_backup_id)
+        _setter("deployment_diagnostic_datas", deployment_diagnostic_datas)
+        _setter("deployment_type", deployment_type)
+        _setter("deployment_url", deployment_url)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("fqdn", fqdn)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_auto_scaling_enabled", is_auto_scaling_enabled)
+        _setter("is_healthy", is_healthy)
+        _setter("is_latest_version", is_latest_version)
+        _setter("is_public", is_public)
+        _setter("is_storage_utilization_limit_exceeded", is_storage_utilization_limit_exceeded)
+        _setter("license_model", license_model)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("lifecycle_sub_state", lifecycle_sub_state)
+        _setter("maintenance_configurations", maintenance_configurations)
+        _setter("maintenance_windows", maintenance_windows)
+        _setter("next_maintenance_action_type", next_maintenance_action_type)
+        _setter("next_maintenance_description", next_maintenance_description)
+        _setter("nsg_ids", nsg_ids)
+        _setter("ogg_datas", ogg_datas)
+        _setter("private_ip_address", private_ip_address)
+        _setter("public_ip_address", public_ip_address)
+        _setter("state", state)
+        _setter("storage_utilization_in_bytes", storage_utilization_in_bytes)
+        _setter("subnet_id", subnet_id)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_of_next_maintenance", time_of_next_maintenance)
+        _setter("time_ogg_version_supported_until", time_ogg_version_supported_until)
+        _setter("time_updated", time_updated)
+        _setter("time_upgrade_required", time_upgrade_required)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3648,12 +4541,31 @@ class GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult(dict)
         :param str time_diagnostic_end: The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_diagnostic_start: The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "diagnostic_state", diagnostic_state)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "time_diagnostic_end", time_diagnostic_end)
-        pulumi.set(__self__, "time_diagnostic_start", time_diagnostic_start)
+        GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            diagnostic_state=diagnostic_state,
+            namespace=namespace,
+            object=object,
+            time_diagnostic_end=time_diagnostic_end,
+            time_diagnostic_start=time_diagnostic_start,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             diagnostic_state: str,
+             namespace: str,
+             object: str,
+             time_diagnostic_end: str,
+             time_diagnostic_start: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("diagnostic_state", diagnostic_state)
+        _setter("namespace", namespace)
+        _setter("object", object)
+        _setter("time_diagnostic_end", time_diagnostic_end)
+        _setter("time_diagnostic_start", time_diagnostic_start)
 
     @property
     @pulumi.getter
@@ -3719,11 +4631,28 @@ class GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult(dict)
         :param int major_release_upgrade_period_in_days: Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
         :param int security_patch_upgrade_period_in_days: Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
         """
-        pulumi.set(__self__, "bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
-        pulumi.set(__self__, "interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
-        pulumi.set(__self__, "is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
-        pulumi.set(__self__, "major_release_upgrade_period_in_days", major_release_upgrade_period_in_days)
-        pulumi.set(__self__, "security_patch_upgrade_period_in_days", security_patch_upgrade_period_in_days)
+        GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bundle_release_upgrade_period_in_days=bundle_release_upgrade_period_in_days,
+            interim_release_upgrade_period_in_days=interim_release_upgrade_period_in_days,
+            is_interim_release_auto_upgrade_enabled=is_interim_release_auto_upgrade_enabled,
+            major_release_upgrade_period_in_days=major_release_upgrade_period_in_days,
+            security_patch_upgrade_period_in_days=security_patch_upgrade_period_in_days,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bundle_release_upgrade_period_in_days: int,
+             interim_release_upgrade_period_in_days: int,
+             is_interim_release_auto_upgrade_enabled: bool,
+             major_release_upgrade_period_in_days: int,
+             security_patch_upgrade_period_in_days: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bundle_release_upgrade_period_in_days", bundle_release_upgrade_period_in_days)
+        _setter("interim_release_upgrade_period_in_days", interim_release_upgrade_period_in_days)
+        _setter("is_interim_release_auto_upgrade_enabled", is_interim_release_auto_upgrade_enabled)
+        _setter("major_release_upgrade_period_in_days", major_release_upgrade_period_in_days)
+        _setter("security_patch_upgrade_period_in_days", security_patch_upgrade_period_in_days)
 
     @property
     @pulumi.getter(name="bundleReleaseUpgradePeriodInDays")
@@ -3775,8 +4704,19 @@ class GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult(dict):
         :param str day: Days of the week.
         :param int start_hour: Start hour for maintenance period. Hour is in UTC.
         """
-        pulumi.set(__self__, "day", day)
-        pulumi.set(__self__, "start_hour", start_hour)
+        GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            day=day,
+            start_hour=start_hour,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             day: str,
+             start_hour: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("day", day)
+        _setter("start_hour", start_hour)
 
     @property
     @pulumi.getter
@@ -3816,15 +4756,40 @@ class GetDeploymentsDeploymentCollectionItemOggDataResult(dict):
         :param str ogg_version: Version of OGG
         :param str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
         """
-        pulumi.set(__self__, "admin_password", admin_password)
-        pulumi.set(__self__, "admin_username", admin_username)
-        pulumi.set(__self__, "certificate", certificate)
-        pulumi.set(__self__, "credential_store", credential_store)
-        pulumi.set(__self__, "deployment_name", deployment_name)
-        pulumi.set(__self__, "identity_domain_id", identity_domain_id)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "ogg_version", ogg_version)
-        pulumi.set(__self__, "password_secret_id", password_secret_id)
+        GetDeploymentsDeploymentCollectionItemOggDataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            admin_password=admin_password,
+            admin_username=admin_username,
+            certificate=certificate,
+            credential_store=credential_store,
+            deployment_name=deployment_name,
+            identity_domain_id=identity_domain_id,
+            key=key,
+            ogg_version=ogg_version,
+            password_secret_id=password_secret_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             admin_password: str,
+             admin_username: str,
+             certificate: str,
+             credential_store: str,
+             deployment_name: str,
+             identity_domain_id: str,
+             key: str,
+             ogg_version: str,
+             password_secret_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("admin_password", admin_password)
+        _setter("admin_username", admin_username)
+        _setter("certificate", certificate)
+        _setter("credential_store", credential_store)
+        _setter("deployment_name", deployment_name)
+        _setter("identity_domain_id", identity_domain_id)
+        _setter("key", key)
+        _setter("ogg_version", ogg_version)
+        _setter("password_secret_id", password_secret_id)
 
     @property
     @pulumi.getter(name="adminPassword")
@@ -3899,10 +4864,23 @@ class GetDeploymentsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDeploymentsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3931,9 +4909,22 @@ class GetMessageItemResult(dict):
         :param str deployment_message_status: The deployment Message Status.
         :param str id: The deployment Message Id.
         """
-        pulumi.set(__self__, "deployment_message", deployment_message)
-        pulumi.set(__self__, "deployment_message_status", deployment_message_status)
-        pulumi.set(__self__, "id", id)
+        GetMessageItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            deployment_message=deployment_message,
+            deployment_message_status=deployment_message_status,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             deployment_message: str,
+             deployment_message_status: str,
+             id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("deployment_message", deployment_message)
+        _setter("deployment_message_status", deployment_message_status)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="deploymentMessage")
@@ -3967,7 +4958,16 @@ class GetMessagesDeploymentMessagesCollectionResult(dict):
         """
         :param Sequence['GetMessagesDeploymentMessagesCollectionItemArgs'] items: An array of DeploymentMessages.
         """
-        pulumi.set(__self__, "items", items)
+        GetMessagesDeploymentMessagesCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetMessagesDeploymentMessagesCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3989,9 +4989,22 @@ class GetMessagesDeploymentMessagesCollectionItemResult(dict):
         :param str deployment_message_status: The deployment Message Status.
         :param str id: The deployment Message Id.
         """
-        pulumi.set(__self__, "deployment_message", deployment_message)
-        pulumi.set(__self__, "deployment_message_status", deployment_message_status)
-        pulumi.set(__self__, "id", id)
+        GetMessagesDeploymentMessagesCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            deployment_message=deployment_message,
+            deployment_message_status=deployment_message_status,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             deployment_message: str,
+             deployment_message_status: str,
+             id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("deployment_message", deployment_message)
+        _setter("deployment_message_status", deployment_message_status)
+        _setter("id", id)
 
     @property
     @pulumi.getter(name="deploymentMessage")
@@ -4024,10 +5037,23 @@ class GetMessagesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetMessagesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4068,15 +5094,40 @@ class GetTrailFileItemResult(dict):
         :param str time_last_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str trail_file_id: A Trail File identifier
         """
-        pulumi.set(__self__, "consumers", consumers)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "max_sequence_number", max_sequence_number)
-        pulumi.set(__self__, "min_sequence_number", min_sequence_number)
-        pulumi.set(__self__, "number_of_sequences", number_of_sequences)
-        pulumi.set(__self__, "producer", producer)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "time_last_updated", time_last_updated)
-        pulumi.set(__self__, "trail_file_id", trail_file_id)
+        GetTrailFileItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            consumers=consumers,
+            display_name=display_name,
+            max_sequence_number=max_sequence_number,
+            min_sequence_number=min_sequence_number,
+            number_of_sequences=number_of_sequences,
+            producer=producer,
+            size_in_bytes=size_in_bytes,
+            time_last_updated=time_last_updated,
+            trail_file_id=trail_file_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             consumers: Sequence[str],
+             display_name: str,
+             max_sequence_number: str,
+             min_sequence_number: str,
+             number_of_sequences: int,
+             producer: str,
+             size_in_bytes: float,
+             time_last_updated: str,
+             trail_file_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("consumers", consumers)
+        _setter("display_name", display_name)
+        _setter("max_sequence_number", max_sequence_number)
+        _setter("min_sequence_number", min_sequence_number)
+        _setter("number_of_sequences", number_of_sequences)
+        _setter("producer", producer)
+        _setter("size_in_bytes", size_in_bytes)
+        _setter("time_last_updated", time_last_updated)
+        _setter("trail_file_id", trail_file_id)
 
     @property
     @pulumi.getter
@@ -4157,10 +5208,23 @@ class GetTrailFilesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetTrailFilesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4187,8 +5251,19 @@ class GetTrailFilesTrailFileCollectionResult(dict):
         :param Sequence['GetTrailFilesTrailFileCollectionItemArgs'] items: An array of TrailFiles.
         :param str time_last_fetched: The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "time_last_fetched", time_last_fetched)
+        GetTrailFilesTrailFileCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            time_last_fetched=time_last_fetched,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetTrailFilesTrailFileCollectionItemResult'],
+             time_last_fetched: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
+        _setter("time_last_fetched", time_last_fetched)
 
     @property
     @pulumi.getter
@@ -4230,15 +5305,40 @@ class GetTrailFilesTrailFileCollectionItemResult(dict):
         :param str time_last_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str trail_file_id: A Trail File identifier
         """
-        pulumi.set(__self__, "consumers", consumers)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "max_sequence_number", max_sequence_number)
-        pulumi.set(__self__, "min_sequence_number", min_sequence_number)
-        pulumi.set(__self__, "number_of_sequences", number_of_sequences)
-        pulumi.set(__self__, "producer", producer)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "time_last_updated", time_last_updated)
-        pulumi.set(__self__, "trail_file_id", trail_file_id)
+        GetTrailFilesTrailFileCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            consumers=consumers,
+            display_name=display_name,
+            max_sequence_number=max_sequence_number,
+            min_sequence_number=min_sequence_number,
+            number_of_sequences=number_of_sequences,
+            producer=producer,
+            size_in_bytes=size_in_bytes,
+            time_last_updated=time_last_updated,
+            trail_file_id=trail_file_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             consumers: Sequence[str],
+             display_name: str,
+             max_sequence_number: str,
+             min_sequence_number: str,
+             number_of_sequences: int,
+             producer: str,
+             size_in_bytes: float,
+             time_last_updated: str,
+             trail_file_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("consumers", consumers)
+        _setter("display_name", display_name)
+        _setter("max_sequence_number", max_sequence_number)
+        _setter("min_sequence_number", min_sequence_number)
+        _setter("number_of_sequences", number_of_sequences)
+        _setter("producer", producer)
+        _setter("size_in_bytes", size_in_bytes)
+        _setter("time_last_updated", time_last_updated)
+        _setter("trail_file_id", trail_file_id)
 
     @property
     @pulumi.getter
@@ -4326,10 +5426,25 @@ class GetTrailSequenceItemResult(dict):
         :param float size_in_bytes: The size of the backup stored in object storage (in bytes)
         :param str time_last_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "sequence_id", sequence_id)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "time_last_updated", time_last_updated)
+        GetTrailSequenceItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            sequence_id=sequence_id,
+            size_in_bytes=size_in_bytes,
+            time_last_updated=time_last_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             sequence_id: str,
+             size_in_bytes: float,
+             time_last_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("sequence_id", sequence_id)
+        _setter("size_in_bytes", size_in_bytes)
+        _setter("time_last_updated", time_last_updated)
 
     @property
     @pulumi.getter(name="displayName")
@@ -4370,10 +5485,23 @@ class GetTrailSequencesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetTrailSequencesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4400,8 +5528,19 @@ class GetTrailSequencesTrailSequenceCollectionResult(dict):
         :param Sequence['GetTrailSequencesTrailSequenceCollectionItemArgs'] items: An array of TrailSequences.
         :param str time_last_fetched: The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        pulumi.set(__self__, "items", items)
-        pulumi.set(__self__, "time_last_fetched", time_last_fetched)
+        GetTrailSequencesTrailSequenceCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+            time_last_fetched=time_last_fetched,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetTrailSequencesTrailSequenceCollectionItemResult'],
+             time_last_fetched: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
+        _setter("time_last_fetched", time_last_fetched)
 
     @property
     @pulumi.getter
@@ -4433,10 +5572,25 @@ class GetTrailSequencesTrailSequenceCollectionItemResult(dict):
         :param float size_in_bytes: The size of the backup stored in object storage (in bytes)
         :param str time_last_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "sequence_id", sequence_id)
-        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
-        pulumi.set(__self__, "time_last_updated", time_last_updated)
+        GetTrailSequencesTrailSequenceCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            sequence_id=sequence_id,
+            size_in_bytes=size_in_bytes,
+            time_last_updated=time_last_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             sequence_id: str,
+             size_in_bytes: float,
+             time_last_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("sequence_id", sequence_id)
+        _setter("size_in_bytes", size_in_bytes)
+        _setter("time_last_updated", time_last_updated)
 
     @property
     @pulumi.getter(name="displayName")

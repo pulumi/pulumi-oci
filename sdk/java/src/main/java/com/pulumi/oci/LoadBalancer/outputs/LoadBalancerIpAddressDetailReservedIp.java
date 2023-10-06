@@ -11,17 +11,9 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class LoadBalancerIpAddressDetailReservedIp {
-    /**
-     * @return Ocid of the pre-created public IP. That should be attahed to this load balancer.
-     * 
-     */
     private @Nullable String id;
 
     private LoadBalancerIpAddressDetailReservedIp() {}
-    /**
-     * @return Ocid of the pre-created public IP. That should be attahed to this load balancer.
-     * 
-     */
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
     }

@@ -134,6 +134,11 @@ namespace Pulumi.Oci.Kms
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
+        /// Summary about metadata of external key manager to be returned to the customer as a response.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetVaultExternalKeyManagerMetadataSummaryResult> ExternalKeyManagerMetadataSummaries;
+        public readonly ImmutableArray<Outputs.GetVaultExternalKeyManagerMetadataResult> ExternalKeyManagerMetadatas;
+        /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
@@ -142,7 +147,7 @@ namespace Pulumi.Oci.Kms
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// A boolean that will be true when vault is primary, and will be false when vault is a replica from a primary vault.
+        /// A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
         /// </summary>
         public readonly bool IsPrimary;
         /// <summary>
@@ -166,7 +171,7 @@ namespace Pulumi.Oci.Kms
         /// </summary>
         public readonly bool RestoreTrigger;
         /// <summary>
-        /// The OCID of the vault from which this vault was restored, if it was restored from a backup file.  If you restore a vault to the same region, the vault retains the same OCID that it had when you  backed up the vault.
+        /// The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
         /// </summary>
         public readonly string RestoredFromVaultId;
         /// <summary>
@@ -196,6 +201,10 @@ namespace Pulumi.Oci.Kms
             ImmutableDictionary<string, object> definedTags,
 
             string displayName,
+
+            ImmutableArray<Outputs.GetVaultExternalKeyManagerMetadataSummaryResult> externalKeyManagerMetadataSummaries,
+
+            ImmutableArray<Outputs.GetVaultExternalKeyManagerMetadataResult> externalKeyManagerMetadatas,
 
             ImmutableDictionary<string, object> freeformTags,
 
@@ -229,6 +238,8 @@ namespace Pulumi.Oci.Kms
             CryptoEndpoint = cryptoEndpoint;
             DefinedTags = definedTags;
             DisplayName = displayName;
+            ExternalKeyManagerMetadataSummaries = externalKeyManagerMetadataSummaries;
+            ExternalKeyManagerMetadatas = externalKeyManagerMetadatas;
             FreeformTags = freeformTags;
             Id = id;
             IsPrimary = isPrimary;

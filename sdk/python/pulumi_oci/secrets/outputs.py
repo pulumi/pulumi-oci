@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -24,8 +24,19 @@ class GetSecretbundleSecretBundleContentResult(dict):
         :param str content: The base64-encoded content of the secret.
         :param str content_type: The formatting type of the secret contents.
         """
-        pulumi.set(__self__, "content", content)
-        pulumi.set(__self__, "content_type", content_type)
+        GetSecretbundleSecretBundleContentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            content=content,
+            content_type=content_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             content: str,
+             content_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("content", content)
+        _setter("content_type", content_type)
 
     @property
     @pulumi.getter
@@ -50,10 +61,23 @@ class GetSecretbundleVersionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSecretbundleVersionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -90,13 +114,34 @@ class GetSecretbundleVersionsSecretBundleVersionResult(dict):
         :param str version_name: The version name of the secret bundle, as provided when the secret was created or last rotated.
         :param str version_number: The version number of the secret.
         """
-        pulumi.set(__self__, "secret_id", secret_id)
-        pulumi.set(__self__, "stages", stages)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_of_deletion", time_of_deletion)
-        pulumi.set(__self__, "time_of_expiry", time_of_expiry)
-        pulumi.set(__self__, "version_name", version_name)
-        pulumi.set(__self__, "version_number", version_number)
+        GetSecretbundleVersionsSecretBundleVersionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            secret_id=secret_id,
+            stages=stages,
+            time_created=time_created,
+            time_of_deletion=time_of_deletion,
+            time_of_expiry=time_of_expiry,
+            version_name=version_name,
+            version_number=version_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             secret_id: str,
+             stages: Sequence[str],
+             time_created: str,
+             time_of_deletion: str,
+             time_of_expiry: str,
+             version_name: str,
+             version_number: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("secret_id", secret_id)
+        _setter("stages", stages)
+        _setter("time_created", time_created)
+        _setter("time_of_deletion", time_of_deletion)
+        _setter("time_of_expiry", time_of_expiry)
+        _setter("version_name", version_name)
+        _setter("version_number", version_number)
 
     @property
     @pulumi.getter(name="secretId")

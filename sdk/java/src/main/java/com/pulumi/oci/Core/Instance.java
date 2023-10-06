@@ -244,17 +244,9 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> displayName() {
         return this.displayName;
     }
-    /**
-     * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-     * 
-     */
     @Export(name="extendedMetadata", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> extendedMetadata;
 
-    /**
-     * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-     * 
-     */
     public Output<Map<String,Object>> extendedMetadata() {
         return this.extendedMetadata;
     }

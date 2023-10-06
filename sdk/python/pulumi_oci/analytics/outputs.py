@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -56,8 +56,19 @@ class AnalyticsInstanceCapacity(dict):
         :param str capacity_type: The capacity model to use.
         :param int capacity_value: (Updatable) The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
         """
-        pulumi.set(__self__, "capacity_type", capacity_type)
-        pulumi.set(__self__, "capacity_value", capacity_value)
+        AnalyticsInstanceCapacity._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacity_type=capacity_type,
+            capacity_value=capacity_value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacity_type: str,
+             capacity_value: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("capacity_type", capacity_type)
+        _setter("capacity_value", capacity_value)
 
     @property
     @pulumi.getter(name="capacityType")
@@ -124,19 +135,40 @@ class AnalyticsInstanceNetworkEndpointDetails(dict):
         :param Sequence[str] whitelisted_services: Oracle Cloud Services that are allowed to access this Analytics instance.
         :param Sequence['AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs'] whitelisted_vcns: Virtual Cloud Networks allowed to access this network endpoint.
         """
-        pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
+        AnalyticsInstanceNetworkEndpointDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            network_endpoint_type=network_endpoint_type,
+            network_security_group_ids=network_security_group_ids,
+            subnet_id=subnet_id,
+            vcn_id=vcn_id,
+            whitelisted_ips=whitelisted_ips,
+            whitelisted_services=whitelisted_services,
+            whitelisted_vcns=whitelisted_vcns,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             network_endpoint_type: str,
+             network_security_group_ids: Optional[Sequence[str]] = None,
+             subnet_id: Optional[str] = None,
+             vcn_id: Optional[str] = None,
+             whitelisted_ips: Optional[Sequence[str]] = None,
+             whitelisted_services: Optional[Sequence[str]] = None,
+             whitelisted_vcns: Optional[Sequence['outputs.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("network_endpoint_type", network_endpoint_type)
         if network_security_group_ids is not None:
-            pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
+            _setter("network_security_group_ids", network_security_group_ids)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if vcn_id is not None:
-            pulumi.set(__self__, "vcn_id", vcn_id)
+            _setter("vcn_id", vcn_id)
         if whitelisted_ips is not None:
-            pulumi.set(__self__, "whitelisted_ips", whitelisted_ips)
+            _setter("whitelisted_ips", whitelisted_ips)
         if whitelisted_services is not None:
-            pulumi.set(__self__, "whitelisted_services", whitelisted_services)
+            _setter("whitelisted_services", whitelisted_services)
         if whitelisted_vcns is not None:
-            pulumi.set(__self__, "whitelisted_vcns", whitelisted_vcns)
+            _setter("whitelisted_vcns", whitelisted_vcns)
 
     @property
     @pulumi.getter(name="networkEndpointType")
@@ -221,10 +253,21 @@ class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn(dict):
         :param str id: The Virtual Cloud Network OCID.
         :param Sequence[str] whitelisted_ips: Source IP addresses or IP address ranges in ingress rules.
         """
+        AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            whitelisted_ips=whitelisted_ips,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: Optional[str] = None,
+             whitelisted_ips: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if whitelisted_ips is not None:
-            pulumi.set(__self__, "whitelisted_ips", whitelisted_ips)
+            _setter("whitelisted_ips", whitelisted_ips)
 
     @property
     @pulumi.getter
@@ -269,9 +312,20 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone(dict):
         :param str dns_zone: (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
         :param str description: (Updatable) Description of private source scan host zone.
         """
-        pulumi.set(__self__, "dns_zone", dns_zone)
+        AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dns_zone=dns_zone,
+            description=description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dns_zone: str,
+             description: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("dns_zone", dns_zone)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
 
     @property
     @pulumi.getter(name="dnsZone")
@@ -320,10 +374,23 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost(dict):
         :param int scan_port: (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
         :param str description: (Updatable) Description of private source scan host zone.
         """
-        pulumi.set(__self__, "scan_hostname", scan_hostname)
-        pulumi.set(__self__, "scan_port", scan_port)
+        AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            scan_hostname=scan_hostname,
+            scan_port=scan_port,
+            description=description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             scan_hostname: str,
+             scan_port: int,
+             description: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("scan_hostname", scan_hostname)
+        _setter("scan_port", scan_port)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
 
     @property
     @pulumi.getter(name="scanHostname")
@@ -359,8 +426,19 @@ class GetAnalyticsInstanceCapacityResult(dict):
         :param str capacity_type: The capacity model to use.
         :param int capacity_value: The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
         """
-        pulumi.set(__self__, "capacity_type", capacity_type)
-        pulumi.set(__self__, "capacity_value", capacity_value)
+        GetAnalyticsInstanceCapacityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacity_type=capacity_type,
+            capacity_value=capacity_value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacity_type: str,
+             capacity_value: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("capacity_type", capacity_type)
+        _setter("capacity_value", capacity_value)
 
     @property
     @pulumi.getter(name="capacityType")
@@ -398,13 +476,34 @@ class GetAnalyticsInstanceNetworkEndpointDetailResult(dict):
         :param Sequence[str] whitelisted_services: Oracle Cloud Services that are allowed to access this Analytics instance.
         :param Sequence['GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs'] whitelisted_vcns: Virtual Cloud Networks allowed to access this network endpoint.
         """
-        pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
-        pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "vcn_id", vcn_id)
-        pulumi.set(__self__, "whitelisted_ips", whitelisted_ips)
-        pulumi.set(__self__, "whitelisted_services", whitelisted_services)
-        pulumi.set(__self__, "whitelisted_vcns", whitelisted_vcns)
+        GetAnalyticsInstanceNetworkEndpointDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            network_endpoint_type=network_endpoint_type,
+            network_security_group_ids=network_security_group_ids,
+            subnet_id=subnet_id,
+            vcn_id=vcn_id,
+            whitelisted_ips=whitelisted_ips,
+            whitelisted_services=whitelisted_services,
+            whitelisted_vcns=whitelisted_vcns,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             network_endpoint_type: str,
+             network_security_group_ids: Sequence[str],
+             subnet_id: str,
+             vcn_id: str,
+             whitelisted_ips: Sequence[str],
+             whitelisted_services: Sequence[str],
+             whitelisted_vcns: Sequence['outputs.GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("network_endpoint_type", network_endpoint_type)
+        _setter("network_security_group_ids", network_security_group_ids)
+        _setter("subnet_id", subnet_id)
+        _setter("vcn_id", vcn_id)
+        _setter("whitelisted_ips", whitelisted_ips)
+        _setter("whitelisted_services", whitelisted_services)
+        _setter("whitelisted_vcns", whitelisted_vcns)
 
     @property
     @pulumi.getter(name="networkEndpointType")
@@ -472,8 +571,19 @@ class GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult(dict):
         :param str id: The Virtual Cloud Network OCID.
         :param Sequence[str] whitelisted_ips: Source IP addresses or IP address ranges in ingress rules.
         """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "whitelisted_ips", whitelisted_ips)
+        GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            whitelisted_ips=whitelisted_ips,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             whitelisted_ips: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
+        _setter("whitelisted_ips", whitelisted_ips)
 
     @property
     @pulumi.getter
@@ -501,8 +611,19 @@ class GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneResult(dict):
         :param str description: Description of private source scan host zone.
         :param str dns_zone: Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "dns_zone", dns_zone)
+        GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            dns_zone=dns_zone,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             dns_zone: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("dns_zone", dns_zone)
 
     @property
     @pulumi.getter
@@ -532,9 +653,22 @@ class GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostResult(dict):
         :param str scan_hostname: Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
         :param int scan_port: Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "scan_hostname", scan_hostname)
-        pulumi.set(__self__, "scan_port", scan_port)
+        GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            scan_hostname=scan_hostname,
+            scan_port=scan_port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             scan_hostname: str,
+             scan_port: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("scan_hostname", scan_hostname)
+        _setter("scan_port", scan_port)
 
     @property
     @pulumi.getter
@@ -599,23 +733,64 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
         :param str time_created: The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param str time_updated: The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
         """
-        pulumi.set(__self__, "capacities", capacities)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "email_notification", email_notification)
-        pulumi.set(__self__, "feature_set", feature_set)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "idcs_access_token", idcs_access_token)
-        pulumi.set(__self__, "kms_key_id", kms_key_id)
-        pulumi.set(__self__, "license_type", license_type)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
-        pulumi.set(__self__, "service_url", service_url)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetAnalyticsInstancesAnalyticsInstanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacities=capacities,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            email_notification=email_notification,
+            feature_set=feature_set,
+            freeform_tags=freeform_tags,
+            id=id,
+            idcs_access_token=idcs_access_token,
+            kms_key_id=kms_key_id,
+            license_type=license_type,
+            name=name,
+            network_endpoint_details=network_endpoint_details,
+            service_url=service_url,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacities: Sequence['outputs.GetAnalyticsInstancesAnalyticsInstanceCapacityResult'],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             email_notification: str,
+             feature_set: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             idcs_access_token: str,
+             kms_key_id: str,
+             license_type: str,
+             name: str,
+             network_endpoint_details: Sequence['outputs.GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailResult'],
+             service_url: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("capacities", capacities)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("email_notification", email_notification)
+        _setter("feature_set", feature_set)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("idcs_access_token", idcs_access_token)
+        _setter("kms_key_id", kms_key_id)
+        _setter("license_type", license_type)
+        _setter("name", name)
+        _setter("network_endpoint_details", network_endpoint_details)
+        _setter("service_url", service_url)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -760,8 +935,19 @@ class GetAnalyticsInstancesAnalyticsInstanceCapacityResult(dict):
         :param str capacity_type: A filter to only return resources matching the capacity type enum. Values are case-insensitive.
         :param int capacity_value: The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
         """
-        pulumi.set(__self__, "capacity_type", capacity_type)
-        pulumi.set(__self__, "capacity_value", capacity_value)
+        GetAnalyticsInstancesAnalyticsInstanceCapacityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            capacity_type=capacity_type,
+            capacity_value=capacity_value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             capacity_type: str,
+             capacity_value: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("capacity_type", capacity_type)
+        _setter("capacity_value", capacity_value)
 
     @property
     @pulumi.getter(name="capacityType")
@@ -799,13 +985,34 @@ class GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailResult(dict):
         :param Sequence[str] whitelisted_services: Oracle Cloud Services that are allowed to access this Analytics instance.
         :param Sequence['GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs'] whitelisted_vcns: Virtual Cloud Networks allowed to access this network endpoint.
         """
-        pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
-        pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "vcn_id", vcn_id)
-        pulumi.set(__self__, "whitelisted_ips", whitelisted_ips)
-        pulumi.set(__self__, "whitelisted_services", whitelisted_services)
-        pulumi.set(__self__, "whitelisted_vcns", whitelisted_vcns)
+        GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            network_endpoint_type=network_endpoint_type,
+            network_security_group_ids=network_security_group_ids,
+            subnet_id=subnet_id,
+            vcn_id=vcn_id,
+            whitelisted_ips=whitelisted_ips,
+            whitelisted_services=whitelisted_services,
+            whitelisted_vcns=whitelisted_vcns,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             network_endpoint_type: str,
+             network_security_group_ids: Sequence[str],
+             subnet_id: str,
+             vcn_id: str,
+             whitelisted_ips: Sequence[str],
+             whitelisted_services: Sequence[str],
+             whitelisted_vcns: Sequence['outputs.GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("network_endpoint_type", network_endpoint_type)
+        _setter("network_security_group_ids", network_security_group_ids)
+        _setter("subnet_id", subnet_id)
+        _setter("vcn_id", vcn_id)
+        _setter("whitelisted_ips", whitelisted_ips)
+        _setter("whitelisted_services", whitelisted_services)
+        _setter("whitelisted_vcns", whitelisted_vcns)
 
     @property
     @pulumi.getter(name="networkEndpointType")
@@ -873,8 +1080,19 @@ class GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnR
         :param str id: The Virtual Cloud Network OCID.
         :param Sequence[str] whitelisted_ips: Source IP addresses or IP address ranges in ingress rules.
         """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "whitelisted_ips", whitelisted_ips)
+        GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            whitelisted_ips=whitelisted_ips,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             whitelisted_ips: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
+        _setter("whitelisted_ips", whitelisted_ips)
 
     @property
     @pulumi.getter
@@ -902,10 +1120,23 @@ class GetAnalyticsInstancesFilterResult(dict):
         """
         :param str name: A filter to return only resources that match the given name exactly.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAnalyticsInstancesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails
     {
         /// <summary>
-        /// (Updatable) The network bandwidth for the model.
+        /// (Updatable) The minimum network bandwidth for the model deployment.
         /// </summary>
         public readonly int? BandwidthMbps;
         /// <summary>

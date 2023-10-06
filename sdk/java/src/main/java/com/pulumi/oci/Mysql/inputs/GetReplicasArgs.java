@@ -6,6 +6,7 @@ package com.pulumi.oci.Mysql.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Mysql.inputs.GetReplicasFilterArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -30,6 +31,21 @@ public final class GetReplicasArgs extends com.pulumi.resources.InvokeArgs {
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+
+    /**
+     * The requested Configuration instance.
+     * 
+     */
+    @Import(name="configurationId")
+    private @Nullable Output<String> configurationId;
+
+    /**
+     * @return The requested Configuration instance.
+     * 
+     */
+    public Optional<Output<String>> configurationId() {
+        return Optional.ofNullable(this.configurationId);
     }
 
     /**
@@ -70,6 +86,21 @@ public final class GetReplicasArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
+     * Filter instances if they are using the latest revision of the Configuration they are associated with.
+     * 
+     */
+    @Import(name="isUpToDate")
+    private @Nullable Output<Boolean> isUpToDate;
+
+    /**
+     * @return Filter instances if they are using the latest revision of the Configuration they are associated with.
+     * 
+     */
+    public Optional<Output<Boolean>> isUpToDate() {
+        return Optional.ofNullable(this.isUpToDate);
+    }
+
+    /**
      * The read replica [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -103,9 +134,11 @@ public final class GetReplicasArgs extends com.pulumi.resources.InvokeArgs {
 
     private GetReplicasArgs(GetReplicasArgs $) {
         this.compartmentId = $.compartmentId;
+        this.configurationId = $.configurationId;
         this.dbSystemId = $.dbSystemId;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.isUpToDate = $.isUpToDate;
         this.replicaId = $.replicaId;
         this.state = $.state;
     }
@@ -147,6 +180,27 @@ public final class GetReplicasArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param configurationId The requested Configuration instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configurationId(@Nullable Output<String> configurationId) {
+            $.configurationId = configurationId;
+            return this;
+        }
+
+        /**
+         * @param configurationId The requested Configuration instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder configurationId(String configurationId) {
+            return configurationId(Output.of(configurationId));
         }
 
         /**
@@ -202,6 +256,27 @@ public final class GetReplicasArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder filters(GetReplicasFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param isUpToDate Filter instances if they are using the latest revision of the Configuration they are associated with.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isUpToDate(@Nullable Output<Boolean> isUpToDate) {
+            $.isUpToDate = isUpToDate;
+            return this;
+        }
+
+        /**
+         * @param isUpToDate Filter instances if they are using the latest revision of the Configuration they are associated with.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isUpToDate(Boolean isUpToDate) {
+            return isUpToDate(Output.of(isUpToDate));
         }
 
         /**

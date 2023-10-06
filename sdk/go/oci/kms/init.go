@@ -21,6 +21,8 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint":
+		r = &EkmsPrivateEndpoint{}
 	case "oci:Kms/encryptedData:EncryptedData":
 		r = &EncryptedData{}
 	case "oci:Kms/generatedKey:GeneratedKey":
@@ -50,6 +52,11 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Kms/ekmsPrivateEndpoint",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Kms/encryptedData",

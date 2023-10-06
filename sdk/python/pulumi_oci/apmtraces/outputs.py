@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -30,10 +30,23 @@ class GetQueryQuickPicksFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetQueryQuickPicksFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -60,8 +73,19 @@ class GetQueryQuickPicksQuickPickResult(dict):
         :param str quick_pick_name: Quick Pick name for the query.
         :param str quick_pick_query: Query for the Quick Pick.
         """
-        pulumi.set(__self__, "quick_pick_name", quick_pick_name)
-        pulumi.set(__self__, "quick_pick_query", quick_pick_query)
+        GetQueryQuickPicksQuickPickResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            quick_pick_name=quick_pick_name,
+            quick_pick_query=quick_pick_query,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             quick_pick_name: str,
+             quick_pick_query: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("quick_pick_name", quick_pick_name)
+        _setter("quick_pick_query", quick_pick_query)
 
     @property
     @pulumi.getter(name="quickPickName")
@@ -89,8 +113,19 @@ class GetTraceAggregatedSnapshotDataDetailResult(dict):
         :param str key: Name of the property.
         :param str value: Value of the property.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        GetTraceAggregatedSnapshotDataDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -120,9 +155,22 @@ class GetTraceServiceSummaryResult(dict):
         :param str span_service_name: Name associated with the service.
         :param str total_spans: Number of spans for serviceName in the trace.
         """
-        pulumi.set(__self__, "error_spans", error_spans)
-        pulumi.set(__self__, "span_service_name", span_service_name)
-        pulumi.set(__self__, "total_spans", total_spans)
+        GetTraceServiceSummaryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            error_spans=error_spans,
+            span_service_name=span_service_name,
+            total_spans=total_spans,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             error_spans: str,
+             span_service_name: str,
+             total_spans: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("error_spans", error_spans)
+        _setter("span_service_name", span_service_name)
+        _setter("total_spans", total_spans)
 
     @property
     @pulumi.getter(name="errorSpans")
@@ -158,8 +206,19 @@ class GetTraceSnapshotDataTraceSnapshotDetailResult(dict):
         :param str key: Name of the property.
         :param str value: Value of the property.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        GetTraceSnapshotDataTraceSnapshotDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -207,18 +266,49 @@ class GetTraceSpanResult(dict):
         :param str time_started: Span start time.  Timestamp when the span was started.
         :param str trace_key: Unique Application Performance Monitoring trace identifier (traceId).
         """
-        pulumi.set(__self__, "duration_in_ms", duration_in_ms)
-        pulumi.set(__self__, "is_error", is_error)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "kind", kind)
-        pulumi.set(__self__, "logs", logs)
-        pulumi.set(__self__, "operation_name", operation_name)
-        pulumi.set(__self__, "parent_span_key", parent_span_key)
-        pulumi.set(__self__, "service_name", service_name)
-        pulumi.set(__self__, "tags", tags)
-        pulumi.set(__self__, "time_ended", time_ended)
-        pulumi.set(__self__, "time_started", time_started)
-        pulumi.set(__self__, "trace_key", trace_key)
+        GetTraceSpanResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            duration_in_ms=duration_in_ms,
+            is_error=is_error,
+            key=key,
+            kind=kind,
+            logs=logs,
+            operation_name=operation_name,
+            parent_span_key=parent_span_key,
+            service_name=service_name,
+            tags=tags,
+            time_ended=time_ended,
+            time_started=time_started,
+            trace_key=trace_key,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             duration_in_ms: str,
+             is_error: bool,
+             key: str,
+             kind: str,
+             logs: Sequence['outputs.GetTraceSpanLogResult'],
+             operation_name: str,
+             parent_span_key: str,
+             service_name: str,
+             tags: Sequence['outputs.GetTraceSpanTagResult'],
+             time_ended: str,
+             time_started: str,
+             trace_key: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("duration_in_ms", duration_in_ms)
+        _setter("is_error", is_error)
+        _setter("key", key)
+        _setter("kind", kind)
+        _setter("logs", logs)
+        _setter("operation_name", operation_name)
+        _setter("parent_span_key", parent_span_key)
+        _setter("service_name", service_name)
+        _setter("tags", tags)
+        _setter("time_ended", time_ended)
+        _setter("time_started", time_started)
+        _setter("trace_key", trace_key)
 
     @property
     @pulumi.getter(name="durationInMs")
@@ -326,8 +416,19 @@ class GetTraceSpanLogResult(dict):
         :param Sequence['GetTraceSpanLogSpanLogArgs'] span_logs: List of logs associated with the span at the given timestamp.
         :param str time_created: Timestamp at which the log is created.
         """
-        pulumi.set(__self__, "span_logs", span_logs)
-        pulumi.set(__self__, "time_created", time_created)
+        GetTraceSpanLogResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            span_logs=span_logs,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             span_logs: Sequence['outputs.GetTraceSpanLogSpanLogResult'],
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("span_logs", span_logs)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="spanLogs")
@@ -355,8 +456,19 @@ class GetTraceSpanLogSpanLogResult(dict):
         :param str log_key: Key that specifies the log name.
         :param str log_value: Value associated with the log key.
         """
-        pulumi.set(__self__, "log_key", log_key)
-        pulumi.set(__self__, "log_value", log_value)
+        GetTraceSpanLogSpanLogResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_key=log_key,
+            log_value=log_value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_key: str,
+             log_value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_key", log_key)
+        _setter("log_value", log_value)
 
     @property
     @pulumi.getter(name="logKey")
@@ -412,22 +524,61 @@ class GetTraceSpanSummaryResult(dict):
         :param str trace_error_type: Error type of the trace.
         :param str trace_status: The status of the trace. The trace statuses are defined as follows: complete - a root span has been recorded, but there is no information on the errors. success - a complete root span is recorded there is a successful error type and error code - HTTP 200. incomplete - the root span has not yet been received. error - the root span returned with an error. There may or may not be an associated error code or error type.
         """
-        pulumi.set(__self__, "error_span_count", error_span_count)
-        pulumi.set(__self__, "is_fault", is_fault)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "root_span_duration_in_ms", root_span_duration_in_ms)
-        pulumi.set(__self__, "root_span_operation_name", root_span_operation_name)
-        pulumi.set(__self__, "root_span_service_name", root_span_service_name)
-        pulumi.set(__self__, "service_summaries", service_summaries)
-        pulumi.set(__self__, "span_count", span_count)
-        pulumi.set(__self__, "time_earliest_span_started", time_earliest_span_started)
-        pulumi.set(__self__, "time_latest_span_ended", time_latest_span_ended)
-        pulumi.set(__self__, "time_root_span_ended", time_root_span_ended)
-        pulumi.set(__self__, "time_root_span_started", time_root_span_started)
-        pulumi.set(__self__, "trace_duration_in_ms", trace_duration_in_ms)
-        pulumi.set(__self__, "trace_error_code", trace_error_code)
-        pulumi.set(__self__, "trace_error_type", trace_error_type)
-        pulumi.set(__self__, "trace_status", trace_status)
+        GetTraceSpanSummaryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            error_span_count=error_span_count,
+            is_fault=is_fault,
+            key=key,
+            root_span_duration_in_ms=root_span_duration_in_ms,
+            root_span_operation_name=root_span_operation_name,
+            root_span_service_name=root_span_service_name,
+            service_summaries=service_summaries,
+            span_count=span_count,
+            time_earliest_span_started=time_earliest_span_started,
+            time_latest_span_ended=time_latest_span_ended,
+            time_root_span_ended=time_root_span_ended,
+            time_root_span_started=time_root_span_started,
+            trace_duration_in_ms=trace_duration_in_ms,
+            trace_error_code=trace_error_code,
+            trace_error_type=trace_error_type,
+            trace_status=trace_status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             error_span_count: int,
+             is_fault: bool,
+             key: str,
+             root_span_duration_in_ms: int,
+             root_span_operation_name: str,
+             root_span_service_name: str,
+             service_summaries: Sequence['outputs.GetTraceSpanSummaryServiceSummaryResult'],
+             span_count: int,
+             time_earliest_span_started: str,
+             time_latest_span_ended: str,
+             time_root_span_ended: str,
+             time_root_span_started: str,
+             trace_duration_in_ms: int,
+             trace_error_code: str,
+             trace_error_type: str,
+             trace_status: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("error_span_count", error_span_count)
+        _setter("is_fault", is_fault)
+        _setter("key", key)
+        _setter("root_span_duration_in_ms", root_span_duration_in_ms)
+        _setter("root_span_operation_name", root_span_operation_name)
+        _setter("root_span_service_name", root_span_service_name)
+        _setter("service_summaries", service_summaries)
+        _setter("span_count", span_count)
+        _setter("time_earliest_span_started", time_earliest_span_started)
+        _setter("time_latest_span_ended", time_latest_span_ended)
+        _setter("time_root_span_ended", time_root_span_ended)
+        _setter("time_root_span_started", time_root_span_started)
+        _setter("trace_duration_in_ms", trace_duration_in_ms)
+        _setter("trace_error_code", trace_error_code)
+        _setter("trace_error_type", trace_error_type)
+        _setter("trace_status", trace_status)
 
     @property
     @pulumi.getter(name="errorSpanCount")
@@ -569,9 +720,22 @@ class GetTraceSpanSummaryServiceSummaryResult(dict):
         :param str span_service_name: Name associated with the service.
         :param str total_spans: Number of spans for serviceName in the trace.
         """
-        pulumi.set(__self__, "error_spans", error_spans)
-        pulumi.set(__self__, "span_service_name", span_service_name)
-        pulumi.set(__self__, "total_spans", total_spans)
+        GetTraceSpanSummaryServiceSummaryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            error_spans=error_spans,
+            span_service_name=span_service_name,
+            total_spans=total_spans,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             error_spans: str,
+             span_service_name: str,
+             total_spans: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("error_spans", error_spans)
+        _setter("span_service_name", span_service_name)
+        _setter("total_spans", total_spans)
 
     @property
     @pulumi.getter(name="errorSpans")
@@ -607,8 +771,19 @@ class GetTraceSpanTagResult(dict):
         :param str tag_name: Key that specifies the tag name.
         :param str tag_value: Value associated with the tag key.
         """
-        pulumi.set(__self__, "tag_name", tag_name)
-        pulumi.set(__self__, "tag_value", tag_value)
+        GetTraceSpanTagResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            tag_name=tag_name,
+            tag_value=tag_value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             tag_name: str,
+             tag_value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("tag_name", tag_name)
+        _setter("tag_value", tag_value)
 
     @property
     @pulumi.getter(name="tagName")

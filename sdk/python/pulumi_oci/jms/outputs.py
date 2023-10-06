@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -110,8 +110,19 @@ class FleetInventoryLog(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        FleetInventoryLog._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -166,8 +177,19 @@ class FleetOperationLog(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        FleetOperationLog._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -197,7 +219,16 @@ class GetAnnouncementsAnnouncementCollectionResult(dict):
         """
         :param Sequence['GetAnnouncementsAnnouncementCollectionItemArgs'] items: List of AnnouncementSummary items
         """
-        pulumi.set(__self__, "items", items)
+        GetAnnouncementsAnnouncementCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetAnnouncementsAnnouncementCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -221,10 +252,25 @@ class GetAnnouncementsAnnouncementCollectionItemResult(dict):
         :param str time_released: Date time on which the announcement was released
         :param str url: URL to the announcement web page
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "summary", summary)
-        pulumi.set(__self__, "time_released", time_released)
-        pulumi.set(__self__, "url", url)
+        GetAnnouncementsAnnouncementCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            summary=summary,
+            time_released=time_released,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: int,
+             summary: str,
+             time_released: str,
+             url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("summary", summary)
+        _setter("time_released", time_released)
+        _setter("url", url)
 
     @property
     @pulumi.getter
@@ -265,10 +311,23 @@ class GetAnnouncementsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAnnouncementsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -293,7 +352,16 @@ class GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingResult(dict):
         """
         :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -313,8 +381,19 @@ class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisResult(dict):
         :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
         :param Sequence['GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs'] summarized_events_logs: Summarized events log for advanced feature.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "summarized_events_logs", summarized_events_logs)
+        GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            summarized_events_logs=summarized_events_logs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: bool,
+             summarized_events_logs: Sequence['outputs.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
+        _setter("summarized_events_logs", summarized_events_logs)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -342,8 +421,19 @@ class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -369,7 +459,16 @@ class GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisResult(dict):
         """
         :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -387,7 +486,16 @@ class GetFleetAdvancedFeatureConfigurationJfrRecordingResult(dict):
         """
         :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetFleetAdvancedFeatureConfigurationJfrRecordingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -407,8 +515,19 @@ class GetFleetAdvancedFeatureConfigurationLcmResult(dict):
         :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
         :param Sequence['GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs'] post_installation_actions: List of available post actions you can execute after the successful Java installation.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "post_installation_actions", post_installation_actions)
+        GetFleetAdvancedFeatureConfigurationLcmResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            post_installation_actions=post_installation_actions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: bool,
+             post_installation_actions: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
+        _setter("post_installation_actions", post_installation_actions)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -446,12 +565,31 @@ class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult(dict):
         :param bool should_replace_certificates_operating_system: Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
                * Replace JDK root certificates with a list provided by the operating system.
         """
-        pulumi.set(__self__, "add_logging_handler", add_logging_handler)
-        pulumi.set(__self__, "disabled_tls_versions", disabled_tls_versions)
-        pulumi.set(__self__, "global_logging_level", global_logging_level)
-        pulumi.set(__self__, "minimum_key_size_settings", minimum_key_size_settings)
-        pulumi.set(__self__, "proxies", proxies)
-        pulumi.set(__self__, "should_replace_certificates_operating_system", should_replace_certificates_operating_system)
+        GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            add_logging_handler=add_logging_handler,
+            disabled_tls_versions=disabled_tls_versions,
+            global_logging_level=global_logging_level,
+            minimum_key_size_settings=minimum_key_size_settings,
+            proxies=proxies,
+            should_replace_certificates_operating_system=should_replace_certificates_operating_system,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             add_logging_handler: bool,
+             disabled_tls_versions: Sequence[str],
+             global_logging_level: str,
+             minimum_key_size_settings: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingResult'],
+             proxies: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult'],
+             should_replace_certificates_operating_system: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("add_logging_handler", add_logging_handler)
+        _setter("disabled_tls_versions", disabled_tls_versions)
+        _setter("global_logging_level", global_logging_level)
+        _setter("minimum_key_size_settings", minimum_key_size_settings)
+        _setter("proxies", proxies)
+        _setter("should_replace_certificates_operating_system", should_replace_certificates_operating_system)
 
     @property
     @pulumi.getter(name="addLoggingHandler")
@@ -522,9 +660,22 @@ class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySiz
         :param Sequence['GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArgs'] tls: Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
                * Changing minimum key length for Diffie-Hellman
         """
-        pulumi.set(__self__, "certpaths", certpaths)
-        pulumi.set(__self__, "jars", jars)
-        pulumi.set(__self__, "tls", tls)
+        GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            certpaths=certpaths,
+            jars=jars,
+            tls=tls,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             certpaths: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathResult'],
+             jars: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarResult'],
+             tls: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("certpaths", certpaths)
+        _setter("jars", jars)
+        _setter("tls", tls)
 
     @property
     @pulumi.getter
@@ -567,8 +718,19 @@ class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySiz
         :param int key_size: Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
         :param str name: The algorithm name.
         """
-        pulumi.set(__self__, "key_size", key_size)
-        pulumi.set(__self__, "name", name)
+        GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key_size=key_size,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key_size: int,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key_size", key_size)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="keySize")
@@ -596,8 +758,19 @@ class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySiz
         :param int key_size: Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
         :param str name: The algorithm name.
         """
-        pulumi.set(__self__, "key_size", key_size)
-        pulumi.set(__self__, "name", name)
+        GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key_size=key_size,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key_size: int,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key_size", key_size)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="keySize")
@@ -625,8 +798,19 @@ class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySiz
         :param int key_size: Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
         :param str name: The algorithm name.
         """
-        pulumi.set(__self__, "key_size", key_size)
-        pulumi.set(__self__, "name", name)
+        GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key_size=key_size,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key_size: int,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key_size", key_size)
+        _setter("name", name)
 
     @property
     @pulumi.getter(name="keySize")
@@ -668,15 +852,40 @@ class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult(d
         :param int socks_proxy_port: Socks port number to be set in net.properties file.
         :param bool use_system_proxies: Sets "java.net.useSystemProxies=true" in net.properties when they exist.
         """
-        pulumi.set(__self__, "ftp_proxy_host", ftp_proxy_host)
-        pulumi.set(__self__, "ftp_proxy_port", ftp_proxy_port)
-        pulumi.set(__self__, "http_proxy_host", http_proxy_host)
-        pulumi.set(__self__, "http_proxy_port", http_proxy_port)
-        pulumi.set(__self__, "https_proxy_host", https_proxy_host)
-        pulumi.set(__self__, "https_proxy_port", https_proxy_port)
-        pulumi.set(__self__, "socks_proxy_host", socks_proxy_host)
-        pulumi.set(__self__, "socks_proxy_port", socks_proxy_port)
-        pulumi.set(__self__, "use_system_proxies", use_system_proxies)
+        GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ftp_proxy_host=ftp_proxy_host,
+            ftp_proxy_port=ftp_proxy_port,
+            http_proxy_host=http_proxy_host,
+            http_proxy_port=http_proxy_port,
+            https_proxy_host=https_proxy_host,
+            https_proxy_port=https_proxy_port,
+            socks_proxy_host=socks_proxy_host,
+            socks_proxy_port=socks_proxy_port,
+            use_system_proxies=use_system_proxies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ftp_proxy_host: str,
+             ftp_proxy_port: int,
+             http_proxy_host: str,
+             http_proxy_port: int,
+             https_proxy_host: str,
+             https_proxy_port: int,
+             socks_proxy_host: str,
+             socks_proxy_port: int,
+             use_system_proxies: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ftp_proxy_host", ftp_proxy_host)
+        _setter("ftp_proxy_port", ftp_proxy_port)
+        _setter("http_proxy_host", http_proxy_host)
+        _setter("http_proxy_port", http_proxy_port)
+        _setter("https_proxy_host", https_proxy_host)
+        _setter("https_proxy_port", https_proxy_port)
+        _setter("socks_proxy_host", socks_proxy_host)
+        _setter("socks_proxy_port", socks_proxy_port)
+        _setter("use_system_proxies", use_system_proxies)
 
     @property
     @pulumi.getter(name="ftpProxyHost")
@@ -758,7 +967,16 @@ class GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisResult(dict):
         """
         :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -775,10 +993,23 @@ class GetFleetBlocklistsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetFleetBlocklistsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -809,10 +1040,25 @@ class GetFleetBlocklistsItemResult(dict):
         :param str reason: The reason why the operation is blocklisted.
         :param Sequence['GetFleetBlocklistsItemTargetArgs'] targets: A resource to blocklist for certain operation.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "operation", operation)
-        pulumi.set(__self__, "reason", reason)
-        pulumi.set(__self__, "targets", targets)
+        GetFleetBlocklistsItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            operation=operation,
+            reason=reason,
+            targets=targets,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             operation: str,
+             reason: str,
+             targets: Sequence['outputs.GetFleetBlocklistsItemTargetResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("operation", operation)
+        _setter("reason", reason)
+        _setter("targets", targets)
 
     @property
     @pulumi.getter
@@ -858,9 +1104,22 @@ class GetFleetBlocklistsItemTargetResult(dict):
         :param str installation_key: The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
         :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
         """
-        pulumi.set(__self__, "fleet_id", fleet_id)
-        pulumi.set(__self__, "installation_key", installation_key)
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        GetFleetBlocklistsItemTargetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            fleet_id=fleet_id,
+            installation_key=installation_key,
+            managed_instance_id=managed_instance_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             fleet_id: str,
+             installation_key: str,
+             managed_instance_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("fleet_id", fleet_id)
+        _setter("installation_key", installation_key)
+        _setter("managed_instance_id", managed_instance_id)
 
     @property
     @pulumi.getter(name="fleetId")
@@ -891,7 +1150,16 @@ class GetFleetBlocklistsItemTargetResult(dict):
 class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -938,23 +1206,64 @@ class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult(dict
         :param int total_event_count: Total number of events in the analysis.
         :param str work_request_id: The OCID of the work request to start the analysis.
         """
-        pulumi.set(__self__, "aggregation_mode", aggregation_mode)
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "crypto_roadmap_version", crypto_roadmap_version)
-        pulumi.set(__self__, "finding_count", finding_count)
-        pulumi.set(__self__, "fleet_id", fleet_id)
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "non_compliant_finding_count", non_compliant_finding_count)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "summarized_event_count", summarized_event_count)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_first_event", time_first_event)
-        pulumi.set(__self__, "time_last_event", time_last_event)
-        pulumi.set(__self__, "total_event_count", total_event_count)
-        pulumi.set(__self__, "work_request_id", work_request_id)
+        GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregation_mode=aggregation_mode,
+            bucket=bucket,
+            crypto_roadmap_version=crypto_roadmap_version,
+            finding_count=finding_count,
+            fleet_id=fleet_id,
+            host_name=host_name,
+            id=id,
+            managed_instance_id=managed_instance_id,
+            namespace=namespace,
+            non_compliant_finding_count=non_compliant_finding_count,
+            object=object,
+            summarized_event_count=summarized_event_count,
+            time_created=time_created,
+            time_first_event=time_first_event,
+            time_last_event=time_last_event,
+            total_event_count=total_event_count,
+            work_request_id=work_request_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregation_mode: str,
+             bucket: str,
+             crypto_roadmap_version: str,
+             finding_count: int,
+             fleet_id: str,
+             host_name: str,
+             id: str,
+             managed_instance_id: str,
+             namespace: str,
+             non_compliant_finding_count: int,
+             object: str,
+             summarized_event_count: int,
+             time_created: str,
+             time_first_event: str,
+             time_last_event: str,
+             total_event_count: int,
+             work_request_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("aggregation_mode", aggregation_mode)
+        _setter("bucket", bucket)
+        _setter("crypto_roadmap_version", crypto_roadmap_version)
+        _setter("finding_count", finding_count)
+        _setter("fleet_id", fleet_id)
+        _setter("host_name", host_name)
+        _setter("id", id)
+        _setter("managed_instance_id", managed_instance_id)
+        _setter("namespace", namespace)
+        _setter("non_compliant_finding_count", non_compliant_finding_count)
+        _setter("object", object)
+        _setter("summarized_event_count", summarized_event_count)
+        _setter("time_created", time_created)
+        _setter("time_first_event", time_first_event)
+        _setter("time_last_event", time_last_event)
+        _setter("total_event_count", total_event_count)
+        _setter("work_request_id", work_request_id)
 
     @property
     @pulumi.getter(name="aggregationMode")
@@ -1099,10 +1408,23 @@ class GetFleetCryptoAnalysisResultsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetFleetCryptoAnalysisResultsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1126,10 +1448,23 @@ class GetFleetDiagnosesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetFleetDiagnosesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1154,7 +1489,16 @@ class GetFleetDiagnosesFleetDiagnosisCollectionResult(dict):
         """
         :param Sequence['GetFleetDiagnosesFleetDiagnosisCollectionItemArgs'] items: A list of the fleet resource diagnosis.
         """
-        pulumi.set(__self__, "items", items)
+        GetFleetDiagnosesFleetDiagnosisCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetFleetDiagnosesFleetDiagnosisCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1178,10 +1522,25 @@ class GetFleetDiagnosesFleetDiagnosisCollectionItemResult(dict):
         :param str resource_state: The state of the resource. The resource state is ACTIVE when it works properly for the fleet. In case it would cause an issue for the fleet function, the state is INACTIVE. When JMS can't locate the resource, the state is NOT_FOUND. OTHER covers other cases, such as a temporarily network issue that prevents JMS from detecting the resource. Check the resourceDiagnosis for details.
         :param str resource_type: The type of the resource needed by the fleet. This is the role of a resource in the fleet. Use the OCID to determine the actual Oracle Cloud Infrastructure resource type such as log group or log.
         """
-        pulumi.set(__self__, "resource_diagnosis", resource_diagnosis)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_state", resource_state)
-        pulumi.set(__self__, "resource_type", resource_type)
+        GetFleetDiagnosesFleetDiagnosisCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            resource_diagnosis=resource_diagnosis,
+            resource_id=resource_id,
+            resource_state=resource_state,
+            resource_type=resource_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             resource_diagnosis: str,
+             resource_id: str,
+             resource_state: str,
+             resource_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("resource_diagnosis", resource_diagnosis)
+        _setter("resource_id", resource_id)
+        _setter("resource_state", resource_state)
+        _setter("resource_type", resource_type)
 
     @property
     @pulumi.getter(name="resourceDiagnosis")
@@ -1225,8 +1584,19 @@ class GetFleetInventoryLogResult(dict):
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetFleetInventoryLogResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -1251,10 +1621,23 @@ class GetFleetJavaMigrationAnalysisResultsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetFleetJavaMigrationAnalysisResultsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1276,7 +1659,16 @@ class GetFleetJavaMigrationAnalysisResultsFilterResult(dict):
 class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1321,22 +1713,61 @@ class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionI
         :param str time_created: The time the result is compiled.
         :param str work_request_id: The OCID of the work request of this analysis.
         """
-        pulumi.set(__self__, "application_execution_type", application_execution_type)
-        pulumi.set(__self__, "application_name", application_name)
-        pulumi.set(__self__, "application_path", application_path)
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "fleet_id", fleet_id)
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
-        pulumi.set(__self__, "metadata", metadata)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object_lists", object_lists)
-        pulumi.set(__self__, "object_storage_upload_dir_path", object_storage_upload_dir_path)
-        pulumi.set(__self__, "source_jdk_version", source_jdk_version)
-        pulumi.set(__self__, "target_jdk_version", target_jdk_version)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "work_request_id", work_request_id)
+        GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            application_execution_type=application_execution_type,
+            application_name=application_name,
+            application_path=application_path,
+            bucket=bucket,
+            fleet_id=fleet_id,
+            host_name=host_name,
+            id=id,
+            managed_instance_id=managed_instance_id,
+            metadata=metadata,
+            namespace=namespace,
+            object_lists=object_lists,
+            object_storage_upload_dir_path=object_storage_upload_dir_path,
+            source_jdk_version=source_jdk_version,
+            target_jdk_version=target_jdk_version,
+            time_created=time_created,
+            work_request_id=work_request_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             application_execution_type: str,
+             application_name: str,
+             application_path: str,
+             bucket: str,
+             fleet_id: str,
+             host_name: str,
+             id: str,
+             managed_instance_id: str,
+             metadata: str,
+             namespace: str,
+             object_lists: Sequence[str],
+             object_storage_upload_dir_path: str,
+             source_jdk_version: str,
+             target_jdk_version: str,
+             time_created: str,
+             work_request_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("application_execution_type", application_execution_type)
+        _setter("application_name", application_name)
+        _setter("application_path", application_path)
+        _setter("bucket", bucket)
+        _setter("fleet_id", fleet_id)
+        _setter("host_name", host_name)
+        _setter("id", id)
+        _setter("managed_instance_id", managed_instance_id)
+        _setter("metadata", metadata)
+        _setter("namespace", namespace)
+        _setter("object_lists", object_lists)
+        _setter("object_storage_upload_dir_path", object_storage_upload_dir_path)
+        _setter("source_jdk_version", source_jdk_version)
+        _setter("target_jdk_version", target_jdk_version)
+        _setter("time_created", time_created)
+        _setter("work_request_id", work_request_id)
 
     @property
     @pulumi.getter(name="applicationExecutionType")
@@ -1476,8 +1907,19 @@ class GetFleetOperationLogResult(dict):
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetFleetOperationLogResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -1502,10 +1944,23 @@ class GetFleetPerformanceTuningAnalysisResultsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetFleetPerformanceTuningAnalysisResultsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1527,7 +1982,16 @@ class GetFleetPerformanceTuningAnalysisResultsFilterResult(dict):
 class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1574,23 +2038,64 @@ class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCol
         :param int warning_count: Total number of warnings reported by the analysis.
         :param str work_request_id: The OCID of the work request to start the analysis.
         """
-        pulumi.set(__self__, "application_id", application_id)
-        pulumi.set(__self__, "application_installation_id", application_installation_id)
-        pulumi.set(__self__, "application_installation_path", application_installation_path)
-        pulumi.set(__self__, "application_name", application_name)
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "fleet_id", fleet_id)
-        pulumi.set(__self__, "host_name", host_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object", object)
-        pulumi.set(__self__, "result", result)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_finished", time_finished)
-        pulumi.set(__self__, "time_started", time_started)
-        pulumi.set(__self__, "warning_count", warning_count)
-        pulumi.set(__self__, "work_request_id", work_request_id)
+        GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            application_id=application_id,
+            application_installation_id=application_installation_id,
+            application_installation_path=application_installation_path,
+            application_name=application_name,
+            bucket=bucket,
+            fleet_id=fleet_id,
+            host_name=host_name,
+            id=id,
+            managed_instance_id=managed_instance_id,
+            namespace=namespace,
+            object=object,
+            result=result,
+            time_created=time_created,
+            time_finished=time_finished,
+            time_started=time_started,
+            warning_count=warning_count,
+            work_request_id=work_request_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             application_id: str,
+             application_installation_id: str,
+             application_installation_path: str,
+             application_name: str,
+             bucket: str,
+             fleet_id: str,
+             host_name: str,
+             id: str,
+             managed_instance_id: str,
+             namespace: str,
+             object: str,
+             result: str,
+             time_created: str,
+             time_finished: str,
+             time_started: str,
+             warning_count: int,
+             work_request_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("application_id", application_id)
+        _setter("application_installation_id", application_installation_id)
+        _setter("application_installation_path", application_installation_path)
+        _setter("application_name", application_name)
+        _setter("bucket", bucket)
+        _setter("fleet_id", fleet_id)
+        _setter("host_name", host_name)
+        _setter("id", id)
+        _setter("managed_instance_id", managed_instance_id)
+        _setter("namespace", namespace)
+        _setter("object", object)
+        _setter("result", result)
+        _setter("time_created", time_created)
+        _setter("time_finished", time_finished)
+        _setter("time_started", time_started)
+        _setter("warning_count", warning_count)
+        _setter("work_request_id", work_request_id)
 
     @property
     @pulumi.getter(name="applicationId")
@@ -1735,10 +2240,23 @@ class GetFleetsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetFleetsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1760,7 +2278,16 @@ class GetFleetsFilterResult(dict):
 class GetFleetsFleetCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetFleetsFleetCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetFleetsFleetCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetFleetsFleetCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1807,23 +2334,64 @@ class GetFleetsFleetCollectionItemResult(dict):
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
-        pulumi.set(__self__, "approximate_application_count", approximate_application_count)
-        pulumi.set(__self__, "approximate_installation_count", approximate_installation_count)
-        pulumi.set(__self__, "approximate_java_server_count", approximate_java_server_count)
-        pulumi.set(__self__, "approximate_jre_count", approximate_jre_count)
-        pulumi.set(__self__, "approximate_managed_instance_count", approximate_managed_instance_count)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "inventory_logs", inventory_logs)
-        pulumi.set(__self__, "is_advanced_features_enabled", is_advanced_features_enabled)
-        pulumi.set(__self__, "operation_logs", operation_logs)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
+        GetFleetsFleetCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            approximate_application_count=approximate_application_count,
+            approximate_installation_count=approximate_installation_count,
+            approximate_java_server_count=approximate_java_server_count,
+            approximate_jre_count=approximate_jre_count,
+            approximate_managed_instance_count=approximate_managed_instance_count,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            inventory_logs=inventory_logs,
+            is_advanced_features_enabled=is_advanced_features_enabled,
+            operation_logs=operation_logs,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             approximate_application_count: int,
+             approximate_installation_count: int,
+             approximate_java_server_count: int,
+             approximate_jre_count: int,
+             approximate_managed_instance_count: int,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             inventory_logs: Sequence['outputs.GetFleetsFleetCollectionItemInventoryLogResult'],
+             is_advanced_features_enabled: bool,
+             operation_logs: Sequence['outputs.GetFleetsFleetCollectionItemOperationLogResult'],
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("approximate_application_count", approximate_application_count)
+        _setter("approximate_installation_count", approximate_installation_count)
+        _setter("approximate_java_server_count", approximate_java_server_count)
+        _setter("approximate_jre_count", approximate_jre_count)
+        _setter("approximate_managed_instance_count", approximate_managed_instance_count)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("inventory_logs", inventory_logs)
+        _setter("is_advanced_features_enabled", is_advanced_features_enabled)
+        _setter("operation_logs", operation_logs)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="approximateApplicationCount")
@@ -1971,8 +2539,19 @@ class GetFleetsFleetCollectionItemInventoryLogResult(dict):
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetFleetsFleetCollectionItemInventoryLogResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -2000,8 +2579,19 @@ class GetFleetsFleetCollectionItemOperationLogResult(dict):
         :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
         """
-        pulumi.set(__self__, "log_group_id", log_group_id)
-        pulumi.set(__self__, "log_id", log_id)
+        GetFleetsFleetCollectionItemOperationLogResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            log_group_id=log_group_id,
+            log_id=log_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             log_group_id: str,
+             log_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("log_group_id", log_group_id)
+        _setter("log_id", log_id)
 
     @property
     @pulumi.getter(name="logGroupId")
@@ -2045,16 +2635,43 @@ class GetInstallationSiteItemResult(dict):
         :param str state: The lifecycle state of the installation site.
         :param str time_last_seen: The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
         """
-        pulumi.set(__self__, "approximate_application_count", approximate_application_count)
-        pulumi.set(__self__, "blocklists", blocklists)
-        pulumi.set(__self__, "installation_key", installation_key)
-        pulumi.set(__self__, "jres", jres)
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
-        pulumi.set(__self__, "operating_systems", operating_systems)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "security_status", security_status)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_last_seen", time_last_seen)
+        GetInstallationSiteItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            approximate_application_count=approximate_application_count,
+            blocklists=blocklists,
+            installation_key=installation_key,
+            jres=jres,
+            managed_instance_id=managed_instance_id,
+            operating_systems=operating_systems,
+            path=path,
+            security_status=security_status,
+            state=state,
+            time_last_seen=time_last_seen,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             approximate_application_count: int,
+             blocklists: Sequence['outputs.GetInstallationSiteItemBlocklistResult'],
+             installation_key: str,
+             jres: Sequence['outputs.GetInstallationSiteItemJreResult'],
+             managed_instance_id: str,
+             operating_systems: Sequence['outputs.GetInstallationSiteItemOperatingSystemResult'],
+             path: str,
+             security_status: str,
+             state: str,
+             time_last_seen: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("approximate_application_count", approximate_application_count)
+        _setter("blocklists", blocklists)
+        _setter("installation_key", installation_key)
+        _setter("jres", jres)
+        _setter("managed_instance_id", managed_instance_id)
+        _setter("operating_systems", operating_systems)
+        _setter("path", path)
+        _setter("security_status", security_status)
+        _setter("state", state)
+        _setter("time_last_seen", time_last_seen)
 
     @property
     @pulumi.getter(name="approximateApplicationCount")
@@ -2146,8 +2763,19 @@ class GetInstallationSiteItemBlocklistResult(dict):
         :param str operation: The operation type.
         :param str reason: The reason why the operation is blocklisted.
         """
-        pulumi.set(__self__, "operation", operation)
-        pulumi.set(__self__, "reason", reason)
+        GetInstallationSiteItemBlocklistResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            operation=operation,
+            reason=reason,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             operation: str,
+             reason: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("operation", operation)
+        _setter("reason", reason)
 
     @property
     @pulumi.getter
@@ -2179,10 +2807,25 @@ class GetInstallationSiteItemJreResult(dict):
         :param str vendor: The vendor of the Java Runtime.
         :param str version: The version of the operating system as provided by the Java system property os.version.
         """
-        pulumi.set(__self__, "distribution", distribution)
-        pulumi.set(__self__, "jre_key", jre_key)
-        pulumi.set(__self__, "vendor", vendor)
-        pulumi.set(__self__, "version", version)
+        GetInstallationSiteItemJreResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            distribution=distribution,
+            jre_key=jre_key,
+            vendor=vendor,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             distribution: str,
+             jre_key: str,
+             vendor: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("distribution", distribution)
+        _setter("jre_key", jre_key)
+        _setter("vendor", vendor)
+        _setter("version", version)
 
     @property
     @pulumi.getter
@@ -2232,11 +2875,28 @@ class GetInstallationSiteItemOperatingSystemResult(dict):
         :param str name: The name of the operating system as provided by the Java system property os.name.
         :param str version: The version of the operating system as provided by the Java system property os.version.
         """
-        pulumi.set(__self__, "architecture", architecture)
-        pulumi.set(__self__, "family", family)
-        pulumi.set(__self__, "managed_instance_count", managed_instance_count)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "version", version)
+        GetInstallationSiteItemOperatingSystemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            architecture=architecture,
+            family=family,
+            managed_instance_count=managed_instance_count,
+            name=name,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             architecture: str,
+             family: str,
+             managed_instance_count: int,
+             name: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("architecture", architecture)
+        _setter("family", family)
+        _setter("managed_instance_count", managed_instance_count)
+        _setter("name", name)
+        _setter("version", version)
 
     @property
     @pulumi.getter
@@ -2288,10 +2948,23 @@ class GetInstallationSitesFilterResult(dict):
         """
         :param str name: The name of the operating system as provided by the Java system property os.name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetInstallationSitesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2319,7 +2992,16 @@ class GetInstallationSitesInstallationSiteCollectionResult(dict):
         """
         :param Sequence['GetInstallationSitesInstallationSiteCollectionItemArgs'] items: A list of Java installation sites.
         """
-        pulumi.set(__self__, "items", items)
+        GetInstallationSitesInstallationSiteCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2337,7 +3019,16 @@ class GetInstallationSitesInstallationSiteCollectionItemResult(dict):
         """
         :param Sequence['GetInstallationSitesInstallationSiteCollectionItemItemArgs'] items: A list of Java installation sites.
         """
-        pulumi.set(__self__, "items", items)
+        GetInstallationSitesInstallationSiteCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2373,16 +3064,43 @@ class GetInstallationSitesInstallationSiteCollectionItemItemResult(dict):
         :param str state: The lifecycle state of the installation site.
         :param str time_last_seen: The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
         """
-        pulumi.set(__self__, "approximate_application_count", approximate_application_count)
-        pulumi.set(__self__, "blocklists", blocklists)
-        pulumi.set(__self__, "installation_key", installation_key)
-        pulumi.set(__self__, "jres", jres)
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
-        pulumi.set(__self__, "operating_systems", operating_systems)
-        pulumi.set(__self__, "path", path)
-        pulumi.set(__self__, "security_status", security_status)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_last_seen", time_last_seen)
+        GetInstallationSitesInstallationSiteCollectionItemItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            approximate_application_count=approximate_application_count,
+            blocklists=blocklists,
+            installation_key=installation_key,
+            jres=jres,
+            managed_instance_id=managed_instance_id,
+            operating_systems=operating_systems,
+            path=path,
+            security_status=security_status,
+            state=state,
+            time_last_seen=time_last_seen,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             approximate_application_count: int,
+             blocklists: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemBlocklistResult'],
+             installation_key: str,
+             jres: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemJreResult'],
+             managed_instance_id: str,
+             operating_systems: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResult'],
+             path: str,
+             security_status: str,
+             state: str,
+             time_last_seen: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("approximate_application_count", approximate_application_count)
+        _setter("blocklists", blocklists)
+        _setter("installation_key", installation_key)
+        _setter("jres", jres)
+        _setter("managed_instance_id", managed_instance_id)
+        _setter("operating_systems", operating_systems)
+        _setter("path", path)
+        _setter("security_status", security_status)
+        _setter("state", state)
+        _setter("time_last_seen", time_last_seen)
 
     @property
     @pulumi.getter(name="approximateApplicationCount")
@@ -2474,8 +3192,19 @@ class GetInstallationSitesInstallationSiteCollectionItemItemBlocklistResult(dict
         :param str operation: The operation type.
         :param str reason: The reason why the operation is blocklisted.
         """
-        pulumi.set(__self__, "operation", operation)
-        pulumi.set(__self__, "reason", reason)
+        GetInstallationSitesInstallationSiteCollectionItemItemBlocklistResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            operation=operation,
+            reason=reason,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             operation: str,
+             reason: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("operation", operation)
+        _setter("reason", reason)
 
     @property
     @pulumi.getter
@@ -2507,10 +3236,25 @@ class GetInstallationSitesInstallationSiteCollectionItemItemJreResult(dict):
         :param str vendor: The vendor of the Java Runtime.
         :param str version: The version of the operating system as provided by the Java system property os.version.
         """
-        pulumi.set(__self__, "distribution", distribution)
-        pulumi.set(__self__, "jre_key", jre_key)
-        pulumi.set(__self__, "vendor", vendor)
-        pulumi.set(__self__, "version", version)
+        GetInstallationSitesInstallationSiteCollectionItemItemJreResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            distribution=distribution,
+            jre_key=jre_key,
+            vendor=vendor,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             distribution: str,
+             jre_key: str,
+             vendor: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("distribution", distribution)
+        _setter("jre_key", jre_key)
+        _setter("vendor", vendor)
+        _setter("version", version)
 
     @property
     @pulumi.getter
@@ -2560,11 +3304,28 @@ class GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResul
         :param str name: The name of the operating system as provided by the Java system property os.name.
         :param str version: The version of the operating system as provided by the Java system property os.version.
         """
-        pulumi.set(__self__, "architecture", architecture)
-        pulumi.set(__self__, "family", family)
-        pulumi.set(__self__, "managed_instance_count", managed_instance_count)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "version", version)
+        GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            architecture=architecture,
+            family=family,
+            managed_instance_count=managed_instance_count,
+            name=name,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             architecture: str,
+             family: str,
+             managed_instance_count: int,
+             name: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("architecture", architecture)
+        _setter("family", family)
+        _setter("managed_instance_count", managed_instance_count)
+        _setter("name", name)
+        _setter("version", version)
 
     @property
     @pulumi.getter
@@ -2613,10 +3374,23 @@ class GetJavaFamiliesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetJavaFamiliesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2638,7 +3412,16 @@ class GetJavaFamiliesFilterResult(dict):
 class GetJavaFamiliesJavaFamilyCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetJavaFamiliesJavaFamilyCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetJavaFamiliesJavaFamilyCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetJavaFamiliesJavaFamilyCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2661,11 +3444,28 @@ class GetJavaFamiliesJavaFamilyCollectionItemResult(dict):
         :param str family_version: The version identifier for the Java family.
         :param str support_type: This indicates the support category for the Java release family.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "doc_url", doc_url)
-        pulumi.set(__self__, "end_of_support_life_date", end_of_support_life_date)
-        pulumi.set(__self__, "family_version", family_version)
-        pulumi.set(__self__, "support_type", support_type)
+        GetJavaFamiliesJavaFamilyCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            doc_url=doc_url,
+            end_of_support_life_date=end_of_support_life_date,
+            family_version=family_version,
+            support_type=support_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             doc_url: str,
+             end_of_support_life_date: str,
+             family_version: str,
+             support_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("doc_url", doc_url)
+        _setter("end_of_support_life_date", end_of_support_life_date)
+        _setter("family_version", family_version)
+        _setter("support_type", support_type)
 
     @property
     @pulumi.getter(name="displayName")
@@ -2723,11 +3523,28 @@ class GetJavaReleaseArtifactResult(dict):
         :param str artifact_id: Unique identifier for the artifact.
         :param str sha256: SHA256 checksum of the artifact.
         """
-        pulumi.set(__self__, "approximate_file_size_in_bytes", approximate_file_size_in_bytes)
-        pulumi.set(__self__, "artifact_content_type", artifact_content_type)
-        pulumi.set(__self__, "artifact_description", artifact_description)
-        pulumi.set(__self__, "artifact_id", artifact_id)
-        pulumi.set(__self__, "sha256", sha256)
+        GetJavaReleaseArtifactResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            approximate_file_size_in_bytes=approximate_file_size_in_bytes,
+            artifact_content_type=artifact_content_type,
+            artifact_description=artifact_description,
+            artifact_id=artifact_id,
+            sha256=sha256,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             approximate_file_size_in_bytes: str,
+             artifact_content_type: str,
+             artifact_description: str,
+             artifact_id: str,
+             sha256: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("approximate_file_size_in_bytes", approximate_file_size_in_bytes)
+        _setter("artifact_content_type", artifact_content_type)
+        _setter("artifact_description", artifact_description)
+        _setter("artifact_id", artifact_id)
+        _setter("sha256", sha256)
 
     @property
     @pulumi.getter(name="approximateFileSizeInBytes")
@@ -2785,11 +3602,28 @@ class GetJavaReleaseFamilyDetailResult(dict):
         :param str family_version: Java release family identifier.
         :param str support_type: This indicates the support category for the Java release family.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "doc_url", doc_url)
-        pulumi.set(__self__, "end_of_support_life_date", end_of_support_life_date)
-        pulumi.set(__self__, "family_version", family_version)
-        pulumi.set(__self__, "support_type", support_type)
+        GetJavaReleaseFamilyDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            doc_url=doc_url,
+            end_of_support_life_date=end_of_support_life_date,
+            family_version=family_version,
+            support_type=support_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             doc_url: str,
+             end_of_support_life_date: str,
+             family_version: str,
+             support_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("doc_url", doc_url)
+        _setter("end_of_support_life_date", end_of_support_life_date)
+        _setter("family_version", family_version)
+        _setter("support_type", support_type)
 
     @property
     @pulumi.getter(name="displayName")
@@ -2843,9 +3677,22 @@ class GetJavaReleaseLicenseDetailResult(dict):
         :param str license_type: License type for the Java version.
         :param str license_url: Publicly accessible license URL containing the detailed terms and conditions.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "license_type", license_type)
-        pulumi.set(__self__, "license_url", license_url)
+        GetJavaReleaseLicenseDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            license_type=license_type,
+            license_url=license_url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             license_type: str,
+             license_url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("license_type", license_type)
+        _setter("license_url", license_url)
 
     @property
     @pulumi.getter(name="displayName")
@@ -2878,10 +3725,23 @@ class GetJavaReleasesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetJavaReleasesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2903,7 +3763,16 @@ class GetJavaReleasesFilterResult(dict):
 class GetJavaReleasesJavaReleaseCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetJavaReleasesJavaReleaseCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2940,18 +3809,49 @@ class GetJavaReleasesJavaReleaseCollectionItemResult(dict):
         :param str release_version: Unique Java release version identifier
         :param str security_status: The security status of the Java version.
         """
-        pulumi.set(__self__, "artifact_content_types", artifact_content_types)
-        pulumi.set(__self__, "artifacts", artifacts)
-        pulumi.set(__self__, "family_details", family_details)
-        pulumi.set(__self__, "family_version", family_version)
-        pulumi.set(__self__, "license_details", license_details)
-        pulumi.set(__self__, "license_type", license_type)
-        pulumi.set(__self__, "parent_release_version", parent_release_version)
-        pulumi.set(__self__, "release_date", release_date)
-        pulumi.set(__self__, "release_notes_url", release_notes_url)
-        pulumi.set(__self__, "release_type", release_type)
-        pulumi.set(__self__, "release_version", release_version)
-        pulumi.set(__self__, "security_status", security_status)
+        GetJavaReleasesJavaReleaseCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            artifact_content_types=artifact_content_types,
+            artifacts=artifacts,
+            family_details=family_details,
+            family_version=family_version,
+            license_details=license_details,
+            license_type=license_type,
+            parent_release_version=parent_release_version,
+            release_date=release_date,
+            release_notes_url=release_notes_url,
+            release_type=release_type,
+            release_version=release_version,
+            security_status=security_status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             artifact_content_types: Sequence[str],
+             artifacts: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemArtifactResult'],
+             family_details: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult'],
+             family_version: str,
+             license_details: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult'],
+             license_type: str,
+             parent_release_version: str,
+             release_date: str,
+             release_notes_url: str,
+             release_type: str,
+             release_version: str,
+             security_status: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("artifact_content_types", artifact_content_types)
+        _setter("artifacts", artifacts)
+        _setter("family_details", family_details)
+        _setter("family_version", family_version)
+        _setter("license_details", license_details)
+        _setter("license_type", license_type)
+        _setter("parent_release_version", parent_release_version)
+        _setter("release_date", release_date)
+        _setter("release_notes_url", release_notes_url)
+        _setter("release_type", release_type)
+        _setter("release_version", release_version)
+        _setter("security_status", security_status)
 
     @property
     @pulumi.getter(name="artifactContentTypes")
@@ -3065,11 +3965,28 @@ class GetJavaReleasesJavaReleaseCollectionItemArtifactResult(dict):
         :param str artifact_id: Unique identifier for the artifact.
         :param str sha256: SHA256 checksum of the artifact.
         """
-        pulumi.set(__self__, "approximate_file_size_in_bytes", approximate_file_size_in_bytes)
-        pulumi.set(__self__, "artifact_content_type", artifact_content_type)
-        pulumi.set(__self__, "artifact_description", artifact_description)
-        pulumi.set(__self__, "artifact_id", artifact_id)
-        pulumi.set(__self__, "sha256", sha256)
+        GetJavaReleasesJavaReleaseCollectionItemArtifactResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            approximate_file_size_in_bytes=approximate_file_size_in_bytes,
+            artifact_content_type=artifact_content_type,
+            artifact_description=artifact_description,
+            artifact_id=artifact_id,
+            sha256=sha256,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             approximate_file_size_in_bytes: str,
+             artifact_content_type: str,
+             artifact_description: str,
+             artifact_id: str,
+             sha256: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("approximate_file_size_in_bytes", approximate_file_size_in_bytes)
+        _setter("artifact_content_type", artifact_content_type)
+        _setter("artifact_description", artifact_description)
+        _setter("artifact_id", artifact_id)
+        _setter("sha256", sha256)
 
     @property
     @pulumi.getter(name="approximateFileSizeInBytes")
@@ -3127,11 +4044,28 @@ class GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult(dict):
         :param str family_version: The version identifier for the Java family.
         :param str support_type: This indicates the support category for the Java release family.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "doc_url", doc_url)
-        pulumi.set(__self__, "end_of_support_life_date", end_of_support_life_date)
-        pulumi.set(__self__, "family_version", family_version)
-        pulumi.set(__self__, "support_type", support_type)
+        GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            doc_url=doc_url,
+            end_of_support_life_date=end_of_support_life_date,
+            family_version=family_version,
+            support_type=support_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             doc_url: str,
+             end_of_support_life_date: str,
+             family_version: str,
+             support_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("doc_url", doc_url)
+        _setter("end_of_support_life_date", end_of_support_life_date)
+        _setter("family_version", family_version)
+        _setter("support_type", support_type)
 
     @property
     @pulumi.getter(name="displayName")
@@ -3185,9 +4119,22 @@ class GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult(dict):
         :param str license_type: Java license type.
         :param str license_url: Publicly accessible license URL containing the detailed terms and conditions.
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "license_type", license_type)
-        pulumi.set(__self__, "license_url", license_url)
+        GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            license_type=license_type,
+            license_url=license_url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             license_type: str,
+             license_url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("license_type", license_type)
+        _setter("license_url", license_url)
 
     @property
     @pulumi.getter(name="displayName")
@@ -3257,25 +4204,70 @@ class GetListJreUsageItemResult(dict):
         :param str vendor: The vendor of the Java Runtime.
         :param str version: The version of the Java Runtime.
         """
-        pulumi.set(__self__, "approximate_application_count", approximate_application_count)
-        pulumi.set(__self__, "approximate_installation_count", approximate_installation_count)
-        pulumi.set(__self__, "approximate_managed_instance_count", approximate_managed_instance_count)
-        pulumi.set(__self__, "approximate_pending_work_request_count", approximate_pending_work_request_count)
-        pulumi.set(__self__, "days_under_security_baseline", days_under_security_baseline)
-        pulumi.set(__self__, "distribution", distribution)
-        pulumi.set(__self__, "end_of_support_life_date", end_of_support_life_date)
-        pulumi.set(__self__, "fleet_id", fleet_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
-        pulumi.set(__self__, "operating_systems", operating_systems)
-        pulumi.set(__self__, "release_date", release_date)
-        pulumi.set(__self__, "security_status", security_status)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_first_seen", time_first_seen)
-        pulumi.set(__self__, "time_last_seen", time_last_seen)
-        pulumi.set(__self__, "time_start", time_start)
-        pulumi.set(__self__, "vendor", vendor)
-        pulumi.set(__self__, "version", version)
+        GetListJreUsageItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            approximate_application_count=approximate_application_count,
+            approximate_installation_count=approximate_installation_count,
+            approximate_managed_instance_count=approximate_managed_instance_count,
+            approximate_pending_work_request_count=approximate_pending_work_request_count,
+            days_under_security_baseline=days_under_security_baseline,
+            distribution=distribution,
+            end_of_support_life_date=end_of_support_life_date,
+            fleet_id=fleet_id,
+            id=id,
+            managed_instance_id=managed_instance_id,
+            operating_systems=operating_systems,
+            release_date=release_date,
+            security_status=security_status,
+            time_end=time_end,
+            time_first_seen=time_first_seen,
+            time_last_seen=time_last_seen,
+            time_start=time_start,
+            vendor=vendor,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             approximate_application_count: int,
+             approximate_installation_count: int,
+             approximate_managed_instance_count: int,
+             approximate_pending_work_request_count: int,
+             days_under_security_baseline: int,
+             distribution: str,
+             end_of_support_life_date: str,
+             fleet_id: str,
+             id: str,
+             managed_instance_id: str,
+             operating_systems: Sequence['outputs.GetListJreUsageItemOperatingSystemResult'],
+             release_date: str,
+             security_status: str,
+             time_end: str,
+             time_first_seen: str,
+             time_last_seen: str,
+             time_start: str,
+             vendor: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("approximate_application_count", approximate_application_count)
+        _setter("approximate_installation_count", approximate_installation_count)
+        _setter("approximate_managed_instance_count", approximate_managed_instance_count)
+        _setter("approximate_pending_work_request_count", approximate_pending_work_request_count)
+        _setter("days_under_security_baseline", days_under_security_baseline)
+        _setter("distribution", distribution)
+        _setter("end_of_support_life_date", end_of_support_life_date)
+        _setter("fleet_id", fleet_id)
+        _setter("id", id)
+        _setter("managed_instance_id", managed_instance_id)
+        _setter("operating_systems", operating_systems)
+        _setter("release_date", release_date)
+        _setter("security_status", security_status)
+        _setter("time_end", time_end)
+        _setter("time_first_seen", time_first_seen)
+        _setter("time_last_seen", time_last_seen)
+        _setter("time_start", time_start)
+        _setter("vendor", vendor)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="approximateApplicationCount")
@@ -3445,11 +4437,28 @@ class GetListJreUsageItemOperatingSystemResult(dict):
         :param str name: The name of the operating system as provided by the Java system property os.name.
         :param str version: The version of the Java Runtime.
         """
-        pulumi.set(__self__, "architecture", architecture)
-        pulumi.set(__self__, "family", family)
-        pulumi.set(__self__, "managed_instance_count", managed_instance_count)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "version", version)
+        GetListJreUsageItemOperatingSystemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            architecture=architecture,
+            family=family,
+            managed_instance_count=managed_instance_count,
+            name=name,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             architecture: str,
+             family: str,
+             managed_instance_count: int,
+             name: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("architecture", architecture)
+        _setter("family", family)
+        _setter("managed_instance_count", managed_instance_count)
+        _setter("name", name)
+        _setter("version", version)
 
     @property
     @pulumi.getter

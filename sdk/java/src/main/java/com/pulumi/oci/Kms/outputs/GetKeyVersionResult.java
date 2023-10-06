@@ -4,6 +4,7 @@
 package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Kms.outputs.GetKeyVersionExternalKeyReferenceDetail;
 import com.pulumi.oci.Kms.outputs.GetKeyVersionReplicaDetail;
 import java.lang.Boolean;
 import java.lang.String;
@@ -18,12 +19,22 @@ public final class GetKeyVersionResult {
      */
     private String compartmentId;
     /**
+     * @return Key reference data to be returned to the customer as a response.
+     * 
+     */
+    private List<GetKeyVersionExternalKeyReferenceDetail> externalKeyReferenceDetails;
+    /**
+     * @return Key version ID associated with the external key.
+     * 
+     */
+    private String externalKeyVersionId;
+    /**
      * @return The OCID of the key version.
      * 
      */
     private String id;
     /**
-     * @return A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+     * @return A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      * 
      */
     private Boolean isPrimary;
@@ -84,6 +95,20 @@ public final class GetKeyVersionResult {
         return this.compartmentId;
     }
     /**
+     * @return Key reference data to be returned to the customer as a response.
+     * 
+     */
+    public List<GetKeyVersionExternalKeyReferenceDetail> externalKeyReferenceDetails() {
+        return this.externalKeyReferenceDetails;
+    }
+    /**
+     * @return Key version ID associated with the external key.
+     * 
+     */
+    public String externalKeyVersionId() {
+        return this.externalKeyVersionId;
+    }
+    /**
      * @return The OCID of the key version.
      * 
      */
@@ -91,7 +116,7 @@ public final class GetKeyVersionResult {
         return this.id;
     }
     /**
-     * @return A boolean that will be true when key version is primary, and will be false when key version is a replica from a primary key version.
+     * @return A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
      * 
      */
     public Boolean isPrimary() {
@@ -177,6 +202,8 @@ public final class GetKeyVersionResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private List<GetKeyVersionExternalKeyReferenceDetail> externalKeyReferenceDetails;
+        private String externalKeyVersionId;
         private String id;
         private Boolean isPrimary;
         private String keyId;
@@ -194,6 +221,8 @@ public final class GetKeyVersionResult {
         public Builder(GetKeyVersionResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.externalKeyReferenceDetails = defaults.externalKeyReferenceDetails;
+    	      this.externalKeyVersionId = defaults.externalKeyVersionId;
     	      this.id = defaults.id;
     	      this.isPrimary = defaults.isPrimary;
     	      this.keyId = defaults.keyId;
@@ -212,6 +241,19 @@ public final class GetKeyVersionResult {
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder externalKeyReferenceDetails(List<GetKeyVersionExternalKeyReferenceDetail> externalKeyReferenceDetails) {
+            this.externalKeyReferenceDetails = Objects.requireNonNull(externalKeyReferenceDetails);
+            return this;
+        }
+        public Builder externalKeyReferenceDetails(GetKeyVersionExternalKeyReferenceDetail... externalKeyReferenceDetails) {
+            return externalKeyReferenceDetails(List.of(externalKeyReferenceDetails));
+        }
+        @CustomType.Setter
+        public Builder externalKeyVersionId(String externalKeyVersionId) {
+            this.externalKeyVersionId = Objects.requireNonNull(externalKeyVersionId);
             return this;
         }
         @CustomType.Setter
@@ -285,6 +327,8 @@ public final class GetKeyVersionResult {
         public GetKeyVersionResult build() {
             final var o = new GetKeyVersionResult();
             o.compartmentId = compartmentId;
+            o.externalKeyReferenceDetails = externalKeyReferenceDetails;
+            o.externalKeyVersionId = externalKeyVersionId;
             o.id = id;
             o.isPrimary = isPrimary;
             o.keyId = keyId;

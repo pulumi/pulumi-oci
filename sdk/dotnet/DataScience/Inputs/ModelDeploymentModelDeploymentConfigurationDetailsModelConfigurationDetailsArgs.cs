@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DataScience.Inputs
     public sealed class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The network bandwidth for the model.
+        /// (Updatable) The minimum network bandwidth for the model deployment.
         /// </summary>
         [Input("bandwidthMbps")]
         public Input<int>? BandwidthMbps { get; set; }

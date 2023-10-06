@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -189,58 +189,117 @@ class AddressActionVerificationAddress(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        AddressActionVerificationAddress._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address_key=address_key,
+            city=city,
+            company_name=company_name,
+            contributor_class=contributor_class,
+            country=country,
+            county=county,
+            department_name=department_name,
+            email_address=email_address,
+            first_name=first_name,
+            internal_number=internal_number,
+            job_title=job_title,
+            last_name=last_name,
+            line1=line1,
+            line2=line2,
+            line3=line3,
+            line4=line4,
+            middle_name=middle_name,
+            municipal_inscription=municipal_inscription,
+            phone_country_code=phone_country_code,
+            phone_number=phone_number,
+            postal_code=postal_code,
+            province=province,
+            state=state,
+            state_inscription=state_inscription,
+            street_name=street_name,
+            street_number=street_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address_key: Optional[str] = None,
+             city: Optional[str] = None,
+             company_name: Optional[str] = None,
+             contributor_class: Optional[str] = None,
+             country: Optional[str] = None,
+             county: Optional[str] = None,
+             department_name: Optional[str] = None,
+             email_address: Optional[str] = None,
+             first_name: Optional[str] = None,
+             internal_number: Optional[str] = None,
+             job_title: Optional[str] = None,
+             last_name: Optional[str] = None,
+             line1: Optional[str] = None,
+             line2: Optional[str] = None,
+             line3: Optional[str] = None,
+             line4: Optional[str] = None,
+             middle_name: Optional[str] = None,
+             municipal_inscription: Optional[str] = None,
+             phone_country_code: Optional[str] = None,
+             phone_number: Optional[str] = None,
+             postal_code: Optional[str] = None,
+             province: Optional[str] = None,
+             state: Optional[str] = None,
+             state_inscription: Optional[str] = None,
+             street_name: Optional[str] = None,
+             street_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if address_key is not None:
-            pulumi.set(__self__, "address_key", address_key)
+            _setter("address_key", address_key)
         if city is not None:
-            pulumi.set(__self__, "city", city)
+            _setter("city", city)
         if company_name is not None:
-            pulumi.set(__self__, "company_name", company_name)
+            _setter("company_name", company_name)
         if contributor_class is not None:
-            pulumi.set(__self__, "contributor_class", contributor_class)
+            _setter("contributor_class", contributor_class)
         if country is not None:
-            pulumi.set(__self__, "country", country)
+            _setter("country", country)
         if county is not None:
-            pulumi.set(__self__, "county", county)
+            _setter("county", county)
         if department_name is not None:
-            pulumi.set(__self__, "department_name", department_name)
+            _setter("department_name", department_name)
         if email_address is not None:
-            pulumi.set(__self__, "email_address", email_address)
+            _setter("email_address", email_address)
         if first_name is not None:
-            pulumi.set(__self__, "first_name", first_name)
+            _setter("first_name", first_name)
         if internal_number is not None:
-            pulumi.set(__self__, "internal_number", internal_number)
+            _setter("internal_number", internal_number)
         if job_title is not None:
-            pulumi.set(__self__, "job_title", job_title)
+            _setter("job_title", job_title)
         if last_name is not None:
-            pulumi.set(__self__, "last_name", last_name)
+            _setter("last_name", last_name)
         if line1 is not None:
-            pulumi.set(__self__, "line1", line1)
+            _setter("line1", line1)
         if line2 is not None:
-            pulumi.set(__self__, "line2", line2)
+            _setter("line2", line2)
         if line3 is not None:
-            pulumi.set(__self__, "line3", line3)
+            _setter("line3", line3)
         if line4 is not None:
-            pulumi.set(__self__, "line4", line4)
+            _setter("line4", line4)
         if middle_name is not None:
-            pulumi.set(__self__, "middle_name", middle_name)
+            _setter("middle_name", middle_name)
         if municipal_inscription is not None:
-            pulumi.set(__self__, "municipal_inscription", municipal_inscription)
+            _setter("municipal_inscription", municipal_inscription)
         if phone_country_code is not None:
-            pulumi.set(__self__, "phone_country_code", phone_country_code)
+            _setter("phone_country_code", phone_country_code)
         if phone_number is not None:
-            pulumi.set(__self__, "phone_number", phone_number)
+            _setter("phone_number", phone_number)
         if postal_code is not None:
-            pulumi.set(__self__, "postal_code", postal_code)
+            _setter("postal_code", postal_code)
         if province is not None:
-            pulumi.set(__self__, "province", province)
+            _setter("province", province)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if state_inscription is not None:
-            pulumi.set(__self__, "state_inscription", state_inscription)
+            _setter("state_inscription", state_inscription)
         if street_name is not None:
-            pulumi.set(__self__, "street_name", street_name)
+            _setter("street_name", street_name)
         if street_number is not None:
-            pulumi.set(__self__, "street_number", street_number)
+            _setter("street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
@@ -561,58 +620,117 @@ class SubscriptionBillingAddress(dict):
         :param str street_name: (Updatable) Street name of the address.
         :param str street_number: (Updatable) Street number of the address.
         """
+        SubscriptionBillingAddress._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address_key=address_key,
+            city=city,
+            company_name=company_name,
+            contributor_class=contributor_class,
+            country=country,
+            county=county,
+            department_name=department_name,
+            email_address=email_address,
+            first_name=first_name,
+            internal_number=internal_number,
+            job_title=job_title,
+            last_name=last_name,
+            line1=line1,
+            line2=line2,
+            line3=line3,
+            line4=line4,
+            middle_name=middle_name,
+            municipal_inscription=municipal_inscription,
+            phone_country_code=phone_country_code,
+            phone_number=phone_number,
+            postal_code=postal_code,
+            province=province,
+            state=state,
+            state_inscription=state_inscription,
+            street_name=street_name,
+            street_number=street_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address_key: Optional[str] = None,
+             city: Optional[str] = None,
+             company_name: Optional[str] = None,
+             contributor_class: Optional[str] = None,
+             country: Optional[str] = None,
+             county: Optional[str] = None,
+             department_name: Optional[str] = None,
+             email_address: Optional[str] = None,
+             first_name: Optional[str] = None,
+             internal_number: Optional[str] = None,
+             job_title: Optional[str] = None,
+             last_name: Optional[str] = None,
+             line1: Optional[str] = None,
+             line2: Optional[str] = None,
+             line3: Optional[str] = None,
+             line4: Optional[str] = None,
+             middle_name: Optional[str] = None,
+             municipal_inscription: Optional[str] = None,
+             phone_country_code: Optional[str] = None,
+             phone_number: Optional[str] = None,
+             postal_code: Optional[str] = None,
+             province: Optional[str] = None,
+             state: Optional[str] = None,
+             state_inscription: Optional[str] = None,
+             street_name: Optional[str] = None,
+             street_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if address_key is not None:
-            pulumi.set(__self__, "address_key", address_key)
+            _setter("address_key", address_key)
         if city is not None:
-            pulumi.set(__self__, "city", city)
+            _setter("city", city)
         if company_name is not None:
-            pulumi.set(__self__, "company_name", company_name)
+            _setter("company_name", company_name)
         if contributor_class is not None:
-            pulumi.set(__self__, "contributor_class", contributor_class)
+            _setter("contributor_class", contributor_class)
         if country is not None:
-            pulumi.set(__self__, "country", country)
+            _setter("country", country)
         if county is not None:
-            pulumi.set(__self__, "county", county)
+            _setter("county", county)
         if department_name is not None:
-            pulumi.set(__self__, "department_name", department_name)
+            _setter("department_name", department_name)
         if email_address is not None:
-            pulumi.set(__self__, "email_address", email_address)
+            _setter("email_address", email_address)
         if first_name is not None:
-            pulumi.set(__self__, "first_name", first_name)
+            _setter("first_name", first_name)
         if internal_number is not None:
-            pulumi.set(__self__, "internal_number", internal_number)
+            _setter("internal_number", internal_number)
         if job_title is not None:
-            pulumi.set(__self__, "job_title", job_title)
+            _setter("job_title", job_title)
         if last_name is not None:
-            pulumi.set(__self__, "last_name", last_name)
+            _setter("last_name", last_name)
         if line1 is not None:
-            pulumi.set(__self__, "line1", line1)
+            _setter("line1", line1)
         if line2 is not None:
-            pulumi.set(__self__, "line2", line2)
+            _setter("line2", line2)
         if line3 is not None:
-            pulumi.set(__self__, "line3", line3)
+            _setter("line3", line3)
         if line4 is not None:
-            pulumi.set(__self__, "line4", line4)
+            _setter("line4", line4)
         if middle_name is not None:
-            pulumi.set(__self__, "middle_name", middle_name)
+            _setter("middle_name", middle_name)
         if municipal_inscription is not None:
-            pulumi.set(__self__, "municipal_inscription", municipal_inscription)
+            _setter("municipal_inscription", municipal_inscription)
         if phone_country_code is not None:
-            pulumi.set(__self__, "phone_country_code", phone_country_code)
+            _setter("phone_country_code", phone_country_code)
         if phone_number is not None:
-            pulumi.set(__self__, "phone_number", phone_number)
+            _setter("phone_number", phone_number)
         if postal_code is not None:
-            pulumi.set(__self__, "postal_code", postal_code)
+            _setter("postal_code", postal_code)
         if province is not None:
-            pulumi.set(__self__, "province", province)
+            _setter("province", province)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if state_inscription is not None:
-            pulumi.set(__self__, "state_inscription", state_inscription)
+            _setter("state_inscription", state_inscription)
         if street_name is not None:
-            pulumi.set(__self__, "street_name", street_name)
+            _setter("street_name", street_name)
         if street_number is not None:
-            pulumi.set(__self__, "street_number", street_number)
+            _setter("street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
@@ -847,8 +965,17 @@ class SubscriptionPaymentGateway(dict):
         """
         :param Sequence['SubscriptionPaymentGatewayMerchantDefinedDataArgs'] merchant_defined_datas: (Updatable) Merchant details.
         """
+        SubscriptionPaymentGateway._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            merchant_defined_datas=merchant_defined_datas,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             merchant_defined_datas: Optional[Sequence['outputs.SubscriptionPaymentGatewayMerchantDefinedData']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if merchant_defined_datas is not None:
-            pulumi.set(__self__, "merchant_defined_datas", merchant_defined_datas)
+            _setter("merchant_defined_datas", merchant_defined_datas)
 
     @property
     @pulumi.getter(name="merchantDefinedDatas")
@@ -887,10 +1014,21 @@ class SubscriptionPaymentGatewayMerchantDefinedData(dict):
         :param str cloud_account_name: (Updatable) Cloud account name.
         :param str promo_type: (Updatable) Promotion type code.
         """
+        SubscriptionPaymentGatewayMerchantDefinedData._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cloud_account_name=cloud_account_name,
+            promo_type=promo_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cloud_account_name: Optional[str] = None,
+             promo_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if cloud_account_name is not None:
-            pulumi.set(__self__, "cloud_account_name", cloud_account_name)
+            _setter("cloud_account_name", cloud_account_name)
         if promo_type is not None:
-            pulumi.set(__self__, "promo_type", promo_type)
+            _setter("promo_type", promo_type)
 
     @property
     @pulumi.getter(name="cloudAccountName")
@@ -973,28 +1111,57 @@ class SubscriptionPaymentOption(dict):
         :param str wallet_instrument_id: (Updatable) Wallet instrument internal id.
         :param str wallet_transaction_id: (Updatable) Wallet transaction id.
         """
+        SubscriptionPaymentOption._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credit_card_type=credit_card_type,
+            email_address=email_address,
+            ext_billing_agreement_id=ext_billing_agreement_id,
+            first_name=first_name,
+            last_digits=last_digits,
+            last_name=last_name,
+            name_on_card=name_on_card,
+            payment_method=payment_method,
+            time_expiration=time_expiration,
+            wallet_instrument_id=wallet_instrument_id,
+            wallet_transaction_id=wallet_transaction_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credit_card_type: Optional[str] = None,
+             email_address: Optional[str] = None,
+             ext_billing_agreement_id: Optional[str] = None,
+             first_name: Optional[str] = None,
+             last_digits: Optional[str] = None,
+             last_name: Optional[str] = None,
+             name_on_card: Optional[str] = None,
+             payment_method: Optional[str] = None,
+             time_expiration: Optional[str] = None,
+             wallet_instrument_id: Optional[str] = None,
+             wallet_transaction_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if credit_card_type is not None:
-            pulumi.set(__self__, "credit_card_type", credit_card_type)
+            _setter("credit_card_type", credit_card_type)
         if email_address is not None:
-            pulumi.set(__self__, "email_address", email_address)
+            _setter("email_address", email_address)
         if ext_billing_agreement_id is not None:
-            pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
+            _setter("ext_billing_agreement_id", ext_billing_agreement_id)
         if first_name is not None:
-            pulumi.set(__self__, "first_name", first_name)
+            _setter("first_name", first_name)
         if last_digits is not None:
-            pulumi.set(__self__, "last_digits", last_digits)
+            _setter("last_digits", last_digits)
         if last_name is not None:
-            pulumi.set(__self__, "last_name", last_name)
+            _setter("last_name", last_name)
         if name_on_card is not None:
-            pulumi.set(__self__, "name_on_card", name_on_card)
+            _setter("name_on_card", name_on_card)
         if payment_method is not None:
-            pulumi.set(__self__, "payment_method", payment_method)
+            _setter("payment_method", payment_method)
         if time_expiration is not None:
-            pulumi.set(__self__, "time_expiration", time_expiration)
+            _setter("time_expiration", time_expiration)
         if wallet_instrument_id is not None:
-            pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
+            _setter("wallet_instrument_id", wallet_instrument_id)
         if wallet_transaction_id is not None:
-            pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
+            _setter("wallet_transaction_id", wallet_transaction_id)
 
     @property
     @pulumi.getter(name="creditCardType")
@@ -1187,47 +1354,96 @@ class SubscriptionSubscription(dict):
         :param str upgrade_state: (Updatable) Status of the upgrade.
         :param str upgrade_state_details: (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
         """
-        pulumi.set(__self__, "subscription_plan_number", subscription_plan_number)
+        SubscriptionSubscription._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            subscription_plan_number=subscription_plan_number,
+            account_type=account_type,
+            bill_to_cust_account_id=bill_to_cust_account_id,
+            billing_addresses=billing_addresses,
+            currency_code=currency_code,
+            gsi_org_code=gsi_org_code,
+            id=id,
+            is_intent_to_pay=is_intent_to_pay,
+            language_code=language_code,
+            organization_id=organization_id,
+            payment_gateway=payment_gateway,
+            payment_options=payment_options,
+            plan_type=plan_type,
+            ship_to_cust_acct_role_id=ship_to_cust_acct_role_id,
+            ship_to_cust_acct_site_id=ship_to_cust_acct_site_id,
+            tax_info=tax_info,
+            time_personal_to_corporate_conv=time_personal_to_corporate_conv,
+            time_plan_upgrade=time_plan_upgrade,
+            time_start=time_start,
+            upgrade_state=upgrade_state,
+            upgrade_state_details=upgrade_state_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             subscription_plan_number: str,
+             account_type: Optional[str] = None,
+             bill_to_cust_account_id: Optional[str] = None,
+             billing_addresses: Optional[Sequence['outputs.SubscriptionSubscriptionBillingAddress']] = None,
+             currency_code: Optional[str] = None,
+             gsi_org_code: Optional[str] = None,
+             id: Optional[str] = None,
+             is_intent_to_pay: Optional[bool] = None,
+             language_code: Optional[str] = None,
+             organization_id: Optional[str] = None,
+             payment_gateway: Optional['outputs.SubscriptionSubscriptionPaymentGateway'] = None,
+             payment_options: Optional[Sequence['outputs.SubscriptionSubscriptionPaymentOption']] = None,
+             plan_type: Optional[str] = None,
+             ship_to_cust_acct_role_id: Optional[str] = None,
+             ship_to_cust_acct_site_id: Optional[str] = None,
+             tax_info: Optional['outputs.SubscriptionSubscriptionTaxInfo'] = None,
+             time_personal_to_corporate_conv: Optional[str] = None,
+             time_plan_upgrade: Optional[str] = None,
+             time_start: Optional[str] = None,
+             upgrade_state: Optional[str] = None,
+             upgrade_state_details: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("subscription_plan_number", subscription_plan_number)
         if account_type is not None:
-            pulumi.set(__self__, "account_type", account_type)
+            _setter("account_type", account_type)
         if bill_to_cust_account_id is not None:
-            pulumi.set(__self__, "bill_to_cust_account_id", bill_to_cust_account_id)
+            _setter("bill_to_cust_account_id", bill_to_cust_account_id)
         if billing_addresses is not None:
-            pulumi.set(__self__, "billing_addresses", billing_addresses)
+            _setter("billing_addresses", billing_addresses)
         if currency_code is not None:
-            pulumi.set(__self__, "currency_code", currency_code)
+            _setter("currency_code", currency_code)
         if gsi_org_code is not None:
-            pulumi.set(__self__, "gsi_org_code", gsi_org_code)
+            _setter("gsi_org_code", gsi_org_code)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if is_intent_to_pay is not None:
-            pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
+            _setter("is_intent_to_pay", is_intent_to_pay)
         if language_code is not None:
-            pulumi.set(__self__, "language_code", language_code)
+            _setter("language_code", language_code)
         if organization_id is not None:
-            pulumi.set(__self__, "organization_id", organization_id)
+            _setter("organization_id", organization_id)
         if payment_gateway is not None:
-            pulumi.set(__self__, "payment_gateway", payment_gateway)
+            _setter("payment_gateway", payment_gateway)
         if payment_options is not None:
-            pulumi.set(__self__, "payment_options", payment_options)
+            _setter("payment_options", payment_options)
         if plan_type is not None:
-            pulumi.set(__self__, "plan_type", plan_type)
+            _setter("plan_type", plan_type)
         if ship_to_cust_acct_role_id is not None:
-            pulumi.set(__self__, "ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
+            _setter("ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
         if ship_to_cust_acct_site_id is not None:
-            pulumi.set(__self__, "ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
+            _setter("ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
         if tax_info is not None:
-            pulumi.set(__self__, "tax_info", tax_info)
+            _setter("tax_info", tax_info)
         if time_personal_to_corporate_conv is not None:
-            pulumi.set(__self__, "time_personal_to_corporate_conv", time_personal_to_corporate_conv)
+            _setter("time_personal_to_corporate_conv", time_personal_to_corporate_conv)
         if time_plan_upgrade is not None:
-            pulumi.set(__self__, "time_plan_upgrade", time_plan_upgrade)
+            _setter("time_plan_upgrade", time_plan_upgrade)
         if time_start is not None:
-            pulumi.set(__self__, "time_start", time_start)
+            _setter("time_start", time_start)
         if upgrade_state is not None:
-            pulumi.set(__self__, "upgrade_state", upgrade_state)
+            _setter("upgrade_state", upgrade_state)
         if upgrade_state_details is not None:
-            pulumi.set(__self__, "upgrade_state_details", upgrade_state_details)
+            _setter("upgrade_state_details", upgrade_state_details)
 
     @property
     @pulumi.getter(name="subscriptionPlanNumber")
@@ -1504,58 +1720,117 @@ class SubscriptionSubscriptionBillingAddress(dict):
         :param str street_name: (Updatable) Street name of the address.
         :param str street_number: (Updatable) Street number of the address.
         """
+        SubscriptionSubscriptionBillingAddress._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address_key=address_key,
+            city=city,
+            company_name=company_name,
+            contributor_class=contributor_class,
+            country=country,
+            county=county,
+            department_name=department_name,
+            email_address=email_address,
+            first_name=first_name,
+            internal_number=internal_number,
+            job_title=job_title,
+            last_name=last_name,
+            line1=line1,
+            line2=line2,
+            line3=line3,
+            line4=line4,
+            middle_name=middle_name,
+            municipal_inscription=municipal_inscription,
+            phone_country_code=phone_country_code,
+            phone_number=phone_number,
+            postal_code=postal_code,
+            province=province,
+            state=state,
+            state_inscription=state_inscription,
+            street_name=street_name,
+            street_number=street_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address_key: Optional[str] = None,
+             city: Optional[str] = None,
+             company_name: Optional[str] = None,
+             contributor_class: Optional[str] = None,
+             country: Optional[str] = None,
+             county: Optional[str] = None,
+             department_name: Optional[str] = None,
+             email_address: Optional[str] = None,
+             first_name: Optional[str] = None,
+             internal_number: Optional[str] = None,
+             job_title: Optional[str] = None,
+             last_name: Optional[str] = None,
+             line1: Optional[str] = None,
+             line2: Optional[str] = None,
+             line3: Optional[str] = None,
+             line4: Optional[str] = None,
+             middle_name: Optional[str] = None,
+             municipal_inscription: Optional[str] = None,
+             phone_country_code: Optional[str] = None,
+             phone_number: Optional[str] = None,
+             postal_code: Optional[str] = None,
+             province: Optional[str] = None,
+             state: Optional[str] = None,
+             state_inscription: Optional[str] = None,
+             street_name: Optional[str] = None,
+             street_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if address_key is not None:
-            pulumi.set(__self__, "address_key", address_key)
+            _setter("address_key", address_key)
         if city is not None:
-            pulumi.set(__self__, "city", city)
+            _setter("city", city)
         if company_name is not None:
-            pulumi.set(__self__, "company_name", company_name)
+            _setter("company_name", company_name)
         if contributor_class is not None:
-            pulumi.set(__self__, "contributor_class", contributor_class)
+            _setter("contributor_class", contributor_class)
         if country is not None:
-            pulumi.set(__self__, "country", country)
+            _setter("country", country)
         if county is not None:
-            pulumi.set(__self__, "county", county)
+            _setter("county", county)
         if department_name is not None:
-            pulumi.set(__self__, "department_name", department_name)
+            _setter("department_name", department_name)
         if email_address is not None:
-            pulumi.set(__self__, "email_address", email_address)
+            _setter("email_address", email_address)
         if first_name is not None:
-            pulumi.set(__self__, "first_name", first_name)
+            _setter("first_name", first_name)
         if internal_number is not None:
-            pulumi.set(__self__, "internal_number", internal_number)
+            _setter("internal_number", internal_number)
         if job_title is not None:
-            pulumi.set(__self__, "job_title", job_title)
+            _setter("job_title", job_title)
         if last_name is not None:
-            pulumi.set(__self__, "last_name", last_name)
+            _setter("last_name", last_name)
         if line1 is not None:
-            pulumi.set(__self__, "line1", line1)
+            _setter("line1", line1)
         if line2 is not None:
-            pulumi.set(__self__, "line2", line2)
+            _setter("line2", line2)
         if line3 is not None:
-            pulumi.set(__self__, "line3", line3)
+            _setter("line3", line3)
         if line4 is not None:
-            pulumi.set(__self__, "line4", line4)
+            _setter("line4", line4)
         if middle_name is not None:
-            pulumi.set(__self__, "middle_name", middle_name)
+            _setter("middle_name", middle_name)
         if municipal_inscription is not None:
-            pulumi.set(__self__, "municipal_inscription", municipal_inscription)
+            _setter("municipal_inscription", municipal_inscription)
         if phone_country_code is not None:
-            pulumi.set(__self__, "phone_country_code", phone_country_code)
+            _setter("phone_country_code", phone_country_code)
         if phone_number is not None:
-            pulumi.set(__self__, "phone_number", phone_number)
+            _setter("phone_number", phone_number)
         if postal_code is not None:
-            pulumi.set(__self__, "postal_code", postal_code)
+            _setter("postal_code", postal_code)
         if province is not None:
-            pulumi.set(__self__, "province", province)
+            _setter("province", province)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if state_inscription is not None:
-            pulumi.set(__self__, "state_inscription", state_inscription)
+            _setter("state_inscription", state_inscription)
         if street_name is not None:
-            pulumi.set(__self__, "street_name", street_name)
+            _setter("street_name", street_name)
         if street_number is not None:
-            pulumi.set(__self__, "street_number", street_number)
+            _setter("street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
@@ -1790,8 +2065,17 @@ class SubscriptionSubscriptionPaymentGateway(dict):
         """
         :param 'SubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs' merchant_defined_data: (Updatable) Merchant details.
         """
+        SubscriptionSubscriptionPaymentGateway._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            merchant_defined_data=merchant_defined_data,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             merchant_defined_data: Optional['outputs.SubscriptionSubscriptionPaymentGatewayMerchantDefinedData'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if merchant_defined_data is not None:
-            pulumi.set(__self__, "merchant_defined_data", merchant_defined_data)
+            _setter("merchant_defined_data", merchant_defined_data)
 
     @property
     @pulumi.getter(name="merchantDefinedData")
@@ -1830,10 +2114,21 @@ class SubscriptionSubscriptionPaymentGatewayMerchantDefinedData(dict):
         :param str cloud_account_name: (Updatable) Cloud account name.
         :param str promo_type: (Updatable) Promotion type code.
         """
+        SubscriptionSubscriptionPaymentGatewayMerchantDefinedData._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cloud_account_name=cloud_account_name,
+            promo_type=promo_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cloud_account_name: Optional[str] = None,
+             promo_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if cloud_account_name is not None:
-            pulumi.set(__self__, "cloud_account_name", cloud_account_name)
+            _setter("cloud_account_name", cloud_account_name)
         if promo_type is not None:
-            pulumi.set(__self__, "promo_type", promo_type)
+            _setter("promo_type", promo_type)
 
     @property
     @pulumi.getter(name="cloudAccountName")
@@ -1916,27 +2211,56 @@ class SubscriptionSubscriptionPaymentOption(dict):
         :param str wallet_instrument_id: (Updatable) Wallet instrument internal id.
         :param str wallet_transaction_id: (Updatable) Wallet transaction id.
         """
-        pulumi.set(__self__, "payment_method", payment_method)
+        SubscriptionSubscriptionPaymentOption._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            payment_method=payment_method,
+            credit_card_type=credit_card_type,
+            email_address=email_address,
+            ext_billing_agreement_id=ext_billing_agreement_id,
+            first_name=first_name,
+            last_digits=last_digits,
+            last_name=last_name,
+            name_on_card=name_on_card,
+            time_expiration=time_expiration,
+            wallet_instrument_id=wallet_instrument_id,
+            wallet_transaction_id=wallet_transaction_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             payment_method: str,
+             credit_card_type: Optional[str] = None,
+             email_address: Optional[str] = None,
+             ext_billing_agreement_id: Optional[str] = None,
+             first_name: Optional[str] = None,
+             last_digits: Optional[str] = None,
+             last_name: Optional[str] = None,
+             name_on_card: Optional[str] = None,
+             time_expiration: Optional[str] = None,
+             wallet_instrument_id: Optional[str] = None,
+             wallet_transaction_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("payment_method", payment_method)
         if credit_card_type is not None:
-            pulumi.set(__self__, "credit_card_type", credit_card_type)
+            _setter("credit_card_type", credit_card_type)
         if email_address is not None:
-            pulumi.set(__self__, "email_address", email_address)
+            _setter("email_address", email_address)
         if ext_billing_agreement_id is not None:
-            pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
+            _setter("ext_billing_agreement_id", ext_billing_agreement_id)
         if first_name is not None:
-            pulumi.set(__self__, "first_name", first_name)
+            _setter("first_name", first_name)
         if last_digits is not None:
-            pulumi.set(__self__, "last_digits", last_digits)
+            _setter("last_digits", last_digits)
         if last_name is not None:
-            pulumi.set(__self__, "last_name", last_name)
+            _setter("last_name", last_name)
         if name_on_card is not None:
-            pulumi.set(__self__, "name_on_card", name_on_card)
+            _setter("name_on_card", name_on_card)
         if time_expiration is not None:
-            pulumi.set(__self__, "time_expiration", time_expiration)
+            _setter("time_expiration", time_expiration)
         if wallet_instrument_id is not None:
-            pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
+            _setter("wallet_instrument_id", wallet_instrument_id)
         if wallet_transaction_id is not None:
-            pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
+            _setter("wallet_transaction_id", wallet_transaction_id)
 
     @property
     @pulumi.getter(name="paymentMethod")
@@ -2067,16 +2391,33 @@ class SubscriptionSubscriptionTaxInfo(dict):
         :param str tax_payer_id: (Updatable) Tay payer identifier.
         :param str tax_reg_number: (Updatable) Tax registration number.
         """
+        SubscriptionSubscriptionTaxInfo._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            no_tax_reason_code=no_tax_reason_code,
+            no_tax_reason_code_details=no_tax_reason_code_details,
+            tax_cnpj=tax_cnpj,
+            tax_payer_id=tax_payer_id,
+            tax_reg_number=tax_reg_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             no_tax_reason_code: Optional[str] = None,
+             no_tax_reason_code_details: Optional[str] = None,
+             tax_cnpj: Optional[str] = None,
+             tax_payer_id: Optional[str] = None,
+             tax_reg_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if no_tax_reason_code is not None:
-            pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
+            _setter("no_tax_reason_code", no_tax_reason_code)
         if no_tax_reason_code_details is not None:
-            pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
+            _setter("no_tax_reason_code_details", no_tax_reason_code_details)
         if tax_cnpj is not None:
-            pulumi.set(__self__, "tax_cnpj", tax_cnpj)
+            _setter("tax_cnpj", tax_cnpj)
         if tax_payer_id is not None:
-            pulumi.set(__self__, "tax_payer_id", tax_payer_id)
+            _setter("tax_payer_id", tax_payer_id)
         if tax_reg_number is not None:
-            pulumi.set(__self__, "tax_reg_number", tax_reg_number)
+            _setter("tax_reg_number", tax_reg_number)
 
     @property
     @pulumi.getter(name="noTaxReasonCode")
@@ -2159,16 +2500,33 @@ class SubscriptionTaxInfo(dict):
         :param str tax_payer_id: (Updatable) Tay payer identifier.
         :param str tax_reg_number: (Updatable) Tax registration number.
         """
+        SubscriptionTaxInfo._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            no_tax_reason_code=no_tax_reason_code,
+            no_tax_reason_code_details=no_tax_reason_code_details,
+            tax_cnpj=tax_cnpj,
+            tax_payer_id=tax_payer_id,
+            tax_reg_number=tax_reg_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             no_tax_reason_code: Optional[str] = None,
+             no_tax_reason_code_details: Optional[str] = None,
+             tax_cnpj: Optional[str] = None,
+             tax_payer_id: Optional[str] = None,
+             tax_reg_number: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if no_tax_reason_code is not None:
-            pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
+            _setter("no_tax_reason_code", no_tax_reason_code)
         if no_tax_reason_code_details is not None:
-            pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
+            _setter("no_tax_reason_code_details", no_tax_reason_code_details)
         if tax_cnpj is not None:
-            pulumi.set(__self__, "tax_cnpj", tax_cnpj)
+            _setter("tax_cnpj", tax_cnpj)
         if tax_payer_id is not None:
-            pulumi.set(__self__, "tax_payer_id", tax_payer_id)
+            _setter("tax_payer_id", tax_payer_id)
         if tax_reg_number is not None:
-            pulumi.set(__self__, "tax_reg_number", tax_reg_number)
+            _setter("tax_reg_number", tax_reg_number)
 
     @property
     @pulumi.getter(name="noTaxReasonCode")
@@ -2220,8 +2578,19 @@ class GetAddressRuleAddressResult(dict):
         :param Sequence['GetAddressRuleAddressFieldArgs'] fields: Tax type rule fields
         :param str third_party_validation: Third party validation.
         """
-        pulumi.set(__self__, "fields", fields)
-        pulumi.set(__self__, "third_party_validation", third_party_validation)
+        GetAddressRuleAddressResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            fields=fields,
+            third_party_validation=third_party_validation,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             fields: Sequence['outputs.GetAddressRuleAddressFieldResult'],
+             third_party_validation: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("fields", fields)
+        _setter("third_party_validation", third_party_validation)
 
     @property
     @pulumi.getter
@@ -2255,11 +2624,28 @@ class GetAddressRuleAddressFieldResult(dict):
         :param str language: Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
         :param str name: The field name
         """
-        pulumi.set(__self__, "formats", formats)
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "language", language)
-        pulumi.set(__self__, "name", name)
+        GetAddressRuleAddressFieldResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            formats=formats,
+            is_required=is_required,
+            labels=labels,
+            language=language,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             formats: Sequence['outputs.GetAddressRuleAddressFieldFormatResult'],
+             is_required: bool,
+             labels: Sequence['outputs.GetAddressRuleAddressFieldLabelResult'],
+             language: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("formats", formats)
+        _setter("is_required", is_required)
+        _setter("labels", labels)
+        _setter("language", language)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2311,8 +2697,19 @@ class GetAddressRuleAddressFieldFormatResult(dict):
         :param str example: English translation of the label (for reference only - translation is not provided)
         :param str value: Language token of the required label
         """
-        pulumi.set(__self__, "example", example)
-        pulumi.set(__self__, "value", value)
+        GetAddressRuleAddressFieldFormatResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            example=example,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             example: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("example", example)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -2340,8 +2737,19 @@ class GetAddressRuleAddressFieldLabelResult(dict):
         :param str example: English translation of the label (for reference only - translation is not provided)
         :param str value: Language token of the required label
         """
-        pulumi.set(__self__, "example", example)
-        pulumi.set(__self__, "value", value)
+        GetAddressRuleAddressFieldLabelResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            example=example,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             example: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("example", example)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -2367,7 +2775,16 @@ class GetAddressRuleContactResult(dict):
         """
         :param Sequence['GetAddressRuleContactFieldArgs'] fields: Tax type rule fields
         """
-        pulumi.set(__self__, "fields", fields)
+        GetAddressRuleContactResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            fields=fields,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             fields: Sequence['outputs.GetAddressRuleContactFieldResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("fields", fields)
 
     @property
     @pulumi.getter
@@ -2393,11 +2810,28 @@ class GetAddressRuleContactFieldResult(dict):
         :param str language: Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
         :param str name: The field name
         """
-        pulumi.set(__self__, "formats", formats)
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "language", language)
-        pulumi.set(__self__, "name", name)
+        GetAddressRuleContactFieldResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            formats=formats,
+            is_required=is_required,
+            labels=labels,
+            language=language,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             formats: Sequence['outputs.GetAddressRuleContactFieldFormatResult'],
+             is_required: bool,
+             labels: Sequence['outputs.GetAddressRuleContactFieldLabelResult'],
+             language: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("formats", formats)
+        _setter("is_required", is_required)
+        _setter("labels", labels)
+        _setter("language", language)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2449,8 +2883,19 @@ class GetAddressRuleContactFieldFormatResult(dict):
         :param str example: English translation of the label (for reference only - translation is not provided)
         :param str value: Language token of the required label
         """
-        pulumi.set(__self__, "example", example)
-        pulumi.set(__self__, "value", value)
+        GetAddressRuleContactFieldFormatResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            example=example,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             example: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("example", example)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -2478,8 +2923,19 @@ class GetAddressRuleContactFieldLabelResult(dict):
         :param str example: English translation of the label (for reference only - translation is not provided)
         :param str value: Language token of the required label
         """
-        pulumi.set(__self__, "example", example)
-        pulumi.set(__self__, "value", value)
+        GetAddressRuleContactFieldLabelResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            example=example,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             example: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("example", example)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -2505,7 +2961,16 @@ class GetAddressRuleTaxResult(dict):
         """
         :param Sequence['GetAddressRuleTaxFieldArgs'] fields: Tax type rule fields
         """
-        pulumi.set(__self__, "fields", fields)
+        GetAddressRuleTaxResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            fields=fields,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             fields: Sequence['outputs.GetAddressRuleTaxFieldResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("fields", fields)
 
     @property
     @pulumi.getter
@@ -2531,11 +2996,28 @@ class GetAddressRuleTaxFieldResult(dict):
         :param str language: Locale code (rfc4646 format) of a forced language (e.g.: jp addresses require jp always)
         :param str name: The field name
         """
-        pulumi.set(__self__, "formats", formats)
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "language", language)
-        pulumi.set(__self__, "name", name)
+        GetAddressRuleTaxFieldResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            formats=formats,
+            is_required=is_required,
+            labels=labels,
+            language=language,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             formats: Sequence['outputs.GetAddressRuleTaxFieldFormatResult'],
+             is_required: bool,
+             labels: Sequence['outputs.GetAddressRuleTaxFieldLabelResult'],
+             language: str,
+             name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("formats", formats)
+        _setter("is_required", is_required)
+        _setter("labels", labels)
+        _setter("language", language)
+        _setter("name", name)
 
     @property
     @pulumi.getter
@@ -2587,8 +3069,19 @@ class GetAddressRuleTaxFieldFormatResult(dict):
         :param str example: English translation of the label (for reference only - translation is not provided)
         :param str value: Language token of the required label
         """
-        pulumi.set(__self__, "example", example)
-        pulumi.set(__self__, "value", value)
+        GetAddressRuleTaxFieldFormatResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            example=example,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             example: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("example", example)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -2616,8 +3109,19 @@ class GetAddressRuleTaxFieldLabelResult(dict):
         :param str example: English translation of the label (for reference only - translation is not provided)
         :param str value: Language token of the required label
         """
-        pulumi.set(__self__, "example", example)
-        pulumi.set(__self__, "value", value)
+        GetAddressRuleTaxFieldLabelResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            example=example,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             example: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("example", example)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -2669,20 +3173,55 @@ class GetInvoiceBillToAddressResult(dict):
         :param str street_name: Street name
         :param str street_number: House no
         """
-        pulumi.set(__self__, "address_line1", address_line1)
-        pulumi.set(__self__, "address_line2", address_line2)
-        pulumi.set(__self__, "address_line3", address_line3)
-        pulumi.set(__self__, "address_line4", address_line4)
-        pulumi.set(__self__, "city", city)
-        pulumi.set(__self__, "company_name", company_name)
-        pulumi.set(__self__, "contact_name", contact_name)
-        pulumi.set(__self__, "countries", countries)
-        pulumi.set(__self__, "county", county)
-        pulumi.set(__self__, "postal_code", postal_code)
-        pulumi.set(__self__, "province", province)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "street_name", street_name)
-        pulumi.set(__self__, "street_number", street_number)
+        GetInvoiceBillToAddressResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address_line1=address_line1,
+            address_line2=address_line2,
+            address_line3=address_line3,
+            address_line4=address_line4,
+            city=city,
+            company_name=company_name,
+            contact_name=contact_name,
+            countries=countries,
+            county=county,
+            postal_code=postal_code,
+            province=province,
+            state=state,
+            street_name=street_name,
+            street_number=street_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address_line1: str,
+             address_line2: str,
+             address_line3: str,
+             address_line4: str,
+             city: str,
+             company_name: str,
+             contact_name: str,
+             countries: Sequence['outputs.GetInvoiceBillToAddressCountryResult'],
+             county: str,
+             postal_code: str,
+             province: str,
+             state: str,
+             street_name: str,
+             street_number: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("address_line1", address_line1)
+        _setter("address_line2", address_line2)
+        _setter("address_line3", address_line3)
+        _setter("address_line4", address_line4)
+        _setter("city", city)
+        _setter("company_name", company_name)
+        _setter("contact_name", contact_name)
+        _setter("countries", countries)
+        _setter("county", county)
+        _setter("postal_code", postal_code)
+        _setter("province", province)
+        _setter("state", state)
+        _setter("street_name", street_name)
+        _setter("street_number", street_number)
 
     @property
     @pulumi.getter(name="addressLine1")
@@ -2812,11 +3351,28 @@ class GetInvoiceBillToAddressCountryResult(dict):
         :param str country_name: Name of the country
         :param float language_id: Language identifier
         """
-        pulumi.set(__self__, "ascii3country_code", ascii3country_code)
-        pulumi.set(__self__, "country_code", country_code)
-        pulumi.set(__self__, "country_id", country_id)
-        pulumi.set(__self__, "country_name", country_name)
-        pulumi.set(__self__, "language_id", language_id)
+        GetInvoiceBillToAddressCountryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ascii3country_code=ascii3country_code,
+            country_code=country_code,
+            country_id=country_id,
+            country_name=country_name,
+            language_id=language_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ascii3country_code: str,
+             country_code: str,
+             country_id: float,
+             country_name: str,
+             language_id: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ascii3country_code", ascii3country_code)
+        _setter("country_code", country_code)
+        _setter("country_id", country_id)
+        _setter("country_name", country_name)
+        _setter("language_id", language_id)
 
     @property
     @pulumi.getter(name="ascii3countryCode")
@@ -2874,11 +3430,28 @@ class GetInvoiceCurrencyResult(dict):
         :param float round_decimal_point: Round decimal point
         :param float usd_conversion: USD conversion rate of the currency
         """
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "currency_symbol", currency_symbol)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "round_decimal_point", round_decimal_point)
-        pulumi.set(__self__, "usd_conversion", usd_conversion)
+        GetInvoiceCurrencyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            currency_code=currency_code,
+            currency_symbol=currency_symbol,
+            name=name,
+            round_decimal_point=round_decimal_point,
+            usd_conversion=usd_conversion,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             currency_code: str,
+             currency_symbol: str,
+             name: str,
+             round_decimal_point: float,
+             usd_conversion: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("currency_code", currency_code)
+        _setter("currency_symbol", currency_symbol)
+        _setter("name", name)
+        _setter("round_decimal_point", round_decimal_point)
+        _setter("usd_conversion", usd_conversion)
 
     @property
     @pulumi.getter(name="currencyCode")
@@ -2954,20 +3527,55 @@ class GetInvoiceLastPaymentDetailResult(dict):
         :param str time_expiration: Expired date of the credit card
         :param str time_paid_on: Paid the invoice on this day
         """
-        pulumi.set(__self__, "account_number", account_number)
-        pulumi.set(__self__, "amount_paid", amount_paid)
-        pulumi.set(__self__, "card_type", card_type)
-        pulumi.set(__self__, "credit_card_type", credit_card_type)
-        pulumi.set(__self__, "echeck_routing", echeck_routing)
-        pulumi.set(__self__, "last_digits", last_digits)
-        pulumi.set(__self__, "name_on_card", name_on_card)
-        pulumi.set(__self__, "paid_by", paid_by)
-        pulumi.set(__self__, "payment_method", payment_method)
-        pulumi.set(__self__, "paypal_id", paypal_id)
-        pulumi.set(__self__, "paypal_reference", paypal_reference)
-        pulumi.set(__self__, "routing_number", routing_number)
-        pulumi.set(__self__, "time_expiration", time_expiration)
-        pulumi.set(__self__, "time_paid_on", time_paid_on)
+        GetInvoiceLastPaymentDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            account_number=account_number,
+            amount_paid=amount_paid,
+            card_type=card_type,
+            credit_card_type=credit_card_type,
+            echeck_routing=echeck_routing,
+            last_digits=last_digits,
+            name_on_card=name_on_card,
+            paid_by=paid_by,
+            payment_method=payment_method,
+            paypal_id=paypal_id,
+            paypal_reference=paypal_reference,
+            routing_number=routing_number,
+            time_expiration=time_expiration,
+            time_paid_on=time_paid_on,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             account_number: str,
+             amount_paid: float,
+             card_type: str,
+             credit_card_type: str,
+             echeck_routing: str,
+             last_digits: str,
+             name_on_card: str,
+             paid_by: str,
+             payment_method: str,
+             paypal_id: str,
+             paypal_reference: str,
+             routing_number: str,
+             time_expiration: str,
+             time_paid_on: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("account_number", account_number)
+        _setter("amount_paid", amount_paid)
+        _setter("card_type", card_type)
+        _setter("credit_card_type", credit_card_type)
+        _setter("echeck_routing", echeck_routing)
+        _setter("last_digits", last_digits)
+        _setter("name_on_card", name_on_card)
+        _setter("paid_by", paid_by)
+        _setter("payment_method", payment_method)
+        _setter("paypal_id", paypal_id)
+        _setter("paypal_reference", paypal_reference)
+        _setter("routing_number", routing_number)
+        _setter("time_expiration", time_expiration)
+        _setter("time_paid_on", time_paid_on)
 
     @property
     @pulumi.getter(name="accountNumber")
@@ -3091,10 +3699,23 @@ class GetInvoicesFilterResult(dict):
         """
         :param str name: Name of the currency
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetInvoicesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3119,7 +3740,16 @@ class GetInvoicesFilterResult(dict):
 class GetInvoicesInvoiceCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetInvoicesInvoiceCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetInvoicesInvoiceCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetInvoicesInvoiceCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3187,36 +3817,103 @@ class GetInvoicesInvoiceCollectionItemResult(dict):
         :param str time_invoice: Date of invoice
         :param str time_invoice_due: Due date of invoice
         """
-        pulumi.set(__self__, "bill_to_addresses", bill_to_addresses)
-        pulumi.set(__self__, "currencies", currencies)
-        pulumi.set(__self__, "internal_invoice_id", internal_invoice_id)
-        pulumi.set(__self__, "invoice_amount", invoice_amount)
-        pulumi.set(__self__, "invoice_amount_adjusted", invoice_amount_adjusted)
-        pulumi.set(__self__, "invoice_amount_applied", invoice_amount_applied)
-        pulumi.set(__self__, "invoice_amount_credited", invoice_amount_credited)
-        pulumi.set(__self__, "invoice_amount_due", invoice_amount_due)
-        pulumi.set(__self__, "invoice_amount_in_dispute", invoice_amount_in_dispute)
-        pulumi.set(__self__, "invoice_id", invoice_id)
-        pulumi.set(__self__, "invoice_number", invoice_number)
-        pulumi.set(__self__, "invoice_po_number", invoice_po_number)
-        pulumi.set(__self__, "invoice_ref_number", invoice_ref_number)
-        pulumi.set(__self__, "invoice_status", invoice_status)
-        pulumi.set(__self__, "invoice_type", invoice_type)
-        pulumi.set(__self__, "is_credit_card_payable", is_credit_card_payable)
-        pulumi.set(__self__, "is_display_download_pdf", is_display_download_pdf)
-        pulumi.set(__self__, "is_display_view_pdf", is_display_view_pdf)
-        pulumi.set(__self__, "is_paid", is_paid)
-        pulumi.set(__self__, "is_payable", is_payable)
-        pulumi.set(__self__, "is_payment_failed", is_payment_failed)
-        pulumi.set(__self__, "is_pdf_email_available", is_pdf_email_available)
-        pulumi.set(__self__, "last_payment_details", last_payment_details)
-        pulumi.set(__self__, "party_name", party_name)
-        pulumi.set(__self__, "payment_terms", payment_terms)
-        pulumi.set(__self__, "preferred_email", preferred_email)
-        pulumi.set(__self__, "subscription_ids", subscription_ids)
-        pulumi.set(__self__, "tax", tax)
-        pulumi.set(__self__, "time_invoice", time_invoice)
-        pulumi.set(__self__, "time_invoice_due", time_invoice_due)
+        GetInvoicesInvoiceCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bill_to_addresses=bill_to_addresses,
+            currencies=currencies,
+            internal_invoice_id=internal_invoice_id,
+            invoice_amount=invoice_amount,
+            invoice_amount_adjusted=invoice_amount_adjusted,
+            invoice_amount_applied=invoice_amount_applied,
+            invoice_amount_credited=invoice_amount_credited,
+            invoice_amount_due=invoice_amount_due,
+            invoice_amount_in_dispute=invoice_amount_in_dispute,
+            invoice_id=invoice_id,
+            invoice_number=invoice_number,
+            invoice_po_number=invoice_po_number,
+            invoice_ref_number=invoice_ref_number,
+            invoice_status=invoice_status,
+            invoice_type=invoice_type,
+            is_credit_card_payable=is_credit_card_payable,
+            is_display_download_pdf=is_display_download_pdf,
+            is_display_view_pdf=is_display_view_pdf,
+            is_paid=is_paid,
+            is_payable=is_payable,
+            is_payment_failed=is_payment_failed,
+            is_pdf_email_available=is_pdf_email_available,
+            last_payment_details=last_payment_details,
+            party_name=party_name,
+            payment_terms=payment_terms,
+            preferred_email=preferred_email,
+            subscription_ids=subscription_ids,
+            tax=tax,
+            time_invoice=time_invoice,
+            time_invoice_due=time_invoice_due,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bill_to_addresses: Sequence['outputs.GetInvoicesInvoiceCollectionItemBillToAddressResult'],
+             currencies: Sequence['outputs.GetInvoicesInvoiceCollectionItemCurrencyResult'],
+             internal_invoice_id: str,
+             invoice_amount: float,
+             invoice_amount_adjusted: float,
+             invoice_amount_applied: float,
+             invoice_amount_credited: float,
+             invoice_amount_due: float,
+             invoice_amount_in_dispute: float,
+             invoice_id: str,
+             invoice_number: str,
+             invoice_po_number: str,
+             invoice_ref_number: str,
+             invoice_status: str,
+             invoice_type: str,
+             is_credit_card_payable: bool,
+             is_display_download_pdf: bool,
+             is_display_view_pdf: bool,
+             is_paid: bool,
+             is_payable: bool,
+             is_payment_failed: bool,
+             is_pdf_email_available: bool,
+             last_payment_details: Sequence['outputs.GetInvoicesInvoiceCollectionItemLastPaymentDetailResult'],
+             party_name: str,
+             payment_terms: str,
+             preferred_email: str,
+             subscription_ids: Sequence[str],
+             tax: float,
+             time_invoice: str,
+             time_invoice_due: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bill_to_addresses", bill_to_addresses)
+        _setter("currencies", currencies)
+        _setter("internal_invoice_id", internal_invoice_id)
+        _setter("invoice_amount", invoice_amount)
+        _setter("invoice_amount_adjusted", invoice_amount_adjusted)
+        _setter("invoice_amount_applied", invoice_amount_applied)
+        _setter("invoice_amount_credited", invoice_amount_credited)
+        _setter("invoice_amount_due", invoice_amount_due)
+        _setter("invoice_amount_in_dispute", invoice_amount_in_dispute)
+        _setter("invoice_id", invoice_id)
+        _setter("invoice_number", invoice_number)
+        _setter("invoice_po_number", invoice_po_number)
+        _setter("invoice_ref_number", invoice_ref_number)
+        _setter("invoice_status", invoice_status)
+        _setter("invoice_type", invoice_type)
+        _setter("is_credit_card_payable", is_credit_card_payable)
+        _setter("is_display_download_pdf", is_display_download_pdf)
+        _setter("is_display_view_pdf", is_display_view_pdf)
+        _setter("is_paid", is_paid)
+        _setter("is_payable", is_payable)
+        _setter("is_payment_failed", is_payment_failed)
+        _setter("is_pdf_email_available", is_pdf_email_available)
+        _setter("last_payment_details", last_payment_details)
+        _setter("party_name", party_name)
+        _setter("payment_terms", payment_terms)
+        _setter("preferred_email", preferred_email)
+        _setter("subscription_ids", subscription_ids)
+        _setter("tax", tax)
+        _setter("time_invoice", time_invoice)
+        _setter("time_invoice_due", time_invoice_due)
 
     @property
     @pulumi.getter(name="billToAddresses")
@@ -3477,20 +4174,55 @@ class GetInvoicesInvoiceCollectionItemBillToAddressResult(dict):
         :param str street_name: Street name
         :param str street_number: House no
         """
-        pulumi.set(__self__, "address_line1", address_line1)
-        pulumi.set(__self__, "address_line2", address_line2)
-        pulumi.set(__self__, "address_line3", address_line3)
-        pulumi.set(__self__, "address_line4", address_line4)
-        pulumi.set(__self__, "city", city)
-        pulumi.set(__self__, "company_name", company_name)
-        pulumi.set(__self__, "contact_name", contact_name)
-        pulumi.set(__self__, "countries", countries)
-        pulumi.set(__self__, "county", county)
-        pulumi.set(__self__, "postal_code", postal_code)
-        pulumi.set(__self__, "province", province)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "street_name", street_name)
-        pulumi.set(__self__, "street_number", street_number)
+        GetInvoicesInvoiceCollectionItemBillToAddressResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address_line1=address_line1,
+            address_line2=address_line2,
+            address_line3=address_line3,
+            address_line4=address_line4,
+            city=city,
+            company_name=company_name,
+            contact_name=contact_name,
+            countries=countries,
+            county=county,
+            postal_code=postal_code,
+            province=province,
+            state=state,
+            street_name=street_name,
+            street_number=street_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address_line1: str,
+             address_line2: str,
+             address_line3: str,
+             address_line4: str,
+             city: str,
+             company_name: str,
+             contact_name: str,
+             countries: Sequence['outputs.GetInvoicesInvoiceCollectionItemBillToAddressCountryResult'],
+             county: str,
+             postal_code: str,
+             province: str,
+             state: str,
+             street_name: str,
+             street_number: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("address_line1", address_line1)
+        _setter("address_line2", address_line2)
+        _setter("address_line3", address_line3)
+        _setter("address_line4", address_line4)
+        _setter("city", city)
+        _setter("company_name", company_name)
+        _setter("contact_name", contact_name)
+        _setter("countries", countries)
+        _setter("county", county)
+        _setter("postal_code", postal_code)
+        _setter("province", province)
+        _setter("state", state)
+        _setter("street_name", street_name)
+        _setter("street_number", street_number)
 
     @property
     @pulumi.getter(name="addressLine1")
@@ -3620,11 +4352,28 @@ class GetInvoicesInvoiceCollectionItemBillToAddressCountryResult(dict):
         :param str country_name: Name of the country
         :param float language_id: Language identifier
         """
-        pulumi.set(__self__, "ascii3country_code", ascii3country_code)
-        pulumi.set(__self__, "country_code", country_code)
-        pulumi.set(__self__, "country_id", country_id)
-        pulumi.set(__self__, "country_name", country_name)
-        pulumi.set(__self__, "language_id", language_id)
+        GetInvoicesInvoiceCollectionItemBillToAddressCountryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ascii3country_code=ascii3country_code,
+            country_code=country_code,
+            country_id=country_id,
+            country_name=country_name,
+            language_id=language_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ascii3country_code: str,
+             country_code: str,
+             country_id: float,
+             country_name: str,
+             language_id: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ascii3country_code", ascii3country_code)
+        _setter("country_code", country_code)
+        _setter("country_id", country_id)
+        _setter("country_name", country_name)
+        _setter("language_id", language_id)
 
     @property
     @pulumi.getter(name="ascii3countryCode")
@@ -3682,11 +4431,28 @@ class GetInvoicesInvoiceCollectionItemCurrencyResult(dict):
         :param float round_decimal_point: Round decimal point
         :param float usd_conversion: USD conversion rate of the currency
         """
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "currency_symbol", currency_symbol)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "round_decimal_point", round_decimal_point)
-        pulumi.set(__self__, "usd_conversion", usd_conversion)
+        GetInvoicesInvoiceCollectionItemCurrencyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            currency_code=currency_code,
+            currency_symbol=currency_symbol,
+            name=name,
+            round_decimal_point=round_decimal_point,
+            usd_conversion=usd_conversion,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             currency_code: str,
+             currency_symbol: str,
+             name: str,
+             round_decimal_point: float,
+             usd_conversion: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("currency_code", currency_code)
+        _setter("currency_symbol", currency_symbol)
+        _setter("name", name)
+        _setter("round_decimal_point", round_decimal_point)
+        _setter("usd_conversion", usd_conversion)
 
     @property
     @pulumi.getter(name="currencyCode")
@@ -3762,20 +4528,55 @@ class GetInvoicesInvoiceCollectionItemLastPaymentDetailResult(dict):
         :param str time_expiration: Expired date of the credit card
         :param str time_paid_on: Paid the invoice on this day
         """
-        pulumi.set(__self__, "account_number", account_number)
-        pulumi.set(__self__, "amount_paid", amount_paid)
-        pulumi.set(__self__, "card_type", card_type)
-        pulumi.set(__self__, "credit_card_type", credit_card_type)
-        pulumi.set(__self__, "echeck_routing", echeck_routing)
-        pulumi.set(__self__, "last_digits", last_digits)
-        pulumi.set(__self__, "name_on_card", name_on_card)
-        pulumi.set(__self__, "paid_by", paid_by)
-        pulumi.set(__self__, "payment_method", payment_method)
-        pulumi.set(__self__, "paypal_id", paypal_id)
-        pulumi.set(__self__, "paypal_reference", paypal_reference)
-        pulumi.set(__self__, "routing_number", routing_number)
-        pulumi.set(__self__, "time_expiration", time_expiration)
-        pulumi.set(__self__, "time_paid_on", time_paid_on)
+        GetInvoicesInvoiceCollectionItemLastPaymentDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            account_number=account_number,
+            amount_paid=amount_paid,
+            card_type=card_type,
+            credit_card_type=credit_card_type,
+            echeck_routing=echeck_routing,
+            last_digits=last_digits,
+            name_on_card=name_on_card,
+            paid_by=paid_by,
+            payment_method=payment_method,
+            paypal_id=paypal_id,
+            paypal_reference=paypal_reference,
+            routing_number=routing_number,
+            time_expiration=time_expiration,
+            time_paid_on=time_paid_on,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             account_number: str,
+             amount_paid: float,
+             card_type: str,
+             credit_card_type: str,
+             echeck_routing: str,
+             last_digits: str,
+             name_on_card: str,
+             paid_by: str,
+             payment_method: str,
+             paypal_id: str,
+             paypal_reference: str,
+             routing_number: str,
+             time_expiration: str,
+             time_paid_on: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("account_number", account_number)
+        _setter("amount_paid", amount_paid)
+        _setter("card_type", card_type)
+        _setter("credit_card_type", credit_card_type)
+        _setter("echeck_routing", echeck_routing)
+        _setter("last_digits", last_digits)
+        _setter("name_on_card", name_on_card)
+        _setter("paid_by", paid_by)
+        _setter("payment_method", payment_method)
+        _setter("paypal_id", paypal_id)
+        _setter("paypal_reference", paypal_reference)
+        _setter("routing_number", routing_number)
+        _setter("time_expiration", time_expiration)
+        _setter("time_paid_on", time_paid_on)
 
     @property
     @pulumi.getter(name="accountNumber")
@@ -3913,15 +4714,40 @@ class GetInvoicesInvoiceLineItemResult(dict):
         :param str time_start: Start date
         :param float total_price: Total price of the ordered product (Net unit price x quantity)
         """
-        pulumi.set(__self__, "currencies", currencies)
-        pulumi.set(__self__, "net_unit_price", net_unit_price)
-        pulumi.set(__self__, "order_no", order_no)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "product", product)
-        pulumi.set(__self__, "quantity", quantity)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
-        pulumi.set(__self__, "total_price", total_price)
+        GetInvoicesInvoiceLineItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            currencies=currencies,
+            net_unit_price=net_unit_price,
+            order_no=order_no,
+            part_number=part_number,
+            product=product,
+            quantity=quantity,
+            time_end=time_end,
+            time_start=time_start,
+            total_price=total_price,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             currencies: Sequence['outputs.GetInvoicesInvoiceLineItemCurrencyResult'],
+             net_unit_price: float,
+             order_no: str,
+             part_number: str,
+             product: str,
+             quantity: float,
+             time_end: str,
+             time_start: str,
+             total_price: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("currencies", currencies)
+        _setter("net_unit_price", net_unit_price)
+        _setter("order_no", order_no)
+        _setter("part_number", part_number)
+        _setter("product", product)
+        _setter("quantity", quantity)
+        _setter("time_end", time_end)
+        _setter("time_start", time_start)
+        _setter("total_price", total_price)
 
     @property
     @pulumi.getter
@@ -4011,11 +4837,28 @@ class GetInvoicesInvoiceLineItemCurrencyResult(dict):
         :param float round_decimal_point: Round decimal point
         :param float usd_conversion: USD conversion rate of the currency
         """
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "currency_symbol", currency_symbol)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "round_decimal_point", round_decimal_point)
-        pulumi.set(__self__, "usd_conversion", usd_conversion)
+        GetInvoicesInvoiceLineItemCurrencyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            currency_code=currency_code,
+            currency_symbol=currency_symbol,
+            name=name,
+            round_decimal_point=round_decimal_point,
+            usd_conversion=usd_conversion,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             currency_code: str,
+             currency_symbol: str,
+             name: str,
+             round_decimal_point: float,
+             usd_conversion: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("currency_code", currency_code)
+        _setter("currency_symbol", currency_symbol)
+        _setter("name", name)
+        _setter("round_decimal_point", round_decimal_point)
+        _setter("usd_conversion", usd_conversion)
 
     @property
     @pulumi.getter(name="currencyCode")
@@ -4067,10 +4910,23 @@ class GetInvoicesInvoiceLinesFilterResult(dict):
         """
         :param str name: Name of the currency
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetInvoicesInvoiceLinesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4098,7 +4954,16 @@ class GetInvoicesInvoiceLinesInvoiceLineCollectionResult(dict):
         """
         :param Sequence['GetInvoicesInvoiceLinesInvoiceLineCollectionItemArgs'] items: Invoice line list elements
         """
-        pulumi.set(__self__, "items", items)
+        GetInvoicesInvoiceLinesInvoiceLineCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetInvoicesInvoiceLinesInvoiceLineCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -4132,15 +4997,40 @@ class GetInvoicesInvoiceLinesInvoiceLineCollectionItemResult(dict):
         :param str time_start: Start date
         :param float total_price: Total price of the ordered product (Net unit price x quantity)
         """
-        pulumi.set(__self__, "currencies", currencies)
-        pulumi.set(__self__, "net_unit_price", net_unit_price)
-        pulumi.set(__self__, "order_no", order_no)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "product", product)
-        pulumi.set(__self__, "quantity", quantity)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
-        pulumi.set(__self__, "total_price", total_price)
+        GetInvoicesInvoiceLinesInvoiceLineCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            currencies=currencies,
+            net_unit_price=net_unit_price,
+            order_no=order_no,
+            part_number=part_number,
+            product=product,
+            quantity=quantity,
+            time_end=time_end,
+            time_start=time_start,
+            total_price=total_price,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             currencies: Sequence['outputs.GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyResult'],
+             net_unit_price: float,
+             order_no: str,
+             part_number: str,
+             product: str,
+             quantity: float,
+             time_end: str,
+             time_start: str,
+             total_price: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("currencies", currencies)
+        _setter("net_unit_price", net_unit_price)
+        _setter("order_no", order_no)
+        _setter("part_number", part_number)
+        _setter("product", product)
+        _setter("quantity", quantity)
+        _setter("time_end", time_end)
+        _setter("time_start", time_start)
+        _setter("total_price", total_price)
 
     @property
     @pulumi.getter
@@ -4230,11 +5120,28 @@ class GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyResult(dict):
         :param float round_decimal_point: Round decimal point
         :param float usd_conversion: USD conversion rate of the currency
         """
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "currency_symbol", currency_symbol)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "round_decimal_point", round_decimal_point)
-        pulumi.set(__self__, "usd_conversion", usd_conversion)
+        GetInvoicesInvoiceLinesInvoiceLineCollectionItemCurrencyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            currency_code=currency_code,
+            currency_symbol=currency_symbol,
+            name=name,
+            round_decimal_point=round_decimal_point,
+            usd_conversion=usd_conversion,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             currency_code: str,
+             currency_symbol: str,
+             name: str,
+             round_decimal_point: float,
+             usd_conversion: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("currency_code", currency_code)
+        _setter("currency_symbol", currency_symbol)
+        _setter("name", name)
+        _setter("round_decimal_point", round_decimal_point)
+        _setter("usd_conversion", usd_conversion)
 
     @property
     @pulumi.getter(name="currencyCode")
@@ -4334,32 +5241,91 @@ class GetSubscriptionBillingAddressResult(dict):
         :param str street_name: Street name of the address.
         :param str street_number: Street number of the address.
         """
-        pulumi.set(__self__, "address_key", address_key)
-        pulumi.set(__self__, "city", city)
-        pulumi.set(__self__, "company_name", company_name)
-        pulumi.set(__self__, "contributor_class", contributor_class)
-        pulumi.set(__self__, "country", country)
-        pulumi.set(__self__, "county", county)
-        pulumi.set(__self__, "department_name", department_name)
-        pulumi.set(__self__, "email_address", email_address)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "internal_number", internal_number)
-        pulumi.set(__self__, "job_title", job_title)
-        pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "line1", line1)
-        pulumi.set(__self__, "line2", line2)
-        pulumi.set(__self__, "line3", line3)
-        pulumi.set(__self__, "line4", line4)
-        pulumi.set(__self__, "middle_name", middle_name)
-        pulumi.set(__self__, "municipal_inscription", municipal_inscription)
-        pulumi.set(__self__, "phone_country_code", phone_country_code)
-        pulumi.set(__self__, "phone_number", phone_number)
-        pulumi.set(__self__, "postal_code", postal_code)
-        pulumi.set(__self__, "province", province)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "state_inscription", state_inscription)
-        pulumi.set(__self__, "street_name", street_name)
-        pulumi.set(__self__, "street_number", street_number)
+        GetSubscriptionBillingAddressResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address_key=address_key,
+            city=city,
+            company_name=company_name,
+            contributor_class=contributor_class,
+            country=country,
+            county=county,
+            department_name=department_name,
+            email_address=email_address,
+            first_name=first_name,
+            internal_number=internal_number,
+            job_title=job_title,
+            last_name=last_name,
+            line1=line1,
+            line2=line2,
+            line3=line3,
+            line4=line4,
+            middle_name=middle_name,
+            municipal_inscription=municipal_inscription,
+            phone_country_code=phone_country_code,
+            phone_number=phone_number,
+            postal_code=postal_code,
+            province=province,
+            state=state,
+            state_inscription=state_inscription,
+            street_name=street_name,
+            street_number=street_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address_key: str,
+             city: str,
+             company_name: str,
+             contributor_class: str,
+             country: str,
+             county: str,
+             department_name: str,
+             email_address: str,
+             first_name: str,
+             internal_number: str,
+             job_title: str,
+             last_name: str,
+             line1: str,
+             line2: str,
+             line3: str,
+             line4: str,
+             middle_name: str,
+             municipal_inscription: str,
+             phone_country_code: str,
+             phone_number: str,
+             postal_code: str,
+             province: str,
+             state: str,
+             state_inscription: str,
+             street_name: str,
+             street_number: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("address_key", address_key)
+        _setter("city", city)
+        _setter("company_name", company_name)
+        _setter("contributor_class", contributor_class)
+        _setter("country", country)
+        _setter("county", county)
+        _setter("department_name", department_name)
+        _setter("email_address", email_address)
+        _setter("first_name", first_name)
+        _setter("internal_number", internal_number)
+        _setter("job_title", job_title)
+        _setter("last_name", last_name)
+        _setter("line1", line1)
+        _setter("line2", line2)
+        _setter("line3", line3)
+        _setter("line4", line4)
+        _setter("middle_name", middle_name)
+        _setter("municipal_inscription", municipal_inscription)
+        _setter("phone_country_code", phone_country_code)
+        _setter("phone_number", phone_number)
+        _setter("postal_code", postal_code)
+        _setter("province", province)
+        _setter("state", state)
+        _setter("state_inscription", state_inscription)
+        _setter("street_name", street_name)
+        _setter("street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
@@ -4577,7 +5543,16 @@ class GetSubscriptionPaymentGatewayResult(dict):
         """
         :param Sequence['GetSubscriptionPaymentGatewayMerchantDefinedDataArgs'] merchant_defined_datas: Merchant details.
         """
-        pulumi.set(__self__, "merchant_defined_datas", merchant_defined_datas)
+        GetSubscriptionPaymentGatewayResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            merchant_defined_datas=merchant_defined_datas,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             merchant_defined_datas: Sequence['outputs.GetSubscriptionPaymentGatewayMerchantDefinedDataResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("merchant_defined_datas", merchant_defined_datas)
 
     @property
     @pulumi.getter(name="merchantDefinedDatas")
@@ -4597,8 +5572,19 @@ class GetSubscriptionPaymentGatewayMerchantDefinedDataResult(dict):
         :param str cloud_account_name: Cloud account name.
         :param str promo_type: Promotion type code.
         """
-        pulumi.set(__self__, "cloud_account_name", cloud_account_name)
-        pulumi.set(__self__, "promo_type", promo_type)
+        GetSubscriptionPaymentGatewayMerchantDefinedDataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cloud_account_name=cloud_account_name,
+            promo_type=promo_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cloud_account_name: str,
+             promo_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cloud_account_name", cloud_account_name)
+        _setter("promo_type", promo_type)
 
     @property
     @pulumi.getter(name="cloudAccountName")
@@ -4644,17 +5630,46 @@ class GetSubscriptionPaymentOptionResult(dict):
         :param str wallet_instrument_id: Wallet instrument internal id.
         :param str wallet_transaction_id: Wallet transaction id.
         """
-        pulumi.set(__self__, "credit_card_type", credit_card_type)
-        pulumi.set(__self__, "email_address", email_address)
-        pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "last_digits", last_digits)
-        pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "name_on_card", name_on_card)
-        pulumi.set(__self__, "payment_method", payment_method)
-        pulumi.set(__self__, "time_expiration", time_expiration)
-        pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
-        pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
+        GetSubscriptionPaymentOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credit_card_type=credit_card_type,
+            email_address=email_address,
+            ext_billing_agreement_id=ext_billing_agreement_id,
+            first_name=first_name,
+            last_digits=last_digits,
+            last_name=last_name,
+            name_on_card=name_on_card,
+            payment_method=payment_method,
+            time_expiration=time_expiration,
+            wallet_instrument_id=wallet_instrument_id,
+            wallet_transaction_id=wallet_transaction_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credit_card_type: str,
+             email_address: str,
+             ext_billing_agreement_id: str,
+             first_name: str,
+             last_digits: str,
+             last_name: str,
+             name_on_card: str,
+             payment_method: str,
+             time_expiration: str,
+             wallet_instrument_id: str,
+             wallet_transaction_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credit_card_type", credit_card_type)
+        _setter("email_address", email_address)
+        _setter("ext_billing_agreement_id", ext_billing_agreement_id)
+        _setter("first_name", first_name)
+        _setter("last_digits", last_digits)
+        _setter("last_name", last_name)
+        _setter("name_on_card", name_on_card)
+        _setter("payment_method", payment_method)
+        _setter("time_expiration", time_expiration)
+        _setter("wallet_instrument_id", wallet_instrument_id)
+        _setter("wallet_transaction_id", wallet_transaction_id)
 
     @property
     @pulumi.getter(name="creditCardType")
@@ -4792,27 +5807,76 @@ class GetSubscriptionSubscriptionResult(dict):
         :param str upgrade_state: Status of the upgrade.
         :param str upgrade_state_details: This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
         """
-        pulumi.set(__self__, "account_type", account_type)
-        pulumi.set(__self__, "bill_to_cust_account_id", bill_to_cust_account_id)
-        pulumi.set(__self__, "billing_addresses", billing_addresses)
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "gsi_org_code", gsi_org_code)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
-        pulumi.set(__self__, "language_code", language_code)
-        pulumi.set(__self__, "organization_id", organization_id)
-        pulumi.set(__self__, "payment_gateways", payment_gateways)
-        pulumi.set(__self__, "payment_options", payment_options)
-        pulumi.set(__self__, "plan_type", plan_type)
-        pulumi.set(__self__, "ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
-        pulumi.set(__self__, "ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
-        pulumi.set(__self__, "subscription_plan_number", subscription_plan_number)
-        pulumi.set(__self__, "tax_infos", tax_infos)
-        pulumi.set(__self__, "time_personal_to_corporate_conv", time_personal_to_corporate_conv)
-        pulumi.set(__self__, "time_plan_upgrade", time_plan_upgrade)
-        pulumi.set(__self__, "time_start", time_start)
-        pulumi.set(__self__, "upgrade_state", upgrade_state)
-        pulumi.set(__self__, "upgrade_state_details", upgrade_state_details)
+        GetSubscriptionSubscriptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            account_type=account_type,
+            bill_to_cust_account_id=bill_to_cust_account_id,
+            billing_addresses=billing_addresses,
+            currency_code=currency_code,
+            gsi_org_code=gsi_org_code,
+            id=id,
+            is_intent_to_pay=is_intent_to_pay,
+            language_code=language_code,
+            organization_id=organization_id,
+            payment_gateways=payment_gateways,
+            payment_options=payment_options,
+            plan_type=plan_type,
+            ship_to_cust_acct_role_id=ship_to_cust_acct_role_id,
+            ship_to_cust_acct_site_id=ship_to_cust_acct_site_id,
+            subscription_plan_number=subscription_plan_number,
+            tax_infos=tax_infos,
+            time_personal_to_corporate_conv=time_personal_to_corporate_conv,
+            time_plan_upgrade=time_plan_upgrade,
+            time_start=time_start,
+            upgrade_state=upgrade_state,
+            upgrade_state_details=upgrade_state_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             account_type: str,
+             bill_to_cust_account_id: str,
+             billing_addresses: Sequence['outputs.GetSubscriptionSubscriptionBillingAddressResult'],
+             currency_code: str,
+             gsi_org_code: str,
+             id: str,
+             is_intent_to_pay: bool,
+             language_code: str,
+             organization_id: str,
+             payment_gateways: Sequence['outputs.GetSubscriptionSubscriptionPaymentGatewayResult'],
+             payment_options: Sequence['outputs.GetSubscriptionSubscriptionPaymentOptionResult'],
+             plan_type: str,
+             ship_to_cust_acct_role_id: str,
+             ship_to_cust_acct_site_id: str,
+             subscription_plan_number: str,
+             tax_infos: Sequence['outputs.GetSubscriptionSubscriptionTaxInfoResult'],
+             time_personal_to_corporate_conv: str,
+             time_plan_upgrade: str,
+             time_start: str,
+             upgrade_state: str,
+             upgrade_state_details: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("account_type", account_type)
+        _setter("bill_to_cust_account_id", bill_to_cust_account_id)
+        _setter("billing_addresses", billing_addresses)
+        _setter("currency_code", currency_code)
+        _setter("gsi_org_code", gsi_org_code)
+        _setter("id", id)
+        _setter("is_intent_to_pay", is_intent_to_pay)
+        _setter("language_code", language_code)
+        _setter("organization_id", organization_id)
+        _setter("payment_gateways", payment_gateways)
+        _setter("payment_options", payment_options)
+        _setter("plan_type", plan_type)
+        _setter("ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
+        _setter("ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
+        _setter("subscription_plan_number", subscription_plan_number)
+        _setter("tax_infos", tax_infos)
+        _setter("time_personal_to_corporate_conv", time_personal_to_corporate_conv)
+        _setter("time_plan_upgrade", time_plan_upgrade)
+        _setter("time_start", time_start)
+        _setter("upgrade_state", upgrade_state)
+        _setter("upgrade_state_details", upgrade_state_details)
 
     @property
     @pulumi.getter(name="accountType")
@@ -5040,32 +6104,91 @@ class GetSubscriptionSubscriptionBillingAddressResult(dict):
         :param str street_name: Street name of the address.
         :param str street_number: Street number of the address.
         """
-        pulumi.set(__self__, "address_key", address_key)
-        pulumi.set(__self__, "city", city)
-        pulumi.set(__self__, "company_name", company_name)
-        pulumi.set(__self__, "contributor_class", contributor_class)
-        pulumi.set(__self__, "country", country)
-        pulumi.set(__self__, "county", county)
-        pulumi.set(__self__, "department_name", department_name)
-        pulumi.set(__self__, "email_address", email_address)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "internal_number", internal_number)
-        pulumi.set(__self__, "job_title", job_title)
-        pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "line1", line1)
-        pulumi.set(__self__, "line2", line2)
-        pulumi.set(__self__, "line3", line3)
-        pulumi.set(__self__, "line4", line4)
-        pulumi.set(__self__, "middle_name", middle_name)
-        pulumi.set(__self__, "municipal_inscription", municipal_inscription)
-        pulumi.set(__self__, "phone_country_code", phone_country_code)
-        pulumi.set(__self__, "phone_number", phone_number)
-        pulumi.set(__self__, "postal_code", postal_code)
-        pulumi.set(__self__, "province", province)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "state_inscription", state_inscription)
-        pulumi.set(__self__, "street_name", street_name)
-        pulumi.set(__self__, "street_number", street_number)
+        GetSubscriptionSubscriptionBillingAddressResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address_key=address_key,
+            city=city,
+            company_name=company_name,
+            contributor_class=contributor_class,
+            country=country,
+            county=county,
+            department_name=department_name,
+            email_address=email_address,
+            first_name=first_name,
+            internal_number=internal_number,
+            job_title=job_title,
+            last_name=last_name,
+            line1=line1,
+            line2=line2,
+            line3=line3,
+            line4=line4,
+            middle_name=middle_name,
+            municipal_inscription=municipal_inscription,
+            phone_country_code=phone_country_code,
+            phone_number=phone_number,
+            postal_code=postal_code,
+            province=province,
+            state=state,
+            state_inscription=state_inscription,
+            street_name=street_name,
+            street_number=street_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address_key: str,
+             city: str,
+             company_name: str,
+             contributor_class: str,
+             country: str,
+             county: str,
+             department_name: str,
+             email_address: str,
+             first_name: str,
+             internal_number: str,
+             job_title: str,
+             last_name: str,
+             line1: str,
+             line2: str,
+             line3: str,
+             line4: str,
+             middle_name: str,
+             municipal_inscription: str,
+             phone_country_code: str,
+             phone_number: str,
+             postal_code: str,
+             province: str,
+             state: str,
+             state_inscription: str,
+             street_name: str,
+             street_number: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("address_key", address_key)
+        _setter("city", city)
+        _setter("company_name", company_name)
+        _setter("contributor_class", contributor_class)
+        _setter("country", country)
+        _setter("county", county)
+        _setter("department_name", department_name)
+        _setter("email_address", email_address)
+        _setter("first_name", first_name)
+        _setter("internal_number", internal_number)
+        _setter("job_title", job_title)
+        _setter("last_name", last_name)
+        _setter("line1", line1)
+        _setter("line2", line2)
+        _setter("line3", line3)
+        _setter("line4", line4)
+        _setter("middle_name", middle_name)
+        _setter("municipal_inscription", municipal_inscription)
+        _setter("phone_country_code", phone_country_code)
+        _setter("phone_number", phone_number)
+        _setter("postal_code", postal_code)
+        _setter("province", province)
+        _setter("state", state)
+        _setter("state_inscription", state_inscription)
+        _setter("street_name", street_name)
+        _setter("street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
@@ -5283,7 +6406,16 @@ class GetSubscriptionSubscriptionPaymentGatewayResult(dict):
         """
         :param Sequence['GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataArgs'] merchant_defined_datas: Merchant details.
         """
-        pulumi.set(__self__, "merchant_defined_datas", merchant_defined_datas)
+        GetSubscriptionSubscriptionPaymentGatewayResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            merchant_defined_datas=merchant_defined_datas,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             merchant_defined_datas: Sequence['outputs.GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("merchant_defined_datas", merchant_defined_datas)
 
     @property
     @pulumi.getter(name="merchantDefinedDatas")
@@ -5303,8 +6435,19 @@ class GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataResult(dict):
         :param str cloud_account_name: Cloud account name.
         :param str promo_type: Promotion type code.
         """
-        pulumi.set(__self__, "cloud_account_name", cloud_account_name)
-        pulumi.set(__self__, "promo_type", promo_type)
+        GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedDataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cloud_account_name=cloud_account_name,
+            promo_type=promo_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cloud_account_name: str,
+             promo_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cloud_account_name", cloud_account_name)
+        _setter("promo_type", promo_type)
 
     @property
     @pulumi.getter(name="cloudAccountName")
@@ -5350,17 +6493,46 @@ class GetSubscriptionSubscriptionPaymentOptionResult(dict):
         :param str wallet_instrument_id: Wallet instrument internal id.
         :param str wallet_transaction_id: Wallet transaction id.
         """
-        pulumi.set(__self__, "credit_card_type", credit_card_type)
-        pulumi.set(__self__, "email_address", email_address)
-        pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "last_digits", last_digits)
-        pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "name_on_card", name_on_card)
-        pulumi.set(__self__, "payment_method", payment_method)
-        pulumi.set(__self__, "time_expiration", time_expiration)
-        pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
-        pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
+        GetSubscriptionSubscriptionPaymentOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credit_card_type=credit_card_type,
+            email_address=email_address,
+            ext_billing_agreement_id=ext_billing_agreement_id,
+            first_name=first_name,
+            last_digits=last_digits,
+            last_name=last_name,
+            name_on_card=name_on_card,
+            payment_method=payment_method,
+            time_expiration=time_expiration,
+            wallet_instrument_id=wallet_instrument_id,
+            wallet_transaction_id=wallet_transaction_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credit_card_type: str,
+             email_address: str,
+             ext_billing_agreement_id: str,
+             first_name: str,
+             last_digits: str,
+             last_name: str,
+             name_on_card: str,
+             payment_method: str,
+             time_expiration: str,
+             wallet_instrument_id: str,
+             wallet_transaction_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credit_card_type", credit_card_type)
+        _setter("email_address", email_address)
+        _setter("ext_billing_agreement_id", ext_billing_agreement_id)
+        _setter("first_name", first_name)
+        _setter("last_digits", last_digits)
+        _setter("last_name", last_name)
+        _setter("name_on_card", name_on_card)
+        _setter("payment_method", payment_method)
+        _setter("time_expiration", time_expiration)
+        _setter("wallet_instrument_id", wallet_instrument_id)
+        _setter("wallet_transaction_id", wallet_transaction_id)
 
     @property
     @pulumi.getter(name="creditCardType")
@@ -5466,11 +6638,28 @@ class GetSubscriptionSubscriptionTaxInfoResult(dict):
         :param str tax_payer_id: Tay payer identifier.
         :param str tax_reg_number: Tax registration number.
         """
-        pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
-        pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
-        pulumi.set(__self__, "tax_cnpj", tax_cnpj)
-        pulumi.set(__self__, "tax_payer_id", tax_payer_id)
-        pulumi.set(__self__, "tax_reg_number", tax_reg_number)
+        GetSubscriptionSubscriptionTaxInfoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            no_tax_reason_code=no_tax_reason_code,
+            no_tax_reason_code_details=no_tax_reason_code_details,
+            tax_cnpj=tax_cnpj,
+            tax_payer_id=tax_payer_id,
+            tax_reg_number=tax_reg_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             no_tax_reason_code: str,
+             no_tax_reason_code_details: str,
+             tax_cnpj: str,
+             tax_payer_id: str,
+             tax_reg_number: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("no_tax_reason_code", no_tax_reason_code)
+        _setter("no_tax_reason_code_details", no_tax_reason_code_details)
+        _setter("tax_cnpj", tax_cnpj)
+        _setter("tax_payer_id", tax_payer_id)
+        _setter("tax_reg_number", tax_reg_number)
 
     @property
     @pulumi.getter(name="noTaxReasonCode")
@@ -5528,11 +6717,28 @@ class GetSubscriptionTaxInfoResult(dict):
         :param str tax_payer_id: Tay payer identifier.
         :param str tax_reg_number: Tax registration number.
         """
-        pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
-        pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
-        pulumi.set(__self__, "tax_cnpj", tax_cnpj)
-        pulumi.set(__self__, "tax_payer_id", tax_payer_id)
-        pulumi.set(__self__, "tax_reg_number", tax_reg_number)
+        GetSubscriptionTaxInfoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            no_tax_reason_code=no_tax_reason_code,
+            no_tax_reason_code_details=no_tax_reason_code_details,
+            tax_cnpj=tax_cnpj,
+            tax_payer_id=tax_payer_id,
+            tax_reg_number=tax_reg_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             no_tax_reason_code: str,
+             no_tax_reason_code_details: str,
+             tax_cnpj: str,
+             tax_payer_id: str,
+             tax_reg_number: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("no_tax_reason_code", no_tax_reason_code)
+        _setter("no_tax_reason_code_details", no_tax_reason_code_details)
+        _setter("tax_cnpj", tax_cnpj)
+        _setter("tax_payer_id", tax_payer_id)
+        _setter("tax_reg_number", tax_reg_number)
 
     @property
     @pulumi.getter(name="noTaxReasonCode")
@@ -5581,10 +6787,23 @@ class GetSubscriptionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSubscriptionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5606,7 +6825,16 @@ class GetSubscriptionsFilterResult(dict):
 class GetSubscriptionsSubscriptionCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetSubscriptionsSubscriptionCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -5668,32 +6896,91 @@ class GetSubscriptionsSubscriptionCollectionItemResult(dict):
         :param str upgrade_state: Status of the upgrade.
         :param str upgrade_state_details: This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
         """
-        pulumi.set(__self__, "account_type", account_type)
-        pulumi.set(__self__, "bill_to_cust_account_id", bill_to_cust_account_id)
-        pulumi.set(__self__, "billing_addresses", billing_addresses)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "email", email)
-        pulumi.set(__self__, "gsi_org_code", gsi_org_code)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
-        pulumi.set(__self__, "language_code", language_code)
-        pulumi.set(__self__, "organization_id", organization_id)
-        pulumi.set(__self__, "osp_home_region", osp_home_region)
-        pulumi.set(__self__, "payment_gateways", payment_gateways)
-        pulumi.set(__self__, "payment_options", payment_options)
-        pulumi.set(__self__, "plan_type", plan_type)
-        pulumi.set(__self__, "ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
-        pulumi.set(__self__, "ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
-        pulumi.set(__self__, "subscription_id", subscription_id)
-        pulumi.set(__self__, "subscription_plan_number", subscription_plan_number)
-        pulumi.set(__self__, "subscriptions", subscriptions)
-        pulumi.set(__self__, "tax_infos", tax_infos)
-        pulumi.set(__self__, "time_personal_to_corporate_conv", time_personal_to_corporate_conv)
-        pulumi.set(__self__, "time_plan_upgrade", time_plan_upgrade)
-        pulumi.set(__self__, "time_start", time_start)
-        pulumi.set(__self__, "upgrade_state", upgrade_state)
-        pulumi.set(__self__, "upgrade_state_details", upgrade_state_details)
+        GetSubscriptionsSubscriptionCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            account_type=account_type,
+            bill_to_cust_account_id=bill_to_cust_account_id,
+            billing_addresses=billing_addresses,
+            compartment_id=compartment_id,
+            currency_code=currency_code,
+            email=email,
+            gsi_org_code=gsi_org_code,
+            id=id,
+            is_intent_to_pay=is_intent_to_pay,
+            language_code=language_code,
+            organization_id=organization_id,
+            osp_home_region=osp_home_region,
+            payment_gateways=payment_gateways,
+            payment_options=payment_options,
+            plan_type=plan_type,
+            ship_to_cust_acct_role_id=ship_to_cust_acct_role_id,
+            ship_to_cust_acct_site_id=ship_to_cust_acct_site_id,
+            subscription_id=subscription_id,
+            subscription_plan_number=subscription_plan_number,
+            subscriptions=subscriptions,
+            tax_infos=tax_infos,
+            time_personal_to_corporate_conv=time_personal_to_corporate_conv,
+            time_plan_upgrade=time_plan_upgrade,
+            time_start=time_start,
+            upgrade_state=upgrade_state,
+            upgrade_state_details=upgrade_state_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             account_type: str,
+             bill_to_cust_account_id: str,
+             billing_addresses: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemBillingAddressResult'],
+             compartment_id: str,
+             currency_code: str,
+             email: str,
+             gsi_org_code: str,
+             id: str,
+             is_intent_to_pay: bool,
+             language_code: str,
+             organization_id: str,
+             osp_home_region: str,
+             payment_gateways: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemPaymentGatewayResult'],
+             payment_options: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemPaymentOptionResult'],
+             plan_type: str,
+             ship_to_cust_acct_role_id: str,
+             ship_to_cust_acct_site_id: str,
+             subscription_id: str,
+             subscription_plan_number: str,
+             subscriptions: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionResult'],
+             tax_infos: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemTaxInfoResult'],
+             time_personal_to_corporate_conv: str,
+             time_plan_upgrade: str,
+             time_start: str,
+             upgrade_state: str,
+             upgrade_state_details: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("account_type", account_type)
+        _setter("bill_to_cust_account_id", bill_to_cust_account_id)
+        _setter("billing_addresses", billing_addresses)
+        _setter("compartment_id", compartment_id)
+        _setter("currency_code", currency_code)
+        _setter("email", email)
+        _setter("gsi_org_code", gsi_org_code)
+        _setter("id", id)
+        _setter("is_intent_to_pay", is_intent_to_pay)
+        _setter("language_code", language_code)
+        _setter("organization_id", organization_id)
+        _setter("osp_home_region", osp_home_region)
+        _setter("payment_gateways", payment_gateways)
+        _setter("payment_options", payment_options)
+        _setter("plan_type", plan_type)
+        _setter("ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
+        _setter("ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
+        _setter("subscription_id", subscription_id)
+        _setter("subscription_plan_number", subscription_plan_number)
+        _setter("subscriptions", subscriptions)
+        _setter("tax_infos", tax_infos)
+        _setter("time_personal_to_corporate_conv", time_personal_to_corporate_conv)
+        _setter("time_plan_upgrade", time_plan_upgrade)
+        _setter("time_start", time_start)
+        _setter("upgrade_state", upgrade_state)
+        _setter("upgrade_state_details", upgrade_state_details)
 
     @property
     @pulumi.getter(name="accountType")
@@ -5952,32 +7239,91 @@ class GetSubscriptionsSubscriptionCollectionItemBillingAddressResult(dict):
         :param str street_name: Street name of the address.
         :param str street_number: Street number of the address.
         """
-        pulumi.set(__self__, "address_key", address_key)
-        pulumi.set(__self__, "city", city)
-        pulumi.set(__self__, "company_name", company_name)
-        pulumi.set(__self__, "contributor_class", contributor_class)
-        pulumi.set(__self__, "country", country)
-        pulumi.set(__self__, "county", county)
-        pulumi.set(__self__, "department_name", department_name)
-        pulumi.set(__self__, "email_address", email_address)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "internal_number", internal_number)
-        pulumi.set(__self__, "job_title", job_title)
-        pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "line1", line1)
-        pulumi.set(__self__, "line2", line2)
-        pulumi.set(__self__, "line3", line3)
-        pulumi.set(__self__, "line4", line4)
-        pulumi.set(__self__, "middle_name", middle_name)
-        pulumi.set(__self__, "municipal_inscription", municipal_inscription)
-        pulumi.set(__self__, "phone_country_code", phone_country_code)
-        pulumi.set(__self__, "phone_number", phone_number)
-        pulumi.set(__self__, "postal_code", postal_code)
-        pulumi.set(__self__, "province", province)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "state_inscription", state_inscription)
-        pulumi.set(__self__, "street_name", street_name)
-        pulumi.set(__self__, "street_number", street_number)
+        GetSubscriptionsSubscriptionCollectionItemBillingAddressResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address_key=address_key,
+            city=city,
+            company_name=company_name,
+            contributor_class=contributor_class,
+            country=country,
+            county=county,
+            department_name=department_name,
+            email_address=email_address,
+            first_name=first_name,
+            internal_number=internal_number,
+            job_title=job_title,
+            last_name=last_name,
+            line1=line1,
+            line2=line2,
+            line3=line3,
+            line4=line4,
+            middle_name=middle_name,
+            municipal_inscription=municipal_inscription,
+            phone_country_code=phone_country_code,
+            phone_number=phone_number,
+            postal_code=postal_code,
+            province=province,
+            state=state,
+            state_inscription=state_inscription,
+            street_name=street_name,
+            street_number=street_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address_key: str,
+             city: str,
+             company_name: str,
+             contributor_class: str,
+             country: str,
+             county: str,
+             department_name: str,
+             email_address: str,
+             first_name: str,
+             internal_number: str,
+             job_title: str,
+             last_name: str,
+             line1: str,
+             line2: str,
+             line3: str,
+             line4: str,
+             middle_name: str,
+             municipal_inscription: str,
+             phone_country_code: str,
+             phone_number: str,
+             postal_code: str,
+             province: str,
+             state: str,
+             state_inscription: str,
+             street_name: str,
+             street_number: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("address_key", address_key)
+        _setter("city", city)
+        _setter("company_name", company_name)
+        _setter("contributor_class", contributor_class)
+        _setter("country", country)
+        _setter("county", county)
+        _setter("department_name", department_name)
+        _setter("email_address", email_address)
+        _setter("first_name", first_name)
+        _setter("internal_number", internal_number)
+        _setter("job_title", job_title)
+        _setter("last_name", last_name)
+        _setter("line1", line1)
+        _setter("line2", line2)
+        _setter("line3", line3)
+        _setter("line4", line4)
+        _setter("middle_name", middle_name)
+        _setter("municipal_inscription", municipal_inscription)
+        _setter("phone_country_code", phone_country_code)
+        _setter("phone_number", phone_number)
+        _setter("postal_code", postal_code)
+        _setter("province", province)
+        _setter("state", state)
+        _setter("state_inscription", state_inscription)
+        _setter("street_name", street_name)
+        _setter("street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
@@ -6195,7 +7541,16 @@ class GetSubscriptionsSubscriptionCollectionItemPaymentGatewayResult(dict):
         """
         :param Sequence['GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataArgs'] merchant_defined_datas: Merchant details.
         """
-        pulumi.set(__self__, "merchant_defined_datas", merchant_defined_datas)
+        GetSubscriptionsSubscriptionCollectionItemPaymentGatewayResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            merchant_defined_datas=merchant_defined_datas,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             merchant_defined_datas: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("merchant_defined_datas", merchant_defined_datas)
 
     @property
     @pulumi.getter(name="merchantDefinedDatas")
@@ -6215,8 +7570,19 @@ class GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDat
         :param str cloud_account_name: Cloud account name.
         :param str promo_type: Promotion type code.
         """
-        pulumi.set(__self__, "cloud_account_name", cloud_account_name)
-        pulumi.set(__self__, "promo_type", promo_type)
+        GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cloud_account_name=cloud_account_name,
+            promo_type=promo_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cloud_account_name: str,
+             promo_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cloud_account_name", cloud_account_name)
+        _setter("promo_type", promo_type)
 
     @property
     @pulumi.getter(name="cloudAccountName")
@@ -6262,17 +7628,46 @@ class GetSubscriptionsSubscriptionCollectionItemPaymentOptionResult(dict):
         :param str wallet_instrument_id: Wallet instrument internal id.
         :param str wallet_transaction_id: Wallet transaction id.
         """
-        pulumi.set(__self__, "credit_card_type", credit_card_type)
-        pulumi.set(__self__, "email_address", email_address)
-        pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "last_digits", last_digits)
-        pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "name_on_card", name_on_card)
-        pulumi.set(__self__, "payment_method", payment_method)
-        pulumi.set(__self__, "time_expiration", time_expiration)
-        pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
-        pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
+        GetSubscriptionsSubscriptionCollectionItemPaymentOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credit_card_type=credit_card_type,
+            email_address=email_address,
+            ext_billing_agreement_id=ext_billing_agreement_id,
+            first_name=first_name,
+            last_digits=last_digits,
+            last_name=last_name,
+            name_on_card=name_on_card,
+            payment_method=payment_method,
+            time_expiration=time_expiration,
+            wallet_instrument_id=wallet_instrument_id,
+            wallet_transaction_id=wallet_transaction_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credit_card_type: str,
+             email_address: str,
+             ext_billing_agreement_id: str,
+             first_name: str,
+             last_digits: str,
+             last_name: str,
+             name_on_card: str,
+             payment_method: str,
+             time_expiration: str,
+             wallet_instrument_id: str,
+             wallet_transaction_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credit_card_type", credit_card_type)
+        _setter("email_address", email_address)
+        _setter("ext_billing_agreement_id", ext_billing_agreement_id)
+        _setter("first_name", first_name)
+        _setter("last_digits", last_digits)
+        _setter("last_name", last_name)
+        _setter("name_on_card", name_on_card)
+        _setter("payment_method", payment_method)
+        _setter("time_expiration", time_expiration)
+        _setter("wallet_instrument_id", wallet_instrument_id)
+        _setter("wallet_transaction_id", wallet_transaction_id)
 
     @property
     @pulumi.getter(name="creditCardType")
@@ -6410,27 +7805,76 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionResult(dict):
         :param str upgrade_state: Status of the upgrade.
         :param str upgrade_state_details: This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
         """
-        pulumi.set(__self__, "account_type", account_type)
-        pulumi.set(__self__, "bill_to_cust_account_id", bill_to_cust_account_id)
-        pulumi.set(__self__, "billing_addresses", billing_addresses)
-        pulumi.set(__self__, "currency_code", currency_code)
-        pulumi.set(__self__, "gsi_org_code", gsi_org_code)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
-        pulumi.set(__self__, "language_code", language_code)
-        pulumi.set(__self__, "organization_id", organization_id)
-        pulumi.set(__self__, "payment_gateways", payment_gateways)
-        pulumi.set(__self__, "payment_options", payment_options)
-        pulumi.set(__self__, "plan_type", plan_type)
-        pulumi.set(__self__, "ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
-        pulumi.set(__self__, "ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
-        pulumi.set(__self__, "subscription_plan_number", subscription_plan_number)
-        pulumi.set(__self__, "tax_infos", tax_infos)
-        pulumi.set(__self__, "time_personal_to_corporate_conv", time_personal_to_corporate_conv)
-        pulumi.set(__self__, "time_plan_upgrade", time_plan_upgrade)
-        pulumi.set(__self__, "time_start", time_start)
-        pulumi.set(__self__, "upgrade_state", upgrade_state)
-        pulumi.set(__self__, "upgrade_state_details", upgrade_state_details)
+        GetSubscriptionsSubscriptionCollectionItemSubscriptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            account_type=account_type,
+            bill_to_cust_account_id=bill_to_cust_account_id,
+            billing_addresses=billing_addresses,
+            currency_code=currency_code,
+            gsi_org_code=gsi_org_code,
+            id=id,
+            is_intent_to_pay=is_intent_to_pay,
+            language_code=language_code,
+            organization_id=organization_id,
+            payment_gateways=payment_gateways,
+            payment_options=payment_options,
+            plan_type=plan_type,
+            ship_to_cust_acct_role_id=ship_to_cust_acct_role_id,
+            ship_to_cust_acct_site_id=ship_to_cust_acct_site_id,
+            subscription_plan_number=subscription_plan_number,
+            tax_infos=tax_infos,
+            time_personal_to_corporate_conv=time_personal_to_corporate_conv,
+            time_plan_upgrade=time_plan_upgrade,
+            time_start=time_start,
+            upgrade_state=upgrade_state,
+            upgrade_state_details=upgrade_state_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             account_type: str,
+             bill_to_cust_account_id: str,
+             billing_addresses: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressResult'],
+             currency_code: str,
+             gsi_org_code: str,
+             id: str,
+             is_intent_to_pay: bool,
+             language_code: str,
+             organization_id: str,
+             payment_gateways: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayResult'],
+             payment_options: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionResult'],
+             plan_type: str,
+             ship_to_cust_acct_role_id: str,
+             ship_to_cust_acct_site_id: str,
+             subscription_plan_number: str,
+             tax_infos: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoResult'],
+             time_personal_to_corporate_conv: str,
+             time_plan_upgrade: str,
+             time_start: str,
+             upgrade_state: str,
+             upgrade_state_details: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("account_type", account_type)
+        _setter("bill_to_cust_account_id", bill_to_cust_account_id)
+        _setter("billing_addresses", billing_addresses)
+        _setter("currency_code", currency_code)
+        _setter("gsi_org_code", gsi_org_code)
+        _setter("id", id)
+        _setter("is_intent_to_pay", is_intent_to_pay)
+        _setter("language_code", language_code)
+        _setter("organization_id", organization_id)
+        _setter("payment_gateways", payment_gateways)
+        _setter("payment_options", payment_options)
+        _setter("plan_type", plan_type)
+        _setter("ship_to_cust_acct_role_id", ship_to_cust_acct_role_id)
+        _setter("ship_to_cust_acct_site_id", ship_to_cust_acct_site_id)
+        _setter("subscription_plan_number", subscription_plan_number)
+        _setter("tax_infos", tax_infos)
+        _setter("time_personal_to_corporate_conv", time_personal_to_corporate_conv)
+        _setter("time_plan_upgrade", time_plan_upgrade)
+        _setter("time_start", time_start)
+        _setter("upgrade_state", upgrade_state)
+        _setter("upgrade_state_details", upgrade_state_details)
 
     @property
     @pulumi.getter(name="accountType")
@@ -6658,32 +8102,91 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressResult
         :param str street_name: Street name of the address.
         :param str street_number: Street number of the address.
         """
-        pulumi.set(__self__, "address_key", address_key)
-        pulumi.set(__self__, "city", city)
-        pulumi.set(__self__, "company_name", company_name)
-        pulumi.set(__self__, "contributor_class", contributor_class)
-        pulumi.set(__self__, "country", country)
-        pulumi.set(__self__, "county", county)
-        pulumi.set(__self__, "department_name", department_name)
-        pulumi.set(__self__, "email_address", email_address)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "internal_number", internal_number)
-        pulumi.set(__self__, "job_title", job_title)
-        pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "line1", line1)
-        pulumi.set(__self__, "line2", line2)
-        pulumi.set(__self__, "line3", line3)
-        pulumi.set(__self__, "line4", line4)
-        pulumi.set(__self__, "middle_name", middle_name)
-        pulumi.set(__self__, "municipal_inscription", municipal_inscription)
-        pulumi.set(__self__, "phone_country_code", phone_country_code)
-        pulumi.set(__self__, "phone_number", phone_number)
-        pulumi.set(__self__, "postal_code", postal_code)
-        pulumi.set(__self__, "province", province)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "state_inscription", state_inscription)
-        pulumi.set(__self__, "street_name", street_name)
-        pulumi.set(__self__, "street_number", street_number)
+        GetSubscriptionsSubscriptionCollectionItemSubscriptionBillingAddressResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address_key=address_key,
+            city=city,
+            company_name=company_name,
+            contributor_class=contributor_class,
+            country=country,
+            county=county,
+            department_name=department_name,
+            email_address=email_address,
+            first_name=first_name,
+            internal_number=internal_number,
+            job_title=job_title,
+            last_name=last_name,
+            line1=line1,
+            line2=line2,
+            line3=line3,
+            line4=line4,
+            middle_name=middle_name,
+            municipal_inscription=municipal_inscription,
+            phone_country_code=phone_country_code,
+            phone_number=phone_number,
+            postal_code=postal_code,
+            province=province,
+            state=state,
+            state_inscription=state_inscription,
+            street_name=street_name,
+            street_number=street_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address_key: str,
+             city: str,
+             company_name: str,
+             contributor_class: str,
+             country: str,
+             county: str,
+             department_name: str,
+             email_address: str,
+             first_name: str,
+             internal_number: str,
+             job_title: str,
+             last_name: str,
+             line1: str,
+             line2: str,
+             line3: str,
+             line4: str,
+             middle_name: str,
+             municipal_inscription: str,
+             phone_country_code: str,
+             phone_number: str,
+             postal_code: str,
+             province: str,
+             state: str,
+             state_inscription: str,
+             street_name: str,
+             street_number: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("address_key", address_key)
+        _setter("city", city)
+        _setter("company_name", company_name)
+        _setter("contributor_class", contributor_class)
+        _setter("country", country)
+        _setter("county", county)
+        _setter("department_name", department_name)
+        _setter("email_address", email_address)
+        _setter("first_name", first_name)
+        _setter("internal_number", internal_number)
+        _setter("job_title", job_title)
+        _setter("last_name", last_name)
+        _setter("line1", line1)
+        _setter("line2", line2)
+        _setter("line3", line3)
+        _setter("line4", line4)
+        _setter("middle_name", middle_name)
+        _setter("municipal_inscription", municipal_inscription)
+        _setter("phone_country_code", phone_country_code)
+        _setter("phone_number", phone_number)
+        _setter("postal_code", postal_code)
+        _setter("province", province)
+        _setter("state", state)
+        _setter("state_inscription", state_inscription)
+        _setter("street_name", street_name)
+        _setter("street_number", street_number)
 
     @property
     @pulumi.getter(name="addressKey")
@@ -6901,7 +8404,16 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayResult
         """
         :param Sequence['GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataArgs'] merchant_defined_datas: Merchant details.
         """
-        pulumi.set(__self__, "merchant_defined_datas", merchant_defined_datas)
+        GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            merchant_defined_datas=merchant_defined_datas,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             merchant_defined_datas: Sequence['outputs.GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("merchant_defined_datas", merchant_defined_datas)
 
     @property
     @pulumi.getter(name="merchantDefinedDatas")
@@ -6921,8 +8433,19 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMercha
         :param str cloud_account_name: Cloud account name.
         :param str promo_type: Promotion type code.
         """
-        pulumi.set(__self__, "cloud_account_name", cloud_account_name)
-        pulumi.set(__self__, "promo_type", promo_type)
+        GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentGatewayMerchantDefinedDataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cloud_account_name=cloud_account_name,
+            promo_type=promo_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cloud_account_name: str,
+             promo_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cloud_account_name", cloud_account_name)
+        _setter("promo_type", promo_type)
 
     @property
     @pulumi.getter(name="cloudAccountName")
@@ -6968,17 +8491,46 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionResult(
         :param str wallet_instrument_id: Wallet instrument internal id.
         :param str wallet_transaction_id: Wallet transaction id.
         """
-        pulumi.set(__self__, "credit_card_type", credit_card_type)
-        pulumi.set(__self__, "email_address", email_address)
-        pulumi.set(__self__, "ext_billing_agreement_id", ext_billing_agreement_id)
-        pulumi.set(__self__, "first_name", first_name)
-        pulumi.set(__self__, "last_digits", last_digits)
-        pulumi.set(__self__, "last_name", last_name)
-        pulumi.set(__self__, "name_on_card", name_on_card)
-        pulumi.set(__self__, "payment_method", payment_method)
-        pulumi.set(__self__, "time_expiration", time_expiration)
-        pulumi.set(__self__, "wallet_instrument_id", wallet_instrument_id)
-        pulumi.set(__self__, "wallet_transaction_id", wallet_transaction_id)
+        GetSubscriptionsSubscriptionCollectionItemSubscriptionPaymentOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credit_card_type=credit_card_type,
+            email_address=email_address,
+            ext_billing_agreement_id=ext_billing_agreement_id,
+            first_name=first_name,
+            last_digits=last_digits,
+            last_name=last_name,
+            name_on_card=name_on_card,
+            payment_method=payment_method,
+            time_expiration=time_expiration,
+            wallet_instrument_id=wallet_instrument_id,
+            wallet_transaction_id=wallet_transaction_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credit_card_type: str,
+             email_address: str,
+             ext_billing_agreement_id: str,
+             first_name: str,
+             last_digits: str,
+             last_name: str,
+             name_on_card: str,
+             payment_method: str,
+             time_expiration: str,
+             wallet_instrument_id: str,
+             wallet_transaction_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credit_card_type", credit_card_type)
+        _setter("email_address", email_address)
+        _setter("ext_billing_agreement_id", ext_billing_agreement_id)
+        _setter("first_name", first_name)
+        _setter("last_digits", last_digits)
+        _setter("last_name", last_name)
+        _setter("name_on_card", name_on_card)
+        _setter("payment_method", payment_method)
+        _setter("time_expiration", time_expiration)
+        _setter("wallet_instrument_id", wallet_instrument_id)
+        _setter("wallet_transaction_id", wallet_transaction_id)
 
     @property
     @pulumi.getter(name="creditCardType")
@@ -7084,11 +8636,28 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoResult(dict):
         :param str tax_payer_id: Tay payer identifier.
         :param str tax_reg_number: Tax registration number.
         """
-        pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
-        pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
-        pulumi.set(__self__, "tax_cnpj", tax_cnpj)
-        pulumi.set(__self__, "tax_payer_id", tax_payer_id)
-        pulumi.set(__self__, "tax_reg_number", tax_reg_number)
+        GetSubscriptionsSubscriptionCollectionItemSubscriptionTaxInfoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            no_tax_reason_code=no_tax_reason_code,
+            no_tax_reason_code_details=no_tax_reason_code_details,
+            tax_cnpj=tax_cnpj,
+            tax_payer_id=tax_payer_id,
+            tax_reg_number=tax_reg_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             no_tax_reason_code: str,
+             no_tax_reason_code_details: str,
+             tax_cnpj: str,
+             tax_payer_id: str,
+             tax_reg_number: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("no_tax_reason_code", no_tax_reason_code)
+        _setter("no_tax_reason_code_details", no_tax_reason_code_details)
+        _setter("tax_cnpj", tax_cnpj)
+        _setter("tax_payer_id", tax_payer_id)
+        _setter("tax_reg_number", tax_reg_number)
 
     @property
     @pulumi.getter(name="noTaxReasonCode")
@@ -7146,11 +8715,28 @@ class GetSubscriptionsSubscriptionCollectionItemTaxInfoResult(dict):
         :param str tax_payer_id: Tay payer identifier.
         :param str tax_reg_number: Tax registration number.
         """
-        pulumi.set(__self__, "no_tax_reason_code", no_tax_reason_code)
-        pulumi.set(__self__, "no_tax_reason_code_details", no_tax_reason_code_details)
-        pulumi.set(__self__, "tax_cnpj", tax_cnpj)
-        pulumi.set(__self__, "tax_payer_id", tax_payer_id)
-        pulumi.set(__self__, "tax_reg_number", tax_reg_number)
+        GetSubscriptionsSubscriptionCollectionItemTaxInfoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            no_tax_reason_code=no_tax_reason_code,
+            no_tax_reason_code_details=no_tax_reason_code_details,
+            tax_cnpj=tax_cnpj,
+            tax_payer_id=tax_payer_id,
+            tax_reg_number=tax_reg_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             no_tax_reason_code: str,
+             no_tax_reason_code_details: str,
+             tax_cnpj: str,
+             tax_payer_id: str,
+             tax_reg_number: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("no_tax_reason_code", no_tax_reason_code)
+        _setter("no_tax_reason_code_details", no_tax_reason_code_details)
+        _setter("tax_cnpj", tax_cnpj)
+        _setter("tax_payer_id", tax_payer_id)
+        _setter("tax_reg_number", tax_reg_number)
 
     @property
     @pulumi.getter(name="noTaxReasonCode")

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -23,10 +23,23 @@ class GetOceInstancesFilterResult(dict):
         """
         :param str name: OceInstance Name
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOceInstancesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -105,33 +118,94 @@ class GetOceInstancesOceInstanceResult(dict):
         :param str upgrade_schedule: Upgrade schedule type representing service to be upgraded immediately whenever latest version is released or delay upgrade of the service to previous released version
         :param str waf_primary_domain: Web Application Firewall(WAF) primary domain
         """
-        pulumi.set(__self__, "add_on_features", add_on_features)
-        pulumi.set(__self__, "admin_email", admin_email)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "dr_region", dr_region)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "guid", guid)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "idcs_access_token", idcs_access_token)
-        pulumi.set(__self__, "idcs_tenancy", idcs_tenancy)
-        pulumi.set(__self__, "instance_access_type", instance_access_type)
-        pulumi.set(__self__, "instance_license_type", instance_license_type)
-        pulumi.set(__self__, "instance_usage_type", instance_usage_type)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "object_storage_namespace", object_storage_namespace)
-        pulumi.set(__self__, "service", service)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "state_message", state_message)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "tenancy_id", tenancy_id)
-        pulumi.set(__self__, "tenancy_name", tenancy_name)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "upgrade_schedule", upgrade_schedule)
-        pulumi.set(__self__, "waf_primary_domain", waf_primary_domain)
+        GetOceInstancesOceInstanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            add_on_features=add_on_features,
+            admin_email=admin_email,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            dr_region=dr_region,
+            freeform_tags=freeform_tags,
+            guid=guid,
+            id=id,
+            idcs_access_token=idcs_access_token,
+            idcs_tenancy=idcs_tenancy,
+            instance_access_type=instance_access_type,
+            instance_license_type=instance_license_type,
+            instance_usage_type=instance_usage_type,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            object_storage_namespace=object_storage_namespace,
+            service=service,
+            state=state,
+            state_message=state_message,
+            system_tags=system_tags,
+            tenancy_id=tenancy_id,
+            tenancy_name=tenancy_name,
+            time_created=time_created,
+            time_updated=time_updated,
+            upgrade_schedule=upgrade_schedule,
+            waf_primary_domain=waf_primary_domain,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             add_on_features: Sequence[str],
+             admin_email: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             dr_region: str,
+             freeform_tags: Mapping[str, Any],
+             guid: str,
+             id: str,
+             idcs_access_token: str,
+             idcs_tenancy: str,
+             instance_access_type: str,
+             instance_license_type: str,
+             instance_usage_type: str,
+             lifecycle_details: str,
+             name: str,
+             object_storage_namespace: str,
+             service: Mapping[str, Any],
+             state: str,
+             state_message: str,
+             system_tags: Mapping[str, Any],
+             tenancy_id: str,
+             tenancy_name: str,
+             time_created: str,
+             time_updated: str,
+             upgrade_schedule: str,
+             waf_primary_domain: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("add_on_features", add_on_features)
+        _setter("admin_email", admin_email)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("dr_region", dr_region)
+        _setter("freeform_tags", freeform_tags)
+        _setter("guid", guid)
+        _setter("id", id)
+        _setter("idcs_access_token", idcs_access_token)
+        _setter("idcs_tenancy", idcs_tenancy)
+        _setter("instance_access_type", instance_access_type)
+        _setter("instance_license_type", instance_license_type)
+        _setter("instance_usage_type", instance_usage_type)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("name", name)
+        _setter("object_storage_namespace", object_storage_namespace)
+        _setter("service", service)
+        _setter("state", state)
+        _setter("state_message", state_message)
+        _setter("system_tags", system_tags)
+        _setter("tenancy_id", tenancy_id)
+        _setter("tenancy_name", tenancy_name)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("upgrade_schedule", upgrade_schedule)
+        _setter("waf_primary_domain", waf_primary_domain)
 
     @property
     @pulumi.getter(name="addOnFeatures")

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -245,25 +245,52 @@ class CloudGuardDataSourceDataSourceDetails(dict):
         :param Sequence[str] regions: (Updatable) Logging Query regions
         :param int threshold: (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
         """
-        pulumi.set(__self__, "data_source_feed_provider", data_source_feed_provider)
+        CloudGuardDataSourceDataSourceDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_source_feed_provider=data_source_feed_provider,
+            additional_entities_count=additional_entities_count,
+            interval_in_minutes=interval_in_minutes,
+            logging_query_details=logging_query_details,
+            logging_query_type=logging_query_type,
+            operator=operator,
+            query=query,
+            query_start_time=query_start_time,
+            regions=regions,
+            threshold=threshold,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_source_feed_provider: str,
+             additional_entities_count: Optional[int] = None,
+             interval_in_minutes: Optional[int] = None,
+             logging_query_details: Optional['outputs.CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails'] = None,
+             logging_query_type: Optional[str] = None,
+             operator: Optional[str] = None,
+             query: Optional[str] = None,
+             query_start_time: Optional['outputs.CloudGuardDataSourceDataSourceDetailsQueryStartTime'] = None,
+             regions: Optional[Sequence[str]] = None,
+             threshold: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("data_source_feed_provider", data_source_feed_provider)
         if additional_entities_count is not None:
-            pulumi.set(__self__, "additional_entities_count", additional_entities_count)
+            _setter("additional_entities_count", additional_entities_count)
         if interval_in_minutes is not None:
-            pulumi.set(__self__, "interval_in_minutes", interval_in_minutes)
+            _setter("interval_in_minutes", interval_in_minutes)
         if logging_query_details is not None:
-            pulumi.set(__self__, "logging_query_details", logging_query_details)
+            _setter("logging_query_details", logging_query_details)
         if logging_query_type is not None:
-            pulumi.set(__self__, "logging_query_type", logging_query_type)
+            _setter("logging_query_type", logging_query_type)
         if operator is not None:
-            pulumi.set(__self__, "operator", operator)
+            _setter("operator", operator)
         if query is not None:
-            pulumi.set(__self__, "query", query)
+            _setter("query", query)
         if query_start_time is not None:
-            pulumi.set(__self__, "query_start_time", query_start_time)
+            _setter("query_start_time", query_start_time)
         if regions is not None:
-            pulumi.set(__self__, "regions", regions)
+            _setter("regions", regions)
         if threshold is not None:
-            pulumi.set(__self__, "threshold", threshold)
+            _setter("threshold", threshold)
 
     @property
     @pulumi.getter(name="dataSourceFeedProvider")
@@ -374,9 +401,20 @@ class CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails(dict):
         :param str logging_query_type: (Updatable) Logging query type for data source (Sighting/Insight)
         :param int key_entities_count: (Updatable) The key entities count used for data source query
         """
-        pulumi.set(__self__, "logging_query_type", logging_query_type)
+        CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            logging_query_type=logging_query_type,
+            key_entities_count=key_entities_count,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             logging_query_type: str,
+             key_entities_count: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("logging_query_type", logging_query_type)
         if key_entities_count is not None:
-            pulumi.set(__self__, "key_entities_count", key_entities_count)
+            _setter("key_entities_count", key_entities_count)
 
     @property
     @pulumi.getter(name="loggingQueryType")
@@ -423,9 +461,20 @@ class CloudGuardDataSourceDataSourceDetailsQueryStartTime(dict):
         :param str start_policy_type: (Updatable) policy used for deciding the query start time
         :param str query_start_time: (Updatable) Time when the query can start, if not specified it can start immediately.
         """
-        pulumi.set(__self__, "start_policy_type", start_policy_type)
+        CloudGuardDataSourceDataSourceDetailsQueryStartTime._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            start_policy_type=start_policy_type,
+            query_start_time=query_start_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             start_policy_type: str,
+             query_start_time: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("start_policy_type", start_policy_type)
         if query_start_time is not None:
-            pulumi.set(__self__, "query_start_time", query_start_time)
+            _setter("query_start_time", query_start_time)
 
     @property
     @pulumi.getter(name="startPolicyType")
@@ -472,10 +521,21 @@ class CloudGuardDataSourceDataSourceDetectorMappingInfo(dict):
         :param str detector_recipe_id: Id of the attached detectorRecipeId to the Data Source.
         :param str detector_rule_id: Id of the attached detectorRuleId to the Data Source.
         """
+        CloudGuardDataSourceDataSourceDetectorMappingInfo._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            detector_recipe_id=detector_recipe_id,
+            detector_rule_id=detector_rule_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             detector_recipe_id: Optional[str] = None,
+             detector_rule_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if detector_recipe_id is not None:
-            pulumi.set(__self__, "detector_recipe_id", detector_recipe_id)
+            _setter("detector_recipe_id", detector_recipe_id)
         if detector_rule_id is not None:
-            pulumi.set(__self__, "detector_rule_id", detector_rule_id)
+            _setter("detector_rule_id", detector_rule_id)
 
     @property
     @pulumi.getter(name="detectorRecipeId")
@@ -503,10 +563,21 @@ class CloudGuardDataSourceRegionStatusDetail(dict):
         :param str region: Data Source replication region.
         :param str status: Status of data Source
         """
+        CloudGuardDataSourceRegionStatusDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            region=region,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             region: Optional[str] = None,
+             status: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if region is not None:
-            pulumi.set(__self__, "region", region)
+            _setter("region", region)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
 
     @property
     @pulumi.getter
@@ -538,9 +609,20 @@ class DataMaskRuleTargetSelected(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "kind", kind)
+        DataMaskRuleTargetSelected._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: str,
+             values: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("kind", kind)
         if values is not None:
-            pulumi.set(__self__, "values", values)
+            _setter("values", values)
 
     @property
     @pulumi.getter
@@ -639,36 +721,75 @@ class DetectorRecipeDetectorRule(dict):
         :param str time_created: The date and time the detector recipe was created. Format defined by RFC3339.
         :param str time_updated: The date and time the detector recipe was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
+        DetectorRecipeDetectorRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            detector_rule_id=detector_rule_id,
+            candidate_responder_rules=candidate_responder_rules,
+            data_source_id=data_source_id,
+            description=description,
+            detector=detector,
+            display_name=display_name,
+            entities_mappings=entities_mappings,
+            lifecycle_details=lifecycle_details,
+            managed_list_types=managed_list_types,
+            recommendation=recommendation,
+            resource_type=resource_type,
+            service_type=service_type,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: 'outputs.DetectorRecipeDetectorRuleDetails',
+             detector_rule_id: str,
+             candidate_responder_rules: Optional[Sequence['outputs.DetectorRecipeDetectorRuleCandidateResponderRule']] = None,
+             data_source_id: Optional[str] = None,
+             description: Optional[str] = None,
+             detector: Optional[str] = None,
+             display_name: Optional[str] = None,
+             entities_mappings: Optional[Sequence['outputs.DetectorRecipeDetectorRuleEntitiesMapping']] = None,
+             lifecycle_details: Optional[str] = None,
+             managed_list_types: Optional[Sequence[str]] = None,
+             recommendation: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             service_type: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("details", details)
+        _setter("detector_rule_id", detector_rule_id)
         if candidate_responder_rules is not None:
-            pulumi.set(__self__, "candidate_responder_rules", candidate_responder_rules)
+            _setter("candidate_responder_rules", candidate_responder_rules)
         if data_source_id is not None:
-            pulumi.set(__self__, "data_source_id", data_source_id)
+            _setter("data_source_id", data_source_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if detector is not None:
-            pulumi.set(__self__, "detector", detector)
+            _setter("detector", detector)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if entities_mappings is not None:
-            pulumi.set(__self__, "entities_mappings", entities_mappings)
+            _setter("entities_mappings", entities_mappings)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if managed_list_types is not None:
-            pulumi.set(__self__, "managed_list_types", managed_list_types)
+            _setter("managed_list_types", managed_list_types)
         if recommendation is not None:
-            pulumi.set(__self__, "recommendation", recommendation)
+            _setter("recommendation", recommendation)
         if resource_type is not None:
-            pulumi.set(__self__, "resource_type", resource_type)
+            _setter("resource_type", resource_type)
         if service_type is not None:
-            pulumi.set(__self__, "service_type", service_type)
+            _setter("service_type", service_type)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -833,12 +954,25 @@ class DetectorRecipeDetectorRuleCandidateResponderRule(dict):
         :param str id: Ocid for detector recipe
         :param bool is_preferred: Preferred state
         """
+        DetectorRecipeDetectorRuleCandidateResponderRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+            is_preferred=is_preferred,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             is_preferred: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if is_preferred is not None:
-            pulumi.set(__self__, "is_preferred", is_preferred)
+            _setter("is_preferred", is_preferred)
 
     @property
     @pulumi.getter(name="displayName")
@@ -917,24 +1051,51 @@ class DetectorRecipeDetectorRuleDetails(dict):
         :param Sequence[str] labels: (Updatable) user defined labels for a detector rule
         :param str recommendation: (Updatable) Recommendation for DetectorRecipeDetectorRule
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "risk_level", risk_level)
+        DetectorRecipeDetectorRuleDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            risk_level=risk_level,
+            condition=condition,
+            configurations=configurations,
+            data_source_id=data_source_id,
+            description=description,
+            entities_mappings=entities_mappings,
+            is_configuration_allowed=is_configuration_allowed,
+            labels=labels,
+            recommendation=recommendation,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: bool,
+             risk_level: str,
+             condition: Optional[str] = None,
+             configurations: Optional[Sequence['outputs.DetectorRecipeDetectorRuleDetailsConfiguration']] = None,
+             data_source_id: Optional[str] = None,
+             description: Optional[str] = None,
+             entities_mappings: Optional[Sequence['outputs.DetectorRecipeDetectorRuleDetailsEntitiesMapping']] = None,
+             is_configuration_allowed: Optional[bool] = None,
+             labels: Optional[Sequence[str]] = None,
+             recommendation: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
+        _setter("risk_level", risk_level)
         if condition is not None:
-            pulumi.set(__self__, "condition", condition)
+            _setter("condition", condition)
         if configurations is not None:
-            pulumi.set(__self__, "configurations", configurations)
+            _setter("configurations", configurations)
         if data_source_id is not None:
-            pulumi.set(__self__, "data_source_id", data_source_id)
+            _setter("data_source_id", data_source_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if entities_mappings is not None:
-            pulumi.set(__self__, "entities_mappings", entities_mappings)
+            _setter("entities_mappings", entities_mappings)
         if is_configuration_allowed is not None:
-            pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
+            _setter("is_configuration_allowed", is_configuration_allowed)
         if labels is not None:
-            pulumi.set(__self__, "labels", labels)
+            _setter("labels", labels)
         if recommendation is not None:
-            pulumi.set(__self__, "recommendation", recommendation)
+            _setter("recommendation", recommendation)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -1051,14 +1212,31 @@ class DetectorRecipeDetectorRuleDetailsConfiguration(dict):
         :param str value: (Updatable) configuration value
         :param Sequence['DetectorRecipeDetectorRuleDetailsConfigurationValueArgs'] values: (Updatable) List of configuration values
         """
-        pulumi.set(__self__, "config_key", config_key)
-        pulumi.set(__self__, "name", name)
+        DetectorRecipeDetectorRuleDetailsConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            name=name,
+            data_type=data_type,
+            value=value,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: str,
+             name: str,
+             data_type: Optional[str] = None,
+             value: Optional[str] = None,
+             values: Optional[Sequence['outputs.DetectorRecipeDetectorRuleDetailsConfigurationValue']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_key", config_key)
+        _setter("name", name)
         if data_type is not None:
-            pulumi.set(__self__, "data_type", data_type)
+            _setter("data_type", data_type)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
         if values is not None:
-            pulumi.set(__self__, "values", values)
+            _setter("values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -1131,9 +1309,22 @@ class DetectorRecipeDetectorRuleDetailsConfigurationValue(dict):
         :param str managed_list_type: (Updatable) type of the managed list
         :param str value: (Updatable) configuration value
         """
-        pulumi.set(__self__, "list_type", list_type)
-        pulumi.set(__self__, "managed_list_type", managed_list_type)
-        pulumi.set(__self__, "value", value)
+        DetectorRecipeDetectorRuleDetailsConfigurationValue._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            list_type=list_type,
+            managed_list_type=managed_list_type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             list_type: str,
+             managed_list_type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("list_type", list_type)
+        _setter("managed_list_type", managed_list_type)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -1194,11 +1385,24 @@ class DetectorRecipeDetectorRuleDetailsEntitiesMapping(dict):
                Avoid entering confidential information.
         :param str entity_type: (Updatable) Possible type of entity
         """
-        pulumi.set(__self__, "query_field", query_field)
+        DetectorRecipeDetectorRuleDetailsEntitiesMapping._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            query_field=query_field,
+            display_name=display_name,
+            entity_type=entity_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             query_field: str,
+             display_name: Optional[str] = None,
+             entity_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("query_field", query_field)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if entity_type is not None:
-            pulumi.set(__self__, "entity_type", entity_type)
+            _setter("entity_type", entity_type)
 
     @property
     @pulumi.getter(name="queryField")
@@ -1261,12 +1465,25 @@ class DetectorRecipeDetectorRuleEntitiesMapping(dict):
         :param str entity_type: (Updatable) Possible type of entity
         :param str query_field: (Updatable) The entity value mapped to a data source query
         """
+        DetectorRecipeDetectorRuleEntitiesMapping._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            entity_type=entity_type,
+            query_field=query_field,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             entity_type: Optional[str] = None,
+             query_field: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if entity_type is not None:
-            pulumi.set(__self__, "entity_type", entity_type)
+            _setter("entity_type", entity_type)
         if query_field is not None:
-            pulumi.set(__self__, "query_field", query_field)
+            _setter("query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -1371,38 +1588,77 @@ class DetectorRecipeEffectiveDetectorRule(dict):
         :param str time_created: The date and time the detector recipe was created. Format defined by RFC3339.
         :param str time_updated: The date and time the detector recipe was updated. Format defined by RFC3339.
         """
+        DetectorRecipeEffectiveDetectorRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            candidate_responder_rules=candidate_responder_rules,
+            data_source_id=data_source_id,
+            description=description,
+            details=details,
+            detector=detector,
+            detector_rule_id=detector_rule_id,
+            display_name=display_name,
+            entities_mappings=entities_mappings,
+            lifecycle_details=lifecycle_details,
+            managed_list_types=managed_list_types,
+            recommendation=recommendation,
+            resource_type=resource_type,
+            service_type=service_type,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             candidate_responder_rules: Optional[Sequence['outputs.DetectorRecipeEffectiveDetectorRuleCandidateResponderRule']] = None,
+             data_source_id: Optional[str] = None,
+             description: Optional[str] = None,
+             details: Optional[Sequence['outputs.DetectorRecipeEffectiveDetectorRuleDetail']] = None,
+             detector: Optional[str] = None,
+             detector_rule_id: Optional[str] = None,
+             display_name: Optional[str] = None,
+             entities_mappings: Optional[Sequence['outputs.DetectorRecipeEffectiveDetectorRuleEntitiesMapping']] = None,
+             lifecycle_details: Optional[str] = None,
+             managed_list_types: Optional[Sequence[str]] = None,
+             recommendation: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             service_type: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if candidate_responder_rules is not None:
-            pulumi.set(__self__, "candidate_responder_rules", candidate_responder_rules)
+            _setter("candidate_responder_rules", candidate_responder_rules)
         if data_source_id is not None:
-            pulumi.set(__self__, "data_source_id", data_source_id)
+            _setter("data_source_id", data_source_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if details is not None:
-            pulumi.set(__self__, "details", details)
+            _setter("details", details)
         if detector is not None:
-            pulumi.set(__self__, "detector", detector)
+            _setter("detector", detector)
         if detector_rule_id is not None:
-            pulumi.set(__self__, "detector_rule_id", detector_rule_id)
+            _setter("detector_rule_id", detector_rule_id)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if entities_mappings is not None:
-            pulumi.set(__self__, "entities_mappings", entities_mappings)
+            _setter("entities_mappings", entities_mappings)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if managed_list_types is not None:
-            pulumi.set(__self__, "managed_list_types", managed_list_types)
+            _setter("managed_list_types", managed_list_types)
         if recommendation is not None:
-            pulumi.set(__self__, "recommendation", recommendation)
+            _setter("recommendation", recommendation)
         if resource_type is not None:
-            pulumi.set(__self__, "resource_type", resource_type)
+            _setter("resource_type", resource_type)
         if service_type is not None:
-            pulumi.set(__self__, "service_type", service_type)
+            _setter("service_type", service_type)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="candidateResponderRules")
@@ -1567,12 +1823,25 @@ class DetectorRecipeEffectiveDetectorRuleCandidateResponderRule(dict):
         :param str id: Ocid for detector recipe
         :param bool is_preferred: Preferred state
         """
+        DetectorRecipeEffectiveDetectorRuleCandidateResponderRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+            is_preferred=is_preferred,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             is_preferred: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if is_preferred is not None:
-            pulumi.set(__self__, "is_preferred", is_preferred)
+            _setter("is_preferred", is_preferred)
 
     @property
     @pulumi.getter(name="displayName")
@@ -1639,18 +1908,37 @@ class DetectorRecipeEffectiveDetectorRuleDetail(dict):
         :param Sequence[str] labels: (Updatable) user defined labels for a detector rule
         :param str risk_level: (Updatable) The Risk Level
         """
+        DetectorRecipeEffectiveDetectorRuleDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition=condition,
+            configurations=configurations,
+            is_configuration_allowed=is_configuration_allowed,
+            is_enabled=is_enabled,
+            labels=labels,
+            risk_level=risk_level,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition: Optional[str] = None,
+             configurations: Optional[Sequence['outputs.DetectorRecipeEffectiveDetectorRuleDetailConfiguration']] = None,
+             is_configuration_allowed: Optional[bool] = None,
+             is_enabled: Optional[bool] = None,
+             labels: Optional[Sequence[str]] = None,
+             risk_level: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if condition is not None:
-            pulumi.set(__self__, "condition", condition)
+            _setter("condition", condition)
         if configurations is not None:
-            pulumi.set(__self__, "configurations", configurations)
+            _setter("configurations", configurations)
         if is_configuration_allowed is not None:
-            pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
+            _setter("is_configuration_allowed", is_configuration_allowed)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if labels is not None:
-            pulumi.set(__self__, "labels", labels)
+            _setter("labels", labels)
         if risk_level is not None:
-            pulumi.set(__self__, "risk_level", risk_level)
+            _setter("risk_level", risk_level)
 
     @property
     @pulumi.getter
@@ -1735,16 +2023,33 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfiguration(dict):
         :param str value: (Updatable) configuration value
         :param Sequence['DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs'] values: (Updatable) List of configuration values
         """
+        DetectorRecipeEffectiveDetectorRuleDetailConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            data_type=data_type,
+            name=name,
+            value=value,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: Optional[str] = None,
+             data_type: Optional[str] = None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             values: Optional[Sequence['outputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_key is not None:
-            pulumi.set(__self__, "config_key", config_key)
+            _setter("config_key", config_key)
         if data_type is not None:
-            pulumi.set(__self__, "data_type", data_type)
+            _setter("data_type", data_type)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
         if values is not None:
-            pulumi.set(__self__, "values", values)
+            _setter("values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -1817,12 +2122,25 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue(dict):
         :param str managed_list_type: (Updatable) type of the managed list
         :param str value: (Updatable) configuration value
         """
+        DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            list_type=list_type,
+            managed_list_type=managed_list_type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             list_type: Optional[str] = None,
+             managed_list_type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if list_type is not None:
-            pulumi.set(__self__, "list_type", list_type)
+            _setter("list_type", list_type)
         if managed_list_type is not None:
-            pulumi.set(__self__, "managed_list_type", managed_list_type)
+            _setter("managed_list_type", managed_list_type)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -1883,12 +2201,25 @@ class DetectorRecipeEffectiveDetectorRuleEntitiesMapping(dict):
         :param str entity_type: (Updatable) Possible type of entity
         :param str query_field: (Updatable) The entity value mapped to a data source query
         """
+        DetectorRecipeEffectiveDetectorRuleEntitiesMapping._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            entity_type=entity_type,
+            query_field=query_field,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             entity_type: Optional[str] = None,
+             query_field: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if entity_type is not None:
-            pulumi.set(__self__, "entity_type", entity_type)
+            _setter("entity_type", entity_type)
         if query_field is not None:
-            pulumi.set(__self__, "query_field", query_field)
+            _setter("query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -1979,30 +2310,61 @@ class ResponderRecipeEffectiveResponderRule(dict):
         :param str time_updated: The date and time the responder recipe was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
+        ResponderRecipeEffectiveResponderRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            description=description,
+            details=details,
+            display_name=display_name,
+            lifecycle_details=lifecycle_details,
+            policies=policies,
+            responder_rule_id=responder_rule_id,
+            state=state,
+            supported_modes=supported_modes,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             description: Optional[str] = None,
+             details: Optional[Sequence['outputs.ResponderRecipeEffectiveResponderRuleDetail']] = None,
+             display_name: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             policies: Optional[Sequence[str]] = None,
+             responder_rule_id: Optional[str] = None,
+             state: Optional[str] = None,
+             supported_modes: Optional[Sequence[str]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if details is not None:
-            pulumi.set(__self__, "details", details)
+            _setter("details", details)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if policies is not None:
-            pulumi.set(__self__, "policies", policies)
+            _setter("policies", policies)
         if responder_rule_id is not None:
-            pulumi.set(__self__, "responder_rule_id", responder_rule_id)
+            _setter("responder_rule_id", responder_rule_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if supported_modes is not None:
-            pulumi.set(__self__, "supported_modes", supported_modes)
+            _setter("supported_modes", supported_modes)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2135,14 +2497,29 @@ class ResponderRecipeEffectiveResponderRuleDetail(dict):
         :param bool is_enabled: (Updatable) Identifies state for ResponderRule
         :param str mode: Execution Mode for ResponderRule
         """
+        ResponderRecipeEffectiveResponderRuleDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition=condition,
+            configurations=configurations,
+            is_enabled=is_enabled,
+            mode=mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition: Optional[str] = None,
+             configurations: Optional[Sequence['outputs.ResponderRecipeEffectiveResponderRuleDetailConfiguration']] = None,
+             is_enabled: Optional[bool] = None,
+             mode: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if condition is not None:
-            pulumi.set(__self__, "condition", condition)
+            _setter("condition", condition)
         if configurations is not None:
-            pulumi.set(__self__, "configurations", configurations)
+            _setter("configurations", configurations)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if mode is not None:
-            pulumi.set(__self__, "mode", mode)
+            _setter("mode", mode)
 
     @property
     @pulumi.getter
@@ -2205,12 +2582,25 @@ class ResponderRecipeEffectiveResponderRuleDetailConfiguration(dict):
         :param str name: configuration name
         :param str value: configuration value
         """
+        ResponderRecipeEffectiveResponderRuleDetailConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: Optional[str] = None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_key is not None:
-            pulumi.set(__self__, "config_key", config_key)
+            _setter("config_key", config_key)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -2299,28 +2689,59 @@ class ResponderRecipeResponderRule(dict):
         :param str time_updated: The date and time the responder recipe was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "responder_rule_id", responder_rule_id)
+        ResponderRecipeResponderRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            responder_rule_id=responder_rule_id,
+            compartment_id=compartment_id,
+            description=description,
+            display_name=display_name,
+            lifecycle_details=lifecycle_details,
+            policies=policies,
+            state=state,
+            supported_modes=supported_modes,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: 'outputs.ResponderRecipeResponderRuleDetails',
+             responder_rule_id: str,
+             compartment_id: Optional[str] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             policies: Optional[Sequence[str]] = None,
+             state: Optional[str] = None,
+             supported_modes: Optional[Sequence[str]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("details", details)
+        _setter("responder_rule_id", responder_rule_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if policies is not None:
-            pulumi.set(__self__, "policies", policies)
+            _setter("policies", policies)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if supported_modes is not None:
-            pulumi.set(__self__, "supported_modes", supported_modes)
+            _setter("supported_modes", supported_modes)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter
@@ -2453,13 +2874,28 @@ class ResponderRecipeResponderRuleDetails(dict):
         :param Sequence['ResponderRecipeResponderRuleDetailsConfigurationArgs'] configurations: ResponderRule configurations
         :param str mode: Execution Mode for ResponderRule
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        ResponderRecipeResponderRuleDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            condition=condition,
+            configurations=configurations,
+            mode=mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: bool,
+             condition: Optional[str] = None,
+             configurations: Optional[Sequence['outputs.ResponderRecipeResponderRuleDetailsConfiguration']] = None,
+             mode: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
         if condition is not None:
-            pulumi.set(__self__, "condition", condition)
+            _setter("condition", condition)
         if configurations is not None:
-            pulumi.set(__self__, "configurations", configurations)
+            _setter("configurations", configurations)
         if mode is not None:
-            pulumi.set(__self__, "mode", mode)
+            _setter("mode", mode)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -2522,12 +2958,25 @@ class ResponderRecipeResponderRuleDetailsConfiguration(dict):
         :param str name: configuration name
         :param str value: configuration value
         """
+        ResponderRecipeResponderRuleDetailsConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: Optional[str] = None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_key is not None:
-            pulumi.set(__self__, "config_key", config_key)
+            _setter("config_key", config_key)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -2590,14 +3039,29 @@ class TargetTargetDetail(dict):
         :param str target_resource_type: possible type of targets(COMPARTMENT/FACLOUD)
         :param Sequence['TargetTargetDetailTargetSecurityZoneRecipeArgs'] target_security_zone_recipes: The list of security zone recipes to associate this compartment with.
         """
+        TargetTargetDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            security_zone_display_name=security_zone_display_name,
+            security_zone_id=security_zone_id,
+            target_resource_type=target_resource_type,
+            target_security_zone_recipes=target_security_zone_recipes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             security_zone_display_name: Optional[str] = None,
+             security_zone_id: Optional[str] = None,
+             target_resource_type: Optional[str] = None,
+             target_security_zone_recipes: Optional[Sequence['outputs.TargetTargetDetailTargetSecurityZoneRecipe']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if security_zone_display_name is not None:
-            pulumi.set(__self__, "security_zone_display_name", security_zone_display_name)
+            _setter("security_zone_display_name", security_zone_display_name)
         if security_zone_id is not None:
-            pulumi.set(__self__, "security_zone_id", security_zone_id)
+            _setter("security_zone_id", security_zone_id)
         if target_resource_type is not None:
-            pulumi.set(__self__, "target_resource_type", target_resource_type)
+            _setter("target_resource_type", target_resource_type)
         if target_security_zone_recipes is not None:
-            pulumi.set(__self__, "target_security_zone_recipes", target_security_zone_recipes)
+            _setter("target_security_zone_recipes", target_security_zone_recipes)
 
     @property
     @pulumi.getter(name="securityZoneDisplayName")
@@ -2702,32 +3166,65 @@ class TargetTargetDetailTargetSecurityZoneRecipe(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
+        TargetTargetDetailTargetSecurityZoneRecipe._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            owner=owner,
+            security_policies=security_policies,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             owner: Optional[str] = None,
+             security_policies: Optional[Sequence[str]] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if security_policies is not None:
-            pulumi.set(__self__, "security_policies", security_policies)
+            _setter("security_policies", security_policies)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2902,29 +3399,60 @@ class TargetTargetDetectorRecipe(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "detector_recipe_id", detector_recipe_id)
+        TargetTargetDetectorRecipe._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            detector_recipe_id=detector_recipe_id,
+            compartment_id=compartment_id,
+            description=description,
+            detector=detector,
+            detector_rules=detector_rules,
+            display_name=display_name,
+            effective_detector_rules=effective_detector_rules,
+            id=id,
+            owner=owner,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             detector_recipe_id: str,
+             compartment_id: Optional[str] = None,
+             description: Optional[str] = None,
+             detector: Optional[str] = None,
+             detector_rules: Optional[Sequence['outputs.TargetTargetDetectorRecipeDetectorRule']] = None,
+             display_name: Optional[str] = None,
+             effective_detector_rules: Optional[Sequence['outputs.TargetTargetDetectorRecipeEffectiveDetectorRule']] = None,
+             id: Optional[str] = None,
+             owner: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("detector_recipe_id", detector_recipe_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if detector is not None:
-            pulumi.set(__self__, "detector", detector)
+            _setter("detector", detector)
         if detector_rules is not None:
-            pulumi.set(__self__, "detector_rules", detector_rules)
+            _setter("detector_rules", detector_rules)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if effective_detector_rules is not None:
-            pulumi.set(__self__, "effective_detector_rules", effective_detector_rules)
+            _setter("effective_detector_rules", effective_detector_rules)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="detectorRecipeId")
@@ -3101,34 +3629,71 @@ class TargetTargetDetectorRecipeDetectorRule(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
+        TargetTargetDetectorRecipeDetectorRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            detector_rule_id=detector_rule_id,
+            data_source_id=data_source_id,
+            description=description,
+            detector=detector,
+            display_name=display_name,
+            entities_mappings=entities_mappings,
+            lifecycle_details=lifecycle_details,
+            managed_list_types=managed_list_types,
+            recommendation=recommendation,
+            resource_type=resource_type,
+            service_type=service_type,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: 'outputs.TargetTargetDetectorRecipeDetectorRuleDetails',
+             detector_rule_id: str,
+             data_source_id: Optional[str] = None,
+             description: Optional[str] = None,
+             detector: Optional[str] = None,
+             display_name: Optional[str] = None,
+             entities_mappings: Optional[Sequence['outputs.TargetTargetDetectorRecipeDetectorRuleEntitiesMapping']] = None,
+             lifecycle_details: Optional[str] = None,
+             managed_list_types: Optional[Sequence[str]] = None,
+             recommendation: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             service_type: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("details", details)
+        _setter("detector_rule_id", detector_rule_id)
         if data_source_id is not None:
-            pulumi.set(__self__, "data_source_id", data_source_id)
+            _setter("data_source_id", data_source_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if detector is not None:
-            pulumi.set(__self__, "detector", detector)
+            _setter("detector", detector)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if entities_mappings is not None:
-            pulumi.set(__self__, "entities_mappings", entities_mappings)
+            _setter("entities_mappings", entities_mappings)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if managed_list_types is not None:
-            pulumi.set(__self__, "managed_list_types", managed_list_types)
+            _setter("managed_list_types", managed_list_types)
         if recommendation is not None:
-            pulumi.set(__self__, "recommendation", recommendation)
+            _setter("recommendation", recommendation)
         if resource_type is not None:
-            pulumi.set(__self__, "resource_type", resource_type)
+            _setter("resource_type", resource_type)
         if service_type is not None:
-            pulumi.set(__self__, "service_type", service_type)
+            _setter("service_type", service_type)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -3295,18 +3860,37 @@ class TargetTargetDetectorRecipeDetectorRuleDetails(dict):
         :param Sequence[str] labels: user defined labels for a detector rule
         :param str risk_level: The Risk Level
         """
+        TargetTargetDetectorRecipeDetectorRuleDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition_groups=condition_groups,
+            configurations=configurations,
+            is_configuration_allowed=is_configuration_allowed,
+            is_enabled=is_enabled,
+            labels=labels,
+            risk_level=risk_level,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition_groups: Optional[Sequence['outputs.TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup']] = None,
+             configurations: Optional[Sequence['outputs.TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration']] = None,
+             is_configuration_allowed: Optional[bool] = None,
+             is_enabled: Optional[bool] = None,
+             labels: Optional[Sequence[str]] = None,
+             risk_level: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if condition_groups is not None:
-            pulumi.set(__self__, "condition_groups", condition_groups)
+            _setter("condition_groups", condition_groups)
         if configurations is not None:
-            pulumi.set(__self__, "configurations", configurations)
+            _setter("configurations", configurations)
         if is_configuration_allowed is not None:
-            pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
+            _setter("is_configuration_allowed", is_configuration_allowed)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if labels is not None:
-            pulumi.set(__self__, "labels", labels)
+            _setter("labels", labels)
         if risk_level is not None:
-            pulumi.set(__self__, "risk_level", risk_level)
+            _setter("risk_level", risk_level)
 
     @property
     @pulumi.getter(name="conditionGroups")
@@ -3383,8 +3967,19 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup(dict):
         :param str compartment_id: (Updatable) compartment associated with condition
         :param str condition: (Updatable) Base condition object
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "condition", condition)
+        TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            condition=condition,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             condition: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("condition", condition)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3437,16 +4032,33 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration(dict):
         :param str value: (Updatable) configuration value
         :param Sequence['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs'] values: List of configuration values
         """
+        TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            data_type=data_type,
+            name=name,
+            value=value,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: Optional[str] = None,
+             data_type: Optional[str] = None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             values: Optional[Sequence['outputs.TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_key is not None:
-            pulumi.set(__self__, "config_key", config_key)
+            _setter("config_key", config_key)
         if data_type is not None:
-            pulumi.set(__self__, "data_type", data_type)
+            _setter("data_type", data_type)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
         if values is not None:
-            pulumi.set(__self__, "values", values)
+            _setter("values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -3519,12 +4131,25 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue(dict):
         :param str managed_list_type: type of the managed list
         :param str value: (Updatable) configuration value
         """
+        TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            list_type=list_type,
+            managed_list_type=managed_list_type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             list_type: Optional[str] = None,
+             managed_list_type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if list_type is not None:
-            pulumi.set(__self__, "list_type", list_type)
+            _setter("list_type", list_type)
         if managed_list_type is not None:
-            pulumi.set(__self__, "managed_list_type", managed_list_type)
+            _setter("managed_list_type", managed_list_type)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -3585,12 +4210,25 @@ class TargetTargetDetectorRecipeDetectorRuleEntitiesMapping(dict):
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
+        TargetTargetDetectorRecipeDetectorRuleEntitiesMapping._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            entity_type=entity_type,
+            query_field=query_field,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             entity_type: Optional[str] = None,
+             query_field: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if entity_type is not None:
-            pulumi.set(__self__, "entity_type", entity_type)
+            _setter("entity_type", entity_type)
         if query_field is not None:
-            pulumi.set(__self__, "query_field", query_field)
+            _setter("query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -3693,36 +4331,73 @@ class TargetTargetDetectorRecipeEffectiveDetectorRule(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
+        TargetTargetDetectorRecipeEffectiveDetectorRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_source_id=data_source_id,
+            description=description,
+            details=details,
+            detector=detector,
+            detector_rule_id=detector_rule_id,
+            display_name=display_name,
+            entities_mappings=entities_mappings,
+            lifecycle_details=lifecycle_details,
+            managed_list_types=managed_list_types,
+            recommendation=recommendation,
+            resource_type=resource_type,
+            service_type=service_type,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_source_id: Optional[str] = None,
+             description: Optional[str] = None,
+             details: Optional[Sequence['outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetail']] = None,
+             detector: Optional[str] = None,
+             detector_rule_id: Optional[str] = None,
+             display_name: Optional[str] = None,
+             entities_mappings: Optional[Sequence['outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping']] = None,
+             lifecycle_details: Optional[str] = None,
+             managed_list_types: Optional[Sequence[str]] = None,
+             recommendation: Optional[str] = None,
+             resource_type: Optional[str] = None,
+             service_type: Optional[str] = None,
+             state: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if data_source_id is not None:
-            pulumi.set(__self__, "data_source_id", data_source_id)
+            _setter("data_source_id", data_source_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if details is not None:
-            pulumi.set(__self__, "details", details)
+            _setter("details", details)
         if detector is not None:
-            pulumi.set(__self__, "detector", detector)
+            _setter("detector", detector)
         if detector_rule_id is not None:
-            pulumi.set(__self__, "detector_rule_id", detector_rule_id)
+            _setter("detector_rule_id", detector_rule_id)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if entities_mappings is not None:
-            pulumi.set(__self__, "entities_mappings", entities_mappings)
+            _setter("entities_mappings", entities_mappings)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if managed_list_types is not None:
-            pulumi.set(__self__, "managed_list_types", managed_list_types)
+            _setter("managed_list_types", managed_list_types)
         if recommendation is not None:
-            pulumi.set(__self__, "recommendation", recommendation)
+            _setter("recommendation", recommendation)
         if resource_type is not None:
-            pulumi.set(__self__, "resource_type", resource_type)
+            _setter("resource_type", resource_type)
         if service_type is not None:
-            pulumi.set(__self__, "service_type", service_type)
+            _setter("service_type", service_type)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="dataSourceId")
@@ -3889,18 +4564,37 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetail(dict):
         :param Sequence[str] labels: user defined labels for a detector rule
         :param str risk_level: The Risk Level
         """
+        TargetTargetDetectorRecipeEffectiveDetectorRuleDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition_groups=condition_groups,
+            configurations=configurations,
+            is_configuration_allowed=is_configuration_allowed,
+            is_enabled=is_enabled,
+            labels=labels,
+            risk_level=risk_level,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition_groups: Optional[Sequence['outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup']] = None,
+             configurations: Optional[Sequence['outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration']] = None,
+             is_configuration_allowed: Optional[bool] = None,
+             is_enabled: Optional[bool] = None,
+             labels: Optional[Sequence[str]] = None,
+             risk_level: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if condition_groups is not None:
-            pulumi.set(__self__, "condition_groups", condition_groups)
+            _setter("condition_groups", condition_groups)
         if configurations is not None:
-            pulumi.set(__self__, "configurations", configurations)
+            _setter("configurations", configurations)
         if is_configuration_allowed is not None:
-            pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
+            _setter("is_configuration_allowed", is_configuration_allowed)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if labels is not None:
-            pulumi.set(__self__, "labels", labels)
+            _setter("labels", labels)
         if risk_level is not None:
-            pulumi.set(__self__, "risk_level", risk_level)
+            _setter("risk_level", risk_level)
 
     @property
     @pulumi.getter(name="conditionGroups")
@@ -3977,10 +4671,21 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup(dict):
         :param str compartment_id: (Updatable) compartment associated with condition
         :param str condition: (Updatable) Base condition object
         """
+        TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            condition=condition,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             condition: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if condition is not None:
-            pulumi.set(__self__, "condition", condition)
+            _setter("condition", condition)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -4033,16 +4738,33 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration(dict):
         :param str value: (Updatable) configuration value
         :param Sequence['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
+        TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            data_type=data_type,
+            name=name,
+            value=value,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: Optional[str] = None,
+             data_type: Optional[str] = None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             values: Optional[Sequence['outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_key is not None:
-            pulumi.set(__self__, "config_key", config_key)
+            _setter("config_key", config_key)
         if data_type is not None:
-            pulumi.set(__self__, "data_type", data_type)
+            _setter("data_type", data_type)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
         if values is not None:
-            pulumi.set(__self__, "values", values)
+            _setter("values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -4115,12 +4837,25 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue(di
         :param str managed_list_type: type of the managed list
         :param str value: (Updatable) configuration value
         """
+        TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            list_type=list_type,
+            managed_list_type=managed_list_type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             list_type: Optional[str] = None,
+             managed_list_type: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if list_type is not None:
-            pulumi.set(__self__, "list_type", list_type)
+            _setter("list_type", list_type)
         if managed_list_type is not None:
-            pulumi.set(__self__, "managed_list_type", managed_list_type)
+            _setter("managed_list_type", managed_list_type)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -4181,12 +4916,25 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping(dict):
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
+        TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            entity_type=entity_type,
+            query_field=query_field,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             entity_type: Optional[str] = None,
+             query_field: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if entity_type is not None:
-            pulumi.set(__self__, "entity_type", entity_type)
+            _setter("entity_type", entity_type)
         if query_field is not None:
-            pulumi.set(__self__, "query_field", query_field)
+            _setter("query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -4273,25 +5021,52 @@ class TargetTargetResponderRecipe(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "responder_recipe_id", responder_recipe_id)
+        TargetTargetResponderRecipe._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            responder_recipe_id=responder_recipe_id,
+            compartment_id=compartment_id,
+            description=description,
+            display_name=display_name,
+            effective_responder_rules=effective_responder_rules,
+            id=id,
+            owner=owner,
+            responder_rules=responder_rules,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             responder_recipe_id: str,
+             compartment_id: Optional[str] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             effective_responder_rules: Optional[Sequence['outputs.TargetTargetResponderRecipeEffectiveResponderRule']] = None,
+             id: Optional[str] = None,
+             owner: Optional[str] = None,
+             responder_rules: Optional[Sequence['outputs.TargetTargetResponderRecipeResponderRule']] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("responder_recipe_id", responder_recipe_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if effective_responder_rules is not None:
-            pulumi.set(__self__, "effective_responder_rules", effective_responder_rules)
+            _setter("effective_responder_rules", effective_responder_rules)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if owner is not None:
-            pulumi.set(__self__, "owner", owner)
+            _setter("owner", owner)
         if responder_rules is not None:
-            pulumi.set(__self__, "responder_rules", responder_rules)
+            _setter("responder_rules", responder_rules)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="responderRecipeId")
@@ -4444,30 +5219,61 @@ class TargetTargetResponderRecipeEffectiveResponderRule(dict):
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
+        TargetTargetResponderRecipeEffectiveResponderRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            description=description,
+            details=details,
+            display_name=display_name,
+            lifecycle_details=lifecycle_details,
+            policies=policies,
+            responder_rule_id=responder_rule_id,
+            state=state,
+            supported_modes=supported_modes,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[str] = None,
+             description: Optional[str] = None,
+             details: Optional[Sequence['outputs.TargetTargetResponderRecipeEffectiveResponderRuleDetail']] = None,
+             display_name: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             policies: Optional[Sequence[str]] = None,
+             responder_rule_id: Optional[str] = None,
+             state: Optional[str] = None,
+             supported_modes: Optional[Sequence[str]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if details is not None:
-            pulumi.set(__self__, "details", details)
+            _setter("details", details)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if policies is not None:
-            pulumi.set(__self__, "policies", policies)
+            _setter("policies", policies)
         if responder_rule_id is not None:
-            pulumi.set(__self__, "responder_rule_id", responder_rule_id)
+            _setter("responder_rule_id", responder_rule_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if supported_modes is not None:
-            pulumi.set(__self__, "supported_modes", supported_modes)
+            _setter("supported_modes", supported_modes)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -4604,14 +5410,29 @@ class TargetTargetResponderRecipeEffectiveResponderRuleDetail(dict):
         :param bool is_enabled: Identifies state for ResponderRule
         :param str mode: (Updatable) Execution Mode for ResponderRule
         """
+        TargetTargetResponderRecipeEffectiveResponderRuleDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition=condition,
+            configurations=configurations,
+            is_enabled=is_enabled,
+            mode=mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition: Optional[str] = None,
+             configurations: Optional[Sequence['outputs.TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration']] = None,
+             is_enabled: Optional[bool] = None,
+             mode: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if condition is not None:
-            pulumi.set(__self__, "condition", condition)
+            _setter("condition", condition)
         if configurations is not None:
-            pulumi.set(__self__, "configurations", configurations)
+            _setter("configurations", configurations)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if mode is not None:
-            pulumi.set(__self__, "mode", mode)
+            _setter("mode", mode)
 
     @property
     @pulumi.getter
@@ -4674,12 +5495,25 @@ class TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration(dict)
         :param str name: (Updatable) configuration name
         :param str value: (Updatable) configuration value
         """
+        TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: Optional[str] = None,
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_key is not None:
-            pulumi.set(__self__, "config_key", config_key)
+            _setter("config_key", config_key)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -4772,28 +5606,59 @@ class TargetTargetResponderRecipeResponderRule(dict):
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "responder_rule_id", responder_rule_id)
+        TargetTargetResponderRecipeResponderRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            details=details,
+            responder_rule_id=responder_rule_id,
+            compartment_id=compartment_id,
+            description=description,
+            display_name=display_name,
+            lifecycle_details=lifecycle_details,
+            policies=policies,
+            state=state,
+            supported_modes=supported_modes,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             details: 'outputs.TargetTargetResponderRecipeResponderRuleDetails',
+             responder_rule_id: str,
+             compartment_id: Optional[str] = None,
+             description: Optional[str] = None,
+             display_name: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             policies: Optional[Sequence[str]] = None,
+             state: Optional[str] = None,
+             supported_modes: Optional[Sequence[str]] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("details", details)
+        _setter("responder_rule_id", responder_rule_id)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if policies is not None:
-            pulumi.set(__self__, "policies", policies)
+            _setter("policies", policies)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if supported_modes is not None:
-            pulumi.set(__self__, "supported_modes", supported_modes)
+            _setter("supported_modes", supported_modes)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter
@@ -4930,14 +5795,29 @@ class TargetTargetResponderRecipeResponderRuleDetails(dict):
         :param bool is_enabled: Identifies state for ResponderRule
         :param str mode: (Updatable) Execution Mode for ResponderRule
         """
+        TargetTargetResponderRecipeResponderRuleDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition=condition,
+            configurations=configurations,
+            is_enabled=is_enabled,
+            mode=mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition: Optional[str] = None,
+             configurations: Optional[Sequence['outputs.TargetTargetResponderRecipeResponderRuleDetailsConfiguration']] = None,
+             is_enabled: Optional[bool] = None,
+             mode: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if condition is not None:
-            pulumi.set(__self__, "condition", condition)
+            _setter("condition", condition)
         if configurations is not None:
-            pulumi.set(__self__, "configurations", configurations)
+            _setter("configurations", configurations)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if mode is not None:
-            pulumi.set(__self__, "mode", mode)
+            _setter("mode", mode)
 
     @property
     @pulumi.getter
@@ -5000,9 +5880,22 @@ class TargetTargetResponderRecipeResponderRuleDetailsConfiguration(dict):
         :param str name: (Updatable) configuration name
         :param str value: (Updatable) configuration value
         """
-        pulumi.set(__self__, "config_key", config_key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        TargetTargetResponderRecipeResponderRuleDetailsConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: str,
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_key", config_key)
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -5038,8 +5931,19 @@ class GetDataMaskRuleTargetSelectedResult(dict):
         :param str kind: Target selection.
         :param Sequence[str] values: Types of Targets
         """
-        pulumi.set(__self__, "kind", kind)
-        pulumi.set(__self__, "values", values)
+        GetDataMaskRuleTargetSelectedResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: str,
+             values: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("kind", kind)
+        _setter("values", values)
 
     @property
     @pulumi.getter
@@ -5062,7 +5966,16 @@ class GetDataMaskRuleTargetSelectedResult(dict):
 class GetDataMaskRulesDataMaskRuleCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDataMaskRulesDataMaskRuleCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetDataMaskRulesDataMaskRuleCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDataMaskRulesDataMaskRuleCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -5105,21 +6018,58 @@ class GetDataMaskRulesDataMaskRuleCollectionItemResult(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "data_mask_categories", data_mask_categories)
-        pulumi.set(__self__, "data_mask_rule_status", data_mask_rule_status)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "iam_group_id", iam_group_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecyle_details", lifecyle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "target_selecteds", target_selecteds)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetDataMaskRulesDataMaskRuleCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            data_mask_categories=data_mask_categories,
+            data_mask_rule_status=data_mask_rule_status,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            iam_group_id=iam_group_id,
+            id=id,
+            lifecyle_details=lifecyle_details,
+            state=state,
+            system_tags=system_tags,
+            target_selecteds=target_selecteds,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             data_mask_categories: Sequence[str],
+             data_mask_rule_status: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             iam_group_id: str,
+             id: str,
+             lifecyle_details: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             target_selecteds: Sequence['outputs.GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedResult'],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("data_mask_categories", data_mask_categories)
+        _setter("data_mask_rule_status", data_mask_rule_status)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("iam_group_id", iam_group_id)
+        _setter("id", id)
+        _setter("lifecyle_details", lifecyle_details)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("target_selecteds", target_selecteds)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -5251,8 +6201,19 @@ class GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedResult(dict):
         :param str kind: Target selection.
         :param Sequence[str] values: Types of Targets
         """
-        pulumi.set(__self__, "kind", kind)
-        pulumi.set(__self__, "values", values)
+        GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kind=kind,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kind: str,
+             values: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("kind", kind)
+        _setter("values", values)
 
     @property
     @pulumi.getter
@@ -5280,10 +6241,23 @@ class GetDataMaskRulesFilterResult(dict):
         """
         :param Sequence[str] values: Types of Targets
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDataMaskRulesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5329,16 +6303,43 @@ class GetDataSourceDataSourceDetailResult(dict):
         :param Sequence[str] regions: Logging Query regions
         :param int threshold: The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
         """
-        pulumi.set(__self__, "additional_entities_count", additional_entities_count)
-        pulumi.set(__self__, "data_source_feed_provider", data_source_feed_provider)
-        pulumi.set(__self__, "interval_in_minutes", interval_in_minutes)
-        pulumi.set(__self__, "logging_query_details", logging_query_details)
-        pulumi.set(__self__, "logging_query_type", logging_query_type)
-        pulumi.set(__self__, "operator", operator)
-        pulumi.set(__self__, "query", query)
-        pulumi.set(__self__, "query_start_times", query_start_times)
-        pulumi.set(__self__, "regions", regions)
-        pulumi.set(__self__, "threshold", threshold)
+        GetDataSourceDataSourceDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_entities_count=additional_entities_count,
+            data_source_feed_provider=data_source_feed_provider,
+            interval_in_minutes=interval_in_minutes,
+            logging_query_details=logging_query_details,
+            logging_query_type=logging_query_type,
+            operator=operator,
+            query=query,
+            query_start_times=query_start_times,
+            regions=regions,
+            threshold=threshold,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_entities_count: int,
+             data_source_feed_provider: str,
+             interval_in_minutes: int,
+             logging_query_details: Sequence['outputs.GetDataSourceDataSourceDetailLoggingQueryDetailResult'],
+             logging_query_type: str,
+             operator: str,
+             query: str,
+             query_start_times: Sequence['outputs.GetDataSourceDataSourceDetailQueryStartTimeResult'],
+             regions: Sequence[str],
+             threshold: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("additional_entities_count", additional_entities_count)
+        _setter("data_source_feed_provider", data_source_feed_provider)
+        _setter("interval_in_minutes", interval_in_minutes)
+        _setter("logging_query_details", logging_query_details)
+        _setter("logging_query_type", logging_query_type)
+        _setter("operator", operator)
+        _setter("query", query)
+        _setter("query_start_times", query_start_times)
+        _setter("regions", regions)
+        _setter("threshold", threshold)
 
     @property
     @pulumi.getter(name="additionalEntitiesCount")
@@ -5430,8 +6431,19 @@ class GetDataSourceDataSourceDetailLoggingQueryDetailResult(dict):
         :param int key_entities_count: The key entities count used for data source query
         :param str logging_query_type: Logging query type for data source (Sighting/Insight)
         """
-        pulumi.set(__self__, "key_entities_count", key_entities_count)
-        pulumi.set(__self__, "logging_query_type", logging_query_type)
+        GetDataSourceDataSourceDetailLoggingQueryDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key_entities_count=key_entities_count,
+            logging_query_type=logging_query_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key_entities_count: int,
+             logging_query_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key_entities_count", key_entities_count)
+        _setter("logging_query_type", logging_query_type)
 
     @property
     @pulumi.getter(name="keyEntitiesCount")
@@ -5459,8 +6471,19 @@ class GetDataSourceDataSourceDetailQueryStartTimeResult(dict):
         :param str query_start_time: Time when the query can start, if not specified it can start immediately.
         :param str start_policy_type: policy used for deciding the query start time
         """
-        pulumi.set(__self__, "query_start_time", query_start_time)
-        pulumi.set(__self__, "start_policy_type", start_policy_type)
+        GetDataSourceDataSourceDetailQueryStartTimeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            query_start_time=query_start_time,
+            start_policy_type=start_policy_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             query_start_time: str,
+             start_policy_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("query_start_time", query_start_time)
+        _setter("start_policy_type", start_policy_type)
 
     @property
     @pulumi.getter(name="queryStartTime")
@@ -5488,8 +6511,19 @@ class GetDataSourceDataSourceDetectorMappingInfoResult(dict):
         :param str detector_recipe_id: Id of the attached detectorRecipeId to the Data Source.
         :param str detector_rule_id: Id of the attached detectorRuleId to the Data Source.
         """
-        pulumi.set(__self__, "detector_recipe_id", detector_recipe_id)
-        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
+        GetDataSourceDataSourceDetectorMappingInfoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            detector_recipe_id=detector_recipe_id,
+            detector_rule_id=detector_rule_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             detector_recipe_id: str,
+             detector_rule_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("detector_recipe_id", detector_recipe_id)
+        _setter("detector_rule_id", detector_rule_id)
 
     @property
     @pulumi.getter(name="detectorRecipeId")
@@ -5527,13 +6561,34 @@ class GetDataSourceEventItemResult(dict):
         :param str status: Current data source event info status
         :param str time_created: Data source event created time
         """
-        pulumi.set(__self__, "comments", comments)
-        pulumi.set(__self__, "data_source_id", data_source_id)
-        pulumi.set(__self__, "event_date", event_date)
-        pulumi.set(__self__, "event_infos", event_infos)
-        pulumi.set(__self__, "region", region)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "time_created", time_created)
+        GetDataSourceEventItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            comments=comments,
+            data_source_id=data_source_id,
+            event_date=event_date,
+            event_infos=event_infos,
+            region=region,
+            status=status,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             comments: str,
+             data_source_id: str,
+             event_date: str,
+             event_infos: Sequence['outputs.GetDataSourceEventItemEventInfoResult'],
+             region: str,
+             status: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("comments", comments)
+        _setter("data_source_id", data_source_id)
+        _setter("event_date", event_date)
+        _setter("event_infos", event_infos)
+        _setter("region", region)
+        _setter("status", status)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter
@@ -5603,11 +6658,28 @@ class GetDataSourceEventItemEventInfoResult(dict):
         """
         :param str data_source_feed_provider: Possible type of dataSourceFeed Provider(LoggingQuery)
         """
-        pulumi.set(__self__, "data_source_feed_provider", data_source_feed_provider)
-        pulumi.set(__self__, "log_result", log_result)
-        pulumi.set(__self__, "observed_value", observed_value)
-        pulumi.set(__self__, "operator", operator)
-        pulumi.set(__self__, "trigger_value", trigger_value)
+        GetDataSourceEventItemEventInfoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_source_feed_provider=data_source_feed_provider,
+            log_result=log_result,
+            observed_value=observed_value,
+            operator=operator,
+            trigger_value=trigger_value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_source_feed_provider: str,
+             log_result: str,
+             observed_value: str,
+             operator: str,
+             trigger_value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("data_source_feed_provider", data_source_feed_provider)
+        _setter("log_result", log_result)
+        _setter("observed_value", observed_value)
+        _setter("operator", operator)
+        _setter("trigger_value", trigger_value)
 
     @property
     @pulumi.getter(name="dataSourceFeedProvider")
@@ -5645,7 +6717,16 @@ class GetDataSourceEventsDataSourceEventCollectionResult(dict):
         """
         :param Sequence['GetDataSourceEventsDataSourceEventCollectionItemArgs'] items: List of event related to a DataSource
         """
-        pulumi.set(__self__, "items", items)
+        GetDataSourceEventsDataSourceEventCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDataSourceEventsDataSourceEventCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -5675,13 +6756,34 @@ class GetDataSourceEventsDataSourceEventCollectionItemResult(dict):
         :param str status: Current data source event info status
         :param str time_created: Data source event created time
         """
-        pulumi.set(__self__, "comments", comments)
-        pulumi.set(__self__, "data_source_id", data_source_id)
-        pulumi.set(__self__, "event_date", event_date)
-        pulumi.set(__self__, "event_infos", event_infos)
-        pulumi.set(__self__, "region", region)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "time_created", time_created)
+        GetDataSourceEventsDataSourceEventCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            comments=comments,
+            data_source_id=data_source_id,
+            event_date=event_date,
+            event_infos=event_infos,
+            region=region,
+            status=status,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             comments: str,
+             data_source_id: str,
+             event_date: str,
+             event_infos: Sequence['outputs.GetDataSourceEventsDataSourceEventCollectionItemEventInfoResult'],
+             region: str,
+             status: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("comments", comments)
+        _setter("data_source_id", data_source_id)
+        _setter("event_date", event_date)
+        _setter("event_infos", event_infos)
+        _setter("region", region)
+        _setter("status", status)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter
@@ -5751,11 +6853,28 @@ class GetDataSourceEventsDataSourceEventCollectionItemEventInfoResult(dict):
         """
         :param str data_source_feed_provider: Possible type of dataSourceFeed Provider(LoggingQuery)
         """
-        pulumi.set(__self__, "data_source_feed_provider", data_source_feed_provider)
-        pulumi.set(__self__, "log_result", log_result)
-        pulumi.set(__self__, "observed_value", observed_value)
-        pulumi.set(__self__, "operator", operator)
-        pulumi.set(__self__, "trigger_value", trigger_value)
+        GetDataSourceEventsDataSourceEventCollectionItemEventInfoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_source_feed_provider=data_source_feed_provider,
+            log_result=log_result,
+            observed_value=observed_value,
+            operator=operator,
+            trigger_value=trigger_value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_source_feed_provider: str,
+             log_result: str,
+             observed_value: str,
+             operator: str,
+             trigger_value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("data_source_feed_provider", data_source_feed_provider)
+        _setter("log_result", log_result)
+        _setter("observed_value", observed_value)
+        _setter("operator", operator)
+        _setter("trigger_value", trigger_value)
 
     @property
     @pulumi.getter(name="dataSourceFeedProvider")
@@ -5792,10 +6911,23 @@ class GetDataSourceEventsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDataSourceEventsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5822,8 +6954,19 @@ class GetDataSourceRegionStatusDetailResult(dict):
         :param str region: Data Source replication region.
         :param str status: Status of data Source
         """
-        pulumi.set(__self__, "region", region)
-        pulumi.set(__self__, "status", status)
+        GetDataSourceRegionStatusDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            region=region,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             region: str,
+             status: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("region", region)
+        _setter("status", status)
 
     @property
     @pulumi.getter
@@ -5846,7 +6989,16 @@ class GetDataSourceRegionStatusDetailResult(dict):
 class GetDataSourcesDataSourceCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDataSourcesDataSourceCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetDataSourcesDataSourceCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDataSourcesDataSourceCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -5887,20 +7039,55 @@ class GetDataSourcesDataSourceCollectionItemResult(dict):
         :param str time_created: The date and time the Data source was created. Format defined by RFC3339.
         :param str time_updated: The date and time the Data source was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "data_source_details", data_source_details)
-        pulumi.set(__self__, "data_source_detector_mapping_infos", data_source_detector_mapping_infos)
-        pulumi.set(__self__, "data_source_feed_provider", data_source_feed_provider)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "region_status_details", region_status_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetDataSourcesDataSourceCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            data_source_details=data_source_details,
+            data_source_detector_mapping_infos=data_source_detector_mapping_infos,
+            data_source_feed_provider=data_source_feed_provider,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            region_status_details=region_status_details,
+            state=state,
+            status=status,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             data_source_details: Sequence['outputs.GetDataSourcesDataSourceCollectionItemDataSourceDetailResult'],
+             data_source_detector_mapping_infos: Sequence['outputs.GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoResult'],
+             data_source_feed_provider: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             region_status_details: Sequence['outputs.GetDataSourcesDataSourceCollectionItemRegionStatusDetailResult'],
+             state: str,
+             status: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("data_source_details", data_source_details)
+        _setter("data_source_detector_mapping_infos", data_source_detector_mapping_infos)
+        _setter("data_source_feed_provider", data_source_feed_provider)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("region_status_details", region_status_details)
+        _setter("state", state)
+        _setter("status", status)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -6040,16 +7227,43 @@ class GetDataSourcesDataSourceCollectionItemDataSourceDetailResult(dict):
         :param Sequence[str] regions: Logging Query regions
         :param int threshold: The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
         """
-        pulumi.set(__self__, "additional_entities_count", additional_entities_count)
-        pulumi.set(__self__, "data_source_feed_provider", data_source_feed_provider)
-        pulumi.set(__self__, "interval_in_minutes", interval_in_minutes)
-        pulumi.set(__self__, "logging_query_details", logging_query_details)
-        pulumi.set(__self__, "logging_query_type", logging_query_type)
-        pulumi.set(__self__, "operator", operator)
-        pulumi.set(__self__, "query", query)
-        pulumi.set(__self__, "query_start_times", query_start_times)
-        pulumi.set(__self__, "regions", regions)
-        pulumi.set(__self__, "threshold", threshold)
+        GetDataSourcesDataSourceCollectionItemDataSourceDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_entities_count=additional_entities_count,
+            data_source_feed_provider=data_source_feed_provider,
+            interval_in_minutes=interval_in_minutes,
+            logging_query_details=logging_query_details,
+            logging_query_type=logging_query_type,
+            operator=operator,
+            query=query,
+            query_start_times=query_start_times,
+            regions=regions,
+            threshold=threshold,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_entities_count: int,
+             data_source_feed_provider: str,
+             interval_in_minutes: int,
+             logging_query_details: Sequence['outputs.GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailResult'],
+             logging_query_type: str,
+             operator: str,
+             query: str,
+             query_start_times: Sequence['outputs.GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeResult'],
+             regions: Sequence[str],
+             threshold: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("additional_entities_count", additional_entities_count)
+        _setter("data_source_feed_provider", data_source_feed_provider)
+        _setter("interval_in_minutes", interval_in_minutes)
+        _setter("logging_query_details", logging_query_details)
+        _setter("logging_query_type", logging_query_type)
+        _setter("operator", operator)
+        _setter("query", query)
+        _setter("query_start_times", query_start_times)
+        _setter("regions", regions)
+        _setter("threshold", threshold)
 
     @property
     @pulumi.getter(name="additionalEntitiesCount")
@@ -6141,8 +7355,19 @@ class GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailRe
         :param int key_entities_count: The key entities count used for data source query
         :param str logging_query_type: A filter to return only resources their query type matches the given LoggingQueryType.
         """
-        pulumi.set(__self__, "key_entities_count", key_entities_count)
-        pulumi.set(__self__, "logging_query_type", logging_query_type)
+        GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key_entities_count=key_entities_count,
+            logging_query_type=logging_query_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key_entities_count: int,
+             logging_query_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key_entities_count", key_entities_count)
+        _setter("logging_query_type", logging_query_type)
 
     @property
     @pulumi.getter(name="keyEntitiesCount")
@@ -6170,8 +7395,19 @@ class GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeResult
         :param str query_start_time: Time when the query can start, if not specified it can start immediately.
         :param str start_policy_type: policy used for deciding the query start time
         """
-        pulumi.set(__self__, "query_start_time", query_start_time)
-        pulumi.set(__self__, "start_policy_type", start_policy_type)
+        GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTimeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            query_start_time=query_start_time,
+            start_policy_type=start_policy_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             query_start_time: str,
+             start_policy_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("query_start_time", query_start_time)
+        _setter("start_policy_type", start_policy_type)
 
     @property
     @pulumi.getter(name="queryStartTime")
@@ -6199,8 +7435,19 @@ class GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoResult(
         :param str detector_recipe_id: Id of the attached detectorRecipeId to the Data Source.
         :param str detector_rule_id: Id of the attached detectorRuleId to the Data Source.
         """
-        pulumi.set(__self__, "detector_recipe_id", detector_recipe_id)
-        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
+        GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            detector_recipe_id=detector_recipe_id,
+            detector_rule_id=detector_rule_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             detector_recipe_id: str,
+             detector_rule_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("detector_recipe_id", detector_recipe_id)
+        _setter("detector_rule_id", detector_rule_id)
 
     @property
     @pulumi.getter(name="detectorRecipeId")
@@ -6228,8 +7475,19 @@ class GetDataSourcesDataSourceCollectionItemRegionStatusDetailResult(dict):
         :param str region: Data Source replication region.
         :param str status: Status of data Source
         """
-        pulumi.set(__self__, "region", region)
-        pulumi.set(__self__, "status", status)
+        GetDataSourcesDataSourceCollectionItemRegionStatusDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            region=region,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             region: str,
+             status: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("region", region)
+        _setter("status", status)
 
     @property
     @pulumi.getter
@@ -6254,10 +7512,23 @@ class GetDataSourcesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDataSourcesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6312,22 +7583,61 @@ class GetDetectorRecipeDetectorRuleResult(dict):
         :param str time_created: The date and time the detector recipe was created. Format defined by RFC3339.
         :param str time_updated: The date and time the detector recipe was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "candidate_responder_rules", candidate_responder_rules)
-        pulumi.set(__self__, "data_source_id", data_source_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "detector", detector)
-        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "entities_mappings", entities_mappings)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "managed_list_types", managed_list_types)
-        pulumi.set(__self__, "recommendation", recommendation)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "service_type", service_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetDetectorRecipeDetectorRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            candidate_responder_rules=candidate_responder_rules,
+            data_source_id=data_source_id,
+            description=description,
+            details=details,
+            detector=detector,
+            detector_rule_id=detector_rule_id,
+            display_name=display_name,
+            entities_mappings=entities_mappings,
+            lifecycle_details=lifecycle_details,
+            managed_list_types=managed_list_types,
+            recommendation=recommendation,
+            resource_type=resource_type,
+            service_type=service_type,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             candidate_responder_rules: Sequence['outputs.GetDetectorRecipeDetectorRuleCandidateResponderRuleResult'],
+             data_source_id: str,
+             description: str,
+             details: Sequence['outputs.GetDetectorRecipeDetectorRuleDetailResult'],
+             detector: str,
+             detector_rule_id: str,
+             display_name: str,
+             entities_mappings: Sequence['outputs.GetDetectorRecipeDetectorRuleEntitiesMappingResult'],
+             lifecycle_details: str,
+             managed_list_types: Sequence[str],
+             recommendation: str,
+             resource_type: str,
+             service_type: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("candidate_responder_rules", candidate_responder_rules)
+        _setter("data_source_id", data_source_id)
+        _setter("description", description)
+        _setter("details", details)
+        _setter("detector", detector)
+        _setter("detector_rule_id", detector_rule_id)
+        _setter("display_name", display_name)
+        _setter("entities_mappings", entities_mappings)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("managed_list_types", managed_list_types)
+        _setter("recommendation", recommendation)
+        _setter("resource_type", resource_type)
+        _setter("service_type", service_type)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="candidateResponderRules")
@@ -6469,9 +7779,22 @@ class GetDetectorRecipeDetectorRuleCandidateResponderRuleResult(dict):
         :param str id: Ocid for detector recipe
         :param bool is_preferred: Preferred state
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_preferred", is_preferred)
+        GetDetectorRecipeDetectorRuleCandidateResponderRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+            is_preferred=is_preferred,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             id: str,
+             is_preferred: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("is_preferred", is_preferred)
 
     @property
     @pulumi.getter(name="displayName")
@@ -6523,16 +7846,43 @@ class GetDetectorRecipeDetectorRuleDetailResult(dict):
         :param str recommendation: Recommendation for DetectorRecipeDetectorRule
         :param str risk_level: The Risk Level
         """
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "data_source_id", data_source_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "entities_mappings", entities_mappings)
-        pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "recommendation", recommendation)
-        pulumi.set(__self__, "risk_level", risk_level)
+        GetDetectorRecipeDetectorRuleDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition=condition,
+            configurations=configurations,
+            data_source_id=data_source_id,
+            description=description,
+            entities_mappings=entities_mappings,
+            is_configuration_allowed=is_configuration_allowed,
+            is_enabled=is_enabled,
+            labels=labels,
+            recommendation=recommendation,
+            risk_level=risk_level,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition: str,
+             configurations: Sequence['outputs.GetDetectorRecipeDetectorRuleDetailConfigurationResult'],
+             data_source_id: str,
+             description: str,
+             entities_mappings: Sequence['outputs.GetDetectorRecipeDetectorRuleDetailEntitiesMappingResult'],
+             is_configuration_allowed: bool,
+             is_enabled: bool,
+             labels: Sequence[str],
+             recommendation: str,
+             risk_level: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition", condition)
+        _setter("configurations", configurations)
+        _setter("data_source_id", data_source_id)
+        _setter("description", description)
+        _setter("entities_mappings", entities_mappings)
+        _setter("is_configuration_allowed", is_configuration_allowed)
+        _setter("is_enabled", is_enabled)
+        _setter("labels", labels)
+        _setter("recommendation", recommendation)
+        _setter("risk_level", risk_level)
 
     @property
     @pulumi.getter
@@ -6630,11 +7980,28 @@ class GetDetectorRecipeDetectorRuleDetailConfigurationResult(dict):
         :param str value: configuration value
         :param Sequence['GetDetectorRecipeDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
-        pulumi.set(__self__, "config_key", config_key)
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
-        pulumi.set(__self__, "values", values)
+        GetDetectorRecipeDetectorRuleDetailConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            data_type=data_type,
+            name=name,
+            value=value,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: str,
+             data_type: str,
+             name: str,
+             value: str,
+             values: Sequence['outputs.GetDetectorRecipeDetectorRuleDetailConfigurationValueResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_key", config_key)
+        _setter("data_type", data_type)
+        _setter("name", name)
+        _setter("value", value)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -6688,9 +8055,22 @@ class GetDetectorRecipeDetectorRuleDetailConfigurationValueResult(dict):
         :param str managed_list_type: type of the managed list
         :param str value: configuration value
         """
-        pulumi.set(__self__, "list_type", list_type)
-        pulumi.set(__self__, "managed_list_type", managed_list_type)
-        pulumi.set(__self__, "value", value)
+        GetDetectorRecipeDetectorRuleDetailConfigurationValueResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            list_type=list_type,
+            managed_list_type=managed_list_type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             list_type: str,
+             managed_list_type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("list_type", list_type)
+        _setter("managed_list_type", managed_list_type)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -6728,9 +8108,22 @@ class GetDetectorRecipeDetectorRuleDetailEntitiesMappingResult(dict):
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "entity_type", entity_type)
-        pulumi.set(__self__, "query_field", query_field)
+        GetDetectorRecipeDetectorRuleDetailEntitiesMappingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            entity_type=entity_type,
+            query_field=query_field,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             entity_type: str,
+             query_field: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("entity_type", entity_type)
+        _setter("query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -6768,9 +8161,22 @@ class GetDetectorRecipeDetectorRuleEntitiesMappingResult(dict):
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "entity_type", entity_type)
-        pulumi.set(__self__, "query_field", query_field)
+        GetDetectorRecipeDetectorRuleEntitiesMappingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            entity_type=entity_type,
+            query_field=query_field,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             entity_type: str,
+             query_field: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("entity_type", entity_type)
+        _setter("query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -6834,22 +8240,61 @@ class GetDetectorRecipeEffectiveDetectorRuleResult(dict):
         :param str time_created: The date and time the detector recipe was created. Format defined by RFC3339.
         :param str time_updated: The date and time the detector recipe was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "candidate_responder_rules", candidate_responder_rules)
-        pulumi.set(__self__, "data_source_id", data_source_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "detector", detector)
-        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "entities_mappings", entities_mappings)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "managed_list_types", managed_list_types)
-        pulumi.set(__self__, "recommendation", recommendation)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "service_type", service_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetDetectorRecipeEffectiveDetectorRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            candidate_responder_rules=candidate_responder_rules,
+            data_source_id=data_source_id,
+            description=description,
+            details=details,
+            detector=detector,
+            detector_rule_id=detector_rule_id,
+            display_name=display_name,
+            entities_mappings=entities_mappings,
+            lifecycle_details=lifecycle_details,
+            managed_list_types=managed_list_types,
+            recommendation=recommendation,
+            resource_type=resource_type,
+            service_type=service_type,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             candidate_responder_rules: Sequence['outputs.GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleResult'],
+             data_source_id: str,
+             description: str,
+             details: Sequence['outputs.GetDetectorRecipeEffectiveDetectorRuleDetailResult'],
+             detector: str,
+             detector_rule_id: str,
+             display_name: str,
+             entities_mappings: Sequence['outputs.GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult'],
+             lifecycle_details: str,
+             managed_list_types: Sequence[str],
+             recommendation: str,
+             resource_type: str,
+             service_type: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("candidate_responder_rules", candidate_responder_rules)
+        _setter("data_source_id", data_source_id)
+        _setter("description", description)
+        _setter("details", details)
+        _setter("detector", detector)
+        _setter("detector_rule_id", detector_rule_id)
+        _setter("display_name", display_name)
+        _setter("entities_mappings", entities_mappings)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("managed_list_types", managed_list_types)
+        _setter("recommendation", recommendation)
+        _setter("resource_type", resource_type)
+        _setter("service_type", service_type)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="candidateResponderRules")
@@ -6991,9 +8436,22 @@ class GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleResult(dict):
         :param str id: Ocid for detector recipe
         :param bool is_preferred: Preferred state
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_preferred", is_preferred)
+        GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+            is_preferred=is_preferred,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             id: str,
+             is_preferred: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("is_preferred", is_preferred)
 
     @property
     @pulumi.getter(name="displayName")
@@ -7037,12 +8495,31 @@ class GetDetectorRecipeEffectiveDetectorRuleDetailResult(dict):
         :param Sequence[str] labels: user defined labels for a detector rule
         :param str risk_level: The Risk Level
         """
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "risk_level", risk_level)
+        GetDetectorRecipeEffectiveDetectorRuleDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition=condition,
+            configurations=configurations,
+            is_configuration_allowed=is_configuration_allowed,
+            is_enabled=is_enabled,
+            labels=labels,
+            risk_level=risk_level,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition: str,
+             configurations: Sequence['outputs.GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult'],
+             is_configuration_allowed: bool,
+             is_enabled: bool,
+             labels: Sequence[str],
+             risk_level: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition", condition)
+        _setter("configurations", configurations)
+        _setter("is_configuration_allowed", is_configuration_allowed)
+        _setter("is_enabled", is_enabled)
+        _setter("labels", labels)
+        _setter("risk_level", risk_level)
 
     @property
     @pulumi.getter
@@ -7108,11 +8585,28 @@ class GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult(dict):
         :param str value: configuration value
         :param Sequence['GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
-        pulumi.set(__self__, "config_key", config_key)
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
-        pulumi.set(__self__, "values", values)
+        GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            data_type=data_type,
+            name=name,
+            value=value,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: str,
+             data_type: str,
+             name: str,
+             value: str,
+             values: Sequence['outputs.GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_key", config_key)
+        _setter("data_type", data_type)
+        _setter("name", name)
+        _setter("value", value)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -7166,9 +8660,22 @@ class GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult(dict)
         :param str managed_list_type: type of the managed list
         :param str value: configuration value
         """
-        pulumi.set(__self__, "list_type", list_type)
-        pulumi.set(__self__, "managed_list_type", managed_list_type)
-        pulumi.set(__self__, "value", value)
+        GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            list_type=list_type,
+            managed_list_type=managed_list_type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             list_type: str,
+             managed_list_type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("list_type", list_type)
+        _setter("managed_list_type", managed_list_type)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -7206,9 +8713,22 @@ class GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult(dict):
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "entity_type", entity_type)
-        pulumi.set(__self__, "query_field", query_field)
+        GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            entity_type=entity_type,
+            query_field=query_field,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             entity_type: str,
+             query_field: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("entity_type", entity_type)
+        _setter("query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -7239,7 +8759,16 @@ class GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult(dict):
 class GetDetectorRecipesDetectorRecipeCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetDetectorRecipesDetectorRecipeCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -7284,22 +8813,61 @@ class GetDetectorRecipesDetectorRecipeCollectionItemResult(dict):
         :param str time_created: The date and time the detector recipe was created. Format defined by RFC3339.
         :param str time_updated: The date and time the detector recipe was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "detector", detector)
-        pulumi.set(__self__, "detector_rules", detector_rules)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "effective_detector_rules", effective_detector_rules)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "owner", owner)
-        pulumi.set(__self__, "source_detector_recipe_id", source_detector_recipe_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "target_ids", target_ids)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetDetectorRecipesDetectorRecipeCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            detector=detector,
+            detector_rules=detector_rules,
+            display_name=display_name,
+            effective_detector_rules=effective_detector_rules,
+            freeform_tags=freeform_tags,
+            id=id,
+            owner=owner,
+            source_detector_recipe_id=source_detector_recipe_id,
+            state=state,
+            system_tags=system_tags,
+            target_ids=target_ids,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             detector: str,
+             detector_rules: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleResult'],
+             display_name: str,
+             effective_detector_rules: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleResult'],
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             owner: str,
+             source_detector_recipe_id: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             target_ids: Sequence[str],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("detector", detector)
+        _setter("detector_rules", detector_rules)
+        _setter("display_name", display_name)
+        _setter("effective_detector_rules", effective_detector_rules)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("owner", owner)
+        _setter("source_detector_recipe_id", source_detector_recipe_id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("target_ids", target_ids)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -7467,22 +9035,61 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleResult(dict):
         :param str time_created: The date and time the detector recipe was created. Format defined by RFC3339.
         :param str time_updated: The date and time the detector recipe was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "candidate_responder_rules", candidate_responder_rules)
-        pulumi.set(__self__, "data_source_id", data_source_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "detector", detector)
-        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "entities_mappings", entities_mappings)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "managed_list_types", managed_list_types)
-        pulumi.set(__self__, "recommendation", recommendation)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "service_type", service_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            candidate_responder_rules=candidate_responder_rules,
+            data_source_id=data_source_id,
+            description=description,
+            details=details,
+            detector=detector,
+            detector_rule_id=detector_rule_id,
+            display_name=display_name,
+            entities_mappings=entities_mappings,
+            lifecycle_details=lifecycle_details,
+            managed_list_types=managed_list_types,
+            recommendation=recommendation,
+            resource_type=resource_type,
+            service_type=service_type,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             candidate_responder_rules: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleResult'],
+             data_source_id: str,
+             description: str,
+             details: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailResult'],
+             detector: str,
+             detector_rule_id: str,
+             display_name: str,
+             entities_mappings: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingResult'],
+             lifecycle_details: str,
+             managed_list_types: Sequence[str],
+             recommendation: str,
+             resource_type: str,
+             service_type: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("candidate_responder_rules", candidate_responder_rules)
+        _setter("data_source_id", data_source_id)
+        _setter("description", description)
+        _setter("details", details)
+        _setter("detector", detector)
+        _setter("detector_rule_id", detector_rule_id)
+        _setter("display_name", display_name)
+        _setter("entities_mappings", entities_mappings)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("managed_list_types", managed_list_types)
+        _setter("recommendation", recommendation)
+        _setter("resource_type", resource_type)
+        _setter("service_type", service_type)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="candidateResponderRules")
@@ -7624,9 +9231,22 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateRespond
         :param str id: Ocid for detector recipe
         :param bool is_preferred: Preferred state
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_preferred", is_preferred)
+        GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+            is_preferred=is_preferred,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             id: str,
+             is_preferred: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("is_preferred", is_preferred)
 
     @property
     @pulumi.getter(name="displayName")
@@ -7678,16 +9298,43 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailResult(dic
         :param str recommendation: Recommendation for DetectorRecipeDetectorRule
         :param str risk_level: The Risk Level
         """
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "data_source_id", data_source_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "entities_mappings", entities_mappings)
-        pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "recommendation", recommendation)
-        pulumi.set(__self__, "risk_level", risk_level)
+        GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition=condition,
+            configurations=configurations,
+            data_source_id=data_source_id,
+            description=description,
+            entities_mappings=entities_mappings,
+            is_configuration_allowed=is_configuration_allowed,
+            is_enabled=is_enabled,
+            labels=labels,
+            recommendation=recommendation,
+            risk_level=risk_level,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition: str,
+             configurations: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationResult'],
+             data_source_id: str,
+             description: str,
+             entities_mappings: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingResult'],
+             is_configuration_allowed: bool,
+             is_enabled: bool,
+             labels: Sequence[str],
+             recommendation: str,
+             risk_level: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition", condition)
+        _setter("configurations", configurations)
+        _setter("data_source_id", data_source_id)
+        _setter("description", description)
+        _setter("entities_mappings", entities_mappings)
+        _setter("is_configuration_allowed", is_configuration_allowed)
+        _setter("is_enabled", is_enabled)
+        _setter("labels", labels)
+        _setter("recommendation", recommendation)
+        _setter("risk_level", risk_level)
 
     @property
     @pulumi.getter
@@ -7785,11 +9432,28 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurat
         :param str value: configuration value
         :param Sequence['GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
-        pulumi.set(__self__, "config_key", config_key)
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
-        pulumi.set(__self__, "values", values)
+        GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            data_type=data_type,
+            name=name,
+            value=value,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: str,
+             data_type: str,
+             name: str,
+             value: str,
+             values: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_key", config_key)
+        _setter("data_type", data_type)
+        _setter("name", name)
+        _setter("value", value)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -7843,9 +9507,22 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurat
         :param str managed_list_type: type of the managed list
         :param str value: configuration value
         """
-        pulumi.set(__self__, "list_type", list_type)
-        pulumi.set(__self__, "managed_list_type", managed_list_type)
-        pulumi.set(__self__, "value", value)
+        GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            list_type=list_type,
+            managed_list_type=managed_list_type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             list_type: str,
+             managed_list_type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("list_type", list_type)
+        _setter("managed_list_type", managed_list_type)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -7883,9 +9560,22 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMa
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "entity_type", entity_type)
-        pulumi.set(__self__, "query_field", query_field)
+        GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            entity_type=entity_type,
+            query_field=query_field,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             entity_type: str,
+             query_field: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("entity_type", entity_type)
+        _setter("query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -7923,9 +9613,22 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingR
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "entity_type", entity_type)
-        pulumi.set(__self__, "query_field", query_field)
+        GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            entity_type=entity_type,
+            query_field=query_field,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             entity_type: str,
+             query_field: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("entity_type", entity_type)
+        _setter("query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -7989,22 +9692,61 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleResult(
         :param str time_created: The date and time the detector recipe was created. Format defined by RFC3339.
         :param str time_updated: The date and time the detector recipe was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "candidate_responder_rules", candidate_responder_rules)
-        pulumi.set(__self__, "data_source_id", data_source_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "detector", detector)
-        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "entities_mappings", entities_mappings)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "managed_list_types", managed_list_types)
-        pulumi.set(__self__, "recommendation", recommendation)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "service_type", service_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            candidate_responder_rules=candidate_responder_rules,
+            data_source_id=data_source_id,
+            description=description,
+            details=details,
+            detector=detector,
+            detector_rule_id=detector_rule_id,
+            display_name=display_name,
+            entities_mappings=entities_mappings,
+            lifecycle_details=lifecycle_details,
+            managed_list_types=managed_list_types,
+            recommendation=recommendation,
+            resource_type=resource_type,
+            service_type=service_type,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             candidate_responder_rules: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleResult'],
+             data_source_id: str,
+             description: str,
+             details: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailResult'],
+             detector: str,
+             detector_rule_id: str,
+             display_name: str,
+             entities_mappings: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingResult'],
+             lifecycle_details: str,
+             managed_list_types: Sequence[str],
+             recommendation: str,
+             resource_type: str,
+             service_type: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("candidate_responder_rules", candidate_responder_rules)
+        _setter("data_source_id", data_source_id)
+        _setter("description", description)
+        _setter("details", details)
+        _setter("detector", detector)
+        _setter("detector_rule_id", detector_rule_id)
+        _setter("display_name", display_name)
+        _setter("entities_mappings", entities_mappings)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("managed_list_types", managed_list_types)
+        _setter("recommendation", recommendation)
+        _setter("resource_type", resource_type)
+        _setter("service_type", service_type)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="candidateResponderRules")
@@ -8146,9 +9888,22 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandida
         :param str id: Ocid for detector recipe
         :param bool is_preferred: Preferred state
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_preferred", is_preferred)
+        GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            id=id,
+            is_preferred=is_preferred,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             id: str,
+             is_preferred: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("is_preferred", is_preferred)
 
     @property
     @pulumi.getter(name="displayName")
@@ -8192,12 +9947,31 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailR
         :param Sequence[str] labels: user defined labels for a detector rule
         :param str risk_level: The Risk Level
         """
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "risk_level", risk_level)
+        GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition=condition,
+            configurations=configurations,
+            is_configuration_allowed=is_configuration_allowed,
+            is_enabled=is_enabled,
+            labels=labels,
+            risk_level=risk_level,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition: str,
+             configurations: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationResult'],
+             is_configuration_allowed: bool,
+             is_enabled: bool,
+             labels: Sequence[str],
+             risk_level: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition", condition)
+        _setter("configurations", configurations)
+        _setter("is_configuration_allowed", is_configuration_allowed)
+        _setter("is_enabled", is_enabled)
+        _setter("labels", labels)
+        _setter("risk_level", risk_level)
 
     @property
     @pulumi.getter
@@ -8263,11 +10037,28 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailC
         :param str value: configuration value
         :param Sequence['GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
-        pulumi.set(__self__, "config_key", config_key)
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
-        pulumi.set(__self__, "values", values)
+        GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            data_type=data_type,
+            name=name,
+            value=value,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: str,
+             data_type: str,
+             name: str,
+             value: str,
+             values: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_key", config_key)
+        _setter("data_type", data_type)
+        _setter("name", name)
+        _setter("value", value)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -8321,9 +10112,22 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailC
         :param str managed_list_type: type of the managed list
         :param str value: configuration value
         """
-        pulumi.set(__self__, "list_type", list_type)
-        pulumi.set(__self__, "managed_list_type", managed_list_type)
-        pulumi.set(__self__, "value", value)
+        GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            list_type=list_type,
+            managed_list_type=managed_list_type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             list_type: str,
+             managed_list_type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("list_type", list_type)
+        _setter("managed_list_type", managed_list_type)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -8361,9 +10165,22 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitie
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "entity_type", entity_type)
-        pulumi.set(__self__, "query_field", query_field)
+        GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            entity_type=entity_type,
+            query_field=query_field,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             entity_type: str,
+             query_field: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("entity_type", entity_type)
+        _setter("query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -8400,10 +10217,23 @@ class GetDetectorRecipesFilterResult(dict):
         :param str name: configuration name
         :param Sequence[str] values: List of configuration values
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDetectorRecipesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -8440,10 +10270,25 @@ class GetGuardTargetTargetDetailResult(dict):
         :param str target_resource_type: possible type of targets
         :param Sequence['GetGuardTargetTargetDetailTargetSecurityZoneRecipeArgs'] target_security_zone_recipes: The list of security zone recipes to associate this compartment with.
         """
-        pulumi.set(__self__, "security_zone_display_name", security_zone_display_name)
-        pulumi.set(__self__, "security_zone_id", security_zone_id)
-        pulumi.set(__self__, "target_resource_type", target_resource_type)
-        pulumi.set(__self__, "target_security_zone_recipes", target_security_zone_recipes)
+        GetGuardTargetTargetDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            security_zone_display_name=security_zone_display_name,
+            security_zone_id=security_zone_id,
+            target_resource_type=target_resource_type,
+            target_security_zone_recipes=target_security_zone_recipes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             security_zone_display_name: str,
+             security_zone_id: str,
+             target_resource_type: str,
+             target_security_zone_recipes: Sequence['outputs.GetGuardTargetTargetDetailTargetSecurityZoneRecipeResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("security_zone_display_name", security_zone_display_name)
+        _setter("security_zone_id", security_zone_id)
+        _setter("target_resource_type", target_resource_type)
+        _setter("target_security_zone_recipes", target_security_zone_recipes)
 
     @property
     @pulumi.getter(name="securityZoneDisplayName")
@@ -8509,19 +10354,52 @@ class GetGuardTargetTargetDetailTargetSecurityZoneRecipeResult(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "owner", owner)
-        pulumi.set(__self__, "security_policies", security_policies)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetGuardTargetTargetDetailTargetSecurityZoneRecipeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            owner=owner,
+            security_policies=security_policies,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             owner: str,
+             security_policies: Sequence[str],
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("owner", owner)
+        _setter("security_policies", security_policies)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -8657,18 +10535,49 @@ class GetGuardTargetTargetDetectorRecipeResult(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "detector", detector)
-        pulumi.set(__self__, "detector_recipe_id", detector_recipe_id)
-        pulumi.set(__self__, "detector_rules", detector_rules)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "effective_detector_rules", effective_detector_rules)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "owner", owner)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetGuardTargetTargetDetectorRecipeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            description=description,
+            detector=detector,
+            detector_recipe_id=detector_recipe_id,
+            detector_rules=detector_rules,
+            display_name=display_name,
+            effective_detector_rules=effective_detector_rules,
+            id=id,
+            owner=owner,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             description: str,
+             detector: str,
+             detector_recipe_id: str,
+             detector_rules: Sequence['outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleResult'],
+             display_name: str,
+             effective_detector_rules: Sequence['outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleResult'],
+             id: str,
+             owner: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("description", description)
+        _setter("detector", detector)
+        _setter("detector_recipe_id", detector_recipe_id)
+        _setter("detector_rules", detector_rules)
+        _setter("display_name", display_name)
+        _setter("effective_detector_rules", effective_detector_rules)
+        _setter("id", id)
+        _setter("owner", owner)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -8802,21 +10711,58 @@ class GetGuardTargetTargetDetectorRecipeDetectorRuleResult(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "data_source_id", data_source_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "detector", detector)
-        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "entities_mappings", entities_mappings)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "managed_list_types", managed_list_types)
-        pulumi.set(__self__, "recommendation", recommendation)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "service_type", service_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetGuardTargetTargetDetectorRecipeDetectorRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_source_id=data_source_id,
+            description=description,
+            details=details,
+            detector=detector,
+            detector_rule_id=detector_rule_id,
+            display_name=display_name,
+            entities_mappings=entities_mappings,
+            lifecycle_details=lifecycle_details,
+            managed_list_types=managed_list_types,
+            recommendation=recommendation,
+            resource_type=resource_type,
+            service_type=service_type,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_source_id: str,
+             description: str,
+             details: Sequence['outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailResult'],
+             detector: str,
+             detector_rule_id: str,
+             display_name: str,
+             entities_mappings: Sequence['outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingResult'],
+             lifecycle_details: str,
+             managed_list_types: Sequence[str],
+             recommendation: str,
+             resource_type: str,
+             service_type: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("data_source_id", data_source_id)
+        _setter("description", description)
+        _setter("details", details)
+        _setter("detector", detector)
+        _setter("detector_rule_id", detector_rule_id)
+        _setter("display_name", display_name)
+        _setter("entities_mappings", entities_mappings)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("managed_list_types", managed_list_types)
+        _setter("recommendation", recommendation)
+        _setter("resource_type", resource_type)
+        _setter("service_type", service_type)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="dataSourceId")
@@ -8956,12 +10902,31 @@ class GetGuardTargetTargetDetectorRecipeDetectorRuleDetailResult(dict):
         :param Sequence[str] labels: user defined labels for a detector rule
         :param str risk_level: The Risk Level
         """
-        pulumi.set(__self__, "condition_groups", condition_groups)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "risk_level", risk_level)
+        GetGuardTargetTargetDetectorRecipeDetectorRuleDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition_groups=condition_groups,
+            configurations=configurations,
+            is_configuration_allowed=is_configuration_allowed,
+            is_enabled=is_enabled,
+            labels=labels,
+            risk_level=risk_level,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition_groups: Sequence['outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupResult'],
+             configurations: Sequence['outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationResult'],
+             is_configuration_allowed: bool,
+             is_enabled: bool,
+             labels: Sequence[str],
+             risk_level: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition_groups", condition_groups)
+        _setter("configurations", configurations)
+        _setter("is_configuration_allowed", is_configuration_allowed)
+        _setter("is_enabled", is_enabled)
+        _setter("labels", labels)
+        _setter("risk_level", risk_level)
 
     @property
     @pulumi.getter(name="conditionGroups")
@@ -9021,8 +10986,19 @@ class GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupResult(d
         :param str compartment_id: Compartment Identifier
         :param str condition: Base condition object
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "condition", condition)
+        GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            condition=condition,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             condition: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("condition", condition)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -9056,11 +11032,28 @@ class GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationResult(di
         :param str value: configuration value
         :param Sequence['GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
-        pulumi.set(__self__, "config_key", config_key)
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
-        pulumi.set(__self__, "values", values)
+        GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            data_type=data_type,
+            name=name,
+            value=value,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: str,
+             data_type: str,
+             name: str,
+             value: str,
+             values: Sequence['outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_key", config_key)
+        _setter("data_type", data_type)
+        _setter("name", name)
+        _setter("value", value)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -9114,9 +11107,22 @@ class GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueResu
         :param str managed_list_type: type of the managed list
         :param str value: configuration value
         """
-        pulumi.set(__self__, "list_type", list_type)
-        pulumi.set(__self__, "managed_list_type", managed_list_type)
-        pulumi.set(__self__, "value", value)
+        GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            list_type=list_type,
+            managed_list_type=managed_list_type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             list_type: str,
+             managed_list_type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("list_type", list_type)
+        _setter("managed_list_type", managed_list_type)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -9154,9 +11160,22 @@ class GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingResult(dict):
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "entity_type", entity_type)
-        pulumi.set(__self__, "query_field", query_field)
+        GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            entity_type=entity_type,
+            query_field=query_field,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             entity_type: str,
+             query_field: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("entity_type", entity_type)
+        _setter("query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -9218,21 +11237,58 @@ class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleResult(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "data_source_id", data_source_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "detector", detector)
-        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "entities_mappings", entities_mappings)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "managed_list_types", managed_list_types)
-        pulumi.set(__self__, "recommendation", recommendation)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "service_type", service_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_source_id=data_source_id,
+            description=description,
+            details=details,
+            detector=detector,
+            detector_rule_id=detector_rule_id,
+            display_name=display_name,
+            entities_mappings=entities_mappings,
+            lifecycle_details=lifecycle_details,
+            managed_list_types=managed_list_types,
+            recommendation=recommendation,
+            resource_type=resource_type,
+            service_type=service_type,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_source_id: str,
+             description: str,
+             details: Sequence['outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailResult'],
+             detector: str,
+             detector_rule_id: str,
+             display_name: str,
+             entities_mappings: Sequence['outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult'],
+             lifecycle_details: str,
+             managed_list_types: Sequence[str],
+             recommendation: str,
+             resource_type: str,
+             service_type: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("data_source_id", data_source_id)
+        _setter("description", description)
+        _setter("details", details)
+        _setter("detector", detector)
+        _setter("detector_rule_id", detector_rule_id)
+        _setter("display_name", display_name)
+        _setter("entities_mappings", entities_mappings)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("managed_list_types", managed_list_types)
+        _setter("recommendation", recommendation)
+        _setter("resource_type", resource_type)
+        _setter("service_type", service_type)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="dataSourceId")
@@ -9372,12 +11428,31 @@ class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailResult(dict):
         :param Sequence[str] labels: user defined labels for a detector rule
         :param str risk_level: The Risk Level
         """
-        pulumi.set(__self__, "condition_groups", condition_groups)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "risk_level", risk_level)
+        GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition_groups=condition_groups,
+            configurations=configurations,
+            is_configuration_allowed=is_configuration_allowed,
+            is_enabled=is_enabled,
+            labels=labels,
+            risk_level=risk_level,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition_groups: Sequence['outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupResult'],
+             configurations: Sequence['outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult'],
+             is_configuration_allowed: bool,
+             is_enabled: bool,
+             labels: Sequence[str],
+             risk_level: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition_groups", condition_groups)
+        _setter("configurations", configurations)
+        _setter("is_configuration_allowed", is_configuration_allowed)
+        _setter("is_enabled", is_enabled)
+        _setter("labels", labels)
+        _setter("risk_level", risk_level)
 
     @property
     @pulumi.getter(name="conditionGroups")
@@ -9437,8 +11512,19 @@ class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGrou
         :param str compartment_id: Compartment Identifier
         :param str condition: Base condition object
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "condition", condition)
+        GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            condition=condition,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             condition: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("condition", condition)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -9472,11 +11558,28 @@ class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration
         :param str value: configuration value
         :param Sequence['GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
-        pulumi.set(__self__, "config_key", config_key)
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
-        pulumi.set(__self__, "values", values)
+        GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            data_type=data_type,
+            name=name,
+            value=value,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: str,
+             data_type: str,
+             name: str,
+             value: str,
+             values: Sequence['outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_key", config_key)
+        _setter("data_type", data_type)
+        _setter("name", name)
+        _setter("value", value)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -9530,9 +11633,22 @@ class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration
         :param str managed_list_type: type of the managed list
         :param str value: configuration value
         """
-        pulumi.set(__self__, "list_type", list_type)
-        pulumi.set(__self__, "managed_list_type", managed_list_type)
-        pulumi.set(__self__, "value", value)
+        GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            list_type=list_type,
+            managed_list_type=managed_list_type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             list_type: str,
+             managed_list_type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("list_type", list_type)
+        _setter("managed_list_type", managed_list_type)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -9570,9 +11686,22 @@ class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResu
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "entity_type", entity_type)
-        pulumi.set(__self__, "query_field", query_field)
+        GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            entity_type=entity_type,
+            query_field=query_field,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             entity_type: str,
+             query_field: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("entity_type", entity_type)
+        _setter("query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -9624,16 +11753,43 @@ class GetGuardTargetTargetResponderRecipeResult(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "effective_responder_rules", effective_responder_rules)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "owner", owner)
-        pulumi.set(__self__, "responder_recipe_id", responder_recipe_id)
-        pulumi.set(__self__, "responder_rules", responder_rules)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetGuardTargetTargetResponderRecipeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            description=description,
+            display_name=display_name,
+            effective_responder_rules=effective_responder_rules,
+            id=id,
+            owner=owner,
+            responder_recipe_id=responder_recipe_id,
+            responder_rules=responder_rules,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             description: str,
+             display_name: str,
+             effective_responder_rules: Sequence['outputs.GetGuardTargetTargetResponderRecipeEffectiveResponderRuleResult'],
+             id: str,
+             owner: str,
+             responder_recipe_id: str,
+             responder_rules: Sequence['outputs.GetGuardTargetTargetResponderRecipeResponderRuleResult'],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("effective_responder_rules", effective_responder_rules)
+        _setter("id", id)
+        _setter("owner", owner)
+        _setter("responder_recipe_id", responder_recipe_id)
+        _setter("responder_rules", responder_rules)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -9745,18 +11901,49 @@ class GetGuardTargetTargetResponderRecipeEffectiveResponderRuleResult(dict):
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "policies", policies)
-        pulumi.set(__self__, "responder_rule_id", responder_rule_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "supported_modes", supported_modes)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
+        GetGuardTargetTargetResponderRecipeEffectiveResponderRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            description=description,
+            details=details,
+            display_name=display_name,
+            lifecycle_details=lifecycle_details,
+            policies=policies,
+            responder_rule_id=responder_rule_id,
+            state=state,
+            supported_modes=supported_modes,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             description: str,
+             details: Sequence['outputs.GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailResult'],
+             display_name: str,
+             lifecycle_details: str,
+             policies: Sequence[str],
+             responder_rule_id: str,
+             state: str,
+             supported_modes: Sequence[str],
+             time_created: str,
+             time_updated: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("description", description)
+        _setter("details", details)
+        _setter("display_name", display_name)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("policies", policies)
+        _setter("responder_rule_id", responder_rule_id)
+        _setter("state", state)
+        _setter("supported_modes", supported_modes)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -9868,10 +12055,25 @@ class GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailResult(dict
         :param bool is_enabled: Identifies state for ResponderRule
         :param str mode: Execution Mode for ResponderRule
         """
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "mode", mode)
+        GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition=condition,
+            configurations=configurations,
+            is_enabled=is_enabled,
+            mode=mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition: str,
+             configurations: Sequence['outputs.GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationResult'],
+             is_enabled: bool,
+             mode: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition", condition)
+        _setter("configurations", configurations)
+        _setter("is_enabled", is_enabled)
+        _setter("mode", mode)
 
     @property
     @pulumi.getter
@@ -9917,9 +12119,22 @@ class GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurati
         :param str name: configuration name
         :param str value: configuration value
         """
-        pulumi.set(__self__, "config_key", config_key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: str,
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_key", config_key)
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -9975,18 +12190,49 @@ class GetGuardTargetTargetResponderRecipeResponderRuleResult(dict):
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "policies", policies)
-        pulumi.set(__self__, "responder_rule_id", responder_rule_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "supported_modes", supported_modes)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
+        GetGuardTargetTargetResponderRecipeResponderRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            description=description,
+            details=details,
+            display_name=display_name,
+            lifecycle_details=lifecycle_details,
+            policies=policies,
+            responder_rule_id=responder_rule_id,
+            state=state,
+            supported_modes=supported_modes,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             description: str,
+             details: Sequence['outputs.GetGuardTargetTargetResponderRecipeResponderRuleDetailResult'],
+             display_name: str,
+             lifecycle_details: str,
+             policies: Sequence[str],
+             responder_rule_id: str,
+             state: str,
+             supported_modes: Sequence[str],
+             time_created: str,
+             time_updated: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("description", description)
+        _setter("details", details)
+        _setter("display_name", display_name)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("policies", policies)
+        _setter("responder_rule_id", responder_rule_id)
+        _setter("state", state)
+        _setter("supported_modes", supported_modes)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -10098,10 +12344,25 @@ class GetGuardTargetTargetResponderRecipeResponderRuleDetailResult(dict):
         :param bool is_enabled: Identifies state for ResponderRule
         :param str mode: Execution Mode for ResponderRule
         """
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "mode", mode)
+        GetGuardTargetTargetResponderRecipeResponderRuleDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition=condition,
+            configurations=configurations,
+            is_enabled=is_enabled,
+            mode=mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition: str,
+             configurations: Sequence['outputs.GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationResult'],
+             is_enabled: bool,
+             mode: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition", condition)
+        _setter("configurations", configurations)
+        _setter("is_enabled", is_enabled)
+        _setter("mode", mode)
 
     @property
     @pulumi.getter
@@ -10147,9 +12408,22 @@ class GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationResult(
         :param str name: configuration name
         :param str value: configuration value
         """
-        pulumi.set(__self__, "config_key", config_key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetGuardTargetTargetResponderRecipeResponderRuleDetailConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: str,
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_key", config_key)
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -10186,10 +12460,23 @@ class GetGuardTargetsFilterResult(dict):
         :param str name: configuration name
         :param Sequence[str] values: List of configuration values
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetGuardTargetsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -10217,7 +12504,16 @@ class GetGuardTargetsFilterResult(dict):
 class GetGuardTargetsTargetCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetGuardTargetsTargetCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetGuardTargetsTargetCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetGuardTargetsTargetCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -10266,24 +12562,67 @@ class GetGuardTargetsTargetCollectionItemResult(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "inherited_by_compartments", inherited_by_compartments)
-        pulumi.set(__self__, "lifecyle_details", lifecyle_details)
-        pulumi.set(__self__, "recipe_count", recipe_count)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "target_details", target_details)
-        pulumi.set(__self__, "target_detector_recipes", target_detector_recipes)
-        pulumi.set(__self__, "target_resource_id", target_resource_id)
-        pulumi.set(__self__, "target_resource_type", target_resource_type)
-        pulumi.set(__self__, "target_responder_recipes", target_responder_recipes)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetGuardTargetsTargetCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            inherited_by_compartments=inherited_by_compartments,
+            lifecyle_details=lifecyle_details,
+            recipe_count=recipe_count,
+            state=state,
+            system_tags=system_tags,
+            target_details=target_details,
+            target_detector_recipes=target_detector_recipes,
+            target_resource_id=target_resource_id,
+            target_resource_type=target_resource_type,
+            target_responder_recipes=target_responder_recipes,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             inherited_by_compartments: Sequence[str],
+             lifecyle_details: str,
+             recipe_count: int,
+             state: str,
+             system_tags: Mapping[str, Any],
+             target_details: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetailResult'],
+             target_detector_recipes: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeResult'],
+             target_resource_id: str,
+             target_resource_type: str,
+             target_responder_recipes: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetResponderRecipeResult'],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("inherited_by_compartments", inherited_by_compartments)
+        _setter("lifecyle_details", lifecyle_details)
+        _setter("recipe_count", recipe_count)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("target_details", target_details)
+        _setter("target_detector_recipes", target_detector_recipes)
+        _setter("target_resource_id", target_resource_id)
+        _setter("target_resource_type", target_resource_type)
+        _setter("target_responder_recipes", target_responder_recipes)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -10443,10 +12782,25 @@ class GetGuardTargetsTargetCollectionItemTargetDetailResult(dict):
         :param str target_resource_type: possible type of targets
         :param Sequence['GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeArgs'] target_security_zone_recipes: The list of security zone recipes to associate this compartment with.
         """
-        pulumi.set(__self__, "security_zone_display_name", security_zone_display_name)
-        pulumi.set(__self__, "security_zone_id", security_zone_id)
-        pulumi.set(__self__, "target_resource_type", target_resource_type)
-        pulumi.set(__self__, "target_security_zone_recipes", target_security_zone_recipes)
+        GetGuardTargetsTargetCollectionItemTargetDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            security_zone_display_name=security_zone_display_name,
+            security_zone_id=security_zone_id,
+            target_resource_type=target_resource_type,
+            target_security_zone_recipes=target_security_zone_recipes,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             security_zone_display_name: str,
+             security_zone_id: str,
+             target_resource_type: str,
+             target_security_zone_recipes: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("security_zone_display_name", security_zone_display_name)
+        _setter("security_zone_id", security_zone_id)
+        _setter("target_resource_type", target_resource_type)
+        _setter("target_security_zone_recipes", target_security_zone_recipes)
 
     @property
     @pulumi.getter(name="securityZoneDisplayName")
@@ -10512,19 +12866,52 @@ class GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeRes
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "owner", owner)
-        pulumi.set(__self__, "security_policies", security_policies)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetGuardTargetsTargetCollectionItemTargetDetailTargetSecurityZoneRecipeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            owner=owner,
+            security_policies=security_policies,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             owner: str,
+             security_policies: Sequence[str],
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("owner", owner)
+        _setter("security_policies", security_policies)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -10660,18 +13047,49 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeResult(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "detector", detector)
-        pulumi.set(__self__, "detector_recipe_id", detector_recipe_id)
-        pulumi.set(__self__, "detector_rules", detector_rules)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "effective_detector_rules", effective_detector_rules)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "owner", owner)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            description=description,
+            detector=detector,
+            detector_recipe_id=detector_recipe_id,
+            detector_rules=detector_rules,
+            display_name=display_name,
+            effective_detector_rules=effective_detector_rules,
+            id=id,
+            owner=owner,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             description: str,
+             detector: str,
+             detector_recipe_id: str,
+             detector_rules: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleResult'],
+             display_name: str,
+             effective_detector_rules: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleResult'],
+             id: str,
+             owner: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("description", description)
+        _setter("detector", detector)
+        _setter("detector_recipe_id", detector_recipe_id)
+        _setter("detector_rules", detector_rules)
+        _setter("display_name", display_name)
+        _setter("effective_detector_rules", effective_detector_rules)
+        _setter("id", id)
+        _setter("owner", owner)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -10805,21 +13223,58 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleResult(
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "data_source_id", data_source_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "detector", detector)
-        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "entities_mappings", entities_mappings)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "managed_list_types", managed_list_types)
-        pulumi.set(__self__, "recommendation", recommendation)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "service_type", service_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_source_id=data_source_id,
+            description=description,
+            details=details,
+            detector=detector,
+            detector_rule_id=detector_rule_id,
+            display_name=display_name,
+            entities_mappings=entities_mappings,
+            lifecycle_details=lifecycle_details,
+            managed_list_types=managed_list_types,
+            recommendation=recommendation,
+            resource_type=resource_type,
+            service_type=service_type,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_source_id: str,
+             description: str,
+             details: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailResult'],
+             detector: str,
+             detector_rule_id: str,
+             display_name: str,
+             entities_mappings: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingResult'],
+             lifecycle_details: str,
+             managed_list_types: Sequence[str],
+             recommendation: str,
+             resource_type: str,
+             service_type: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("data_source_id", data_source_id)
+        _setter("description", description)
+        _setter("details", details)
+        _setter("detector", detector)
+        _setter("detector_rule_id", detector_rule_id)
+        _setter("display_name", display_name)
+        _setter("entities_mappings", entities_mappings)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("managed_list_types", managed_list_types)
+        _setter("recommendation", recommendation)
+        _setter("resource_type", resource_type)
+        _setter("service_type", service_type)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="dataSourceId")
@@ -10959,12 +13414,31 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailR
         :param Sequence[str] labels: user defined labels for a detector rule
         :param str risk_level: The Risk Level
         """
-        pulumi.set(__self__, "condition_groups", condition_groups)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "risk_level", risk_level)
+        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition_groups=condition_groups,
+            configurations=configurations,
+            is_configuration_allowed=is_configuration_allowed,
+            is_enabled=is_enabled,
+            labels=labels,
+            risk_level=risk_level,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition_groups: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupResult'],
+             configurations: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationResult'],
+             is_configuration_allowed: bool,
+             is_enabled: bool,
+             labels: Sequence[str],
+             risk_level: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition_groups", condition_groups)
+        _setter("configurations", configurations)
+        _setter("is_configuration_allowed", is_configuration_allowed)
+        _setter("is_enabled", is_enabled)
+        _setter("labels", labels)
+        _setter("risk_level", risk_level)
 
     @property
     @pulumi.getter(name="conditionGroups")
@@ -11024,8 +13498,19 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailC
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param str condition: Base condition object
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "condition", condition)
+        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            condition=condition,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             condition: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("condition", condition)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -11059,11 +13544,28 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailC
         :param str value: configuration value
         :param Sequence['GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
-        pulumi.set(__self__, "config_key", config_key)
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
-        pulumi.set(__self__, "values", values)
+        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            data_type=data_type,
+            name=name,
+            value=value,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: str,
+             data_type: str,
+             name: str,
+             value: str,
+             values: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_key", config_key)
+        _setter("data_type", data_type)
+        _setter("name", name)
+        _setter("value", value)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -11117,9 +13619,22 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailC
         :param str managed_list_type: type of the managed list
         :param str value: configuration value
         """
-        pulumi.set(__self__, "list_type", list_type)
-        pulumi.set(__self__, "managed_list_type", managed_list_type)
-        pulumi.set(__self__, "value", value)
+        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            list_type=list_type,
+            managed_list_type=managed_list_type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             list_type: str,
+             managed_list_type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("list_type", list_type)
+        _setter("managed_list_type", managed_list_type)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -11157,9 +13672,22 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitie
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "entity_type", entity_type)
-        pulumi.set(__self__, "query_field", query_field)
+        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            entity_type=entity_type,
+            query_field=query_field,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             entity_type: str,
+             query_field: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("entity_type", entity_type)
+        _setter("query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -11221,21 +13749,58 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRu
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "data_source_id", data_source_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "detector", detector)
-        pulumi.set(__self__, "detector_rule_id", detector_rule_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "entities_mappings", entities_mappings)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "managed_list_types", managed_list_types)
-        pulumi.set(__self__, "recommendation", recommendation)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "service_type", service_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data_source_id=data_source_id,
+            description=description,
+            details=details,
+            detector=detector,
+            detector_rule_id=detector_rule_id,
+            display_name=display_name,
+            entities_mappings=entities_mappings,
+            lifecycle_details=lifecycle_details,
+            managed_list_types=managed_list_types,
+            recommendation=recommendation,
+            resource_type=resource_type,
+            service_type=service_type,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data_source_id: str,
+             description: str,
+             details: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailResult'],
+             detector: str,
+             detector_rule_id: str,
+             display_name: str,
+             entities_mappings: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult'],
+             lifecycle_details: str,
+             managed_list_types: Sequence[str],
+             recommendation: str,
+             resource_type: str,
+             service_type: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("data_source_id", data_source_id)
+        _setter("description", description)
+        _setter("details", details)
+        _setter("detector", detector)
+        _setter("detector_rule_id", detector_rule_id)
+        _setter("display_name", display_name)
+        _setter("entities_mappings", entities_mappings)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("managed_list_types", managed_list_types)
+        _setter("recommendation", recommendation)
+        _setter("resource_type", resource_type)
+        _setter("service_type", service_type)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="dataSourceId")
@@ -11375,12 +13940,31 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRu
         :param Sequence[str] labels: user defined labels for a detector rule
         :param str risk_level: The Risk Level
         """
-        pulumi.set(__self__, "condition_groups", condition_groups)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "is_configuration_allowed", is_configuration_allowed)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "risk_level", risk_level)
+        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition_groups=condition_groups,
+            configurations=configurations,
+            is_configuration_allowed=is_configuration_allowed,
+            is_enabled=is_enabled,
+            labels=labels,
+            risk_level=risk_level,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition_groups: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupResult'],
+             configurations: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult'],
+             is_configuration_allowed: bool,
+             is_enabled: bool,
+             labels: Sequence[str],
+             risk_level: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition_groups", condition_groups)
+        _setter("configurations", configurations)
+        _setter("is_configuration_allowed", is_configuration_allowed)
+        _setter("is_enabled", is_enabled)
+        _setter("labels", labels)
+        _setter("risk_level", risk_level)
 
     @property
     @pulumi.getter(name="conditionGroups")
@@ -11440,8 +14024,19 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRu
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param str condition: Base condition object
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "condition", condition)
+        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            condition=condition,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             condition: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("condition", condition)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -11475,11 +14070,28 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRu
         :param str value: configuration value
         :param Sequence['GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
-        pulumi.set(__self__, "config_key", config_key)
-        pulumi.set(__self__, "data_type", data_type)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
-        pulumi.set(__self__, "values", values)
+        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            data_type=data_type,
+            name=name,
+            value=value,
+            values=values,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: str,
+             data_type: str,
+             name: str,
+             value: str,
+             values: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_key", config_key)
+        _setter("data_type", data_type)
+        _setter("name", name)
+        _setter("value", value)
+        _setter("values", values)
 
     @property
     @pulumi.getter(name="configKey")
@@ -11533,9 +14145,22 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRu
         :param str managed_list_type: type of the managed list
         :param str value: configuration value
         """
-        pulumi.set(__self__, "list_type", list_type)
-        pulumi.set(__self__, "managed_list_type", managed_list_type)
-        pulumi.set(__self__, "value", value)
+        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            list_type=list_type,
+            managed_list_type=managed_list_type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             list_type: str,
+             managed_list_type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("list_type", list_type)
+        _setter("managed_list_type", managed_list_type)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="listType")
@@ -11573,9 +14198,22 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRu
         :param str entity_type: Possible type of entity
         :param str query_field: The entity value mapped to a data source query
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "entity_type", entity_type)
-        pulumi.set(__self__, "query_field", query_field)
+        GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            entity_type=entity_type,
+            query_field=query_field,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             entity_type: str,
+             query_field: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("entity_type", entity_type)
+        _setter("query_field", query_field)
 
     @property
     @pulumi.getter(name="displayName")
@@ -11627,16 +14265,43 @@ class GetGuardTargetsTargetCollectionItemTargetResponderRecipeResult(dict):
         :param str time_created: The date and time the target was created. Format defined by RFC3339.
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "effective_responder_rules", effective_responder_rules)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "owner", owner)
-        pulumi.set(__self__, "responder_recipe_id", responder_recipe_id)
-        pulumi.set(__self__, "responder_rules", responder_rules)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetGuardTargetsTargetCollectionItemTargetResponderRecipeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            description=description,
+            display_name=display_name,
+            effective_responder_rules=effective_responder_rules,
+            id=id,
+            owner=owner,
+            responder_recipe_id=responder_recipe_id,
+            responder_rules=responder_rules,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             description: str,
+             display_name: str,
+             effective_responder_rules: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleResult'],
+             id: str,
+             owner: str,
+             responder_recipe_id: str,
+             responder_rules: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleResult'],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("effective_responder_rules", effective_responder_rules)
+        _setter("id", id)
+        _setter("owner", owner)
+        _setter("responder_recipe_id", responder_recipe_id)
+        _setter("responder_rules", responder_rules)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -11748,18 +14413,49 @@ class GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponder
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "policies", policies)
-        pulumi.set(__self__, "responder_rule_id", responder_rule_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "supported_modes", supported_modes)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
+        GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            description=description,
+            details=details,
+            display_name=display_name,
+            lifecycle_details=lifecycle_details,
+            policies=policies,
+            responder_rule_id=responder_rule_id,
+            state=state,
+            supported_modes=supported_modes,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             description: str,
+             details: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailResult'],
+             display_name: str,
+             lifecycle_details: str,
+             policies: Sequence[str],
+             responder_rule_id: str,
+             state: str,
+             supported_modes: Sequence[str],
+             time_created: str,
+             time_updated: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("description", description)
+        _setter("details", details)
+        _setter("display_name", display_name)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("policies", policies)
+        _setter("responder_rule_id", responder_rule_id)
+        _setter("state", state)
+        _setter("supported_modes", supported_modes)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -11871,10 +14567,25 @@ class GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponder
         :param bool is_enabled: Identifies state for ResponderRule
         :param str mode: Execution Mode for ResponderRule
         """
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "mode", mode)
+        GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition=condition,
+            configurations=configurations,
+            is_enabled=is_enabled,
+            mode=mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition: str,
+             configurations: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationResult'],
+             is_enabled: bool,
+             mode: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition", condition)
+        _setter("configurations", configurations)
+        _setter("is_enabled", is_enabled)
+        _setter("mode", mode)
 
     @property
     @pulumi.getter
@@ -11920,9 +14631,22 @@ class GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponder
         :param str name: configuration name
         :param str value: configuration value
         """
-        pulumi.set(__self__, "config_key", config_key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: str,
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_key", config_key)
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -11978,18 +14702,49 @@ class GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleResul
         :param str time_updated: The date and time the target was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "policies", policies)
-        pulumi.set(__self__, "responder_rule_id", responder_rule_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "supported_modes", supported_modes)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
+        GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            description=description,
+            details=details,
+            display_name=display_name,
+            lifecycle_details=lifecycle_details,
+            policies=policies,
+            responder_rule_id=responder_rule_id,
+            state=state,
+            supported_modes=supported_modes,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             description: str,
+             details: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailResult'],
+             display_name: str,
+             lifecycle_details: str,
+             policies: Sequence[str],
+             responder_rule_id: str,
+             state: str,
+             supported_modes: Sequence[str],
+             time_created: str,
+             time_updated: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("description", description)
+        _setter("details", details)
+        _setter("display_name", display_name)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("policies", policies)
+        _setter("responder_rule_id", responder_rule_id)
+        _setter("state", state)
+        _setter("supported_modes", supported_modes)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -12101,10 +14856,25 @@ class GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetai
         :param bool is_enabled: Identifies state for ResponderRule
         :param str mode: Execution Mode for ResponderRule
         """
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "mode", mode)
+        GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition=condition,
+            configurations=configurations,
+            is_enabled=is_enabled,
+            mode=mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition: str,
+             configurations: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationResult'],
+             is_enabled: bool,
+             mode: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition", condition)
+        _setter("configurations", configurations)
+        _setter("is_enabled", is_enabled)
+        _setter("mode", mode)
 
     @property
     @pulumi.getter
@@ -12150,9 +14920,22 @@ class GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetai
         :param str name: configuration name
         :param str value: configuration value
         """
-        pulumi.set(__self__, "config_key", config_key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetGuardTargetsTargetCollectionItemTargetResponderRecipeResponderRuleDetailConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: str,
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_key", config_key)
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -12185,10 +14968,23 @@ class GetManagedListsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedListsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12210,7 +15006,16 @@ class GetManagedListsFilterResult(dict):
 class GetManagedListsManagedListCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetManagedListsManagedListCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetManagedListsManagedListCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetManagedListsManagedListCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -12255,22 +15060,61 @@ class GetManagedListsManagedListCollectionItemResult(dict):
         :param str time_created: The date and time the managed list was created. Format defined by RFC3339.
         :param str time_updated: The date and time the managed list was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "feed_provider", feed_provider)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_editable", is_editable)
-        pulumi.set(__self__, "lifecyle_details", lifecyle_details)
-        pulumi.set(__self__, "list_items", list_items)
-        pulumi.set(__self__, "list_type", list_type)
-        pulumi.set(__self__, "source_managed_list_id", source_managed_list_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetManagedListsManagedListCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            feed_provider=feed_provider,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_editable=is_editable,
+            lifecyle_details=lifecyle_details,
+            list_items=list_items,
+            list_type=list_type,
+            source_managed_list_id=source_managed_list_id,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             feed_provider: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_editable: bool,
+             lifecyle_details: str,
+             list_items: Sequence[str],
+             list_type: str,
+             source_managed_list_id: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("feed_provider", feed_provider)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_editable", is_editable)
+        _setter("lifecyle_details", lifecyle_details)
+        _setter("list_items", list_items)
+        _setter("list_type", list_type)
+        _setter("source_managed_list_id", source_managed_list_id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -12407,10 +15251,23 @@ class GetProblemEntitiesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProblemEntitiesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -12435,7 +15292,16 @@ class GetProblemEntitiesProblemEntityCollectionResult(dict):
         """
         :param Sequence['GetProblemEntitiesProblemEntityCollectionItemArgs'] items: List of problem entities summaries related to a data source.
         """
-        pulumi.set(__self__, "items", items)
+        GetProblemEntitiesProblemEntityCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetProblemEntitiesProblemEntityCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -12463,12 +15329,31 @@ class GetProblemEntitiesProblemEntityCollectionItemResult(dict):
         :param str time_first_detected: Data source problem entities first detected time
         :param str time_last_detected: Data source problem entities last detected time
         """
-        pulumi.set(__self__, "entity_details", entity_details)
-        pulumi.set(__self__, "problem_id", problem_id)
-        pulumi.set(__self__, "regions", regions)
-        pulumi.set(__self__, "result_url", result_url)
-        pulumi.set(__self__, "time_first_detected", time_first_detected)
-        pulumi.set(__self__, "time_last_detected", time_last_detected)
+        GetProblemEntitiesProblemEntityCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            entity_details=entity_details,
+            problem_id=problem_id,
+            regions=regions,
+            result_url=result_url,
+            time_first_detected=time_first_detected,
+            time_last_detected=time_last_detected,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             entity_details: Sequence['outputs.GetProblemEntitiesProblemEntityCollectionItemEntityDetailResult'],
+             problem_id: str,
+             regions: Sequence[str],
+             result_url: str,
+             time_first_detected: str,
+             time_last_detected: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("entity_details", entity_details)
+        _setter("problem_id", problem_id)
+        _setter("regions", regions)
+        _setter("result_url", result_url)
+        _setter("time_first_detected", time_first_detected)
+        _setter("time_last_detected", time_last_detected)
 
     @property
     @pulumi.getter(name="entityDetails")
@@ -12530,9 +15415,22 @@ class GetProblemEntitiesProblemEntityCollectionItemEntityDetailResult(dict):
         :param str type: Type of entity
         :param str value: The entity value
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        GetProblemEntitiesProblemEntityCollectionItemEntityDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="displayName")
@@ -12576,12 +15474,31 @@ class GetProblemEntityItemResult(dict):
         :param str time_first_detected: Data source problem entities first detected time
         :param str time_last_detected: Data source problem entities last detected time
         """
-        pulumi.set(__self__, "entity_details", entity_details)
-        pulumi.set(__self__, "problem_id", problem_id)
-        pulumi.set(__self__, "regions", regions)
-        pulumi.set(__self__, "result_url", result_url)
-        pulumi.set(__self__, "time_first_detected", time_first_detected)
-        pulumi.set(__self__, "time_last_detected", time_last_detected)
+        GetProblemEntityItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            entity_details=entity_details,
+            problem_id=problem_id,
+            regions=regions,
+            result_url=result_url,
+            time_first_detected=time_first_detected,
+            time_last_detected=time_last_detected,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             entity_details: Sequence['outputs.GetProblemEntityItemEntityDetailResult'],
+             problem_id: str,
+             regions: Sequence[str],
+             result_url: str,
+             time_first_detected: str,
+             time_last_detected: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("entity_details", entity_details)
+        _setter("problem_id", problem_id)
+        _setter("regions", regions)
+        _setter("result_url", result_url)
+        _setter("time_first_detected", time_first_detected)
+        _setter("time_last_detected", time_last_detected)
 
     @property
     @pulumi.getter(name="entityDetails")
@@ -12643,9 +15560,22 @@ class GetProblemEntityItemEntityDetailResult(dict):
         :param str type: Type of entity
         :param str value: The entity value
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "value", value)
+        GetProblemEntityItemEntityDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            type=type,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             type: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("type", type)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="displayName")
@@ -12701,18 +15631,49 @@ class GetResponderRecipeEffectiveResponderRuleResult(dict):
         :param str time_updated: The date and time the responder recipe was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "policies", policies)
-        pulumi.set(__self__, "responder_rule_id", responder_rule_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "supported_modes", supported_modes)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
+        GetResponderRecipeEffectiveResponderRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            description=description,
+            details=details,
+            display_name=display_name,
+            lifecycle_details=lifecycle_details,
+            policies=policies,
+            responder_rule_id=responder_rule_id,
+            state=state,
+            supported_modes=supported_modes,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             description: str,
+             details: Sequence['outputs.GetResponderRecipeEffectiveResponderRuleDetailResult'],
+             display_name: str,
+             lifecycle_details: str,
+             policies: Sequence[str],
+             responder_rule_id: str,
+             state: str,
+             supported_modes: Sequence[str],
+             time_created: str,
+             time_updated: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("description", description)
+        _setter("details", details)
+        _setter("display_name", display_name)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("policies", policies)
+        _setter("responder_rule_id", responder_rule_id)
+        _setter("state", state)
+        _setter("supported_modes", supported_modes)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -12824,10 +15785,25 @@ class GetResponderRecipeEffectiveResponderRuleDetailResult(dict):
         :param bool is_enabled: Identifies state for ResponderRule
         :param str mode: Execution Mode for ResponderRule
         """
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "mode", mode)
+        GetResponderRecipeEffectiveResponderRuleDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition=condition,
+            configurations=configurations,
+            is_enabled=is_enabled,
+            mode=mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition: str,
+             configurations: Sequence['outputs.GetResponderRecipeEffectiveResponderRuleDetailConfigurationResult'],
+             is_enabled: bool,
+             mode: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition", condition)
+        _setter("configurations", configurations)
+        _setter("is_enabled", is_enabled)
+        _setter("mode", mode)
 
     @property
     @pulumi.getter
@@ -12873,9 +15849,22 @@ class GetResponderRecipeEffectiveResponderRuleDetailConfigurationResult(dict):
         :param str name: configuration name
         :param str value: configuration value
         """
-        pulumi.set(__self__, "config_key", config_key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetResponderRecipeEffectiveResponderRuleDetailConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: str,
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_key", config_key)
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -12931,18 +15920,49 @@ class GetResponderRecipeResponderRuleResult(dict):
         :param str time_updated: The date and time the responder recipe was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "policies", policies)
-        pulumi.set(__self__, "responder_rule_id", responder_rule_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "supported_modes", supported_modes)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
+        GetResponderRecipeResponderRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            description=description,
+            details=details,
+            display_name=display_name,
+            lifecycle_details=lifecycle_details,
+            policies=policies,
+            responder_rule_id=responder_rule_id,
+            state=state,
+            supported_modes=supported_modes,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             description: str,
+             details: Sequence['outputs.GetResponderRecipeResponderRuleDetailResult'],
+             display_name: str,
+             lifecycle_details: str,
+             policies: Sequence[str],
+             responder_rule_id: str,
+             state: str,
+             supported_modes: Sequence[str],
+             time_created: str,
+             time_updated: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("description", description)
+        _setter("details", details)
+        _setter("display_name", display_name)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("policies", policies)
+        _setter("responder_rule_id", responder_rule_id)
+        _setter("state", state)
+        _setter("supported_modes", supported_modes)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -13054,10 +16074,25 @@ class GetResponderRecipeResponderRuleDetailResult(dict):
         :param bool is_enabled: Identifies state for ResponderRule
         :param str mode: Execution Mode for ResponderRule
         """
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "mode", mode)
+        GetResponderRecipeResponderRuleDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition=condition,
+            configurations=configurations,
+            is_enabled=is_enabled,
+            mode=mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition: str,
+             configurations: Sequence['outputs.GetResponderRecipeResponderRuleDetailConfigurationResult'],
+             is_enabled: bool,
+             mode: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition", condition)
+        _setter("configurations", configurations)
+        _setter("is_enabled", is_enabled)
+        _setter("mode", mode)
 
     @property
     @pulumi.getter
@@ -13103,9 +16138,22 @@ class GetResponderRecipeResponderRuleDetailConfigurationResult(dict):
         :param str name: configuration name
         :param str value: configuration value
         """
-        pulumi.set(__self__, "config_key", config_key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetResponderRecipeResponderRuleDetailConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: str,
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_key", config_key)
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -13141,10 +16189,23 @@ class GetResponderRecipesFilterResult(dict):
         """
         :param str name: configuration name
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetResponderRecipesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -13169,7 +16230,16 @@ class GetResponderRecipesFilterResult(dict):
 class GetResponderRecipesResponderRecipeCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetResponderRecipesResponderRecipeCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetResponderRecipesResponderRecipeCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetResponderRecipesResponderRecipeCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -13212,21 +16282,58 @@ class GetResponderRecipesResponderRecipeCollectionItemResult(dict):
         :param str time_created: The date and time the responder recipe was created. Format defined by RFC3339.
         :param str time_updated: The date and time the responder recipe was updated. Format defined by RFC3339.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "effective_responder_rules", effective_responder_rules)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "owner", owner)
-        pulumi.set(__self__, "responder_rules", responder_rules)
-        pulumi.set(__self__, "source_responder_recipe_id", source_responder_recipe_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetResponderRecipesResponderRecipeCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            effective_responder_rules=effective_responder_rules,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            owner=owner,
+            responder_rules=responder_rules,
+            source_responder_recipe_id=source_responder_recipe_id,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             effective_responder_rules: Sequence['outputs.GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleResult'],
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             owner: str,
+             responder_rules: Sequence['outputs.GetResponderRecipesResponderRecipeCollectionItemResponderRuleResult'],
+             source_responder_recipe_id: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("effective_responder_rules", effective_responder_rules)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("owner", owner)
+        _setter("responder_rules", responder_rules)
+        _setter("source_responder_recipe_id", source_responder_recipe_id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -13378,18 +16485,49 @@ class GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleResu
         :param str time_updated: The date and time the responder recipe was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "policies", policies)
-        pulumi.set(__self__, "responder_rule_id", responder_rule_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "supported_modes", supported_modes)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
+        GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            description=description,
+            details=details,
+            display_name=display_name,
+            lifecycle_details=lifecycle_details,
+            policies=policies,
+            responder_rule_id=responder_rule_id,
+            state=state,
+            supported_modes=supported_modes,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             description: str,
+             details: Sequence['outputs.GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailResult'],
+             display_name: str,
+             lifecycle_details: str,
+             policies: Sequence[str],
+             responder_rule_id: str,
+             state: str,
+             supported_modes: Sequence[str],
+             time_created: str,
+             time_updated: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("description", description)
+        _setter("details", details)
+        _setter("display_name", display_name)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("policies", policies)
+        _setter("responder_rule_id", responder_rule_id)
+        _setter("state", state)
+        _setter("supported_modes", supported_modes)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -13501,10 +16639,25 @@ class GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDeta
         :param bool is_enabled: Identifies state for ResponderRule
         :param str mode: Execution Mode for ResponderRule
         """
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "mode", mode)
+        GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition=condition,
+            configurations=configurations,
+            is_enabled=is_enabled,
+            mode=mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition: str,
+             configurations: Sequence['outputs.GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationResult'],
+             is_enabled: bool,
+             mode: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition", condition)
+        _setter("configurations", configurations)
+        _setter("is_enabled", is_enabled)
+        _setter("mode", mode)
 
     @property
     @pulumi.getter
@@ -13550,9 +16703,22 @@ class GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDeta
         :param str name: configuration name
         :param str value: configuration value
         """
-        pulumi.set(__self__, "config_key", config_key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: str,
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_key", config_key)
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -13608,18 +16774,49 @@ class GetResponderRecipesResponderRecipeCollectionItemResponderRuleResult(dict):
         :param str time_updated: The date and time the responder recipe was updated. Format defined by RFC3339.
         :param str type: Type of Responder
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "details", details)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "policies", policies)
-        pulumi.set(__self__, "responder_rule_id", responder_rule_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "supported_modes", supported_modes)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "type", type)
+        GetResponderRecipesResponderRecipeCollectionItemResponderRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            description=description,
+            details=details,
+            display_name=display_name,
+            lifecycle_details=lifecycle_details,
+            policies=policies,
+            responder_rule_id=responder_rule_id,
+            state=state,
+            supported_modes=supported_modes,
+            time_created=time_created,
+            time_updated=time_updated,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             description: str,
+             details: Sequence['outputs.GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailResult'],
+             display_name: str,
+             lifecycle_details: str,
+             policies: Sequence[str],
+             responder_rule_id: str,
+             state: str,
+             supported_modes: Sequence[str],
+             time_created: str,
+             time_updated: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("description", description)
+        _setter("details", details)
+        _setter("display_name", display_name)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("policies", policies)
+        _setter("responder_rule_id", responder_rule_id)
+        _setter("state", state)
+        _setter("supported_modes", supported_modes)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -13731,10 +16928,25 @@ class GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailResult(
         :param bool is_enabled: Identifies state for ResponderRule
         :param str mode: Execution Mode for ResponderRule
         """
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "mode", mode)
+        GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            condition=condition,
+            configurations=configurations,
+            is_enabled=is_enabled,
+            mode=mode,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             condition: str,
+             configurations: Sequence['outputs.GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationResult'],
+             is_enabled: bool,
+             mode: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("condition", condition)
+        _setter("configurations", configurations)
+        _setter("is_enabled", is_enabled)
+        _setter("mode", mode)
 
     @property
     @pulumi.getter
@@ -13780,9 +16992,22 @@ class GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigu
         :param str name: configuration name
         :param str value: configuration value
         """
-        pulumi.set(__self__, "config_key", config_key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetailConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_key=config_key,
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_key: str,
+             name: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_key", config_key)
+        _setter("name", name)
+        _setter("value", value)
 
     @property
     @pulumi.getter(name="configKey")
@@ -13815,10 +17040,23 @@ class GetSecurityPoliciesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSecurityPoliciesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -13840,7 +17078,16 @@ class GetSecurityPoliciesFilterResult(dict):
 class GetSecurityPoliciesSecurityPolicyCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSecurityPoliciesSecurityPolicyCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetSecurityPoliciesSecurityPolicyCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetSecurityPoliciesSecurityPolicyCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -13881,20 +17128,55 @@ class GetSecurityPoliciesSecurityPolicyCollectionItemResult(dict):
         :param str time_created: The time the security policy was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the security policy was last updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "category", category)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "friendly_name", friendly_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "owner", owner)
-        pulumi.set(__self__, "services", services)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetSecurityPoliciesSecurityPolicyCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category=category,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            friendly_name=friendly_name,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            owner=owner,
+            services=services,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             friendly_name: str,
+             id: str,
+             lifecycle_details: str,
+             owner: str,
+             services: Sequence[str],
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("category", category)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("friendly_name", friendly_name)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("owner", owner)
+        _setter("services", services)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter
@@ -14015,10 +17297,23 @@ class GetSecurityRecipesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSecurityRecipesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -14040,7 +17335,16 @@ class GetSecurityRecipesFilterResult(dict):
 class GetSecurityRecipesSecurityRecipeCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSecurityRecipesSecurityRecipeCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetSecurityRecipesSecurityRecipeCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetSecurityRecipesSecurityRecipeCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -14077,18 +17381,49 @@ class GetSecurityRecipesSecurityRecipeCollectionItemResult(dict):
         :param str time_created: The time the recipe was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the recipe was last updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "owner", owner)
-        pulumi.set(__self__, "security_policies", security_policies)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetSecurityRecipesSecurityRecipeCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            owner=owner,
+            security_policies=security_policies,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             owner: str,
+             security_policies: Sequence[str],
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("owner", owner)
+        _setter("security_policies", security_policies)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -14193,10 +17528,23 @@ class GetSecurityZonesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSecurityZonesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -14218,7 +17566,16 @@ class GetSecurityZonesFilterResult(dict):
 class GetSecurityZonesSecurityZoneCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetSecurityZonesSecurityZoneCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetSecurityZonesSecurityZoneCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetSecurityZonesSecurityZoneCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -14257,19 +17614,52 @@ class GetSecurityZonesSecurityZoneCollectionItemResult(dict):
         :param str time_created: The time the security zone was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the security zone was last updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "inherited_by_compartments", inherited_by_compartments)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "security_zone_recipe_id", security_zone_recipe_id)
-        pulumi.set(__self__, "security_zone_target_id", security_zone_target_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetSecurityZonesSecurityZoneCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            inherited_by_compartments=inherited_by_compartments,
+            lifecycle_details=lifecycle_details,
+            security_zone_recipe_id=security_zone_recipe_id,
+            security_zone_target_id=security_zone_target_id,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             inherited_by_compartments: Sequence[str],
+             lifecycle_details: str,
+             security_zone_recipe_id: str,
+             security_zone_target_id: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("inherited_by_compartments", inherited_by_compartments)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("security_zone_recipe_id", security_zone_recipe_id)
+        _setter("security_zone_target_id", security_zone_target_id)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")

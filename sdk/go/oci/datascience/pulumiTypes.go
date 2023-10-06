@@ -3122,7 +3122,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurati
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails struct {
-	// (Updatable) The network bandwidth for the model.
+	// (Updatable) The minimum network bandwidth for the model deployment.
 	BandwidthMbps *int `pulumi:"bandwidthMbps"`
 	// (Updatable) The model deployment instance configuration
 	InstanceConfiguration ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration `pulumi:"instanceConfiguration"`
@@ -3144,7 +3144,7 @@ type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs struct {
-	// (Updatable) The network bandwidth for the model.
+	// (Updatable) The minimum network bandwidth for the model deployment.
 	BandwidthMbps pulumi.IntPtrInput `pulumi:"bandwidthMbps"`
 	// (Updatable) The model deployment instance configuration
 	InstanceConfiguration ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationInput `pulumi:"instanceConfiguration"`
@@ -3249,7 +3249,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 	}
 }
 
-// (Updatable) The network bandwidth for the model.
+// (Updatable) The minimum network bandwidth for the model deployment.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsOutput) BandwidthMbps() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails) *int {
 		return v.BandwidthMbps
@@ -3307,7 +3307,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsOutput)
 }
 
-// (Updatable) The network bandwidth for the model.
+// (Updatable) The minimum network bandwidth for the model deployment.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsPtrOutput) BandwidthMbps() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails) *int {
 		if v == nil {
@@ -3904,6 +3904,8 @@ type NotebookSessionNotebookSessionConfigDetails struct {
 	BlockStorageSizeInGbs *int `pulumi:"blockStorageSizeInGbs"`
 	// (Updatable) Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails *NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails `pulumi:"notebookSessionShapeConfigDetails"`
+	// (Updatable) The OCID of a Data Science private endpoint.
+	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
 	Shape string `pulumi:"shape"`
 	// (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
@@ -3926,6 +3928,8 @@ type NotebookSessionNotebookSessionConfigDetailsArgs struct {
 	BlockStorageSizeInGbs pulumi.IntPtrInput `pulumi:"blockStorageSizeInGbs"`
 	// (Updatable) Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsPtrInput `pulumi:"notebookSessionShapeConfigDetails"`
+	// (Updatable) The OCID of a Data Science private endpoint.
+	PrivateEndpointId pulumi.StringPtrInput `pulumi:"privateEndpointId"`
 	// (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
@@ -4039,6 +4043,11 @@ func (o NotebookSessionNotebookSessionConfigDetailsOutput) NotebookSessionShapeC
 	}).(NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsPtrOutput)
 }
 
+// (Updatable) The OCID of a Data Science private endpoint.
+func (o NotebookSessionNotebookSessionConfigDetailsOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NotebookSessionNotebookSessionConfigDetails) *string { return v.PrivateEndpointId }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
 func (o NotebookSessionNotebookSessionConfigDetailsOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v NotebookSessionNotebookSessionConfigDetails) string { return v.Shape }).(pulumi.StringOutput)
@@ -4097,6 +4106,16 @@ func (o NotebookSessionNotebookSessionConfigDetailsPtrOutput) NotebookSessionSha
 		}
 		return v.NotebookSessionShapeConfigDetails
 	}).(NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsPtrOutput)
+}
+
+// (Updatable) The OCID of a Data Science private endpoint.
+func (o NotebookSessionNotebookSessionConfigDetailsPtrOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NotebookSessionNotebookSessionConfigDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PrivateEndpointId
+	}).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
@@ -4308,6 +4327,8 @@ type NotebookSessionNotebookSessionConfigurationDetails struct {
 	BlockStorageSizeInGbs *int `pulumi:"blockStorageSizeInGbs"`
 	// (Updatable) Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails *NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails `pulumi:"notebookSessionShapeConfigDetails"`
+	// (Updatable) The OCID of a Data Science private endpoint.
+	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
 	Shape string `pulumi:"shape"`
 	// (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
@@ -4330,6 +4351,8 @@ type NotebookSessionNotebookSessionConfigurationDetailsArgs struct {
 	BlockStorageSizeInGbs pulumi.IntPtrInput `pulumi:"blockStorageSizeInGbs"`
 	// (Updatable) Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsPtrInput `pulumi:"notebookSessionShapeConfigDetails"`
+	// (Updatable) The OCID of a Data Science private endpoint.
+	PrivateEndpointId pulumi.StringPtrInput `pulumi:"privateEndpointId"`
 	// (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
@@ -4443,6 +4466,11 @@ func (o NotebookSessionNotebookSessionConfigurationDetailsOutput) NotebookSessio
 	}).(NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsPtrOutput)
 }
 
+// (Updatable) The OCID of a Data Science private endpoint.
+func (o NotebookSessionNotebookSessionConfigurationDetailsOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NotebookSessionNotebookSessionConfigurationDetails) *string { return v.PrivateEndpointId }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
 func (o NotebookSessionNotebookSessionConfigurationDetailsOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v NotebookSessionNotebookSessionConfigurationDetails) string { return v.Shape }).(pulumi.StringOutput)
@@ -4501,6 +4529,16 @@ func (o NotebookSessionNotebookSessionConfigurationDetailsPtrOutput) NotebookSes
 		}
 		return v.NotebookSessionShapeConfigDetails
 	}).(NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsPtrOutput)
+}
+
+// (Updatable) The OCID of a Data Science private endpoint.
+func (o NotebookSessionNotebookSessionConfigurationDetailsPtrOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NotebookSessionNotebookSessionConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PrivateEndpointId
+	}).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
@@ -13199,7 +13237,7 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigura
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail struct {
-	// The network bandwidth for the model.
+	// The minimum network bandwidth for the model deployment.
 	BandwidthMbps int `pulumi:"bandwidthMbps"`
 	// The model deployment instance configuration
 	InstanceConfigurations []GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration `pulumi:"instanceConfigurations"`
@@ -13221,7 +13259,7 @@ type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetai
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs struct {
-	// The network bandwidth for the model.
+	// The minimum network bandwidth for the model deployment.
 	BandwidthMbps pulumi.IntInput `pulumi:"bandwidthMbps"`
 	// The model deployment instance configuration
 	InstanceConfigurations GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArrayInput `pulumi:"instanceConfigurations"`
@@ -13300,7 +13338,7 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDe
 	}
 }
 
-// The network bandwidth for the model.
+// The minimum network bandwidth for the model deployment.
 func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailOutput) BandwidthMbps() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail) int {
 		return v.BandwidthMbps
@@ -15149,7 +15187,7 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvi
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail struct {
-	// The network bandwidth for the model.
+	// The minimum network bandwidth for the model deployment.
 	BandwidthMbps int `pulumi:"bandwidthMbps"`
 	// The model deployment instance configuration
 	InstanceConfigurations []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration `pulumi:"instanceConfigurations"`
@@ -15171,7 +15209,7 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelCo
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs struct {
-	// The network bandwidth for the model.
+	// The minimum network bandwidth for the model deployment.
 	BandwidthMbps pulumi.IntInput `pulumi:"bandwidthMbps"`
 	// The model deployment instance configuration
 	InstanceConfigurations GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArrayInput `pulumi:"instanceConfigurations"`
@@ -15250,7 +15288,7 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailMode
 	}
 }
 
-// The network bandwidth for the model.
+// The minimum network bandwidth for the model deployment.
 func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailOutput) BandwidthMbps() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail) int {
 		return v.BandwidthMbps
@@ -16791,6 +16829,8 @@ type GetNotebookSessionNotebookSessionConfigDetail struct {
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
 	// Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails []GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail `pulumi:"notebookSessionShapeConfigDetails"`
+	// The OCID of a Data Science private endpoint.
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
 	// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
 	Shape string `pulumi:"shape"`
 	// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
@@ -16813,6 +16853,8 @@ type GetNotebookSessionNotebookSessionConfigDetailArgs struct {
 	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
 	// Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayInput `pulumi:"notebookSessionShapeConfigDetails"`
+	// The OCID of a Data Science private endpoint.
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
 	// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
@@ -16898,6 +16940,11 @@ func (o GetNotebookSessionNotebookSessionConfigDetailOutput) NotebookSessionShap
 	return o.ApplyT(func(v GetNotebookSessionNotebookSessionConfigDetail) []GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail {
 		return v.NotebookSessionShapeConfigDetails
 	}).(GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput)
+}
+
+// The OCID of a Data Science private endpoint.
+func (o GetNotebookSessionNotebookSessionConfigDetailOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionNotebookSessionConfigDetail) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
 }
 
 // The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
@@ -17075,6 +17122,8 @@ type GetNotebookSessionNotebookSessionConfigurationDetail struct {
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
 	// Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails []GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail `pulumi:"notebookSessionShapeConfigDetails"`
+	// The OCID of a Data Science private endpoint.
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
 	// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
 	Shape string `pulumi:"shape"`
 	// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
@@ -17097,6 +17146,8 @@ type GetNotebookSessionNotebookSessionConfigurationDetailArgs struct {
 	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
 	// Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput `pulumi:"notebookSessionShapeConfigDetails"`
+	// The OCID of a Data Science private endpoint.
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
 	// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
@@ -17182,6 +17233,11 @@ func (o GetNotebookSessionNotebookSessionConfigurationDetailOutput) NotebookSess
 	return o.ApplyT(func(v GetNotebookSessionNotebookSessionConfigurationDetail) []GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail {
 		return v.NotebookSessionShapeConfigDetails
 	}).(GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput)
+}
+
+// The OCID of a Data Science private endpoint.
+func (o GetNotebookSessionNotebookSessionConfigurationDetailOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionNotebookSessionConfigurationDetail) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
 }
 
 // The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
@@ -18394,6 +18450,8 @@ type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail struct {
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
 	// Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails []GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail `pulumi:"notebookSessionShapeConfigDetails"`
+	// The OCID of a Data Science private endpoint.
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
 	// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
 	Shape string `pulumi:"shape"`
 	// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
@@ -18416,6 +18474,8 @@ type GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs struct {
 	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
 	// Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayInput `pulumi:"notebookSessionShapeConfigDetails"`
+	// The OCID of a Data Science private endpoint.
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
 	// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
@@ -18503,6 +18563,13 @@ func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) Not
 	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail) []GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetail {
 		return v.NotebookSessionShapeConfigDetails
 	}).(GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailArrayOutput)
+}
+
+// The OCID of a Data Science private endpoint.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigDetail) string {
+		return v.PrivateEndpointId
+	}).(pulumi.StringOutput)
 }
 
 // The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
@@ -18680,6 +18747,8 @@ type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail struct
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
 	// Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails []GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail `pulumi:"notebookSessionShapeConfigDetails"`
+	// The OCID of a Data Science private endpoint.
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
 	// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
 	Shape string `pulumi:"shape"`
 	// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
@@ -18702,6 +18771,8 @@ type GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailArgs st
 	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
 	// Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayInput `pulumi:"notebookSessionShapeConfigDetails"`
+	// The OCID of a Data Science private endpoint.
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
 	// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
@@ -18789,6 +18860,13 @@ func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutp
 	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail) []GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail {
 		return v.NotebookSessionShapeConfigDetails
 	}).(GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailArrayOutput)
+}
+
+// The OCID of a Data Science private endpoint.
+func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetail) string {
+		return v.PrivateEndpointId
+	}).(pulumi.StringOutput)
 }
 
 // The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
@@ -24901,6 +24979,389 @@ func (o GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShape
 	}).(GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput)
 }
 
+type GetPrivateEndpointsDataSciencePrivateEndpoint struct {
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+	CreatedBy string `pulumi:"createdBy"`
+	// Resource types in the Data Science service such as notebooks.
+	DataScienceResourceType string `pulumi:"dataScienceResourceType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A user friendly description. Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// <b>Filter</b> results by its user-friendly name.
+	DisplayName string `pulumi:"displayName"`
+	// Accesing the Data Science resource using FQDN.
+	Fqdn string `pulumi:"fqdn"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of a private endpoint.
+	Id string `pulumi:"id"`
+	// Details of the state of Data Science private endpoint.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// An array of network security group OCIDs.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The lifecycle state of the private endpoint.
+	State     string `pulumi:"state"`
+	SubDomain string `pulumi:"subDomain"`
+	// The OCID of a subnet.
+	SubnetId string `pulumi:"subnetId"`
+	// The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetPrivateEndpointsDataSciencePrivateEndpointInput is an input type that accepts GetPrivateEndpointsDataSciencePrivateEndpointArgs and GetPrivateEndpointsDataSciencePrivateEndpointOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointsDataSciencePrivateEndpointInput` via:
+//
+//	GetPrivateEndpointsDataSciencePrivateEndpointArgs{...}
+type GetPrivateEndpointsDataSciencePrivateEndpointInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointsDataSciencePrivateEndpointOutput() GetPrivateEndpointsDataSciencePrivateEndpointOutput
+	ToGetPrivateEndpointsDataSciencePrivateEndpointOutputWithContext(context.Context) GetPrivateEndpointsDataSciencePrivateEndpointOutput
+}
+
+type GetPrivateEndpointsDataSciencePrivateEndpointArgs struct {
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// Resource types in the Data Science service such as notebooks.
+	DataScienceResourceType pulumi.StringInput `pulumi:"dataScienceResourceType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A user friendly description. Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// <b>Filter</b> results by its user-friendly name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Accesing the Data Science resource using FQDN.
+	Fqdn pulumi.StringInput `pulumi:"fqdn"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The OCID of a private endpoint.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Details of the state of Data Science private endpoint.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// An array of network security group OCIDs.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The lifecycle state of the private endpoint.
+	State     pulumi.StringInput `pulumi:"state"`
+	SubDomain pulumi.StringInput `pulumi:"subDomain"`
+	// The OCID of a subnet.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetPrivateEndpointsDataSciencePrivateEndpointArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointsDataSciencePrivateEndpoint)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointsDataSciencePrivateEndpointArgs) ToGetPrivateEndpointsDataSciencePrivateEndpointOutput() GetPrivateEndpointsDataSciencePrivateEndpointOutput {
+	return i.ToGetPrivateEndpointsDataSciencePrivateEndpointOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointsDataSciencePrivateEndpointArgs) ToGetPrivateEndpointsDataSciencePrivateEndpointOutputWithContext(ctx context.Context) GetPrivateEndpointsDataSciencePrivateEndpointOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsDataSciencePrivateEndpointOutput)
+}
+
+func (i GetPrivateEndpointsDataSciencePrivateEndpointArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsDataSciencePrivateEndpoint] {
+	return pulumix.Output[GetPrivateEndpointsDataSciencePrivateEndpoint]{
+		OutputState: i.ToGetPrivateEndpointsDataSciencePrivateEndpointOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetPrivateEndpointsDataSciencePrivateEndpointArrayInput is an input type that accepts GetPrivateEndpointsDataSciencePrivateEndpointArray and GetPrivateEndpointsDataSciencePrivateEndpointArrayOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointsDataSciencePrivateEndpointArrayInput` via:
+//
+//	GetPrivateEndpointsDataSciencePrivateEndpointArray{ GetPrivateEndpointsDataSciencePrivateEndpointArgs{...} }
+type GetPrivateEndpointsDataSciencePrivateEndpointArrayInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointsDataSciencePrivateEndpointArrayOutput() GetPrivateEndpointsDataSciencePrivateEndpointArrayOutput
+	ToGetPrivateEndpointsDataSciencePrivateEndpointArrayOutputWithContext(context.Context) GetPrivateEndpointsDataSciencePrivateEndpointArrayOutput
+}
+
+type GetPrivateEndpointsDataSciencePrivateEndpointArray []GetPrivateEndpointsDataSciencePrivateEndpointInput
+
+func (GetPrivateEndpointsDataSciencePrivateEndpointArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointsDataSciencePrivateEndpoint)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointsDataSciencePrivateEndpointArray) ToGetPrivateEndpointsDataSciencePrivateEndpointArrayOutput() GetPrivateEndpointsDataSciencePrivateEndpointArrayOutput {
+	return i.ToGetPrivateEndpointsDataSciencePrivateEndpointArrayOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointsDataSciencePrivateEndpointArray) ToGetPrivateEndpointsDataSciencePrivateEndpointArrayOutputWithContext(ctx context.Context) GetPrivateEndpointsDataSciencePrivateEndpointArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsDataSciencePrivateEndpointArrayOutput)
+}
+
+func (i GetPrivateEndpointsDataSciencePrivateEndpointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsDataSciencePrivateEndpoint] {
+	return pulumix.Output[[]GetPrivateEndpointsDataSciencePrivateEndpoint]{
+		OutputState: i.ToGetPrivateEndpointsDataSciencePrivateEndpointArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetPrivateEndpointsDataSciencePrivateEndpointOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointsDataSciencePrivateEndpointOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointsDataSciencePrivateEndpoint)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) ToGetPrivateEndpointsDataSciencePrivateEndpointOutput() GetPrivateEndpointsDataSciencePrivateEndpointOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) ToGetPrivateEndpointsDataSciencePrivateEndpointOutputWithContext(ctx context.Context) GetPrivateEndpointsDataSciencePrivateEndpointOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsDataSciencePrivateEndpoint] {
+	return pulumix.Output[GetPrivateEndpointsDataSciencePrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
+}
+
+// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// Resource types in the Data Science service such as notebooks.
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) DataScienceResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) string { return v.DataScienceResourceType }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A user friendly description. Avoid entering confidential information.
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// <b>Filter</b> results by its user-friendly name.
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Accesing the Data Science resource using FQDN.
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) Fqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) string { return v.Fqdn }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The OCID of a private endpoint.
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details of the state of Data Science private endpoint.
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// An array of network security group OCIDs.
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The lifecycle state of the private endpoint.
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) SubDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) string { return v.SubDomain }).(pulumi.StringOutput)
+}
+
+// The OCID of a subnet.
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetPrivateEndpointsDataSciencePrivateEndpointArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointsDataSciencePrivateEndpointArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointsDataSciencePrivateEndpoint)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointsDataSciencePrivateEndpointArrayOutput) ToGetPrivateEndpointsDataSciencePrivateEndpointArrayOutput() GetPrivateEndpointsDataSciencePrivateEndpointArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsDataSciencePrivateEndpointArrayOutput) ToGetPrivateEndpointsDataSciencePrivateEndpointArrayOutputWithContext(ctx context.Context) GetPrivateEndpointsDataSciencePrivateEndpointArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsDataSciencePrivateEndpointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsDataSciencePrivateEndpoint] {
+	return pulumix.Output[[]GetPrivateEndpointsDataSciencePrivateEndpoint]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetPrivateEndpointsDataSciencePrivateEndpointArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointsDataSciencePrivateEndpointOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateEndpointsDataSciencePrivateEndpoint {
+		return vs[0].([]GetPrivateEndpointsDataSciencePrivateEndpoint)[vs[1].(int)]
+	}).(GetPrivateEndpointsDataSciencePrivateEndpointOutput)
+}
+
+type GetPrivateEndpointsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPrivateEndpointsFilterInput is an input type that accepts GetPrivateEndpointsFilterArgs and GetPrivateEndpointsFilterOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointsFilterInput` via:
+//
+//	GetPrivateEndpointsFilterArgs{...}
+type GetPrivateEndpointsFilterInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointsFilterOutput() GetPrivateEndpointsFilterOutput
+	ToGetPrivateEndpointsFilterOutputWithContext(context.Context) GetPrivateEndpointsFilterOutput
+}
+
+type GetPrivateEndpointsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPrivateEndpointsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointsFilter)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointsFilterArgs) ToGetPrivateEndpointsFilterOutput() GetPrivateEndpointsFilterOutput {
+	return i.ToGetPrivateEndpointsFilterOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointsFilterArgs) ToGetPrivateEndpointsFilterOutputWithContext(ctx context.Context) GetPrivateEndpointsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsFilterOutput)
+}
+
+func (i GetPrivateEndpointsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsFilter] {
+	return pulumix.Output[GetPrivateEndpointsFilter]{
+		OutputState: i.ToGetPrivateEndpointsFilterOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetPrivateEndpointsFilterArrayInput is an input type that accepts GetPrivateEndpointsFilterArray and GetPrivateEndpointsFilterArrayOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointsFilterArrayInput` via:
+//
+//	GetPrivateEndpointsFilterArray{ GetPrivateEndpointsFilterArgs{...} }
+type GetPrivateEndpointsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointsFilterArrayOutput() GetPrivateEndpointsFilterArrayOutput
+	ToGetPrivateEndpointsFilterArrayOutputWithContext(context.Context) GetPrivateEndpointsFilterArrayOutput
+}
+
+type GetPrivateEndpointsFilterArray []GetPrivateEndpointsFilterInput
+
+func (GetPrivateEndpointsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointsFilter)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointsFilterArray) ToGetPrivateEndpointsFilterArrayOutput() GetPrivateEndpointsFilterArrayOutput {
+	return i.ToGetPrivateEndpointsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointsFilterArray) ToGetPrivateEndpointsFilterArrayOutputWithContext(ctx context.Context) GetPrivateEndpointsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsFilterArrayOutput)
+}
+
+func (i GetPrivateEndpointsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsFilter] {
+	return pulumix.Output[[]GetPrivateEndpointsFilter]{
+		OutputState: i.ToGetPrivateEndpointsFilterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetPrivateEndpointsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointsFilter)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointsFilterOutput) ToGetPrivateEndpointsFilterOutput() GetPrivateEndpointsFilterOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsFilterOutput) ToGetPrivateEndpointsFilterOutputWithContext(ctx context.Context) GetPrivateEndpointsFilterOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateEndpointsFilter] {
+	return pulumix.Output[GetPrivateEndpointsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetPrivateEndpointsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPrivateEndpointsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPrivateEndpointsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPrivateEndpointsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointsFilter)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointsFilterArrayOutput) ToGetPrivateEndpointsFilterArrayOutput() GetPrivateEndpointsFilterArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsFilterArrayOutput) ToGetPrivateEndpointsFilterArrayOutputWithContext(ctx context.Context) GetPrivateEndpointsFilterArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetPrivateEndpointsFilter] {
+	return pulumix.Output[[]GetPrivateEndpointsFilter]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetPrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateEndpointsFilter {
+		return vs[0].([]GetPrivateEndpointsFilter)[vs[1].(int)]
+	}).(GetPrivateEndpointsFilterOutput)
+}
+
 type GetProjectsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -25530,6 +25991,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsDataSciencePrivateEndpointInput)(nil)).Elem(), GetPrivateEndpointsDataSciencePrivateEndpointArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsDataSciencePrivateEndpointArrayInput)(nil)).Elem(), GetPrivateEndpointsDataSciencePrivateEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsFilterInput)(nil)).Elem(), GetPrivateEndpointsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsFilterArrayInput)(nil)).Elem(), GetPrivateEndpointsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsFilterInput)(nil)).Elem(), GetProjectsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsFilterArrayInput)(nil)).Elem(), GetProjectsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectInput)(nil)).Elem(), GetProjectsProjectArgs{})
@@ -25839,6 +26304,10 @@ func init() {
 	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPrivateEndpointsDataSciencePrivateEndpointOutput{})
+	pulumi.RegisterOutputType(GetPrivateEndpointsDataSciencePrivateEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetPrivateEndpointsFilterOutput{})
+	pulumi.RegisterOutputType(GetPrivateEndpointsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetProjectsFilterOutput{})
 	pulumi.RegisterOutputType(GetProjectsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetProjectsProjectOutput{})

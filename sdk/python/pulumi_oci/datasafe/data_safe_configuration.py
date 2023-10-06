@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -27,9 +27,20 @@ class DataSafeConfigurationArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] compartment_id: (Updatable) A filter to return only resources that match the specified compartment OCID.
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        DataSafeConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            compartment_id=compartment_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: pulumi.Input[bool],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -88,24 +99,49 @@ class _DataSafeConfigurationState:
         :param pulumi.Input[str] time_enabled: The date and time Data Safe was enabled, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] url: The URL of the Data Safe service.
         """
+        _DataSafeConfigurationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            data_safe_nat_gateway_ip_address=data_safe_nat_gateway_ip_address,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            global_settings=global_settings,
+            is_enabled=is_enabled,
+            state=state,
+            time_enabled=time_enabled,
+            url=url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             data_safe_nat_gateway_ip_address: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             global_settings: Optional[pulumi.Input[Sequence[pulumi.Input['DataSafeConfigurationGlobalSettingArgs']]]] = None,
+             is_enabled: Optional[pulumi.Input[bool]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_enabled: Optional[pulumi.Input[str]] = None,
+             url: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if data_safe_nat_gateway_ip_address is not None:
-            pulumi.set(__self__, "data_safe_nat_gateway_ip_address", data_safe_nat_gateway_ip_address)
+            _setter("data_safe_nat_gateway_ip_address", data_safe_nat_gateway_ip_address)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if global_settings is not None:
-            pulumi.set(__self__, "global_settings", global_settings)
+            _setter("global_settings", global_settings)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_enabled is not None:
-            pulumi.set(__self__, "time_enabled", time_enabled)
+            _setter("time_enabled", time_enabled)
         if url is not None:
-            pulumi.set(__self__, "url", url)
+            _setter("url", url)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -293,6 +329,10 @@ class DataSafeConfiguration(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DataSafeConfigurationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

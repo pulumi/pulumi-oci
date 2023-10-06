@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['OperationsInsightsWarehouseRotateWarehouseWalletArgs', 'OperationsInsightsWarehouseRotateWarehouseWallet']
@@ -23,7 +23,16 @@ class OperationsInsightsWarehouseRotateWarehouseWalletArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
+        OperationsInsightsWarehouseRotateWarehouseWalletArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            operations_insights_warehouse_id=operations_insights_warehouse_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             operations_insights_warehouse_id: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("operations_insights_warehouse_id", operations_insights_warehouse_id)
 
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
@@ -54,8 +63,17 @@ class _OperationsInsightsWarehouseRotateWarehouseWalletState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _OperationsInsightsWarehouseRotateWarehouseWalletState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            operations_insights_warehouse_id=operations_insights_warehouse_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if operations_insights_warehouse_id is not None:
-            pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
+            _setter("operations_insights_warehouse_id", operations_insights_warehouse_id)
 
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
@@ -149,6 +167,10 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            OperationsInsightsWarehouseRotateWarehouseWalletArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

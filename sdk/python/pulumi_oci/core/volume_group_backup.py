@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -36,20 +36,41 @@ class VolumeGroupBackupArgs:
                * INCREMENTAL
         :param pulumi.Input[str] volume_group_id: The OCID of the volume group that needs to be backed up.
         """
+        VolumeGroupBackupArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            source_details=source_details,
+            type=type,
+            volume_group_id=volume_group_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             source_details: Optional[pulumi.Input['VolumeGroupBackupSourceDetailsArgs']] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             volume_group_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if source_details is not None:
-            pulumi.set(__self__, "source_details", source_details)
+            _setter("source_details", source_details)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if volume_group_id is not None:
-            pulumi.set(__self__, "volume_group_id", volume_group_id)
+            _setter("volume_group_id", volume_group_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -184,42 +205,85 @@ class _VolumeGroupBackupState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] volume_backup_ids: OCIDs for the volume backups in this volume group backup.
         :param pulumi.Input[str] volume_group_id: The OCID of the volume group that needs to be backed up.
         """
+        _VolumeGroupBackupState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            expiration_time=expiration_time,
+            freeform_tags=freeform_tags,
+            size_in_gbs=size_in_gbs,
+            size_in_mbs=size_in_mbs,
+            source_details=source_details,
+            source_type=source_type,
+            source_volume_group_backup_id=source_volume_group_backup_id,
+            state=state,
+            time_created=time_created,
+            time_request_received=time_request_received,
+            type=type,
+            unique_size_in_gbs=unique_size_in_gbs,
+            unique_size_in_mbs=unique_size_in_mbs,
+            volume_backup_ids=volume_backup_ids,
+            volume_group_id=volume_group_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             expiration_time: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             size_in_gbs: Optional[pulumi.Input[str]] = None,
+             size_in_mbs: Optional[pulumi.Input[str]] = None,
+             source_details: Optional[pulumi.Input['VolumeGroupBackupSourceDetailsArgs']] = None,
+             source_type: Optional[pulumi.Input[str]] = None,
+             source_volume_group_backup_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_request_received: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             unique_size_in_gbs: Optional[pulumi.Input[str]] = None,
+             unique_size_in_mbs: Optional[pulumi.Input[str]] = None,
+             volume_backup_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             volume_group_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if expiration_time is not None:
-            pulumi.set(__self__, "expiration_time", expiration_time)
+            _setter("expiration_time", expiration_time)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if size_in_gbs is not None:
-            pulumi.set(__self__, "size_in_gbs", size_in_gbs)
+            _setter("size_in_gbs", size_in_gbs)
         if size_in_mbs is not None:
-            pulumi.set(__self__, "size_in_mbs", size_in_mbs)
+            _setter("size_in_mbs", size_in_mbs)
         if source_details is not None:
-            pulumi.set(__self__, "source_details", source_details)
+            _setter("source_details", source_details)
         if source_type is not None:
-            pulumi.set(__self__, "source_type", source_type)
+            _setter("source_type", source_type)
         if source_volume_group_backup_id is not None:
-            pulumi.set(__self__, "source_volume_group_backup_id", source_volume_group_backup_id)
+            _setter("source_volume_group_backup_id", source_volume_group_backup_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_request_received is not None:
-            pulumi.set(__self__, "time_request_received", time_request_received)
+            _setter("time_request_received", time_request_received)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
         if unique_size_in_gbs is not None:
-            pulumi.set(__self__, "unique_size_in_gbs", unique_size_in_gbs)
+            _setter("unique_size_in_gbs", unique_size_in_gbs)
         if unique_size_in_mbs is not None:
-            pulumi.set(__self__, "unique_size_in_mbs", unique_size_in_mbs)
+            _setter("unique_size_in_mbs", unique_size_in_mbs)
         if volume_backup_ids is not None:
-            pulumi.set(__self__, "volume_backup_ids", volume_backup_ids)
+            _setter("volume_backup_ids", volume_backup_ids)
         if volume_group_id is not None:
-            pulumi.set(__self__, "volume_group_id", volume_group_id)
+            _setter("volume_group_id", volume_group_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -549,6 +613,10 @@ class VolumeGroupBackup(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            VolumeGroupBackupArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -574,6 +642,11 @@ class VolumeGroupBackup(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            if source_details is not None and not isinstance(source_details, VolumeGroupBackupSourceDetailsArgs):
+                source_details = source_details or {}
+                def _setter(key, value):
+                    source_details[key] = value
+                VolumeGroupBackupSourceDetailsArgs._configure(_setter, **source_details)
             __props__.__dict__["source_details"] = source_details
             __props__.__dict__["type"] = type
             __props__.__dict__["volume_group_id"] = volume_group_id

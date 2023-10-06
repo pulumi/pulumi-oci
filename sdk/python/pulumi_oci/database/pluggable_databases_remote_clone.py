@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -37,16 +37,37 @@ class PluggableDatabasesRemoteCloneArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "cloned_pdb_name", cloned_pdb_name)
-        pulumi.set(__self__, "pluggable_database_id", pluggable_database_id)
-        pulumi.set(__self__, "source_container_db_admin_password", source_container_db_admin_password)
-        pulumi.set(__self__, "target_container_database_id", target_container_database_id)
+        PluggableDatabasesRemoteCloneArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cloned_pdb_name=cloned_pdb_name,
+            pluggable_database_id=pluggable_database_id,
+            source_container_db_admin_password=source_container_db_admin_password,
+            target_container_database_id=target_container_database_id,
+            pdb_admin_password=pdb_admin_password,
+            should_pdb_admin_account_be_locked=should_pdb_admin_account_be_locked,
+            target_tde_wallet_password=target_tde_wallet_password,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cloned_pdb_name: pulumi.Input[str],
+             pluggable_database_id: pulumi.Input[str],
+             source_container_db_admin_password: pulumi.Input[str],
+             target_container_database_id: pulumi.Input[str],
+             pdb_admin_password: Optional[pulumi.Input[str]] = None,
+             should_pdb_admin_account_be_locked: Optional[pulumi.Input[bool]] = None,
+             target_tde_wallet_password: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cloned_pdb_name", cloned_pdb_name)
+        _setter("pluggable_database_id", pluggable_database_id)
+        _setter("source_container_db_admin_password", source_container_db_admin_password)
+        _setter("target_container_database_id", target_container_database_id)
         if pdb_admin_password is not None:
-            pulumi.set(__self__, "pdb_admin_password", pdb_admin_password)
+            _setter("pdb_admin_password", pdb_admin_password)
         if should_pdb_admin_account_be_locked is not None:
-            pulumi.set(__self__, "should_pdb_admin_account_be_locked", should_pdb_admin_account_be_locked)
+            _setter("should_pdb_admin_account_be_locked", should_pdb_admin_account_be_locked)
         if target_tde_wallet_password is not None:
-            pulumi.set(__self__, "target_tde_wallet_password", target_tde_wallet_password)
+            _setter("target_tde_wallet_password", target_tde_wallet_password)
 
     @property
     @pulumi.getter(name="clonedPdbName")
@@ -185,44 +206,89 @@ class _PluggableDatabasesRemoteCloneState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] time_created: The date and time the pluggable database was created.
         """
+        _PluggableDatabasesRemoteCloneState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cloned_pdb_name=cloned_pdb_name,
+            compartment_id=compartment_id,
+            connection_strings=connection_strings,
+            container_database_id=container_database_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_restricted=is_restricted,
+            lifecycle_details=lifecycle_details,
+            open_mode=open_mode,
+            pdb_admin_password=pdb_admin_password,
+            pdb_name=pdb_name,
+            pluggable_database_id=pluggable_database_id,
+            pluggable_database_management_configs=pluggable_database_management_configs,
+            should_pdb_admin_account_be_locked=should_pdb_admin_account_be_locked,
+            source_container_db_admin_password=source_container_db_admin_password,
+            state=state,
+            target_container_database_id=target_container_database_id,
+            target_tde_wallet_password=target_tde_wallet_password,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cloned_pdb_name: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabasesRemoteCloneConnectionStringArgs']]]] = None,
+             container_database_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_restricted: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             open_mode: Optional[pulumi.Input[str]] = None,
+             pdb_admin_password: Optional[pulumi.Input[str]] = None,
+             pdb_name: Optional[pulumi.Input[str]] = None,
+             pluggable_database_id: Optional[pulumi.Input[str]] = None,
+             pluggable_database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs']]]] = None,
+             should_pdb_admin_account_be_locked: Optional[pulumi.Input[bool]] = None,
+             source_container_db_admin_password: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             target_container_database_id: Optional[pulumi.Input[str]] = None,
+             target_tde_wallet_password: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if cloned_pdb_name is not None:
-            pulumi.set(__self__, "cloned_pdb_name", cloned_pdb_name)
+            _setter("cloned_pdb_name", cloned_pdb_name)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if connection_strings is not None:
-            pulumi.set(__self__, "connection_strings", connection_strings)
+            _setter("connection_strings", connection_strings)
         if container_database_id is not None:
-            pulumi.set(__self__, "container_database_id", container_database_id)
+            _setter("container_database_id", container_database_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_restricted is not None:
-            pulumi.set(__self__, "is_restricted", is_restricted)
+            _setter("is_restricted", is_restricted)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if open_mode is not None:
-            pulumi.set(__self__, "open_mode", open_mode)
+            _setter("open_mode", open_mode)
         if pdb_admin_password is not None:
-            pulumi.set(__self__, "pdb_admin_password", pdb_admin_password)
+            _setter("pdb_admin_password", pdb_admin_password)
         if pdb_name is not None:
-            pulumi.set(__self__, "pdb_name", pdb_name)
+            _setter("pdb_name", pdb_name)
         if pluggable_database_id is not None:
-            pulumi.set(__self__, "pluggable_database_id", pluggable_database_id)
+            _setter("pluggable_database_id", pluggable_database_id)
         if pluggable_database_management_configs is not None:
-            pulumi.set(__self__, "pluggable_database_management_configs", pluggable_database_management_configs)
+            _setter("pluggable_database_management_configs", pluggable_database_management_configs)
         if should_pdb_admin_account_be_locked is not None:
-            pulumi.set(__self__, "should_pdb_admin_account_be_locked", should_pdb_admin_account_be_locked)
+            _setter("should_pdb_admin_account_be_locked", should_pdb_admin_account_be_locked)
         if source_container_db_admin_password is not None:
-            pulumi.set(__self__, "source_container_db_admin_password", source_container_db_admin_password)
+            _setter("source_container_db_admin_password", source_container_db_admin_password)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if target_container_database_id is not None:
-            pulumi.set(__self__, "target_container_database_id", target_container_database_id)
+            _setter("target_container_database_id", target_container_database_id)
         if target_tde_wallet_password is not None:
-            pulumi.set(__self__, "target_tde_wallet_password", target_tde_wallet_password)
+            _setter("target_tde_wallet_password", target_tde_wallet_password)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="clonedPdbName")
@@ -552,6 +618,10 @@ class PluggableDatabasesRemoteClone(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            PluggableDatabasesRemoteCloneArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

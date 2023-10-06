@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -149,12 +149,25 @@ class AddonAddonError(dict):
         :param str message: A human-readable error string of the upstream error.
         :param str status: The status of the HTTP response encountered in the upstream error.
         """
+        AddonAddonError._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            code=code,
+            message=message,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             code: Optional[str] = None,
+             message: Optional[str] = None,
+             status: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if code is not None:
-            pulumi.set(__self__, "code", code)
+            _setter("code", code)
         if message is not None:
-            pulumi.set(__self__, "message", message)
+            _setter("message", message)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
 
     @property
     @pulumi.getter
@@ -190,10 +203,21 @@ class AddonConfiguration(dict):
         :param str key: (Updatable) configuration key name
         :param str value: (Updatable) configuration value name
         """
+        AddonConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -236,7 +260,16 @@ class ClusterClusterPodNetworkOption(dict):
         """
         :param str cni_type: The CNI used by the node pools of this cluster
         """
-        pulumi.set(__self__, "cni_type", cni_type)
+        ClusterClusterPodNetworkOption._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cni_type=cni_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cni_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cni_type", cni_type)
 
     @property
     @pulumi.getter(name="cniType")
@@ -281,14 +314,29 @@ class ClusterEndpoint(dict):
         :param str public_endpoint: The public native networking Kubernetes API server endpoint, if one was requested.
         :param str vcn_hostname_endpoint: The FQDN assigned to the Kubernetes API private endpoint. Example: 'https://yourVcnHostnameEndpoint'
         """
+        ClusterEndpoint._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kubernetes=kubernetes,
+            private_endpoint=private_endpoint,
+            public_endpoint=public_endpoint,
+            vcn_hostname_endpoint=vcn_hostname_endpoint,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kubernetes: Optional[str] = None,
+             private_endpoint: Optional[str] = None,
+             public_endpoint: Optional[str] = None,
+             vcn_hostname_endpoint: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if kubernetes is not None:
-            pulumi.set(__self__, "kubernetes", kubernetes)
+            _setter("kubernetes", kubernetes)
         if private_endpoint is not None:
-            pulumi.set(__self__, "private_endpoint", private_endpoint)
+            _setter("private_endpoint", private_endpoint)
         if public_endpoint is not None:
-            pulumi.set(__self__, "public_endpoint", public_endpoint)
+            _setter("public_endpoint", public_endpoint)
         if vcn_hostname_endpoint is not None:
-            pulumi.set(__self__, "vcn_hostname_endpoint", vcn_hostname_endpoint)
+            _setter("vcn_hostname_endpoint", vcn_hostname_endpoint)
 
     @property
     @pulumi.getter
@@ -355,11 +403,24 @@ class ClusterEndpointConfig(dict):
         :param bool is_public_ip_enabled: Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         """
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        ClusterEndpointConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            subnet_id=subnet_id,
+            is_public_ip_enabled=is_public_ip_enabled,
+            nsg_ids=nsg_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             subnet_id: str,
+             is_public_ip_enabled: Optional[bool] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("subnet_id", subnet_id)
         if is_public_ip_enabled is not None:
-            pulumi.set(__self__, "is_public_ip_enabled", is_public_ip_enabled)
+            _setter("is_public_ip_enabled", is_public_ip_enabled)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
 
     @property
     @pulumi.getter(name="subnetId")
@@ -414,10 +475,21 @@ class ClusterImagePolicyConfig(dict):
         :param bool is_policy_enabled: (Updatable) Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
         :param Sequence['ClusterImagePolicyConfigKeyDetailArgs'] key_details: (Updatable) A list of KMS key details.
         """
+        ClusterImagePolicyConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_policy_enabled=is_policy_enabled,
+            key_details=key_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_policy_enabled: Optional[bool] = None,
+             key_details: Optional[Sequence['outputs.ClusterImagePolicyConfigKeyDetail']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if is_policy_enabled is not None:
-            pulumi.set(__self__, "is_policy_enabled", is_policy_enabled)
+            _setter("is_policy_enabled", is_policy_enabled)
         if key_details is not None:
-            pulumi.set(__self__, "key_details", key_details)
+            _setter("key_details", key_details)
 
     @property
     @pulumi.getter(name="isPolicyEnabled")
@@ -460,8 +532,17 @@ class ClusterImagePolicyConfigKeyDetail(dict):
         """
         :param str kms_key_id: The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
         """
+        ClusterImagePolicyConfigKeyDetail._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kms_key_id=kms_key_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kms_key_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -532,26 +613,53 @@ class ClusterMetadata(dict):
         :param str updated_by_user_id: The user who updated the cluster.
         :param str updated_by_work_request_id: The OCID of the work request which updated the cluster.
         """
+        ClusterMetadata._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            created_by_user_id=created_by_user_id,
+            created_by_work_request_id=created_by_work_request_id,
+            deleted_by_user_id=deleted_by_user_id,
+            deleted_by_work_request_id=deleted_by_work_request_id,
+            time_created=time_created,
+            time_credential_expiration=time_credential_expiration,
+            time_deleted=time_deleted,
+            time_updated=time_updated,
+            updated_by_user_id=updated_by_user_id,
+            updated_by_work_request_id=updated_by_work_request_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             created_by_user_id: Optional[str] = None,
+             created_by_work_request_id: Optional[str] = None,
+             deleted_by_user_id: Optional[str] = None,
+             deleted_by_work_request_id: Optional[str] = None,
+             time_created: Optional[str] = None,
+             time_credential_expiration: Optional[str] = None,
+             time_deleted: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             updated_by_user_id: Optional[str] = None,
+             updated_by_work_request_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if created_by_user_id is not None:
-            pulumi.set(__self__, "created_by_user_id", created_by_user_id)
+            _setter("created_by_user_id", created_by_user_id)
         if created_by_work_request_id is not None:
-            pulumi.set(__self__, "created_by_work_request_id", created_by_work_request_id)
+            _setter("created_by_work_request_id", created_by_work_request_id)
         if deleted_by_user_id is not None:
-            pulumi.set(__self__, "deleted_by_user_id", deleted_by_user_id)
+            _setter("deleted_by_user_id", deleted_by_user_id)
         if deleted_by_work_request_id is not None:
-            pulumi.set(__self__, "deleted_by_work_request_id", deleted_by_work_request_id)
+            _setter("deleted_by_work_request_id", deleted_by_work_request_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_credential_expiration is not None:
-            pulumi.set(__self__, "time_credential_expiration", time_credential_expiration)
+            _setter("time_credential_expiration", time_credential_expiration)
         if time_deleted is not None:
-            pulumi.set(__self__, "time_deleted", time_deleted)
+            _setter("time_deleted", time_deleted)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if updated_by_user_id is not None:
-            pulumi.set(__self__, "updated_by_user_id", updated_by_user_id)
+            _setter("updated_by_user_id", updated_by_user_id)
         if updated_by_work_request_id is not None:
-            pulumi.set(__self__, "updated_by_work_request_id", updated_by_work_request_id)
+            _setter("updated_by_work_request_id", updated_by_work_request_id)
 
     @property
     @pulumi.getter(name="createdByUserId")
@@ -678,18 +786,37 @@ class ClusterOptions(dict):
         :param 'ClusterOptionsServiceLbConfigArgs' service_lb_config: (Updatable) Configuration to be applied to load balancers created by Kubernetes services
         :param Sequence[str] service_lb_subnet_ids: The OCIDs of the subnets used for Kubernetes services load balancers.
         """
+        ClusterOptions._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            add_ons=add_ons,
+            admission_controller_options=admission_controller_options,
+            kubernetes_network_config=kubernetes_network_config,
+            persistent_volume_config=persistent_volume_config,
+            service_lb_config=service_lb_config,
+            service_lb_subnet_ids=service_lb_subnet_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             add_ons: Optional['outputs.ClusterOptionsAddOns'] = None,
+             admission_controller_options: Optional['outputs.ClusterOptionsAdmissionControllerOptions'] = None,
+             kubernetes_network_config: Optional['outputs.ClusterOptionsKubernetesNetworkConfig'] = None,
+             persistent_volume_config: Optional['outputs.ClusterOptionsPersistentVolumeConfig'] = None,
+             service_lb_config: Optional['outputs.ClusterOptionsServiceLbConfig'] = None,
+             service_lb_subnet_ids: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if add_ons is not None:
-            pulumi.set(__self__, "add_ons", add_ons)
+            _setter("add_ons", add_ons)
         if admission_controller_options is not None:
-            pulumi.set(__self__, "admission_controller_options", admission_controller_options)
+            _setter("admission_controller_options", admission_controller_options)
         if kubernetes_network_config is not None:
-            pulumi.set(__self__, "kubernetes_network_config", kubernetes_network_config)
+            _setter("kubernetes_network_config", kubernetes_network_config)
         if persistent_volume_config is not None:
-            pulumi.set(__self__, "persistent_volume_config", persistent_volume_config)
+            _setter("persistent_volume_config", persistent_volume_config)
         if service_lb_config is not None:
-            pulumi.set(__self__, "service_lb_config", service_lb_config)
+            _setter("service_lb_config", service_lb_config)
         if service_lb_subnet_ids is not None:
-            pulumi.set(__self__, "service_lb_subnet_ids", service_lb_subnet_ids)
+            _setter("service_lb_subnet_ids", service_lb_subnet_ids)
 
     @property
     @pulumi.getter(name="addOns")
@@ -768,10 +895,21 @@ class ClusterOptionsAddOns(dict):
         :param bool is_kubernetes_dashboard_enabled: Whether or not to enable the Kubernetes Dashboard add-on.
         :param bool is_tiller_enabled: Whether or not to enable the Tiller add-on.
         """
+        ClusterOptionsAddOns._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_kubernetes_dashboard_enabled=is_kubernetes_dashboard_enabled,
+            is_tiller_enabled=is_tiller_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_kubernetes_dashboard_enabled: Optional[bool] = None,
+             is_tiller_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if is_kubernetes_dashboard_enabled is not None:
-            pulumi.set(__self__, "is_kubernetes_dashboard_enabled", is_kubernetes_dashboard_enabled)
+            _setter("is_kubernetes_dashboard_enabled", is_kubernetes_dashboard_enabled)
         if is_tiller_enabled is not None:
-            pulumi.set(__self__, "is_tiller_enabled", is_tiller_enabled)
+            _setter("is_tiller_enabled", is_tiller_enabled)
 
     @property
     @pulumi.getter(name="isKubernetesDashboardEnabled")
@@ -814,8 +952,17 @@ class ClusterOptionsAdmissionControllerOptions(dict):
         """
         :param bool is_pod_security_policy_enabled: (Updatable) Whether or not to enable the Pod Security Policy admission controller.
         """
+        ClusterOptionsAdmissionControllerOptions._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_pod_security_policy_enabled=is_pod_security_policy_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_pod_security_policy_enabled: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if is_pod_security_policy_enabled is not None:
-            pulumi.set(__self__, "is_pod_security_policy_enabled", is_pod_security_policy_enabled)
+            _setter("is_pod_security_policy_enabled", is_pod_security_policy_enabled)
 
     @property
     @pulumi.getter(name="isPodSecurityPolicyEnabled")
@@ -854,10 +1001,21 @@ class ClusterOptionsKubernetesNetworkConfig(dict):
         :param str pods_cidr: The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
         :param str services_cidr: The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
         """
+        ClusterOptionsKubernetesNetworkConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            pods_cidr=pods_cidr,
+            services_cidr=services_cidr,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             pods_cidr: Optional[str] = None,
+             services_cidr: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if pods_cidr is not None:
-            pulumi.set(__self__, "pods_cidr", pods_cidr)
+            _setter("pods_cidr", pods_cidr)
         if services_cidr is not None:
-            pulumi.set(__self__, "services_cidr", services_cidr)
+            _setter("services_cidr", services_cidr)
 
     @property
     @pulumi.getter(name="podsCidr")
@@ -904,10 +1062,21 @@ class ClusterOptionsPersistentVolumeConfig(dict):
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
+        ClusterOptionsPersistentVolumeConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -954,10 +1123,21 @@ class ClusterOptionsServiceLbConfig(dict):
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
+        ClusterOptionsServiceLbConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -1103,55 +1283,112 @@ class ContainerInstanceContainer(dict):
         :param Sequence['ContainerInstanceContainerVolumeMountArgs'] volume_mounts: List of the volume mounts.
         :param str working_directory: The working directory within the container's filesystem for the container process. If not specified, the default working directory from the image is used.
         """
-        pulumi.set(__self__, "image_url", image_url)
+        ContainerInstanceContainer._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            image_url=image_url,
+            arguments=arguments,
+            availability_domain=availability_domain,
+            commands=commands,
+            compartment_id=compartment_id,
+            container_id=container_id,
+            container_instance_id=container_instance_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            environment_variables=environment_variables,
+            exit_code=exit_code,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            health_checks=health_checks,
+            is_resource_principal_disabled=is_resource_principal_disabled,
+            lifecycle_details=lifecycle_details,
+            resource_config=resource_config,
+            security_context=security_context,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_terminated=time_terminated,
+            time_updated=time_updated,
+            volume_mounts=volume_mounts,
+            working_directory=working_directory,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             image_url: str,
+             arguments: Optional[Sequence[str]] = None,
+             availability_domain: Optional[str] = None,
+             commands: Optional[Sequence[str]] = None,
+             compartment_id: Optional[str] = None,
+             container_id: Optional[str] = None,
+             container_instance_id: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             environment_variables: Optional[Mapping[str, Any]] = None,
+             exit_code: Optional[int] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             health_checks: Optional[Sequence['outputs.ContainerInstanceContainerHealthCheck']] = None,
+             is_resource_principal_disabled: Optional[bool] = None,
+             lifecycle_details: Optional[str] = None,
+             resource_config: Optional['outputs.ContainerInstanceContainerResourceConfig'] = None,
+             security_context: Optional['outputs.ContainerInstanceContainerSecurityContext'] = None,
+             state: Optional[str] = None,
+             system_tags: Optional[Mapping[str, Any]] = None,
+             time_created: Optional[str] = None,
+             time_terminated: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             volume_mounts: Optional[Sequence['outputs.ContainerInstanceContainerVolumeMount']] = None,
+             working_directory: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("image_url", image_url)
         if arguments is not None:
-            pulumi.set(__self__, "arguments", arguments)
+            _setter("arguments", arguments)
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if commands is not None:
-            pulumi.set(__self__, "commands", commands)
+            _setter("commands", commands)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if container_id is not None:
-            pulumi.set(__self__, "container_id", container_id)
+            _setter("container_id", container_id)
         if container_instance_id is not None:
-            pulumi.set(__self__, "container_instance_id", container_instance_id)
+            _setter("container_instance_id", container_instance_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if environment_variables is not None:
-            pulumi.set(__self__, "environment_variables", environment_variables)
+            _setter("environment_variables", environment_variables)
         if exit_code is not None:
-            pulumi.set(__self__, "exit_code", exit_code)
+            _setter("exit_code", exit_code)
         if fault_domain is not None:
-            pulumi.set(__self__, "fault_domain", fault_domain)
+            _setter("fault_domain", fault_domain)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if health_checks is not None:
-            pulumi.set(__self__, "health_checks", health_checks)
+            _setter("health_checks", health_checks)
         if is_resource_principal_disabled is not None:
-            pulumi.set(__self__, "is_resource_principal_disabled", is_resource_principal_disabled)
+            _setter("is_resource_principal_disabled", is_resource_principal_disabled)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if resource_config is not None:
-            pulumi.set(__self__, "resource_config", resource_config)
+            _setter("resource_config", resource_config)
         if security_context is not None:
-            pulumi.set(__self__, "security_context", security_context)
+            _setter("security_context", security_context)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_terminated is not None:
-            pulumi.set(__self__, "time_terminated", time_terminated)
+            _setter("time_terminated", time_terminated)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if volume_mounts is not None:
-            pulumi.set(__self__, "volume_mounts", volume_mounts)
+            _setter("volume_mounts", volume_mounts)
         if working_directory is not None:
-            pulumi.set(__self__, "working_directory", working_directory)
+            _setter("working_directory", working_directory)
 
     @property
     @pulumi.getter(name="imageUrl")
@@ -1423,33 +1660,68 @@ class ContainerInstanceContainerHealthCheck(dict):
         :param int success_threshold: Number of consecutive successes at which we consider the check succeeded again after it was in failure state.
         :param int timeout_in_seconds: Length of waiting time in seconds before marking health check failed.
         """
-        pulumi.set(__self__, "health_check_type", health_check_type)
+        ContainerInstanceContainerHealthCheck._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            health_check_type=health_check_type,
+            commands=commands,
+            failure_action=failure_action,
+            failure_threshold=failure_threshold,
+            headers=headers,
+            initial_delay_in_seconds=initial_delay_in_seconds,
+            interval_in_seconds=interval_in_seconds,
+            name=name,
+            path=path,
+            port=port,
+            status=status,
+            status_details=status_details,
+            success_threshold=success_threshold,
+            timeout_in_seconds=timeout_in_seconds,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             health_check_type: str,
+             commands: Optional[Sequence[str]] = None,
+             failure_action: Optional[str] = None,
+             failure_threshold: Optional[int] = None,
+             headers: Optional[Sequence['outputs.ContainerInstanceContainerHealthCheckHeader']] = None,
+             initial_delay_in_seconds: Optional[int] = None,
+             interval_in_seconds: Optional[int] = None,
+             name: Optional[str] = None,
+             path: Optional[str] = None,
+             port: Optional[int] = None,
+             status: Optional[str] = None,
+             status_details: Optional[str] = None,
+             success_threshold: Optional[int] = None,
+             timeout_in_seconds: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("health_check_type", health_check_type)
         if commands is not None:
-            pulumi.set(__self__, "commands", commands)
+            _setter("commands", commands)
         if failure_action is not None:
-            pulumi.set(__self__, "failure_action", failure_action)
+            _setter("failure_action", failure_action)
         if failure_threshold is not None:
-            pulumi.set(__self__, "failure_threshold", failure_threshold)
+            _setter("failure_threshold", failure_threshold)
         if headers is not None:
-            pulumi.set(__self__, "headers", headers)
+            _setter("headers", headers)
         if initial_delay_in_seconds is not None:
-            pulumi.set(__self__, "initial_delay_in_seconds", initial_delay_in_seconds)
+            _setter("initial_delay_in_seconds", initial_delay_in_seconds)
         if interval_in_seconds is not None:
-            pulumi.set(__self__, "interval_in_seconds", interval_in_seconds)
+            _setter("interval_in_seconds", interval_in_seconds)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if path is not None:
-            pulumi.set(__self__, "path", path)
+            _setter("path", path)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if status_details is not None:
-            pulumi.set(__self__, "status_details", status_details)
+            _setter("status_details", status_details)
         if success_threshold is not None:
-            pulumi.set(__self__, "success_threshold", success_threshold)
+            _setter("success_threshold", success_threshold)
         if timeout_in_seconds is not None:
-            pulumi.set(__self__, "timeout_in_seconds", timeout_in_seconds)
+            _setter("timeout_in_seconds", timeout_in_seconds)
 
     @property
     @pulumi.getter(name="healthCheckType")
@@ -1567,10 +1839,21 @@ class ContainerInstanceContainerHealthCheckHeader(dict):
         :param str name: The name of the volume. This must be unique within a single container instance.
         :param str value: Container HTTP header value.
         """
+        ContainerInstanceContainerHealthCheckHeader._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -1625,10 +1908,21 @@ class ContainerInstanceContainerResourceConfig(dict):
                
                A container with a 2.0 vcpusLimit could consume up to 100% of the CPU resources available on the container instance. Values can be fractional. A value of "1.5" means that the container can consume at most the equivalent of 1 and a half logical CPUs worth of CPU capacity.
         """
+        ContainerInstanceContainerResourceConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_limit_in_gbs=memory_limit_in_gbs,
+            vcpus_limit=vcpus_limit,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_limit_in_gbs: Optional[float] = None,
+             vcpus_limit: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if memory_limit_in_gbs is not None:
-            pulumi.set(__self__, "memory_limit_in_gbs", memory_limit_in_gbs)
+            _setter("memory_limit_in_gbs", memory_limit_in_gbs)
         if vcpus_limit is not None:
-            pulumi.set(__self__, "vcpus_limit", vcpus_limit)
+            _setter("vcpus_limit", vcpus_limit)
 
     @property
     @pulumi.getter(name="memoryLimitInGbs")
@@ -1695,16 +1989,33 @@ class ContainerInstanceContainerSecurityContext(dict):
         :param int run_as_user: The user ID (UID) to run the entrypoint process of the container. Defaults to user specified UID in container image metadata if not provided. This must be provided if runAsGroup is provided.
         :param str security_context_type: The type of security context
         """
+        ContainerInstanceContainerSecurityContext._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_non_root_user_check_enabled=is_non_root_user_check_enabled,
+            is_root_file_system_readonly=is_root_file_system_readonly,
+            run_as_group=run_as_group,
+            run_as_user=run_as_user,
+            security_context_type=security_context_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_non_root_user_check_enabled: Optional[bool] = None,
+             is_root_file_system_readonly: Optional[bool] = None,
+             run_as_group: Optional[int] = None,
+             run_as_user: Optional[int] = None,
+             security_context_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if is_non_root_user_check_enabled is not None:
-            pulumi.set(__self__, "is_non_root_user_check_enabled", is_non_root_user_check_enabled)
+            _setter("is_non_root_user_check_enabled", is_non_root_user_check_enabled)
         if is_root_file_system_readonly is not None:
-            pulumi.set(__self__, "is_root_file_system_readonly", is_root_file_system_readonly)
+            _setter("is_root_file_system_readonly", is_root_file_system_readonly)
         if run_as_group is not None:
-            pulumi.set(__self__, "run_as_group", run_as_group)
+            _setter("run_as_group", run_as_group)
         if run_as_user is not None:
-            pulumi.set(__self__, "run_as_user", run_as_user)
+            _setter("run_as_user", run_as_user)
         if security_context_type is not None:
-            pulumi.set(__self__, "security_context_type", security_context_type)
+            _setter("security_context_type", security_context_type)
 
     @property
     @pulumi.getter(name="isNonRootUserCheckEnabled")
@@ -1785,14 +2096,31 @@ class ContainerInstanceContainerVolumeMount(dict):
         :param int partition: If there is more than one partition in the volume, reference this number of partitions. Here is an example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
         :param str sub_path: A subpath inside the referenced volume.
         """
-        pulumi.set(__self__, "mount_path", mount_path)
-        pulumi.set(__self__, "volume_name", volume_name)
+        ContainerInstanceContainerVolumeMount._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            mount_path=mount_path,
+            volume_name=volume_name,
+            is_read_only=is_read_only,
+            partition=partition,
+            sub_path=sub_path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             mount_path: str,
+             volume_name: str,
+             is_read_only: Optional[bool] = None,
+             partition: Optional[int] = None,
+             sub_path: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("mount_path", mount_path)
+        _setter("volume_name", volume_name)
         if is_read_only is not None:
-            pulumi.set(__self__, "is_read_only", is_read_only)
+            _setter("is_read_only", is_read_only)
         if partition is not None:
-            pulumi.set(__self__, "partition", partition)
+            _setter("partition", partition)
         if sub_path is not None:
-            pulumi.set(__self__, "sub_path", sub_path)
+            _setter("sub_path", sub_path)
 
     @property
     @pulumi.getter(name="mountPath")
@@ -1846,12 +2174,25 @@ class ContainerInstanceDnsConfig(dict):
         :param Sequence[str] options: Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
         :param Sequence[str] searches: Search list for host-name lookup. If null, we will use searches from subnet dhcpDnsOptios.
         """
+        ContainerInstanceDnsConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            nameservers=nameservers,
+            options=options,
+            searches=searches,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             nameservers: Optional[Sequence[str]] = None,
+             options: Optional[Sequence[str]] = None,
+             searches: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if nameservers is not None:
-            pulumi.set(__self__, "nameservers", nameservers)
+            _setter("nameservers", nameservers)
         if options is not None:
-            pulumi.set(__self__, "options", options)
+            _setter("options", options)
         if searches is not None:
-            pulumi.set(__self__, "searches", searches)
+            _setter("searches", searches)
 
     @property
     @pulumi.getter
@@ -1914,14 +2255,31 @@ class ContainerInstanceImagePullSecret(dict):
         :param str secret_id: The OCID of the secret for registry credentials.
         :param str username: The username which should be used with the registry for authentication. The value is expected in base64 format.
         """
-        pulumi.set(__self__, "registry_endpoint", registry_endpoint)
-        pulumi.set(__self__, "secret_type", secret_type)
+        ContainerInstanceImagePullSecret._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            registry_endpoint=registry_endpoint,
+            secret_type=secret_type,
+            password=password,
+            secret_id=secret_id,
+            username=username,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             registry_endpoint: str,
+             secret_type: str,
+             password: Optional[str] = None,
+             secret_id: Optional[str] = None,
+             username: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("registry_endpoint", registry_endpoint)
+        _setter("secret_type", secret_type)
         if password is not None:
-            pulumi.set(__self__, "password", password)
+            _setter("password", password)
         if secret_id is not None:
-            pulumi.set(__self__, "secret_id", secret_id)
+            _setter("secret_id", secret_id)
         if username is not None:
-            pulumi.set(__self__, "username", username)
+            _setter("username", username)
 
     @property
     @pulumi.getter(name="registryEndpoint")
@@ -1998,13 +2356,28 @@ class ContainerInstanceShapeConfig(dict):
         :param float networking_bandwidth_in_gbps: The networking bandwidth available to the container instance, in gigabits per second.
         :param str processor_description: A short description of the container instance's processor (CPU).
         """
-        pulumi.set(__self__, "ocpus", ocpus)
+        ContainerInstanceShapeConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            ocpus=ocpus,
+            memory_in_gbs=memory_in_gbs,
+            networking_bandwidth_in_gbps=networking_bandwidth_in_gbps,
+            processor_description=processor_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             ocpus: float,
+             memory_in_gbs: Optional[float] = None,
+             networking_bandwidth_in_gbps: Optional[float] = None,
+             processor_description: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("ocpus", ocpus)
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if networking_bandwidth_in_gbps is not None:
-            pulumi.set(__self__, "networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
+            _setter("networking_bandwidth_in_gbps", networking_bandwidth_in_gbps)
         if processor_description is not None:
-            pulumi.set(__self__, "processor_description", processor_description)
+            _setter("processor_description", processor_description)
 
     @property
     @pulumi.getter
@@ -2099,25 +2472,52 @@ class ContainerInstanceVnic(dict):
         :param bool skip_source_dest_check: Whether the source/destination check is disabled on the VNIC.
         :param str vnic_id: The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
         """
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        ContainerInstanceVnic._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            subnet_id=subnet_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            hostname_label=hostname_label,
+            is_public_ip_assigned=is_public_ip_assigned,
+            nsg_ids=nsg_ids,
+            private_ip=private_ip,
+            skip_source_dest_check=skip_source_dest_check,
+            vnic_id=vnic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             subnet_id: str,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             display_name: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             hostname_label: Optional[str] = None,
+             is_public_ip_assigned: Optional[bool] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             private_ip: Optional[str] = None,
+             skip_source_dest_check: Optional[bool] = None,
+             vnic_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("subnet_id", subnet_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hostname_label is not None:
-            pulumi.set(__self__, "hostname_label", hostname_label)
+            _setter("hostname_label", hostname_label)
         if is_public_ip_assigned is not None:
-            pulumi.set(__self__, "is_public_ip_assigned", is_public_ip_assigned)
+            _setter("is_public_ip_assigned", is_public_ip_assigned)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if private_ip is not None:
-            pulumi.set(__self__, "private_ip", private_ip)
+            _setter("private_ip", private_ip)
         if skip_source_dest_check is not None:
-            pulumi.set(__self__, "skip_source_dest_check", skip_source_dest_check)
+            _setter("skip_source_dest_check", skip_source_dest_check)
         if vnic_id is not None:
-            pulumi.set(__self__, "vnic_id", vnic_id)
+            _setter("vnic_id", vnic_id)
 
     @property
     @pulumi.getter(name="subnetId")
@@ -2232,12 +2632,27 @@ class ContainerInstanceVolume(dict):
         :param str backing_store: The volume type of the empty directory, can be either File Storage or Memory.
         :param Sequence['ContainerInstanceVolumeConfigArgs'] configs: Contains key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "volume_type", volume_type)
+        ContainerInstanceVolume._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            volume_type=volume_type,
+            backing_store=backing_store,
+            configs=configs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             volume_type: str,
+             backing_store: Optional[str] = None,
+             configs: Optional[Sequence['outputs.ContainerInstanceVolumeConfig']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("volume_type", volume_type)
         if backing_store is not None:
-            pulumi.set(__self__, "backing_store", backing_store)
+            _setter("backing_store", backing_store)
         if configs is not None:
-            pulumi.set(__self__, "configs", configs)
+            _setter("configs", configs)
 
     @property
     @pulumi.getter
@@ -2300,12 +2715,25 @@ class ContainerInstanceVolumeConfig(dict):
         :param str file_name: The name of the file. The fileName should be unique across the volume.
         :param str path: (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
         """
+        ContainerInstanceVolumeConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            data=data,
+            file_name=file_name,
+            path=path,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             data: Optional[str] = None,
+             file_name: Optional[str] = None,
+             path: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if data is not None:
-            pulumi.set(__self__, "data", data)
+            _setter("data", data)
         if file_name is not None:
-            pulumi.set(__self__, "file_name", file_name)
+            _setter("file_name", file_name)
         if path is not None:
-            pulumi.set(__self__, "path", path)
+            _setter("path", path)
 
     @property
     @pulumi.getter
@@ -2341,10 +2769,21 @@ class NodePoolInitialNodeLabel(dict):
         :param str key: (Updatable) The key of the pair.
         :param str value: (Updatable) The value of the pair.
         """
+        NodePoolInitialNodeLabel._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -2431,34 +2870,69 @@ class NodePoolNode(dict):
         :param str state: The state of the nodepool.
         :param str subnet_id: (Updatable) The OCID of the subnet in which to place nodes.
         """
+        NodePoolNode._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            defined_tags=defined_tags,
+            errors=errors,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            id=id,
+            kubernetes_version=kubernetes_version,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            node_pool_id=node_pool_id,
+            private_ip=private_ip,
+            public_ip=public_ip,
+            state=state,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[str] = None,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             errors: Optional[Sequence['outputs.NodePoolNodeError']] = None,
+             fault_domain: Optional[str] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             id: Optional[str] = None,
+             kubernetes_version: Optional[str] = None,
+             lifecycle_details: Optional[str] = None,
+             name: Optional[str] = None,
+             node_pool_id: Optional[str] = None,
+             private_ip: Optional[str] = None,
+             public_ip: Optional[str] = None,
+             state: Optional[str] = None,
+             subnet_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if errors is not None:
-            pulumi.set(__self__, "errors", errors)
+            _setter("errors", errors)
         if fault_domain is not None:
-            pulumi.set(__self__, "fault_domain", fault_domain)
+            _setter("fault_domain", fault_domain)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if kubernetes_version is not None:
-            pulumi.set(__self__, "kubernetes_version", kubernetes_version)
+            _setter("kubernetes_version", kubernetes_version)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if node_pool_id is not None:
-            pulumi.set(__self__, "node_pool_id", node_pool_id)
+            _setter("node_pool_id", node_pool_id)
         if private_ip is not None:
-            pulumi.set(__self__, "private_ip", private_ip)
+            _setter("private_ip", private_ip)
         if public_ip is not None:
-            pulumi.set(__self__, "public_ip", public_ip)
+            _setter("public_ip", public_ip)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -2625,20 +3099,43 @@ class NodePoolNodeConfigDetails(dict):
         :param 'NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs' node_pool_pod_network_option_details: (Updatable) The CNI related configuration of pods in the node pool.
         :param Sequence[str] nsg_ids: (Updatable) The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         """
-        pulumi.set(__self__, "placement_configs", placement_configs)
-        pulumi.set(__self__, "size", size)
+        NodePoolNodeConfigDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            placement_configs=placement_configs,
+            size=size,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_pv_encryption_in_transit_enabled=is_pv_encryption_in_transit_enabled,
+            kms_key_id=kms_key_id,
+            node_pool_pod_network_option_details=node_pool_pod_network_option_details,
+            nsg_ids=nsg_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             placement_configs: Sequence['outputs.NodePoolNodeConfigDetailsPlacementConfig'],
+             size: int,
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             is_pv_encryption_in_transit_enabled: Optional[bool] = None,
+             kms_key_id: Optional[str] = None,
+             node_pool_pod_network_option_details: Optional['outputs.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails'] = None,
+             nsg_ids: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("placement_configs", placement_configs)
+        _setter("size", size)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_pv_encryption_in_transit_enabled is not None:
-            pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+            _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if node_pool_pod_network_option_details is not None:
-            pulumi.set(__self__, "node_pool_pod_network_option_details", node_pool_pod_network_option_details)
+            _setter("node_pool_pod_network_option_details", node_pool_pod_network_option_details)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
 
     @property
     @pulumi.getter(name="placementConfigs")
@@ -2743,13 +3240,28 @@ class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails(dict):
         :param Sequence[str] pod_nsg_ids: (Updatable) The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param Sequence[str] pod_subnet_ids: (Updatable) The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
         """
-        pulumi.set(__self__, "cni_type", cni_type)
+        NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cni_type=cni_type,
+            max_pods_per_node=max_pods_per_node,
+            pod_nsg_ids=pod_nsg_ids,
+            pod_subnet_ids=pod_subnet_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cni_type: str,
+             max_pods_per_node: Optional[int] = None,
+             pod_nsg_ids: Optional[Sequence[str]] = None,
+             pod_subnet_ids: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cni_type", cni_type)
         if max_pods_per_node is not None:
-            pulumi.set(__self__, "max_pods_per_node", max_pods_per_node)
+            _setter("max_pods_per_node", max_pods_per_node)
         if pod_nsg_ids is not None:
-            pulumi.set(__self__, "pod_nsg_ids", pod_nsg_ids)
+            _setter("pod_nsg_ids", pod_nsg_ids)
         if pod_subnet_ids is not None:
-            pulumi.set(__self__, "pod_subnet_ids", pod_subnet_ids)
+            _setter("pod_subnet_ids", pod_subnet_ids)
 
     @property
     @pulumi.getter(name="cniType")
@@ -2824,14 +3336,31 @@ class NodePoolNodeConfigDetailsPlacementConfig(dict):
         :param Sequence[str] fault_domains: (Updatable) A list of fault domains in which to place nodes.
         :param 'NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs' preemptible_node_config: (Updatable) Configuration options for preemptible nodes.
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        NodePoolNodeConfigDetailsPlacementConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            subnet_id=subnet_id,
+            capacity_reservation_id=capacity_reservation_id,
+            fault_domains=fault_domains,
+            preemptible_node_config=preemptible_node_config,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: str,
+             subnet_id: str,
+             capacity_reservation_id: Optional[str] = None,
+             fault_domains: Optional[Sequence[str]] = None,
+             preemptible_node_config: Optional['outputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("subnet_id", subnet_id)
         if capacity_reservation_id is not None:
-            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+            _setter("capacity_reservation_id", capacity_reservation_id)
         if fault_domains is not None:
-            pulumi.set(__self__, "fault_domains", fault_domains)
+            _setter("fault_domains", fault_domains)
         if preemptible_node_config is not None:
-            pulumi.set(__self__, "preemptible_node_config", preemptible_node_config)
+            _setter("preemptible_node_config", preemptible_node_config)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -2898,7 +3427,16 @@ class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig(dict):
         """
         :param 'NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs' preemption_action: (Updatable) The action to run when the preemptible node is interrupted for eviction.
         """
-        pulumi.set(__self__, "preemption_action", preemption_action)
+        NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            preemption_action=preemption_action,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             preemption_action: 'outputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction',
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("preemption_action", preemption_action)
 
     @property
     @pulumi.getter(name="preemptionAction")
@@ -2935,9 +3473,20 @@ class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAct
         :param str type: (Updatable) The type of action to run when the instance is interrupted for eviction.
         :param bool is_preserve_boot_volume: (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         """
-        pulumi.set(__self__, "type", type)
+        NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAction._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            type=type,
+            is_preserve_boot_volume=is_preserve_boot_volume,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             type: str,
+             is_preserve_boot_volume: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("type", type)
         if is_preserve_boot_volume is not None:
-            pulumi.set(__self__, "is_preserve_boot_volume", is_preserve_boot_volume)
+            _setter("is_preserve_boot_volume", is_preserve_boot_volume)
 
     @property
     @pulumi.getter
@@ -2967,12 +3516,25 @@ class NodePoolNodeError(dict):
         :param str message: A human-readable error string of the upstream error.
         :param str status: The status of the HTTP response encountered in the upstream error.
         """
+        NodePoolNodeError._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            code=code,
+            message=message,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             code: Optional[str] = None,
+             message: Optional[str] = None,
+             status: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if code is not None:
-            pulumi.set(__self__, "code", code)
+            _setter("code", code)
         if message is not None:
-            pulumi.set(__self__, "message", message)
+            _setter("message", message)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
 
     @property
     @pulumi.getter
@@ -3027,10 +3589,21 @@ class NodePoolNodeEvictionNodePoolSettings(dict):
         :param str eviction_grace_duration: (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
         :param bool is_force_delete_after_grace_duration: (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
         """
+        NodePoolNodeEvictionNodePoolSettings._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            eviction_grace_duration=eviction_grace_duration,
+            is_force_delete_after_grace_duration=is_force_delete_after_grace_duration,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             eviction_grace_duration: Optional[str] = None,
+             is_force_delete_after_grace_duration: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if eviction_grace_duration is not None:
-            pulumi.set(__self__, "eviction_grace_duration", eviction_grace_duration)
+            _setter("eviction_grace_duration", eviction_grace_duration)
         if is_force_delete_after_grace_duration is not None:
-            pulumi.set(__self__, "is_force_delete_after_grace_duration", is_force_delete_after_grace_duration)
+            _setter("is_force_delete_after_grace_duration", is_force_delete_after_grace_duration)
 
     @property
     @pulumi.getter(name="evictionGraceDuration")
@@ -3081,12 +3654,25 @@ class NodePoolNodePoolCyclingDetails(dict):
         :param str maximum_surge: (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
         :param str maximum_unavailable: (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
         """
+        NodePoolNodePoolCyclingDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_node_cycling_enabled=is_node_cycling_enabled,
+            maximum_surge=maximum_surge,
+            maximum_unavailable=maximum_unavailable,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_node_cycling_enabled: Optional[bool] = None,
+             maximum_surge: Optional[str] = None,
+             maximum_unavailable: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if is_node_cycling_enabled is not None:
-            pulumi.set(__self__, "is_node_cycling_enabled", is_node_cycling_enabled)
+            _setter("is_node_cycling_enabled", is_node_cycling_enabled)
         if maximum_surge is not None:
-            pulumi.set(__self__, "maximum_surge", maximum_surge)
+            _setter("maximum_surge", maximum_surge)
         if maximum_unavailable is not None:
-            pulumi.set(__self__, "maximum_unavailable", maximum_unavailable)
+            _setter("maximum_unavailable", maximum_unavailable)
 
     @property
     @pulumi.getter(name="isNodeCyclingEnabled")
@@ -3139,10 +3725,21 @@ class NodePoolNodeShapeConfig(dict):
         :param float memory_in_gbs: (Updatable) The total amount of memory available to each node, in gigabytes.
         :param float ocpus: (Updatable) The total number of OCPUs available to each node in the node pool. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
+        NodePoolNodeShapeConfig._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: Optional[float] = None,
+             ocpus: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if memory_in_gbs is not None:
-            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+            _setter("memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
-            pulumi.set(__self__, "ocpus", ocpus)
+            _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -3193,12 +3790,25 @@ class NodePoolNodeSource(dict):
         :param str source_name: The user-friendly name of the entity corresponding to the OCID.
         :param str source_type: (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
         """
+        NodePoolNodeSource._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            image_id=image_id,
+            source_name=source_name,
+            source_type=source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             image_id: Optional[str] = None,
+             source_name: Optional[str] = None,
+             source_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if image_id is not None:
-            pulumi.set(__self__, "image_id", image_id)
+            _setter("image_id", image_id)
         if source_name is not None:
-            pulumi.set(__self__, "source_name", source_name)
+            _setter("source_name", source_name)
         if source_type is not None:
-            pulumi.set(__self__, "source_type", source_type)
+            _setter("source_type", source_type)
 
     @property
     @pulumi.getter(name="imageId")
@@ -3257,10 +3867,23 @@ class NodePoolNodeSourceDetails(dict):
         :param str source_type: (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
         :param str boot_volume_size_in_gbs: (Updatable) The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
         """
-        pulumi.set(__self__, "image_id", image_id)
-        pulumi.set(__self__, "source_type", source_type)
+        NodePoolNodeSourceDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            image_id=image_id,
+            source_type=source_type,
+            boot_volume_size_in_gbs=boot_volume_size_in_gbs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             image_id: str,
+             source_type: str,
+             boot_volume_size_in_gbs: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("image_id", image_id)
+        _setter("source_type", source_type)
         if boot_volume_size_in_gbs is not None:
-            pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
+            _setter("boot_volume_size_in_gbs", boot_volume_size_in_gbs)
 
     @property
     @pulumi.getter(name="imageId")
@@ -3296,10 +3919,21 @@ class VirtualNodePoolInitialVirtualNodeLabel(dict):
         :param str key: (Updatable) The key of the pair.
         :param str value: (Updatable) The value of the pair.
         """
+        VirtualNodePoolInitialVirtualNodeLabel._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -3350,9 +3984,22 @@ class VirtualNodePoolPlacementConfiguration(dict):
         :param Sequence[str] fault_domains: (Updatable) The fault domain of this virtual node.
         :param str subnet_id: (Updatable) The regional subnet where pods' VNIC will be placed.
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "fault_domains", fault_domains)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        VirtualNodePoolPlacementConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            fault_domains=fault_domains,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: str,
+             fault_domains: Sequence[str],
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("fault_domains", fault_domains)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -3409,10 +4056,23 @@ class VirtualNodePoolPodConfiguration(dict):
         :param str subnet_id: (Updatable) The regional subnet where pods' VNIC will be placed.
         :param Sequence[str] nsg_ids: (Updatable) List of network security group IDs applied to the Pod VNIC.
         """
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        VirtualNodePoolPodConfiguration._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            shape=shape,
+            subnet_id=subnet_id,
+            nsg_ids=nsg_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             shape: str,
+             subnet_id: str,
+             nsg_ids: Optional[Sequence[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("shape", shape)
+        _setter("subnet_id", subnet_id)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
 
     @property
     @pulumi.getter
@@ -3450,12 +4110,25 @@ class VirtualNodePoolTaint(dict):
         :param str key: (Updatable) The key of the pair.
         :param str value: (Updatable) The value of the pair.
         """
+        VirtualNodePoolTaint._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            effect=effect,
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             effect: Optional[str] = None,
+             key: Optional[str] = None,
+             value: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if effect is not None:
-            pulumi.set(__self__, "effect", effect)
+            _setter("effect", effect)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -3514,10 +4187,21 @@ class VirtualNodePoolVirtualNodeTags(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        VirtualNodePoolVirtualNodeTags._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Optional[Mapping[str, Any]] = None,
+             freeform_tags: Optional[Mapping[str, Any]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -3551,9 +4235,22 @@ class GetAddonAddonErrorResult(dict):
         :param str message: A human-readable error string of the upstream error.
         :param str status: The status of the HTTP response encountered in the upstream error.
         """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "status", status)
+        GetAddonAddonErrorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            code=code,
+            message=message,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             code: str,
+             message: str,
+             status: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("code", code)
+        _setter("message", message)
+        _setter("status", status)
 
     @property
     @pulumi.getter
@@ -3589,8 +4286,19 @@ class GetAddonConfigurationResult(dict):
         :param str key: configuration key name
         :param str value: configuration value name
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        GetAddonConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -3636,17 +4344,46 @@ class GetAddonOptionsAddonOptionResult(dict):
         :param str time_created: The time the work request was created.
         :param Sequence['GetAddonOptionsAddonOptionVersionArgs'] versions: The resources this work request affects.
         """
-        pulumi.set(__self__, "addon_group", addon_group)
-        pulumi.set(__self__, "addon_schema_version", addon_schema_version)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "is_essential", is_essential)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "versions", versions)
+        GetAddonOptionsAddonOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            addon_group=addon_group,
+            addon_schema_version=addon_schema_version,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            is_essential=is_essential,
+            name=name,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            versions=versions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             addon_group: str,
+             addon_schema_version: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             freeform_tags: Mapping[str, Any],
+             is_essential: bool,
+             name: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             versions: Sequence['outputs.GetAddonOptionsAddonOptionVersionResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("addon_group", addon_group)
+        _setter("addon_schema_version", addon_schema_version)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("freeform_tags", freeform_tags)
+        _setter("is_essential", is_essential)
+        _setter("name", name)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("versions", versions)
 
     @property
     @pulumi.getter(name="addonGroup")
@@ -3752,11 +4489,28 @@ class GetAddonOptionsAddonOptionVersionResult(dict):
         :param str status: Current state of the addon, only active will be visible to customer, visibility of versions in other status will be filtered  based on limits property.
         :param str version_number: Version number, need be comparable within an addon.
         """
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "kubernetes_version_filters", kubernetes_version_filters)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "version_number", version_number)
+        GetAddonOptionsAddonOptionVersionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            configurations=configurations,
+            description=description,
+            kubernetes_version_filters=kubernetes_version_filters,
+            status=status,
+            version_number=version_number,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             configurations: Sequence['outputs.GetAddonOptionsAddonOptionVersionConfigurationResult'],
+             description: str,
+             kubernetes_version_filters: Sequence['outputs.GetAddonOptionsAddonOptionVersionKubernetesVersionFilterResult'],
+             status: str,
+             version_number: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("configurations", configurations)
+        _setter("description", description)
+        _setter("kubernetes_version_filters", kubernetes_version_filters)
+        _setter("status", status)
+        _setter("version_number", version_number)
 
     @property
     @pulumi.getter
@@ -3814,11 +4568,28 @@ class GetAddonOptionsAddonOptionVersionConfigurationResult(dict):
         :param str key: Addon configuration key
         :param str value: Addon configuration value
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "is_required", is_required)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        GetAddonOptionsAddonOptionVersionConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            display_name=display_name,
+            is_required=is_required,
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             display_name: str,
+             is_required: bool,
+             key: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("is_required", is_required)
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -3872,9 +4643,22 @@ class GetAddonOptionsAddonOptionVersionKubernetesVersionFilterResult(dict):
         :param str maximum_version: The latest kubernetes version.
         :param str minimal_version: The earliest kubernetes version.
         """
-        pulumi.set(__self__, "exact_kubernetes_versions", exact_kubernetes_versions)
-        pulumi.set(__self__, "maximum_version", maximum_version)
-        pulumi.set(__self__, "minimal_version", minimal_version)
+        GetAddonOptionsAddonOptionVersionKubernetesVersionFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            exact_kubernetes_versions=exact_kubernetes_versions,
+            maximum_version=maximum_version,
+            minimal_version=minimal_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             exact_kubernetes_versions: Sequence[str],
+             maximum_version: str,
+             minimal_version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("exact_kubernetes_versions", exact_kubernetes_versions)
+        _setter("maximum_version", maximum_version)
+        _setter("minimal_version", minimal_version)
 
     @property
     @pulumi.getter(name="exactKubernetesVersions")
@@ -3910,10 +4694,23 @@ class GetAddonOptionsFilterResult(dict):
         """
         :param str name: Name of the addon and it would be unique.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAddonOptionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3956,15 +4753,40 @@ class GetAddonsAddonResult(dict):
         :param str time_created: The time the cluster was created.
         :param str version: selected addon version, or null indicates autoUpdate
         """
-        pulumi.set(__self__, "addon_errors", addon_errors)
-        pulumi.set(__self__, "addon_name", addon_name)
-        pulumi.set(__self__, "cluster_id", cluster_id)
-        pulumi.set(__self__, "configurations", configurations)
-        pulumi.set(__self__, "current_installed_version", current_installed_version)
-        pulumi.set(__self__, "remove_addon_resources_on_delete", remove_addon_resources_on_delete)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "version", version)
+        GetAddonsAddonResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            addon_errors=addon_errors,
+            addon_name=addon_name,
+            cluster_id=cluster_id,
+            configurations=configurations,
+            current_installed_version=current_installed_version,
+            remove_addon_resources_on_delete=remove_addon_resources_on_delete,
+            state=state,
+            time_created=time_created,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             addon_errors: Sequence['outputs.GetAddonsAddonAddonErrorResult'],
+             addon_name: str,
+             cluster_id: str,
+             configurations: Sequence['outputs.GetAddonsAddonConfigurationResult'],
+             current_installed_version: str,
+             remove_addon_resources_on_delete: bool,
+             state: str,
+             time_created: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("addon_errors", addon_errors)
+        _setter("addon_name", addon_name)
+        _setter("cluster_id", cluster_id)
+        _setter("configurations", configurations)
+        _setter("current_installed_version", current_installed_version)
+        _setter("remove_addon_resources_on_delete", remove_addon_resources_on_delete)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="addonErrors")
@@ -4047,9 +4869,22 @@ class GetAddonsAddonAddonErrorResult(dict):
         :param str message: A human-readable error string of the upstream error.
         :param str status: The status of the HTTP response encountered in the upstream error.
         """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "status", status)
+        GetAddonsAddonAddonErrorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            code=code,
+            message=message,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             code: str,
+             message: str,
+             status: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("code", code)
+        _setter("message", message)
+        _setter("status", status)
 
     @property
     @pulumi.getter
@@ -4085,8 +4920,19 @@ class GetAddonsAddonConfigurationResult(dict):
         :param str key: configuration key name
         :param str value: configuration value name
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        GetAddonsAddonConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -4111,10 +4957,23 @@ class GetAddonsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetAddonsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4139,7 +4998,16 @@ class GetClusterOptionClusterPodNetworkOptionResult(dict):
         """
         :param str cni_type: The CNI used by the node pools of this cluster
         """
-        pulumi.set(__self__, "cni_type", cni_type)
+        GetClusterOptionClusterPodNetworkOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cni_type=cni_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cni_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cni_type", cni_type)
 
     @property
     @pulumi.getter(name="cniType")
@@ -4156,10 +5024,23 @@ class GetClusterWorkloadMappingsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetClusterWorkloadMappingsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4200,15 +5081,40 @@ class GetClusterWorkloadMappingsWorkloadMappingResult(dict):
         :param str state: The state of the workloadMapping.
         :param str time_created: The time the cluster was created.
         """
-        pulumi.set(__self__, "cluster_id", cluster_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "mapped_compartment_id", mapped_compartment_id)
-        pulumi.set(__self__, "mapped_tenancy_id", mapped_tenancy_id)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetClusterWorkloadMappingsWorkloadMappingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cluster_id=cluster_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            id=id,
+            mapped_compartment_id=mapped_compartment_id,
+            mapped_tenancy_id=mapped_tenancy_id,
+            namespace=namespace,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cluster_id: str,
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             mapped_compartment_id: str,
+             mapped_tenancy_id: str,
+             namespace: str,
+             state: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cluster_id", cluster_id)
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("mapped_compartment_id", mapped_compartment_id)
+        _setter("mapped_tenancy_id", mapped_tenancy_id)
+        _setter("namespace", namespace)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="clusterId")
@@ -4324,24 +5230,67 @@ class GetClustersClusterResult(dict):
         :param str type: Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
         :param str vcn_id: The OCID of the virtual cloud network (VCN) in which the cluster exists.
         """
-        pulumi.set(__self__, "available_kubernetes_upgrades", available_kubernetes_upgrades)
-        pulumi.set(__self__, "cluster_pod_network_options", cluster_pod_network_options)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "endpoint_configs", endpoint_configs)
-        pulumi.set(__self__, "endpoints", endpoints)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "image_policy_configs", image_policy_configs)
-        pulumi.set(__self__, "kms_key_id", kms_key_id)
-        pulumi.set(__self__, "kubernetes_version", kubernetes_version)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "metadatas", metadatas)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "options", options)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "type", type)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        GetClustersClusterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            available_kubernetes_upgrades=available_kubernetes_upgrades,
+            cluster_pod_network_options=cluster_pod_network_options,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            endpoint_configs=endpoint_configs,
+            endpoints=endpoints,
+            freeform_tags=freeform_tags,
+            id=id,
+            image_policy_configs=image_policy_configs,
+            kms_key_id=kms_key_id,
+            kubernetes_version=kubernetes_version,
+            lifecycle_details=lifecycle_details,
+            metadatas=metadatas,
+            name=name,
+            options=options,
+            state=state,
+            type=type,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             available_kubernetes_upgrades: Sequence[str],
+             cluster_pod_network_options: Sequence['outputs.GetClustersClusterClusterPodNetworkOptionResult'],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             endpoint_configs: Sequence['outputs.GetClustersClusterEndpointConfigResult'],
+             endpoints: Sequence['outputs.GetClustersClusterEndpointResult'],
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             image_policy_configs: Sequence['outputs.GetClustersClusterImagePolicyConfigResult'],
+             kms_key_id: str,
+             kubernetes_version: str,
+             lifecycle_details: str,
+             metadatas: Sequence['outputs.GetClustersClusterMetadataResult'],
+             name: str,
+             options: Sequence['outputs.GetClustersClusterOptionResult'],
+             state: str,
+             type: str,
+             vcn_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("available_kubernetes_upgrades", available_kubernetes_upgrades)
+        _setter("cluster_pod_network_options", cluster_pod_network_options)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("endpoint_configs", endpoint_configs)
+        _setter("endpoints", endpoints)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("image_policy_configs", image_policy_configs)
+        _setter("kms_key_id", kms_key_id)
+        _setter("kubernetes_version", kubernetes_version)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("metadatas", metadatas)
+        _setter("name", name)
+        _setter("options", options)
+        _setter("state", state)
+        _setter("type", type)
+        _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="availableKubernetesUpgrades")
@@ -4495,7 +5444,16 @@ class GetClustersClusterClusterPodNetworkOptionResult(dict):
         """
         :param str cni_type: The CNI used by the node pools of this cluster
         """
-        pulumi.set(__self__, "cni_type", cni_type)
+        GetClustersClusterClusterPodNetworkOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cni_type=cni_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cni_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cni_type", cni_type)
 
     @property
     @pulumi.getter(name="cniType")
@@ -4519,10 +5477,25 @@ class GetClustersClusterEndpointResult(dict):
         :param str public_endpoint: The public native networking Kubernetes API server endpoint, if one was requested.
         :param str vcn_hostname_endpoint: The FQDN assigned to the Kubernetes API private endpoint. Example: 'https://yourVcnHostnameEndpoint'
         """
-        pulumi.set(__self__, "kubernetes", kubernetes)
-        pulumi.set(__self__, "private_endpoint", private_endpoint)
-        pulumi.set(__self__, "public_endpoint", public_endpoint)
-        pulumi.set(__self__, "vcn_hostname_endpoint", vcn_hostname_endpoint)
+        GetClustersClusterEndpointResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kubernetes=kubernetes,
+            private_endpoint=private_endpoint,
+            public_endpoint=public_endpoint,
+            vcn_hostname_endpoint=vcn_hostname_endpoint,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kubernetes: str,
+             private_endpoint: str,
+             public_endpoint: str,
+             vcn_hostname_endpoint: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("kubernetes", kubernetes)
+        _setter("private_endpoint", private_endpoint)
+        _setter("public_endpoint", public_endpoint)
+        _setter("vcn_hostname_endpoint", vcn_hostname_endpoint)
 
     @property
     @pulumi.getter
@@ -4568,9 +5541,22 @@ class GetClustersClusterEndpointConfigResult(dict):
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param str subnet_id: The OCID of the regional subnet in which to place the Cluster endpoint.
         """
-        pulumi.set(__self__, "is_public_ip_enabled", is_public_ip_enabled)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetClustersClusterEndpointConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_public_ip_enabled=is_public_ip_enabled,
+            nsg_ids=nsg_ids,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_public_ip_enabled: bool,
+             nsg_ids: Sequence[str],
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_public_ip_enabled", is_public_ip_enabled)
+        _setter("nsg_ids", nsg_ids)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="isPublicIpEnabled")
@@ -4606,8 +5592,19 @@ class GetClustersClusterImagePolicyConfigResult(dict):
         :param bool is_policy_enabled: Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
         :param Sequence['GetClustersClusterImagePolicyConfigKeyDetailArgs'] key_details: A list of KMS key details.
         """
-        pulumi.set(__self__, "is_policy_enabled", is_policy_enabled)
-        pulumi.set(__self__, "key_details", key_details)
+        GetClustersClusterImagePolicyConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_policy_enabled=is_policy_enabled,
+            key_details=key_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_policy_enabled: bool,
+             key_details: Sequence['outputs.GetClustersClusterImagePolicyConfigKeyDetailResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_policy_enabled", is_policy_enabled)
+        _setter("key_details", key_details)
 
     @property
     @pulumi.getter(name="isPolicyEnabled")
@@ -4633,7 +5630,16 @@ class GetClustersClusterImagePolicyConfigKeyDetailResult(dict):
         """
         :param str kms_key_id: The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
         """
-        pulumi.set(__self__, "kms_key_id", kms_key_id)
+        GetClustersClusterImagePolicyConfigKeyDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            kms_key_id=kms_key_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             kms_key_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("kms_key_id", kms_key_id)
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -4669,16 +5675,43 @@ class GetClustersClusterMetadataResult(dict):
         :param str updated_by_user_id: The user who updated the cluster.
         :param str updated_by_work_request_id: The OCID of the work request which updated the cluster.
         """
-        pulumi.set(__self__, "created_by_user_id", created_by_user_id)
-        pulumi.set(__self__, "created_by_work_request_id", created_by_work_request_id)
-        pulumi.set(__self__, "deleted_by_user_id", deleted_by_user_id)
-        pulumi.set(__self__, "deleted_by_work_request_id", deleted_by_work_request_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_credential_expiration", time_credential_expiration)
-        pulumi.set(__self__, "time_deleted", time_deleted)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "updated_by_user_id", updated_by_user_id)
-        pulumi.set(__self__, "updated_by_work_request_id", updated_by_work_request_id)
+        GetClustersClusterMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            created_by_user_id=created_by_user_id,
+            created_by_work_request_id=created_by_work_request_id,
+            deleted_by_user_id=deleted_by_user_id,
+            deleted_by_work_request_id=deleted_by_work_request_id,
+            time_created=time_created,
+            time_credential_expiration=time_credential_expiration,
+            time_deleted=time_deleted,
+            time_updated=time_updated,
+            updated_by_user_id=updated_by_user_id,
+            updated_by_work_request_id=updated_by_work_request_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             created_by_user_id: str,
+             created_by_work_request_id: str,
+             deleted_by_user_id: str,
+             deleted_by_work_request_id: str,
+             time_created: str,
+             time_credential_expiration: str,
+             time_deleted: str,
+             time_updated: str,
+             updated_by_user_id: str,
+             updated_by_work_request_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("created_by_user_id", created_by_user_id)
+        _setter("created_by_work_request_id", created_by_work_request_id)
+        _setter("deleted_by_user_id", deleted_by_user_id)
+        _setter("deleted_by_work_request_id", deleted_by_work_request_id)
+        _setter("time_created", time_created)
+        _setter("time_credential_expiration", time_credential_expiration)
+        _setter("time_deleted", time_deleted)
+        _setter("time_updated", time_updated)
+        _setter("updated_by_user_id", updated_by_user_id)
+        _setter("updated_by_work_request_id", updated_by_work_request_id)
 
     @property
     @pulumi.getter(name="createdByUserId")
@@ -4778,12 +5811,31 @@ class GetClustersClusterOptionResult(dict):
         :param Sequence['GetClustersClusterOptionServiceLbConfigArgs'] service_lb_configs: Configuration to be applied to load balancers created by Kubernetes services
         :param Sequence[str] service_lb_subnet_ids: The OCIDs of the subnets used for Kubernetes services load balancers.
         """
-        pulumi.set(__self__, "add_ons", add_ons)
-        pulumi.set(__self__, "admission_controller_options", admission_controller_options)
-        pulumi.set(__self__, "kubernetes_network_configs", kubernetes_network_configs)
-        pulumi.set(__self__, "persistent_volume_configs", persistent_volume_configs)
-        pulumi.set(__self__, "service_lb_configs", service_lb_configs)
-        pulumi.set(__self__, "service_lb_subnet_ids", service_lb_subnet_ids)
+        GetClustersClusterOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            add_ons=add_ons,
+            admission_controller_options=admission_controller_options,
+            kubernetes_network_configs=kubernetes_network_configs,
+            persistent_volume_configs=persistent_volume_configs,
+            service_lb_configs=service_lb_configs,
+            service_lb_subnet_ids=service_lb_subnet_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             add_ons: Sequence['outputs.GetClustersClusterOptionAddOnResult'],
+             admission_controller_options: Sequence['outputs.GetClustersClusterOptionAdmissionControllerOptionResult'],
+             kubernetes_network_configs: Sequence['outputs.GetClustersClusterOptionKubernetesNetworkConfigResult'],
+             persistent_volume_configs: Sequence['outputs.GetClustersClusterOptionPersistentVolumeConfigResult'],
+             service_lb_configs: Sequence['outputs.GetClustersClusterOptionServiceLbConfigResult'],
+             service_lb_subnet_ids: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("add_ons", add_ons)
+        _setter("admission_controller_options", admission_controller_options)
+        _setter("kubernetes_network_configs", kubernetes_network_configs)
+        _setter("persistent_volume_configs", persistent_volume_configs)
+        _setter("service_lb_configs", service_lb_configs)
+        _setter("service_lb_subnet_ids", service_lb_subnet_ids)
 
     @property
     @pulumi.getter(name="addOns")
@@ -4843,8 +5895,19 @@ class GetClustersClusterOptionAddOnResult(dict):
         :param bool is_kubernetes_dashboard_enabled: Whether or not to enable the Kubernetes Dashboard add-on.
         :param bool is_tiller_enabled: Whether or not to enable the Tiller add-on.
         """
-        pulumi.set(__self__, "is_kubernetes_dashboard_enabled", is_kubernetes_dashboard_enabled)
-        pulumi.set(__self__, "is_tiller_enabled", is_tiller_enabled)
+        GetClustersClusterOptionAddOnResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_kubernetes_dashboard_enabled=is_kubernetes_dashboard_enabled,
+            is_tiller_enabled=is_tiller_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_kubernetes_dashboard_enabled: bool,
+             is_tiller_enabled: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_kubernetes_dashboard_enabled", is_kubernetes_dashboard_enabled)
+        _setter("is_tiller_enabled", is_tiller_enabled)
 
     @property
     @pulumi.getter(name="isKubernetesDashboardEnabled")
@@ -4870,7 +5933,16 @@ class GetClustersClusterOptionAdmissionControllerOptionResult(dict):
         """
         :param bool is_pod_security_policy_enabled: Whether or not to enable the Pod Security Policy admission controller.
         """
-        pulumi.set(__self__, "is_pod_security_policy_enabled", is_pod_security_policy_enabled)
+        GetClustersClusterOptionAdmissionControllerOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_pod_security_policy_enabled=is_pod_security_policy_enabled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_pod_security_policy_enabled: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_pod_security_policy_enabled", is_pod_security_policy_enabled)
 
     @property
     @pulumi.getter(name="isPodSecurityPolicyEnabled")
@@ -4890,8 +5962,19 @@ class GetClustersClusterOptionKubernetesNetworkConfigResult(dict):
         :param str pods_cidr: The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
         :param str services_cidr: The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
         """
-        pulumi.set(__self__, "pods_cidr", pods_cidr)
-        pulumi.set(__self__, "services_cidr", services_cidr)
+        GetClustersClusterOptionKubernetesNetworkConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            pods_cidr=pods_cidr,
+            services_cidr=services_cidr,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             pods_cidr: str,
+             services_cidr: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("pods_cidr", pods_cidr)
+        _setter("services_cidr", services_cidr)
 
     @property
     @pulumi.getter(name="podsCidr")
@@ -4919,8 +6002,19 @@ class GetClustersClusterOptionPersistentVolumeConfigResult(dict):
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        GetClustersClusterOptionPersistentVolumeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -4948,8 +6042,19 @@ class GetClustersClusterOptionServiceLbConfigResult(dict):
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        GetClustersClusterOptionServiceLbConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -4977,10 +6082,23 @@ class GetClustersFilterResult(dict):
         """
         :param str name: The name to filter on.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetClustersFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5010,8 +6128,19 @@ class GetNodePoolInitialNodeLabelResult(dict):
         :param str key: The key of the pair.
         :param str value: The value of the pair.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        GetNodePoolInitialNodeLabelResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -5063,20 +6192,55 @@ class GetNodePoolNodeResult(dict):
         :param str state: The state of the nodepool.
         :param str subnet_id: The OCID of the subnet in which this node is placed.
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "errors", errors)
-        pulumi.set(__self__, "fault_domain", fault_domain)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "kubernetes_version", kubernetes_version)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "node_pool_id", node_pool_id)
-        pulumi.set(__self__, "private_ip", private_ip)
-        pulumi.set(__self__, "public_ip", public_ip)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetNodePoolNodeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            defined_tags=defined_tags,
+            errors=errors,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            id=id,
+            kubernetes_version=kubernetes_version,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            node_pool_id=node_pool_id,
+            private_ip=private_ip,
+            public_ip=public_ip,
+            state=state,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: str,
+             defined_tags: Mapping[str, Any],
+             errors: Sequence['outputs.GetNodePoolNodeErrorResult'],
+             fault_domain: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             kubernetes_version: str,
+             lifecycle_details: str,
+             name: str,
+             node_pool_id: str,
+             private_ip: str,
+             public_ip: str,
+             state: str,
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("defined_tags", defined_tags)
+        _setter("errors", errors)
+        _setter("fault_domain", fault_domain)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("kubernetes_version", kubernetes_version)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("name", name)
+        _setter("node_pool_id", node_pool_id)
+        _setter("private_ip", private_ip)
+        _setter("public_ip", public_ip)
+        _setter("state", state)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -5212,14 +6376,37 @@ class GetNodePoolNodeConfigDetailResult(dict):
         :param Sequence['GetNodePoolNodeConfigDetailPlacementConfigArgs'] placement_configs: The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
         :param int size: The number of nodes in the node pool.
         """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
-        pulumi.set(__self__, "kms_key_id", kms_key_id)
-        pulumi.set(__self__, "node_pool_pod_network_option_details", node_pool_pod_network_option_details)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "placement_configs", placement_configs)
-        pulumi.set(__self__, "size", size)
+        GetNodePoolNodeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_pv_encryption_in_transit_enabled=is_pv_encryption_in_transit_enabled,
+            kms_key_id=kms_key_id,
+            node_pool_pod_network_option_details=node_pool_pod_network_option_details,
+            nsg_ids=nsg_ids,
+            placement_configs=placement_configs,
+            size=size,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             is_pv_encryption_in_transit_enabled: bool,
+             kms_key_id: str,
+             node_pool_pod_network_option_details: Sequence['outputs.GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult'],
+             nsg_ids: Sequence[str],
+             placement_configs: Sequence['outputs.GetNodePoolNodeConfigDetailPlacementConfigResult'],
+             size: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+        _setter("kms_key_id", kms_key_id)
+        _setter("node_pool_pod_network_option_details", node_pool_pod_network_option_details)
+        _setter("nsg_ids", nsg_ids)
+        _setter("placement_configs", placement_configs)
+        _setter("size", size)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -5299,10 +6486,25 @@ class GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult(dict):
         :param Sequence[str] pod_nsg_ids: The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param Sequence[str] pod_subnet_ids: The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
         """
-        pulumi.set(__self__, "cni_type", cni_type)
-        pulumi.set(__self__, "max_pods_per_node", max_pods_per_node)
-        pulumi.set(__self__, "pod_nsg_ids", pod_nsg_ids)
-        pulumi.set(__self__, "pod_subnet_ids", pod_subnet_ids)
+        GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cni_type=cni_type,
+            max_pods_per_node=max_pods_per_node,
+            pod_nsg_ids=pod_nsg_ids,
+            pod_subnet_ids=pod_subnet_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cni_type: str,
+             max_pods_per_node: int,
+             pod_nsg_ids: Sequence[str],
+             pod_subnet_ids: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cni_type", cni_type)
+        _setter("max_pods_per_node", max_pods_per_node)
+        _setter("pod_nsg_ids", pod_nsg_ids)
+        _setter("pod_subnet_ids", pod_subnet_ids)
 
     @property
     @pulumi.getter(name="cniType")
@@ -5352,11 +6554,28 @@ class GetNodePoolNodeConfigDetailPlacementConfigResult(dict):
         :param Sequence['GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs'] preemptible_node_configs: Configuration options for preemptible nodes.
         :param str subnet_id: The OCID of the subnet in which this node is placed.
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
-        pulumi.set(__self__, "fault_domains", fault_domains)
-        pulumi.set(__self__, "preemptible_node_configs", preemptible_node_configs)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetNodePoolNodeConfigDetailPlacementConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            capacity_reservation_id=capacity_reservation_id,
+            fault_domains=fault_domains,
+            preemptible_node_configs=preemptible_node_configs,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: str,
+             capacity_reservation_id: str,
+             fault_domains: Sequence[str],
+             preemptible_node_configs: Sequence['outputs.GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult'],
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("capacity_reservation_id", capacity_reservation_id)
+        _setter("fault_domains", fault_domains)
+        _setter("preemptible_node_configs", preemptible_node_configs)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -5406,7 +6625,16 @@ class GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult(dict
         """
         :param Sequence['GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs'] preemption_actions: The action to run when the preemptible node is interrupted for eviction.
         """
-        pulumi.set(__self__, "preemption_actions", preemption_actions)
+        GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            preemption_actions=preemption_actions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             preemption_actions: Sequence['outputs.GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("preemption_actions", preemption_actions)
 
     @property
     @pulumi.getter(name="preemptionActions")
@@ -5426,8 +6654,19 @@ class GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionA
         :param bool is_preserve_boot_volume: Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         :param str type: The type of action to run when the instance is interrupted for eviction.
         """
-        pulumi.set(__self__, "is_preserve_boot_volume", is_preserve_boot_volume)
-        pulumi.set(__self__, "type", type)
+        GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_preserve_boot_volume=is_preserve_boot_volume,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_preserve_boot_volume: bool,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_preserve_boot_volume", is_preserve_boot_volume)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="isPreserveBootVolume")
@@ -5457,9 +6696,22 @@ class GetNodePoolNodeErrorResult(dict):
         :param str message: A human-readable error string of the upstream error.
         :param str status: The status of the HTTP response encountered in the upstream error.
         """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "status", status)
+        GetNodePoolNodeErrorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            code=code,
+            message=message,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             code: str,
+             message: str,
+             status: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("code", code)
+        _setter("message", message)
+        _setter("status", status)
 
     @property
     @pulumi.getter
@@ -5495,8 +6747,19 @@ class GetNodePoolNodeEvictionNodePoolSettingResult(dict):
         :param str eviction_grace_duration: Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
         :param bool is_force_delete_after_grace_duration: If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
         """
-        pulumi.set(__self__, "eviction_grace_duration", eviction_grace_duration)
-        pulumi.set(__self__, "is_force_delete_after_grace_duration", is_force_delete_after_grace_duration)
+        GetNodePoolNodeEvictionNodePoolSettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            eviction_grace_duration=eviction_grace_duration,
+            is_force_delete_after_grace_duration=is_force_delete_after_grace_duration,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             eviction_grace_duration: str,
+             is_force_delete_after_grace_duration: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("eviction_grace_duration", eviction_grace_duration)
+        _setter("is_force_delete_after_grace_duration", is_force_delete_after_grace_duration)
 
     @property
     @pulumi.getter(name="evictionGraceDuration")
@@ -5526,9 +6789,22 @@ class GetNodePoolNodePoolCyclingDetailResult(dict):
         :param str maximum_surge: Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
         :param str maximum_unavailable: Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
         """
-        pulumi.set(__self__, "is_node_cycling_enabled", is_node_cycling_enabled)
-        pulumi.set(__self__, "maximum_surge", maximum_surge)
-        pulumi.set(__self__, "maximum_unavailable", maximum_unavailable)
+        GetNodePoolNodePoolCyclingDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_node_cycling_enabled=is_node_cycling_enabled,
+            maximum_surge=maximum_surge,
+            maximum_unavailable=maximum_unavailable,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_node_cycling_enabled: bool,
+             maximum_surge: str,
+             maximum_unavailable: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_node_cycling_enabled", is_node_cycling_enabled)
+        _setter("maximum_surge", maximum_surge)
+        _setter("maximum_unavailable", maximum_unavailable)
 
     @property
     @pulumi.getter(name="isNodeCyclingEnabled")
@@ -5564,8 +6840,19 @@ class GetNodePoolNodeShapeConfigResult(dict):
         :param float memory_in_gbs: The total amount of memory available to each node, in gigabytes.
         :param float ocpus: The total number of OCPUs available to each node in the node pool. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetNodePoolNodeShapeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: float,
+             ocpus: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -5595,9 +6882,22 @@ class GetNodePoolNodeSourceResult(dict):
         :param str source_name: The user-friendly name of the entity corresponding to the OCID.
         :param str source_type: The source type for the node. Use `IMAGE` when specifying an OCID of an image.
         """
-        pulumi.set(__self__, "image_id", image_id)
-        pulumi.set(__self__, "source_name", source_name)
-        pulumi.set(__self__, "source_type", source_type)
+        GetNodePoolNodeSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            image_id=image_id,
+            source_name=source_name,
+            source_type=source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             image_id: str,
+             source_name: str,
+             source_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("image_id", image_id)
+        _setter("source_name", source_name)
+        _setter("source_type", source_type)
 
     @property
     @pulumi.getter(name="imageId")
@@ -5635,9 +6935,22 @@ class GetNodePoolNodeSourceDetailResult(dict):
         :param str image_id: The OCID of the image used to boot the node.
         :param str source_type: The source type for the node. Use `IMAGE` when specifying an OCID of an image.
         """
-        pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
-        pulumi.set(__self__, "image_id", image_id)
-        pulumi.set(__self__, "source_type", source_type)
+        GetNodePoolNodeSourceDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            boot_volume_size_in_gbs=boot_volume_size_in_gbs,
+            image_id=image_id,
+            source_type=source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             boot_volume_size_in_gbs: str,
+             image_id: str,
+             source_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("boot_volume_size_in_gbs", boot_volume_size_in_gbs)
+        _setter("image_id", image_id)
+        _setter("source_type", source_type)
 
     @property
     @pulumi.getter(name="bootVolumeSizeInGbs")
@@ -5675,9 +6988,22 @@ class GetNodePoolOptionSourceResult(dict):
         :param str source_name: The user-friendly name of the entity corresponding to the OCID.
         :param str source_type: The source type of this option. `IMAGE` means the OCID is of an image.
         """
-        pulumi.set(__self__, "image_id", image_id)
-        pulumi.set(__self__, "source_name", source_name)
-        pulumi.set(__self__, "source_type", source_type)
+        GetNodePoolOptionSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            image_id=image_id,
+            source_name=source_name,
+            source_type=source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             image_id: str,
+             source_name: str,
+             source_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("image_id", image_id)
+        _setter("source_name", source_name)
+        _setter("source_type", source_type)
 
     @property
     @pulumi.getter(name="imageId")
@@ -5713,10 +7039,23 @@ class GetNodePoolsFilterResult(dict):
         """
         :param str name: The name to filter on.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetNodePoolsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5790,31 +7129,88 @@ class GetNodePoolsNodePoolResult(dict):
         :param str state: A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
         :param Sequence[str] subnet_ids: The OCIDs of the subnets in which to place nodes for this node pool.
         """
-        pulumi.set(__self__, "cluster_id", cluster_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "initial_node_labels", initial_node_labels)
-        pulumi.set(__self__, "kubernetes_version", kubernetes_version)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "node_config_details", node_config_details)
-        pulumi.set(__self__, "node_eviction_node_pool_settings", node_eviction_node_pool_settings)
-        pulumi.set(__self__, "node_image_id", node_image_id)
-        pulumi.set(__self__, "node_image_name", node_image_name)
-        pulumi.set(__self__, "node_metadata", node_metadata)
-        pulumi.set(__self__, "node_pool_cycling_details", node_pool_cycling_details)
-        pulumi.set(__self__, "node_pool_id", node_pool_id)
-        pulumi.set(__self__, "node_shape", node_shape)
-        pulumi.set(__self__, "node_shape_configs", node_shape_configs)
-        pulumi.set(__self__, "node_source_details", node_source_details)
-        pulumi.set(__self__, "node_sources", node_sources)
-        pulumi.set(__self__, "nodes", nodes)
-        pulumi.set(__self__, "quantity_per_subnet", quantity_per_subnet)
-        pulumi.set(__self__, "ssh_public_key", ssh_public_key)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_ids", subnet_ids)
+        GetNodePoolsNodePoolResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cluster_id=cluster_id,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            id=id,
+            initial_node_labels=initial_node_labels,
+            kubernetes_version=kubernetes_version,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            node_config_details=node_config_details,
+            node_eviction_node_pool_settings=node_eviction_node_pool_settings,
+            node_image_id=node_image_id,
+            node_image_name=node_image_name,
+            node_metadata=node_metadata,
+            node_pool_cycling_details=node_pool_cycling_details,
+            node_pool_id=node_pool_id,
+            node_shape=node_shape,
+            node_shape_configs=node_shape_configs,
+            node_source_details=node_source_details,
+            node_sources=node_sources,
+            nodes=nodes,
+            quantity_per_subnet=quantity_per_subnet,
+            ssh_public_key=ssh_public_key,
+            state=state,
+            subnet_ids=subnet_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cluster_id: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             initial_node_labels: Sequence['outputs.GetNodePoolsNodePoolInitialNodeLabelResult'],
+             kubernetes_version: str,
+             lifecycle_details: str,
+             name: str,
+             node_config_details: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailResult'],
+             node_eviction_node_pool_settings: Sequence['outputs.GetNodePoolsNodePoolNodeEvictionNodePoolSettingResult'],
+             node_image_id: str,
+             node_image_name: str,
+             node_metadata: Mapping[str, Any],
+             node_pool_cycling_details: Sequence['outputs.GetNodePoolsNodePoolNodePoolCyclingDetailResult'],
+             node_pool_id: str,
+             node_shape: str,
+             node_shape_configs: Sequence['outputs.GetNodePoolsNodePoolNodeShapeConfigResult'],
+             node_source_details: Sequence['outputs.GetNodePoolsNodePoolNodeSourceDetailResult'],
+             node_sources: Sequence['outputs.GetNodePoolsNodePoolNodeSourceResult'],
+             nodes: Sequence['outputs.GetNodePoolsNodePoolNodeResult'],
+             quantity_per_subnet: int,
+             ssh_public_key: str,
+             state: str,
+             subnet_ids: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cluster_id", cluster_id)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("initial_node_labels", initial_node_labels)
+        _setter("kubernetes_version", kubernetes_version)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("name", name)
+        _setter("node_config_details", node_config_details)
+        _setter("node_eviction_node_pool_settings", node_eviction_node_pool_settings)
+        _setter("node_image_id", node_image_id)
+        _setter("node_image_name", node_image_name)
+        _setter("node_metadata", node_metadata)
+        _setter("node_pool_cycling_details", node_pool_cycling_details)
+        _setter("node_pool_id", node_pool_id)
+        _setter("node_shape", node_shape)
+        _setter("node_shape_configs", node_shape_configs)
+        _setter("node_source_details", node_source_details)
+        _setter("node_sources", node_sources)
+        _setter("nodes", nodes)
+        _setter("quantity_per_subnet", quantity_per_subnet)
+        _setter("ssh_public_key", ssh_public_key)
+        _setter("state", state)
+        _setter("subnet_ids", subnet_ids)
 
     @property
     @pulumi.getter(name="clusterId")
@@ -6026,8 +7422,19 @@ class GetNodePoolsNodePoolInitialNodeLabelResult(dict):
         :param str key: The key of the pair.
         :param str value: The value of the pair.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        GetNodePoolsNodePoolInitialNodeLabelResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -6074,20 +7481,55 @@ class GetNodePoolsNodePoolNodeResult(dict):
         :param str state: A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
         :param str subnet_id: The OCID of the subnet in which to place nodes.
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "errors", errors)
-        pulumi.set(__self__, "fault_domain", fault_domain)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "kubernetes_version", kubernetes_version)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "node_pool_id", node_pool_id)
-        pulumi.set(__self__, "private_ip", private_ip)
-        pulumi.set(__self__, "public_ip", public_ip)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetNodePoolsNodePoolNodeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            defined_tags=defined_tags,
+            errors=errors,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            id=id,
+            kubernetes_version=kubernetes_version,
+            lifecycle_details=lifecycle_details,
+            name=name,
+            node_pool_id=node_pool_id,
+            private_ip=private_ip,
+            public_ip=public_ip,
+            state=state,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: str,
+             defined_tags: Mapping[str, Any],
+             errors: Sequence['outputs.GetNodePoolsNodePoolNodeErrorResult'],
+             fault_domain: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             kubernetes_version: str,
+             lifecycle_details: str,
+             name: str,
+             node_pool_id: str,
+             private_ip: str,
+             public_ip: str,
+             state: str,
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("defined_tags", defined_tags)
+        _setter("errors", errors)
+        _setter("fault_domain", fault_domain)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("kubernetes_version", kubernetes_version)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("name", name)
+        _setter("node_pool_id", node_pool_id)
+        _setter("private_ip", private_ip)
+        _setter("public_ip", public_ip)
+        _setter("state", state)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -6208,14 +7650,37 @@ class GetNodePoolsNodePoolNodeConfigDetailResult(dict):
         :param Sequence['GetNodePoolsNodePoolNodeConfigDetailPlacementConfigArgs'] placement_configs: The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
         :param int size: The number of nodes in the node pool.
         """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
-        pulumi.set(__self__, "kms_key_id", kms_key_id)
-        pulumi.set(__self__, "node_pool_pod_network_option_details", node_pool_pod_network_option_details)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "placement_configs", placement_configs)
-        pulumi.set(__self__, "size", size)
+        GetNodePoolsNodePoolNodeConfigDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_pv_encryption_in_transit_enabled=is_pv_encryption_in_transit_enabled,
+            kms_key_id=kms_key_id,
+            node_pool_pod_network_option_details=node_pool_pod_network_option_details,
+            nsg_ids=nsg_ids,
+            placement_configs=placement_configs,
+            size=size,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             is_pv_encryption_in_transit_enabled: bool,
+             kms_key_id: str,
+             node_pool_pod_network_option_details: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult'],
+             nsg_ids: Sequence[str],
+             placement_configs: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult'],
+             size: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("is_pv_encryption_in_transit_enabled", is_pv_encryption_in_transit_enabled)
+        _setter("kms_key_id", kms_key_id)
+        _setter("node_pool_pod_network_option_details", node_pool_pod_network_option_details)
+        _setter("nsg_ids", nsg_ids)
+        _setter("placement_configs", placement_configs)
+        _setter("size", size)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -6295,10 +7760,25 @@ class GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult(d
         :param Sequence[str] pod_nsg_ids: The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param Sequence[str] pod_subnet_ids: The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
         """
-        pulumi.set(__self__, "cni_type", cni_type)
-        pulumi.set(__self__, "max_pods_per_node", max_pods_per_node)
-        pulumi.set(__self__, "pod_nsg_ids", pod_nsg_ids)
-        pulumi.set(__self__, "pod_subnet_ids", pod_subnet_ids)
+        GetNodePoolsNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cni_type=cni_type,
+            max_pods_per_node=max_pods_per_node,
+            pod_nsg_ids=pod_nsg_ids,
+            pod_subnet_ids=pod_subnet_ids,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cni_type: str,
+             max_pods_per_node: int,
+             pod_nsg_ids: Sequence[str],
+             pod_subnet_ids: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cni_type", cni_type)
+        _setter("max_pods_per_node", max_pods_per_node)
+        _setter("pod_nsg_ids", pod_nsg_ids)
+        _setter("pod_subnet_ids", pod_subnet_ids)
 
     @property
     @pulumi.getter(name="cniType")
@@ -6348,11 +7828,28 @@ class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult(dict):
         :param Sequence['GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigArgs'] preemptible_node_configs: Configuration options for preemptible nodes.
         :param str subnet_id: The OCID of the subnet in which to place nodes.
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
-        pulumi.set(__self__, "fault_domains", fault_domains)
-        pulumi.set(__self__, "preemptible_node_configs", preemptible_node_configs)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetNodePoolsNodePoolNodeConfigDetailPlacementConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            capacity_reservation_id=capacity_reservation_id,
+            fault_domains=fault_domains,
+            preemptible_node_configs=preemptible_node_configs,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: str,
+             capacity_reservation_id: str,
+             fault_domains: Sequence[str],
+             preemptible_node_configs: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult'],
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("capacity_reservation_id", capacity_reservation_id)
+        _setter("fault_domains", fault_domains)
+        _setter("preemptible_node_configs", preemptible_node_configs)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -6402,7 +7899,16 @@ class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigRe
         """
         :param Sequence['GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionArgs'] preemption_actions: The action to run when the preemptible node is interrupted for eviction.
         """
-        pulumi.set(__self__, "preemption_actions", preemption_actions)
+        GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            preemption_actions=preemption_actions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             preemption_actions: Sequence['outputs.GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("preemption_actions", preemption_actions)
 
     @property
     @pulumi.getter(name="preemptionActions")
@@ -6422,8 +7928,19 @@ class GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPr
         :param bool is_preserve_boot_volume: Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         :param str type: The type of action to run when the instance is interrupted for eviction.
         """
-        pulumi.set(__self__, "is_preserve_boot_volume", is_preserve_boot_volume)
-        pulumi.set(__self__, "type", type)
+        GetNodePoolsNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionActionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_preserve_boot_volume=is_preserve_boot_volume,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_preserve_boot_volume: bool,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_preserve_boot_volume", is_preserve_boot_volume)
+        _setter("type", type)
 
     @property
     @pulumi.getter(name="isPreserveBootVolume")
@@ -6448,9 +7965,22 @@ class GetNodePoolsNodePoolNodeErrorResult(dict):
                  code: str,
                  message: str,
                  status: str):
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "status", status)
+        GetNodePoolsNodePoolNodeErrorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            code=code,
+            message=message,
+            status=status,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             code: str,
+             message: str,
+             status: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("code", code)
+        _setter("message", message)
+        _setter("status", status)
 
     @property
     @pulumi.getter
@@ -6477,8 +8007,19 @@ class GetNodePoolsNodePoolNodeEvictionNodePoolSettingResult(dict):
         :param str eviction_grace_duration: Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
         :param bool is_force_delete_after_grace_duration: If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
         """
-        pulumi.set(__self__, "eviction_grace_duration", eviction_grace_duration)
-        pulumi.set(__self__, "is_force_delete_after_grace_duration", is_force_delete_after_grace_duration)
+        GetNodePoolsNodePoolNodeEvictionNodePoolSettingResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            eviction_grace_duration=eviction_grace_duration,
+            is_force_delete_after_grace_duration=is_force_delete_after_grace_duration,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             eviction_grace_duration: str,
+             is_force_delete_after_grace_duration: bool,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("eviction_grace_duration", eviction_grace_duration)
+        _setter("is_force_delete_after_grace_duration", is_force_delete_after_grace_duration)
 
     @property
     @pulumi.getter(name="evictionGraceDuration")
@@ -6508,9 +8049,22 @@ class GetNodePoolsNodePoolNodePoolCyclingDetailResult(dict):
         :param str maximum_surge: Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
         :param str maximum_unavailable: Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
         """
-        pulumi.set(__self__, "is_node_cycling_enabled", is_node_cycling_enabled)
-        pulumi.set(__self__, "maximum_surge", maximum_surge)
-        pulumi.set(__self__, "maximum_unavailable", maximum_unavailable)
+        GetNodePoolsNodePoolNodePoolCyclingDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_node_cycling_enabled=is_node_cycling_enabled,
+            maximum_surge=maximum_surge,
+            maximum_unavailable=maximum_unavailable,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_node_cycling_enabled: bool,
+             maximum_surge: str,
+             maximum_unavailable: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_node_cycling_enabled", is_node_cycling_enabled)
+        _setter("maximum_surge", maximum_surge)
+        _setter("maximum_unavailable", maximum_unavailable)
 
     @property
     @pulumi.getter(name="isNodeCyclingEnabled")
@@ -6546,8 +8100,19 @@ class GetNodePoolsNodePoolNodeShapeConfigResult(dict):
         :param float memory_in_gbs: The total amount of memory available to each node, in gigabytes.
         :param float ocpus: The total number of OCPUs available to each node in the node pool. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
-        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
-        pulumi.set(__self__, "ocpus", ocpus)
+        GetNodePoolsNodePoolNodeShapeConfigResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_in_gbs=memory_in_gbs,
+            ocpus=ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_in_gbs: float,
+             ocpus: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_in_gbs", memory_in_gbs)
+        _setter("ocpus", ocpus)
 
     @property
     @pulumi.getter(name="memoryInGbs")
@@ -6577,9 +8142,22 @@ class GetNodePoolsNodePoolNodeSourceResult(dict):
         :param str source_name: The user-friendly name of the entity corresponding to the OCID.
         :param str source_type: The source type for the node. Use `IMAGE` when specifying an OCID of an image.
         """
-        pulumi.set(__self__, "image_id", image_id)
-        pulumi.set(__self__, "source_name", source_name)
-        pulumi.set(__self__, "source_type", source_type)
+        GetNodePoolsNodePoolNodeSourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            image_id=image_id,
+            source_name=source_name,
+            source_type=source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             image_id: str,
+             source_name: str,
+             source_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("image_id", image_id)
+        _setter("source_name", source_name)
+        _setter("source_type", source_type)
 
     @property
     @pulumi.getter(name="imageId")
@@ -6617,9 +8195,22 @@ class GetNodePoolsNodePoolNodeSourceDetailResult(dict):
         :param str image_id: The OCID of the image used to boot the node.
         :param str source_type: The source type for the node. Use `IMAGE` when specifying an OCID of an image.
         """
-        pulumi.set(__self__, "boot_volume_size_in_gbs", boot_volume_size_in_gbs)
-        pulumi.set(__self__, "image_id", image_id)
-        pulumi.set(__self__, "source_type", source_type)
+        GetNodePoolsNodePoolNodeSourceDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            boot_volume_size_in_gbs=boot_volume_size_in_gbs,
+            image_id=image_id,
+            source_type=source_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             boot_volume_size_in_gbs: str,
+             image_id: str,
+             source_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("boot_volume_size_in_gbs", boot_volume_size_in_gbs)
+        _setter("image_id", image_id)
+        _setter("source_type", source_type)
 
     @property
     @pulumi.getter(name="bootVolumeSizeInGbs")
@@ -6655,10 +8246,23 @@ class GetPodShapesFilterResult(dict):
         """
         :param str name: The name to filter on.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetPodShapesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6694,11 +8298,28 @@ class GetPodShapesPodShapeResult(dict):
         :param Sequence['GetPodShapesPodShapeOcpuOptionArgs'] ocpu_options: Options for OCPU shape.
         :param str processor_description: A short description of the VM's processor (CPU).
         """
-        pulumi.set(__self__, "memory_options", memory_options)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "network_bandwidth_options", network_bandwidth_options)
-        pulumi.set(__self__, "ocpu_options", ocpu_options)
-        pulumi.set(__self__, "processor_description", processor_description)
+        GetPodShapesPodShapeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            memory_options=memory_options,
+            name=name,
+            network_bandwidth_options=network_bandwidth_options,
+            ocpu_options=ocpu_options,
+            processor_description=processor_description,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             memory_options: Sequence['outputs.GetPodShapesPodShapeMemoryOptionResult'],
+             name: str,
+             network_bandwidth_options: Sequence['outputs.GetPodShapesPodShapeNetworkBandwidthOptionResult'],
+             ocpu_options: Sequence['outputs.GetPodShapesPodShapeOcpuOptionResult'],
+             processor_description: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("memory_options", memory_options)
+        _setter("name", name)
+        _setter("network_bandwidth_options", network_bandwidth_options)
+        _setter("ocpu_options", ocpu_options)
+        _setter("processor_description", processor_description)
 
     @property
     @pulumi.getter(name="memoryOptions")
@@ -6756,11 +8377,28 @@ class GetPodShapesPodShapeMemoryOptionResult(dict):
         :param float min_in_gbs: The minimum amount of memory, in gigabytes.
         :param float min_per_ocpu_in_gbs: The minimum amount of memory per OCPU available for this shape, in gigabytes.
         """
-        pulumi.set(__self__, "default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
-        pulumi.set(__self__, "max_in_gbs", max_in_gbs)
-        pulumi.set(__self__, "max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
-        pulumi.set(__self__, "min_in_gbs", min_in_gbs)
-        pulumi.set(__self__, "min_per_ocpu_in_gbs", min_per_ocpu_in_gbs)
+        GetPodShapesPodShapeMemoryOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_per_ocpu_in_gbs=default_per_ocpu_in_gbs,
+            max_in_gbs=max_in_gbs,
+            max_per_ocpu_in_gbs=max_per_ocpu_in_gbs,
+            min_in_gbs=min_in_gbs,
+            min_per_ocpu_in_gbs=min_per_ocpu_in_gbs,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_per_ocpu_in_gbs: float,
+             max_in_gbs: float,
+             max_per_ocpu_in_gbs: float,
+             min_in_gbs: float,
+             min_per_ocpu_in_gbs: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_per_ocpu_in_gbs", default_per_ocpu_in_gbs)
+        _setter("max_in_gbs", max_in_gbs)
+        _setter("max_per_ocpu_in_gbs", max_per_ocpu_in_gbs)
+        _setter("min_in_gbs", min_in_gbs)
+        _setter("min_per_ocpu_in_gbs", min_per_ocpu_in_gbs)
 
     @property
     @pulumi.getter(name="defaultPerOcpuInGbs")
@@ -6814,9 +8452,22 @@ class GetPodShapesPodShapeNetworkBandwidthOptionResult(dict):
         :param float max_in_gbps: The maximum amount of networking bandwidth, in gigabits per second.
         :param float min_in_gbps: The minimum amount of networking bandwidth, in gigabits per second.
         """
-        pulumi.set(__self__, "default_per_ocpu_in_gbps", default_per_ocpu_in_gbps)
-        pulumi.set(__self__, "max_in_gbps", max_in_gbps)
-        pulumi.set(__self__, "min_in_gbps", min_in_gbps)
+        GetPodShapesPodShapeNetworkBandwidthOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            default_per_ocpu_in_gbps=default_per_ocpu_in_gbps,
+            max_in_gbps=max_in_gbps,
+            min_in_gbps=min_in_gbps,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             default_per_ocpu_in_gbps: float,
+             max_in_gbps: float,
+             min_in_gbps: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("default_per_ocpu_in_gbps", default_per_ocpu_in_gbps)
+        _setter("max_in_gbps", max_in_gbps)
+        _setter("min_in_gbps", min_in_gbps)
 
     @property
     @pulumi.getter(name="defaultPerOcpuInGbps")
@@ -6852,8 +8503,19 @@ class GetPodShapesPodShapeOcpuOptionResult(dict):
         :param float max: The maximum number of OCPUs.
         :param float min: The minimum number of OCPUs.
         """
-        pulumi.set(__self__, "max", max)
-        pulumi.set(__self__, "min", min)
+        GetPodShapesPodShapeOcpuOptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            max=max,
+            min=min,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             max: float,
+             min: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("max", max)
+        _setter("min", min)
 
     @property
     @pulumi.getter
@@ -6881,8 +8543,19 @@ class GetVirtualNodePoolInitialVirtualNodeLabelResult(dict):
         :param str key: The key of the pair.
         :param str value: The value of the pair.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        GetVirtualNodePoolInitialVirtualNodeLabelResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -6912,9 +8585,22 @@ class GetVirtualNodePoolPlacementConfigurationResult(dict):
         :param Sequence[str] fault_domains: The fault domain of this virtual node.
         :param str subnet_id: The regional subnet where pods' VNIC will be placed.
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "fault_domains", fault_domains)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetVirtualNodePoolPlacementConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            fault_domains=fault_domains,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: str,
+             fault_domains: Sequence[str],
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("fault_domains", fault_domains)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -6952,9 +8638,22 @@ class GetVirtualNodePoolPodConfigurationResult(dict):
         :param str shape: Shape of the pods.
         :param str subnet_id: The regional subnet where pods' VNIC will be placed.
         """
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetVirtualNodePoolPodConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            nsg_ids=nsg_ids,
+            shape=shape,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             nsg_ids: Sequence[str],
+             shape: str,
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("nsg_ids", nsg_ids)
+        _setter("shape", shape)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -6992,9 +8691,22 @@ class GetVirtualNodePoolTaintResult(dict):
         :param str key: The key of the pair.
         :param str value: The value of the pair.
         """
-        pulumi.set(__self__, "effect", effect)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        GetVirtualNodePoolTaintResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            effect=effect,
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             effect: str,
+             key: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("effect", effect)
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -7030,8 +8742,19 @@ class GetVirtualNodePoolVirtualNodeTagResult(dict):
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        GetVirtualNodePoolVirtualNodeTagResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -7059,10 +8782,23 @@ class GetVirtualNodePoolsFilterResult(dict):
         """
         :param str name: The name to filter on.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetVirtualNodePoolsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -7127,26 +8863,73 @@ class GetVirtualNodePoolsVirtualNodePoolResult(dict):
         :param str time_updated: The time the virtual node pool was updated.
         :param Sequence['GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArgs'] virtual_node_tags: The tags associated to the virtual nodes in this virtual node pool.
         """
-        pulumi.set(__self__, "cluster_id", cluster_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "initial_virtual_node_labels", initial_virtual_node_labels)
-        pulumi.set(__self__, "kubernetes_version", kubernetes_version)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "placement_configurations", placement_configurations)
-        pulumi.set(__self__, "pod_configurations", pod_configurations)
-        pulumi.set(__self__, "size", size)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "taints", taints)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "virtual_node_pool_id", virtual_node_pool_id)
-        pulumi.set(__self__, "virtual_node_tags", virtual_node_tags)
+        GetVirtualNodePoolsVirtualNodePoolResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            cluster_id=cluster_id,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            initial_virtual_node_labels=initial_virtual_node_labels,
+            kubernetes_version=kubernetes_version,
+            lifecycle_details=lifecycle_details,
+            nsg_ids=nsg_ids,
+            placement_configurations=placement_configurations,
+            pod_configurations=pod_configurations,
+            size=size,
+            state=state,
+            system_tags=system_tags,
+            taints=taints,
+            time_created=time_created,
+            time_updated=time_updated,
+            virtual_node_pool_id=virtual_node_pool_id,
+            virtual_node_tags=virtual_node_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             cluster_id: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             initial_virtual_node_labels: Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelResult'],
+             kubernetes_version: str,
+             lifecycle_details: str,
+             nsg_ids: Sequence[str],
+             placement_configurations: Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationResult'],
+             pod_configurations: Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolPodConfigurationResult'],
+             size: int,
+             state: str,
+             system_tags: Mapping[str, Any],
+             taints: Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolTaintResult'],
+             time_created: str,
+             time_updated: str,
+             virtual_node_pool_id: str,
+             virtual_node_tags: Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("cluster_id", cluster_id)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("initial_virtual_node_labels", initial_virtual_node_labels)
+        _setter("kubernetes_version", kubernetes_version)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("nsg_ids", nsg_ids)
+        _setter("placement_configurations", placement_configurations)
+        _setter("pod_configurations", pod_configurations)
+        _setter("size", size)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("taints", taints)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("virtual_node_pool_id", virtual_node_pool_id)
+        _setter("virtual_node_tags", virtual_node_tags)
 
     @property
     @pulumi.getter(name="clusterId")
@@ -7315,8 +9098,19 @@ class GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelResult(dict):
         :param str key: The key of the pair.
         :param str value: The value of the pair.
         """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabelResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             key: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -7346,9 +9140,22 @@ class GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationResult(dict):
         :param Sequence[str] fault_domains: The fault domain of this virtual node.
         :param str subnet_id: The regional subnet where pods' VNIC will be placed.
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "fault_domains", fault_domains)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            fault_domains=fault_domains,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: str,
+             fault_domains: Sequence[str],
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("fault_domains", fault_domains)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -7386,9 +9193,22 @@ class GetVirtualNodePoolsVirtualNodePoolPodConfigurationResult(dict):
         :param str shape: Shape of the pods.
         :param str subnet_id: The regional subnet where pods' VNIC will be placed.
         """
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "shape", shape)
-        pulumi.set(__self__, "subnet_id", subnet_id)
+        GetVirtualNodePoolsVirtualNodePoolPodConfigurationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            nsg_ids=nsg_ids,
+            shape=shape,
+            subnet_id=subnet_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             nsg_ids: Sequence[str],
+             shape: str,
+             subnet_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("nsg_ids", nsg_ids)
+        _setter("shape", shape)
+        _setter("subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -7426,9 +9246,22 @@ class GetVirtualNodePoolsVirtualNodePoolTaintResult(dict):
         :param str key: The key of the pair.
         :param str value: The value of the pair.
         """
-        pulumi.set(__self__, "effect", effect)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "value", value)
+        GetVirtualNodePoolsVirtualNodePoolTaintResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            effect=effect,
+            key=key,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             effect: str,
+             key: str,
+             value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("effect", effect)
+        _setter("key", key)
+        _setter("value", value)
 
     @property
     @pulumi.getter
@@ -7464,8 +9297,19 @@ class GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagResult(dict):
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -7490,10 +9334,23 @@ class GetWorkRequestErrorsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetWorkRequestErrorsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -7522,9 +9379,22 @@ class GetWorkRequestErrorsWorkRequestErrorResult(dict):
         :param str message: A human-readable error string.
         :param str timestamp: The date and time the error occurred.
         """
-        pulumi.set(__self__, "code", code)
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "timestamp", timestamp)
+        GetWorkRequestErrorsWorkRequestErrorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            code=code,
+            message=message,
+            timestamp=timestamp,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             code: str,
+             message: str,
+             timestamp: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("code", code)
+        _setter("message", message)
+        _setter("timestamp", timestamp)
 
     @property
     @pulumi.getter
@@ -7557,10 +9427,23 @@ class GetWorkRequestLogEntriesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetWorkRequestLogEntriesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -7587,8 +9470,19 @@ class GetWorkRequestLogEntriesWorkRequestLogEntryResult(dict):
         :param str message: The description of an action that occurred.
         :param str timestamp: The date and time the log entry occurred.
         """
-        pulumi.set(__self__, "message", message)
-        pulumi.set(__self__, "timestamp", timestamp)
+        GetWorkRequestLogEntriesWorkRequestLogEntryResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            message=message,
+            timestamp=timestamp,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             message: str,
+             timestamp: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("message", message)
+        _setter("timestamp", timestamp)
 
     @property
     @pulumi.getter
@@ -7613,10 +9507,23 @@ class GetWorkRequestsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetWorkRequestsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -7655,14 +9562,37 @@ class GetWorkRequestsWorkRequestResult(dict):
         :param str time_finished: The time the work request was finished.
         :param str time_started: The time the work request was started.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "operation_type", operation_type)
-        pulumi.set(__self__, "resources", resources)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "time_accepted", time_accepted)
-        pulumi.set(__self__, "time_finished", time_finished)
-        pulumi.set(__self__, "time_started", time_started)
+        GetWorkRequestsWorkRequestResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            id=id,
+            operation_type=operation_type,
+            resources=resources,
+            status=status,
+            time_accepted=time_accepted,
+            time_finished=time_finished,
+            time_started=time_started,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             id: str,
+             operation_type: str,
+             resources: Sequence['outputs.GetWorkRequestsWorkRequestResourceResult'],
+             status: str,
+             time_accepted: str,
+             time_finished: str,
+             time_started: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("id", id)
+        _setter("operation_type", operation_type)
+        _setter("resources", resources)
+        _setter("status", status)
+        _setter("time_accepted", time_accepted)
+        _setter("time_finished", time_finished)
+        _setter("time_started", time_started)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -7742,10 +9672,25 @@ class GetWorkRequestsWorkRequestResourceResult(dict):
         :param str entity_uri: The URI path on which the user can issue a GET request to access the resource metadata.
         :param str identifier: The OCID of the resource the work request affects.
         """
-        pulumi.set(__self__, "action_type", action_type)
-        pulumi.set(__self__, "entity_type", entity_type)
-        pulumi.set(__self__, "entity_uri", entity_uri)
-        pulumi.set(__self__, "identifier", identifier)
+        GetWorkRequestsWorkRequestResourceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_type=action_type,
+            entity_type=entity_type,
+            entity_uri=entity_uri,
+            identifier=identifier,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_type: str,
+             entity_type: str,
+             entity_uri: str,
+             identifier: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_type", action_type)
+        _setter("entity_type", entity_type)
+        _setter("entity_uri", entity_uri)
+        _setter("identifier", identifier)
 
     @property
     @pulumi.getter(name="actionType")

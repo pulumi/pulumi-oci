@@ -5,6 +5,7 @@ package com.pulumi.oci.Kms;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Kms.inputs.VaultExternalKeyManagerMetadataArgs;
 import com.pulumi.oci.Kms.inputs.VaultRestoreFromFileArgs;
 import com.pulumi.oci.Kms.inputs.VaultRestoreFromObjectStoreArgs;
 import java.lang.Boolean;
@@ -63,6 +64,21 @@ public final class VaultArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Output<String> displayName() {
         return this.displayName;
+    }
+
+    /**
+     * Metadata required for accessing External Key manager
+     * 
+     */
+    @Import(name="externalKeyManagerMetadata")
+    private @Nullable Output<VaultExternalKeyManagerMetadataArgs> externalKeyManagerMetadata;
+
+    /**
+     * @return Metadata required for accessing External Key manager
+     * 
+     */
+    public Optional<Output<VaultExternalKeyManagerMetadataArgs>> externalKeyManagerMetadata() {
+        return Optional.ofNullable(this.externalKeyManagerMetadata);
     }
 
     /**
@@ -159,6 +175,7 @@ public final class VaultArgs extends com.pulumi.resources.ResourceArgs {
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
+        this.externalKeyManagerMetadata = $.externalKeyManagerMetadata;
         this.freeformTags = $.freeformTags;
         this.restoreFromFile = $.restoreFromFile;
         this.restoreFromObjectStore = $.restoreFromObjectStore;
@@ -246,6 +263,27 @@ public final class VaultArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param externalKeyManagerMetadata Metadata required for accessing External Key manager
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyManagerMetadata(@Nullable Output<VaultExternalKeyManagerMetadataArgs> externalKeyManagerMetadata) {
+            $.externalKeyManagerMetadata = externalKeyManagerMetadata;
+            return this;
+        }
+
+        /**
+         * @param externalKeyManagerMetadata Metadata required for accessing External Key manager
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalKeyManagerMetadata(VaultExternalKeyManagerMetadataArgs externalKeyManagerMetadata) {
+            return externalKeyManagerMetadata(Output.of(externalKeyManagerMetadata));
         }
 
         /**

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['AutonomousContainerDatabaseDataguardAssociationOperationArgs', 'AutonomousContainerDatabaseDataguardAssociationOperation']
@@ -23,9 +23,22 @@ class AutonomousContainerDatabaseDataguardAssociationOperationArgs:
         :param pulumi.Input[str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
         :param pulumi.Input[str] operation: There are three type of supported operations `switchover`, `failover`, `reinstate`. `switchover` can only be used for primary database while `failover` and `reinstate` can only be used for standby database. This attribute is a forcenew attribute.
         """
-        pulumi.set(__self__, "autonomous_container_database_dataguard_association_id", autonomous_container_database_dataguard_association_id)
-        pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
-        pulumi.set(__self__, "operation", operation)
+        AutonomousContainerDatabaseDataguardAssociationOperationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            autonomous_container_database_dataguard_association_id=autonomous_container_database_dataguard_association_id,
+            autonomous_container_database_id=autonomous_container_database_id,
+            operation=operation,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             autonomous_container_database_dataguard_association_id: pulumi.Input[str],
+             autonomous_container_database_id: pulumi.Input[str],
+             operation: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("autonomous_container_database_dataguard_association_id", autonomous_container_database_dataguard_association_id)
+        _setter("autonomous_container_database_id", autonomous_container_database_id)
+        _setter("operation", operation)
 
     @property
     @pulumi.getter(name="autonomousContainerDatabaseDataguardAssociationId")
@@ -76,12 +89,25 @@ class _AutonomousContainerDatabaseDataguardAssociationOperationState:
         :param pulumi.Input[str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
         :param pulumi.Input[str] operation: There are three type of supported operations `switchover`, `failover`, `reinstate`. `switchover` can only be used for primary database while `failover` and `reinstate` can only be used for standby database. This attribute is a forcenew attribute.
         """
+        _AutonomousContainerDatabaseDataguardAssociationOperationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            autonomous_container_database_dataguard_association_id=autonomous_container_database_dataguard_association_id,
+            autonomous_container_database_id=autonomous_container_database_id,
+            operation=operation,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[str]] = None,
+             autonomous_container_database_id: Optional[pulumi.Input[str]] = None,
+             operation: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if autonomous_container_database_dataguard_association_id is not None:
-            pulumi.set(__self__, "autonomous_container_database_dataguard_association_id", autonomous_container_database_dataguard_association_id)
+            _setter("autonomous_container_database_dataguard_association_id", autonomous_container_database_dataguard_association_id)
         if autonomous_container_database_id is not None:
-            pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
+            _setter("autonomous_container_database_id", autonomous_container_database_id)
         if operation is not None:
-            pulumi.set(__self__, "operation", operation)
+            _setter("operation", operation)
 
     @property
     @pulumi.getter(name="autonomousContainerDatabaseDataguardAssociationId")
@@ -193,6 +219,10 @@ class AutonomousContainerDatabaseDataguardAssociationOperation(pulumi.CustomReso
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            AutonomousContainerDatabaseDataguardAssociationOperationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

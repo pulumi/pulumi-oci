@@ -18,9 +18,6 @@ namespace Pulumi.Oci.Autoscaling.Inputs
         [Input("action")]
         public Input<Inputs.AutoScalingConfigurationPolicyRuleActionGetArgs>? Action { get; set; }
 
-        /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
 

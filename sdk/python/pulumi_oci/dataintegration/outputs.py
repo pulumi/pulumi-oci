@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -125,20 +125,41 @@ class WorkspaceApplicationDependentObjectMetadata(dict):
         :param int object_version: The object version.
         :param str type: The type of the object in patch.
         """
+        WorkspaceApplicationDependentObjectMetadata._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            identifier=identifier,
+            key=key,
+            name=name,
+            name_path=name_path,
+            object_version=object_version,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: Optional[str] = None,
+             identifier: Optional[str] = None,
+             key: Optional[str] = None,
+             name: Optional[str] = None,
+             name_path: Optional[str] = None,
+             object_version: Optional[int] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if action is not None:
-            pulumi.set(__self__, "action", action)
+            _setter("action", action)
         if identifier is not None:
-            pulumi.set(__self__, "identifier", identifier)
+            _setter("identifier", identifier)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if name_path is not None:
-            pulumi.set(__self__, "name_path", name_path)
+            _setter("name_path", name_path)
         if object_version is not None:
-            pulumi.set(__self__, "object_version", object_version)
+            _setter("object_version", object_version)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter
@@ -269,34 +290,69 @@ class WorkspaceApplicationMetadata(dict):
         :param str updated_by: The user that updated the object.
         :param str updated_by_name: The user that updated the object.
         """
+        WorkspaceApplicationMetadata._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregator_key=aggregator_key,
+            aggregators=aggregators,
+            count_statistics=count_statistics,
+            created_by=created_by,
+            created_by_name=created_by_name,
+            identifier_path=identifier_path,
+            info_fields=info_fields,
+            is_favorite=is_favorite,
+            labels=labels,
+            registry_version=registry_version,
+            time_created=time_created,
+            time_updated=time_updated,
+            updated_by=updated_by,
+            updated_by_name=updated_by_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregator_key: Optional[str] = None,
+             aggregators: Optional[Sequence['outputs.WorkspaceApplicationMetadataAggregator']] = None,
+             count_statistics: Optional[Sequence['outputs.WorkspaceApplicationMetadataCountStatistic']] = None,
+             created_by: Optional[str] = None,
+             created_by_name: Optional[str] = None,
+             identifier_path: Optional[str] = None,
+             info_fields: Optional[Mapping[str, Any]] = None,
+             is_favorite: Optional[bool] = None,
+             labels: Optional[Sequence[str]] = None,
+             registry_version: Optional[int] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             updated_by: Optional[str] = None,
+             updated_by_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if aggregator_key is not None:
-            pulumi.set(__self__, "aggregator_key", aggregator_key)
+            _setter("aggregator_key", aggregator_key)
         if aggregators is not None:
-            pulumi.set(__self__, "aggregators", aggregators)
+            _setter("aggregators", aggregators)
         if count_statistics is not None:
-            pulumi.set(__self__, "count_statistics", count_statistics)
+            _setter("count_statistics", count_statistics)
         if created_by is not None:
-            pulumi.set(__self__, "created_by", created_by)
+            _setter("created_by", created_by)
         if created_by_name is not None:
-            pulumi.set(__self__, "created_by_name", created_by_name)
+            _setter("created_by_name", created_by_name)
         if identifier_path is not None:
-            pulumi.set(__self__, "identifier_path", identifier_path)
+            _setter("identifier_path", identifier_path)
         if info_fields is not None:
-            pulumi.set(__self__, "info_fields", info_fields)
+            _setter("info_fields", info_fields)
         if is_favorite is not None:
-            pulumi.set(__self__, "is_favorite", is_favorite)
+            _setter("is_favorite", is_favorite)
         if labels is not None:
-            pulumi.set(__self__, "labels", labels)
+            _setter("labels", labels)
         if registry_version is not None:
-            pulumi.set(__self__, "registry_version", registry_version)
+            _setter("registry_version", registry_version)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if updated_by is not None:
-            pulumi.set(__self__, "updated_by", updated_by)
+            _setter("updated_by", updated_by)
         if updated_by_name is not None:
-            pulumi.set(__self__, "updated_by_name", updated_by_name)
+            _setter("updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -426,16 +482,33 @@ class WorkspaceApplicationMetadataAggregator(dict):
         :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: The type of the object in patch.
         """
+        WorkspaceApplicationMetadataAggregator._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            identifier=identifier,
+            key=key,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             identifier: Optional[str] = None,
+             key: Optional[str] = None,
+             name: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if identifier is not None:
-            pulumi.set(__self__, "identifier", identifier)
+            _setter("identifier", identifier)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter
@@ -502,8 +575,17 @@ class WorkspaceApplicationMetadataCountStatistic(dict):
         """
         :param Sequence['WorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
         """
+        WorkspaceApplicationMetadataCountStatistic._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_type_count_lists=object_type_count_lists,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_type_count_lists: Optional[Sequence['outputs.WorkspaceApplicationMetadataCountStatisticObjectTypeCountList']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if object_type_count_lists is not None:
-            pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+            _setter("object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
@@ -542,10 +624,21 @@ class WorkspaceApplicationMetadataCountStatisticObjectTypeCountList(dict):
         :param str object_count: The value for the count statistic object.
         :param str object_type: The type of object for the count statistic object.
         """
+        WorkspaceApplicationMetadataCountStatisticObjectTypeCountList._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_count=object_count,
+            object_type=object_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_count: Optional[str] = None,
+             object_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if object_count is not None:
-            pulumi.set(__self__, "object_count", object_count)
+            _setter("object_count", object_count)
         if object_type is not None:
-            pulumi.set(__self__, "object_type", object_type)
+            _setter("object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
@@ -590,10 +683,21 @@ class WorkspaceApplicationParentRef(dict):
         :param str parent: Key of the parent object.
         :param str root_doc_id: Key of the root document object.
         """
+        WorkspaceApplicationParentRef._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            parent=parent,
+            root_doc_id=root_doc_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             parent: Optional[str] = None,
+             root_doc_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if parent is not None:
-            pulumi.set(__self__, "parent", parent)
+            _setter("parent", parent)
         if root_doc_id is not None:
-            pulumi.set(__self__, "root_doc_id", root_doc_id)
+            _setter("root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
@@ -650,20 +754,41 @@ class WorkspaceApplicationPublishedObjectMetadata(dict):
         :param int object_version: The object version.
         :param str type: The type of the object in patch.
         """
+        WorkspaceApplicationPublishedObjectMetadata._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            identifier=identifier,
+            key=key,
+            name=name,
+            name_path=name_path,
+            object_version=object_version,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: Optional[str] = None,
+             identifier: Optional[str] = None,
+             key: Optional[str] = None,
+             name: Optional[str] = None,
+             name_path: Optional[str] = None,
+             object_version: Optional[int] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if action is not None:
-            pulumi.set(__self__, "action", action)
+            _setter("action", action)
         if identifier is not None:
-            pulumi.set(__self__, "identifier", identifier)
+            _setter("identifier", identifier)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if name_path is not None:
-            pulumi.set(__self__, "name_path", name_path)
+            _setter("name_path", name_path)
         if object_version is not None:
-            pulumi.set(__self__, "object_version", object_version)
+            _setter("object_version", object_version)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter
@@ -758,16 +883,33 @@ class WorkspaceApplicationRegistryMetadata(dict):
         :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
         """
+        WorkspaceApplicationRegistryMetadata._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregator_key=aggregator_key,
+            is_favorite=is_favorite,
+            key=key,
+            labels=labels,
+            registry_version=registry_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregator_key: Optional[str] = None,
+             is_favorite: Optional[bool] = None,
+             key: Optional[str] = None,
+             labels: Optional[Sequence[str]] = None,
+             registry_version: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if aggregator_key is not None:
-            pulumi.set(__self__, "aggregator_key", aggregator_key)
+            _setter("aggregator_key", aggregator_key)
         if is_favorite is not None:
-            pulumi.set(__self__, "is_favorite", is_favorite)
+            _setter("is_favorite", is_favorite)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if labels is not None:
-            pulumi.set(__self__, "labels", labels)
+            _setter("labels", labels)
         if registry_version is not None:
-            pulumi.set(__self__, "registry_version", registry_version)
+            _setter("registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -854,16 +996,33 @@ class WorkspaceApplicationSourceApplicationInfo(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        WorkspaceApplicationSourceApplicationInfo._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            application_key=application_key,
+            application_version=application_version,
+            copy_type=copy_type,
+            last_patch_key=last_patch_key,
+            workspace_id=workspace_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             application_key: Optional[str] = None,
+             application_version: Optional[str] = None,
+             copy_type: Optional[str] = None,
+             last_patch_key: Optional[str] = None,
+             workspace_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if application_key is not None:
-            pulumi.set(__self__, "application_key", application_key)
+            _setter("application_key", application_key)
         if application_version is not None:
-            pulumi.set(__self__, "application_version", application_version)
+            _setter("application_version", application_version)
         if copy_type is not None:
-            pulumi.set(__self__, "copy_type", copy_type)
+            _setter("copy_type", copy_type)
         if last_patch_key is not None:
-            pulumi.set(__self__, "last_patch_key", last_patch_key)
+            _setter("last_patch_key", last_patch_key)
         if workspace_id is not None:
-            pulumi.set(__self__, "workspace_id", workspace_id)
+            _setter("workspace_id", workspace_id)
 
     @property
     @pulumi.getter(name="applicationKey")
@@ -982,34 +1141,69 @@ class WorkspaceFolderMetadata(dict):
         :param str updated_by: The user that updated the object.
         :param str updated_by_name: The user that updated the object.
         """
+        WorkspaceFolderMetadata._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregator_key=aggregator_key,
+            aggregators=aggregators,
+            count_statistics=count_statistics,
+            created_by=created_by,
+            created_by_name=created_by_name,
+            identifier_path=identifier_path,
+            info_fields=info_fields,
+            is_favorite=is_favorite,
+            labels=labels,
+            registry_version=registry_version,
+            time_created=time_created,
+            time_updated=time_updated,
+            updated_by=updated_by,
+            updated_by_name=updated_by_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregator_key: Optional[str] = None,
+             aggregators: Optional[Sequence['outputs.WorkspaceFolderMetadataAggregator']] = None,
+             count_statistics: Optional[Sequence['outputs.WorkspaceFolderMetadataCountStatistic']] = None,
+             created_by: Optional[str] = None,
+             created_by_name: Optional[str] = None,
+             identifier_path: Optional[str] = None,
+             info_fields: Optional[Mapping[str, Any]] = None,
+             is_favorite: Optional[bool] = None,
+             labels: Optional[Sequence[str]] = None,
+             registry_version: Optional[int] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             updated_by: Optional[str] = None,
+             updated_by_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if aggregator_key is not None:
-            pulumi.set(__self__, "aggregator_key", aggregator_key)
+            _setter("aggregator_key", aggregator_key)
         if aggregators is not None:
-            pulumi.set(__self__, "aggregators", aggregators)
+            _setter("aggregators", aggregators)
         if count_statistics is not None:
-            pulumi.set(__self__, "count_statistics", count_statistics)
+            _setter("count_statistics", count_statistics)
         if created_by is not None:
-            pulumi.set(__self__, "created_by", created_by)
+            _setter("created_by", created_by)
         if created_by_name is not None:
-            pulumi.set(__self__, "created_by_name", created_by_name)
+            _setter("created_by_name", created_by_name)
         if identifier_path is not None:
-            pulumi.set(__self__, "identifier_path", identifier_path)
+            _setter("identifier_path", identifier_path)
         if info_fields is not None:
-            pulumi.set(__self__, "info_fields", info_fields)
+            _setter("info_fields", info_fields)
         if is_favorite is not None:
-            pulumi.set(__self__, "is_favorite", is_favorite)
+            _setter("is_favorite", is_favorite)
         if labels is not None:
-            pulumi.set(__self__, "labels", labels)
+            _setter("labels", labels)
         if registry_version is not None:
-            pulumi.set(__self__, "registry_version", registry_version)
+            _setter("registry_version", registry_version)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if updated_by is not None:
-            pulumi.set(__self__, "updated_by", updated_by)
+            _setter("updated_by", updated_by)
         if updated_by_name is not None:
-            pulumi.set(__self__, "updated_by_name", updated_by_name)
+            _setter("updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -1139,16 +1333,33 @@ class WorkspaceFolderMetadataAggregator(dict):
         :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: The type of the aggregator.
         """
+        WorkspaceFolderMetadataAggregator._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            identifier=identifier,
+            key=key,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             identifier: Optional[str] = None,
+             key: Optional[str] = None,
+             name: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if identifier is not None:
-            pulumi.set(__self__, "identifier", identifier)
+            _setter("identifier", identifier)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter
@@ -1215,8 +1426,17 @@ class WorkspaceFolderMetadataCountStatistic(dict):
         """
         :param Sequence['WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
         """
+        WorkspaceFolderMetadataCountStatistic._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_type_count_lists=object_type_count_lists,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_type_count_lists: Optional[Sequence['outputs.WorkspaceFolderMetadataCountStatisticObjectTypeCountList']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if object_type_count_lists is not None:
-            pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+            _setter("object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
@@ -1255,10 +1475,21 @@ class WorkspaceFolderMetadataCountStatisticObjectTypeCountList(dict):
         :param str object_count: The value for the count statistic object.
         :param str object_type: The type of object for the count statistic object.
         """
+        WorkspaceFolderMetadataCountStatisticObjectTypeCountList._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_count=object_count,
+            object_type=object_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_count: Optional[str] = None,
+             object_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if object_count is not None:
-            pulumi.set(__self__, "object_count", object_count)
+            _setter("object_count", object_count)
         if object_type is not None:
-            pulumi.set(__self__, "object_type", object_type)
+            _setter("object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
@@ -1303,10 +1534,21 @@ class WorkspaceFolderParentRef(dict):
         :param str parent: Key of the parent object.
         :param str root_doc_id: Key of the root document object.
         """
+        WorkspaceFolderParentRef._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            parent=parent,
+            root_doc_id=root_doc_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             parent: Optional[str] = None,
+             root_doc_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if parent is not None:
-            pulumi.set(__self__, "parent", parent)
+            _setter("parent", parent)
         if root_doc_id is not None:
-            pulumi.set(__self__, "root_doc_id", root_doc_id)
+            _setter("root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
@@ -1361,16 +1603,33 @@ class WorkspaceFolderRegistryMetadata(dict):
         :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
         :param int registry_version: (Updatable) The registry version.
         """
+        WorkspaceFolderRegistryMetadata._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregator_key=aggregator_key,
+            is_favorite=is_favorite,
+            key=key,
+            labels=labels,
+            registry_version=registry_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregator_key: Optional[str] = None,
+             is_favorite: Optional[bool] = None,
+             key: Optional[str] = None,
+             labels: Optional[Sequence[str]] = None,
+             registry_version: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if aggregator_key is not None:
-            pulumi.set(__self__, "aggregator_key", aggregator_key)
+            _setter("aggregator_key", aggregator_key)
         if is_favorite is not None:
-            pulumi.set(__self__, "is_favorite", is_favorite)
+            _setter("is_favorite", is_favorite)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if labels is not None:
-            pulumi.set(__self__, "labels", labels)
+            _setter("labels", labels)
         if registry_version is not None:
-            pulumi.set(__self__, "registry_version", registry_version)
+            _setter("registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -1485,34 +1744,69 @@ class WorkspaceProjectMetadata(dict):
         :param str updated_by: The user that updated the object.
         :param str updated_by_name: The user that updated the object.
         """
+        WorkspaceProjectMetadata._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregator_key=aggregator_key,
+            aggregators=aggregators,
+            count_statistics=count_statistics,
+            created_by=created_by,
+            created_by_name=created_by_name,
+            identifier_path=identifier_path,
+            info_fields=info_fields,
+            is_favorite=is_favorite,
+            labels=labels,
+            registry_version=registry_version,
+            time_created=time_created,
+            time_updated=time_updated,
+            updated_by=updated_by,
+            updated_by_name=updated_by_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregator_key: Optional[str] = None,
+             aggregators: Optional[Sequence['outputs.WorkspaceProjectMetadataAggregator']] = None,
+             count_statistics: Optional[Sequence['outputs.WorkspaceProjectMetadataCountStatistic']] = None,
+             created_by: Optional[str] = None,
+             created_by_name: Optional[str] = None,
+             identifier_path: Optional[str] = None,
+             info_fields: Optional[Mapping[str, Any]] = None,
+             is_favorite: Optional[bool] = None,
+             labels: Optional[Sequence[str]] = None,
+             registry_version: Optional[int] = None,
+             time_created: Optional[str] = None,
+             time_updated: Optional[str] = None,
+             updated_by: Optional[str] = None,
+             updated_by_name: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if aggregator_key is not None:
-            pulumi.set(__self__, "aggregator_key", aggregator_key)
+            _setter("aggregator_key", aggregator_key)
         if aggregators is not None:
-            pulumi.set(__self__, "aggregators", aggregators)
+            _setter("aggregators", aggregators)
         if count_statistics is not None:
-            pulumi.set(__self__, "count_statistics", count_statistics)
+            _setter("count_statistics", count_statistics)
         if created_by is not None:
-            pulumi.set(__self__, "created_by", created_by)
+            _setter("created_by", created_by)
         if created_by_name is not None:
-            pulumi.set(__self__, "created_by_name", created_by_name)
+            _setter("created_by_name", created_by_name)
         if identifier_path is not None:
-            pulumi.set(__self__, "identifier_path", identifier_path)
+            _setter("identifier_path", identifier_path)
         if info_fields is not None:
-            pulumi.set(__self__, "info_fields", info_fields)
+            _setter("info_fields", info_fields)
         if is_favorite is not None:
-            pulumi.set(__self__, "is_favorite", is_favorite)
+            _setter("is_favorite", is_favorite)
         if labels is not None:
-            pulumi.set(__self__, "labels", labels)
+            _setter("labels", labels)
         if registry_version is not None:
-            pulumi.set(__self__, "registry_version", registry_version)
+            _setter("registry_version", registry_version)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if updated_by is not None:
-            pulumi.set(__self__, "updated_by", updated_by)
+            _setter("updated_by", updated_by)
         if updated_by_name is not None:
-            pulumi.set(__self__, "updated_by_name", updated_by_name)
+            _setter("updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -1642,16 +1936,33 @@ class WorkspaceProjectMetadataAggregator(dict):
         :param str name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: The type of the aggregator.
         """
+        WorkspaceProjectMetadataAggregator._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            identifier=identifier,
+            key=key,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             identifier: Optional[str] = None,
+             key: Optional[str] = None,
+             name: Optional[str] = None,
+             type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if identifier is not None:
-            pulumi.set(__self__, "identifier", identifier)
+            _setter("identifier", identifier)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter
@@ -1718,8 +2029,17 @@ class WorkspaceProjectMetadataCountStatistic(dict):
         """
         :param Sequence['WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
         """
+        WorkspaceProjectMetadataCountStatistic._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_type_count_lists=object_type_count_lists,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_type_count_lists: Optional[Sequence['outputs.WorkspaceProjectMetadataCountStatisticObjectTypeCountList']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if object_type_count_lists is not None:
-            pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+            _setter("object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
@@ -1758,10 +2078,21 @@ class WorkspaceProjectMetadataCountStatisticObjectTypeCountList(dict):
         :param str object_count: The value for the count statistic object.
         :param str object_type: The type of object for the count statistic object.
         """
+        WorkspaceProjectMetadataCountStatisticObjectTypeCountList._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_count=object_count,
+            object_type=object_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_count: Optional[str] = None,
+             object_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if object_count is not None:
-            pulumi.set(__self__, "object_count", object_count)
+            _setter("object_count", object_count)
         if object_type is not None:
-            pulumi.set(__self__, "object_type", object_type)
+            _setter("object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
@@ -1806,10 +2137,21 @@ class WorkspaceProjectParentRef(dict):
         :param str parent: Key of the parent object.
         :param str root_doc_id: Key of the root document object.
         """
+        WorkspaceProjectParentRef._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            parent=parent,
+            root_doc_id=root_doc_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             parent: Optional[str] = None,
+             root_doc_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if parent is not None:
-            pulumi.set(__self__, "parent", parent)
+            _setter("parent", parent)
         if root_doc_id is not None:
-            pulumi.set(__self__, "root_doc_id", root_doc_id)
+            _setter("root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
@@ -1864,16 +2206,33 @@ class WorkspaceProjectRegistryMetadata(dict):
         :param Sequence[str] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
         :param int registry_version: (Updatable) The registry version.
         """
+        WorkspaceProjectRegistryMetadata._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregator_key=aggregator_key,
+            is_favorite=is_favorite,
+            key=key,
+            labels=labels,
+            registry_version=registry_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregator_key: Optional[str] = None,
+             is_favorite: Optional[bool] = None,
+             key: Optional[str] = None,
+             labels: Optional[Sequence[str]] = None,
+             registry_version: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if aggregator_key is not None:
-            pulumi.set(__self__, "aggregator_key", aggregator_key)
+            _setter("aggregator_key", aggregator_key)
         if is_favorite is not None:
-            pulumi.set(__self__, "is_favorite", is_favorite)
+            _setter("is_favorite", is_favorite)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if labels is not None:
-            pulumi.set(__self__, "labels", labels)
+            _setter("labels", labels)
         if registry_version is not None:
-            pulumi.set(__self__, "registry_version", registry_version)
+            _setter("registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -1935,13 +2294,34 @@ class GetWorkspaceApplicationDependentObjectMetadataResult(dict):
         :param int object_version: The object version.
         :param str type: The type of the object in patch.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "name_path", name_path)
-        pulumi.set(__self__, "object_version", object_version)
-        pulumi.set(__self__, "type", type)
+        GetWorkspaceApplicationDependentObjectMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            identifier=identifier,
+            key=key,
+            name=name,
+            name_path=name_path,
+            object_version=object_version,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: str,
+             identifier: str,
+             key: str,
+             name: str,
+             name_path: str,
+             object_version: int,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("identifier", identifier)
+        _setter("key", key)
+        _setter("name", name)
+        _setter("name_path", name_path)
+        _setter("object_version", object_version)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -2033,20 +2413,55 @@ class GetWorkspaceApplicationMetadataResult(dict):
         :param str updated_by: The user that updated the object.
         :param str updated_by_name: The user that updated the object.
         """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "aggregators", aggregators)
-        pulumi.set(__self__, "count_statistics", count_statistics)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "created_by_name", created_by_name)
-        pulumi.set(__self__, "identifier_path", identifier_path)
-        pulumi.set(__self__, "info_fields", info_fields)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "updated_by", updated_by)
-        pulumi.set(__self__, "updated_by_name", updated_by_name)
+        GetWorkspaceApplicationMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregator_key=aggregator_key,
+            aggregators=aggregators,
+            count_statistics=count_statistics,
+            created_by=created_by,
+            created_by_name=created_by_name,
+            identifier_path=identifier_path,
+            info_fields=info_fields,
+            is_favorite=is_favorite,
+            labels=labels,
+            registry_version=registry_version,
+            time_created=time_created,
+            time_updated=time_updated,
+            updated_by=updated_by,
+            updated_by_name=updated_by_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregator_key: str,
+             aggregators: Sequence['outputs.GetWorkspaceApplicationMetadataAggregatorResult'],
+             count_statistics: Sequence['outputs.GetWorkspaceApplicationMetadataCountStatisticResult'],
+             created_by: str,
+             created_by_name: str,
+             identifier_path: str,
+             info_fields: Mapping[str, Any],
+             is_favorite: bool,
+             labels: Sequence[str],
+             registry_version: int,
+             time_created: str,
+             time_updated: str,
+             updated_by: str,
+             updated_by_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("aggregator_key", aggregator_key)
+        _setter("aggregators", aggregators)
+        _setter("count_statistics", count_statistics)
+        _setter("created_by", created_by)
+        _setter("created_by_name", created_by_name)
+        _setter("identifier_path", identifier_path)
+        _setter("info_fields", info_fields)
+        _setter("is_favorite", is_favorite)
+        _setter("labels", labels)
+        _setter("registry_version", registry_version)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("updated_by", updated_by)
+        _setter("updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -2176,11 +2591,28 @@ class GetWorkspaceApplicationMetadataAggregatorResult(dict):
         :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: The type of the object in patch.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        GetWorkspaceApplicationMetadataAggregatorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            identifier=identifier,
+            key=key,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             identifier: str,
+             key: str,
+             name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("identifier", identifier)
+        _setter("key", key)
+        _setter("name", name)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -2230,7 +2662,16 @@ class GetWorkspaceApplicationMetadataCountStatisticResult(dict):
         """
         :param Sequence['GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
         """
-        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+        GetWorkspaceApplicationMetadataCountStatisticResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_type_count_lists=object_type_count_lists,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_type_count_lists: Sequence['outputs.GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
@@ -2250,8 +2691,19 @@ class GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListResult(dic
         :param str object_count: The value for the count statistic object.
         :param str object_type: The type of object for the count statistic object.
         """
-        pulumi.set(__self__, "object_count", object_count)
-        pulumi.set(__self__, "object_type", object_type)
+        GetWorkspaceApplicationMetadataCountStatisticObjectTypeCountListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_count=object_count,
+            object_type=object_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_count: str,
+             object_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object_count", object_count)
+        _setter("object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
@@ -2279,8 +2731,19 @@ class GetWorkspaceApplicationParentRefResult(dict):
         :param str parent: Key of the parent object.
         :param str root_doc_id: Key of the root document object.
         """
-        pulumi.set(__self__, "parent", parent)
-        pulumi.set(__self__, "root_doc_id", root_doc_id)
+        GetWorkspaceApplicationParentRefResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            parent=parent,
+            root_doc_id=root_doc_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             parent: str,
+             root_doc_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("parent", parent)
+        _setter("root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
@@ -2318,13 +2781,34 @@ class GetWorkspaceApplicationPublishedObjectMetadataResult(dict):
         :param int object_version: The object version.
         :param str type: The type of the object in patch.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "name_path", name_path)
-        pulumi.set(__self__, "object_version", object_version)
-        pulumi.set(__self__, "type", type)
+        GetWorkspaceApplicationPublishedObjectMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            identifier=identifier,
+            key=key,
+            name=name,
+            name_path=name_path,
+            object_version=object_version,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: str,
+             identifier: str,
+             key: str,
+             name: str,
+             name_path: str,
+             object_version: int,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("identifier", identifier)
+        _setter("key", key)
+        _setter("name", name)
+        _setter("name_path", name_path)
+        _setter("object_version", object_version)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -2398,11 +2882,28 @@ class GetWorkspaceApplicationRegistryMetadataResult(dict):
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
         """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
+        GetWorkspaceApplicationRegistryMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregator_key=aggregator_key,
+            is_favorite=is_favorite,
+            key=key,
+            labels=labels,
+            registry_version=registry_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregator_key: str,
+             is_favorite: bool,
+             key: str,
+             labels: Sequence[str],
+             registry_version: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("aggregator_key", aggregator_key)
+        _setter("is_favorite", is_favorite)
+        _setter("key", key)
+        _setter("labels", labels)
+        _setter("registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -2459,11 +2960,28 @@ class GetWorkspaceApplicationSourceApplicationInfoResult(dict):
         :param str last_patch_key: The last patch key for the application.
         :param str workspace_id: The workspace ID.
         """
-        pulumi.set(__self__, "application_key", application_key)
-        pulumi.set(__self__, "application_version", application_version)
-        pulumi.set(__self__, "copy_type", copy_type)
-        pulumi.set(__self__, "last_patch_key", last_patch_key)
-        pulumi.set(__self__, "workspace_id", workspace_id)
+        GetWorkspaceApplicationSourceApplicationInfoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            application_key=application_key,
+            application_version=application_version,
+            copy_type=copy_type,
+            last_patch_key=last_patch_key,
+            workspace_id=workspace_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             application_key: str,
+             application_version: str,
+             copy_type: str,
+             last_patch_key: str,
+             workspace_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("application_key", application_key)
+        _setter("application_version", application_version)
+        _setter("copy_type", copy_type)
+        _setter("last_patch_key", last_patch_key)
+        _setter("workspace_id", workspace_id)
 
     @property
     @pulumi.getter(name="applicationKey")
@@ -2507,7 +3025,16 @@ class GetWorkspaceApplicationSourceApplicationInfoResult(dict):
 class GetWorkspaceApplicationsApplicationSummaryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetWorkspaceApplicationsApplicationSummaryCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2571,32 +3098,91 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemResult(dict):
         :param str time_updated: The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
         :param str workspace_id: The workspace ID.
         """
-        pulumi.set(__self__, "application_version", application_version)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "dependent_object_metadatas", dependent_object_metadatas)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "key_map", key_map)
-        pulumi.set(__self__, "metadatas", metadatas)
-        pulumi.set(__self__, "model_type", model_type)
-        pulumi.set(__self__, "model_version", model_version)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "object_status", object_status)
-        pulumi.set(__self__, "object_version", object_version)
-        pulumi.set(__self__, "parent_reves", parent_reves)
-        pulumi.set(__self__, "published_object_metadatas", published_object_metadatas)
-        pulumi.set(__self__, "registry_metadatas", registry_metadatas)
-        pulumi.set(__self__, "source_application_infos", source_application_infos)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_patched", time_patched)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "workspace_id", workspace_id)
+        GetWorkspaceApplicationsApplicationSummaryCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            application_version=application_version,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            dependent_object_metadatas=dependent_object_metadatas,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            identifier=identifier,
+            key=key,
+            key_map=key_map,
+            metadatas=metadatas,
+            model_type=model_type,
+            model_version=model_version,
+            name=name,
+            object_status=object_status,
+            object_version=object_version,
+            parent_reves=parent_reves,
+            published_object_metadatas=published_object_metadatas,
+            registry_metadatas=registry_metadatas,
+            source_application_infos=source_application_infos,
+            state=state,
+            time_created=time_created,
+            time_patched=time_patched,
+            time_updated=time_updated,
+            workspace_id=workspace_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             application_version: int,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             dependent_object_metadatas: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataResult'],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             identifier: str,
+             key: str,
+             key_map: Mapping[str, Any],
+             metadatas: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataResult'],
+             model_type: str,
+             model_version: str,
+             name: str,
+             object_status: int,
+             object_version: int,
+             parent_reves: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefResult'],
+             published_object_metadatas: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataResult'],
+             registry_metadatas: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataResult'],
+             source_application_infos: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoResult'],
+             state: str,
+             time_created: str,
+             time_patched: str,
+             time_updated: str,
+             workspace_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("application_version", application_version)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("dependent_object_metadatas", dependent_object_metadatas)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("identifier", identifier)
+        _setter("key", key)
+        _setter("key_map", key_map)
+        _setter("metadatas", metadatas)
+        _setter("model_type", model_type)
+        _setter("model_version", model_version)
+        _setter("name", name)
+        _setter("object_status", object_status)
+        _setter("object_version", object_version)
+        _setter("parent_reves", parent_reves)
+        _setter("published_object_metadatas", published_object_metadatas)
+        _setter("registry_metadatas", registry_metadatas)
+        _setter("source_application_infos", source_application_infos)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_patched", time_patched)
+        _setter("time_updated", time_updated)
+        _setter("workspace_id", workspace_id)
 
     @property
     @pulumi.getter(name="applicationVersion")
@@ -2823,13 +3409,34 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMet
         :param int object_version: The object version.
         :param str type: The type of the object in patch.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "name_path", name_path)
-        pulumi.set(__self__, "object_version", object_version)
-        pulumi.set(__self__, "type", type)
+        GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            identifier=identifier,
+            key=key,
+            name=name,
+            name_path=name_path,
+            object_version=object_version,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: str,
+             identifier: str,
+             key: str,
+             name: str,
+             name_path: str,
+             object_version: int,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("identifier", identifier)
+        _setter("key", key)
+        _setter("name", name)
+        _setter("name_path", name_path)
+        _setter("object_version", object_version)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -2921,20 +3528,55 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataResult(dic
         :param str updated_by: The user that updated the object.
         :param str updated_by_name: The user that updated the object.
         """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "aggregators", aggregators)
-        pulumi.set(__self__, "count_statistics", count_statistics)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "created_by_name", created_by_name)
-        pulumi.set(__self__, "identifier_path", identifier_path)
-        pulumi.set(__self__, "info_fields", info_fields)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "updated_by", updated_by)
-        pulumi.set(__self__, "updated_by_name", updated_by_name)
+        GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregator_key=aggregator_key,
+            aggregators=aggregators,
+            count_statistics=count_statistics,
+            created_by=created_by,
+            created_by_name=created_by_name,
+            identifier_path=identifier_path,
+            info_fields=info_fields,
+            is_favorite=is_favorite,
+            labels=labels,
+            registry_version=registry_version,
+            time_created=time_created,
+            time_updated=time_updated,
+            updated_by=updated_by,
+            updated_by_name=updated_by_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregator_key: str,
+             aggregators: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorResult'],
+             count_statistics: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticResult'],
+             created_by: str,
+             created_by_name: str,
+             identifier_path: str,
+             info_fields: Mapping[str, Any],
+             is_favorite: bool,
+             labels: Sequence[str],
+             registry_version: int,
+             time_created: str,
+             time_updated: str,
+             updated_by: str,
+             updated_by_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("aggregator_key", aggregator_key)
+        _setter("aggregators", aggregators)
+        _setter("count_statistics", count_statistics)
+        _setter("created_by", created_by)
+        _setter("created_by_name", created_by_name)
+        _setter("identifier_path", identifier_path)
+        _setter("info_fields", info_fields)
+        _setter("is_favorite", is_favorite)
+        _setter("labels", labels)
+        _setter("registry_version", registry_version)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("updated_by", updated_by)
+        _setter("updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -3064,11 +3706,28 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregator
         :param str name: Used to filter by the name of the object.
         :param str type: The type of the object in patch.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataAggregatorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            identifier=identifier,
+            key=key,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             identifier: str,
+             key: str,
+             name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("identifier", identifier)
+        _setter("key", key)
+        _setter("name", name)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -3118,7 +3777,16 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStati
         """
         :param Sequence['GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
         """
-        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+        GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_type_count_lists=object_type_count_lists,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_type_count_lists: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
@@ -3138,8 +3806,19 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStati
         :param str object_count: The value for the count statistic object.
         :param str object_type: The type of object for the count statistic object.
         """
-        pulumi.set(__self__, "object_count", object_count)
-        pulumi.set(__self__, "object_type", object_type)
+        GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_count=object_count,
+            object_type=object_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_count: str,
+             object_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object_count", object_count)
+        _setter("object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
@@ -3167,8 +3846,19 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefResult(di
         :param str parent: Key of the parent object.
         :param str root_doc_id: Key of the root document object.
         """
-        pulumi.set(__self__, "parent", parent)
-        pulumi.set(__self__, "root_doc_id", root_doc_id)
+        GetWorkspaceApplicationsApplicationSummaryCollectionItemParentRefResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            parent=parent,
+            root_doc_id=root_doc_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             parent: str,
+             root_doc_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("parent", parent)
+        _setter("root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
@@ -3206,13 +3896,34 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMet
         :param int object_version: The object version.
         :param str type: The type of the object in patch.
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "name_path", name_path)
-        pulumi.set(__self__, "object_version", object_version)
-        pulumi.set(__self__, "type", type)
+        GetWorkspaceApplicationsApplicationSummaryCollectionItemPublishedObjectMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            identifier=identifier,
+            key=key,
+            name=name,
+            name_path=name_path,
+            object_version=object_version,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: str,
+             identifier: str,
+             key: str,
+             name: str,
+             name_path: str,
+             object_version: int,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("identifier", identifier)
+        _setter("key", key)
+        _setter("name", name)
+        _setter("name_path", name_path)
+        _setter("object_version", object_version)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -3286,11 +3997,28 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataRe
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
         """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
+        GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregator_key=aggregator_key,
+            is_favorite=is_favorite,
+            key=key,
+            labels=labels,
+            registry_version=registry_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregator_key: str,
+             is_favorite: bool,
+             key: str,
+             labels: Sequence[str],
+             registry_version: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("aggregator_key", aggregator_key)
+        _setter("is_favorite", is_favorite)
+        _setter("key", key)
+        _setter("labels", labels)
+        _setter("registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -3347,11 +4075,28 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationI
         :param str last_patch_key: The last patch key for the application.
         :param str workspace_id: The workspace ID.
         """
-        pulumi.set(__self__, "application_key", application_key)
-        pulumi.set(__self__, "application_version", application_version)
-        pulumi.set(__self__, "copy_type", copy_type)
-        pulumi.set(__self__, "last_patch_key", last_patch_key)
-        pulumi.set(__self__, "workspace_id", workspace_id)
+        GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            application_key=application_key,
+            application_version=application_version,
+            copy_type=copy_type,
+            last_patch_key=last_patch_key,
+            workspace_id=workspace_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             application_key: str,
+             application_version: str,
+             copy_type: str,
+             last_patch_key: str,
+             workspace_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("application_key", application_key)
+        _setter("application_version", application_version)
+        _setter("copy_type", copy_type)
+        _setter("last_patch_key", last_patch_key)
+        _setter("workspace_id", workspace_id)
 
     @property
     @pulumi.getter(name="applicationKey")
@@ -3400,10 +4145,23 @@ class GetWorkspaceApplicationsFilterResult(dict):
         """
         :param str name: Used to filter by the name of the object.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetWorkspaceApplicationsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3457,20 +4215,55 @@ class GetWorkspaceFolderMetadataResult(dict):
         :param str updated_by: The user that updated the object.
         :param str updated_by_name: The user that updated the object.
         """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "aggregators", aggregators)
-        pulumi.set(__self__, "count_statistics", count_statistics)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "created_by_name", created_by_name)
-        pulumi.set(__self__, "identifier_path", identifier_path)
-        pulumi.set(__self__, "info_fields", info_fields)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "updated_by", updated_by)
-        pulumi.set(__self__, "updated_by_name", updated_by_name)
+        GetWorkspaceFolderMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregator_key=aggregator_key,
+            aggregators=aggregators,
+            count_statistics=count_statistics,
+            created_by=created_by,
+            created_by_name=created_by_name,
+            identifier_path=identifier_path,
+            info_fields=info_fields,
+            is_favorite=is_favorite,
+            labels=labels,
+            registry_version=registry_version,
+            time_created=time_created,
+            time_updated=time_updated,
+            updated_by=updated_by,
+            updated_by_name=updated_by_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregator_key: str,
+             aggregators: Sequence['outputs.GetWorkspaceFolderMetadataAggregatorResult'],
+             count_statistics: Sequence['outputs.GetWorkspaceFolderMetadataCountStatisticResult'],
+             created_by: str,
+             created_by_name: str,
+             identifier_path: str,
+             info_fields: Mapping[str, Any],
+             is_favorite: bool,
+             labels: Sequence[str],
+             registry_version: int,
+             time_created: str,
+             time_updated: str,
+             updated_by: str,
+             updated_by_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("aggregator_key", aggregator_key)
+        _setter("aggregators", aggregators)
+        _setter("count_statistics", count_statistics)
+        _setter("created_by", created_by)
+        _setter("created_by_name", created_by_name)
+        _setter("identifier_path", identifier_path)
+        _setter("info_fields", info_fields)
+        _setter("is_favorite", is_favorite)
+        _setter("labels", labels)
+        _setter("registry_version", registry_version)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("updated_by", updated_by)
+        _setter("updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -3600,11 +4393,28 @@ class GetWorkspaceFolderMetadataAggregatorResult(dict):
         :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: The type of the aggregator.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        GetWorkspaceFolderMetadataAggregatorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            identifier=identifier,
+            key=key,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             identifier: str,
+             key: str,
+             name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("identifier", identifier)
+        _setter("key", key)
+        _setter("name", name)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -3654,7 +4464,16 @@ class GetWorkspaceFolderMetadataCountStatisticResult(dict):
         """
         :param Sequence['GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
         """
-        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+        GetWorkspaceFolderMetadataCountStatisticResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_type_count_lists=object_type_count_lists,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_type_count_lists: Sequence['outputs.GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
@@ -3674,8 +4493,19 @@ class GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListResult(dict):
         :param str object_count: The value for the count statistic object.
         :param str object_type: The type of object for the count statistic object.
         """
-        pulumi.set(__self__, "object_count", object_count)
-        pulumi.set(__self__, "object_type", object_type)
+        GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_count=object_count,
+            object_type=object_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_count: str,
+             object_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object_count", object_count)
+        _setter("object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
@@ -3703,8 +4533,19 @@ class GetWorkspaceFolderParentRefResult(dict):
         :param str parent: Key of the parent object.
         :param str root_doc_id: Key of the root document object.
         """
-        pulumi.set(__self__, "parent", parent)
-        pulumi.set(__self__, "root_doc_id", root_doc_id)
+        GetWorkspaceFolderParentRefResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            parent=parent,
+            root_doc_id=root_doc_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             parent: str,
+             root_doc_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("parent", parent)
+        _setter("root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
@@ -3738,11 +4579,28 @@ class GetWorkspaceFolderRegistryMetadataResult(dict):
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
         """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
+        GetWorkspaceFolderRegistryMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregator_key=aggregator_key,
+            is_favorite=is_favorite,
+            key=key,
+            labels=labels,
+            registry_version=registry_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregator_key: str,
+             is_favorite: bool,
+             key: str,
+             labels: Sequence[str],
+             registry_version: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("aggregator_key", aggregator_key)
+        _setter("is_favorite", is_favorite)
+        _setter("key", key)
+        _setter("labels", labels)
+        _setter("registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -3794,10 +4652,23 @@ class GetWorkspaceFoldersFilterResult(dict):
         """
         :param str name: Used to filter by the name of the object.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetWorkspaceFoldersFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3822,7 +4693,16 @@ class GetWorkspaceFoldersFilterResult(dict):
 class GetWorkspaceFoldersFolderSummaryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetWorkspaceFoldersFolderSummaryCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3863,21 +4743,58 @@ class GetWorkspaceFoldersFolderSummaryCollectionItemResult(dict):
         :param Sequence['GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArgs'] parent_reves: A reference to the object's parent.
         :param str workspace_id: The workspace ID.
         """
-        pulumi.set(__self__, "category_name", category_name)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "folder_key", folder_key)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "key_map", key_map)
-        pulumi.set(__self__, "metadatas", metadatas)
-        pulumi.set(__self__, "model_type", model_type)
-        pulumi.set(__self__, "model_version", model_version)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "object_status", object_status)
-        pulumi.set(__self__, "object_version", object_version)
-        pulumi.set(__self__, "parent_reves", parent_reves)
-        pulumi.set(__self__, "registry_metadata", registry_metadata)
-        pulumi.set(__self__, "workspace_id", workspace_id)
+        GetWorkspaceFoldersFolderSummaryCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            category_name=category_name,
+            description=description,
+            folder_key=folder_key,
+            identifier=identifier,
+            key=key,
+            key_map=key_map,
+            metadatas=metadatas,
+            model_type=model_type,
+            model_version=model_version,
+            name=name,
+            object_status=object_status,
+            object_version=object_version,
+            parent_reves=parent_reves,
+            registry_metadata=registry_metadata,
+            workspace_id=workspace_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             category_name: str,
+             description: str,
+             folder_key: str,
+             identifier: str,
+             key: str,
+             key_map: Mapping[str, Any],
+             metadatas: Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataResult'],
+             model_type: str,
+             model_version: str,
+             name: str,
+             object_status: int,
+             object_version: int,
+             parent_reves: Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemParentRefResult'],
+             registry_metadata: 'outputs.GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataResult',
+             workspace_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("category_name", category_name)
+        _setter("description", description)
+        _setter("folder_key", folder_key)
+        _setter("identifier", identifier)
+        _setter("key", key)
+        _setter("key_map", key_map)
+        _setter("metadatas", metadatas)
+        _setter("model_type", model_type)
+        _setter("model_version", model_version)
+        _setter("name", name)
+        _setter("object_status", object_status)
+        _setter("object_version", object_version)
+        _setter("parent_reves", parent_reves)
+        _setter("registry_metadata", registry_metadata)
+        _setter("workspace_id", workspace_id)
 
     @property
     @pulumi.getter(name="categoryName")
@@ -4027,20 +4944,55 @@ class GetWorkspaceFoldersFolderSummaryCollectionItemMetadataResult(dict):
         :param str updated_by: The user that updated the object.
         :param str updated_by_name: The user that updated the object.
         """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "aggregators", aggregators)
-        pulumi.set(__self__, "count_statistics", count_statistics)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "created_by_name", created_by_name)
-        pulumi.set(__self__, "identifier_path", identifier_path)
-        pulumi.set(__self__, "info_fields", info_fields)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "updated_by", updated_by)
-        pulumi.set(__self__, "updated_by_name", updated_by_name)
+        GetWorkspaceFoldersFolderSummaryCollectionItemMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregator_key=aggregator_key,
+            aggregators=aggregators,
+            count_statistics=count_statistics,
+            created_by=created_by,
+            created_by_name=created_by_name,
+            identifier_path=identifier_path,
+            info_fields=info_fields,
+            is_favorite=is_favorite,
+            labels=labels,
+            registry_version=registry_version,
+            time_created=time_created,
+            time_updated=time_updated,
+            updated_by=updated_by,
+            updated_by_name=updated_by_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregator_key: str,
+             aggregators: Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorResult'],
+             count_statistics: Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticResult'],
+             created_by: str,
+             created_by_name: str,
+             identifier_path: str,
+             info_fields: Mapping[str, Any],
+             is_favorite: bool,
+             labels: Sequence[str],
+             registry_version: int,
+             time_created: str,
+             time_updated: str,
+             updated_by: str,
+             updated_by_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("aggregator_key", aggregator_key)
+        _setter("aggregators", aggregators)
+        _setter("count_statistics", count_statistics)
+        _setter("created_by", created_by)
+        _setter("created_by_name", created_by_name)
+        _setter("identifier_path", identifier_path)
+        _setter("info_fields", info_fields)
+        _setter("is_favorite", is_favorite)
+        _setter("labels", labels)
+        _setter("registry_version", registry_version)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("updated_by", updated_by)
+        _setter("updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -4170,11 +5122,28 @@ class GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorResult(dic
         :param str name: Used to filter by the name of the object.
         :param str type: The type of the aggregator.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            identifier=identifier,
+            key=key,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             identifier: str,
+             key: str,
+             name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("identifier", identifier)
+        _setter("key", key)
+        _setter("name", name)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -4224,7 +5193,16 @@ class GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticResult
         """
         :param Sequence['GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
         """
-        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+        GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_type_count_lists=object_type_count_lists,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_type_count_lists: Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
@@ -4244,8 +5222,19 @@ class GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObject
         :param str object_count: The value for the count statistic object.
         :param str object_type: The type of object for the count statistic object.
         """
-        pulumi.set(__self__, "object_count", object_count)
-        pulumi.set(__self__, "object_type", object_type)
+        GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_count=object_count,
+            object_type=object_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_count: str,
+             object_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object_count", object_count)
+        _setter("object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
@@ -4273,8 +5262,19 @@ class GetWorkspaceFoldersFolderSummaryCollectionItemParentRefResult(dict):
         :param str parent: Key of the parent object.
         :param str root_doc_id: Key of the root document object.
         """
-        pulumi.set(__self__, "parent", parent)
-        pulumi.set(__self__, "root_doc_id", root_doc_id)
+        GetWorkspaceFoldersFolderSummaryCollectionItemParentRefResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            parent=parent,
+            root_doc_id=root_doc_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             parent: str,
+             root_doc_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("parent", parent)
+        _setter("root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
@@ -4308,11 +5308,28 @@ class GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataResult(dict)
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
         """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
+        GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregator_key=aggregator_key,
+            is_favorite=is_favorite,
+            key=key,
+            labels=labels,
+            registry_version=registry_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregator_key: str,
+             is_favorite: bool,
+             key: str,
+             labels: Sequence[str],
+             registry_version: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("aggregator_key", aggregator_key)
+        _setter("is_favorite", is_favorite)
+        _setter("key", key)
+        _setter("labels", labels)
+        _setter("registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -4388,20 +5405,55 @@ class GetWorkspaceProjectMetadataResult(dict):
         :param str updated_by: The user that updated the object.
         :param str updated_by_name: The user that updated the object.
         """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "aggregators", aggregators)
-        pulumi.set(__self__, "count_statistics", count_statistics)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "created_by_name", created_by_name)
-        pulumi.set(__self__, "identifier_path", identifier_path)
-        pulumi.set(__self__, "info_fields", info_fields)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "updated_by", updated_by)
-        pulumi.set(__self__, "updated_by_name", updated_by_name)
+        GetWorkspaceProjectMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregator_key=aggregator_key,
+            aggregators=aggregators,
+            count_statistics=count_statistics,
+            created_by=created_by,
+            created_by_name=created_by_name,
+            identifier_path=identifier_path,
+            info_fields=info_fields,
+            is_favorite=is_favorite,
+            labels=labels,
+            registry_version=registry_version,
+            time_created=time_created,
+            time_updated=time_updated,
+            updated_by=updated_by,
+            updated_by_name=updated_by_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregator_key: str,
+             aggregators: Sequence['outputs.GetWorkspaceProjectMetadataAggregatorResult'],
+             count_statistics: Sequence['outputs.GetWorkspaceProjectMetadataCountStatisticResult'],
+             created_by: str,
+             created_by_name: str,
+             identifier_path: str,
+             info_fields: Mapping[str, Any],
+             is_favorite: bool,
+             labels: Sequence[str],
+             registry_version: int,
+             time_created: str,
+             time_updated: str,
+             updated_by: str,
+             updated_by_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("aggregator_key", aggregator_key)
+        _setter("aggregators", aggregators)
+        _setter("count_statistics", count_statistics)
+        _setter("created_by", created_by)
+        _setter("created_by_name", created_by_name)
+        _setter("identifier_path", identifier_path)
+        _setter("info_fields", info_fields)
+        _setter("is_favorite", is_favorite)
+        _setter("labels", labels)
+        _setter("registry_version", registry_version)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("updated_by", updated_by)
+        _setter("updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -4531,11 +5583,28 @@ class GetWorkspaceProjectMetadataAggregatorResult(dict):
         :param str name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param str type: The type of the aggregator.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        GetWorkspaceProjectMetadataAggregatorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            identifier=identifier,
+            key=key,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             identifier: str,
+             key: str,
+             name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("identifier", identifier)
+        _setter("key", key)
+        _setter("name", name)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -4585,7 +5654,16 @@ class GetWorkspaceProjectMetadataCountStatisticResult(dict):
         """
         :param Sequence['GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
         """
-        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+        GetWorkspaceProjectMetadataCountStatisticResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_type_count_lists=object_type_count_lists,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_type_count_lists: Sequence['outputs.GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
@@ -4605,8 +5683,19 @@ class GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListResult(dict):
         :param str object_count: The value for the count statistic object.
         :param str object_type: The type of object for the count statistic object.
         """
-        pulumi.set(__self__, "object_count", object_count)
-        pulumi.set(__self__, "object_type", object_type)
+        GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_count=object_count,
+            object_type=object_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_count: str,
+             object_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object_count", object_count)
+        _setter("object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
@@ -4634,8 +5723,19 @@ class GetWorkspaceProjectParentRefResult(dict):
         :param str parent: Key of the parent object.
         :param str root_doc_id: Key of the root document object.
         """
-        pulumi.set(__self__, "parent", parent)
-        pulumi.set(__self__, "root_doc_id", root_doc_id)
+        GetWorkspaceProjectParentRefResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            parent=parent,
+            root_doc_id=root_doc_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             parent: str,
+             root_doc_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("parent", parent)
+        _setter("root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
@@ -4669,11 +5769,28 @@ class GetWorkspaceProjectRegistryMetadataResult(dict):
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
         """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
+        GetWorkspaceProjectRegistryMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregator_key=aggregator_key,
+            is_favorite=is_favorite,
+            key=key,
+            labels=labels,
+            registry_version=registry_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregator_key: str,
+             is_favorite: bool,
+             key: str,
+             labels: Sequence[str],
+             registry_version: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("aggregator_key", aggregator_key)
+        _setter("is_favorite", is_favorite)
+        _setter("key", key)
+        _setter("labels", labels)
+        _setter("registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -4725,10 +5842,23 @@ class GetWorkspaceProjectsFilterResult(dict):
         """
         :param str name: Used to filter by the name of the object.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetWorkspaceProjectsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4753,7 +5883,16 @@ class GetWorkspaceProjectsFilterResult(dict):
 class GetWorkspaceProjectsProjectSummaryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetWorkspaceProjectsProjectSummaryCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -4792,20 +5931,55 @@ class GetWorkspaceProjectsProjectSummaryCollectionItemResult(dict):
         :param Sequence['GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArgs'] parent_reves: A reference to the object's parent.
         :param str workspace_id: The workspace ID.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "key_map", key_map)
-        pulumi.set(__self__, "metadatas", metadatas)
-        pulumi.set(__self__, "model_type", model_type)
-        pulumi.set(__self__, "model_version", model_version)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "object_status", object_status)
-        pulumi.set(__self__, "object_version", object_version)
-        pulumi.set(__self__, "parent_reves", parent_reves)
-        pulumi.set(__self__, "project_key", project_key)
-        pulumi.set(__self__, "registry_metadata", registry_metadata)
-        pulumi.set(__self__, "workspace_id", workspace_id)
+        GetWorkspaceProjectsProjectSummaryCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            identifier=identifier,
+            key=key,
+            key_map=key_map,
+            metadatas=metadatas,
+            model_type=model_type,
+            model_version=model_version,
+            name=name,
+            object_status=object_status,
+            object_version=object_version,
+            parent_reves=parent_reves,
+            project_key=project_key,
+            registry_metadata=registry_metadata,
+            workspace_id=workspace_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             identifier: str,
+             key: str,
+             key_map: Mapping[str, Any],
+             metadatas: Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataResult'],
+             model_type: str,
+             model_version: str,
+             name: str,
+             object_status: int,
+             object_version: int,
+             parent_reves: Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemParentRefResult'],
+             project_key: str,
+             registry_metadata: 'outputs.GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataResult',
+             workspace_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("identifier", identifier)
+        _setter("key", key)
+        _setter("key_map", key_map)
+        _setter("metadatas", metadatas)
+        _setter("model_type", model_type)
+        _setter("model_version", model_version)
+        _setter("name", name)
+        _setter("object_status", object_status)
+        _setter("object_version", object_version)
+        _setter("parent_reves", parent_reves)
+        _setter("project_key", project_key)
+        _setter("registry_metadata", registry_metadata)
+        _setter("workspace_id", workspace_id)
 
     @property
     @pulumi.getter
@@ -4947,20 +6121,55 @@ class GetWorkspaceProjectsProjectSummaryCollectionItemMetadataResult(dict):
         :param str updated_by: The user that updated the object.
         :param str updated_by_name: The user that updated the object.
         """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "aggregators", aggregators)
-        pulumi.set(__self__, "count_statistics", count_statistics)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "created_by_name", created_by_name)
-        pulumi.set(__self__, "identifier_path", identifier_path)
-        pulumi.set(__self__, "info_fields", info_fields)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "updated_by", updated_by)
-        pulumi.set(__self__, "updated_by_name", updated_by_name)
+        GetWorkspaceProjectsProjectSummaryCollectionItemMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregator_key=aggregator_key,
+            aggregators=aggregators,
+            count_statistics=count_statistics,
+            created_by=created_by,
+            created_by_name=created_by_name,
+            identifier_path=identifier_path,
+            info_fields=info_fields,
+            is_favorite=is_favorite,
+            labels=labels,
+            registry_version=registry_version,
+            time_created=time_created,
+            time_updated=time_updated,
+            updated_by=updated_by,
+            updated_by_name=updated_by_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregator_key: str,
+             aggregators: Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorResult'],
+             count_statistics: Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticResult'],
+             created_by: str,
+             created_by_name: str,
+             identifier_path: str,
+             info_fields: Mapping[str, Any],
+             is_favorite: bool,
+             labels: Sequence[str],
+             registry_version: int,
+             time_created: str,
+             time_updated: str,
+             updated_by: str,
+             updated_by_name: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("aggregator_key", aggregator_key)
+        _setter("aggregators", aggregators)
+        _setter("count_statistics", count_statistics)
+        _setter("created_by", created_by)
+        _setter("created_by_name", created_by_name)
+        _setter("identifier_path", identifier_path)
+        _setter("info_fields", info_fields)
+        _setter("is_favorite", is_favorite)
+        _setter("labels", labels)
+        _setter("registry_version", registry_version)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("updated_by", updated_by)
+        _setter("updated_by_name", updated_by_name)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -5090,11 +6299,28 @@ class GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorResult(d
         :param str name: Used to filter by the name of the object.
         :param str type: The type of the aggregator.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "identifier", identifier)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "type", type)
+        GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            identifier=identifier,
+            key=key,
+            name=name,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             identifier: str,
+             key: str,
+             name: str,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("identifier", identifier)
+        _setter("key", key)
+        _setter("name", name)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -5144,7 +6370,16 @@ class GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticResu
         """
         :param Sequence['GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs'] object_type_count_lists: The array of statistics.
         """
-        pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
+        GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_type_count_lists=object_type_count_lists,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_type_count_lists: Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object_type_count_lists", object_type_count_lists)
 
     @property
     @pulumi.getter(name="objectTypeCountLists")
@@ -5164,8 +6399,19 @@ class GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObje
         :param str object_count: The value for the count statistic object.
         :param str object_type: The type of object for the count statistic object.
         """
-        pulumi.set(__self__, "object_count", object_count)
-        pulumi.set(__self__, "object_type", object_type)
+        GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            object_count=object_count,
+            object_type=object_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             object_count: str,
+             object_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("object_count", object_count)
+        _setter("object_type", object_type)
 
     @property
     @pulumi.getter(name="objectCount")
@@ -5193,8 +6439,19 @@ class GetWorkspaceProjectsProjectSummaryCollectionItemParentRefResult(dict):
         :param str parent: Key of the parent object.
         :param str root_doc_id: Key of the root document object.
         """
-        pulumi.set(__self__, "parent", parent)
-        pulumi.set(__self__, "root_doc_id", root_doc_id)
+        GetWorkspaceProjectsProjectSummaryCollectionItemParentRefResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            parent=parent,
+            root_doc_id=root_doc_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             parent: str,
+             root_doc_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("parent", parent)
+        _setter("root_doc_id", root_doc_id)
 
     @property
     @pulumi.getter
@@ -5228,11 +6485,28 @@ class GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataResult(dic
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
         """
-        pulumi.set(__self__, "aggregator_key", aggregator_key)
-        pulumi.set(__self__, "is_favorite", is_favorite)
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "registry_version", registry_version)
+        GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            aggregator_key=aggregator_key,
+            is_favorite=is_favorite,
+            key=key,
+            labels=labels,
+            registry_version=registry_version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             aggregator_key: str,
+             is_favorite: bool,
+             key: str,
+             labels: Sequence[str],
+             registry_version: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("aggregator_key", aggregator_key)
+        _setter("is_favorite", is_favorite)
+        _setter("key", key)
+        _setter("labels", labels)
+        _setter("registry_version", registry_version)
 
     @property
     @pulumi.getter(name="aggregatorKey")
@@ -5284,10 +6558,23 @@ class GetWorkspacesFilterResult(dict):
         """
         :param str name: Used to filter by the name of the object.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetWorkspacesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5354,29 +6641,82 @@ class GetWorkspacesWorkspaceResult(dict):
         :param str time_updated: The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str vcn_id: The OCID of the VCN the subnet is in.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "dns_server_ip", dns_server_ip)
-        pulumi.set(__self__, "dns_server_zone", dns_server_zone)
-        pulumi.set(__self__, "endpoint_compartment_id", endpoint_compartment_id)
-        pulumi.set(__self__, "endpoint_id", endpoint_id)
-        pulumi.set(__self__, "endpoint_name", endpoint_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_force_operation", is_force_operation)
-        pulumi.set(__self__, "is_private_network_enabled", is_private_network_enabled)
-        pulumi.set(__self__, "quiesce_timeout", quiesce_timeout)
-        pulumi.set(__self__, "registry_compartment_id", registry_compartment_id)
-        pulumi.set(__self__, "registry_id", registry_id)
-        pulumi.set(__self__, "registry_name", registry_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "state_message", state_message)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "vcn_id", vcn_id)
+        GetWorkspacesWorkspaceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            dns_server_ip=dns_server_ip,
+            dns_server_zone=dns_server_zone,
+            endpoint_compartment_id=endpoint_compartment_id,
+            endpoint_id=endpoint_id,
+            endpoint_name=endpoint_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_force_operation=is_force_operation,
+            is_private_network_enabled=is_private_network_enabled,
+            quiesce_timeout=quiesce_timeout,
+            registry_compartment_id=registry_compartment_id,
+            registry_id=registry_id,
+            registry_name=registry_name,
+            state=state,
+            state_message=state_message,
+            subnet_id=subnet_id,
+            time_created=time_created,
+            time_updated=time_updated,
+            vcn_id=vcn_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             dns_server_ip: str,
+             dns_server_zone: str,
+             endpoint_compartment_id: str,
+             endpoint_id: str,
+             endpoint_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_force_operation: bool,
+             is_private_network_enabled: bool,
+             quiesce_timeout: int,
+             registry_compartment_id: str,
+             registry_id: str,
+             registry_name: str,
+             state: str,
+             state_message: str,
+             subnet_id: str,
+             time_created: str,
+             time_updated: str,
+             vcn_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("dns_server_ip", dns_server_ip)
+        _setter("dns_server_zone", dns_server_zone)
+        _setter("endpoint_compartment_id", endpoint_compartment_id)
+        _setter("endpoint_id", endpoint_id)
+        _setter("endpoint_name", endpoint_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_force_operation", is_force_operation)
+        _setter("is_private_network_enabled", is_private_network_enabled)
+        _setter("quiesce_timeout", quiesce_timeout)
+        _setter("registry_compartment_id", registry_compartment_id)
+        _setter("registry_id", registry_id)
+        _setter("registry_name", registry_name)
+        _setter("state", state)
+        _setter("state_message", state_message)
+        _setter("subnet_id", subnet_id)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("vcn_id", vcn_id)
 
     @property
     @pulumi.getter(name="compartmentId")

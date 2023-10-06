@@ -44,9 +44,6 @@ namespace Pulumi.Oci.LoadBalancer
     [OciResourceType("oci:LoadBalancer/sslCipherSuite:SslCipherSuite")]
     public partial class SslCipherSuite : global::Pulumi.CustomResource
     {
-        /// <summary>
-        /// A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
-        /// </summary>
         [Output("ciphers")]
         public Output<ImmutableArray<string>> Ciphers { get; private set; } = null!;
 
@@ -126,10 +123,6 @@ namespace Pulumi.Oci.LoadBalancer
     {
         [Input("ciphers", required: true)]
         private InputList<string>? _ciphers;
-
-        /// <summary>
-        /// A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
-        /// </summary>
         public InputList<string> Ciphers
         {
             get => _ciphers ?? (_ciphers = new InputList<string>());
@@ -171,10 +164,6 @@ namespace Pulumi.Oci.LoadBalancer
     {
         [Input("ciphers")]
         private InputList<string>? _ciphers;
-
-        /// <summary>
-        /// A list of SSL ciphers the load balancer must support for HTTPS or SSL connections.
-        /// </summary>
         public InputList<string> Ciphers
         {
             get => _ciphers ?? (_ciphers = new InputList<string>());

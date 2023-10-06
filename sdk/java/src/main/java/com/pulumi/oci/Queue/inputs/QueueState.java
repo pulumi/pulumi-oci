@@ -20,14 +20,29 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
     public static final QueueState Empty = new QueueState();
 
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue&#39;s resources.
+     * 
+     */
+    @Import(name="channelConsumptionLimit")
+    private @Nullable Output<Integer> channelConsumptionLimit;
+
+    /**
+     * @return (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue&#39;s resources.
+     * 
+     */
+    public Optional<Output<Integer>> channelConsumptionLimit() {
+        return Optional.ofNullable(this.channelConsumptionLimit);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -35,14 +50,14 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
      * 
      */
     @Import(name="customEncryptionKeyId")
     private @Nullable Output<String> customEncryptionKeyId;
 
     /**
-     * @return (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
      * 
      */
     public Optional<Output<String>> customEncryptionKeyId() {
@@ -80,14 +95,14 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Queue Identifier
+     * (Updatable) The user-friendly name of the queue.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) Queue Identifier
+     * @return (Updatable) The user-friendly name of the queue.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -110,14 +125,14 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * Any additional details about the current state of the queue.
      * 
      */
     @Import(name="lifecycleDetails")
     private @Nullable Output<String> lifecycleDetails;
 
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return Any additional details about the current state of the queue.
      * 
      */
     public Optional<Output<String>> lifecycleDetails() {
@@ -154,14 +169,14 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The retention period of the messages in the queue, in seconds.
+     * The retention period of messages in the queue, in seconds.
      * 
      */
     @Import(name="retentionInSeconds")
     private @Nullable Output<Integer> retentionInSeconds;
 
     /**
-     * @return The retention period of the messages in the queue, in seconds.
+     * @return The retention period of messages in the queue, in seconds.
      * 
      */
     public Optional<Output<Integer>> retentionInSeconds() {
@@ -169,14 +184,14 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The current state of the Queue.
+     * The current state of the queue.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the Queue.
+     * @return The current state of the queue.
      * 
      */
     public Optional<Output<String>> state() {
@@ -199,14 +214,14 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The time the the Queue was created. An RFC3339 formatted datetime string
+     * The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time the the Queue was created. An RFC3339 formatted datetime string
+     * @return The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -214,14 +229,14 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The time the Queue was updated. An RFC3339 formatted datetime string
+     * The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The time the Queue was updated. An RFC3339 formatted datetime string
+     * @return The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -244,14 +259,14 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The default visibility of the messages consumed from the queue.
+     * (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
      * 
      */
     @Import(name="visibilityInSeconds")
     private @Nullable Output<Integer> visibilityInSeconds;
 
     /**
-     * @return (Updatable) The default visibility of the messages consumed from the queue.
+     * @return (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
      * 
      */
     public Optional<Output<Integer>> visibilityInSeconds() {
@@ -261,6 +276,7 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
     private QueueState() {}
 
     private QueueState(QueueState $) {
+        this.channelConsumptionLimit = $.channelConsumptionLimit;
         this.compartmentId = $.compartmentId;
         this.customEncryptionKeyId = $.customEncryptionKeyId;
         this.deadLetterQueueDeliveryCount = $.deadLetterQueueDeliveryCount;
@@ -299,7 +315,28 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param channelConsumptionLimit (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue&#39;s resources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder channelConsumptionLimit(@Nullable Output<Integer> channelConsumptionLimit) {
+            $.channelConsumptionLimit = channelConsumptionLimit;
+            return this;
+        }
+
+        /**
+         * @param channelConsumptionLimit (Updatable) The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue&#39;s resources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder channelConsumptionLimit(Integer channelConsumptionLimit) {
+            return channelConsumptionLimit(Output.of(channelConsumptionLimit));
+        }
+
+        /**
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
          * 
          * @return builder
          * 
@@ -310,7 +347,7 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
          * 
          * @return builder
          * 
@@ -320,7 +357,7 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customEncryptionKeyId (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+         * @param customEncryptionKeyId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
          * 
          * @return builder
          * 
@@ -331,7 +368,7 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customEncryptionKeyId (Updatable) Id of the custom master encryption key which will be used to encrypt messages content
+         * @param customEncryptionKeyId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
          * 
          * @return builder
          * 
@@ -383,7 +420,7 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Queue Identifier
+         * @param displayName (Updatable) The user-friendly name of the queue.
          * 
          * @return builder
          * 
@@ -394,7 +431,7 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Queue Identifier
+         * @param displayName (Updatable) The user-friendly name of the queue.
          * 
          * @return builder
          * 
@@ -425,7 +462,7 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lifecycleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * @param lifecycleDetails Any additional details about the current state of the queue.
          * 
          * @return builder
          * 
@@ -436,7 +473,7 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lifecycleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * @param lifecycleDetails Any additional details about the current state of the queue.
          * 
          * @return builder
          * 
@@ -485,7 +522,7 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param retentionInSeconds The retention period of the messages in the queue, in seconds.
+         * @param retentionInSeconds The retention period of messages in the queue, in seconds.
          * 
          * @return builder
          * 
@@ -496,7 +533,7 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param retentionInSeconds The retention period of the messages in the queue, in seconds.
+         * @param retentionInSeconds The retention period of messages in the queue, in seconds.
          * 
          * @return builder
          * 
@@ -506,7 +543,7 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The current state of the Queue.
+         * @param state The current state of the queue.
          * 
          * @return builder
          * 
@@ -517,7 +554,7 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The current state of the Queue.
+         * @param state The current state of the queue.
          * 
          * @return builder
          * 
@@ -548,7 +585,7 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated The time the the Queue was created. An RFC3339 formatted datetime string
+         * @param timeCreated The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
          * 
          * @return builder
          * 
@@ -559,7 +596,7 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated The time the the Queue was created. An RFC3339 formatted datetime string
+         * @param timeCreated The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
          * 
          * @return builder
          * 
@@ -569,7 +606,7 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated The time the Queue was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
          * 
          * @return builder
          * 
@@ -580,7 +617,7 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated The time the Queue was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
          * 
          * @return builder
          * 
@@ -611,7 +648,7 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param visibilityInSeconds (Updatable) The default visibility of the messages consumed from the queue.
+         * @param visibilityInSeconds (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
          * 
          * @return builder
          * 
@@ -622,7 +659,7 @@ public final class QueueState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param visibilityInSeconds (Updatable) The default visibility of the messages consumed from the queue.
+         * @param visibilityInSeconds (Updatable) The default visibility timeout of the messages consumed from the queue, in seconds.
          * 
          * @return builder
          * 

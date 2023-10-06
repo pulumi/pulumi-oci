@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -58,10 +58,21 @@ class OdaInstanceRestrictedOperation(dict):
         :param str operation_name: Name of the restricted operation.
         :param str restricting_service: Name of the service restricting the operation.
         """
+        OdaInstanceRestrictedOperation._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            operation_name=operation_name,
+            restricting_service=restricting_service,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             operation_name: Optional[str] = None,
+             restricting_service: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if operation_name is not None:
-            pulumi.set(__self__, "operation_name", operation_name)
+            _setter("operation_name", operation_name)
         if restricting_service is not None:
-            pulumi.set(__self__, "restricting_service", restricting_service)
+            _setter("restricting_service", restricting_service)
 
     @property
     @pulumi.getter(name="operationName")
@@ -112,12 +123,25 @@ class OdaPrivateEndpointScanProxyScanListenerInfo(dict):
         :param str scan_listener_ip: A SCAN listener's IP of the customer's Real Application Cluster (RAC).
         :param int scan_listener_port: The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
         """
+        OdaPrivateEndpointScanProxyScanListenerInfo._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            scan_listener_fqdn=scan_listener_fqdn,
+            scan_listener_ip=scan_listener_ip,
+            scan_listener_port=scan_listener_port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             scan_listener_fqdn: Optional[str] = None,
+             scan_listener_ip: Optional[str] = None,
+             scan_listener_port: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if scan_listener_fqdn is not None:
-            pulumi.set(__self__, "scan_listener_fqdn", scan_listener_fqdn)
+            _setter("scan_listener_fqdn", scan_listener_fqdn)
         if scan_listener_ip is not None:
-            pulumi.set(__self__, "scan_listener_ip", scan_listener_ip)
+            _setter("scan_listener_ip", scan_listener_ip)
         if scan_listener_port is not None:
-            pulumi.set(__self__, "scan_listener_port", scan_listener_port)
+            _setter("scan_listener_port", scan_listener_port)
 
     @property
     @pulumi.getter(name="scanListenerFqdn")
@@ -153,8 +177,19 @@ class GetOdaInstanceRestrictedOperationResult(dict):
         :param str operation_name: Name of the restricted operation.
         :param str restricting_service: Name of the service restricting the operation.
         """
-        pulumi.set(__self__, "operation_name", operation_name)
-        pulumi.set(__self__, "restricting_service", restricting_service)
+        GetOdaInstanceRestrictedOperationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            operation_name=operation_name,
+            restricting_service=restricting_service,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             operation_name: str,
+             restricting_service: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("operation_name", operation_name)
+        _setter("restricting_service", restricting_service)
 
     @property
     @pulumi.getter(name="operationName")
@@ -179,10 +214,23 @@ class GetOdaInstancesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOdaInstancesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -251,29 +299,82 @@ class GetOdaInstancesOdaInstanceResult(dict):
         :param str time_updated: When the Digital Assistance instance was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         :param str web_app_url: URL for the Digital Assistant web application that's associated with the instance.
         """
-        pulumi.set(__self__, "attachment_ids", attachment_ids)
-        pulumi.set(__self__, "attachment_types", attachment_types)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "connector_url", connector_url)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "identity_app_console_url", identity_app_console_url)
-        pulumi.set(__self__, "identity_app_guid", identity_app_guid)
-        pulumi.set(__self__, "identity_domain", identity_domain)
-        pulumi.set(__self__, "imported_package_ids", imported_package_ids)
-        pulumi.set(__self__, "imported_package_names", imported_package_names)
-        pulumi.set(__self__, "is_role_based_access", is_role_based_access)
-        pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
-        pulumi.set(__self__, "restricted_operations", restricted_operations)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "state_message", state_message)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "web_app_url", web_app_url)
+        GetOdaInstancesOdaInstanceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            attachment_ids=attachment_ids,
+            attachment_types=attachment_types,
+            compartment_id=compartment_id,
+            connector_url=connector_url,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            identity_app_console_url=identity_app_console_url,
+            identity_app_guid=identity_app_guid,
+            identity_domain=identity_domain,
+            imported_package_ids=imported_package_ids,
+            imported_package_names=imported_package_names,
+            is_role_based_access=is_role_based_access,
+            lifecycle_sub_state=lifecycle_sub_state,
+            restricted_operations=restricted_operations,
+            shape_name=shape_name,
+            state=state,
+            state_message=state_message,
+            time_created=time_created,
+            time_updated=time_updated,
+            web_app_url=web_app_url,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             attachment_ids: Sequence[str],
+             attachment_types: Sequence[str],
+             compartment_id: str,
+             connector_url: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             identity_app_console_url: str,
+             identity_app_guid: str,
+             identity_domain: str,
+             imported_package_ids: Sequence[str],
+             imported_package_names: Sequence[str],
+             is_role_based_access: bool,
+             lifecycle_sub_state: str,
+             restricted_operations: Sequence['outputs.GetOdaInstancesOdaInstanceRestrictedOperationResult'],
+             shape_name: str,
+             state: str,
+             state_message: str,
+             time_created: str,
+             time_updated: str,
+             web_app_url: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("attachment_ids", attachment_ids)
+        _setter("attachment_types", attachment_types)
+        _setter("compartment_id", compartment_id)
+        _setter("connector_url", connector_url)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("identity_app_console_url", identity_app_console_url)
+        _setter("identity_app_guid", identity_app_guid)
+        _setter("identity_domain", identity_domain)
+        _setter("imported_package_ids", imported_package_ids)
+        _setter("imported_package_names", imported_package_names)
+        _setter("is_role_based_access", is_role_based_access)
+        _setter("lifecycle_sub_state", lifecycle_sub_state)
+        _setter("restricted_operations", restricted_operations)
+        _setter("shape_name", shape_name)
+        _setter("state", state)
+        _setter("state_message", state_message)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("web_app_url", web_app_url)
 
     @property
     @pulumi.getter(name="attachmentIds")
@@ -469,8 +570,19 @@ class GetOdaInstancesOdaInstanceRestrictedOperationResult(dict):
         :param str operation_name: Name of the restricted operation.
         :param str restricting_service: Name of the service restricting the operation.
         """
-        pulumi.set(__self__, "operation_name", operation_name)
-        pulumi.set(__self__, "restricting_service", restricting_service)
+        GetOdaInstancesOdaInstanceRestrictedOperationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            operation_name=operation_name,
+            restricting_service=restricting_service,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             operation_name: str,
+             restricting_service: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("operation_name", operation_name)
+        _setter("restricting_service", restricting_service)
 
     @property
     @pulumi.getter(name="operationName")
@@ -495,10 +607,23 @@ class GetOdaPrivateEndpointAttachmentsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOdaPrivateEndpointAttachmentsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -520,7 +645,16 @@ class GetOdaPrivateEndpointAttachmentsFilterResult(dict):
 class GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -547,13 +681,34 @@ class GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItem
         :param str time_created: When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         :param str time_updated: When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "oda_instance_id", oda_instance_id)
-        pulumi.set(__self__, "oda_private_endpoint_id", oda_private_endpoint_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetOdaPrivateEndpointAttachmentsOdaPrivateEndpointAttachmentCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            id=id,
+            oda_instance_id=oda_instance_id,
+            oda_private_endpoint_id=oda_private_endpoint_id,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             id: str,
+             oda_instance_id: str,
+             oda_private_endpoint_id: str,
+             state: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("id", id)
+        _setter("oda_instance_id", oda_instance_id)
+        _setter("oda_private_endpoint_id", oda_private_endpoint_id)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -618,10 +773,23 @@ class GetOdaPrivateEndpointScanProxiesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOdaPrivateEndpointScanProxiesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -643,7 +811,16 @@ class GetOdaPrivateEndpointScanProxiesFilterResult(dict):
 class GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -670,13 +847,34 @@ class GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemR
         :param str state: List only the ODA Private Endpoint Scan Proxies that are in this lifecycle state.
         :param str time_created: When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "oda_private_endpoint_id", oda_private_endpoint_id)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "scan_listener_infos", scan_listener_infos)
-        pulumi.set(__self__, "scan_listener_type", scan_listener_type)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            id=id,
+            oda_private_endpoint_id=oda_private_endpoint_id,
+            protocol=protocol,
+            scan_listener_infos=scan_listener_infos,
+            scan_listener_type=scan_listener_type,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             id: str,
+             oda_private_endpoint_id: str,
+             protocol: str,
+             scan_listener_infos: Sequence['outputs.GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoResult'],
+             scan_listener_type: str,
+             state: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("id", id)
+        _setter("oda_private_endpoint_id", oda_private_endpoint_id)
+        _setter("protocol", protocol)
+        _setter("scan_listener_infos", scan_listener_infos)
+        _setter("scan_listener_type", scan_listener_type)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter
@@ -746,9 +944,22 @@ class GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemS
         :param str scan_listener_ip: A SCAN listener's IP of the customer's Real Application Cluster (RAC).
         :param int scan_listener_port: The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
         """
-        pulumi.set(__self__, "scan_listener_fqdn", scan_listener_fqdn)
-        pulumi.set(__self__, "scan_listener_ip", scan_listener_ip)
-        pulumi.set(__self__, "scan_listener_port", scan_listener_port)
+        GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItemScanListenerInfoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            scan_listener_fqdn=scan_listener_fqdn,
+            scan_listener_ip=scan_listener_ip,
+            scan_listener_port=scan_listener_port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             scan_listener_fqdn: str,
+             scan_listener_ip: str,
+             scan_listener_port: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("scan_listener_fqdn", scan_listener_fqdn)
+        _setter("scan_listener_ip", scan_listener_ip)
+        _setter("scan_listener_port", scan_listener_port)
 
     @property
     @pulumi.getter(name="scanListenerFqdn")
@@ -786,9 +997,22 @@ class GetOdaPrivateEndpointScanProxyScanListenerInfoResult(dict):
         :param str scan_listener_ip: A SCAN listener's IP of the customer's Real Application Cluster (RAC).
         :param int scan_listener_port: The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
         """
-        pulumi.set(__self__, "scan_listener_fqdn", scan_listener_fqdn)
-        pulumi.set(__self__, "scan_listener_ip", scan_listener_ip)
-        pulumi.set(__self__, "scan_listener_port", scan_listener_port)
+        GetOdaPrivateEndpointScanProxyScanListenerInfoResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            scan_listener_fqdn=scan_listener_fqdn,
+            scan_listener_ip=scan_listener_ip,
+            scan_listener_port=scan_listener_port,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             scan_listener_fqdn: str,
+             scan_listener_ip: str,
+             scan_listener_port: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("scan_listener_fqdn", scan_listener_fqdn)
+        _setter("scan_listener_ip", scan_listener_ip)
+        _setter("scan_listener_port", scan_listener_port)
 
     @property
     @pulumi.getter(name="scanListenerFqdn")
@@ -821,10 +1045,23 @@ class GetOdaPrivateEndpointsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetOdaPrivateEndpointsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -846,7 +1083,16 @@ class GetOdaPrivateEndpointsFilterResult(dict):
 class GetOdaPrivateEndpointsOdaPrivateEndpointCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetOdaPrivateEndpointsOdaPrivateEndpointCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -881,17 +1127,46 @@ class GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemResult(dict):
         :param str time_created: When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         :param str time_updated: When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            nsg_ids=nsg_ids,
+            state=state,
+            subnet_id=subnet_id,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             nsg_ids: Sequence[str],
+             state: str,
+             subnet_id: str,
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("nsg_ids", nsg_ids)
+        _setter("state", state)
+        _setter("subnet_id", subnet_id)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")

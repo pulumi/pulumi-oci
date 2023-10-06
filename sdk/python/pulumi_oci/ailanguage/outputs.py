@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -106,18 +106,37 @@ class ModelEvaluationResult(dict):
         :param Sequence['ModelEvaluationResultMetricArgs'] metrics: Model level named entity recognition metrics
         :param str model_type: Model type
         """
+        ModelEvaluationResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            class_metrics=class_metrics,
+            confusion_matrix=confusion_matrix,
+            entity_metrics=entity_metrics,
+            labels=labels,
+            metrics=metrics,
+            model_type=model_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             class_metrics: Optional[Sequence['outputs.ModelEvaluationResultClassMetric']] = None,
+             confusion_matrix: Optional[str] = None,
+             entity_metrics: Optional[Sequence['outputs.ModelEvaluationResultEntityMetric']] = None,
+             labels: Optional[Sequence[str]] = None,
+             metrics: Optional[Sequence['outputs.ModelEvaluationResultMetric']] = None,
+             model_type: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if class_metrics is not None:
-            pulumi.set(__self__, "class_metrics", class_metrics)
+            _setter("class_metrics", class_metrics)
         if confusion_matrix is not None:
-            pulumi.set(__self__, "confusion_matrix", confusion_matrix)
+            _setter("confusion_matrix", confusion_matrix)
         if entity_metrics is not None:
-            pulumi.set(__self__, "entity_metrics", entity_metrics)
+            _setter("entity_metrics", entity_metrics)
         if labels is not None:
-            pulumi.set(__self__, "labels", labels)
+            _setter("labels", labels)
         if metrics is not None:
-            pulumi.set(__self__, "metrics", metrics)
+            _setter("metrics", metrics)
         if model_type is not None:
-            pulumi.set(__self__, "model_type", model_type)
+            _setter("model_type", model_type)
 
     @property
     @pulumi.getter(name="classMetrics")
@@ -183,16 +202,33 @@ class ModelEvaluationResultClassMetric(dict):
         :param float recall: Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
         :param float support: number of samples in the test set
         """
+        ModelEvaluationResultClassMetric._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            f1=f1,
+            label=label,
+            precision=precision,
+            recall=recall,
+            support=support,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             f1: Optional[float] = None,
+             label: Optional[str] = None,
+             precision: Optional[float] = None,
+             recall: Optional[float] = None,
+             support: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if f1 is not None:
-            pulumi.set(__self__, "f1", f1)
+            _setter("f1", f1)
         if label is not None:
-            pulumi.set(__self__, "label", label)
+            _setter("label", label)
         if precision is not None:
-            pulumi.set(__self__, "precision", precision)
+            _setter("precision", precision)
         if recall is not None:
-            pulumi.set(__self__, "recall", recall)
+            _setter("recall", recall)
         if support is not None:
-            pulumi.set(__self__, "support", support)
+            _setter("support", support)
 
     @property
     @pulumi.getter
@@ -248,14 +284,29 @@ class ModelEvaluationResultEntityMetric(dict):
         :param float precision: Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
         :param float recall: Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
         """
+        ModelEvaluationResultEntityMetric._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            f1=f1,
+            label=label,
+            precision=precision,
+            recall=recall,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             f1: Optional[float] = None,
+             label: Optional[str] = None,
+             precision: Optional[float] = None,
+             recall: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if f1 is not None:
-            pulumi.set(__self__, "f1", f1)
+            _setter("f1", f1)
         if label is not None:
-            pulumi.set(__self__, "label", label)
+            _setter("label", label)
         if precision is not None:
-            pulumi.set(__self__, "precision", precision)
+            _setter("precision", precision)
         if recall is not None:
-            pulumi.set(__self__, "recall", recall)
+            _setter("recall", recall)
 
     @property
     @pulumi.getter
@@ -348,26 +399,53 @@ class ModelEvaluationResultMetric(dict):
         :param float weighted_precision: Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
         :param float weighted_recall: Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
         """
+        ModelEvaluationResultMetric._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            accuracy=accuracy,
+            macro_f1=macro_f1,
+            macro_precision=macro_precision,
+            macro_recall=macro_recall,
+            micro_f1=micro_f1,
+            micro_precision=micro_precision,
+            micro_recall=micro_recall,
+            weighted_f1=weighted_f1,
+            weighted_precision=weighted_precision,
+            weighted_recall=weighted_recall,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             accuracy: Optional[float] = None,
+             macro_f1: Optional[float] = None,
+             macro_precision: Optional[float] = None,
+             macro_recall: Optional[float] = None,
+             micro_f1: Optional[float] = None,
+             micro_precision: Optional[float] = None,
+             micro_recall: Optional[float] = None,
+             weighted_f1: Optional[float] = None,
+             weighted_precision: Optional[float] = None,
+             weighted_recall: Optional[float] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if accuracy is not None:
-            pulumi.set(__self__, "accuracy", accuracy)
+            _setter("accuracy", accuracy)
         if macro_f1 is not None:
-            pulumi.set(__self__, "macro_f1", macro_f1)
+            _setter("macro_f1", macro_f1)
         if macro_precision is not None:
-            pulumi.set(__self__, "macro_precision", macro_precision)
+            _setter("macro_precision", macro_precision)
         if macro_recall is not None:
-            pulumi.set(__self__, "macro_recall", macro_recall)
+            _setter("macro_recall", macro_recall)
         if micro_f1 is not None:
-            pulumi.set(__self__, "micro_f1", micro_f1)
+            _setter("micro_f1", micro_f1)
         if micro_precision is not None:
-            pulumi.set(__self__, "micro_precision", micro_precision)
+            _setter("micro_precision", micro_precision)
         if micro_recall is not None:
-            pulumi.set(__self__, "micro_recall", micro_recall)
+            _setter("micro_recall", micro_recall)
         if weighted_f1 is not None:
-            pulumi.set(__self__, "weighted_f1", weighted_f1)
+            _setter("weighted_f1", weighted_f1)
         if weighted_precision is not None:
-            pulumi.set(__self__, "weighted_precision", weighted_precision)
+            _setter("weighted_precision", weighted_precision)
         if weighted_recall is not None:
-            pulumi.set(__self__, "weighted_recall", weighted_recall)
+            _setter("weighted_recall", weighted_recall)
 
     @property
     @pulumi.getter
@@ -484,13 +562,28 @@ class ModelModelDetails(dict):
         :param str language_code: supported language default value is en
         :param str version: Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
         """
-        pulumi.set(__self__, "model_type", model_type)
+        ModelModelDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            model_type=model_type,
+            classification_mode=classification_mode,
+            language_code=language_code,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             model_type: str,
+             classification_mode: Optional['outputs.ModelModelDetailsClassificationMode'] = None,
+             language_code: Optional[str] = None,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("model_type", model_type)
         if classification_mode is not None:
-            pulumi.set(__self__, "classification_mode", classification_mode)
+            _setter("classification_mode", classification_mode)
         if language_code is not None:
-            pulumi.set(__self__, "language_code", language_code)
+            _setter("language_code", language_code)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter(name="modelType")
@@ -551,9 +644,20 @@ class ModelModelDetailsClassificationMode(dict):
         :param str classification_mode: classification Modes
         :param str version: Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
         """
-        pulumi.set(__self__, "classification_mode", classification_mode)
+        ModelModelDetailsClassificationMode._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            classification_mode=classification_mode,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             classification_mode: str,
+             version: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("classification_mode", classification_mode)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter(name="classificationMode")
@@ -604,10 +708,23 @@ class ModelTestStrategy(dict):
         :param 'ModelTestStrategyTestingDatasetArgs' testing_dataset: Possible data set type
         :param 'ModelTestStrategyValidationDatasetArgs' validation_dataset: Possible data set type
         """
-        pulumi.set(__self__, "strategy_type", strategy_type)
-        pulumi.set(__self__, "testing_dataset", testing_dataset)
+        ModelTestStrategy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            strategy_type=strategy_type,
+            testing_dataset=testing_dataset,
+            validation_dataset=validation_dataset,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             strategy_type: str,
+             testing_dataset: 'outputs.ModelTestStrategyTestingDataset',
+             validation_dataset: Optional['outputs.ModelTestStrategyValidationDataset'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("strategy_type", strategy_type)
+        _setter("testing_dataset", testing_dataset)
         if validation_dataset is not None:
-            pulumi.set(__self__, "validation_dataset", validation_dataset)
+            _setter("validation_dataset", validation_dataset)
 
     @property
     @pulumi.getter(name="strategyType")
@@ -666,11 +783,24 @@ class ModelTestStrategyTestingDataset(dict):
         :param str dataset_id: Data Science Labelling Service OCID
         :param 'ModelTestStrategyTestingDatasetLocationDetailsArgs' location_details: Possible object storage location types
         """
-        pulumi.set(__self__, "dataset_type", dataset_type)
+        ModelTestStrategyTestingDataset._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dataset_type=dataset_type,
+            dataset_id=dataset_id,
+            location_details=location_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dataset_type: str,
+             dataset_id: Optional[str] = None,
+             location_details: Optional['outputs.ModelTestStrategyTestingDatasetLocationDetails'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("dataset_type", dataset_type)
         if dataset_id is not None:
-            pulumi.set(__self__, "dataset_id", dataset_id)
+            _setter("dataset_id", dataset_id)
         if location_details is not None:
-            pulumi.set(__self__, "location_details", location_details)
+            _setter("location_details", location_details)
 
     @property
     @pulumi.getter(name="datasetType")
@@ -733,10 +863,25 @@ class ModelTestStrategyTestingDatasetLocationDetails(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "location_type", location_type)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object_names", object_names)
+        ModelTestStrategyTestingDatasetLocationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            location_type=location_type,
+            namespace=namespace,
+            object_names=object_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             location_type: str,
+             namespace: str,
+             object_names: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("location_type", location_type)
+        _setter("namespace", namespace)
+        _setter("object_names", object_names)
 
     @property
     @pulumi.getter
@@ -807,11 +952,24 @@ class ModelTestStrategyValidationDataset(dict):
         :param str dataset_id: Data Science Labelling Service OCID
         :param 'ModelTestStrategyValidationDatasetLocationDetailsArgs' location_details: Possible object storage location types
         """
-        pulumi.set(__self__, "dataset_type", dataset_type)
+        ModelTestStrategyValidationDataset._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dataset_type=dataset_type,
+            dataset_id=dataset_id,
+            location_details=location_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dataset_type: str,
+             dataset_id: Optional[str] = None,
+             location_details: Optional['outputs.ModelTestStrategyValidationDatasetLocationDetails'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("dataset_type", dataset_type)
         if dataset_id is not None:
-            pulumi.set(__self__, "dataset_id", dataset_id)
+            _setter("dataset_id", dataset_id)
         if location_details is not None:
-            pulumi.set(__self__, "location_details", location_details)
+            _setter("location_details", location_details)
 
     @property
     @pulumi.getter(name="datasetType")
@@ -874,10 +1032,25 @@ class ModelTestStrategyValidationDatasetLocationDetails(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "location_type", location_type)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object_names", object_names)
+        ModelTestStrategyValidationDatasetLocationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            location_type=location_type,
+            namespace=namespace,
+            object_names=object_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             location_type: str,
+             namespace: str,
+             object_names: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("location_type", location_type)
+        _setter("namespace", namespace)
+        _setter("object_names", object_names)
 
     @property
     @pulumi.getter
@@ -948,11 +1121,24 @@ class ModelTrainingDataset(dict):
         :param str dataset_id: Data Science Labelling Service OCID
         :param 'ModelTrainingDatasetLocationDetailsArgs' location_details: Possible object storage location types
         """
-        pulumi.set(__self__, "dataset_type", dataset_type)
+        ModelTrainingDataset._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dataset_type=dataset_type,
+            dataset_id=dataset_id,
+            location_details=location_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dataset_type: str,
+             dataset_id: Optional[str] = None,
+             location_details: Optional['outputs.ModelTrainingDatasetLocationDetails'] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("dataset_type", dataset_type)
         if dataset_id is not None:
-            pulumi.set(__self__, "dataset_id", dataset_id)
+            _setter("dataset_id", dataset_id)
         if location_details is not None:
-            pulumi.set(__self__, "location_details", location_details)
+            _setter("location_details", location_details)
 
     @property
     @pulumi.getter(name="datasetType")
@@ -1015,10 +1201,25 @@ class ModelTrainingDatasetLocationDetails(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "location_type", location_type)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object_names", object_names)
+        ModelTrainingDatasetLocationDetails._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            location_type=location_type,
+            namespace=namespace,
+            object_names=object_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             location_type: str,
+             namespace: str,
+             object_names: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("location_type", location_type)
+        _setter("namespace", namespace)
+        _setter("object_names", object_names)
 
     @property
     @pulumi.getter
@@ -1061,7 +1262,16 @@ class ModelTrainingDatasetLocationDetails(dict):
 class GetEndpointsEndpointCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetEndpointsEndpointCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetEndpointsEndpointCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetEndpointsEndpointCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1102,20 +1312,55 @@ class GetEndpointsEndpointCollectionItemResult(dict):
         :param str time_created: The time the the endpoint was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the endpoint was updated. An RFC3339 formatted datetime string.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "inference_units", inference_units)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "model_id", model_id)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetEndpointsEndpointCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            inference_units=inference_units,
+            lifecycle_details=lifecycle_details,
+            model_id=model_id,
+            project_id=project_id,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             inference_units: int,
+             lifecycle_details: str,
+             model_id: str,
+             project_id: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("inference_units", inference_units)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("model_id", model_id)
+        _setter("project_id", project_id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -1236,10 +1481,23 @@ class GetEndpointsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetEndpointsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1274,12 +1532,31 @@ class GetModelEvaluationResultResult(dict):
         :param Sequence['GetModelEvaluationResultMetricArgs'] metrics: Model level named entity recognition metrics
         :param str model_type: Model type
         """
-        pulumi.set(__self__, "class_metrics", class_metrics)
-        pulumi.set(__self__, "confusion_matrix", confusion_matrix)
-        pulumi.set(__self__, "entity_metrics", entity_metrics)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "metrics", metrics)
-        pulumi.set(__self__, "model_type", model_type)
+        GetModelEvaluationResultResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            class_metrics=class_metrics,
+            confusion_matrix=confusion_matrix,
+            entity_metrics=entity_metrics,
+            labels=labels,
+            metrics=metrics,
+            model_type=model_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             class_metrics: Sequence['outputs.GetModelEvaluationResultClassMetricResult'],
+             confusion_matrix: str,
+             entity_metrics: Sequence['outputs.GetModelEvaluationResultEntityMetricResult'],
+             labels: Sequence[str],
+             metrics: Sequence['outputs.GetModelEvaluationResultMetricResult'],
+             model_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("class_metrics", class_metrics)
+        _setter("confusion_matrix", confusion_matrix)
+        _setter("entity_metrics", entity_metrics)
+        _setter("labels", labels)
+        _setter("metrics", metrics)
+        _setter("model_type", model_type)
 
     @property
     @pulumi.getter(name="classMetrics")
@@ -1345,11 +1622,28 @@ class GetModelEvaluationResultClassMetricResult(dict):
         :param float recall: Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
         :param float support: number of samples in the test set
         """
-        pulumi.set(__self__, "f1", f1)
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "precision", precision)
-        pulumi.set(__self__, "recall", recall)
-        pulumi.set(__self__, "support", support)
+        GetModelEvaluationResultClassMetricResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            f1=f1,
+            label=label,
+            precision=precision,
+            recall=recall,
+            support=support,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             f1: float,
+             label: str,
+             precision: float,
+             recall: float,
+             support: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("f1", f1)
+        _setter("label", label)
+        _setter("precision", precision)
+        _setter("recall", recall)
+        _setter("support", support)
 
     @property
     @pulumi.getter
@@ -1405,10 +1699,25 @@ class GetModelEvaluationResultEntityMetricResult(dict):
         :param float precision: Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
         :param float recall: Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
         """
-        pulumi.set(__self__, "f1", f1)
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "precision", precision)
-        pulumi.set(__self__, "recall", recall)
+        GetModelEvaluationResultEntityMetricResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            f1=f1,
+            label=label,
+            precision=precision,
+            recall=recall,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             f1: float,
+             label: str,
+             precision: float,
+             recall: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("f1", f1)
+        _setter("label", label)
+        _setter("precision", precision)
+        _setter("recall", recall)
 
     @property
     @pulumi.getter
@@ -1468,16 +1777,43 @@ class GetModelEvaluationResultMetricResult(dict):
         :param float weighted_precision: Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
         :param float weighted_recall: Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
         """
-        pulumi.set(__self__, "accuracy", accuracy)
-        pulumi.set(__self__, "macro_f1", macro_f1)
-        pulumi.set(__self__, "macro_precision", macro_precision)
-        pulumi.set(__self__, "macro_recall", macro_recall)
-        pulumi.set(__self__, "micro_f1", micro_f1)
-        pulumi.set(__self__, "micro_precision", micro_precision)
-        pulumi.set(__self__, "micro_recall", micro_recall)
-        pulumi.set(__self__, "weighted_f1", weighted_f1)
-        pulumi.set(__self__, "weighted_precision", weighted_precision)
-        pulumi.set(__self__, "weighted_recall", weighted_recall)
+        GetModelEvaluationResultMetricResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            accuracy=accuracy,
+            macro_f1=macro_f1,
+            macro_precision=macro_precision,
+            macro_recall=macro_recall,
+            micro_f1=micro_f1,
+            micro_precision=micro_precision,
+            micro_recall=micro_recall,
+            weighted_f1=weighted_f1,
+            weighted_precision=weighted_precision,
+            weighted_recall=weighted_recall,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             accuracy: float,
+             macro_f1: float,
+             macro_precision: float,
+             macro_recall: float,
+             micro_f1: float,
+             micro_precision: float,
+             micro_recall: float,
+             weighted_f1: float,
+             weighted_precision: float,
+             weighted_recall: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("accuracy", accuracy)
+        _setter("macro_f1", macro_f1)
+        _setter("macro_precision", macro_precision)
+        _setter("macro_recall", macro_recall)
+        _setter("micro_f1", micro_f1)
+        _setter("micro_precision", micro_precision)
+        _setter("micro_recall", micro_recall)
+        _setter("weighted_f1", weighted_f1)
+        _setter("weighted_precision", weighted_precision)
+        _setter("weighted_recall", weighted_recall)
 
     @property
     @pulumi.getter
@@ -1567,7 +1903,16 @@ class GetModelEvaluationResultsEvaluationResultCollectionResult(dict):
         """
         :param Sequence['GetModelEvaluationResultsEvaluationResultCollectionItemArgs'] items: List of model evaluation analysis
         """
-        pulumi.set(__self__, "items", items)
+        GetModelEvaluationResultsEvaluationResultCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetModelEvaluationResultsEvaluationResultCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1601,15 +1946,40 @@ class GetModelEvaluationResultsEvaluationResultCollectionItemResult(dict):
         :param Sequence['GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntityArgs'] true_entities: List of true(actual) entities in test data for NER model
         :param Sequence[str] true_labels: List of true(actual) labels in test data for multi class or multi label TextClassification
         """
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "location", location)
-        pulumi.set(__self__, "model_type", model_type)
-        pulumi.set(__self__, "predicted_entities", predicted_entities)
-        pulumi.set(__self__, "predicted_labels", predicted_labels)
-        pulumi.set(__self__, "record", record)
-        pulumi.set(__self__, "true_entities", true_entities)
-        pulumi.set(__self__, "true_labels", true_labels)
+        GetModelEvaluationResultsEvaluationResultCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            location=location,
+            model_type=model_type,
+            predicted_entities=predicted_entities,
+            predicted_labels=predicted_labels,
+            record=record,
+            true_entities=true_entities,
+            true_labels=true_labels,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             defined_tags: Mapping[str, Any],
+             freeform_tags: Mapping[str, Any],
+             location: str,
+             model_type: str,
+             predicted_entities: Sequence['outputs.GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntityResult'],
+             predicted_labels: Sequence[str],
+             record: str,
+             true_entities: Sequence['outputs.GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntityResult'],
+             true_labels: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("defined_tags", defined_tags)
+        _setter("freeform_tags", freeform_tags)
+        _setter("location", location)
+        _setter("model_type", model_type)
+        _setter("predicted_entities", predicted_entities)
+        _setter("predicted_labels", predicted_labels)
+        _setter("record", record)
+        _setter("true_entities", true_entities)
+        _setter("true_labels", true_labels)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -1695,9 +2065,22 @@ class GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntityResu
         :param int offset: Starting index on text.
         :param str type: Type of entity text like PER, LOC, GPE, NOPE etc.
         """
-        pulumi.set(__self__, "length", length)
-        pulumi.set(__self__, "offset", offset)
-        pulumi.set(__self__, "type", type)
+        GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            length=length,
+            offset=offset,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             length: int,
+             offset: int,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("length", length)
+        _setter("offset", offset)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -1735,9 +2118,22 @@ class GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntityResult(di
         :param int offset: Starting index on text.
         :param str type: Type of entity text like PER, LOC, GPE, NOPE etc.
         """
-        pulumi.set(__self__, "length", length)
-        pulumi.set(__self__, "offset", offset)
-        pulumi.set(__self__, "type", type)
+        GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntityResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            length=length,
+            offset=offset,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             length: int,
+             offset: int,
+             type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("length", length)
+        _setter("offset", offset)
+        _setter("type", type)
 
     @property
     @pulumi.getter
@@ -1770,10 +2166,23 @@ class GetModelEvaluationResultsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetModelEvaluationResultsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1804,10 +2213,25 @@ class GetModelModelDetailResult(dict):
         :param str model_type: Model type
         :param str version: For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
-        pulumi.set(__self__, "classification_modes", classification_modes)
-        pulumi.set(__self__, "language_code", language_code)
-        pulumi.set(__self__, "model_type", model_type)
-        pulumi.set(__self__, "version", version)
+        GetModelModelDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            classification_modes=classification_modes,
+            language_code=language_code,
+            model_type=model_type,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             classification_modes: Sequence['outputs.GetModelModelDetailClassificationModeResult'],
+             language_code: str,
+             model_type: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("classification_modes", classification_modes)
+        _setter("language_code", language_code)
+        _setter("model_type", model_type)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="classificationModes")
@@ -1851,8 +2275,19 @@ class GetModelModelDetailClassificationModeResult(dict):
         :param str classification_mode: classification Modes
         :param str version: For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
-        pulumi.set(__self__, "classification_mode", classification_mode)
-        pulumi.set(__self__, "version", version)
+        GetModelModelDetailClassificationModeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            classification_mode=classification_mode,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             classification_mode: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("classification_mode", classification_mode)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="classificationMode")
@@ -1882,9 +2317,22 @@ class GetModelTestStrategyResult(dict):
         :param Sequence['GetModelTestStrategyTestingDatasetArgs'] testing_datasets: Possible data set type
         :param Sequence['GetModelTestStrategyValidationDatasetArgs'] validation_datasets: Possible data set type
         """
-        pulumi.set(__self__, "strategy_type", strategy_type)
-        pulumi.set(__self__, "testing_datasets", testing_datasets)
-        pulumi.set(__self__, "validation_datasets", validation_datasets)
+        GetModelTestStrategyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            strategy_type=strategy_type,
+            testing_datasets=testing_datasets,
+            validation_datasets=validation_datasets,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             strategy_type: str,
+             testing_datasets: Sequence['outputs.GetModelTestStrategyTestingDatasetResult'],
+             validation_datasets: Sequence['outputs.GetModelTestStrategyValidationDatasetResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("strategy_type", strategy_type)
+        _setter("testing_datasets", testing_datasets)
+        _setter("validation_datasets", validation_datasets)
 
     @property
     @pulumi.getter(name="strategyType")
@@ -1922,9 +2370,22 @@ class GetModelTestStrategyTestingDatasetResult(dict):
         :param str dataset_type: Possible data sets
         :param Sequence['GetModelTestStrategyTestingDatasetLocationDetailArgs'] location_details: Possible object storage location types
         """
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "location_details", location_details)
+        GetModelTestStrategyTestingDatasetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dataset_id=dataset_id,
+            dataset_type=dataset_type,
+            location_details=location_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dataset_id: str,
+             dataset_type: str,
+             location_details: Sequence['outputs.GetModelTestStrategyTestingDatasetLocationDetailResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("dataset_id", dataset_id)
+        _setter("dataset_type", dataset_type)
+        _setter("location_details", location_details)
 
     @property
     @pulumi.getter(name="datasetId")
@@ -1964,10 +2425,25 @@ class GetModelTestStrategyTestingDatasetLocationDetailResult(dict):
         :param str namespace: Object storage namespace
         :param Sequence[str] object_names: Array of files which need to be processed in the bucket
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "location_type", location_type)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object_names", object_names)
+        GetModelTestStrategyTestingDatasetLocationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            location_type=location_type,
+            namespace=namespace,
+            object_names=object_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             location_type: str,
+             namespace: str,
+             object_names: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("location_type", location_type)
+        _setter("namespace", namespace)
+        _setter("object_names", object_names)
 
     @property
     @pulumi.getter
@@ -2013,9 +2489,22 @@ class GetModelTestStrategyValidationDatasetResult(dict):
         :param str dataset_type: Possible data sets
         :param Sequence['GetModelTestStrategyValidationDatasetLocationDetailArgs'] location_details: Possible object storage location types
         """
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "location_details", location_details)
+        GetModelTestStrategyValidationDatasetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dataset_id=dataset_id,
+            dataset_type=dataset_type,
+            location_details=location_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dataset_id: str,
+             dataset_type: str,
+             location_details: Sequence['outputs.GetModelTestStrategyValidationDatasetLocationDetailResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("dataset_id", dataset_id)
+        _setter("dataset_type", dataset_type)
+        _setter("location_details", location_details)
 
     @property
     @pulumi.getter(name="datasetId")
@@ -2055,10 +2544,25 @@ class GetModelTestStrategyValidationDatasetLocationDetailResult(dict):
         :param str namespace: Object storage namespace
         :param Sequence[str] object_names: Array of files which need to be processed in the bucket
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "location_type", location_type)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object_names", object_names)
+        GetModelTestStrategyValidationDatasetLocationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            location_type=location_type,
+            namespace=namespace,
+            object_names=object_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             location_type: str,
+             namespace: str,
+             object_names: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("location_type", location_type)
+        _setter("namespace", namespace)
+        _setter("object_names", object_names)
 
     @property
     @pulumi.getter
@@ -2104,9 +2608,22 @@ class GetModelTrainingDatasetResult(dict):
         :param str dataset_type: Possible data sets
         :param Sequence['GetModelTrainingDatasetLocationDetailArgs'] location_details: Possible object storage location types
         """
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "location_details", location_details)
+        GetModelTrainingDatasetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dataset_id=dataset_id,
+            dataset_type=dataset_type,
+            location_details=location_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dataset_id: str,
+             dataset_type: str,
+             location_details: Sequence['outputs.GetModelTrainingDatasetLocationDetailResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("dataset_id", dataset_id)
+        _setter("dataset_type", dataset_type)
+        _setter("location_details", location_details)
 
     @property
     @pulumi.getter(name="datasetId")
@@ -2146,10 +2663,25 @@ class GetModelTrainingDatasetLocationDetailResult(dict):
         :param str namespace: Object storage namespace
         :param Sequence[str] object_names: Array of files which need to be processed in the bucket
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "location_type", location_type)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object_names", object_names)
+        GetModelTrainingDatasetLocationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            location_type=location_type,
+            namespace=namespace,
+            object_names=object_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             location_type: str,
+             namespace: str,
+             object_names: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("location_type", location_type)
+        _setter("namespace", namespace)
+        _setter("object_names", object_names)
 
     @property
     @pulumi.getter
@@ -2190,10 +2722,23 @@ class GetModelsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetModelsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -2215,7 +2760,16 @@ class GetModelsFilterResult(dict):
 class GetModelsModelCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetModelsModelCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetModelsModelCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetModelsModelCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -2262,23 +2816,64 @@ class GetModelsModelCollectionItemResult(dict):
         :param Sequence['GetModelsModelCollectionItemTrainingDatasetArgs'] training_datasets: Possible data set type
         :param str version: For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "evaluation_results", evaluation_results)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "model_details", model_details)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "test_strategies", test_strategies)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "training_datasets", training_datasets)
-        pulumi.set(__self__, "version", version)
+        GetModelsModelCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            evaluation_results=evaluation_results,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            model_details=model_details,
+            project_id=project_id,
+            state=state,
+            system_tags=system_tags,
+            test_strategies=test_strategies,
+            time_created=time_created,
+            time_updated=time_updated,
+            training_datasets=training_datasets,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             evaluation_results: Sequence['outputs.GetModelsModelCollectionItemEvaluationResultResult'],
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             model_details: Sequence['outputs.GetModelsModelCollectionItemModelDetailResult'],
+             project_id: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             test_strategies: Sequence['outputs.GetModelsModelCollectionItemTestStrategyResult'],
+             time_created: str,
+             time_updated: str,
+             training_datasets: Sequence['outputs.GetModelsModelCollectionItemTrainingDatasetResult'],
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("evaluation_results", evaluation_results)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("model_details", model_details)
+        _setter("project_id", project_id)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("test_strategies", test_strategies)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("training_datasets", training_datasets)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2434,12 +3029,31 @@ class GetModelsModelCollectionItemEvaluationResultResult(dict):
         :param Sequence['GetModelsModelCollectionItemEvaluationResultMetricArgs'] metrics: Model level named entity recognition metrics
         :param str model_type: Model type
         """
-        pulumi.set(__self__, "class_metrics", class_metrics)
-        pulumi.set(__self__, "confusion_matrix", confusion_matrix)
-        pulumi.set(__self__, "entity_metrics", entity_metrics)
-        pulumi.set(__self__, "labels", labels)
-        pulumi.set(__self__, "metrics", metrics)
-        pulumi.set(__self__, "model_type", model_type)
+        GetModelsModelCollectionItemEvaluationResultResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            class_metrics=class_metrics,
+            confusion_matrix=confusion_matrix,
+            entity_metrics=entity_metrics,
+            labels=labels,
+            metrics=metrics,
+            model_type=model_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             class_metrics: Sequence['outputs.GetModelsModelCollectionItemEvaluationResultClassMetricResult'],
+             confusion_matrix: str,
+             entity_metrics: Sequence['outputs.GetModelsModelCollectionItemEvaluationResultEntityMetricResult'],
+             labels: Sequence[str],
+             metrics: Sequence['outputs.GetModelsModelCollectionItemEvaluationResultMetricResult'],
+             model_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("class_metrics", class_metrics)
+        _setter("confusion_matrix", confusion_matrix)
+        _setter("entity_metrics", entity_metrics)
+        _setter("labels", labels)
+        _setter("metrics", metrics)
+        _setter("model_type", model_type)
 
     @property
     @pulumi.getter(name="classMetrics")
@@ -2505,11 +3119,28 @@ class GetModelsModelCollectionItemEvaluationResultClassMetricResult(dict):
         :param float recall: Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
         :param float support: number of samples in the test set
         """
-        pulumi.set(__self__, "f1", f1)
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "precision", precision)
-        pulumi.set(__self__, "recall", recall)
-        pulumi.set(__self__, "support", support)
+        GetModelsModelCollectionItemEvaluationResultClassMetricResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            f1=f1,
+            label=label,
+            precision=precision,
+            recall=recall,
+            support=support,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             f1: float,
+             label: str,
+             precision: float,
+             recall: float,
+             support: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("f1", f1)
+        _setter("label", label)
+        _setter("precision", precision)
+        _setter("recall", recall)
+        _setter("support", support)
 
     @property
     @pulumi.getter
@@ -2565,10 +3196,25 @@ class GetModelsModelCollectionItemEvaluationResultEntityMetricResult(dict):
         :param float precision: Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
         :param float recall: Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
         """
-        pulumi.set(__self__, "f1", f1)
-        pulumi.set(__self__, "label", label)
-        pulumi.set(__self__, "precision", precision)
-        pulumi.set(__self__, "recall", recall)
+        GetModelsModelCollectionItemEvaluationResultEntityMetricResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            f1=f1,
+            label=label,
+            precision=precision,
+            recall=recall,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             f1: float,
+             label: str,
+             precision: float,
+             recall: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("f1", f1)
+        _setter("label", label)
+        _setter("precision", precision)
+        _setter("recall", recall)
 
     @property
     @pulumi.getter
@@ -2628,16 +3274,43 @@ class GetModelsModelCollectionItemEvaluationResultMetricResult(dict):
         :param float weighted_precision: Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
         :param float weighted_recall: Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
         """
-        pulumi.set(__self__, "accuracy", accuracy)
-        pulumi.set(__self__, "macro_f1", macro_f1)
-        pulumi.set(__self__, "macro_precision", macro_precision)
-        pulumi.set(__self__, "macro_recall", macro_recall)
-        pulumi.set(__self__, "micro_f1", micro_f1)
-        pulumi.set(__self__, "micro_precision", micro_precision)
-        pulumi.set(__self__, "micro_recall", micro_recall)
-        pulumi.set(__self__, "weighted_f1", weighted_f1)
-        pulumi.set(__self__, "weighted_precision", weighted_precision)
-        pulumi.set(__self__, "weighted_recall", weighted_recall)
+        GetModelsModelCollectionItemEvaluationResultMetricResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            accuracy=accuracy,
+            macro_f1=macro_f1,
+            macro_precision=macro_precision,
+            macro_recall=macro_recall,
+            micro_f1=micro_f1,
+            micro_precision=micro_precision,
+            micro_recall=micro_recall,
+            weighted_f1=weighted_f1,
+            weighted_precision=weighted_precision,
+            weighted_recall=weighted_recall,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             accuracy: float,
+             macro_f1: float,
+             macro_precision: float,
+             macro_recall: float,
+             micro_f1: float,
+             micro_precision: float,
+             micro_recall: float,
+             weighted_f1: float,
+             weighted_precision: float,
+             weighted_recall: float,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("accuracy", accuracy)
+        _setter("macro_f1", macro_f1)
+        _setter("macro_precision", macro_precision)
+        _setter("macro_recall", macro_recall)
+        _setter("micro_f1", micro_f1)
+        _setter("micro_precision", micro_precision)
+        _setter("micro_recall", micro_recall)
+        _setter("weighted_f1", weighted_f1)
+        _setter("weighted_precision", weighted_precision)
+        _setter("weighted_recall", weighted_recall)
 
     @property
     @pulumi.getter
@@ -2733,10 +3406,25 @@ class GetModelsModelCollectionItemModelDetailResult(dict):
         :param str model_type: Model type
         :param str version: For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
-        pulumi.set(__self__, "classification_modes", classification_modes)
-        pulumi.set(__self__, "language_code", language_code)
-        pulumi.set(__self__, "model_type", model_type)
-        pulumi.set(__self__, "version", version)
+        GetModelsModelCollectionItemModelDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            classification_modes=classification_modes,
+            language_code=language_code,
+            model_type=model_type,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             classification_modes: Sequence['outputs.GetModelsModelCollectionItemModelDetailClassificationModeResult'],
+             language_code: str,
+             model_type: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("classification_modes", classification_modes)
+        _setter("language_code", language_code)
+        _setter("model_type", model_type)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="classificationModes")
@@ -2780,8 +3468,19 @@ class GetModelsModelCollectionItemModelDetailClassificationModeResult(dict):
         :param str classification_mode: classification Modes
         :param str version: For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
-        pulumi.set(__self__, "classification_mode", classification_mode)
-        pulumi.set(__self__, "version", version)
+        GetModelsModelCollectionItemModelDetailClassificationModeResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            classification_mode=classification_mode,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             classification_mode: str,
+             version: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("classification_mode", classification_mode)
+        _setter("version", version)
 
     @property
     @pulumi.getter(name="classificationMode")
@@ -2811,9 +3510,22 @@ class GetModelsModelCollectionItemTestStrategyResult(dict):
         :param Sequence['GetModelsModelCollectionItemTestStrategyTestingDatasetArgs'] testing_datasets: Possible data set type
         :param Sequence['GetModelsModelCollectionItemTestStrategyValidationDatasetArgs'] validation_datasets: Possible data set type
         """
-        pulumi.set(__self__, "strategy_type", strategy_type)
-        pulumi.set(__self__, "testing_datasets", testing_datasets)
-        pulumi.set(__self__, "validation_datasets", validation_datasets)
+        GetModelsModelCollectionItemTestStrategyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            strategy_type=strategy_type,
+            testing_datasets=testing_datasets,
+            validation_datasets=validation_datasets,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             strategy_type: str,
+             testing_datasets: Sequence['outputs.GetModelsModelCollectionItemTestStrategyTestingDatasetResult'],
+             validation_datasets: Sequence['outputs.GetModelsModelCollectionItemTestStrategyValidationDatasetResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("strategy_type", strategy_type)
+        _setter("testing_datasets", testing_datasets)
+        _setter("validation_datasets", validation_datasets)
 
     @property
     @pulumi.getter(name="strategyType")
@@ -2851,9 +3563,22 @@ class GetModelsModelCollectionItemTestStrategyTestingDatasetResult(dict):
         :param str dataset_type: Possible data sets
         :param Sequence['GetModelsModelCollectionItemTestStrategyTestingDatasetLocationDetailArgs'] location_details: Possible object storage location types
         """
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "location_details", location_details)
+        GetModelsModelCollectionItemTestStrategyTestingDatasetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dataset_id=dataset_id,
+            dataset_type=dataset_type,
+            location_details=location_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dataset_id: str,
+             dataset_type: str,
+             location_details: Sequence['outputs.GetModelsModelCollectionItemTestStrategyTestingDatasetLocationDetailResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("dataset_id", dataset_id)
+        _setter("dataset_type", dataset_type)
+        _setter("location_details", location_details)
 
     @property
     @pulumi.getter(name="datasetId")
@@ -2893,10 +3618,25 @@ class GetModelsModelCollectionItemTestStrategyTestingDatasetLocationDetailResult
         :param str namespace: Object storage namespace
         :param Sequence[str] object_names: Array of files which need to be processed in the bucket
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "location_type", location_type)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object_names", object_names)
+        GetModelsModelCollectionItemTestStrategyTestingDatasetLocationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            location_type=location_type,
+            namespace=namespace,
+            object_names=object_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             location_type: str,
+             namespace: str,
+             object_names: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("location_type", location_type)
+        _setter("namespace", namespace)
+        _setter("object_names", object_names)
 
     @property
     @pulumi.getter
@@ -2942,9 +3682,22 @@ class GetModelsModelCollectionItemTestStrategyValidationDatasetResult(dict):
         :param str dataset_type: Possible data sets
         :param Sequence['GetModelsModelCollectionItemTestStrategyValidationDatasetLocationDetailArgs'] location_details: Possible object storage location types
         """
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "location_details", location_details)
+        GetModelsModelCollectionItemTestStrategyValidationDatasetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dataset_id=dataset_id,
+            dataset_type=dataset_type,
+            location_details=location_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dataset_id: str,
+             dataset_type: str,
+             location_details: Sequence['outputs.GetModelsModelCollectionItemTestStrategyValidationDatasetLocationDetailResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("dataset_id", dataset_id)
+        _setter("dataset_type", dataset_type)
+        _setter("location_details", location_details)
 
     @property
     @pulumi.getter(name="datasetId")
@@ -2984,10 +3737,25 @@ class GetModelsModelCollectionItemTestStrategyValidationDatasetLocationDetailRes
         :param str namespace: Object storage namespace
         :param Sequence[str] object_names: Array of files which need to be processed in the bucket
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "location_type", location_type)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object_names", object_names)
+        GetModelsModelCollectionItemTestStrategyValidationDatasetLocationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            location_type=location_type,
+            namespace=namespace,
+            object_names=object_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             location_type: str,
+             namespace: str,
+             object_names: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("location_type", location_type)
+        _setter("namespace", namespace)
+        _setter("object_names", object_names)
 
     @property
     @pulumi.getter
@@ -3033,9 +3801,22 @@ class GetModelsModelCollectionItemTrainingDatasetResult(dict):
         :param str dataset_type: Possible data sets
         :param Sequence['GetModelsModelCollectionItemTrainingDatasetLocationDetailArgs'] location_details: Possible object storage location types
         """
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "location_details", location_details)
+        GetModelsModelCollectionItemTrainingDatasetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dataset_id=dataset_id,
+            dataset_type=dataset_type,
+            location_details=location_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dataset_id: str,
+             dataset_type: str,
+             location_details: Sequence['outputs.GetModelsModelCollectionItemTrainingDatasetLocationDetailResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("dataset_id", dataset_id)
+        _setter("dataset_type", dataset_type)
+        _setter("location_details", location_details)
 
     @property
     @pulumi.getter(name="datasetId")
@@ -3075,10 +3856,25 @@ class GetModelsModelCollectionItemTrainingDatasetLocationDetailResult(dict):
         :param str namespace: Object storage namespace
         :param Sequence[str] object_names: Array of files which need to be processed in the bucket
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "location_type", location_type)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "object_names", object_names)
+        GetModelsModelCollectionItemTrainingDatasetLocationDetailResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            location_type=location_type,
+            namespace=namespace,
+            object_names=object_names,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             location_type: str,
+             namespace: str,
+             object_names: Sequence[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("location_type", location_type)
+        _setter("namespace", namespace)
+        _setter("object_names", object_names)
 
     @property
     @pulumi.getter
@@ -3119,10 +3915,23 @@ class GetProjectsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProjectsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -3144,7 +3953,16 @@ class GetProjectsFilterResult(dict):
 class GetProjectsProjectCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetProjectsProjectCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetProjectsProjectCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetProjectsProjectCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -3179,17 +3997,46 @@ class GetProjectsProjectCollectionItemResult(dict):
         :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetProjectsProjectCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")

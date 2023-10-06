@@ -22,10 +22,6 @@ public final class AutoScalingConfigurationPolicy {
      * 
      */
     private @Nullable AutoScalingConfigurationPolicyCapacity capacity;
-    /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
-     * 
-     */
     private @Nullable String displayName;
     /**
      * @return An execution schedule for an autoscaling policy.
@@ -67,10 +63,6 @@ public final class AutoScalingConfigurationPolicy {
     public Optional<AutoScalingConfigurationPolicyCapacity> capacity() {
         return Optional.ofNullable(this.capacity);
     }
-    /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
-     * 
-     */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }

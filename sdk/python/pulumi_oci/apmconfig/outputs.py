@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -54,10 +54,21 @@ class ConfigDimension(dict):
         :param str name: (Updatable) The name of the metric. This must be a known metric name.
         :param str value_source: (Updatable) This must not be set.
         """
+        ConfigDimension._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value_source=value_source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: Optional[str] = None,
+             value_source: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if value_source is not None:
-            pulumi.set(__self__, "value_source", value_source)
+            _setter("value_source", value_source)
 
     @property
     @pulumi.getter
@@ -110,14 +121,29 @@ class ConfigInUseBy(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
         :param str options_group: A string that specifies the group that an OPTIONS item belongs to.
         """
+        ConfigInUseBy._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_type=config_type,
+            display_name=display_name,
+            id=id,
+            options_group=options_group,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_type: Optional[str] = None,
+             display_name: Optional[str] = None,
+             id: Optional[str] = None,
+             options_group: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if config_type is not None:
-            pulumi.set(__self__, "config_type", config_type)
+            _setter("config_type", config_type)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if options_group is not None:
-            pulumi.set(__self__, "options_group", options_group)
+            _setter("options_group", options_group)
 
     @property
     @pulumi.getter(name="configType")
@@ -182,14 +208,29 @@ class ConfigMetric(dict):
         :param str unit: (Updatable) The unit of the metric.
         :param str value_source: (Updatable) This must not be set.
         """
+        ConfigMetric._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            name=name,
+            unit=unit,
+            value_source=value_source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: Optional[str] = None,
+             name: Optional[str] = None,
+             unit: Optional[str] = None,
+             value_source: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if unit is not None:
-            pulumi.set(__self__, "unit", unit)
+            _setter("unit", unit)
         if value_source is not None:
-            pulumi.set(__self__, "value_source", value_source)
+            _setter("value_source", value_source)
 
     @property
     @pulumi.getter
@@ -274,20 +315,41 @@ class ConfigRule(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        ConfigRule._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            filter_text=filter_text,
+            is_apply_to_error_spans=is_apply_to_error_spans,
+            is_enabled=is_enabled,
+            priority=priority,
+            satisfied_response_time=satisfied_response_time,
+            tolerating_response_time=tolerating_response_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: Optional[str] = None,
+             filter_text: Optional[str] = None,
+             is_apply_to_error_spans: Optional[bool] = None,
+             is_enabled: Optional[bool] = None,
+             priority: Optional[int] = None,
+             satisfied_response_time: Optional[int] = None,
+             tolerating_response_time: Optional[int] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if filter_text is not None:
-            pulumi.set(__self__, "filter_text", filter_text)
+            _setter("filter_text", filter_text)
         if is_apply_to_error_spans is not None:
-            pulumi.set(__self__, "is_apply_to_error_spans", is_apply_to_error_spans)
+            _setter("is_apply_to_error_spans", is_apply_to_error_spans)
         if is_enabled is not None:
-            pulumi.set(__self__, "is_enabled", is_enabled)
+            _setter("is_enabled", is_enabled)
         if priority is not None:
-            pulumi.set(__self__, "priority", priority)
+            _setter("priority", priority)
         if satisfied_response_time is not None:
-            pulumi.set(__self__, "satisfied_response_time", satisfied_response_time)
+            _setter("satisfied_response_time", satisfied_response_time)
         if tolerating_response_time is not None:
-            pulumi.set(__self__, "tolerating_response_time", tolerating_response_time)
+            _setter("tolerating_response_time", tolerating_response_time)
 
     @property
     @pulumi.getter(name="displayName")
@@ -359,8 +421,19 @@ class GetConfigDimensionResult(dict):
         :param str name: The name of the metric. This must be a known metric name.
         :param str value_source: This must not be set.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value_source", value_source)
+        GetConfigDimensionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value_source=value_source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             value_source: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("value_source", value_source)
 
     @property
     @pulumi.getter
@@ -392,10 +465,25 @@ class GetConfigInUseByResult(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
         :param str options_group: A string that specifies the group that an OPTIONS item belongs to.
         """
-        pulumi.set(__self__, "config_type", config_type)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "options_group", options_group)
+        GetConfigInUseByResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_type=config_type,
+            display_name=display_name,
+            id=id,
+            options_group=options_group,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_type: str,
+             display_name: str,
+             id: str,
+             options_group: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_type", config_type)
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("options_group", options_group)
 
     @property
     @pulumi.getter(name="configType")
@@ -443,10 +531,25 @@ class GetConfigMetricResult(dict):
         :param str unit: The unit of the metric.
         :param str value_source: This must not be set.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "unit", unit)
-        pulumi.set(__self__, "value_source", value_source)
+        GetConfigMetricResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            name=name,
+            unit=unit,
+            value_source=value_source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             name: str,
+             unit: str,
+             value_source: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("name", name)
+        _setter("unit", unit)
+        _setter("value_source", value_source)
 
     @property
     @pulumi.getter
@@ -500,13 +603,34 @@ class GetConfigRuleResult(dict):
         :param int satisfied_response_time: The maximum response time in milliseconds that is considered "satisfactory" for the end user.
         :param int tolerating_response_time: The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "filter_text", filter_text)
-        pulumi.set(__self__, "is_apply_to_error_spans", is_apply_to_error_spans)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "priority", priority)
-        pulumi.set(__self__, "satisfied_response_time", satisfied_response_time)
-        pulumi.set(__self__, "tolerating_response_time", tolerating_response_time)
+        GetConfigRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            filter_text=filter_text,
+            is_apply_to_error_spans=is_apply_to_error_spans,
+            is_enabled=is_enabled,
+            priority=priority,
+            satisfied_response_time=satisfied_response_time,
+            tolerating_response_time=tolerating_response_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             filter_text: str,
+             is_apply_to_error_spans: bool,
+             is_enabled: bool,
+             priority: int,
+             satisfied_response_time: int,
+             tolerating_response_time: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("filter_text", filter_text)
+        _setter("is_apply_to_error_spans", is_apply_to_error_spans)
+        _setter("is_enabled", is_enabled)
+        _setter("priority", priority)
+        _setter("satisfied_response_time", satisfied_response_time)
+        _setter("tolerating_response_time", tolerating_response_time)
 
     @property
     @pulumi.getter(name="displayName")
@@ -569,7 +693,16 @@ class GetConfigRuleResult(dict):
 class GetConfigsConfigCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetConfigsConfigCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetConfigsConfigCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetConfigsConfigCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -624,28 +757,79 @@ class GetConfigsConfigCollectionItemResult(dict):
         :param str time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         :param str updated_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
         """
-        pulumi.set(__self__, "apm_domain_id", apm_domain_id)
-        pulumi.set(__self__, "config_type", config_type)
-        pulumi.set(__self__, "created_by", created_by)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "dimensions", dimensions)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "etag", etag)
-        pulumi.set(__self__, "filter_id", filter_id)
-        pulumi.set(__self__, "filter_text", filter_text)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "group", group)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "in_use_bies", in_use_bies)
-        pulumi.set(__self__, "metrics", metrics)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "opc_dry_run", opc_dry_run)
-        pulumi.set(__self__, "options", options)
-        pulumi.set(__self__, "rules", rules)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "updated_by", updated_by)
+        GetConfigsConfigCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            apm_domain_id=apm_domain_id,
+            config_type=config_type,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            description=description,
+            dimensions=dimensions,
+            display_name=display_name,
+            etag=etag,
+            filter_id=filter_id,
+            filter_text=filter_text,
+            freeform_tags=freeform_tags,
+            group=group,
+            id=id,
+            in_use_bies=in_use_bies,
+            metrics=metrics,
+            namespace=namespace,
+            opc_dry_run=opc_dry_run,
+            options=options,
+            rules=rules,
+            time_created=time_created,
+            time_updated=time_updated,
+            updated_by=updated_by,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             apm_domain_id: str,
+             config_type: str,
+             created_by: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             dimensions: Sequence['outputs.GetConfigsConfigCollectionItemDimensionResult'],
+             display_name: str,
+             etag: str,
+             filter_id: str,
+             filter_text: str,
+             freeform_tags: Mapping[str, Any],
+             group: str,
+             id: str,
+             in_use_bies: Sequence['outputs.GetConfigsConfigCollectionItemInUseByResult'],
+             metrics: Sequence['outputs.GetConfigsConfigCollectionItemMetricResult'],
+             namespace: str,
+             opc_dry_run: str,
+             options: str,
+             rules: Sequence['outputs.GetConfigsConfigCollectionItemRuleResult'],
+             time_created: str,
+             time_updated: str,
+             updated_by: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("apm_domain_id", apm_domain_id)
+        _setter("config_type", config_type)
+        _setter("created_by", created_by)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("dimensions", dimensions)
+        _setter("display_name", display_name)
+        _setter("etag", etag)
+        _setter("filter_id", filter_id)
+        _setter("filter_text", filter_text)
+        _setter("freeform_tags", freeform_tags)
+        _setter("group", group)
+        _setter("id", id)
+        _setter("in_use_bies", in_use_bies)
+        _setter("metrics", metrics)
+        _setter("namespace", namespace)
+        _setter("opc_dry_run", opc_dry_run)
+        _setter("options", options)
+        _setter("rules", rules)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("updated_by", updated_by)
 
     @property
     @pulumi.getter(name="apmDomainId")
@@ -827,8 +1011,19 @@ class GetConfigsConfigCollectionItemDimensionResult(dict):
         :param str name: The name of the metric. This must be a known metric name.
         :param str value_source: This must not be set.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value_source", value_source)
+        GetConfigsConfigCollectionItemDimensionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value_source=value_source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             value_source: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("value_source", value_source)
 
     @property
     @pulumi.getter
@@ -860,10 +1055,25 @@ class GetConfigsConfigCollectionItemInUseByResult(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
         :param str options_group: A filter to return OPTIONS resources that match the given group.
         """
-        pulumi.set(__self__, "config_type", config_type)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "options_group", options_group)
+        GetConfigsConfigCollectionItemInUseByResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            config_type=config_type,
+            display_name=display_name,
+            id=id,
+            options_group=options_group,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             config_type: str,
+             display_name: str,
+             id: str,
+             options_group: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("config_type", config_type)
+        _setter("display_name", display_name)
+        _setter("id", id)
+        _setter("options_group", options_group)
 
     @property
     @pulumi.getter(name="configType")
@@ -911,10 +1121,25 @@ class GetConfigsConfigCollectionItemMetricResult(dict):
         :param str unit: The unit of the metric.
         :param str value_source: This must not be set.
         """
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "unit", unit)
-        pulumi.set(__self__, "value_source", value_source)
+        GetConfigsConfigCollectionItemMetricResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            description=description,
+            name=name,
+            unit=unit,
+            value_source=value_source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             description: str,
+             name: str,
+             unit: str,
+             value_source: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("description", description)
+        _setter("name", name)
+        _setter("unit", unit)
+        _setter("value_source", value_source)
 
     @property
     @pulumi.getter
@@ -968,13 +1193,34 @@ class GetConfigsConfigCollectionItemRuleResult(dict):
         :param int satisfied_response_time: The maximum response time in milliseconds that is considered "satisfactory" for the end user.
         :param int tolerating_response_time: The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
         """
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "filter_text", filter_text)
-        pulumi.set(__self__, "is_apply_to_error_spans", is_apply_to_error_spans)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "priority", priority)
-        pulumi.set(__self__, "satisfied_response_time", satisfied_response_time)
-        pulumi.set(__self__, "tolerating_response_time", tolerating_response_time)
+        GetConfigsConfigCollectionItemRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            display_name=display_name,
+            filter_text=filter_text,
+            is_apply_to_error_spans=is_apply_to_error_spans,
+            is_enabled=is_enabled,
+            priority=priority,
+            satisfied_response_time=satisfied_response_time,
+            tolerating_response_time=tolerating_response_time,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             display_name: str,
+             filter_text: str,
+             is_apply_to_error_spans: bool,
+             is_enabled: bool,
+             priority: int,
+             satisfied_response_time: int,
+             tolerating_response_time: int,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("display_name", display_name)
+        _setter("filter_text", filter_text)
+        _setter("is_apply_to_error_spans", is_apply_to_error_spans)
+        _setter("is_enabled", is_enabled)
+        _setter("priority", priority)
+        _setter("satisfied_response_time", satisfied_response_time)
+        _setter("tolerating_response_time", tolerating_response_time)
 
     @property
     @pulumi.getter(name="displayName")
@@ -1042,10 +1288,23 @@ class GetConfigsFilterResult(dict):
         """
         :param str name: The name of the metric. This must be a known metric name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetConfigsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

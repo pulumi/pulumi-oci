@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -41,21 +41,46 @@ class IngressGatewayArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "hosts", hosts)
-        pulumi.set(__self__, "mesh_id", mesh_id)
+        IngressGatewayArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            hosts=hosts,
+            mesh_id=mesh_id,
+            access_logging=access_logging,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            mtls=mtls,
+            name=name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             hosts: pulumi.Input[Sequence[pulumi.Input['IngressGatewayHostArgs']]],
+             mesh_id: pulumi.Input[str],
+             access_logging: Optional[pulumi.Input['IngressGatewayAccessLoggingArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             mtls: Optional[pulumi.Input['IngressGatewayMtlsArgs']] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("hosts", hosts)
+        _setter("mesh_id", mesh_id)
         if access_logging is not None:
-            pulumi.set(__self__, "access_logging", access_logging)
+            _setter("access_logging", access_logging)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if mtls is not None:
-            pulumi.set(__self__, "mtls", mtls)
+            _setter("mtls", mtls)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -208,34 +233,69 @@ class _IngressGatewayState:
         :param pulumi.Input[str] time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         """
+        _IngressGatewayState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            access_logging=access_logging,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            hosts=hosts,
+            lifecycle_details=lifecycle_details,
+            mesh_id=mesh_id,
+            mtls=mtls,
+            name=name,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             access_logging: Optional[pulumi.Input['IngressGatewayAccessLoggingArgs']] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hosts: Optional[pulumi.Input[Sequence[pulumi.Input['IngressGatewayHostArgs']]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             mesh_id: Optional[pulumi.Input[str]] = None,
+             mtls: Optional[pulumi.Input['IngressGatewayMtlsArgs']] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if access_logging is not None:
-            pulumi.set(__self__, "access_logging", access_logging)
+            _setter("access_logging", access_logging)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hosts is not None:
-            pulumi.set(__self__, "hosts", hosts)
+            _setter("hosts", hosts)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if mesh_id is not None:
-            pulumi.set(__self__, "mesh_id", mesh_id)
+            _setter("mesh_id", mesh_id)
         if mtls is not None:
-            pulumi.set(__self__, "mtls", mtls)
+            _setter("mtls", mtls)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="accessLogging")
@@ -579,6 +639,10 @@ class IngressGateway(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            IngressGatewayArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -602,6 +666,11 @@ class IngressGateway(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = IngressGatewayArgs.__new__(IngressGatewayArgs)
 
+            if access_logging is not None and not isinstance(access_logging, IngressGatewayAccessLoggingArgs):
+                access_logging = access_logging or {}
+                def _setter(key, value):
+                    access_logging[key] = value
+                IngressGatewayAccessLoggingArgs._configure(_setter, **access_logging)
             __props__.__dict__["access_logging"] = access_logging
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
@@ -615,6 +684,11 @@ class IngressGateway(pulumi.CustomResource):
             if mesh_id is None and not opts.urn:
                 raise TypeError("Missing required property 'mesh_id'")
             __props__.__dict__["mesh_id"] = mesh_id
+            if mtls is not None and not isinstance(mtls, IngressGatewayMtlsArgs):
+                mtls = mtls or {}
+                def _setter(key, value):
+                    mtls[key] = value
+                IngressGatewayMtlsArgs._configure(_setter, **mtls)
             __props__.__dict__["mtls"] = mtls
             __props__.__dict__["name"] = name
             __props__.__dict__["lifecycle_details"] = None

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -33,14 +33,31 @@ class DbSystemsUpgradeArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "action", action)
-        pulumi.set(__self__, "db_system_id", db_system_id)
+        DbSystemsUpgradeArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            db_system_id=db_system_id,
+            is_snapshot_retention_days_force_updated=is_snapshot_retention_days_force_updated,
+            new_gi_version=new_gi_version,
+            snapshot_retention_period_in_days=snapshot_retention_period_in_days,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: pulumi.Input[str],
+             db_system_id: pulumi.Input[str],
+             is_snapshot_retention_days_force_updated: Optional[pulumi.Input[bool]] = None,
+             new_gi_version: Optional[pulumi.Input[str]] = None,
+             snapshot_retention_period_in_days: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action", action)
+        _setter("db_system_id", db_system_id)
         if is_snapshot_retention_days_force_updated is not None:
-            pulumi.set(__self__, "is_snapshot_retention_days_force_updated", is_snapshot_retention_days_force_updated)
+            _setter("is_snapshot_retention_days_force_updated", is_snapshot_retention_days_force_updated)
         if new_gi_version is not None:
-            pulumi.set(__self__, "new_gi_version", new_gi_version)
+            _setter("new_gi_version", new_gi_version)
         if snapshot_retention_period_in_days is not None:
-            pulumi.set(__self__, "snapshot_retention_period_in_days", snapshot_retention_period_in_days)
+            _setter("snapshot_retention_period_in_days", snapshot_retention_period_in_days)
 
     @property
     @pulumi.getter
@@ -218,104 +235,209 @@ class _DbSystemsUpgradeState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the DB system to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
         :param pulumi.Input[str] zone_id: The OCID of the zone the DB system is associated with.
         """
+        _DbSystemsUpgradeState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action=action,
+            availability_domain=availability_domain,
+            backup_network_nsg_ids=backup_network_nsg_ids,
+            backup_subnet_id=backup_subnet_id,
+            cluster_name=cluster_name,
+            compartment_id=compartment_id,
+            cpu_core_count=cpu_core_count,
+            data_storage_percentage=data_storage_percentage,
+            data_storage_size_in_gb=data_storage_size_in_gb,
+            database_edition=database_edition,
+            db_system_id=db_system_id,
+            db_system_options=db_system_options,
+            defined_tags=defined_tags,
+            disk_redundancy=disk_redundancy,
+            display_name=display_name,
+            domain=domain,
+            fault_domains=fault_domains,
+            freeform_tags=freeform_tags,
+            hostname=hostname,
+            iorm_config_caches=iorm_config_caches,
+            is_snapshot_retention_days_force_updated=is_snapshot_retention_days_force_updated,
+            kms_key_id=kms_key_id,
+            last_maintenance_run_id=last_maintenance_run_id,
+            last_patch_history_entry_id=last_patch_history_entry_id,
+            license_model=license_model,
+            lifecycle_details=lifecycle_details,
+            listener_port=listener_port,
+            maintenance_windows=maintenance_windows,
+            new_gi_version=new_gi_version,
+            next_maintenance_run_id=next_maintenance_run_id,
+            node_count=node_count,
+            nsg_ids=nsg_ids,
+            point_in_time_data_disk_clone_timestamp=point_in_time_data_disk_clone_timestamp,
+            reco_storage_size_in_gb=reco_storage_size_in_gb,
+            scan_dns_name=scan_dns_name,
+            scan_dns_record_id=scan_dns_record_id,
+            scan_ip_ids=scan_ip_ids,
+            shape=shape,
+            snapshot_retention_period_in_days=snapshot_retention_period_in_days,
+            source_db_system_id=source_db_system_id,
+            sparse_diskgroup=sparse_diskgroup,
+            ssh_public_keys=ssh_public_keys,
+            state=state,
+            subnet_id=subnet_id,
+            time_created=time_created,
+            time_zone=time_zone,
+            version=version,
+            vip_ids=vip_ids,
+            zone_id=zone_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action: Optional[pulumi.Input[str]] = None,
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             backup_subnet_id: Optional[pulumi.Input[str]] = None,
+             cluster_name: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             cpu_core_count: Optional[pulumi.Input[int]] = None,
+             data_storage_percentage: Optional[pulumi.Input[int]] = None,
+             data_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
+             database_edition: Optional[pulumi.Input[str]] = None,
+             db_system_id: Optional[pulumi.Input[str]] = None,
+             db_system_options: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeDbSystemOptionArgs']]]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             disk_redundancy: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             domain: Optional[pulumi.Input[str]] = None,
+             fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             hostname: Optional[pulumi.Input[str]] = None,
+             iorm_config_caches: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeIormConfigCachArgs']]]] = None,
+             is_snapshot_retention_days_force_updated: Optional[pulumi.Input[bool]] = None,
+             kms_key_id: Optional[pulumi.Input[str]] = None,
+             last_maintenance_run_id: Optional[pulumi.Input[str]] = None,
+             last_patch_history_entry_id: Optional[pulumi.Input[str]] = None,
+             license_model: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             listener_port: Optional[pulumi.Input[int]] = None,
+             maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowArgs']]]] = None,
+             new_gi_version: Optional[pulumi.Input[str]] = None,
+             next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
+             node_count: Optional[pulumi.Input[int]] = None,
+             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             point_in_time_data_disk_clone_timestamp: Optional[pulumi.Input[str]] = None,
+             reco_storage_size_in_gb: Optional[pulumi.Input[int]] = None,
+             scan_dns_name: Optional[pulumi.Input[str]] = None,
+             scan_dns_record_id: Optional[pulumi.Input[str]] = None,
+             scan_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             shape: Optional[pulumi.Input[str]] = None,
+             snapshot_retention_period_in_days: Optional[pulumi.Input[int]] = None,
+             source_db_system_id: Optional[pulumi.Input[str]] = None,
+             sparse_diskgroup: Optional[pulumi.Input[bool]] = None,
+             ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             subnet_id: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_zone: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[str]] = None,
+             vip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             zone_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if action is not None:
-            pulumi.set(__self__, "action", action)
+            _setter("action", action)
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if backup_network_nsg_ids is not None:
-            pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+            _setter("backup_network_nsg_ids", backup_network_nsg_ids)
         if backup_subnet_id is not None:
-            pulumi.set(__self__, "backup_subnet_id", backup_subnet_id)
+            _setter("backup_subnet_id", backup_subnet_id)
         if cluster_name is not None:
-            pulumi.set(__self__, "cluster_name", cluster_name)
+            _setter("cluster_name", cluster_name)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if cpu_core_count is not None:
-            pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+            _setter("cpu_core_count", cpu_core_count)
         if data_storage_percentage is not None:
-            pulumi.set(__self__, "data_storage_percentage", data_storage_percentage)
+            _setter("data_storage_percentage", data_storage_percentage)
         if data_storage_size_in_gb is not None:
-            pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+            _setter("data_storage_size_in_gb", data_storage_size_in_gb)
         if database_edition is not None:
-            pulumi.set(__self__, "database_edition", database_edition)
+            _setter("database_edition", database_edition)
         if db_system_id is not None:
-            pulumi.set(__self__, "db_system_id", db_system_id)
+            _setter("db_system_id", db_system_id)
         if db_system_options is not None:
-            pulumi.set(__self__, "db_system_options", db_system_options)
+            _setter("db_system_options", db_system_options)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if disk_redundancy is not None:
-            pulumi.set(__self__, "disk_redundancy", disk_redundancy)
+            _setter("disk_redundancy", disk_redundancy)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if domain is not None:
-            pulumi.set(__self__, "domain", domain)
+            _setter("domain", domain)
         if fault_domains is not None:
-            pulumi.set(__self__, "fault_domains", fault_domains)
+            _setter("fault_domains", fault_domains)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if hostname is not None:
-            pulumi.set(__self__, "hostname", hostname)
+            _setter("hostname", hostname)
         if iorm_config_caches is not None:
-            pulumi.set(__self__, "iorm_config_caches", iorm_config_caches)
+            _setter("iorm_config_caches", iorm_config_caches)
         if is_snapshot_retention_days_force_updated is not None:
-            pulumi.set(__self__, "is_snapshot_retention_days_force_updated", is_snapshot_retention_days_force_updated)
+            _setter("is_snapshot_retention_days_force_updated", is_snapshot_retention_days_force_updated)
         if kms_key_id is not None:
-            pulumi.set(__self__, "kms_key_id", kms_key_id)
+            _setter("kms_key_id", kms_key_id)
         if last_maintenance_run_id is not None:
-            pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
+            _setter("last_maintenance_run_id", last_maintenance_run_id)
         if last_patch_history_entry_id is not None:
-            pulumi.set(__self__, "last_patch_history_entry_id", last_patch_history_entry_id)
+            _setter("last_patch_history_entry_id", last_patch_history_entry_id)
         if license_model is not None:
-            pulumi.set(__self__, "license_model", license_model)
+            _setter("license_model", license_model)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if listener_port is not None:
-            pulumi.set(__self__, "listener_port", listener_port)
+            _setter("listener_port", listener_port)
         if maintenance_windows is not None:
-            pulumi.set(__self__, "maintenance_windows", maintenance_windows)
+            _setter("maintenance_windows", maintenance_windows)
         if new_gi_version is not None:
-            pulumi.set(__self__, "new_gi_version", new_gi_version)
+            _setter("new_gi_version", new_gi_version)
         if next_maintenance_run_id is not None:
-            pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
+            _setter("next_maintenance_run_id", next_maintenance_run_id)
         if node_count is not None:
-            pulumi.set(__self__, "node_count", node_count)
+            _setter("node_count", node_count)
         if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
+            _setter("nsg_ids", nsg_ids)
         if point_in_time_data_disk_clone_timestamp is not None:
-            pulumi.set(__self__, "point_in_time_data_disk_clone_timestamp", point_in_time_data_disk_clone_timestamp)
+            _setter("point_in_time_data_disk_clone_timestamp", point_in_time_data_disk_clone_timestamp)
         if reco_storage_size_in_gb is not None:
-            pulumi.set(__self__, "reco_storage_size_in_gb", reco_storage_size_in_gb)
+            _setter("reco_storage_size_in_gb", reco_storage_size_in_gb)
         if scan_dns_name is not None:
-            pulumi.set(__self__, "scan_dns_name", scan_dns_name)
+            _setter("scan_dns_name", scan_dns_name)
         if scan_dns_record_id is not None:
-            pulumi.set(__self__, "scan_dns_record_id", scan_dns_record_id)
+            _setter("scan_dns_record_id", scan_dns_record_id)
         if scan_ip_ids is not None:
-            pulumi.set(__self__, "scan_ip_ids", scan_ip_ids)
+            _setter("scan_ip_ids", scan_ip_ids)
         if shape is not None:
-            pulumi.set(__self__, "shape", shape)
+            _setter("shape", shape)
         if snapshot_retention_period_in_days is not None:
-            pulumi.set(__self__, "snapshot_retention_period_in_days", snapshot_retention_period_in_days)
+            _setter("snapshot_retention_period_in_days", snapshot_retention_period_in_days)
         if source_db_system_id is not None:
-            pulumi.set(__self__, "source_db_system_id", source_db_system_id)
+            _setter("source_db_system_id", source_db_system_id)
         if sparse_diskgroup is not None:
-            pulumi.set(__self__, "sparse_diskgroup", sparse_diskgroup)
+            _setter("sparse_diskgroup", sparse_diskgroup)
         if ssh_public_keys is not None:
-            pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
+            _setter("ssh_public_keys", ssh_public_keys)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if subnet_id is not None:
-            pulumi.set(__self__, "subnet_id", subnet_id)
+            _setter("subnet_id", subnet_id)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_zone is not None:
-            pulumi.set(__self__, "time_zone", time_zone)
+            _setter("time_zone", time_zone)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
         if vip_ids is not None:
-            pulumi.set(__self__, "vip_ids", vip_ids)
+            _setter("vip_ids", vip_ids)
         if zone_id is not None:
-            pulumi.set(__self__, "zone_id", zone_id)
+            _setter("zone_id", zone_id)
 
     @property
     @pulumi.getter
@@ -998,6 +1120,10 @@ class DbSystemsUpgrade(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DbSystemsUpgradeArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

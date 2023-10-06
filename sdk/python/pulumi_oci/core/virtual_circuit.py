@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -61,45 +61,90 @@ class VirtualCircuitArgs:
         :param pulumi.Input[str] region: The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] routing_policies: (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "type", type)
+        VirtualCircuitArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            type=type,
+            bandwidth_shape_name=bandwidth_shape_name,
+            bgp_admin_state=bgp_admin_state,
+            cross_connect_mappings=cross_connect_mappings,
+            customer_asn=customer_asn,
+            customer_bgp_asn=customer_bgp_asn,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            gateway_id=gateway_id,
+            ip_mtu=ip_mtu,
+            is_bfd_enabled=is_bfd_enabled,
+            is_transport_mode=is_transport_mode,
+            provider_service_id=provider_service_id,
+            provider_service_key_name=provider_service_key_name,
+            public_prefixes=public_prefixes,
+            region=region,
+            routing_policies=routing_policies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             type: pulumi.Input[str],
+             bandwidth_shape_name: Optional[pulumi.Input[str]] = None,
+             bgp_admin_state: Optional[pulumi.Input[str]] = None,
+             cross_connect_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitCrossConnectMappingArgs']]]] = None,
+             customer_asn: Optional[pulumi.Input[str]] = None,
+             customer_bgp_asn: Optional[pulumi.Input[int]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             gateway_id: Optional[pulumi.Input[str]] = None,
+             ip_mtu: Optional[pulumi.Input[str]] = None,
+             is_bfd_enabled: Optional[pulumi.Input[bool]] = None,
+             is_transport_mode: Optional[pulumi.Input[bool]] = None,
+             provider_service_id: Optional[pulumi.Input[str]] = None,
+             provider_service_key_name: Optional[pulumi.Input[str]] = None,
+             public_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]]] = None,
+             region: Optional[pulumi.Input[str]] = None,
+             routing_policies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("type", type)
         if bandwidth_shape_name is not None:
-            pulumi.set(__self__, "bandwidth_shape_name", bandwidth_shape_name)
+            _setter("bandwidth_shape_name", bandwidth_shape_name)
         if bgp_admin_state is not None:
-            pulumi.set(__self__, "bgp_admin_state", bgp_admin_state)
+            _setter("bgp_admin_state", bgp_admin_state)
         if cross_connect_mappings is not None:
-            pulumi.set(__self__, "cross_connect_mappings", cross_connect_mappings)
+            _setter("cross_connect_mappings", cross_connect_mappings)
         if customer_asn is not None:
-            pulumi.set(__self__, "customer_asn", customer_asn)
+            _setter("customer_asn", customer_asn)
         if customer_bgp_asn is not None:
             warnings.warn("""The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.""", DeprecationWarning)
             pulumi.log.warn("""customer_bgp_asn is deprecated: The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.""")
         if customer_bgp_asn is not None:
-            pulumi.set(__self__, "customer_bgp_asn", customer_bgp_asn)
+            _setter("customer_bgp_asn", customer_bgp_asn)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if gateway_id is not None:
-            pulumi.set(__self__, "gateway_id", gateway_id)
+            _setter("gateway_id", gateway_id)
         if ip_mtu is not None:
-            pulumi.set(__self__, "ip_mtu", ip_mtu)
+            _setter("ip_mtu", ip_mtu)
         if is_bfd_enabled is not None:
-            pulumi.set(__self__, "is_bfd_enabled", is_bfd_enabled)
+            _setter("is_bfd_enabled", is_bfd_enabled)
         if is_transport_mode is not None:
-            pulumi.set(__self__, "is_transport_mode", is_transport_mode)
+            _setter("is_transport_mode", is_transport_mode)
         if provider_service_id is not None:
-            pulumi.set(__self__, "provider_service_id", provider_service_id)
+            _setter("provider_service_id", provider_service_id)
         if provider_service_key_name is not None:
-            pulumi.set(__self__, "provider_service_key_name", provider_service_key_name)
+            _setter("provider_service_key_name", provider_service_key_name)
         if public_prefixes is not None:
-            pulumi.set(__self__, "public_prefixes", public_prefixes)
+            _setter("public_prefixes", public_prefixes)
         if region is not None:
-            pulumi.set(__self__, "region", region)
+            _setter("region", region)
         if routing_policies is not None:
-            pulumi.set(__self__, "routing_policies", routing_policies)
+            _setter("routing_policies", routing_policies)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -403,68 +448,131 @@ class _VirtualCircuitState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _VirtualCircuitState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bandwidth_shape_name=bandwidth_shape_name,
+            bgp_admin_state=bgp_admin_state,
+            bgp_ipv6session_state=bgp_ipv6session_state,
+            bgp_management=bgp_management,
+            bgp_session_state=bgp_session_state,
+            compartment_id=compartment_id,
+            cross_connect_mappings=cross_connect_mappings,
+            customer_asn=customer_asn,
+            customer_bgp_asn=customer_bgp_asn,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            gateway_id=gateway_id,
+            ip_mtu=ip_mtu,
+            is_bfd_enabled=is_bfd_enabled,
+            is_transport_mode=is_transport_mode,
+            oracle_bgp_asn=oracle_bgp_asn,
+            provider_service_id=provider_service_id,
+            provider_service_key_name=provider_service_key_name,
+            provider_state=provider_state,
+            public_prefixes=public_prefixes,
+            reference_comment=reference_comment,
+            region=region,
+            routing_policies=routing_policies,
+            service_type=service_type,
+            state=state,
+            time_created=time_created,
+            type=type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bandwidth_shape_name: Optional[pulumi.Input[str]] = None,
+             bgp_admin_state: Optional[pulumi.Input[str]] = None,
+             bgp_ipv6session_state: Optional[pulumi.Input[str]] = None,
+             bgp_management: Optional[pulumi.Input[str]] = None,
+             bgp_session_state: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             cross_connect_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitCrossConnectMappingArgs']]]] = None,
+             customer_asn: Optional[pulumi.Input[str]] = None,
+             customer_bgp_asn: Optional[pulumi.Input[int]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             gateway_id: Optional[pulumi.Input[str]] = None,
+             ip_mtu: Optional[pulumi.Input[str]] = None,
+             is_bfd_enabled: Optional[pulumi.Input[bool]] = None,
+             is_transport_mode: Optional[pulumi.Input[bool]] = None,
+             oracle_bgp_asn: Optional[pulumi.Input[int]] = None,
+             provider_service_id: Optional[pulumi.Input[str]] = None,
+             provider_service_key_name: Optional[pulumi.Input[str]] = None,
+             provider_state: Optional[pulumi.Input[str]] = None,
+             public_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]]] = None,
+             reference_comment: Optional[pulumi.Input[str]] = None,
+             region: Optional[pulumi.Input[str]] = None,
+             routing_policies: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             service_type: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if bandwidth_shape_name is not None:
-            pulumi.set(__self__, "bandwidth_shape_name", bandwidth_shape_name)
+            _setter("bandwidth_shape_name", bandwidth_shape_name)
         if bgp_admin_state is not None:
-            pulumi.set(__self__, "bgp_admin_state", bgp_admin_state)
+            _setter("bgp_admin_state", bgp_admin_state)
         if bgp_ipv6session_state is not None:
-            pulumi.set(__self__, "bgp_ipv6session_state", bgp_ipv6session_state)
+            _setter("bgp_ipv6session_state", bgp_ipv6session_state)
         if bgp_management is not None:
             warnings.warn("""The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.""", DeprecationWarning)
             pulumi.log.warn("""bgp_management is deprecated: The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.""")
         if bgp_management is not None:
-            pulumi.set(__self__, "bgp_management", bgp_management)
+            _setter("bgp_management", bgp_management)
         if bgp_session_state is not None:
-            pulumi.set(__self__, "bgp_session_state", bgp_session_state)
+            _setter("bgp_session_state", bgp_session_state)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if cross_connect_mappings is not None:
-            pulumi.set(__self__, "cross_connect_mappings", cross_connect_mappings)
+            _setter("cross_connect_mappings", cross_connect_mappings)
         if customer_asn is not None:
-            pulumi.set(__self__, "customer_asn", customer_asn)
+            _setter("customer_asn", customer_asn)
         if customer_bgp_asn is not None:
             warnings.warn("""The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.""", DeprecationWarning)
             pulumi.log.warn("""customer_bgp_asn is deprecated: The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.""")
         if customer_bgp_asn is not None:
-            pulumi.set(__self__, "customer_bgp_asn", customer_bgp_asn)
+            _setter("customer_bgp_asn", customer_bgp_asn)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if gateway_id is not None:
-            pulumi.set(__self__, "gateway_id", gateway_id)
+            _setter("gateway_id", gateway_id)
         if ip_mtu is not None:
-            pulumi.set(__self__, "ip_mtu", ip_mtu)
+            _setter("ip_mtu", ip_mtu)
         if is_bfd_enabled is not None:
-            pulumi.set(__self__, "is_bfd_enabled", is_bfd_enabled)
+            _setter("is_bfd_enabled", is_bfd_enabled)
         if is_transport_mode is not None:
-            pulumi.set(__self__, "is_transport_mode", is_transport_mode)
+            _setter("is_transport_mode", is_transport_mode)
         if oracle_bgp_asn is not None:
-            pulumi.set(__self__, "oracle_bgp_asn", oracle_bgp_asn)
+            _setter("oracle_bgp_asn", oracle_bgp_asn)
         if provider_service_id is not None:
-            pulumi.set(__self__, "provider_service_id", provider_service_id)
+            _setter("provider_service_id", provider_service_id)
         if provider_service_key_name is not None:
-            pulumi.set(__self__, "provider_service_key_name", provider_service_key_name)
+            _setter("provider_service_key_name", provider_service_key_name)
         if provider_state is not None:
-            pulumi.set(__self__, "provider_state", provider_state)
+            _setter("provider_state", provider_state)
         if public_prefixes is not None:
-            pulumi.set(__self__, "public_prefixes", public_prefixes)
+            _setter("public_prefixes", public_prefixes)
         if reference_comment is not None:
-            pulumi.set(__self__, "reference_comment", reference_comment)
+            _setter("reference_comment", reference_comment)
         if region is not None:
-            pulumi.set(__self__, "region", region)
+            _setter("region", region)
         if routing_policies is not None:
-            pulumi.set(__self__, "routing_policies", routing_policies)
+            _setter("routing_policies", routing_policies)
         if service_type is not None:
-            pulumi.set(__self__, "service_type", service_type)
+            _setter("service_type", service_type)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if type is not None:
-            pulumi.set(__self__, "type", type)
+            _setter("type", type)
 
     @property
     @pulumi.getter(name="bandwidthShapeName")
@@ -1030,6 +1138,10 @@ class VirtualCircuit(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            VirtualCircuitArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -1070,9 +1182,6 @@ class VirtualCircuit(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["cross_connect_mappings"] = cross_connect_mappings
             __props__.__dict__["customer_asn"] = customer_asn
-            if customer_bgp_asn is not None and not opts.urn:
-                warnings.warn("""The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.""", DeprecationWarning)
-                pulumi.log.warn("""customer_bgp_asn is deprecated: The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.""")
             __props__.__dict__["customer_bgp_asn"] = customer_bgp_asn
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -27,9 +27,20 @@ class ExternalAsmArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "external_asm_id", external_asm_id)
+        ExternalAsmArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            external_asm_id=external_asm_id,
+            external_connector_id=external_connector_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             external_asm_id: pulumi.Input[str],
+             external_connector_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("external_asm_id", external_asm_id)
         if external_connector_id is not None:
-            pulumi.set(__self__, "external_connector_id", external_connector_id)
+            _setter("external_connector_id", external_connector_id)
 
     @property
     @pulumi.getter(name="externalAsmId")
@@ -102,38 +113,77 @@ class _ExternalAsmState:
         :param pulumi.Input[str] time_updated: The date and time the external ASM was last updated.
         :param pulumi.Input[str] version: The ASM version.
         """
+        _ExternalAsmState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_details=additional_details,
+            compartment_id=compartment_id,
+            component_name=component_name,
+            display_name=display_name,
+            external_asm_id=external_asm_id,
+            external_connector_id=external_connector_id,
+            external_db_system_id=external_db_system_id,
+            grid_home=grid_home,
+            is_cluster=is_cluster,
+            is_flex_enabled=is_flex_enabled,
+            lifecycle_details=lifecycle_details,
+            serviced_databases=serviced_databases,
+            state=state,
+            time_created=time_created,
+            time_updated=time_updated,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_details: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             component_name: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             external_asm_id: Optional[pulumi.Input[str]] = None,
+             external_connector_id: Optional[pulumi.Input[str]] = None,
+             external_db_system_id: Optional[pulumi.Input[str]] = None,
+             grid_home: Optional[pulumi.Input[str]] = None,
+             is_cluster: Optional[pulumi.Input[bool]] = None,
+             is_flex_enabled: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             serviced_databases: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalAsmServicedDatabaseArgs']]]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if additional_details is not None:
-            pulumi.set(__self__, "additional_details", additional_details)
+            _setter("additional_details", additional_details)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if component_name is not None:
-            pulumi.set(__self__, "component_name", component_name)
+            _setter("component_name", component_name)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if external_asm_id is not None:
-            pulumi.set(__self__, "external_asm_id", external_asm_id)
+            _setter("external_asm_id", external_asm_id)
         if external_connector_id is not None:
-            pulumi.set(__self__, "external_connector_id", external_connector_id)
+            _setter("external_connector_id", external_connector_id)
         if external_db_system_id is not None:
-            pulumi.set(__self__, "external_db_system_id", external_db_system_id)
+            _setter("external_db_system_id", external_db_system_id)
         if grid_home is not None:
-            pulumi.set(__self__, "grid_home", grid_home)
+            _setter("grid_home", grid_home)
         if is_cluster is not None:
-            pulumi.set(__self__, "is_cluster", is_cluster)
+            _setter("is_cluster", is_cluster)
         if is_flex_enabled is not None:
-            pulumi.set(__self__, "is_flex_enabled", is_flex_enabled)
+            _setter("is_flex_enabled", is_flex_enabled)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if serviced_databases is not None:
-            pulumi.set(__self__, "serviced_databases", serviced_databases)
+            _setter("serviced_databases", serviced_databases)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter(name="additionalDetails")
@@ -391,6 +441,10 @@ class ExternalAsm(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ExternalAsmArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

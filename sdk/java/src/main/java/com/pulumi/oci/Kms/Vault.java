@@ -9,6 +9,8 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Kms.VaultArgs;
 import com.pulumi.oci.Kms.inputs.VaultState;
+import com.pulumi.oci.Kms.outputs.VaultExternalKeyManagerMetadata;
+import com.pulumi.oci.Kms.outputs.VaultExternalKeyManagerMetadataSummary;
 import com.pulumi.oci.Kms.outputs.VaultReplicaDetail;
 import com.pulumi.oci.Kms.outputs.VaultRestoreFromFile;
 import com.pulumi.oci.Kms.outputs.VaultRestoreFromObjectStore;
@@ -43,6 +45,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Kms.Vault;
  * import com.pulumi.oci.Kms.VaultArgs;
+ * import com.pulumi.oci.Kms.inputs.VaultExternalKeyManagerMetadataArgs;
+ * import com.pulumi.oci.Kms.inputs.VaultExternalKeyManagerMetadataOauthMetadataArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -61,6 +65,15 @@ import javax.annotation.Nullable;
  *             .displayName(var_.vault_display_name())
  *             .vaultType(var_.vault_vault_type())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .externalKeyManagerMetadata(VaultExternalKeyManagerMetadataArgs.builder()
+ *                 .externalVaultEndpointUrl(var_.vault_external_key_manager_metadata_external_vault_endpoint_url())
+ *                 .oauthMetadata(VaultExternalKeyManagerMetadataOauthMetadataArgs.builder()
+ *                     .clientAppId(oci_kms_client_app.test_client_app().id())
+ *                     .clientAppSecret(var_.vault_external_key_manager_metadata_oauth_metadata_client_app_secret())
+ *                     .idcsAccountNameUrl(var_.vault_external_key_manager_metadata_oauth_metadata_idcs_account_name_url())
+ *                     .build())
+ *                 .privateEndpointId(oci_dataflow_private_endpoint.test_private_endpoint().id())
+ *                 .build())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 
@@ -136,6 +149,34 @@ public class Vault extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
+     * Metadata required for accessing External Key manager
+     * 
+     */
+    @Export(name="externalKeyManagerMetadata", refs={VaultExternalKeyManagerMetadata.class}, tree="[0]")
+    private Output<VaultExternalKeyManagerMetadata> externalKeyManagerMetadata;
+
+    /**
+     * @return Metadata required for accessing External Key manager
+     * 
+     */
+    public Output<VaultExternalKeyManagerMetadata> externalKeyManagerMetadata() {
+        return this.externalKeyManagerMetadata;
+    }
+    /**
+     * Summary about metadata of external key manager to be returned to the customer as a response.
+     * 
+     */
+    @Export(name="externalKeyManagerMetadataSummaries", refs={List.class,VaultExternalKeyManagerMetadataSummary.class}, tree="[0,1]")
+    private Output<List<VaultExternalKeyManagerMetadataSummary>> externalKeyManagerMetadataSummaries;
+
+    /**
+     * @return Summary about metadata of external key manager to be returned to the customer as a response.
+     * 
+     */
+    public Output<List<VaultExternalKeyManagerMetadataSummary>> externalKeyManagerMetadataSummaries() {
+        return this.externalKeyManagerMetadataSummaries;
+    }
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -150,14 +191,14 @@ public class Vault extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * A boolean that will be true when vault is primary, and will be false when vault is a replica from a primary vault.
+     * A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
      * 
      */
     @Export(name="isPrimary", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPrimary;
 
     /**
-     * @return A boolean that will be true when vault is primary, and will be false when vault is a replica from a primary vault.
+     * @return A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
      * 
      */
     public Output<Boolean> isPrimary() {
@@ -226,14 +267,14 @@ public class Vault extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.restoreTrigger);
     }
     /**
-     * The OCID of the vault from which this vault was restored, if it was restored from a backup file.  If you restore a vault to the same region, the vault retains the same OCID that it had when you  backed up the vault.
+     * The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
      * 
      */
     @Export(name="restoredFromVaultId", refs={String.class}, tree="[0]")
     private Output<String> restoredFromVaultId;
 
     /**
-     * @return The OCID of the vault from which this vault was restored, if it was restored from a backup file.  If you restore a vault to the same region, the vault retains the same OCID that it had when you  backed up the vault.
+     * @return The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
      * 
      */
     public Output<String> restoredFromVaultId() {

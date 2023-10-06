@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails {
     /**
-     * @return (Updatable) The network bandwidth for the model.
+     * @return (Updatable) The minimum network bandwidth for the model deployment.
      * 
      */
     private @Nullable Integer bandwidthMbps;
@@ -37,7 +37,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
 
     private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails() {}
     /**
-     * @return (Updatable) The network bandwidth for the model.
+     * @return (Updatable) The minimum network bandwidth for the model deployment.
      * 
      */
     public Optional<Integer> bandwidthMbps() {

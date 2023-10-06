@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -45,13 +45,34 @@ class GetCommitmentsCommitmentResult(dict):
         :param str time_start: Commitment start date
         :param str used_amount: Commitment used amount
         """
-        pulumi.set(__self__, "available_amount", available_amount)
-        pulumi.set(__self__, "funded_allocation_value", funded_allocation_value)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "quantity", quantity)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
-        pulumi.set(__self__, "used_amount", used_amount)
+        GetCommitmentsCommitmentResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            available_amount=available_amount,
+            funded_allocation_value=funded_allocation_value,
+            id=id,
+            quantity=quantity,
+            time_end=time_end,
+            time_start=time_start,
+            used_amount=used_amount,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             available_amount: str,
+             funded_allocation_value: str,
+             id: str,
+             quantity: str,
+             time_end: str,
+             time_start: str,
+             used_amount: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("available_amount", available_amount)
+        _setter("funded_allocation_value", funded_allocation_value)
+        _setter("id", id)
+        _setter("quantity", quantity)
+        _setter("time_end", time_end)
+        _setter("time_start", time_start)
+        _setter("used_amount", used_amount)
 
     @property
     @pulumi.getter(name="availableAmount")
@@ -116,10 +137,23 @@ class GetCommitmentsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetCommitmentsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -146,10 +180,23 @@ class GetRatecardsFilterResult(dict):
         """
         :param str name: Product name
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetRatecardsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -193,15 +240,40 @@ class GetRatecardsRateCardResult(dict):
         :param str time_end: Rate card end date
         :param str time_start: Rate card start date
         """
-        pulumi.set(__self__, "currencies", currencies)
-        pulumi.set(__self__, "discretionary_discount_percentage", discretionary_discount_percentage)
-        pulumi.set(__self__, "is_tier", is_tier)
-        pulumi.set(__self__, "net_unit_price", net_unit_price)
-        pulumi.set(__self__, "overage_price", overage_price)
-        pulumi.set(__self__, "products", products)
-        pulumi.set(__self__, "rate_card_tiers", rate_card_tiers)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
+        GetRatecardsRateCardResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            currencies=currencies,
+            discretionary_discount_percentage=discretionary_discount_percentage,
+            is_tier=is_tier,
+            net_unit_price=net_unit_price,
+            overage_price=overage_price,
+            products=products,
+            rate_card_tiers=rate_card_tiers,
+            time_end=time_end,
+            time_start=time_start,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             currencies: Sequence['outputs.GetRatecardsRateCardCurrencyResult'],
+             discretionary_discount_percentage: str,
+             is_tier: bool,
+             net_unit_price: str,
+             overage_price: str,
+             products: Sequence['outputs.GetRatecardsRateCardProductResult'],
+             rate_card_tiers: Sequence['outputs.GetRatecardsRateCardRateCardTierResult'],
+             time_end: str,
+             time_start: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("currencies", currencies)
+        _setter("discretionary_discount_percentage", discretionary_discount_percentage)
+        _setter("is_tier", is_tier)
+        _setter("net_unit_price", net_unit_price)
+        _setter("overage_price", overage_price)
+        _setter("products", products)
+        _setter("rate_card_tiers", rate_card_tiers)
+        _setter("time_end", time_end)
+        _setter("time_start", time_start)
 
     @property
     @pulumi.getter
@@ -287,9 +359,22 @@ class GetRatecardsRateCardCurrencyResult(dict):
         :param str name: Product name
         :param str std_precision: Standard Precision of the Currency
         """
-        pulumi.set(__self__, "iso_code", iso_code)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "std_precision", std_precision)
+        GetRatecardsRateCardCurrencyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            iso_code=iso_code,
+            name=name,
+            std_precision=std_precision,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             iso_code: str,
+             name: str,
+             std_precision: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("iso_code", iso_code)
+        _setter("name", name)
+        _setter("std_precision", std_precision)
 
     @property
     @pulumi.getter(name="isoCode")
@@ -333,12 +418,31 @@ class GetRatecardsRateCardProductResult(dict):
         :param str ucm_rate_card_part_type: Rate card part type of Product
         :param str unit_of_measure: Unit of measure
         """
-        pulumi.set(__self__, "billing_category", billing_category)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "product_category", product_category)
-        pulumi.set(__self__, "ucm_rate_card_part_type", ucm_rate_card_part_type)
-        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
+        GetRatecardsRateCardProductResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            billing_category=billing_category,
+            name=name,
+            part_number=part_number,
+            product_category=product_category,
+            ucm_rate_card_part_type=ucm_rate_card_part_type,
+            unit_of_measure=unit_of_measure,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             billing_category: str,
+             name: str,
+             part_number: str,
+             product_category: str,
+             ucm_rate_card_part_type: str,
+             unit_of_measure: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("billing_category", billing_category)
+        _setter("name", name)
+        _setter("part_number", part_number)
+        _setter("product_category", product_category)
+        _setter("ucm_rate_card_part_type", ucm_rate_card_part_type)
+        _setter("unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter(name="billingCategory")
@@ -400,9 +504,22 @@ class GetRatecardsRateCardRateCardTierResult(dict):
         :param str overage_price: Rate card tier overage price
         :param str up_to_quantity: Rate card tier quantity range
         """
-        pulumi.set(__self__, "net_unit_price", net_unit_price)
-        pulumi.set(__self__, "overage_price", overage_price)
-        pulumi.set(__self__, "up_to_quantity", up_to_quantity)
+        GetRatecardsRateCardRateCardTierResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            net_unit_price=net_unit_price,
+            overage_price=overage_price,
+            up_to_quantity=up_to_quantity,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             net_unit_price: str,
+             overage_price: str,
+             up_to_quantity: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("net_unit_price", net_unit_price)
+        _setter("overage_price", overage_price)
+        _setter("up_to_quantity", up_to_quantity)
 
     @property
     @pulumi.getter(name="netUnitPrice")
@@ -438,10 +555,23 @@ class GetSubscriptionsFilterResult(dict):
         """
         :param str name: Product name
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSubscriptionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -479,12 +609,31 @@ class GetSubscriptionsSubscriptionResult(dict):
         :param str time_end: Represents the date when the last service of the subscription ends
         :param str time_start: Represents the date when the first service of the subscription was activated
         """
-        pulumi.set(__self__, "currencies", currencies)
-        pulumi.set(__self__, "service_name", service_name)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "subscribed_services", subscribed_services)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
+        GetSubscriptionsSubscriptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            currencies=currencies,
+            service_name=service_name,
+            status=status,
+            subscribed_services=subscribed_services,
+            time_end=time_end,
+            time_start=time_start,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             currencies: Sequence['outputs.GetSubscriptionsSubscriptionCurrencyResult'],
+             service_name: str,
+             status: str,
+             subscribed_services: Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceResult'],
+             time_end: str,
+             time_start: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("currencies", currencies)
+        _setter("service_name", service_name)
+        _setter("status", status)
+        _setter("subscribed_services", subscribed_services)
+        _setter("time_end", time_end)
+        _setter("time_start", time_start)
 
     @property
     @pulumi.getter
@@ -546,9 +695,22 @@ class GetSubscriptionsSubscriptionCurrencyResult(dict):
         :param str name: Product name
         :param str std_precision: Standard Precision of the Currency
         """
-        pulumi.set(__self__, "iso_code", iso_code)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "std_precision", std_precision)
+        GetSubscriptionsSubscriptionCurrencyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            iso_code=iso_code,
+            name=name,
+            std_precision=std_precision,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             iso_code: str,
+             name: str,
+             std_precision: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("iso_code", iso_code)
+        _setter("name", name)
+        _setter("std_precision", std_precision)
 
     @property
     @pulumi.getter(name="isoCode")
@@ -624,28 +786,79 @@ class GetSubscriptionsSubscriptionSubscribedServiceResult(dict):
         :param str time_start: Represents the date when the first service of the subscription was activated
         :param str total_value: Subscribed service total value
         """
-        pulumi.set(__self__, "booking_opty_number", booking_opty_number)
-        pulumi.set(__self__, "commitment_services", commitment_services)
-        pulumi.set(__self__, "csi", csi)
-        pulumi.set(__self__, "data_center_region", data_center_region)
-        pulumi.set(__self__, "funded_allocation_value", funded_allocation_value)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
-        pulumi.set(__self__, "net_unit_price", net_unit_price)
-        pulumi.set(__self__, "operation_type", operation_type)
-        pulumi.set(__self__, "order_number", order_number)
-        pulumi.set(__self__, "partner_transaction_type", partner_transaction_type)
-        pulumi.set(__self__, "pricing_model", pricing_model)
-        pulumi.set(__self__, "products", products)
-        pulumi.set(__self__, "program_type", program_type)
-        pulumi.set(__self__, "promo_type", promo_type)
-        pulumi.set(__self__, "quantity", quantity)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "term_value", term_value)
-        pulumi.set(__self__, "term_value_uom", term_value_uom)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
-        pulumi.set(__self__, "total_value", total_value)
+        GetSubscriptionsSubscriptionSubscribedServiceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            booking_opty_number=booking_opty_number,
+            commitment_services=commitment_services,
+            csi=csi,
+            data_center_region=data_center_region,
+            funded_allocation_value=funded_allocation_value,
+            id=id,
+            is_intent_to_pay=is_intent_to_pay,
+            net_unit_price=net_unit_price,
+            operation_type=operation_type,
+            order_number=order_number,
+            partner_transaction_type=partner_transaction_type,
+            pricing_model=pricing_model,
+            products=products,
+            program_type=program_type,
+            promo_type=promo_type,
+            quantity=quantity,
+            status=status,
+            term_value=term_value,
+            term_value_uom=term_value_uom,
+            time_end=time_end,
+            time_start=time_start,
+            total_value=total_value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             booking_opty_number: str,
+             commitment_services: Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceResult'],
+             csi: str,
+             data_center_region: str,
+             funded_allocation_value: str,
+             id: str,
+             is_intent_to_pay: bool,
+             net_unit_price: str,
+             operation_type: str,
+             order_number: str,
+             partner_transaction_type: str,
+             pricing_model: str,
+             products: Sequence['outputs.GetSubscriptionsSubscriptionSubscribedServiceProductResult'],
+             program_type: str,
+             promo_type: str,
+             quantity: str,
+             status: str,
+             term_value: str,
+             term_value_uom: str,
+             time_end: str,
+             time_start: str,
+             total_value: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("booking_opty_number", booking_opty_number)
+        _setter("commitment_services", commitment_services)
+        _setter("csi", csi)
+        _setter("data_center_region", data_center_region)
+        _setter("funded_allocation_value", funded_allocation_value)
+        _setter("id", id)
+        _setter("is_intent_to_pay", is_intent_to_pay)
+        _setter("net_unit_price", net_unit_price)
+        _setter("operation_type", operation_type)
+        _setter("order_number", order_number)
+        _setter("partner_transaction_type", partner_transaction_type)
+        _setter("pricing_model", pricing_model)
+        _setter("products", products)
+        _setter("program_type", program_type)
+        _setter("promo_type", promo_type)
+        _setter("quantity", quantity)
+        _setter("status", status)
+        _setter("term_value", term_value)
+        _setter("term_value_uom", term_value_uom)
+        _setter("time_end", time_end)
+        _setter("time_start", time_start)
+        _setter("total_value", total_value)
 
     @property
     @pulumi.getter(name="bookingOptyNumber")
@@ -841,12 +1054,31 @@ class GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceResult(dict)
         :param str time_end: Represents the date when the last service of the subscription ends
         :param str time_start: Represents the date when the first service of the subscription was activated
         """
-        pulumi.set(__self__, "available_amount", available_amount)
-        pulumi.set(__self__, "funded_allocation_value", funded_allocation_value)
-        pulumi.set(__self__, "line_net_amount", line_net_amount)
-        pulumi.set(__self__, "quantity", quantity)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_start", time_start)
+        GetSubscriptionsSubscriptionSubscribedServiceCommitmentServiceResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            available_amount=available_amount,
+            funded_allocation_value=funded_allocation_value,
+            line_net_amount=line_net_amount,
+            quantity=quantity,
+            time_end=time_end,
+            time_start=time_start,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             available_amount: str,
+             funded_allocation_value: str,
+             line_net_amount: str,
+             quantity: str,
+             time_end: str,
+             time_start: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("available_amount", available_amount)
+        _setter("funded_allocation_value", funded_allocation_value)
+        _setter("line_net_amount", line_net_amount)
+        _setter("quantity", quantity)
+        _setter("time_end", time_end)
+        _setter("time_start", time_start)
 
     @property
     @pulumi.getter(name="availableAmount")
@@ -910,10 +1142,25 @@ class GetSubscriptionsSubscriptionSubscribedServiceProductResult(dict):
         :param str provisioning_group: Product provisioning group
         :param str unit_of_measure: Unit of measure
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "part_number", part_number)
-        pulumi.set(__self__, "provisioning_group", provisioning_group)
-        pulumi.set(__self__, "unit_of_measure", unit_of_measure)
+        GetSubscriptionsSubscriptionSubscribedServiceProductResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            part_number=part_number,
+            provisioning_group=provisioning_group,
+            unit_of_measure=unit_of_measure,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             part_number: str,
+             provisioning_group: str,
+             unit_of_measure: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("part_number", part_number)
+        _setter("provisioning_group", provisioning_group)
+        _setter("unit_of_measure", unit_of_measure)
 
     @property
     @pulumi.getter

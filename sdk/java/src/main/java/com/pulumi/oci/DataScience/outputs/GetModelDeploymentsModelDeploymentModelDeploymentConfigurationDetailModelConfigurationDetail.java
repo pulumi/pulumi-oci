@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail {
     /**
-     * @return The network bandwidth for the model.
+     * @return The minimum network bandwidth for the model deployment.
      * 
      */
     private Integer bandwidthMbps;
@@ -36,7 +36,7 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
 
     private GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail() {}
     /**
-     * @return The network bandwidth for the model.
+     * @return The minimum network bandwidth for the model deployment.
      * 
      */
     public Integer bandwidthMbps() {

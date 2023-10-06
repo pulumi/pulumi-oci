@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -45,24 +45,53 @@ class ScheduleArgs:
         :param pulumi.Input['ScheduleQueryPropertiesArgs'] query_properties: The query properties.
         :param pulumi.Input[str] saved_report_id: The saved report id which can also be used to generate query.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "result_location", result_location)
-        pulumi.set(__self__, "schedule_recurrences", schedule_recurrences)
-        pulumi.set(__self__, "time_scheduled", time_scheduled)
+        ScheduleArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            result_location=result_location,
+            schedule_recurrences=schedule_recurrences,
+            time_scheduled=time_scheduled,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            name=name,
+            output_file_format=output_file_format,
+            query_properties=query_properties,
+            saved_report_id=saved_report_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             result_location: pulumi.Input['ScheduleResultLocationArgs'],
+             schedule_recurrences: pulumi.Input[str],
+             time_scheduled: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             output_file_format: Optional[pulumi.Input[str]] = None,
+             query_properties: Optional[pulumi.Input['ScheduleQueryPropertiesArgs']] = None,
+             saved_report_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("result_location", result_location)
+        _setter("schedule_recurrences", schedule_recurrences)
+        _setter("time_scheduled", time_scheduled)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if output_file_format is not None:
-            pulumi.set(__self__, "output_file_format", output_file_format)
+            _setter("output_file_format", output_file_format)
         if query_properties is not None:
-            pulumi.set(__self__, "query_properties", query_properties)
+            _setter("query_properties", query_properties)
         if saved_report_id is not None:
-            pulumi.set(__self__, "saved_report_id", saved_report_id)
+            _setter("saved_report_id", saved_report_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -241,36 +270,73 @@ class _ScheduleState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        _ScheduleState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            freeform_tags=freeform_tags,
+            name=name,
+            output_file_format=output_file_format,
+            query_properties=query_properties,
+            result_location=result_location,
+            saved_report_id=saved_report_id,
+            schedule_recurrences=schedule_recurrences,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_next_run=time_next_run,
+            time_scheduled=time_scheduled,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             output_file_format: Optional[pulumi.Input[str]] = None,
+             query_properties: Optional[pulumi.Input['ScheduleQueryPropertiesArgs']] = None,
+             result_location: Optional[pulumi.Input['ScheduleResultLocationArgs']] = None,
+             saved_report_id: Optional[pulumi.Input[str]] = None,
+             schedule_recurrences: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_next_run: Optional[pulumi.Input[str]] = None,
+             time_scheduled: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if output_file_format is not None:
-            pulumi.set(__self__, "output_file_format", output_file_format)
+            _setter("output_file_format", output_file_format)
         if query_properties is not None:
-            pulumi.set(__self__, "query_properties", query_properties)
+            _setter("query_properties", query_properties)
         if result_location is not None:
-            pulumi.set(__self__, "result_location", result_location)
+            _setter("result_location", result_location)
         if saved_report_id is not None:
-            pulumi.set(__self__, "saved_report_id", saved_report_id)
+            _setter("saved_report_id", saved_report_id)
         if schedule_recurrences is not None:
-            pulumi.set(__self__, "schedule_recurrences", schedule_recurrences)
+            _setter("schedule_recurrences", schedule_recurrences)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_next_run is not None:
-            pulumi.set(__self__, "time_next_run", time_next_run)
+            _setter("time_next_run", time_next_run)
         if time_scheduled is not None:
-            pulumi.set(__self__, "time_scheduled", time_scheduled)
+            _setter("time_scheduled", time_scheduled)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -626,6 +692,10 @@ class Schedule(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ScheduleArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -659,7 +729,17 @@ class Schedule(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["name"] = name
             __props__.__dict__["output_file_format"] = output_file_format
+            if query_properties is not None and not isinstance(query_properties, ScheduleQueryPropertiesArgs):
+                query_properties = query_properties or {}
+                def _setter(key, value):
+                    query_properties[key] = value
+                ScheduleQueryPropertiesArgs._configure(_setter, **query_properties)
             __props__.__dict__["query_properties"] = query_properties
+            if result_location is not None and not isinstance(result_location, ScheduleResultLocationArgs):
+                result_location = result_location or {}
+                def _setter(key, value):
+                    result_location[key] = value
+                ScheduleResultLocationArgs._configure(_setter, **result_location)
             if result_location is None and not opts.urn:
                 raise TypeError("Missing required property 'result_location'")
             __props__.__dict__["result_location"] = result_location

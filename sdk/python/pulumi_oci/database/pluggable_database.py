@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,20 +39,43 @@ class PluggableDatabaseArgs:
         :param pulumi.Input[bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         :param pulumi.Input[str] tde_wallet_password: The existing TDE wallet password of the CDB.
         """
-        pulumi.set(__self__, "container_database_id", container_database_id)
-        pulumi.set(__self__, "pdb_name", pdb_name)
+        PluggableDatabaseArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            container_database_id=container_database_id,
+            pdb_name=pdb_name,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            pdb_admin_password=pdb_admin_password,
+            rotate_key_trigger=rotate_key_trigger,
+            should_pdb_admin_account_be_locked=should_pdb_admin_account_be_locked,
+            tde_wallet_password=tde_wallet_password,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             container_database_id: pulumi.Input[str],
+             pdb_name: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             pdb_admin_password: Optional[pulumi.Input[str]] = None,
+             rotate_key_trigger: Optional[pulumi.Input[int]] = None,
+             should_pdb_admin_account_be_locked: Optional[pulumi.Input[bool]] = None,
+             tde_wallet_password: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("container_database_id", container_database_id)
+        _setter("pdb_name", pdb_name)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if pdb_admin_password is not None:
-            pulumi.set(__self__, "pdb_admin_password", pdb_admin_password)
+            _setter("pdb_admin_password", pdb_admin_password)
         if rotate_key_trigger is not None:
-            pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
+            _setter("rotate_key_trigger", rotate_key_trigger)
         if should_pdb_admin_account_be_locked is not None:
-            pulumi.set(__self__, "should_pdb_admin_account_be_locked", should_pdb_admin_account_be_locked)
+            _setter("should_pdb_admin_account_be_locked", should_pdb_admin_account_be_locked)
         if tde_wallet_password is not None:
-            pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
+            _setter("tde_wallet_password", tde_wallet_password)
 
     @property
     @pulumi.getter(name="containerDatabaseId")
@@ -197,38 +220,77 @@ class _PluggableDatabaseState:
         :param pulumi.Input[str] tde_wallet_password: The existing TDE wallet password of the CDB.
         :param pulumi.Input[str] time_created: The date and time the pluggable database was created.
         """
+        _PluggableDatabaseState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            connection_strings=connection_strings,
+            container_database_id=container_database_id,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+            is_restricted=is_restricted,
+            lifecycle_details=lifecycle_details,
+            open_mode=open_mode,
+            pdb_admin_password=pdb_admin_password,
+            pdb_name=pdb_name,
+            pluggable_database_management_configs=pluggable_database_management_configs,
+            rotate_key_trigger=rotate_key_trigger,
+            should_pdb_admin_account_be_locked=should_pdb_admin_account_be_locked,
+            state=state,
+            tde_wallet_password=tde_wallet_password,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseConnectionStringArgs']]]] = None,
+             container_database_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             is_restricted: Optional[pulumi.Input[bool]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             open_mode: Optional[pulumi.Input[str]] = None,
+             pdb_admin_password: Optional[pulumi.Input[str]] = None,
+             pdb_name: Optional[pulumi.Input[str]] = None,
+             pluggable_database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabasePluggableDatabaseManagementConfigArgs']]]] = None,
+             rotate_key_trigger: Optional[pulumi.Input[int]] = None,
+             should_pdb_admin_account_be_locked: Optional[pulumi.Input[bool]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             tde_wallet_password: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if connection_strings is not None:
-            pulumi.set(__self__, "connection_strings", connection_strings)
+            _setter("connection_strings", connection_strings)
         if container_database_id is not None:
-            pulumi.set(__self__, "container_database_id", container_database_id)
+            _setter("container_database_id", container_database_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if is_restricted is not None:
-            pulumi.set(__self__, "is_restricted", is_restricted)
+            _setter("is_restricted", is_restricted)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if open_mode is not None:
-            pulumi.set(__self__, "open_mode", open_mode)
+            _setter("open_mode", open_mode)
         if pdb_admin_password is not None:
-            pulumi.set(__self__, "pdb_admin_password", pdb_admin_password)
+            _setter("pdb_admin_password", pdb_admin_password)
         if pdb_name is not None:
-            pulumi.set(__self__, "pdb_name", pdb_name)
+            _setter("pdb_name", pdb_name)
         if pluggable_database_management_configs is not None:
-            pulumi.set(__self__, "pluggable_database_management_configs", pluggable_database_management_configs)
+            _setter("pluggable_database_management_configs", pluggable_database_management_configs)
         if rotate_key_trigger is not None:
-            pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
+            _setter("rotate_key_trigger", rotate_key_trigger)
         if should_pdb_admin_account_be_locked is not None:
-            pulumi.set(__self__, "should_pdb_admin_account_be_locked", should_pdb_admin_account_be_locked)
+            _setter("should_pdb_admin_account_be_locked", should_pdb_admin_account_be_locked)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if tde_wallet_password is not None:
-            pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
+            _setter("tde_wallet_password", tde_wallet_password)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -536,6 +598,10 @@ class PluggableDatabase(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            PluggableDatabaseArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -39,17 +39,40 @@ class ExternalDatabaseConnectorArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "connection_credentials", connection_credentials)
-        pulumi.set(__self__, "connection_string", connection_string)
-        pulumi.set(__self__, "connector_agent_id", connector_agent_id)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "external_database_id", external_database_id)
+        ExternalDatabaseConnectorArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            connection_credentials=connection_credentials,
+            connection_string=connection_string,
+            connector_agent_id=connector_agent_id,
+            display_name=display_name,
+            external_database_id=external_database_id,
+            connector_type=connector_type,
+            defined_tags=defined_tags,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             connection_credentials: pulumi.Input['ExternalDatabaseConnectorConnectionCredentialsArgs'],
+             connection_string: pulumi.Input['ExternalDatabaseConnectorConnectionStringArgs'],
+             connector_agent_id: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             external_database_id: pulumi.Input[str],
+             connector_type: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("connection_credentials", connection_credentials)
+        _setter("connection_string", connection_string)
+        _setter("connector_agent_id", connector_agent_id)
+        _setter("display_name", display_name)
+        _setter("external_database_id", external_database_id)
         if connector_type is not None:
-            pulumi.set(__self__, "connector_type", connector_type)
+            _setter("connector_type", connector_type)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="connectionCredentials")
@@ -190,34 +213,69 @@ class _ExternalDatabaseConnectorState:
         :param pulumi.Input[str] time_connection_status_last_updated: The date and time the `connectionStatus` of this external connector was last updated.
         :param pulumi.Input[str] time_created: The date and time the external connector was created.
         """
+        _ExternalDatabaseConnectorState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            connection_credentials=connection_credentials,
+            connection_status=connection_status,
+            connection_string=connection_string,
+            connector_agent_id=connector_agent_id,
+            connector_type=connector_type,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            external_database_id=external_database_id,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            time_connection_status_last_updated=time_connection_status_last_updated,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             connection_credentials: Optional[pulumi.Input['ExternalDatabaseConnectorConnectionCredentialsArgs']] = None,
+             connection_status: Optional[pulumi.Input[str]] = None,
+             connection_string: Optional[pulumi.Input['ExternalDatabaseConnectorConnectionStringArgs']] = None,
+             connector_agent_id: Optional[pulumi.Input[str]] = None,
+             connector_type: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             external_database_id: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_connection_status_last_updated: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if connection_credentials is not None:
-            pulumi.set(__self__, "connection_credentials", connection_credentials)
+            _setter("connection_credentials", connection_credentials)
         if connection_status is not None:
-            pulumi.set(__self__, "connection_status", connection_status)
+            _setter("connection_status", connection_status)
         if connection_string is not None:
-            pulumi.set(__self__, "connection_string", connection_string)
+            _setter("connection_string", connection_string)
         if connector_agent_id is not None:
-            pulumi.set(__self__, "connector_agent_id", connector_agent_id)
+            _setter("connector_agent_id", connector_agent_id)
         if connector_type is not None:
-            pulumi.set(__self__, "connector_type", connector_type)
+            _setter("connector_type", connector_type)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if external_database_id is not None:
-            pulumi.set(__self__, "external_database_id", external_database_id)
+            _setter("external_database_id", external_database_id)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_connection_status_last_updated is not None:
-            pulumi.set(__self__, "time_connection_status_last_updated", time_connection_status_last_updated)
+            _setter("time_connection_status_last_updated", time_connection_status_last_updated)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -525,6 +583,10 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ExternalDatabaseConnectorArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -547,9 +609,19 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ExternalDatabaseConnectorArgs.__new__(ExternalDatabaseConnectorArgs)
 
+            if connection_credentials is not None and not isinstance(connection_credentials, ExternalDatabaseConnectorConnectionCredentialsArgs):
+                connection_credentials = connection_credentials or {}
+                def _setter(key, value):
+                    connection_credentials[key] = value
+                ExternalDatabaseConnectorConnectionCredentialsArgs._configure(_setter, **connection_credentials)
             if connection_credentials is None and not opts.urn:
                 raise TypeError("Missing required property 'connection_credentials'")
             __props__.__dict__["connection_credentials"] = connection_credentials
+            if connection_string is not None and not isinstance(connection_string, ExternalDatabaseConnectorConnectionStringArgs):
+                connection_string = connection_string or {}
+                def _setter(key, value):
+                    connection_string[key] = value
+                ExternalDatabaseConnectorConnectionStringArgs._configure(_setter, **connection_string)
             if connection_string is None and not opts.urn:
                 raise TypeError("Missing required property 'connection_string'")
             __props__.__dict__["connection_string"] = connection_string

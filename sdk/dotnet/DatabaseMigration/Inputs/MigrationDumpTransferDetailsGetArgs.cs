@@ -12,6 +12,9 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
 
     public sealed class MigrationDumpTransferDetailsGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("sharedStorageMountTargetId")]
+        public Input<string>? SharedStorageMountTargetId { get; set; }
+
         /// <summary>
         /// (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
         /// </summary>

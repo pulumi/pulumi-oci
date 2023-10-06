@@ -2885,6 +2885,428 @@ func (o MigrationDataTransferMediumDetailsObjectStorageDetailsPtrOutput) Namespa
 	}).(pulumi.StringPtrOutput)
 }
 
+type MigrationDataTransferMediumDetailsV2 struct {
+	AccessKeyId *string `pulumi:"accessKeyId"`
+	// (Updatable) Name of directory object in database
+	Name                *string                                                  `pulumi:"name"`
+	ObjectStorageBucket *MigrationDataTransferMediumDetailsV2ObjectStorageBucket `pulumi:"objectStorageBucket"`
+	Region              *string                                                  `pulumi:"region"`
+	SecretAccessKey     *string                                                  `pulumi:"secretAccessKey"`
+	// (Updatable) Migration type.
+	Type string `pulumi:"type"`
+}
+
+// MigrationDataTransferMediumDetailsV2Input is an input type that accepts MigrationDataTransferMediumDetailsV2Args and MigrationDataTransferMediumDetailsV2Output values.
+// You can construct a concrete instance of `MigrationDataTransferMediumDetailsV2Input` via:
+//
+//	MigrationDataTransferMediumDetailsV2Args{...}
+type MigrationDataTransferMediumDetailsV2Input interface {
+	pulumi.Input
+
+	ToMigrationDataTransferMediumDetailsV2Output() MigrationDataTransferMediumDetailsV2Output
+	ToMigrationDataTransferMediumDetailsV2OutputWithContext(context.Context) MigrationDataTransferMediumDetailsV2Output
+}
+
+type MigrationDataTransferMediumDetailsV2Args struct {
+	AccessKeyId pulumi.StringPtrInput `pulumi:"accessKeyId"`
+	// (Updatable) Name of directory object in database
+	Name                pulumi.StringPtrInput                                           `pulumi:"name"`
+	ObjectStorageBucket MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrInput `pulumi:"objectStorageBucket"`
+	Region              pulumi.StringPtrInput                                           `pulumi:"region"`
+	SecretAccessKey     pulumi.StringPtrInput                                           `pulumi:"secretAccessKey"`
+	// (Updatable) Migration type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (MigrationDataTransferMediumDetailsV2Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationDataTransferMediumDetailsV2)(nil)).Elem()
+}
+
+func (i MigrationDataTransferMediumDetailsV2Args) ToMigrationDataTransferMediumDetailsV2Output() MigrationDataTransferMediumDetailsV2Output {
+	return i.ToMigrationDataTransferMediumDetailsV2OutputWithContext(context.Background())
+}
+
+func (i MigrationDataTransferMediumDetailsV2Args) ToMigrationDataTransferMediumDetailsV2OutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsV2Output {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsV2Output)
+}
+
+func (i MigrationDataTransferMediumDetailsV2Args) ToOutput(ctx context.Context) pulumix.Output[MigrationDataTransferMediumDetailsV2] {
+	return pulumix.Output[MigrationDataTransferMediumDetailsV2]{
+		OutputState: i.ToMigrationDataTransferMediumDetailsV2OutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i MigrationDataTransferMediumDetailsV2Args) ToMigrationDataTransferMediumDetailsV2PtrOutput() MigrationDataTransferMediumDetailsV2PtrOutput {
+	return i.ToMigrationDataTransferMediumDetailsV2PtrOutputWithContext(context.Background())
+}
+
+func (i MigrationDataTransferMediumDetailsV2Args) ToMigrationDataTransferMediumDetailsV2PtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsV2PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsV2Output).ToMigrationDataTransferMediumDetailsV2PtrOutputWithContext(ctx)
+}
+
+// MigrationDataTransferMediumDetailsV2PtrInput is an input type that accepts MigrationDataTransferMediumDetailsV2Args, MigrationDataTransferMediumDetailsV2Ptr and MigrationDataTransferMediumDetailsV2PtrOutput values.
+// You can construct a concrete instance of `MigrationDataTransferMediumDetailsV2PtrInput` via:
+//
+//	        MigrationDataTransferMediumDetailsV2Args{...}
+//
+//	or:
+//
+//	        nil
+type MigrationDataTransferMediumDetailsV2PtrInput interface {
+	pulumi.Input
+
+	ToMigrationDataTransferMediumDetailsV2PtrOutput() MigrationDataTransferMediumDetailsV2PtrOutput
+	ToMigrationDataTransferMediumDetailsV2PtrOutputWithContext(context.Context) MigrationDataTransferMediumDetailsV2PtrOutput
+}
+
+type migrationDataTransferMediumDetailsV2PtrType MigrationDataTransferMediumDetailsV2Args
+
+func MigrationDataTransferMediumDetailsV2Ptr(v *MigrationDataTransferMediumDetailsV2Args) MigrationDataTransferMediumDetailsV2PtrInput {
+	return (*migrationDataTransferMediumDetailsV2PtrType)(v)
+}
+
+func (*migrationDataTransferMediumDetailsV2PtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationDataTransferMediumDetailsV2)(nil)).Elem()
+}
+
+func (i *migrationDataTransferMediumDetailsV2PtrType) ToMigrationDataTransferMediumDetailsV2PtrOutput() MigrationDataTransferMediumDetailsV2PtrOutput {
+	return i.ToMigrationDataTransferMediumDetailsV2PtrOutputWithContext(context.Background())
+}
+
+func (i *migrationDataTransferMediumDetailsV2PtrType) ToMigrationDataTransferMediumDetailsV2PtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsV2PtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsV2PtrOutput)
+}
+
+func (i *migrationDataTransferMediumDetailsV2PtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationDataTransferMediumDetailsV2] {
+	return pulumix.Output[*MigrationDataTransferMediumDetailsV2]{
+		OutputState: i.ToMigrationDataTransferMediumDetailsV2PtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type MigrationDataTransferMediumDetailsV2Output struct{ *pulumi.OutputState }
+
+func (MigrationDataTransferMediumDetailsV2Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationDataTransferMediumDetailsV2)(nil)).Elem()
+}
+
+func (o MigrationDataTransferMediumDetailsV2Output) ToMigrationDataTransferMediumDetailsV2Output() MigrationDataTransferMediumDetailsV2Output {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsV2Output) ToMigrationDataTransferMediumDetailsV2OutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsV2Output {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsV2Output) ToMigrationDataTransferMediumDetailsV2PtrOutput() MigrationDataTransferMediumDetailsV2PtrOutput {
+	return o.ToMigrationDataTransferMediumDetailsV2PtrOutputWithContext(context.Background())
+}
+
+func (o MigrationDataTransferMediumDetailsV2Output) ToMigrationDataTransferMediumDetailsV2PtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsV2PtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationDataTransferMediumDetailsV2) *MigrationDataTransferMediumDetailsV2 {
+		return &v
+	}).(MigrationDataTransferMediumDetailsV2PtrOutput)
+}
+
+func (o MigrationDataTransferMediumDetailsV2Output) ToOutput(ctx context.Context) pulumix.Output[MigrationDataTransferMediumDetailsV2] {
+	return pulumix.Output[MigrationDataTransferMediumDetailsV2]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o MigrationDataTransferMediumDetailsV2Output) AccessKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetailsV2) *string { return v.AccessKeyId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Name of directory object in database
+func (o MigrationDataTransferMediumDetailsV2Output) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetailsV2) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+func (o MigrationDataTransferMediumDetailsV2Output) ObjectStorageBucket() MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetailsV2) *MigrationDataTransferMediumDetailsV2ObjectStorageBucket {
+		return v.ObjectStorageBucket
+	}).(MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput)
+}
+
+func (o MigrationDataTransferMediumDetailsV2Output) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetailsV2) *string { return v.Region }).(pulumi.StringPtrOutput)
+}
+
+func (o MigrationDataTransferMediumDetailsV2Output) SecretAccessKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetailsV2) *string { return v.SecretAccessKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Migration type.
+func (o MigrationDataTransferMediumDetailsV2Output) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetailsV2) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type MigrationDataTransferMediumDetailsV2PtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationDataTransferMediumDetailsV2PtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationDataTransferMediumDetailsV2)(nil)).Elem()
+}
+
+func (o MigrationDataTransferMediumDetailsV2PtrOutput) ToMigrationDataTransferMediumDetailsV2PtrOutput() MigrationDataTransferMediumDetailsV2PtrOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsV2PtrOutput) ToMigrationDataTransferMediumDetailsV2PtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsV2PtrOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsV2PtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationDataTransferMediumDetailsV2] {
+	return pulumix.Output[*MigrationDataTransferMediumDetailsV2]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o MigrationDataTransferMediumDetailsV2PtrOutput) Elem() MigrationDataTransferMediumDetailsV2Output {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsV2) MigrationDataTransferMediumDetailsV2 {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationDataTransferMediumDetailsV2
+		return ret
+	}).(MigrationDataTransferMediumDetailsV2Output)
+}
+
+func (o MigrationDataTransferMediumDetailsV2PtrOutput) AccessKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsV2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AccessKeyId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Name of directory object in database
+func (o MigrationDataTransferMediumDetailsV2PtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsV2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o MigrationDataTransferMediumDetailsV2PtrOutput) ObjectStorageBucket() MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsV2) *MigrationDataTransferMediumDetailsV2ObjectStorageBucket {
+		if v == nil {
+			return nil
+		}
+		return v.ObjectStorageBucket
+	}).(MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput)
+}
+
+func (o MigrationDataTransferMediumDetailsV2PtrOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsV2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Region
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o MigrationDataTransferMediumDetailsV2PtrOutput) SecretAccessKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsV2) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SecretAccessKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Migration type.
+func (o MigrationDataTransferMediumDetailsV2PtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsV2) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type MigrationDataTransferMediumDetailsV2ObjectStorageBucket struct {
+	// (Updatable) Bucket name.
+	Bucket *string `pulumi:"bucket"`
+	// (Updatable) Namespace name of the object store bucket.
+	Namespace *string `pulumi:"namespace"`
+}
+
+// MigrationDataTransferMediumDetailsV2ObjectStorageBucketInput is an input type that accepts MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs and MigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput values.
+// You can construct a concrete instance of `MigrationDataTransferMediumDetailsV2ObjectStorageBucketInput` via:
+//
+//	MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs{...}
+type MigrationDataTransferMediumDetailsV2ObjectStorageBucketInput interface {
+	pulumi.Input
+
+	ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput() MigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput
+	ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutputWithContext(context.Context) MigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput
+}
+
+type MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs struct {
+	// (Updatable) Bucket name.
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// (Updatable) Namespace name of the object store bucket.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+}
+
+func (MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationDataTransferMediumDetailsV2ObjectStorageBucket)(nil)).Elem()
+}
+
+func (i MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs) ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput() MigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput {
+	return i.ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutputWithContext(context.Background())
+}
+
+func (i MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs) ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput)
+}
+
+func (i MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs) ToOutput(ctx context.Context) pulumix.Output[MigrationDataTransferMediumDetailsV2ObjectStorageBucket] {
+	return pulumix.Output[MigrationDataTransferMediumDetailsV2ObjectStorageBucket]{
+		OutputState: i.ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutputWithContext(ctx).OutputState,
+	}
+}
+
+func (i MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs) ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput() MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput {
+	return i.ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs) ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput).ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutputWithContext(ctx)
+}
+
+// MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrInput is an input type that accepts MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs, MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtr and MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput values.
+// You can construct a concrete instance of `MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrInput` via:
+//
+//	        MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrInput interface {
+	pulumi.Input
+
+	ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput() MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput
+	ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutputWithContext(context.Context) MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput
+}
+
+type migrationDataTransferMediumDetailsV2ObjectStorageBucketPtrType MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs
+
+func MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtr(v *MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs) MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrInput {
+	return (*migrationDataTransferMediumDetailsV2ObjectStorageBucketPtrType)(v)
+}
+
+func (*migrationDataTransferMediumDetailsV2ObjectStorageBucketPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationDataTransferMediumDetailsV2ObjectStorageBucket)(nil)).Elem()
+}
+
+func (i *migrationDataTransferMediumDetailsV2ObjectStorageBucketPtrType) ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput() MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput {
+	return i.ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationDataTransferMediumDetailsV2ObjectStorageBucketPtrType) ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput)
+}
+
+func (i *migrationDataTransferMediumDetailsV2ObjectStorageBucketPtrType) ToOutput(ctx context.Context) pulumix.Output[*MigrationDataTransferMediumDetailsV2ObjectStorageBucket] {
+	return pulumix.Output[*MigrationDataTransferMediumDetailsV2ObjectStorageBucket]{
+		OutputState: i.ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutputWithContext(ctx).OutputState,
+	}
+}
+
+type MigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput struct{ *pulumi.OutputState }
+
+func (MigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationDataTransferMediumDetailsV2ObjectStorageBucket)(nil)).Elem()
+}
+
+func (o MigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput) ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput() MigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput) ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput) ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput() MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput {
+	return o.ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput) ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationDataTransferMediumDetailsV2ObjectStorageBucket) *MigrationDataTransferMediumDetailsV2ObjectStorageBucket {
+		return &v
+	}).(MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput)
+}
+
+func (o MigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput) ToOutput(ctx context.Context) pulumix.Output[MigrationDataTransferMediumDetailsV2ObjectStorageBucket] {
+	return pulumix.Output[MigrationDataTransferMediumDetailsV2ObjectStorageBucket]{
+		OutputState: o.OutputState,
+	}
+}
+
+// (Updatable) Bucket name.
+func (o MigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetailsV2ObjectStorageBucket) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Namespace name of the object store bucket.
+func (o MigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetailsV2ObjectStorageBucket) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+type MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationDataTransferMediumDetailsV2ObjectStorageBucket)(nil)).Elem()
+}
+
+func (o MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput) ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput() MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput) ToMigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MigrationDataTransferMediumDetailsV2ObjectStorageBucket] {
+	return pulumix.Output[*MigrationDataTransferMediumDetailsV2ObjectStorageBucket]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput) Elem() MigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsV2ObjectStorageBucket) MigrationDataTransferMediumDetailsV2ObjectStorageBucket {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationDataTransferMediumDetailsV2ObjectStorageBucket
+		return ret
+	}).(MigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput)
+}
+
+// (Updatable) Bucket name.
+func (o MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsV2ObjectStorageBucket) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Bucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Namespace name of the object store bucket.
+func (o MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsV2ObjectStorageBucket) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
 type MigrationDatapumpSettings struct {
 	// (Updatable) Optional parameters for Data Pump Export and Import. Refer to [Configuring Optional Initial Load Advanced Settings](https://docs.us.oracle.com/en/cloud/paas/database-migration/dmsus/working-migration-resources.html#GUID-24BD3054-FDF8-48FF-8492-636C1D4B71ED)
 	DataPumpParameters *MigrationDatapumpSettingsDataPumpParameters `pulumi:"dataPumpParameters"`
@@ -3884,6 +4306,7 @@ func (o MigrationDatapumpSettingsMetadataRemapArrayOutput) Index(i pulumi.IntInp
 }
 
 type MigrationDumpTransferDetails struct {
+	SharedStorageMountTargetId *string `pulumi:"sharedStorageMountTargetId"`
 	// (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
 	Source *MigrationDumpTransferDetailsSource `pulumi:"source"`
 	// (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
@@ -3902,6 +4325,7 @@ type MigrationDumpTransferDetailsInput interface {
 }
 
 type MigrationDumpTransferDetailsArgs struct {
+	SharedStorageMountTargetId pulumi.StringPtrInput `pulumi:"sharedStorageMountTargetId"`
 	// (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
 	Source MigrationDumpTransferDetailsSourcePtrInput `pulumi:"source"`
 	// (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
@@ -4003,6 +4427,10 @@ func (o MigrationDumpTransferDetailsOutput) ToOutput(ctx context.Context) pulumi
 	}
 }
 
+func (o MigrationDumpTransferDetailsOutput) SharedStorageMountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDumpTransferDetails) *string { return v.SharedStorageMountTargetId }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
 func (o MigrationDumpTransferDetailsOutput) Source() MigrationDumpTransferDetailsSourcePtrOutput {
 	return o.ApplyT(func(v MigrationDumpTransferDetails) *MigrationDumpTransferDetailsSource { return v.Source }).(MigrationDumpTransferDetailsSourcePtrOutput)
@@ -4041,6 +4469,15 @@ func (o MigrationDumpTransferDetailsPtrOutput) Elem() MigrationDumpTransferDetai
 		var ret MigrationDumpTransferDetails
 		return ret
 	}).(MigrationDumpTransferDetailsOutput)
+}
+
+func (o MigrationDumpTransferDetailsPtrOutput) SharedStorageMountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDumpTransferDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SharedStorageMountTargetId
+	}).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
@@ -12423,6 +12860,292 @@ func (o GetMigrationDataTransferMediumDetailObjectStorageDetailArrayOutput) Inde
 	}).(GetMigrationDataTransferMediumDetailObjectStorageDetailOutput)
 }
 
+type GetMigrationDataTransferMediumDetailsV2 struct {
+	AccessKeyId string `pulumi:"accessKeyId"`
+	// Name of directory object in database
+	Name                 string                                                       `pulumi:"name"`
+	ObjectStorageBuckets []GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket `pulumi:"objectStorageBuckets"`
+	Region               string                                                       `pulumi:"region"`
+	SecretAccessKey      string                                                       `pulumi:"secretAccessKey"`
+	// Migration type.
+	Type string `pulumi:"type"`
+}
+
+// GetMigrationDataTransferMediumDetailsV2Input is an input type that accepts GetMigrationDataTransferMediumDetailsV2Args and GetMigrationDataTransferMediumDetailsV2Output values.
+// You can construct a concrete instance of `GetMigrationDataTransferMediumDetailsV2Input` via:
+//
+//	GetMigrationDataTransferMediumDetailsV2Args{...}
+type GetMigrationDataTransferMediumDetailsV2Input interface {
+	pulumi.Input
+
+	ToGetMigrationDataTransferMediumDetailsV2Output() GetMigrationDataTransferMediumDetailsV2Output
+	ToGetMigrationDataTransferMediumDetailsV2OutputWithContext(context.Context) GetMigrationDataTransferMediumDetailsV2Output
+}
+
+type GetMigrationDataTransferMediumDetailsV2Args struct {
+	AccessKeyId pulumi.StringInput `pulumi:"accessKeyId"`
+	// Name of directory object in database
+	Name                 pulumi.StringInput                                                   `pulumi:"name"`
+	ObjectStorageBuckets GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayInput `pulumi:"objectStorageBuckets"`
+	Region               pulumi.StringInput                                                   `pulumi:"region"`
+	SecretAccessKey      pulumi.StringInput                                                   `pulumi:"secretAccessKey"`
+	// Migration type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMigrationDataTransferMediumDetailsV2Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataTransferMediumDetailsV2)(nil)).Elem()
+}
+
+func (i GetMigrationDataTransferMediumDetailsV2Args) ToGetMigrationDataTransferMediumDetailsV2Output() GetMigrationDataTransferMediumDetailsV2Output {
+	return i.ToGetMigrationDataTransferMediumDetailsV2OutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataTransferMediumDetailsV2Args) ToGetMigrationDataTransferMediumDetailsV2OutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailsV2Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataTransferMediumDetailsV2Output)
+}
+
+func (i GetMigrationDataTransferMediumDetailsV2Args) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDataTransferMediumDetailsV2] {
+	return pulumix.Output[GetMigrationDataTransferMediumDetailsV2]{
+		OutputState: i.ToGetMigrationDataTransferMediumDetailsV2OutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMigrationDataTransferMediumDetailsV2ArrayInput is an input type that accepts GetMigrationDataTransferMediumDetailsV2Array and GetMigrationDataTransferMediumDetailsV2ArrayOutput values.
+// You can construct a concrete instance of `GetMigrationDataTransferMediumDetailsV2ArrayInput` via:
+//
+//	GetMigrationDataTransferMediumDetailsV2Array{ GetMigrationDataTransferMediumDetailsV2Args{...} }
+type GetMigrationDataTransferMediumDetailsV2ArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataTransferMediumDetailsV2ArrayOutput() GetMigrationDataTransferMediumDetailsV2ArrayOutput
+	ToGetMigrationDataTransferMediumDetailsV2ArrayOutputWithContext(context.Context) GetMigrationDataTransferMediumDetailsV2ArrayOutput
+}
+
+type GetMigrationDataTransferMediumDetailsV2Array []GetMigrationDataTransferMediumDetailsV2Input
+
+func (GetMigrationDataTransferMediumDetailsV2Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataTransferMediumDetailsV2)(nil)).Elem()
+}
+
+func (i GetMigrationDataTransferMediumDetailsV2Array) ToGetMigrationDataTransferMediumDetailsV2ArrayOutput() GetMigrationDataTransferMediumDetailsV2ArrayOutput {
+	return i.ToGetMigrationDataTransferMediumDetailsV2ArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataTransferMediumDetailsV2Array) ToGetMigrationDataTransferMediumDetailsV2ArrayOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailsV2ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataTransferMediumDetailsV2ArrayOutput)
+}
+
+func (i GetMigrationDataTransferMediumDetailsV2Array) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDataTransferMediumDetailsV2] {
+	return pulumix.Output[[]GetMigrationDataTransferMediumDetailsV2]{
+		OutputState: i.ToGetMigrationDataTransferMediumDetailsV2ArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMigrationDataTransferMediumDetailsV2Output struct{ *pulumi.OutputState }
+
+func (GetMigrationDataTransferMediumDetailsV2Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataTransferMediumDetailsV2)(nil)).Elem()
+}
+
+func (o GetMigrationDataTransferMediumDetailsV2Output) ToGetMigrationDataTransferMediumDetailsV2Output() GetMigrationDataTransferMediumDetailsV2Output {
+	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailsV2Output) ToGetMigrationDataTransferMediumDetailsV2OutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailsV2Output {
+	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailsV2Output) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDataTransferMediumDetailsV2] {
+	return pulumix.Output[GetMigrationDataTransferMediumDetailsV2]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMigrationDataTransferMediumDetailsV2Output) AccessKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetailsV2) string { return v.AccessKeyId }).(pulumi.StringOutput)
+}
+
+// Name of directory object in database
+func (o GetMigrationDataTransferMediumDetailsV2Output) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetailsV2) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMigrationDataTransferMediumDetailsV2Output) ObjectStorageBuckets() GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetailsV2) []GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket {
+		return v.ObjectStorageBuckets
+	}).(GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput)
+}
+
+func (o GetMigrationDataTransferMediumDetailsV2Output) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetailsV2) string { return v.Region }).(pulumi.StringOutput)
+}
+
+func (o GetMigrationDataTransferMediumDetailsV2Output) SecretAccessKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetailsV2) string { return v.SecretAccessKey }).(pulumi.StringOutput)
+}
+
+// Migration type.
+func (o GetMigrationDataTransferMediumDetailsV2Output) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetailsV2) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMigrationDataTransferMediumDetailsV2ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataTransferMediumDetailsV2ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataTransferMediumDetailsV2)(nil)).Elem()
+}
+
+func (o GetMigrationDataTransferMediumDetailsV2ArrayOutput) ToGetMigrationDataTransferMediumDetailsV2ArrayOutput() GetMigrationDataTransferMediumDetailsV2ArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailsV2ArrayOutput) ToGetMigrationDataTransferMediumDetailsV2ArrayOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailsV2ArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailsV2ArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDataTransferMediumDetailsV2] {
+	return pulumix.Output[[]GetMigrationDataTransferMediumDetailsV2]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMigrationDataTransferMediumDetailsV2ArrayOutput) Index(i pulumi.IntInput) GetMigrationDataTransferMediumDetailsV2Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationDataTransferMediumDetailsV2 {
+		return vs[0].([]GetMigrationDataTransferMediumDetailsV2)[vs[1].(int)]
+	}).(GetMigrationDataTransferMediumDetailsV2Output)
+}
+
+type GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket struct {
+	// Bucket name.
+	Bucket string `pulumi:"bucket"`
+	// Namespace name of the object store bucket.
+	Namespace string `pulumi:"namespace"`
+}
+
+// GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketInput is an input type that accepts GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs and GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput values.
+// You can construct a concrete instance of `GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketInput` via:
+//
+//	GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs{...}
+type GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput() GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput
+	ToGetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutputWithContext(context.Context) GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput
+}
+
+type GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs struct {
+	// Bucket name.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Namespace name of the object store bucket.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+}
+
+func (GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket)(nil)).Elem()
+}
+
+func (i GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs) ToGetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput() GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput {
+	return i.ToGetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs) ToGetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput)
+}
+
+func (i GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket] {
+	return pulumix.Output[GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket]{
+		OutputState: i.ToGetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayInput is an input type that accepts GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArray and GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput values.
+// You can construct a concrete instance of `GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayInput` via:
+//
+//	GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArray{ GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs{...} }
+type GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput() GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput
+	ToGetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutputWithContext(context.Context) GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput
+}
+
+type GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArray []GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketInput
+
+func (GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket)(nil)).Elem()
+}
+
+func (i GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArray) ToGetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput() GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput {
+	return i.ToGetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArray) ToGetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput)
+}
+
+func (i GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket] {
+	return pulumix.Output[[]GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket]{
+		OutputState: i.ToGetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket)(nil)).Elem()
+}
+
+func (o GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput) ToGetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput() GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput {
+	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput) ToGetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput {
+	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket] {
+	return pulumix.Output[GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Bucket name.
+func (o GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Namespace name of the object store bucket.
+func (o GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+type GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket)(nil)).Elem()
+}
+
+func (o GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput) ToGetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput() GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput) ToGetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket] {
+	return pulumix.Output[[]GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput) Index(i pulumi.IntInput) GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket {
+		return vs[0].([]GetMigrationDataTransferMediumDetailsV2ObjectStorageBucket)[vs[1].(int)]
+	}).(GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput)
+}
+
 type GetMigrationDatapumpSetting struct {
 	// Optional parameters for Data Pump Export and Import. Refer to [Configuring Optional Initial Load Advanced Settings](https://docs.us.oracle.com/en/cloud/paas/database-migration/dmsus/working-migration-resources.html#GUID-24BD3054-FDF8-48FF-8492-636C1D4B71ED)
 	DataPumpParameters []GetMigrationDatapumpSettingDataPumpParameter `pulumi:"dataPumpParameters"`
@@ -13154,6 +13877,7 @@ func (o GetMigrationDatapumpSettingMetadataRemapArrayOutput) Index(i pulumi.IntI
 }
 
 type GetMigrationDumpTransferDetail struct {
+	SharedStorageMountTargetId string `pulumi:"sharedStorageMountTargetId"`
 	// Optional additional properties for dump transfer in source or target host. Default kind is CURL
 	Sources []GetMigrationDumpTransferDetailSource `pulumi:"sources"`
 	// Optional additional properties for dump transfer in source or target host. Default kind is CURL
@@ -13172,6 +13896,7 @@ type GetMigrationDumpTransferDetailInput interface {
 }
 
 type GetMigrationDumpTransferDetailArgs struct {
+	SharedStorageMountTargetId pulumi.StringInput `pulumi:"sharedStorageMountTargetId"`
 	// Optional additional properties for dump transfer in source or target host. Default kind is CURL
 	Sources GetMigrationDumpTransferDetailSourceArrayInput `pulumi:"sources"`
 	// Optional additional properties for dump transfer in source or target host. Default kind is CURL
@@ -13245,6 +13970,10 @@ func (o GetMigrationDumpTransferDetailOutput) ToOutput(ctx context.Context) pulu
 	return pulumix.Output[GetMigrationDumpTransferDetail]{
 		OutputState: o.OutputState,
 	}
+}
+
+func (o GetMigrationDumpTransferDetailOutput) SharedStorageMountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDumpTransferDetail) string { return v.SharedStorageMountTargetId }).(pulumi.StringOutput)
 }
 
 // Optional additional properties for dump transfer in source or target host. Default kind is CURL
@@ -16967,7 +17696,8 @@ type GetMigrationsMigrationCollectionItem struct {
 	CredentialsSecretId string `pulumi:"credentialsSecretId"`
 	CsvText             string `pulumi:"csvText"`
 	// Data Transfer Medium details for the Migration.
-	DataTransferMediumDetails []GetMigrationsMigrationCollectionItemDataTransferMediumDetail `pulumi:"dataTransferMediumDetails"`
+	DataTransferMediumDetails    []GetMigrationsMigrationCollectionItemDataTransferMediumDetail    `pulumi:"dataTransferMediumDetails"`
+	DataTransferMediumDetailsV2s []GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2 `pulumi:"dataTransferMediumDetailsV2s"`
 	// Optional settings for Data Pump Export and Import jobs
 	DatapumpSettings []GetMigrationsMigrationCollectionItemDatapumpSetting `pulumi:"datapumpSettings"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -17038,7 +17768,8 @@ type GetMigrationsMigrationCollectionItemArgs struct {
 	CredentialsSecretId pulumi.StringInput `pulumi:"credentialsSecretId"`
 	CsvText             pulumi.StringInput `pulumi:"csvText"`
 	// Data Transfer Medium details for the Migration.
-	DataTransferMediumDetails GetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayInput `pulumi:"dataTransferMediumDetails"`
+	DataTransferMediumDetails    GetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayInput    `pulumi:"dataTransferMediumDetails"`
+	DataTransferMediumDetailsV2s GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayInput `pulumi:"dataTransferMediumDetailsV2s"`
 	// Optional settings for Data Pump Export and Import jobs
 	DatapumpSettings GetMigrationsMigrationCollectionItemDatapumpSettingArrayInput `pulumi:"datapumpSettings"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -17187,6 +17918,12 @@ func (o GetMigrationsMigrationCollectionItemOutput) DataTransferMediumDetails() 
 	return o.ApplyT(func(v GetMigrationsMigrationCollectionItem) []GetMigrationsMigrationCollectionItemDataTransferMediumDetail {
 		return v.DataTransferMediumDetails
 	}).(GetMigrationsMigrationCollectionItemDataTransferMediumDetailArrayOutput)
+}
+
+func (o GetMigrationsMigrationCollectionItemOutput) DataTransferMediumDetailsV2s() GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItem) []GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2 {
+		return v.DataTransferMediumDetailsV2s
+	}).(GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutput)
 }
 
 // Optional settings for Data Pump Export and Import jobs
@@ -18010,6 +18747,298 @@ func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorag
 	}).(GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailOutput)
 }
 
+type GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2 struct {
+	AccessKeyId string `pulumi:"accessKeyId"`
+	// Name of directory object in database
+	Name                 string                                                                               `pulumi:"name"`
+	ObjectStorageBuckets []GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket `pulumi:"objectStorageBuckets"`
+	Region               string                                                                               `pulumi:"region"`
+	SecretAccessKey      string                                                                               `pulumi:"secretAccessKey"`
+	// Migration type.
+	Type string `pulumi:"type"`
+}
+
+// GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Input is an input type that accepts GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Args and GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Input` via:
+//
+//	GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Args{...}
+type GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Input interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output() GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output
+	ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2OutputWithContext(context.Context) GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output
+}
+
+type GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Args struct {
+	AccessKeyId pulumi.StringInput `pulumi:"accessKeyId"`
+	// Name of directory object in database
+	Name                 pulumi.StringInput                                                                           `pulumi:"name"`
+	ObjectStorageBuckets GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayInput `pulumi:"objectStorageBuckets"`
+	Region               pulumi.StringInput                                                                           `pulumi:"region"`
+	SecretAccessKey      pulumi.StringInput                                                                           `pulumi:"secretAccessKey"`
+	// Migration type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Args) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output() GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output {
+	return i.ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2OutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Args) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2OutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output)
+}
+
+func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Args) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2OutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Array and GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayInput` via:
+//
+//	GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Array{ GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Args{...} }
+type GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutput() GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutput
+	ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutputWithContext(context.Context) GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutput
+}
+
+type GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Array []GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Input
+
+func (GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Array) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutput() GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutput {
+	return i.ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Array) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutput)
+}
+
+func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Array) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output() GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2OutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output) AccessKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2) string { return v.AccessKeyId }).(pulumi.StringOutput)
+}
+
+// Name of directory object in database
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output) ObjectStorageBuckets() GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2) []GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket {
+		return v.ObjectStorageBuckets
+	}).(GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput)
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2) string { return v.Region }).(pulumi.StringOutput)
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output) SecretAccessKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2) string {
+		return v.SecretAccessKey
+	}).(pulumi.StringOutput)
+}
+
+// Migration type.
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutput) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutput() GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutput) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2 {
+		return vs[0].([]GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2)[vs[1].(int)]
+	}).(GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output)
+}
+
+type GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket struct {
+	// Bucket name.
+	Bucket string `pulumi:"bucket"`
+	// Namespace name of the object store bucket.
+	Namespace string `pulumi:"namespace"`
+}
+
+// GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketInput is an input type that accepts GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArgs and GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutput values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketInput` via:
+//
+//	GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArgs{...}
+type GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketInput interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutput() GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutput
+	ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutputWithContext(context.Context) GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutput
+}
+
+type GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArgs struct {
+	// Bucket name.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Namespace name of the object store bucket.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+}
+
+func (GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArgs) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutput() GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutput {
+	return i.ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArgs) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutput)
+}
+
+func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArgs) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutputWithContext(ctx).OutputState,
+	}
+}
+
+// GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayInput is an input type that accepts GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArray and GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayInput` via:
+//
+//	GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArray{ GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArgs{...} }
+type GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput() GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput
+	ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutputWithContext(context.Context) GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput
+}
+
+type GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArray []GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketInput
+
+func (GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket)(nil)).Elem()
+}
+
+func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArray) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput() GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput {
+	return i.ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArray) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput)
+}
+
+func (i GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket]{
+		OutputState: i.ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
+type GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutput) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutput() GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutput) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket] {
+	return pulumix.Output[GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Bucket name.
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket) string {
+		return v.Bucket
+	}).(pulumi.StringOutput)
+}
+
+// Namespace name of the object store bucket.
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+type GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket)(nil)).Elem()
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput() GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput) ToGetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutputWithContext(ctx context.Context) GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput {
+	return o
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket] {
+	return pulumix.Output[[]GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput) Index(i pulumi.IntInput) GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket {
+		return vs[0].([]GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket)[vs[1].(int)]
+	}).(GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutput)
+}
+
 type GetMigrationsMigrationCollectionItemDatapumpSetting struct {
 	// Optional parameters for Data Pump Export and Import. Refer to [Configuring Optional Initial Load Advanced Settings](https://docs.us.oracle.com/en/cloud/paas/database-migration/dmsus/working-migration-resources.html#GUID-24BD3054-FDF8-48FF-8492-636C1D4B71ED)
 	DataPumpParameters []GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameter `pulumi:"dataPumpParameters"`
@@ -18749,6 +19778,7 @@ func (o GetMigrationsMigrationCollectionItemDatapumpSettingMetadataRemapArrayOut
 }
 
 type GetMigrationsMigrationCollectionItemDumpTransferDetail struct {
+	SharedStorageMountTargetId string `pulumi:"sharedStorageMountTargetId"`
 	// Optional additional properties for dump transfer in source or target host. Default kind is CURL
 	Sources []GetMigrationsMigrationCollectionItemDumpTransferDetailSource `pulumi:"sources"`
 	// Optional additional properties for dump transfer in source or target host. Default kind is CURL
@@ -18767,6 +19797,7 @@ type GetMigrationsMigrationCollectionItemDumpTransferDetailInput interface {
 }
 
 type GetMigrationsMigrationCollectionItemDumpTransferDetailArgs struct {
+	SharedStorageMountTargetId pulumi.StringInput `pulumi:"sharedStorageMountTargetId"`
 	// Optional additional properties for dump transfer in source or target host. Default kind is CURL
 	Sources GetMigrationsMigrationCollectionItemDumpTransferDetailSourceArrayInput `pulumi:"sources"`
 	// Optional additional properties for dump transfer in source or target host. Default kind is CURL
@@ -18840,6 +19871,12 @@ func (o GetMigrationsMigrationCollectionItemDumpTransferDetailOutput) ToOutput(c
 	return pulumix.Output[GetMigrationsMigrationCollectionItemDumpTransferDetail]{
 		OutputState: o.OutputState,
 	}
+}
+
+func (o GetMigrationsMigrationCollectionItemDumpTransferDetailOutput) SharedStorageMountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItemDumpTransferDetail) string {
+		return v.SharedStorageMountTargetId
+	}).(pulumi.StringOutput)
 }
 
 // Optional additional properties for dump transfer in source or target host. Default kind is CURL
@@ -22026,6 +23063,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtrInput)(nil)).Elem(), MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationDataTransferMediumDetailsObjectStorageDetailsInput)(nil)).Elem(), MigrationDataTransferMediumDetailsObjectStorageDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationDataTransferMediumDetailsObjectStorageDetailsPtrInput)(nil)).Elem(), MigrationDataTransferMediumDetailsObjectStorageDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationDataTransferMediumDetailsV2Input)(nil)).Elem(), MigrationDataTransferMediumDetailsV2Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationDataTransferMediumDetailsV2PtrInput)(nil)).Elem(), MigrationDataTransferMediumDetailsV2Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationDataTransferMediumDetailsV2ObjectStorageBucketInput)(nil)).Elem(), MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrInput)(nil)).Elem(), MigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationDatapumpSettingsInput)(nil)).Elem(), MigrationDatapumpSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationDatapumpSettingsPtrInput)(nil)).Elem(), MigrationDatapumpSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationDatapumpSettingsDataPumpParametersInput)(nil)).Elem(), MigrationDatapumpSettingsDataPumpParametersArgs{})
@@ -22140,6 +23181,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayInput)(nil)).Elem(), GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataTransferMediumDetailObjectStorageDetailInput)(nil)).Elem(), GetMigrationDataTransferMediumDetailObjectStorageDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataTransferMediumDetailObjectStorageDetailArrayInput)(nil)).Elem(), GetMigrationDataTransferMediumDetailObjectStorageDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataTransferMediumDetailsV2Input)(nil)).Elem(), GetMigrationDataTransferMediumDetailsV2Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataTransferMediumDetailsV2ArrayInput)(nil)).Elem(), GetMigrationDataTransferMediumDetailsV2Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketInput)(nil)).Elem(), GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayInput)(nil)).Elem(), GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDatapumpSettingInput)(nil)).Elem(), GetMigrationDatapumpSettingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDatapumpSettingArrayInput)(nil)).Elem(), GetMigrationDatapumpSettingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDatapumpSettingDataPumpParameterInput)(nil)).Elem(), GetMigrationDatapumpSettingDataPumpParameterArgs{})
@@ -22218,6 +23263,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArrayInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Input)(nil)).Elem(), GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemDatapumpSettingInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemDatapumpSettingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemDatapumpSettingArrayInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemDatapumpSettingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterInput)(nil)).Elem(), GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterArgs{})
@@ -22306,6 +23355,10 @@ func init() {
 	pulumi.RegisterOutputType(MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketPtrOutput{})
 	pulumi.RegisterOutputType(MigrationDataTransferMediumDetailsObjectStorageDetailsOutput{})
 	pulumi.RegisterOutputType(MigrationDataTransferMediumDetailsObjectStorageDetailsPtrOutput{})
+	pulumi.RegisterOutputType(MigrationDataTransferMediumDetailsV2Output{})
+	pulumi.RegisterOutputType(MigrationDataTransferMediumDetailsV2PtrOutput{})
+	pulumi.RegisterOutputType(MigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput{})
+	pulumi.RegisterOutputType(MigrationDataTransferMediumDetailsV2ObjectStorageBucketPtrOutput{})
 	pulumi.RegisterOutputType(MigrationDatapumpSettingsOutput{})
 	pulumi.RegisterOutputType(MigrationDatapumpSettingsPtrOutput{})
 	pulumi.RegisterOutputType(MigrationDatapumpSettingsDataPumpParametersOutput{})
@@ -22420,6 +23473,10 @@ func init() {
 	pulumi.RegisterOutputType(GetMigrationDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationDataTransferMediumDetailObjectStorageDetailOutput{})
 	pulumi.RegisterOutputType(GetMigrationDataTransferMediumDetailObjectStorageDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataTransferMediumDetailsV2Output{})
+	pulumi.RegisterOutputType(GetMigrationDataTransferMediumDetailsV2ArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationDatapumpSettingOutput{})
 	pulumi.RegisterOutputType(GetMigrationDatapumpSettingArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationDatapumpSettingDataPumpParameterOutput{})
@@ -22498,6 +23555,10 @@ func init() {
 	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemDataTransferMediumDetailDatabaseLinkDetailWalletBucketArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailOutput{})
 	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemDataTransferMediumDetailObjectStorageDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2Output{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketOutput{})
+	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucketArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemDatapumpSettingOutput{})
 	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemDatapumpSettingArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationsMigrationCollectionItemDatapumpSettingDataPumpParameterOutput{})

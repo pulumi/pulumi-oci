@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -49,28 +49,61 @@ class JobArgs:
         :param pulumi.Input[str] job_artifact: The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
         :param pulumi.Input['JobJobLogConfigurationDetailsArgs'] job_log_configuration_details: Logging configuration for resource.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "job_configuration_details", job_configuration_details)
-        pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
-        pulumi.set(__self__, "project_id", project_id)
+        JobArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            job_configuration_details=job_configuration_details,
+            job_infrastructure_configuration_details=job_infrastructure_configuration_details,
+            project_id=project_id,
+            artifact_content_disposition=artifact_content_disposition,
+            artifact_content_length=artifact_content_length,
+            defined_tags=defined_tags,
+            delete_related_job_runs=delete_related_job_runs,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            job_artifact=job_artifact,
+            job_log_configuration_details=job_log_configuration_details,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             job_configuration_details: pulumi.Input['JobJobConfigurationDetailsArgs'],
+             job_infrastructure_configuration_details: pulumi.Input['JobJobInfrastructureConfigurationDetailsArgs'],
+             project_id: pulumi.Input[str],
+             artifact_content_disposition: Optional[pulumi.Input[str]] = None,
+             artifact_content_length: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             delete_related_job_runs: Optional[pulumi.Input[bool]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             job_artifact: Optional[pulumi.Input[str]] = None,
+             job_log_configuration_details: Optional[pulumi.Input['JobJobLogConfigurationDetailsArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("job_configuration_details", job_configuration_details)
+        _setter("job_infrastructure_configuration_details", job_infrastructure_configuration_details)
+        _setter("project_id", project_id)
         if artifact_content_disposition is not None:
-            pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
+            _setter("artifact_content_disposition", artifact_content_disposition)
         if artifact_content_length is not None:
-            pulumi.set(__self__, "artifact_content_length", artifact_content_length)
+            _setter("artifact_content_length", artifact_content_length)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if delete_related_job_runs is not None:
-            pulumi.set(__self__, "delete_related_job_runs", delete_related_job_runs)
+            _setter("delete_related_job_runs", delete_related_job_runs)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if job_artifact is not None:
-            pulumi.set(__self__, "job_artifact", job_artifact)
+            _setter("job_artifact", job_artifact)
         if job_log_configuration_details is not None:
-            pulumi.set(__self__, "job_log_configuration_details", job_log_configuration_details)
+            _setter("job_log_configuration_details", job_log_configuration_details)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -280,46 +313,93 @@ class _JobState:
         :param pulumi.Input[str] state: The state of the job.
         :param pulumi.Input[str] time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
         """
+        _JobState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            artifact_content_disposition=artifact_content_disposition,
+            artifact_content_length=artifact_content_length,
+            artifact_content_md5=artifact_content_md5,
+            artifact_last_modified=artifact_last_modified,
+            compartment_id=compartment_id,
+            created_by=created_by,
+            defined_tags=defined_tags,
+            delete_related_job_runs=delete_related_job_runs,
+            description=description,
+            display_name=display_name,
+            empty_artifact=empty_artifact,
+            freeform_tags=freeform_tags,
+            job_artifact=job_artifact,
+            job_configuration_details=job_configuration_details,
+            job_infrastructure_configuration_details=job_infrastructure_configuration_details,
+            job_log_configuration_details=job_log_configuration_details,
+            lifecycle_details=lifecycle_details,
+            project_id=project_id,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             artifact_content_disposition: Optional[pulumi.Input[str]] = None,
+             artifact_content_length: Optional[pulumi.Input[str]] = None,
+             artifact_content_md5: Optional[pulumi.Input[str]] = None,
+             artifact_last_modified: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             created_by: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             delete_related_job_runs: Optional[pulumi.Input[bool]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             empty_artifact: Optional[pulumi.Input[bool]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             job_artifact: Optional[pulumi.Input[str]] = None,
+             job_configuration_details: Optional[pulumi.Input['JobJobConfigurationDetailsArgs']] = None,
+             job_infrastructure_configuration_details: Optional[pulumi.Input['JobJobInfrastructureConfigurationDetailsArgs']] = None,
+             job_log_configuration_details: Optional[pulumi.Input['JobJobLogConfigurationDetailsArgs']] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if artifact_content_disposition is not None:
-            pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
+            _setter("artifact_content_disposition", artifact_content_disposition)
         if artifact_content_length is not None:
-            pulumi.set(__self__, "artifact_content_length", artifact_content_length)
+            _setter("artifact_content_length", artifact_content_length)
         if artifact_content_md5 is not None:
-            pulumi.set(__self__, "artifact_content_md5", artifact_content_md5)
+            _setter("artifact_content_md5", artifact_content_md5)
         if artifact_last_modified is not None:
-            pulumi.set(__self__, "artifact_last_modified", artifact_last_modified)
+            _setter("artifact_last_modified", artifact_last_modified)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if created_by is not None:
-            pulumi.set(__self__, "created_by", created_by)
+            _setter("created_by", created_by)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if delete_related_job_runs is not None:
-            pulumi.set(__self__, "delete_related_job_runs", delete_related_job_runs)
+            _setter("delete_related_job_runs", delete_related_job_runs)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if empty_artifact is not None:
-            pulumi.set(__self__, "empty_artifact", empty_artifact)
+            _setter("empty_artifact", empty_artifact)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if job_artifact is not None:
-            pulumi.set(__self__, "job_artifact", job_artifact)
+            _setter("job_artifact", job_artifact)
         if job_configuration_details is not None:
-            pulumi.set(__self__, "job_configuration_details", job_configuration_details)
+            _setter("job_configuration_details", job_configuration_details)
         if job_infrastructure_configuration_details is not None:
-            pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
+            _setter("job_infrastructure_configuration_details", job_infrastructure_configuration_details)
         if job_log_configuration_details is not None:
-            pulumi.set(__self__, "job_log_configuration_details", job_log_configuration_details)
+            _setter("job_log_configuration_details", job_log_configuration_details)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if project_id is not None:
-            pulumi.set(__self__, "project_id", project_id)
+            _setter("project_id", project_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
 
     @property
     @pulumi.getter(name="artifactContentDisposition")
@@ -720,6 +800,10 @@ class Job(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            JobArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -758,12 +842,27 @@ class Job(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["job_artifact"] = job_artifact
+            if job_configuration_details is not None and not isinstance(job_configuration_details, JobJobConfigurationDetailsArgs):
+                job_configuration_details = job_configuration_details or {}
+                def _setter(key, value):
+                    job_configuration_details[key] = value
+                JobJobConfigurationDetailsArgs._configure(_setter, **job_configuration_details)
             if job_configuration_details is None and not opts.urn:
                 raise TypeError("Missing required property 'job_configuration_details'")
             __props__.__dict__["job_configuration_details"] = job_configuration_details
+            if job_infrastructure_configuration_details is not None and not isinstance(job_infrastructure_configuration_details, JobJobInfrastructureConfigurationDetailsArgs):
+                job_infrastructure_configuration_details = job_infrastructure_configuration_details or {}
+                def _setter(key, value):
+                    job_infrastructure_configuration_details[key] = value
+                JobJobInfrastructureConfigurationDetailsArgs._configure(_setter, **job_infrastructure_configuration_details)
             if job_infrastructure_configuration_details is None and not opts.urn:
                 raise TypeError("Missing required property 'job_infrastructure_configuration_details'")
             __props__.__dict__["job_infrastructure_configuration_details"] = job_infrastructure_configuration_details
+            if job_log_configuration_details is not None and not isinstance(job_log_configuration_details, JobJobLogConfigurationDetailsArgs):
+                job_log_configuration_details = job_log_configuration_details or {}
+                def _setter(key, value):
+                    job_log_configuration_details[key] = value
+                JobJobLogConfigurationDetailsArgs._configure(_setter, **job_log_configuration_details)
             __props__.__dict__["job_log_configuration_details"] = job_log_configuration_details
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")

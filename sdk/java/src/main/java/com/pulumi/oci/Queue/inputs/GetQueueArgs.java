@@ -14,14 +14,14 @@ public final class GetQueueArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetQueueArgs Empty = new GetQueueArgs();
 
     /**
-     * unique Queue identifier
+     * The unique queue identifier.
      * 
      */
     @Import(name="queueId", required=true)
     private Output<String> queueId;
 
     /**
-     * @return unique Queue identifier
+     * @return The unique queue identifier.
      * 
      */
     public Output<String> queueId() {
@@ -53,7 +53,7 @@ public final class GetQueueArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param queueId unique Queue identifier
+         * @param queueId The unique queue identifier.
          * 
          * @return builder
          * 
@@ -64,7 +64,7 @@ public final class GetQueueArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param queueId unique Queue identifier
+         * @param queueId The unique queue identifier.
          * 
          * @return builder
          * 

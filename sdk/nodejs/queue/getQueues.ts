@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Queues in Oracle Cloud Infrastructure Queue service.
  *
- * Returns a list of Queues.
+ * Returns a list of queues.
  *
  * ## Example Usage
  *
@@ -43,7 +43,7 @@ export function getQueues(args?: GetQueuesArgs, opts?: pulumi.InvokeOptions): Pr
  */
 export interface GetQueuesArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId?: string;
     /**
@@ -52,7 +52,7 @@ export interface GetQueuesArgs {
     displayName?: string;
     filters?: inputs.Queue.GetQueuesFilter[];
     /**
-     * unique Queue identifier
+     * The unique queue identifier.
      */
     id?: string;
     /**
@@ -66,16 +66,16 @@ export interface GetQueuesArgs {
  */
 export interface GetQueuesResult {
     /**
-     * Compartment Identifier
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the queue.
      */
     readonly compartmentId?: string;
     /**
-     * Queue Identifier, can be renamed
+     * A user-friendly name for the queue. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     readonly displayName?: string;
     readonly filters?: outputs.Queue.GetQueuesFilter[];
     /**
-     * Unique identifier that is immutable on creation
+     * A unique identifier for the queue that is immutable on creation.
      */
     readonly id?: string;
     /**
@@ -83,14 +83,14 @@ export interface GetQueuesResult {
      */
     readonly queueCollections: outputs.Queue.GetQueuesQueueCollection[];
     /**
-     * The current state of the Queue.
+     * The current state of the queue.
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Queues in Oracle Cloud Infrastructure Queue service.
  *
- * Returns a list of Queues.
+ * Returns a list of queues.
  *
  * ## Example Usage
  *
@@ -115,7 +115,7 @@ export function getQueuesOutput(args?: GetQueuesOutputArgs, opts?: pulumi.Invoke
  */
 export interface GetQueuesOutputArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -124,7 +124,7 @@ export interface GetQueuesOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Queue.GetQueuesFilterArgs>[]>;
     /**
-     * unique Queue identifier
+     * The unique queue identifier.
      */
     id?: pulumi.Input<string>;
     /**

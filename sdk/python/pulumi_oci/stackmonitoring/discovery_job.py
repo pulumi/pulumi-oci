@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -37,18 +37,39 @@ class DiscoveryJobArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "discovery_details", discovery_details)
+        DiscoveryJobArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            discovery_details=discovery_details,
+            defined_tags=defined_tags,
+            discovery_client=discovery_client,
+            discovery_type=discovery_type,
+            freeform_tags=freeform_tags,
+            should_propagate_tags_to_discovered_resources=should_propagate_tags_to_discovered_resources,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: pulumi.Input[str],
+             discovery_details: pulumi.Input['DiscoveryJobDiscoveryDetailsArgs'],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             discovery_client: Optional[pulumi.Input[str]] = None,
+             discovery_type: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             should_propagate_tags_to_discovered_resources: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("discovery_details", discovery_details)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if discovery_client is not None:
-            pulumi.set(__self__, "discovery_client", discovery_client)
+            _setter("discovery_client", discovery_client)
         if discovery_type is not None:
-            pulumi.set(__self__, "discovery_type", discovery_type)
+            _setter("discovery_type", discovery_type)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if should_propagate_tags_to_discovered_resources is not None:
-            pulumi.set(__self__, "should_propagate_tags_to_discovered_resources", should_propagate_tags_to_discovered_resources)
+            _setter("should_propagate_tags_to_discovered_resources", should_propagate_tags_to_discovered_resources)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -177,34 +198,69 @@ class _DiscoveryJobState:
         :param pulumi.Input[str] time_updated: The time the discovery Job was updated.
         :param pulumi.Input[str] user_id: The OCID of user in which the job is submitted
         """
+        _DiscoveryJobState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            discovery_client=discovery_client,
+            discovery_details=discovery_details,
+            discovery_type=discovery_type,
+            freeform_tags=freeform_tags,
+            should_propagate_tags_to_discovered_resources=should_propagate_tags_to_discovered_resources,
+            state=state,
+            status=status,
+            status_message=status_message,
+            system_tags=system_tags,
+            tenant_id=tenant_id,
+            time_updated=time_updated,
+            user_id=user_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             discovery_client: Optional[pulumi.Input[str]] = None,
+             discovery_details: Optional[pulumi.Input['DiscoveryJobDiscoveryDetailsArgs']] = None,
+             discovery_type: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             should_propagate_tags_to_discovered_resources: Optional[pulumi.Input[bool]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             status_message: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             tenant_id: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             user_id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if discovery_client is not None:
-            pulumi.set(__self__, "discovery_client", discovery_client)
+            _setter("discovery_client", discovery_client)
         if discovery_details is not None:
-            pulumi.set(__self__, "discovery_details", discovery_details)
+            _setter("discovery_details", discovery_details)
         if discovery_type is not None:
-            pulumi.set(__self__, "discovery_type", discovery_type)
+            _setter("discovery_type", discovery_type)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if should_propagate_tags_to_discovered_resources is not None:
-            pulumi.set(__self__, "should_propagate_tags_to_discovered_resources", should_propagate_tags_to_discovered_resources)
+            _setter("should_propagate_tags_to_discovered_resources", should_propagate_tags_to_discovered_resources)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if status_message is not None:
-            pulumi.set(__self__, "status_message", status_message)
+            _setter("status_message", status_message)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if tenant_id is not None:
-            pulumi.set(__self__, "tenant_id", tenant_id)
+            _setter("tenant_id", tenant_id)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if user_id is not None:
-            pulumi.set(__self__, "user_id", user_id)
+            _setter("user_id", user_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -526,6 +582,10 @@ class DiscoveryJob(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DiscoveryJobArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -552,6 +612,11 @@ class DiscoveryJob(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["discovery_client"] = discovery_client
+            if discovery_details is not None and not isinstance(discovery_details, DiscoveryJobDiscoveryDetailsArgs):
+                discovery_details = discovery_details or {}
+                def _setter(key, value):
+                    discovery_details[key] = value
+                DiscoveryJobDiscoveryDetailsArgs._configure(_setter, **discovery_details)
             if discovery_details is None and not opts.urn:
                 raise TypeError("Missing required property 'discovery_details'")
             __props__.__dict__["discovery_details"] = discovery_details

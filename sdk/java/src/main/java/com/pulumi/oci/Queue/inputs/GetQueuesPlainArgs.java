@@ -17,14 +17,14 @@ public final class GetQueuesPlainArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetQueuesPlainArgs Empty = new GetQueuesPlainArgs();
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable String compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     public Optional<String> compartmentId() {
@@ -54,14 +54,14 @@ public final class GetQueuesPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * unique Queue identifier
+     * The unique queue identifier.
      * 
      */
     @Import(name="id")
     private @Nullable String id;
 
     /**
-     * @return unique Queue identifier
+     * @return The unique queue identifier.
      * 
      */
     public Optional<String> id() {
@@ -112,7 +112,7 @@ public final class GetQueuesPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -143,7 +143,7 @@ public final class GetQueuesPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param id unique Queue identifier
+         * @param id The unique queue identifier.
          * 
          * @return builder
          * 

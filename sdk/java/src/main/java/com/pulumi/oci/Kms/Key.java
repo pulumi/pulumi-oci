@@ -9,6 +9,8 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Kms.KeyArgs;
 import com.pulumi.oci.Kms.inputs.KeyState;
+import com.pulumi.oci.Kms.outputs.KeyExternalKeyReference;
+import com.pulumi.oci.Kms.outputs.KeyExternalKeyReferenceDetail;
 import com.pulumi.oci.Kms.outputs.KeyKeyShape;
 import com.pulumi.oci.Kms.outputs.KeyReplicaDetail;
 import com.pulumi.oci.Kms.outputs.KeyRestoreFromFile;
@@ -31,47 +33,6 @@ import javax.annotation.Nullable;
  * number of requests across all management write operations. Key Management might throttle this call
  * to reject an otherwise valid request when the total rate of management write operations exceeds 10
  * requests per second for a given tenancy.
- * 
- * ## Example Usage
- * ```java
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Kms.Key;
- * import com.pulumi.oci.Kms.KeyArgs;
- * import com.pulumi.oci.Kms.inputs.KeyKeyShapeArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testKey = new Key(&#34;testKey&#34;, KeyArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.key_display_name())
- *             .keyShape(KeyKeyShapeArgs.builder()
- *                 .algorithm(var_.key_key_shape_algorithm())
- *                 .length(var_.key_key_shape_length())
- *                 .curveId(oci_kms_curve.test_curve().id())
- *                 .build())
- *             .managementEndpoint(var_.key_management_endpoint())
- *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .protectionMode(var_.key_protection_mode())
- *             .build());
- * 
- *     }
- * }
- * ```
  * 
  * ## Import
  * 
@@ -155,6 +116,34 @@ public class Key extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
+     * A reference to the key on external key manager.
+     * 
+     */
+    @Export(name="externalKeyReference", refs={KeyExternalKeyReference.class}, tree="[0]")
+    private Output<KeyExternalKeyReference> externalKeyReference;
+
+    /**
+     * @return A reference to the key on external key manager.
+     * 
+     */
+    public Output<KeyExternalKeyReference> externalKeyReference() {
+        return this.externalKeyReference;
+    }
+    /**
+     * Key reference data to be returned to the customer as a response.
+     * 
+     */
+    @Export(name="externalKeyReferenceDetails", refs={List.class,KeyExternalKeyReferenceDetail.class}, tree="[0,1]")
+    private Output<List<KeyExternalKeyReferenceDetail>> externalKeyReferenceDetails;
+
+    /**
+     * @return Key reference data to be returned to the customer as a response.
+     * 
+     */
+    public Output<List<KeyExternalKeyReferenceDetail>> externalKeyReferenceDetails() {
+        return this.externalKeyReferenceDetails;
+    }
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -169,14 +158,14 @@ public class Key extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+     * A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
      * 
      */
     @Export(name="isPrimary", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPrimary;
 
     /**
-     * @return A boolean that will be true when key is primary, and will be false when key is a replica from a primary key.
+     * @return A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
      * 
      */
     public Output<Boolean> isPrimary() {
@@ -211,14 +200,14 @@ public class Key extends com.pulumi.resources.CustomResource {
         return this.managementEndpoint;
     }
     /**
-     * The key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key&#39;s protection mode is set to `HSM`. You can&#39;t change a key&#39;s protection mode after the key is created or imported.
+     * The key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key&#39;s protection mode is set to `HSM`. You can&#39;t change a key&#39;s protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer&#39;s external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
      * 
      */
     @Export(name="protectionMode", refs={String.class}, tree="[0]")
     private Output<String> protectionMode;
 
     /**
-     * @return The key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s RSA wrapping key which persists  on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,  a key&#39;s protection mode is set to `HSM`. You can&#39;t change a key&#39;s protection mode after the key is created or imported.
+     * @return The key&#39;s protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault&#39;s RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key&#39;s protection mode is set to `HSM`. You can&#39;t change a key&#39;s protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer&#39;s external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
      * 
      */
     public Output<String> protectionMode() {

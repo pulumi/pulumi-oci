@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
@@ -125,22 +125,45 @@ class ExternalAsmServicedDatabaseArgs:
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
         :param pulumi.Input[bool] is_managed: Indicates whether the database is a Managed Database or not.
         """
+        ExternalAsmServicedDatabaseArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            database_sub_type=database_sub_type,
+            database_type=database_type,
+            db_unique_name=db_unique_name,
+            disk_groups=disk_groups,
+            display_name=display_name,
+            id=id,
+            is_managed=is_managed,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             database_sub_type: Optional[pulumi.Input[str]] = None,
+             database_type: Optional[pulumi.Input[str]] = None,
+             db_unique_name: Optional[pulumi.Input[str]] = None,
+             disk_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             is_managed: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if database_sub_type is not None:
-            pulumi.set(__self__, "database_sub_type", database_sub_type)
+            _setter("database_sub_type", database_sub_type)
         if database_type is not None:
-            pulumi.set(__self__, "database_type", database_type)
+            _setter("database_type", database_type)
         if db_unique_name is not None:
-            pulumi.set(__self__, "db_unique_name", db_unique_name)
+            _setter("db_unique_name", db_unique_name)
         if disk_groups is not None:
-            pulumi.set(__self__, "disk_groups", disk_groups)
+            _setter("disk_groups", disk_groups)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if is_managed is not None:
-            pulumi.set(__self__, "is_managed", is_managed)
+            _setter("is_managed", is_managed)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -250,12 +273,25 @@ class ExternalClusterNetworkConfigurationArgs:
         :param pulumi.Input[str] network_type: The network type.
         :param pulumi.Input[str] subnet: The subnet for the network.
         """
+        ExternalClusterNetworkConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            network_number=network_number,
+            network_type=network_type,
+            subnet=subnet,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             network_number: Optional[pulumi.Input[int]] = None,
+             network_type: Optional[pulumi.Input[str]] = None,
+             subnet: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if network_number is not None:
-            pulumi.set(__self__, "network_number", network_number)
+            _setter("network_number", network_number)
         if network_type is not None:
-            pulumi.set(__self__, "network_type", network_type)
+            _setter("network_type", network_type)
         if subnet is not None:
-            pulumi.set(__self__, "subnet", subnet)
+            _setter("subnet", subnet)
 
     @property
     @pulumi.getter(name="networkNumber")
@@ -307,14 +343,29 @@ class ExternalClusterScanConfigurationArgs:
         :param pulumi.Input[int] scan_port: The port number of the SCAN listener.
         :param pulumi.Input[str] scan_protocol: The protocol of the SCAN listener.
         """
+        ExternalClusterScanConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            network_number=network_number,
+            scan_name=scan_name,
+            scan_port=scan_port,
+            scan_protocol=scan_protocol,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             network_number: Optional[pulumi.Input[int]] = None,
+             scan_name: Optional[pulumi.Input[str]] = None,
+             scan_port: Optional[pulumi.Input[int]] = None,
+             scan_protocol: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if network_number is not None:
-            pulumi.set(__self__, "network_number", network_number)
+            _setter("network_number", network_number)
         if scan_name is not None:
-            pulumi.set(__self__, "scan_name", scan_name)
+            _setter("scan_name", scan_name)
         if scan_port is not None:
-            pulumi.set(__self__, "scan_port", scan_port)
+            _setter("scan_port", scan_port)
         if scan_protocol is not None:
-            pulumi.set(__self__, "scan_protocol", scan_protocol)
+            _setter("scan_protocol", scan_protocol)
 
     @property
     @pulumi.getter(name="networkNumber")
@@ -376,12 +427,25 @@ class ExternalClusterVipConfigurationArgs:
         :param pulumi.Input[int] network_number: The network number from which VIPs are obtained.
         :param pulumi.Input[str] node_name: The name of the node with the VIP.
         """
+        ExternalClusterVipConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address=address,
+            network_number=network_number,
+            node_name=node_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address: Optional[pulumi.Input[str]] = None,
+             network_number: Optional[pulumi.Input[int]] = None,
+             node_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if address is not None:
-            pulumi.set(__self__, "address", address)
+            _setter("address", address)
         if network_number is not None:
-            pulumi.set(__self__, "network_number", network_number)
+            _setter("network_number", network_number)
         if node_name is not None:
-            pulumi.set(__self__, "node_name", node_name)
+            _setter("node_name", node_name)
 
     @property
     @pulumi.getter
@@ -431,11 +495,24 @@ class ExternalDbSystemConnectorConnectionInfoArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgs']]] connection_strings: The Oracle Database connection string.
         """
-        pulumi.set(__self__, "component_type", component_type)
+        ExternalDbSystemConnectorConnectionInfoArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            component_type=component_type,
+            connection_credentials=connection_credentials,
+            connection_strings=connection_strings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             component_type: pulumi.Input[str],
+             connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
+             connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("component_type", component_type)
         if connection_credentials is not None:
-            pulumi.set(__self__, "connection_credentials", connection_credentials)
+            _setter("connection_credentials", connection_credentials)
         if connection_strings is not None:
-            pulumi.set(__self__, "connection_strings", connection_strings)
+            _setter("connection_strings", connection_strings)
 
     @property
     @pulumi.getter(name="componentType")
@@ -491,18 +568,37 @@ class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs:
         :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         :param pulumi.Input[str] user_name: The user name used to connect to the ASM instance.
         """
+        ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_name=credential_name,
+            credential_type=credential_type,
+            password_secret_id=password_secret_id,
+            role=role,
+            ssl_secret_id=ssl_secret_id,
+            user_name=user_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_name: Optional[pulumi.Input[str]] = None,
+             credential_type: Optional[pulumi.Input[str]] = None,
+             password_secret_id: Optional[pulumi.Input[str]] = None,
+             role: Optional[pulumi.Input[str]] = None,
+             ssl_secret_id: Optional[pulumi.Input[str]] = None,
+             user_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if credential_name is not None:
-            pulumi.set(__self__, "credential_name", credential_name)
+            _setter("credential_name", credential_name)
         if credential_type is not None:
-            pulumi.set(__self__, "credential_type", credential_type)
+            _setter("credential_type", credential_type)
         if password_secret_id is not None:
-            pulumi.set(__self__, "password_secret_id", password_secret_id)
+            _setter("password_secret_id", password_secret_id)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if ssl_secret_id is not None:
-            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+            _setter("ssl_secret_id", ssl_secret_id)
         if user_name is not None:
-            pulumi.set(__self__, "user_name", user_name)
+            _setter("user_name", user_name)
 
     @property
     @pulumi.getter(name="credentialName")
@@ -592,16 +688,33 @@ class ExternalDbSystemConnectorConnectionInfoConnectionStringArgs:
         :param pulumi.Input[str] protocol: The protocol used to connect to the ASM instance.
         :param pulumi.Input[str] service: The service name of the ASM instance.
         """
+        ExternalDbSystemConnectorConnectionInfoConnectionStringArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host_name=host_name,
+            hosts=hosts,
+            port=port,
+            protocol=protocol,
+            service=service,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host_name: Optional[pulumi.Input[str]] = None,
+             hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if host_name is not None:
-            pulumi.set(__self__, "host_name", host_name)
+            _setter("host_name", host_name)
         if hosts is not None:
-            pulumi.set(__self__, "hosts", hosts)
+            _setter("hosts", hosts)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if service is not None:
-            pulumi.set(__self__, "service", service)
+            _setter("service", service)
 
     @property
     @pulumi.getter(name="hostName")
@@ -671,7 +784,16 @@ class ExternalDbSystemDatabaseManagementConfigArgs:
         """
         :param pulumi.Input[str] license_model: The Oracle license model that applies to the external database.
         """
-        pulumi.set(__self__, "license_model", license_model)
+        ExternalDbSystemDatabaseManagementConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            license_model=license_model,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             license_model: pulumi.Input[str],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("license_model", license_model)
 
     @property
     @pulumi.getter(name="licenseModel")
@@ -783,100 +905,201 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
         :param pulumi.Input[str] version: The version of Oracle Clusterware running in the cluster.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]] vip_configurations: The list of Virtual IP (VIP) configurations of the external cluster.
         """
+        ExternalDbSystemDiscoveryDiscoveredComponentArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            adr_home_directory=adr_home_directory,
+            asm_instances=asm_instances,
+            associated_components=associated_components,
+            cluster_id=cluster_id,
+            cluster_instances=cluster_instances,
+            compartment_id=compartment_id,
+            component_id=component_id,
+            component_name=component_name,
+            component_type=component_type,
+            connectors=connectors,
+            container_database_id=container_database_id,
+            cpu_core_count=cpu_core_count,
+            crs_base_directory=crs_base_directory,
+            db_edition=db_edition,
+            db_id=db_id,
+            db_node_name=db_node_name,
+            db_packs=db_packs,
+            db_role=db_role,
+            db_type=db_type,
+            db_unique_name=db_unique_name,
+            db_version=db_version,
+            display_name=display_name,
+            endpoints=endpoints,
+            grid_home=grid_home,
+            guid=guid,
+            home_directory=home_directory,
+            host_name=host_name,
+            instance_name=instance_name,
+            is_cluster=is_cluster,
+            is_flex_cluster=is_flex_cluster,
+            is_flex_enabled=is_flex_enabled,
+            is_selected_for_monitoring=is_selected_for_monitoring,
+            listener_alias=listener_alias,
+            listener_type=listener_type,
+            log_directory=log_directory,
+            memory_size_in_gbs=memory_size_in_gbs,
+            network_configurations=network_configurations,
+            node_role=node_role,
+            ocr_file_location=ocr_file_location,
+            oracle_home=oracle_home,
+            pluggable_databases=pluggable_databases,
+            resource_id=resource_id,
+            scan_configurations=scan_configurations,
+            status=status,
+            trace_directory=trace_directory,
+            version=version,
+            vip_configurations=vip_configurations,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             adr_home_directory: Optional[pulumi.Input[str]] = None,
+             asm_instances: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]] = None,
+             associated_components: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]] = None,
+             cluster_id: Optional[pulumi.Input[str]] = None,
+             cluster_instances: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs']]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             component_id: Optional[pulumi.Input[str]] = None,
+             component_name: Optional[pulumi.Input[str]] = None,
+             component_type: Optional[pulumi.Input[str]] = None,
+             connectors: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs']]]] = None,
+             container_database_id: Optional[pulumi.Input[str]] = None,
+             cpu_core_count: Optional[pulumi.Input[float]] = None,
+             crs_base_directory: Optional[pulumi.Input[str]] = None,
+             db_edition: Optional[pulumi.Input[str]] = None,
+             db_id: Optional[pulumi.Input[str]] = None,
+             db_node_name: Optional[pulumi.Input[str]] = None,
+             db_packs: Optional[pulumi.Input[str]] = None,
+             db_role: Optional[pulumi.Input[str]] = None,
+             db_type: Optional[pulumi.Input[str]] = None,
+             db_unique_name: Optional[pulumi.Input[str]] = None,
+             db_version: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs']]]] = None,
+             grid_home: Optional[pulumi.Input[str]] = None,
+             guid: Optional[pulumi.Input[str]] = None,
+             home_directory: Optional[pulumi.Input[str]] = None,
+             host_name: Optional[pulumi.Input[str]] = None,
+             instance_name: Optional[pulumi.Input[str]] = None,
+             is_cluster: Optional[pulumi.Input[bool]] = None,
+             is_flex_cluster: Optional[pulumi.Input[bool]] = None,
+             is_flex_enabled: Optional[pulumi.Input[bool]] = None,
+             is_selected_for_monitoring: Optional[pulumi.Input[bool]] = None,
+             listener_alias: Optional[pulumi.Input[str]] = None,
+             listener_type: Optional[pulumi.Input[str]] = None,
+             log_directory: Optional[pulumi.Input[str]] = None,
+             memory_size_in_gbs: Optional[pulumi.Input[float]] = None,
+             network_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]]] = None,
+             node_role: Optional[pulumi.Input[str]] = None,
+             ocr_file_location: Optional[pulumi.Input[str]] = None,
+             oracle_home: Optional[pulumi.Input[str]] = None,
+             pluggable_databases: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]]] = None,
+             resource_id: Optional[pulumi.Input[str]] = None,
+             scan_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             trace_directory: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[str]] = None,
+             vip_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if adr_home_directory is not None:
-            pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+            _setter("adr_home_directory", adr_home_directory)
         if asm_instances is not None:
-            pulumi.set(__self__, "asm_instances", asm_instances)
+            _setter("asm_instances", asm_instances)
         if associated_components is not None:
-            pulumi.set(__self__, "associated_components", associated_components)
+            _setter("associated_components", associated_components)
         if cluster_id is not None:
-            pulumi.set(__self__, "cluster_id", cluster_id)
+            _setter("cluster_id", cluster_id)
         if cluster_instances is not None:
-            pulumi.set(__self__, "cluster_instances", cluster_instances)
+            _setter("cluster_instances", cluster_instances)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if component_id is not None:
-            pulumi.set(__self__, "component_id", component_id)
+            _setter("component_id", component_id)
         if component_name is not None:
-            pulumi.set(__self__, "component_name", component_name)
+            _setter("component_name", component_name)
         if component_type is not None:
-            pulumi.set(__self__, "component_type", component_type)
+            _setter("component_type", component_type)
         if connectors is not None:
-            pulumi.set(__self__, "connectors", connectors)
+            _setter("connectors", connectors)
         if container_database_id is not None:
-            pulumi.set(__self__, "container_database_id", container_database_id)
+            _setter("container_database_id", container_database_id)
         if cpu_core_count is not None:
-            pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+            _setter("cpu_core_count", cpu_core_count)
         if crs_base_directory is not None:
-            pulumi.set(__self__, "crs_base_directory", crs_base_directory)
+            _setter("crs_base_directory", crs_base_directory)
         if db_edition is not None:
-            pulumi.set(__self__, "db_edition", db_edition)
+            _setter("db_edition", db_edition)
         if db_id is not None:
-            pulumi.set(__self__, "db_id", db_id)
+            _setter("db_id", db_id)
         if db_node_name is not None:
-            pulumi.set(__self__, "db_node_name", db_node_name)
+            _setter("db_node_name", db_node_name)
         if db_packs is not None:
-            pulumi.set(__self__, "db_packs", db_packs)
+            _setter("db_packs", db_packs)
         if db_role is not None:
-            pulumi.set(__self__, "db_role", db_role)
+            _setter("db_role", db_role)
         if db_type is not None:
-            pulumi.set(__self__, "db_type", db_type)
+            _setter("db_type", db_type)
         if db_unique_name is not None:
-            pulumi.set(__self__, "db_unique_name", db_unique_name)
+            _setter("db_unique_name", db_unique_name)
         if db_version is not None:
-            pulumi.set(__self__, "db_version", db_version)
+            _setter("db_version", db_version)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if endpoints is not None:
-            pulumi.set(__self__, "endpoints", endpoints)
+            _setter("endpoints", endpoints)
         if grid_home is not None:
-            pulumi.set(__self__, "grid_home", grid_home)
+            _setter("grid_home", grid_home)
         if guid is not None:
-            pulumi.set(__self__, "guid", guid)
+            _setter("guid", guid)
         if home_directory is not None:
-            pulumi.set(__self__, "home_directory", home_directory)
+            _setter("home_directory", home_directory)
         if host_name is not None:
-            pulumi.set(__self__, "host_name", host_name)
+            _setter("host_name", host_name)
         if instance_name is not None:
-            pulumi.set(__self__, "instance_name", instance_name)
+            _setter("instance_name", instance_name)
         if is_cluster is not None:
-            pulumi.set(__self__, "is_cluster", is_cluster)
+            _setter("is_cluster", is_cluster)
         if is_flex_cluster is not None:
-            pulumi.set(__self__, "is_flex_cluster", is_flex_cluster)
+            _setter("is_flex_cluster", is_flex_cluster)
         if is_flex_enabled is not None:
-            pulumi.set(__self__, "is_flex_enabled", is_flex_enabled)
+            _setter("is_flex_enabled", is_flex_enabled)
         if is_selected_for_monitoring is not None:
-            pulumi.set(__self__, "is_selected_for_monitoring", is_selected_for_monitoring)
+            _setter("is_selected_for_monitoring", is_selected_for_monitoring)
         if listener_alias is not None:
-            pulumi.set(__self__, "listener_alias", listener_alias)
+            _setter("listener_alias", listener_alias)
         if listener_type is not None:
-            pulumi.set(__self__, "listener_type", listener_type)
+            _setter("listener_type", listener_type)
         if log_directory is not None:
-            pulumi.set(__self__, "log_directory", log_directory)
+            _setter("log_directory", log_directory)
         if memory_size_in_gbs is not None:
-            pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+            _setter("memory_size_in_gbs", memory_size_in_gbs)
         if network_configurations is not None:
-            pulumi.set(__self__, "network_configurations", network_configurations)
+            _setter("network_configurations", network_configurations)
         if node_role is not None:
-            pulumi.set(__self__, "node_role", node_role)
+            _setter("node_role", node_role)
         if ocr_file_location is not None:
-            pulumi.set(__self__, "ocr_file_location", ocr_file_location)
+            _setter("ocr_file_location", ocr_file_location)
         if oracle_home is not None:
-            pulumi.set(__self__, "oracle_home", oracle_home)
+            _setter("oracle_home", oracle_home)
         if pluggable_databases is not None:
-            pulumi.set(__self__, "pluggable_databases", pluggable_databases)
+            _setter("pluggable_databases", pluggable_databases)
         if resource_id is not None:
-            pulumi.set(__self__, "resource_id", resource_id)
+            _setter("resource_id", resource_id)
         if scan_configurations is not None:
-            pulumi.set(__self__, "scan_configurations", scan_configurations)
+            _setter("scan_configurations", scan_configurations)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if trace_directory is not None:
-            pulumi.set(__self__, "trace_directory", trace_directory)
+            _setter("trace_directory", trace_directory)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
         if vip_configurations is not None:
-            pulumi.set(__self__, "vip_configurations", vip_configurations)
+            _setter("vip_configurations", vip_configurations)
 
     @property
     @pulumi.getter(name="adrHomeDirectory")
@@ -1448,12 +1671,25 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs:
         :param pulumi.Input[str] host_name: The host name of the database or the SCAN name in case of a RAC database.
         :param pulumi.Input[str] instance_name: The name of the ASM instance.
         """
+        ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            adr_home_directory=adr_home_directory,
+            host_name=host_name,
+            instance_name=instance_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             adr_home_directory: Optional[pulumi.Input[str]] = None,
+             host_name: Optional[pulumi.Input[str]] = None,
+             instance_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if adr_home_directory is not None:
-            pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+            _setter("adr_home_directory", adr_home_directory)
         if host_name is not None:
-            pulumi.set(__self__, "host_name", host_name)
+            _setter("host_name", host_name)
         if instance_name is not None:
-            pulumi.set(__self__, "instance_name", instance_name)
+            _setter("instance_name", instance_name)
 
     @property
     @pulumi.getter(name="adrHomeDirectory")
@@ -1503,12 +1739,25 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs:
         :param pulumi.Input[str] component_id: The identifier of the discovered DB system component.
         :param pulumi.Input[str] component_type: The component type.
         """
+        ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            association_type=association_type,
+            component_id=component_id,
+            component_type=component_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             association_type: Optional[pulumi.Input[str]] = None,
+             component_id: Optional[pulumi.Input[str]] = None,
+             component_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if association_type is not None:
-            pulumi.set(__self__, "association_type", association_type)
+            _setter("association_type", association_type)
         if component_id is not None:
-            pulumi.set(__self__, "component_id", component_id)
+            _setter("component_id", component_id)
         if component_type is not None:
-            pulumi.set(__self__, "component_type", component_type)
+            _setter("component_type", component_type)
 
     @property
     @pulumi.getter(name="associationType")
@@ -1564,18 +1813,37 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs:
         :param pulumi.Input[str] host_name: The host name of the database or the SCAN name in case of a RAC database.
         :param pulumi.Input[str] node_role: The role of the cluster node.
         """
+        ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            adr_home_directory=adr_home_directory,
+            cluster_id=cluster_id,
+            connectors=connectors,
+            crs_base_directory=crs_base_directory,
+            host_name=host_name,
+            node_role=node_role,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             adr_home_directory: Optional[pulumi.Input[str]] = None,
+             cluster_id: Optional[pulumi.Input[str]] = None,
+             connectors: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]]] = None,
+             crs_base_directory: Optional[pulumi.Input[str]] = None,
+             host_name: Optional[pulumi.Input[str]] = None,
+             node_role: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if adr_home_directory is not None:
-            pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+            _setter("adr_home_directory", adr_home_directory)
         if cluster_id is not None:
-            pulumi.set(__self__, "cluster_id", cluster_id)
+            _setter("cluster_id", cluster_id)
         if connectors is not None:
-            pulumi.set(__self__, "connectors", connectors)
+            _setter("connectors", connectors)
         if crs_base_directory is not None:
-            pulumi.set(__self__, "crs_base_directory", crs_base_directory)
+            _setter("crs_base_directory", crs_base_directory)
         if host_name is not None:
-            pulumi.set(__self__, "host_name", host_name)
+            _setter("host_name", host_name)
         if node_role is not None:
-            pulumi.set(__self__, "node_role", node_role)
+            _setter("node_role", node_role)
 
     @property
     @pulumi.getter(name="adrHomeDirectory")
@@ -1669,20 +1937,41 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs:
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         :param pulumi.Input[str] time_connection_status_last_updated: The date and time the connectionStatus of the external DB system connector was last updated.
         """
+        ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agent_id=agent_id,
+            connection_failure_message=connection_failure_message,
+            connection_infos=connection_infos,
+            connection_status=connection_status,
+            connector_type=connector_type,
+            display_name=display_name,
+            time_connection_status_last_updated=time_connection_status_last_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agent_id: Optional[pulumi.Input[str]] = None,
+             connection_failure_message: Optional[pulumi.Input[str]] = None,
+             connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]]] = None,
+             connection_status: Optional[pulumi.Input[str]] = None,
+             connector_type: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             time_connection_status_last_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if agent_id is not None:
-            pulumi.set(__self__, "agent_id", agent_id)
+            _setter("agent_id", agent_id)
         if connection_failure_message is not None:
-            pulumi.set(__self__, "connection_failure_message", connection_failure_message)
+            _setter("connection_failure_message", connection_failure_message)
         if connection_infos is not None:
-            pulumi.set(__self__, "connection_infos", connection_infos)
+            _setter("connection_infos", connection_infos)
         if connection_status is not None:
-            pulumi.set(__self__, "connection_status", connection_status)
+            _setter("connection_status", connection_status)
         if connector_type is not None:
-            pulumi.set(__self__, "connector_type", connector_type)
+            _setter("connector_type", connector_type)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if time_connection_status_last_updated is not None:
-            pulumi.set(__self__, "time_connection_status_last_updated", time_connection_status_last_updated)
+            _setter("time_connection_status_last_updated", time_connection_status_last_updated)
 
     @property
     @pulumi.getter(name="agentId")
@@ -1780,12 +2069,25 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]] connection_strings: The Oracle Database connection string.
         """
+        ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            component_type=component_type,
+            connection_credentials=connection_credentials,
+            connection_strings=connection_strings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             component_type: Optional[pulumi.Input[str]] = None,
+             connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
+             connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if component_type is not None:
-            pulumi.set(__self__, "component_type", component_type)
+            _setter("component_type", component_type)
         if connection_credentials is not None:
-            pulumi.set(__self__, "connection_credentials", connection_credentials)
+            _setter("connection_credentials", connection_credentials)
         if connection_strings is not None:
-            pulumi.set(__self__, "connection_strings", connection_strings)
+            _setter("connection_strings", connection_strings)
 
     @property
     @pulumi.getter(name="componentType")
@@ -1841,18 +2143,37 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
         :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         :param pulumi.Input[str] user_name: The user name used to connect to the ASM instance.
         """
+        ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_name=credential_name,
+            credential_type=credential_type,
+            password_secret_id=password_secret_id,
+            role=role,
+            ssl_secret_id=ssl_secret_id,
+            user_name=user_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_name: Optional[pulumi.Input[str]] = None,
+             credential_type: Optional[pulumi.Input[str]] = None,
+             password_secret_id: Optional[pulumi.Input[str]] = None,
+             role: Optional[pulumi.Input[str]] = None,
+             ssl_secret_id: Optional[pulumi.Input[str]] = None,
+             user_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if credential_name is not None:
-            pulumi.set(__self__, "credential_name", credential_name)
+            _setter("credential_name", credential_name)
         if credential_type is not None:
-            pulumi.set(__self__, "credential_type", credential_type)
+            _setter("credential_type", credential_type)
         if password_secret_id is not None:
-            pulumi.set(__self__, "password_secret_id", password_secret_id)
+            _setter("password_secret_id", password_secret_id)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if ssl_secret_id is not None:
-            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+            _setter("ssl_secret_id", ssl_secret_id)
         if user_name is not None:
-            pulumi.set(__self__, "user_name", user_name)
+            _setter("user_name", user_name)
 
     @property
     @pulumi.getter(name="credentialName")
@@ -1942,16 +2263,33 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
         :param pulumi.Input[str] protocol: The protocol used to connect to the ASM instance.
         :param pulumi.Input[str] service: The service name of the ASM instance.
         """
+        ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host_name=host_name,
+            hosts=hosts,
+            port=port,
+            protocol=protocol,
+            service=service,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host_name: Optional[pulumi.Input[str]] = None,
+             hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if host_name is not None:
-            pulumi.set(__self__, "host_name", host_name)
+            _setter("host_name", host_name)
         if hosts is not None:
-            pulumi.set(__self__, "hosts", hosts)
+            _setter("hosts", hosts)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if service is not None:
-            pulumi.set(__self__, "service", service)
+            _setter("service", service)
 
     @property
     @pulumi.getter(name="hostName")
@@ -2033,20 +2371,41 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs:
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         :param pulumi.Input[str] time_connection_status_last_updated: The date and time the connectionStatus of the external DB system connector was last updated.
         """
+        ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agent_id=agent_id,
+            connection_failure_message=connection_failure_message,
+            connection_infos=connection_infos,
+            connection_status=connection_status,
+            connector_type=connector_type,
+            display_name=display_name,
+            time_connection_status_last_updated=time_connection_status_last_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agent_id: Optional[pulumi.Input[str]] = None,
+             connection_failure_message: Optional[pulumi.Input[str]] = None,
+             connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]]] = None,
+             connection_status: Optional[pulumi.Input[str]] = None,
+             connector_type: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             time_connection_status_last_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if agent_id is not None:
-            pulumi.set(__self__, "agent_id", agent_id)
+            _setter("agent_id", agent_id)
         if connection_failure_message is not None:
-            pulumi.set(__self__, "connection_failure_message", connection_failure_message)
+            _setter("connection_failure_message", connection_failure_message)
         if connection_infos is not None:
-            pulumi.set(__self__, "connection_infos", connection_infos)
+            _setter("connection_infos", connection_infos)
         if connection_status is not None:
-            pulumi.set(__self__, "connection_status", connection_status)
+            _setter("connection_status", connection_status)
         if connector_type is not None:
-            pulumi.set(__self__, "connector_type", connector_type)
+            _setter("connector_type", connector_type)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if time_connection_status_last_updated is not None:
-            pulumi.set(__self__, "time_connection_status_last_updated", time_connection_status_last_updated)
+            _setter("time_connection_status_last_updated", time_connection_status_last_updated)
 
     @property
     @pulumi.getter(name="agentId")
@@ -2144,12 +2503,25 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]] connection_strings: The Oracle Database connection string.
         """
+        ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            component_type=component_type,
+            connection_credentials=connection_credentials,
+            connection_strings=connection_strings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             component_type: Optional[pulumi.Input[str]] = None,
+             connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
+             connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if component_type is not None:
-            pulumi.set(__self__, "component_type", component_type)
+            _setter("component_type", component_type)
         if connection_credentials is not None:
-            pulumi.set(__self__, "connection_credentials", connection_credentials)
+            _setter("connection_credentials", connection_credentials)
         if connection_strings is not None:
-            pulumi.set(__self__, "connection_strings", connection_strings)
+            _setter("connection_strings", connection_strings)
 
     @property
     @pulumi.getter(name="componentType")
@@ -2205,18 +2577,37 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
         :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         :param pulumi.Input[str] user_name: The user name used to connect to the ASM instance.
         """
+        ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_name=credential_name,
+            credential_type=credential_type,
+            password_secret_id=password_secret_id,
+            role=role,
+            ssl_secret_id=ssl_secret_id,
+            user_name=user_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_name: Optional[pulumi.Input[str]] = None,
+             credential_type: Optional[pulumi.Input[str]] = None,
+             password_secret_id: Optional[pulumi.Input[str]] = None,
+             role: Optional[pulumi.Input[str]] = None,
+             ssl_secret_id: Optional[pulumi.Input[str]] = None,
+             user_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if credential_name is not None:
-            pulumi.set(__self__, "credential_name", credential_name)
+            _setter("credential_name", credential_name)
         if credential_type is not None:
-            pulumi.set(__self__, "credential_type", credential_type)
+            _setter("credential_type", credential_type)
         if password_secret_id is not None:
-            pulumi.set(__self__, "password_secret_id", password_secret_id)
+            _setter("password_secret_id", password_secret_id)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if ssl_secret_id is not None:
-            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+            _setter("ssl_secret_id", ssl_secret_id)
         if user_name is not None:
-            pulumi.set(__self__, "user_name", user_name)
+            _setter("user_name", user_name)
 
     @property
     @pulumi.getter(name="credentialName")
@@ -2306,16 +2697,33 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
         :param pulumi.Input[str] protocol: The protocol used to connect to the ASM instance.
         :param pulumi.Input[str] service: The service name of the ASM instance.
         """
+        ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host_name=host_name,
+            hosts=hosts,
+            port=port,
+            protocol=protocol,
+            service=service,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host_name: Optional[pulumi.Input[str]] = None,
+             hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if host_name is not None:
-            pulumi.set(__self__, "host_name", host_name)
+            _setter("host_name", host_name)
         if hosts is not None:
-            pulumi.set(__self__, "hosts", hosts)
+            _setter("hosts", hosts)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if service is not None:
-            pulumi.set(__self__, "service", service)
+            _setter("service", service)
 
     @property
     @pulumi.getter(name="hostName")
@@ -2393,16 +2801,33 @@ class ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs:
         :param pulumi.Input[str] protocol: The protocol used to connect to the ASM instance.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] services: The list of services registered with the listener.
         """
+        ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host=host,
+            key=key,
+            port=port,
+            protocol=protocol,
+            services=services,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host: Optional[pulumi.Input[str]] = None,
+             key: Optional[pulumi.Input[str]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             services: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if host is not None:
-            pulumi.set(__self__, "host", host)
+            _setter("host", host)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if services is not None:
-            pulumi.set(__self__, "services", services)
+            _setter("services", services)
 
     @property
     @pulumi.getter
@@ -2476,12 +2901,25 @@ class ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs:
         :param pulumi.Input[str] network_type: The network type.
         :param pulumi.Input[str] subnet: The subnet for the network.
         """
+        ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            network_number=network_number,
+            network_type=network_type,
+            subnet=subnet,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             network_number: Optional[pulumi.Input[int]] = None,
+             network_type: Optional[pulumi.Input[str]] = None,
+             subnet: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if network_number is not None:
-            pulumi.set(__self__, "network_number", network_number)
+            _setter("network_number", network_number)
         if network_type is not None:
-            pulumi.set(__self__, "network_type", network_type)
+            _setter("network_type", network_type)
         if subnet is not None:
-            pulumi.set(__self__, "subnet", subnet)
+            _setter("subnet", subnet)
 
     @property
     @pulumi.getter(name="networkNumber")
@@ -2533,14 +2971,29 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs:
         :param pulumi.Input[str] container_database_id: The unique identifier of the parent Container Database (CDB).
         :param pulumi.Input[str] guid: The unique identifier of the PDB.
         """
+        ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            connectors=connectors,
+            container_database_id=container_database_id,
+            guid=guid,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             connectors: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]] = None,
+             container_database_id: Optional[pulumi.Input[str]] = None,
+             guid: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if connectors is not None:
-            pulumi.set(__self__, "connectors", connectors)
+            _setter("connectors", connectors)
         if container_database_id is not None:
-            pulumi.set(__self__, "container_database_id", container_database_id)
+            _setter("container_database_id", container_database_id)
         if guid is not None:
-            pulumi.set(__self__, "guid", guid)
+            _setter("guid", guid)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -2610,20 +3063,41 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         :param pulumi.Input[str] time_connection_status_last_updated: The date and time the connectionStatus of the external DB system connector was last updated.
         """
+        ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            agent_id=agent_id,
+            connection_failure_message=connection_failure_message,
+            connection_infos=connection_infos,
+            connection_status=connection_status,
+            connector_type=connector_type,
+            display_name=display_name,
+            time_connection_status_last_updated=time_connection_status_last_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             agent_id: Optional[pulumi.Input[str]] = None,
+             connection_failure_message: Optional[pulumi.Input[str]] = None,
+             connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]]] = None,
+             connection_status: Optional[pulumi.Input[str]] = None,
+             connector_type: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             time_connection_status_last_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if agent_id is not None:
-            pulumi.set(__self__, "agent_id", agent_id)
+            _setter("agent_id", agent_id)
         if connection_failure_message is not None:
-            pulumi.set(__self__, "connection_failure_message", connection_failure_message)
+            _setter("connection_failure_message", connection_failure_message)
         if connection_infos is not None:
-            pulumi.set(__self__, "connection_infos", connection_infos)
+            _setter("connection_infos", connection_infos)
         if connection_status is not None:
-            pulumi.set(__self__, "connection_status", connection_status)
+            _setter("connection_status", connection_status)
         if connector_type is not None:
-            pulumi.set(__self__, "connector_type", connector_type)
+            _setter("connector_type", connector_type)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if time_connection_status_last_updated is not None:
-            pulumi.set(__self__, "time_connection_status_last_updated", time_connection_status_last_updated)
+            _setter("time_connection_status_last_updated", time_connection_status_last_updated)
 
     @property
     @pulumi.getter(name="agentId")
@@ -2721,12 +3195,25 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]] connection_strings: The Oracle Database connection string.
         """
+        ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            component_type=component_type,
+            connection_credentials=connection_credentials,
+            connection_strings=connection_strings,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             component_type: Optional[pulumi.Input[str]] = None,
+             connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
+             connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if component_type is not None:
-            pulumi.set(__self__, "component_type", component_type)
+            _setter("component_type", component_type)
         if connection_credentials is not None:
-            pulumi.set(__self__, "connection_credentials", connection_credentials)
+            _setter("connection_credentials", connection_credentials)
         if connection_strings is not None:
-            pulumi.set(__self__, "connection_strings", connection_strings)
+            _setter("connection_strings", connection_strings)
 
     @property
     @pulumi.getter(name="componentType")
@@ -2782,18 +3269,37 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
         :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         :param pulumi.Input[str] user_name: The user name used to connect to the ASM instance.
         """
+        ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_name=credential_name,
+            credential_type=credential_type,
+            password_secret_id=password_secret_id,
+            role=role,
+            ssl_secret_id=ssl_secret_id,
+            user_name=user_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_name: Optional[pulumi.Input[str]] = None,
+             credential_type: Optional[pulumi.Input[str]] = None,
+             password_secret_id: Optional[pulumi.Input[str]] = None,
+             role: Optional[pulumi.Input[str]] = None,
+             ssl_secret_id: Optional[pulumi.Input[str]] = None,
+             user_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if credential_name is not None:
-            pulumi.set(__self__, "credential_name", credential_name)
+            _setter("credential_name", credential_name)
         if credential_type is not None:
-            pulumi.set(__self__, "credential_type", credential_type)
+            _setter("credential_type", credential_type)
         if password_secret_id is not None:
-            pulumi.set(__self__, "password_secret_id", password_secret_id)
+            _setter("password_secret_id", password_secret_id)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if ssl_secret_id is not None:
-            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+            _setter("ssl_secret_id", ssl_secret_id)
         if user_name is not None:
-            pulumi.set(__self__, "user_name", user_name)
+            _setter("user_name", user_name)
 
     @property
     @pulumi.getter(name="credentialName")
@@ -2883,16 +3389,33 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
         :param pulumi.Input[str] protocol: The protocol used to connect to the ASM instance.
         :param pulumi.Input[str] service: The service name of the ASM instance.
         """
+        ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host_name=host_name,
+            hosts=hosts,
+            port=port,
+            protocol=protocol,
+            service=service,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host_name: Optional[pulumi.Input[str]] = None,
+             hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if host_name is not None:
-            pulumi.set(__self__, "host_name", host_name)
+            _setter("host_name", host_name)
         if hosts is not None:
-            pulumi.set(__self__, "hosts", hosts)
+            _setter("hosts", hosts)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if service is not None:
-            pulumi.set(__self__, "service", service)
+            _setter("service", service)
 
     @property
     @pulumi.getter(name="hostName")
@@ -2968,14 +3491,29 @@ class ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs:
         :param pulumi.Input[int] scan_port: The port number of the SCAN listener.
         :param pulumi.Input[str] scan_protocol: The protocol of the SCAN listener.
         """
+        ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            network_number=network_number,
+            scan_name=scan_name,
+            scan_port=scan_port,
+            scan_protocol=scan_protocol,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             network_number: Optional[pulumi.Input[int]] = None,
+             scan_name: Optional[pulumi.Input[str]] = None,
+             scan_port: Optional[pulumi.Input[int]] = None,
+             scan_protocol: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if network_number is not None:
-            pulumi.set(__self__, "network_number", network_number)
+            _setter("network_number", network_number)
         if scan_name is not None:
-            pulumi.set(__self__, "scan_name", scan_name)
+            _setter("scan_name", scan_name)
         if scan_port is not None:
-            pulumi.set(__self__, "scan_port", scan_port)
+            _setter("scan_port", scan_port)
         if scan_protocol is not None:
-            pulumi.set(__self__, "scan_protocol", scan_protocol)
+            _setter("scan_protocol", scan_protocol)
 
     @property
     @pulumi.getter(name="networkNumber")
@@ -3037,12 +3575,25 @@ class ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs:
         :param pulumi.Input[int] network_number: The network number from which VIPs are obtained.
         :param pulumi.Input[str] node_name: The name of the node with the VIP.
         """
+        ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            address=address,
+            network_number=network_number,
+            node_name=node_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             address: Optional[pulumi.Input[str]] = None,
+             network_number: Optional[pulumi.Input[int]] = None,
+             node_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if address is not None:
-            pulumi.set(__self__, "address", address)
+            _setter("address", address)
         if network_number is not None:
-            pulumi.set(__self__, "network_number", network_number)
+            _setter("network_number", network_number)
         if node_name is not None:
-            pulumi.set(__self__, "node_name", node_name)
+            _setter("node_name", node_name)
 
     @property
     @pulumi.getter
@@ -3096,10 +3647,23 @@ class ExternalDbSystemDiscoveryPatchOperationArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "operation", operation)
-        pulumi.set(__self__, "selection", selection)
+        ExternalDbSystemDiscoveryPatchOperationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            operation=operation,
+            selection=selection,
+            value=value,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             operation: pulumi.Input[str],
+             selection: pulumi.Input[str],
+             value: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("operation", operation)
+        _setter("selection", selection)
         if value is not None:
-            pulumi.set(__self__, "value", value)
+            _setter("value", value)
 
     @property
     @pulumi.getter
@@ -3155,14 +3719,29 @@ class ExternalDbSystemDiscoveryPatchOperationValueArgs:
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         :param pulumi.Input[bool] is_selected_for_monitoring: Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
         """
+        ExternalDbSystemDiscoveryPatchOperationValueArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            connector=connector,
+            display_name=display_name,
+            is_selected_for_monitoring=is_selected_for_monitoring,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             connector: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs']] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             is_selected_for_monitoring: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if connector is not None:
-            pulumi.set(__self__, "connector", connector)
+            _setter("connector", connector)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if is_selected_for_monitoring is not None:
-            pulumi.set(__self__, "is_selected_for_monitoring", is_selected_for_monitoring)
+            _setter("is_selected_for_monitoring", is_selected_for_monitoring)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -3226,12 +3805,27 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs:
         :param pulumi.Input[str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
         :param pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs'] connection_info: The connection details required to connect to an external DB system component.
         """
-        pulumi.set(__self__, "connector_type", connector_type)
-        pulumi.set(__self__, "display_name", display_name)
+        ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            connector_type=connector_type,
+            display_name=display_name,
+            agent_id=agent_id,
+            connection_info=connection_info,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             connector_type: pulumi.Input[str],
+             display_name: pulumi.Input[str],
+             agent_id: Optional[pulumi.Input[str]] = None,
+             connection_info: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("connector_type", connector_type)
+        _setter("display_name", display_name)
         if agent_id is not None:
-            pulumi.set(__self__, "agent_id", agent_id)
+            _setter("agent_id", agent_id)
         if connection_info is not None:
-            pulumi.set(__self__, "connection_info", connection_info)
+            _setter("connection_info", connection_info)
 
     @property
     @pulumi.getter(name="connectorType")
@@ -3293,11 +3887,24 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs:
         :param pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs'] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         :param pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs'] connection_string: The Oracle Database connection string.
         """
-        pulumi.set(__self__, "component_type", component_type)
+        ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            component_type=component_type,
+            connection_credentials=connection_credentials,
+            connection_string=connection_string,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             component_type: pulumi.Input[str],
+             connection_credentials: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']] = None,
+             connection_string: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("component_type", component_type)
         if connection_credentials is not None:
-            pulumi.set(__self__, "connection_credentials", connection_credentials)
+            _setter("connection_credentials", connection_credentials)
         if connection_string is not None:
-            pulumi.set(__self__, "connection_string", connection_string)
+            _setter("connection_string", connection_string)
 
     @property
     @pulumi.getter(name="componentType")
@@ -3353,17 +3960,36 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
         :param pulumi.Input[str] ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         :param pulumi.Input[str] user_name: The user name used to connect to the ASM instance.
         """
-        pulumi.set(__self__, "credential_type", credential_type)
+        ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            credential_type=credential_type,
+            credential_name=credential_name,
+            password_secret_id=password_secret_id,
+            role=role,
+            ssl_secret_id=ssl_secret_id,
+            user_name=user_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             credential_type: pulumi.Input[str],
+             credential_name: Optional[pulumi.Input[str]] = None,
+             password_secret_id: Optional[pulumi.Input[str]] = None,
+             role: Optional[pulumi.Input[str]] = None,
+             ssl_secret_id: Optional[pulumi.Input[str]] = None,
+             user_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("credential_type", credential_type)
         if credential_name is not None:
-            pulumi.set(__self__, "credential_name", credential_name)
+            _setter("credential_name", credential_name)
         if password_secret_id is not None:
-            pulumi.set(__self__, "password_secret_id", password_secret_id)
+            _setter("password_secret_id", password_secret_id)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if ssl_secret_id is not None:
-            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+            _setter("ssl_secret_id", ssl_secret_id)
         if user_name is not None:
-            pulumi.set(__self__, "user_name", user_name)
+            _setter("user_name", user_name)
 
     @property
     @pulumi.getter(name="credentialType")
@@ -3453,16 +4079,33 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
         :param pulumi.Input[str] protocol: The protocol used to connect to the ASM instance.
         :param pulumi.Input[str] service: The service name of the ASM instance.
         """
+        ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host_name=host_name,
+            hosts=hosts,
+            port=port,
+            protocol=protocol,
+            service=service,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host_name: Optional[pulumi.Input[str]] = None,
+             hosts: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             service: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if host_name is not None:
-            pulumi.set(__self__, "host_name", host_name)
+            _setter("host_name", host_name)
         if hosts is not None:
-            pulumi.set(__self__, "hosts", hosts)
+            _setter("hosts", hosts)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if service is not None:
-            pulumi.set(__self__, "service", service)
+            _setter("service", service)
 
     @property
     @pulumi.getter(name="hostName")
@@ -3538,9 +4181,20 @@ class ExternalDbSystemStackMonitoringConfigArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        ExternalDbSystemStackMonitoringConfigArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_enabled=is_enabled,
+            metadata=metadata,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_enabled: pulumi.Input[bool],
+             metadata: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_enabled", is_enabled)
         if metadata is not None:
-            pulumi.set(__self__, "metadata", metadata)
+            _setter("metadata", metadata)
 
     @property
     @pulumi.getter(name="isEnabled")
@@ -3600,30 +4254,61 @@ class ExternalExadataInfrastructureDatabaseSystemArgs:
         :param pulumi.Input[str] time_updated: The timestamp of the last update of the Exadata resource.
         :param pulumi.Input[str] version: The version of the Exadata resource.
         """
+        ExternalExadataInfrastructureDatabaseSystemArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_details=additional_details,
+            compartment_id=compartment_id,
+            display_name=display_name,
+            id=id,
+            internal_id=internal_id,
+            license_model=license_model,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            status=status,
+            time_created=time_created,
+            time_updated=time_updated,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_details: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             internal_id: Optional[pulumi.Input[str]] = None,
+             license_model: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if additional_details is not None:
-            pulumi.set(__self__, "additional_details", additional_details)
+            _setter("additional_details", additional_details)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if internal_id is not None:
-            pulumi.set(__self__, "internal_id", internal_id)
+            _setter("internal_id", internal_id)
         if license_model is not None:
-            pulumi.set(__self__, "license_model", license_model)
+            _setter("license_model", license_model)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter(name="additionalDetails")
@@ -3797,28 +4482,57 @@ class ExternalExadataInfrastructureStorageGridArgs:
         :param pulumi.Input[str] time_updated: The timestamp of the last update of the Exadata resource.
         :param pulumi.Input[str] version: The version of the Exadata resource.
         """
+        ExternalExadataInfrastructureStorageGridArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            additional_details=additional_details,
+            display_name=display_name,
+            id=id,
+            internal_id=internal_id,
+            lifecycle_details=lifecycle_details,
+            server_count=server_count,
+            state=state,
+            status=status,
+            time_created=time_created,
+            time_updated=time_updated,
+            version=version,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             additional_details: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             internal_id: Optional[pulumi.Input[str]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             server_count: Optional[pulumi.Input[float]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             version: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if additional_details is not None:
-            pulumi.set(__self__, "additional_details", additional_details)
+            _setter("additional_details", additional_details)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if internal_id is not None:
-            pulumi.set(__self__, "internal_id", internal_id)
+            _setter("internal_id", internal_id)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if server_count is not None:
-            pulumi.set(__self__, "server_count", server_count)
+            _setter("server_count", server_count)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
         if version is not None:
-            pulumi.set(__self__, "version", version)
+            _setter("version", version)
 
     @property
     @pulumi.getter(name="additionalDetails")
@@ -3968,14 +4682,31 @@ class ExternalExadataStorageConnectorCredentialInfoArgs:
         :param pulumi.Input[str] ssl_trust_store_password: (Updatable) The password of the SSL truststore location in the agent.
         :param pulumi.Input[str] ssl_trust_store_type: (Updatable) The SSL truststore type.
         """
-        pulumi.set(__self__, "password", password)
-        pulumi.set(__self__, "username", username)
+        ExternalExadataStorageConnectorCredentialInfoArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            username=username,
+            ssl_trust_store_location=ssl_trust_store_location,
+            ssl_trust_store_password=ssl_trust_store_password,
+            ssl_trust_store_type=ssl_trust_store_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: pulumi.Input[str],
+             username: pulumi.Input[str],
+             ssl_trust_store_location: Optional[pulumi.Input[str]] = None,
+             ssl_trust_store_password: Optional[pulumi.Input[str]] = None,
+             ssl_trust_store_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("password", password)
+        _setter("username", username)
         if ssl_trust_store_location is not None:
-            pulumi.set(__self__, "ssl_trust_store_location", ssl_trust_store_location)
+            _setter("ssl_trust_store_location", ssl_trust_store_location)
         if ssl_trust_store_password is not None:
-            pulumi.set(__self__, "ssl_trust_store_password", ssl_trust_store_password)
+            _setter("ssl_trust_store_password", ssl_trust_store_password)
         if ssl_trust_store_type is not None:
-            pulumi.set(__self__, "ssl_trust_store_type", ssl_trust_store_type)
+            _setter("ssl_trust_store_type", ssl_trust_store_type)
 
     @property
     @pulumi.getter
@@ -4053,16 +4784,33 @@ class ExternalListenerEndpointArgs:
         :param pulumi.Input[str] protocol: The listener protocol.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] services: The list of services registered with the listener.
         """
+        ExternalListenerEndpointArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            host=host,
+            key=key,
+            port=port,
+            protocol=protocol,
+            services=services,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             host: Optional[pulumi.Input[str]] = None,
+             key: Optional[pulumi.Input[str]] = None,
+             port: Optional[pulumi.Input[int]] = None,
+             protocol: Optional[pulumi.Input[str]] = None,
+             services: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if host is not None:
-            pulumi.set(__self__, "host", host)
+            _setter("host", host)
         if key is not None:
-            pulumi.set(__self__, "key", key)
+            _setter("key", key)
         if port is not None:
-            pulumi.set(__self__, "port", port)
+            _setter("port", port)
         if protocol is not None:
-            pulumi.set(__self__, "protocol", protocol)
+            _setter("protocol", protocol)
         if services is not None:
-            pulumi.set(__self__, "services", services)
+            _setter("services", services)
 
     @property
     @pulumi.getter
@@ -4136,12 +4884,25 @@ class ExternalListenerServicedAsmArgs:
         :param pulumi.Input[str] display_name: The user-friendly name for the database. The name does not have to be unique.
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
         """
+        ExternalListenerServicedAsmArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            display_name=display_name,
+            id=id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -4199,20 +4960,41 @@ class ExternalListenerServicedDatabaseArgs:
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
         :param pulumi.Input[bool] is_managed: Indicates whether the database is a Managed Database or not.
         """
+        ExternalListenerServicedDatabaseArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            database_sub_type=database_sub_type,
+            database_type=database_type,
+            db_unique_name=db_unique_name,
+            display_name=display_name,
+            id=id,
+            is_managed=is_managed,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             database_sub_type: Optional[pulumi.Input[str]] = None,
+             database_type: Optional[pulumi.Input[str]] = None,
+             db_unique_name: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             is_managed: Optional[pulumi.Input[bool]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if database_sub_type is not None:
-            pulumi.set(__self__, "database_sub_type", database_sub_type)
+            _setter("database_sub_type", database_sub_type)
         if database_type is not None:
-            pulumi.set(__self__, "database_type", database_type)
+            _setter("database_type", database_type)
         if db_unique_name is not None:
-            pulumi.set(__self__, "db_unique_name", db_unique_name)
+            _setter("db_unique_name", db_unique_name)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if is_managed is not None:
-            pulumi.set(__self__, "is_managed", is_managed)
+            _setter("is_managed", is_managed)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -4324,22 +5106,45 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
         :param pulumi.Input[str] time_added: The date and time the Managed Database was added to the group.
         :param pulumi.Input[str] workload_type: The workload type of the Autonomous Database.
         """
+        ManagedDatabaseGroupManagedDatabaseArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            database_sub_type=database_sub_type,
+            database_type=database_type,
+            deployment_type=deployment_type,
+            id=id,
+            name=name,
+            time_added=time_added,
+            workload_type=workload_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             database_sub_type: Optional[pulumi.Input[str]] = None,
+             database_type: Optional[pulumi.Input[str]] = None,
+             deployment_type: Optional[pulumi.Input[str]] = None,
+             id: Optional[pulumi.Input[str]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             time_added: Optional[pulumi.Input[str]] = None,
+             workload_type: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if database_sub_type is not None:
-            pulumi.set(__self__, "database_sub_type", database_sub_type)
+            _setter("database_sub_type", database_sub_type)
         if database_type is not None:
-            pulumi.set(__self__, "database_type", database_type)
+            _setter("database_type", database_type)
         if deployment_type is not None:
-            pulumi.set(__self__, "deployment_type", deployment_type)
+            _setter("deployment_type", deployment_type)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if time_added is not None:
-            pulumi.set(__self__, "time_added", time_added)
+            _setter("time_added", time_added)
         if workload_type is not None:
-            pulumi.set(__self__, "workload_type", workload_type)
+            _setter("workload_type", workload_type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -4455,14 +5260,29 @@ class ManagedDatabasesChangeDatabaseParameterCredentialsArgs:
         :param pulumi.Input[str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         :param pulumi.Input[str] user_name: The database user name used to perform management activity.
         """
+        ManagedDatabasesChangeDatabaseParameterCredentialsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            role=role,
+            secret_id=secret_id,
+            user_name=user_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: Optional[pulumi.Input[str]] = None,
+             role: Optional[pulumi.Input[str]] = None,
+             secret_id: Optional[pulumi.Input[str]] = None,
+             user_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if password is not None:
-            pulumi.set(__self__, "password", password)
+            _setter("password", password)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if secret_id is not None:
-            pulumi.set(__self__, "secret_id", secret_id)
+            _setter("secret_id", secret_id)
         if user_name is not None:
-            pulumi.set(__self__, "user_name", user_name)
+            _setter("user_name", user_name)
 
     @property
     @pulumi.getter
@@ -4524,10 +5344,23 @@ class ManagedDatabasesChangeDatabaseParameterParameterArgs:
         :param pulumi.Input[str] value: The parameter value.
         :param pulumi.Input[str] update_comment: A comment string to associate with the change in parameter value. It cannot contain control characters or a line break.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "value", value)
+        ManagedDatabasesChangeDatabaseParameterParameterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            value=value,
+            update_comment=update_comment,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: pulumi.Input[str],
+             value: pulumi.Input[str],
+             update_comment: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("value", value)
         if update_comment is not None:
-            pulumi.set(__self__, "update_comment", update_comment)
+            _setter("update_comment", update_comment)
 
     @property
     @pulumi.getter
@@ -4579,14 +5412,29 @@ class ManagedDatabasesResetDatabaseParameterCredentialsArgs:
         :param pulumi.Input[str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         :param pulumi.Input[str] user_name: The database user name used to perform management activity.
         """
+        ManagedDatabasesResetDatabaseParameterCredentialsArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            password=password,
+            role=role,
+            secret_id=secret_id,
+            user_name=user_name,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             password: Optional[pulumi.Input[str]] = None,
+             role: Optional[pulumi.Input[str]] = None,
+             secret_id: Optional[pulumi.Input[str]] = None,
+             user_name: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if password is not None:
-            pulumi.set(__self__, "password", password)
+            _setter("password", password)
         if role is not None:
-            pulumi.set(__self__, "role", role)
+            _setter("role", role)
         if secret_id is not None:
-            pulumi.set(__self__, "secret_id", secret_id)
+            _setter("secret_id", secret_id)
         if user_name is not None:
-            pulumi.set(__self__, "user_name", user_name)
+            _setter("user_name", user_name)
 
     @property
     @pulumi.getter
@@ -4646,10 +5494,23 @@ class GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs:
         """
         :param str name: The name of the database.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4691,10 +5552,23 @@ class GetDbManagementPrivateEndpointsFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetDbManagementPrivateEndpointsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4736,10 +5610,23 @@ class GetExternalAsmDiskGroupsFilterArgs:
         """
         :param str name: The name of the ASM disk group.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExternalAsmDiskGroupsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4778,10 +5665,23 @@ class GetExternalAsmInstancesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExternalAsmInstancesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4820,10 +5720,23 @@ class GetExternalAsmUsersFilterArgs:
         """
         :param str name: The name of the ASM user.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExternalAsmUsersFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4862,10 +5775,23 @@ class GetExternalAsmsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExternalAsmsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4901,10 +5827,23 @@ class GetExternalClusterInstancesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExternalClusterInstancesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4940,10 +5879,23 @@ class GetExternalClustersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExternalClustersFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -4979,10 +5931,23 @@ class GetExternalDatabasesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExternalDatabasesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5018,10 +5983,23 @@ class GetExternalDbHomesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExternalDbHomesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5057,10 +6035,23 @@ class GetExternalDbNodesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExternalDbNodesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5096,10 +6087,23 @@ class GetExternalDbSystemConnectorsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExternalDbSystemConnectorsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5135,10 +6139,23 @@ class GetExternalDbSystemDiscoveriesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExternalDbSystemDiscoveriesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5174,10 +6191,23 @@ class GetExternalDbSystemsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExternalDbSystemsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5213,10 +6243,23 @@ class GetExternalExadataInfrastructuresFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExternalExadataInfrastructuresFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5252,10 +6295,23 @@ class GetExternalExadataStorageConnectorsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExternalExadataStorageConnectorsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5291,10 +6347,23 @@ class GetExternalExadataStorageServersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExternalExadataStorageServersFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5333,10 +6402,23 @@ class GetExternalListenerServicesFilterArgs:
         """
         :param str name: The name of the service.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExternalListenerServicesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5375,10 +6457,23 @@ class GetExternalListenersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetExternalListenersFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5417,10 +6512,23 @@ class GetJobExecutionsStatusesFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetJobExecutionsStatusesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5459,10 +6567,23 @@ class GetManagedDatabaseAddmTasksFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabaseAddmTasksFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5498,10 +6619,23 @@ class GetManagedDatabaseAlertLogCountsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabaseAlertLogCountsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5537,10 +6671,23 @@ class GetManagedDatabaseAttentionLogCountsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabaseAttentionLogCountsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5576,10 +6723,23 @@ class GetManagedDatabaseCursorCacheStatementsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabaseCursorCacheStatementsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5618,10 +6778,23 @@ class GetManagedDatabaseGroupsFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabaseGroupsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5663,10 +6836,23 @@ class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgs:
         """
         :param str name: The name of the rule.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5705,10 +6891,23 @@ class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5747,10 +6946,23 @@ class GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs:
         """
         :param str name: The name of the Managed Database.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabaseOptimizerStatisticsCollectionOperationsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5792,10 +7004,23 @@ class GetManagedDatabaseSqlPlanBaselineJobsFilterArgs:
         """
         :param str name: A filter to return the SQL plan baseline jobs that match the name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabaseSqlPlanBaselineJobsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5834,10 +7059,23 @@ class GetManagedDatabaseSqlPlanBaselinesFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabaseSqlPlanBaselinesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5876,10 +7114,23 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs:
         """
         :param str name: The optional query parameter to filter the SQL Tuning Advisor task list by name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5918,10 +7169,23 @@ class GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabaseSqlTuningAdvisorTasksFindingsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5957,10 +7221,23 @@ class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -5999,10 +7276,23 @@ class GetManagedDatabaseSqlTuningSetsFilterArgs:
         """
         :param str name: The name of the SQL tuning set.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabaseSqlTuningSetsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6041,10 +7331,23 @@ class GetManagedDatabaseTableStatisticsFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabaseTableStatisticsFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6083,10 +7386,23 @@ class GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabaseUserConsumerGroupPrivilegesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6128,10 +7444,23 @@ class GetManagedDatabaseUserDataAccessContainersFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabaseUserDataAccessContainersFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6173,10 +7502,23 @@ class GetManagedDatabaseUserObjectPrivilegesFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabaseUserObjectPrivilegesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6218,10 +7560,23 @@ class GetManagedDatabaseUserProxiedForUsersFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabaseUserProxiedForUsersFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6263,10 +7618,23 @@ class GetManagedDatabaseUserRolesFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabaseUserRolesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6308,10 +7676,23 @@ class GetManagedDatabaseUsersFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabaseUsersFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6353,10 +7734,23 @@ class GetManagedDatabasesAsmPropertiesFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabasesAsmPropertiesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6398,10 +7792,23 @@ class GetManagedDatabasesDatabaseParametersFilterArgs:
         """
         :param str name: A filter to return all parameters that have the text given in their names.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabasesDatabaseParametersFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6443,10 +7850,23 @@ class GetManagedDatabasesFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabasesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6488,10 +7908,23 @@ class GetManagedDatabasesUserProxyUsersFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabasesUserProxyUsersFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -6533,10 +7966,23 @@ class GetManagedDatabasesUserSystemPrivilegesFilterArgs:
         """
         :param str name: A filter to return only resources that match the entire name.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetManagedDatabasesUserSystemPrivilegesFilterArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter

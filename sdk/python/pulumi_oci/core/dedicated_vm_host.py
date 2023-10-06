@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = ['DedicatedVmHostArgs', 'DedicatedVmHost']
@@ -39,17 +39,38 @@ class DedicatedVmHostArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "dedicated_vm_host_shape", dedicated_vm_host_shape)
+        DedicatedVmHostArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            dedicated_vm_host_shape=dedicated_vm_host_shape,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: pulumi.Input[str],
+             compartment_id: pulumi.Input[str],
+             dedicated_vm_host_shape: pulumi.Input[str],
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             fault_domain: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("availability_domain", availability_domain)
+        _setter("compartment_id", compartment_id)
+        _setter("dedicated_vm_host_shape", dedicated_vm_host_shape)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if fault_domain is not None:
-            pulumi.set(__self__, "fault_domain", fault_domain)
+            _setter("fault_domain", fault_domain)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -184,32 +205,65 @@ class _DedicatedVmHostState:
         :param pulumi.Input[float] total_memory_in_gbs: The current total memory of the dedicated VM host, in GBs.
         :param pulumi.Input[float] total_ocpus: The current total OCPUs of the dedicated VM host.
         """
+        _DedicatedVmHostState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            availability_domain=availability_domain,
+            compartment_id=compartment_id,
+            dedicated_vm_host_shape=dedicated_vm_host_shape,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            fault_domain=fault_domain,
+            freeform_tags=freeform_tags,
+            remaining_memory_in_gbs=remaining_memory_in_gbs,
+            remaining_ocpus=remaining_ocpus,
+            state=state,
+            time_created=time_created,
+            total_memory_in_gbs=total_memory_in_gbs,
+            total_ocpus=total_ocpus,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             availability_domain: Optional[pulumi.Input[str]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             dedicated_vm_host_shape: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             fault_domain: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             remaining_memory_in_gbs: Optional[pulumi.Input[float]] = None,
+             remaining_ocpus: Optional[pulumi.Input[float]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             total_memory_in_gbs: Optional[pulumi.Input[float]] = None,
+             total_ocpus: Optional[pulumi.Input[float]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if availability_domain is not None:
-            pulumi.set(__self__, "availability_domain", availability_domain)
+            _setter("availability_domain", availability_domain)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if dedicated_vm_host_shape is not None:
-            pulumi.set(__self__, "dedicated_vm_host_shape", dedicated_vm_host_shape)
+            _setter("dedicated_vm_host_shape", dedicated_vm_host_shape)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if fault_domain is not None:
-            pulumi.set(__self__, "fault_domain", fault_domain)
+            _setter("fault_domain", fault_domain)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if remaining_memory_in_gbs is not None:
-            pulumi.set(__self__, "remaining_memory_in_gbs", remaining_memory_in_gbs)
+            _setter("remaining_memory_in_gbs", remaining_memory_in_gbs)
         if remaining_ocpus is not None:
-            pulumi.set(__self__, "remaining_ocpus", remaining_ocpus)
+            _setter("remaining_ocpus", remaining_ocpus)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if total_memory_in_gbs is not None:
-            pulumi.set(__self__, "total_memory_in_gbs", total_memory_in_gbs)
+            _setter("total_memory_in_gbs", total_memory_in_gbs)
         if total_ocpus is not None:
-            pulumi.set(__self__, "total_ocpus", total_ocpus)
+            _setter("total_ocpus", total_ocpus)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -495,6 +549,10 @@ class DedicatedVmHost(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            DedicatedVmHostArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,

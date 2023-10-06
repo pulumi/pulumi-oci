@@ -412,6 +412,8 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      */
     public readonly remoteDisasterRecoveryType!: pulumi.Output<string>;
+    public readonly resourcePoolLeaderId!: pulumi.Output<string>;
+    public readonly resourcePoolSummary!: pulumi.Output<outputs.Database.AutonomousDatabaseResourcePoolSummary>;
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      */
@@ -523,6 +525,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * The date and time when maintenance will end.
      */
     public /*out*/ readonly timeMaintenanceEnd!: pulumi.Output<string>;
+    public /*out*/ readonly timeOfJoiningResourcePool!: pulumi.Output<string>;
     /**
      * The timestamp of the last failover operation.
      */
@@ -683,6 +686,8 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["refreshableStatus"] = state ? state.refreshableStatus : undefined;
             resourceInputs["remoteDisasterRecoveryConfigurations"] = state ? state.remoteDisasterRecoveryConfigurations : undefined;
             resourceInputs["remoteDisasterRecoveryType"] = state ? state.remoteDisasterRecoveryType : undefined;
+            resourceInputs["resourcePoolLeaderId"] = state ? state.resourcePoolLeaderId : undefined;
+            resourceInputs["resourcePoolSummary"] = state ? state.resourcePoolSummary : undefined;
             resourceInputs["role"] = state ? state.role : undefined;
             resourceInputs["rotateKeyTrigger"] = state ? state.rotateKeyTrigger : undefined;
             resourceInputs["scheduledOperations"] = state ? state.scheduledOperations : undefined;
@@ -706,6 +711,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["timeLocalDataGuardEnabled"] = state ? state.timeLocalDataGuardEnabled : undefined;
             resourceInputs["timeMaintenanceBegin"] = state ? state.timeMaintenanceBegin : undefined;
             resourceInputs["timeMaintenanceEnd"] = state ? state.timeMaintenanceEnd : undefined;
+            resourceInputs["timeOfJoiningResourcePool"] = state ? state.timeOfJoiningResourcePool : undefined;
             resourceInputs["timeOfLastFailover"] = state ? state.timeOfLastFailover : undefined;
             resourceInputs["timeOfLastRefresh"] = state ? state.timeOfLastRefresh : undefined;
             resourceInputs["timeOfLastRefreshPoint"] = state ? state.timeOfLastRefreshPoint : undefined;
@@ -779,6 +785,8 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["privateEndpointLabel"] = args ? args.privateEndpointLabel : undefined;
             resourceInputs["refreshableMode"] = args ? args.refreshableMode : undefined;
             resourceInputs["remoteDisasterRecoveryType"] = args ? args.remoteDisasterRecoveryType : undefined;
+            resourceInputs["resourcePoolLeaderId"] = args ? args.resourcePoolLeaderId : undefined;
+            resourceInputs["resourcePoolSummary"] = args ? args.resourcePoolSummary : undefined;
             resourceInputs["rotateKeyTrigger"] = args ? args.rotateKeyTrigger : undefined;
             resourceInputs["scheduledOperations"] = args ? args.scheduledOperations : undefined;
             resourceInputs["secretId"] = args ? args.secretId : undefined;
@@ -837,6 +845,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["timeLocalDataGuardEnabled"] = undefined /*out*/;
             resourceInputs["timeMaintenanceBegin"] = undefined /*out*/;
             resourceInputs["timeMaintenanceEnd"] = undefined /*out*/;
+            resourceInputs["timeOfJoiningResourcePool"] = undefined /*out*/;
             resourceInputs["timeOfLastFailover"] = undefined /*out*/;
             resourceInputs["timeOfLastRefresh"] = undefined /*out*/;
             resourceInputs["timeOfLastRefreshPoint"] = undefined /*out*/;
@@ -1224,6 +1233,8 @@ export interface AutonomousDatabaseState {
      * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      */
     remoteDisasterRecoveryType?: pulumi.Input<string>;
+    resourcePoolLeaderId?: pulumi.Input<string>;
+    resourcePoolSummary?: pulumi.Input<inputs.Database.AutonomousDatabaseResourcePoolSummary>;
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      */
@@ -1335,6 +1346,7 @@ export interface AutonomousDatabaseState {
      * The date and time when maintenance will end.
      */
     timeMaintenanceEnd?: pulumi.Input<string>;
+    timeOfJoiningResourcePool?: pulumi.Input<string>;
     /**
      * The timestamp of the last failover operation.
      */
@@ -1646,6 +1658,8 @@ export interface AutonomousDatabaseArgs {
      * Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      */
     remoteDisasterRecoveryType?: pulumi.Input<string>;
+    resourcePoolLeaderId?: pulumi.Input<string>;
+    resourcePoolSummary?: pulumi.Input<inputs.Database.AutonomousDatabaseResourcePoolSummary>;
     /**
      * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated databases i.e. where `isDedicated` is true.
      */

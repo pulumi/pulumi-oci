@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -28,10 +28,23 @@ class GetNotificationTopicsFilterResult(dict):
         """
         :param str name: A filter to only return resources that match the given name exactly.
         """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetNotificationTopicsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -81,18 +94,49 @@ class GetNotificationTopicsNotificationTopicResult(dict):
         :param str time_created: The time the topic was created.
         :param str topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
         """
-        pulumi.set(__self__, "api_endpoint", api_endpoint)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "etag", etag)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "short_topic_id", short_topic_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "topic_id", topic_id)
+        GetNotificationTopicsNotificationTopicResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            api_endpoint=api_endpoint,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            etag=etag,
+            freeform_tags=freeform_tags,
+            id=id,
+            name=name,
+            short_topic_id=short_topic_id,
+            state=state,
+            time_created=time_created,
+            topic_id=topic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             api_endpoint: str,
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             etag: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             name: str,
+             short_topic_id: str,
+             state: str,
+             time_created: str,
+             topic_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("api_endpoint", api_endpoint)
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("etag", etag)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("name", name)
+        _setter("short_topic_id", short_topic_id)
+        _setter("state", state)
+        _setter("time_created", time_created)
+        _setter("topic_id", topic_id)
 
     @property
     @pulumi.getter(name="apiEndpoint")
@@ -197,10 +241,23 @@ class GetSubscriptionsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetSubscriptionsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -244,17 +301,46 @@ class GetSubscriptionsSubscriptionResult(dict):
         :param str state: The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
         :param str topic_id: Return all subscriptions that are subscribed to the given topic OCID. Either this query parameter or the compartmentId query parameter must be set.
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "created_time", created_time)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "delivery_policies", delivery_policies)
-        pulumi.set(__self__, "endpoint", endpoint)
-        pulumi.set(__self__, "etag", etag)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "protocol", protocol)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "topic_id", topic_id)
+        GetSubscriptionsSubscriptionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            created_time=created_time,
+            defined_tags=defined_tags,
+            delivery_policies=delivery_policies,
+            endpoint=endpoint,
+            etag=etag,
+            freeform_tags=freeform_tags,
+            id=id,
+            protocol=protocol,
+            state=state,
+            topic_id=topic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             created_time: str,
+             defined_tags: Mapping[str, Any],
+             delivery_policies: Sequence['outputs.GetSubscriptionsSubscriptionDeliveryPolicyResult'],
+             endpoint: str,
+             etag: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             protocol: str,
+             state: str,
+             topic_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("created_time", created_time)
+        _setter("defined_tags", defined_tags)
+        _setter("delivery_policies", delivery_policies)
+        _setter("endpoint", endpoint)
+        _setter("etag", etag)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("protocol", protocol)
+        _setter("state", state)
+        _setter("topic_id", topic_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -346,7 +432,16 @@ class GetSubscriptionsSubscriptionResult(dict):
 class GetSubscriptionsSubscriptionDeliveryPolicyResult(dict):
     def __init__(__self__, *,
                  backoff_retry_policies: Sequence['outputs.GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyResult']):
-        pulumi.set(__self__, "backoff_retry_policies", backoff_retry_policies)
+        GetSubscriptionsSubscriptionDeliveryPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            backoff_retry_policies=backoff_retry_policies,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             backoff_retry_policies: Sequence['outputs.GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("backoff_retry_policies", backoff_retry_policies)
 
     @property
     @pulumi.getter(name="backoffRetryPolicies")
@@ -363,8 +458,19 @@ class GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyResult(dict):
         :param int max_retry_duration: The maximum retry duration in milliseconds.
         :param str policy_type: The type of delivery policy. Default value: EXPONENTIAL.
         """
-        pulumi.set(__self__, "max_retry_duration", max_retry_duration)
-        pulumi.set(__self__, "policy_type", policy_type)
+        GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicyResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            max_retry_duration=max_retry_duration,
+            policy_type=policy_type,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             max_retry_duration: int,
+             policy_type: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("max_retry_duration", max_retry_duration)
+        _setter("policy_type", policy_type)
 
     @property
     @pulumi.getter(name="maxRetryDuration")

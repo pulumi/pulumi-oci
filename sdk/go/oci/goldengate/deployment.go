@@ -83,8 +83,7 @@ type Deployment struct {
 	PrivateIpAddress pulumi.StringOutput `pulumi:"privateIpAddress"`
 	// The public IP address representing the access point for the Deployment.
 	PublicIpAddress pulumi.StringOutput `pulumi:"publicIpAddress"`
-	// Possible lifecycle states.
-	State pulumi.StringOutput `pulumi:"state"`
+	State           pulumi.StringOutput `pulumi:"state"`
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes pulumi.StringOutput `pulumi:"storageUtilizationInBytes"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
@@ -208,8 +207,7 @@ type deploymentState struct {
 	PrivateIpAddress *string `pulumi:"privateIpAddress"`
 	// The public IP address representing the access point for the Deployment.
 	PublicIpAddress *string `pulumi:"publicIpAddress"`
-	// Possible lifecycle states.
-	State *string `pulumi:"state"`
+	State           *string `pulumi:"state"`
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes *string `pulumi:"storageUtilizationInBytes"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
@@ -283,8 +281,7 @@ type DeploymentState struct {
 	PrivateIpAddress pulumi.StringPtrInput
 	// The public IP address representing the access point for the Deployment.
 	PublicIpAddress pulumi.StringPtrInput
-	// Possible lifecycle states.
-	State pulumi.StringPtrInput
+	State           pulumi.StringPtrInput
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
@@ -340,8 +337,7 @@ type deploymentArgs struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) Deployment Data for creating an OggDeployment
 	OggData *DeploymentOggData `pulumi:"oggData"`
-	// Possible lifecycle states.
-	State *string `pulumi:"state"`
+	State   *string            `pulumi:"state"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -380,8 +376,7 @@ type DeploymentArgs struct {
 	NsgIds pulumi.StringArrayInput
 	// (Updatable) Deployment Data for creating an OggDeployment
 	OggData DeploymentOggDataPtrInput
-	// Possible lifecycle states.
-	State pulumi.StringPtrInput
+	State   pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
 	SubnetId pulumi.StringInput
 }
@@ -632,7 +627,6 @@ func (o DeploymentOutput) PublicIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.PublicIpAddress }).(pulumi.StringOutput)
 }
 
-// Possible lifecycle states.
 func (o DeploymentOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

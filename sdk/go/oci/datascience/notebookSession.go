@@ -48,7 +48,8 @@ import (
 //						MemoryInGbs: pulumi.Any(_var.Notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs),
 //						Ocpus:       pulumi.Any(_var.Notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus),
 //					},
-//					SubnetId: pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//					PrivateEndpointId: pulumi.Any(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
+//					SubnetId:          pulumi.Any(oci_core_subnet.Test_subnet.Id),
 //				},
 //				NotebookSessionConfigurationDetails: &datascience.NotebookSessionNotebookSessionConfigurationDetailsArgs{
 //					Shape:                 pulumi.Any(_var.Notebook_session_notebook_session_configuration_details_shape),
@@ -58,6 +59,7 @@ import (
 //						MemoryInGbs: pulumi.Any(_var.Notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs),
 //						Ocpus:       pulumi.Any(_var.Notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus),
 //					},
+//					PrivateEndpointId: pulumi.Any(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
 //				},
 //				NotebookSessionRuntimeConfigDetails: &datascience.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs{
 //					CustomEnvironmentVariables: pulumi.Any(_var.Notebook_session_notebook_session_runtime_config_details_custom_environment_variables),

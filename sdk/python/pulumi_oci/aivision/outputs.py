@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -68,15 +68,32 @@ class ModelTestingDataset(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "dataset_type", dataset_type)
+        ModelTestingDataset._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dataset_type=dataset_type,
+            bucket=bucket,
+            dataset_id=dataset_id,
+            namespace_name=namespace_name,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dataset_type: str,
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             namespace_name: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("dataset_type", dataset_type)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if dataset_id is not None:
-            pulumi.set(__self__, "dataset_id", dataset_id)
+            _setter("dataset_id", dataset_id)
         if namespace_name is not None:
-            pulumi.set(__self__, "namespace_name", namespace_name)
+            _setter("namespace_name", namespace_name)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter(name="datasetType")
@@ -163,15 +180,32 @@ class ModelTrainingDataset(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "dataset_type", dataset_type)
+        ModelTrainingDataset._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dataset_type=dataset_type,
+            bucket=bucket,
+            dataset_id=dataset_id,
+            namespace_name=namespace_name,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dataset_type: str,
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             namespace_name: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("dataset_type", dataset_type)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if dataset_id is not None:
-            pulumi.set(__self__, "dataset_id", dataset_id)
+            _setter("dataset_id", dataset_id)
         if namespace_name is not None:
-            pulumi.set(__self__, "namespace_name", namespace_name)
+            _setter("namespace_name", namespace_name)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter(name="datasetType")
@@ -258,15 +292,32 @@ class ModelValidationDataset(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "dataset_type", dataset_type)
+        ModelValidationDataset._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            dataset_type=dataset_type,
+            bucket=bucket,
+            dataset_id=dataset_id,
+            namespace_name=namespace_name,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             dataset_type: str,
+             bucket: Optional[str] = None,
+             dataset_id: Optional[str] = None,
+             namespace_name: Optional[str] = None,
+             object: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("dataset_type", dataset_type)
         if bucket is not None:
-            pulumi.set(__self__, "bucket", bucket)
+            _setter("bucket", bucket)
         if dataset_id is not None:
-            pulumi.set(__self__, "dataset_id", dataset_id)
+            _setter("dataset_id", dataset_id)
         if namespace_name is not None:
-            pulumi.set(__self__, "namespace_name", namespace_name)
+            _setter("namespace_name", namespace_name)
         if object is not None:
-            pulumi.set(__self__, "object", object)
+            _setter("object", object)
 
     @property
     @pulumi.getter(name="datasetType")
@@ -328,11 +379,28 @@ class GetModelTestingDatasetResult(dict):
         :param str namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
         :param str object: The object name of the input data file.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "namespace_name", namespace_name)
-        pulumi.set(__self__, "object", object)
+        GetModelTestingDatasetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            dataset_id=dataset_id,
+            dataset_type=dataset_type,
+            namespace_name=namespace_name,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             dataset_id: str,
+             dataset_type: str,
+             namespace_name: str,
+             object: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("dataset_id", dataset_id)
+        _setter("dataset_type", dataset_type)
+        _setter("namespace_name", namespace_name)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -390,11 +458,28 @@ class GetModelTrainingDatasetResult(dict):
         :param str namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
         :param str object: The object name of the input data file.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "namespace_name", namespace_name)
-        pulumi.set(__self__, "object", object)
+        GetModelTrainingDatasetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            dataset_id=dataset_id,
+            dataset_type=dataset_type,
+            namespace_name=namespace_name,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             dataset_id: str,
+             dataset_type: str,
+             namespace_name: str,
+             object: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("dataset_id", dataset_id)
+        _setter("dataset_type", dataset_type)
+        _setter("namespace_name", namespace_name)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -452,11 +537,28 @@ class GetModelValidationDatasetResult(dict):
         :param str namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
         :param str object: The object name of the input data file.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "namespace_name", namespace_name)
-        pulumi.set(__self__, "object", object)
+        GetModelValidationDatasetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            dataset_id=dataset_id,
+            dataset_type=dataset_type,
+            namespace_name=namespace_name,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             dataset_id: str,
+             dataset_type: str,
+             namespace_name: str,
+             object: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("dataset_id", dataset_id)
+        _setter("dataset_type", dataset_type)
+        _setter("namespace_name", namespace_name)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -505,10 +607,23 @@ class GetModelsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetModelsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -530,7 +645,16 @@ class GetModelsFilterResult(dict):
 class GetModelsModelCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetModelsModelCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetModelsModelCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetModelsModelCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -597,33 +721,94 @@ class GetModelsModelCollectionItemResult(dict):
         :param Sequence['GetModelsModelCollectionItemTrainingDatasetArgs'] training_datasets: The base entity for a Dataset, which is the input for Model creation.
         :param Sequence['GetModelsModelCollectionItemValidationDatasetArgs'] validation_datasets: The base entity for a Dataset, which is the input for Model creation.
         """
-        pulumi.set(__self__, "average_precision", average_precision)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "confidence_threshold", confidence_threshold)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_quick_mode", is_quick_mode)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "max_training_duration_in_hours", max_training_duration_in_hours)
-        pulumi.set(__self__, "metrics", metrics)
-        pulumi.set(__self__, "model_type", model_type)
-        pulumi.set(__self__, "model_version", model_version)
-        pulumi.set(__self__, "precision", precision)
-        pulumi.set(__self__, "project_id", project_id)
-        pulumi.set(__self__, "recall", recall)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "test_image_count", test_image_count)
-        pulumi.set(__self__, "testing_datasets", testing_datasets)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
-        pulumi.set(__self__, "total_image_count", total_image_count)
-        pulumi.set(__self__, "trained_duration_in_hours", trained_duration_in_hours)
-        pulumi.set(__self__, "training_datasets", training_datasets)
-        pulumi.set(__self__, "validation_datasets", validation_datasets)
+        GetModelsModelCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            average_precision=average_precision,
+            compartment_id=compartment_id,
+            confidence_threshold=confidence_threshold,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_quick_mode=is_quick_mode,
+            lifecycle_details=lifecycle_details,
+            max_training_duration_in_hours=max_training_duration_in_hours,
+            metrics=metrics,
+            model_type=model_type,
+            model_version=model_version,
+            precision=precision,
+            project_id=project_id,
+            recall=recall,
+            state=state,
+            system_tags=system_tags,
+            test_image_count=test_image_count,
+            testing_datasets=testing_datasets,
+            time_created=time_created,
+            time_updated=time_updated,
+            total_image_count=total_image_count,
+            trained_duration_in_hours=trained_duration_in_hours,
+            training_datasets=training_datasets,
+            validation_datasets=validation_datasets,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             average_precision: float,
+             compartment_id: str,
+             confidence_threshold: float,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_quick_mode: bool,
+             lifecycle_details: str,
+             max_training_duration_in_hours: float,
+             metrics: str,
+             model_type: str,
+             model_version: str,
+             precision: float,
+             project_id: str,
+             recall: float,
+             state: str,
+             system_tags: Mapping[str, Any],
+             test_image_count: int,
+             testing_datasets: Sequence['outputs.GetModelsModelCollectionItemTestingDatasetResult'],
+             time_created: str,
+             time_updated: str,
+             total_image_count: int,
+             trained_duration_in_hours: float,
+             training_datasets: Sequence['outputs.GetModelsModelCollectionItemTrainingDatasetResult'],
+             validation_datasets: Sequence['outputs.GetModelsModelCollectionItemValidationDatasetResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("average_precision", average_precision)
+        _setter("compartment_id", compartment_id)
+        _setter("confidence_threshold", confidence_threshold)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_quick_mode", is_quick_mode)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("max_training_duration_in_hours", max_training_duration_in_hours)
+        _setter("metrics", metrics)
+        _setter("model_type", model_type)
+        _setter("model_version", model_version)
+        _setter("precision", precision)
+        _setter("project_id", project_id)
+        _setter("recall", recall)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("test_image_count", test_image_count)
+        _setter("testing_datasets", testing_datasets)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
+        _setter("total_image_count", total_image_count)
+        _setter("trained_duration_in_hours", trained_duration_in_hours)
+        _setter("training_datasets", training_datasets)
+        _setter("validation_datasets", validation_datasets)
 
     @property
     @pulumi.getter(name="averagePrecision")
@@ -856,11 +1041,28 @@ class GetModelsModelCollectionItemTestingDatasetResult(dict):
         :param str dataset_type: Type of the Dataset.
         :param str object: The object name of the input data file.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "namespace_name", namespace_name)
-        pulumi.set(__self__, "object", object)
+        GetModelsModelCollectionItemTestingDatasetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            dataset_id=dataset_id,
+            dataset_type=dataset_type,
+            namespace_name=namespace_name,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             dataset_id: str,
+             dataset_type: str,
+             namespace_name: str,
+             object: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("dataset_id", dataset_id)
+        _setter("dataset_type", dataset_type)
+        _setter("namespace_name", namespace_name)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -914,11 +1116,28 @@ class GetModelsModelCollectionItemTrainingDatasetResult(dict):
         :param str dataset_type: Type of the Dataset.
         :param str object: The object name of the input data file.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "namespace_name", namespace_name)
-        pulumi.set(__self__, "object", object)
+        GetModelsModelCollectionItemTrainingDatasetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            dataset_id=dataset_id,
+            dataset_type=dataset_type,
+            namespace_name=namespace_name,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             dataset_id: str,
+             dataset_type: str,
+             namespace_name: str,
+             object: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("dataset_id", dataset_id)
+        _setter("dataset_type", dataset_type)
+        _setter("namespace_name", namespace_name)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -972,11 +1191,28 @@ class GetModelsModelCollectionItemValidationDatasetResult(dict):
         :param str dataset_type: Type of the Dataset.
         :param str object: The object name of the input data file.
         """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "dataset_id", dataset_id)
-        pulumi.set(__self__, "dataset_type", dataset_type)
-        pulumi.set(__self__, "namespace_name", namespace_name)
-        pulumi.set(__self__, "object", object)
+        GetModelsModelCollectionItemValidationDatasetResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            bucket=bucket,
+            dataset_id=dataset_id,
+            dataset_type=dataset_type,
+            namespace_name=namespace_name,
+            object=object,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             bucket: str,
+             dataset_id: str,
+             dataset_type: str,
+             namespace_name: str,
+             object: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("bucket", bucket)
+        _setter("dataset_id", dataset_id)
+        _setter("dataset_type", dataset_type)
+        _setter("namespace_name", namespace_name)
+        _setter("object", object)
 
     @property
     @pulumi.getter
@@ -1022,10 +1258,23 @@ class GetProjectsFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetProjectsFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -1047,7 +1296,16 @@ class GetProjectsFilterResult(dict):
 class GetProjectsProjectCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetProjectsProjectCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+        GetProjectsProjectCollectionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            items=items,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             items: Sequence['outputs.GetProjectsProjectCollectionItemResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("items", items)
 
     @property
     @pulumi.getter
@@ -1082,17 +1340,46 @@ class GetProjectsProjectCollectionItemResult(dict):
         :param str time_created: The time the Project was created. An RFC3339 formatted datetime string
         :param str time_updated: The time the Project was updated. An RFC3339 formatted datetime string
         """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        GetProjectsProjectCollectionItemResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            lifecycle_details=lifecycle_details,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             compartment_id: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             lifecycle_details: str,
+             state: str,
+             system_tags: Mapping[str, Any],
+             time_created: str,
+             time_updated: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("compartment_id", compartment_id)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("lifecycle_details", lifecycle_details)
+        _setter("state", state)
+        _setter("system_tags", system_tags)
+        _setter("time_created", time_created)
+        _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="compartmentId")

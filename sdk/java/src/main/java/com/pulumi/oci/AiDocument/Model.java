@@ -210,17 +210,9 @@ public class Model extends com.pulumi.resources.CustomResource {
     public Output<List<ModelMetric>> metrics() {
         return this.metrics;
     }
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-     * 
-     */
     @Export(name="modelId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> modelId;
 
-    /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
-     * 
-     */
     public Output<Optional<String>> modelId() {
         return Codegen.optional(this.modelId);
     }

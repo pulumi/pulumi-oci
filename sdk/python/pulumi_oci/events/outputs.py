@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 
@@ -28,7 +28,16 @@ class RuleActions(dict):
         """
         :param Sequence['RuleActionsActionArgs'] actions: (Updatable) A list of one or more ActionDetails objects.
         """
-        pulumi.set(__self__, "actions", actions)
+        RuleActions._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actions=actions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actions: Sequence['outputs.RuleActionsAction'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("actions", actions)
 
     @property
     @pulumi.getter
@@ -96,22 +105,47 @@ class RuleActionsAction(dict):
         :param str stream_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
         :param str topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
         """
-        pulumi.set(__self__, "action_type", action_type)
-        pulumi.set(__self__, "is_enabled", is_enabled)
+        RuleActionsAction._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_type=action_type,
+            is_enabled=is_enabled,
+            description=description,
+            function_id=function_id,
+            id=id,
+            lifecycle_message=lifecycle_message,
+            state=state,
+            stream_id=stream_id,
+            topic_id=topic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_type: str,
+             is_enabled: bool,
+             description: Optional[str] = None,
+             function_id: Optional[str] = None,
+             id: Optional[str] = None,
+             lifecycle_message: Optional[str] = None,
+             state: Optional[str] = None,
+             stream_id: Optional[str] = None,
+             topic_id: Optional[str] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_type", action_type)
+        _setter("is_enabled", is_enabled)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if function_id is not None:
-            pulumi.set(__self__, "function_id", function_id)
+            _setter("function_id", function_id)
         if id is not None:
-            pulumi.set(__self__, "id", id)
+            _setter("id", id)
         if lifecycle_message is not None:
-            pulumi.set(__self__, "lifecycle_message", lifecycle_message)
+            _setter("lifecycle_message", lifecycle_message)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if stream_id is not None:
-            pulumi.set(__self__, "stream_id", stream_id)
+            _setter("stream_id", stream_id)
         if topic_id is not None:
-            pulumi.set(__self__, "topic_id", topic_id)
+            _setter("topic_id", topic_id)
 
     @property
     @pulumi.getter(name="actionType")
@@ -200,7 +234,16 @@ class GetRuleActionResult(dict):
         """
         :param Sequence['GetRuleActionActionArgs'] actions: A list of one or more Action objects.
         """
-        pulumi.set(__self__, "actions", actions)
+        GetRuleActionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actions=actions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actions: Sequence['outputs.GetRuleActionActionResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("actions", actions)
 
     @property
     @pulumi.getter
@@ -237,15 +280,40 @@ class GetRuleActionActionResult(dict):
         :param str stream_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
         :param str topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
         """
-        pulumi.set(__self__, "action_type", action_type)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "lifecycle_message", lifecycle_message)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "stream_id", stream_id)
-        pulumi.set(__self__, "topic_id", topic_id)
+        GetRuleActionActionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_type=action_type,
+            description=description,
+            function_id=function_id,
+            id=id,
+            is_enabled=is_enabled,
+            lifecycle_message=lifecycle_message,
+            state=state,
+            stream_id=stream_id,
+            topic_id=topic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_type: str,
+             description: str,
+             function_id: str,
+             id: str,
+             is_enabled: bool,
+             lifecycle_message: str,
+             state: str,
+             stream_id: str,
+             topic_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_type", action_type)
+        _setter("description", description)
+        _setter("function_id", function_id)
+        _setter("id", id)
+        _setter("is_enabled", is_enabled)
+        _setter("lifecycle_message", lifecycle_message)
+        _setter("state", state)
+        _setter("stream_id", stream_id)
+        _setter("topic_id", topic_id)
 
     @property
     @pulumi.getter(name="actionType")
@@ -329,10 +397,23 @@ class GetRulesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
+        GetRulesFilterResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            name=name,
+            values=values,
+            regex=regex,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             name: str,
+             values: Sequence[str],
+             regex: Optional[bool] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("name", name)
+        _setter("values", values)
         if regex is not None:
-            pulumi.set(__self__, "regex", regex)
+            _setter("regex", regex)
 
     @property
     @pulumi.getter
@@ -380,18 +461,49 @@ class GetRulesRuleResult(dict):
         :param str state: A filter to return only rules that match the lifecycle state in this parameter.  Example: `Creating`
         :param str time_created: The time this rule was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         """
-        pulumi.set(__self__, "actions", actions)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "condition", condition)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "lifecycle_message", lifecycle_message)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
+        GetRulesRuleResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actions=actions,
+            compartment_id=compartment_id,
+            condition=condition,
+            defined_tags=defined_tags,
+            description=description,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            id=id,
+            is_enabled=is_enabled,
+            lifecycle_message=lifecycle_message,
+            state=state,
+            time_created=time_created,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actions: Sequence['outputs.GetRulesRuleActionResult'],
+             compartment_id: str,
+             condition: str,
+             defined_tags: Mapping[str, Any],
+             description: str,
+             display_name: str,
+             freeform_tags: Mapping[str, Any],
+             id: str,
+             is_enabled: bool,
+             lifecycle_message: str,
+             state: str,
+             time_created: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("actions", actions)
+        _setter("compartment_id", compartment_id)
+        _setter("condition", condition)
+        _setter("defined_tags", defined_tags)
+        _setter("description", description)
+        _setter("display_name", display_name)
+        _setter("freeform_tags", freeform_tags)
+        _setter("id", id)
+        _setter("is_enabled", is_enabled)
+        _setter("lifecycle_message", lifecycle_message)
+        _setter("state", state)
+        _setter("time_created", time_created)
 
     @property
     @pulumi.getter
@@ -498,7 +610,16 @@ class GetRulesRuleActionResult(dict):
         """
         :param Sequence['GetRulesRuleActionActionArgs'] actions: A list of one or more Action objects.
         """
-        pulumi.set(__self__, "actions", actions)
+        GetRulesRuleActionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            actions=actions,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             actions: Sequence['outputs.GetRulesRuleActionActionResult'],
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("actions", actions)
 
     @property
     @pulumi.getter
@@ -535,15 +656,40 @@ class GetRulesRuleActionActionResult(dict):
         :param str stream_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
         :param str topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
         """
-        pulumi.set(__self__, "action_type", action_type)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "function_id", function_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "lifecycle_message", lifecycle_message)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "stream_id", stream_id)
-        pulumi.set(__self__, "topic_id", topic_id)
+        GetRulesRuleActionActionResult._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_type=action_type,
+            description=description,
+            function_id=function_id,
+            id=id,
+            is_enabled=is_enabled,
+            lifecycle_message=lifecycle_message,
+            state=state,
+            stream_id=stream_id,
+            topic_id=topic_id,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_type: str,
+             description: str,
+             function_id: str,
+             id: str,
+             is_enabled: bool,
+             lifecycle_message: str,
+             state: str,
+             stream_id: str,
+             topic_id: str,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("action_type", action_type)
+        _setter("description", description)
+        _setter("function_id", function_id)
+        _setter("id", id)
+        _setter("is_enabled", is_enabled)
+        _setter("lifecycle_message", lifecycle_message)
+        _setter("state", state)
+        _setter("stream_id", stream_id)
+        _setter("topic_id", topic_id)
 
     @property
     @pulumi.getter(name="actionType")

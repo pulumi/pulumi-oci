@@ -155,9 +155,6 @@ export class Deployment extends pulumi.CustomResource {
      * The public IP address representing the access point for the Deployment.
      */
     public /*out*/ readonly publicIpAddress!: pulumi.Output<string>;
-    /**
-     * Possible lifecycle states.
-     */
     public readonly state!: pulumi.Output<string>;
     /**
      * The amount of storage being utilized (in bytes)
@@ -418,9 +415,6 @@ export interface DeploymentState {
      * The public IP address representing the access point for the Deployment.
      */
     publicIpAddress?: pulumi.Input<string>;
-    /**
-     * Possible lifecycle states.
-     */
     state?: pulumi.Input<string>;
     /**
      * The amount of storage being utilized (in bytes)
@@ -524,9 +518,6 @@ export interface DeploymentArgs {
      * (Updatable) Deployment Data for creating an OggDeployment
      */
     oggData?: pulumi.Input<inputs.GoldenGate.DeploymentOggData>;
-    /**
-     * Possible lifecycle states.
-     */
     state?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.

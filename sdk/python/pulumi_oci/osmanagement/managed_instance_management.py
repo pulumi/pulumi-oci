@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -27,13 +27,28 @@ class ManagedInstanceManagementArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ManagedInstanceManagementManagedInstanceGroupArgs']]] managed_instance_groups: (Updatable) The ids of the managed instance groups of which this instance is a member.
         :param pulumi.Input['ManagedInstanceManagementParentSoftwareSourceArgs'] parent_software_source: (Updatable) the parent (base) Software Source attached to the Managed Instance
         """
-        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        ManagedInstanceManagementArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            managed_instance_id=managed_instance_id,
+            child_software_sources=child_software_sources,
+            managed_instance_groups=managed_instance_groups,
+            parent_software_source=parent_software_source,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             managed_instance_id: pulumi.Input[str],
+             child_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceManagementChildSoftwareSourceArgs']]]] = None,
+             managed_instance_groups: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceManagementManagedInstanceGroupArgs']]]] = None,
+             parent_software_source: Optional[pulumi.Input['ManagedInstanceManagementParentSoftwareSourceArgs']] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("managed_instance_id", managed_instance_id)
         if child_software_sources is not None:
-            pulumi.set(__self__, "child_software_sources", child_software_sources)
+            _setter("child_software_sources", child_software_sources)
         if managed_instance_groups is not None:
-            pulumi.set(__self__, "managed_instance_groups", managed_instance_groups)
+            _setter("managed_instance_groups", managed_instance_groups)
         if parent_software_source is not None:
-            pulumi.set(__self__, "parent_software_source", parent_software_source)
+            _setter("parent_software_source", parent_software_source)
 
     @property
     @pulumi.getter(name="managedInstanceId")
@@ -118,34 +133,69 @@ class _ManagedInstanceManagementState:
         :param pulumi.Input[str] status: status of the managed instance.
         :param pulumi.Input[int] updates_available: Number of updates available to be installed
         """
+        _ManagedInstanceManagementState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            child_software_sources=child_software_sources,
+            compartment_id=compartment_id,
+            description=description,
+            display_name=display_name,
+            last_boot=last_boot,
+            last_checkin=last_checkin,
+            managed_instance_groups=managed_instance_groups,
+            managed_instance_id=managed_instance_id,
+            os_kernel_version=os_kernel_version,
+            os_name=os_name,
+            os_version=os_version,
+            parent_software_source=parent_software_source,
+            status=status,
+            updates_available=updates_available,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             child_software_sources: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceManagementChildSoftwareSourceArgs']]]] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             description: Optional[pulumi.Input[str]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             last_boot: Optional[pulumi.Input[str]] = None,
+             last_checkin: Optional[pulumi.Input[str]] = None,
+             managed_instance_groups: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceManagementManagedInstanceGroupArgs']]]] = None,
+             managed_instance_id: Optional[pulumi.Input[str]] = None,
+             os_kernel_version: Optional[pulumi.Input[str]] = None,
+             os_name: Optional[pulumi.Input[str]] = None,
+             os_version: Optional[pulumi.Input[str]] = None,
+             parent_software_source: Optional[pulumi.Input['ManagedInstanceManagementParentSoftwareSourceArgs']] = None,
+             status: Optional[pulumi.Input[str]] = None,
+             updates_available: Optional[pulumi.Input[int]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if child_software_sources is not None:
-            pulumi.set(__self__, "child_software_sources", child_software_sources)
+            _setter("child_software_sources", child_software_sources)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if description is not None:
-            pulumi.set(__self__, "description", description)
+            _setter("description", description)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if last_boot is not None:
-            pulumi.set(__self__, "last_boot", last_boot)
+            _setter("last_boot", last_boot)
         if last_checkin is not None:
-            pulumi.set(__self__, "last_checkin", last_checkin)
+            _setter("last_checkin", last_checkin)
         if managed_instance_groups is not None:
-            pulumi.set(__self__, "managed_instance_groups", managed_instance_groups)
+            _setter("managed_instance_groups", managed_instance_groups)
         if managed_instance_id is not None:
-            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+            _setter("managed_instance_id", managed_instance_id)
         if os_kernel_version is not None:
-            pulumi.set(__self__, "os_kernel_version", os_kernel_version)
+            _setter("os_kernel_version", os_kernel_version)
         if os_name is not None:
-            pulumi.set(__self__, "os_name", os_name)
+            _setter("os_name", os_name)
         if os_version is not None:
-            pulumi.set(__self__, "os_version", os_version)
+            _setter("os_version", os_version)
         if parent_software_source is not None:
-            pulumi.set(__self__, "parent_software_source", parent_software_source)
+            _setter("parent_software_source", parent_software_source)
         if status is not None:
-            pulumi.set(__self__, "status", status)
+            _setter("status", status)
         if updates_available is not None:
-            pulumi.set(__self__, "updates_available", updates_available)
+            _setter("updates_available", updates_available)
 
     @property
     @pulumi.getter(name="childSoftwareSources")
@@ -433,6 +483,10 @@ class ManagedInstanceManagement(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ManagedInstanceManagementArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -456,6 +510,11 @@ class ManagedInstanceManagement(pulumi.CustomResource):
             if managed_instance_id is None and not opts.urn:
                 raise TypeError("Missing required property 'managed_instance_id'")
             __props__.__dict__["managed_instance_id"] = managed_instance_id
+            if parent_software_source is not None and not isinstance(parent_software_source, ManagedInstanceManagementParentSoftwareSourceArgs):
+                parent_software_source = parent_software_source or {}
+                def _setter(key, value):
+                    parent_software_source[key] = value
+                ManagedInstanceManagementParentSoftwareSourceArgs._configure(_setter, **parent_software_source)
             __props__.__dict__["parent_software_source"] = parent_software_source
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["description"] = None

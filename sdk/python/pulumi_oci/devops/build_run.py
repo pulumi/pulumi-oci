@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 from . import outputs
 from ._inputs import *
@@ -35,17 +35,36 @@ class BuildRunArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        pulumi.set(__self__, "build_pipeline_id", build_pipeline_id)
+        BuildRunArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            build_pipeline_id=build_pipeline_id,
+            build_run_arguments=build_run_arguments,
+            commit_info=commit_info,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             build_pipeline_id: pulumi.Input[str],
+             build_run_arguments: Optional[pulumi.Input['BuildRunBuildRunArgumentsArgs']] = None,
+             commit_info: Optional[pulumi.Input['BuildRunCommitInfoArgs']] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("build_pipeline_id", build_pipeline_id)
         if build_run_arguments is not None:
-            pulumi.set(__self__, "build_run_arguments", build_run_arguments)
+            _setter("build_run_arguments", build_run_arguments)
         if commit_info is not None:
-            pulumi.set(__self__, "commit_info", commit_info)
+            _setter("commit_info", commit_info)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
 
     @property
     @pulumi.getter(name="buildPipelineId")
@@ -166,38 +185,77 @@ class _BuildRunState:
         :param pulumi.Input[str] time_created: The time the build run was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: The time the build run was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
+        _BuildRunState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            build_outputs=build_outputs,
+            build_pipeline_id=build_pipeline_id,
+            build_run_arguments=build_run_arguments,
+            build_run_progresses=build_run_progresses,
+            build_run_sources=build_run_sources,
+            commit_info=commit_info,
+            compartment_id=compartment_id,
+            defined_tags=defined_tags,
+            display_name=display_name,
+            freeform_tags=freeform_tags,
+            lifecycle_details=lifecycle_details,
+            project_id=project_id,
+            state=state,
+            system_tags=system_tags,
+            time_created=time_created,
+            time_updated=time_updated,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             build_outputs: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputArgs']]]] = None,
+             build_pipeline_id: Optional[pulumi.Input[str]] = None,
+             build_run_arguments: Optional[pulumi.Input['BuildRunBuildRunArgumentsArgs']] = None,
+             build_run_progresses: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunProgressArgs']]]] = None,
+             build_run_sources: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceArgs']]]] = None,
+             commit_info: Optional[pulumi.Input['BuildRunCommitInfoArgs']] = None,
+             compartment_id: Optional[pulumi.Input[str]] = None,
+             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             display_name: Optional[pulumi.Input[str]] = None,
+             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             lifecycle_details: Optional[pulumi.Input[str]] = None,
+             project_id: Optional[pulumi.Input[str]] = None,
+             state: Optional[pulumi.Input[str]] = None,
+             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+             time_created: Optional[pulumi.Input[str]] = None,
+             time_updated: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if build_outputs is not None:
-            pulumi.set(__self__, "build_outputs", build_outputs)
+            _setter("build_outputs", build_outputs)
         if build_pipeline_id is not None:
-            pulumi.set(__self__, "build_pipeline_id", build_pipeline_id)
+            _setter("build_pipeline_id", build_pipeline_id)
         if build_run_arguments is not None:
-            pulumi.set(__self__, "build_run_arguments", build_run_arguments)
+            _setter("build_run_arguments", build_run_arguments)
         if build_run_progresses is not None:
-            pulumi.set(__self__, "build_run_progresses", build_run_progresses)
+            _setter("build_run_progresses", build_run_progresses)
         if build_run_sources is not None:
-            pulumi.set(__self__, "build_run_sources", build_run_sources)
+            _setter("build_run_sources", build_run_sources)
         if commit_info is not None:
-            pulumi.set(__self__, "commit_info", commit_info)
+            _setter("commit_info", commit_info)
         if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+            _setter("compartment_id", compartment_id)
         if defined_tags is not None:
-            pulumi.set(__self__, "defined_tags", defined_tags)
+            _setter("defined_tags", defined_tags)
         if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+            _setter("display_name", display_name)
         if freeform_tags is not None:
-            pulumi.set(__self__, "freeform_tags", freeform_tags)
+            _setter("freeform_tags", freeform_tags)
         if lifecycle_details is not None:
-            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+            _setter("lifecycle_details", lifecycle_details)
         if project_id is not None:
-            pulumi.set(__self__, "project_id", project_id)
+            _setter("project_id", project_id)
         if state is not None:
-            pulumi.set(__self__, "state", state)
+            _setter("state", state)
         if system_tags is not None:
-            pulumi.set(__self__, "system_tags", system_tags)
+            _setter("system_tags", system_tags)
         if time_created is not None:
-            pulumi.set(__self__, "time_created", time_created)
+            _setter("time_created", time_created)
         if time_updated is not None:
-            pulumi.set(__self__, "time_updated", time_updated)
+            _setter("time_updated", time_updated)
 
     @property
     @pulumi.getter(name="buildOutputs")
@@ -519,6 +577,10 @@ class BuildRun(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            BuildRunArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
@@ -542,7 +604,17 @@ class BuildRun(pulumi.CustomResource):
             if build_pipeline_id is None and not opts.urn:
                 raise TypeError("Missing required property 'build_pipeline_id'")
             __props__.__dict__["build_pipeline_id"] = build_pipeline_id
+            if build_run_arguments is not None and not isinstance(build_run_arguments, BuildRunBuildRunArgumentsArgs):
+                build_run_arguments = build_run_arguments or {}
+                def _setter(key, value):
+                    build_run_arguments[key] = value
+                BuildRunBuildRunArgumentsArgs._configure(_setter, **build_run_arguments)
             __props__.__dict__["build_run_arguments"] = build_run_arguments
+            if commit_info is not None and not isinstance(commit_info, BuildRunCommitInfoArgs):
+                commit_info = commit_info or {}
+                def _setter(key, value):
+                    commit_info[key] = value
+                BuildRunCommitInfoArgs._configure(_setter, **commit_info)
             __props__.__dict__["commit_info"] = commit_info
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
